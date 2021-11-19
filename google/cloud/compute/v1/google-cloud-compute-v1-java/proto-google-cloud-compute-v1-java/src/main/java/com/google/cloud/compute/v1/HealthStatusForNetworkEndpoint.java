@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private HealthStatusForNetworkEndpoint() {
-    healthState_ = 0;
+    healthState_ = "";
   }
 
   @java.lang.Override
@@ -92,10 +92,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000004;
             break;
           }
-          case -1702910096: {
-            int rawValue = input.readEnum();
+          case -1702910094: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000010;
-            healthState_ = rawValue;
+            healthState_ = s;
             break;
           }
           case -1027969318: {
@@ -444,41 +444,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
-  private int healthState_;
+  private volatile java.lang.Object healthState_;
   /**
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    * @return Whether the healthState field is set.
    */
-  @java.lang.Override public boolean hasHealthState() {
+  @java.lang.Override
+  public boolean hasHealthState() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-   * @return The enum numeric value on the wire for healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The healthState.
    */
-  @java.lang.Override public int getHealthStateValue() {
-    return healthState_;
+  @java.lang.Override
+  public java.lang.String getHealthState() {
+    java.lang.Object ref = healthState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      healthState_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-   * @return The healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The bytes for healthState.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState getHealthState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState result = com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState.valueOf(healthState_);
-    return result == null ? com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getHealthStateBytes() {
+    java.lang.Object ref = healthState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      healthState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -505,7 +528,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(308876645, getHealthCheck());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(324007150, healthState_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 324007150, healthState_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(408374747, getHealthCheckService());
@@ -532,8 +555,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(308876645, getHealthCheck());
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(324007150, healthState_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(324007150, healthState_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -576,7 +598,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasHealthState() != other.hasHealthState()) return false;
     if (hasHealthState()) {
-      if (healthState_ != other.healthState_) return false;
+      if (!getHealthState()
+          .equals(other.getHealthState())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -607,7 +630,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasHealthState()) {
       hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + healthState_;
+      hash = (53 * hash) + getHealthState().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -773,7 +796,7 @@ private static final long serialVersionUID = 0L;
         healthCheckServiceBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000008);
-      healthState_ = 0;
+      healthState_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -901,7 +924,9 @@ private static final long serialVersionUID = 0L;
         mergeHealthCheckService(other.getHealthCheckService());
       }
       if (other.hasHealthState()) {
-        setHealthState(other.getHealthState());
+        bitField0_ |= 0x00000010;
+        healthState_ = other.healthState_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1557,40 +1582,78 @@ private static final long serialVersionUID = 0L;
       return healthCheckServiceBuilder_;
     }
 
-    private int healthState_ = 0;
+    private java.lang.Object healthState_ = "";
     /**
      * <pre>
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      * @return Whether the healthState field is set.
      */
-    @java.lang.Override public boolean hasHealthState() {
+    public boolean hasHealthState() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-     * @return The enum numeric value on the wire for healthState.
+     * <code>optional string health_state = 324007150;</code>
+     * @return The healthState.
      */
-    @java.lang.Override public int getHealthStateValue() {
-      return healthState_;
+    public java.lang.String getHealthState() {
+      java.lang.Object ref = healthState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        healthState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-     * @param value The enum numeric value on the wire for healthState to set.
+     * <code>optional string health_state = 324007150;</code>
+     * @return The bytes for healthState.
+     */
+    public com.google.protobuf.ByteString
+        getHealthStateBytes() {
+      java.lang.Object ref = healthState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        healthState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string health_state = 324007150;</code>
+     * @param value The healthState to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthStateValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setHealthState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       healthState_ = value;
       onChanged();
       return this;
@@ -1598,46 +1661,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-     * @return The healthState.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState getHealthState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState result = com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState.valueOf(healthState_);
-      return result == null ? com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Health state of the network endpoint determined based on the health checks configured.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-     * @param value The healthState to set.
+     * <code>optional string health_state = 324007150;</code>
      * @return This builder for chaining.
      */
-    public Builder setHealthState(com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      healthState_ = value.getNumber();
+    public Builder clearHealthState() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      healthState_ = getDefaultInstance().getHealthState();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
+     * @param value The bytes for healthState to set.
      * @return This builder for chaining.
      */
-    public Builder clearHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      healthState_ = 0;
+    public Builder setHealthStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      healthState_ = value;
       onChanged();
       return this;
     }

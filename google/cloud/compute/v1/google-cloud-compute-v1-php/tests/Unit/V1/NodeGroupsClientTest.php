@@ -555,10 +555,12 @@ class NodeGroupsClientTest extends GeneratedTest
         $id = 3355;
         $kind = 'kind3292052';
         $locationHint = 'locationHint-1796964143';
+        $maintenancePolicy = 'maintenancePolicy1065198558';
         $name = 'name3373707';
         $nodeTemplate = 'nodeTemplate323154455';
         $selfLink = 'selfLink-1691268851';
         $size = 3530753;
+        $status = 'status-892481550';
         $zone2 = 'zone2-696322977';
         $expectedResponse = new NodeGroup();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -567,10 +569,12 @@ class NodeGroupsClientTest extends GeneratedTest
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setLocationHint($locationHint);
+        $expectedResponse->setMaintenancePolicy($maintenancePolicy);
         $expectedResponse->setName($name);
         $expectedResponse->setNodeTemplate($nodeTemplate);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setSize($size);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setZone($zone2);
         $transport->addResponse($expectedResponse);
         // Mock request

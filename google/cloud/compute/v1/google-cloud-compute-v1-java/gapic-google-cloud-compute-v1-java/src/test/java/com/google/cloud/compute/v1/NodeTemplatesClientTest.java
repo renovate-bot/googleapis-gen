@@ -209,6 +209,7 @@ public class NodeTemplatesClientTest {
     NodeTemplate expectedResponse =
         NodeTemplate.newBuilder()
             .addAllAccelerators(new ArrayList<AcceleratorConfig>())
+            .setCpuOvercommitType("cpuOvercommitType708789421")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .addAllDisks(new ArrayList<LocalDisk>())
@@ -221,6 +222,7 @@ public class NodeTemplatesClientTest {
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setServerBinding(ServerBinding.newBuilder().build())
+            .setStatus("status-892481550")
             .setStatusMessage("statusMessage-958704715")
             .build();
     mockService.addResponse(expectedResponse);

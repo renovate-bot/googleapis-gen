@@ -64,28 +64,32 @@ public interface SecurityPolicyRuleMatcherOrBuilder extends
   /**
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
+   * <code>optional string versioned_expr = 322286013;</code>
    * @return Whether the versionedExpr field is set.
    */
   boolean hasVersionedExpr();
   /**
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-   * @return The enum numeric value on the wire for versionedExpr.
+   * <code>optional string versioned_expr = 322286013;</code>
+   * @return The versionedExpr.
    */
-  int getVersionedExprValue();
+  java.lang.String getVersionedExpr();
   /**
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-   * @return The versionedExpr.
+   * <code>optional string versioned_expr = 322286013;</code>
+   * @return The bytes for versionedExpr.
    */
-  com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr getVersionedExpr();
+  com.google.protobuf.ByteString
+      getVersionedExprBytes();
 }

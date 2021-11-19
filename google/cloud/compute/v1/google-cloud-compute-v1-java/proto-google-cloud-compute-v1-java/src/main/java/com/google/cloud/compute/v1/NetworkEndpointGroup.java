@@ -25,7 +25,7 @@ private static final long serialVersionUID = 0L;
     kind_ = "";
     name_ = "";
     network_ = "";
-    networkEndpointType_ = 0;
+    networkEndpointType_ = "";
     region_ = "";
     selfLink_ = "";
     subnetwork_ = "";
@@ -123,10 +123,10 @@ private static final long serialVersionUID = 0L;
                 annotations__.getKey(), annotations__.getValue());
             break;
           }
-          case 946412184: {
-            int rawValue = input.readEnum();
+          case 946412186: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000400;
-            networkEndpointType_ = rawValue;
+            networkEndpointType_ = s;
             break;
           }
           case 1111570338: {
@@ -1004,41 +1004,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NETWORK_ENDPOINT_TYPE_FIELD_NUMBER = 118301523;
-  private int networkEndpointType_;
+  private volatile java.lang.Object networkEndpointType_;
   /**
    * <pre>
    * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
+   * <code>optional string network_endpoint_type = 118301523;</code>
    * @return Whether the networkEndpointType field is set.
    */
-  @java.lang.Override public boolean hasNetworkEndpointType() {
+  @java.lang.Override
+  public boolean hasNetworkEndpointType() {
     return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    * <pre>
    * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-   * @return The enum numeric value on the wire for networkEndpointType.
+   * <code>optional string network_endpoint_type = 118301523;</code>
+   * @return The networkEndpointType.
    */
-  @java.lang.Override public int getNetworkEndpointTypeValue() {
-    return networkEndpointType_;
+  @java.lang.Override
+  public java.lang.String getNetworkEndpointType() {
+    java.lang.Object ref = networkEndpointType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkEndpointType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-   * @return The networkEndpointType.
+   * <code>optional string network_endpoint_type = 118301523;</code>
+   * @return The bytes for networkEndpointType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType getNetworkEndpointType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType result = com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType.valueOf(networkEndpointType_);
-    return result == null ? com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkEndpointTypeBytes() {
+    java.lang.Object ref = networkEndpointType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkEndpointType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -1342,7 +1365,7 @@ private static final long serialVersionUID = 0L;
         AnnotationsDefaultEntryHolder.defaultEntry,
         112032548);
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeEnum(118301523, networkEndpointType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 118301523, networkEndpointType_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -1412,8 +1435,7 @@ private static final long serialVersionUID = 0L;
           .computeMessageSize(112032548, annotations__);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(118301523, networkEndpointType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(118301523, networkEndpointType_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -1511,7 +1533,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkEndpointType() != other.hasNetworkEndpointType()) return false;
     if (hasNetworkEndpointType()) {
-      if (networkEndpointType_ != other.networkEndpointType_) return false;
+      if (!getNetworkEndpointType()
+          .equals(other.getNetworkEndpointType())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1596,7 +1619,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkEndpointType()) {
       hash = (37 * hash) + NETWORK_ENDPOINT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + networkEndpointType_;
+      hash = (53 * hash) + getNetworkEndpointType().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1813,7 +1836,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000200);
       network_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      networkEndpointType_ = 0;
+      networkEndpointType_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
@@ -2023,7 +2046,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNetworkEndpointType()) {
-        setNetworkEndpointType(other.getNetworkEndpointType());
+        bitField0_ |= 0x00000800;
+        networkEndpointType_ = other.networkEndpointType_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00001000;
@@ -3347,40 +3372,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int networkEndpointType_ = 0;
+    private java.lang.Object networkEndpointType_ = "";
     /**
      * <pre>
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
+     * <code>optional string network_endpoint_type = 118301523;</code>
      * @return Whether the networkEndpointType field is set.
      */
-    @java.lang.Override public boolean hasNetworkEndpointType() {
+    public boolean hasNetworkEndpointType() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <pre>
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-     * @return The enum numeric value on the wire for networkEndpointType.
+     * <code>optional string network_endpoint_type = 118301523;</code>
+     * @return The networkEndpointType.
      */
-    @java.lang.Override public int getNetworkEndpointTypeValue() {
-      return networkEndpointType_;
+    public java.lang.String getNetworkEndpointType() {
+      java.lang.Object ref = networkEndpointType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkEndpointType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-     * @param value The enum numeric value on the wire for networkEndpointType to set.
+     * <code>optional string network_endpoint_type = 118301523;</code>
+     * @return The bytes for networkEndpointType.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkEndpointTypeBytes() {
+      java.lang.Object ref = networkEndpointType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkEndpointType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_endpoint_type = 118301523;</code>
+     * @param value The networkEndpointType to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkEndpointTypeValue(int value) {
-      bitField0_ |= 0x00000800;
+    public Builder setNetworkEndpointType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
       networkEndpointType_ = value;
       onChanged();
       return this;
@@ -3388,46 +3451,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-     * @return The networkEndpointType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType getNetworkEndpointType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType result = com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType.valueOf(networkEndpointType_);
-      return result == null ? com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-     * @param value The networkEndpointType to set.
+     * <code>optional string network_endpoint_type = 118301523;</code>
      * @return This builder for chaining.
      */
-    public Builder setNetworkEndpointType(com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      networkEndpointType_ = value.getNumber();
+    public Builder clearNetworkEndpointType() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      networkEndpointType_ = getDefaultInstance().getNetworkEndpointType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
+     * <code>optional string network_endpoint_type = 118301523;</code>
+     * @param value The bytes for networkEndpointType to set.
      * @return This builder for chaining.
      */
-    public Builder clearNetworkEndpointType() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      networkEndpointType_ = 0;
+    public Builder setNetworkEndpointTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      networkEndpointType_ = value;
       onChanged();
       return this;
     }

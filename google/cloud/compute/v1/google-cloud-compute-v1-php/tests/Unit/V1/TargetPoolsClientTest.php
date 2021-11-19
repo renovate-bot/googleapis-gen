@@ -556,6 +556,7 @@ class TargetPoolsClientTest extends GeneratedTest
         $name = 'name3373707';
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
+        $sessionAffinity = 'sessionAffinity1000759473';
         $expectedResponse = new TargetPool();
         $expectedResponse->setBackupPool($backupPool);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -566,6 +567,7 @@ class TargetPoolsClientTest extends GeneratedTest
         $expectedResponse->setName($name);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setSessionAffinity($sessionAffinity);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';

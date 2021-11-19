@@ -23,8 +23,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig extends \Goo
     protected $enable = null;
     /**
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
+     * Generated from protobuf field <code>optional string rule_visibility = 453258293;</code>
      */
     protected $rule_visibility = null;
 
@@ -36,8 +37,9 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig extends \Goo
      *
      *     @type bool $enable
      *           If set to true, enables CAAP for L7 DDoS detection.
-     *     @type int $rule_visibility
+     *     @type string $rule_visibility
      *           Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     *           Check the RuleVisibility enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -83,13 +85,14 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig extends \Goo
 
     /**
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string rule_visibility = 453258293;</code>
+     * @return string
      */
     public function getRuleVisibility()
     {
-        return isset($this->rule_visibility) ? $this->rule_visibility : 0;
+        return isset($this->rule_visibility) ? $this->rule_visibility : '';
     }
 
     public function hasRuleVisibility()
@@ -104,14 +107,15 @@ class SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig extends \Goo
 
     /**
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string rule_visibility = 453258293;</code>
+     * @param string $var
      * @return $this
      */
     public function setRuleVisibility($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig\RuleVisibility::class);
+        GPBUtil::checkString($var, True);
         $this->rule_visibility = $var;
 
         return $this;

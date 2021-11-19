@@ -702,7 +702,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetInstanc
               instance='instance_value',
               kind='kind_value',
               name='name_value',
-              nat_policy=compute.TargetInstance.NatPolicy.NO_NAT,
+              nat_policy='nat_policy_value',
               network='network_value',
               self_link='self_link_value',
               zone='zone_value',
@@ -724,7 +724,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetInstanc
     assert response.instance == 'instance_value'
     assert response.kind == 'kind_value'
     assert response.name == 'name_value'
-    assert response.nat_policy == compute.TargetInstance.NatPolicy.NO_NAT
+    assert response.nat_policy == 'nat_policy_value'
     assert response.network == 'network_value'
     assert response.self_link == 'self_link_value'
     assert response.zone == 'zone_value'

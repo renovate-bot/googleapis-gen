@@ -37,28 +37,32 @@ public interface LogConfigCloudAuditOptionsOrBuilder extends
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    * @return Whether the logName field is set.
    */
   boolean hasLogName();
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-   * @return The enum numeric value on the wire for logName.
+   * <code>optional string log_name = 402913958;</code>
+   * @return The logName.
    */
-  int getLogNameValue();
+  java.lang.String getLogName();
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-   * @return The logName.
+   * <code>optional string log_name = 402913958;</code>
+   * @return The bytes for logName.
    */
-  com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName getLogName();
+  com.google.protobuf.ByteString
+      getLogNameBytes();
 }

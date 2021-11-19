@@ -174,28 +174,32 @@ public interface PublicDelegatedPrefixPublicDelegatedSubPrefixOrBuilder extends
   /**
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the sub public delegated prefix.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }

@@ -77,8 +77,9 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -126,8 +127,9 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
      *           [Output Only] Status information of existing scaling schedules.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     *           Check the Status enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\AutoscalerStatusDetails[]|\Google\Protobuf\Internal\RepeatedField $status_details
      *           [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation for Commonly returned status messages for examples of status messages you might encounter.
      *     @type string $target
@@ -493,13 +495,14 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -514,14 +517,15 @@ class Autoscaler extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Autoscaler.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Autoscaler\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

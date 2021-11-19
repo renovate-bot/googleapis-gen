@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
     kind_ = "";
     name_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     zone_ = "";
   }
 
@@ -90,10 +90,10 @@ private static final long serialVersionUID = 0L;
             creationTimestamp_ = s;
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000400;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case 1812405496: {
@@ -826,41 +826,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00000400) != 0);
   }
   /**
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The status of the reservation.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Reservation.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Reservation.Status result = com.google.cloud.compute.v1.Reservation.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Reservation.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
@@ -951,7 +974,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeBool(226550687, specificReservationRequired_);
@@ -997,8 +1020,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1088,7 +1110,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasZone() != other.hasZone()) return false;
     if (hasZone()) {
@@ -1151,7 +1174,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasZone()) {
       hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -1319,7 +1342,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
       specificReservationRequired_ = false;
       bitField0_ = (bitField0_ & ~0x00000200);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       zone_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -1495,7 +1518,9 @@ private static final long serialVersionUID = 0L;
         setSpecificReservationRequired(other.getSpecificReservationRequired());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000400;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasZone()) {
         bitField0_ |= 0x00000800;
@@ -2495,40 +2520,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00000400;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
       status_ = value;
       onChanged();
       return this;
@@ -2536,46 +2599,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Reservation.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Reservation.Status result = com.google.cloud.compute.v1.Reservation.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Reservation.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The status of the reservation.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Reservation.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000400;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      status_ = value;
       onChanged();
       return this;
     }

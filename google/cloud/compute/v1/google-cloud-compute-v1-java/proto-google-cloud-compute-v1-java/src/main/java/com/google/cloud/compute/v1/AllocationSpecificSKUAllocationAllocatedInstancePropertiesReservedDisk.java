@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk() {
-    interface_ = 0;
+    interface_ = "";
   }
 
   @java.lang.Override
@@ -58,10 +58,10 @@ private static final long serialVersionUID = 0L;
             diskSizeGb_ = input.readInt64();
             break;
           }
-          case -273978936: {
-            int rawValue = input.readEnum();
+          case -273978934: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            interface_ = rawValue;
+            interface_ = s;
             break;
           }
           default: {
@@ -254,41 +254,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INTERFACE_FIELD_NUMBER = 502623545;
-  private int interface_;
+  private volatile java.lang.Object interface_;
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    * @return Whether the interface field is set.
    */
-  @java.lang.Override public boolean hasInterface() {
+  @java.lang.Override
+  public boolean hasInterface() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-   * @return The enum numeric value on the wire for interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The interface.
    */
-  @java.lang.Override public int getInterfaceValue() {
-    return interface_;
+  @java.lang.Override
+  public java.lang.String getInterface() {
+    java.lang.Object ref = interface_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interface_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-   * @return The interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The bytes for interface.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface getInterface() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface result = com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface.valueOf(interface_);
-    return result == null ? com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInterfaceBytes() {
+    java.lang.Object ref = interface_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interface_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -309,7 +332,7 @@ private static final long serialVersionUID = 0L;
       output.writeInt64(316263735, diskSizeGb_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(502623545, interface_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 502623545, interface_);
     }
     unknownFields.writeTo(output);
   }
@@ -325,8 +348,7 @@ private static final long serialVersionUID = 0L;
         .computeInt64Size(316263735, diskSizeGb_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(502623545, interface_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(502623545, interface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -350,7 +372,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInterface() != other.hasInterface()) return false;
     if (hasInterface()) {
-      if (interface_ != other.interface_) return false;
+      if (!getInterface()
+          .equals(other.getInterface())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -370,7 +393,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInterface()) {
       hash = (37 * hash) + INTERFACE_FIELD_NUMBER;
-      hash = (53 * hash) + interface_;
+      hash = (53 * hash) + getInterface().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -510,7 +533,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       diskSizeGb_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
-      interface_ = 0;
+      interface_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -601,7 +624,9 @@ private static final long serialVersionUID = 0L;
         setDiskSizeGb(other.getDiskSizeGb());
       }
       if (other.hasInterface()) {
-        setInterface(other.getInterface());
+        bitField0_ |= 0x00000002;
+        interface_ = other.interface_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -688,40 +713,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int interface_ = 0;
+    private java.lang.Object interface_ = "";
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      * @return Whether the interface field is set.
      */
-    @java.lang.Override public boolean hasInterface() {
+    public boolean hasInterface() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-     * @return The enum numeric value on the wire for interface.
+     * <code>optional string interface = 502623545;</code>
+     * @return The interface.
      */
-    @java.lang.Override public int getInterfaceValue() {
-      return interface_;
+    public java.lang.String getInterface() {
+      java.lang.Object ref = interface_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interface_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-     * @param value The enum numeric value on the wire for interface to set.
+     * <code>optional string interface = 502623545;</code>
+     * @return The bytes for interface.
+     */
+    public com.google.protobuf.ByteString
+        getInterfaceBytes() {
+      java.lang.Object ref = interface_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interface_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string interface = 502623545;</code>
+     * @param value The interface to set.
      * @return This builder for chaining.
      */
-    public Builder setInterfaceValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setInterface(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       interface_ = value;
       onChanged();
       return this;
@@ -729,46 +792,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-     * @return The interface.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface getInterface() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface result = com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface.valueOf(interface_);
-      return result == null ? com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-     * @param value The interface to set.
+     * <code>optional string interface = 502623545;</code>
      * @return This builder for chaining.
      */
-    public Builder setInterface(com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      interface_ = value.getNumber();
+    public Builder clearInterface() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      interface_ = getDefaultInstance().getInterface();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
+     * @param value The bytes for interface to set.
      * @return This builder for chaining.
      */
-    public Builder clearInterface() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      interface_ = 0;
+    public Builder setInterfaceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      interface_ = value;
       onChanged();
       return this;
     }

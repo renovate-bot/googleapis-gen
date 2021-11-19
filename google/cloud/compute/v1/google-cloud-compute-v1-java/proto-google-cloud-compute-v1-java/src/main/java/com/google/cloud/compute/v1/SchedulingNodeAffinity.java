@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private SchedulingNodeAffinity() {
     key_ = "";
-    operator_ = 0;
+    operator_ = "";
     values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -62,10 +62,10 @@ private static final long serialVersionUID = 0L;
             key_ = s;
             break;
           }
-          case 290538784: {
-            int rawValue = input.readEnum();
+          case 290538786: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            operator_ = rawValue;
+            operator_ = s;
             break;
           }
           case 1999431954: {
@@ -326,41 +326,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OPERATOR_FIELD_NUMBER = 36317348;
-  private int operator_;
+  private volatile java.lang.Object operator_;
   /**
    * <pre>
    * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Check the Operator enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
+   * <code>optional string operator = 36317348;</code>
    * @return Whether the operator field is set.
    */
-  @java.lang.Override public boolean hasOperator() {
+  @java.lang.Override
+  public boolean hasOperator() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Check the Operator enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-   * @return The enum numeric value on the wire for operator.
+   * <code>optional string operator = 36317348;</code>
+   * @return The operator.
    */
-  @java.lang.Override public int getOperatorValue() {
-    return operator_;
+  @java.lang.Override
+  public java.lang.String getOperator() {
+    java.lang.Object ref = operator_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operator_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Check the Operator enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-   * @return The operator.
+   * <code>optional string operator = 36317348;</code>
+   * @return The bytes for operator.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator getOperator() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator result = com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator.valueOf(operator_);
-    return result == null ? com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOperatorBytes() {
+    java.lang.Object ref = operator_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      operator_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int VALUES_FIELD_NUMBER = 249928994;
@@ -432,7 +455,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 106079, key_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(36317348, operator_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36317348, operator_);
     }
     for (int i = 0; i < values_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249928994, values_.getRaw(i));
@@ -450,8 +473,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(106079, key_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(36317348, operator_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36317348, operator_);
     }
     {
       int dataSize = 0;
@@ -483,7 +505,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOperator() != other.hasOperator()) return false;
     if (hasOperator()) {
-      if (operator_ != other.operator_) return false;
+      if (!getOperator()
+          .equals(other.getOperator())) return false;
     }
     if (!getValuesList()
         .equals(other.getValuesList())) return false;
@@ -504,7 +527,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOperator()) {
       hash = (37 * hash) + OPERATOR_FIELD_NUMBER;
-      hash = (53 * hash) + operator_;
+      hash = (53 * hash) + getOperator().hashCode();
     }
     if (getValuesCount() > 0) {
       hash = (37 * hash) + VALUES_FIELD_NUMBER;
@@ -649,7 +672,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       key_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      operator_ = 0;
+      operator_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -749,7 +772,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasOperator()) {
-        setOperator(other.getOperator());
+        bitField0_ |= 0x00000002;
+        operator_ = other.operator_;
+        onChanged();
       }
       if (!other.values_.isEmpty()) {
         if (values_.isEmpty()) {
@@ -898,40 +923,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int operator_ = 0;
+    private java.lang.Object operator_ = "";
     /**
      * <pre>
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
+     * <code>optional string operator = 36317348;</code>
      * @return Whether the operator field is set.
      */
-    @java.lang.Override public boolean hasOperator() {
+    public boolean hasOperator() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-     * @return The enum numeric value on the wire for operator.
+     * <code>optional string operator = 36317348;</code>
+     * @return The operator.
      */
-    @java.lang.Override public int getOperatorValue() {
-      return operator_;
+    public java.lang.String getOperator() {
+      java.lang.Object ref = operator_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operator_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-     * @param value The enum numeric value on the wire for operator to set.
+     * <code>optional string operator = 36317348;</code>
+     * @return The bytes for operator.
+     */
+    public com.google.protobuf.ByteString
+        getOperatorBytes() {
+      java.lang.Object ref = operator_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        operator_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operator = 36317348;</code>
+     * @param value The operator to set.
      * @return This builder for chaining.
      */
-    public Builder setOperatorValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setOperator(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       operator_ = value;
       onChanged();
       return this;
@@ -939,46 +1002,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-     * @return The operator.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator getOperator() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator result = com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator.valueOf(operator_);
-      return result == null ? com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-     * @param value The operator to set.
+     * <code>optional string operator = 36317348;</code>
      * @return This builder for chaining.
      */
-    public Builder setOperator(com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      operator_ = value.getNumber();
+    public Builder clearOperator() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      operator_ = getDefaultInstance().getOperator();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
+     * <code>optional string operator = 36317348;</code>
+     * @param value The bytes for operator to set.
      * @return This builder for chaining.
      */
-    public Builder clearOperator() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      operator_ = 0;
+    public Builder setOperatorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      operator_ = value;
       onChanged();
       return this;
     }

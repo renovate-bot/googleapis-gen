@@ -92,28 +92,32 @@ public interface PacketMirroringFilterOrBuilder extends
   /**
    * <pre>
    * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    * @return Whether the direction field is set.
    */
   boolean hasDirection();
   /**
    * <pre>
    * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
-   * @return The enum numeric value on the wire for direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The direction.
    */
-  int getDirectionValue();
+  java.lang.String getDirection();
   /**
    * <pre>
    * Direction of traffic to mirror, either INGRESS, EGRESS, or BOTH. The default is BOTH.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroringFilter.Direction direction = 111150975;</code>
-   * @return The direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The bytes for direction.
    */
-  com.google.cloud.compute.v1.PacketMirroringFilter.Direction getDirection();
+  com.google.protobuf.ByteString
+      getDirectionBytes();
 }

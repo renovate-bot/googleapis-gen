@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ResourcePolicySnapshotSchedulePolicyRetentionPolicy() {
-    onSourceDiskDelete_ = 0;
+    onSourceDiskDelete_ = "";
   }
 
   @java.lang.Override
@@ -54,10 +54,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case -1719323064: {
-            int rawValue = input.readEnum();
+          case -1719323062: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            onSourceDiskDelete_ = rawValue;
+            onSourceDiskDelete_ = s;
             break;
           }
           case -1700591464: {
@@ -264,41 +264,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ON_SOURCE_DISK_DELETE_FIELD_NUMBER = 321955529;
-  private int onSourceDiskDelete_;
+  private volatile java.lang.Object onSourceDiskDelete_;
   /**
    * <pre>
    * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
+   * <code>optional string on_source_disk_delete = 321955529;</code>
    * @return Whether the onSourceDiskDelete field is set.
    */
-  @java.lang.Override public boolean hasOnSourceDiskDelete() {
+  @java.lang.Override
+  public boolean hasOnSourceDiskDelete() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
-   * @return The enum numeric value on the wire for onSourceDiskDelete.
+   * <code>optional string on_source_disk_delete = 321955529;</code>
+   * @return The onSourceDiskDelete.
    */
-  @java.lang.Override public int getOnSourceDiskDeleteValue() {
-    return onSourceDiskDelete_;
+  @java.lang.Override
+  public java.lang.String getOnSourceDiskDelete() {
+    java.lang.Object ref = onSourceDiskDelete_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      onSourceDiskDelete_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+   * Check the OnSourceDiskDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
-   * @return The onSourceDiskDelete.
+   * <code>optional string on_source_disk_delete = 321955529;</code>
+   * @return The bytes for onSourceDiskDelete.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete getOnSourceDiskDelete() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete result = com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete.valueOf(onSourceDiskDelete_);
-    return result == null ? com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOnSourceDiskDeleteBytes() {
+    java.lang.Object ref = onSourceDiskDelete_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      onSourceDiskDelete_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -316,7 +339,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(321955529, onSourceDiskDelete_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 321955529, onSourceDiskDelete_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(324296979, maxRetentionDays_);
@@ -331,8 +354,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(321955529, onSourceDiskDelete_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(321955529, onSourceDiskDelete_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -360,7 +382,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOnSourceDiskDelete() != other.hasOnSourceDiskDelete()) return false;
     if (hasOnSourceDiskDelete()) {
-      if (onSourceDiskDelete_ != other.onSourceDiskDelete_) return false;
+      if (!getOnSourceDiskDelete()
+          .equals(other.getOnSourceDiskDelete())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -379,7 +402,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOnSourceDiskDelete()) {
       hash = (37 * hash) + ON_SOURCE_DISK_DELETE_FIELD_NUMBER;
-      hash = (53 * hash) + onSourceDiskDelete_;
+      hash = (53 * hash) + getOnSourceDiskDelete().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -520,7 +543,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       maxRetentionDays_ = 0;
       bitField0_ = (bitField0_ & ~0x00000001);
-      onSourceDiskDelete_ = 0;
+      onSourceDiskDelete_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -611,7 +634,9 @@ private static final long serialVersionUID = 0L;
         setMaxRetentionDays(other.getMaxRetentionDays());
       }
       if (other.hasOnSourceDiskDelete()) {
-        setOnSourceDiskDelete(other.getOnSourceDiskDelete());
+        bitField0_ |= 0x00000002;
+        onSourceDiskDelete_ = other.onSourceDiskDelete_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -698,40 +723,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int onSourceDiskDelete_ = 0;
+    private java.lang.Object onSourceDiskDelete_ = "";
     /**
      * <pre>
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
+     * <code>optional string on_source_disk_delete = 321955529;</code>
      * @return Whether the onSourceDiskDelete field is set.
      */
-    @java.lang.Override public boolean hasOnSourceDiskDelete() {
+    public boolean hasOnSourceDiskDelete() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
-     * @return The enum numeric value on the wire for onSourceDiskDelete.
+     * <code>optional string on_source_disk_delete = 321955529;</code>
+     * @return The onSourceDiskDelete.
      */
-    @java.lang.Override public int getOnSourceDiskDeleteValue() {
-      return onSourceDiskDelete_;
+    public java.lang.String getOnSourceDiskDelete() {
+      java.lang.Object ref = onSourceDiskDelete_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onSourceDiskDelete_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
-     * @param value The enum numeric value on the wire for onSourceDiskDelete to set.
+     * <code>optional string on_source_disk_delete = 321955529;</code>
+     * @return The bytes for onSourceDiskDelete.
+     */
+    public com.google.protobuf.ByteString
+        getOnSourceDiskDeleteBytes() {
+      java.lang.Object ref = onSourceDiskDelete_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        onSourceDiskDelete_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Check the OnSourceDiskDelete enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_source_disk_delete = 321955529;</code>
+     * @param value The onSourceDiskDelete to set.
      * @return This builder for chaining.
      */
-    public Builder setOnSourceDiskDeleteValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setOnSourceDiskDelete(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       onSourceDiskDelete_ = value;
       onChanged();
       return this;
@@ -739,46 +802,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
-     * @return The onSourceDiskDelete.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete getOnSourceDiskDelete() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete result = com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete.valueOf(onSourceDiskDelete_);
-      return result == null ? com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
-     * @param value The onSourceDiskDelete to set.
+     * <code>optional string on_source_disk_delete = 321955529;</code>
      * @return This builder for chaining.
      */
-    public Builder setOnSourceDiskDelete(com.google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      onSourceDiskDelete_ = value.getNumber();
+    public Builder clearOnSourceDiskDelete() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onSourceDiskDelete_ = getDefaultInstance().getOnSourceDiskDelete();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the behavior to apply to scheduled snapshots when the source disk is deleted.
+     * Check the OnSourceDiskDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ResourcePolicySnapshotSchedulePolicyRetentionPolicy.OnSourceDiskDelete on_source_disk_delete = 321955529;</code>
+     * <code>optional string on_source_disk_delete = 321955529;</code>
+     * @param value The bytes for onSourceDiskDelete to set.
      * @return This builder for chaining.
      */
-    public Builder clearOnSourceDiskDelete() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onSourceDiskDelete_ = 0;
+    public Builder setOnSourceDiskDeleteBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      onSourceDiskDelete_ = value;
       onChanged();
       return this;
     }

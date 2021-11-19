@@ -777,6 +777,7 @@ public class NetworksClient implements BackgroundResource {
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListPeeringRoutesNetworksRequest request =
    *       ListPeeringRoutesNetworksRequest.newBuilder()
+   *           .setDirection("direction-962590849")
    *           .setFilter("filter-1274492040")
    *           .setMaxResults(1128457243)
    *           .setNetwork("network1843485230")
@@ -811,6 +812,7 @@ public class NetworksClient implements BackgroundResource {
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListPeeringRoutesNetworksRequest request =
    *       ListPeeringRoutesNetworksRequest.newBuilder()
+   *           .setDirection("direction-962590849")
    *           .setFilter("filter-1274492040")
    *           .setMaxResults(1128457243)
    *           .setNetwork("network1843485230")
@@ -845,6 +847,7 @@ public class NetworksClient implements BackgroundResource {
    * try (NetworksClient networksClient = NetworksClient.create()) {
    *   ListPeeringRoutesNetworksRequest request =
    *       ListPeeringRoutesNetworksRequest.newBuilder()
+   *           .setDirection("direction-962590849")
    *           .setFilter("filter-1274492040")
    *           .setMaxResults(1128457243)
    *           .setNetwork("network1843485230")

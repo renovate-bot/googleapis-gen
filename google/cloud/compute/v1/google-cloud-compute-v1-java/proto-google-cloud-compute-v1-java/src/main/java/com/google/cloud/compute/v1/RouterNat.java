@@ -22,10 +22,10 @@ private static final long serialVersionUID = 0L;
   private RouterNat() {
     drainNatIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     name_ = "";
-    natIpAllocateOption_ = 0;
+    natIpAllocateOption_ = "";
     natIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     rules_ = java.util.Collections.emptyList();
-    sourceSubnetworkIpRangesToNat_ = 0;
+    sourceSubnetworkIpRangesToNat_ = "";
     subnetworks_ = java.util.Collections.emptyList();
   }
 
@@ -109,10 +109,10 @@ private static final long serialVersionUID = 0L;
             tcpEstablishedIdleTimeoutSec_ = input.readInt32();
             break;
           }
-          case 2017705688: {
-            int rawValue = input.readEnum();
+          case 2017705690: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000040;
-            sourceSubnetworkIpRangesToNat_ = rawValue;
+            sourceSubnetworkIpRangesToNat_ = s;
             break;
           }
           case 2075534552: {
@@ -142,10 +142,10 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.compute.v1.RouterNatSubnetworkToNat.parser(), extensionRegistry));
             break;
           }
-          case -857152536: {
-            int rawValue = input.readEnum();
+          case -857152534: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000020;
-            natIpAllocateOption_ = rawValue;
+            natIpAllocateOption_ = s;
             break;
           }
           case -262339014: {
@@ -735,41 +735,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAT_IP_ALLOCATE_OPTION_FIELD_NUMBER = 429726845;
-  private int natIpAllocateOption_;
+  private volatile java.lang.Object natIpAllocateOption_;
   /**
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+   * <code>optional string nat_ip_allocate_option = 429726845;</code>
    * @return Whether the natIpAllocateOption field is set.
    */
-  @java.lang.Override public boolean hasNatIpAllocateOption() {
+  @java.lang.Override
+  public boolean hasNatIpAllocateOption() {
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-   * @return The enum numeric value on the wire for natIpAllocateOption.
+   * <code>optional string nat_ip_allocate_option = 429726845;</code>
+   * @return The natIpAllocateOption.
    */
-  @java.lang.Override public int getNatIpAllocateOptionValue() {
-    return natIpAllocateOption_;
+  @java.lang.Override
+  public java.lang.String getNatIpAllocateOption() {
+    java.lang.Object ref = natIpAllocateOption_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      natIpAllocateOption_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+   * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+   * Check the NatIpAllocateOption enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-   * @return The natIpAllocateOption.
+   * <code>optional string nat_ip_allocate_option = 429726845;</code>
+   * @return The bytes for natIpAllocateOption.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption getNatIpAllocateOption() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption result = com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption.valueOf(natIpAllocateOption_);
-    return result == null ? com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNatIpAllocateOptionBytes() {
+    java.lang.Object ref = natIpAllocateOption_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      natIpAllocateOption_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAT_IPS_FIELD_NUMBER = 117635086;
@@ -884,41 +907,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SOURCE_SUBNETWORK_IP_RANGES_TO_NAT_FIELD_NUMBER = 252213211;
-  private int sourceSubnetworkIpRangesToNat_;
+  private volatile java.lang.Object sourceSubnetworkIpRangesToNat_;
   /**
    * <pre>
    * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+   * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
    * @return Whether the sourceSubnetworkIpRangesToNat field is set.
    */
-  @java.lang.Override public boolean hasSourceSubnetworkIpRangesToNat() {
+  @java.lang.Override
+  public boolean hasSourceSubnetworkIpRangesToNat() {
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <pre>
    * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-   * @return The enum numeric value on the wire for sourceSubnetworkIpRangesToNat.
+   * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+   * @return The sourceSubnetworkIpRangesToNat.
    */
-  @java.lang.Override public int getSourceSubnetworkIpRangesToNatValue() {
-    return sourceSubnetworkIpRangesToNat_;
+  @java.lang.Override
+  public java.lang.String getSourceSubnetworkIpRangesToNat() {
+    java.lang.Object ref = sourceSubnetworkIpRangesToNat_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceSubnetworkIpRangesToNat_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+   * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-   * @return The sourceSubnetworkIpRangesToNat.
+   * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+   * @return The bytes for sourceSubnetworkIpRangesToNat.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat getSourceSubnetworkIpRangesToNat() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat result = com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat.valueOf(sourceSubnetworkIpRangesToNat_);
-    return result == null ? com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceSubnetworkIpRangesToNatBytes() {
+    java.lang.Object ref = sourceSubnetworkIpRangesToNat_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceSubnetworkIpRangesToNat_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUBNETWORKS_FIELD_NUMBER = 415853125;
@@ -1128,7 +1174,7 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(223098349, tcpEstablishedIdleTimeoutSec_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeEnum(252213211, sourceSubnetworkIpRangesToNat_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 252213211, sourceSubnetworkIpRangesToNat_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(259441819, enableEndpointIndependentMapping_);
@@ -1140,7 +1186,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(415853125, subnetworks_.get(i));
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(429726845, natIpAllocateOption_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 429726845, natIpAllocateOption_);
     }
     for (int i = 0; i < drainNatIps_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 504078535, drainNatIps_.getRaw(i));
@@ -1193,8 +1239,7 @@ private static final long serialVersionUID = 0L;
         .computeInt32Size(223098349, tcpEstablishedIdleTimeoutSec_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(252213211, sourceSubnetworkIpRangesToNat_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(252213211, sourceSubnetworkIpRangesToNat_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1209,8 +1254,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(415853125, subnetworks_.get(i));
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(429726845, natIpAllocateOption_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(429726845, natIpAllocateOption_);
     }
     {
       int dataSize = 0;
@@ -1268,7 +1312,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNatIpAllocateOption() != other.hasNatIpAllocateOption()) return false;
     if (hasNatIpAllocateOption()) {
-      if (natIpAllocateOption_ != other.natIpAllocateOption_) return false;
+      if (!getNatIpAllocateOption()
+          .equals(other.getNatIpAllocateOption())) return false;
     }
     if (!getNatIpsList()
         .equals(other.getNatIpsList())) return false;
@@ -1276,7 +1321,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getRulesList())) return false;
     if (hasSourceSubnetworkIpRangesToNat() != other.hasSourceSubnetworkIpRangesToNat()) return false;
     if (hasSourceSubnetworkIpRangesToNat()) {
-      if (sourceSubnetworkIpRangesToNat_ != other.sourceSubnetworkIpRangesToNat_) return false;
+      if (!getSourceSubnetworkIpRangesToNat()
+          .equals(other.getSourceSubnetworkIpRangesToNat())) return false;
     }
     if (!getSubnetworksList()
         .equals(other.getSubnetworksList())) return false;
@@ -1338,7 +1384,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNatIpAllocateOption()) {
       hash = (37 * hash) + NAT_IP_ALLOCATE_OPTION_FIELD_NUMBER;
-      hash = (53 * hash) + natIpAllocateOption_;
+      hash = (53 * hash) + getNatIpAllocateOption().hashCode();
     }
     if (getNatIpsCount() > 0) {
       hash = (37 * hash) + NAT_IPS_FIELD_NUMBER;
@@ -1350,7 +1396,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSourceSubnetworkIpRangesToNat()) {
       hash = (37 * hash) + SOURCE_SUBNETWORK_IP_RANGES_TO_NAT_FIELD_NUMBER;
-      hash = (53 * hash) + sourceSubnetworkIpRangesToNat_;
+      hash = (53 * hash) + getSourceSubnetworkIpRangesToNat().hashCode();
     }
     if (getSubnetworksCount() > 0) {
       hash = (37 * hash) + SUBNETWORKS_FIELD_NUMBER;
@@ -1528,7 +1574,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      natIpAllocateOption_ = 0;
+      natIpAllocateOption_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       natIps_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1538,7 +1584,7 @@ private static final long serialVersionUID = 0L;
       } else {
         rulesBuilder_.clear();
       }
-      sourceSubnetworkIpRangesToNat_ = 0;
+      sourceSubnetworkIpRangesToNat_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       if (subnetworksBuilder_ == null) {
         subnetworks_ = java.util.Collections.emptyList();
@@ -1735,7 +1781,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNatIpAllocateOption()) {
-        setNatIpAllocateOption(other.getNatIpAllocateOption());
+        bitField0_ |= 0x00000040;
+        natIpAllocateOption_ = other.natIpAllocateOption_;
+        onChanged();
       }
       if (!other.natIps_.isEmpty()) {
         if (natIps_.isEmpty()) {
@@ -1774,7 +1822,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasSourceSubnetworkIpRangesToNat()) {
-        setSourceSubnetworkIpRangesToNat(other.getSourceSubnetworkIpRangesToNat());
+        bitField0_ |= 0x00000200;
+        sourceSubnetworkIpRangesToNat_ = other.sourceSubnetworkIpRangesToNat_;
+        onChanged();
       }
       if (subnetworksBuilder_ == null) {
         if (!other.subnetworks_.isEmpty()) {
@@ -2402,87 +2452,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int natIpAllocateOption_ = 0;
+    private java.lang.Object natIpAllocateOption_ = "";
     /**
      * <pre>
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+     * <code>optional string nat_ip_allocate_option = 429726845;</code>
      * @return Whether the natIpAllocateOption field is set.
      */
-    @java.lang.Override public boolean hasNatIpAllocateOption() {
+    public boolean hasNatIpAllocateOption() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-     * @return The enum numeric value on the wire for natIpAllocateOption.
+     * <code>optional string nat_ip_allocate_option = 429726845;</code>
+     * @return The natIpAllocateOption.
      */
-    @java.lang.Override public int getNatIpAllocateOptionValue() {
-      return natIpAllocateOption_;
+    public java.lang.String getNatIpAllocateOption() {
+      java.lang.Object ref = natIpAllocateOption_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        natIpAllocateOption_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-     * @param value The enum numeric value on the wire for natIpAllocateOption to set.
+     * <code>optional string nat_ip_allocate_option = 429726845;</code>
+     * @return The bytes for natIpAllocateOption.
+     */
+    public com.google.protobuf.ByteString
+        getNatIpAllocateOptionBytes() {
+      java.lang.Object ref = natIpAllocateOption_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        natIpAllocateOption_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string nat_ip_allocate_option = 429726845;</code>
+     * @param value The natIpAllocateOption to set.
      * @return This builder for chaining.
      */
-    public Builder setNatIpAllocateOptionValue(int value) {
-      bitField0_ |= 0x00000040;
+    public Builder setNatIpAllocateOption(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
       natIpAllocateOption_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-     * @return The natIpAllocateOption.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption getNatIpAllocateOption() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption result = com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption.valueOf(natIpAllocateOption_);
-      return result == null ? com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-     * @param value The natIpAllocateOption to set.
+     * <code>optional string nat_ip_allocate_option = 429726845;</code>
      * @return This builder for chaining.
      */
-    public Builder setNatIpAllocateOption(com.google.cloud.compute.v1.RouterNat.NatIpAllocateOption value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000040;
-      natIpAllocateOption_ = value.getNumber();
+    public Builder clearNatIpAllocateOption() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      natIpAllocateOption_ = getDefaultInstance().getNatIpAllocateOption();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+     * <code>optional string nat_ip_allocate_option = 429726845;</code>
+     * @param value The bytes for natIpAllocateOption to set.
      * @return This builder for chaining.
      */
-    public Builder clearNatIpAllocateOption() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      natIpAllocateOption_ = 0;
+    public Builder setNatIpAllocateOptionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000040;
+      natIpAllocateOption_ = value;
       onChanged();
       return this;
     }
@@ -2945,40 +3023,78 @@ private static final long serialVersionUID = 0L;
       return rulesBuilder_;
     }
 
-    private int sourceSubnetworkIpRangesToNat_ = 0;
+    private java.lang.Object sourceSubnetworkIpRangesToNat_ = "";
     /**
      * <pre>
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
      * @return Whether the sourceSubnetworkIpRangesToNat field is set.
      */
-    @java.lang.Override public boolean hasSourceSubnetworkIpRangesToNat() {
+    public boolean hasSourceSubnetworkIpRangesToNat() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <pre>
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-     * @return The enum numeric value on the wire for sourceSubnetworkIpRangesToNat.
+     * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * @return The sourceSubnetworkIpRangesToNat.
      */
-    @java.lang.Override public int getSourceSubnetworkIpRangesToNatValue() {
-      return sourceSubnetworkIpRangesToNat_;
+    public java.lang.String getSourceSubnetworkIpRangesToNat() {
+      java.lang.Object ref = sourceSubnetworkIpRangesToNat_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceSubnetworkIpRangesToNat_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-     * @param value The enum numeric value on the wire for sourceSubnetworkIpRangesToNat to set.
+     * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * @return The bytes for sourceSubnetworkIpRangesToNat.
+     */
+    public com.google.protobuf.ByteString
+        getSourceSubnetworkIpRangesToNatBytes() {
+      java.lang.Object ref = sourceSubnetworkIpRangesToNat_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceSubnetworkIpRangesToNat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * @param value The sourceSubnetworkIpRangesToNat to set.
      * @return This builder for chaining.
      */
-    public Builder setSourceSubnetworkIpRangesToNatValue(int value) {
-      bitField0_ |= 0x00000200;
+    public Builder setSourceSubnetworkIpRangesToNat(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
       sourceSubnetworkIpRangesToNat_ = value;
       onChanged();
       return this;
@@ -2986,46 +3102,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-     * @return The sourceSubnetworkIpRangesToNat.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat getSourceSubnetworkIpRangesToNat() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat result = com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat.valueOf(sourceSubnetworkIpRangesToNat_);
-      return result == null ? com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-     * @param value The sourceSubnetworkIpRangesToNat to set.
+     * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
      * @return This builder for chaining.
      */
-    public Builder setSourceSubnetworkIpRangesToNat(com.google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      sourceSubnetworkIpRangesToNat_ = value.getNumber();
+    public Builder clearSourceSubnetworkIpRangesToNat() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      sourceSubnetworkIpRangesToNat_ = getDefaultInstance().getSourceSubnetworkIpRangesToNat();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * @param value The bytes for sourceSubnetworkIpRangesToNat to set.
      * @return This builder for chaining.
      */
-    public Builder clearSourceSubnetworkIpRangesToNat() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      sourceSubnetworkIpRangesToNat_ = 0;
+    public Builder setSourceSubnetworkIpRangesToNatBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      sourceSubnetworkIpRangesToNat_ = value;
       onChanged();
       return this;
     }

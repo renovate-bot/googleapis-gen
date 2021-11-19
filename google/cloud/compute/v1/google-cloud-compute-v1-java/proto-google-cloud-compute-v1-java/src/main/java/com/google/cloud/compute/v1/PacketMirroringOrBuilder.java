@@ -95,30 +95,34 @@ public interface PacketMirroringOrBuilder extends
   /**
    * <pre>
    * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
   /**
    * <pre>
    * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-   * @return The enum numeric value on the wire for enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The enable.
    */
-  int getEnableValue();
+  java.lang.String getEnable();
   /**
    * <pre>
    * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-   * @return The enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The bytes for enable.
    */
-  com.google.cloud.compute.v1.PacketMirroring.Enable getEnable();
+  com.google.protobuf.ByteString
+      getEnableBytes();
 
   /**
    * <pre>

@@ -174,30 +174,34 @@ public interface TargetInstanceOrBuilder extends
   /**
    * <pre>
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+   * <code>optional string nat_policy = 509780496;</code>
    * @return Whether the natPolicy field is set.
    */
   boolean hasNatPolicy();
   /**
    * <pre>
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-   * @return The enum numeric value on the wire for natPolicy.
+   * <code>optional string nat_policy = 509780496;</code>
+   * @return The natPolicy.
    */
-  int getNatPolicyValue();
+  java.lang.String getNatPolicy();
   /**
    * <pre>
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-   * @return The natPolicy.
+   * <code>optional string nat_policy = 509780496;</code>
+   * @return The bytes for natPolicy.
    */
-  com.google.cloud.compute.v1.TargetInstance.NatPolicy getNatPolicy();
+  com.google.protobuf.ByteString
+      getNatPolicyBytes();
 
   /**
    * <pre>

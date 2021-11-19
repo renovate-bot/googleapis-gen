@@ -23,8 +23,9 @@ class SchedulingNodeAffinity extends \Google\Protobuf\Internal\Message
     protected $key = null;
     /**
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
+     * Generated from protobuf field <code>optional string operator = 36317348;</code>
      */
     protected $operator = null;
     /**
@@ -42,8 +43,9 @@ class SchedulingNodeAffinity extends \Google\Protobuf\Internal\Message
      *
      *     @type string $key
      *           Corresponds to the label key of Node resource.
-     *     @type int $operator
+     *     @type string $operator
      *           Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     *           Check the Operator enum for the list of possible values.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $values
      *           Corresponds to the label values of Node resource.
      * }
@@ -91,13 +93,14 @@ class SchedulingNodeAffinity extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string operator = 36317348;</code>
+     * @return string
      */
     public function getOperator()
     {
-        return isset($this->operator) ? $this->operator : 0;
+        return isset($this->operator) ? $this->operator : '';
     }
 
     public function hasOperator()
@@ -112,14 +115,15 @@ class SchedulingNodeAffinity extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+     * Check the Operator enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string operator = 36317348;</code>
+     * @param string $var
      * @return $this
      */
     public function setOperator($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SchedulingNodeAffinity\Operator::class);
+        GPBUtil::checkString($var, True);
         $this->operator = $var;
 
         return $this;

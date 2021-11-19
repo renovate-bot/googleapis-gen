@@ -36,8 +36,8 @@ private static final long serialVersionUID = 0L;
     sourceImageId_ = "";
     sourceSnapshot_ = "";
     sourceSnapshotId_ = "";
-    sourceType_ = 0;
-    status_ = 0;
+    sourceType_ = "";
+    status_ = "";
     storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -155,10 +155,10 @@ private static final long serialVersionUID = 0L;
             labelFingerprint_ = s;
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x02000000;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case 1538854938: {
@@ -259,10 +259,10 @@ private static final long serialVersionUID = 0L;
             sourceDisk_ = s;
             break;
           }
-          case -677001488: {
-            int rawValue = input.readEnum();
+          case -677001486: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x01000000;
-            sourceType_ = rawValue;
+            sourceType_ = s;
             break;
           }
           case -661440822: {
@@ -2067,79 +2067,125 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SOURCE_TYPE_FIELD_NUMBER = 452245726;
-  private int sourceType_;
+  private volatile java.lang.Object sourceType_;
   /**
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+   * <code>optional string source_type = 452245726;</code>
    * @return Whether the sourceType field is set.
    */
-  @java.lang.Override public boolean hasSourceType() {
+  @java.lang.Override
+  public boolean hasSourceType() {
     return ((bitField0_ & 0x01000000) != 0);
   }
   /**
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-   * @return The enum numeric value on the wire for sourceType.
+   * <code>optional string source_type = 452245726;</code>
+   * @return The sourceType.
    */
-  @java.lang.Override public int getSourceTypeValue() {
-    return sourceType_;
+  @java.lang.Override
+  public java.lang.String getSourceType() {
+    java.lang.Object ref = sourceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-   * @return The sourceType.
+   * <code>optional string source_type = 452245726;</code>
+   * @return The bytes for sourceType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Image.SourceType getSourceType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Image.SourceType result = com.google.cloud.compute.v1.Image.SourceType.valueOf(sourceType_);
-    return result == null ? com.google.cloud.compute.v1.Image.SourceType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSourceTypeBytes() {
+    java.lang.Object ref = sourceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sourceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x02000000) != 0);
   }
   /**
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Image.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Image.Status result = com.google.cloud.compute.v1.Image.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Image.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
@@ -2246,7 +2292,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(192356867, getShieldedInstanceInitialState());
@@ -2282,7 +2328,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 451753793, sourceDisk_);
     }
     if (((bitField0_ & 0x01000000) != 0)) {
-      output.writeEnum(452245726, sourceType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 452245726, sourceType_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 454190809, sourceDiskId_);
@@ -2364,8 +2410,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -2417,8 +2462,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(451753793, sourceDisk_);
     }
     if (((bitField0_ & 0x01000000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(452245726, sourceType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(452245726, sourceType_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(454190809, sourceDiskId_);
@@ -2597,11 +2641,13 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSourceType() != other.hasSourceType()) return false;
     if (hasSourceType()) {
-      if (sourceType_ != other.sourceType_) return false;
+      if (!getSourceType()
+          .equals(other.getSourceType())) return false;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (!getStorageLocationsList()
         .equals(other.getStorageLocationsList())) return false;
@@ -2734,11 +2780,11 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSourceType()) {
       hash = (37 * hash) + SOURCE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + sourceType_;
+      hash = (53 * hash) + getSourceType().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (getStorageLocationsCount() > 0) {
       hash = (37 * hash) + STORAGE_LOCATIONS_FIELD_NUMBER;
@@ -2998,9 +3044,9 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x04000000);
       sourceSnapshotId_ = "";
       bitField0_ = (bitField0_ & ~0x08000000);
-      sourceType_ = 0;
+      sourceType_ = "";
       bitField0_ = (bitField0_ & ~0x10000000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x20000000);
       storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x40000000);
@@ -3386,10 +3432,14 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasSourceType()) {
-        setSourceType(other.getSourceType());
+        bitField0_ |= 0x10000000;
+        sourceType_ = other.sourceType_;
+        onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x20000000;
+        status_ = other.status_;
+        onChanged();
       }
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
@@ -6855,40 +6905,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int sourceType_ = 0;
+    private java.lang.Object sourceType_ = "";
     /**
      * <pre>
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+     * <code>optional string source_type = 452245726;</code>
      * @return Whether the sourceType field is set.
      */
-    @java.lang.Override public boolean hasSourceType() {
+    public boolean hasSourceType() {
       return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      * <pre>
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-     * @return The enum numeric value on the wire for sourceType.
+     * <code>optional string source_type = 452245726;</code>
+     * @return The sourceType.
      */
-    @java.lang.Override public int getSourceTypeValue() {
-      return sourceType_;
+    public java.lang.String getSourceType() {
+      java.lang.Object ref = sourceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-     * @param value The enum numeric value on the wire for sourceType to set.
+     * <code>optional string source_type = 452245726;</code>
+     * @return The bytes for sourceType.
+     */
+    public com.google.protobuf.ByteString
+        getSourceTypeBytes() {
+      java.lang.Object ref = sourceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sourceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string source_type = 452245726;</code>
+     * @param value The sourceType to set.
      * @return This builder for chaining.
      */
-    public Builder setSourceTypeValue(int value) {
-      bitField0_ |= 0x10000000;
+    public Builder setSourceType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x10000000;
       sourceType_ = value;
       onChanged();
       return this;
@@ -6896,84 +6984,112 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-     * @return The sourceType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Image.SourceType getSourceType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Image.SourceType result = com.google.cloud.compute.v1.Image.SourceType.valueOf(sourceType_);
-      return result == null ? com.google.cloud.compute.v1.Image.SourceType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The type of the image used to create this disk. The default and only value is RAW
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-     * @param value The sourceType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setSourceType(com.google.cloud.compute.v1.Image.SourceType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x10000000;
-      sourceType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The type of the image used to create this disk. The default and only value is RAW
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+     * <code>optional string source_type = 452245726;</code>
      * @return This builder for chaining.
      */
     public Builder clearSourceType() {
       bitField0_ = (bitField0_ & ~0x10000000);
-      sourceType_ = 0;
+      sourceType_ = getDefaultInstance().getSourceType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string source_type = 452245726;</code>
+     * @param value The bytes for sourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x10000000;
+      sourceType_ = value;
       onChanged();
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x20000000) != 0);
     }
     /**
      * <pre>
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x20000000;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x20000000;
       status_ = value;
       onChanged();
       return this;
@@ -6981,46 +7097,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Image.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Image.Status result = com.google.cloud.compute.v1.Image.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Image.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Image.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x20000000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x20000000);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x20000000;
+      status_ = value;
       onChanged();
       return this;
     }

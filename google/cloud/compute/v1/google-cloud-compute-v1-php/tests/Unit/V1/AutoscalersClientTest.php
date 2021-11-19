@@ -294,6 +294,7 @@ class AutoscalersClientTest extends GeneratedTest
         $recommendedSize = 1889567899;
         $region = 'region-934795532';
         $selfLink = 'selfLink-1691268851';
+        $status = 'status-892481550';
         $target = 'target-880905839';
         $zone2 = 'zone2-696322977';
         $expectedResponse = new Autoscaler();
@@ -305,6 +306,7 @@ class AutoscalersClientTest extends GeneratedTest
         $expectedResponse->setRecommendedSize($recommendedSize);
         $expectedResponse->setRegion($region);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setTarget($target);
         $expectedResponse->setZone($zone2);
         $transport->addResponse($expectedResponse);

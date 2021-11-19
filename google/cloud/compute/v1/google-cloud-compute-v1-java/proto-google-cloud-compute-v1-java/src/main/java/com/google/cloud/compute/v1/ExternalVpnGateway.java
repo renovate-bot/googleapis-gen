@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
     kind_ = "";
     labelFingerprint_ = "";
     name_ = "";
-    redundancyType_ = 0;
+    redundancyType_ = "";
     selfLink_ = "";
   }
 
@@ -99,10 +99,10 @@ private static final long serialVersionUID = 0L;
             labelFingerprint_ = s;
             break;
           }
-          case -2123417376: {
-            int rawValue = input.readEnum();
+          case -2123417374: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000040;
-            redundancyType_ = rawValue;
+            redundancyType_ = s;
             break;
           }
           case -911466526: {
@@ -815,41 +815,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REDUNDANCY_TYPE_FIELD_NUMBER = 271443740;
-  private int redundancyType_;
+  private volatile java.lang.Object redundancyType_;
   /**
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+   * <code>optional string redundancy_type = 271443740;</code>
    * @return Whether the redundancyType field is set.
    */
-  @java.lang.Override public boolean hasRedundancyType() {
+  @java.lang.Override
+  public boolean hasRedundancyType() {
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-   * @return The enum numeric value on the wire for redundancyType.
+   * <code>optional string redundancy_type = 271443740;</code>
+   * @return The redundancyType.
    */
-  @java.lang.Override public int getRedundancyTypeValue() {
-    return redundancyType_;
+  @java.lang.Override
+  public java.lang.String getRedundancyType() {
+    java.lang.Object ref = redundancyType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redundancyType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-   * @return The redundancyType.
+   * <code>optional string redundancy_type = 271443740;</code>
+   * @return The bytes for redundancyType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType getRedundancyType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType result = com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType.valueOf(redundancyType_);
-    return result == null ? com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRedundancyTypeBytes() {
+    java.lang.Object ref = redundancyType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      redundancyType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
@@ -943,7 +966,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeEnum(271443740, redundancyType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 271443740, redundancyType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -987,8 +1010,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(271443740, redundancyType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(271443740, redundancyType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
@@ -1057,7 +1079,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRedundancyType() != other.hasRedundancyType()) return false;
     if (hasRedundancyType()) {
-      if (redundancyType_ != other.redundancyType_) return false;
+      if (!getRedundancyType()
+          .equals(other.getRedundancyType())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1110,7 +1133,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRedundancyType()) {
       hash = (37 * hash) + REDUNDANCY_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + redundancyType_;
+      hash = (53 * hash) + getRedundancyType().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1295,7 +1318,7 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().clear();
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      redundancyType_ = 0;
+      redundancyType_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -1476,7 +1499,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasRedundancyType()) {
-        setRedundancyType(other.getRedundancyType());
+        bitField0_ |= 0x00000100;
+        redundancyType_ = other.redundancyType_;
+        onChanged();
       }
       if (other.hasSelfLink()) {
         bitField0_ |= 0x00000200;
@@ -2571,40 +2596,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int redundancyType_ = 0;
+    private java.lang.Object redundancyType_ = "";
     /**
      * <pre>
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+     * <code>optional string redundancy_type = 271443740;</code>
      * @return Whether the redundancyType field is set.
      */
-    @java.lang.Override public boolean hasRedundancyType() {
+    public boolean hasRedundancyType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-     * @return The enum numeric value on the wire for redundancyType.
+     * <code>optional string redundancy_type = 271443740;</code>
+     * @return The redundancyType.
      */
-    @java.lang.Override public int getRedundancyTypeValue() {
-      return redundancyType_;
+    public java.lang.String getRedundancyType() {
+      java.lang.Object ref = redundancyType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redundancyType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-     * @param value The enum numeric value on the wire for redundancyType to set.
+     * <code>optional string redundancy_type = 271443740;</code>
+     * @return The bytes for redundancyType.
+     */
+    public com.google.protobuf.ByteString
+        getRedundancyTypeBytes() {
+      java.lang.Object ref = redundancyType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        redundancyType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string redundancy_type = 271443740;</code>
+     * @param value The redundancyType to set.
      * @return This builder for chaining.
      */
-    public Builder setRedundancyTypeValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setRedundancyType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       redundancyType_ = value;
       onChanged();
       return this;
@@ -2612,46 +2675,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-     * @return The redundancyType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType getRedundancyType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType result = com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType.valueOf(redundancyType_);
-      return result == null ? com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Indicates the user-supplied redundancy type of this external VPN gateway.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-     * @param value The redundancyType to set.
+     * <code>optional string redundancy_type = 271443740;</code>
      * @return This builder for chaining.
      */
-    public Builder setRedundancyType(com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      redundancyType_ = value.getNumber();
+    public Builder clearRedundancyType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      redundancyType_ = getDefaultInstance().getRedundancyType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+     * <code>optional string redundancy_type = 271443740;</code>
+     * @param value The bytes for redundancyType to set.
      * @return This builder for chaining.
      */
-    public Builder clearRedundancyType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      redundancyType_ = 0;
+    public Builder setRedundancyTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      redundancyType_ = value;
       onChanged();
       return this;
     }

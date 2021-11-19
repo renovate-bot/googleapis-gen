@@ -171,30 +171,34 @@ public interface NetworkInterfaceOrBuilder extends
   /**
    * <pre>
    * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   * <code>optional string ipv6_access_type = 504658653;</code>
    * @return Whether the ipv6AccessType field is set.
    */
   boolean hasIpv6AccessType();
   /**
    * <pre>
    * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The enum numeric value on the wire for ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The ipv6AccessType.
    */
-  int getIpv6AccessTypeValue();
+  java.lang.String getIpv6AccessType();
   /**
    * <pre>
    * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The bytes for ipv6AccessType.
    */
-  com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType getIpv6AccessType();
+  com.google.protobuf.ByteString
+      getIpv6AccessTypeBytes();
 
   /**
    * <pre>
@@ -344,30 +348,34 @@ public interface NetworkInterfaceOrBuilder extends
   /**
    * <pre>
    * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * Check the NicType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+   * <code>optional string nic_type = 59810577;</code>
    * @return Whether the nicType field is set.
    */
   boolean hasNicType();
   /**
    * <pre>
    * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * Check the NicType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-   * @return The enum numeric value on the wire for nicType.
+   * <code>optional string nic_type = 59810577;</code>
+   * @return The nicType.
    */
-  int getNicTypeValue();
+  java.lang.String getNicType();
   /**
    * <pre>
    * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * Check the NicType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-   * @return The nicType.
+   * <code>optional string nic_type = 59810577;</code>
+   * @return The bytes for nicType.
    */
-  com.google.cloud.compute.v1.NetworkInterface.NicType getNicType();
+  com.google.protobuf.ByteString
+      getNicTypeBytes();
 
   /**
    * <pre>
@@ -391,30 +399,34 @@ public interface NetworkInterfaceOrBuilder extends
   /**
    * <pre>
    * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
+   * <code>optional string stack_type = 425908881;</code>
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
   /**
    * <pre>
    * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-   * @return The enum numeric value on the wire for stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The stackType.
    */
-  int getStackTypeValue();
+  java.lang.String getStackType();
   /**
    * <pre>
    * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-   * @return The stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The bytes for stackType.
    */
-  com.google.cloud.compute.v1.NetworkInterface.StackType getStackType();
+  com.google.protobuf.ByteString
+      getStackTypeBytes();
 
   /**
    * <pre>

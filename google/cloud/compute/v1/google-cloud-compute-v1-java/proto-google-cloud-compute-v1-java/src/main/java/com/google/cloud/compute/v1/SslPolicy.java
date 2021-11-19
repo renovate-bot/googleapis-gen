@@ -26,9 +26,9 @@ private static final long serialVersionUID = 0L;
     enabledFeatures_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     fingerprint_ = "";
     kind_ = "";
-    minTlsVersion_ = 0;
+    minTlsVersion_ = "";
     name_ = "";
-    profile_ = 0;
+    profile_ = "";
     selfLink_ = "";
     warnings_ = java.util.Collections.emptyList();
   }
@@ -81,10 +81,10 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 65247544: {
-            int rawValue = input.readEnum();
+          case 65247546: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000020;
-            minTlsVersion_ = rawValue;
+            minTlsVersion_ = s;
             break;
           }
           case 244202930: {
@@ -102,10 +102,10 @@ private static final long serialVersionUID = 0L;
             customFeatures_.add(s);
             break;
           }
-          case 1819561288: {
-            int rawValue = input.readEnum();
+          case 1819561290: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            profile_ = rawValue;
+            profile_ = s;
             break;
           }
           case 1877428002: {
@@ -889,41 +889,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MIN_TLS_VERSION_FIELD_NUMBER = 8155943;
-  private int minTlsVersion_;
+  private volatile java.lang.Object minTlsVersion_;
   /**
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+   * <code>optional string min_tls_version = 8155943;</code>
    * @return Whether the minTlsVersion field is set.
    */
-  @java.lang.Override public boolean hasMinTlsVersion() {
+  @java.lang.Override
+  public boolean hasMinTlsVersion() {
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-   * @return The enum numeric value on the wire for minTlsVersion.
+   * <code>optional string min_tls_version = 8155943;</code>
+   * @return The minTlsVersion.
    */
-  @java.lang.Override public int getMinTlsVersionValue() {
-    return minTlsVersion_;
+  @java.lang.Override
+  public java.lang.String getMinTlsVersion() {
+    java.lang.Object ref = minTlsVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      minTlsVersion_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-   * @return The minTlsVersion.
+   * <code>optional string min_tls_version = 8155943;</code>
+   * @return The bytes for minTlsVersion.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SslPolicy.MinTlsVersion getMinTlsVersion() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslPolicy.MinTlsVersion result = com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.valueOf(minTlsVersion_);
-    return result == null ? com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMinTlsVersionBytes() {
+    java.lang.Object ref = minTlsVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      minTlsVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -985,41 +1008,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROFILE_FIELD_NUMBER = 227445161;
-  private int profile_;
+  private volatile java.lang.Object profile_;
   /**
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+   * <code>optional string profile = 227445161;</code>
    * @return Whether the profile field is set.
    */
-  @java.lang.Override public boolean hasProfile() {
+  @java.lang.Override
+  public boolean hasProfile() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-   * @return The enum numeric value on the wire for profile.
+   * <code>optional string profile = 227445161;</code>
+   * @return The profile.
    */
-  @java.lang.Override public int getProfileValue() {
-    return profile_;
+  @java.lang.Override
+  public java.lang.String getProfile() {
+    java.lang.Object ref = profile_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      profile_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-   * @return The profile.
+   * <code>optional string profile = 227445161;</code>
+   * @return The bytes for profile.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SslPolicy.Profile getProfile() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslPolicy.Profile result = com.google.cloud.compute.v1.SslPolicy.Profile.valueOf(profile_);
-    return result == null ? com.google.cloud.compute.v1.SslPolicy.Profile.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProfileBytes() {
+    java.lang.Object ref = profile_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      profile_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
@@ -1164,7 +1210,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(8155943, minTlsVersion_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8155943, minTlsVersion_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
@@ -1173,7 +1219,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 34789707, customFeatures_.getRaw(i));
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(227445161, profile_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 227445161, profile_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
@@ -1210,8 +1256,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(8155943, minTlsVersion_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8155943, minTlsVersion_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
@@ -1225,8 +1270,7 @@ private static final long serialVersionUID = 0L;
       size += 5 * getCustomFeaturesList().size();
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(227445161, profile_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(227445161, profile_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
@@ -1295,7 +1339,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMinTlsVersion() != other.hasMinTlsVersion()) return false;
     if (hasMinTlsVersion()) {
-      if (minTlsVersion_ != other.minTlsVersion_) return false;
+      if (!getMinTlsVersion()
+          .equals(other.getMinTlsVersion())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -1304,7 +1349,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasProfile() != other.hasProfile()) return false;
     if (hasProfile()) {
-      if (profile_ != other.profile_) return false;
+      if (!getProfile()
+          .equals(other.getProfile())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1355,7 +1401,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMinTlsVersion()) {
       hash = (37 * hash) + MIN_TLS_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + minTlsVersion_;
+      hash = (53 * hash) + getMinTlsVersion().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1363,7 +1409,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasProfile()) {
       hash = (37 * hash) + PROFILE_FIELD_NUMBER;
-      hash = (53 * hash) + profile_;
+      hash = (53 * hash) + getProfile().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1525,11 +1571,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      minTlsVersion_ = 0;
+      minTlsVersion_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      profile_ = 0;
+      profile_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -1715,7 +1761,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasMinTlsVersion()) {
-        setMinTlsVersion(other.getMinTlsVersion());
+        bitField0_ |= 0x00000080;
+        minTlsVersion_ = other.minTlsVersion_;
+        onChanged();
       }
       if (other.hasName()) {
         bitField0_ |= 0x00000100;
@@ -1723,7 +1771,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasProfile()) {
-        setProfile(other.getProfile());
+        bitField0_ |= 0x00000200;
+        profile_ = other.profile_;
+        onChanged();
       }
       if (other.hasSelfLink()) {
         bitField0_ |= 0x00000400;
@@ -2561,40 +2611,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int minTlsVersion_ = 0;
+    private java.lang.Object minTlsVersion_ = "";
     /**
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
      * @return Whether the minTlsVersion field is set.
      */
-    @java.lang.Override public boolean hasMinTlsVersion() {
+    public boolean hasMinTlsVersion() {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     * @return The enum numeric value on the wire for minTlsVersion.
+     * <code>optional string min_tls_version = 8155943;</code>
+     * @return The minTlsVersion.
      */
-    @java.lang.Override public int getMinTlsVersionValue() {
-      return minTlsVersion_;
+    public java.lang.String getMinTlsVersion() {
+      java.lang.Object ref = minTlsVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        minTlsVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     * @param value The enum numeric value on the wire for minTlsVersion to set.
+     * <code>optional string min_tls_version = 8155943;</code>
+     * @return The bytes for minTlsVersion.
+     */
+    public com.google.protobuf.ByteString
+        getMinTlsVersionBytes() {
+      java.lang.Object ref = minTlsVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        minTlsVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string min_tls_version = 8155943;</code>
+     * @param value The minTlsVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setMinTlsVersionValue(int value) {
-      bitField0_ |= 0x00000080;
+    public Builder setMinTlsVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
       minTlsVersion_ = value;
       onChanged();
       return this;
@@ -2602,46 +2690,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     * @return The minTlsVersion.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslPolicy.MinTlsVersion getMinTlsVersion() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslPolicy.MinTlsVersion result = com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.valueOf(minTlsVersion_);
-      return result == null ? com.google.cloud.compute.v1.SslPolicy.MinTlsVersion.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     * @param value The minTlsVersion to set.
+     * <code>optional string min_tls_version = 8155943;</code>
      * @return This builder for chaining.
      */
-    public Builder setMinTlsVersion(com.google.cloud.compute.v1.SslPolicy.MinTlsVersion value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000080;
-      minTlsVersion_ = value.getNumber();
+    public Builder clearMinTlsVersion() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      minTlsVersion_ = getDefaultInstance().getMinTlsVersion();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * <code>optional string min_tls_version = 8155943;</code>
+     * @param value The bytes for minTlsVersion to set.
      * @return This builder for chaining.
      */
-    public Builder clearMinTlsVersion() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      minTlsVersion_ = 0;
+    public Builder setMinTlsVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      minTlsVersion_ = value;
       onChanged();
       return this;
     }
@@ -2753,40 +2831,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int profile_ = 0;
+    private java.lang.Object profile_ = "";
     /**
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
      * @return Whether the profile field is set.
      */
-    @java.lang.Override public boolean hasProfile() {
+    public boolean hasProfile() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     * @return The enum numeric value on the wire for profile.
+     * <code>optional string profile = 227445161;</code>
+     * @return The profile.
      */
-    @java.lang.Override public int getProfileValue() {
-      return profile_;
+    public java.lang.String getProfile() {
+      java.lang.Object ref = profile_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        profile_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     * @param value The enum numeric value on the wire for profile to set.
+     * <code>optional string profile = 227445161;</code>
+     * @return The bytes for profile.
+     */
+    public com.google.protobuf.ByteString
+        getProfileBytes() {
+      java.lang.Object ref = profile_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        profile_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string profile = 227445161;</code>
+     * @param value The profile to set.
      * @return This builder for chaining.
      */
-    public Builder setProfileValue(int value) {
-      bitField0_ |= 0x00000200;
+    public Builder setProfile(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
       profile_ = value;
       onChanged();
       return this;
@@ -2794,46 +2910,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     * @return The profile.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslPolicy.Profile getProfile() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslPolicy.Profile result = com.google.cloud.compute.v1.SslPolicy.Profile.valueOf(profile_);
-      return result == null ? com.google.cloud.compute.v1.SslPolicy.Profile.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     * @param value The profile to set.
+     * <code>optional string profile = 227445161;</code>
      * @return This builder for chaining.
      */
-    public Builder setProfile(com.google.cloud.compute.v1.SslPolicy.Profile value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      profile_ = value.getNumber();
+    public Builder clearProfile() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      profile_ = getDefaultInstance().getProfile();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * <code>optional string profile = 227445161;</code>
+     * @param value The bytes for profile to set.
      * @return This builder for chaining.
      */
-    public Builder clearProfile() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      profile_ = 0;
+    public Builder setProfileBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      profile_ = value;
       onChanged();
       return this;
     }

@@ -328,30 +328,34 @@ public interface NetworkEndpointGroupOrBuilder extends
   /**
    * <pre>
    * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
+   * <code>optional string network_endpoint_type = 118301523;</code>
    * @return Whether the networkEndpointType field is set.
    */
   boolean hasNetworkEndpointType();
   /**
    * <pre>
    * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-   * @return The enum numeric value on the wire for networkEndpointType.
+   * <code>optional string network_endpoint_type = 118301523;</code>
+   * @return The networkEndpointType.
    */
-  int getNetworkEndpointTypeValue();
+  java.lang.String getNetworkEndpointType();
   /**
    * <pre>
    * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+   * Check the NetworkEndpointType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-   * @return The networkEndpointType.
+   * <code>optional string network_endpoint_type = 118301523;</code>
+   * @return The bytes for networkEndpointType.
    */
-  com.google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType getNetworkEndpointType();
+  com.google.protobuf.ByteString
+      getNetworkEndpointTypeBytes();
 
   /**
    * <pre>

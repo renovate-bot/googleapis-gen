@@ -297,15 +297,21 @@ public class SubnetworksClientTest {
             .setGatewayAddress("gatewayAddress1860901136")
             .setId(3355)
             .setIpCidrRange("ipCidrRange-866375486")
+            .setIpv6AccessType("ipv6AccessType606780421")
             .setIpv6CidrRange("ipv6CidrRange885760002")
             .setKind("kind3292052")
             .setLogConfig(SubnetworkLogConfig.newBuilder().build())
             .setName("name3373707")
             .setNetwork("network1843485230")
             .setPrivateIpGoogleAccess(true)
+            .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
+            .setPurpose("purpose-220463842")
             .setRegion("region-934795532")
+            .setRole("role3506294")
             .addAllSecondaryIpRanges(new ArrayList<SubnetworkSecondaryRange>())
             .setSelfLink("selfLink1191800166")
+            .setStackType("stackType1727939042")
+            .setState("state109757585")
             .build();
     mockService.addResponse(expectedResponse);
 

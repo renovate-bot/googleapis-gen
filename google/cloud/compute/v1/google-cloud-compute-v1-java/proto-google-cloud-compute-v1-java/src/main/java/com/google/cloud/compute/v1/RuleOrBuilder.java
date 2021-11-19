@@ -10,30 +10,34 @@ public interface RuleOrBuilder extends
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Rule.Action action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    * @return Whether the action field is set.
    */
   boolean hasAction();
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Rule.Action action = 187661878;</code>
-   * @return The enum numeric value on the wire for action.
+   * <code>optional string action = 187661878;</code>
+   * @return The action.
    */
-  int getActionValue();
+  java.lang.String getAction();
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Rule.Action action = 187661878;</code>
-   * @return The action.
+   * <code>optional string action = 187661878;</code>
+   * @return The bytes for action.
    */
-  com.google.cloud.compute.v1.Rule.Action getAction();
+  com.google.protobuf.ByteString
+      getActionBytes();
 
   /**
    * <pre>

@@ -378,6 +378,7 @@ public class TargetPoolsClientTest {
             .setName("name3373707")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setSessionAffinity("sessionAffinity-289859106")
             .build();
     mockService.addResponse(expectedResponse);
 

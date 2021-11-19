@@ -510,6 +510,7 @@ public class FirewallPoliciesClientTest {
         FirewallPolicyRule.newBuilder()
             .setAction("action-1422950858")
             .setDescription("description-1724546052")
+            .setDirection("direction-962590849")
             .setDisabled(true)
             .setEnableLogging(true)
             .setKind("kind3292052")

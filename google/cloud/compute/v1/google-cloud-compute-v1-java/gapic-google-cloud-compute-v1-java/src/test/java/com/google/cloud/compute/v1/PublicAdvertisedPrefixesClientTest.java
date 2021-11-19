@@ -162,6 +162,7 @@ public class PublicAdvertisedPrefixesClientTest {
                 new ArrayList<PublicAdvertisedPrefixPublicDelegatedPrefix>())
             .setSelfLink("selfLink1191800166")
             .setSharedSecret("sharedSecret-1054259339")
+            .setStatus("status-892481550")
             .build();
     mockService.addResponse(expectedResponse);
 

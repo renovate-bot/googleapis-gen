@@ -10,30 +10,34 @@ public interface RawDiskOrBuilder extends
   /**
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>optional string container_type = 318809144;</code>
    * @return Whether the containerType field is set.
    */
   boolean hasContainerType();
   /**
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-   * @return The enum numeric value on the wire for containerType.
+   * <code>optional string container_type = 318809144;</code>
+   * @return The containerType.
    */
-  int getContainerTypeValue();
+  java.lang.String getContainerType();
   /**
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-   * @return The containerType.
+   * <code>optional string container_type = 318809144;</code>
+   * @return The bytes for containerType.
    */
-  com.google.cloud.compute.v1.RawDisk.ContainerType getContainerType();
+  com.google.protobuf.ByteString
+      getContainerTypeBytes();
 
   /**
    * <pre>

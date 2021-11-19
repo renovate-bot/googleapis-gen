@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RegionInstanceGroupsListInstancesRequest() {
-    instanceState_ = 0;
+    instanceState_ = "";
     portName_ = "";
   }
 
@@ -60,10 +60,10 @@ private static final long serialVersionUID = 0L;
             portName_ = s;
             break;
           }
-          case 737788728: {
-            int rawValue = input.readEnum();
+          case 737788730: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            instanceState_ = rawValue;
+            instanceState_ = s;
             break;
           }
           default: {
@@ -245,41 +245,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int INSTANCE_STATE_FIELD_NUMBER = 92223591;
-  private int instanceState_;
+  private volatile java.lang.Object instanceState_;
   /**
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
+   * <code>optional string instance_state = 92223591;</code>
    * @return Whether the instanceState field is set.
    */
-  @java.lang.Override public boolean hasInstanceState() {
+  @java.lang.Override
+  public boolean hasInstanceState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-   * @return The enum numeric value on the wire for instanceState.
+   * <code>optional string instance_state = 92223591;</code>
+   * @return The instanceState.
    */
-  @java.lang.Override public int getInstanceStateValue() {
-    return instanceState_;
+  @java.lang.Override
+  public java.lang.String getInstanceState() {
+    java.lang.Object ref = instanceState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceState_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-   * @return The instanceState.
+   * <code>optional string instance_state = 92223591;</code>
+   * @return The bytes for instanceState.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState getInstanceState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState result = com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState.valueOf(instanceState_);
-    return result == null ? com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInstanceStateBytes() {
+    java.lang.Object ref = instanceState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      instanceState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PORT_NAME_FIELD_NUMBER = 41534345;
@@ -358,7 +381,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 41534345, portName_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(92223591, instanceState_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 92223591, instanceState_);
     }
     unknownFields.writeTo(output);
   }
@@ -373,8 +396,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(41534345, portName_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(92223591, instanceState_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(92223591, instanceState_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -393,7 +415,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasInstanceState() != other.hasInstanceState()) return false;
     if (hasInstanceState()) {
-      if (instanceState_ != other.instanceState_) return false;
+      if (!getInstanceState()
+          .equals(other.getInstanceState())) return false;
     }
     if (hasPortName() != other.hasPortName()) return false;
     if (hasPortName()) {
@@ -413,7 +436,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasInstanceState()) {
       hash = (37 * hash) + INSTANCE_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + instanceState_;
+      hash = (53 * hash) + getInstanceState().hashCode();
     }
     if (hasPortName()) {
       hash = (37 * hash) + PORT_NAME_FIELD_NUMBER;
@@ -555,7 +578,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      instanceState_ = 0;
+      instanceState_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       portName_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -645,7 +668,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest other) {
       if (other == com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.getDefaultInstance()) return this;
       if (other.hasInstanceState()) {
-        setInstanceState(other.getInstanceState());
+        bitField0_ |= 0x00000001;
+        instanceState_ = other.instanceState_;
+        onChanged();
       }
       if (other.hasPortName()) {
         bitField0_ |= 0x00000002;
@@ -682,40 +707,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int instanceState_ = 0;
+    private java.lang.Object instanceState_ = "";
     /**
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
+     * <code>optional string instance_state = 92223591;</code>
      * @return Whether the instanceState field is set.
      */
-    @java.lang.Override public boolean hasInstanceState() {
+    public boolean hasInstanceState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-     * @return The enum numeric value on the wire for instanceState.
+     * <code>optional string instance_state = 92223591;</code>
+     * @return The instanceState.
      */
-    @java.lang.Override public int getInstanceStateValue() {
-      return instanceState_;
+    public java.lang.String getInstanceState() {
+      java.lang.Object ref = instanceState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-     * @param value The enum numeric value on the wire for instanceState to set.
+     * <code>optional string instance_state = 92223591;</code>
+     * @return The bytes for instanceState.
+     */
+    public com.google.protobuf.ByteString
+        getInstanceStateBytes() {
+      java.lang.Object ref = instanceState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_state = 92223591;</code>
+     * @param value The instanceState to set.
      * @return This builder for chaining.
      */
-    public Builder setInstanceStateValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setInstanceState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       instanceState_ = value;
       onChanged();
       return this;
@@ -723,46 +786,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-     * @return The instanceState.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState getInstanceState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState result = com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState.valueOf(instanceState_);
-      return result == null ? com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-     * @param value The instanceState to set.
+     * <code>optional string instance_state = 92223591;</code>
      * @return This builder for chaining.
      */
-    public Builder setInstanceState(com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      instanceState_ = value.getNumber();
+    public Builder clearInstanceState() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      instanceState_ = getDefaultInstance().getInstanceState();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+     * Check the InstanceState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
+     * <code>optional string instance_state = 92223591;</code>
+     * @param value The bytes for instanceState to set.
      * @return This builder for chaining.
      */
-    public Builder clearInstanceState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      instanceState_ = 0;
+    public Builder setInstanceStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      instanceState_ = value;
       onChanged();
       return this;
     }

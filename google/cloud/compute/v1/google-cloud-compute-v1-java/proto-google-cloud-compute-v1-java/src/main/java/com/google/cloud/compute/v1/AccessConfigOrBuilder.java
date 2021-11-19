@@ -145,30 +145,34 @@ public interface AccessConfigOrBuilder extends
   /**
    * <pre>
    * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  int getNetworkTierValue();
+  java.lang.String getNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  com.google.cloud.compute.v1.AccessConfig.NetworkTier getNetworkTier();
+  com.google.protobuf.ByteString
+      getNetworkTierBytes();
 
   /**
    * <pre>
@@ -221,28 +225,32 @@ public interface AccessConfigOrBuilder extends
   /**
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
   boolean hasType();
   /**
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.AccessConfig.Type getType();
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

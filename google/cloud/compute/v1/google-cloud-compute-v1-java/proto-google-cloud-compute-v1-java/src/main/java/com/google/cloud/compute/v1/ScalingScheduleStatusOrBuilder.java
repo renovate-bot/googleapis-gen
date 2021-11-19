@@ -68,28 +68,32 @@ public interface ScalingScheduleStatusOrBuilder extends
   /**
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return Whether the state field is set.
    */
   boolean hasState();
   /**
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
-   * @return The enum numeric value on the wire for state.
+   * <code>optional string state = 109757585;</code>
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    * <pre>
    * [Output Only] The current state of a scaling schedule.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
-   * @return The state.
+   * <code>optional string state = 109757585;</code>
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.ScalingScheduleStatus.State getState();
+  com.google.protobuf.ByteString
+      getStateBytes();
 }

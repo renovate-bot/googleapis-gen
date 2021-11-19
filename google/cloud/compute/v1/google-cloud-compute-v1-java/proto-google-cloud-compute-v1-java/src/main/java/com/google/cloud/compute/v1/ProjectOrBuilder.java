@@ -66,30 +66,34 @@ public interface ProjectOrBuilder extends
   /**
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
+   * <code>optional string default_network_tier = 471753361;</code>
    * @return Whether the defaultNetworkTier field is set.
    */
   boolean hasDefaultNetworkTier();
   /**
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
-   * @return The enum numeric value on the wire for defaultNetworkTier.
+   * <code>optional string default_network_tier = 471753361;</code>
+   * @return The defaultNetworkTier.
    */
-  int getDefaultNetworkTierValue();
+  java.lang.String getDefaultNetworkTier();
   /**
    * <pre>
    * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+   * Check the DefaultNetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
-   * @return The defaultNetworkTier.
+   * <code>optional string default_network_tier = 471753361;</code>
+   * @return The bytes for defaultNetworkTier.
    */
-  com.google.cloud.compute.v1.Project.DefaultNetworkTier getDefaultNetworkTier();
+  com.google.protobuf.ByteString
+      getDefaultNetworkTierBytes();
 
   /**
    * <pre>
@@ -370,28 +374,32 @@ public interface ProjectOrBuilder extends
   /**
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+   * <code>optional string xpn_project_status = 228419265;</code>
    * @return Whether the xpnProjectStatus field is set.
    */
   boolean hasXpnProjectStatus();
   /**
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
-   * @return The enum numeric value on the wire for xpnProjectStatus.
+   * <code>optional string xpn_project_status = 228419265;</code>
+   * @return The xpnProjectStatus.
    */
-  int getXpnProjectStatusValue();
+  java.lang.String getXpnProjectStatus();
   /**
    * <pre>
    * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+   * Check the XpnProjectStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
-   * @return The xpnProjectStatus.
+   * <code>optional string xpn_project_status = 228419265;</code>
+   * @return The bytes for xpnProjectStatus.
    */
-  com.google.cloud.compute.v1.Project.XpnProjectStatus getXpnProjectStatus();
+  com.google.protobuf.ByteString
+      getXpnProjectStatusBytes();
 }

@@ -28,29 +28,33 @@ public interface RouterNatLogConfigOrBuilder extends
 
   /**
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful. 
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+   * Check the Filter enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    * @return Whether the filter field is set.
    */
   boolean hasFilter();
   /**
    * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful. 
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+   * Check the Filter enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
-   * @return The enum numeric value on the wire for filter.
-   */
-  int getFilterValue();
-  /**
-   * <pre>
-   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.RouterNatLogConfig.Filter filter = 336120696;</code>
+   * <code>optional string filter = 336120696;</code>
    * @return The filter.
    */
-  com.google.cloud.compute.v1.RouterNatLogConfig.Filter getFilter();
+  java.lang.String getFilter();
+  /**
+   * <pre>
+   * Specify the desired filtering of logs on this NAT. If unspecified, logs are exported for all connections handled by this NAT. This option can take one of the following values: - ERRORS_ONLY: Export logs only for connection failures. - TRANSLATIONS_ONLY: Export logs only for successful connections. - ALL: Export logs for all connections, successful and unsuccessful.
+   * Check the Filter enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string filter = 336120696;</code>
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString
+      getFilterBytes();
 }

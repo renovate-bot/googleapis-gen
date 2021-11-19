@@ -214,6 +214,7 @@ public class TargetHttpsProxiesClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setProxyBind(true)
+            .setQuicOverride("quicOverride502760490")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setServerTlsPolicy("serverTlsPolicy-1897015798")

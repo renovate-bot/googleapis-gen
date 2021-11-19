@@ -156,6 +156,7 @@ public class TargetTcpProxiesClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setProxyBind(true)
+            .setProxyHeader("proxyHeader1768394395")
             .setSelfLink("selfLink1191800166")
             .setService("service1984153269")
             .build();

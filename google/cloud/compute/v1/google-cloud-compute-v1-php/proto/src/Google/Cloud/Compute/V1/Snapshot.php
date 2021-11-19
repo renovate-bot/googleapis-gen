@@ -137,8 +137,9 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     protected $source_disk_id = null;
     /**
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -149,8 +150,9 @@ class Snapshot extends \Google\Protobuf\Internal\Message
     protected $storage_bytes = null;
     /**
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+     * Generated from protobuf field <code>optional string storage_bytes_status = 490739082;</code>
      */
     protected $storage_bytes_status = null;
     /**
@@ -206,12 +208,14 @@ class Snapshot extends \Google\Protobuf\Internal\Message
      *           The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
      *     @type string $source_disk_id
      *           [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     *           Check the Status enum for the list of possible values.
      *     @type int|string $storage_bytes
      *           [Output Only] A size of the storage used by the snapshot. As snapshots share storage, this number is expected to change with snapshot creation/deletion.
-     *     @type int $storage_bytes_status
+     *     @type string $storage_bytes_status
      *           [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     *           Check the StorageBytesStatus enum for the list of possible values.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $storage_locations
      *           Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
      * }
@@ -913,13 +917,14 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -934,14 +939,15 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Snapshot\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;
@@ -985,13 +991,14 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string storage_bytes_status = 490739082;</code>
+     * @return string
      */
     public function getStorageBytesStatus()
     {
-        return isset($this->storage_bytes_status) ? $this->storage_bytes_status : 0;
+        return isset($this->storage_bytes_status) ? $this->storage_bytes_status : '';
     }
 
     public function hasStorageBytesStatus()
@@ -1006,14 +1013,15 @@ class Snapshot extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string storage_bytes_status = 490739082;</code>
+     * @param string $var
      * @return $this
      */
     public function setStorageBytesStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Snapshot\StorageBytesStatus::class);
+        GPBUtil::checkString($var, True);
         $this->storage_bytes_status = $var;
 
         return $this;

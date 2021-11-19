@@ -20,10 +20,10 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ManagedInstance() {
-    currentAction_ = 0;
+    currentAction_ = "";
     instance_ = "";
     instanceHealth_ = java.util.Collections.emptyList();
-    instanceStatus_ = 0;
+    instanceStatus_ = "";
   }
 
   @java.lang.Override
@@ -81,16 +81,16 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000020;
             break;
           }
-          case 1396618976: {
-            int rawValue = input.readEnum();
+          case 1396618978: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            instanceStatus_ = rawValue;
+            instanceStatus_ = s;
             break;
           }
-          case 1427807712: {
-            int rawValue = input.readEnum();
+          case 1427807714: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            currentAction_ = rawValue;
+            currentAction_ = s;
             break;
           }
           case -1482103102: {
@@ -723,41 +723,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int CURRENT_ACTION_FIELD_NUMBER = 178475964;
-  private int currentAction_;
+  private volatile java.lang.Object currentAction_;
   /**
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
+   * <code>optional string current_action = 178475964;</code>
    * @return Whether the currentAction field is set.
    */
-  @java.lang.Override public boolean hasCurrentAction() {
+  @java.lang.Override
+  public boolean hasCurrentAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-   * @return The enum numeric value on the wire for currentAction.
+   * <code>optional string current_action = 178475964;</code>
+   * @return The currentAction.
    */
-  @java.lang.Override public int getCurrentActionValue() {
-    return currentAction_;
+  @java.lang.Override
+  public java.lang.String getCurrentAction() {
+    java.lang.Object ref = currentAction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      currentAction_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+   * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+   * Check the CurrentAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-   * @return The currentAction.
+   * <code>optional string current_action = 178475964;</code>
+   * @return The bytes for currentAction.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ManagedInstance.CurrentAction getCurrentAction() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ManagedInstance.CurrentAction result = com.google.cloud.compute.v1.ManagedInstance.CurrentAction.valueOf(currentAction_);
-    return result == null ? com.google.cloud.compute.v1.ManagedInstance.CurrentAction.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCurrentActionBytes() {
+    java.lang.Object ref = currentAction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      currentAction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
@@ -906,41 +929,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSTANCE_STATUS_FIELD_NUMBER = 174577372;
-  private int instanceStatus_;
+  private volatile java.lang.Object instanceStatus_;
   /**
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
+   * <code>optional string instance_status = 174577372;</code>
    * @return Whether the instanceStatus field is set.
    */
-  @java.lang.Override public boolean hasInstanceStatus() {
+  @java.lang.Override
+  public boolean hasInstanceStatus() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-   * @return The enum numeric value on the wire for instanceStatus.
+   * <code>optional string instance_status = 174577372;</code>
+   * @return The instanceStatus.
    */
-  @java.lang.Override public int getInstanceStatusValue() {
-    return instanceStatus_;
+  @java.lang.Override
+  public java.lang.String getInstanceStatus() {
+    java.lang.Object ref = instanceStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instanceStatus_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+   * Check the InstanceStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-   * @return The instanceStatus.
+   * <code>optional string instance_status = 174577372;</code>
+   * @return The bytes for instanceStatus.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ManagedInstance.InstanceStatus getInstanceStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ManagedInstance.InstanceStatus result = com.google.cloud.compute.v1.ManagedInstance.InstanceStatus.valueOf(instanceStatus_);
-    return result == null ? com.google.cloud.compute.v1.ManagedInstance.InstanceStatus.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInstanceStatusBytes() {
+    java.lang.Object ref = instanceStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      instanceStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LAST_ATTEMPT_FIELD_NUMBER = 434771492;
@@ -1119,10 +1165,10 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(98661858, getPreservedStateFromConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(174577372, instanceStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 174577372, instanceStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(178475964, currentAction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 178475964, currentAction_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(351608024, getVersion());
@@ -1157,12 +1203,10 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(98661858, getPreservedStateFromConfig());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(174577372, instanceStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(174577372, instanceStatus_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(178475964, currentAction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178475964, currentAction_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1197,7 +1241,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasCurrentAction() != other.hasCurrentAction()) return false;
     if (hasCurrentAction()) {
-      if (currentAction_ != other.currentAction_) return false;
+      if (!getCurrentAction()
+          .equals(other.getCurrentAction())) return false;
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
@@ -1213,7 +1258,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInstanceHealthList())) return false;
     if (hasInstanceStatus() != other.hasInstanceStatus()) return false;
     if (hasInstanceStatus()) {
-      if (instanceStatus_ != other.instanceStatus_) return false;
+      if (!getInstanceStatus()
+          .equals(other.getInstanceStatus())) return false;
     }
     if (hasLastAttempt() != other.hasLastAttempt()) return false;
     if (hasLastAttempt()) {
@@ -1248,7 +1294,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasCurrentAction()) {
       hash = (37 * hash) + CURRENT_ACTION_FIELD_NUMBER;
-      hash = (53 * hash) + currentAction_;
+      hash = (53 * hash) + getCurrentAction().hashCode();
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -1265,7 +1311,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInstanceStatus()) {
       hash = (37 * hash) + INSTANCE_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + instanceStatus_;
+      hash = (53 * hash) + getInstanceStatus().hashCode();
     }
     if (hasLastAttempt()) {
       hash = (37 * hash) + LAST_ATTEMPT_FIELD_NUMBER;
@@ -1425,7 +1471,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      currentAction_ = 0;
+      currentAction_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1437,7 +1483,7 @@ private static final long serialVersionUID = 0L;
       } else {
         instanceHealthBuilder_.clear();
       }
-      instanceStatus_ = 0;
+      instanceStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       if (lastAttemptBuilder_ == null) {
         lastAttempt_ = null;
@@ -1598,7 +1644,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.ManagedInstance other) {
       if (other == com.google.cloud.compute.v1.ManagedInstance.getDefaultInstance()) return this;
       if (other.hasCurrentAction()) {
-        setCurrentAction(other.getCurrentAction());
+        bitField0_ |= 0x00000001;
+        currentAction_ = other.currentAction_;
+        onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
@@ -1635,7 +1683,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasInstanceStatus()) {
-        setInstanceStatus(other.getInstanceStatus());
+        bitField0_ |= 0x00000010;
+        instanceStatus_ = other.instanceStatus_;
+        onChanged();
       }
       if (other.hasLastAttempt()) {
         mergeLastAttempt(other.getLastAttempt());
@@ -1679,87 +1729,115 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int currentAction_ = 0;
+    private java.lang.Object currentAction_ = "";
     /**
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
+     * <code>optional string current_action = 178475964;</code>
      * @return Whether the currentAction field is set.
      */
-    @java.lang.Override public boolean hasCurrentAction() {
+    public boolean hasCurrentAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-     * @return The enum numeric value on the wire for currentAction.
+     * <code>optional string current_action = 178475964;</code>
+     * @return The currentAction.
      */
-    @java.lang.Override public int getCurrentActionValue() {
-      return currentAction_;
+    public java.lang.String getCurrentAction() {
+      java.lang.Object ref = currentAction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currentAction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-     * @param value The enum numeric value on the wire for currentAction to set.
+     * <code>optional string current_action = 178475964;</code>
+     * @return The bytes for currentAction.
+     */
+    public com.google.protobuf.ByteString
+        getCurrentActionBytes() {
+      java.lang.Object ref = currentAction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currentAction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string current_action = 178475964;</code>
+     * @param value The currentAction to set.
      * @return This builder for chaining.
      */
-    public Builder setCurrentActionValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setCurrentAction(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       currentAction_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-     * @return The currentAction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ManagedInstance.CurrentAction getCurrentAction() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ManagedInstance.CurrentAction result = com.google.cloud.compute.v1.ManagedInstance.CurrentAction.valueOf(currentAction_);
-      return result == null ? com.google.cloud.compute.v1.ManagedInstance.CurrentAction.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-     * @param value The currentAction to set.
+     * <code>optional string current_action = 178475964;</code>
      * @return This builder for chaining.
      */
-    public Builder setCurrentAction(com.google.cloud.compute.v1.ManagedInstance.CurrentAction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      currentAction_ = value.getNumber();
+    public Builder clearCurrentAction() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      currentAction_ = getDefaultInstance().getCurrentAction();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
+     * <code>optional string current_action = 178475964;</code>
+     * @param value The bytes for currentAction to set.
      * @return This builder for chaining.
      */
-    public Builder clearCurrentAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      currentAction_ = 0;
+    public Builder setCurrentActionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      currentAction_ = value;
       onChanged();
       return this;
     }
@@ -2238,40 +2316,78 @@ private static final long serialVersionUID = 0L;
       return instanceHealthBuilder_;
     }
 
-    private int instanceStatus_ = 0;
+    private java.lang.Object instanceStatus_ = "";
     /**
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
+     * <code>optional string instance_status = 174577372;</code>
      * @return Whether the instanceStatus field is set.
      */
-    @java.lang.Override public boolean hasInstanceStatus() {
+    public boolean hasInstanceStatus() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-     * @return The enum numeric value on the wire for instanceStatus.
+     * <code>optional string instance_status = 174577372;</code>
+     * @return The instanceStatus.
      */
-    @java.lang.Override public int getInstanceStatusValue() {
-      return instanceStatus_;
+    public java.lang.String getInstanceStatus() {
+      java.lang.Object ref = instanceStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instanceStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-     * @param value The enum numeric value on the wire for instanceStatus to set.
+     * <code>optional string instance_status = 174577372;</code>
+     * @return The bytes for instanceStatus.
+     */
+    public com.google.protobuf.ByteString
+        getInstanceStatusBytes() {
+      java.lang.Object ref = instanceStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instanceStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instance_status = 174577372;</code>
+     * @param value The instanceStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setInstanceStatusValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setInstanceStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       instanceStatus_ = value;
       onChanged();
       return this;
@@ -2279,46 +2395,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-     * @return The instanceStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ManagedInstance.InstanceStatus getInstanceStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ManagedInstance.InstanceStatus result = com.google.cloud.compute.v1.ManagedInstance.InstanceStatus.valueOf(instanceStatus_);
-      return result == null ? com.google.cloud.compute.v1.ManagedInstance.InstanceStatus.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The status of the instance. This field is empty when the instance does not exist.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-     * @param value The instanceStatus to set.
+     * <code>optional string instance_status = 174577372;</code>
      * @return This builder for chaining.
      */
-    public Builder setInstanceStatus(com.google.cloud.compute.v1.ManagedInstance.InstanceStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      instanceStatus_ = value.getNumber();
+    public Builder clearInstanceStatus() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      instanceStatus_ = getDefaultInstance().getInstanceStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
+     * <code>optional string instance_status = 174577372;</code>
+     * @param value The bytes for instanceStatus to set.
      * @return This builder for chaining.
      */
-    public Builder clearInstanceStatus() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      instanceStatus_ = 0;
+    public Builder setInstanceStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      instanceStatus_ = value;
       onChanged();
       return this;
     }

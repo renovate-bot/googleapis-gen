@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ManagedInstanceInstanceHealth() {
-    detailedHealthState_ = 0;
+    detailedHealthState_ = "";
     healthCheck_ = "";
   }
 
@@ -60,10 +60,10 @@ private static final long serialVersionUID = 0L;
             healthCheck_ = s;
             break;
           }
-          case -211205912: {
-            int rawValue = input.readEnum();
+          case -211205910: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            detailedHealthState_ = rawValue;
+            detailedHealthState_ = s;
             break;
           }
           default: {
@@ -296,41 +296,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int DETAILED_HEALTH_STATE_FIELD_NUMBER = 510470173;
-  private int detailedHealthState_;
+  private volatile java.lang.Object detailedHealthState_;
   /**
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+   * <code>optional string detailed_health_state = 510470173;</code>
    * @return Whether the detailedHealthState field is set.
    */
-  @java.lang.Override public boolean hasDetailedHealthState() {
+  @java.lang.Override
+  public boolean hasDetailedHealthState() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-   * @return The enum numeric value on the wire for detailedHealthState.
+   * <code>optional string detailed_health_state = 510470173;</code>
+   * @return The detailedHealthState.
    */
-  @java.lang.Override public int getDetailedHealthStateValue() {
-    return detailedHealthState_;
+  @java.lang.Override
+  public java.lang.String getDetailedHealthState() {
+    java.lang.Object ref = detailedHealthState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      detailedHealthState_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-   * @return The detailedHealthState.
+   * <code>optional string detailed_health_state = 510470173;</code>
+   * @return The bytes for detailedHealthState.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState getDetailedHealthState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState result = com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState.valueOf(detailedHealthState_);
-    return result == null ? com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDetailedHealthStateBytes() {
+    java.lang.Object ref = detailedHealthState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      detailedHealthState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int HEALTH_CHECK_FIELD_NUMBER = 308876645;
@@ -409,7 +432,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 308876645, healthCheck_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(510470173, detailedHealthState_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 510470173, detailedHealthState_);
     }
     unknownFields.writeTo(output);
   }
@@ -424,8 +447,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(308876645, healthCheck_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(510470173, detailedHealthState_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(510470173, detailedHealthState_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -444,7 +466,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasDetailedHealthState() != other.hasDetailedHealthState()) return false;
     if (hasDetailedHealthState()) {
-      if (detailedHealthState_ != other.detailedHealthState_) return false;
+      if (!getDetailedHealthState()
+          .equals(other.getDetailedHealthState())) return false;
     }
     if (hasHealthCheck() != other.hasHealthCheck()) return false;
     if (hasHealthCheck()) {
@@ -464,7 +487,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasDetailedHealthState()) {
       hash = (37 * hash) + DETAILED_HEALTH_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + detailedHealthState_;
+      hash = (53 * hash) + getDetailedHealthState().hashCode();
     }
     if (hasHealthCheck()) {
       hash = (37 * hash) + HEALTH_CHECK_FIELD_NUMBER;
@@ -606,7 +629,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      detailedHealthState_ = 0;
+      detailedHealthState_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       healthCheck_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -696,7 +719,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.ManagedInstanceInstanceHealth other) {
       if (other == com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.getDefaultInstance()) return this;
       if (other.hasDetailedHealthState()) {
-        setDetailedHealthState(other.getDetailedHealthState());
+        bitField0_ |= 0x00000001;
+        detailedHealthState_ = other.detailedHealthState_;
+        onChanged();
       }
       if (other.hasHealthCheck()) {
         bitField0_ |= 0x00000002;
@@ -733,40 +758,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int detailedHealthState_ = 0;
+    private java.lang.Object detailedHealthState_ = "";
     /**
      * <pre>
      * [Output Only] The current detailed instance health state.
+     * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+     * <code>optional string detailed_health_state = 510470173;</code>
      * @return Whether the detailedHealthState field is set.
      */
-    @java.lang.Override public boolean hasDetailedHealthState() {
+    public boolean hasDetailedHealthState() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * [Output Only] The current detailed instance health state.
+     * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-     * @return The enum numeric value on the wire for detailedHealthState.
+     * <code>optional string detailed_health_state = 510470173;</code>
+     * @return The detailedHealthState.
      */
-    @java.lang.Override public int getDetailedHealthStateValue() {
-      return detailedHealthState_;
+    public java.lang.String getDetailedHealthState() {
+      java.lang.Object ref = detailedHealthState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        detailedHealthState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The current detailed instance health state.
+     * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-     * @param value The enum numeric value on the wire for detailedHealthState to set.
+     * <code>optional string detailed_health_state = 510470173;</code>
+     * @return The bytes for detailedHealthState.
+     */
+    public com.google.protobuf.ByteString
+        getDetailedHealthStateBytes() {
+      java.lang.Object ref = detailedHealthState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        detailedHealthState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The current detailed instance health state.
+     * Check the DetailedHealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string detailed_health_state = 510470173;</code>
+     * @param value The detailedHealthState to set.
      * @return This builder for chaining.
      */
-    public Builder setDetailedHealthStateValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setDetailedHealthState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       detailedHealthState_ = value;
       onChanged();
       return this;
@@ -774,46 +837,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The current detailed instance health state.
+     * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-     * @return The detailedHealthState.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState getDetailedHealthState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState result = com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState.valueOf(detailedHealthState_);
-      return result == null ? com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The current detailed instance health state.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-     * @param value The detailedHealthState to set.
+     * <code>optional string detailed_health_state = 510470173;</code>
      * @return This builder for chaining.
      */
-    public Builder setDetailedHealthState(com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      detailedHealthState_ = value.getNumber();
+    public Builder clearDetailedHealthState() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      detailedHealthState_ = getDefaultInstance().getDetailedHealthState();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The current detailed instance health state.
+     * Check the DetailedHealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+     * <code>optional string detailed_health_state = 510470173;</code>
+     * @param value The bytes for detailedHealthState to set.
      * @return This builder for chaining.
      */
-    public Builder clearDetailedHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      detailedHealthState_ = 0;
+    public Builder setDetailedHealthStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      detailedHealthState_ = value;
       onChanged();
       return this;
     }

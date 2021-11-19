@@ -35,8 +35,9 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
     protected $description = null;
     /**
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * Generated from protobuf field <code>optional string enable = 311764355;</code>
      */
     protected $enable = null;
     /**
@@ -106,8 +107,9 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
      *           An optional description of this resource. Provide this property when you create the resource.
-     *     @type int $enable
+     *     @type string $enable
      *           Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     *           Check the Enable enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\PacketMirroringFilter $filter
      *           Filter for mirrored traffic. If unspecified, all traffic is mirrored.
      *     @type int|string $id
@@ -243,13 +245,14 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string enable = 311764355;</code>
+     * @return string
      */
     public function getEnable()
     {
-        return isset($this->enable) ? $this->enable : 0;
+        return isset($this->enable) ? $this->enable : '';
     }
 
     public function hasEnable()
@@ -264,14 +267,15 @@ class PacketMirroring extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string enable = 311764355;</code>
+     * @param string $var
      * @return $this
      */
     public function setEnable($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\PacketMirroring\Enable::class);
+        GPBUtil::checkString($var, True);
         $this->enable = $var;
 
         return $this;

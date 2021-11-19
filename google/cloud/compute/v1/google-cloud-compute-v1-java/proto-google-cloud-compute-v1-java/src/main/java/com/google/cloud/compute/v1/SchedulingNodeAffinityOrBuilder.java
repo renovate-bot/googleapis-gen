@@ -39,30 +39,34 @@ public interface SchedulingNodeAffinityOrBuilder extends
   /**
    * <pre>
    * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Check the Operator enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
+   * <code>optional string operator = 36317348;</code>
    * @return Whether the operator field is set.
    */
   boolean hasOperator();
   /**
    * <pre>
    * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Check the Operator enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-   * @return The enum numeric value on the wire for operator.
+   * <code>optional string operator = 36317348;</code>
+   * @return The operator.
    */
-  int getOperatorValue();
+  java.lang.String getOperator();
   /**
    * <pre>
    * Defines the operation of node selection. Valid operators are IN for affinity and NOT_IN for anti-affinity.
+   * Check the Operator enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SchedulingNodeAffinity.Operator operator = 36317348;</code>
-   * @return The operator.
+   * <code>optional string operator = 36317348;</code>
+   * @return The bytes for operator.
    */
-  com.google.cloud.compute.v1.SchedulingNodeAffinity.Operator getOperator();
+  com.google.protobuf.ByteString
+      getOperatorBytes();
 
   /**
    * <pre>

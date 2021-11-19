@@ -57,8 +57,9 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     protected $location_hint = null;
     /**
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+     * Generated from protobuf field <code>optional string maintenance_policy = 528327646;</code>
      */
     protected $maintenance_policy = null;
     /**
@@ -90,7 +91,10 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      */
     protected $size = null;
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+     * 
+     * Check the Status enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -119,8 +123,9 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      *           [Output Only] The type of the resource. Always compute#nodeGroup for node group.
      *     @type string $location_hint
      *           An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
-     *     @type int $maintenance_policy
+     *     @type string $maintenance_policy
      *           Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     *           Check the MaintenancePolicy enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\NodeGroupMaintenanceWindow $maintenance_window
      *     @type string $name
      *           The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -130,7 +135,9 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined URL for the resource.
      *     @type int $size
      *           [Output Only] The total number of nodes in the node group.
-     *     @type int $status
+     *     @type string $status
+     *           
+     *           Check the Status enum for the list of possible values.
      *     @type string $zone
      *           [Output Only] The name of the zone where the node group resides, such as us-central1-a.
      * }
@@ -390,13 +397,14 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string maintenance_policy = 528327646;</code>
+     * @return string
      */
     public function getMaintenancePolicy()
     {
-        return isset($this->maintenance_policy) ? $this->maintenance_policy : 0;
+        return isset($this->maintenance_policy) ? $this->maintenance_policy : '';
     }
 
     public function hasMaintenancePolicy()
@@ -411,14 +419,15 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string maintenance_policy = 528327646;</code>
+     * @param string $var
      * @return $this
      */
     public function setMaintenancePolicy($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeGroup\MaintenancePolicy::class);
+        GPBUtil::checkString($var, True);
         $this->maintenance_policy = $var;
 
         return $this;
@@ -601,12 +610,15 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-     * @return int
+     * 
+     * Check the Status enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -620,13 +632,16 @@ class NodeGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-     * @param int $var
+     * 
+     * Check the Status enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeGroup\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

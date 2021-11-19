@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     fingerprint_ = "";
     healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    healthStatusAggregationPolicy_ = 0;
+    healthStatusAggregationPolicy_ = "";
     kind_ = "";
     name_ = "";
     networkEndpointGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -108,10 +108,10 @@ private static final long serialVersionUID = 0L;
             fingerprint_ = s;
             break;
           }
-          case 2025305032: {
-            int rawValue = input.readEnum();
+          case 2025305034: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            healthStatusAggregationPolicy_ = rawValue;
+            healthStatusAggregationPolicy_ = s;
             break;
           }
           case -1041139374: {
@@ -557,41 +557,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HEALTH_STATUS_AGGREGATION_POLICY_FIELD_NUMBER = 253163129;
-  private int healthStatusAggregationPolicy_;
+  private volatile java.lang.Object healthStatusAggregationPolicy_;
   /**
    * <pre>
    * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+   * Check the HealthStatusAggregationPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
+   * <code>optional string health_status_aggregation_policy = 253163129;</code>
    * @return Whether the healthStatusAggregationPolicy field is set.
    */
-  @java.lang.Override public boolean hasHealthStatusAggregationPolicy() {
+  @java.lang.Override
+  public boolean hasHealthStatusAggregationPolicy() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
    * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+   * Check the HealthStatusAggregationPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-   * @return The enum numeric value on the wire for healthStatusAggregationPolicy.
+   * <code>optional string health_status_aggregation_policy = 253163129;</code>
+   * @return The healthStatusAggregationPolicy.
    */
-  @java.lang.Override public int getHealthStatusAggregationPolicyValue() {
-    return healthStatusAggregationPolicy_;
+  @java.lang.Override
+  public java.lang.String getHealthStatusAggregationPolicy() {
+    java.lang.Object ref = healthStatusAggregationPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      healthStatusAggregationPolicy_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+   * Check the HealthStatusAggregationPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-   * @return The healthStatusAggregationPolicy.
+   * <code>optional string health_status_aggregation_policy = 253163129;</code>
+   * @return The bytes for healthStatusAggregationPolicy.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy getHealthStatusAggregationPolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy result = com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy.valueOf(healthStatusAggregationPolicy_);
-    return result == null ? com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getHealthStatusAggregationPolicyBytes() {
+    java.lang.Object ref = healthStatusAggregationPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      healthStatusAggregationPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ID_FIELD_NUMBER = 3355;
@@ -991,7 +1014,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(253163129, healthStatusAggregationPolicy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 253163129, healthStatusAggregationPolicy_);
     }
     for (int i = 0; i < notificationEndpoints_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406728490, notificationEndpoints_.getRaw(i));
@@ -1042,8 +1065,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(234678500, fingerprint_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(253163129, healthStatusAggregationPolicy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(253163129, healthStatusAggregationPolicy_);
     }
     {
       int dataSize = 0;
@@ -1101,7 +1123,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getHealthChecksList())) return false;
     if (hasHealthStatusAggregationPolicy() != other.hasHealthStatusAggregationPolicy()) return false;
     if (hasHealthStatusAggregationPolicy()) {
-      if (healthStatusAggregationPolicy_ != other.healthStatusAggregationPolicy_) return false;
+      if (!getHealthStatusAggregationPolicy()
+          .equals(other.getHealthStatusAggregationPolicy())) return false;
     }
     if (hasId() != other.hasId()) return false;
     if (hasId()) {
@@ -1161,7 +1184,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasHealthStatusAggregationPolicy()) {
       hash = (37 * hash) + HEALTH_STATUS_AGGREGATION_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + healthStatusAggregationPolicy_;
+      hash = (53 * hash) + getHealthStatusAggregationPolicy().hashCode();
     }
     if (hasId()) {
       hash = (37 * hash) + ID_FIELD_NUMBER;
@@ -1337,7 +1360,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000008);
-      healthStatusAggregationPolicy_ = 0;
+      healthStatusAggregationPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1507,7 +1530,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasHealthStatusAggregationPolicy()) {
-        setHealthStatusAggregationPolicy(other.getHealthStatusAggregationPolicy());
+        bitField0_ |= 0x00000010;
+        healthStatusAggregationPolicy_ = other.healthStatusAggregationPolicy_;
+        onChanged();
       }
       if (other.hasId()) {
         setId(other.getId());
@@ -2049,40 +2074,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int healthStatusAggregationPolicy_ = 0;
+    private java.lang.Object healthStatusAggregationPolicy_ = "";
     /**
      * <pre>
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
+     * <code>optional string health_status_aggregation_policy = 253163129;</code>
      * @return Whether the healthStatusAggregationPolicy field is set.
      */
-    @java.lang.Override public boolean hasHealthStatusAggregationPolicy() {
+    public boolean hasHealthStatusAggregationPolicy() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-     * @return The enum numeric value on the wire for healthStatusAggregationPolicy.
+     * <code>optional string health_status_aggregation_policy = 253163129;</code>
+     * @return The healthStatusAggregationPolicy.
      */
-    @java.lang.Override public int getHealthStatusAggregationPolicyValue() {
-      return healthStatusAggregationPolicy_;
+    public java.lang.String getHealthStatusAggregationPolicy() {
+      java.lang.Object ref = healthStatusAggregationPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        healthStatusAggregationPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-     * @param value The enum numeric value on the wire for healthStatusAggregationPolicy to set.
+     * <code>optional string health_status_aggregation_policy = 253163129;</code>
+     * @return The bytes for healthStatusAggregationPolicy.
+     */
+    public com.google.protobuf.ByteString
+        getHealthStatusAggregationPolicyBytes() {
+      java.lang.Object ref = healthStatusAggregationPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        healthStatusAggregationPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string health_status_aggregation_policy = 253163129;</code>
+     * @param value The healthStatusAggregationPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthStatusAggregationPolicyValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setHealthStatusAggregationPolicy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       healthStatusAggregationPolicy_ = value;
       onChanged();
       return this;
@@ -2090,46 +2153,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-     * @return The healthStatusAggregationPolicy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy getHealthStatusAggregationPolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy result = com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy.valueOf(healthStatusAggregationPolicy_);
-      return result == null ? com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-     * @param value The healthStatusAggregationPolicy to set.
+     * <code>optional string health_status_aggregation_policy = 253163129;</code>
      * @return This builder for chaining.
      */
-    public Builder setHealthStatusAggregationPolicy(com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      healthStatusAggregationPolicy_ = value.getNumber();
+    public Builder clearHealthStatusAggregationPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      healthStatusAggregationPolicy_ = getDefaultInstance().getHealthStatusAggregationPolicy();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
+     * <code>optional string health_status_aggregation_policy = 253163129;</code>
+     * @param value The bytes for healthStatusAggregationPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder clearHealthStatusAggregationPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      healthStatusAggregationPolicy_ = 0;
+    public Builder setHealthStatusAggregationPolicyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      healthStatusAggregationPolicy_ = value;
       onChanged();
       return this;
     }

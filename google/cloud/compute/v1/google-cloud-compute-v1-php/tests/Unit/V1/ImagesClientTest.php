@@ -345,6 +345,8 @@ class ImagesClientTest extends GeneratedTest
         $sourceImageId = 'sourceImageId-2092155357';
         $sourceSnapshot = 'sourceSnapshot-947679896';
         $sourceSnapshotId = 'sourceSnapshotId-1511650478';
+        $sourceType = 'sourceType-84625186';
+        $status = 'status-892481550';
         $expectedResponse = new Image();
         $expectedResponse->setArchiveSizeBytes($archiveSizeBytes);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -363,6 +365,8 @@ class ImagesClientTest extends GeneratedTest
         $expectedResponse->setSourceImageId($sourceImageId);
         $expectedResponse->setSourceSnapshot($sourceSnapshot);
         $expectedResponse->setSourceSnapshotId($sourceSnapshotId);
+        $expectedResponse->setSourceType($sourceType);
+        $expectedResponse->setStatus($status);
         $transport->addResponse($expectedResponse);
         // Mock request
         $image = 'image100313435';
@@ -445,6 +449,8 @@ class ImagesClientTest extends GeneratedTest
         $sourceImageId = 'sourceImageId-2092155357';
         $sourceSnapshot = 'sourceSnapshot-947679896';
         $sourceSnapshotId = 'sourceSnapshotId-1511650478';
+        $sourceType = 'sourceType-84625186';
+        $status = 'status-892481550';
         $expectedResponse = new Image();
         $expectedResponse->setArchiveSizeBytes($archiveSizeBytes);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -463,6 +469,8 @@ class ImagesClientTest extends GeneratedTest
         $expectedResponse->setSourceImageId($sourceImageId);
         $expectedResponse->setSourceSnapshot($sourceSnapshot);
         $expectedResponse->setSourceSnapshotId($sourceSnapshotId);
+        $expectedResponse->setSourceType($sourceType);
+        $expectedResponse->setStatus($status);
         $transport->addResponse($expectedResponse);
         // Mock request
         $family = 'family-1281860764';

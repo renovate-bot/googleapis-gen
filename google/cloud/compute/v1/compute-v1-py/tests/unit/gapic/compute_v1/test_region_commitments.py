@@ -545,20 +545,20 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetRegionCommitm
     with mock.patch.object(Session, 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Commitment(
-              category=compute.Commitment.Category.CATEGORY_UNSPECIFIED,
+              category='category_value',
               creation_timestamp='creation_timestamp_value',
               description='description_value',
               end_timestamp='end_timestamp_value',
               id=205,
               kind='kind_value',
               name='name_value',
-              plan=compute.Commitment.Plan.INVALID,
+              plan='plan_value',
               region='region_value',
               self_link='self_link_value',
               start_timestamp='start_timestamp_value',
-              status=compute.Commitment.Status.ACTIVE,
+              status='status_value',
               status_message='status_message_value',
-              type_=compute.Commitment.Type.ACCELERATOR_OPTIMIZED,
+              type_='type__value',
         )
 
         # Wrap the value into a proper Response obj
@@ -571,20 +571,20 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetRegionCommitm
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Commitment)
-    assert response.category == compute.Commitment.Category.CATEGORY_UNSPECIFIED
+    assert response.category == 'category_value'
     assert response.creation_timestamp == 'creation_timestamp_value'
     assert response.description == 'description_value'
     assert response.end_timestamp == 'end_timestamp_value'
     assert response.id == 205
     assert response.kind == 'kind_value'
     assert response.name == 'name_value'
-    assert response.plan == compute.Commitment.Plan.INVALID
+    assert response.plan == 'plan_value'
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
     assert response.start_timestamp == 'start_timestamp_value'
-    assert response.status == compute.Commitment.Status.ACTIVE
+    assert response.status == 'status_value'
     assert response.status_message == 'status_message_value'
-    assert response.type_ == compute.Commitment.Type.ACCELERATOR_OPTIMIZED
+    assert response.type_ == 'type__value'
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetRegionCommitmentRequest):
@@ -674,7 +674,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertRegionC
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2"}
-    request_init["commitment_resource"] = compute.Commitment(category=compute.Commitment.Category.CATEGORY_UNSPECIFIED)
+    request_init["commitment_resource"] = compute.Commitment(category='category_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -747,7 +747,7 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2"}
-    request_init["commitment_resource"] = compute.Commitment(category=compute.Commitment.Category.CATEGORY_UNSPECIFIED)
+    request_init["commitment_resource"] = compute.Commitment(category='category_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -790,7 +790,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         mock_args = dict(
             project='project_value',
             region='region_value',
-            commitment_resource=compute.Commitment(category=compute.Commitment.Category.CATEGORY_UNSPECIFIED),
+            commitment_resource=compute.Commitment(category='category_value'),
         )
         mock_args.update(sample_request)
         client.insert(**mock_args)
@@ -815,7 +815,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
             compute.InsertRegionCommitmentRequest(),
             project='project_value',
             region='region_value',
-            commitment_resource=compute.Commitment(category=compute.Commitment.Category.CATEGORY_UNSPECIFIED),
+            commitment_resource=compute.Commitment(category='category_value'),
         )
 
 

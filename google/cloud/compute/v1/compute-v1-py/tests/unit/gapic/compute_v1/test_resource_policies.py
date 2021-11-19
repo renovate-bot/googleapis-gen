@@ -705,7 +705,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetResourcePolic
               name='name_value',
               region='region_value',
               self_link='self_link_value',
-              status=compute.ResourcePolicy.Status.CREATING,
+              status='status_value',
         )
 
         # Wrap the value into a proper Response obj
@@ -725,7 +725,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetResourcePolic
     assert response.name == 'name_value'
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
-    assert response.status == compute.ResourcePolicy.Status.CREATING
+    assert response.status == 'status_value'
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetResourcePolicyRequest):

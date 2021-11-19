@@ -10,30 +10,34 @@ public interface CommitmentOrBuilder extends
   /**
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    * @return Whether the category field is set.
    */
   boolean hasCategory();
   /**
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-   * @return The enum numeric value on the wire for category.
+   * <code>optional string category = 50511102;</code>
+   * @return The category.
    */
-  int getCategoryValue();
+  java.lang.String getCategory();
   /**
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-   * @return The category.
+   * <code>optional string category = 50511102;</code>
+   * @return The bytes for category.
    */
-  com.google.cloud.compute.v1.Commitment.Category getCategory();
+  com.google.protobuf.ByteString
+      getCategoryBytes();
 
   /**
    * <pre>
@@ -229,30 +233,34 @@ public interface CommitmentOrBuilder extends
   /**
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    * @return Whether the plan field is set.
    */
   boolean hasPlan();
   /**
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-   * @return The enum numeric value on the wire for plan.
+   * <code>optional string plan = 3443497;</code>
+   * @return The plan.
    */
-  int getPlanValue();
+  java.lang.String getPlan();
   /**
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-   * @return The plan.
+   * <code>optional string plan = 3443497;</code>
+   * @return The bytes for plan.
    */
-  com.google.cloud.compute.v1.Commitment.Plan getPlan();
+  com.google.protobuf.ByteString
+      getPlanBytes();
 
   /**
    * <pre>
@@ -432,30 +440,34 @@ public interface CommitmentOrBuilder extends
   /**
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Commitment.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>
@@ -489,28 +501,32 @@ public interface CommitmentOrBuilder extends
   /**
    * <pre>
    * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
   boolean hasType();
   /**
    * <pre>
    * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    * <pre>
    * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.Commitment.Type getType();
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

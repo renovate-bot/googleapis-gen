@@ -16,7 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Subsetting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+     * 
+     * Check the Policy enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string policy = 91071794;</code>
      */
     protected $policy = null;
 
@@ -26,7 +29,9 @@ class Subsetting extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $policy
+     *     @type string $policy
+     *           
+     *           Check the Policy enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -35,12 +40,15 @@ class Subsetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-     * @return int
+     * 
+     * Check the Policy enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string policy = 91071794;</code>
+     * @return string
      */
     public function getPolicy()
     {
-        return isset($this->policy) ? $this->policy : 0;
+        return isset($this->policy) ? $this->policy : '';
     }
 
     public function hasPolicy()
@@ -54,13 +62,16 @@ class Subsetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-     * @param int $var
+     * 
+     * Check the Policy enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string policy = 91071794;</code>
+     * @param string $var
      * @return $this
      */
     public function setPolicy($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subsetting\Policy::class);
+        GPBUtil::checkString($var, True);
         $this->policy = $var;
 
         return $this;

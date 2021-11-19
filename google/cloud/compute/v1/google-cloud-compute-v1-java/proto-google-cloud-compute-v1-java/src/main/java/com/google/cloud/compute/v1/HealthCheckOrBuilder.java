@@ -377,30 +377,34 @@ public interface HealthCheckOrBuilder extends
   /**
    * <pre>
    * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
   boolean hasType();
   /**
    * <pre>
    * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    * <pre>
    * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.HealthCheck.Type getType();
+  com.google.protobuf.ByteString
+      getTypeBytes();
 
   /**
    * <pre>

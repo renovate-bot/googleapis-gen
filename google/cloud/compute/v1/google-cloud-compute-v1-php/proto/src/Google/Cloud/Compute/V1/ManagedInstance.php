@@ -16,9 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class ManagedInstance extends \Google\Protobuf\Internal\Message
 {
     /**
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
+     * Generated from protobuf field <code>optional string current_action = 178475964;</code>
      */
     protected $current_action = null;
     /**
@@ -41,8 +42,9 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     private $instance_health;
     /**
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
+     * Generated from protobuf field <code>optional string instance_status = 174577372;</code>
      */
     protected $instance_status = null;
     /**
@@ -76,16 +78,18 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $current_action
-     *           [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     *     @type string $current_action
+     *           [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     *           Check the CurrentAction enum for the list of possible values.
      *     @type int|string $id
      *           [Output only] The unique identifier for this resource. This field is empty when instance does not exist.
      *     @type string $instance
      *           [Output Only] The URL of the instance. The URL can exist even if the instance has not yet been created.
      *     @type \Google\Cloud\Compute\V1\ManagedInstanceInstanceHealth[]|\Google\Protobuf\Internal\RepeatedField $instance_health
      *           [Output Only] Health state of the instance per health-check.
-     *     @type int $instance_status
+     *     @type string $instance_status
      *           [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     *           Check the InstanceStatus enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\ManagedInstanceLastAttempt $last_attempt
      *           [Output Only] Information about the last attempt to create or delete the instance.
      *     @type \Google\Cloud\Compute\V1\PreservedState $preserved_state_from_config
@@ -102,14 +106,15 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string current_action = 178475964;</code>
+     * @return string
      */
     public function getCurrentAction()
     {
-        return isset($this->current_action) ? $this->current_action : 0;
+        return isset($this->current_action) ? $this->current_action : '';
     }
 
     public function hasCurrentAction()
@@ -123,15 +128,16 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified. 
+     * [Output Only] The current action that the managed instance group has scheduled for the instance. Possible values: - NONE The instance is running, and the managed instance group does not have any scheduled actions for this instance. - CREATING The managed instance group is creating this instance. If the group fails to create this instance, it will try again until it is successful. - CREATING_WITHOUT_RETRIES The managed instance group is attempting to create this instance only once. If the group fails to create this instance, it does not try again and the group's targetSize value is decreased instead. - RECREATING The managed instance group is recreating this instance. - DELETING The managed instance group is permanently deleting this instance. - ABANDONING The managed instance group is abandoning this instance. The instance will be removed from the instance group and from any target pools that are associated with this group. - RESTARTING The managed instance group is restarting the instance. - REFRESHING The managed instance group is applying configuration changes to the instance without stopping it. For example, the group can update the target pool list for an instance without stopping that instance. - VERIFYING The managed instance group has created the instance and it is in the process of being verified.
+     * Check the CurrentAction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ManagedInstance.CurrentAction current_action = 178475964;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string current_action = 178475964;</code>
+     * @param string $var
      * @return $this
      */
     public function setCurrentAction($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ManagedInstance\CurrentAction::class);
+        GPBUtil::checkString($var, True);
         $this->current_action = $var;
 
         return $this;
@@ -237,13 +243,14 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string instance_status = 174577372;</code>
+     * @return string
      */
     public function getInstanceStatus()
     {
-        return isset($this->instance_status) ? $this->instance_status : 0;
+        return isset($this->instance_status) ? $this->instance_status : '';
     }
 
     public function hasInstanceStatus()
@@ -258,14 +265,15 @@ class ManagedInstance extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the instance. This field is empty when the instance does not exist.
+     * Check the InstanceStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ManagedInstance.InstanceStatus instance_status = 174577372;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string instance_status = 174577372;</code>
+     * @param string $var
      * @return $this
      */
     public function setInstanceStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ManagedInstance\InstanceStatus::class);
+        GPBUtil::checkString($var, True);
         $this->instance_status = $var;
 
         return $this;

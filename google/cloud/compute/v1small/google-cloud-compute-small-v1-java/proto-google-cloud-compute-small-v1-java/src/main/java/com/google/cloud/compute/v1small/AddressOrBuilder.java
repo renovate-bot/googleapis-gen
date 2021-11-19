@@ -39,30 +39,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
+   * <code>optional string address_type = 264307877;</code>
    * @return Whether the addressType field is set.
    */
   boolean hasAddressType();
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-   * @return The enum numeric value on the wire for addressType.
+   * <code>optional string address_type = 264307877;</code>
+   * @return The addressType.
    */
-  int getAddressTypeValue();
+  java.lang.String getAddressType();
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-   * @return The addressType.
+   * <code>optional string address_type = 264307877;</code>
+   * @return The bytes for addressType.
    */
-  com.google.cloud.compute.v1small.Address.AddressType getAddressType();
+  com.google.protobuf.ByteString
+      getAddressTypeBytes();
 
   /**
    * <pre>
@@ -144,30 +148,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    * @return Whether the ipVersion field is set.
    */
   boolean hasIpVersion();
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-   * @return The enum numeric value on the wire for ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The ipVersion.
    */
-  int getIpVersionValue();
+  java.lang.String getIpVersion();
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-   * @return The ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The bytes for ipVersion.
    */
-  com.google.cloud.compute.v1small.Address.IpVersion getIpVersion();
+  com.google.protobuf.ByteString
+      getIpVersionBytes();
 
   /**
    * <pre>
@@ -260,9 +268,10 @@ public interface AddressOrBuilder extends
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
    * If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
@@ -270,22 +279,25 @@ public interface AddressOrBuilder extends
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
    * If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  int getNetworkTierValue();
+  java.lang.String getNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
    * If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  com.google.cloud.compute.v1small.Address.NetworkTier getNetworkTier();
+  com.google.protobuf.ByteString
+      getNetworkTierBytes();
 
   /**
    * <pre>
@@ -313,9 +325,10 @@ public interface AddressOrBuilder extends
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    * @return Whether the purpose field is set.
    */
   boolean hasPurpose();
@@ -326,12 +339,13 @@ public interface AddressOrBuilder extends
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-   * @return The enum numeric value on the wire for purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The purpose.
    */
-  int getPurposeValue();
+  java.lang.String getPurpose();
   /**
    * <pre>
    * The purpose of this resource, which can be one of the following values:
@@ -339,12 +353,14 @@ public interface AddressOrBuilder extends
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-   * @return The purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The bytes for purpose.
    */
-  com.google.cloud.compute.v1small.Address.Purpose getPurpose();
+  com.google.protobuf.ByteString
+      getPurposeBytes();
 
   /**
    * <pre>
@@ -407,30 +423,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1small.Address.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

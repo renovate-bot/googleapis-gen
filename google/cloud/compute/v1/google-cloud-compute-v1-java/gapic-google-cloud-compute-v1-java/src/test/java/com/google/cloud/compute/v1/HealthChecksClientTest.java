@@ -222,6 +222,7 @@ public class HealthChecksClientTest {
             .setSslHealthCheck(SSLHealthCheck.newBuilder().build())
             .setTcpHealthCheck(TCPHealthCheck.newBuilder().build())
             .setTimeoutSec(-2067488653)
+            .setType("type3575610")
             .setUnhealthyThreshold(1838571216)
             .build();
     mockService.addResponse(expectedResponse);

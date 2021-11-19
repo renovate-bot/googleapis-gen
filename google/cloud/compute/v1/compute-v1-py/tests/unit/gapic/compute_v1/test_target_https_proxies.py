@@ -702,7 +702,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetHttpsPr
               kind='kind_value',
               name='name_value',
               proxy_bind=True,
-              quic_override=compute.TargetHttpsProxy.QuicOverride.DISABLE,
+              quic_override='quic_override_value',
               region='region_value',
               self_link='self_link_value',
               server_tls_policy='server_tls_policy_value',
@@ -729,7 +729,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetHttpsPr
     assert response.kind == 'kind_value'
     assert response.name == 'name_value'
     assert response.proxy_bind is True
-    assert response.quic_override == compute.TargetHttpsProxy.QuicOverride.DISABLE
+    assert response.quic_override == 'quic_override_value'
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
     assert response.server_tls_policy == 'server_tls_policy_value'
@@ -1299,7 +1299,7 @@ def test_set_quic_override_rest(transport: str = 'rest', request_type=compute.Se
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "target_https_proxy": "sample2"}
-    request_init["target_https_proxies_set_quic_override_request_resource"] = compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override=compute.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride.DISABLE)
+    request_init["target_https_proxies_set_quic_override_request_resource"] = compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override='quic_override_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1372,7 +1372,7 @@ def test_set_quic_override_rest_bad_request(transport: str = 'rest', request_typ
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "target_https_proxy": "sample2"}
-    request_init["target_https_proxies_set_quic_override_request_resource"] = compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override=compute.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride.DISABLE)
+    request_init["target_https_proxies_set_quic_override_request_resource"] = compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override='quic_override_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1415,7 +1415,7 @@ def test_set_quic_override_rest_flattened(transport: str = 'rest'):
         mock_args = dict(
             project='project_value',
             target_https_proxy='target_https_proxy_value',
-            target_https_proxies_set_quic_override_request_resource=compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override=compute.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride.DISABLE),
+            target_https_proxies_set_quic_override_request_resource=compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override='quic_override_value'),
         )
         mock_args.update(sample_request)
         client.set_quic_override(**mock_args)
@@ -1440,7 +1440,7 @@ def test_set_quic_override_rest_flattened_error(transport: str = 'rest'):
             compute.SetQuicOverrideTargetHttpsProxyRequest(),
             project='project_value',
             target_https_proxy='target_https_proxy_value',
-            target_https_proxies_set_quic_override_request_resource=compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override=compute.TargetHttpsProxiesSetQuicOverrideRequest.QuicOverride.DISABLE),
+            target_https_proxies_set_quic_override_request_resource=compute.TargetHttpsProxiesSetQuicOverrideRequest(quic_override='quic_override_value'),
         )
 
 

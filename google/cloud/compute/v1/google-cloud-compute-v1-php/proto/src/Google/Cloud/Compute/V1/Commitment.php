@@ -17,8 +17,9 @@ class Commitment extends \Google\Protobuf\Internal\Message
 {
     /**
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * Generated from protobuf field <code>optional string category = 50511102;</code>
      */
     protected $category = null;
     /**
@@ -65,8 +66,9 @@ class Commitment extends \Google\Protobuf\Internal\Message
     protected $name = null;
     /**
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * Generated from protobuf field <code>optional string plan = 3443497;</code>
      */
     protected $plan = null;
     /**
@@ -101,8 +103,9 @@ class Commitment extends \Google\Protobuf\Internal\Message
     protected $start_timestamp = null;
     /**
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -113,8 +116,9 @@ class Commitment extends \Google\Protobuf\Internal\Message
     protected $status_message = null;
     /**
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
 
@@ -124,8 +128,9 @@ class Commitment extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $category
+     *     @type string $category
      *           The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     *           Check the Category enum for the list of possible values.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
@@ -140,8 +145,9 @@ class Commitment extends \Google\Protobuf\Internal\Message
      *           The license specification required as part of a license commitment.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-     *     @type int $plan
+     *     @type string $plan
      *           The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     *           Check the Plan enum for the list of possible values.
      *     @type string $region
      *           [Output Only] URL of the region where this commitment may be used.
      *     @type \Google\Cloud\Compute\V1\Reservation[]|\Google\Protobuf\Internal\RepeatedField $reservations
@@ -152,12 +158,14 @@ class Commitment extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined URL for the resource.
      *     @type string $start_timestamp
      *           [Output Only] Commitment start time in RFC3339 text format.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     *           Check the Status enum for the list of possible values.
      *     @type string $status_message
      *           [Output Only] An optional, human-readable explanation of the status.
-     *     @type int $type
+     *     @type string $type
      *           The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     *           Check the Type enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -167,13 +175,14 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string category = 50511102;</code>
+     * @return string
      */
     public function getCategory()
     {
-        return isset($this->category) ? $this->category : 0;
+        return isset($this->category) ? $this->category : '';
     }
 
     public function hasCategory()
@@ -188,14 +197,15 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string category = 50511102;</code>
+     * @param string $var
      * @return $this
      */
     public function setCategory($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Commitment\Category::class);
+        GPBUtil::checkString($var, True);
         $this->category = $var;
 
         return $this;
@@ -455,13 +465,14 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string plan = 3443497;</code>
+     * @return string
      */
     public function getPlan()
     {
-        return isset($this->plan) ? $this->plan : 0;
+        return isset($this->plan) ? $this->plan : '';
     }
 
     public function hasPlan()
@@ -476,14 +487,15 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string plan = 3443497;</code>
+     * @param string $var
      * @return $this
      */
     public function setPlan($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Commitment\Plan::class);
+        GPBUtil::checkString($var, True);
         $this->plan = $var;
 
         return $this;
@@ -651,13 +663,14 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -672,14 +685,15 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Commitment\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;
@@ -723,13 +737,14 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -744,14 +759,15 @@ class Commitment extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Commitment\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

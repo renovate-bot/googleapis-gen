@@ -217,6 +217,7 @@ public class ReservationsClientTest {
             .setSelfLink("selfLink1191800166")
             .setSpecificReservation(AllocationSpecificSKUReservation.newBuilder().build())
             .setSpecificReservationRequired(true)
+            .setStatus("status-892481550")
             .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);

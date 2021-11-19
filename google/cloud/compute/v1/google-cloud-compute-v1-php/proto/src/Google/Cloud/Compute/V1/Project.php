@@ -29,8 +29,9 @@ class Project extends \Google\Protobuf\Internal\Message
     protected $creation_timestamp = null;
     /**
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
+     * Generated from protobuf field <code>optional string default_network_tier = 471753361;</code>
      */
     protected $default_network_tier = null;
     /**
@@ -89,8 +90,9 @@ class Project extends \Google\Protobuf\Internal\Message
     protected $usage_export_location = null;
     /**
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
+     * Generated from protobuf field <code>optional string xpn_project_status = 228419265;</code>
      */
     protected $xpn_project_status = null;
 
@@ -104,8 +106,9 @@ class Project extends \Google\Protobuf\Internal\Message
      *           Metadata key/value pairs available to all instances contained in this project. See Custom metadata for more information.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
-     *     @type int $default_network_tier
+     *     @type string $default_network_tier
      *           This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     *           Check the DefaultNetworkTier enum for the list of possible values.
      *     @type string $default_service_account
      *           [Output Only] Default service account used by VMs running in this project.
      *     @type string $description
@@ -124,8 +127,9 @@ class Project extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined URL for the resource.
      *     @type \Google\Cloud\Compute\V1\UsageExportLocation $usage_export_location
      *           The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
-     *     @type int $xpn_project_status
+     *     @type string $xpn_project_status
      *           [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     *           Check the XpnProjectStatus enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -207,13 +211,14 @@ class Project extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string default_network_tier = 471753361;</code>
+     * @return string
      */
     public function getDefaultNetworkTier()
     {
-        return isset($this->default_network_tier) ? $this->default_network_tier : 0;
+        return isset($this->default_network_tier) ? $this->default_network_tier : '';
     }
 
     public function hasDefaultNetworkTier()
@@ -228,14 +233,15 @@ class Project extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
+     * Check the DefaultNetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Project.DefaultNetworkTier default_network_tier = 471753361;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string default_network_tier = 471753361;</code>
+     * @param string $var
      * @return $this
      */
     public function setDefaultNetworkTier($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Project\DefaultNetworkTier::class);
+        GPBUtil::checkString($var, True);
         $this->default_network_tier = $var;
 
         return $this;
@@ -547,13 +553,14 @@ class Project extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string xpn_project_status = 228419265;</code>
+     * @return string
      */
     public function getXpnProjectStatus()
     {
-        return isset($this->xpn_project_status) ? $this->xpn_project_status : 0;
+        return isset($this->xpn_project_status) ? $this->xpn_project_status : '';
     }
 
     public function hasXpnProjectStatus()
@@ -568,14 +575,15 @@ class Project extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
+     * Check the XpnProjectStatus enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Project.XpnProjectStatus xpn_project_status = 228419265;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string xpn_project_status = 228419265;</code>
+     * @param string $var
      * @return $this
      */
     public function setXpnProjectStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Project\XpnProjectStatus::class);
+        GPBUtil::checkString($var, True);
         $this->xpn_project_status = $var;
 
         return $this;

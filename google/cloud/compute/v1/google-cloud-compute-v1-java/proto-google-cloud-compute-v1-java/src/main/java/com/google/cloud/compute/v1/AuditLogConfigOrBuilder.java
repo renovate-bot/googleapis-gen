@@ -70,28 +70,32 @@ public interface AuditLogConfigOrBuilder extends
   /**
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>optional string log_type = 403115861;</code>
    * @return Whether the logType field is set.
    */
   boolean hasLogType();
   /**
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-   * @return The enum numeric value on the wire for logType.
+   * <code>optional string log_type = 403115861;</code>
+   * @return The logType.
    */
-  int getLogTypeValue();
+  java.lang.String getLogType();
   /**
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-   * @return The logType.
+   * <code>optional string log_type = 403115861;</code>
+   * @return The bytes for logType.
    */
-  com.google.cloud.compute.v1.AuditLogConfig.LogType getLogType();
+  com.google.protobuf.ByteString
+      getLogTypeBytes();
 }

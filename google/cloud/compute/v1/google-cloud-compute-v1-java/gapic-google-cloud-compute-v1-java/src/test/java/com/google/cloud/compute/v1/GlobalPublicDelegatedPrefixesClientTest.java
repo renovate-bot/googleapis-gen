@@ -163,6 +163,7 @@ public class GlobalPublicDelegatedPrefixesClientTest {
                 new ArrayList<PublicDelegatedPrefixPublicDelegatedSubPrefix>())
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
             .build();
     mockService.addResponse(expectedResponse);
 

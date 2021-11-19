@@ -16,8 +16,9 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
 {
     /**
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
+     * Generated from protobuf field <code>optional string action = 187661878;</code>
      */
     protected $action = null;
     /**
@@ -39,8 +40,9 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $action
+     *     @type string $action
      *           [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     *           Check the Action enum for the list of possible values.
      *     @type string $instance
      *           [Output Only] The URL of the instance. The URL can be set even if the instance has not yet been created.
      *     @type \Google\Cloud\Compute\V1\ManagedInstanceVersion $version
@@ -54,13 +56,14 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
 
     /**
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string action = 187661878;</code>
+     * @return string
      */
     public function getAction()
     {
-        return isset($this->action) ? $this->action : 0;
+        return isset($this->action) ? $this->action : '';
     }
 
     public function hasAction()
@@ -75,14 +78,15 @@ class InstanceManagedByIgmErrorInstanceActionDetails extends \Google\Protobuf\In
 
     /**
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string action = 187661878;</code>
+     * @param string $var
      * @return $this
      */
     public function setAction($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\InstanceManagedByIgmErrorInstanceActionDetails\Action::class);
+        GPBUtil::checkString($var, True);
         $this->action = $var;
 
         return $this;

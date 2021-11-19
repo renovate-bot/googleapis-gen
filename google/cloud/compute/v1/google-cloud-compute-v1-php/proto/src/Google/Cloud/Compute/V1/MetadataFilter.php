@@ -22,9 +22,10 @@ class MetadataFilter extends \Google\Protobuf\Internal\Message
      */
     private $filter_labels;
     /**
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
+     * Generated from protobuf field <code>optional string filter_match_criteria = 239970368;</code>
      */
     protected $filter_match_criteria = null;
 
@@ -36,8 +37,9 @@ class MetadataFilter extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Compute\V1\MetadataFilterLabelMatch[]|\Google\Protobuf\Internal\RepeatedField $filter_labels
      *           The list of label value pairs that must match labels in the provided metadata based on filterMatchCriteria This list must not be empty and can have at the most 64 entries.
-     *     @type int $filter_match_criteria
-     *           Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     *     @type string $filter_match_criteria
+     *           Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     *           Check the FilterMatchCriteria enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -72,14 +74,15 @@ class MetadataFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string filter_match_criteria = 239970368;</code>
+     * @return string
      */
     public function getFilterMatchCriteria()
     {
-        return isset($this->filter_match_criteria) ? $this->filter_match_criteria : 0;
+        return isset($this->filter_match_criteria) ? $this->filter_match_criteria : '';
     }
 
     public function hasFilterMatchCriteria()
@@ -93,15 +96,16 @@ class MetadataFilter extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string filter_match_criteria = 239970368;</code>
+     * @param string $var
      * @return $this
      */
     public function setFilterMatchCriteria($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\MetadataFilter\FilterMatchCriteria::class);
+        GPBUtil::checkString($var, True);
         $this->filter_match_criteria = $var;
 
         return $this;

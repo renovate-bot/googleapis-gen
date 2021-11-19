@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   private ExchangedPeeringRoute() {
     destRange_ = "";
     nextHopRegion_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -55,10 +55,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 28604880: {
-            int rawValue = input.readEnum();
+          case 28604882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000010;
-            type_ = rawValue;
+            type_ = s;
             break;
           }
           case 916019232: {
@@ -449,41 +449,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
    * The type of the peering route.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
-  @java.lang.Override public boolean hasType() {
+  @java.lang.Override
+  public boolean hasType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
    * The type of the peering route.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  @java.lang.Override public int getTypeValue() {
-    return type_;
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The type of the peering route.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ExchangedPeeringRoute.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ExchangedPeeringRoute.Type result = com.google.cloud.compute.v1.ExchangedPeeringRoute.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.ExchangedPeeringRoute.Type.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -501,7 +524,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeBool(114502404, imported_);
@@ -525,8 +548,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -579,7 +601,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -611,7 +634,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -757,7 +780,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       priority_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -873,7 +896,9 @@ private static final long serialVersionUID = 0L;
         setPriority(other.getPriority());
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00000010;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1229,40 +1254,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      * <pre>
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
+    public boolean hasType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>optional string type = 3575610;</code>
+     * @return The type.
      */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-     * @param value The enum numeric value on the wire for type to set.
+     * <code>optional string type = 3575610;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of the peering route.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       type_ = value;
       onChanged();
       return this;
@@ -1270,46 +1333,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ExchangedPeeringRoute.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ExchangedPeeringRoute.Type result = com.google.cloud.compute.v1.ExchangedPeeringRoute.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.ExchangedPeeringRoute.Type.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The type of the peering route.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-     * @param value The type to set.
+     * <code>optional string type = 3575610;</code>
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.ExchangedPeeringRoute.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      type_ = 0;
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      type_ = value;
       onChanged();
       return this;
     }

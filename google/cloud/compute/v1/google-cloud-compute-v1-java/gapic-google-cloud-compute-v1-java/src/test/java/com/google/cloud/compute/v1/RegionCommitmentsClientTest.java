@@ -137,6 +137,7 @@ public class RegionCommitmentsClientTest {
   public void getTest() throws Exception {
     Commitment expectedResponse =
         Commitment.newBuilder()
+            .setCategory("category50511102")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
             .setEndTimestamp("endTimestamp-356088197")
@@ -144,12 +145,15 @@ public class RegionCommitmentsClientTest {
             .setKind("kind3292052")
             .setLicenseResource(LicenseResourceCommitment.newBuilder().build())
             .setName("name3373707")
+            .setPlan("plan3443497")
             .setRegion("region-934795532")
             .addAllReservations(new ArrayList<Reservation>())
             .addAllResources(new ArrayList<ResourceCommitment>())
             .setSelfLink("selfLink1191800166")
             .setStartTimestamp("startTimestamp-299216172")
+            .setStatus("status-892481550")
             .setStatusMessage("statusMessage-958704715")
+            .setType("type3575610")
             .build();
     mockService.addResponse(expectedResponse);
 

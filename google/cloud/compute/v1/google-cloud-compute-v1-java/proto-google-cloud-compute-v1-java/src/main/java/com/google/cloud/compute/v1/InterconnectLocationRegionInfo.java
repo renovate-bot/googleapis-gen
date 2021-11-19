@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InterconnectLocationRegionInfo() {
-    locationPresence_ = 0;
+    locationPresence_ = "";
     region_ = "";
   }
 
@@ -55,10 +55,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 812143144: {
-            int rawValue = input.readEnum();
+          case 812143146: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            locationPresence_ = rawValue;
+            locationPresence_ = s;
             break;
           }
           case 1111570338: {
@@ -312,41 +312,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOCATION_PRESENCE_FIELD_NUMBER = 101517893;
-  private int locationPresence_;
+  private volatile java.lang.Object locationPresence_;
   /**
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
+   * <code>optional string location_presence = 101517893;</code>
    * @return Whether the locationPresence field is set.
    */
-  @java.lang.Override public boolean hasLocationPresence() {
+  @java.lang.Override
+  public boolean hasLocationPresence() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-   * @return The enum numeric value on the wire for locationPresence.
+   * <code>optional string location_presence = 101517893;</code>
+   * @return The locationPresence.
    */
-  @java.lang.Override public int getLocationPresenceValue() {
-    return locationPresence_;
+  @java.lang.Override
+  public java.lang.String getLocationPresence() {
+    java.lang.Object ref = locationPresence_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      locationPresence_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-   * @return The locationPresence.
+   * <code>optional string location_presence = 101517893;</code>
+   * @return The bytes for locationPresence.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence getLocationPresence() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence result = com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence.valueOf(locationPresence_);
-    return result == null ? com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLocationPresenceBytes() {
+    java.lang.Object ref = locationPresence_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      locationPresence_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -422,7 +445,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(101517893, locationPresence_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 101517893, locationPresence_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -440,8 +463,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(101517893, locationPresence_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101517893, locationPresence_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -472,7 +494,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLocationPresence() != other.hasLocationPresence()) return false;
     if (hasLocationPresence()) {
-      if (locationPresence_ != other.locationPresence_) return false;
+      if (!getLocationPresence()
+          .equals(other.getLocationPresence())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -497,7 +520,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLocationPresence()) {
       hash = (37 * hash) + LOCATION_PRESENCE_FIELD_NUMBER;
-      hash = (53 * hash) + locationPresence_;
+      hash = (53 * hash) + getLocationPresence().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -642,7 +665,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       expectedRttMs_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
-      locationPresence_ = 0;
+      locationPresence_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -739,7 +762,9 @@ private static final long serialVersionUID = 0L;
         setExpectedRttMs(other.getExpectedRttMs());
       }
       if (other.hasLocationPresence()) {
-        setLocationPresence(other.getLocationPresence());
+        bitField0_ |= 0x00000002;
+        locationPresence_ = other.locationPresence_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00000004;
@@ -831,40 +856,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int locationPresence_ = 0;
+    private java.lang.Object locationPresence_ = "";
     /**
      * <pre>
      * Identifies the network presence of this location.
+     * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
+     * <code>optional string location_presence = 101517893;</code>
      * @return Whether the locationPresence field is set.
      */
-    @java.lang.Override public boolean hasLocationPresence() {
+    public boolean hasLocationPresence() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * Identifies the network presence of this location.
+     * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-     * @return The enum numeric value on the wire for locationPresence.
+     * <code>optional string location_presence = 101517893;</code>
+     * @return The locationPresence.
      */
-    @java.lang.Override public int getLocationPresenceValue() {
-      return locationPresence_;
+    public java.lang.String getLocationPresence() {
+      java.lang.Object ref = locationPresence_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        locationPresence_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Identifies the network presence of this location.
+     * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-     * @param value The enum numeric value on the wire for locationPresence to set.
+     * <code>optional string location_presence = 101517893;</code>
+     * @return The bytes for locationPresence.
+     */
+    public com.google.protobuf.ByteString
+        getLocationPresenceBytes() {
+      java.lang.Object ref = locationPresence_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        locationPresence_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Identifies the network presence of this location.
+     * Check the LocationPresence enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string location_presence = 101517893;</code>
+     * @param value The locationPresence to set.
      * @return This builder for chaining.
      */
-    public Builder setLocationPresenceValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setLocationPresence(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       locationPresence_ = value;
       onChanged();
       return this;
@@ -872,46 +935,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Identifies the network presence of this location.
+     * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-     * @return The locationPresence.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence getLocationPresence() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence result = com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence.valueOf(locationPresence_);
-      return result == null ? com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Identifies the network presence of this location.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-     * @param value The locationPresence to set.
+     * <code>optional string location_presence = 101517893;</code>
      * @return This builder for chaining.
      */
-    public Builder setLocationPresence(com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      locationPresence_ = value.getNumber();
+    public Builder clearLocationPresence() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      locationPresence_ = getDefaultInstance().getLocationPresence();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Identifies the network presence of this location.
+     * Check the LocationPresence enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
+     * <code>optional string location_presence = 101517893;</code>
+     * @param value The bytes for locationPresence to set.
      * @return This builder for chaining.
      */
-    public Builder clearLocationPresence() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      locationPresence_ = 0;
+    public Builder setLocationPresenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      locationPresence_ = value;
       onChanged();
       return this;
     }

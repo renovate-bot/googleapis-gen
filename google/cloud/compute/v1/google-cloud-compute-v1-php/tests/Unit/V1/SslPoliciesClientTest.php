@@ -206,7 +206,9 @@ class SslPoliciesClientTest extends GeneratedTest
         $fingerprint = 'fingerprint-1375934236';
         $id = 3355;
         $kind = 'kind3292052';
+        $minTlsVersion = 'minTlsVersion8155943';
         $name = 'name3373707';
+        $profile = 'profile-309425751';
         $selfLink = 'selfLink-1691268851';
         $expectedResponse = new SslPolicy();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -214,7 +216,9 @@ class SslPoliciesClientTest extends GeneratedTest
         $expectedResponse->setFingerprint($fingerprint);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
+        $expectedResponse->setMinTlsVersion($minTlsVersion);
         $expectedResponse->setName($name);
+        $expectedResponse->setProfile($profile);
         $expectedResponse->setSelfLink($selfLink);
         $transport->addResponse($expectedResponse);
         // Mock request

@@ -208,6 +208,7 @@ class RegionHealthCheckServicesClientTest extends GeneratedTest
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
         $fingerprint = 'fingerprint-1375934236';
+        $healthStatusAggregationPolicy = 'healthStatusAggregationPolicy-820578695';
         $id = 3355;
         $kind = 'kind3292052';
         $name = 'name3373707';
@@ -217,6 +218,7 @@ class RegionHealthCheckServicesClientTest extends GeneratedTest
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
         $expectedResponse->setFingerprint($fingerprint);
+        $expectedResponse->setHealthStatusAggregationPolicy($healthStatusAggregationPolicy);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);

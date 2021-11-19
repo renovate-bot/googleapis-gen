@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ReservationAffinity() {
-    consumeReservationType_ = 0;
+    consumeReservationType_ = "";
     key_ = "";
     values_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -71,10 +71,10 @@ private static final long serialVersionUID = 0L;
             values_.add(s);
             break;
           }
-          case -1889071744: {
-            int rawValue = input.readEnum();
+          case -1889071742: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            consumeReservationType_ = rawValue;
+            consumeReservationType_ = s;
             break;
           }
           default: {
@@ -285,41 +285,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int CONSUME_RESERVATION_TYPE_FIELD_NUMBER = 300736944;
-  private int consumeReservationType_;
+  private volatile java.lang.Object consumeReservationType_;
   /**
    * <pre>
    * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+   * <code>optional string consume_reservation_type = 300736944;</code>
    * @return Whether the consumeReservationType field is set.
    */
-  @java.lang.Override public boolean hasConsumeReservationType() {
+  @java.lang.Override
+  public boolean hasConsumeReservationType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-   * @return The enum numeric value on the wire for consumeReservationType.
+   * <code>optional string consume_reservation_type = 300736944;</code>
+   * @return The consumeReservationType.
    */
-  @java.lang.Override public int getConsumeReservationTypeValue() {
-    return consumeReservationType_;
+  @java.lang.Override
+  public java.lang.String getConsumeReservationType() {
+    java.lang.Object ref = consumeReservationType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      consumeReservationType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-   * @return The consumeReservationType.
+   * <code>optional string consume_reservation_type = 300736944;</code>
+   * @return The bytes for consumeReservationType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType getConsumeReservationType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType result = com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType.valueOf(consumeReservationType_);
-    return result == null ? com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConsumeReservationTypeBytes() {
+    java.lang.Object ref = consumeReservationType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      consumeReservationType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int KEY_FIELD_NUMBER = 106079;
@@ -452,7 +475,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 249928994, values_.getRaw(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(300736944, consumeReservationType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 300736944, consumeReservationType_);
     }
     unknownFields.writeTo(output);
   }
@@ -475,8 +498,7 @@ private static final long serialVersionUID = 0L;
       size += 5 * getValuesList().size();
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(300736944, consumeReservationType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(300736944, consumeReservationType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -495,7 +517,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasConsumeReservationType() != other.hasConsumeReservationType()) return false;
     if (hasConsumeReservationType()) {
-      if (consumeReservationType_ != other.consumeReservationType_) return false;
+      if (!getConsumeReservationType()
+          .equals(other.getConsumeReservationType())) return false;
     }
     if (hasKey() != other.hasKey()) return false;
     if (hasKey()) {
@@ -517,7 +540,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasConsumeReservationType()) {
       hash = (37 * hash) + CONSUME_RESERVATION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + consumeReservationType_;
+      hash = (53 * hash) + getConsumeReservationType().hashCode();
     }
     if (hasKey()) {
       hash = (37 * hash) + KEY_FIELD_NUMBER;
@@ -664,7 +687,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      consumeReservationType_ = 0;
+      consumeReservationType_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       key_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -761,7 +784,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.ReservationAffinity other) {
       if (other == com.google.cloud.compute.v1.ReservationAffinity.getDefaultInstance()) return this;
       if (other.hasConsumeReservationType()) {
-        setConsumeReservationType(other.getConsumeReservationType());
+        bitField0_ |= 0x00000001;
+        consumeReservationType_ = other.consumeReservationType_;
+        onChanged();
       }
       if (other.hasKey()) {
         bitField0_ |= 0x00000002;
@@ -808,40 +833,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int consumeReservationType_ = 0;
+    private java.lang.Object consumeReservationType_ = "";
     /**
      * <pre>
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+     * <code>optional string consume_reservation_type = 300736944;</code>
      * @return Whether the consumeReservationType field is set.
      */
-    @java.lang.Override public boolean hasConsumeReservationType() {
+    public boolean hasConsumeReservationType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-     * @return The enum numeric value on the wire for consumeReservationType.
+     * <code>optional string consume_reservation_type = 300736944;</code>
+     * @return The consumeReservationType.
      */
-    @java.lang.Override public int getConsumeReservationTypeValue() {
-      return consumeReservationType_;
+    public java.lang.String getConsumeReservationType() {
+      java.lang.Object ref = consumeReservationType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        consumeReservationType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-     * @param value The enum numeric value on the wire for consumeReservationType to set.
+     * <code>optional string consume_reservation_type = 300736944;</code>
+     * @return The bytes for consumeReservationType.
+     */
+    public com.google.protobuf.ByteString
+        getConsumeReservationTypeBytes() {
+      java.lang.Object ref = consumeReservationType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        consumeReservationType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Check the ConsumeReservationType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string consume_reservation_type = 300736944;</code>
+     * @param value The consumeReservationType to set.
      * @return This builder for chaining.
      */
-    public Builder setConsumeReservationTypeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setConsumeReservationType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       consumeReservationType_ = value;
       onChanged();
       return this;
@@ -849,46 +912,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-     * @return The consumeReservationType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType getConsumeReservationType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType result = com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType.valueOf(consumeReservationType_);
-      return result == null ? com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-     * @param value The consumeReservationType to set.
+     * <code>optional string consume_reservation_type = 300736944;</code>
      * @return This builder for chaining.
      */
-    public Builder setConsumeReservationType(com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      consumeReservationType_ = value.getNumber();
+    public Builder clearConsumeReservationType() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      consumeReservationType_ = getDefaultInstance().getConsumeReservationType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+     * Check the ConsumeReservationType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+     * <code>optional string consume_reservation_type = 300736944;</code>
+     * @param value The bytes for consumeReservationType to set.
      * @return This builder for chaining.
      */
-    public Builder clearConsumeReservationType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      consumeReservationType_ = 0;
+    public Builder setConsumeReservationTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      consumeReservationType_ = value;
       onChanged();
       return this;
     }

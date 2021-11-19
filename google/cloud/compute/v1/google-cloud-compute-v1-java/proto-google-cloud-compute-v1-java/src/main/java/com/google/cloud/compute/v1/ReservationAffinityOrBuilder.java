@@ -10,30 +10,34 @@ public interface ReservationAffinityOrBuilder extends
   /**
    * <pre>
    * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
+   * <code>optional string consume_reservation_type = 300736944;</code>
    * @return Whether the consumeReservationType field is set.
    */
   boolean hasConsumeReservationType();
   /**
    * <pre>
    * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-   * @return The enum numeric value on the wire for consumeReservationType.
+   * <code>optional string consume_reservation_type = 300736944;</code>
+   * @return The consumeReservationType.
    */
-  int getConsumeReservationTypeValue();
+  java.lang.String getConsumeReservationType();
   /**
    * <pre>
    * Specifies the type of reservation from which this instance can consume resources: ANY_RESERVATION (default), SPECIFIC_RESERVATION, or NO_RESERVATION. See Consuming reserved instances for examples.
+   * Check the ConsumeReservationType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType consume_reservation_type = 300736944;</code>
-   * @return The consumeReservationType.
+   * <code>optional string consume_reservation_type = 300736944;</code>
+   * @return The bytes for consumeReservationType.
    */
-  com.google.cloud.compute.v1.ReservationAffinity.ConsumeReservationType getConsumeReservationType();
+  com.google.protobuf.ByteString
+      getConsumeReservationTypeBytes();
 
   /**
    * <pre>

@@ -79,8 +79,9 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
     protected $snapshot_schedule_policy = null;
     /**
      * [Output Only] The status of resource policy creation.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ResourcePolicy.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
 
@@ -110,8 +111,9 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined fully-qualified URL for this resource.
      *     @type \Google\Cloud\Compute\V1\ResourcePolicySnapshotSchedulePolicy $snapshot_schedule_policy
      *           Resource policy for persistent disks for creating snapshots.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of resource policy creation.
+     *           Check the Status enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -509,13 +511,14 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of resource policy creation.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ResourcePolicy.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -530,14 +533,15 @@ class ResourcePolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of resource policy creation.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ResourcePolicy.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ResourcePolicy\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

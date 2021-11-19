@@ -705,7 +705,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetSslCertificat
               region='region_value',
               self_link='self_link_value',
               subject_alternative_names=['subject_alternative_names_value'],
-              type_=compute.SslCertificate.Type.MANAGED,
+              type_='type__value',
         )
 
         # Wrap the value into a proper Response obj
@@ -729,7 +729,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetSslCertificat
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
     assert response.subject_alternative_names == ['subject_alternative_names_value']
-    assert response.type_ == compute.SslCertificate.Type.MANAGED
+    assert response.type_ == 'type__value'
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetSslCertificateRequest):

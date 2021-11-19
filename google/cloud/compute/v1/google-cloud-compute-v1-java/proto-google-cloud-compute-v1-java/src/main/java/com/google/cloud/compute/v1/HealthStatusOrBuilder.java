@@ -122,30 +122,34 @@ public interface HealthStatusOrBuilder extends
   /**
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    * @return Whether the healthState field is set.
    */
   boolean hasHealthState();
   /**
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-   * @return The enum numeric value on the wire for healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The healthState.
    */
-  int getHealthStateValue();
+  java.lang.String getHealthState();
   /**
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-   * @return The healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The bytes for healthState.
    */
-  com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState();
+  com.google.protobuf.ByteString
+      getHealthStateBytes();
 
   /**
    * <pre>
@@ -242,18 +246,34 @@ public interface HealthStatusOrBuilder extends
       getWeightBytes();
 
   /**
-   * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   * <pre>
+   * 
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    * @return Whether the weightError field is set.
    */
   boolean hasWeightError();
   /**
-   * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-   * @return The enum numeric value on the wire for weightError.
-   */
-  int getWeightErrorValue();
-  /**
-   * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   * <pre>
+   * 
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    * @return The weightError.
    */
-  com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError();
+  java.lang.String getWeightError();
+  /**
+   * <pre>
+   * 
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
+   * @return The bytes for weightError.
+   */
+  com.google.protobuf.ByteString
+      getWeightErrorBytes();
 }

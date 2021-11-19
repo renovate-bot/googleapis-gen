@@ -185,14 +185,16 @@ class Image extends \Google\Protobuf\Internal\Message
     protected $source_snapshot_id = null;
     /**
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+     * Generated from protobuf field <code>optional string source_type = 452245726;</code>
      */
     protected $source_type = null;
     /**
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -264,10 +266,12 @@ class Image extends \Google\Protobuf\Internal\Message
      *           The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
      *     @type string $source_snapshot_id
      *           [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
-     *     @type int $source_type
+     *     @type string $source_type
      *           The type of the image used to create this disk. The default and only value is RAW
-     *     @type int $status
+     *           Check the SourceType enum for the list of possible values.
+     *     @type string $status
      *           [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     *           Check the Status enum for the list of possible values.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $storage_locations
      *           Cloud Storage bucket storage location of the image (regional or multi-regional).
      * }
@@ -1247,13 +1251,14 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string source_type = 452245726;</code>
+     * @return string
      */
     public function getSourceType()
     {
-        return isset($this->source_type) ? $this->source_type : 0;
+        return isset($this->source_type) ? $this->source_type : '';
     }
 
     public function hasSourceType()
@@ -1268,14 +1273,15 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of the image used to create this disk. The default and only value is RAW
+     * Check the SourceType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string source_type = 452245726;</code>
+     * @param string $var
      * @return $this
      */
     public function setSourceType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Image\SourceType::class);
+        GPBUtil::checkString($var, True);
         $this->source_type = $var;
 
         return $this;
@@ -1283,13 +1289,14 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -1304,14 +1311,15 @@ class Image extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Image\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

@@ -34,9 +34,10 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
      */
     protected $device_name = null;
     /**
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+     * Generated from protobuf field <code>optional string instantiate_from = 393383903;</code>
      */
     protected $instantiate_from = null;
 
@@ -52,8 +53,9 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
      *           The custom source image to be used to restore this disk when instantiating this instance template.
      *     @type string $device_name
      *           Specifies the device name of the disk to which the configurations apply to.
-     *     @type int $instantiate_from
-     *           Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     *     @type string $instantiate_from
+     *           Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     *           Check the InstantiateFrom enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -170,14 +172,15 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string instantiate_from = 393383903;</code>
+     * @return string
      */
     public function getInstantiateFrom()
     {
-        return isset($this->instantiate_from) ? $this->instantiate_from : 0;
+        return isset($this->instantiate_from) ? $this->instantiate_from : '';
     }
 
     public function hasInstantiateFrom()
@@ -191,15 +194,16 @@ class DiskInstantiationConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string instantiate_from = 393383903;</code>
+     * @param string $var
      * @return $this
      */
     public function setInstantiateFrom($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\DiskInstantiationConfig\InstantiateFrom::class);
+        GPBUtil::checkString($var, True);
         $this->instantiate_from = $var;
 
         return $this;

@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private AuditLogConfig() {
     exemptedMembers_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    logType_ = 0;
+    logType_ = "";
   }
 
   @java.lang.Override
@@ -69,10 +69,10 @@ private static final long serialVersionUID = 0L;
             exemptedMembers_.add(s);
             break;
           }
-          case -1070040408: {
-            int rawValue = input.readEnum();
+          case -1070040406: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            logType_ = rawValue;
+            logType_ = s;
             break;
           }
           default: {
@@ -369,41 +369,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOG_TYPE_FIELD_NUMBER = 403115861;
-  private int logType_;
+  private volatile java.lang.Object logType_;
   /**
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+   * <code>optional string log_type = 403115861;</code>
    * @return Whether the logType field is set.
    */
-  @java.lang.Override public boolean hasLogType() {
+  @java.lang.Override
+  public boolean hasLogType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-   * @return The enum numeric value on the wire for logType.
+   * <code>optional string log_type = 403115861;</code>
+   * @return The logType.
    */
-  @java.lang.Override public int getLogTypeValue() {
-    return logType_;
+  @java.lang.Override
+  public java.lang.String getLogType() {
+    java.lang.Object ref = logType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The log type that this config enables.
+   * Check the LogType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-   * @return The logType.
+   * <code>optional string log_type = 403115861;</code>
+   * @return The bytes for logType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AuditLogConfig.LogType getLogType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AuditLogConfig.LogType result = com.google.cloud.compute.v1.AuditLogConfig.LogType.valueOf(logType_);
-    return result == null ? com.google.cloud.compute.v1.AuditLogConfig.LogType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogTypeBytes() {
+    java.lang.Object ref = logType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -427,7 +450,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232615576, exemptedMembers_.getRaw(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(403115861, logType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 403115861, logType_);
     }
     unknownFields.writeTo(output);
   }
@@ -451,8 +474,7 @@ private static final long serialVersionUID = 0L;
       size += 5 * getExemptedMembersList().size();
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(403115861, logType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(403115861, logType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -478,7 +500,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLogType() != other.hasLogType()) return false;
     if (hasLogType()) {
-      if (logType_ != other.logType_) return false;
+      if (!getLogType()
+          .equals(other.getLogType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -502,7 +525,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLogType()) {
       hash = (37 * hash) + LOG_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + logType_;
+      hash = (53 * hash) + getLogType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -645,7 +668,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000001);
       ignoreChildExemptions_ = false;
       bitField0_ = (bitField0_ & ~0x00000002);
-      logType_ = 0;
+      logType_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -751,7 +774,9 @@ private static final long serialVersionUID = 0L;
         setIgnoreChildExemptions(other.getIgnoreChildExemptions());
       }
       if (other.hasLogType()) {
-        setLogType(other.getLogType());
+        bitField0_ |= 0x00000004;
+        logType_ = other.logType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -984,40 +1009,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int logType_ = 0;
+    private java.lang.Object logType_ = "";
     /**
      * <pre>
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>optional string log_type = 403115861;</code>
      * @return Whether the logType field is set.
      */
-    @java.lang.Override public boolean hasLogType() {
+    public boolean hasLogType() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-     * @return The enum numeric value on the wire for logType.
+     * <code>optional string log_type = 403115861;</code>
+     * @return The logType.
      */
-    @java.lang.Override public int getLogTypeValue() {
-      return logType_;
+    public java.lang.String getLogType() {
+      java.lang.Object ref = logType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-     * @param value The enum numeric value on the wire for logType to set.
+     * <code>optional string log_type = 403115861;</code>
+     * @return The bytes for logType.
+     */
+    public com.google.protobuf.ByteString
+        getLogTypeBytes() {
+      java.lang.Object ref = logType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_type = 403115861;</code>
+     * @param value The logType to set.
      * @return This builder for chaining.
      */
-    public Builder setLogTypeValue(int value) {
-      bitField0_ |= 0x00000004;
+    public Builder setLogType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
       logType_ = value;
       onChanged();
       return this;
@@ -1025,46 +1088,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-     * @return The logType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AuditLogConfig.LogType getLogType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AuditLogConfig.LogType result = com.google.cloud.compute.v1.AuditLogConfig.LogType.valueOf(logType_);
-      return result == null ? com.google.cloud.compute.v1.AuditLogConfig.LogType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The log type that this config enables.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-     * @param value The logType to set.
+     * <code>optional string log_type = 403115861;</code>
      * @return This builder for chaining.
      */
-    public Builder setLogType(com.google.cloud.compute.v1.AuditLogConfig.LogType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      logType_ = value.getNumber();
+    public Builder clearLogType() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      logType_ = getDefaultInstance().getLogType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * <code>optional string log_type = 403115861;</code>
+     * @param value The bytes for logType to set.
      * @return This builder for chaining.
      */
-    public Builder clearLogType() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      logType_ = 0;
+    public Builder setLogTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      logType_ = value;
       onChanged();
       return this;
     }

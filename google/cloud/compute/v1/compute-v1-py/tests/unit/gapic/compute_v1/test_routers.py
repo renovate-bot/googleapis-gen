@@ -1100,7 +1100,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertRouterR
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1173,7 +1173,7 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1216,7 +1216,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         mock_args = dict(
             project='project_value',
             region='region_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
         mock_args.update(sample_request)
         client.insert(**mock_args)
@@ -1241,7 +1241,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
             compute.InsertRouterRequest(),
             project='project_value',
             region='region_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
 
 
@@ -1427,7 +1427,7 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchRouterReq
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "router": "sample3"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1500,7 +1500,7 @@ def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.Pa
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "router": "sample3"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1544,7 +1544,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             router='router_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
         mock_args.update(sample_request)
         client.patch(**mock_args)
@@ -1570,7 +1570,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             router='router_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
 
 
@@ -1582,7 +1582,7 @@ def test_preview_rest(transport: str = 'rest', request_type=compute.PreviewRoute
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "router": "sample3"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1611,7 +1611,7 @@ def test_preview_rest_bad_request(transport: str = 'rest', request_type=compute.
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "router": "sample3"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1655,7 +1655,7 @@ def test_preview_rest_flattened(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             router='router_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
         mock_args.update(sample_request)
         client.preview(**mock_args)
@@ -1681,7 +1681,7 @@ def test_preview_rest_flattened_error(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             router='router_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
 
 
@@ -1693,7 +1693,7 @@ def test_update_rest(transport: str = 'rest', request_type=compute.UpdateRouterR
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "router": "sample3"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1766,7 +1766,7 @@ def test_update_rest_bad_request(transport: str = 'rest', request_type=compute.U
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "router": "sample3"}
-    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM))
+    request_init["router_resource"] = compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value'))
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1810,7 +1810,7 @@ def test_update_rest_flattened(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             router='router_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
         mock_args.update(sample_request)
         client.update(**mock_args)
@@ -1836,7 +1836,7 @@ def test_update_rest_flattened_error(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             router='router_value',
-            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode=compute.RouterBgp.AdvertiseMode.CUSTOM)),
+            router_resource=compute.Router(bgp=compute.RouterBgp(advertise_mode='advertise_mode_value')),
         )
 
 

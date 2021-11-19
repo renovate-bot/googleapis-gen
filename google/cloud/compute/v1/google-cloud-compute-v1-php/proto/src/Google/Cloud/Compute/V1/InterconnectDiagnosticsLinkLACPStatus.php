@@ -27,9 +27,10 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
      */
     protected $neighbor_system_id = null;
     /**
-     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty. 
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;</code>
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
      */
     protected $state = null;
 
@@ -43,8 +44,9 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
      *           System ID of the port on Google's side of the LACP exchange.
      *     @type string $neighbor_system_id
      *           System ID of the port on the neighbor's side of the LACP exchange.
-     *     @type int $state
-     *           The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty. 
+     *     @type string $state
+     *           The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     *           Check the State enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -125,14 +127,15 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty. 
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @return string
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : 0;
+        return isset($this->state) ? $this->state : '';
     }
 
     public function hasState()
@@ -146,15 +149,16 @@ class InterconnectDiagnosticsLinkLACPStatus extends \Google\Protobuf\Internal\Me
     }
 
     /**
-     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty. 
+     * The state of a LACP link, which can take one of the following values: - ACTIVE: The link is configured and active within the bundle. - DETACHED: The link is not configured within the bundle. This means that the rest of the object should be empty.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectDiagnosticsLinkLACPStatus.State state = 109757585;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @param string $var
      * @return $this
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\InterconnectDiagnosticsLinkLACPStatus\State::class);
+        GPBUtil::checkString($var, True);
         $this->state = $var;
 
         return $this;

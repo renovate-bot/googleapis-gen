@@ -59,8 +59,9 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * [Output Only] Current state of this License Code.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LicenseCode.State state = 109757585;</code>
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
      */
     protected $state = null;
     /**
@@ -90,8 +91,9 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
      *           [Output Only] Name of the resource. The name is 1-20 characters long and must be a valid 64 bit integer.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $state
+     *     @type string $state
      *           [Output Only] Current state of this License Code.
+     *           Check the State enum for the list of possible values.
      *     @type bool $transferable
      *           [Output Only] If true, the license will remain attached when creating images or snapshots from disks. Otherwise, the license is not transferred.
      * }
@@ -345,13 +347,14 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Current state of this License Code.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LicenseCode.State state = 109757585;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @return string
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : 0;
+        return isset($this->state) ? $this->state : '';
     }
 
     public function hasState()
@@ -366,14 +369,15 @@ class LicenseCode extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Current state of this License Code.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LicenseCode.State state = 109757585;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @param string $var
      * @return $this
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\LicenseCode\State::class);
+        GPBUtil::checkString($var, True);
         $this->state = $var;
 
         return $this;

@@ -164,30 +164,34 @@ public interface TargetTcpProxyOrBuilder extends
   /**
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetTcpProxy.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
   /**
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetTcpProxy.ProxyHeader proxy_header = 160374142;</code>
-   * @return The enum numeric value on the wire for proxyHeader.
+   * <code>optional string proxy_header = 160374142;</code>
+   * @return The proxyHeader.
    */
-  int getProxyHeaderValue();
+  java.lang.String getProxyHeader();
   /**
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetTcpProxy.ProxyHeader proxy_header = 160374142;</code>
-   * @return The proxyHeader.
+   * <code>optional string proxy_header = 160374142;</code>
+   * @return The bytes for proxyHeader.
    */
-  com.google.cloud.compute.v1.TargetTcpProxy.ProxyHeader getProxyHeader();
+  com.google.protobuf.ByteString
+      getProxyHeaderBytes();
 
   /**
    * <pre>

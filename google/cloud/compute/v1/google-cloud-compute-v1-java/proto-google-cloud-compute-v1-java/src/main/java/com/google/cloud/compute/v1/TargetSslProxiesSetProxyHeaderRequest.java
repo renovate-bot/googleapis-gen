@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TargetSslProxiesSetProxyHeaderRequest() {
-    proxyHeader_ = 0;
+    proxyHeader_ = "";
   }
 
   @java.lang.Override
@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 1282993136: {
-            int rawValue = input.readEnum();
+          case 1282993138: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            proxyHeader_ = rawValue;
+            proxyHeader_ = s;
             break;
           }
           default: {
@@ -222,41 +222,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int PROXY_HEADER_FIELD_NUMBER = 160374142;
-  private int proxyHeader_;
+  private volatile java.lang.Object proxyHeader_;
   /**
    * <pre>
    * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    * @return Whether the proxyHeader field is set.
    */
-  @java.lang.Override public boolean hasProxyHeader() {
+  @java.lang.Override
+  public boolean hasProxyHeader() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
-   * @return The enum numeric value on the wire for proxyHeader.
+   * <code>optional string proxy_header = 160374142;</code>
+   * @return The proxyHeader.
    */
-  @java.lang.Override public int getProxyHeaderValue() {
-    return proxyHeader_;
+  @java.lang.Override
+  public java.lang.String getProxyHeader() {
+    java.lang.Object ref = proxyHeader_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      proxyHeader_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
-   * @return The proxyHeader.
+   * <code>optional string proxy_header = 160374142;</code>
+   * @return The bytes for proxyHeader.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader getProxyHeader() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader result = com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader.valueOf(proxyHeader_);
-    return result == null ? com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProxyHeaderBytes() {
+    java.lang.Object ref = proxyHeader_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      proxyHeader_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -274,7 +297,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(160374142, proxyHeader_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 160374142, proxyHeader_);
     }
     unknownFields.writeTo(output);
   }
@@ -286,8 +309,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(160374142, proxyHeader_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(160374142, proxyHeader_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,7 +328,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasProxyHeader() != other.hasProxyHeader()) return false;
     if (hasProxyHeader()) {
-      if (proxyHeader_ != other.proxyHeader_) return false;
+      if (!getProxyHeader()
+          .equals(other.getProxyHeader())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -321,7 +344,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasProxyHeader()) {
       hash = (37 * hash) + PROXY_HEADER_FIELD_NUMBER;
-      hash = (53 * hash) + proxyHeader_;
+      hash = (53 * hash) + getProxyHeader().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -459,7 +482,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      proxyHeader_ = 0;
+      proxyHeader_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -543,7 +566,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest other) {
       if (other == com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.getDefaultInstance()) return this;
       if (other.hasProxyHeader()) {
-        setProxyHeader(other.getProxyHeader());
+        bitField0_ |= 0x00000001;
+        proxyHeader_ = other.proxyHeader_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -575,40 +600,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int proxyHeader_ = 0;
+    private java.lang.Object proxyHeader_ = "";
     /**
      * <pre>
      * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
      * @return Whether the proxyHeader field is set.
      */
-    @java.lang.Override public boolean hasProxyHeader() {
+    public boolean hasProxyHeader() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
-     * @return The enum numeric value on the wire for proxyHeader.
+     * <code>optional string proxy_header = 160374142;</code>
+     * @return The proxyHeader.
      */
-    @java.lang.Override public int getProxyHeaderValue() {
-      return proxyHeader_;
+    public java.lang.String getProxyHeader() {
+      java.lang.Object ref = proxyHeader_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        proxyHeader_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
-     * @param value The enum numeric value on the wire for proxyHeader to set.
+     * <code>optional string proxy_header = 160374142;</code>
+     * @return The bytes for proxyHeader.
+     */
+    public com.google.protobuf.ByteString
+        getProxyHeaderBytes() {
+      java.lang.Object ref = proxyHeader_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        proxyHeader_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * Check the ProxyHeader enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string proxy_header = 160374142;</code>
+     * @param value The proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder setProxyHeaderValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setProxyHeader(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       proxyHeader_ = value;
       onChanged();
       return this;
@@ -616,46 +679,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
-     * @return The proxyHeader.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader getProxyHeader() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader result = com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader.valueOf(proxyHeader_);
-      return result == null ? com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
-     * @param value The proxyHeader to set.
+     * <code>optional string proxy_header = 160374142;</code>
      * @return This builder for chaining.
      */
-    public Builder setProxyHeader(com.google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      proxyHeader_ = value.getNumber();
+    public Builder clearProxyHeader() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      proxyHeader_ = getDefaultInstance().getProxyHeader();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The new type of proxy header to append before sending data to the backend. NONE or PROXY_V1 are allowed.
+     * Check the ProxyHeader enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetSslProxiesSetProxyHeaderRequest.ProxyHeader proxy_header = 160374142;</code>
+     * <code>optional string proxy_header = 160374142;</code>
+     * @param value The bytes for proxyHeader to set.
      * @return This builder for chaining.
      */
-    public Builder clearProxyHeader() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      proxyHeader_ = 0;
+    public Builder setProxyHeaderBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      proxyHeader_ = value;
       onChanged();
       return this;
     }

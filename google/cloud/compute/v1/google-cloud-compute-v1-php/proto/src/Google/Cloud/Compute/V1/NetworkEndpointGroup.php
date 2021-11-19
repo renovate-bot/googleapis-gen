@@ -83,8 +83,9 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
     protected $network = null;
     /**
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
+     * Generated from protobuf field <code>optional string network_endpoint_type = 118301523;</code>
      */
     protected $network_endpoint_type = null;
     /**
@@ -146,8 +147,9 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
      *           Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $network
      *           The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
-     *     @type int $network_endpoint_type
+     *     @type string $network_endpoint_type
      *           Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     *           Check the NetworkEndpointType enum for the list of possible values.
      *     @type string $region
      *           [Output Only] The URL of the region where the network endpoint group is located.
      *     @type string $self_link
@@ -553,13 +555,14 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string network_endpoint_type = 118301523;</code>
+     * @return string
      */
     public function getNetworkEndpointType()
     {
-        return isset($this->network_endpoint_type) ? $this->network_endpoint_type : 0;
+        return isset($this->network_endpoint_type) ? $this->network_endpoint_type : '';
     }
 
     public function hasNetworkEndpointType()
@@ -574,14 +577,15 @@ class NetworkEndpointGroup extends \Google\Protobuf\Internal\Message
 
     /**
      * Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
+     * Check the NetworkEndpointType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NetworkEndpointGroup.NetworkEndpointType network_endpoint_type = 118301523;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string network_endpoint_type = 118301523;</code>
+     * @param string $var
      * @return $this
      */
     public function setNetworkEndpointType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NetworkEndpointGroup\NetworkEndpointType::class);
+        GPBUtil::checkString($var, True);
         $this->network_endpoint_type = $var;
 
         return $this;

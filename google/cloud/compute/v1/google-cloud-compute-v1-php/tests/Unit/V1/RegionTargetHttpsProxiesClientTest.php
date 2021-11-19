@@ -215,6 +215,7 @@ class RegionTargetHttpsProxiesClientTest extends GeneratedTest
         $kind = 'kind3292052';
         $name = 'name3373707';
         $proxyBind = true;
+        $quicOverride = 'quicOverride2067189933';
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
         $serverTlsPolicy = 'serverTlsPolicy1906438002';
@@ -229,6 +230,7 @@ class RegionTargetHttpsProxiesClientTest extends GeneratedTest
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
         $expectedResponse->setProxyBind($proxyBind);
+        $expectedResponse->setQuicOverride($quicOverride);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setServerTlsPolicy($serverTlsPolicy);

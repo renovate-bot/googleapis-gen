@@ -65,8 +65,9 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     protected $initialize_params = null;
     /**
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * Generated from protobuf field <code>optional string interface = 502623545;</code>
      */
     protected $interface = null;
     /**
@@ -83,8 +84,9 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     private $licenses;
     /**
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
      */
     protected $mode = null;
     /**
@@ -101,8 +103,9 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
     protected $source = null;
     /**
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
 
@@ -128,20 +131,23 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
      *           [Output Only] A zero-based index to this disk, where 0 is reserved for the boot disk. If you have many disks attached to an instance, each disk would have a unique index number.
      *     @type \Google\Cloud\Compute\V1\AttachedDiskInitializeParams $initialize_params
      *           [Input Only] Specifies the parameters for a new disk that will be created alongside the new instance. Use initialization parameters to create boot disks or local SSDs attached to the new instance. This property is mutually exclusive with the source property; you can only define one or the other, but not both.
-     *     @type int $interface
+     *     @type string $interface
      *           Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     *           Check the Interface enum for the list of possible values.
      *     @type string $kind
      *           [Output Only] Type of the resource. Always compute#attachedDisk for attached disks.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $licenses
      *           [Output Only] Any valid publicly visible licenses.
-     *     @type int $mode
+     *     @type string $mode
      *           The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     *           Check the Mode enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\InitialStateConfig $shielded_instance_initial_state
      *           [Output Only] shielded vm initial state stored on disk
      *     @type string $source
      *           Specifies a valid partial or full URL to an existing Persistent Disk resource. When creating a new instance, one of initializeParams.sourceImage or initializeParams.sourceSnapshot or disks.source is required except for local SSD. If desired, you can also attach existing non-root persistent disks using this property. This field is only applicable for persistent disks. Note that for InstanceTemplate, specify the disk name, not the URL for the disk.
-     *     @type int $type
+     *     @type string $type
      *           Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     *           Check the Type enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -429,13 +435,14 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string interface = 502623545;</code>
+     * @return string
      */
     public function getInterface()
     {
-        return isset($this->interface) ? $this->interface : 0;
+        return isset($this->interface) ? $this->interface : '';
     }
 
     public function hasInterface()
@@ -450,14 +457,15 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string interface = 502623545;</code>
+     * @param string $var
      * @return $this
      */
     public function setInterface($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AttachedDisk\PBInterface::class);
+        GPBUtil::checkString($var, True);
         $this->interface = $var;
 
         return $this;
@@ -527,13 +535,14 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
+     * @return string
      */
     public function getMode()
     {
-        return isset($this->mode) ? $this->mode : 0;
+        return isset($this->mode) ? $this->mode : '';
     }
 
     public function hasMode()
@@ -548,14 +557,15 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
+     * @param string $var
      * @return $this
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AttachedDisk\Mode::class);
+        GPBUtil::checkString($var, True);
         $this->mode = $var;
 
         return $this;
@@ -635,13 +645,14 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -656,14 +667,15 @@ class AttachedDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AttachedDisk\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

@@ -73,10 +73,11 @@ class Address(proto.Message):
             resource.
 
             This field is a member of `oneof`_ ``_address``.
-        address_type (google.cloud.compute_v1.types.Address.AddressType):
+        address_type (str):
             The type of address to reserve, either
             INTERNAL or EXTERNAL. If unspecified, defaults
-            to EXTERNAL.
+            to EXTERNAL. Check the AddressType enum for the
+            list of possible values.
 
             This field is a member of `oneof`_ ``_address_type``.
         creation_timestamp (str):
@@ -93,10 +94,12 @@ class Address(proto.Message):
             identifier is defined by the server.
 
             This field is a member of `oneof`_ ``_id``.
-        ip_version (google.cloud.compute_v1.types.Address.IpVersion):
+        ip_version (str):
             The IP version that will be used by this
             address. Valid options are IPV4 or IPV6. This
             can only be specified for a global address.
+            Check the IpVersion enum for the list of
+            possible values.
 
             This field is a member of `oneof`_ ``_ip_version``.
         kind (str):
@@ -122,7 +125,7 @@ class Address(proto.Message):
             VPC_PEERING purpose.
 
             This field is a member of `oneof`_ ``_network``.
-        network_tier (google.cloud.compute_v1.types.Address.NetworkTier):
+        network_tier (str):
             This signifies the networking tier used for
             configuring this address and can only take the
             following values: PREMIUM or STANDARD. Global
@@ -134,7 +137,8 @@ class Address(proto.Message):
             forwarding rules in Premium Tier can only be
             used with a network load balancer.  If this
             field is not specified, it is assumed to be
-            PREMIUM.
+            PREMIUM. Check the NetworkTier enum for the list
+            of possible values.
 
             This field is a member of `oneof`_ ``_network_tier``.
         prefix_length (int):
@@ -142,7 +146,7 @@ class Address(proto.Message):
             an IP range.
 
             This field is a member of `oneof`_ ``_prefix_length``.
-        purpose (google.cloud.compute_v1.types.Address.Purpose):
+        purpose (str):
             The purpose of this resource, which can be one of the
             following values:
 
@@ -154,7 +158,8 @@ class Address(proto.Message):
             -  ``VPC_PEERING`` for addresses that are reserved for VPC
                peer networks.
             -  ``NAT_AUTO`` for addresses that are external IP addresses
-               automatically reserved for Cloud NAT.
+               automatically reserved for Cloud NAT. Check the Purpose
+               enum for the list of possible values.
 
             This field is a member of `oneof`_ ``_purpose``.
         region (str):
@@ -168,13 +173,14 @@ class Address(proto.Message):
             [Output Only] Server-defined URL for the resource.
 
             This field is a member of `oneof`_ ``_self_link``.
-        status (google.cloud.compute_v1.types.Address.Status):
+        status (str):
             [Output Only] The status of the address, which can be one of
             RESERVING, RESERVED, or IN_USE. An address that is RESERVING
             is currently in the process of being reserved. A RESERVED
             address is currently reserved and available to use. An
             IN_USE address is currently being used by another resource
-            and is not available.
+            and is not available. Check the Status enum for the list of
+            possible values.
 
             This field is a member of `oneof`_ ``_status``.
         subnetwork (str):
@@ -258,10 +264,9 @@ class Address(proto.Message):
         optional=True,
     )
     address_type = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=264307877,
         optional=True,
-        enum=AddressType,
     )
     creation_timestamp = proto.Field(
         proto.STRING,
@@ -279,10 +284,9 @@ class Address(proto.Message):
         optional=True,
     )
     ip_version = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=294959552,
         optional=True,
-        enum=IpVersion,
     )
     kind = proto.Field(
         proto.STRING,
@@ -300,10 +304,9 @@ class Address(proto.Message):
         optional=True,
     )
     network_tier = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=517397843,
         optional=True,
-        enum=NetworkTier,
     )
     prefix_length = proto.Field(
         proto.INT32,
@@ -311,10 +314,9 @@ class Address(proto.Message):
         optional=True,
     )
     purpose = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=316407070,
         optional=True,
-        enum=Purpose,
     )
     region = proto.Field(
         proto.STRING,
@@ -327,10 +329,9 @@ class Address(proto.Message):
         optional=True,
     )
     status = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=181260274,
         optional=True,
-        enum=Status,
     )
     subnetwork = proto.Field(
         proto.STRING,
@@ -1245,10 +1246,11 @@ class Warning(proto.Message):
     r"""[Output Only] Informational warning message.
 
     Attributes:
-        code (google.cloud.compute_v1.types.Warning.Code):
+        code (str):
             [Output Only] A warning code, if applicable. For example,
             Compute Engine returns NO_RESULTS_ON_PAGE if there are no
-            results in the response.
+            results in the response. Check the Code enum for the list of
+            possible values.
 
             This field is a member of `oneof`_ ``_code``.
         data (Sequence[google.cloud.compute_v1.types.Data]):
@@ -1292,10 +1294,9 @@ class Warning(proto.Message):
         UNREACHABLE = 13328052
 
     code = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=3059181,
         optional=True,
-        enum=Code,
     )
     data = proto.RepeatedField(
         proto.MESSAGE,
@@ -1313,10 +1314,11 @@ class Warnings(proto.Message):
     r"""
 
     Attributes:
-        code (google.cloud.compute_v1.types.Warnings.Code):
+        code (str):
             [Output Only] A warning code, if applicable. For example,
             Compute Engine returns NO_RESULTS_ON_PAGE if there are no
-            results in the response.
+            results in the response. Check the Code enum for the list of
+            possible values.
 
             This field is a member of `oneof`_ ``_code``.
         data (Sequence[google.cloud.compute_v1.types.Data]):
@@ -1360,10 +1362,9 @@ class Warnings(proto.Message):
         UNREACHABLE = 13328052
 
     code = proto.Field(
-        proto.ENUM,
+        proto.STRING,
         number=3059181,
         optional=True,
-        enum=Code,
     )
     data = proto.RepeatedField(
         proto.MESSAGE,

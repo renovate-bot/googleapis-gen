@@ -106,28 +106,32 @@ public interface AutoscalingPolicyCustomMetricUtilizationOrBuilder extends
   /**
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+   * <code>optional string utilization_target_type = 340169355;</code>
    * @return Whether the utilizationTargetType field is set.
    */
   boolean hasUtilizationTargetType();
   /**
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-   * @return The enum numeric value on the wire for utilizationTargetType.
+   * <code>optional string utilization_target_type = 340169355;</code>
+   * @return The utilizationTargetType.
    */
-  int getUtilizationTargetTypeValue();
+  java.lang.String getUtilizationTargetType();
   /**
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-   * @return The utilizationTargetType.
+   * <code>optional string utilization_target_type = 340169355;</code>
+   * @return The bytes for utilizationTargetType.
    */
-  com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType getUtilizationTargetType();
+  com.google.protobuf.ByteString
+      getUtilizationTargetTypeBytes();
 }

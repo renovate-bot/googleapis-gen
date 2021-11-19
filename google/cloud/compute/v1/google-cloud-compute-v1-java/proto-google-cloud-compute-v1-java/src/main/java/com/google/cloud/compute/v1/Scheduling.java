@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private Scheduling() {
     locationHint_ = "";
     nodeAffinities_ = java.util.Collections.emptyList();
-    onHostMaintenance_ = 0;
+    onHostMaintenance_ = "";
   }
 
   @java.lang.Override
@@ -56,10 +56,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 516934368: {
-            int rawValue = input.readEnum();
+          case 516934370: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            onHostMaintenance_ = rawValue;
+            onHostMaintenance_ = s;
             break;
           }
           case -1757113896: {
@@ -446,41 +446,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ON_HOST_MAINTENANCE_FIELD_NUMBER = 64616796;
-  private int onHostMaintenance_;
+  private volatile java.lang.Object onHostMaintenance_;
   /**
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    * @return Whether the onHostMaintenance field is set.
    */
-  @java.lang.Override public boolean hasOnHostMaintenance() {
+  @java.lang.Override
+  public boolean hasOnHostMaintenance() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-   * @return The enum numeric value on the wire for onHostMaintenance.
+   * <code>optional string on_host_maintenance = 64616796;</code>
+   * @return The onHostMaintenance.
    */
-  @java.lang.Override public int getOnHostMaintenanceValue() {
-    return onHostMaintenance_;
+  @java.lang.Override
+  public java.lang.String getOnHostMaintenance() {
+    java.lang.Object ref = onHostMaintenance_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      onHostMaintenance_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-   * @return The onHostMaintenance.
+   * <code>optional string on_host_maintenance = 64616796;</code>
+   * @return The bytes for onHostMaintenance.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Scheduling.OnHostMaintenance getOnHostMaintenance() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Scheduling.OnHostMaintenance result = com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.valueOf(onHostMaintenance_);
-    return result == null ? com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOnHostMaintenanceBytes() {
+    java.lang.Object ref = onHostMaintenance_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      onHostMaintenance_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PREEMPTIBLE_FIELD_NUMBER = 324203169;
@@ -525,7 +548,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(64616796, onHostMaintenance_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 64616796, onHostMaintenance_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(317231675, minNodeCpus_);
@@ -552,8 +575,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(64616796, onHostMaintenance_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(64616796, onHostMaintenance_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -608,7 +630,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNodeAffinitiesList())) return false;
     if (hasOnHostMaintenance() != other.hasOnHostMaintenance()) return false;
     if (hasOnHostMaintenance()) {
-      if (onHostMaintenance_ != other.onHostMaintenance_) return false;
+      if (!getOnHostMaintenance()
+          .equals(other.getOnHostMaintenance())) return false;
     }
     if (hasPreemptible() != other.hasPreemptible()) return false;
     if (hasPreemptible()) {
@@ -645,7 +668,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOnHostMaintenance()) {
       hash = (37 * hash) + ON_HOST_MAINTENANCE_FIELD_NUMBER;
-      hash = (53 * hash) + onHostMaintenance_;
+      hash = (53 * hash) + getOnHostMaintenance().hashCode();
     }
     if (hasPreemptible()) {
       hash = (37 * hash) + PREEMPTIBLE_FIELD_NUMBER;
@@ -802,7 +825,7 @@ private static final long serialVersionUID = 0L;
       } else {
         nodeAffinitiesBuilder_.clear();
       }
-      onHostMaintenance_ = 0;
+      onHostMaintenance_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       preemptible_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -950,7 +973,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasOnHostMaintenance()) {
-        setOnHostMaintenance(other.getOnHostMaintenance());
+        bitField0_ |= 0x00000010;
+        onHostMaintenance_ = other.onHostMaintenance_;
+        onChanged();
       }
       if (other.hasPreemptible()) {
         setPreemptible(other.getPreemptible());
@@ -1514,40 +1539,78 @@ private static final long serialVersionUID = 0L;
       return nodeAffinitiesBuilder_;
     }
 
-    private int onHostMaintenance_ = 0;
+    private java.lang.Object onHostMaintenance_ = "";
     /**
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
      * @return Whether the onHostMaintenance field is set.
      */
-    @java.lang.Override public boolean hasOnHostMaintenance() {
+    public boolean hasOnHostMaintenance() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-     * @return The enum numeric value on the wire for onHostMaintenance.
+     * <code>optional string on_host_maintenance = 64616796;</code>
+     * @return The onHostMaintenance.
      */
-    @java.lang.Override public int getOnHostMaintenanceValue() {
-      return onHostMaintenance_;
+    public java.lang.String getOnHostMaintenance() {
+      java.lang.Object ref = onHostMaintenance_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onHostMaintenance_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-     * @param value The enum numeric value on the wire for onHostMaintenance to set.
+     * <code>optional string on_host_maintenance = 64616796;</code>
+     * @return The bytes for onHostMaintenance.
+     */
+    public com.google.protobuf.ByteString
+        getOnHostMaintenanceBytes() {
+      java.lang.Object ref = onHostMaintenance_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        onHostMaintenance_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_host_maintenance = 64616796;</code>
+     * @param value The onHostMaintenance to set.
      * @return This builder for chaining.
      */
-    public Builder setOnHostMaintenanceValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setOnHostMaintenance(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       onHostMaintenance_ = value;
       onChanged();
       return this;
@@ -1555,46 +1618,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-     * @return The onHostMaintenance.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Scheduling.OnHostMaintenance getOnHostMaintenance() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Scheduling.OnHostMaintenance result = com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.valueOf(onHostMaintenance_);
-      return result == null ? com.google.cloud.compute.v1.Scheduling.OnHostMaintenance.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-     * @param value The onHostMaintenance to set.
+     * <code>optional string on_host_maintenance = 64616796;</code>
      * @return This builder for chaining.
      */
-    public Builder setOnHostMaintenance(com.google.cloud.compute.v1.Scheduling.OnHostMaintenance value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      onHostMaintenance_ = value.getNumber();
+    public Builder clearOnHostMaintenance() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onHostMaintenance_ = getDefaultInstance().getOnHostMaintenance();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
+     * <code>optional string on_host_maintenance = 64616796;</code>
+     * @param value The bytes for onHostMaintenance to set.
      * @return This builder for chaining.
      */
-    public Builder clearOnHostMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onHostMaintenance_ = 0;
+    public Builder setOnHostMaintenanceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      onHostMaintenance_ = value;
       onChanged();
       return this;
     }

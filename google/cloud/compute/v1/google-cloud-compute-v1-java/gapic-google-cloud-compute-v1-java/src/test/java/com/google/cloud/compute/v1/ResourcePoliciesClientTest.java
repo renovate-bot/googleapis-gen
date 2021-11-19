@@ -218,6 +218,7 @@ public class ResourcePoliciesClientTest {
             .setResourceStatus(ResourcePolicyResourceStatus.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .setSnapshotSchedulePolicy(ResourcePolicySnapshotSchedulePolicy.newBuilder().build())
+            .setStatus("status-892481550")
             .build();
     mockService.addResponse(expectedResponse);
 

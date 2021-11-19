@@ -53,29 +53,33 @@ public interface MetadataFilterOrBuilder extends
 
   /**
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    * @return Whether the filterMatchCriteria field is set.
    */
   boolean hasFilterMatchCriteria();
   /**
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-   * @return The enum numeric value on the wire for filterMatchCriteria.
-   */
-  int getFilterMatchCriteriaValue();
-  /**
-   * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    * @return The filterMatchCriteria.
    */
-  com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria getFilterMatchCriteria();
+  java.lang.String getFilterMatchCriteria();
+  /**
+   * <pre>
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string filter_match_criteria = 239970368;</code>
+   * @return The bytes for filterMatchCriteria.
+   */
+  com.google.protobuf.ByteString
+      getFilterMatchCriteriaBytes();
 }

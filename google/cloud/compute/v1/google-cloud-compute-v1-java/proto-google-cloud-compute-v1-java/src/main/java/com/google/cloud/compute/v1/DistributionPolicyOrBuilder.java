@@ -10,30 +10,34 @@ public interface DistributionPolicyOrBuilder extends
   /**
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   * <code>optional string target_shape = 338621299;</code>
    * @return Whether the targetShape field is set.
    */
   boolean hasTargetShape();
   /**
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-   * @return The enum numeric value on the wire for targetShape.
+   * <code>optional string target_shape = 338621299;</code>
+   * @return The targetShape.
    */
-  int getTargetShapeValue();
+  java.lang.String getTargetShape();
   /**
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-   * @return The targetShape.
+   * <code>optional string target_shape = 338621299;</code>
+   * @return The bytes for targetShape.
    */
-  com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape();
+  com.google.protobuf.ByteString
+      getTargetShapeBytes();
 
   /**
    * <pre>

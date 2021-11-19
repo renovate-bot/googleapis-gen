@@ -163,27 +163,35 @@ class RegionCommitmentsClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
+        $category = 'category50511102';
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
         $endTimestamp = 'endTimestamp1004967602';
         $id = 3355;
         $kind = 'kind3292052';
         $name = 'name3373707';
+        $plan = 'plan3443497';
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
         $startTimestamp = 'startTimestamp-1526966919';
+        $status = 'status-892481550';
         $statusMessage = 'statusMessage-239442758';
+        $type = 'type3575610';
         $expectedResponse = new Commitment();
+        $expectedResponse->setCategory($category);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEndTimestamp($endTimestamp);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
+        $expectedResponse->setPlan($plan);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setStartTimestamp($startTimestamp);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setStatusMessage($statusMessage);
+        $expectedResponse->setType($type);
         $transport->addResponse($expectedResponse);
         // Mock request
         $commitment = 'commitment1019005717';

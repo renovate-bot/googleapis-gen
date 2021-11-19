@@ -726,30 +726,34 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
   /**
    * <pre>
    * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The privateIpv6GoogleAccess.
    */
-  int getPrivateIpv6GoogleAccessValue();
+  java.lang.String getPrivateIpv6GoogleAccess();
   /**
    * <pre>
    * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  com.google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess();
+  com.google.protobuf.ByteString
+      getPrivateIpv6GoogleAccessBytes();
 
   /**
    * <pre>
@@ -990,30 +994,34 @@ public interface InstanceOrBuilder extends
   /**
    * <pre>
    * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Instance.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Instance.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Instance.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Instance.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

@@ -202,6 +202,7 @@ class FirewallsClientTest extends GeneratedTest
         // Mock response
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
+        $direction = 'direction-962590849';
         $disabled = true;
         $id = 3355;
         $kind = 'kind3292052';
@@ -212,6 +213,7 @@ class FirewallsClientTest extends GeneratedTest
         $expectedResponse = new Firewall();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setDirection($direction);
         $expectedResponse->setDisabled($disabled);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);

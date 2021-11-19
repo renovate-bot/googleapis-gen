@@ -29,7 +29,7 @@ private static final long serialVersionUID = 0L;
     name_ = "";
     region_ = "";
     selfLink_ = "";
-    sessionAffinity_ = 0;
+    sessionAffinity_ = "";
   }
 
   @java.lang.Override
@@ -133,10 +133,10 @@ private static final long serialVersionUID = 0L;
             selfLink_ = s;
             break;
           }
-          case -583858808: {
-            int rawValue = input.readEnum();
+          case -583858806: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000200;
-            sessionAffinity_ = rawValue;
+            sessionAffinity_ = s;
             break;
           }
           default: {
@@ -988,41 +988,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
-  private int sessionAffinity_;
+  private volatile java.lang.Object sessionAffinity_;
   /**
    * <pre>
    * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   * <code>optional string session_affinity = 463888561;</code>
    * @return Whether the sessionAffinity field is set.
    */
-  @java.lang.Override public boolean hasSessionAffinity() {
+  @java.lang.Override
+  public boolean hasSessionAffinity() {
     return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
    * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-   * @return The enum numeric value on the wire for sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The sessionAffinity.
    */
-  @java.lang.Override public int getSessionAffinityValue() {
-    return sessionAffinity_;
+  @java.lang.Override
+  public java.lang.String getSessionAffinity() {
+    java.lang.Object ref = sessionAffinity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sessionAffinity_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-   * @return The sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The bytes for sessionAffinity.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.TargetPool.SessionAffinity getSessionAffinity() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.TargetPool.SessionAffinity result = com.google.cloud.compute.v1.TargetPool.SessionAffinity.valueOf(sessionAffinity_);
-    return result == null ? com.google.cloud.compute.v1.TargetPool.SessionAffinity.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSessionAffinityBytes() {
+    java.lang.Object ref = sessionAffinity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sessionAffinity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1073,7 +1096,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(463888561, sessionAffinity_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 463888561, sessionAffinity_);
     }
     unknownFields.writeTo(output);
   }
@@ -1130,8 +1153,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(463888561, sessionAffinity_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(463888561, sessionAffinity_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1200,7 +1222,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
     if (hasSessionAffinity()) {
-      if (sessionAffinity_ != other.sessionAffinity_) return false;
+      if (!getSessionAffinity()
+          .equals(other.getSessionAffinity())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1261,7 +1284,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSessionAffinity()) {
       hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
-      hash = (53 * hash) + sessionAffinity_;
+      hash = (53 * hash) + getSessionAffinity().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1422,7 +1445,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000200);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
-      sessionAffinity_ = 0;
+      sessionAffinity_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
@@ -1613,7 +1636,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasSessionAffinity()) {
-        setSessionAffinity(other.getSessionAffinity());
+        bitField0_ |= 0x00000800;
+        sessionAffinity_ = other.sessionAffinity_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2796,40 +2821,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int sessionAffinity_ = 0;
+    private java.lang.Object sessionAffinity_ = "";
     /**
      * <pre>
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+     * <code>optional string session_affinity = 463888561;</code>
      * @return Whether the sessionAffinity field is set.
      */
-    @java.lang.Override public boolean hasSessionAffinity() {
+    public boolean hasSessionAffinity() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <pre>
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-     * @return The enum numeric value on the wire for sessionAffinity.
+     * <code>optional string session_affinity = 463888561;</code>
+     * @return The sessionAffinity.
      */
-    @java.lang.Override public int getSessionAffinityValue() {
-      return sessionAffinity_;
+    public java.lang.String getSessionAffinity() {
+      java.lang.Object ref = sessionAffinity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionAffinity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-     * @param value The enum numeric value on the wire for sessionAffinity to set.
+     * <code>optional string session_affinity = 463888561;</code>
+     * @return The bytes for sessionAffinity.
+     */
+    public com.google.protobuf.ByteString
+        getSessionAffinityBytes() {
+      java.lang.Object ref = sessionAffinity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionAffinity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string session_affinity = 463888561;</code>
+     * @param value The sessionAffinity to set.
      * @return This builder for chaining.
      */
-    public Builder setSessionAffinityValue(int value) {
-      bitField0_ |= 0x00000800;
+    public Builder setSessionAffinity(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -2837,46 +2900,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-     * @return The sessionAffinity.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.TargetPool.SessionAffinity getSessionAffinity() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.TargetPool.SessionAffinity result = com.google.cloud.compute.v1.TargetPool.SessionAffinity.valueOf(sessionAffinity_);
-      return result == null ? com.google.cloud.compute.v1.TargetPool.SessionAffinity.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-     * @param value The sessionAffinity to set.
+     * <code>optional string session_affinity = 463888561;</code>
      * @return This builder for chaining.
      */
-    public Builder setSessionAffinity(com.google.cloud.compute.v1.TargetPool.SessionAffinity value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      sessionAffinity_ = value.getNumber();
+    public Builder clearSessionAffinity() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      sessionAffinity_ = getDefaultInstance().getSessionAffinity();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+     * <code>optional string session_affinity = 463888561;</code>
+     * @param value The bytes for sessionAffinity to set.
      * @return This builder for chaining.
      */
-    public Builder clearSessionAffinity() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      sessionAffinity_ = 0;
+    public Builder setSessionAffinityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      sessionAffinity_ = value;
       onChanged();
       return this;
     }

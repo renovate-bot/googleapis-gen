@@ -687,6 +687,7 @@ public class InstancesClientTest {
             .setMinCpuPlatform("minCpuPlatform1549557897")
             .setName("name3373707")
             .addAllNetworkInterfaces(new ArrayList<NetworkInterface>())
+            .setPrivateIpv6GoogleAccess("privateIpv6GoogleAccess-1729571801")
             .setReservationAffinity(ReservationAffinity.newBuilder().build())
             .addAllResourcePolicies(new ArrayList<String>())
             .setSatisfiesPzs(true)
@@ -697,6 +698,7 @@ public class InstancesClientTest {
             .setShieldedInstanceIntegrityPolicy(
                 ShieldedInstanceIntegrityPolicy.newBuilder().build())
             .setStartRestricted(true)
+            .setStatus("status-892481550")
             .setStatusMessage("statusMessage-958704715")
             .setTags(Tags.newBuilder().build())
             .setZone("zone3744684")

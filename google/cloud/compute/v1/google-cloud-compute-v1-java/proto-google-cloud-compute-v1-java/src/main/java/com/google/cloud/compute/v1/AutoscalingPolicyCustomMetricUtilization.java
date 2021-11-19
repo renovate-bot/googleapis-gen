@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private AutoscalingPolicyCustomMetricUtilization() {
     filter_ = "";
     metric_ = "";
-    utilizationTargetType_ = 0;
+    utilizationTargetType_ = "";
   }
 
   @java.lang.Override
@@ -67,10 +67,10 @@ private static final long serialVersionUID = 0L;
             filter_ = s;
             break;
           }
-          case -1573612456: {
-            int rawValue = input.readEnum();
+          case -1573612454: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000010;
-            utilizationTargetType_ = rawValue;
+            utilizationTargetType_ = s;
             break;
           }
           case -256822783: {
@@ -450,41 +450,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int UTILIZATION_TARGET_TYPE_FIELD_NUMBER = 340169355;
-  private int utilizationTargetType_;
+  private volatile java.lang.Object utilizationTargetType_;
   /**
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+   * <code>optional string utilization_target_type = 340169355;</code>
    * @return Whether the utilizationTargetType field is set.
    */
-  @java.lang.Override public boolean hasUtilizationTargetType() {
+  @java.lang.Override
+  public boolean hasUtilizationTargetType() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-   * @return The enum numeric value on the wire for utilizationTargetType.
+   * <code>optional string utilization_target_type = 340169355;</code>
+   * @return The utilizationTargetType.
    */
-  @java.lang.Override public int getUtilizationTargetTypeValue() {
-    return utilizationTargetType_;
+  @java.lang.Override
+  public java.lang.String getUtilizationTargetType() {
+    java.lang.Object ref = utilizationTargetType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      utilizationTargetType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+   * Check the UtilizationTargetType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-   * @return The utilizationTargetType.
+   * <code>optional string utilization_target_type = 340169355;</code>
+   * @return The bytes for utilizationTargetType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType getUtilizationTargetType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType result = com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType.valueOf(utilizationTargetType_);
-    return result == null ? com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUtilizationTargetTypeBytes() {
+    java.lang.Object ref = utilizationTargetType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      utilizationTargetType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -508,7 +531,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 336120696, filter_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(340169355, utilizationTargetType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 340169355, utilizationTargetType_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeDouble(504768064, singleInstanceAssignment_);
@@ -533,8 +556,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(336120696, filter_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(340169355, utilizationTargetType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(340169355, utilizationTargetType_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -582,7 +604,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasUtilizationTargetType() != other.hasUtilizationTargetType()) return false;
     if (hasUtilizationTargetType()) {
-      if (utilizationTargetType_ != other.utilizationTargetType_) return false;
+      if (!getUtilizationTargetType()
+          .equals(other.getUtilizationTargetType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -615,7 +638,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasUtilizationTargetType()) {
       hash = (37 * hash) + UTILIZATION_TARGET_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + utilizationTargetType_;
+      hash = (53 * hash) + getUtilizationTargetType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -762,7 +785,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       utilizationTarget_ = 0D;
       bitField0_ = (bitField0_ & ~0x00000008);
-      utilizationTargetType_ = 0;
+      utilizationTargetType_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
@@ -878,7 +901,9 @@ private static final long serialVersionUID = 0L;
         setUtilizationTarget(other.getUtilizationTarget());
       }
       if (other.hasUtilizationTargetType()) {
-        setUtilizationTargetType(other.getUtilizationTargetType());
+        bitField0_ |= 0x00000010;
+        utilizationTargetType_ = other.utilizationTargetType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1234,40 +1259,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int utilizationTargetType_ = 0;
+    private java.lang.Object utilizationTargetType_ = "";
     /**
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+     * <code>optional string utilization_target_type = 340169355;</code>
      * @return Whether the utilizationTargetType field is set.
      */
-    @java.lang.Override public boolean hasUtilizationTargetType() {
+    public boolean hasUtilizationTargetType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-     * @return The enum numeric value on the wire for utilizationTargetType.
+     * <code>optional string utilization_target_type = 340169355;</code>
+     * @return The utilizationTargetType.
      */
-    @java.lang.Override public int getUtilizationTargetTypeValue() {
-      return utilizationTargetType_;
+    public java.lang.String getUtilizationTargetType() {
+      java.lang.Object ref = utilizationTargetType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        utilizationTargetType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-     * @param value The enum numeric value on the wire for utilizationTargetType to set.
+     * <code>optional string utilization_target_type = 340169355;</code>
+     * @return The bytes for utilizationTargetType.
+     */
+    public com.google.protobuf.ByteString
+        getUtilizationTargetTypeBytes() {
+      java.lang.Object ref = utilizationTargetType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        utilizationTargetType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string utilization_target_type = 340169355;</code>
+     * @param value The utilizationTargetType to set.
      * @return This builder for chaining.
      */
-    public Builder setUtilizationTargetTypeValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setUtilizationTargetType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       utilizationTargetType_ = value;
       onChanged();
       return this;
@@ -1275,46 +1338,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-     * @return The utilizationTargetType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType getUtilizationTargetType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType result = com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType.valueOf(utilizationTargetType_);
-      return result == null ? com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
-     * @param value The utilizationTargetType to set.
+     * <code>optional string utilization_target_type = 340169355;</code>
      * @return This builder for chaining.
      */
-    public Builder setUtilizationTargetType(com.google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      utilizationTargetType_ = value.getNumber();
+    public Builder clearUtilizationTargetType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      utilizationTargetType_ = getDefaultInstance().getUtilizationTargetType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Defines how target utilization value is expressed for a Stackdriver Monitoring metric. Either GAUGE, DELTA_PER_SECOND, or DELTA_PER_MINUTE.
+     * Check the UtilizationTargetType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCustomMetricUtilization.UtilizationTargetType utilization_target_type = 340169355;</code>
+     * <code>optional string utilization_target_type = 340169355;</code>
+     * @param value The bytes for utilizationTargetType to set.
      * @return This builder for chaining.
      */
-    public Builder clearUtilizationTargetType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      utilizationTargetType_ = 0;
+    public Builder setUtilizationTargetTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      utilizationTargetType_ = value;
       onChanged();
       return this;
     }

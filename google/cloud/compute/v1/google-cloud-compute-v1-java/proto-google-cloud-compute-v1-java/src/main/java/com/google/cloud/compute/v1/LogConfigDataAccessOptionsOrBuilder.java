@@ -10,28 +10,32 @@ public interface LogConfigDataAccessOptionsOrBuilder extends
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+   * <code>optional string log_mode = 402897342;</code>
    * @return Whether the logMode field is set.
    */
   boolean hasLogMode();
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
-   * @return The enum numeric value on the wire for logMode.
+   * <code>optional string log_mode = 402897342;</code>
+   * @return The logMode.
    */
-  int getLogModeValue();
+  java.lang.String getLogMode();
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
-   * @return The logMode.
+   * <code>optional string log_mode = 402897342;</code>
+   * @return The bytes for logMode.
    */
-  com.google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode getLogMode();
+  com.google.protobuf.ByteString
+      getLogModeBytes();
 }

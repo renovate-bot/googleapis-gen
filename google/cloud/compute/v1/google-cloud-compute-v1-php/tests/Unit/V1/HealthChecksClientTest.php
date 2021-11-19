@@ -291,6 +291,7 @@ class HealthChecksClientTest extends GeneratedTest
         $region = 'region-934795532';
         $selfLink = 'selfLink-1691268851';
         $timeoutSec = 2067488653;
+        $type = 'type3575610';
         $unhealthyThreshold = 1838571216;
         $expectedResponse = new HealthCheck();
         $expectedResponse->setCheckIntervalSec($checkIntervalSec);
@@ -303,6 +304,7 @@ class HealthChecksClientTest extends GeneratedTest
         $expectedResponse->setRegion($region);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setTimeoutSec($timeoutSec);
+        $expectedResponse->setType($type);
         $expectedResponse->setUnhealthyThreshold($unhealthyThreshold);
         $transport->addResponse($expectedResponse);
         // Mock request

@@ -28,16 +28,16 @@ private static final long serialVersionUID = 0L;
     googleIpAddress_ = "";
     googleReferenceId_ = "";
     interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    interconnectType_ = 0;
+    interconnectType_ = "";
     kind_ = "";
-    linkType_ = 0;
+    linkType_ = "";
     location_ = "";
     name_ = "";
     nocContactEmail_ = "";
-    operationalStatus_ = 0;
+    operationalStatus_ = "";
     peerIpAddress_ = "";
     selfLink_ = "";
-    state_ = 0;
+    state_ = "";
   }
 
   @java.lang.Override
@@ -111,10 +111,10 @@ private static final long serialVersionUID = 0L;
             requestedLinkCount_ = input.readInt32();
             break;
           }
-          case 878060680: {
-            int rawValue = input.readEnum();
+          case 878060682: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00080000;
-            state_ = rawValue;
+            state_ = s;
             break;
           }
           case 1318718842: {
@@ -126,10 +126,10 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.compute.v1.InterconnectCircuitInfo.parser(), extensionRegistry));
             break;
           }
-          case 1608566776: {
-            int rawValue = input.readEnum();
+          case 1608566778: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00002000;
-            operationalStatus_ = rawValue;
+            operationalStatus_ = s;
             break;
           }
           case 1661886154: {
@@ -195,16 +195,16 @@ private static final long serialVersionUID = 0L;
             satisfiesPzs_ = input.readBool();
             break;
           }
-          case -173645224: {
-            int rawValue = input.readEnum();
+          case -173645222: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            interconnectType_ = rawValue;
+            interconnectType_ = s;
             break;
           }
-          case -109305096: {
-            int rawValue = input.readEnum();
+          case -109305094: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000200;
-            linkType_ = rawValue;
+            linkType_ = s;
             break;
           }
           case -15411542: {
@@ -1368,41 +1368,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INTERCONNECT_TYPE_FIELD_NUMBER = 515165259;
-  private int interconnectType_;
+  private volatile java.lang.Object interconnectType_;
   /**
    * <pre>
    * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+   * <code>optional string interconnect_type = 515165259;</code>
    * @return Whether the interconnectType field is set.
    */
-  @java.lang.Override public boolean hasInterconnectType() {
+  @java.lang.Override
+  public boolean hasInterconnectType() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-   * @return The enum numeric value on the wire for interconnectType.
+   * <code>optional string interconnect_type = 515165259;</code>
+   * @return The interconnectType.
    */
-  @java.lang.Override public int getInterconnectTypeValue() {
-    return interconnectType_;
+  @java.lang.Override
+  public java.lang.String getInterconnectType() {
+    java.lang.Object ref = interconnectType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interconnectType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-   * @return The interconnectType.
+   * <code>optional string interconnect_type = 515165259;</code>
+   * @return The bytes for interconnectType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Interconnect.InterconnectType getInterconnectType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Interconnect.InterconnectType result = com.google.cloud.compute.v1.Interconnect.InterconnectType.valueOf(interconnectType_);
-    return result == null ? com.google.cloud.compute.v1.Interconnect.InterconnectType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInterconnectTypeBytes() {
+    java.lang.Object ref = interconnectType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interconnectType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1464,41 +1487,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LINK_TYPE_FIELD_NUMBER = 523207775;
-  private int linkType_;
+  private volatile java.lang.Object linkType_;
   /**
    * <pre>
    * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Check the LinkType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+   * <code>optional string link_type = 523207775;</code>
    * @return Whether the linkType field is set.
    */
-  @java.lang.Override public boolean hasLinkType() {
+  @java.lang.Override
+  public boolean hasLinkType() {
     return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
    * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Check the LinkType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-   * @return The enum numeric value on the wire for linkType.
+   * <code>optional string link_type = 523207775;</code>
+   * @return The linkType.
    */
-  @java.lang.Override public int getLinkTypeValue() {
-    return linkType_;
+  @java.lang.Override
+  public java.lang.String getLinkType() {
+    java.lang.Object ref = linkType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      linkType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Check the LinkType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-   * @return The linkType.
+   * <code>optional string link_type = 523207775;</code>
+   * @return The bytes for linkType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Interconnect.LinkType getLinkType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Interconnect.LinkType result = com.google.cloud.compute.v1.Interconnect.LinkType.valueOf(linkType_);
-    return result == null ? com.google.cloud.compute.v1.Interconnect.LinkType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLinkTypeBytes() {
+    java.lang.Object ref = linkType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      linkType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LOCATION_FIELD_NUMBER = 290430901;
@@ -1676,41 +1722,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int OPERATIONAL_STATUS_FIELD_NUMBER = 201070847;
-  private int operationalStatus_;
+  private volatile java.lang.Object operationalStatus_;
   /**
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
+   * <code>optional string operational_status = 201070847;</code>
    * @return Whether the operationalStatus field is set.
    */
-  @java.lang.Override public boolean hasOperationalStatus() {
+  @java.lang.Override
+  public boolean hasOperationalStatus() {
     return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-   * @return The enum numeric value on the wire for operationalStatus.
+   * <code>optional string operational_status = 201070847;</code>
+   * @return The operationalStatus.
    */
-  @java.lang.Override public int getOperationalStatusValue() {
-    return operationalStatus_;
+  @java.lang.Override
+  public java.lang.String getOperationalStatus() {
+    java.lang.Object ref = operationalStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      operationalStatus_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-   * @return The operationalStatus.
+   * <code>optional string operational_status = 201070847;</code>
+   * @return The bytes for operationalStatus.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Interconnect.OperationalStatus getOperationalStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Interconnect.OperationalStatus result = com.google.cloud.compute.v1.Interconnect.OperationalStatus.valueOf(operationalStatus_);
-    return result == null ? com.google.cloud.compute.v1.Interconnect.OperationalStatus.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOperationalStatusBytes() {
+    java.lang.Object ref = operationalStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      operationalStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PEER_IP_ADDRESS_FIELD_NUMBER = 207735769;
@@ -1911,41 +1980,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private int state_;
+  private volatile java.lang.Object state_;
   /**
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return Whether the state field is set.
    */
-  @java.lang.Override public boolean hasState() {
+  @java.lang.Override
+  public boolean hasState() {
     return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-   * @return The enum numeric value on the wire for state.
+   * <code>optional string state = 109757585;</code>
+   * @return The state.
    */
-  @java.lang.Override public int getStateValue() {
-    return state_;
+  @java.lang.Override
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-   * @return The state.
+   * <code>optional string state = 109757585;</code>
+   * @return The bytes for state.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Interconnect.State getState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Interconnect.State result = com.google.cloud.compute.v1.Interconnect.State.valueOf(state_);
-    return result == null ? com.google.cloud.compute.v1.Interconnect.State.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1984,13 +2076,13 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(45051387, requestedLinkCount_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      output.writeEnum(109757585, state_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
       output.writeMessage(164839855, circuitInfos_.get(i));
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeEnum(201070847, operationalStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 201070847, operationalStatus_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
@@ -2023,10 +2115,10 @@ private static final long serialVersionUID = 0L;
       output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(515165259, interconnectType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 515165259, interconnectType_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(523207775, linkType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 523207775, linkType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 534944469, googleReferenceId_);
@@ -2064,16 +2156,14 @@ private static final long serialVersionUID = 0L;
         .computeInt32Size(45051387, requestedLinkCount_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(109757585, state_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < circuitInfos_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(164839855, circuitInfos_.get(i));
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(201070847, operationalStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(201070847, operationalStatus_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
@@ -2115,12 +2205,10 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(515165259, interconnectType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(515165259, interconnectType_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(523207775, linkType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(523207775, linkType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(534944469, googleReferenceId_);
@@ -2183,7 +2271,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getInterconnectAttachmentsList())) return false;
     if (hasInterconnectType() != other.hasInterconnectType()) return false;
     if (hasInterconnectType()) {
-      if (interconnectType_ != other.interconnectType_) return false;
+      if (!getInterconnectType()
+          .equals(other.getInterconnectType())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -2192,7 +2281,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLinkType() != other.hasLinkType()) return false;
     if (hasLinkType()) {
-      if (linkType_ != other.linkType_) return false;
+      if (!getLinkType()
+          .equals(other.getLinkType())) return false;
     }
     if (hasLocation() != other.hasLocation()) return false;
     if (hasLocation()) {
@@ -2211,7 +2301,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOperationalStatus() != other.hasOperationalStatus()) return false;
     if (hasOperationalStatus()) {
-      if (operationalStatus_ != other.operationalStatus_) return false;
+      if (!getOperationalStatus()
+          .equals(other.getOperationalStatus())) return false;
     }
     if (hasPeerIpAddress() != other.hasPeerIpAddress()) return false;
     if (hasPeerIpAddress()) {
@@ -2240,7 +2331,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
-      if (state_ != other.state_) return false;
+      if (!getState()
+          .equals(other.getState())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2297,7 +2389,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInterconnectType()) {
       hash = (37 * hash) + INTERCONNECT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + interconnectType_;
+      hash = (53 * hash) + getInterconnectType().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -2305,7 +2397,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLinkType()) {
       hash = (37 * hash) + LINK_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + linkType_;
+      hash = (53 * hash) + getLinkType().hashCode();
     }
     if (hasLocation()) {
       hash = (37 * hash) + LOCATION_FIELD_NUMBER;
@@ -2321,7 +2413,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOperationalStatus()) {
       hash = (37 * hash) + OPERATIONAL_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + operationalStatus_;
+      hash = (53 * hash) + getOperationalStatus().hashCode();
     }
     if (hasPeerIpAddress()) {
       hash = (37 * hash) + PEER_IP_ADDRESS_FIELD_NUMBER;
@@ -2346,7 +2438,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
+      hash = (53 * hash) + getState().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2515,11 +2607,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
       interconnectAttachments_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000200);
-      interconnectType_ = 0;
+      interconnectType_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
-      linkType_ = 0;
+      linkType_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       location_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
@@ -2527,7 +2619,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00004000);
       nocContactEmail_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
-      operationalStatus_ = 0;
+      operationalStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
       peerIpAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
@@ -2539,7 +2631,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00100000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00200000);
-      state_ = 0;
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00400000);
       return this;
     }
@@ -2815,7 +2907,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasInterconnectType()) {
-        setInterconnectType(other.getInterconnectType());
+        bitField0_ |= 0x00000400;
+        interconnectType_ = other.interconnectType_;
+        onChanged();
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000800;
@@ -2823,7 +2917,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasLinkType()) {
-        setLinkType(other.getLinkType());
+        bitField0_ |= 0x00001000;
+        linkType_ = other.linkType_;
+        onChanged();
       }
       if (other.hasLocation()) {
         bitField0_ |= 0x00002000;
@@ -2841,7 +2937,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasOperationalStatus()) {
-        setOperationalStatus(other.getOperationalStatus());
+        bitField0_ |= 0x00010000;
+        operationalStatus_ = other.operationalStatus_;
+        onChanged();
       }
       if (other.hasPeerIpAddress()) {
         bitField0_ |= 0x00020000;
@@ -2863,7 +2961,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasState()) {
-        setState(other.getState());
+        bitField0_ |= 0x00400000;
+        state_ = other.state_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4310,40 +4410,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int interconnectType_ = 0;
+    private java.lang.Object interconnectType_ = "";
     /**
      * <pre>
      * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+     * <code>optional string interconnect_type = 515165259;</code>
      * @return Whether the interconnectType field is set.
      */
-    @java.lang.Override public boolean hasInterconnectType() {
+    public boolean hasInterconnectType() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <pre>
      * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-     * @return The enum numeric value on the wire for interconnectType.
+     * <code>optional string interconnect_type = 515165259;</code>
+     * @return The interconnectType.
      */
-    @java.lang.Override public int getInterconnectTypeValue() {
-      return interconnectType_;
+    public java.lang.String getInterconnectType() {
+      java.lang.Object ref = interconnectType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interconnectType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-     * @param value The enum numeric value on the wire for interconnectType to set.
+     * <code>optional string interconnect_type = 515165259;</code>
+     * @return The bytes for interconnectType.
+     */
+    public com.google.protobuf.ByteString
+        getInterconnectTypeBytes() {
+      java.lang.Object ref = interconnectType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interconnectType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Check the InterconnectType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string interconnect_type = 515165259;</code>
+     * @param value The interconnectType to set.
      * @return This builder for chaining.
      */
-    public Builder setInterconnectTypeValue(int value) {
-      bitField0_ |= 0x00000400;
+    public Builder setInterconnectType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
       interconnectType_ = value;
       onChanged();
       return this;
@@ -4351,46 +4489,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-     * @return The interconnectType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Interconnect.InterconnectType getInterconnectType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Interconnect.InterconnectType result = com.google.cloud.compute.v1.Interconnect.InterconnectType.valueOf(interconnectType_);
-      return result == null ? com.google.cloud.compute.v1.Interconnect.InterconnectType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-     * @param value The interconnectType to set.
+     * <code>optional string interconnect_type = 515165259;</code>
      * @return This builder for chaining.
      */
-    public Builder setInterconnectType(com.google.cloud.compute.v1.Interconnect.InterconnectType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000400;
-      interconnectType_ = value.getNumber();
+    public Builder clearInterconnectType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      interconnectType_ = getDefaultInstance().getInterconnectType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+     * Check the InterconnectType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+     * <code>optional string interconnect_type = 515165259;</code>
+     * @param value The bytes for interconnectType to set.
      * @return This builder for chaining.
      */
-    public Builder clearInterconnectType() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      interconnectType_ = 0;
+    public Builder setInterconnectTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      interconnectType_ = value;
       onChanged();
       return this;
     }
@@ -4502,40 +4630,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int linkType_ = 0;
+    private java.lang.Object linkType_ = "";
     /**
      * <pre>
      * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Check the LinkType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+     * <code>optional string link_type = 523207775;</code>
      * @return Whether the linkType field is set.
      */
-    @java.lang.Override public boolean hasLinkType() {
+    public boolean hasLinkType() {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <pre>
      * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Check the LinkType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-     * @return The enum numeric value on the wire for linkType.
+     * <code>optional string link_type = 523207775;</code>
+     * @return The linkType.
      */
-    @java.lang.Override public int getLinkTypeValue() {
-      return linkType_;
+    public java.lang.String getLinkType() {
+      java.lang.Object ref = linkType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        linkType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Check the LinkType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-     * @param value The enum numeric value on the wire for linkType to set.
+     * <code>optional string link_type = 523207775;</code>
+     * @return The bytes for linkType.
+     */
+    public com.google.protobuf.ByteString
+        getLinkTypeBytes() {
+      java.lang.Object ref = linkType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        linkType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Check the LinkType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string link_type = 523207775;</code>
+     * @param value The linkType to set.
      * @return This builder for chaining.
      */
-    public Builder setLinkTypeValue(int value) {
-      bitField0_ |= 0x00001000;
+    public Builder setLinkType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
       linkType_ = value;
       onChanged();
       return this;
@@ -4543,46 +4709,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Check the LinkType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-     * @return The linkType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Interconnect.LinkType getLinkType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Interconnect.LinkType result = com.google.cloud.compute.v1.Interconnect.LinkType.valueOf(linkType_);
-      return result == null ? com.google.cloud.compute.v1.Interconnect.LinkType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-     * @param value The linkType to set.
+     * <code>optional string link_type = 523207775;</code>
      * @return This builder for chaining.
      */
-    public Builder setLinkType(com.google.cloud.compute.v1.Interconnect.LinkType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00001000;
-      linkType_ = value.getNumber();
+    public Builder clearLinkType() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      linkType_ = getDefaultInstance().getLinkType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+     * Check the LinkType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+     * <code>optional string link_type = 523207775;</code>
+     * @param value The bytes for linkType to set.
      * @return This builder for chaining.
      */
-    public Builder clearLinkType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      linkType_ = 0;
+    public Builder setLinkTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00001000;
+      linkType_ = value;
       onChanged();
       return this;
     }
@@ -4908,87 +5064,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int operationalStatus_ = 0;
+    private java.lang.Object operationalStatus_ = "";
     /**
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
+     * <code>optional string operational_status = 201070847;</code>
      * @return Whether the operationalStatus field is set.
      */
-    @java.lang.Override public boolean hasOperationalStatus() {
+    public boolean hasOperationalStatus() {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-     * @return The enum numeric value on the wire for operationalStatus.
+     * <code>optional string operational_status = 201070847;</code>
+     * @return The operationalStatus.
      */
-    @java.lang.Override public int getOperationalStatusValue() {
-      return operationalStatus_;
+    public java.lang.String getOperationalStatus() {
+      java.lang.Object ref = operationalStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        operationalStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-     * @param value The enum numeric value on the wire for operationalStatus to set.
+     * <code>optional string operational_status = 201070847;</code>
+     * @return The bytes for operationalStatus.
+     */
+    public com.google.protobuf.ByteString
+        getOperationalStatusBytes() {
+      java.lang.Object ref = operationalStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        operationalStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the OperationalStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string operational_status = 201070847;</code>
+     * @param value The operationalStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setOperationalStatusValue(int value) {
-      bitField0_ |= 0x00010000;
+    public Builder setOperationalStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00010000;
       operationalStatus_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-     * @return The operationalStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Interconnect.OperationalStatus getOperationalStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Interconnect.OperationalStatus result = com.google.cloud.compute.v1.Interconnect.OperationalStatus.valueOf(operationalStatus_);
-      return result == null ? com.google.cloud.compute.v1.Interconnect.OperationalStatus.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-     * @param value The operationalStatus to set.
+     * <code>optional string operational_status = 201070847;</code>
      * @return This builder for chaining.
      */
-    public Builder setOperationalStatus(com.google.cloud.compute.v1.Interconnect.OperationalStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00010000;
-      operationalStatus_ = value.getNumber();
+    public Builder clearOperationalStatus() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      operationalStatus_ = getDefaultInstance().getOperationalStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the OperationalStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
+     * <code>optional string operational_status = 201070847;</code>
+     * @param value The bytes for operationalStatus to set.
      * @return This builder for chaining.
      */
-    public Builder clearOperationalStatus() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      operationalStatus_ = 0;
+    public Builder setOperationalStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00010000;
+      operationalStatus_ = value;
       onChanged();
       return this;
     }
@@ -5372,87 +5556,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int state_ = 0;
+    private java.lang.Object state_ = "";
     /**
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      * @return Whether the state field is set.
      */
-    @java.lang.Override public boolean hasState() {
+    public boolean hasState() {
       return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-     * @return The enum numeric value on the wire for state.
+     * <code>optional string state = 109757585;</code>
+     * @return The state.
      */
-    @java.lang.Override public int getStateValue() {
-      return state_;
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-     * @param value The enum numeric value on the wire for state to set.
+     * <code>optional string state = 109757585;</code>
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString
+        getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the State enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string state = 109757585;</code>
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStateValue(int value) {
-      bitField0_ |= 0x00400000;
+    public Builder setState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00400000;
       state_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Interconnect.State getState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Interconnect.State result = com.google.cloud.compute.v1.Interconnect.State.valueOf(state_);
-      return result == null ? com.google.cloud.compute.v1.Interconnect.State.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-     * @param value The state to set.
+     * <code>optional string state = 109757585;</code>
      * @return This builder for chaining.
      */
-    public Builder setState(com.google.cloud.compute.v1.Interconnect.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00400000;
-      state_ = value.getNumber();
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+     * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
+     * @param value The bytes for state to set.
      * @return This builder for chaining.
      */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00400000);
-      state_ = 0;
+    public Builder setStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00400000;
+      state_ = value;
       onChanged();
       return this;
     }

@@ -10,30 +10,34 @@ public interface RegionInstanceGroupsListInstancesRequestOrBuilder extends
   /**
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
+   * <code>optional string instance_state = 92223591;</code>
    * @return Whether the instanceState field is set.
    */
   boolean hasInstanceState();
   /**
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-   * @return The enum numeric value on the wire for instanceState.
+   * <code>optional string instance_state = 92223591;</code>
+   * @return The instanceState.
    */
-  int getInstanceStateValue();
+  java.lang.String getInstanceState();
   /**
    * <pre>
    * Instances in which state should be returned. Valid options are: 'ALL', 'RUNNING'. By default, it lists all instances.
+   * Check the InstanceState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState instance_state = 92223591;</code>
-   * @return The instanceState.
+   * <code>optional string instance_state = 92223591;</code>
+   * @return The bytes for instanceState.
    */
-  com.google.cloud.compute.v1.RegionInstanceGroupsListInstancesRequest.InstanceState getInstanceState();
+  com.google.protobuf.ByteString
+      getInstanceStateBytes();
 
   /**
    * <pre>

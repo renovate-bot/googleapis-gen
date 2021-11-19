@@ -96,31 +96,35 @@ public interface InterconnectLocationOrBuilder extends
 
   /**
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Check the Continent enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+   * <code>optional string continent = 133442996;</code>
    * @return Whether the continent field is set.
    */
   boolean hasContinent();
   /**
    * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Check the Continent enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
-   * @return The enum numeric value on the wire for continent.
-   */
-  int getContinentValue();
-  /**
-   * <pre>
-   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+   * <code>optional string continent = 133442996;</code>
    * @return The continent.
    */
-  com.google.cloud.compute.v1.InterconnectLocation.Continent getContinent();
+  java.lang.String getContinent();
+  /**
+   * <pre>
+   * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+   * Check the Continent enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string continent = 133442996;</code>
+   * @return The bytes for continent.
+   */
+  com.google.protobuf.ByteString
+      getContinentBytes();
 
   /**
    * <pre>
@@ -419,31 +423,35 @@ public interface InterconnectLocationOrBuilder extends
 
   /**
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
-   */
-  int getStatusValue();
-  /**
-   * <pre>
-   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return The status.
    */
-  com.google.cloud.compute.v1.InterconnectLocation.Status getStatus();
+  java.lang.String getStatus();
+  /**
+   * <pre>
+   * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

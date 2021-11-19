@@ -156,6 +156,7 @@ public class RegionHealthCheckServicesClientTest {
             .setDescription("description-1724546052")
             .setFingerprint("fingerprint-1375934236")
             .addAllHealthChecks(new ArrayList<String>())
+            .setHealthStatusAggregationPolicy("healthStatusAggregationPolicy111281894")
             .setId(3355)
             .setKind("kind3292052")
             .setName("name3373707")

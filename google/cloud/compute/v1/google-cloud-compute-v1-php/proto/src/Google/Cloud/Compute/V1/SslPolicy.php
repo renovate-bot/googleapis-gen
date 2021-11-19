@@ -59,8 +59,9 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     protected $kind = null;
     /**
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+     * Generated from protobuf field <code>optional string min_tls_version = 8155943;</code>
      */
     protected $min_tls_version = null;
     /**
@@ -71,8 +72,9 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
     protected $name = null;
     /**
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+     * Generated from protobuf field <code>optional string profile = 227445161;</code>
      */
     protected $profile = null;
     /**
@@ -108,12 +110,14 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
      *           [Output only] Type of the resource. Always compute#sslPolicyfor SSL policies.
-     *     @type int $min_tls_version
+     *     @type string $min_tls_version
      *           The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     *           Check the MinTlsVersion enum for the list of possible values.
      *     @type string $name
      *           Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-     *     @type int $profile
+     *     @type string $profile
      *           Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     *           Check the Profile enum for the list of possible values.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
      *     @type \Google\Cloud\Compute\V1\Warnings[]|\Google\Protobuf\Internal\RepeatedField $warnings
@@ -359,13 +363,14 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string min_tls_version = 8155943;</code>
+     * @return string
      */
     public function getMinTlsVersion()
     {
-        return isset($this->min_tls_version) ? $this->min_tls_version : 0;
+        return isset($this->min_tls_version) ? $this->min_tls_version : '';
     }
 
     public function hasMinTlsVersion()
@@ -380,14 +385,15 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+     * Check the MinTlsVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string min_tls_version = 8155943;</code>
+     * @param string $var
      * @return $this
      */
     public function setMinTlsVersion($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SslPolicy\MinTlsVersion::class);
+        GPBUtil::checkString($var, True);
         $this->min_tls_version = $var;
 
         return $this;
@@ -431,13 +437,14 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string profile = 227445161;</code>
+     * @return string
      */
     public function getProfile()
     {
-        return isset($this->profile) ? $this->profile : 0;
+        return isset($this->profile) ? $this->profile : '';
     }
 
     public function hasProfile()
@@ -452,14 +459,15 @@ class SslPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+     * Check the Profile enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string profile = 227445161;</code>
+     * @param string $var
      * @return $this
      */
     public function setProfile($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SslPolicy\Profile::class);
+        GPBUtil::checkString($var, True);
         $this->profile = $var;
 
         return $this;

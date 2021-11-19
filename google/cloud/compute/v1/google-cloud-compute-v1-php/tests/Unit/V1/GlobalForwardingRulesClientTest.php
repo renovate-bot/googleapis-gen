@@ -203,6 +203,7 @@ class GlobalForwardingRulesClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $iPAddress = 'iPAddress1116718767';
+        $iPProtocol = 'iPProtocol488094525';
         $allPorts = true;
         $allowGlobalAccess = true;
         $backendService = 'backendService306946058';
@@ -210,13 +211,17 @@ class GlobalForwardingRulesClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $fingerprint = 'fingerprint-1375934236';
         $id = 3355;
+        $ipVersion = 'ipVersion-1315653184';
         $isMirroringCollector = true;
         $kind = 'kind3292052';
         $labelFingerprint = 'labelFingerprint714995737';
+        $loadBalancingScheme = 'loadBalancingScheme1974502980';
         $name = 'name3373707';
         $network = 'network1843485230';
+        $networkTier = 'networkTier-19473069';
         $portRange = 'portRange217518079';
         $pscConnectionId = 292082397;
+        $pscConnectionStatus = 'pscConnectionStatus-889592652';
         $region = 'region-934795532';
         $selfLink = 'selfLink-1691268851';
         $serviceLabel = 'serviceLabel-1730474774';
@@ -225,6 +230,7 @@ class GlobalForwardingRulesClientTest extends GeneratedTest
         $target = 'target-880905839';
         $expectedResponse = new ForwardingRule();
         $expectedResponse->setIPAddress($iPAddress);
+        $expectedResponse->setIPProtocol($iPProtocol);
         $expectedResponse->setAllPorts($allPorts);
         $expectedResponse->setAllowGlobalAccess($allowGlobalAccess);
         $expectedResponse->setBackendService($backendService);
@@ -232,13 +238,17 @@ class GlobalForwardingRulesClientTest extends GeneratedTest
         $expectedResponse->setDescription($description);
         $expectedResponse->setFingerprint($fingerprint);
         $expectedResponse->setId($id);
+        $expectedResponse->setIpVersion($ipVersion);
         $expectedResponse->setIsMirroringCollector($isMirroringCollector);
         $expectedResponse->setKind($kind);
         $expectedResponse->setLabelFingerprint($labelFingerprint);
+        $expectedResponse->setLoadBalancingScheme($loadBalancingScheme);
         $expectedResponse->setName($name);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setNetworkTier($networkTier);
         $expectedResponse->setPortRange($portRange);
         $expectedResponse->setPscConnectionId($pscConnectionId);
+        $expectedResponse->setPscConnectionStatus($pscConnectionStatus);
         $expectedResponse->setRegion($region);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setServiceLabel($serviceLabel);

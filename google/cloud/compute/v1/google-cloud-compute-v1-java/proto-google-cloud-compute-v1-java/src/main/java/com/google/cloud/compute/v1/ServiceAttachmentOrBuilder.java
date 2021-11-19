@@ -54,30 +54,34 @@ public interface ServiceAttachmentOrBuilder extends
   /**
    * <pre>
    * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
+   * <code>optional string connection_preference = 285818076;</code>
    * @return Whether the connectionPreference field is set.
    */
   boolean hasConnectionPreference();
   /**
    * <pre>
    * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-   * @return The enum numeric value on the wire for connectionPreference.
+   * <code>optional string connection_preference = 285818076;</code>
+   * @return The connectionPreference.
    */
-  int getConnectionPreferenceValue();
+  java.lang.String getConnectionPreference();
   /**
    * <pre>
    * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-   * @return The connectionPreference.
+   * <code>optional string connection_preference = 285818076;</code>
+   * @return The bytes for connectionPreference.
    */
-  com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference getConnectionPreference();
+  com.google.protobuf.ByteString
+      getConnectionPreferenceBytes();
 
   /**
    * <pre>

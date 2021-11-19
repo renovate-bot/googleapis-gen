@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private DistributionPolicy() {
-    targetShape_ = 0;
+    targetShape_ = "";
     zones_ = java.util.Collections.emptyList();
   }
 
@@ -63,10 +63,10 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.compute.v1.DistributionPolicyZoneConfiguration.parser(), extensionRegistry));
             break;
           }
-          case -1585996904: {
-            int rawValue = input.readEnum();
+          case -1585996902: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            targetShape_ = rawValue;
+            targetShape_ = s;
             break;
           }
           default: {
@@ -268,41 +268,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int TARGET_SHAPE_FIELD_NUMBER = 338621299;
-  private int targetShape_;
+  private volatile java.lang.Object targetShape_;
   /**
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+   * <code>optional string target_shape = 338621299;</code>
    * @return Whether the targetShape field is set.
    */
-  @java.lang.Override public boolean hasTargetShape() {
+  @java.lang.Override
+  public boolean hasTargetShape() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-   * @return The enum numeric value on the wire for targetShape.
+   * <code>optional string target_shape = 338621299;</code>
+   * @return The targetShape.
    */
-  @java.lang.Override public int getTargetShapeValue() {
-    return targetShape_;
+  @java.lang.Override
+  public java.lang.String getTargetShape() {
+    java.lang.Object ref = targetShape_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      targetShape_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+   * Check the TargetShape enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-   * @return The targetShape.
+   * <code>optional string target_shape = 338621299;</code>
+   * @return The bytes for targetShape.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.DistributionPolicy.TargetShape result = com.google.cloud.compute.v1.DistributionPolicy.TargetShape.valueOf(targetShape_);
-    return result == null ? com.google.cloud.compute.v1.DistributionPolicy.TargetShape.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTargetShapeBytes() {
+    java.lang.Object ref = targetShape_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      targetShape_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ZONES_FIELD_NUMBER = 116085319;
@@ -383,7 +406,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(116085319, zones_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(338621299, targetShape_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 338621299, targetShape_);
     }
     unknownFields.writeTo(output);
   }
@@ -399,8 +422,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(116085319, zones_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(338621299, targetShape_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(338621299, targetShape_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -419,7 +441,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasTargetShape() != other.hasTargetShape()) return false;
     if (hasTargetShape()) {
-      if (targetShape_ != other.targetShape_) return false;
+      if (!getTargetShape()
+          .equals(other.getTargetShape())) return false;
     }
     if (!getZonesList()
         .equals(other.getZonesList())) return false;
@@ -436,7 +459,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasTargetShape()) {
       hash = (37 * hash) + TARGET_SHAPE_FIELD_NUMBER;
-      hash = (53 * hash) + targetShape_;
+      hash = (53 * hash) + getTargetShape().hashCode();
     }
     if (getZonesCount() > 0) {
       hash = (37 * hash) + ZONES_FIELD_NUMBER;
@@ -579,7 +602,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      targetShape_ = 0;
+      targetShape_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       if (zonesBuilder_ == null) {
         zones_ = java.util.Collections.emptyList();
@@ -678,7 +701,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.DistributionPolicy other) {
       if (other == com.google.cloud.compute.v1.DistributionPolicy.getDefaultInstance()) return this;
       if (other.hasTargetShape()) {
-        setTargetShape(other.getTargetShape());
+        bitField0_ |= 0x00000001;
+        targetShape_ = other.targetShape_;
+        onChanged();
       }
       if (zonesBuilder_ == null) {
         if (!other.zones_.isEmpty()) {
@@ -736,40 +761,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int targetShape_ = 0;
+    private java.lang.Object targetShape_ = "";
     /**
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+     * <code>optional string target_shape = 338621299;</code>
      * @return Whether the targetShape field is set.
      */
-    @java.lang.Override public boolean hasTargetShape() {
+    public boolean hasTargetShape() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-     * @return The enum numeric value on the wire for targetShape.
+     * <code>optional string target_shape = 338621299;</code>
+     * @return The targetShape.
      */
-    @java.lang.Override public int getTargetShapeValue() {
-      return targetShape_;
+    public java.lang.String getTargetShape() {
+      java.lang.Object ref = targetShape_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        targetShape_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-     * @param value The enum numeric value on the wire for targetShape to set.
+     * <code>optional string target_shape = 338621299;</code>
+     * @return The bytes for targetShape.
+     */
+    public com.google.protobuf.ByteString
+        getTargetShapeBytes() {
+      java.lang.Object ref = targetShape_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        targetShape_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string target_shape = 338621299;</code>
+     * @param value The targetShape to set.
      * @return This builder for chaining.
      */
-    public Builder setTargetShapeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setTargetShape(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       targetShape_ = value;
       onChanged();
       return this;
@@ -777,46 +840,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-     * @return The targetShape.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.DistributionPolicy.TargetShape getTargetShape() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.DistributionPolicy.TargetShape result = com.google.cloud.compute.v1.DistributionPolicy.TargetShape.valueOf(targetShape_);
-      return result == null ? com.google.cloud.compute.v1.DistributionPolicy.TargetShape.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
-     * @param value The targetShape to set.
+     * <code>optional string target_shape = 338621299;</code>
      * @return This builder for chaining.
      */
-    public Builder setTargetShape(com.google.cloud.compute.v1.DistributionPolicy.TargetShape value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      targetShape_ = value.getNumber();
+    public Builder clearTargetShape() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      targetShape_ = getDefaultInstance().getTargetShape();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The distribution shape to which the group converges either proactively or on resize events (depending on the value set in updatePolicy.instanceRedistributionType).
+     * Check the TargetShape enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DistributionPolicy.TargetShape target_shape = 338621299;</code>
+     * <code>optional string target_shape = 338621299;</code>
+     * @param value The bytes for targetShape to set.
      * @return This builder for chaining.
      */
-    public Builder clearTargetShape() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      targetShape_ = 0;
+    public Builder setTargetShapeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      targetShape_ = value;
       onChanged();
       return this;
     }

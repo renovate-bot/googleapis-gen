@@ -209,6 +209,7 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $kind = 'kind3292052';
         $labelFingerprint = 'labelFingerprint714995737';
         $name = 'name3373707';
+        $redundancyType = 'redundancyType1345185564';
         $selfLink = 'selfLink-1691268851';
         $expectedResponse = new ExternalVpnGateway();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -217,6 +218,7 @@ class ExternalVpnGatewaysClientTest extends GeneratedTest
         $expectedResponse->setKind($kind);
         $expectedResponse->setLabelFingerprint($labelFingerprint);
         $expectedResponse->setName($name);
+        $expectedResponse->setRedundancyType($redundancyType);
         $expectedResponse->setSelfLink($selfLink);
         $transport->addResponse($expectedResponse);
         // Mock request

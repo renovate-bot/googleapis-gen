@@ -19,8 +19,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private PreservedStatePreservedDisk() {
-    autoDelete_ = 0;
-    mode_ = 0;
+    autoDelete_ = "";
+    mode_ = "";
     source_ = "";
   }
 
@@ -55,10 +55,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 26856728: {
-            int rawValue = input.readEnum();
+          case 26856730: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            mode_ = rawValue;
+            mode_ = s;
             break;
           }
           case 1417887962: {
@@ -67,10 +67,10 @@ private static final long serialVersionUID = 0L;
             source_ = s;
             break;
           }
-          case -576876072: {
-            int rawValue = input.readEnum();
+          case -576876070: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            autoDelete_ = rawValue;
+            autoDelete_ = s;
             break;
           }
           default: {
@@ -381,79 +381,125 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
-  private int autoDelete_;
+  private volatile java.lang.Object autoDelete_;
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
+   * <code>optional string auto_delete = 464761403;</code>
    * @return Whether the autoDelete field is set.
    */
-  @java.lang.Override public boolean hasAutoDelete() {
+  @java.lang.Override
+  public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
-   * @return The enum numeric value on the wire for autoDelete.
+   * <code>optional string auto_delete = 464761403;</code>
+   * @return The autoDelete.
    */
-  @java.lang.Override public int getAutoDeleteValue() {
-    return autoDelete_;
+  @java.lang.Override
+  public java.lang.String getAutoDelete() {
+    java.lang.Object ref = autoDelete_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autoDelete_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
-   * @return The autoDelete.
+   * <code>optional string auto_delete = 464761403;</code>
+   * @return The bytes for autoDelete.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete getAutoDelete() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete result = com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.valueOf(autoDelete_);
-    return result == null ? com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAutoDeleteBytes() {
+    java.lang.Object ref = autoDelete_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      autoDelete_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private int mode_;
+  private volatile java.lang.Object mode_;
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    * @return Whether the mode field is set.
    */
-  @java.lang.Override public boolean hasMode() {
+  @java.lang.Override
+  public boolean hasMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
-   * @return The enum numeric value on the wire for mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The mode.
    */
-  @java.lang.Override public int getModeValue() {
-    return mode_;
+  @java.lang.Override
+  public java.lang.String getMode() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
-   * @return The mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The bytes for mode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode getMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode result = com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode.valueOf(mode_);
-    return result == null ? com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModeBytes() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      mode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SOURCE_FIELD_NUMBER = 177235995;
@@ -529,13 +575,13 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(3357091, mode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 177235995, source_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(464761403, autoDelete_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 464761403, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -547,15 +593,13 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3357091, mode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(177235995, source_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(464761403, autoDelete_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(464761403, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -574,11 +618,13 @@ private static final long serialVersionUID = 0L;
 
     if (hasAutoDelete() != other.hasAutoDelete()) return false;
     if (hasAutoDelete()) {
-      if (autoDelete_ != other.autoDelete_) return false;
+      if (!getAutoDelete()
+          .equals(other.getAutoDelete())) return false;
     }
     if (hasMode() != other.hasMode()) return false;
     if (hasMode()) {
-      if (mode_ != other.mode_) return false;
+      if (!getMode()
+          .equals(other.getMode())) return false;
     }
     if (hasSource() != other.hasSource()) return false;
     if (hasSource()) {
@@ -598,11 +644,11 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAutoDelete()) {
       hash = (37 * hash) + AUTO_DELETE_FIELD_NUMBER;
-      hash = (53 * hash) + autoDelete_;
+      hash = (53 * hash) + getAutoDelete().hashCode();
     }
     if (hasMode()) {
       hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + mode_;
+      hash = (53 * hash) + getMode().hashCode();
     }
     if (hasSource()) {
       hash = (37 * hash) + SOURCE_FIELD_NUMBER;
@@ -744,9 +790,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      autoDelete_ = 0;
+      autoDelete_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      mode_ = 0;
+      mode_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       source_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -840,10 +886,14 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.PreservedStatePreservedDisk other) {
       if (other == com.google.cloud.compute.v1.PreservedStatePreservedDisk.getDefaultInstance()) return this;
       if (other.hasAutoDelete()) {
-        setAutoDelete(other.getAutoDelete());
+        bitField0_ |= 0x00000001;
+        autoDelete_ = other.autoDelete_;
+        onChanged();
       }
       if (other.hasMode()) {
-        setMode(other.getMode());
+        bitField0_ |= 0x00000002;
+        mode_ = other.mode_;
+        onChanged();
       }
       if (other.hasSource()) {
         bitField0_ |= 0x00000004;
@@ -880,40 +930,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int autoDelete_ = 0;
+    private java.lang.Object autoDelete_ = "";
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
+     * <code>optional string auto_delete = 464761403;</code>
      * @return Whether the autoDelete field is set.
      */
-    @java.lang.Override public boolean hasAutoDelete() {
+    public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
-     * @return The enum numeric value on the wire for autoDelete.
+     * <code>optional string auto_delete = 464761403;</code>
+     * @return The autoDelete.
      */
-    @java.lang.Override public int getAutoDeleteValue() {
-      return autoDelete_;
+    public java.lang.String getAutoDelete() {
+      java.lang.Object ref = autoDelete_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autoDelete_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
-     * @param value The enum numeric value on the wire for autoDelete to set.
+     * <code>optional string auto_delete = 464761403;</code>
+     * @return The bytes for autoDelete.
+     */
+    public com.google.protobuf.ByteString
+        getAutoDeleteBytes() {
+      java.lang.Object ref = autoDelete_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        autoDelete_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_delete = 464761403;</code>
+     * @param value The autoDelete to set.
      * @return This builder for chaining.
      */
-    public Builder setAutoDeleteValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setAutoDelete(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       autoDelete_ = value;
       onChanged();
       return this;
@@ -921,84 +1009,112 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
-     * @return The autoDelete.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete getAutoDelete() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete result = com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.valueOf(autoDelete_);
-      return result == null ? com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
-     * @param value The autoDelete to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAutoDelete(com.google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      autoDelete_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.AutoDelete auto_delete = 464761403;</code>
+     * <code>optional string auto_delete = 464761403;</code>
      * @return This builder for chaining.
      */
     public Builder clearAutoDelete() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      autoDelete_ = 0;
+      autoDelete_ = getDefaultInstance().getAutoDelete();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * These stateful disks will never be deleted during autohealing, update, instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole MIG is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_delete = 464761403;</code>
+     * @param value The bytes for autoDelete to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoDeleteBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      autoDelete_ = value;
       onChanged();
       return this;
     }
 
-    private int mode_ = 0;
+    private java.lang.Object mode_ = "";
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      * @return Whether the mode field is set.
      */
-    @java.lang.Override public boolean hasMode() {
+    public boolean hasMode() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
-     * @return The enum numeric value on the wire for mode.
+     * <code>optional string mode = 3357091;</code>
+     * @return The mode.
      */
-    @java.lang.Override public int getModeValue() {
-      return mode_;
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
-     * @param value The enum numeric value on the wire for mode to set.
+     * <code>optional string mode = 3357091;</code>
+     * @return The bytes for mode.
+     */
+    public com.google.protobuf.ByteString
+        getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string mode = 3357091;</code>
+     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    public Builder setModeValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       mode_ = value;
       onChanged();
       return this;
@@ -1006,46 +1122,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
-     * @return The mode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode getMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode result = com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode.valueOf(mode_);
-      return result == null ? com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
-     * @param value The mode to set.
+     * <code>optional string mode = 3357091;</code>
      * @return This builder for chaining.
      */
-    public Builder setMode(com.google.cloud.compute.v1.PreservedStatePreservedDisk.Mode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      mode_ = value.getNumber();
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      mode_ = getDefaultInstance().getMode();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PreservedStatePreservedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
+     * @param value The bytes for mode to set.
      * @return This builder for chaining.
      */
-    public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      mode_ = 0;
+    public Builder setModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      mode_ = value;
       onChanged();
       return this;
     }

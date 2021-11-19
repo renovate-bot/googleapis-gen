@@ -8,18 +8,34 @@ public interface SubsettingOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+   * <pre>
+   * 
+   * Check the Policy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy = 91071794;</code>
    * @return Whether the policy field is set.
    */
   boolean hasPolicy();
   /**
-   * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-   * @return The enum numeric value on the wire for policy.
-   */
-  int getPolicyValue();
-  /**
-   * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+   * <pre>
+   * 
+   * Check the Policy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy = 91071794;</code>
    * @return The policy.
    */
-  com.google.cloud.compute.v1.Subsetting.Policy getPolicy();
+  java.lang.String getPolicy();
+  /**
+   * <pre>
+   * 
+   * Check the Policy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy = 91071794;</code>
+   * @return The bytes for policy.
+   */
+  com.google.protobuf.ByteString
+      getPolicyBytes();
 }

@@ -20,9 +20,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SubnetworkLogConfig() {
-    aggregationInterval_ = 0;
+    aggregationInterval_ = "";
     filterExpr_ = "";
-    metadata_ = 0;
+    metadata_ = "";
     metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -57,16 +57,16 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 694933880: {
-            int rawValue = input.readEnum();
+          case 694933882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000010;
-            metadata_ = rawValue;
+            metadata_ = s;
             break;
           }
-          case 1399352336: {
-            int rawValue = input.readEnum();
+          case 1399352338: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            aggregationInterval_ = rawValue;
+            aggregationInterval_ = s;
             break;
           }
           case 1466995426: {
@@ -434,41 +434,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int AGGREGATION_INTERVAL_FIELD_NUMBER = 174919042;
-  private int aggregationInterval_;
+  private volatile java.lang.Object aggregationInterval_;
   /**
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
+   * <code>optional string aggregation_interval = 174919042;</code>
    * @return Whether the aggregationInterval field is set.
    */
-  @java.lang.Override public boolean hasAggregationInterval() {
+  @java.lang.Override
+  public boolean hasAggregationInterval() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
-   * @return The enum numeric value on the wire for aggregationInterval.
+   * <code>optional string aggregation_interval = 174919042;</code>
+   * @return The aggregationInterval.
    */
-  @java.lang.Override public int getAggregationIntervalValue() {
-    return aggregationInterval_;
+  @java.lang.Override
+  public java.lang.String getAggregationInterval() {
+    java.lang.Object ref = aggregationInterval_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      aggregationInterval_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+   * Check the AggregationInterval enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
-   * @return The aggregationInterval.
+   * <code>optional string aggregation_interval = 174919042;</code>
+   * @return The bytes for aggregationInterval.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval getAggregationInterval() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval result = com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.valueOf(aggregationInterval_);
-    return result == null ? com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAggregationIntervalBytes() {
+    java.lang.Object ref = aggregationInterval_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      aggregationInterval_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
@@ -584,41 +607,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
-  private int metadata_;
+  private volatile java.lang.Object metadata_;
   /**
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    * @return Whether the metadata field is set.
    */
-  @java.lang.Override public boolean hasMetadata() {
+  @java.lang.Override
+  public boolean hasMetadata() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-   * @return The enum numeric value on the wire for metadata.
+   * <code>optional string metadata = 86866735;</code>
+   * @return The metadata.
    */
-  @java.lang.Override public int getMetadataValue() {
-    return metadata_;
+  @java.lang.Override
+  public java.lang.String getMetadata() {
+    java.lang.Object ref = metadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadata_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-   * @return The metadata.
+   * <code>optional string metadata = 86866735;</code>
+   * @return The bytes for metadata.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata getMetadata() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata result = com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.valueOf(metadata_);
-    return result == null ? com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMetadataBytes() {
+    java.lang.Object ref = metadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      metadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int METADATA_FIELDS_FIELD_NUMBER = 378461641;
@@ -687,10 +733,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(86866735, metadata_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 86866735, metadata_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(174919042, aggregationInterval_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 174919042, aggregationInterval_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 183374428, filterExpr_);
@@ -714,12 +760,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(86866735, metadata_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(86866735, metadata_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(174919042, aggregationInterval_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(174919042, aggregationInterval_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(183374428, filterExpr_);
@@ -757,7 +801,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasAggregationInterval() != other.hasAggregationInterval()) return false;
     if (hasAggregationInterval()) {
-      if (aggregationInterval_ != other.aggregationInterval_) return false;
+      if (!getAggregationInterval()
+          .equals(other.getAggregationInterval())) return false;
     }
     if (hasEnable() != other.hasEnable()) return false;
     if (hasEnable()) {
@@ -777,7 +822,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      if (metadata_ != other.metadata_) return false;
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
     }
     if (!getMetadataFieldsList()
         .equals(other.getMetadataFieldsList())) return false;
@@ -794,7 +840,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAggregationInterval()) {
       hash = (37 * hash) + AGGREGATION_INTERVAL_FIELD_NUMBER;
-      hash = (53 * hash) + aggregationInterval_;
+      hash = (53 * hash) + getAggregationInterval().hashCode();
     }
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
@@ -812,7 +858,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + metadata_;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     if (getMetadataFieldsCount() > 0) {
       hash = (37 * hash) + METADATA_FIELDS_FIELD_NUMBER;
@@ -955,7 +1001,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      aggregationInterval_ = 0;
+      aggregationInterval_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       enable_ = false;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -963,7 +1009,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       flowSampling_ = 0F;
       bitField0_ = (bitField0_ & ~0x00000008);
-      metadata_ = 0;
+      metadata_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       metadataFields_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1070,7 +1116,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.SubnetworkLogConfig other) {
       if (other == com.google.cloud.compute.v1.SubnetworkLogConfig.getDefaultInstance()) return this;
       if (other.hasAggregationInterval()) {
-        setAggregationInterval(other.getAggregationInterval());
+        bitField0_ |= 0x00000001;
+        aggregationInterval_ = other.aggregationInterval_;
+        onChanged();
       }
       if (other.hasEnable()) {
         setEnable(other.getEnable());
@@ -1084,7 +1132,9 @@ private static final long serialVersionUID = 0L;
         setFlowSampling(other.getFlowSampling());
       }
       if (other.hasMetadata()) {
-        setMetadata(other.getMetadata());
+        bitField0_ |= 0x00000010;
+        metadata_ = other.metadata_;
+        onChanged();
       }
       if (!other.metadataFields_.isEmpty()) {
         if (metadataFields_.isEmpty()) {
@@ -1126,40 +1176,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int aggregationInterval_ = 0;
+    private java.lang.Object aggregationInterval_ = "";
     /**
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
+     * <code>optional string aggregation_interval = 174919042;</code>
      * @return Whether the aggregationInterval field is set.
      */
-    @java.lang.Override public boolean hasAggregationInterval() {
+    public boolean hasAggregationInterval() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
-     * @return The enum numeric value on the wire for aggregationInterval.
+     * <code>optional string aggregation_interval = 174919042;</code>
+     * @return The aggregationInterval.
      */
-    @java.lang.Override public int getAggregationIntervalValue() {
-      return aggregationInterval_;
+    public java.lang.String getAggregationInterval() {
+      java.lang.Object ref = aggregationInterval_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        aggregationInterval_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
-     * @param value The enum numeric value on the wire for aggregationInterval to set.
+     * <code>optional string aggregation_interval = 174919042;</code>
+     * @return The bytes for aggregationInterval.
+     */
+    public com.google.protobuf.ByteString
+        getAggregationIntervalBytes() {
+      java.lang.Object ref = aggregationInterval_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        aggregationInterval_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string aggregation_interval = 174919042;</code>
+     * @param value The aggregationInterval to set.
      * @return This builder for chaining.
      */
-    public Builder setAggregationIntervalValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setAggregationInterval(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       aggregationInterval_ = value;
       onChanged();
       return this;
@@ -1167,46 +1255,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
-     * @return The aggregationInterval.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval getAggregationInterval() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval result = com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.valueOf(aggregationInterval_);
-      return result == null ? com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
-     * @param value The aggregationInterval to set.
+     * <code>optional string aggregation_interval = 174919042;</code>
      * @return This builder for chaining.
      */
-    public Builder setAggregationInterval(com.google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      aggregationInterval_ = value.getNumber();
+    public Builder clearAggregationInterval() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      aggregationInterval_ = getDefaultInstance().getAggregationInterval();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Can only be specified if VPC flow logging for this subnetwork is enabled. Toggles the aggregation interval for collecting flow logs. Increasing the interval time will reduce the amount of generated flow logs for long lasting connections. Default is an interval of 5 seconds per connection.
+     * Check the AggregationInterval enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.AggregationInterval aggregation_interval = 174919042;</code>
+     * <code>optional string aggregation_interval = 174919042;</code>
+     * @param value The bytes for aggregationInterval to set.
      * @return This builder for chaining.
      */
-    public Builder clearAggregationInterval() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      aggregationInterval_ = 0;
+    public Builder setAggregationIntervalBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      aggregationInterval_ = value;
       onChanged();
       return this;
     }
@@ -1428,40 +1506,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int metadata_ = 0;
+    private java.lang.Object metadata_ = "";
     /**
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      * @return Whether the metadata field is set.
      */
-    @java.lang.Override public boolean hasMetadata() {
+    public boolean hasMetadata() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-     * @return The enum numeric value on the wire for metadata.
+     * <code>optional string metadata = 86866735;</code>
+     * @return The metadata.
      */
-    @java.lang.Override public int getMetadataValue() {
-      return metadata_;
+    public java.lang.String getMetadata() {
+      java.lang.Object ref = metadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-     * @param value The enum numeric value on the wire for metadata to set.
+     * <code>optional string metadata = 86866735;</code>
+     * @return The bytes for metadata.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataBytes() {
+      java.lang.Object ref = metadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string metadata = 86866735;</code>
+     * @param value The metadata to set.
      * @return This builder for chaining.
      */
-    public Builder setMetadataValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setMetadata(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       metadata_ = value;
       onChanged();
       return this;
@@ -1469,46 +1585,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-     * @return The metadata.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata getMetadata() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata result = com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.valueOf(metadata_);
-      return result == null ? com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
-     * @param value The metadata to set.
+     * <code>optional string metadata = 86866735;</code>
      * @return This builder for chaining.
      */
-    public Builder setMetadata(com.google.cloud.compute.v1.SubnetworkLogConfig.Metadata value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      metadata_ = value.getNumber();
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      metadata_ = getDefaultInstance().getMetadata();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Can only be specified if VPC flow logs for this subnetwork is enabled. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default is EXCLUDE_ALL_METADATA.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SubnetworkLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
+     * @param value The bytes for metadata to set.
      * @return This builder for chaining.
      */
-    public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      metadata_ = 0;
+    public Builder setMetadataBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      metadata_ = value;
       onChanged();
       return this;
     }

@@ -290,6 +290,7 @@ class ServiceAttachmentsClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
+        $connectionPreference = 'connectionPreference822688988';
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
         $enableProxyProtocol = false;
@@ -302,6 +303,7 @@ class ServiceAttachmentsClientTest extends GeneratedTest
         $selfLink = 'selfLink-1691268851';
         $targetService = 'targetService-1609318905';
         $expectedResponse = new ServiceAttachment();
+        $expectedResponse->setConnectionPreference($connectionPreference);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEnableProxyProtocol($enableProxyProtocol);

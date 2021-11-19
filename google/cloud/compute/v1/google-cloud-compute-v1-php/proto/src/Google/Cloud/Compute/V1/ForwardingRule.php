@@ -23,8 +23,9 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
     protected $I_p_address = null;
     /**
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     * Generated from protobuf field <code>optional string I_p_protocol = 488094525;</code>
      */
     protected $I_p_protocol = null;
     /**
@@ -71,8 +72,9 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
     protected $id = null;
     /**
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * Generated from protobuf field <code>optional string ip_version = 294959552;</code>
      */
     protected $ip_version = null;
     /**
@@ -101,8 +103,9 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
     private $labels;
     /**
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * Generated from protobuf field <code>optional string load_balancing_scheme = 363890244;</code>
      */
     protected $load_balancing_scheme = null;
     /**
@@ -125,8 +128,9 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
     protected $network = null;
     /**
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
      */
     protected $network_tier = null;
     /**
@@ -148,7 +152,10 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
      */
     protected $psc_connection_id = null;
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string psc_connection_status = 184149172;</code>
      */
     protected $psc_connection_status = null;
     /**
@@ -200,8 +207,9 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
      *
      *     @type string $I_p_address
      *           IP address that this forwarding rule serves. When a client sends traffic to this IP address, the forwarding rule directs the traffic to the target that you specify in the forwarding rule. If you don't specify a reserved IP address, an ephemeral IP address is assigned. Methods for specifying an IP address: * IPv4 dotted decimal, as in `100.1.2.3` * Full URL, as in https://www.googleapis.com/compute/v1/projects/project_id/regions/region /addresses/address-name * Partial URL or by name, as in: - projects/project_id/regions/region/addresses/address-name - regions/region/addresses/address-name - global/addresses/address-name - address-name The loadBalancingScheme and the forwarding rule's target determine the type of IP address that you can use. For detailed information, see [IP address specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#ip_address_specifications). Must be set to `0.0.0.0` when the target is targetGrpcProxy that has validateForProxyless field set to true. For Private Service Connect forwarding rules that forward traffic to Google APIs, IP address must be provided.
-     *     @type int $I_p_protocol
+     *     @type string $I_p_protocol
      *           The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     *           Check the IPProtocol enum for the list of possible values.
      *     @type bool $all_ports
      *           This field is used along with the backend_service field for Internal TCP/UDP Load Balancing or Network Load Balancing, or with the target field for internal and external TargetInstance. You can only use one of ports and port_range, or allPorts. The three are mutually exclusive. For TCP, UDP and SCTP traffic, packets addressed to any ports will be forwarded to the target or backendService.
      *     @type bool $allow_global_access
@@ -216,8 +224,9 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
      *           Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ForwardingRule. Include the fingerprint in patch request to ensure that you do not overwrite changes that were applied from another concurrent request. To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
      *     @type int|string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     *     @type int $ip_version
+     *     @type string $ip_version
      *           The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     *           Check the IpVersion enum for the list of possible values.
      *     @type bool $is_mirroring_collector
      *           Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if a PacketMirroring rule applies to them. This can only be set to true for load balancers that have their loadBalancingScheme set to INTERNAL.
      *     @type string $kind
@@ -226,23 +235,27 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
      *           A fingerprint for the labels being applied to this resource, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
-     *     @type int $load_balancing_scheme
+     *     @type string $load_balancing_scheme
      *           Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     *           Check the LoadBalancingScheme enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\MetadataFilter[]|\Google\Protobuf\Internal\RepeatedField $metadata_filters
      *           Opaque filter criteria used by load balancer to restrict routing configuration to a limited set of xDS compliant clients. In their xDS requests to load balancer, xDS clients present node metadata. When there is a match, the relevant configuration is made available to those proxies. Otherwise, all the resources (e.g. TargetHttpProxy, UrlMap) referenced by the ForwardingRule are not visible to those proxies. For each metadataFilter in this list, if its filterMatchCriteria is set to MATCH_ANY, at least one of the filterLabels must match the corresponding label provided in the metadata. If its filterMatchCriteria is set to MATCH_ALL, then all of its filterLabels must match with corresponding labels provided in the metadata. If multiple metadataFilters are specified, all of them need to be satisfied in order to be considered a match. metadataFilters specified here will be applifed before those specified in the UrlMap that this ForwardingRule references. metadataFilters only applies to Loadbalancers that have their loadBalancingScheme set to INTERNAL_SELF_MANAGED.
      *     @type string $name
      *           Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. For Private Service Connect forwarding rules that forward traffic to Google APIs, the forwarding rule name must be a 1-20 characters string with lowercase letters and numbers and must start with a letter.
      *     @type string $network
      *           This field is not used for external load balancing. For Internal TCP/UDP Load Balancing, this field identifies the network that the load balanced IP should belong to for this Forwarding Rule. If this field is not specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
-     *     @type int $network_tier
+     *     @type string $network_tier
      *           This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     *           Check the NetworkTier enum for the list of possible values.
      *     @type string $port_range
      *           This field can be used only if: - Load balancing scheme is one of EXTERNAL, INTERNAL_SELF_MANAGED or INTERNAL_MANAGED - IPProtocol is one of TCP, UDP, or SCTP. Packets addressed to ports in the specified range will be forwarded to target or backend_service. You can only use one of ports, port_range, or allPorts. The three are mutually exclusive. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint ports. Some types of forwarding target have constraints on the acceptable ports. For more information, see [Port specifications](https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#port_specifications). &#64;pattern: \\d+(?:-\\d+)?
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $ports
      *           The ports field is only supported when the forwarding rule references a backend_service directly. Only packets addressed to the [specified list of ports]((https://cloud.google.com/load-balancing/docs/forwarding-rule-concepts#port_specifications)) are forwarded to backends. You can only use one of ports and port_range, or allPorts. The three are mutually exclusive. You can specify a list of up to five ports, which can be non-contiguous. Forwarding rules with the same [IPAddress, IPProtocol] pair must have disjoint ports. &#64;pattern: \\d+(?:-\\d+)?
      *     @type int|string $psc_connection_id
      *           [Output Only] The PSC connection id of the PSC Forwarding Rule.
-     *     @type int $psc_connection_status
+     *     @type string $psc_connection_status
+     *           
+     *           Check the PscConnectionStatus enum for the list of possible values.
      *     @type string $region
      *           [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      *     @type string $self_link
@@ -301,13 +314,14 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string I_p_protocol = 488094525;</code>
+     * @return string
      */
     public function getIPProtocol()
     {
-        return isset($this->I_p_protocol) ? $this->I_p_protocol : 0;
+        return isset($this->I_p_protocol) ? $this->I_p_protocol : '';
     }
 
     public function hasIPProtocol()
@@ -322,14 +336,15 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string I_p_protocol = 488094525;</code>
+     * @param string $var
      * @return $this
      */
     public function setIPProtocol($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ForwardingRule\IPProtocol::class);
+        GPBUtil::checkString($var, True);
         $this->I_p_protocol = $var;
 
         return $this;
@@ -589,13 +604,14 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string ip_version = 294959552;</code>
+     * @return string
      */
     public function getIpVersion()
     {
-        return isset($this->ip_version) ? $this->ip_version : 0;
+        return isset($this->ip_version) ? $this->ip_version : '';
     }
 
     public function hasIpVersion()
@@ -610,14 +626,15 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string ip_version = 294959552;</code>
+     * @param string $var
      * @return $this
      */
     public function setIpVersion($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ForwardingRule\IpVersion::class);
+        GPBUtil::checkString($var, True);
         $this->ip_version = $var;
 
         return $this;
@@ -759,13 +776,14 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string load_balancing_scheme = 363890244;</code>
+     * @return string
      */
     public function getLoadBalancingScheme()
     {
-        return isset($this->load_balancing_scheme) ? $this->load_balancing_scheme : 0;
+        return isset($this->load_balancing_scheme) ? $this->load_balancing_scheme : '';
     }
 
     public function hasLoadBalancingScheme()
@@ -780,14 +798,15 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string load_balancing_scheme = 363890244;</code>
+     * @param string $var
      * @return $this
      */
     public function setLoadBalancingScheme($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ForwardingRule\LoadBalancingScheme::class);
+        GPBUtil::checkString($var, True);
         $this->load_balancing_scheme = $var;
 
         return $this;
@@ -893,13 +912,14 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
+     * @return string
      */
     public function getNetworkTier()
     {
-        return isset($this->network_tier) ? $this->network_tier : 0;
+        return isset($this->network_tier) ? $this->network_tier : '';
     }
 
     public function hasNetworkTier()
@@ -914,14 +934,15 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
+     * @param string $var
      * @return $this
      */
     public function setNetworkTier($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ForwardingRule\NetworkTier::class);
+        GPBUtil::checkString($var, True);
         $this->network_tier = $var;
 
         return $this;
@@ -1026,12 +1047,15 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-     * @return int
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string psc_connection_status = 184149172;</code>
+     * @return string
      */
     public function getPscConnectionStatus()
     {
-        return isset($this->psc_connection_status) ? $this->psc_connection_status : 0;
+        return isset($this->psc_connection_status) ? $this->psc_connection_status : '';
     }
 
     public function hasPscConnectionStatus()
@@ -1045,13 +1069,16 @@ class ForwardingRule extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-     * @param int $var
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string psc_connection_status = 184149172;</code>
+     * @param string $var
      * @return $this
      */
     public function setPscConnectionStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ForwardingRule\PscConnectionStatus::class);
+        GPBUtil::checkString($var, True);
         $this->psc_connection_status = $var;
 
         return $this;

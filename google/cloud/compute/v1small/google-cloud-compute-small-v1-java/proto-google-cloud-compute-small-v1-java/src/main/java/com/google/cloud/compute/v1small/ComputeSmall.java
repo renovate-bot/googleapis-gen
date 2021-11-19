@@ -113,223 +113,215 @@ public final class ComputeSmall {
       "\032\034google/api/annotations.proto\032\027google/a" +
       "pi/client.proto\032\037google/api/field_behavi" +
       "or.proto\032\031google/api/resource.proto\032&goo" +
-      "gle/cloud/extended_operations.proto\"\362\n\n\007" +
-      "Address\022\030\n\007address\030\364\267\336\334\001 \001(\tH\000\210\001\001\022O\n\014add" +
-      "ress_type\030\245\211\204~ \001(\01621.google.cloud.comput" +
-      "e.v1small.Address.AddressTypeH\001\210\001\001\022\"\n\022cr" +
-      "eation_timestamp\030\266\217\307\016 \001(\tH\002\210\001\001\022\034\n\013descri" +
-      "ption\030\374\207\326\311\001 \001(\tH\003\210\001\001\022\020\n\002id\030\233\032 \001(\004H\004\210\001\001\022L" +
-      "\n\nip_version\030\300\363\322\214\001 \001(\0162/.google.cloud.co" +
-      "mpute.v1small.Address.IpVersionH\005\210\001\001\022\024\n\004" +
-      "kind\030\224\367\310\001 \001(\tH\006\210\001\001\022\024\n\004name\030\213\365\315\001 \001(\tH\007\210\001\001" +
-      "\022\027\n\007network\030\256\264\205o \001(\tH\010\210\001\001\022P\n\014network_tie" +
-      "r\030\323\272\333\366\001 \001(\01621.google.cloud.compute.v1sma" +
-      "ll.Address.NetworkTierH\t\210\001\001\022\036\n\rprefix_le" +
-      "ngth\030\263\272\243\330\001 \001(\005H\n\210\001\001\022G\n\007purpose\030\236\372\357\226\001 \001(\016" +
-      "2-.google.cloud.compute.v1small.Address." +
-      "PurposeH\013\210\001\001\022\026\n\006region\030\364\315\240B \001(\tH\014\210\001\001\022\032\n\t" +
-      "self_link\030\215\222\305\331\001 \001(\tH\r\210\001\001\022D\n\006status\030\362\237\267V " +
-      "\001(\0162,.google.cloud.compute.v1small.Addre" +
-      "ss.StatusH\016\210\001\001\022\033\n\nsubnetwork\030\356\247\344\222\001 \001(\tH\017" +
-      "\210\001\001\022\020\n\005users\030\210\234\2325 \003(\t\"e\n\013AddressType\022\032\n\026" +
-      "UNDEFINED_ADDRESS_TYPE\020\000\022\017\n\010EXTERNAL\020\313\247\375" +
-      "\020\022\020\n\010INTERNAL\020\275\355\226\205\001\022\027\n\020UNSPECIFIED_TYPE\020" +
-      "\342\356\333\031\"[\n\tIpVersion\022\030\n\024UNDEFINED_IP_VERSIO" +
-      "N\020\000\022\013\n\004IPV4\020\205\314\211\001\022\013\n\004IPV6\020\207\314\211\001\022\032\n\023UNSPECI" +
-      "FIED_VERSION\020\220\317\265\n\"L\n\013NetworkTier\022\032\n\026UNDE" +
-      "FINED_NETWORK_TIER\020\000\022\017\n\007PREMIUM\020\267\264\301\276\001\022\020\n" +
-      "\010STANDARD\020\275\235\214\347\001\"q\n\007Purpose\022\025\n\021UNDEFINED_" +
-      "PURPOSE\020\000\022\024\n\014DNS_RESOLVER\020\374\334\203\343\001\022\023\n\014GCE_E" +
-      "NDPOINT\020\253\304\365m\022\017\n\010NAT_AUTO\020\255\264\205N\022\023\n\013VPC_PEE" +
-      "RING\020\252\363\216\277\001\"R\n\006Status\022\024\n\020UNDEFINED_STATUS" +
-      "\020\000\022\r\n\006IN_USE\020\315\316\245\010\022\020\n\010RESERVED\020\250\366\215\316\001\022\021\n\tR" +
-      "ESERVING\020\331\364\257\365\001B\n\n\010_addressB\017\n\r_address_t" +
-      "ypeB\025\n\023_creation_timestampB\016\n\014_descripti" +
-      "onB\005\n\003_idB\r\n\013_ip_versionB\007\n\005_kindB\007\n\005_na" +
-      "meB\n\n\010_networkB\017\n\r_network_tierB\020\n\016_pref" +
-      "ix_lengthB\n\n\010_purposeB\t\n\007_regionB\014\n\n_sel" +
-      "f_linkB\t\n\007_statusB\r\n\013_subnetwork\"\255\003\n\025Add" +
-      "ressAggregatedList\022\020\n\002id\030\233\032 \001(\tH\000\210\001\001\022P\n\005" +
-      "items\030\300\317\367/ \003(\0132>.google.cloud.compute.v1" +
-      "small.AddressAggregatedList.ItemsEntry\022\024" +
-      "\n\004kind\030\224\367\310\001 \001(\tH\001\210\001\001\022\037\n\017next_page_token\030" +
-      "\225\272\206& \001(\tH\002\210\001\001\022\032\n\tself_link\030\215\222\305\331\001 \001(\tH\003\210\001" +
-      "\001\022>\n\007warning\030\234\337\226\030 \001(\0132%.google.cloud.com" +
-      "pute.v1small.WarningH\004\210\001\001\032_\n\nItemsEntry\022" +
-      "\013\n\003key\030\001 \001(\t\022@\n\005value\030\002 \001(\01321.google.clo" +
-      "ud.compute.v1small.AddressesScopedList:\002" +
-      "8\001B\005\n\003_idB\007\n\005_kindB\022\n\020_next_page_tokenB\014" +
-      "\n\n_self_linkB\n\n\010_warning\"\251\002\n\013AddressList" +
-      "\022\020\n\002id\030\233\032 \001(\tH\000\210\001\001\0227\n\005items\030\300\317\367/ \003(\0132%.g" +
-      "oogle.cloud.compute.v1small.Address\022\024\n\004k" +
-      "ind\030\224\367\310\001 \001(\tH\001\210\001\001\022\037\n\017next_page_token\030\225\272\206" +
-      "& \001(\tH\002\210\001\001\022\032\n\tself_link\030\215\222\305\331\001 \001(\tH\003\210\001\001\022>" +
-      "\n\007warning\030\234\337\226\030 \001(\0132%.google.cloud.comput" +
-      "e.v1small.WarningH\004\210\001\001B\005\n\003_idB\007\n\005_kindB\022" +
-      "\n\020_next_page_tokenB\014\n\n_self_linkB\n\n\010_war" +
-      "ning\"\237\001\n\023AddressesScopedList\022<\n\taddresse" +
-      "s\030\242\367\201\241\001 \003(\0132%.google.cloud.compute.v1sma" +
-      "ll.Address\022>\n\007warning\030\234\337\226\030 \001(\0132%.google." +
-      "cloud.compute.v1small.WarningH\000\210\001\001B\n\n\010_w" +
-      "arning\"\230\002\n\036AggregatedListAddressesReques" +
-      "t\022\027\n\006filter\030\370\226\243\240\001 \001(\tH\000\210\001\001\022#\n\022include_al" +
-      "l_scopes\030\364\341\314\272\001 \001(\010H\001\210\001\001\022\033\n\013max_results\030\233" +
-      "\310\213\032 \001(\rH\002\210\001\001\022\030\n\010order_by\030\350\375\307L \001(\tH\003\210\001\001\022\032" +
-      "\n\npage_token\030\311\260\304\t \001(\tH\004\210\001\001\022\027\n\007project\030\231\226" +
-      "\301l \001(\tB\003\340A\002B\t\n\007_filterB\025\n\023_include_all_s" +
-      "copesB\016\n\014_max_resultsB\013\n\t_order_byB\r\n\013_p" +
-      "age_token\"C\n\004Data\022\022\n\003key\030\337\274\006 \001(\tH\000\210\001\001\022\025\n" +
-      "\005value\030\361\242\2625 \001(\tH\001\210\001\001B\006\n\004_keyB\010\n\006_value\"\237" +
-      "\001\n\024DeleteAddressRequest\022\030\n\007address\030\364\267\336\334\001" +
-      " \001(\tB\003\340A\002\022!\n\007project\030\231\226\301l \001(\tB\r\340A\002\362G\007pro" +
-      "ject\022\037\n\006region\030\364\315\240B \001(\tB\014\340A\002\362G\006region\022\032\n" +
-      "\nrequest_id\030\313\201\331\021 \001(\tH\000\210\001\001B\r\n\013_request_id" +
-      "\"A\n\005Error\0228\n\006errors\030\353\336\325\226\001 \003(\0132$.google.c" +
-      "loud.compute.v1small.Errors\"u\n\006Errors\022\024\n" +
-      "\004code\030\355\333\272\001 \001(\tH\000\210\001\001\022\031\n\010location\030\265\277\276\212\001 \001(" +
-      "\tH\001\210\001\001\022\030\n\007message\030\207\200\254\307\001 \001(\tH\002\210\001\001B\007\n\005_cod" +
-      "eB\013\n\t_locationB\n\n\010_message\"n\n\031GetRegionO" +
-      "perationRequest\022 \n\toperation\030\347\252\353\030 \001(\tB\n\340" +
-      "A\002\372G\004name\022\027\n\007project\030\231\226\301l \001(\tB\003\340A\002\022\026\n\006re" +
-      "gion\030\364\315\240B \001(\tB\003\340A\002\"\317\001\n\024InsertAddressRequ" +
-      "est\022H\n\020address_resource\030\371\227\336\346\001 \001(\0132%.goog" +
-      "le.cloud.compute.v1small.AddressB\003\340A\002\022!\n" +
-      "\007project\030\231\226\301l \001(\tB\r\340A\002\362G\007project\022\037\n\006regi" +
-      "on\030\364\315\240B \001(\tB\014\340A\002\362G\006region\022\032\n\nrequest_id\030" +
-      "\313\201\331\021 \001(\tH\000\210\001\001B\r\n\013_request_id\"\335\001\n\024ListAdd" +
-      "ressesRequest\022\027\n\006filter\030\370\226\243\240\001 \001(\tH\000\210\001\001\022\033" +
-      "\n\013max_results\030\233\310\213\032 \001(\rH\001\210\001\001\022\030\n\010order_by\030" +
-      "\350\375\307L \001(\tB\003\340A\002\022\032\n\npage_token\030\311\260\304\t \001(\tH\002\210\001" +
-      "\001\022\027\n\007project\030\231\226\301l \001(\tB\003\340A\002\022\026\n\006region\030\364\315\240" +
-      "B \001(\tB\003\340A\002B\t\n\007_filterB\016\n\014_max_resultsB\r\n" +
-      "\013_page_token\"\257\t\n\tOperation\022$\n\023client_ope" +
-      "ration_id\030\347\215\336\215\001 \001(\tH\000\210\001\001\022\"\n\022creation_tim" +
-      "estamp\030\266\217\307\016 \001(\tH\001\210\001\001\022\034\n\013description\030\374\207\326\311" +
-      "\001 \001(\tH\002\210\001\001\022\030\n\010end_time\030\261\247\3476 \001(\tH\003\210\001\001\022:\n\005" +
-      "error\030\210\244\223. \001(\0132#.google.cloud.compute.v1" +
-      "small.ErrorH\004\210\001\001\022\'\n\022http_error_message\030\331" +
-      "\372\310` \001(\tB\003\350G\004H\005\210\001\001\022,\n\026http_error_status_c" +
-      "ode\030\354\204\370\224\001 \001(\005B\003\350G\003H\006\210\001\001\022\020\n\002id\030\233\032 \001(\004H\007\210\001" +
-      "\001\022\034\n\013insert_time\030\223\251\350\316\001 \001(\tH\010\210\001\001\022\024\n\004kind\030" +
-      "\224\367\310\001 \001(\tH\t\210\001\001\022\031\n\004name\030\213\365\315\001 \001(\tB\003\350G\001H\n\210\001\001" +
-      "\022\036\n\016operation_type\030\222\366\332T \001(\tH\013\210\001\001\022\030\n\010prog" +
-      "ress\030\255\204\323\" \001(\005H\014\210\001\001\022\026\n\006region\030\364\315\240B \001(\tH\r\210" +
-      "\001\001\022\032\n\tself_link\030\215\222\305\331\001 \001(\tH\016\210\001\001\022\032\n\nstart_" +
-      "time\030\212\351\356\021 \001(\tH\017\210\001\001\022K\n\006status\030\362\237\267V \001(\0162.." +
-      "google.cloud.compute.v1small.Operation.S" +
-      "tatusB\003\350G\002H\020\210\001\001\022\037\n\016status_message\030\272\311\351\215\001 " +
-      "\001(\tH\021\210\001\001\022\031\n\ttarget_id\030\211\225\215{ \001(\004H\022\210\001\001\022\033\n\013t" +
-      "arget_link\030\350\223\361\035 \001(\tH\023\210\001\001\022\024\n\004user\030\313\327\333\001 \001(" +
-      "\tH\024\210\001\001\022<\n\010warnings\030\327\210\301\355\001 \003(\0132&.google.cl" +
-      "oud.compute.v1small.Warnings\022\024\n\004zone\030\254\307\344" +
-      "\001 \001(\tH\025\210\001\001\"K\n\006Status\022\024\n\020UNDEFINED_STATUS" +
-      "\020\000\022\013\n\004DONE\020\202\267\200\001\022\016\n\007PENDING\020\367\252\360\020\022\016\n\007RUNNI" +
-      "NG\020\237\303\3529B\026\n\024_client_operation_idB\025\n\023_crea" +
-      "tion_timestampB\016\n\014_descriptionB\013\n\t_end_t" +
-      "imeB\010\n\006_errorB\025\n\023_http_error_messageB\031\n\027" +
-      "_http_error_status_codeB\005\n\003_idB\016\n\014_inser" +
-      "t_timeB\007\n\005_kindB\007\n\005_nameB\021\n\017_operation_t" +
-      "ypeB\013\n\t_progressB\t\n\007_regionB\014\n\n_self_lin" +
-      "kB\r\n\013_start_timeB\t\n\007_statusB\021\n\017_status_m" +
-      "essageB\014\n\n_target_idB\016\n\014_target_linkB\007\n\005" +
-      "_userB\007\n\005_zone\"h\n\032WaitRegionOperationReq" +
-      "uest\022\031\n\toperation\030\347\252\353\030 \001(\tB\003\340A\002\022\027\n\007proje" +
-      "ct\030\231\226\301l \001(\tB\003\340A\002\022\026\n\006region\030\364\315\240B \001(\tB\003\340A\002" +
-      "\"\313\007\n\007Warning\022@\n\004code\030\355\333\272\001 \001(\0162*.google.c" +
-      "loud.compute.v1small.Warning.CodeH\000\210\001\001\0223" +
-      "\n\004data\030\252\337\273\001 \003(\0132\".google.cloud.compute.v" +
-      "1small.Data\022\030\n\007message\030\207\200\254\307\001 \001(\tH\001\210\001\001\"\231\006" +
-      "\n\004Code\022\022\n\016UNDEFINED_CODE\020\000\022\025\n\016CLEANUP_FA" +
-      "ILED\020\330\214\326G\022 \n\030DEPRECATED_RESOURCE_USED\020\302\337" +
-      "\353\272\001\022\034\n\024DEPRECATED_TYPE_USED\020\226\244\236\245\001\022(\n DIS" +
-      "K_SIZE_LARGER_THAN_IMAGE_SIZE\020\227\201\225\260\001\022\036\n\026E" +
-      "XPERIMENTAL_TYPE_USED\020\213\216\301\327\001\022\033\n\024EXTERNAL_" +
-      "API_WARNING\020\303\277\332S\022\035\n\025FIELD_VALUE_OVERRIDE" +
-      "N\020\257\266\231\235\001\022#\n\033INJECTED_KERNELS_DEPRECATED\020\213" +
-      "\331\202\307\001\022\037\n\027MISSING_TYPE_DEPENDENCY\020\367\370\242\244\001\022%\n" +
-      "\035NEXT_HOP_ADDRESS_NOT_ASSIGNED\020\207\245\372\232\001\022\"\n\032" +
-      "NEXT_HOP_CANNOT_IP_FORWARD\020\347\352\347\266\001\022#\n\033NEXT" +
-      "_HOP_INSTANCE_NOT_FOUND\020\316\314\257\335\001\022\'\n NEXT_HO" +
-      "P_INSTANCE_NOT_ON_NETWORK\020\302\350\235t\022\034\n\024NEXT_H" +
-      "OP_NOT_RUNNING\020\261\317\360\306\001\022\031\n\022NOT_CRITICAL_ERR" +
-      "OR\020\324\250\2672\022\031\n\022NO_RESULTS_ON_PAGE\020\210\246\251\016\022\035\n\026RE" +
-      "QUIRED_TOS_AGREEMENT\020\203\316\344\001\0221\n)RESOURCE_IN" +
-      "_USE_BY_OTHER_RESOURCE_WARNING\020\301\364\355\354\001\022\033\n\024" +
-      "RESOURCE_NOT_DELETED\020\274\267\262P\022!\n\031SCHEMA_VALI" +
-      "DATION_IGNORED\020\312\324\237\203\001\022(\n!SINGLE_INSTANCE_" +
-      "PROPERTY_TEMPLATE\020\321\211\370\177\022\035\n\025UNDECLARED_PRO" +
-      "PERTIES\020\237\206\233\272\001\022\022\n\013UNREACHABLE\020\264\275\255\006B\007\n\005_co" +
-      "deB\n\n\010_message\"\315\007\n\010Warnings\022A\n\004code\030\355\333\272\001" +
-      " \001(\0162+.google.cloud.compute.v1small.Warn" +
-      "ings.CodeH\000\210\001\001\0223\n\004data\030\252\337\273\001 \003(\0132\".google" +
-      ".cloud.compute.v1small.Data\022\030\n\007message\030\207" +
-      "\200\254\307\001 \001(\tH\001\210\001\001\"\231\006\n\004Code\022\022\n\016UNDEFINED_CODE" +
-      "\020\000\022\025\n\016CLEANUP_FAILED\020\330\214\326G\022 \n\030DEPRECATED_" +
-      "RESOURCE_USED\020\302\337\353\272\001\022\034\n\024DEPRECATED_TYPE_U" +
-      "SED\020\226\244\236\245\001\022(\n DISK_SIZE_LARGER_THAN_IMAGE" +
-      "_SIZE\020\227\201\225\260\001\022\036\n\026EXPERIMENTAL_TYPE_USED\020\213\216" +
-      "\301\327\001\022\033\n\024EXTERNAL_API_WARNING\020\303\277\332S\022\035\n\025FIEL" +
-      "D_VALUE_OVERRIDEN\020\257\266\231\235\001\022#\n\033INJECTED_KERN" +
-      "ELS_DEPRECATED\020\213\331\202\307\001\022\037\n\027MISSING_TYPE_DEP" +
-      "ENDENCY\020\367\370\242\244\001\022%\n\035NEXT_HOP_ADDRESS_NOT_AS" +
-      "SIGNED\020\207\245\372\232\001\022\"\n\032NEXT_HOP_CANNOT_IP_FORWA" +
-      "RD\020\347\352\347\266\001\022#\n\033NEXT_HOP_INSTANCE_NOT_FOUND\020" +
-      "\316\314\257\335\001\022\'\n NEXT_HOP_INSTANCE_NOT_ON_NETWOR" +
-      "K\020\302\350\235t\022\034\n\024NEXT_HOP_NOT_RUNNING\020\261\317\360\306\001\022\031\n\022" +
-      "NOT_CRITICAL_ERROR\020\324\250\2672\022\031\n\022NO_RESULTS_ON" +
-      "_PAGE\020\210\246\251\016\022\035\n\026REQUIRED_TOS_AGREEMENT\020\203\316\344" +
-      "\001\0221\n)RESOURCE_IN_USE_BY_OTHER_RESOURCE_W" +
-      "ARNING\020\301\364\355\354\001\022\033\n\024RESOURCE_NOT_DELETED\020\274\267\262" +
-      "P\022!\n\031SCHEMA_VALIDATION_IGNORED\020\312\324\237\203\001\022(\n!" +
-      "SINGLE_INSTANCE_PROPERTY_TEMPLATE\020\321\211\370\177\022\035" +
-      "\n\025UNDECLARED_PROPERTIES\020\237\206\233\272\001\022\022\n\013UNREACH" +
-      "ABLE\020\264\275\255\006B\007\n\005_codeB\n\n\010_message2\345\007\n\tAddre" +
-      "sses\022\312\001\n\016AggregatedList\022<.google.cloud.c" +
-      "ompute.v1small.AggregatedListAddressesRe" +
-      "quest\0323.google.cloud.compute.v1small.Add" +
-      "ressAggregatedList\"E\202\323\344\223\0025\0223/compute/v1/" +
-      "projects/{project}/aggregated/addresses\332" +
-      "A\007project\022\336\001\n\006Delete\0222.google.cloud.comp" +
-      "ute.v1small.DeleteAddressRequest\032\'.googl" +
-      "e.cloud.compute.v1small.Operation\"w\202\323\344\223\002" +
-      "E*C/compute/v1/projects/{project}/region" +
-      "s/{region}/addresses/{address}\332A\026project" +
-      ",region,address\212N\020RegionOperations\022\360\001\n\006I" +
-      "nsert\0222.google.cloud.compute.v1small.Ins" +
-      "ertAddressRequest\032\'.google.cloud.compute" +
-      ".v1small.Operation\"\210\001\202\323\344\223\002M\"9/compute/v1" +
-      "/projects/{project}/regions/{region}/add" +
-      "resses:\020address_resource\332A\037project,regio" +
-      "n,address_resource\212N\020RegionOperations\022\302\001" +
-      "\n\004List\0222.google.cloud.compute.v1small.Li" +
-      "stAddressesRequest\032).google.cloud.comput" +
-      "e.v1small.AddressList\"[\202\323\344\223\002;\0229/compute/" +
-      "v1/projects/{project}/regions/{region}/a" +
-      "ddresses\332A\027project,region,order_by\032r\312A\026c" +
-      "ompute.googleapis.com\322AVhttps://www.goog" +
-      "leapis.com/auth/compute,https://www.goog" +
-      "leapis.com/auth/cloud-platform2\366\004\n\020Regio" +
-      "nOperations\022\325\001\n\003Get\0227.google.cloud.compu" +
-      "te.v1small.GetRegionOperationRequest\032\'.g" +
-      "oogle.cloud.compute.v1small.Operation\"l\202" +
-      "\323\344\223\002H\022F/compute/v1/projects/{project}/re" +
-      "gions/{region}/operations/{operation}\332A\030" +
-      "project,region,operation\220N\001\022\342\001\n\004Wait\0228.g" +
-      "oogle.cloud.compute.v1small.WaitRegionOp" +
-      "erationRequest\032\'.google.cloud.compute.v1" +
-      "small.Operation\"w\202\323\344\223\002V\"T/compute/v1/pro" +
-      "jects/projects/{project}/regions/{region" +
-      "}/operations/{operation}/wait\332A\030project," +
-      "region,operation\032\244\001\312A\026compute.googleapis" +
-      ".com\322A\207\001https://www.googleapis.com/auth/" +
-      "compute.readonly,https://www.googleapis." +
-      "com/auth/compute,https://www.googleapis." +
-      "com/auth/cloud-platformB\311\001\n com.google.c" +
-      "loud.compute.v1smallP\001ZCgoogle.golang.or" +
-      "g/genproto/googleapis/cloud/compute/v1sm" +
-      "all;compute\252\002\034Google.Cloud.Compute.V1Sma" +
-      "ll\312\002\034Google\\Cloud\\Compute\\V1small\352\002\037Goog" +
-      "le::Cloud::Compute::V1smallb\006proto3"
+      "gle/cloud/extended_operations.proto\"\376\010\n\007" +
+      "Address\022\030\n\007address\030\364\267\336\334\001 \001(\tH\000\210\001\001\022\034\n\014add" +
+      "ress_type\030\245\211\204~ \001(\tH\001\210\001\001\022\"\n\022creation_time" +
+      "stamp\030\266\217\307\016 \001(\tH\002\210\001\001\022\034\n\013description\030\374\207\326\311\001" +
+      " \001(\tH\003\210\001\001\022\020\n\002id\030\233\032 \001(\004H\004\210\001\001\022\033\n\nip_versio" +
+      "n\030\300\363\322\214\001 \001(\tH\005\210\001\001\022\024\n\004kind\030\224\367\310\001 \001(\tH\006\210\001\001\022\024" +
+      "\n\004name\030\213\365\315\001 \001(\tH\007\210\001\001\022\027\n\007network\030\256\264\205o \001(\t" +
+      "H\010\210\001\001\022\035\n\014network_tier\030\323\272\333\366\001 \001(\tH\t\210\001\001\022\036\n\r" +
+      "prefix_length\030\263\272\243\330\001 \001(\005H\n\210\001\001\022\030\n\007purpose\030" +
+      "\236\372\357\226\001 \001(\tH\013\210\001\001\022\026\n\006region\030\364\315\240B \001(\tH\014\210\001\001\022\032" +
+      "\n\tself_link\030\215\222\305\331\001 \001(\tH\r\210\001\001\022\026\n\006status\030\362\237\267" +
+      "V \001(\tH\016\210\001\001\022\033\n\nsubnetwork\030\356\247\344\222\001 \001(\tH\017\210\001\001\022" +
+      "\020\n\005users\030\210\234\2325 \003(\t\"e\n\013AddressType\022\032\n\026UNDE" +
+      "FINED_ADDRESS_TYPE\020\000\022\017\n\010EXTERNAL\020\313\247\375\020\022\020\n" +
+      "\010INTERNAL\020\275\355\226\205\001\022\027\n\020UNSPECIFIED_TYPE\020\342\356\333\031" +
+      "\"[\n\tIpVersion\022\030\n\024UNDEFINED_IP_VERSION\020\000\022" +
+      "\013\n\004IPV4\020\205\314\211\001\022\013\n\004IPV6\020\207\314\211\001\022\032\n\023UNSPECIFIED" +
+      "_VERSION\020\220\317\265\n\"L\n\013NetworkTier\022\032\n\026UNDEFINE" +
+      "D_NETWORK_TIER\020\000\022\017\n\007PREMIUM\020\267\264\301\276\001\022\020\n\010STA" +
+      "NDARD\020\275\235\214\347\001\"q\n\007Purpose\022\025\n\021UNDEFINED_PURP" +
+      "OSE\020\000\022\024\n\014DNS_RESOLVER\020\374\334\203\343\001\022\023\n\014GCE_ENDPO" +
+      "INT\020\253\304\365m\022\017\n\010NAT_AUTO\020\255\264\205N\022\023\n\013VPC_PEERING" +
+      "\020\252\363\216\277\001\"R\n\006Status\022\024\n\020UNDEFINED_STATUS\020\000\022\r" +
+      "\n\006IN_USE\020\315\316\245\010\022\020\n\010RESERVED\020\250\366\215\316\001\022\021\n\tRESER" +
+      "VING\020\331\364\257\365\001B\n\n\010_addressB\017\n\r_address_typeB" +
+      "\025\n\023_creation_timestampB\016\n\014_descriptionB\005" +
+      "\n\003_idB\r\n\013_ip_versionB\007\n\005_kindB\007\n\005_nameB\n" +
+      "\n\010_networkB\017\n\r_network_tierB\020\n\016_prefix_l" +
+      "engthB\n\n\010_purposeB\t\n\007_regionB\014\n\n_self_li" +
+      "nkB\t\n\007_statusB\r\n\013_subnetwork\"\255\003\n\025Address" +
+      "AggregatedList\022\020\n\002id\030\233\032 \001(\tH\000\210\001\001\022P\n\005item" +
+      "s\030\300\317\367/ \003(\0132>.google.cloud.compute.v1smal" +
+      "l.AddressAggregatedList.ItemsEntry\022\024\n\004ki" +
+      "nd\030\224\367\310\001 \001(\tH\001\210\001\001\022\037\n\017next_page_token\030\225\272\206&" +
+      " \001(\tH\002\210\001\001\022\032\n\tself_link\030\215\222\305\331\001 \001(\tH\003\210\001\001\022>\n" +
+      "\007warning\030\234\337\226\030 \001(\0132%.google.cloud.compute" +
+      ".v1small.WarningH\004\210\001\001\032_\n\nItemsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022@\n\005value\030\002 \001(\01321.google.cloud.c" +
+      "ompute.v1small.AddressesScopedList:\0028\001B\005" +
+      "\n\003_idB\007\n\005_kindB\022\n\020_next_page_tokenB\014\n\n_s" +
+      "elf_linkB\n\n\010_warning\"\251\002\n\013AddressList\022\020\n\002" +
+      "id\030\233\032 \001(\tH\000\210\001\001\0227\n\005items\030\300\317\367/ \003(\0132%.googl" +
+      "e.cloud.compute.v1small.Address\022\024\n\004kind\030" +
+      "\224\367\310\001 \001(\tH\001\210\001\001\022\037\n\017next_page_token\030\225\272\206& \001(" +
+      "\tH\002\210\001\001\022\032\n\tself_link\030\215\222\305\331\001 \001(\tH\003\210\001\001\022>\n\007wa" +
+      "rning\030\234\337\226\030 \001(\0132%.google.cloud.compute.v1" +
+      "small.WarningH\004\210\001\001B\005\n\003_idB\007\n\005_kindB\022\n\020_n" +
+      "ext_page_tokenB\014\n\n_self_linkB\n\n\010_warning" +
+      "\"\237\001\n\023AddressesScopedList\022<\n\taddresses\030\242\367" +
+      "\201\241\001 \003(\0132%.google.cloud.compute.v1small.A" +
+      "ddress\022>\n\007warning\030\234\337\226\030 \001(\0132%.google.clou" +
+      "d.compute.v1small.WarningH\000\210\001\001B\n\n\010_warni" +
+      "ng\"\230\002\n\036AggregatedListAddressesRequest\022\027\n" +
+      "\006filter\030\370\226\243\240\001 \001(\tH\000\210\001\001\022#\n\022include_all_sc" +
+      "opes\030\364\341\314\272\001 \001(\010H\001\210\001\001\022\033\n\013max_results\030\233\310\213\032 " +
+      "\001(\rH\002\210\001\001\022\030\n\010order_by\030\350\375\307L \001(\tH\003\210\001\001\022\032\n\npa" +
+      "ge_token\030\311\260\304\t \001(\tH\004\210\001\001\022\027\n\007project\030\231\226\301l \001" +
+      "(\tB\003\340A\002B\t\n\007_filterB\025\n\023_include_all_scope" +
+      "sB\016\n\014_max_resultsB\013\n\t_order_byB\r\n\013_page_" +
+      "token\"C\n\004Data\022\022\n\003key\030\337\274\006 \001(\tH\000\210\001\001\022\025\n\005val" +
+      "ue\030\361\242\2625 \001(\tH\001\210\001\001B\006\n\004_keyB\010\n\006_value\"\237\001\n\024D" +
+      "eleteAddressRequest\022\030\n\007address\030\364\267\336\334\001 \001(\t" +
+      "B\003\340A\002\022!\n\007project\030\231\226\301l \001(\tB\r\340A\002\362G\007project" +
+      "\022\037\n\006region\030\364\315\240B \001(\tB\014\340A\002\362G\006region\022\032\n\nreq" +
+      "uest_id\030\313\201\331\021 \001(\tH\000\210\001\001B\r\n\013_request_id\"A\n\005" +
+      "Error\0228\n\006errors\030\353\336\325\226\001 \003(\0132$.google.cloud" +
+      ".compute.v1small.Errors\"u\n\006Errors\022\024\n\004cod" +
+      "e\030\355\333\272\001 \001(\tH\000\210\001\001\022\031\n\010location\030\265\277\276\212\001 \001(\tH\001\210" +
+      "\001\001\022\030\n\007message\030\207\200\254\307\001 \001(\tH\002\210\001\001B\007\n\005_codeB\013\n" +
+      "\t_locationB\n\n\010_message\"n\n\031GetRegionOpera" +
+      "tionRequest\022 \n\toperation\030\347\252\353\030 \001(\tB\n\340A\002\372G" +
+      "\004name\022\027\n\007project\030\231\226\301l \001(\tB\003\340A\002\022\026\n\006region" +
+      "\030\364\315\240B \001(\tB\003\340A\002\"\317\001\n\024InsertAddressRequest\022" +
+      "H\n\020address_resource\030\371\227\336\346\001 \001(\0132%.google.c" +
+      "loud.compute.v1small.AddressB\003\340A\002\022!\n\007pro" +
+      "ject\030\231\226\301l \001(\tB\r\340A\002\362G\007project\022\037\n\006region\030\364" +
+      "\315\240B \001(\tB\014\340A\002\362G\006region\022\032\n\nrequest_id\030\313\201\331\021" +
+      " \001(\tH\000\210\001\001B\r\n\013_request_id\"\335\001\n\024ListAddress" +
+      "esRequest\022\027\n\006filter\030\370\226\243\240\001 \001(\tH\000\210\001\001\022\033\n\013ma" +
+      "x_results\030\233\310\213\032 \001(\rH\001\210\001\001\022\030\n\010order_by\030\350\375\307L" +
+      " \001(\tB\003\340A\002\022\032\n\npage_token\030\311\260\304\t \001(\tH\002\210\001\001\022\027\n" +
+      "\007project\030\231\226\301l \001(\tB\003\340A\002\022\026\n\006region\030\364\315\240B \001(" +
+      "\tB\003\340A\002B\t\n\007_filterB\016\n\014_max_resultsB\r\n\013_pa" +
+      "ge_token\"\257\t\n\tOperation\022$\n\023client_operati" +
+      "on_id\030\347\215\336\215\001 \001(\tH\000\210\001\001\022\"\n\022creation_timesta" +
+      "mp\030\266\217\307\016 \001(\tH\001\210\001\001\022\034\n\013description\030\374\207\326\311\001 \001(" +
+      "\tH\002\210\001\001\022\030\n\010end_time\030\261\247\3476 \001(\tH\003\210\001\001\022:\n\005erro" +
+      "r\030\210\244\223. \001(\0132#.google.cloud.compute.v1smal" +
+      "l.ErrorH\004\210\001\001\022\'\n\022http_error_message\030\331\372\310` " +
+      "\001(\tB\003\350G\004H\005\210\001\001\022,\n\026http_error_status_code\030" +
+      "\354\204\370\224\001 \001(\005B\003\350G\003H\006\210\001\001\022\020\n\002id\030\233\032 \001(\004H\007\210\001\001\022\034\n" +
+      "\013insert_time\030\223\251\350\316\001 \001(\tH\010\210\001\001\022\024\n\004kind\030\224\367\310\001" +
+      " \001(\tH\t\210\001\001\022\031\n\004name\030\213\365\315\001 \001(\tB\003\350G\001H\n\210\001\001\022\036\n\016" +
+      "operation_type\030\222\366\332T \001(\tH\013\210\001\001\022\030\n\010progress" +
+      "\030\255\204\323\" \001(\005H\014\210\001\001\022\026\n\006region\030\364\315\240B \001(\tH\r\210\001\001\022\032" +
+      "\n\tself_link\030\215\222\305\331\001 \001(\tH\016\210\001\001\022\032\n\nstart_time" +
+      "\030\212\351\356\021 \001(\tH\017\210\001\001\022K\n\006status\030\362\237\267V \001(\0162..goog" +
+      "le.cloud.compute.v1small.Operation.Statu" +
+      "sB\003\350G\002H\020\210\001\001\022\037\n\016status_message\030\272\311\351\215\001 \001(\tH" +
+      "\021\210\001\001\022\031\n\ttarget_id\030\211\225\215{ \001(\004H\022\210\001\001\022\033\n\013targe" +
+      "t_link\030\350\223\361\035 \001(\tH\023\210\001\001\022\024\n\004user\030\313\327\333\001 \001(\tH\024\210" +
+      "\001\001\022<\n\010warnings\030\327\210\301\355\001 \003(\0132&.google.cloud." +
+      "compute.v1small.Warnings\022\024\n\004zone\030\254\307\344\001 \001(" +
+      "\tH\025\210\001\001\"K\n\006Status\022\024\n\020UNDEFINED_STATUS\020\000\022\013" +
+      "\n\004DONE\020\202\267\200\001\022\016\n\007PENDING\020\367\252\360\020\022\016\n\007RUNNING\020\237" +
+      "\303\3529B\026\n\024_client_operation_idB\025\n\023_creation" +
+      "_timestampB\016\n\014_descriptionB\013\n\t_end_timeB" +
+      "\010\n\006_errorB\025\n\023_http_error_messageB\031\n\027_htt" +
+      "p_error_status_codeB\005\n\003_idB\016\n\014_insert_ti" +
+      "meB\007\n\005_kindB\007\n\005_nameB\021\n\017_operation_typeB" +
+      "\013\n\t_progressB\t\n\007_regionB\014\n\n_self_linkB\r\n" +
+      "\013_start_timeB\t\n\007_statusB\021\n\017_status_messa" +
+      "geB\014\n\n_target_idB\016\n\014_target_linkB\007\n\005_use" +
+      "rB\007\n\005_zone\"h\n\032WaitRegionOperationRequest" +
+      "\022\031\n\toperation\030\347\252\353\030 \001(\tB\003\340A\002\022\027\n\007project\030\231" +
+      "\226\301l \001(\tB\003\340A\002\022\026\n\006region\030\364\315\240B \001(\tB\003\340A\002\"\237\007\n" +
+      "\007Warning\022\024\n\004code\030\355\333\272\001 \001(\tH\000\210\001\001\0223\n\004data\030\252" +
+      "\337\273\001 \003(\0132\".google.cloud.compute.v1small.D" +
+      "ata\022\030\n\007message\030\207\200\254\307\001 \001(\tH\001\210\001\001\"\231\006\n\004Code\022\022" +
+      "\n\016UNDEFINED_CODE\020\000\022\025\n\016CLEANUP_FAILED\020\330\214\326" +
+      "G\022 \n\030DEPRECATED_RESOURCE_USED\020\302\337\353\272\001\022\034\n\024D" +
+      "EPRECATED_TYPE_USED\020\226\244\236\245\001\022(\n DISK_SIZE_L" +
+      "ARGER_THAN_IMAGE_SIZE\020\227\201\225\260\001\022\036\n\026EXPERIMEN" +
+      "TAL_TYPE_USED\020\213\216\301\327\001\022\033\n\024EXTERNAL_API_WARN" +
+      "ING\020\303\277\332S\022\035\n\025FIELD_VALUE_OVERRIDEN\020\257\266\231\235\001\022" +
+      "#\n\033INJECTED_KERNELS_DEPRECATED\020\213\331\202\307\001\022\037\n\027" +
+      "MISSING_TYPE_DEPENDENCY\020\367\370\242\244\001\022%\n\035NEXT_HO" +
+      "P_ADDRESS_NOT_ASSIGNED\020\207\245\372\232\001\022\"\n\032NEXT_HOP" +
+      "_CANNOT_IP_FORWARD\020\347\352\347\266\001\022#\n\033NEXT_HOP_INS" +
+      "TANCE_NOT_FOUND\020\316\314\257\335\001\022\'\n NEXT_HOP_INSTAN" +
+      "CE_NOT_ON_NETWORK\020\302\350\235t\022\034\n\024NEXT_HOP_NOT_R" +
+      "UNNING\020\261\317\360\306\001\022\031\n\022NOT_CRITICAL_ERROR\020\324\250\2672\022" +
+      "\031\n\022NO_RESULTS_ON_PAGE\020\210\246\251\016\022\035\n\026REQUIRED_T" +
+      "OS_AGREEMENT\020\203\316\344\001\0221\n)RESOURCE_IN_USE_BY_" +
+      "OTHER_RESOURCE_WARNING\020\301\364\355\354\001\022\033\n\024RESOURCE" +
+      "_NOT_DELETED\020\274\267\262P\022!\n\031SCHEMA_VALIDATION_I" +
+      "GNORED\020\312\324\237\203\001\022(\n!SINGLE_INSTANCE_PROPERTY" +
+      "_TEMPLATE\020\321\211\370\177\022\035\n\025UNDECLARED_PROPERTIES\020" +
+      "\237\206\233\272\001\022\022\n\013UNREACHABLE\020\264\275\255\006B\007\n\005_codeB\n\n\010_m" +
+      "essage\"\240\007\n\010Warnings\022\024\n\004code\030\355\333\272\001 \001(\tH\000\210\001" +
+      "\001\0223\n\004data\030\252\337\273\001 \003(\0132\".google.cloud.comput" +
+      "e.v1small.Data\022\030\n\007message\030\207\200\254\307\001 \001(\tH\001\210\001\001" +
+      "\"\231\006\n\004Code\022\022\n\016UNDEFINED_CODE\020\000\022\025\n\016CLEANUP" +
+      "_FAILED\020\330\214\326G\022 \n\030DEPRECATED_RESOURCE_USED" +
+      "\020\302\337\353\272\001\022\034\n\024DEPRECATED_TYPE_USED\020\226\244\236\245\001\022(\n " +
+      "DISK_SIZE_LARGER_THAN_IMAGE_SIZE\020\227\201\225\260\001\022\036" +
+      "\n\026EXPERIMENTAL_TYPE_USED\020\213\216\301\327\001\022\033\n\024EXTERN" +
+      "AL_API_WARNING\020\303\277\332S\022\035\n\025FIELD_VALUE_OVERR" +
+      "IDEN\020\257\266\231\235\001\022#\n\033INJECTED_KERNELS_DEPRECATE" +
+      "D\020\213\331\202\307\001\022\037\n\027MISSING_TYPE_DEPENDENCY\020\367\370\242\244\001" +
+      "\022%\n\035NEXT_HOP_ADDRESS_NOT_ASSIGNED\020\207\245\372\232\001\022" +
+      "\"\n\032NEXT_HOP_CANNOT_IP_FORWARD\020\347\352\347\266\001\022#\n\033N" +
+      "EXT_HOP_INSTANCE_NOT_FOUND\020\316\314\257\335\001\022\'\n NEXT" +
+      "_HOP_INSTANCE_NOT_ON_NETWORK\020\302\350\235t\022\034\n\024NEX" +
+      "T_HOP_NOT_RUNNING\020\261\317\360\306\001\022\031\n\022NOT_CRITICAL_" +
+      "ERROR\020\324\250\2672\022\031\n\022NO_RESULTS_ON_PAGE\020\210\246\251\016\022\035\n" +
+      "\026REQUIRED_TOS_AGREEMENT\020\203\316\344\001\0221\n)RESOURCE" +
+      "_IN_USE_BY_OTHER_RESOURCE_WARNING\020\301\364\355\354\001\022" +
+      "\033\n\024RESOURCE_NOT_DELETED\020\274\267\262P\022!\n\031SCHEMA_V" +
+      "ALIDATION_IGNORED\020\312\324\237\203\001\022(\n!SINGLE_INSTAN" +
+      "CE_PROPERTY_TEMPLATE\020\321\211\370\177\022\035\n\025UNDECLARED_" +
+      "PROPERTIES\020\237\206\233\272\001\022\022\n\013UNREACHABLE\020\264\275\255\006B\007\n\005" +
+      "_codeB\n\n\010_message2\345\007\n\tAddresses\022\312\001\n\016Aggr" +
+      "egatedList\022<.google.cloud.compute.v1smal" +
+      "l.AggregatedListAddressesRequest\0323.googl" +
+      "e.cloud.compute.v1small.AddressAggregate" +
+      "dList\"E\202\323\344\223\0025\0223/compute/v1/projects/{pro" +
+      "ject}/aggregated/addresses\332A\007project\022\336\001\n" +
+      "\006Delete\0222.google.cloud.compute.v1small.D" +
+      "eleteAddressRequest\032\'.google.cloud.compu" +
+      "te.v1small.Operation\"w\202\323\344\223\002E*C/compute/v" +
+      "1/projects/{project}/regions/{region}/ad" +
+      "dresses/{address}\332A\026project,region,addre" +
+      "ss\212N\020RegionOperations\022\360\001\n\006Insert\0222.googl" +
+      "e.cloud.compute.v1small.InsertAddressReq" +
+      "uest\032\'.google.cloud.compute.v1small.Oper" +
+      "ation\"\210\001\202\323\344\223\002M\"9/compute/v1/projects/{pr" +
+      "oject}/regions/{region}/addresses:\020addre" +
+      "ss_resource\332A\037project,region,address_res" +
+      "ource\212N\020RegionOperations\022\302\001\n\004List\0222.goog" +
+      "le.cloud.compute.v1small.ListAddressesRe" +
+      "quest\032).google.cloud.compute.v1small.Add" +
+      "ressList\"[\202\323\344\223\002;\0229/compute/v1/projects/{" +
+      "project}/regions/{region}/addresses\332A\027pr" +
+      "oject,region,order_by\032r\312A\026compute.google" +
+      "apis.com\322AVhttps://www.googleapis.com/au" +
+      "th/compute,https://www.googleapis.com/au" +
+      "th/cloud-platform2\366\004\n\020RegionOperations\022\325" +
+      "\001\n\003Get\0227.google.cloud.compute.v1small.Ge" +
+      "tRegionOperationRequest\032\'.google.cloud.c" +
+      "ompute.v1small.Operation\"l\202\323\344\223\002H\022F/compu" +
+      "te/v1/projects/{project}/regions/{region" +
+      "}/operations/{operation}\332A\030project,regio" +
+      "n,operation\220N\001\022\342\001\n\004Wait\0228.google.cloud.c" +
+      "ompute.v1small.WaitRegionOperationReques" +
+      "t\032\'.google.cloud.compute.v1small.Operati" +
+      "on\"w\202\323\344\223\002V\"T/compute/v1/projects/project" +
+      "s/{project}/regions/{region}/operations/" +
+      "{operation}/wait\332A\030project,region,operat" +
+      "ion\032\244\001\312A\026compute.googleapis.com\322A\207\001https" +
+      "://www.googleapis.com/auth/compute.reado" +
+      "nly,https://www.googleapis.com/auth/comp" +
+      "ute,https://www.googleapis.com/auth/clou" +
+      "d-platformB\311\001\n com.google.cloud.compute." +
+      "v1smallP\001ZCgoogle.golang.org/genproto/go" +
+      "ogleapis/cloud/compute/v1small;compute\252\002" +
+      "\034Google.Cloud.Compute.V1Small\312\002\034Google\\C" +
+      "loud\\Compute\\V1small\352\002\037Google::Cloud::Co" +
+      "mpute::V1smallb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

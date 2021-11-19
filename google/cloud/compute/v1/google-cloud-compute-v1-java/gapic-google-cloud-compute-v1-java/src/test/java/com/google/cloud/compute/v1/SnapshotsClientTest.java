@@ -170,7 +170,9 @@ public class SnapshotsClientTest {
             .setSourceDisk("sourceDisk-1111923624")
             .setSourceDiskEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceDiskId("sourceDiskId888256403")
+            .setStatus("status-892481550")
             .setStorageBytes(2035244455)
+            .setStorageBytesStatus("storageBytesStatus-1653482814")
             .addAllStorageLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);

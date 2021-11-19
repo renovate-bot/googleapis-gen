@@ -383,30 +383,34 @@ public interface InstancePropertiesOrBuilder extends
   /**
    * <pre>
    * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
   /**
    * <pre>
    * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The privateIpv6GoogleAccess.
    */
-  int getPrivateIpv6GoogleAccessValue();
+  java.lang.String getPrivateIpv6GoogleAccess();
   /**
    * <pre>
    * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess();
+  com.google.protobuf.ByteString
+      getPrivateIpv6GoogleAccessBytes();
 
   /**
    * <pre>

@@ -24,14 +24,14 @@ private static final long serialVersionUID = 0L;
     aliasIpRanges_ = java.util.Collections.emptyList();
     fingerprint_ = "";
     ipv6AccessConfigs_ = java.util.Collections.emptyList();
-    ipv6AccessType_ = 0;
+    ipv6AccessType_ = "";
     ipv6Address_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
     networkIP_ = "";
-    nicType_ = 0;
-    stackType_ = 0;
+    nicType_ = "";
+    stackType_ = "";
     subnetwork_ = "";
   }
 
@@ -78,10 +78,10 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 478484616: {
-            int rawValue = input.readEnum();
+          case 478484618: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            nicType_ = rawValue;
+            nicType_ = s;
             break;
           }
           case 888466610: {
@@ -132,10 +132,10 @@ private static final long serialVersionUID = 0L;
             ipv6Address_ = s;
             break;
           }
-          case -887696248: {
-            int rawValue = input.readEnum();
+          case -887696246: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000200;
-            stackType_ = rawValue;
+            stackType_ = s;
             break;
           }
           case -427190414: {
@@ -152,10 +152,10 @@ private static final long serialVersionUID = 0L;
             queueCount_ = input.readInt32();
             break;
           }
-          case -257698072: {
-            int rawValue = input.readEnum();
+          case -257698070: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            ipv6AccessType_ = rawValue;
+            ipv6AccessType_ = s;
             break;
           }
           default: {
@@ -900,41 +900,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 504658653;
-  private int ipv6AccessType_;
+  private volatile java.lang.Object ipv6AccessType_;
   /**
    * <pre>
    * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   * <code>optional string ipv6_access_type = 504658653;</code>
    * @return Whether the ipv6AccessType field is set.
    */
-  @java.lang.Override public boolean hasIpv6AccessType() {
+  @java.lang.Override
+  public boolean hasIpv6AccessType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The enum numeric value on the wire for ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The ipv6AccessType.
    */
-  @java.lang.Override public int getIpv6AccessTypeValue() {
-    return ipv6AccessType_;
+  @java.lang.Override
+  public java.lang.String getIpv6AccessType() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6AccessType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The bytes for ipv6AccessType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType getIpv6AccessType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType result = com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType.valueOf(ipv6AccessType_);
-    return result == null ? com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIpv6AccessTypeBytes() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ipv6AccessType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int IPV6_ADDRESS_FIELD_NUMBER = 341563804;
@@ -1228,41 +1251,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NIC_TYPE_FIELD_NUMBER = 59810577;
-  private int nicType_;
+  private volatile java.lang.Object nicType_;
   /**
    * <pre>
    * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * Check the NicType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+   * <code>optional string nic_type = 59810577;</code>
    * @return Whether the nicType field is set.
    */
-  @java.lang.Override public boolean hasNicType() {
+  @java.lang.Override
+  public boolean hasNicType() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * Check the NicType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-   * @return The enum numeric value on the wire for nicType.
+   * <code>optional string nic_type = 59810577;</code>
+   * @return The nicType.
    */
-  @java.lang.Override public int getNicTypeValue() {
-    return nicType_;
+  @java.lang.Override
+  public java.lang.String getNicType() {
+    java.lang.Object ref = nicType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      nicType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+   * Check the NicType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-   * @return The nicType.
+   * <code>optional string nic_type = 59810577;</code>
+   * @return The bytes for nicType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NetworkInterface.NicType getNicType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NetworkInterface.NicType result = com.google.cloud.compute.v1.NetworkInterface.NicType.valueOf(nicType_);
-    return result == null ? com.google.cloud.compute.v1.NetworkInterface.NicType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNicTypeBytes() {
+    java.lang.Object ref = nicType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      nicType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int QUEUE_COUNT_FIELD_NUMBER = 503708769;
@@ -1293,41 +1339,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STACK_TYPE_FIELD_NUMBER = 425908881;
-  private int stackType_;
+  private volatile java.lang.Object stackType_;
   /**
    * <pre>
    * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
+   * <code>optional string stack_type = 425908881;</code>
    * @return Whether the stackType field is set.
    */
-  @java.lang.Override public boolean hasStackType() {
+  @java.lang.Override
+  public boolean hasStackType() {
     return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
    * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-   * @return The enum numeric value on the wire for stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The stackType.
    */
-  @java.lang.Override public int getStackTypeValue() {
-    return stackType_;
+  @java.lang.Override
+  public java.lang.String getStackType() {
+    java.lang.Object ref = stackType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stackType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-   * @return The stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The bytes for stackType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NetworkInterface.StackType getStackType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NetworkInterface.StackType result = com.google.cloud.compute.v1.NetworkInterface.StackType.valueOf(stackType_);
-    return result == null ? com.google.cloud.compute.v1.NetworkInterface.StackType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStackTypeBytes() {
+    java.lang.Object ref = stackType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      stackType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
@@ -1409,7 +1478,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(59810577, nicType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 59810577, nicType_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
       output.writeMessage(111058326, accessConfigs_.get(i));
@@ -1433,7 +1502,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 341563804, ipv6Address_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(425908881, stackType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
       output.writeMessage(483472110, ipv6AccessConfigs_.get(i));
@@ -1442,7 +1511,7 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(503708769, queueCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(504658653, ipv6AccessType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
     }
     unknownFields.writeTo(output);
   }
@@ -1460,8 +1529,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(59810577, nicType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(59810577, nicType_);
     }
     for (int i = 0; i < accessConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1487,8 +1555,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(341563804, ipv6Address_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(425908881, stackType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     for (int i = 0; i < ipv6AccessConfigs_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1499,8 +1566,7 @@ private static final long serialVersionUID = 0L;
         .computeInt32Size(503708769, queueCount_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(504658653, ipv6AccessType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1530,7 +1596,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getIpv6AccessConfigsList())) return false;
     if (hasIpv6AccessType() != other.hasIpv6AccessType()) return false;
     if (hasIpv6AccessType()) {
-      if (ipv6AccessType_ != other.ipv6AccessType_) return false;
+      if (!getIpv6AccessType()
+          .equals(other.getIpv6AccessType())) return false;
     }
     if (hasIpv6Address() != other.hasIpv6Address()) return false;
     if (hasIpv6Address()) {
@@ -1559,7 +1626,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNicType() != other.hasNicType()) return false;
     if (hasNicType()) {
-      if (nicType_ != other.nicType_) return false;
+      if (!getNicType()
+          .equals(other.getNicType())) return false;
     }
     if (hasQueueCount() != other.hasQueueCount()) return false;
     if (hasQueueCount()) {
@@ -1568,7 +1636,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStackType() != other.hasStackType()) return false;
     if (hasStackType()) {
-      if (stackType_ != other.stackType_) return false;
+      if (!getStackType()
+          .equals(other.getStackType())) return false;
     }
     if (hasSubnetwork() != other.hasSubnetwork()) return false;
     if (hasSubnetwork()) {
@@ -1604,7 +1673,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpv6AccessType()) {
       hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + ipv6AccessType_;
+      hash = (53 * hash) + getIpv6AccessType().hashCode();
     }
     if (hasIpv6Address()) {
       hash = (37 * hash) + IPV6_ADDRESS_FIELD_NUMBER;
@@ -1628,7 +1697,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNicType()) {
       hash = (37 * hash) + NIC_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + nicType_;
+      hash = (53 * hash) + getNicType().hashCode();
     }
     if (hasQueueCount()) {
       hash = (37 * hash) + QUEUE_COUNT_FIELD_NUMBER;
@@ -1636,7 +1705,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStackType()) {
       hash = (37 * hash) + STACK_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + stackType_;
+      hash = (53 * hash) + getStackType().hashCode();
     }
     if (hasSubnetwork()) {
       hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
@@ -1802,7 +1871,7 @@ private static final long serialVersionUID = 0L;
       } else {
         ipv6AccessConfigsBuilder_.clear();
       }
-      ipv6AccessType_ = 0;
+      ipv6AccessType_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       ipv6Address_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -1814,11 +1883,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
       networkIP_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
-      nicType_ = 0;
+      nicType_ = "";
       bitField0_ = (bitField0_ & ~0x00000400);
       queueCount_ = 0;
       bitField0_ = (bitField0_ & ~0x00000800);
-      stackType_ = 0;
+      stackType_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       subnetwork_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
@@ -2054,7 +2123,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasIpv6AccessType()) {
-        setIpv6AccessType(other.getIpv6AccessType());
+        bitField0_ |= 0x00000010;
+        ipv6AccessType_ = other.ipv6AccessType_;
+        onChanged();
       }
       if (other.hasIpv6Address()) {
         bitField0_ |= 0x00000020;
@@ -2082,13 +2153,17 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNicType()) {
-        setNicType(other.getNicType());
+        bitField0_ |= 0x00000400;
+        nicType_ = other.nicType_;
+        onChanged();
       }
       if (other.hasQueueCount()) {
         setQueueCount(other.getQueueCount());
       }
       if (other.hasStackType()) {
-        setStackType(other.getStackType());
+        bitField0_ |= 0x00001000;
+        stackType_ = other.stackType_;
+        onChanged();
       }
       if (other.hasSubnetwork()) {
         bitField0_ |= 0x00002000;
@@ -3168,40 +3243,78 @@ private static final long serialVersionUID = 0L;
       return ipv6AccessConfigsBuilder_;
     }
 
-    private int ipv6AccessType_ = 0;
+    private java.lang.Object ipv6AccessType_ = "";
     /**
      * <pre>
      * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     * <code>optional string ipv6_access_type = 504658653;</code>
      * @return Whether the ipv6AccessType field is set.
      */
-    @java.lang.Override public boolean hasIpv6AccessType() {
+    public boolean hasIpv6AccessType() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
      * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @return The enum numeric value on the wire for ipv6AccessType.
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @return The ipv6AccessType.
      */
-    @java.lang.Override public int getIpv6AccessTypeValue() {
-      return ipv6AccessType_;
+    public java.lang.String getIpv6AccessType() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6AccessType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @param value The enum numeric value on the wire for ipv6AccessType to set.
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @return The bytes for ipv6AccessType.
+     */
+    public com.google.protobuf.ByteString
+        getIpv6AccessTypeBytes() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipv6AccessType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @param value The ipv6AccessType to set.
      * @return This builder for chaining.
      */
-    public Builder setIpv6AccessTypeValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setIpv6AccessType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       ipv6AccessType_ = value;
       onChanged();
       return this;
@@ -3209,46 +3322,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @return The ipv6AccessType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType getIpv6AccessType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType result = com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType.valueOf(ipv6AccessType_);
-      return result == null ? com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @param value The ipv6AccessType to set.
+     * <code>optional string ipv6_access_type = 504658653;</code>
      * @return This builder for chaining.
      */
-    public Builder setIpv6AccessType(com.google.cloud.compute.v1.NetworkInterface.Ipv6AccessType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      ipv6AccessType_ = value.getNumber();
+    public Builder clearIpv6AccessType() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] One of EXTERNAL, INTERNAL to indicate whether the IP can be accessed from the Internet. This field is always inherited from its subnetwork. Valid only if stackType is IPV4_IPV6.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @param value The bytes for ipv6AccessType to set.
      * @return This builder for chaining.
      */
-    public Builder clearIpv6AccessType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      ipv6AccessType_ = 0;
+    public Builder setIpv6AccessTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      ipv6AccessType_ = value;
       onChanged();
       return this;
     }
@@ -3788,40 +3891,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int nicType_ = 0;
+    private java.lang.Object nicType_ = "";
     /**
      * <pre>
      * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * Check the NicType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     * <code>optional string nic_type = 59810577;</code>
      * @return Whether the nicType field is set.
      */
-    @java.lang.Override public boolean hasNicType() {
+    public boolean hasNicType() {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
      * <pre>
      * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * Check the NicType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-     * @return The enum numeric value on the wire for nicType.
+     * <code>optional string nic_type = 59810577;</code>
+     * @return The nicType.
      */
-    @java.lang.Override public int getNicTypeValue() {
-      return nicType_;
+    public java.lang.String getNicType() {
+      java.lang.Object ref = nicType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nicType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * Check the NicType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-     * @param value The enum numeric value on the wire for nicType to set.
+     * <code>optional string nic_type = 59810577;</code>
+     * @return The bytes for nicType.
+     */
+    public com.google.protobuf.ByteString
+        getNicTypeBytes() {
+      java.lang.Object ref = nicType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        nicType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * Check the NicType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string nic_type = 59810577;</code>
+     * @param value The nicType to set.
      * @return This builder for chaining.
      */
-    public Builder setNicTypeValue(int value) {
-      bitField0_ |= 0x00000400;
+    public Builder setNicType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000400;
       nicType_ = value;
       onChanged();
       return this;
@@ -3829,46 +3970,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * Check the NicType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-     * @return The nicType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkInterface.NicType getNicType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NetworkInterface.NicType result = com.google.cloud.compute.v1.NetworkInterface.NicType.valueOf(nicType_);
-      return result == null ? com.google.cloud.compute.v1.NetworkInterface.NicType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
-     * @param value The nicType to set.
+     * <code>optional string nic_type = 59810577;</code>
      * @return This builder for chaining.
      */
-    public Builder setNicType(com.google.cloud.compute.v1.NetworkInterface.NicType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000400;
-      nicType_ = value.getNumber();
+    public Builder clearNicType() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      nicType_ = getDefaultInstance().getNicType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+     * Check the NicType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.NicType nic_type = 59810577;</code>
+     * <code>optional string nic_type = 59810577;</code>
+     * @param value The bytes for nicType to set.
      * @return This builder for chaining.
      */
-    public Builder clearNicType() {
-      bitField0_ = (bitField0_ & ~0x00000400);
-      nicType_ = 0;
+    public Builder setNicTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000400;
+      nicType_ = value;
       onChanged();
       return this;
     }
@@ -3928,40 +4059,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int stackType_ = 0;
+    private java.lang.Object stackType_ = "";
     /**
      * <pre>
      * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
+     * <code>optional string stack_type = 425908881;</code>
      * @return Whether the stackType field is set.
      */
-    @java.lang.Override public boolean hasStackType() {
+    public boolean hasStackType() {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <pre>
      * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-     * @return The enum numeric value on the wire for stackType.
+     * <code>optional string stack_type = 425908881;</code>
+     * @return The stackType.
      */
-    @java.lang.Override public int getStackTypeValue() {
-      return stackType_;
+    public java.lang.String getStackType() {
+      java.lang.Object ref = stackType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stackType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-     * @param value The enum numeric value on the wire for stackType to set.
+     * <code>optional string stack_type = 425908881;</code>
+     * @return The bytes for stackType.
+     */
+    public com.google.protobuf.ByteString
+        getStackTypeBytes() {
+      java.lang.Object ref = stackType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stackType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     * @param value The stackType to set.
      * @return This builder for chaining.
      */
-    public Builder setStackTypeValue(int value) {
-      bitField0_ |= 0x00001000;
+    public Builder setStackType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00001000;
       stackType_ = value;
       onChanged();
       return this;
@@ -3969,46 +4138,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-     * @return The stackType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NetworkInterface.StackType getStackType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NetworkInterface.StackType result = com.google.cloud.compute.v1.NetworkInterface.StackType.valueOf(stackType_);
-      return result == null ? com.google.cloud.compute.v1.NetworkInterface.StackType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
-     * @param value The stackType to set.
+     * <code>optional string stack_type = 425908881;</code>
      * @return This builder for chaining.
      */
-    public Builder setStackType(com.google.cloud.compute.v1.NetworkInterface.StackType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00001000;
-      stackType_ = value.getNumber();
+    public Builder clearStackType() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      stackType_ = getDefaultInstance().getStackType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The stack type for this network interface to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at instance creation and update network interface operations.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NetworkInterface.StackType stack_type = 425908881;</code>
+     * <code>optional string stack_type = 425908881;</code>
+     * @param value The bytes for stackType to set.
      * @return This builder for chaining.
      */
-    public Builder clearStackType() {
-      bitField0_ = (bitField0_ & ~0x00001000);
-      stackType_ = 0;
+    public Builder setStackTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00001000;
+      stackType_ = value;
       onChanged();
       return this;
     }

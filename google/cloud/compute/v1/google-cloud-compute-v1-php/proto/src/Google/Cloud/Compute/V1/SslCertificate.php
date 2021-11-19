@@ -95,8 +95,9 @@ class SslCertificate extends \Google\Protobuf\Internal\Message
     private $subject_alternative_names;
     /**
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
 
@@ -132,8 +133,9 @@ class SslCertificate extends \Google\Protobuf\Internal\Message
      *           Configuration and status of a self-managed SSL certificate.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $subject_alternative_names
      *           [Output Only] Domains associated with the certificate via Subject Alternative Name.
-     *     @type int $type
+     *     @type string $type
      *           (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     *           Check the Type enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -601,13 +603,14 @@ class SslCertificate extends \Google\Protobuf\Internal\Message
 
     /**
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -622,14 +625,15 @@ class SslCertificate extends \Google\Protobuf\Internal\Message
 
     /**
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SslCertificate\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

@@ -118,28 +118,32 @@ public interface HealthStatusForNetworkEndpointOrBuilder extends
   /**
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    * @return Whether the healthState field is set.
    */
   boolean hasHealthState();
   /**
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-   * @return The enum numeric value on the wire for healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The healthState.
    */
-  int getHealthStateValue();
+  java.lang.String getHealthState();
   /**
    * <pre>
    * Health state of the network endpoint determined based on the health checks configured.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-   * @return The healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The bytes for healthState.
    */
-  com.google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState getHealthState();
+  com.google.protobuf.ByteString
+      getHealthStateBytes();
 }

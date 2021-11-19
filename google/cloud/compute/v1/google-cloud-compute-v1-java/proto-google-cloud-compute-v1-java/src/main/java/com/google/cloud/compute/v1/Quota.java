@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Quota() {
-    metric_ = 0;
+    metric_ = "";
     owner_ = "";
   }
 
@@ -71,10 +71,10 @@ private static final long serialVersionUID = 0L;
             usage_ = input.readDouble();
             break;
           }
-          case -30429824: {
-            int rawValue = input.readEnum();
+          case -30429822: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            metric_ = rawValue;
+            metric_ = s;
             break;
           }
           default: {
@@ -1372,41 +1372,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METRIC_FIELD_NUMBER = 533067184;
-  private int metric_;
+  private volatile java.lang.Object metric_;
   /**
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    * @return Whether the metric field is set.
    */
-  @java.lang.Override public boolean hasMetric() {
+  @java.lang.Override
+  public boolean hasMetric() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-   * @return The enum numeric value on the wire for metric.
+   * <code>optional string metric = 533067184;</code>
+   * @return The metric.
    */
-  @java.lang.Override public int getMetricValue() {
-    return metric_;
+  @java.lang.Override
+  public java.lang.String getMetric() {
+    java.lang.Object ref = metric_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metric_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-   * @return The metric.
+   * <code>optional string metric = 533067184;</code>
+   * @return The bytes for metric.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Quota.Metric getMetric() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Quota.Metric result = com.google.cloud.compute.v1.Quota.Metric.valueOf(metric_);
-    return result == null ? com.google.cloud.compute.v1.Quota.Metric.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMetricBytes() {
+    java.lang.Object ref = metric_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      metric_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int OWNER_FIELD_NUMBER = 106164915;
@@ -1518,7 +1541,7 @@ private static final long serialVersionUID = 0L;
       output.writeDouble(111574433, usage_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(533067184, metric_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 533067184, metric_);
     }
     unknownFields.writeTo(output);
   }
@@ -1541,8 +1564,7 @@ private static final long serialVersionUID = 0L;
         .computeDoubleSize(111574433, usage_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(533067184, metric_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(533067184, metric_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1567,7 +1589,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMetric() != other.hasMetric()) return false;
     if (hasMetric()) {
-      if (metric_ != other.metric_) return false;
+      if (!getMetric()
+          .equals(other.getMetric())) return false;
     }
     if (hasOwner() != other.hasOwner()) return false;
     if (hasOwner()) {
@@ -1598,7 +1621,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMetric()) {
       hash = (37 * hash) + METRIC_FIELD_NUMBER;
-      hash = (53 * hash) + metric_;
+      hash = (53 * hash) + getMetric().hashCode();
     }
     if (hasOwner()) {
       hash = (37 * hash) + OWNER_FIELD_NUMBER;
@@ -1748,7 +1771,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       limit_ = 0D;
       bitField0_ = (bitField0_ & ~0x00000001);
-      metric_ = 0;
+      metric_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       owner_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1851,7 +1874,9 @@ private static final long serialVersionUID = 0L;
         setLimit(other.getLimit());
       }
       if (other.hasMetric()) {
-        setMetric(other.getMetric());
+        bitField0_ |= 0x00000002;
+        metric_ = other.metric_;
+        onChanged();
       }
       if (other.hasOwner()) {
         bitField0_ |= 0x00000004;
@@ -1946,40 +1971,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int metric_ = 0;
+    private java.lang.Object metric_ = "";
     /**
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
      * @return Whether the metric field is set.
      */
-    @java.lang.Override public boolean hasMetric() {
+    public boolean hasMetric() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     * @return The enum numeric value on the wire for metric.
+     * <code>optional string metric = 533067184;</code>
+     * @return The metric.
      */
-    @java.lang.Override public int getMetricValue() {
-      return metric_;
+    public java.lang.String getMetric() {
+      java.lang.Object ref = metric_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metric_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     * @param value The enum numeric value on the wire for metric to set.
+     * <code>optional string metric = 533067184;</code>
+     * @return The bytes for metric.
+     */
+    public com.google.protobuf.ByteString
+        getMetricBytes() {
+      java.lang.Object ref = metric_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metric_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string metric = 533067184;</code>
+     * @param value The metric to set.
      * @return This builder for chaining.
      */
-    public Builder setMetricValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setMetric(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       metric_ = value;
       onChanged();
       return this;
@@ -1987,46 +2050,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     * @return The metric.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Quota.Metric getMetric() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Quota.Metric result = com.google.cloud.compute.v1.Quota.Metric.valueOf(metric_);
-      return result == null ? com.google.cloud.compute.v1.Quota.Metric.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] Name of the quota metric.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     * @param value The metric to set.
+     * <code>optional string metric = 533067184;</code>
      * @return This builder for chaining.
      */
-    public Builder setMetric(com.google.cloud.compute.v1.Quota.Metric value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      metric_ = value.getNumber();
+    public Builder clearMetric() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metric_ = getDefaultInstance().getMetric();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * <code>optional string metric = 533067184;</code>
+     * @param value The bytes for metric to set.
      * @return This builder for chaining.
      */
-    public Builder clearMetric() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      metric_ = 0;
+    public Builder setMetricBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      metric_ = value;
       onChanged();
       return this;
     }

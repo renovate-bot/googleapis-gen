@@ -83,8 +83,9 @@ class PublicAdvertisedPrefix extends \Google\Protobuf\Internal\Message
     protected $shared_secret = null;
     /**
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
 
@@ -116,8 +117,9 @@ class PublicAdvertisedPrefix extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined URL for the resource.
      *     @type string $shared_secret
      *           [Output Only] The shared secret to be used for reverse DNS verification.
-     *     @type int $status
+     *     @type string $status
      *           The status of the public advertised prefix.
+     *           Check the Status enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -513,13 +515,14 @@ class PublicAdvertisedPrefix extends \Google\Protobuf\Internal\Message
 
     /**
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -534,14 +537,15 @@ class PublicAdvertisedPrefix extends \Google\Protobuf\Internal\Message
 
     /**
      * The status of the public advertised prefix.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PublicAdvertisedPrefix.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\PublicAdvertisedPrefix\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

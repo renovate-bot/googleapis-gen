@@ -213,6 +213,7 @@ public class TargetInstancesClientTest {
             .setInstance("instance555127957")
             .setKind("kind3292052")
             .setName("name3373707")
+            .setNatPolicy("natPolicy-1730208333")
             .setNetwork("network1843485230")
             .setSelfLink("selfLink1191800166")
             .setZone("zone3744684")

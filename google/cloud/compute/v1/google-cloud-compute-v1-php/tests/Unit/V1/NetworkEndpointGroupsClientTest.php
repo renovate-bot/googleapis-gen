@@ -554,6 +554,7 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $kind = 'kind3292052';
         $name = 'name3373707';
         $network = 'network1843485230';
+        $networkEndpointType = 'networkEndpointType118301523';
         $region = 'region-934795532';
         $selfLink = 'selfLink-1691268851';
         $size = 3530753;
@@ -567,6 +568,7 @@ class NetworkEndpointGroupsClientTest extends GeneratedTest
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setNetworkEndpointType($networkEndpointType);
         $expectedResponse->setRegion($region);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setSize($size);

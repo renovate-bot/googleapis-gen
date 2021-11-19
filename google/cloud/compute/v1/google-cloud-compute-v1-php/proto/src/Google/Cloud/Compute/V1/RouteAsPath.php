@@ -21,9 +21,10 @@ class RouteAsPath extends \Google\Protobuf\Internal\Message
      */
     private $as_lists;
     /**
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
+     * Generated from protobuf field <code>optional string path_segment_type = 513464992;</code>
      */
     protected $path_segment_type = null;
 
@@ -35,8 +36,9 @@ class RouteAsPath extends \Google\Protobuf\Internal\Message
      *
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $as_lists
      *           [Output Only] The AS numbers of the AS Path.
-     *     @type int $path_segment_type
-     *           [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     *     @type string $path_segment_type
+     *           [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     *           Check the PathSegmentType enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -71,14 +73,15 @@ class RouteAsPath extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string path_segment_type = 513464992;</code>
+     * @return string
      */
     public function getPathSegmentType()
     {
-        return isset($this->path_segment_type) ? $this->path_segment_type : 0;
+        return isset($this->path_segment_type) ? $this->path_segment_type : '';
     }
 
     public function hasPathSegmentType()
@@ -92,15 +95,16 @@ class RouteAsPath extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string path_segment_type = 513464992;</code>
+     * @param string $var
      * @return $this
      */
     public function setPathSegmentType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RouteAsPath\PathSegmentType::class);
+        GPBUtil::checkString($var, True);
         $this->path_segment_type = $var;
 
         return $this;

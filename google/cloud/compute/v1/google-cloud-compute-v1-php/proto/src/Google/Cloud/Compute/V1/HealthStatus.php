@@ -34,8 +34,9 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     protected $forwarding_rule_ip = null;
     /**
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * Generated from protobuf field <code>optional string health_state = 324007150;</code>
      */
     protected $health_state = null;
     /**
@@ -61,7 +62,10 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
      */
     protected $weight = null;
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string weight_error = 522501505;</code>
      */
     protected $weight_error = null;
 
@@ -77,8 +81,9 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
      *           URL of the forwarding rule associated with the health status of the instance.
      *     @type string $forwarding_rule_ip
      *           A forwarding rule IP address assigned to this instance.
-     *     @type int $health_state
+     *     @type string $health_state
      *           Health state of the instance.
+     *           Check the HealthState enum for the list of possible values.
      *     @type string $instance
      *           URL of the instance resource.
      *     @type string $ip_address
@@ -86,7 +91,9 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
      *     @type int $port
      *           The named port of the instance group, not necessarily the port that is health-checked.
      *     @type string $weight
-     *     @type int $weight_error
+     *     @type string $weight_error
+     *           
+     *           Check the WeightError enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -194,13 +201,14 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string health_state = 324007150;</code>
+     * @return string
      */
     public function getHealthState()
     {
-        return isset($this->health_state) ? $this->health_state : 0;
+        return isset($this->health_state) ? $this->health_state : '';
     }
 
     public function hasHealthState()
@@ -215,14 +223,15 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string health_state = 324007150;</code>
+     * @param string $var
      * @return $this
      */
     public function setHealthState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HealthStatus\HealthState::class);
+        GPBUtil::checkString($var, True);
         $this->health_state = $var;
 
         return $this;
@@ -369,12 +378,15 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-     * @return int
+     * 
+     * Check the WeightError enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string weight_error = 522501505;</code>
+     * @return string
      */
     public function getWeightError()
     {
-        return isset($this->weight_error) ? $this->weight_error : 0;
+        return isset($this->weight_error) ? $this->weight_error : '';
     }
 
     public function hasWeightError()
@@ -388,13 +400,16 @@ class HealthStatus extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-     * @param int $var
+     * 
+     * Check the WeightError enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string weight_error = 522501505;</code>
+     * @param string $var
      * @return $this
      */
     public function setWeightError($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HealthStatus\WeightError::class);
+        GPBUtil::checkString($var, True);
         $this->weight_error = $var;
 
         return $this;

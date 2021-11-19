@@ -115,14 +115,16 @@ class BackendService extends \Google\Protobuf\Internal\Message
     protected $kind = null;
     /**
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * Generated from protobuf field <code>optional string load_balancing_scheme = 363890244;</code>
      */
     protected $load_balancing_scheme = null;
     /**
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
+     * Generated from protobuf field <code>optional string locality_lb_policy = 131431487;</code>
      */
     protected $locality_lb_policy = null;
     /**
@@ -169,8 +171,9 @@ class BackendService extends \Google\Protobuf\Internal\Message
     protected $port_name = null;
     /**
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * Generated from protobuf field <code>optional string protocol = 84577944;</code>
      */
     protected $protocol = null;
     /**
@@ -199,8 +202,9 @@ class BackendService extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+     * Generated from protobuf field <code>optional string session_affinity = 463888561;</code>
      */
     protected $session_affinity = null;
     /**
@@ -252,10 +256,12 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
      *           [Output Only] Type of resource. Always compute#backendService for backend services.
-     *     @type int $load_balancing_scheme
+     *     @type string $load_balancing_scheme
      *           Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
-     *     @type int $locality_lb_policy
+     *           Check the LoadBalancingScheme enum for the list of possible values.
+     *     @type string $locality_lb_policy
      *           The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     *           Check the LocalityLbPolicy enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\BackendServiceLogConfig $log_config
      *           This field denotes the logging options for the load balancer traffic served by this backend service. If logging is enabled, logs will be exported to Stackdriver.
      *     @type \Google\Cloud\Compute\V1\Duration $max_stream_duration
@@ -270,8 +276,9 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           Deprecated in favor of portName. The TCP port to connect on the backend. The default value is 80. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port.
      *     @type string $port_name
      *           A named port on a backend instance group representing the port for communication to the backend VMs in that group. The named port must be [defined on each backend instance group](https://cloud.google.com/load-balancing/docs/backend-service#named_ports). This parameter has no meaning if the backends are NEGs. For Internal TCP/UDP Load Balancing and Network Load Balancing, omit port_name.
-     *     @type int $protocol
+     *     @type string $protocol
      *           The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     *           Check the Protocol enum for the list of possible values.
      *     @type string $region
      *           [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
      *     @type string $security_policy
@@ -280,8 +287,9 @@ class BackendService extends \Google\Protobuf\Internal\Message
      *           This field specifies the security policy that applies to this backend service. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. 
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $session_affinity
+     *     @type string $session_affinity
      *           Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     *           Check the SessionAffinity enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\Subsetting $subsetting
      *     @type int $timeout_sec
      *           Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
@@ -858,13 +866,14 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string load_balancing_scheme = 363890244;</code>
+     * @return string
      */
     public function getLoadBalancingScheme()
     {
-        return isset($this->load_balancing_scheme) ? $this->load_balancing_scheme : 0;
+        return isset($this->load_balancing_scheme) ? $this->load_balancing_scheme : '';
     }
 
     public function hasLoadBalancingScheme()
@@ -879,14 +888,15 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string load_balancing_scheme = 363890244;</code>
+     * @param string $var
      * @return $this
      */
     public function setLoadBalancingScheme($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\BackendService\LoadBalancingScheme::class);
+        GPBUtil::checkString($var, True);
         $this->load_balancing_scheme = $var;
 
         return $this;
@@ -894,13 +904,14 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string locality_lb_policy = 131431487;</code>
+     * @return string
      */
     public function getLocalityLbPolicy()
     {
-        return isset($this->locality_lb_policy) ? $this->locality_lb_policy : 0;
+        return isset($this->locality_lb_policy) ? $this->locality_lb_policy : '';
     }
 
     public function hasLocalityLbPolicy()
@@ -915,14 +926,15 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string locality_lb_policy = 131431487;</code>
+     * @param string $var
      * @return $this
      */
     public function setLocalityLbPolicy($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\BackendService\LocalityLbPolicy::class);
+        GPBUtil::checkString($var, True);
         $this->locality_lb_policy = $var;
 
         return $this;
@@ -1182,13 +1194,14 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string protocol = 84577944;</code>
+     * @return string
      */
     public function getProtocol()
     {
-        return isset($this->protocol) ? $this->protocol : 0;
+        return isset($this->protocol) ? $this->protocol : '';
     }
 
     public function hasProtocol()
@@ -1203,14 +1216,15 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string protocol = 84577944;</code>
+     * @param string $var
      * @return $this
      */
     public function setProtocol($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\BackendService\Protocol::class);
+        GPBUtil::checkString($var, True);
         $this->protocol = $var;
 
         return $this;
@@ -1362,13 +1376,14 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string session_affinity = 463888561;</code>
+     * @return string
      */
     public function getSessionAffinity()
     {
-        return isset($this->session_affinity) ? $this->session_affinity : 0;
+        return isset($this->session_affinity) ? $this->session_affinity : '';
     }
 
     public function hasSessionAffinity()
@@ -1383,14 +1398,15 @@ class BackendService extends \Google\Protobuf\Internal\Message
 
     /**
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string session_affinity = 463888561;</code>
+     * @param string $var
      * @return $this
      */
     public function setSessionAffinity($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\BackendService\SessionAffinity::class);
+        GPBUtil::checkString($var, True);
         $this->session_affinity = $var;
 
         return $this;

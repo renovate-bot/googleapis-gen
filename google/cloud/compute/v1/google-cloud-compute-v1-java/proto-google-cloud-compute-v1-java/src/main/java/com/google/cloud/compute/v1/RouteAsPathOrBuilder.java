@@ -38,29 +38,33 @@ public interface RouteAsPathOrBuilder extends
 
   /**
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
+   * <code>optional string path_segment_type = 513464992;</code>
    * @return Whether the pathSegmentType field is set.
    */
   boolean hasPathSegmentType();
   /**
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-   * @return The enum numeric value on the wire for pathSegmentType.
-   */
-  int getPathSegmentTypeValue();
-  /**
-   * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
+   * <code>optional string path_segment_type = 513464992;</code>
    * @return The pathSegmentType.
    */
-  com.google.cloud.compute.v1.RouteAsPath.PathSegmentType getPathSegmentType();
+  java.lang.String getPathSegmentType();
+  /**
+   * <pre>
+   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * Check the PathSegmentType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string path_segment_type = 513464992;</code>
+   * @return The bytes for pathSegmentType.
+   */
+  com.google.protobuf.ByteString
+      getPathSegmentTypeBytes();
 }

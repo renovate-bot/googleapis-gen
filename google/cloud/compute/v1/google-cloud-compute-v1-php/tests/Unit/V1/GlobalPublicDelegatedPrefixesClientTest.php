@@ -211,6 +211,7 @@ class GlobalPublicDelegatedPrefixesClientTest extends GeneratedTest
         $parentPrefix = 'parentPrefix552104903';
         $region = 'region-934795532';
         $selfLink = 'selfLink-1691268851';
+        $status = 'status-892481550';
         $expectedResponse = new PublicDelegatedPrefix();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
@@ -223,6 +224,7 @@ class GlobalPublicDelegatedPrefixesClientTest extends GeneratedTest
         $expectedResponse->setParentPrefix($parentPrefix);
         $expectedResponse->setRegion($region);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setStatus($status);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';

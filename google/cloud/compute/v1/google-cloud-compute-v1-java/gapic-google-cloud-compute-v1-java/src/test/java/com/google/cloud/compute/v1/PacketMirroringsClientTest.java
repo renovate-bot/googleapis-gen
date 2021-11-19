@@ -210,6 +210,7 @@ public class PacketMirroringsClientTest {
             .setCollectorIlb(PacketMirroringForwardingRuleInfo.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
             .setDescription("description-1724546052")
+            .setEnable("enable-1298848381")
             .setFilter(PacketMirroringFilter.newBuilder().build())
             .setId(3355)
             .setKind("kind3292052")

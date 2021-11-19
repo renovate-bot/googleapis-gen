@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private BackendServiceCdnPolicy() {
     bypassCacheOnRequestHeaders_ = java.util.Collections.emptyList();
-    cacheMode_ = 0;
+    cacheMode_ = "";
     negativeCachingPolicy_ = java.util.Collections.emptyList();
     signedUrlKeyNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -57,10 +57,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 231023104: {
-            int rawValue = input.readEnum();
+          case 231023106: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            cacheMode_ = rawValue;
+            cacheMode_ = s;
             break;
           }
           case 232274880: {
@@ -450,41 +450,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CACHE_MODE_FIELD_NUMBER = 28877888;
-  private int cacheMode_;
+  private volatile java.lang.Object cacheMode_;
   /**
    * <pre>
    * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * Check the CacheMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
+   * <code>optional string cache_mode = 28877888;</code>
    * @return Whether the cacheMode field is set.
    */
-  @java.lang.Override public boolean hasCacheMode() {
+  @java.lang.Override
+  public boolean hasCacheMode() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * Check the CacheMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
-   * @return The enum numeric value on the wire for cacheMode.
+   * <code>optional string cache_mode = 28877888;</code>
+   * @return The cacheMode.
    */
-  @java.lang.Override public int getCacheModeValue() {
-    return cacheMode_;
+  @java.lang.Override
+  public java.lang.String getCacheMode() {
+    java.lang.Object ref = cacheMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cacheMode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+   * Check the CacheMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
-   * @return The cacheMode.
+   * <code>optional string cache_mode = 28877888;</code>
+   * @return The bytes for cacheMode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode getCacheMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode result = com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.valueOf(cacheMode_);
-    return result == null ? com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCacheModeBytes() {
+    java.lang.Object ref = cacheMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      cacheMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CLIENT_TTL_FIELD_NUMBER = 29034360;
@@ -802,7 +825,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(28877888, cacheMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 28877888, cacheMode_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeInt32(29034360, clientTtl_);
@@ -847,8 +870,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(28877888, cacheMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28877888, cacheMode_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -922,7 +944,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasCacheMode() != other.hasCacheMode()) return false;
     if (hasCacheMode()) {
-      if (cacheMode_ != other.cacheMode_) return false;
+      if (!getCacheMode()
+          .equals(other.getCacheMode())) return false;
     }
     if (hasClientTtl() != other.hasClientTtl()) return false;
     if (hasClientTtl()) {
@@ -984,7 +1007,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasCacheMode()) {
       hash = (37 * hash) + CACHE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + cacheMode_;
+      hash = (53 * hash) + getCacheMode().hashCode();
     }
     if (hasClientTtl()) {
       hash = (37 * hash) + CLIENT_TTL_FIELD_NUMBER;
@@ -1177,7 +1200,7 @@ private static final long serialVersionUID = 0L;
         cacheKeyPolicyBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      cacheMode_ = 0;
+      cacheMode_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       clientTtl_ = 0;
       bitField0_ = (bitField0_ & ~0x00000008);
@@ -1371,7 +1394,9 @@ private static final long serialVersionUID = 0L;
         mergeCacheKeyPolicy(other.getCacheKeyPolicy());
       }
       if (other.hasCacheMode()) {
-        setCacheMode(other.getCacheMode());
+        bitField0_ |= 0x00000004;
+        cacheMode_ = other.cacheMode_;
+        onChanged();
       }
       if (other.hasClientTtl()) {
         setClientTtl(other.getClientTtl());
@@ -1928,40 +1953,78 @@ private static final long serialVersionUID = 0L;
       return cacheKeyPolicyBuilder_;
     }
 
-    private int cacheMode_ = 0;
+    private java.lang.Object cacheMode_ = "";
     /**
      * <pre>
      * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * Check the CacheMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
+     * <code>optional string cache_mode = 28877888;</code>
      * @return Whether the cacheMode field is set.
      */
-    @java.lang.Override public boolean hasCacheMode() {
+    public boolean hasCacheMode() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
      * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * Check the CacheMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
-     * @return The enum numeric value on the wire for cacheMode.
+     * <code>optional string cache_mode = 28877888;</code>
+     * @return The cacheMode.
      */
-    @java.lang.Override public int getCacheModeValue() {
-      return cacheMode_;
+    public java.lang.String getCacheMode() {
+      java.lang.Object ref = cacheMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cacheMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * Check the CacheMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
-     * @param value The enum numeric value on the wire for cacheMode to set.
+     * <code>optional string cache_mode = 28877888;</code>
+     * @return The bytes for cacheMode.
+     */
+    public com.google.protobuf.ByteString
+        getCacheModeBytes() {
+      java.lang.Object ref = cacheMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cacheMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * Check the CacheMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string cache_mode = 28877888;</code>
+     * @param value The cacheMode to set.
      * @return This builder for chaining.
      */
-    public Builder setCacheModeValue(int value) {
-      bitField0_ |= 0x00000004;
+    public Builder setCacheMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
       cacheMode_ = value;
       onChanged();
       return this;
@@ -1969,46 +2032,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * Check the CacheMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
-     * @return The cacheMode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode getCacheMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode result = com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.valueOf(cacheMode_);
-      return result == null ? com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
-     * @param value The cacheMode to set.
+     * <code>optional string cache_mode = 28877888;</code>
      * @return This builder for chaining.
      */
-    public Builder setCacheMode(com.google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      cacheMode_ = value.getNumber();
+    public Builder clearCacheMode() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      cacheMode_ = getDefaultInstance().getCacheMode();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the cache setting for all responses from this backend. The possible values are: USE_ORIGIN_HEADERS Requires the origin to set valid caching headers to cache content. Responses without these headers will not be cached at Google's edge, and will require a full trip to the origin on every request, potentially impacting performance and increasing load on the origin server. FORCE_CACHE_ALL Cache all content, ignoring any "private", "no-store" or "no-cache" directives in Cache-Control response headers. Warning: this may result in Cloud CDN caching private, per-user (user identifiable) content. CACHE_ALL_STATIC Automatically cache static content, including common image formats, media (video and audio), and web assets (JavaScript and CSS). Requests and responses that are marked as uncacheable, as well as dynamic content (including HTML), will not be cached.
+     * Check the CacheMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendServiceCdnPolicy.CacheMode cache_mode = 28877888;</code>
+     * <code>optional string cache_mode = 28877888;</code>
+     * @param value The bytes for cacheMode to set.
      * @return This builder for chaining.
      */
-    public Builder clearCacheMode() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      cacheMode_ = 0;
+    public Builder setCacheModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      cacheMode_ = value;
       onChanged();
       return this;
     }

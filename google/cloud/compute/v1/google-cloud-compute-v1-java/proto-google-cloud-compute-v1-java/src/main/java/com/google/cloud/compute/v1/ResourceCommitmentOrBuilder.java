@@ -58,28 +58,32 @@ public interface ResourceCommitmentOrBuilder extends
   /**
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
   boolean hasType();
   /**
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    * <pre>
    * Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourceCommitment.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.ResourceCommitment.Type getType();
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

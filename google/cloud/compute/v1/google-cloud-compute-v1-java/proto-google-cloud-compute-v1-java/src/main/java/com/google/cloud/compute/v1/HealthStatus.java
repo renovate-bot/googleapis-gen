@@ -21,11 +21,11 @@ private static final long serialVersionUID = 0L;
   private HealthStatus() {
     forwardingRule_ = "";
     forwardingRuleIp_ = "";
-    healthState_ = 0;
+    healthState_ = "";
     instance_ = "";
     ipAddress_ = "";
     weight_ = "";
-    weightError_ = 0;
+    weightError_ = "";
   }
 
   @java.lang.Override
@@ -101,10 +101,10 @@ private static final long serialVersionUID = 0L;
             weight_ = s;
             break;
           }
-          case -1702910096: {
-            int rawValue = input.readEnum();
+          case -1702910094: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000004;
-            healthState_ = rawValue;
+            healthState_ = s;
             break;
           }
           case -1044789534: {
@@ -113,10 +113,10 @@ private static final long serialVersionUID = 0L;
             ipAddress_ = s;
             break;
           }
-          case -114955256: {
-            int rawValue = input.readEnum();
+          case -114955254: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            weightError_ = rawValue;
+            weightError_ = s;
             break;
           }
           default: {
@@ -685,41 +685,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int HEALTH_STATE_FIELD_NUMBER = 324007150;
-  private int healthState_;
+  private volatile java.lang.Object healthState_;
   /**
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+   * <code>optional string health_state = 324007150;</code>
    * @return Whether the healthState field is set.
    */
-  @java.lang.Override public boolean hasHealthState() {
+  @java.lang.Override
+  public boolean hasHealthState() {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-   * @return The enum numeric value on the wire for healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The healthState.
    */
-  @java.lang.Override public int getHealthStateValue() {
-    return healthState_;
+  @java.lang.Override
+  public java.lang.String getHealthState() {
+    java.lang.Object ref = healthState_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      healthState_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Health state of the instance.
+   * Check the HealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-   * @return The healthState.
+   * <code>optional string health_state = 324007150;</code>
+   * @return The bytes for healthState.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HealthStatus.HealthState result = com.google.cloud.compute.v1.HealthStatus.HealthState.valueOf(healthState_);
-    return result == null ? com.google.cloud.compute.v1.HealthStatus.HealthState.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getHealthStateBytes() {
+    java.lang.Object ref = healthState_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      healthState_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
@@ -912,29 +935,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int WEIGHT_ERROR_FIELD_NUMBER = 522501505;
-  private int weightError_;
+  private volatile java.lang.Object weightError_;
   /**
-   * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   * <pre>
+   * 
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    * @return Whether the weightError field is set.
    */
-  @java.lang.Override public boolean hasWeightError() {
+  @java.lang.Override
+  public boolean hasWeightError() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
-   * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-   * @return The enum numeric value on the wire for weightError.
-   */
-  @java.lang.Override public int getWeightErrorValue() {
-    return weightError_;
-  }
-  /**
-   * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+   * <pre>
+   * 
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
    * @return The weightError.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HealthStatus.WeightError result = com.google.cloud.compute.v1.HealthStatus.WeightError.valueOf(weightError_);
-    return result == null ? com.google.cloud.compute.v1.HealthStatus.WeightError.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getWeightError() {
+    java.lang.Object ref = weightError_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      weightError_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 
+   * Check the WeightError enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string weight_error = 522501505;</code>
+   * @return The bytes for weightError.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getWeightErrorBytes() {
+    java.lang.Object ref = weightError_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      weightError_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -973,13 +1031,13 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 282149496, weight_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(324007150, healthState_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 324007150, healthState_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(522501505, weightError_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 522501505, weightError_);
     }
     unknownFields.writeTo(output);
   }
@@ -1017,15 +1075,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282149496, weight_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(324007150, healthState_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(324007150, healthState_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(522501505, weightError_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(522501505, weightError_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1056,7 +1112,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasHealthState() != other.hasHealthState()) return false;
     if (hasHealthState()) {
-      if (healthState_ != other.healthState_) return false;
+      if (!getHealthState()
+          .equals(other.getHealthState())) return false;
     }
     if (hasInstance() != other.hasInstance()) return false;
     if (hasInstance()) {
@@ -1080,7 +1137,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasWeightError() != other.hasWeightError()) return false;
     if (hasWeightError()) {
-      if (weightError_ != other.weightError_) return false;
+      if (!getWeightError()
+          .equals(other.getWeightError())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1107,7 +1165,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasHealthState()) {
       hash = (37 * hash) + HEALTH_STATE_FIELD_NUMBER;
-      hash = (53 * hash) + healthState_;
+      hash = (53 * hash) + getHealthState().hashCode();
     }
     if (hasInstance()) {
       hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
@@ -1127,7 +1185,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasWeightError()) {
       hash = (37 * hash) + WEIGHT_ERROR_FIELD_NUMBER;
-      hash = (53 * hash) + weightError_;
+      hash = (53 * hash) + getWeightError().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1292,7 +1350,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       forwardingRuleIp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      healthState_ = 0;
+      healthState_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       instance_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1302,7 +1360,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       weight_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      weightError_ = 0;
+      weightError_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
@@ -1428,7 +1486,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasHealthState()) {
-        setHealthState(other.getHealthState());
+        bitField0_ |= 0x00000008;
+        healthState_ = other.healthState_;
+        onChanged();
       }
       if (other.hasInstance()) {
         bitField0_ |= 0x00000010;
@@ -1449,7 +1509,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasWeightError()) {
-        setWeightError(other.getWeightError());
+        bitField0_ |= 0x00000100;
+        weightError_ = other.weightError_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1851,40 +1913,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int healthState_ = 0;
+    private java.lang.Object healthState_ = "";
     /**
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
      * @return Whether the healthState field is set.
      */
-    @java.lang.Override public boolean hasHealthState() {
+    public boolean hasHealthState() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     * @return The enum numeric value on the wire for healthState.
+     * <code>optional string health_state = 324007150;</code>
+     * @return The healthState.
      */
-    @java.lang.Override public int getHealthStateValue() {
-      return healthState_;
+    public java.lang.String getHealthState() {
+      java.lang.Object ref = healthState_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        healthState_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     * @param value The enum numeric value on the wire for healthState to set.
+     * <code>optional string health_state = 324007150;</code>
+     * @return The bytes for healthState.
+     */
+    public com.google.protobuf.ByteString
+        getHealthStateBytes() {
+      java.lang.Object ref = healthState_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        healthState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string health_state = 324007150;</code>
+     * @param value The healthState to set.
      * @return This builder for chaining.
      */
-    public Builder setHealthStateValue(int value) {
-      bitField0_ |= 0x00000008;
+    public Builder setHealthState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
       healthState_ = value;
       onChanged();
       return this;
@@ -1892,46 +1992,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     * @return The healthState.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HealthStatus.HealthState getHealthState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HealthStatus.HealthState result = com.google.cloud.compute.v1.HealthStatus.HealthState.valueOf(healthState_);
-      return result == null ? com.google.cloud.compute.v1.HealthStatus.HealthState.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Health state of the instance.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
-     * @param value The healthState to set.
+     * <code>optional string health_state = 324007150;</code>
      * @return This builder for chaining.
      */
-    public Builder setHealthState(com.google.cloud.compute.v1.HealthStatus.HealthState value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      healthState_ = value.getNumber();
+    public Builder clearHealthState() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      healthState_ = getDefaultInstance().getHealthState();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Health state of the instance.
+     * Check the HealthState enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HealthStatus.HealthState health_state = 324007150;</code>
+     * <code>optional string health_state = 324007150;</code>
+     * @param value The bytes for healthState to set.
      * @return This builder for chaining.
      */
-    public Builder clearHealthState() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      healthState_ = 0;
+    public Builder setHealthStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      healthState_ = value;
       onChanged();
       return this;
     }
@@ -2288,63 +2378,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int weightError_ = 0;
+    private java.lang.Object weightError_ = "";
     /**
-     * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+     * <pre>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
      * @return Whether the weightError field is set.
      */
-    @java.lang.Override public boolean hasWeightError() {
+    public boolean hasWeightError() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-     * @return The enum numeric value on the wire for weightError.
+     * <pre>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     * @return The weightError.
      */
-    @java.lang.Override public int getWeightErrorValue() {
-      return weightError_;
+    public java.lang.String getWeightError() {
+      java.lang.Object ref = weightError_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        weightError_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-     * @param value The enum numeric value on the wire for weightError to set.
+     * <pre>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     * @return The bytes for weightError.
+     */
+    public com.google.protobuf.ByteString
+        getWeightErrorBytes() {
+      java.lang.Object ref = weightError_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        weightError_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     * @param value The weightError to set.
      * @return This builder for chaining.
      */
-    public Builder setWeightErrorValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setWeightError(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       weightError_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-     * @return The weightError.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HealthStatus.WeightError getWeightError() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HealthStatus.WeightError result = com.google.cloud.compute.v1.HealthStatus.WeightError.valueOf(weightError_);
-      return result == null ? com.google.cloud.compute.v1.HealthStatus.WeightError.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
-     * @param value The weightError to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWeightError(com.google.cloud.compute.v1.HealthStatus.WeightError value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      weightError_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.HealthStatus.WeightError weight_error = 522501505;</code>
+     * <pre>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
      * @return This builder for chaining.
      */
     public Builder clearWeightError() {
       bitField0_ = (bitField0_ & ~0x00000100);
-      weightError_ = 0;
+      weightError_ = getDefaultInstance().getWeightError();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 
+     * Check the WeightError enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string weight_error = 522501505;</code>
+     * @param value The bytes for weightError to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWeightErrorBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      weightError_ = value;
       onChanged();
       return this;
     }

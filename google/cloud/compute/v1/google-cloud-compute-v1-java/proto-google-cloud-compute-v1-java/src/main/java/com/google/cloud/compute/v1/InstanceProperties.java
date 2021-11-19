@@ -25,7 +25,7 @@ private static final long serialVersionUID = 0L;
     machineType_ = "";
     minCpuPlatform_ = "";
     networkInterfaces_ = java.util.Collections.emptyList();
-    privateIpv6GoogleAccess_ = 0;
+    privateIpv6GoogleAccess_ = "";
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     serviceAccounts_ = java.util.Collections.emptyList();
   }
@@ -96,10 +96,10 @@ private static final long serialVersionUID = 0L;
             resourcePolicies_.add(s);
             break;
           }
-          case 386216048: {
-            int rawValue = input.readEnum();
+          case 386216050: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            privateIpv6GoogleAccess_ = rawValue;
+            privateIpv6GoogleAccess_ = s;
             break;
           }
           case 421881946: {
@@ -1054,41 +1054,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 48277006;
-  private int privateIpv6GoogleAccess_;
+  private volatile java.lang.Object privateIpv6GoogleAccess_;
   /**
    * <pre>
    * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
-  @java.lang.Override public boolean hasPrivateIpv6GoogleAccess() {
+  @java.lang.Override
+  public boolean hasPrivateIpv6GoogleAccess() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The privateIpv6GoogleAccess.
    */
-  @java.lang.Override public int getPrivateIpv6GoogleAccessValue() {
-    return privateIpv6GoogleAccess_;
+  @java.lang.Override
+  public java.lang.String getPrivateIpv6GoogleAccess() {
+    java.lang.Object ref = privateIpv6GoogleAccess_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      privateIpv6GoogleAccess_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess result = com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
-    return result == null ? com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrivateIpv6GoogleAccessBytes() {
+    java.lang.Object ref = privateIpv6GoogleAccess_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      privateIpv6GoogleAccess_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int RESERVATION_AFFINITY_FIELD_NUMBER = 157850683;
@@ -1366,7 +1389,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 22220385, resourcePolicies_.getRaw(i));
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(48277006, privateIpv6GoogleAccess_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 48277006, privateIpv6GoogleAccess_);
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
       output.writeMessage(52735243, networkInterfaces_.get(i));
@@ -1439,8 +1462,7 @@ private static final long serialVersionUID = 0L;
       size += 4 * getResourcePoliciesList().size();
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(48277006, privateIpv6GoogleAccess_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(48277006, privateIpv6GoogleAccess_);
     }
     for (int i = 0; i < networkInterfaces_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1561,7 +1583,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getNetworkInterfacesList())) return false;
     if (hasPrivateIpv6GoogleAccess() != other.hasPrivateIpv6GoogleAccess()) return false;
     if (hasPrivateIpv6GoogleAccess()) {
-      if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
+      if (!getPrivateIpv6GoogleAccess()
+          .equals(other.getPrivateIpv6GoogleAccess())) return false;
     }
     if (hasReservationAffinity() != other.hasReservationAffinity()) return false;
     if (hasReservationAffinity()) {
@@ -1645,7 +1668,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPrivateIpv6GoogleAccess()) {
       hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
-      hash = (53 * hash) + privateIpv6GoogleAccess_;
+      hash = (53 * hash) + getPrivateIpv6GoogleAccess().hashCode();
     }
     if (hasReservationAffinity()) {
       hash = (37 * hash) + RESERVATION_AFFINITY_FIELD_NUMBER;
@@ -1885,7 +1908,7 @@ private static final long serialVersionUID = 0L;
       } else {
         networkInterfacesBuilder_.clear();
       }
-      privateIpv6GoogleAccess_ = 0;
+      privateIpv6GoogleAccess_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       if (reservationAffinityBuilder_ == null) {
         reservationAffinity_ = null;
@@ -2223,7 +2246,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasPrivateIpv6GoogleAccess()) {
-        setPrivateIpv6GoogleAccess(other.getPrivateIpv6GoogleAccess());
+        bitField0_ |= 0x00000800;
+        privateIpv6GoogleAccess_ = other.privateIpv6GoogleAccess_;
+        onChanged();
       }
       if (other.hasReservationAffinity()) {
         mergeReservationAffinity(other.getReservationAffinity());
@@ -4239,40 +4264,78 @@ private static final long serialVersionUID = 0L;
       return networkInterfacesBuilder_;
     }
 
-    private int privateIpv6GoogleAccess_ = 0;
+    private java.lang.Object privateIpv6GoogleAccess_ = "";
     /**
      * <pre>
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      * @return Whether the privateIpv6GoogleAccess field is set.
      */
-    @java.lang.Override public boolean hasPrivateIpv6GoogleAccess() {
+    public boolean hasPrivateIpv6GoogleAccess() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <pre>
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return The privateIpv6GoogleAccess.
      */
-    @java.lang.Override public int getPrivateIpv6GoogleAccessValue() {
-      return privateIpv6GoogleAccess_;
+    public java.lang.String getPrivateIpv6GoogleAccess() {
+      java.lang.Object ref = privateIpv6GoogleAccess_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateIpv6GoogleAccess_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param value The enum numeric value on the wire for privateIpv6GoogleAccess to set.
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return The bytes for privateIpv6GoogleAccess.
+     */
+    public com.google.protobuf.ByteString
+        getPrivateIpv6GoogleAccessBytes() {
+      java.lang.Object ref = privateIpv6GoogleAccess_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        privateIpv6GoogleAccess_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param value The privateIpv6GoogleAccess to set.
      * @return This builder for chaining.
      */
-    public Builder setPrivateIpv6GoogleAccessValue(int value) {
-      bitField0_ |= 0x00000800;
+    public Builder setPrivateIpv6GoogleAccess(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
       privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
@@ -4280,46 +4343,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return The privateIpv6GoogleAccess.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess result = com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
-      return result == null ? com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param value The privateIpv6GoogleAccess to set.
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      * @return This builder for chaining.
      */
-    public Builder setPrivateIpv6GoogleAccess(com.google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      privateIpv6GoogleAccess_ = value.getNumber();
+    public Builder clearPrivateIpv6GoogleAccess() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      privateIpv6GoogleAccess_ = getDefaultInstance().getPrivateIpv6GoogleAccess();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param value The bytes for privateIpv6GoogleAccess to set.
      * @return This builder for chaining.
      */
-    public Builder clearPrivateIpv6GoogleAccess() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      privateIpv6GoogleAccess_ = 0;
+    public Builder setPrivateIpv6GoogleAccessBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
     }

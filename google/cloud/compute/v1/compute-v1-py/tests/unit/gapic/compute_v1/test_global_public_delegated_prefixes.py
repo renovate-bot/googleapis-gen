@@ -521,7 +521,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetGlobalPublicD
               parent_prefix='parent_prefix_value',
               region='region_value',
               self_link='self_link_value',
-              status=compute.PublicDelegatedPrefix.Status.ANNOUNCED,
+              status='status_value',
         )
 
         # Wrap the value into a proper Response obj
@@ -545,7 +545,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetGlobalPublicD
     assert response.parent_prefix == 'parent_prefix_value'
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
-    assert response.status == compute.PublicDelegatedPrefix.Status.ANNOUNCED
+    assert response.status == 'status_value'
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetGlobalPublicDelegatedPrefixeRequest):

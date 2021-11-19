@@ -17,8 +17,9 @@ class AutoscalingPolicyCpuUtilization extends \Google\Protobuf\Internal\Message
 {
     /**
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
+     * Generated from protobuf field <code>optional string predictive_method = 390220737;</code>
      */
     protected $predictive_method = null;
     /**
@@ -34,8 +35,9 @@ class AutoscalingPolicyCpuUtilization extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $predictive_method
+     *     @type string $predictive_method
      *           Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     *           Check the PredictiveMethod enum for the list of possible values.
      *     @type float $utilization_target
      *           The target CPU utilization that the autoscaler maintains. Must be a float value in the range (0, 1]. If not specified, the default is 0.6. If the CPU level is below the target utilization, the autoscaler scales in the number of instances until it reaches the minimum number of instances you specified or until the average CPU of your instances reaches the target utilization. If the average CPU is above the target utilization, the autoscaler scales out until it reaches the maximum number of instances you specified or until the average utilization reaches the target utilization.
      * }
@@ -47,13 +49,14 @@ class AutoscalingPolicyCpuUtilization extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string predictive_method = 390220737;</code>
+     * @return string
      */
     public function getPredictiveMethod()
     {
-        return isset($this->predictive_method) ? $this->predictive_method : 0;
+        return isset($this->predictive_method) ? $this->predictive_method : '';
     }
 
     public function hasPredictiveMethod()
@@ -68,14 +71,15 @@ class AutoscalingPolicyCpuUtilization extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string predictive_method = 390220737;</code>
+     * @param string $var
      * @return $this
      */
     public function setPredictiveMethod($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AutoscalingPolicyCpuUtilization\PredictiveMethod::class);
+        GPBUtil::checkString($var, True);
         $this->predictive_method = $var;
 
         return $this;

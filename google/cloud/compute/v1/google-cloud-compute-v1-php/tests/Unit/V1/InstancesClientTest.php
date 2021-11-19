@@ -1098,9 +1098,11 @@ class InstancesClientTest extends GeneratedTest
         $machineType = 'machineType1838323762';
         $minCpuPlatform = 'minCpuPlatform-1367699977';
         $name = 'name3373707';
+        $privateIpv6GoogleAccess = 'privateIpv6GoogleAccess1122018830';
         $satisfiesPzs = false;
         $selfLink = 'selfLink-1691268851';
         $startRestricted = true;
+        $status = 'status-892481550';
         $statusMessage = 'statusMessage-239442758';
         $zone2 = 'zone2-696322977';
         $expectedResponse = new Instance();
@@ -1120,9 +1122,11 @@ class InstancesClientTest extends GeneratedTest
         $expectedResponse->setMachineType($machineType);
         $expectedResponse->setMinCpuPlatform($minCpuPlatform);
         $expectedResponse->setName($name);
+        $expectedResponse->setPrivateIpv6GoogleAccess($privateIpv6GoogleAccess);
         $expectedResponse->setSatisfiesPzs($satisfiesPzs);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setStartRestricted($startRestricted);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setStatusMessage($statusMessage);
         $expectedResponse->setZone($zone2);
         $transport->addResponse($expectedResponse);

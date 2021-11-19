@@ -10,30 +10,34 @@ public interface InstanceManagedByIgmErrorInstanceActionDetailsOrBuilder extends
   /**
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    * @return Whether the action field is set.
    */
   boolean hasAction();
   /**
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-   * @return The enum numeric value on the wire for action.
+   * <code>optional string action = 187661878;</code>
+   * @return The action.
    */
-  int getActionValue();
+  java.lang.String getAction();
   /**
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-   * @return The action.
+   * <code>optional string action = 187661878;</code>
+   * @return The bytes for action.
    */
-  com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action getAction();
+  com.google.protobuf.ByteString
+      getActionBytes();
 
   /**
    * <pre>

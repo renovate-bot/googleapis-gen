@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Warning() {
-    code_ = 0;
+    code_ = "";
     data_ = java.util.Collections.emptyList();
     message_ = "";
   }
@@ -56,10 +56,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 24473448: {
-            int rawValue = input.readEnum();
+          case 24473450: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            code_ = rawValue;
+            code_ = s;
             break;
           }
           case 24608082: {
@@ -432,41 +432,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int CODE_FIELD_NUMBER = 3059181;
-  private int code_;
+  private volatile java.lang.Object code_;
   /**
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    * @return Whether the code field is set.
    */
-  @java.lang.Override public boolean hasCode() {
+  @java.lang.Override
+  public boolean hasCode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
-   * @return The enum numeric value on the wire for code.
+   * <code>optional string code = 3059181;</code>
+   * @return The code.
    */
-  @java.lang.Override public int getCodeValue() {
-    return code_;
+  @java.lang.Override
+  public java.lang.String getCode() {
+    java.lang.Object ref = code_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      code_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
-   * @return The code.
+   * <code>optional string code = 3059181;</code>
+   * @return The bytes for code.
    */
-  @java.lang.Override public com.google.cloud.compute.v1small.Warning.Code getCode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1small.Warning.Code result = com.google.cloud.compute.v1small.Warning.Code.valueOf(code_);
-    return result == null ? com.google.cloud.compute.v1small.Warning.Code.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCodeBytes() {
+    java.lang.Object ref = code_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      code_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DATA_FIELD_NUMBER = 3076010;
@@ -607,7 +630,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(3059181, code_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3059181, code_);
     }
     for (int i = 0; i < data_.size(); i++) {
       output.writeMessage(3076010, data_.get(i));
@@ -625,8 +648,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3059181, code_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3059181, code_);
     }
     for (int i = 0; i < data_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -652,7 +674,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasCode() != other.hasCode()) return false;
     if (hasCode()) {
-      if (code_ != other.code_) return false;
+      if (!getCode()
+          .equals(other.getCode())) return false;
     }
     if (!getDataList()
         .equals(other.getDataList())) return false;
@@ -674,7 +697,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasCode()) {
       hash = (37 * hash) + CODE_FIELD_NUMBER;
-      hash = (53 * hash) + code_;
+      hash = (53 * hash) + getCode().hashCode();
     }
     if (getDataCount() > 0) {
       hash = (37 * hash) + DATA_FIELD_NUMBER;
@@ -822,7 +845,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      code_ = 0;
+      code_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       if (dataBuilder_ == null) {
         data_ = java.util.Collections.emptyList();
@@ -927,7 +950,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1small.Warning other) {
       if (other == com.google.cloud.compute.v1small.Warning.getDefaultInstance()) return this;
       if (other.hasCode()) {
-        setCode(other.getCode());
+        bitField0_ |= 0x00000001;
+        code_ = other.code_;
+        onChanged();
       }
       if (dataBuilder_ == null) {
         if (!other.data_.isEmpty()) {
@@ -990,40 +1015,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int code_ = 0;
+    private java.lang.Object code_ = "";
     /**
      * <pre>
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
      * @return Whether the code field is set.
      */
-    @java.lang.Override public boolean hasCode() {
+    public boolean hasCode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
-     * @return The enum numeric value on the wire for code.
+     * <code>optional string code = 3059181;</code>
+     * @return The code.
      */
-    @java.lang.Override public int getCodeValue() {
-      return code_;
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
-     * @param value The enum numeric value on the wire for code to set.
+     * <code>optional string code = 3059181;</code>
+     * @return The bytes for code.
+     */
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string code = 3059181;</code>
+     * @param value The code to set.
      * @return This builder for chaining.
      */
-    public Builder setCodeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       code_ = value;
       onChanged();
       return this;
@@ -1031,46 +1094,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
-     * @return The code.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1small.Warning.Code getCode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1small.Warning.Code result = com.google.cloud.compute.v1small.Warning.Code.valueOf(code_);
-      return result == null ? com.google.cloud.compute.v1small.Warning.Code.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
-     * @param value The code to set.
+     * <code>optional string code = 3059181;</code>
      * @return This builder for chaining.
      */
-    public Builder setCode(com.google.cloud.compute.v1small.Warning.Code value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      code_ = value.getNumber();
+    public Builder clearCode() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      code_ = getDefaultInstance().getCode();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Warning.Code code = 3059181;</code>
+     * <code>optional string code = 3059181;</code>
+     * @param value The bytes for code to set.
      * @return This builder for chaining.
      */
-    public Builder clearCode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      code_ = 0;
+    public Builder setCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      code_ = value;
       onChanged();
       return this;
     }

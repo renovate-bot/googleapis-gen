@@ -272,30 +272,34 @@ public interface ExternalVpnGatewayOrBuilder extends
   /**
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+   * <code>optional string redundancy_type = 271443740;</code>
    * @return Whether the redundancyType field is set.
    */
   boolean hasRedundancyType();
   /**
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-   * @return The enum numeric value on the wire for redundancyType.
+   * <code>optional string redundancy_type = 271443740;</code>
+   * @return The redundancyType.
    */
-  int getRedundancyTypeValue();
+  java.lang.String getRedundancyType();
   /**
    * <pre>
    * Indicates the user-supplied redundancy type of this external VPN gateway.
+   * Check the RedundancyType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-   * @return The redundancyType.
+   * <code>optional string redundancy_type = 271443740;</code>
+   * @return The bytes for redundancyType.
    */
-  com.google.cloud.compute.v1.ExternalVpnGateway.RedundancyType getRedundancyType();
+  com.google.protobuf.ByteString
+      getRedundancyTypeBytes();
 
   /**
    * <pre>

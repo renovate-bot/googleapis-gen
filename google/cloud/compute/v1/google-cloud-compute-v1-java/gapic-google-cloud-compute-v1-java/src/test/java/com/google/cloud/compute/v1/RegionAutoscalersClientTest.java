@@ -163,6 +163,7 @@ public class RegionAutoscalersClientTest {
             .setRegion("region-934795532")
             .putAllScalingScheduleStatus(new HashMap<String, ScalingScheduleStatus>())
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
             .addAllStatusDetails(new ArrayList<AutoscalerStatusDetails>())
             .setTarget("target-880905839")
             .setZone("zone3744684")

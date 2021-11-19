@@ -41,8 +41,9 @@ class Scheduling extends \Google\Protobuf\Internal\Message
     private $node_affinities;
     /**
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
+     * Generated from protobuf field <code>optional string on_host_maintenance = 64616796;</code>
      */
     protected $on_host_maintenance = null;
     /**
@@ -66,8 +67,9 @@ class Scheduling extends \Google\Protobuf\Internal\Message
      *           The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
      *     @type \Google\Cloud\Compute\V1\SchedulingNodeAffinity[]|\Google\Protobuf\Internal\RepeatedField $node_affinities
      *           A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
-     *     @type int $on_host_maintenance
+     *     @type string $on_host_maintenance
      *           Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     *           Check the OnHostMaintenance enum for the list of possible values.
      *     @type bool $preemptible
      *           Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
      * }
@@ -213,13 +215,14 @@ class Scheduling extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string on_host_maintenance = 64616796;</code>
+     * @return string
      */
     public function getOnHostMaintenance()
     {
-        return isset($this->on_host_maintenance) ? $this->on_host_maintenance : 0;
+        return isset($this->on_host_maintenance) ? $this->on_host_maintenance : '';
     }
 
     public function hasOnHostMaintenance()
@@ -234,14 +237,15 @@ class Scheduling extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+     * Check the OnHostMaintenance enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string on_host_maintenance = 64616796;</code>
+     * @param string $var
      * @return $this
      */
     public function setOnHostMaintenance($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Scheduling\OnHostMaintenance::class);
+        GPBUtil::checkString($var, True);
         $this->on_host_maintenance = $var;
 
         return $this;

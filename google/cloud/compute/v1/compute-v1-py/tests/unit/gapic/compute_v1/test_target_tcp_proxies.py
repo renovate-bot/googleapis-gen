@@ -516,7 +516,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetTcpProx
               kind='kind_value',
               name='name_value',
               proxy_bind=True,
-              proxy_header=compute.TargetTcpProxy.ProxyHeader.NONE,
+              proxy_header='proxy_header_value',
               self_link='self_link_value',
               service='service_value',
         )
@@ -537,7 +537,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetTcpProx
     assert response.kind == 'kind_value'
     assert response.name == 'name_value'
     assert response.proxy_bind is True
-    assert response.proxy_header == compute.TargetTcpProxy.ProxyHeader.NONE
+    assert response.proxy_header == 'proxy_header_value'
     assert response.self_link == 'self_link_value'
     assert response.service == 'service_value'
 
@@ -1103,7 +1103,7 @@ def test_set_proxy_header_rest(transport: str = 'rest', request_type=compute.Set
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "target_tcp_proxy": "sample2"}
-    request_init["target_tcp_proxies_set_proxy_header_request_resource"] = compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header=compute.TargetTcpProxiesSetProxyHeaderRequest.ProxyHeader.NONE)
+    request_init["target_tcp_proxies_set_proxy_header_request_resource"] = compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header='proxy_header_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1176,7 +1176,7 @@ def test_set_proxy_header_rest_bad_request(transport: str = 'rest', request_type
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "target_tcp_proxy": "sample2"}
-    request_init["target_tcp_proxies_set_proxy_header_request_resource"] = compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header=compute.TargetTcpProxiesSetProxyHeaderRequest.ProxyHeader.NONE)
+    request_init["target_tcp_proxies_set_proxy_header_request_resource"] = compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header='proxy_header_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1219,7 +1219,7 @@ def test_set_proxy_header_rest_flattened(transport: str = 'rest'):
         mock_args = dict(
             project='project_value',
             target_tcp_proxy='target_tcp_proxy_value',
-            target_tcp_proxies_set_proxy_header_request_resource=compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header=compute.TargetTcpProxiesSetProxyHeaderRequest.ProxyHeader.NONE),
+            target_tcp_proxies_set_proxy_header_request_resource=compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header='proxy_header_value'),
         )
         mock_args.update(sample_request)
         client.set_proxy_header(**mock_args)
@@ -1244,7 +1244,7 @@ def test_set_proxy_header_rest_flattened_error(transport: str = 'rest'):
             compute.SetProxyHeaderTargetTcpProxyRequest(),
             project='project_value',
             target_tcp_proxy='target_tcp_proxy_value',
-            target_tcp_proxies_set_proxy_header_request_resource=compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header=compute.TargetTcpProxiesSetProxyHeaderRequest.ProxyHeader.NONE),
+            target_tcp_proxies_set_proxy_header_request_resource=compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header='proxy_header_value'),
         )
 
 

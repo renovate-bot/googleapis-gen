@@ -23,8 +23,9 @@ class Address extends \Google\Protobuf\Internal\Message
     protected $address = null;
     /**
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+     * Generated from protobuf field <code>optional string address_type = 264307877;</code>
      */
     protected $address_type = null;
     /**
@@ -47,8 +48,9 @@ class Address extends \Google\Protobuf\Internal\Message
     protected $id = null;
     /**
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+     * Generated from protobuf field <code>optional string ip_version = 294959552;</code>
      */
     protected $ip_version = null;
     /**
@@ -71,8 +73,9 @@ class Address extends \Google\Protobuf\Internal\Message
     protected $network = null;
     /**
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
      */
     protected $network_tier = null;
     /**
@@ -82,9 +85,10 @@ class Address extends \Google\Protobuf\Internal\Message
      */
     protected $prefix_length = null;
     /**
-     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+     * Generated from protobuf field <code>optional string purpose = 316407070;</code>
      */
     protected $purpose = null;
     /**
@@ -101,8 +105,9 @@ class Address extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -126,34 +131,39 @@ class Address extends \Google\Protobuf\Internal\Message
      *
      *     @type string $address
      *           The static IP address represented by this resource.
-     *     @type int $address_type
+     *     @type string $address_type
      *           The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     *           Check the AddressType enum for the list of possible values.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
      *           An optional description of this resource. Provide this field when you create the resource.
      *     @type int|string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-     *     @type int $ip_version
+     *     @type string $ip_version
      *           The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     *           Check the IpVersion enum for the list of possible values.
      *     @type string $kind
      *           [Output Only] Type of the resource. Always compute#address for addresses.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
      *     @type string $network
      *           The URL of the network in which to reserve the address. This field can only be used with INTERNAL type with the VPC_PEERING purpose.
-     *     @type int $network_tier
+     *     @type string $network_tier
      *           This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     *           Check the NetworkTier enum for the list of possible values.
      *     @type int $prefix_length
      *           The prefix length if the resource represents an IP range.
-     *     @type int $purpose
-     *           The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
+     *     @type string $purpose
+     *           The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     *           Check the Purpose enum for the list of possible values.
      *     @type string $region
      *           [Output Only] The URL of the region where a regional address resides. For regional addresses, you must specify the region as a path parameter in the HTTP request URL. *This field is not applicable to global addresses.*
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     *           Check the Status enum for the list of possible values.
      *     @type string $subnetwork
      *           The URL of the subnetwork in which to reserve the address. If an IP address is specified, it must be within the subnetwork's IP range. This field can only be used with INTERNAL type with a GCE_ENDPOINT or DNS_RESOLVER purpose.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $users
@@ -203,13 +213,14 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string address_type = 264307877;</code>
+     * @return string
      */
     public function getAddressType()
     {
-        return isset($this->address_type) ? $this->address_type : 0;
+        return isset($this->address_type) ? $this->address_type : '';
     }
 
     public function hasAddressType()
@@ -224,14 +235,15 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string address_type = 264307877;</code>
+     * @param string $var
      * @return $this
      */
     public function setAddressType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Address\AddressType::class);
+        GPBUtil::checkString($var, True);
         $this->address_type = $var;
 
         return $this;
@@ -347,13 +359,14 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string ip_version = 294959552;</code>
+     * @return string
      */
     public function getIpVersion()
     {
-        return isset($this->ip_version) ? $this->ip_version : 0;
+        return isset($this->ip_version) ? $this->ip_version : '';
     }
 
     public function hasIpVersion()
@@ -368,14 +381,15 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string ip_version = 294959552;</code>
+     * @param string $var
      * @return $this
      */
     public function setIpVersion($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Address\IpVersion::class);
+        GPBUtil::checkString($var, True);
         $this->ip_version = $var;
 
         return $this;
@@ -491,13 +505,14 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
+     * @return string
      */
     public function getNetworkTier()
     {
-        return isset($this->network_tier) ? $this->network_tier : 0;
+        return isset($this->network_tier) ? $this->network_tier : '';
     }
 
     public function hasNetworkTier()
@@ -512,14 +527,15 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
+     * @param string $var
      * @return $this
      */
     public function setNetworkTier($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Address\NetworkTier::class);
+        GPBUtil::checkString($var, True);
         $this->network_tier = $var;
 
         return $this;
@@ -562,14 +578,15 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string purpose = 316407070;</code>
+     * @return string
      */
     public function getPurpose()
     {
-        return isset($this->purpose) ? $this->purpose : 0;
+        return isset($this->purpose) ? $this->purpose : '';
     }
 
     public function hasPurpose()
@@ -583,15 +600,16 @@ class Address extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
+     * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+     * Check the Purpose enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string purpose = 316407070;</code>
+     * @param string $var
      * @return $this
      */
     public function setPurpose($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Address\Purpose::class);
+        GPBUtil::checkString($var, True);
         $this->purpose = $var;
 
         return $this;
@@ -671,13 +689,14 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -692,14 +711,15 @@ class Address extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Address.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Address\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

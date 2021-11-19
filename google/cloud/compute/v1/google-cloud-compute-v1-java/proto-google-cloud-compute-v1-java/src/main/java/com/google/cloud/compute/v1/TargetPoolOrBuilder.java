@@ -333,28 +333,32 @@ public interface TargetPoolOrBuilder extends
   /**
    * <pre>
    * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+   * <code>optional string session_affinity = 463888561;</code>
    * @return Whether the sessionAffinity field is set.
    */
   boolean hasSessionAffinity();
   /**
    * <pre>
    * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-   * @return The enum numeric value on the wire for sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The sessionAffinity.
    */
-  int getSessionAffinityValue();
+  java.lang.String getSessionAffinity();
   /**
    * <pre>
    * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-   * @return The sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The bytes for sessionAffinity.
    */
-  com.google.cloud.compute.v1.TargetPool.SessionAffinity getSessionAffinity();
+  com.google.protobuf.ByteString
+      getSessionAffinityBytes();
 }

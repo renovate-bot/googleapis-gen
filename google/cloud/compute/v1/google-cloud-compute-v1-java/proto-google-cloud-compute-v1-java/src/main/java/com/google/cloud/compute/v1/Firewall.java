@@ -25,7 +25,7 @@ private static final long serialVersionUID = 0L;
     denied_ = java.util.Collections.emptyList();
     description_ = "";
     destinationRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    direction_ = 0;
+    direction_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
@@ -109,10 +109,10 @@ private static final long serialVersionUID = 0L;
             sourceServiceAccounts_.add(s);
             break;
           }
-          case 889207800: {
-            int rawValue = input.readEnum();
+          case 889207802: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000004;
-            direction_ = rawValue;
+            direction_ = s;
             break;
           }
           case 1299189058: {
@@ -700,41 +700,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private int direction_;
+  private volatile java.lang.Object direction_;
   /**
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    * @return Whether the direction field is set.
    */
-  @java.lang.Override public boolean hasDirection() {
+  @java.lang.Override
+  public boolean hasDirection() {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-   * @return The enum numeric value on the wire for direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The direction.
    */
-  @java.lang.Override public int getDirectionValue() {
-    return direction_;
+  @java.lang.Override
+  public java.lang.String getDirection() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      direction_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-   * @return The direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The bytes for direction.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Firewall.Direction getDirection() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Firewall.Direction result = com.google.cloud.compute.v1.Firewall.Direction.valueOf(direction_);
-    return result == null ? com.google.cloud.compute.v1.Firewall.Direction.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDirectionBytes() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      direction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int DISABLED_FIELD_NUMBER = 270940796;
@@ -1376,7 +1399,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 105100756, sourceServiceAccounts_.getRaw(i));
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(111150975, direction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 111150975, direction_);
     }
     for (int i = 0; i < allowed_.size(); i++) {
       output.writeMessage(162398632, allowed_.get(i));
@@ -1453,8 +1476,7 @@ private static final long serialVersionUID = 0L;
       size += 5 * getSourceServiceAccountsList().size();
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(111150975, direction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111150975, direction_);
     }
     for (int i = 0; i < allowed_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1550,7 +1572,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getDestinationRangesList())) return false;
     if (hasDirection() != other.hasDirection()) return false;
     if (hasDirection()) {
-      if (direction_ != other.direction_) return false;
+      if (!getDirection()
+          .equals(other.getDirection())) return false;
     }
     if (hasDisabled() != other.hasDisabled()) return false;
     if (hasDisabled()) {
@@ -1635,7 +1658,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasDirection()) {
       hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
+      hash = (53 * hash) + getDirection().hashCode();
     }
     if (hasDisabled()) {
       hash = (37 * hash) + DISABLED_FIELD_NUMBER;
@@ -1849,7 +1872,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
       destinationRanges_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000010);
-      direction_ = 0;
+      direction_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       disabled_ = false;
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2127,7 +2150,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasDirection()) {
-        setDirection(other.getDirection());
+        bitField0_ |= 0x00000020;
+        direction_ = other.direction_;
+        onChanged();
       }
       if (other.hasDisabled()) {
         setDisabled(other.getDisabled());
@@ -3225,40 +3250,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int direction_ = 0;
+    private java.lang.Object direction_ = "";
     /**
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      * @return Whether the direction field is set.
      */
-    @java.lang.Override public boolean hasDirection() {
+    public boolean hasDirection() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     * @return The enum numeric value on the wire for direction.
+     * <code>optional string direction = 111150975;</code>
+     * @return The direction.
      */
-    @java.lang.Override public int getDirectionValue() {
-      return direction_;
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        direction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     * @param value The enum numeric value on the wire for direction to set.
+     * <code>optional string direction = 111150975;</code>
+     * @return The bytes for direction.
+     */
+    public com.google.protobuf.ByteString
+        getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        direction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string direction = 111150975;</code>
+     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirectionValue(int value) {
-      bitField0_ |= 0x00000020;
+    public Builder setDirection(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
       direction_ = value;
       onChanged();
       return this;
@@ -3266,46 +3329,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     * @return The direction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Firewall.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Firewall.Direction result = com.google.cloud.compute.v1.Firewall.Direction.valueOf(direction_);
-      return result == null ? com.google.cloud.compute.v1.Firewall.Direction.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     * @param value The direction to set.
+     * <code>optional string direction = 111150975;</code>
      * @return This builder for chaining.
      */
-    public Builder setDirection(com.google.cloud.compute.v1.Firewall.Direction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      direction_ = value.getNumber();
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      direction_ = getDefaultInstance().getDirection();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
+     * @param value The bytes for direction to set.
      * @return This builder for chaining.
      */
-    public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      direction_ = 0;
+    public Builder setDirectionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      direction_ = value;
       onChanged();
       return this;
     }

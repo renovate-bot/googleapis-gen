@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private MetadataFilter() {
     filterLabels_ = java.util.Collections.emptyList();
-    filterMatchCriteria_ = 0;
+    filterMatchCriteria_ = "";
   }
 
   @java.lang.Override
@@ -55,10 +55,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 1919762944: {
-            int rawValue = input.readEnum();
+          case 1919762946: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            filterMatchCriteria_ = rawValue;
+            filterMatchCriteria_ = s;
             break;
           }
           case -1831742158: {
@@ -329,41 +329,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FILTER_MATCH_CRITERIA_FIELD_NUMBER = 239970368;
-  private int filterMatchCriteria_;
+  private volatile java.lang.Object filterMatchCriteria_;
   /**
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
+   * <code>optional string filter_match_criteria = 239970368;</code>
    * @return Whether the filterMatchCriteria field is set.
    */
-  @java.lang.Override public boolean hasFilterMatchCriteria() {
+  @java.lang.Override
+  public boolean hasFilterMatchCriteria() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-   * @return The enum numeric value on the wire for filterMatchCriteria.
+   * <code>optional string filter_match_criteria = 239970368;</code>
+   * @return The filterMatchCriteria.
    */
-  @java.lang.Override public int getFilterMatchCriteriaValue() {
-    return filterMatchCriteria_;
+  @java.lang.Override
+  public java.lang.String getFilterMatchCriteria() {
+    java.lang.Object ref = filterMatchCriteria_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      filterMatchCriteria_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+   * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+   * Check the FilterMatchCriteria enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-   * @return The filterMatchCriteria.
+   * <code>optional string filter_match_criteria = 239970368;</code>
+   * @return The bytes for filterMatchCriteria.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria getFilterMatchCriteria() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria result = com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.valueOf(filterMatchCriteria_);
-    return result == null ? com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getFilterMatchCriteriaBytes() {
+    java.lang.Object ref = filterMatchCriteria_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      filterMatchCriteria_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -381,7 +404,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(239970368, filterMatchCriteria_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 239970368, filterMatchCriteria_);
     }
     for (int i = 0; i < filterLabels_.size(); i++) {
       output.writeMessage(307903142, filterLabels_.get(i));
@@ -396,8 +419,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(239970368, filterMatchCriteria_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(239970368, filterMatchCriteria_);
     }
     for (int i = 0; i < filterLabels_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -422,7 +444,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFilterLabelsList())) return false;
     if (hasFilterMatchCriteria() != other.hasFilterMatchCriteria()) return false;
     if (hasFilterMatchCriteria()) {
-      if (filterMatchCriteria_ != other.filterMatchCriteria_) return false;
+      if (!getFilterMatchCriteria()
+          .equals(other.getFilterMatchCriteria())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -441,7 +464,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasFilterMatchCriteria()) {
       hash = (37 * hash) + FILTER_MATCH_CRITERIA_FIELD_NUMBER;
-      hash = (53 * hash) + filterMatchCriteria_;
+      hash = (53 * hash) + getFilterMatchCriteria().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -587,7 +610,7 @@ private static final long serialVersionUID = 0L;
       } else {
         filterLabelsBuilder_.clear();
       }
-      filterMatchCriteria_ = 0;
+      filterMatchCriteria_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -706,7 +729,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasFilterMatchCriteria()) {
-        setFilterMatchCriteria(other.getFilterMatchCriteria());
+        bitField0_ |= 0x00000002;
+        filterMatchCriteria_ = other.filterMatchCriteria_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1050,87 +1075,115 @@ private static final long serialVersionUID = 0L;
       return filterLabelsBuilder_;
     }
 
-    private int filterMatchCriteria_ = 0;
+    private java.lang.Object filterMatchCriteria_ = "";
     /**
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
      * @return Whether the filterMatchCriteria field is set.
      */
-    @java.lang.Override public boolean hasFilterMatchCriteria() {
+    public boolean hasFilterMatchCriteria() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-     * @return The enum numeric value on the wire for filterMatchCriteria.
+     * <code>optional string filter_match_criteria = 239970368;</code>
+     * @return The filterMatchCriteria.
      */
-    @java.lang.Override public int getFilterMatchCriteriaValue() {
-      return filterMatchCriteria_;
+    public java.lang.String getFilterMatchCriteria() {
+      java.lang.Object ref = filterMatchCriteria_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        filterMatchCriteria_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-     * @param value The enum numeric value on the wire for filterMatchCriteria to set.
+     * <code>optional string filter_match_criteria = 239970368;</code>
+     * @return The bytes for filterMatchCriteria.
+     */
+    public com.google.protobuf.ByteString
+        getFilterMatchCriteriaBytes() {
+      java.lang.Object ref = filterMatchCriteria_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        filterMatchCriteria_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string filter_match_criteria = 239970368;</code>
+     * @param value The filterMatchCriteria to set.
      * @return This builder for chaining.
      */
-    public Builder setFilterMatchCriteriaValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setFilterMatchCriteria(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       filterMatchCriteria_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-     * @return The filterMatchCriteria.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria getFilterMatchCriteria() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria result = com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.valueOf(filterMatchCriteria_);
-      return result == null ? com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
-     * @param value The filterMatchCriteria to set.
+     * <code>optional string filter_match_criteria = 239970368;</code>
      * @return This builder for chaining.
      */
-    public Builder setFilterMatchCriteria(com.google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      filterMatchCriteria_ = value.getNumber();
+    public Builder clearFilterMatchCriteria() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      filterMatchCriteria_ = getDefaultInstance().getFilterMatchCriteria();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata. 
+     * Specifies how individual filterLabel matches within the list of filterLabels contribute towards the overall metadataFilter match. Supported values are: - MATCH_ANY: At least one of the filterLabels must have a matching label in the provided metadata. - MATCH_ALL: All filterLabels must have matching labels in the provided metadata.
+     * Check the FilterMatchCriteria enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.MetadataFilter.FilterMatchCriteria filter_match_criteria = 239970368;</code>
+     * <code>optional string filter_match_criteria = 239970368;</code>
+     * @param value The bytes for filterMatchCriteria to set.
      * @return This builder for chaining.
      */
-    public Builder clearFilterMatchCriteria() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      filterMatchCriteria_ = 0;
+    public Builder setFilterMatchCriteriaBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      filterMatchCriteria_ = value;
       onChanged();
       return this;
     }

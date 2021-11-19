@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     hostRedirect_ = "";
     pathRedirect_ = "";
     prefixRedirect_ = "";
-    redirectResponseCode_ = 0;
+    redirectResponseCode_ = "";
   }
 
   @java.lang.Override
@@ -79,10 +79,10 @@ private static final long serialVersionUID = 0L;
             pathRedirect_ = s;
             break;
           }
-          case -801284032: {
-            int rawValue = input.readEnum();
+          case -801284030: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000010;
-            redirectResponseCode_ = rawValue;
+            redirectResponseCode_ = s;
             break;
           }
           case -725493942: {
@@ -522,41 +522,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REDIRECT_RESPONSE_CODE_FIELD_NUMBER = 436710408;
-  private int redirectResponseCode_;
+  private volatile java.lang.Object redirectResponseCode_;
   /**
    * <pre>
-   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+   * <code>optional string redirect_response_code = 436710408;</code>
    * @return Whether the redirectResponseCode field is set.
    */
-  @java.lang.Override public boolean hasRedirectResponseCode() {
+  @java.lang.Override
+  public boolean hasRedirectResponseCode() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
-   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-   * @return The enum numeric value on the wire for redirectResponseCode.
+   * <code>optional string redirect_response_code = 436710408;</code>
+   * @return The redirectResponseCode.
    */
-  @java.lang.Override public int getRedirectResponseCodeValue() {
-    return redirectResponseCode_;
+  @java.lang.Override
+  public java.lang.String getRedirectResponseCode() {
+    java.lang.Object ref = redirectResponseCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      redirectResponseCode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-   * @return The redirectResponseCode.
+   * <code>optional string redirect_response_code = 436710408;</code>
+   * @return The bytes for redirectResponseCode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode getRedirectResponseCode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode result = com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.valueOf(redirectResponseCode_);
-    return result == null ? com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRedirectResponseCodeBytes() {
+    java.lang.Object ref = redirectResponseCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      redirectResponseCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STRIP_QUERY_FIELD_NUMBER = 52284641;
@@ -613,7 +636,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 272342710, pathRedirect_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(436710408, redirectResponseCode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 436710408, redirectResponseCode_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 446184169, prefixRedirect_);
@@ -642,8 +665,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(272342710, pathRedirect_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(436710408, redirectResponseCode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(436710408, redirectResponseCode_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(446184169, prefixRedirect_);
@@ -685,7 +707,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRedirectResponseCode() != other.hasRedirectResponseCode()) return false;
     if (hasRedirectResponseCode()) {
-      if (redirectResponseCode_ != other.redirectResponseCode_) return false;
+      if (!getRedirectResponseCode()
+          .equals(other.getRedirectResponseCode())) return false;
     }
     if (hasStripQuery() != other.hasStripQuery()) return false;
     if (hasStripQuery()) {
@@ -722,7 +745,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRedirectResponseCode()) {
       hash = (37 * hash) + REDIRECT_RESPONSE_CODE_FIELD_NUMBER;
-      hash = (53 * hash) + redirectResponseCode_;
+      hash = (53 * hash) + getRedirectResponseCode().hashCode();
     }
     if (hasStripQuery()) {
       hash = (37 * hash) + STRIP_QUERY_FIELD_NUMBER;
@@ -874,7 +897,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000004);
       prefixRedirect_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
-      redirectResponseCode_ = 0;
+      redirectResponseCode_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
       stripQuery_ = false;
       bitField0_ = (bitField0_ & ~0x00000020);
@@ -998,7 +1021,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasRedirectResponseCode()) {
-        setRedirectResponseCode(other.getRedirectResponseCode());
+        bitField0_ |= 0x00000010;
+        redirectResponseCode_ = other.redirectResponseCode_;
+        onChanged();
       }
       if (other.hasStripQuery()) {
         setStripQuery(other.getStripQuery());
@@ -1409,87 +1434,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int redirectResponseCode_ = 0;
+    private java.lang.Object redirectResponseCode_ = "";
     /**
      * <pre>
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+     * <code>optional string redirect_response_code = 436710408;</code>
      * @return Whether the redirectResponseCode field is set.
      */
-    @java.lang.Override public boolean hasRedirectResponseCode() {
+    public boolean hasRedirectResponseCode() {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      * <pre>
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-     * @return The enum numeric value on the wire for redirectResponseCode.
+     * <code>optional string redirect_response_code = 436710408;</code>
+     * @return The redirectResponseCode.
      */
-    @java.lang.Override public int getRedirectResponseCodeValue() {
-      return redirectResponseCode_;
+    public java.lang.String getRedirectResponseCode() {
+      java.lang.Object ref = redirectResponseCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        redirectResponseCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-     * @param value The enum numeric value on the wire for redirectResponseCode to set.
+     * <code>optional string redirect_response_code = 436710408;</code>
+     * @return The bytes for redirectResponseCode.
+     */
+    public com.google.protobuf.ByteString
+        getRedirectResponseCodeBytes() {
+      java.lang.Object ref = redirectResponseCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        redirectResponseCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string redirect_response_code = 436710408;</code>
+     * @param value The redirectResponseCode to set.
      * @return This builder for chaining.
      */
-    public Builder setRedirectResponseCodeValue(int value) {
-      bitField0_ |= 0x00000010;
+    public Builder setRedirectResponseCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
       redirectResponseCode_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-     * @return The redirectResponseCode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode getRedirectResponseCode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode result = com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.valueOf(redirectResponseCode_);
-      return result == null ? com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-     * @param value The redirectResponseCode to set.
+     * <code>optional string redirect_response_code = 436710408;</code>
      * @return This builder for chaining.
      */
-    public Builder setRedirectResponseCode(com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000010;
-      redirectResponseCode_ = value.getNumber();
+    public Builder clearRedirectResponseCode() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      redirectResponseCode_ = getDefaultInstance().getRedirectResponseCode();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+     * <code>optional string redirect_response_code = 436710408;</code>
+     * @param value The bytes for redirectResponseCode to set.
      * @return This builder for chaining.
      */
-    public Builder clearRedirectResponseCode() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      redirectResponseCode_ = 0;
+    public Builder setRedirectResponseCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000010;
+      redirectResponseCode_ = value;
       onChanged();
       return this;
     }

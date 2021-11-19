@@ -21,22 +21,22 @@ private static final long serialVersionUID = 0L;
   }
   private ForwardingRule() {
     iPAddress_ = "";
-    iPProtocol_ = 0;
+    iPProtocol_ = "";
     backendService_ = "";
     creationTimestamp_ = "";
     description_ = "";
     fingerprint_ = "";
-    ipVersion_ = 0;
+    ipVersion_ = "";
     kind_ = "";
     labelFingerprint_ = "";
-    loadBalancingScheme_ = 0;
+    loadBalancingScheme_ = "";
     metadataFilters_ = java.util.Collections.emptyList();
     name_ = "";
     network_ = "";
-    networkTier_ = 0;
+    networkTier_ = "";
     portRange_ = "";
     ports_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    pscConnectionStatus_ = 0;
+    pscConnectionStatus_ = "";
     region_ = "";
     selfLink_ = "";
     serviceDirectoryRegistrations_ = java.util.Collections.emptyList();
@@ -132,10 +132,10 @@ private static final long serialVersionUID = 0L;
             labelFingerprint_ = s;
             break;
           }
-          case 1473193376: {
-            int rawValue = input.readEnum();
+          case 1473193378: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00080000;
-            pscConnectionStatus_ = rawValue;
+            pscConnectionStatus_ = s;
             break;
           }
           case 1542687882: {
@@ -176,10 +176,10 @@ private static final long serialVersionUID = 0L;
             pscConnectionId_ = input.readUInt64();
             break;
           }
-          case -1935290880: {
-            int rawValue = input.readEnum();
+          case -1935290878: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000200;
-            ipVersion_ = rawValue;
+            ipVersion_ = s;
             break;
           }
           case -1839398830: {
@@ -200,10 +200,10 @@ private static final long serialVersionUID = 0L;
             serviceName_ = s;
             break;
           }
-          case -1383845344: {
-            int rawValue = input.readEnum();
+          case -1383845342: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00002000;
-            loadBalancingScheme_ = rawValue;
+            loadBalancingScheme_ = s;
             break;
           }
           case -958896302: {
@@ -238,10 +238,10 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.compute.v1.MetadataFilter.parser(), extensionRegistry));
             break;
           }
-          case -390211096: {
-            int rawValue = input.readEnum();
+          case -390211094: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            iPProtocol_ = rawValue;
+            iPProtocol_ = s;
             break;
           }
           case -299689904: {
@@ -262,10 +262,10 @@ private static final long serialVersionUID = 0L;
                 labels__.getKey(), labels__.getValue());
             break;
           }
-          case -155784552: {
-            int rawValue = input.readEnum();
+          case -155784550: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00010000;
-            networkTier_ = rawValue;
+            networkTier_ = s;
             break;
           }
           default: {
@@ -1172,41 +1172,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int I_P_PROTOCOL_FIELD_NUMBER = 488094525;
-  private int iPProtocol_;
+  private volatile java.lang.Object iPProtocol_;
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+   * Check the IPProtocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+   * <code>optional string I_p_protocol = 488094525;</code>
    * @return Whether the iPProtocol field is set.
    */
-  @java.lang.Override public boolean hasIPProtocol() {
+  @java.lang.Override
+  public boolean hasIPProtocol() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+   * Check the IPProtocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-   * @return The enum numeric value on the wire for iPProtocol.
+   * <code>optional string I_p_protocol = 488094525;</code>
+   * @return The iPProtocol.
    */
-  @java.lang.Override public int getIPProtocolValue() {
-    return iPProtocol_;
+  @java.lang.Override
+  public java.lang.String getIPProtocol() {
+    java.lang.Object ref = iPProtocol_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      iPProtocol_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+   * Check the IPProtocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-   * @return The iPProtocol.
+   * <code>optional string I_p_protocol = 488094525;</code>
+   * @return The bytes for iPProtocol.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ForwardingRule.IPProtocol result = com.google.cloud.compute.v1.ForwardingRule.IPProtocol.valueOf(iPProtocol_);
-    return result == null ? com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIPProtocolBytes() {
+    java.lang.Object ref = iPProtocol_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      iPProtocol_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ALL_PORTS_FIELD_NUMBER = 445175796;
@@ -1523,41 +1546,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IP_VERSION_FIELD_NUMBER = 294959552;
-  private int ipVersion_;
+  private volatile java.lang.Object ipVersion_;
   /**
    * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    * @return Whether the ipVersion field is set.
    */
-  @java.lang.Override public boolean hasIpVersion() {
+  @java.lang.Override
+  public boolean hasIpVersion() {
     return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-   * @return The enum numeric value on the wire for ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The ipVersion.
    */
-  @java.lang.Override public int getIpVersionValue() {
-    return ipVersion_;
+  @java.lang.Override
+  public java.lang.String getIpVersion() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipVersion_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-   * @return The ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The bytes for ipVersion.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ForwardingRule.IpVersion getIpVersion() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ForwardingRule.IpVersion result = com.google.cloud.compute.v1.ForwardingRule.IpVersion.valueOf(ipVersion_);
-    return result == null ? com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIpVersionBytes() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ipVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int IS_MIRRORING_COLLECTOR_FIELD_NUMBER = 119255164;
@@ -1801,41 +1847,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
-  private int loadBalancingScheme_;
+  private volatile java.lang.Object loadBalancingScheme_;
   /**
    * <pre>
    * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
    * @return Whether the loadBalancingScheme field is set.
    */
-  @java.lang.Override public boolean hasLoadBalancingScheme() {
+  @java.lang.Override
+  public boolean hasLoadBalancingScheme() {
     return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    * <pre>
    * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The enum numeric value on the wire for loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The loadBalancingScheme.
    */
-  @java.lang.Override public int getLoadBalancingSchemeValue() {
-    return loadBalancingScheme_;
+  @java.lang.Override
+  public java.lang.String getLoadBalancingScheme() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancingScheme_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The bytes for loadBalancingScheme.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme getLoadBalancingScheme() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme result = com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme.valueOf(loadBalancingScheme_);
-    return result == null ? com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLoadBalancingSchemeBytes() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      loadBalancingScheme_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int METADATA_FILTERS_FIELD_NUMBER = 464725739;
@@ -2015,41 +2084,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private int networkTier_;
+  private volatile java.lang.Object networkTier_;
   /**
    * <pre>
    * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
-  @java.lang.Override public boolean hasNetworkTier() {
+  @java.lang.Override
+  public boolean hasNetworkTier() {
     return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    * <pre>
    * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  @java.lang.Override public int getNetworkTierValue() {
-    return networkTier_;
+  @java.lang.Override
+  public java.lang.String getNetworkTier() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkTier_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ForwardingRule.NetworkTier getNetworkTier() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ForwardingRule.NetworkTier result = com.google.cloud.compute.v1.ForwardingRule.NetworkTier.valueOf(networkTier_);
-    return result == null ? com.google.cloud.compute.v1.ForwardingRule.NetworkTier.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkTierBytes() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PORT_RANGE_FIELD_NUMBER = 217518079;
@@ -2189,29 +2281,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PSC_CONNECTION_STATUS_FIELD_NUMBER = 184149172;
-  private int pscConnectionStatus_;
+  private volatile java.lang.Object pscConnectionStatus_;
   /**
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+   * <pre>
+   * 
+   * Check the PscConnectionStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string psc_connection_status = 184149172;</code>
    * @return Whether the pscConnectionStatus field is set.
    */
-  @java.lang.Override public boolean hasPscConnectionStatus() {
+  @java.lang.Override
+  public boolean hasPscConnectionStatus() {
     return ((bitField0_ & 0x00080000) != 0);
   }
   /**
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-   * @return The enum numeric value on the wire for pscConnectionStatus.
-   */
-  @java.lang.Override public int getPscConnectionStatusValue() {
-    return pscConnectionStatus_;
-  }
-  /**
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+   * <pre>
+   * 
+   * Check the PscConnectionStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string psc_connection_status = 184149172;</code>
    * @return The pscConnectionStatus.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus getPscConnectionStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus result = com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus.valueOf(pscConnectionStatus_);
-    return result == null ? com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getPscConnectionStatus() {
+    java.lang.Object ref = pscConnectionStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pscConnectionStatus_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 
+   * Check the PscConnectionStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string psc_connection_status = 184149172;</code>
+   * @return The bytes for pscConnectionStatus.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPscConnectionStatusBytes() {
+    java.lang.Object ref = pscConnectionStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pscConnectionStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -2652,7 +2779,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      output.writeEnum(184149172, pscConnectionStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 184149172, pscConnectionStatus_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 192835985, target_);
@@ -2673,7 +2800,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt64(292082397, pscConnectionId_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(294959552, ipVersion_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 294959552, ipVersion_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 306946058, backendService_);
@@ -2685,7 +2812,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 359880149, serviceName_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeEnum(363890244, loadBalancingScheme_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00400000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 417008874, serviceLabel_);
@@ -2703,7 +2830,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(464725739, metadataFilters_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(488094525, iPProtocol_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 488094525, iPProtocol_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(499409674, allowGlobalAccess_);
@@ -2715,7 +2842,7 @@ private static final long serialVersionUID = 0L;
         LabelsDefaultEntryHolder.defaultEntry,
         500195327);
     if (((bitField0_ & 0x00010000) != 0)) {
-      output.writeEnum(517397843, networkTier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -2761,8 +2888,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(184149172, pscConnectionStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(184149172, pscConnectionStatus_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(192835985, target_);
@@ -2785,8 +2911,7 @@ private static final long serialVersionUID = 0L;
         .computeUInt64Size(292082397, pscConnectionId_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(294959552, ipVersion_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(294959552, ipVersion_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(306946058, backendService_);
@@ -2798,8 +2923,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(359880149, serviceName_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(363890244, loadBalancingScheme_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00400000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(417008874, serviceLabel_);
@@ -2819,8 +2943,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(464725739, metadataFilters_.get(i));
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(488094525, iPProtocol_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(488094525, iPProtocol_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -2837,8 +2960,7 @@ private static final long serialVersionUID = 0L;
           .computeMessageSize(500195327, labels__);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(517397843, networkTier_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2862,7 +2984,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIPProtocol() != other.hasIPProtocol()) return false;
     if (hasIPProtocol()) {
-      if (iPProtocol_ != other.iPProtocol_) return false;
+      if (!getIPProtocol()
+          .equals(other.getIPProtocol())) return false;
     }
     if (hasAllPorts() != other.hasAllPorts()) return false;
     if (hasAllPorts()) {
@@ -2901,7 +3024,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpVersion() != other.hasIpVersion()) return false;
     if (hasIpVersion()) {
-      if (ipVersion_ != other.ipVersion_) return false;
+      if (!getIpVersion()
+          .equals(other.getIpVersion())) return false;
     }
     if (hasIsMirroringCollector() != other.hasIsMirroringCollector()) return false;
     if (hasIsMirroringCollector()) {
@@ -2922,7 +3046,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetLabels())) return false;
     if (hasLoadBalancingScheme() != other.hasLoadBalancingScheme()) return false;
     if (hasLoadBalancingScheme()) {
-      if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
+      if (!getLoadBalancingScheme()
+          .equals(other.getLoadBalancingScheme())) return false;
     }
     if (!getMetadataFiltersList()
         .equals(other.getMetadataFiltersList())) return false;
@@ -2938,7 +3063,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
-      if (networkTier_ != other.networkTier_) return false;
+      if (!getNetworkTier()
+          .equals(other.getNetworkTier())) return false;
     }
     if (hasPortRange() != other.hasPortRange()) return false;
     if (hasPortRange()) {
@@ -2954,7 +3080,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPscConnectionStatus() != other.hasPscConnectionStatus()) return false;
     if (hasPscConnectionStatus()) {
-      if (pscConnectionStatus_ != other.pscConnectionStatus_) return false;
+      if (!getPscConnectionStatus()
+          .equals(other.getPscConnectionStatus())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -3005,7 +3132,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIPProtocol()) {
       hash = (37 * hash) + I_P_PROTOCOL_FIELD_NUMBER;
-      hash = (53 * hash) + iPProtocol_;
+      hash = (53 * hash) + getIPProtocol().hashCode();
     }
     if (hasAllPorts()) {
       hash = (37 * hash) + ALL_PORTS_FIELD_NUMBER;
@@ -3040,7 +3167,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpVersion()) {
       hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + ipVersion_;
+      hash = (53 * hash) + getIpVersion().hashCode();
     }
     if (hasIsMirroringCollector()) {
       hash = (37 * hash) + IS_MIRRORING_COLLECTOR_FIELD_NUMBER;
@@ -3061,7 +3188,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLoadBalancingScheme()) {
       hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
-      hash = (53 * hash) + loadBalancingScheme_;
+      hash = (53 * hash) + getLoadBalancingScheme().hashCode();
     }
     if (getMetadataFiltersCount() > 0) {
       hash = (37 * hash) + METADATA_FILTERS_FIELD_NUMBER;
@@ -3077,7 +3204,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + networkTier_;
+      hash = (53 * hash) + getNetworkTier().hashCode();
     }
     if (hasPortRange()) {
       hash = (37 * hash) + PORT_RANGE_FIELD_NUMBER;
@@ -3094,7 +3221,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPscConnectionStatus()) {
       hash = (37 * hash) + PSC_CONNECTION_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + pscConnectionStatus_;
+      hash = (53 * hash) + getPscConnectionStatus().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -3287,7 +3414,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       iPAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      iPProtocol_ = 0;
+      iPProtocol_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       allPorts_ = false;
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -3303,7 +3430,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000080);
       id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000100);
-      ipVersion_ = 0;
+      ipVersion_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       isMirroringCollector_ = false;
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -3312,7 +3439,7 @@ private static final long serialVersionUID = 0L;
       labelFingerprint_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       internalGetMutableLabels().clear();
-      loadBalancingScheme_ = 0;
+      loadBalancingScheme_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       if (metadataFiltersBuilder_ == null) {
         metadataFilters_ = java.util.Collections.emptyList();
@@ -3324,7 +3451,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00010000);
       network_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
-      networkTier_ = 0;
+      networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
       portRange_ = "";
       bitField0_ = (bitField0_ & ~0x00080000);
@@ -3332,7 +3459,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00100000);
       pscConnectionId_ = 0L;
       bitField0_ = (bitField0_ & ~0x00200000);
-      pscConnectionStatus_ = 0;
+      pscConnectionStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00400000);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00800000);
@@ -3564,7 +3691,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasIPProtocol()) {
-        setIPProtocol(other.getIPProtocol());
+        bitField0_ |= 0x00000002;
+        iPProtocol_ = other.iPProtocol_;
+        onChanged();
       }
       if (other.hasAllPorts()) {
         setAllPorts(other.getAllPorts());
@@ -3596,7 +3725,9 @@ private static final long serialVersionUID = 0L;
         setId(other.getId());
       }
       if (other.hasIpVersion()) {
-        setIpVersion(other.getIpVersion());
+        bitField0_ |= 0x00000200;
+        ipVersion_ = other.ipVersion_;
+        onChanged();
       }
       if (other.hasIsMirroringCollector()) {
         setIsMirroringCollector(other.getIsMirroringCollector());
@@ -3614,7 +3745,9 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
       if (other.hasLoadBalancingScheme()) {
-        setLoadBalancingScheme(other.getLoadBalancingScheme());
+        bitField0_ |= 0x00004000;
+        loadBalancingScheme_ = other.loadBalancingScheme_;
+        onChanged();
       }
       if (metadataFiltersBuilder_ == null) {
         if (!other.metadataFilters_.isEmpty()) {
@@ -3653,7 +3786,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        setNetworkTier(other.getNetworkTier());
+        bitField0_ |= 0x00040000;
+        networkTier_ = other.networkTier_;
+        onChanged();
       }
       if (other.hasPortRange()) {
         bitField0_ |= 0x00080000;
@@ -3674,7 +3809,9 @@ private static final long serialVersionUID = 0L;
         setPscConnectionId(other.getPscConnectionId());
       }
       if (other.hasPscConnectionStatus()) {
-        setPscConnectionStatus(other.getPscConnectionStatus());
+        bitField0_ |= 0x00400000;
+        pscConnectionStatus_ = other.pscConnectionStatus_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00800000;
@@ -3869,40 +4006,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int iPProtocol_ = 0;
+    private java.lang.Object iPProtocol_ = "";
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     * <code>optional string I_p_protocol = 488094525;</code>
      * @return Whether the iPProtocol field is set.
      */
-    @java.lang.Override public boolean hasIPProtocol() {
+    public boolean hasIPProtocol() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-     * @return The enum numeric value on the wire for iPProtocol.
+     * <code>optional string I_p_protocol = 488094525;</code>
+     * @return The iPProtocol.
      */
-    @java.lang.Override public int getIPProtocolValue() {
-      return iPProtocol_;
+    public java.lang.String getIPProtocol() {
+      java.lang.Object ref = iPProtocol_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        iPProtocol_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-     * @param value The enum numeric value on the wire for iPProtocol to set.
+     * <code>optional string I_p_protocol = 488094525;</code>
+     * @return The bytes for iPProtocol.
+     */
+    public com.google.protobuf.ByteString
+        getIPProtocolBytes() {
+      java.lang.Object ref = iPProtocol_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        iPProtocol_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string I_p_protocol = 488094525;</code>
+     * @param value The iPProtocol to set.
      * @return This builder for chaining.
      */
-    public Builder setIPProtocolValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setIPProtocol(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       iPProtocol_ = value;
       onChanged();
       return this;
@@ -3910,46 +4085,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-     * @return The iPProtocol.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ForwardingRule.IPProtocol result = com.google.cloud.compute.v1.ForwardingRule.IPProtocol.valueOf(iPProtocol_);
-      return result == null ? com.google.cloud.compute.v1.ForwardingRule.IPProtocol.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-     * @param value The iPProtocol to set.
+     * <code>optional string I_p_protocol = 488094525;</code>
      * @return This builder for chaining.
      */
-    public Builder setIPProtocol(com.google.cloud.compute.v1.ForwardingRule.IPProtocol value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      iPProtocol_ = value.getNumber();
+    public Builder clearIPProtocol() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      iPProtocol_ = getDefaultInstance().getIPProtocol();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+     * Check the IPProtocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+     * <code>optional string I_p_protocol = 488094525;</code>
+     * @param value The bytes for iPProtocol to set.
      * @return This builder for chaining.
      */
-    public Builder clearIPProtocol() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      iPProtocol_ = 0;
+    public Builder setIPProtocolBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      iPProtocol_ = value;
       onChanged();
       return this;
     }
@@ -4547,40 +4712,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int ipVersion_ = 0;
+    private java.lang.Object ipVersion_ = "";
     /**
      * <pre>
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      * @return Whether the ipVersion field is set.
      */
-    @java.lang.Override public boolean hasIpVersion() {
+    public boolean hasIpVersion() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <pre>
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-     * @return The enum numeric value on the wire for ipVersion.
+     * <code>optional string ip_version = 294959552;</code>
+     * @return The ipVersion.
      */
-    @java.lang.Override public int getIpVersionValue() {
-      return ipVersion_;
+    public java.lang.String getIpVersion() {
+      java.lang.Object ref = ipVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-     * @param value The enum numeric value on the wire for ipVersion to set.
+     * <code>optional string ip_version = 294959552;</code>
+     * @return The bytes for ipVersion.
+     */
+    public com.google.protobuf.ByteString
+        getIpVersionBytes() {
+      java.lang.Object ref = ipVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     * @param value The ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setIpVersionValue(int value) {
-      bitField0_ |= 0x00000200;
+    public Builder setIpVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
       ipVersion_ = value;
       onChanged();
       return this;
@@ -4588,46 +4791,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-     * @return The ipVersion.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ForwardingRule.IpVersion getIpVersion() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ForwardingRule.IpVersion result = com.google.cloud.compute.v1.ForwardingRule.IpVersion.valueOf(ipVersion_);
-      return result == null ? com.google.cloud.compute.v1.ForwardingRule.IpVersion.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-     * @param value The ipVersion to set.
+     * <code>optional string ip_version = 294959552;</code>
      * @return This builder for chaining.
      */
-    public Builder setIpVersion(com.google.cloud.compute.v1.ForwardingRule.IpVersion value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      ipVersion_ = value.getNumber();
+    public Builder clearIpVersion() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      ipVersion_ = getDefaultInstance().getIpVersion();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
+     * @param value The bytes for ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder clearIpVersion() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      ipVersion_ = 0;
+    public Builder setIpVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      ipVersion_ = value;
       onChanged();
       return this;
     }
@@ -5057,40 +5250,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int loadBalancingScheme_ = 0;
+    private java.lang.Object loadBalancingScheme_ = "";
     /**
      * <pre>
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      * @return Whether the loadBalancingScheme field is set.
      */
-    @java.lang.Override public boolean hasLoadBalancingScheme() {
+    public boolean hasLoadBalancingScheme() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <pre>
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @return The enum numeric value on the wire for loadBalancingScheme.
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @return The loadBalancingScheme.
      */
-    @java.lang.Override public int getLoadBalancingSchemeValue() {
-      return loadBalancingScheme_;
+    public java.lang.String getLoadBalancingScheme() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancingScheme_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @param value The enum numeric value on the wire for loadBalancingScheme to set.
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @return The bytes for loadBalancingScheme.
+     */
+    public com.google.protobuf.ByteString
+        getLoadBalancingSchemeBytes() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        loadBalancingScheme_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @param value The loadBalancingScheme to set.
      * @return This builder for chaining.
      */
-    public Builder setLoadBalancingSchemeValue(int value) {
-      bitField0_ |= 0x00004000;
+    public Builder setLoadBalancingScheme(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
       loadBalancingScheme_ = value;
       onChanged();
       return this;
@@ -5098,46 +5329,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @return The loadBalancingScheme.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme getLoadBalancingScheme() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme result = com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme.valueOf(loadBalancingScheme_);
-      return result == null ? com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @param value The loadBalancingScheme to set.
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      * @return This builder for chaining.
      */
-    public Builder setLoadBalancingScheme(com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      loadBalancingScheme_ = value.getNumber();
+    public Builder clearLoadBalancingScheme() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      loadBalancingScheme_ = getDefaultInstance().getLoadBalancingScheme();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @param value The bytes for loadBalancingScheme to set.
      * @return This builder for chaining.
      */
-    public Builder clearLoadBalancingScheme() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      loadBalancingScheme_ = 0;
+    public Builder setLoadBalancingSchemeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      loadBalancingScheme_ = value;
       onChanged();
       return this;
     }
@@ -5668,40 +5889,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int networkTier_ = 0;
+    private java.lang.Object networkTier_ = "";
     /**
      * <pre>
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      * @return Whether the networkTier field is set.
      */
-    @java.lang.Override public boolean hasNetworkTier() {
+    public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-     * @return The enum numeric value on the wire for networkTier.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The networkTier.
      */
-    @java.lang.Override public int getNetworkTierValue() {
-      return networkTier_;
+    public java.lang.String getNetworkTier() {
+      java.lang.Object ref = networkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-     * @param value The enum numeric value on the wire for networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The bytes for networkTier.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkTierBytes() {
+      java.lang.Object ref = networkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkTierValue(int value) {
-      bitField0_ |= 0x00040000;
+    public Builder setNetworkTier(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00040000;
       networkTier_ = value;
       onChanged();
       return this;
@@ -5709,46 +5968,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-     * @return The networkTier.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ForwardingRule.NetworkTier getNetworkTier() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ForwardingRule.NetworkTier result = com.google.cloud.compute.v1.ForwardingRule.NetworkTier.valueOf(networkTier_);
-      return result == null ? com.google.cloud.compute.v1.ForwardingRule.NetworkTier.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-     * @param value The networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
      * @return This builder for chaining.
      */
-    public Builder setNetworkTier(com.google.cloud.compute.v1.ForwardingRule.NetworkTier value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00040000;
-      networkTier_ = value.getNumber();
+    public Builder clearNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      networkTier_ = getDefaultInstance().getNetworkTier();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The bytes for networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      networkTier_ = 0;
+    public Builder setNetworkTierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00040000;
+      networkTier_ = value;
       onChanged();
       return this;
     }
@@ -6061,63 +6310,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int pscConnectionStatus_ = 0;
+    private java.lang.Object pscConnectionStatus_ = "";
     /**
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+     * <pre>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string psc_connection_status = 184149172;</code>
      * @return Whether the pscConnectionStatus field is set.
      */
-    @java.lang.Override public boolean hasPscConnectionStatus() {
+    public boolean hasPscConnectionStatus() {
       return ((bitField0_ & 0x00400000) != 0);
     }
     /**
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-     * @return The enum numeric value on the wire for pscConnectionStatus.
+     * <pre>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string psc_connection_status = 184149172;</code>
+     * @return The pscConnectionStatus.
      */
-    @java.lang.Override public int getPscConnectionStatusValue() {
-      return pscConnectionStatus_;
+    public java.lang.String getPscConnectionStatus() {
+      java.lang.Object ref = pscConnectionStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pscConnectionStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-     * @param value The enum numeric value on the wire for pscConnectionStatus to set.
+     * <pre>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string psc_connection_status = 184149172;</code>
+     * @return The bytes for pscConnectionStatus.
+     */
+    public com.google.protobuf.ByteString
+        getPscConnectionStatusBytes() {
+      java.lang.Object ref = pscConnectionStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pscConnectionStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string psc_connection_status = 184149172;</code>
+     * @param value The pscConnectionStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setPscConnectionStatusValue(int value) {
-      bitField0_ |= 0x00400000;
+    public Builder setPscConnectionStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00400000;
       pscConnectionStatus_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-     * @return The pscConnectionStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus getPscConnectionStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus result = com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus.valueOf(pscConnectionStatus_);
-      return result == null ? com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-     * @param value The pscConnectionStatus to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPscConnectionStatus(com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00400000;
-      pscConnectionStatus_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+     * <pre>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string psc_connection_status = 184149172;</code>
      * @return This builder for chaining.
      */
     public Builder clearPscConnectionStatus() {
       bitField0_ = (bitField0_ & ~0x00400000);
-      pscConnectionStatus_ = 0;
+      pscConnectionStatus_ = getDefaultInstance().getPscConnectionStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 
+     * Check the PscConnectionStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string psc_connection_status = 184149172;</code>
+     * @param value The bytes for pscConnectionStatus to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPscConnectionStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00400000;
+      pscConnectionStatus_ = value;
       onChanged();
       return this;
     }

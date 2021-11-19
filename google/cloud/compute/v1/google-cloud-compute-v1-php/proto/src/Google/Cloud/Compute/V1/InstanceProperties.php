@@ -82,8 +82,9 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
     private $network_interfaces;
     /**
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
      */
     protected $private_ipv6_google_access = null;
     /**
@@ -149,8 +150,9 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
      *           Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as minCpuPlatform: "Intel Haswell" or minCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
      *     @type \Google\Cloud\Compute\V1\NetworkInterface[]|\Google\Protobuf\Internal\RepeatedField $network_interfaces
      *           An array of network access configurations for this interface.
-     *     @type int $private_ipv6_google_access
+     *     @type string $private_ipv6_google_access
      *           The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     *           Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\ReservationAffinity $reservation_affinity
      *           Specifies the reservations that instances can consume from.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $resource_policies
@@ -527,13 +529,14 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
 
     /**
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return string
      */
     public function getPrivateIpv6GoogleAccess()
     {
-        return isset($this->private_ipv6_google_access) ? $this->private_ipv6_google_access : 0;
+        return isset($this->private_ipv6_google_access) ? $this->private_ipv6_google_access : '';
     }
 
     public function hasPrivateIpv6GoogleAccess()
@@ -548,14 +551,15 @@ class InstanceProperties extends \Google\Protobuf\Internal\Message
 
     /**
      * The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstanceProperties.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param string $var
      * @return $this
      */
     public function setPrivateIpv6GoogleAccess($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\InstanceProperties\PrivateIpv6GoogleAccess::class);
+        GPBUtil::checkString($var, True);
         $this->private_ipv6_google_access = $var;
 
         return $this;

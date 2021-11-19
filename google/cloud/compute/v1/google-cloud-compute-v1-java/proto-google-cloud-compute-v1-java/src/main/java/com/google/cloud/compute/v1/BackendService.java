@@ -28,16 +28,16 @@ private static final long serialVersionUID = 0L;
     fingerprint_ = "";
     healthChecks_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     kind_ = "";
-    loadBalancingScheme_ = 0;
-    localityLbPolicy_ = 0;
+    loadBalancingScheme_ = "";
+    localityLbPolicy_ = "";
     name_ = "";
     network_ = "";
     portName_ = "";
-    protocol_ = 0;
+    protocol_ = "";
     region_ = "";
     securityPolicy_ = "";
     selfLink_ = "";
-    sessionAffinity_ = 0;
+    sessionAffinity_ = "";
   }
 
   @java.lang.Override
@@ -159,10 +159,10 @@ private static final long serialVersionUID = 0L;
             timeoutSec_ = input.readInt32();
             break;
           }
-          case 676623552: {
-            int rawValue = input.readEnum();
+          case 676623554: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00400000;
-            protocol_ = rawValue;
+            protocol_ = s;
             break;
           }
           case 845269242: {
@@ -178,10 +178,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000100;
             break;
           }
-          case 1051451896: {
-            int rawValue = input.readEnum();
+          case 1051451898: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00004000;
-            localityLbPolicy_ = rawValue;
+            localityLbPolicy_ = s;
             break;
           }
           case 1111570338: {
@@ -252,10 +252,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00080000;
             break;
           }
-          case -1383845344: {
-            int rawValue = input.readEnum();
+          case -1383845342: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00002000;
-            loadBalancingScheme_ = rawValue;
+            loadBalancingScheme_ = s;
             break;
           }
           case -1334991664: {
@@ -332,10 +332,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000008;
             break;
           }
-          case -583858808: {
-            int rawValue = input.readEnum();
+          case -583858806: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x08000000;
-            sessionAffinity_ = rawValue;
+            sessionAffinity_ = s;
             break;
           }
           case -465767918: {
@@ -2007,79 +2007,125 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOAD_BALANCING_SCHEME_FIELD_NUMBER = 363890244;
-  private int loadBalancingScheme_;
+  private volatile java.lang.Object loadBalancingScheme_;
   /**
    * <pre>
    * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
    * @return Whether the loadBalancingScheme field is set.
    */
-  @java.lang.Override public boolean hasLoadBalancingScheme() {
+  @java.lang.Override
+  public boolean hasLoadBalancingScheme() {
     return ((bitField0_ & 0x00002000) != 0);
   }
   /**
    * <pre>
    * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The enum numeric value on the wire for loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The loadBalancingScheme.
    */
-  @java.lang.Override public int getLoadBalancingSchemeValue() {
-    return loadBalancingScheme_;
+  @java.lang.Override
+  public java.lang.String getLoadBalancingScheme() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancingScheme_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The bytes for loadBalancingScheme.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.BackendService.LoadBalancingScheme getLoadBalancingScheme() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.LoadBalancingScheme result = com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.valueOf(loadBalancingScheme_);
-    return result == null ? com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLoadBalancingSchemeBytes() {
+    java.lang.Object ref = loadBalancingScheme_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      loadBalancingScheme_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LOCALITY_LB_POLICY_FIELD_NUMBER = 131431487;
-  private int localityLbPolicy_;
+  private volatile java.lang.Object localityLbPolicy_;
   /**
    * <pre>
    * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
+   * <code>optional string locality_lb_policy = 131431487;</code>
    * @return Whether the localityLbPolicy field is set.
    */
-  @java.lang.Override public boolean hasLocalityLbPolicy() {
+  @java.lang.Override
+  public boolean hasLocalityLbPolicy() {
     return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    * <pre>
    * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-   * @return The enum numeric value on the wire for localityLbPolicy.
+   * <code>optional string locality_lb_policy = 131431487;</code>
+   * @return The localityLbPolicy.
    */
-  @java.lang.Override public int getLocalityLbPolicyValue() {
-    return localityLbPolicy_;
+  @java.lang.Override
+  public java.lang.String getLocalityLbPolicy() {
+    java.lang.Object ref = localityLbPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      localityLbPolicy_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-   * @return The localityLbPolicy.
+   * <code>optional string locality_lb_policy = 131431487;</code>
+   * @return The bytes for localityLbPolicy.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.BackendService.LocalityLbPolicy getLocalityLbPolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.LocalityLbPolicy result = com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.valueOf(localityLbPolicy_);
-    return result == null ? com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLocalityLbPolicyBytes() {
+    java.lang.Object ref = localityLbPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      localityLbPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LOG_CONFIG_FIELD_NUMBER = 351299741;
@@ -2398,41 +2444,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROTOCOL_FIELD_NUMBER = 84577944;
-  private int protocol_;
+  private volatile java.lang.Object protocol_;
   /**
    * <pre>
    * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   * <code>optional string protocol = 84577944;</code>
    * @return Whether the protocol field is set.
    */
-  @java.lang.Override public boolean hasProtocol() {
+  @java.lang.Override
+  public boolean hasProtocol() {
     return ((bitField0_ & 0x00400000) != 0);
   }
   /**
    * <pre>
    * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-   * @return The enum numeric value on the wire for protocol.
+   * <code>optional string protocol = 84577944;</code>
+   * @return The protocol.
    */
-  @java.lang.Override public int getProtocolValue() {
-    return protocol_;
+  @java.lang.Override
+  public java.lang.String getProtocol() {
+    java.lang.Object ref = protocol_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      protocol_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-   * @return The protocol.
+   * <code>optional string protocol = 84577944;</code>
+   * @return The bytes for protocol.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.BackendService.Protocol getProtocol() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.Protocol result = com.google.cloud.compute.v1.BackendService.Protocol.valueOf(protocol_);
-    return result == null ? com.google.cloud.compute.v1.BackendService.Protocol.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getProtocolBytes() {
+    java.lang.Object ref = protocol_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      protocol_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -2648,41 +2717,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SESSION_AFFINITY_FIELD_NUMBER = 463888561;
-  private int sessionAffinity_;
+  private volatile java.lang.Object sessionAffinity_;
   /**
    * <pre>
    * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+   * <code>optional string session_affinity = 463888561;</code>
    * @return Whether the sessionAffinity field is set.
    */
-  @java.lang.Override public boolean hasSessionAffinity() {
+  @java.lang.Override
+  public boolean hasSessionAffinity() {
     return ((bitField0_ & 0x08000000) != 0);
   }
   /**
    * <pre>
    * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-   * @return The enum numeric value on the wire for sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The sessionAffinity.
    */
-  @java.lang.Override public int getSessionAffinityValue() {
-    return sessionAffinity_;
+  @java.lang.Override
+  public java.lang.String getSessionAffinity() {
+    java.lang.Object ref = sessionAffinity_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sessionAffinity_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-   * @return The sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The bytes for sessionAffinity.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.BackendService.SessionAffinity getSessionAffinity() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.BackendService.SessionAffinity result = com.google.cloud.compute.v1.BackendService.SessionAffinity.valueOf(sessionAffinity_);
-    return result == null ? com.google.cloud.compute.v1.BackendService.SessionAffinity.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSessionAffinityBytes() {
+    java.lang.Object ref = sessionAffinity_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sessionAffinity_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUBSETTING_FIELD_NUMBER = 450283536;
@@ -2786,13 +2878,13 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(79994995, timeoutSec_);
     }
     if (((bitField0_ & 0x00400000) != 0)) {
-      output.writeEnum(84577944, protocol_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 84577944, protocol_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(105658655, getFailoverPolicy());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      output.writeEnum(131431487, localityLbPolicy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 131431487, localityLbPolicy_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -2819,7 +2911,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(354625086, getOutlierDetection());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeEnum(363890244, loadBalancingScheme_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt32(369996954, affinityCookieTtlSec_);
@@ -2846,7 +2938,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(461096747, getConnectionDraining());
     }
     if (((bitField0_ & 0x08000000) != 0)) {
-      output.writeEnum(463888561, sessionAffinity_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 463888561, sessionAffinity_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       output.writeMessage(478649922, getSecuritySettings());
@@ -2908,16 +3000,14 @@ private static final long serialVersionUID = 0L;
         .computeInt32Size(79994995, timeoutSec_);
     }
     if (((bitField0_ & 0x00400000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(84577944, protocol_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(84577944, protocol_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(105658655, getFailoverPolicy());
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(131431487, localityLbPolicy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(131431487, localityLbPolicy_);
     }
     if (((bitField0_ & 0x00800000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -2948,8 +3038,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(354625086, getOutlierDetection());
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(363890244, loadBalancingScheme_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(363890244, loadBalancingScheme_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -2990,8 +3079,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(461096747, getConnectionDraining());
     }
     if (((bitField0_ & 0x08000000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(463888561, sessionAffinity_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(463888561, sessionAffinity_);
     }
     if (((bitField0_ & 0x02000000) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -3091,11 +3179,13 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLoadBalancingScheme() != other.hasLoadBalancingScheme()) return false;
     if (hasLoadBalancingScheme()) {
-      if (loadBalancingScheme_ != other.loadBalancingScheme_) return false;
+      if (!getLoadBalancingScheme()
+          .equals(other.getLoadBalancingScheme())) return false;
     }
     if (hasLocalityLbPolicy() != other.hasLocalityLbPolicy()) return false;
     if (hasLocalityLbPolicy()) {
-      if (localityLbPolicy_ != other.localityLbPolicy_) return false;
+      if (!getLocalityLbPolicy()
+          .equals(other.getLocalityLbPolicy())) return false;
     }
     if (hasLogConfig() != other.hasLogConfig()) return false;
     if (hasLogConfig()) {
@@ -3134,7 +3224,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasProtocol() != other.hasProtocol()) return false;
     if (hasProtocol()) {
-      if (protocol_ != other.protocol_) return false;
+      if (!getProtocol()
+          .equals(other.getProtocol())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -3158,7 +3249,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSessionAffinity() != other.hasSessionAffinity()) return false;
     if (hasSessionAffinity()) {
-      if (sessionAffinity_ != other.sessionAffinity_) return false;
+      if (!getSessionAffinity()
+          .equals(other.getSessionAffinity())) return false;
     }
     if (hasSubsetting() != other.hasSubsetting()) return false;
     if (hasSubsetting()) {
@@ -3253,11 +3345,11 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLoadBalancingScheme()) {
       hash = (37 * hash) + LOAD_BALANCING_SCHEME_FIELD_NUMBER;
-      hash = (53 * hash) + loadBalancingScheme_;
+      hash = (53 * hash) + getLoadBalancingScheme().hashCode();
     }
     if (hasLocalityLbPolicy()) {
       hash = (37 * hash) + LOCALITY_LB_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + localityLbPolicy_;
+      hash = (53 * hash) + getLocalityLbPolicy().hashCode();
     }
     if (hasLogConfig()) {
       hash = (37 * hash) + LOG_CONFIG_FIELD_NUMBER;
@@ -3289,7 +3381,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasProtocol()) {
       hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
-      hash = (53 * hash) + protocol_;
+      hash = (53 * hash) + getProtocol().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -3309,7 +3401,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSessionAffinity()) {
       hash = (37 * hash) + SESSION_AFFINITY_FIELD_NUMBER;
-      hash = (53 * hash) + sessionAffinity_;
+      hash = (53 * hash) + getSessionAffinity().hashCode();
     }
     if (hasSubsetting()) {
       hash = (37 * hash) + SUBSETTING_FIELD_NUMBER;
@@ -3530,9 +3622,9 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00008000);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
-      loadBalancingScheme_ = 0;
+      loadBalancingScheme_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
-      localityLbPolicy_ = 0;
+      localityLbPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
       if (logConfigBuilder_ == null) {
         logConfig_ = null;
@@ -3560,7 +3652,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x01000000);
       portName_ = "";
       bitField0_ = (bitField0_ & ~0x02000000);
-      protocol_ = 0;
+      protocol_ = "";
       bitField0_ = (bitField0_ & ~0x04000000);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x08000000);
@@ -3574,7 +3666,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x20000000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x40000000);
-      sessionAffinity_ = 0;
+      sessionAffinity_ = "";
       bitField0_ = (bitField0_ & ~0x80000000);
       if (subsettingBuilder_ == null) {
         subsetting_ = null;
@@ -3954,10 +4046,14 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasLoadBalancingScheme()) {
-        setLoadBalancingScheme(other.getLoadBalancingScheme());
+        bitField0_ |= 0x00020000;
+        loadBalancingScheme_ = other.loadBalancingScheme_;
+        onChanged();
       }
       if (other.hasLocalityLbPolicy()) {
-        setLocalityLbPolicy(other.getLocalityLbPolicy());
+        bitField0_ |= 0x00040000;
+        localityLbPolicy_ = other.localityLbPolicy_;
+        onChanged();
       }
       if (other.hasLogConfig()) {
         mergeLogConfig(other.getLogConfig());
@@ -3987,7 +4083,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasProtocol()) {
-        setProtocol(other.getProtocol());
+        bitField0_ |= 0x04000000;
+        protocol_ = other.protocol_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x08000000;
@@ -4008,7 +4106,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasSessionAffinity()) {
-        setSessionAffinity(other.getSessionAffinity());
+        bitField0_ |= 0x80000000;
+        sessionAffinity_ = other.sessionAffinity_;
+        onChanged();
       }
       if (other.hasSubsetting()) {
         mergeSubsetting(other.getSubsetting());
@@ -6254,40 +6354,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int loadBalancingScheme_ = 0;
+    private java.lang.Object loadBalancingScheme_ = "";
     /**
      * <pre>
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      * @return Whether the loadBalancingScheme field is set.
      */
-    @java.lang.Override public boolean hasLoadBalancingScheme() {
+    public boolean hasLoadBalancingScheme() {
       return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      * <pre>
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @return The enum numeric value on the wire for loadBalancingScheme.
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @return The loadBalancingScheme.
      */
-    @java.lang.Override public int getLoadBalancingSchemeValue() {
-      return loadBalancingScheme_;
+    public java.lang.String getLoadBalancingScheme() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancingScheme_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @param value The enum numeric value on the wire for loadBalancingScheme to set.
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @return The bytes for loadBalancingScheme.
+     */
+    public com.google.protobuf.ByteString
+        getLoadBalancingSchemeBytes() {
+      java.lang.Object ref = loadBalancingScheme_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        loadBalancingScheme_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @param value The loadBalancingScheme to set.
      * @return This builder for chaining.
      */
-    public Builder setLoadBalancingSchemeValue(int value) {
-      bitField0_ |= 0x00020000;
+    public Builder setLoadBalancingScheme(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00020000;
       loadBalancingScheme_ = value;
       onChanged();
       return this;
@@ -6295,84 +6433,112 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @return The loadBalancingScheme.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.LoadBalancingScheme getLoadBalancingScheme() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.LoadBalancingScheme result = com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.valueOf(loadBalancingScheme_);
-      return result == null ? com.google.cloud.compute.v1.BackendService.LoadBalancingScheme.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-     * @param value The loadBalancingScheme to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLoadBalancingScheme(com.google.cloud.compute.v1.BackendService.LoadBalancingScheme value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00020000;
-      loadBalancingScheme_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+     * <code>optional string load_balancing_scheme = 363890244;</code>
      * @return This builder for chaining.
      */
     public Builder clearLoadBalancingScheme() {
       bitField0_ = (bitField0_ & ~0x00020000);
-      loadBalancingScheme_ = 0;
+      loadBalancingScheme_ = getDefaultInstance().getLoadBalancingScheme();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+     * Check the LoadBalancingScheme enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string load_balancing_scheme = 363890244;</code>
+     * @param value The bytes for loadBalancingScheme to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancingSchemeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00020000;
+      loadBalancingScheme_ = value;
       onChanged();
       return this;
     }
 
-    private int localityLbPolicy_ = 0;
+    private java.lang.Object localityLbPolicy_ = "";
     /**
      * <pre>
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
+     * <code>optional string locality_lb_policy = 131431487;</code>
      * @return Whether the localityLbPolicy field is set.
      */
-    @java.lang.Override public boolean hasLocalityLbPolicy() {
+    public boolean hasLocalityLbPolicy() {
       return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      * <pre>
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-     * @return The enum numeric value on the wire for localityLbPolicy.
+     * <code>optional string locality_lb_policy = 131431487;</code>
+     * @return The localityLbPolicy.
      */
-    @java.lang.Override public int getLocalityLbPolicyValue() {
-      return localityLbPolicy_;
+    public java.lang.String getLocalityLbPolicy() {
+      java.lang.Object ref = localityLbPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        localityLbPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-     * @param value The enum numeric value on the wire for localityLbPolicy to set.
+     * <code>optional string locality_lb_policy = 131431487;</code>
+     * @return The bytes for localityLbPolicy.
+     */
+    public com.google.protobuf.ByteString
+        getLocalityLbPolicyBytes() {
+      java.lang.Object ref = localityLbPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        localityLbPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string locality_lb_policy = 131431487;</code>
+     * @param value The localityLbPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setLocalityLbPolicyValue(int value) {
-      bitField0_ |= 0x00040000;
+    public Builder setLocalityLbPolicy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00040000;
       localityLbPolicy_ = value;
       onChanged();
       return this;
@@ -6380,46 +6546,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-     * @return The localityLbPolicy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.LocalityLbPolicy getLocalityLbPolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.LocalityLbPolicy result = com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.valueOf(localityLbPolicy_);
-      return result == null ? com.google.cloud.compute.v1.BackendService.LocalityLbPolicy.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-     * @param value The localityLbPolicy to set.
+     * <code>optional string locality_lb_policy = 131431487;</code>
      * @return This builder for chaining.
      */
-    public Builder setLocalityLbPolicy(com.google.cloud.compute.v1.BackendService.LocalityLbPolicy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00040000;
-      localityLbPolicy_ = value.getNumber();
+    public Builder clearLocalityLbPolicy() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      localityLbPolicy_ = getDefaultInstance().getLocalityLbPolicy();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the LocalityLbPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
+     * <code>optional string locality_lb_policy = 131431487;</code>
+     * @param value The bytes for localityLbPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder clearLocalityLbPolicy() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      localityLbPolicy_ = 0;
+    public Builder setLocalityLbPolicyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00040000;
+      localityLbPolicy_ = value;
       onChanged();
       return this;
     }
@@ -7268,40 +7424,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int protocol_ = 0;
+    private java.lang.Object protocol_ = "";
     /**
      * <pre>
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
      * @return Whether the protocol field is set.
      */
-    @java.lang.Override public boolean hasProtocol() {
+    public boolean hasProtocol() {
       return ((bitField0_ & 0x04000000) != 0);
     }
     /**
      * <pre>
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     * @return The enum numeric value on the wire for protocol.
+     * <code>optional string protocol = 84577944;</code>
+     * @return The protocol.
      */
-    @java.lang.Override public int getProtocolValue() {
-      return protocol_;
+    public java.lang.String getProtocol() {
+      java.lang.Object ref = protocol_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        protocol_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     * @param value The enum numeric value on the wire for protocol to set.
+     * <code>optional string protocol = 84577944;</code>
+     * @return The bytes for protocol.
+     */
+    public com.google.protobuf.ByteString
+        getProtocolBytes() {
+      java.lang.Object ref = protocol_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        protocol_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string protocol = 84577944;</code>
+     * @param value The protocol to set.
      * @return This builder for chaining.
      */
-    public Builder setProtocolValue(int value) {
-      bitField0_ |= 0x04000000;
+    public Builder setProtocol(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x04000000;
       protocol_ = value;
       onChanged();
       return this;
@@ -7309,46 +7503,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     * @return The protocol.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.Protocol getProtocol() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.Protocol result = com.google.cloud.compute.v1.BackendService.Protocol.valueOf(protocol_);
-      return result == null ? com.google.cloud.compute.v1.BackendService.Protocol.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-     * @param value The protocol to set.
+     * <code>optional string protocol = 84577944;</code>
      * @return This builder for chaining.
      */
-    public Builder setProtocol(com.google.cloud.compute.v1.BackendService.Protocol value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x04000000;
-      protocol_ = value.getNumber();
+    public Builder clearProtocol() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      protocol_ = getDefaultInstance().getProtocol();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+     * Check the Protocol enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+     * <code>optional string protocol = 84577944;</code>
+     * @param value The bytes for protocol to set.
      * @return This builder for chaining.
      */
-    public Builder clearProtocol() {
-      bitField0_ = (bitField0_ & ~0x04000000);
-      protocol_ = 0;
+    public Builder setProtocolBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x04000000;
+      protocol_ = value;
       onChanged();
       return this;
     }
@@ -7830,40 +8014,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int sessionAffinity_ = 0;
+    private java.lang.Object sessionAffinity_ = "";
     /**
      * <pre>
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+     * <code>optional string session_affinity = 463888561;</code>
      * @return Whether the sessionAffinity field is set.
      */
-    @java.lang.Override public boolean hasSessionAffinity() {
+    public boolean hasSessionAffinity() {
       return ((bitField0_ & 0x80000000) != 0);
     }
     /**
      * <pre>
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-     * @return The enum numeric value on the wire for sessionAffinity.
+     * <code>optional string session_affinity = 463888561;</code>
+     * @return The sessionAffinity.
      */
-    @java.lang.Override public int getSessionAffinityValue() {
-      return sessionAffinity_;
+    public java.lang.String getSessionAffinity() {
+      java.lang.Object ref = sessionAffinity_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionAffinity_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-     * @param value The enum numeric value on the wire for sessionAffinity to set.
+     * <code>optional string session_affinity = 463888561;</code>
+     * @return The bytes for sessionAffinity.
+     */
+    public com.google.protobuf.ByteString
+        getSessionAffinityBytes() {
+      java.lang.Object ref = sessionAffinity_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionAffinity_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string session_affinity = 463888561;</code>
+     * @param value The sessionAffinity to set.
      * @return This builder for chaining.
      */
-    public Builder setSessionAffinityValue(int value) {
-      bitField0_ |= 0x80000000;
+    public Builder setSessionAffinity(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x80000000;
       sessionAffinity_ = value;
       onChanged();
       return this;
@@ -7871,46 +8093,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-     * @return The sessionAffinity.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.BackendService.SessionAffinity getSessionAffinity() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.BackendService.SessionAffinity result = com.google.cloud.compute.v1.BackendService.SessionAffinity.valueOf(sessionAffinity_);
-      return result == null ? com.google.cloud.compute.v1.BackendService.SessionAffinity.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-     * @param value The sessionAffinity to set.
+     * <code>optional string session_affinity = 463888561;</code>
      * @return This builder for chaining.
      */
-    public Builder setSessionAffinity(com.google.cloud.compute.v1.BackendService.SessionAffinity value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x80000000;
-      sessionAffinity_ = value.getNumber();
+    public Builder clearSessionAffinity() {
+      bitField0_ = (bitField0_ & ~0x80000000);
+      sessionAffinity_ = getDefaultInstance().getSessionAffinity();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+     * Check the SessionAffinity enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+     * <code>optional string session_affinity = 463888561;</code>
+     * @param value The bytes for sessionAffinity to set.
      * @return This builder for chaining.
      */
-    public Builder clearSessionAffinity() {
-      bitField0_ = (bitField0_ & ~0x80000000);
-      sessionAffinity_ = 0;
+    public Builder setSessionAffinityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x80000000;
+      sessionAffinity_ = value;
       onChanged();
       return this;
     }

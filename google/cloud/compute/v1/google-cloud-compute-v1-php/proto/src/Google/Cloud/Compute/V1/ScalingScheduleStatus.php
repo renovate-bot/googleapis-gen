@@ -28,8 +28,9 @@ class ScalingScheduleStatus extends \Google\Protobuf\Internal\Message
     protected $next_start_time = null;
     /**
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
      */
     protected $state = null;
 
@@ -43,8 +44,9 @@ class ScalingScheduleStatus extends \Google\Protobuf\Internal\Message
      *           [Output Only] The last time the scaling schedule became active. Note: this is a timestamp when a schedule actually became active, not when it was planned to do so. The timestamp is in RFC3339 text format.
      *     @type string $next_start_time
      *           [Output Only] The next time the scaling schedule is to become active. Note: this is a timestamp when a schedule is planned to run, but the actual time might be slightly different. The timestamp is in RFC3339 text format.
-     *     @type int $state
+     *     @type string $state
      *           [Output Only] The current state of a scaling schedule.
+     *           Check the State enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,13 +128,14 @@ class ScalingScheduleStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @return string
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : 0;
+        return isset($this->state) ? $this->state : '';
     }
 
     public function hasState()
@@ -147,14 +150,15 @@ class ScalingScheduleStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The current state of a scaling schedule.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ScalingScheduleStatus.State state = 109757585;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @param string $var
      * @return $this
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ScalingScheduleStatus\State::class);
+        GPBUtil::checkString($var, True);
         $this->state = $var;
 
         return $this;

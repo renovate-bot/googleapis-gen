@@ -213,30 +213,34 @@ public interface AttachedDiskOrBuilder extends
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    * @return Whether the interface field is set.
    */
   boolean hasInterface();
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-   * @return The enum numeric value on the wire for interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The interface.
    */
-  int getInterfaceValue();
+  java.lang.String getInterface();
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-   * @return The interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The bytes for interface.
    */
-  com.google.cloud.compute.v1.AttachedDisk.Interface getInterface();
+  com.google.protobuf.ByteString
+      getInterfaceBytes();
 
   /**
    * <pre>
@@ -311,30 +315,34 @@ public interface AttachedDiskOrBuilder extends
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    * @return Whether the mode field is set.
    */
   boolean hasMode();
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-   * @return The enum numeric value on the wire for mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The mode.
    */
-  int getModeValue();
+  java.lang.String getMode();
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-   * @return The mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The bytes for mode.
    */
-  com.google.cloud.compute.v1.AttachedDisk.Mode getMode();
+  com.google.protobuf.ByteString
+      getModeBytes();
 
   /**
    * <pre>
@@ -395,28 +403,32 @@ public interface AttachedDiskOrBuilder extends
   /**
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
   boolean hasType();
   /**
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  int getTypeValue();
+  java.lang.String getType();
   /**
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  com.google.cloud.compute.v1.AttachedDisk.Type getType();
+  com.google.protobuf.ByteString
+      getTypeBytes();
 }

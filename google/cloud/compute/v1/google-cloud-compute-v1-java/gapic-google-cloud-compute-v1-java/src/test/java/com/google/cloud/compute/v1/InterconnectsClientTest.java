@@ -160,15 +160,19 @@ public class InterconnectsClientTest {
             .setGoogleReferenceId("googleReferenceId600178125")
             .setId(3355)
             .addAllInterconnectAttachments(new ArrayList<String>())
+            .setInterconnectType("interconnectType1730818280")
             .setKind("kind3292052")
+            .setLinkType("linkType1194206804")
             .setLocation("location1901043637")
             .setName("name3373707")
             .setNocContactEmail("nocContactEmail480425790")
+            .setOperationalStatus("operationalStatus-2103166364")
             .setPeerIpAddress("peerIpAddress-1037076085")
             .setProvisionedLinkCount(-1199724171)
             .setRequestedLinkCount(1118793211)
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
+            .setState("state109757585")
             .build();
     mockService.addResponse(expectedResponse);
 

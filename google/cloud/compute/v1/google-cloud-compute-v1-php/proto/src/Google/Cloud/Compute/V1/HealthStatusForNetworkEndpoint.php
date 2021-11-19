@@ -40,8 +40,9 @@ class HealthStatusForNetworkEndpoint extends \Google\Protobuf\Internal\Message
     protected $health_check_service = null;
     /**
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
+     * Generated from protobuf field <code>optional string health_state = 324007150;</code>
      */
     protected $health_state = null;
 
@@ -59,8 +60,9 @@ class HealthStatusForNetworkEndpoint extends \Google\Protobuf\Internal\Message
      *           URL of the health check associated with the health state of the network endpoint.
      *     @type \Google\Cloud\Compute\V1\HealthCheckServiceReference $health_check_service
      *           URL of the health check service associated with the health state of the network endpoint.
-     *     @type int $health_state
+     *     @type string $health_state
      *           Health state of the network endpoint determined based on the health checks configured.
+     *           Check the HealthState enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -214,13 +216,14 @@ class HealthStatusForNetworkEndpoint extends \Google\Protobuf\Internal\Message
 
     /**
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string health_state = 324007150;</code>
+     * @return string
      */
     public function getHealthState()
     {
-        return isset($this->health_state) ? $this->health_state : 0;
+        return isset($this->health_state) ? $this->health_state : '';
     }
 
     public function hasHealthState()
@@ -235,14 +238,15 @@ class HealthStatusForNetworkEndpoint extends \Google\Protobuf\Internal\Message
 
     /**
      * Health state of the network endpoint determined based on the health checks configured.
+     * Check the HealthState enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthStatusForNetworkEndpoint.HealthState health_state = 324007150;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string health_state = 324007150;</code>
+     * @param string $var
      * @return $this
      */
     public function setHealthState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HealthStatusForNetworkEndpoint\HealthState::class);
+        GPBUtil::checkString($var, True);
         $this->health_state = $var;
 
         return $this;

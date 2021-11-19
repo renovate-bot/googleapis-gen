@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private StatefulPolicyPreservedStateDiskDevice() {
-    autoDelete_ = 0;
+    autoDelete_ = "";
   }
 
   @java.lang.Override
@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case -576876072: {
-            int rawValue = input.readEnum();
+          case -576876070: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            autoDelete_ = rawValue;
+            autoDelete_ = s;
             break;
           }
           default: {
@@ -222,41 +222,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int AUTO_DELETE_FIELD_NUMBER = 464761403;
-  private int autoDelete_;
+  private volatile java.lang.Object autoDelete_;
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
+   * <code>optional string auto_delete = 464761403;</code>
    * @return Whether the autoDelete field is set.
    */
-  @java.lang.Override public boolean hasAutoDelete() {
+  @java.lang.Override
+  public boolean hasAutoDelete() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-   * @return The enum numeric value on the wire for autoDelete.
+   * <code>optional string auto_delete = 464761403;</code>
+   * @return The autoDelete.
    */
-  @java.lang.Override public int getAutoDeleteValue() {
-    return autoDelete_;
+  @java.lang.Override
+  public java.lang.String getAutoDelete() {
+    java.lang.Object ref = autoDelete_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      autoDelete_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-   * @return The autoDelete.
+   * <code>optional string auto_delete = 464761403;</code>
+   * @return The bytes for autoDelete.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete getAutoDelete() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete result = com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete.valueOf(autoDelete_);
-    return result == null ? com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAutoDeleteBytes() {
+    java.lang.Object ref = autoDelete_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      autoDelete_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -274,7 +297,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(464761403, autoDelete_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 464761403, autoDelete_);
     }
     unknownFields.writeTo(output);
   }
@@ -286,8 +309,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(464761403, autoDelete_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(464761403, autoDelete_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,7 +328,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasAutoDelete() != other.hasAutoDelete()) return false;
     if (hasAutoDelete()) {
-      if (autoDelete_ != other.autoDelete_) return false;
+      if (!getAutoDelete()
+          .equals(other.getAutoDelete())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -321,7 +344,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAutoDelete()) {
       hash = (37 * hash) + AUTO_DELETE_FIELD_NUMBER;
-      hash = (53 * hash) + autoDelete_;
+      hash = (53 * hash) + getAutoDelete().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -459,7 +482,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      autoDelete_ = 0;
+      autoDelete_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -543,7 +566,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice other) {
       if (other == com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.getDefaultInstance()) return this;
       if (other.hasAutoDelete()) {
-        setAutoDelete(other.getAutoDelete());
+        bitField0_ |= 0x00000001;
+        autoDelete_ = other.autoDelete_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -575,40 +600,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int autoDelete_ = 0;
+    private java.lang.Object autoDelete_ = "";
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
+     * <code>optional string auto_delete = 464761403;</code>
      * @return Whether the autoDelete field is set.
      */
-    @java.lang.Override public boolean hasAutoDelete() {
+    public boolean hasAutoDelete() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-     * @return The enum numeric value on the wire for autoDelete.
+     * <code>optional string auto_delete = 464761403;</code>
+     * @return The autoDelete.
      */
-    @java.lang.Override public int getAutoDeleteValue() {
-      return autoDelete_;
+    public java.lang.String getAutoDelete() {
+      java.lang.Object ref = autoDelete_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        autoDelete_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-     * @param value The enum numeric value on the wire for autoDelete to set.
+     * <code>optional string auto_delete = 464761403;</code>
+     * @return The bytes for autoDelete.
+     */
+    public com.google.protobuf.ByteString
+        getAutoDeleteBytes() {
+      java.lang.Object ref = autoDelete_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        autoDelete_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string auto_delete = 464761403;</code>
+     * @param value The autoDelete to set.
      * @return This builder for chaining.
      */
-    public Builder setAutoDeleteValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setAutoDelete(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       autoDelete_ = value;
       onChanged();
       return this;
@@ -616,46 +679,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-     * @return The autoDelete.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete getAutoDelete() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete result = com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete.valueOf(autoDelete_);
-      return result == null ? com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-     * @param value The autoDelete to set.
+     * <code>optional string auto_delete = 464761403;</code>
      * @return This builder for chaining.
      */
-    public Builder setAutoDelete(com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      autoDelete_ = value.getNumber();
+    public Builder clearAutoDelete() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      autoDelete_ = getDefaultInstance().getAutoDelete();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+     * Check the AutoDelete enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
+     * <code>optional string auto_delete = 464761403;</code>
+     * @param value The bytes for autoDelete to set.
      * @return This builder for chaining.
      */
-    public Builder clearAutoDelete() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      autoDelete_ = 0;
+    public Builder setAutoDeleteBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      autoDelete_ = value;
       onChanged();
       return this;
     }

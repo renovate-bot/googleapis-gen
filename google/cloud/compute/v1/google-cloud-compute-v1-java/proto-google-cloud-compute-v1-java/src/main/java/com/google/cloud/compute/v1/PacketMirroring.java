@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private PacketMirroring() {
     creationTimestamp_ = "";
     description_ = "";
-    enable_ = 0;
+    enable_ = "";
     kind_ = "";
     name_ = "";
     region_ = "";
@@ -115,10 +115,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000200;
             break;
           }
-          case -1800852456: {
-            int rawValue = input.readEnum();
+          case -1800852454: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            enable_ = rawValue;
+            enable_ = s;
             break;
           }
           case -1606001726: {
@@ -481,41 +481,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private int enable_;
+  private volatile java.lang.Object enable_;
   /**
    * <pre>
    * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    * @return Whether the enable field is set.
    */
-  @java.lang.Override public boolean hasEnable() {
+  @java.lang.Override
+  public boolean hasEnable() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
    * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-   * @return The enum numeric value on the wire for enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The enable.
    */
-  @java.lang.Override public int getEnableValue() {
-    return enable_;
+  @java.lang.Override
+  public java.lang.String getEnable() {
+    java.lang.Object ref = enable_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      enable_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-   * @return The enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The bytes for enable.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.PacketMirroring.Enable getEnable() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.PacketMirroring.Enable result = com.google.cloud.compute.v1.PacketMirroring.Enable.valueOf(enable_);
-    return result == null ? com.google.cloud.compute.v1.PacketMirroring.Enable.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEnableBytes() {
+    java.lang.Object ref = enable_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      enable_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int FILTER_FIELD_NUMBER = 336120696;
@@ -954,7 +977,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(232872494, getNetwork());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(311764355, enable_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 311764355, enable_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(336120696, getFilter());
@@ -1005,8 +1028,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(232872494, getNetwork());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(311764355, enable_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(311764355, enable_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1058,7 +1080,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasEnable() != other.hasEnable()) return false;
     if (hasEnable()) {
-      if (enable_ != other.enable_) return false;
+      if (!getEnable()
+          .equals(other.getEnable())) return false;
     }
     if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
@@ -1130,7 +1153,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-      hash = (53 * hash) + enable_;
+      hash = (53 * hash) + getEnable().hashCode();
     }
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
@@ -1320,7 +1343,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       description_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      enable_ = 0;
+      enable_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       if (filterBuilder_ == null) {
         filter_ = null;
@@ -1511,7 +1534,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasEnable()) {
-        setEnable(other.getEnable());
+        bitField0_ |= 0x00000008;
+        enable_ = other.enable_;
+        onChanged();
       }
       if (other.hasFilter()) {
         mergeFilter(other.getFilter());
@@ -1948,40 +1973,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int enable_ = 0;
+    private java.lang.Object enable_ = "";
     /**
      * <pre>
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      * @return Whether the enable field is set.
      */
-    @java.lang.Override public boolean hasEnable() {
+    public boolean hasEnable() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     * @return The enum numeric value on the wire for enable.
+     * <code>optional string enable = 311764355;</code>
+     * @return The enable.
      */
-    @java.lang.Override public int getEnableValue() {
-      return enable_;
+    public java.lang.String getEnable() {
+      java.lang.Object ref = enable_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enable_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     * @param value The enum numeric value on the wire for enable to set.
+     * <code>optional string enable = 311764355;</code>
+     * @return The bytes for enable.
+     */
+    public com.google.protobuf.ByteString
+        getEnableBytes() {
+      java.lang.Object ref = enable_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        enable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string enable = 311764355;</code>
+     * @param value The enable to set.
      * @return This builder for chaining.
      */
-    public Builder setEnableValue(int value) {
-      bitField0_ |= 0x00000008;
+    public Builder setEnable(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
       enable_ = value;
       onChanged();
       return this;
@@ -1989,46 +2052,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     * @return The enable.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.PacketMirroring.Enable getEnable() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.PacketMirroring.Enable result = com.google.cloud.compute.v1.PacketMirroring.Enable.valueOf(enable_);
-      return result == null ? com.google.cloud.compute.v1.PacketMirroring.Enable.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
-     * @param value The enable to set.
+     * <code>optional string enable = 311764355;</code>
      * @return This builder for chaining.
      */
-    public Builder setEnable(com.google.cloud.compute.v1.PacketMirroring.Enable value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      enable_ = value.getNumber();
+    public Builder clearEnable() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      enable_ = getDefaultInstance().getEnable();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.PacketMirroring.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
+     * @param value The bytes for enable to set.
      * @return This builder for chaining.
      */
-    public Builder clearEnable() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      enable_ = 0;
+    public Builder setEnableBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      enable_ = value;
       onChanged();
       return this;
     }

@@ -39,28 +39,32 @@ public interface FileContentBufferOrBuilder extends
   /**
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
+   * <code>optional string file_type = 294346781;</code>
    * @return Whether the fileType field is set.
    */
   boolean hasFileType();
   /**
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
-   * @return The enum numeric value on the wire for fileType.
+   * <code>optional string file_type = 294346781;</code>
+   * @return The fileType.
    */
-  int getFileTypeValue();
+  java.lang.String getFileType();
   /**
    * <pre>
    * The file type of source file.
+   * Check the FileType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FileContentBuffer.FileType file_type = 294346781;</code>
-   * @return The fileType.
+   * <code>optional string file_type = 294346781;</code>
+   * @return The bytes for fileType.
    */
-  com.google.cloud.compute.v1.FileContentBuffer.FileType getFileType();
+  com.google.protobuf.ByteString
+      getFileTypeBytes();
 }

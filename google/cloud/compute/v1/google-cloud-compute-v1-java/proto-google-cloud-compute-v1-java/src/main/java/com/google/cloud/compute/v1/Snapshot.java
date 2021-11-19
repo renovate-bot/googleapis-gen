@@ -32,8 +32,8 @@ private static final long serialVersionUID = 0L;
     selfLink_ = "";
     sourceDisk_ = "";
     sourceDiskId_ = "";
-    status_ = 0;
-    storageBytesStatus_ = 0;
+    status_ = "";
+    storageBytesStatus_ = "";
     storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
@@ -137,10 +137,10 @@ private static final long serialVersionUID = 0L;
             labelFingerprint_ = s;
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00020000;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case -1764857416: {
@@ -216,10 +216,10 @@ private static final long serialVersionUID = 0L;
             satisfiesPzs_ = input.readBool();
             break;
           }
-          case -369054640: {
-            int rawValue = input.readEnum();
+          case -369054638: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00080000;
-            storageBytesStatus_ = rawValue;
+            storageBytesStatus_ = s;
             break;
           }
           case -293404678: {
@@ -1607,41 +1607,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00020000) != 0);
   }
   /**
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Snapshot.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Snapshot.Status result = com.google.cloud.compute.v1.Snapshot.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Snapshot.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STORAGE_BYTES_FIELD_NUMBER = 424631719;
@@ -1672,41 +1695,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STORAGE_BYTES_STATUS_FIELD_NUMBER = 490739082;
-  private int storageBytesStatus_;
+  private volatile java.lang.Object storageBytesStatus_;
   /**
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+   * <code>optional string storage_bytes_status = 490739082;</code>
    * @return Whether the storageBytesStatus field is set.
    */
-  @java.lang.Override public boolean hasStorageBytesStatus() {
+  @java.lang.Override
+  public boolean hasStorageBytesStatus() {
     return ((bitField0_ & 0x00080000) != 0);
   }
   /**
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-   * @return The enum numeric value on the wire for storageBytesStatus.
+   * <code>optional string storage_bytes_status = 490739082;</code>
+   * @return The storageBytesStatus.
    */
-  @java.lang.Override public int getStorageBytesStatusValue() {
-    return storageBytesStatus_;
+  @java.lang.Override
+  public java.lang.String getStorageBytesStatus() {
+    java.lang.Object ref = storageBytesStatus_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      storageBytesStatus_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-   * @return The storageBytesStatus.
+   * <code>optional string storage_bytes_status = 490739082;</code>
+   * @return The bytes for storageBytesStatus.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Snapshot.StorageBytesStatus getStorageBytesStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Snapshot.StorageBytesStatus result = com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.valueOf(storageBytesStatus_);
-    return result == null ? com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStorageBytesStatusBytes() {
+    java.lang.Object ref = storageBytesStatus_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      storageBytesStatus_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STORAGE_LOCATIONS_FIELD_NUMBER = 328005274;
@@ -1804,7 +1850,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt64(316263735, diskSizeGb_);
@@ -1843,7 +1889,7 @@ private static final long serialVersionUID = 0L;
       output.writeBool(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      output.writeEnum(490739082, storageBytesStatus_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 490739082, storageBytesStatus_);
     }
     com.google.protobuf.GeneratedMessageV3
       .serializeStringMapTo(
@@ -1901,8 +1947,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(178124825, labelFingerprint_);
     }
     if (((bitField0_ & 0x00020000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1956,8 +2001,7 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(480964267, satisfiesPzs_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(490739082, storageBytesStatus_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(490739082, storageBytesStatus_);
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
          : internalGetLabels().getMap().entrySet()) {
@@ -2081,7 +2125,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasStorageBytes() != other.hasStorageBytes()) return false;
     if (hasStorageBytes()) {
@@ -2090,7 +2135,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStorageBytesStatus() != other.hasStorageBytesStatus()) return false;
     if (hasStorageBytesStatus()) {
-      if (storageBytesStatus_ != other.storageBytesStatus_) return false;
+      if (!getStorageBytesStatus()
+          .equals(other.getStorageBytesStatus())) return false;
     }
     if (!getStorageLocationsList()
         .equals(other.getStorageLocationsList())) return false;
@@ -2192,7 +2238,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasStorageBytes()) {
       hash = (37 * hash) + STORAGE_BYTES_FIELD_NUMBER;
@@ -2201,7 +2247,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStorageBytesStatus()) {
       hash = (37 * hash) + STORAGE_BYTES_STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + storageBytesStatus_;
+      hash = (53 * hash) + getStorageBytesStatus().hashCode();
     }
     if (getStorageLocationsCount() > 0) {
       hash = (37 * hash) + STORAGE_LOCATIONS_FIELD_NUMBER;
@@ -2415,11 +2461,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00040000);
       sourceDiskId_ = "";
       bitField0_ = (bitField0_ & ~0x00080000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00100000);
       storageBytes_ = 0L;
       bitField0_ = (bitField0_ & ~0x00200000);
-      storageBytesStatus_ = 0;
+      storageBytesStatus_ = "";
       bitField0_ = (bitField0_ & ~0x00400000);
       storageLocations_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00800000);
@@ -2699,13 +2745,17 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00100000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasStorageBytes()) {
         setStorageBytes(other.getStorageBytes());
       }
       if (other.hasStorageBytesStatus()) {
-        setStorageBytesStatus(other.getStorageBytesStatus());
+        bitField0_ |= 0x00400000;
+        storageBytesStatus_ = other.storageBytesStatus_;
+        onChanged();
       }
       if (!other.storageLocations_.isEmpty()) {
         if (storageLocations_.isEmpty()) {
@@ -4813,40 +4863,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00100000;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00100000;
       status_ = value;
       onChanged();
       return this;
@@ -4854,46 +4942,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Snapshot.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Snapshot.Status result = com.google.cloud.compute.v1.Snapshot.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Snapshot.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Snapshot.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00100000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00100000);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00100000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -4953,40 +5031,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int storageBytesStatus_ = 0;
+    private java.lang.Object storageBytesStatus_ = "";
     /**
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
      * @return Whether the storageBytesStatus field is set.
      */
-    @java.lang.Override public boolean hasStorageBytesStatus() {
+    public boolean hasStorageBytesStatus() {
       return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-     * @return The enum numeric value on the wire for storageBytesStatus.
+     * <code>optional string storage_bytes_status = 490739082;</code>
+     * @return The storageBytesStatus.
      */
-    @java.lang.Override public int getStorageBytesStatusValue() {
-      return storageBytesStatus_;
+    public java.lang.String getStorageBytesStatus() {
+      java.lang.Object ref = storageBytesStatus_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        storageBytesStatus_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-     * @param value The enum numeric value on the wire for storageBytesStatus to set.
+     * <code>optional string storage_bytes_status = 490739082;</code>
+     * @return The bytes for storageBytesStatus.
+     */
+    public com.google.protobuf.ByteString
+        getStorageBytesStatusBytes() {
+      java.lang.Object ref = storageBytesStatus_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        storageBytesStatus_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string storage_bytes_status = 490739082;</code>
+     * @param value The storageBytesStatus to set.
      * @return This builder for chaining.
      */
-    public Builder setStorageBytesStatusValue(int value) {
-      bitField0_ |= 0x00400000;
+    public Builder setStorageBytesStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00400000;
       storageBytesStatus_ = value;
       onChanged();
       return this;
@@ -4994,46 +5110,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-     * @return The storageBytesStatus.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Snapshot.StorageBytesStatus getStorageBytesStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Snapshot.StorageBytesStatus result = com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.valueOf(storageBytesStatus_);
-      return result == null ? com.google.cloud.compute.v1.Snapshot.StorageBytesStatus.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-     * @param value The storageBytesStatus to set.
+     * <code>optional string storage_bytes_status = 490739082;</code>
      * @return This builder for chaining.
      */
-    public Builder setStorageBytesStatus(com.google.cloud.compute.v1.Snapshot.StorageBytesStatus value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00400000;
-      storageBytesStatus_ = value.getNumber();
+    public Builder clearStorageBytesStatus() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      storageBytesStatus_ = getDefaultInstance().getStorageBytesStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+     * Check the StorageBytesStatus enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+     * <code>optional string storage_bytes_status = 490739082;</code>
+     * @param value The bytes for storageBytesStatus to set.
      * @return This builder for chaining.
      */
-    public Builder clearStorageBytesStatus() {
-      bitField0_ = (bitField0_ & ~0x00400000);
-      storageBytesStatus_ = 0;
+    public Builder setStorageBytesStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00400000;
+      storageBytesStatus_ = value;
       onChanged();
       return this;
     }

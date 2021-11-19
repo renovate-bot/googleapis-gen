@@ -10,30 +10,34 @@ public interface ManagedInstanceInstanceHealthOrBuilder extends
   /**
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
+   * <code>optional string detailed_health_state = 510470173;</code>
    * @return Whether the detailedHealthState field is set.
    */
   boolean hasDetailedHealthState();
   /**
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-   * @return The enum numeric value on the wire for detailedHealthState.
+   * <code>optional string detailed_health_state = 510470173;</code>
+   * @return The detailedHealthState.
    */
-  int getDetailedHealthStateValue();
+  java.lang.String getDetailedHealthState();
   /**
    * <pre>
    * [Output Only] The current detailed instance health state.
+   * Check the DetailedHealthState enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState detailed_health_state = 510470173;</code>
-   * @return The detailedHealthState.
+   * <code>optional string detailed_health_state = 510470173;</code>
+   * @return The bytes for detailedHealthState.
    */
-  com.google.cloud.compute.v1.ManagedInstanceInstanceHealth.DetailedHealthState getDetailedHealthState();
+  com.google.protobuf.ByteString
+      getDetailedHealthStateBytes();
 
   /**
    * <pre>

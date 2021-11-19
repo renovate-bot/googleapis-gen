@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Backend() {
-    balancingMode_ = 0;
+    balancingMode_ = "";
     description_ = "";
     group_ = "";
   }
@@ -113,10 +113,10 @@ private static final long serialVersionUID = 0L;
             description_ = s;
             break;
           }
-          case -852677560: {
-            int rawValue = input.readEnum();
+          case -852677558: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            balancingMode_ = rawValue;
+            balancingMode_ = s;
             break;
           }
           default: {
@@ -315,41 +315,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int BALANCING_MODE_FIELD_NUMBER = 430286217;
-  private int balancingMode_;
+  private volatile java.lang.Object balancingMode_;
   /**
    * <pre>
    * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+   * Check the BalancingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+   * <code>optional string balancing_mode = 430286217;</code>
    * @return Whether the balancingMode field is set.
    */
-  @java.lang.Override public boolean hasBalancingMode() {
+  @java.lang.Override
+  public boolean hasBalancingMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+   * Check the BalancingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-   * @return The enum numeric value on the wire for balancingMode.
+   * <code>optional string balancing_mode = 430286217;</code>
+   * @return The balancingMode.
    */
-  @java.lang.Override public int getBalancingModeValue() {
-    return balancingMode_;
+  @java.lang.Override
+  public java.lang.String getBalancingMode() {
+    java.lang.Object ref = balancingMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      balancingMode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+   * Check the BalancingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-   * @return The balancingMode.
+   * <code>optional string balancing_mode = 430286217;</code>
+   * @return The bytes for balancingMode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Backend.BalancingMode getBalancingMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Backend.BalancingMode result = com.google.cloud.compute.v1.Backend.BalancingMode.valueOf(balancingMode_);
-    return result == null ? com.google.cloud.compute.v1.Backend.BalancingMode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getBalancingModeBytes() {
+    java.lang.Object ref = balancingMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      balancingMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CAPACITY_SCALER_FIELD_NUMBER = 315958157;
@@ -759,7 +782,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(430286217, balancingMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 430286217, balancingMode_);
     }
     unknownFields.writeTo(output);
   }
@@ -813,8 +836,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(430286217, balancingMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(430286217, balancingMode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -833,7 +855,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasBalancingMode() != other.hasBalancingMode()) return false;
     if (hasBalancingMode()) {
-      if (balancingMode_ != other.balancingMode_) return false;
+      if (!getBalancingMode()
+          .equals(other.getBalancingMode())) return false;
     }
     if (hasCapacityScaler() != other.hasCapacityScaler()) return false;
     if (hasCapacityScaler()) {
@@ -907,7 +930,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasBalancingMode()) {
       hash = (37 * hash) + BALANCING_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + balancingMode_;
+      hash = (53 * hash) + getBalancingMode().hashCode();
     }
     if (hasCapacityScaler()) {
       hash = (37 * hash) + CAPACITY_SCALER_FIELD_NUMBER;
@@ -1095,7 +1118,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      balancingMode_ = 0;
+      balancingMode_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       capacityScaler_ = 0F;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1245,7 +1268,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.Backend other) {
       if (other == com.google.cloud.compute.v1.Backend.getDefaultInstance()) return this;
       if (other.hasBalancingMode()) {
-        setBalancingMode(other.getBalancingMode());
+        bitField0_ |= 0x00000001;
+        balancingMode_ = other.balancingMode_;
+        onChanged();
       }
       if (other.hasCapacityScaler()) {
         setCapacityScaler(other.getCapacityScaler());
@@ -1314,40 +1339,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int balancingMode_ = 0;
+    private java.lang.Object balancingMode_ = "";
     /**
      * <pre>
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     * <code>optional string balancing_mode = 430286217;</code>
      * @return Whether the balancingMode field is set.
      */
-    @java.lang.Override public boolean hasBalancingMode() {
+    public boolean hasBalancingMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-     * @return The enum numeric value on the wire for balancingMode.
+     * <code>optional string balancing_mode = 430286217;</code>
+     * @return The balancingMode.
      */
-    @java.lang.Override public int getBalancingModeValue() {
-      return balancingMode_;
+    public java.lang.String getBalancingMode() {
+      java.lang.Object ref = balancingMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        balancingMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-     * @param value The enum numeric value on the wire for balancingMode to set.
+     * <code>optional string balancing_mode = 430286217;</code>
+     * @return The bytes for balancingMode.
+     */
+    public com.google.protobuf.ByteString
+        getBalancingModeBytes() {
+      java.lang.Object ref = balancingMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        balancingMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string balancing_mode = 430286217;</code>
+     * @param value The balancingMode to set.
      * @return This builder for chaining.
      */
-    public Builder setBalancingModeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setBalancingMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       balancingMode_ = value;
       onChanged();
       return this;
@@ -1355,46 +1418,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-     * @return The balancingMode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Backend.BalancingMode getBalancingMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Backend.BalancingMode result = com.google.cloud.compute.v1.Backend.BalancingMode.valueOf(balancingMode_);
-      return result == null ? com.google.cloud.compute.v1.Backend.BalancingMode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-     * @param value The balancingMode to set.
+     * <code>optional string balancing_mode = 430286217;</code>
      * @return This builder for chaining.
      */
-    public Builder setBalancingMode(com.google.cloud.compute.v1.Backend.BalancingMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      balancingMode_ = value.getNumber();
+    public Builder clearBalancingMode() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      balancingMode_ = getDefaultInstance().getBalancingMode();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     * <code>optional string balancing_mode = 430286217;</code>
+     * @param value The bytes for balancingMode to set.
      * @return This builder for chaining.
      */
-    public Builder clearBalancingMode() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      balancingMode_ = 0;
+    public Builder setBalancingModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      balancingMode_ = value;
       onChanged();
       return this;
     }

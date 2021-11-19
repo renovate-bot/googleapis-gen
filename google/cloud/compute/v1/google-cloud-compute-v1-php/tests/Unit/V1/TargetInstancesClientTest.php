@@ -292,6 +292,7 @@ class TargetInstancesClientTest extends GeneratedTest
         $instance = 'instance555127957';
         $kind = 'kind3292052';
         $name = 'name3373707';
+        $natPolicy = 'natPolicy-1637703152';
         $network = 'network1843485230';
         $selfLink = 'selfLink-1691268851';
         $zone2 = 'zone2-696322977';
@@ -302,6 +303,7 @@ class TargetInstancesClientTest extends GeneratedTest
         $expectedResponse->setInstance($instance);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
+        $expectedResponse->setNatPolicy($natPolicy);
         $expectedResponse->setNetwork($network);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setZone($zone2);

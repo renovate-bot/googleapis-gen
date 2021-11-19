@@ -165,30 +165,34 @@ public interface AutoscalingPolicyOrBuilder extends
   /**
    * <pre>
    * Defines operating mode for this policy.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    * @return Whether the mode field is set.
    */
   boolean hasMode();
   /**
    * <pre>
    * Defines operating mode for this policy.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
-   * @return The enum numeric value on the wire for mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The mode.
    */
-  int getModeValue();
+  java.lang.String getMode();
   /**
    * <pre>
    * Defines operating mode for this policy.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
-   * @return The mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The bytes for mode.
    */
-  com.google.cloud.compute.v1.AutoscalingPolicy.Mode getMode();
+  com.google.protobuf.ByteString
+      getModeBytes();
 
   /**
    * <code>optional .google.cloud.compute.v1.AutoscalingPolicyScaleInControl scale_in_control = 527670872;</code>

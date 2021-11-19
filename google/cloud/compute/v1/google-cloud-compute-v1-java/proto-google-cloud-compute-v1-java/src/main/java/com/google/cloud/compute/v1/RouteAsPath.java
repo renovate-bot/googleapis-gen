@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
   }
   private RouteAsPath() {
     asLists_ = emptyIntList();
-    pathSegmentType_ = 0;
+    pathSegmentType_ = "";
   }
 
   @java.lang.Override
@@ -75,10 +75,10 @@ private static final long serialVersionUID = 0L;
             input.popLimit(limit);
             break;
           }
-          case -187247360: {
-            int rawValue = input.readEnum();
+          case -187247358: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            pathSegmentType_ = rawValue;
+            pathSegmentType_ = s;
             break;
           }
           default: {
@@ -305,41 +305,64 @@ private static final long serialVersionUID = 0L;
   private int asListsMemoizedSerializedSize = -1;
 
   public static final int PATH_SEGMENT_TYPE_FIELD_NUMBER = 513464992;
-  private int pathSegmentType_;
+  private volatile java.lang.Object pathSegmentType_;
   /**
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
+   * <code>optional string path_segment_type = 513464992;</code>
    * @return Whether the pathSegmentType field is set.
    */
-  @java.lang.Override public boolean hasPathSegmentType() {
+  @java.lang.Override
+  public boolean hasPathSegmentType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-   * @return The enum numeric value on the wire for pathSegmentType.
+   * <code>optional string path_segment_type = 513464992;</code>
+   * @return The pathSegmentType.
    */
-  @java.lang.Override public int getPathSegmentTypeValue() {
-    return pathSegmentType_;
+  @java.lang.Override
+  public java.lang.String getPathSegmentType() {
+    java.lang.Object ref = pathSegmentType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      pathSegmentType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+   * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+   * Check the PathSegmentType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-   * @return The pathSegmentType.
+   * <code>optional string path_segment_type = 513464992;</code>
+   * @return The bytes for pathSegmentType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouteAsPath.PathSegmentType getPathSegmentType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouteAsPath.PathSegmentType result = com.google.cloud.compute.v1.RouteAsPath.PathSegmentType.valueOf(pathSegmentType_);
-    return result == null ? com.google.cloud.compute.v1.RouteAsPath.PathSegmentType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPathSegmentTypeBytes() {
+    java.lang.Object ref = pathSegmentType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      pathSegmentType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -365,7 +388,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32NoTag(asLists_.getInt(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(513464992, pathSegmentType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 513464992, pathSegmentType_);
     }
     unknownFields.writeTo(output);
   }
@@ -391,8 +414,7 @@ private static final long serialVersionUID = 0L;
       asListsMemoizedSerializedSize = dataSize;
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(513464992, pathSegmentType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(513464992, pathSegmentType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -413,7 +435,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAsListsList())) return false;
     if (hasPathSegmentType() != other.hasPathSegmentType()) return false;
     if (hasPathSegmentType()) {
-      if (pathSegmentType_ != other.pathSegmentType_) return false;
+      if (!getPathSegmentType()
+          .equals(other.getPathSegmentType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -432,7 +455,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPathSegmentType()) {
       hash = (37 * hash) + PATH_SEGMENT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + pathSegmentType_;
+      hash = (53 * hash) + getPathSegmentType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -572,7 +595,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       asLists_ = emptyIntList();
       bitField0_ = (bitField0_ & ~0x00000001);
-      pathSegmentType_ = 0;
+      pathSegmentType_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -671,7 +694,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasPathSegmentType()) {
-        setPathSegmentType(other.getPathSegmentType());
+        bitField0_ |= 0x00000002;
+        pathSegmentType_ = other.pathSegmentType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -810,87 +835,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int pathSegmentType_ = 0;
+    private java.lang.Object pathSegmentType_ = "";
     /**
      * <pre>
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
+     * <code>optional string path_segment_type = 513464992;</code>
      * @return Whether the pathSegmentType field is set.
      */
-    @java.lang.Override public boolean hasPathSegmentType() {
+    public boolean hasPathSegmentType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-     * @return The enum numeric value on the wire for pathSegmentType.
+     * <code>optional string path_segment_type = 513464992;</code>
+     * @return The pathSegmentType.
      */
-    @java.lang.Override public int getPathSegmentTypeValue() {
-      return pathSegmentType_;
+    public java.lang.String getPathSegmentType() {
+      java.lang.Object ref = pathSegmentType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pathSegmentType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-     * @param value The enum numeric value on the wire for pathSegmentType to set.
+     * <code>optional string path_segment_type = 513464992;</code>
+     * @return The bytes for pathSegmentType.
+     */
+    public com.google.protobuf.ByteString
+        getPathSegmentTypeBytes() {
+      java.lang.Object ref = pathSegmentType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pathSegmentType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string path_segment_type = 513464992;</code>
+     * @param value The pathSegmentType to set.
      * @return This builder for chaining.
      */
-    public Builder setPathSegmentTypeValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setPathSegmentType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       pathSegmentType_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-     * @return The pathSegmentType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouteAsPath.PathSegmentType getPathSegmentType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouteAsPath.PathSegmentType result = com.google.cloud.compute.v1.RouteAsPath.PathSegmentType.valueOf(pathSegmentType_);
-      return result == null ? com.google.cloud.compute.v1.RouteAsPath.PathSegmentType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
-     * @param value The pathSegmentType to set.
+     * <code>optional string path_segment_type = 513464992;</code>
      * @return This builder for chaining.
      */
-    public Builder setPathSegmentType(com.google.cloud.compute.v1.RouteAsPath.PathSegmentType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      pathSegmentType_ = value.getNumber();
+    public Builder clearPathSegmentType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      pathSegmentType_ = getDefaultInstance().getPathSegmentType();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed 
+     * [Output Only] The type of the AS Path, which can be one of the following values: - 'AS_SET': unordered set of autonomous systems that the route in has traversed - 'AS_SEQUENCE': ordered set of autonomous systems that the route has traversed - 'AS_CONFED_SEQUENCE': ordered set of Member Autonomous Systems in the local confederation that the route has traversed - 'AS_CONFED_SET': unordered set of Member Autonomous Systems in the local confederation that the route has traversed
+     * Check the PathSegmentType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouteAsPath.PathSegmentType path_segment_type = 513464992;</code>
+     * <code>optional string path_segment_type = 513464992;</code>
+     * @param value The bytes for pathSegmentType to set.
      * @return This builder for chaining.
      */
-    public Builder clearPathSegmentType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      pathSegmentType_ = 0;
+    public Builder setPathSegmentTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      pathSegmentType_ = value;
       onChanged();
       return this;
     }

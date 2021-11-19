@@ -10,30 +10,34 @@ public interface AutoscalingPolicyCpuUtilizationOrBuilder extends
   /**
    * <pre>
    * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
+   * <code>optional string predictive_method = 390220737;</code>
    * @return Whether the predictiveMethod field is set.
    */
   boolean hasPredictiveMethod();
   /**
    * <pre>
    * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-   * @return The enum numeric value on the wire for predictiveMethod.
+   * <code>optional string predictive_method = 390220737;</code>
+   * @return The predictiveMethod.
    */
-  int getPredictiveMethodValue();
+  java.lang.String getPredictiveMethod();
   /**
    * <pre>
    * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-   * @return The predictiveMethod.
+   * <code>optional string predictive_method = 390220737;</code>
+   * @return The bytes for predictiveMethod.
    */
-  com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod getPredictiveMethod();
+  com.google.protobuf.ByteString
+      getPredictiveMethodBytes();
 
   /**
    * <pre>

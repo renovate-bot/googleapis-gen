@@ -1308,7 +1308,7 @@ def test_get_rule_rest(transport: str = 'rest', request_type=compute.GetRuleFire
         return_value = compute.FirewallPolicyRule(
               action='action_value',
               description='description_value',
-              direction=compute.FirewallPolicyRule.Direction.EGRESS,
+              direction='direction_value',
               disabled=True,
               enable_logging=True,
               kind='kind_value',
@@ -1330,7 +1330,7 @@ def test_get_rule_rest(transport: str = 'rest', request_type=compute.GetRuleFire
     assert isinstance(response, compute.FirewallPolicyRule)
     assert response.action == 'action_value'
     assert response.description == 'description_value'
-    assert response.direction == compute.FirewallPolicyRule.Direction.EGRESS
+    assert response.direction == 'direction_value'
     assert response.disabled is True
     assert response.enable_logging is True
     assert response.kind == 'kind_value'

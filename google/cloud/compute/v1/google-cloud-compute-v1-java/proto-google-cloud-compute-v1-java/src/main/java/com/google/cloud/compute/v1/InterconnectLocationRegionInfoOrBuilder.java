@@ -29,30 +29,34 @@ public interface InterconnectLocationRegionInfoOrBuilder extends
   /**
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
+   * <code>optional string location_presence = 101517893;</code>
    * @return Whether the locationPresence field is set.
    */
   boolean hasLocationPresence();
   /**
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-   * @return The enum numeric value on the wire for locationPresence.
+   * <code>optional string location_presence = 101517893;</code>
+   * @return The locationPresence.
    */
-  int getLocationPresenceValue();
+  java.lang.String getLocationPresence();
   /**
    * <pre>
    * Identifies the network presence of this location.
+   * Check the LocationPresence enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence location_presence = 101517893;</code>
-   * @return The locationPresence.
+   * <code>optional string location_presence = 101517893;</code>
+   * @return The bytes for locationPresence.
    */
-  com.google.cloud.compute.v1.InterconnectLocationRegionInfo.LocationPresence getLocationPresence();
+  com.google.protobuf.ByteString
+      getLocationPresenceBytes();
 
   /**
    * <pre>

@@ -34,14 +34,16 @@ class HTTPHealthCheck extends \Google\Protobuf\Internal\Message
     protected $port_name = null;
     /**
      * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HTTPHealthCheck.PortSpecification port_specification = 51590597;</code>
+     * Generated from protobuf field <code>optional string port_specification = 51590597;</code>
      */
     protected $port_specification = null;
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HTTPHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
      */
     protected $proxy_header = null;
     /**
@@ -69,10 +71,12 @@ class HTTPHealthCheck extends \Google\Protobuf\Internal\Message
      *           The TCP port number for the health check request. The default value is 80. Valid values are 1 through 65535.
      *     @type string $port_name
      *           Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined, port takes precedence.
-     *     @type int $port_specification
+     *     @type string $port_specification
      *           Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
-     *     @type int $proxy_header
+     *           Check the PortSpecification enum for the list of possible values.
+     *     @type string $proxy_header
      *           Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     *           Check the ProxyHeader enum for the list of possible values.
      *     @type string $request_path
      *           The request path of the HTTP health check request. The default value is /.
      *     @type string $response
@@ -194,13 +198,14 @@ class HTTPHealthCheck extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HTTPHealthCheck.PortSpecification port_specification = 51590597;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string port_specification = 51590597;</code>
+     * @return string
      */
     public function getPortSpecification()
     {
-        return isset($this->port_specification) ? $this->port_specification : 0;
+        return isset($this->port_specification) ? $this->port_specification : '';
     }
 
     public function hasPortSpecification()
@@ -215,14 +220,15 @@ class HTTPHealthCheck extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, HTTP health check follows behavior specified in port and portName fields.
+     * Check the PortSpecification enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HTTPHealthCheck.PortSpecification port_specification = 51590597;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string port_specification = 51590597;</code>
+     * @param string $var
      * @return $this
      */
     public function setPortSpecification($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HTTPHealthCheck\PortSpecification::class);
+        GPBUtil::checkString($var, True);
         $this->port_specification = $var;
 
         return $this;
@@ -230,13 +236,14 @@ class HTTPHealthCheck extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HTTPHealthCheck.ProxyHeader proxy_header = 160374142;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
+     * @return string
      */
     public function getProxyHeader()
     {
-        return isset($this->proxy_header) ? $this->proxy_header : 0;
+        return isset($this->proxy_header) ? $this->proxy_header : '';
     }
 
     public function hasProxyHeader()
@@ -251,14 +258,15 @@ class HTTPHealthCheck extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HTTPHealthCheck.ProxyHeader proxy_header = 160374142;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
+     * @param string $var
      * @return $this
      */
     public function setProxyHeader($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HTTPHealthCheck\ProxyHeader::class);
+        GPBUtil::checkString($var, True);
         $this->proxy_header = $var;
 
         return $this;

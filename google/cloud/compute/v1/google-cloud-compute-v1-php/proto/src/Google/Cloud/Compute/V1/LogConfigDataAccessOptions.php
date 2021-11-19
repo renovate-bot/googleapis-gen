@@ -17,8 +17,9 @@ class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
 {
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
+     * Generated from protobuf field <code>optional string log_mode = 402897342;</code>
      */
     protected $log_mode = null;
 
@@ -28,8 +29,9 @@ class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $log_mode
+     *     @type string $log_mode
      *           This is deprecated and has no effect. Do not use.
+     *           Check the LogMode enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,13 +41,14 @@ class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string log_mode = 402897342;</code>
+     * @return string
      */
     public function getLogMode()
     {
-        return isset($this->log_mode) ? $this->log_mode : 0;
+        return isset($this->log_mode) ? $this->log_mode : '';
     }
 
     public function hasLogMode()
@@ -60,14 +63,15 @@ class LogConfigDataAccessOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the LogMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LogConfigDataAccessOptions.LogMode log_mode = 402897342;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string log_mode = 402897342;</code>
+     * @param string $var
      * @return $this
      */
     public function setLogMode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\LogConfigDataAccessOptions\LogMode::class);
+        GPBUtil::checkString($var, True);
         $this->log_mode = $var;
 
         return $this;

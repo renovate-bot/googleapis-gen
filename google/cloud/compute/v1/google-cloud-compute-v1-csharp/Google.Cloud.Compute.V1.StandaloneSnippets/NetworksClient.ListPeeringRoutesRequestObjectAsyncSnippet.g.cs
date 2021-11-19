@@ -36,7 +36,7 @@ namespace Google.Cloud.Compute.V1.Snippets
             // Initialize request argument(s)
             ListPeeringRoutesNetworksRequest request = new ListPeeringRoutesNetworksRequest
             {
-                Direction = ListPeeringRoutesNetworksRequest.Types.Direction.UndefinedDirection,
+                Direction = "",
                 Region = "",
                 OrderBy = "",
                 Project = "",

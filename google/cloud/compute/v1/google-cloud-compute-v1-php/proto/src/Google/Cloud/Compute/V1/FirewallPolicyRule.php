@@ -29,8 +29,9 @@ class FirewallPolicyRule extends \Google\Protobuf\Internal\Message
     protected $description = null;
     /**
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
      */
     protected $direction = null;
     /**
@@ -92,8 +93,9 @@ class FirewallPolicyRule extends \Google\Protobuf\Internal\Message
      *           The Action to perform when the client connection triggers the rule. Can currently be either "allow" or "deny()" where valid values for status are 403, 404, and 502.
      *     @type string $description
      *           An optional description for this resource.
-     *     @type int $direction
+     *     @type string $direction
      *           The direction in which this rule applies.
+     *           Check the Direction enum for the list of possible values.
      *     @type bool $disabled
      *           Denotes whether the firewall policy rule is disabled. When set to true, the firewall policy rule is not enforced and traffic behaves as if it did not exist. If this is unspecified, the firewall policy rule will be enabled.
      *     @type bool $enable_logging
@@ -191,13 +193,14 @@ class FirewallPolicyRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
+     * @return string
      */
     public function getDirection()
     {
-        return isset($this->direction) ? $this->direction : 0;
+        return isset($this->direction) ? $this->direction : '';
     }
 
     public function hasDirection()
@@ -212,14 +215,15 @@ class FirewallPolicyRule extends \Google\Protobuf\Internal\Message
 
     /**
      * The direction in which this rule applies.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
+     * @param string $var
      * @return $this
      */
     public function setDirection($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\FirewallPolicyRule\Direction::class);
+        GPBUtil::checkString($var, True);
         $this->direction = $var;
 
         return $this;

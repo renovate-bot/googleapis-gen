@@ -47,8 +47,9 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
     protected $nat_i_p = null;
     /**
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
      */
     protected $network_tier = null;
     /**
@@ -65,8 +66,9 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
     protected $set_public_ptr = null;
     /**
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
 
@@ -86,14 +88,16 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
      *           The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
      *     @type string $nat_i_p
      *           An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
-     *     @type int $network_tier
+     *     @type string $network_tier
      *           This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     *           Check the NetworkTier enum for the list of possible values.
      *     @type string $public_ptr_domain_name
      *           The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled.
      *     @type bool $set_public_ptr
      *           Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name.
-     *     @type int $type
+     *     @type string $type
      *           The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     *           Check the Type enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -283,13 +287,14 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
+     * @return string
      */
     public function getNetworkTier()
     {
-        return isset($this->network_tier) ? $this->network_tier : 0;
+        return isset($this->network_tier) ? $this->network_tier : '';
     }
 
     public function hasNetworkTier()
@@ -304,14 +309,15 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string network_tier = 517397843;</code>
+     * @param string $var
      * @return $this
      */
     public function setNetworkTier($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AccessConfig\NetworkTier::class);
+        GPBUtil::checkString($var, True);
         $this->network_tier = $var;
 
         return $this;
@@ -391,13 +397,14 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -412,14 +419,15 @@ class AccessConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AccessConfig\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

@@ -47,8 +47,9 @@ class AttachedDiskInitializeParams extends \Google\Protobuf\Internal\Message
     private $labels;
     /**
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
+     * Generated from protobuf field <code>optional string on_update_action = 202451980;</code>
      */
     protected $on_update_action = null;
     /**
@@ -104,8 +105,9 @@ class AttachedDiskInitializeParams extends \Google\Protobuf\Internal\Message
      *           Specifies the disk type to use to create the instance. If not specified, the default is pd-standard, specified using the full URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/pd-standard For a full list of acceptable values, see Persistent disk types. If you define this field, you can provide either the full or partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /diskTypes/diskType - projects/project/zones/zone/diskTypes/diskType - zones/zone/diskTypes/diskType Note that for InstanceTemplate, this is the name of the disk type, not URL.
      *     @type array|\Google\Protobuf\Internal\MapField $labels
      *           Labels to apply to this disk. These can be later modified by the disks.setLabels method. This field is only applicable for persistent disks.
-     *     @type int $on_update_action
+     *     @type string $on_update_action
      *           Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     *           Check the OnUpdateAction enum for the list of possible values.
      *     @type int|string $provisioned_iops
      *           Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Values must be between 10,000 and 120,000. For more details, see the Extreme persistent disk documentation.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $resource_policies
@@ -297,13 +299,14 @@ class AttachedDiskInitializeParams extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string on_update_action = 202451980;</code>
+     * @return string
      */
     public function getOnUpdateAction()
     {
-        return isset($this->on_update_action) ? $this->on_update_action : 0;
+        return isset($this->on_update_action) ? $this->on_update_action : '';
     }
 
     public function hasOnUpdateAction()
@@ -318,14 +321,15 @@ class AttachedDiskInitializeParams extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string on_update_action = 202451980;</code>
+     * @param string $var
      * @return $this
      */
     public function setOnUpdateAction($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AttachedDiskInitializeParams\OnUpdateAction::class);
+        GPBUtil::checkString($var, True);
         $this->on_update_action = $var;
 
         return $this;

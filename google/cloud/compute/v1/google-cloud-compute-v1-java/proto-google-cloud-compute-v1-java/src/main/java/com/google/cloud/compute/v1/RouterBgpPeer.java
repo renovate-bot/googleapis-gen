@@ -19,13 +19,13 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RouterBgpPeer() {
-    advertiseMode_ = 0;
-    advertisedGroups_ = java.util.Collections.emptyList();
+    advertiseMode_ = "";
+    advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     advertisedIpRanges_ = java.util.Collections.emptyList();
-    enable_ = 0;
+    enable_ = "";
     interfaceName_ = "";
     ipAddress_ = "";
-    managementType_ = 0;
+    managementType_ = "";
     name_ = "";
     peerIpAddress_ = "";
     routerApplianceInstance_ = "";
@@ -81,27 +81,13 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 168524208: {
-            int rawValue = input.readEnum();
+          case 168524210: {
+            java.lang.String s = input.readStringRequireUtf8();
             if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-              advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
+              advertisedGroups_ = new com.google.protobuf.LazyStringArrayList();
               mutable_bitField0_ |= 0x00000002;
             }
-            advertisedGroups_.add(rawValue);
-            break;
-          }
-          case 168524210: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
-              int rawValue = input.readEnum();
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>();
-                mutable_bitField0_ |= 0x00000002;
-              }
-              advertisedGroups_.add(rawValue);
-            }
-            input.popLimit(oldLimit);
+            advertisedGroups_.add(s);
             break;
           }
           case 283599458: {
@@ -118,10 +104,10 @@ private static final long serialVersionUID = 0L;
             peerAsn_ = input.readUInt32();
             break;
           }
-          case 1389628848: {
-            int rawValue = input.readEnum();
+          case 1389628850: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000040;
-            managementType_ = rawValue;
+            managementType_ = s;
             break;
           }
           case 1491890656: {
@@ -135,16 +121,16 @@ private static final long serialVersionUID = 0L;
             peerIpAddress_ = s;
             break;
           }
-          case -1800852456: {
-            int rawValue = input.readEnum();
+          case -1800852454: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            enable_ = rawValue;
+            enable_ = s;
             break;
           }
-          case -1797892648: {
-            int rawValue = input.readEnum();
+          case -1797892646: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            advertiseMode_ = rawValue;
+            advertiseMode_ = s;
             break;
           }
           case -1044789534: {
@@ -181,7 +167,7 @@ private static final long serialVersionUID = 0L;
           e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
+        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
       }
       if (((mutable_bitField0_ & 0x00000004) != 0)) {
         advertisedIpRanges_ = java.util.Collections.unmodifiableList(advertisedIpRanges_);
@@ -735,120 +721,120 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int ADVERTISE_MODE_FIELD_NUMBER = 312134331;
-  private int advertiseMode_;
+  private volatile java.lang.Object advertiseMode_;
   /**
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    * @return Whether the advertiseMode field is set.
    */
-  @java.lang.Override public boolean hasAdvertiseMode() {
+  @java.lang.Override
+  public boolean hasAdvertiseMode() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-   * @return The enum numeric value on the wire for advertiseMode.
+   * <code>optional string advertise_mode = 312134331;</code>
+   * @return The advertiseMode.
    */
-  @java.lang.Override public int getAdvertiseModeValue() {
-    return advertiseMode_;
+  @java.lang.Override
+  public java.lang.String getAdvertiseMode() {
+    java.lang.Object ref = advertiseMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      advertiseMode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-   * @return The advertiseMode.
+   * <code>optional string advertise_mode = 312134331;</code>
+   * @return The bytes for advertiseMode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode getAdvertiseMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode result = com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode.valueOf(advertiseMode_);
-    return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAdvertiseModeBytes() {
+    java.lang.Object ref = advertiseMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      advertiseMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ADVERTISED_GROUPS_FIELD_NUMBER = 21065526;
-  private java.util.List<java.lang.Integer> advertisedGroups_;
-  private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups> advertisedGroups_converter_ =
-          new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups>() {
-            public com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups convert(java.lang.Integer from) {
-              @SuppressWarnings("deprecation")
-              com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups result = com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups.valueOf(from);
-              return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups.UNRECOGNIZED : result;
-            }
-          };
+  private com.google.protobuf.LazyStringList advertisedGroups_;
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @return A list containing the advertisedGroups.
    */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups> getAdvertisedGroupsList() {
-    return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups>(advertisedGroups_, advertisedGroups_converter_);
+  public com.google.protobuf.ProtocolStringList
+      getAdvertisedGroupsList() {
+    return advertisedGroups_;
   }
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @return The count of advertisedGroups.
    */
-  @java.lang.Override
   public int getAdvertisedGroupsCount() {
     return advertisedGroups_.size();
   }
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @param index The index of the element to return.
    * @return The advertisedGroups at the given index.
    */
-  @java.lang.Override
-  public com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups getAdvertisedGroups(int index) {
-    return advertisedGroups_converter_.convert(advertisedGroups_.get(index));
-  }
-  /**
-   * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-   * @return A list containing the enum numeric values on the wire for advertisedGroups.
-   */
-  @java.lang.Override
-  public java.util.List<java.lang.Integer>
-  getAdvertisedGroupsValueList() {
-    return advertisedGroups_;
-  }
-  /**
-   * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-   * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of advertisedGroups at the given index.
-   */
-  @java.lang.Override
-  public int getAdvertisedGroupsValue(int index) {
+  public java.lang.String getAdvertisedGroups(int index) {
     return advertisedGroups_.get(index);
   }
-  private int advertisedGroupsMemoizedSerializedSize;
+  /**
+   * <pre>
+   * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
+   * </pre>
+   *
+   * <code>repeated string advertised_groups = 21065526;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the advertisedGroups at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getAdvertisedGroupsBytes(int index) {
+    return advertisedGroups_.getByteString(index);
+  }
 
   public static final int ADVERTISED_IP_RANGES_FIELD_NUMBER = 35449932;
   private java.util.List<com.google.cloud.compute.v1.RouterAdvertisedIpRange> advertisedIpRanges_;
@@ -976,41 +962,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ENABLE_FIELD_NUMBER = 311764355;
-  private int enable_;
+  private volatile java.lang.Object enable_;
   /**
    * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    * @return Whether the enable field is set.
    */
-  @java.lang.Override public boolean hasEnable() {
+  @java.lang.Override
+  public boolean hasEnable() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-   * @return The enum numeric value on the wire for enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The enable.
    */
-  @java.lang.Override public int getEnableValue() {
-    return enable_;
+  @java.lang.Override
+  public java.lang.String getEnable() {
+    java.lang.Object ref = enable_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      enable_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-   * @return The enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The bytes for enable.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterBgpPeer.Enable getEnable() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterBgpPeer.Enable result = com.google.cloud.compute.v1.RouterBgpPeer.Enable.valueOf(enable_);
-    return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.Enable.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEnableBytes() {
+    java.lang.Object ref = enable_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      enable_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int INTERFACE_NAME_FIELD_NUMBER = 437854673;
@@ -1130,41 +1139,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MANAGEMENT_TYPE_FIELD_NUMBER = 173703606;
-  private int managementType_;
+  private volatile java.lang.Object managementType_;
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+   * <code>optional string management_type = 173703606;</code>
    * @return Whether the managementType field is set.
    */
-  @java.lang.Override public boolean hasManagementType() {
+  @java.lang.Override
+  public boolean hasManagementType() {
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-   * @return The enum numeric value on the wire for managementType.
+   * <code>optional string management_type = 173703606;</code>
+   * @return The managementType.
    */
-  @java.lang.Override public int getManagementTypeValue() {
-    return managementType_;
+  @java.lang.Override
+  public java.lang.String getManagementType() {
+    java.lang.Object ref = managementType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      managementType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-   * @return The managementType.
+   * <code>optional string management_type = 173703606;</code>
+   * @return The bytes for managementType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterBgpPeer.ManagementType getManagementType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterBgpPeer.ManagementType result = com.google.cloud.compute.v1.RouterBgpPeer.ManagementType.valueOf(managementType_);
-    return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.ManagementType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getManagementTypeBytes() {
+    java.lang.Object ref = managementType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      managementType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -1382,19 +1414,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    getSerializedSize();
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(97440, getBfd());
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
-    if (getAdvertisedGroupsList().size() > 0) {
-      output.writeUInt32NoTag(168524210);
-      output.writeUInt32NoTag(advertisedGroupsMemoizedSerializedSize);
-    }
     for (int i = 0; i < advertisedGroups_.size(); i++) {
-      output.writeEnumNoTag(advertisedGroups_.get(i));
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21065526, advertisedGroups_.getRaw(i));
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       output.writeMessage(35449932, advertisedIpRanges_.get(i));
@@ -1403,7 +1430,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32(69573151, peerAsn_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeEnum(173703606, managementType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 173703606, managementType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeUInt32(186486332, advertisedRoutePriority_);
@@ -1412,10 +1439,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(311764355, enable_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 311764355, enable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(312134331, advertiseMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 312134331, advertiseMode_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 406272220, ipAddress_);
@@ -1445,14 +1472,10 @@ private static final long serialVersionUID = 0L;
     {
       int dataSize = 0;
       for (int i = 0; i < advertisedGroups_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(advertisedGroups_.get(i));
+        dataSize += computeStringSizeNoTag(advertisedGroups_.getRaw(i));
       }
       size += dataSize;
-      if (!getAdvertisedGroupsList().isEmpty()) {  size += 4;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }advertisedGroupsMemoizedSerializedSize = dataSize;
+      size += 4 * getAdvertisedGroupsList().size();
     }
     for (int i = 0; i < advertisedIpRanges_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1463,8 +1486,7 @@ private static final long serialVersionUID = 0L;
         .computeUInt32Size(69573151, peerAsn_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(173703606, managementType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(173703606, managementType_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1474,12 +1496,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(311764355, enable_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(311764355, enable_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(312134331, advertiseMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(312134331, advertiseMode_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(406272220, ipAddress_);
@@ -1507,9 +1527,11 @@ private static final long serialVersionUID = 0L;
 
     if (hasAdvertiseMode() != other.hasAdvertiseMode()) return false;
     if (hasAdvertiseMode()) {
-      if (advertiseMode_ != other.advertiseMode_) return false;
+      if (!getAdvertiseMode()
+          .equals(other.getAdvertiseMode())) return false;
     }
-    if (!advertisedGroups_.equals(other.advertisedGroups_)) return false;
+    if (!getAdvertisedGroupsList()
+        .equals(other.getAdvertisedGroupsList())) return false;
     if (!getAdvertisedIpRangesList()
         .equals(other.getAdvertisedIpRangesList())) return false;
     if (hasAdvertisedRoutePriority() != other.hasAdvertisedRoutePriority()) return false;
@@ -1524,7 +1546,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasEnable() != other.hasEnable()) return false;
     if (hasEnable()) {
-      if (enable_ != other.enable_) return false;
+      if (!getEnable()
+          .equals(other.getEnable())) return false;
     }
     if (hasInterfaceName() != other.hasInterfaceName()) return false;
     if (hasInterfaceName()) {
@@ -1538,7 +1561,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasManagementType() != other.hasManagementType()) return false;
     if (hasManagementType()) {
-      if (managementType_ != other.managementType_) return false;
+      if (!getManagementType()
+          .equals(other.getManagementType())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -1573,11 +1597,11 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAdvertiseMode()) {
       hash = (37 * hash) + ADVERTISE_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + advertiseMode_;
+      hash = (53 * hash) + getAdvertiseMode().hashCode();
     }
     if (getAdvertisedGroupsCount() > 0) {
       hash = (37 * hash) + ADVERTISED_GROUPS_FIELD_NUMBER;
-      hash = (53 * hash) + advertisedGroups_.hashCode();
+      hash = (53 * hash) + getAdvertisedGroupsList().hashCode();
     }
     if (getAdvertisedIpRangesCount() > 0) {
       hash = (37 * hash) + ADVERTISED_IP_RANGES_FIELD_NUMBER;
@@ -1593,7 +1617,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasEnable()) {
       hash = (37 * hash) + ENABLE_FIELD_NUMBER;
-      hash = (53 * hash) + enable_;
+      hash = (53 * hash) + getEnable().hashCode();
     }
     if (hasInterfaceName()) {
       hash = (37 * hash) + INTERFACE_NAME_FIELD_NUMBER;
@@ -1605,7 +1629,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasManagementType()) {
       hash = (37 * hash) + MANAGEMENT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + managementType_;
+      hash = (53 * hash) + getManagementType().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1761,9 +1785,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      advertiseMode_ = 0;
+      advertiseMode_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      advertisedGroups_ = java.util.Collections.emptyList();
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000002);
       if (advertisedIpRangesBuilder_ == null) {
         advertisedIpRanges_ = java.util.Collections.emptyList();
@@ -1779,13 +1803,13 @@ private static final long serialVersionUID = 0L;
         bfdBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
-      enable_ = 0;
+      enable_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       interfaceName_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       ipAddress_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      managementType_ = 0;
+      managementType_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -1828,7 +1852,7 @@ private static final long serialVersionUID = 0L;
       }
       result.advertiseMode_ = advertiseMode_;
       if (((bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = java.util.Collections.unmodifiableList(advertisedGroups_);
+        advertisedGroups_ = advertisedGroups_.getUnmodifiableView();
         bitField0_ = (bitField0_ & ~0x00000002);
       }
       result.advertisedGroups_ = advertisedGroups_;
@@ -1935,7 +1959,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.RouterBgpPeer other) {
       if (other == com.google.cloud.compute.v1.RouterBgpPeer.getDefaultInstance()) return this;
       if (other.hasAdvertiseMode()) {
-        setAdvertiseMode(other.getAdvertiseMode());
+        bitField0_ |= 0x00000001;
+        advertiseMode_ = other.advertiseMode_;
+        onChanged();
       }
       if (!other.advertisedGroups_.isEmpty()) {
         if (advertisedGroups_.isEmpty()) {
@@ -1980,7 +2006,9 @@ private static final long serialVersionUID = 0L;
         mergeBfd(other.getBfd());
       }
       if (other.hasEnable()) {
-        setEnable(other.getEnable());
+        bitField0_ |= 0x00000020;
+        enable_ = other.enable_;
+        onChanged();
       }
       if (other.hasInterfaceName()) {
         bitField0_ |= 0x00000040;
@@ -1993,7 +2021,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasManagementType()) {
-        setManagementType(other.getManagementType());
+        bitField0_ |= 0x00000100;
+        managementType_ = other.managementType_;
+        onChanged();
       }
       if (other.hasName()) {
         bitField0_ |= 0x00000200;
@@ -2043,40 +2073,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int advertiseMode_ = 0;
+    private java.lang.Object advertiseMode_ = "";
     /**
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>optional string advertise_mode = 312134331;</code>
      * @return Whether the advertiseMode field is set.
      */
-    @java.lang.Override public boolean hasAdvertiseMode() {
+    public boolean hasAdvertiseMode() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-     * @return The enum numeric value on the wire for advertiseMode.
+     * <code>optional string advertise_mode = 312134331;</code>
+     * @return The advertiseMode.
      */
-    @java.lang.Override public int getAdvertiseModeValue() {
-      return advertiseMode_;
+    public java.lang.String getAdvertiseMode() {
+      java.lang.Object ref = advertiseMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        advertiseMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-     * @param value The enum numeric value on the wire for advertiseMode to set.
+     * <code>optional string advertise_mode = 312134331;</code>
+     * @return The bytes for advertiseMode.
+     */
+    public com.google.protobuf.ByteString
+        getAdvertiseModeBytes() {
+      java.lang.Object ref = advertiseMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        advertiseMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * User-specified flag to indicate which mode to use for advertisement.
+     * Check the AdvertiseMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string advertise_mode = 312134331;</code>
+     * @param value The advertiseMode to set.
      * @return This builder for chaining.
      */
-    public Builder setAdvertiseModeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setAdvertiseMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       advertiseMode_ = value;
       onChanged();
       return this;
@@ -2084,76 +2152,67 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * User-specified flag to indicate which mode to use for advertisement.
+     * Check the AdvertiseMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-     * @return The advertiseMode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode getAdvertiseMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode result = com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode.valueOf(advertiseMode_);
-      return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * User-specified flag to indicate which mode to use for advertisement.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-     * @param value The advertiseMode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdvertiseMode(com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      advertiseMode_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * User-specified flag to indicate which mode to use for advertisement.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+     * <code>optional string advertise_mode = 312134331;</code>
      * @return This builder for chaining.
      */
     public Builder clearAdvertiseMode() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      advertiseMode_ = 0;
+      advertiseMode_ = getDefaultInstance().getAdvertiseMode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * User-specified flag to indicate which mode to use for advertisement.
+     * Check the AdvertiseMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string advertise_mode = 312134331;</code>
+     * @param value The bytes for advertiseMode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdvertiseModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      advertiseMode_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<java.lang.Integer> advertisedGroups_ =
-      java.util.Collections.emptyList();
+    private com.google.protobuf.LazyStringList advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     private void ensureAdvertisedGroupsIsMutable() {
       if (!((bitField0_ & 0x00000002) != 0)) {
-        advertisedGroups_ = new java.util.ArrayList<java.lang.Integer>(advertisedGroups_);
+        advertisedGroups_ = new com.google.protobuf.LazyStringArrayList(advertisedGroups_);
         bitField0_ |= 0x00000002;
-      }
+       }
     }
     /**
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      * @return A list containing the advertisedGroups.
      */
-    public java.util.List<com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups> getAdvertisedGroupsList() {
-      return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups>(advertisedGroups_, advertisedGroups_converter_);
+    public com.google.protobuf.ProtocolStringList
+        getAdvertisedGroupsList() {
+      return advertisedGroups_.getUnmodifiableView();
     }
     /**
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      * @return The count of advertisedGroups.
      */
     public int getAdvertisedGroupsCount() {
@@ -2162,122 +2221,47 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      * @param index The index of the element to return.
      * @return The advertisedGroups at the given index.
      */
-    public com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups getAdvertisedGroups(int index) {
-      return advertisedGroups_converter_.convert(advertisedGroups_.get(index));
-    }
-    /**
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @param index The index to set the value at.
-     * @param value The advertisedGroups to set.
-     * @return This builder for chaining.
-     */
-    public Builder setAdvertisedGroups(
-        int index, com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureAdvertisedGroupsIsMutable();
-      advertisedGroups_.set(index, value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @param value The advertisedGroups to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAdvertisedGroups(com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      ensureAdvertisedGroupsIsMutable();
-      advertisedGroups_.add(value.getNumber());
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @param values The advertisedGroups to add.
-     * @return This builder for chaining.
-     */
-    public Builder addAllAdvertisedGroups(
-        java.lang.Iterable<? extends com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups> values) {
-      ensureAdvertisedGroupsIsMutable();
-      for (com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups value : values) {
-        advertisedGroups_.add(value.getNumber());
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearAdvertisedGroups() {
-      advertisedGroups_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000002);
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @return A list containing the enum numeric values on the wire for advertisedGroups.
-     */
-    public java.util.List<java.lang.Integer>
-    getAdvertisedGroupsValueList() {
-      return java.util.Collections.unmodifiableList(advertisedGroups_);
-    }
-    /**
-     * <pre>
-     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-     * </pre>
-     *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of advertisedGroups at the given index.
-     */
-    public int getAdvertisedGroupsValue(int index) {
+    public java.lang.String getAdvertisedGroups(int index) {
       return advertisedGroups_.get(index);
     }
     /**
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+     * <code>repeated string advertised_groups = 21065526;</code>
      * @param index The index of the value to return.
-     * @return The enum numeric value on the wire of advertisedGroups at the given index.
+     * @return The bytes of the advertisedGroups at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAdvertisedGroupsBytes(int index) {
+      return advertisedGroups_.getByteString(index);
+    }
+    /**
+     * <pre>
+     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string advertised_groups = 21065526;</code>
+     * @param index The index to set the value at.
+     * @param value The advertisedGroups to set.
      * @return This builder for chaining.
      */
-    public Builder setAdvertisedGroupsValue(
-        int index, int value) {
-      ensureAdvertisedGroupsIsMutable();
+    public Builder setAdvertisedGroups(
+        int index, java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.set(index, value);
       onChanged();
       return this;
@@ -2285,14 +2269,19 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @param value The enum numeric value on the wire for advertisedGroups to add.
+     * <code>repeated string advertised_groups = 21065526;</code>
+     * @param value The advertisedGroups to add.
      * @return This builder for chaining.
      */
-    public Builder addAdvertisedGroupsValue(int value) {
-      ensureAdvertisedGroupsIsMutable();
+    public Builder addAdvertisedGroups(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureAdvertisedGroupsIsMutable();
       advertisedGroups_.add(value);
       onChanged();
       return this;
@@ -2300,18 +2289,54 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
      * </pre>
      *
-     * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-     * @param values The enum numeric values on the wire for advertisedGroups to add.
+     * <code>repeated string advertised_groups = 21065526;</code>
+     * @param values The advertisedGroups to add.
      * @return This builder for chaining.
      */
-    public Builder addAllAdvertisedGroupsValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllAdvertisedGroups(
+        java.lang.Iterable<java.lang.String> values) {
       ensureAdvertisedGroupsIsMutable();
-      for (int value : values) {
-        advertisedGroups_.add(value);
-      }
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, advertisedGroups_);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string advertised_groups = 21065526;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAdvertisedGroups() {
+      advertisedGroups_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+     * Check the AdvertisedGroups enum for the list of possible values.
+     * </pre>
+     *
+     * <code>repeated string advertised_groups = 21065526;</code>
+     * @param value The bytes of the advertisedGroups to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAdvertisedGroupsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      ensureAdvertisedGroupsIsMutable();
+      advertisedGroups_.add(value);
       onChanged();
       return this;
     }
@@ -2839,40 +2864,78 @@ private static final long serialVersionUID = 0L;
       return bfdBuilder_;
     }
 
-    private int enable_ = 0;
+    private java.lang.Object enable_ = "";
     /**
      * <pre>
      * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
      * @return Whether the enable field is set.
      */
-    @java.lang.Override public boolean hasEnable() {
+    public boolean hasEnable() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
      * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-     * @return The enum numeric value on the wire for enable.
+     * <code>optional string enable = 311764355;</code>
+     * @return The enable.
      */
-    @java.lang.Override public int getEnableValue() {
-      return enable_;
+    public java.lang.String getEnable() {
+      java.lang.Object ref = enable_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        enable_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-     * @param value The enum numeric value on the wire for enable to set.
+     * <code>optional string enable = 311764355;</code>
+     * @return The bytes for enable.
+     */
+    public com.google.protobuf.ByteString
+        getEnableBytes() {
+      java.lang.Object ref = enable_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        enable_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string enable = 311764355;</code>
+     * @param value The enable to set.
      * @return This builder for chaining.
      */
-    public Builder setEnableValue(int value) {
-      bitField0_ |= 0x00000020;
+    public Builder setEnable(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
       enable_ = value;
       onChanged();
       return this;
@@ -2880,46 +2943,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-     * @return The enable.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterBgpPeer.Enable getEnable() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterBgpPeer.Enable result = com.google.cloud.compute.v1.RouterBgpPeer.Enable.valueOf(enable_);
-      return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.Enable.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-     * @param value The enable to set.
+     * <code>optional string enable = 311764355;</code>
      * @return This builder for chaining.
      */
-    public Builder setEnable(com.google.cloud.compute.v1.RouterBgpPeer.Enable value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      enable_ = value.getNumber();
+    public Builder clearEnable() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      enable_ = getDefaultInstance().getEnable();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+     * Check the Enable enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
+     * <code>optional string enable = 311764355;</code>
+     * @param value The bytes for enable to set.
      * @return This builder for chaining.
      */
-    public Builder clearEnable() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      enable_ = 0;
+    public Builder setEnableBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      enable_ = value;
       onChanged();
       return this;
     }
@@ -3138,87 +3191,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int managementType_ = 0;
+    private java.lang.Object managementType_ = "";
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+     * <code>optional string management_type = 173703606;</code>
      * @return Whether the managementType field is set.
      */
-    @java.lang.Override public boolean hasManagementType() {
+    public boolean hasManagementType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-     * @return The enum numeric value on the wire for managementType.
+     * <code>optional string management_type = 173703606;</code>
+     * @return The managementType.
      */
-    @java.lang.Override public int getManagementTypeValue() {
-      return managementType_;
+    public java.lang.String getManagementType() {
+      java.lang.Object ref = managementType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managementType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-     * @param value The enum numeric value on the wire for managementType to set.
+     * <code>optional string management_type = 173703606;</code>
+     * @return The bytes for managementType.
+     */
+    public com.google.protobuf.ByteString
+        getManagementTypeBytes() {
+      java.lang.Object ref = managementType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managementType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string management_type = 173703606;</code>
+     * @param value The managementType to set.
      * @return This builder for chaining.
      */
-    public Builder setManagementTypeValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setManagementType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       managementType_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-     * @return The managementType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterBgpPeer.ManagementType getManagementType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterBgpPeer.ManagementType result = com.google.cloud.compute.v1.RouterBgpPeer.ManagementType.valueOf(managementType_);
-      return result == null ? com.google.cloud.compute.v1.RouterBgpPeer.ManagementType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-     * @param value The managementType to set.
+     * <code>optional string management_type = 173703606;</code>
      * @return This builder for chaining.
      */
-    public Builder setManagementType(com.google.cloud.compute.v1.RouterBgpPeer.ManagementType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      managementType_ = value.getNumber();
+    public Builder clearManagementType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      managementType_ = getDefaultInstance().getManagementType();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+     * <code>optional string management_type = 173703606;</code>
+     * @param value The bytes for managementType to set.
      * @return This builder for chaining.
      */
-    public Builder clearManagementType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      managementType_ = 0;
+    public Builder setManagementTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      managementType_ = value;
       onChanged();
       return this;
     }

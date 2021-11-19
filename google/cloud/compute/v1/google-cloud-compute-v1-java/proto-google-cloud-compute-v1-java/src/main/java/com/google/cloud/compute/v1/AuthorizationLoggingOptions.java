@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AuthorizationLoggingOptions() {
-    permissionType_ = 0;
+    permissionType_ = "";
   }
 
   @java.lang.Override
@@ -54,10 +54,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case -87138992: {
-            int rawValue = input.readEnum();
+          case -87138990: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            permissionType_ = rawValue;
+            permissionType_ = s;
             break;
           }
           default: {
@@ -290,41 +290,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int PERMISSION_TYPE_FIELD_NUMBER = 525978538;
-  private int permissionType_;
+  private volatile java.lang.Object permissionType_;
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the PermissionType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
+   * <code>optional string permission_type = 525978538;</code>
    * @return Whether the permissionType field is set.
    */
-  @java.lang.Override public boolean hasPermissionType() {
+  @java.lang.Override
+  public boolean hasPermissionType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the PermissionType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-   * @return The enum numeric value on the wire for permissionType.
+   * <code>optional string permission_type = 525978538;</code>
+   * @return The permissionType.
    */
-  @java.lang.Override public int getPermissionTypeValue() {
-    return permissionType_;
+  @java.lang.Override
+  public java.lang.String getPermissionType() {
+    java.lang.Object ref = permissionType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      permissionType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the PermissionType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-   * @return The permissionType.
+   * <code>optional string permission_type = 525978538;</code>
+   * @return The bytes for permissionType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType getPermissionType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType result = com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType.valueOf(permissionType_);
-    return result == null ? com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPermissionTypeBytes() {
+    java.lang.Object ref = permissionType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      permissionType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -342,7 +365,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(525978538, permissionType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 525978538, permissionType_);
     }
     unknownFields.writeTo(output);
   }
@@ -354,8 +377,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(525978538, permissionType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(525978538, permissionType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -374,7 +396,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasPermissionType() != other.hasPermissionType()) return false;
     if (hasPermissionType()) {
-      if (permissionType_ != other.permissionType_) return false;
+      if (!getPermissionType()
+          .equals(other.getPermissionType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -389,7 +412,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasPermissionType()) {
       hash = (37 * hash) + PERMISSION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + permissionType_;
+      hash = (53 * hash) + getPermissionType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -528,7 +551,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      permissionType_ = 0;
+      permissionType_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -612,7 +635,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.AuthorizationLoggingOptions other) {
       if (other == com.google.cloud.compute.v1.AuthorizationLoggingOptions.getDefaultInstance()) return this;
       if (other.hasPermissionType()) {
-        setPermissionType(other.getPermissionType());
+        bitField0_ |= 0x00000001;
+        permissionType_ = other.permissionType_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -644,40 +669,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int permissionType_ = 0;
+    private java.lang.Object permissionType_ = "";
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
+     * <code>optional string permission_type = 525978538;</code>
      * @return Whether the permissionType field is set.
      */
-    @java.lang.Override public boolean hasPermissionType() {
+    public boolean hasPermissionType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-     * @return The enum numeric value on the wire for permissionType.
+     * <code>optional string permission_type = 525978538;</code>
+     * @return The permissionType.
      */
-    @java.lang.Override public int getPermissionTypeValue() {
-      return permissionType_;
+    public java.lang.String getPermissionType() {
+      java.lang.Object ref = permissionType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        permissionType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-     * @param value The enum numeric value on the wire for permissionType to set.
+     * <code>optional string permission_type = 525978538;</code>
+     * @return The bytes for permissionType.
+     */
+    public com.google.protobuf.ByteString
+        getPermissionTypeBytes() {
+      java.lang.Object ref = permissionType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        permissionType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string permission_type = 525978538;</code>
+     * @param value The permissionType to set.
      * @return This builder for chaining.
      */
-    public Builder setPermissionTypeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setPermissionType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       permissionType_ = value;
       onChanged();
       return this;
@@ -685,46 +748,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-     * @return The permissionType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType getPermissionType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType result = com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType.valueOf(permissionType_);
-      return result == null ? com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-     * @param value The permissionType to set.
+     * <code>optional string permission_type = 525978538;</code>
      * @return This builder for chaining.
      */
-    public Builder setPermissionType(com.google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      permissionType_ = value.getNumber();
+    public Builder clearPermissionType() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      permissionType_ = getDefaultInstance().getPermissionType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
+     * <code>optional string permission_type = 525978538;</code>
+     * @param value The bytes for permissionType to set.
      * @return This builder for chaining.
      */
-    public Builder clearPermissionType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      permissionType_ = 0;
+    public Builder setPermissionTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      permissionType_ = value;
       onChanged();
       return this;
     }

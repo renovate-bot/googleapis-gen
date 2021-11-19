@@ -218,6 +218,7 @@ public class SslCertificatesClientTest {
             .setSelfLink("selfLink1191800166")
             .setSelfManaged(SslCertificateSelfManagedSslCertificate.newBuilder().build())
             .addAllSubjectAlternativeNames(new ArrayList<String>())
+            .setType("type3575610")
             .build();
     mockService.addResponse(expectedResponse);
 

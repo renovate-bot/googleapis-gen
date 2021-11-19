@@ -10,30 +10,34 @@ public interface WarningsOrBuilder extends
   /**
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Warnings.Code code = 3059181;</code>
+   * <code>optional string code = 3059181;</code>
    * @return Whether the code field is set.
    */
   boolean hasCode();
   /**
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Warnings.Code code = 3059181;</code>
-   * @return The enum numeric value on the wire for code.
+   * <code>optional string code = 3059181;</code>
+   * @return The code.
    */
-  int getCodeValue();
+  java.lang.String getCode();
   /**
    * <pre>
    * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+   * Check the Code enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Warnings.Code code = 3059181;</code>
-   * @return The code.
+   * <code>optional string code = 3059181;</code>
+   * @return The bytes for code.
    */
-  com.google.cloud.compute.v1small.Warnings.Code getCode();
+  com.google.protobuf.ByteString
+      getCodeBytes();
 
   /**
    * <pre>

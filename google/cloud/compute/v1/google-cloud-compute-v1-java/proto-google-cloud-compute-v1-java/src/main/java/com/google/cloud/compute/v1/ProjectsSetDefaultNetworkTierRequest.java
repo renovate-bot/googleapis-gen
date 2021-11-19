@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ProjectsSetDefaultNetworkTierRequest() {
-    networkTier_ = 0;
+    networkTier_ = "";
   }
 
   @java.lang.Override
@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case -155784552: {
-            int rawValue = input.readEnum();
+          case -155784550: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            networkTier_ = rawValue;
+            networkTier_ = s;
             break;
           }
           default: {
@@ -238,41 +238,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private int networkTier_;
+  private volatile java.lang.Object networkTier_;
   /**
    * <pre>
    * Default network tier to be set.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
-  @java.lang.Override public boolean hasNetworkTier() {
+  @java.lang.Override
+  public boolean hasNetworkTier() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * Default network tier to be set.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  @java.lang.Override public int getNetworkTierValue() {
-    return networkTier_;
+  @java.lang.Override
+  public java.lang.String getNetworkTier() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkTier_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Default network tier to be set.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier getNetworkTier() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier result = com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier.valueOf(networkTier_);
-    return result == null ? com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkTierBytes() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -290,7 +313,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(517397843, networkTier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -302,8 +325,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(517397843, networkTier_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -322,7 +344,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
-      if (networkTier_ != other.networkTier_) return false;
+      if (!getNetworkTier()
+          .equals(other.getNetworkTier())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -337,7 +360,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + networkTier_;
+      hash = (53 * hash) + getNetworkTier().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -475,7 +498,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      networkTier_ = 0;
+      networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -559,7 +582,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest other) {
       if (other == com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.getDefaultInstance()) return this;
       if (other.hasNetworkTier()) {
-        setNetworkTier(other.getNetworkTier());
+        bitField0_ |= 0x00000001;
+        networkTier_ = other.networkTier_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -591,40 +616,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int networkTier_ = 0;
+    private java.lang.Object networkTier_ = "";
     /**
      * <pre>
      * Default network tier to be set.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      * @return Whether the networkTier field is set.
      */
-    @java.lang.Override public boolean hasNetworkTier() {
+    public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * Default network tier to be set.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
-     * @return The enum numeric value on the wire for networkTier.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The networkTier.
      */
-    @java.lang.Override public int getNetworkTierValue() {
-      return networkTier_;
+    public java.lang.String getNetworkTier() {
+      java.lang.Object ref = networkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Default network tier to be set.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
-     * @param value The enum numeric value on the wire for networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The bytes for networkTier.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkTierBytes() {
+      java.lang.Object ref = networkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Default network tier to be set.
+     * Check the NetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkTierValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setNetworkTier(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       networkTier_ = value;
       onChanged();
       return this;
@@ -632,46 +695,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Default network tier to be set.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
-     * @return The networkTier.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier getNetworkTier() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier result = com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier.valueOf(networkTier_);
-      return result == null ? com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Default network tier to be set.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
-     * @param value The networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
      * @return This builder for chaining.
      */
-    public Builder setNetworkTier(com.google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      networkTier_ = value.getNumber();
+    public Builder clearNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      networkTier_ = getDefaultInstance().getNetworkTier();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Default network tier to be set.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The bytes for networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      networkTier_ = 0;
+    public Builder setNetworkTierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      networkTier_ = value;
       onChanged();
       return this;
     }

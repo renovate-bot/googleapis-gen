@@ -1013,7 +1013,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetNetworkEndpoi
               kind='kind_value',
               name='name_value',
               network='network_value',
-              network_endpoint_type=compute.NetworkEndpointGroup.NetworkEndpointType.GCE_VM_IP,
+              network_endpoint_type='network_endpoint_type_value',
               region='region_value',
               self_link='self_link_value',
               size=443,
@@ -1038,7 +1038,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetNetworkEndpoi
     assert response.kind == 'kind_value'
     assert response.name == 'name_value'
     assert response.network == 'network_value'
-    assert response.network_endpoint_type == compute.NetworkEndpointGroup.NetworkEndpointType.GCE_VM_IP
+    assert response.network_endpoint_type == 'network_endpoint_type_value'
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
     assert response.size == 443
@@ -1460,7 +1460,7 @@ def test_list_network_endpoints_rest(transport: str = 'rest', request_type=compu
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "zone": "sample2", "network_endpoint_group": "sample3"}
-    request_init["network_endpoint_groups_list_endpoints_request_resource"] = compute.NetworkEndpointGroupsListEndpointsRequest(health_status=compute.NetworkEndpointGroupsListEndpointsRequest.HealthStatus.SHOW)
+    request_init["network_endpoint_groups_list_endpoints_request_resource"] = compute.NetworkEndpointGroupsListEndpointsRequest(health_status='health_status_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -1495,7 +1495,7 @@ def test_list_network_endpoints_rest_bad_request(transport: str = 'rest', reques
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "zone": "sample2", "network_endpoint_group": "sample3"}
-    request_init["network_endpoint_groups_list_endpoints_request_resource"] = compute.NetworkEndpointGroupsListEndpointsRequest(health_status=compute.NetworkEndpointGroupsListEndpointsRequest.HealthStatus.SHOW)
+    request_init["network_endpoint_groups_list_endpoints_request_resource"] = compute.NetworkEndpointGroupsListEndpointsRequest(health_status='health_status_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1539,7 +1539,7 @@ def test_list_network_endpoints_rest_flattened(transport: str = 'rest'):
             project='project_value',
             zone='zone_value',
             network_endpoint_group='network_endpoint_group_value',
-            network_endpoint_groups_list_endpoints_request_resource=compute.NetworkEndpointGroupsListEndpointsRequest(health_status=compute.NetworkEndpointGroupsListEndpointsRequest.HealthStatus.SHOW),
+            network_endpoint_groups_list_endpoints_request_resource=compute.NetworkEndpointGroupsListEndpointsRequest(health_status='health_status_value'),
         )
         mock_args.update(sample_request)
         client.list_network_endpoints(**mock_args)
@@ -1565,7 +1565,7 @@ def test_list_network_endpoints_rest_flattened_error(transport: str = 'rest'):
             project='project_value',
             zone='zone_value',
             network_endpoint_group='network_endpoint_group_value',
-            network_endpoint_groups_list_endpoints_request_resource=compute.NetworkEndpointGroupsListEndpointsRequest(health_status=compute.NetworkEndpointGroupsListEndpointsRequest.HealthStatus.SHOW),
+            network_endpoint_groups_list_endpoints_request_resource=compute.NetworkEndpointGroupsListEndpointsRequest(health_status='health_status_value'),
         )
 
 
@@ -1617,7 +1617,7 @@ def test_list_network_endpoints_rest_pager():
             req.side_effect = return_values
 
             sample_request = {"project": "sample1", "zone": "sample2", "network_endpoint_group": "sample3"}
-            sample_request["network_endpoint_groups_list_endpoints_request_resource"] = compute.NetworkEndpointGroupsListEndpointsRequest(health_status=compute.NetworkEndpointGroupsListEndpointsRequest.HealthStatus.SHOW)
+            sample_request["network_endpoint_groups_list_endpoints_request_resource"] = compute.NetworkEndpointGroupsListEndpointsRequest(health_status='health_status_value')
 
             pager = client.list_network_endpoints(request=sample_request)
 

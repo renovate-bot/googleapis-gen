@@ -68,30 +68,34 @@ public interface FirewallPolicyRuleOrBuilder extends
   /**
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    * @return Whether the direction field is set.
    */
   boolean hasDirection();
   /**
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
-   * @return The enum numeric value on the wire for direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The direction.
    */
-  int getDirectionValue();
+  java.lang.String getDirection();
   /**
    * <pre>
    * The direction in which this rule applies.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallPolicyRule.Direction direction = 111150975;</code>
-   * @return The direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The bytes for direction.
    */
-  com.google.cloud.compute.v1.FirewallPolicyRule.Direction getDirection();
+  com.google.protobuf.ByteString
+      getDirectionBytes();
 
   /**
    * <pre>

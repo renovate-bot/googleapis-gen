@@ -201,30 +201,34 @@ public interface NetworkPeeringOrBuilder extends
   /**
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return Whether the state field is set.
    */
   boolean hasState();
   /**
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
-   * @return The enum numeric value on the wire for state.
+   * <code>optional string state = 109757585;</code>
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    * <pre>
    * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
-   * @return The state.
+   * <code>optional string state = 109757585;</code>
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.NetworkPeering.State getState();
+  com.google.protobuf.ByteString
+      getStateBytes();
 
   /**
    * <pre>

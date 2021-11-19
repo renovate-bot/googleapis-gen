@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private ServiceAttachment() {
     connectedEndpoints_ = java.util.Collections.emptyList();
-    connectionPreference_ = 0;
+    connectionPreference_ = "";
     consumerAcceptLists_ = java.util.Collections.emptyList();
     consumerRejectLists_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     creationTimestamp_ = "";
@@ -132,10 +132,10 @@ private static final long serialVersionUID = 0L;
             producerForwardingRule_ = s;
             break;
           }
-          case -2008422688: {
-            int rawValue = input.readEnum();
+          case -2008422686: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            connectionPreference_ = rawValue;
+            connectionPreference_ = s;
             break;
           }
           case -1384637400: {
@@ -430,41 +430,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CONNECTION_PREFERENCE_FIELD_NUMBER = 285818076;
-  private int connectionPreference_;
+  private volatile java.lang.Object connectionPreference_;
   /**
    * <pre>
    * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
+   * <code>optional string connection_preference = 285818076;</code>
    * @return Whether the connectionPreference field is set.
    */
-  @java.lang.Override public boolean hasConnectionPreference() {
+  @java.lang.Override
+  public boolean hasConnectionPreference() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-   * @return The enum numeric value on the wire for connectionPreference.
+   * <code>optional string connection_preference = 285818076;</code>
+   * @return The connectionPreference.
    */
-  @java.lang.Override public int getConnectionPreferenceValue() {
-    return connectionPreference_;
+  @java.lang.Override
+  public java.lang.String getConnectionPreference() {
+    java.lang.Object ref = connectionPreference_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      connectionPreference_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+   * Check the ConnectionPreference enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-   * @return The connectionPreference.
+   * <code>optional string connection_preference = 285818076;</code>
+   * @return The bytes for connectionPreference.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference getConnectionPreference() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference result = com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference.valueOf(connectionPreference_);
-    return result == null ? com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getConnectionPreferenceBytes() {
+    java.lang.Object ref = connectionPreference_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      connectionPreference_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CONSUMER_ACCEPT_LISTS_FIELD_NUMBER = 402725703;
@@ -1288,7 +1311,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 247927889, producerForwardingRule_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(285818076, connectionPreference_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 285818076, connectionPreference_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeBool(363791237, enableProxyProtocol_);
@@ -1355,8 +1378,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(247927889, producerForwardingRule_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(285818076, connectionPreference_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(285818076, connectionPreference_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1403,7 +1425,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getConnectedEndpointsList())) return false;
     if (hasConnectionPreference() != other.hasConnectionPreference()) return false;
     if (hasConnectionPreference()) {
-      if (connectionPreference_ != other.connectionPreference_) return false;
+      if (!getConnectionPreference()
+          .equals(other.getConnectionPreference())) return false;
     }
     if (!getConsumerAcceptListsList()
         .equals(other.getConsumerAcceptListsList())) return false;
@@ -1488,7 +1511,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasConnectionPreference()) {
       hash = (37 * hash) + CONNECTION_PREFERENCE_FIELD_NUMBER;
-      hash = (53 * hash) + connectionPreference_;
+      hash = (53 * hash) + getConnectionPreference().hashCode();
     }
     if (getConsumerAcceptListsCount() > 0) {
       hash = (37 * hash) + CONSUMER_ACCEPT_LISTS_FIELD_NUMBER;
@@ -1698,7 +1721,7 @@ private static final long serialVersionUID = 0L;
       } else {
         connectedEndpointsBuilder_.clear();
       }
-      connectionPreference_ = 0;
+      connectionPreference_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       if (consumerAcceptListsBuilder_ == null) {
         consumerAcceptLists_ = java.util.Collections.emptyList();
@@ -1926,7 +1949,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasConnectionPreference()) {
-        setConnectionPreference(other.getConnectionPreference());
+        bitField0_ |= 0x00000002;
+        connectionPreference_ = other.connectionPreference_;
+        onChanged();
       }
       if (consumerAcceptListsBuilder_ == null) {
         if (!other.consumerAcceptLists_.isEmpty()) {
@@ -2370,40 +2395,78 @@ private static final long serialVersionUID = 0L;
       return connectedEndpointsBuilder_;
     }
 
-    private int connectionPreference_ = 0;
+    private java.lang.Object connectionPreference_ = "";
     /**
      * <pre>
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
+     * <code>optional string connection_preference = 285818076;</code>
      * @return Whether the connectionPreference field is set.
      */
-    @java.lang.Override public boolean hasConnectionPreference() {
+    public boolean hasConnectionPreference() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-     * @return The enum numeric value on the wire for connectionPreference.
+     * <code>optional string connection_preference = 285818076;</code>
+     * @return The connectionPreference.
      */
-    @java.lang.Override public int getConnectionPreferenceValue() {
-      return connectionPreference_;
+    public java.lang.String getConnectionPreference() {
+      java.lang.Object ref = connectionPreference_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        connectionPreference_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-     * @param value The enum numeric value on the wire for connectionPreference to set.
+     * <code>optional string connection_preference = 285818076;</code>
+     * @return The bytes for connectionPreference.
+     */
+    public com.google.protobuf.ByteString
+        getConnectionPreferenceBytes() {
+      java.lang.Object ref = connectionPreference_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        connectionPreference_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string connection_preference = 285818076;</code>
+     * @param value The connectionPreference to set.
      * @return This builder for chaining.
      */
-    public Builder setConnectionPreferenceValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setConnectionPreference(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       connectionPreference_ = value;
       onChanged();
       return this;
@@ -2411,46 +2474,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-     * @return The connectionPreference.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference getConnectionPreference() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference result = com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference.valueOf(connectionPreference_);
-      return result == null ? com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-     * @param value The connectionPreference to set.
+     * <code>optional string connection_preference = 285818076;</code>
      * @return This builder for chaining.
      */
-    public Builder setConnectionPreference(com.google.cloud.compute.v1.ServiceAttachment.ConnectionPreference value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      connectionPreference_ = value.getNumber();
+    public Builder clearConnectionPreference() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      connectionPreference_ = getDefaultInstance().getConnectionPreference();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
+     * <code>optional string connection_preference = 285818076;</code>
+     * @param value The bytes for connectionPreference to set.
      * @return This builder for chaining.
      */
-    public Builder clearConnectionPreference() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      connectionPreference_ = 0;
+    public Builder setConnectionPreferenceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      connectionPreference_ = value;
       onChanged();
       return this;
     }

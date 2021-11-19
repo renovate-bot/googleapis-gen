@@ -221,31 +221,35 @@ public interface TargetHttpsProxyOrBuilder extends
 
   /**
    * <pre>
-   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
+   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+   * Check the QuicOverride enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+   * <code>optional string quic_override = 456577197;</code>
    * @return Whether the quicOverride field is set.
    */
   boolean hasQuicOverride();
   /**
    * <pre>
-   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
+   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+   * Check the QuicOverride enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
-   * @return The enum numeric value on the wire for quicOverride.
-   */
-  int getQuicOverrideValue();
-  /**
-   * <pre>
-   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+   * <code>optional string quic_override = 456577197;</code>
    * @return The quicOverride.
    */
-  com.google.cloud.compute.v1.TargetHttpsProxy.QuicOverride getQuicOverride();
+  java.lang.String getQuicOverride();
+  /**
+   * <pre>
+   * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+   * Check the QuicOverride enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string quic_override = 456577197;</code>
+   * @return The bytes for quicOverride.
+   */
+  com.google.protobuf.ByteString
+      getQuicOverrideBytes();
 
   /**
    * <pre>

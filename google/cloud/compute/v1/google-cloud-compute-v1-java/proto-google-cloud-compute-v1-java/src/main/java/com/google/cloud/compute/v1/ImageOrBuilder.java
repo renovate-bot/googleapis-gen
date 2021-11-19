@@ -820,58 +820,66 @@ public interface ImageOrBuilder extends
   /**
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
+   * <code>optional string source_type = 452245726;</code>
    * @return Whether the sourceType field is set.
    */
   boolean hasSourceType();
   /**
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-   * @return The enum numeric value on the wire for sourceType.
+   * <code>optional string source_type = 452245726;</code>
+   * @return The sourceType.
    */
-  int getSourceTypeValue();
+  java.lang.String getSourceType();
   /**
    * <pre>
    * The type of the image used to create this disk. The default and only value is RAW
+   * Check the SourceType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.SourceType source_type = 452245726;</code>
-   * @return The sourceType.
+   * <code>optional string source_type = 452245726;</code>
+   * @return The bytes for sourceType.
    */
-  com.google.cloud.compute.v1.Image.SourceType getSourceType();
+  com.google.protobuf.ByteString
+      getSourceTypeBytes();
 
   /**
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Image.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Image.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

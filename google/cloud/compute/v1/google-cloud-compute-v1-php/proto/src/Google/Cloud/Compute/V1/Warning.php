@@ -17,8 +17,9 @@ class Warning extends \Google\Protobuf\Internal\Message
 {
     /**
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Warning.Code code = 3059181;</code>
+     * Generated from protobuf field <code>optional string code = 3059181;</code>
      */
     protected $code = null;
     /**
@@ -40,8 +41,9 @@ class Warning extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $code
+     *     @type string $code
      *           [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     *           Check the Code enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\Data[]|\Google\Protobuf\Internal\RepeatedField $data
      *           [Output Only] Metadata about this warning in key: value format. For example: "data": [ { "key": "scope", "value": "zones/us-east1-d" } 
      *     @type string $message
@@ -55,13 +57,14 @@ class Warning extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Warning.Code code = 3059181;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string code = 3059181;</code>
+     * @return string
      */
     public function getCode()
     {
-        return isset($this->code) ? $this->code : 0;
+        return isset($this->code) ? $this->code : '';
     }
 
     public function hasCode()
@@ -76,14 +79,15 @@ class Warning extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] A warning code, if applicable. For example, Compute Engine returns NO_RESULTS_ON_PAGE if there are no results in the response.
+     * Check the Code enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Warning.Code code = 3059181;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string code = 3059181;</code>
+     * @param string $var
      * @return $this
      */
     public function setCode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Warning\Code::class);
+        GPBUtil::checkString($var, True);
         $this->code = $var;
 
         return $this;

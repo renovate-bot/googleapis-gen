@@ -20,21 +20,21 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Commitment() {
-    category_ = 0;
+    category_ = "";
     creationTimestamp_ = "";
     description_ = "";
     endTimestamp_ = "";
     kind_ = "";
     name_ = "";
-    plan_ = 0;
+    plan_ = "";
     region_ = "";
     reservations_ = java.util.Collections.emptyList();
     resources_ = java.util.Collections.emptyList();
     selfLink_ = "";
     startTimestamp_ = "";
-    status_ = 0;
+    status_ = "";
     statusMessage_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -85,16 +85,16 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 27547976: {
-            int rawValue = input.readEnum();
+          case 27547978: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000100;
-            plan_ = rawValue;
+            plan_ = s;
             break;
           }
-          case 28604880: {
-            int rawValue = input.readEnum();
+          case 28604882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00004000;
-            type_ = rawValue;
+            type_ = s;
             break;
           }
           case 244202930: {
@@ -103,10 +103,10 @@ private static final long serialVersionUID = 0L;
             creationTimestamp_ = s;
             break;
           }
-          case 404088816: {
-            int rawValue = input.readEnum();
+          case 404088818: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            category_ = rawValue;
+            category_ = s;
             break;
           }
           case 669166538: {
@@ -130,10 +130,10 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.google.cloud.compute.v1.ResourceCommitment.parser(), extensionRegistry));
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00001000;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case -1915542062: {
@@ -828,41 +828,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int CATEGORY_FIELD_NUMBER = 50511102;
-  private int category_;
+  private volatile java.lang.Object category_;
   /**
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+   * <code>optional string category = 50511102;</code>
    * @return Whether the category field is set.
    */
-  @java.lang.Override public boolean hasCategory() {
+  @java.lang.Override
+  public boolean hasCategory() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-   * @return The enum numeric value on the wire for category.
+   * <code>optional string category = 50511102;</code>
+   * @return The category.
    */
-  @java.lang.Override public int getCategoryValue() {
-    return category_;
+  @java.lang.Override
+  public java.lang.String getCategory() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      category_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+   * Check the Category enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-   * @return The category.
+   * <code>optional string category = 50511102;</code>
+   * @return The bytes for category.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Commitment.Category getCategory() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Category result = com.google.cloud.compute.v1.Commitment.Category.valueOf(category_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Category.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCategoryBytes() {
+    java.lang.Object ref = category_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      category_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -1221,41 +1244,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PLAN_FIELD_NUMBER = 3443497;
-  private int plan_;
+  private volatile java.lang.Object plan_;
   /**
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+   * <code>optional string plan = 3443497;</code>
    * @return Whether the plan field is set.
    */
-  @java.lang.Override public boolean hasPlan() {
+  @java.lang.Override
+  public boolean hasPlan() {
     return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-   * @return The enum numeric value on the wire for plan.
+   * <code>optional string plan = 3443497;</code>
+   * @return The plan.
    */
-  @java.lang.Override public int getPlanValue() {
-    return plan_;
+  @java.lang.Override
+  public java.lang.String getPlan() {
+    java.lang.Object ref = plan_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      plan_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+   * Check the Plan enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-   * @return The plan.
+   * <code>optional string plan = 3443497;</code>
+   * @return The bytes for plan.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Commitment.Plan getPlan() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Plan result = com.google.cloud.compute.v1.Commitment.Plan.valueOf(plan_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Plan.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPlanBytes() {
+    java.lang.Object ref = plan_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      plan_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -1553,41 +1599,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Commitment.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Status result = com.google.cloud.compute.v1.Commitment.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
@@ -1649,41 +1718,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
    * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
-  @java.lang.Override public boolean hasType() {
+  @java.lang.Override
+  public boolean hasType() {
     return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    * <pre>
    * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  @java.lang.Override public int getTypeValue() {
-    return type_;
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Commitment.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Commitment.Type result = com.google.cloud.compute.v1.Commitment.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.Commitment.Type.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1710,16 +1802,16 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeEnum(3443497, plan_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3443497, plan_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(50511102, category_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 50511102, category_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 83645817, startTimestamp_);
@@ -1731,7 +1823,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(164412965, resources_.get(i));
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 297428154, statusMessage_);
@@ -1771,19 +1863,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3443497, plan_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3443497, plan_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(50511102, category_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(50511102, category_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(83645817, startTimestamp_);
@@ -1796,8 +1885,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(164412965, resources_.get(i));
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(297428154, statusMessage_);
@@ -1836,7 +1924,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasCategory() != other.hasCategory()) return false;
     if (hasCategory()) {
-      if (category_ != other.category_) return false;
+      if (!getCategory()
+          .equals(other.getCategory())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -1875,7 +1964,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPlan() != other.hasPlan()) return false;
     if (hasPlan()) {
-      if (plan_ != other.plan_) return false;
+      if (!getPlan()
+          .equals(other.getPlan())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1898,7 +1988,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasStatusMessage() != other.hasStatusMessage()) return false;
     if (hasStatusMessage()) {
@@ -1907,7 +1998,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1922,7 +2014,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasCategory()) {
       hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
-      hash = (53 * hash) + category_;
+      hash = (53 * hash) + getCategory().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -1955,7 +2047,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPlan()) {
       hash = (37 * hash) + PLAN_FIELD_NUMBER;
-      hash = (53 * hash) + plan_;
+      hash = (53 * hash) + getPlan().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -1979,7 +2071,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasStatusMessage()) {
       hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
@@ -1987,7 +2079,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2129,7 +2221,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      category_ = 0;
+      category_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -2149,7 +2241,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      plan_ = 0;
+      plan_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -2169,11 +2261,11 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00001000);
       startTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       statusMessage_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
       return this;
     }
@@ -2335,7 +2427,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.Commitment other) {
       if (other == com.google.cloud.compute.v1.Commitment.getDefaultInstance()) return this;
       if (other.hasCategory()) {
-        setCategory(other.getCategory());
+        bitField0_ |= 0x00000001;
+        category_ = other.category_;
+        onChanged();
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000002;
@@ -2369,7 +2463,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasPlan()) {
-        setPlan(other.getPlan());
+        bitField0_ |= 0x00000100;
+        plan_ = other.plan_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00000200;
@@ -2439,7 +2535,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00004000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasStatusMessage()) {
         bitField0_ |= 0x00008000;
@@ -2447,7 +2545,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00010000;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2479,40 +2579,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int category_ = 0;
+    private java.lang.Object category_ = "";
     /**
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
      * @return Whether the category field is set.
      */
-    @java.lang.Override public boolean hasCategory() {
+    public boolean hasCategory() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     * @return The enum numeric value on the wire for category.
+     * <code>optional string category = 50511102;</code>
+     * @return The category.
      */
-    @java.lang.Override public int getCategoryValue() {
-      return category_;
+    public java.lang.String getCategory() {
+      java.lang.Object ref = category_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        category_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     * @param value The enum numeric value on the wire for category to set.
+     * <code>optional string category = 50511102;</code>
+     * @return The bytes for category.
+     */
+    public com.google.protobuf.ByteString
+        getCategoryBytes() {
+      java.lang.Object ref = category_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        category_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string category = 50511102;</code>
+     * @param value The category to set.
      * @return This builder for chaining.
      */
-    public Builder setCategoryValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setCategory(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       category_ = value;
       onChanged();
       return this;
@@ -2520,46 +2658,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     * @return The category.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Category getCategory() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Category result = com.google.cloud.compute.v1.Commitment.Category.valueOf(category_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Category.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
-     * @param value The category to set.
+     * <code>optional string category = 50511102;</code>
      * @return This builder for chaining.
      */
-    public Builder setCategory(com.google.cloud.compute.v1.Commitment.Category value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      category_ = value.getNumber();
+    public Builder clearCategory() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      category_ = getDefaultInstance().getCategory();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
+     * Check the Category enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Category category = 50511102;</code>
+     * <code>optional string category = 50511102;</code>
+     * @param value The bytes for category to set.
      * @return This builder for chaining.
      */
-    public Builder clearCategory() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      category_ = 0;
+    public Builder setCategoryBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      category_ = value;
       onChanged();
       return this;
     }
@@ -3310,40 +3438,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int plan_ = 0;
+    private java.lang.Object plan_ = "";
     /**
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
      * @return Whether the plan field is set.
      */
-    @java.lang.Override public boolean hasPlan() {
+    public boolean hasPlan() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     * @return The enum numeric value on the wire for plan.
+     * <code>optional string plan = 3443497;</code>
+     * @return The plan.
      */
-    @java.lang.Override public int getPlanValue() {
-      return plan_;
+    public java.lang.String getPlan() {
+      java.lang.Object ref = plan_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        plan_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     * @param value The enum numeric value on the wire for plan to set.
+     * <code>optional string plan = 3443497;</code>
+     * @return The bytes for plan.
+     */
+    public com.google.protobuf.ByteString
+        getPlanBytes() {
+      java.lang.Object ref = plan_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        plan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string plan = 3443497;</code>
+     * @param value The plan to set.
      * @return This builder for chaining.
      */
-    public Builder setPlanValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setPlan(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       plan_ = value;
       onChanged();
       return this;
@@ -3351,46 +3517,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     * @return The plan.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Plan getPlan() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Plan result = com.google.cloud.compute.v1.Commitment.Plan.valueOf(plan_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Plan.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
-     * @param value The plan to set.
+     * <code>optional string plan = 3443497;</code>
      * @return This builder for chaining.
      */
-    public Builder setPlan(com.google.cloud.compute.v1.Commitment.Plan value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      plan_ = value.getNumber();
+    public Builder clearPlan() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      plan_ = getDefaultInstance().getPlan();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
+     * Check the Plan enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Plan plan = 3443497;</code>
+     * <code>optional string plan = 3443497;</code>
+     * @param value The bytes for plan to set.
      * @return This builder for chaining.
      */
-    public Builder clearPlan() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      plan_ = 0;
+    public Builder setPlanBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      plan_ = value;
       onChanged();
       return this;
     }
@@ -4340,40 +4496,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00004000;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
       return this;
@@ -4381,46 +4575,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Status result = com.google.cloud.compute.v1.Commitment.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.Commitment.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). One of the following values: NOT_YET_ACTIVE, ACTIVE, EXPIRED.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      status_ = value;
       onChanged();
       return this;
     }
@@ -4532,40 +4716,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      * <pre>
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
+    public boolean hasType() {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <pre>
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>optional string type = 3575610;</code>
+     * @return The type.
      */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-     * @param value The enum numeric value on the wire for type to set.
+     * <code>optional string type = 3575610;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
-      bitField0_ |= 0x00010000;
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00010000;
       type_ = value;
       onChanged();
       return this;
@@ -4573,46 +4795,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Commitment.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Commitment.Type result = com.google.cloud.compute.v1.Commitment.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.Commitment.Type.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
-     * @param value The type to set.
+     * <code>optional string type = 3575610;</code>
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.Commitment.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00010000;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The type of commitment, which affects the discount rate and the eligible resources. Type MEMORY_OPTIMIZED specifies a commitment that will only apply to memory optimized machines. Type ACCELERATOR_OPTIMIZED specifies a commitment that will only apply to accelerator optimized machines.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Commitment.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      type_ = 0;
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00010000;
+      type_ = value;
       onChanged();
       return this;
     }

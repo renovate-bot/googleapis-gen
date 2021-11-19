@@ -302,6 +302,7 @@ class VpnTunnelsClientTest extends GeneratedTest
         $selfLink = 'selfLink-1691268851';
         $sharedSecret = 'sharedSecret-154938422';
         $sharedSecretHash = 'sharedSecretHash935752803';
+        $status = 'status-892481550';
         $targetVpnGateway = 'targetVpnGateway-4358069';
         $vpnGateway = 'vpnGateway-1203928583';
         $vpnGatewayInterface = 632850035;
@@ -322,6 +323,7 @@ class VpnTunnelsClientTest extends GeneratedTest
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setSharedSecret($sharedSecret);
         $expectedResponse->setSharedSecretHash($sharedSecretHash);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setTargetVpnGateway($targetVpnGateway);
         $expectedResponse->setVpnGateway($vpnGateway);
         $expectedResponse->setVpnGatewayInterface($vpnGatewayInterface);

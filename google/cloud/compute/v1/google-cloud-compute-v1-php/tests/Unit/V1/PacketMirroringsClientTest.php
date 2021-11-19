@@ -290,6 +290,7 @@ class PacketMirroringsClientTest extends GeneratedTest
         // Mock response
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
+        $enable = 'enable-1298848381';
         $id = 3355;
         $kind = 'kind3292052';
         $name = 'name3373707';
@@ -299,6 +300,7 @@ class PacketMirroringsClientTest extends GeneratedTest
         $expectedResponse = new PacketMirroring();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setEnable($enable);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);

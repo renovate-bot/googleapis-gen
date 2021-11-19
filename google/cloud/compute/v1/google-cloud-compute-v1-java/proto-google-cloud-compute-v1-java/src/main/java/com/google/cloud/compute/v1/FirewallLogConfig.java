@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private FirewallLogConfig() {
-    metadata_ = 0;
+    metadata_ = "";
   }
 
   @java.lang.Override
@@ -54,10 +54,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 694933880: {
-            int rawValue = input.readEnum();
+          case 694933882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            metadata_ = rawValue;
+            metadata_ = s;
             break;
           }
           case -1800852456: {
@@ -255,41 +255,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int METADATA_FIELD_NUMBER = 86866735;
-  private int metadata_;
+  private volatile java.lang.Object metadata_;
   /**
    * <pre>
    * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    * @return Whether the metadata field is set.
    */
-  @java.lang.Override public boolean hasMetadata() {
+  @java.lang.Override
+  public boolean hasMetadata() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-   * @return The enum numeric value on the wire for metadata.
+   * <code>optional string metadata = 86866735;</code>
+   * @return The metadata.
    */
-  @java.lang.Override public int getMetadataValue() {
-    return metadata_;
+  @java.lang.Override
+  public java.lang.String getMetadata() {
+    java.lang.Object ref = metadata_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      metadata_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-   * @return The metadata.
+   * <code>optional string metadata = 86866735;</code>
+   * @return The bytes for metadata.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.FirewallLogConfig.Metadata getMetadata() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.FirewallLogConfig.Metadata result = com.google.cloud.compute.v1.FirewallLogConfig.Metadata.valueOf(metadata_);
-    return result == null ? com.google.cloud.compute.v1.FirewallLogConfig.Metadata.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMetadataBytes() {
+    java.lang.Object ref = metadata_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      metadata_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -307,7 +330,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(86866735, metadata_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 86866735, metadata_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(311764355, enable_);
@@ -322,8 +345,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(86866735, metadata_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(86866735, metadata_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -351,7 +373,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMetadata() != other.hasMetadata()) return false;
     if (hasMetadata()) {
-      if (metadata_ != other.metadata_) return false;
+      if (!getMetadata()
+          .equals(other.getMetadata())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -371,7 +394,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMetadata()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
-      hash = (53 * hash) + metadata_;
+      hash = (53 * hash) + getMetadata().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -512,7 +535,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       enable_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      metadata_ = 0;
+      metadata_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -603,7 +626,9 @@ private static final long serialVersionUID = 0L;
         setEnable(other.getEnable());
       }
       if (other.hasMetadata()) {
-        setMetadata(other.getMetadata());
+        bitField0_ |= 0x00000002;
+        metadata_ = other.metadata_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -690,40 +715,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int metadata_ = 0;
+    private java.lang.Object metadata_ = "";
     /**
      * <pre>
      * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
      * @return Whether the metadata field is set.
      */
-    @java.lang.Override public boolean hasMetadata() {
+    public boolean hasMetadata() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-     * @return The enum numeric value on the wire for metadata.
+     * <code>optional string metadata = 86866735;</code>
+     * @return The metadata.
      */
-    @java.lang.Override public int getMetadataValue() {
-      return metadata_;
+    public java.lang.String getMetadata() {
+      java.lang.Object ref = metadata_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        metadata_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-     * @param value The enum numeric value on the wire for metadata to set.
+     * <code>optional string metadata = 86866735;</code>
+     * @return The bytes for metadata.
+     */
+    public com.google.protobuf.ByteString
+        getMetadataBytes() {
+      java.lang.Object ref = metadata_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        metadata_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * Check the Metadata enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string metadata = 86866735;</code>
+     * @param value The metadata to set.
      * @return This builder for chaining.
      */
-    public Builder setMetadataValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setMetadata(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       metadata_ = value;
       onChanged();
       return this;
@@ -731,46 +794,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-     * @return The metadata.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.FirewallLogConfig.Metadata getMetadata() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.FirewallLogConfig.Metadata result = com.google.cloud.compute.v1.FirewallLogConfig.Metadata.valueOf(metadata_);
-      return result == null ? com.google.cloud.compute.v1.FirewallLogConfig.Metadata.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-     * @param value The metadata to set.
+     * <code>optional string metadata = 86866735;</code>
      * @return This builder for chaining.
      */
-    public Builder setMetadata(com.google.cloud.compute.v1.FirewallLogConfig.Metadata value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      metadata_ = value.getNumber();
+    public Builder clearMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      metadata_ = getDefaultInstance().getMetadata();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+     * Check the Metadata enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+     * <code>optional string metadata = 86866735;</code>
+     * @param value The bytes for metadata to set.
      * @return This builder for chaining.
      */
-    public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      metadata_ = 0;
+    public Builder setMetadataBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      metadata_ = value;
       onChanged();
       return this;
     }

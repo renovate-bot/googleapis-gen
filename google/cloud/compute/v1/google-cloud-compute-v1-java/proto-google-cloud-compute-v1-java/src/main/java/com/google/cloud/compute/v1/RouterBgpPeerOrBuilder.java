@@ -10,79 +10,79 @@ public interface RouterBgpPeerOrBuilder extends
   /**
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
+   * <code>optional string advertise_mode = 312134331;</code>
    * @return Whether the advertiseMode field is set.
    */
   boolean hasAdvertiseMode();
   /**
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-   * @return The enum numeric value on the wire for advertiseMode.
+   * <code>optional string advertise_mode = 312134331;</code>
+   * @return The advertiseMode.
    */
-  int getAdvertiseModeValue();
+  java.lang.String getAdvertiseMode();
   /**
    * <pre>
    * User-specified flag to indicate which mode to use for advertisement.
+   * Check the AdvertiseMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode advertise_mode = 312134331;</code>
-   * @return The advertiseMode.
+   * <code>optional string advertise_mode = 312134331;</code>
+   * @return The bytes for advertiseMode.
    */
-  com.google.cloud.compute.v1.RouterBgpPeer.AdvertiseMode getAdvertiseMode();
+  com.google.protobuf.ByteString
+      getAdvertiseModeBytes();
 
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @return A list containing the advertisedGroups.
    */
-  java.util.List<com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups> getAdvertisedGroupsList();
+  java.util.List<java.lang.String>
+      getAdvertisedGroupsList();
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @return The count of advertisedGroups.
    */
   int getAdvertisedGroupsCount();
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @param index The index of the element to return.
    * @return The advertisedGroups at the given index.
    */
-  com.google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups getAdvertisedGroups(int index);
+  java.lang.String getAdvertisedGroups(int index);
   /**
    * <pre>
    * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+   * Check the AdvertisedGroups enum for the list of possible values.
    * </pre>
    *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
-   * @return A list containing the enum numeric values on the wire for advertisedGroups.
-   */
-  java.util.List<java.lang.Integer>
-  getAdvertisedGroupsValueList();
-  /**
-   * <pre>
-   * User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
-   * </pre>
-   *
-   * <code>repeated .google.cloud.compute.v1.RouterBgpPeer.AdvertisedGroups advertised_groups = 21065526;</code>
+   * <code>repeated string advertised_groups = 21065526;</code>
    * @param index The index of the value to return.
-   * @return The enum numeric value on the wire of advertisedGroups at the given index.
+   * @return The bytes of the advertisedGroups at the given index.
    */
-  int getAdvertisedGroupsValue(int index);
+  com.google.protobuf.ByteString
+      getAdvertisedGroupsBytes(int index);
 
   /**
    * <pre>
@@ -177,30 +177,34 @@ public interface RouterBgpPeerOrBuilder extends
   /**
    * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
+   * <code>optional string enable = 311764355;</code>
    * @return Whether the enable field is set.
    */
   boolean hasEnable();
   /**
    * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-   * @return The enum numeric value on the wire for enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The enable.
    */
-  int getEnableValue();
+  java.lang.String getEnable();
   /**
    * <pre>
    * The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
+   * Check the Enable enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.Enable enable = 311764355;</code>
-   * @return The enable.
+   * <code>optional string enable = 311764355;</code>
+   * @return The bytes for enable.
    */
-  com.google.cloud.compute.v1.RouterBgpPeer.Enable getEnable();
+  com.google.protobuf.ByteString
+      getEnableBytes();
 
   /**
    * <pre>
@@ -262,31 +266,35 @@ public interface RouterBgpPeerOrBuilder extends
 
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+   * <code>optional string management_type = 173703606;</code>
    * @return Whether the managementType field is set.
    */
   boolean hasManagementType();
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
-   * @return The enum numeric value on the wire for managementType.
-   */
-  int getManagementTypeValue();
-  /**
-   * <pre>
-   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeer.ManagementType management_type = 173703606;</code>
+   * <code>optional string management_type = 173703606;</code>
    * @return The managementType.
    */
-  com.google.cloud.compute.v1.RouterBgpPeer.ManagementType getManagementType();
+  java.lang.String getManagementType();
+  /**
+   * <pre>
+   * [Output Only] The resource that configures and manages this BGP peer. - MANAGED_BY_USER is the default value and can be managed by you or other users - MANAGED_BY_ATTACHMENT is a BGP peer that is configured and managed by Cloud Interconnect, specifically by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of BGP peer when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string management_type = 173703606;</code>
+   * @return The bytes for managementType.
+   */
+  com.google.protobuf.ByteString
+      getManagementTypeBytes();
 
   /**
    * <pre>

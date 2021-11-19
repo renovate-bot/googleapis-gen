@@ -8,34 +8,66 @@ public interface SecurityPolicyAdvancedOptionsConfigOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+   * <pre>
+   * 
+   * Check the JsonParsing enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string json_parsing = 282493529;</code>
    * @return Whether the jsonParsing field is set.
    */
   boolean hasJsonParsing();
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-   * @return The enum numeric value on the wire for jsonParsing.
-   */
-  int getJsonParsingValue();
-  /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+   * <pre>
+   * 
+   * Check the JsonParsing enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string json_parsing = 282493529;</code>
    * @return The jsonParsing.
    */
-  com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing getJsonParsing();
+  java.lang.String getJsonParsing();
+  /**
+   * <pre>
+   * 
+   * Check the JsonParsing enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string json_parsing = 282493529;</code>
+   * @return The bytes for jsonParsing.
+   */
+  com.google.protobuf.ByteString
+      getJsonParsingBytes();
 
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+   * <pre>
+   * 
+   * Check the LogLevel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_level = 140582601;</code>
    * @return Whether the logLevel field is set.
    */
   boolean hasLogLevel();
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-   * @return The enum numeric value on the wire for logLevel.
-   */
-  int getLogLevelValue();
-  /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+   * <pre>
+   * 
+   * Check the LogLevel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_level = 140582601;</code>
    * @return The logLevel.
    */
-  com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel getLogLevel();
+  java.lang.String getLogLevel();
+  /**
+   * <pre>
+   * 
+   * Check the LogLevel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_level = 140582601;</code>
+   * @return The bytes for logLevel.
+   */
+  com.google.protobuf.ByteString
+      getLogLevelBytes();
 }

@@ -53,8 +53,9 @@ class PublicDelegatedPrefixPublicDelegatedSubPrefix extends \Google\Protobuf\Int
     protected $region = null;
     /**
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
 
@@ -76,8 +77,9 @@ class PublicDelegatedPrefixPublicDelegatedSubPrefix extends \Google\Protobuf\Int
      *           The name of the sub public delegated prefix.
      *     @type string $region
      *           [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the sub public delegated prefix.
+     *           Check the Status enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -303,13 +305,14 @@ class PublicDelegatedPrefixPublicDelegatedSubPrefix extends \Google\Protobuf\Int
 
     /**
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -324,14 +327,15 @@ class PublicDelegatedPrefixPublicDelegatedSubPrefix extends \Google\Protobuf\Int
 
     /**
      * [Output Only] The status of the sub public delegated prefix.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PublicDelegatedPrefixPublicDelegatedSubPrefix.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\PublicDelegatedPrefixPublicDelegatedSubPrefix\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

@@ -107,8 +107,9 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
     protected $timeout_sec = null;
     /**
      * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
     /**
@@ -152,8 +153,9 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\TCPHealthCheck $tcp_health_check
      *     @type int $timeout_sec
      *           How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
-     *     @type int $type
+     *     @type string $type
      *           Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     *           Check the Type enum for the list of possible values.
      *     @type int $unhealthy_threshold
      *           A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
      * }
@@ -753,13 +755,14 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -774,14 +777,15 @@ class HealthCheck extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of the healthCheck, either TCP, SSL, HTTP, HTTPS or HTTP2. If not specified, the default is TCP. Exactly one of the protocol-specific health check field must be specified, which must match type field.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthCheck.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HealthCheck\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

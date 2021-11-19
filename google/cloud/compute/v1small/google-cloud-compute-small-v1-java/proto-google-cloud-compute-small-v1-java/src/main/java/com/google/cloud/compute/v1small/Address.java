@@ -29,18 +29,18 @@ private static final long serialVersionUID = 0L;
   }
   private Address() {
     address_ = "";
-    addressType_ = 0;
+    addressType_ = "";
     creationTimestamp_ = "";
     description_ = "";
-    ipVersion_ = 0;
+    ipVersion_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
-    networkTier_ = 0;
-    purpose_ = 0;
+    networkTier_ = "";
+    purpose_ = "";
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     subnetwork_ = "";
     users_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
@@ -114,10 +114,10 @@ private static final long serialVersionUID = 0L;
             region_ = s;
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00004000;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case 1862979954: {
@@ -126,16 +126,16 @@ private static final long serialVersionUID = 0L;
             network_ = s;
             break;
           }
-          case 2114463016: {
-            int rawValue = input.readEnum();
+          case 2114463018: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            addressType_ = rawValue;
+            addressType_ = s;
             break;
           }
-          case -1935290880: {
-            int rawValue = input.readEnum();
+          case -1935290878: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000020;
-            ipVersion_ = rawValue;
+            ipVersion_ = s;
             break;
           }
           case -1832345742: {
@@ -144,10 +144,10 @@ private static final long serialVersionUID = 0L;
             subnetwork_ = s;
             break;
           }
-          case -1763710736: {
-            int rawValue = input.readEnum();
+          case -1763710734: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000800;
-            purpose_ = rawValue;
+            purpose_ = s;
             break;
           }
           case -911466526: {
@@ -173,10 +173,10 @@ private static final long serialVersionUID = 0L;
             address_ = s;
             break;
           }
-          case -155784552: {
-            int rawValue = input.readEnum();
+          case -155784550: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000200;
-            networkTier_ = rawValue;
+            networkTier_ = s;
             break;
           }
           default: {
@@ -969,41 +969,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ADDRESS_TYPE_FIELD_NUMBER = 264307877;
-  private int addressType_;
+  private volatile java.lang.Object addressType_;
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
+   * <code>optional string address_type = 264307877;</code>
    * @return Whether the addressType field is set.
    */
-  @java.lang.Override public boolean hasAddressType() {
+  @java.lang.Override
+  public boolean hasAddressType() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-   * @return The enum numeric value on the wire for addressType.
+   * <code>optional string address_type = 264307877;</code>
+   * @return The addressType.
    */
-  @java.lang.Override public int getAddressTypeValue() {
-    return addressType_;
+  @java.lang.Override
+  public java.lang.String getAddressType() {
+    java.lang.Object ref = addressType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      addressType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-   * @return The addressType.
+   * <code>optional string address_type = 264307877;</code>
+   * @return The bytes for addressType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1small.Address.AddressType getAddressType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1small.Address.AddressType result = com.google.cloud.compute.v1small.Address.AddressType.valueOf(addressType_);
-    return result == null ? com.google.cloud.compute.v1small.Address.AddressType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getAddressTypeBytes() {
+    java.lang.Object ref = addressType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      addressType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -1150,41 +1173,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IP_VERSION_FIELD_NUMBER = 294959552;
-  private int ipVersion_;
+  private volatile java.lang.Object ipVersion_;
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    * @return Whether the ipVersion field is set.
    */
-  @java.lang.Override public boolean hasIpVersion() {
+  @java.lang.Override
+  public boolean hasIpVersion() {
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-   * @return The enum numeric value on the wire for ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The ipVersion.
    */
-  @java.lang.Override public int getIpVersionValue() {
-    return ipVersion_;
+  @java.lang.Override
+  public java.lang.String getIpVersion() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipVersion_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-   * @return The ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The bytes for ipVersion.
    */
-  @java.lang.Override public com.google.cloud.compute.v1small.Address.IpVersion getIpVersion() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1small.Address.IpVersion result = com.google.cloud.compute.v1small.Address.IpVersion.valueOf(ipVersion_);
-    return result == null ? com.google.cloud.compute.v1small.Address.IpVersion.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIpVersionBytes() {
+    java.lang.Object ref = ipVersion_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ipVersion_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1362,44 +1408,67 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private int networkTier_;
+  private volatile java.lang.Object networkTier_;
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
    * If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
-  @java.lang.Override public boolean hasNetworkTier() {
+  @java.lang.Override
+  public boolean hasNetworkTier() {
     return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
    * If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  @java.lang.Override public int getNetworkTierValue() {
-    return networkTier_;
+  @java.lang.Override
+  public java.lang.String getNetworkTier() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkTier_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
    * If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  @java.lang.Override public com.google.cloud.compute.v1small.Address.NetworkTier getNetworkTier() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1small.Address.NetworkTier result = com.google.cloud.compute.v1small.Address.NetworkTier.valueOf(networkTier_);
-    return result == null ? com.google.cloud.compute.v1small.Address.NetworkTier.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkTierBytes() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PREFIX_LENGTH_FIELD_NUMBER = 453565747;
@@ -1430,7 +1499,7 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PURPOSE_FIELD_NUMBER = 316407070;
-  private int purpose_;
+  private volatile java.lang.Object purpose_;
   /**
    * <pre>
    * The purpose of this resource, which can be one of the following values:
@@ -1438,12 +1507,14 @@ private static final long serialVersionUID = 0L;
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    * @return Whether the purpose field is set.
    */
-  @java.lang.Override public boolean hasPurpose() {
+  @java.lang.Override
+  public boolean hasPurpose() {
     return ((bitField0_ & 0x00000800) != 0);
   }
   /**
@@ -1453,13 +1524,24 @@ private static final long serialVersionUID = 0L;
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-   * @return The enum numeric value on the wire for purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The purpose.
    */
-  @java.lang.Override public int getPurposeValue() {
-    return purpose_;
+  @java.lang.Override
+  public java.lang.String getPurpose() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      purpose_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
@@ -1468,15 +1550,25 @@ private static final long serialVersionUID = 0L;
    * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
    * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
    * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-   * @return The purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The bytes for purpose.
    */
-  @java.lang.Override public com.google.cloud.compute.v1small.Address.Purpose getPurpose() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1small.Address.Purpose result = com.google.cloud.compute.v1small.Address.Purpose.valueOf(purpose_);
-    return result == null ? com.google.cloud.compute.v1small.Address.Purpose.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPurposeBytes() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      purpose_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -1596,41 +1688,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00004000) != 0);
   }
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1small.Address.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1small.Address.Status result = com.google.cloud.compute.v1small.Address.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1small.Address.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SUBNETWORK_FIELD_NUMBER = 307827694;
@@ -1775,22 +1890,22 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 232872494, network_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(264307877, addressType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 264307877, addressType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(294959552, ipVersion_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 294959552, ipVersion_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeEnum(316407070, purpose_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 316407070, purpose_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
@@ -1805,7 +1920,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 462920692, address_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(517397843, networkTier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
     unknownFields.writeTo(output);
   }
@@ -1841,26 +1956,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00004000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(232872494, network_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(264307877, addressType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(264307877, addressType_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(294959552, ipVersion_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(294959552, ipVersion_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(316407070, purpose_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316407070, purpose_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
@@ -1876,8 +1987,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(462920692, address_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(517397843, networkTier_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1901,7 +2011,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasAddressType() != other.hasAddressType()) return false;
     if (hasAddressType()) {
-      if (addressType_ != other.addressType_) return false;
+      if (!getAddressType()
+          .equals(other.getAddressType())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -1920,7 +2031,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpVersion() != other.hasIpVersion()) return false;
     if (hasIpVersion()) {
-      if (ipVersion_ != other.ipVersion_) return false;
+      if (!getIpVersion()
+          .equals(other.getIpVersion())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -1939,7 +2051,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
-      if (networkTier_ != other.networkTier_) return false;
+      if (!getNetworkTier()
+          .equals(other.getNetworkTier())) return false;
     }
     if (hasPrefixLength() != other.hasPrefixLength()) return false;
     if (hasPrefixLength()) {
@@ -1948,7 +2061,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPurpose() != other.hasPurpose()) return false;
     if (hasPurpose()) {
-      if (purpose_ != other.purpose_) return false;
+      if (!getPurpose()
+          .equals(other.getPurpose())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -1962,7 +2076,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasSubnetwork() != other.hasSubnetwork()) return false;
     if (hasSubnetwork()) {
@@ -1988,7 +2103,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasAddressType()) {
       hash = (37 * hash) + ADDRESS_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + addressType_;
+      hash = (53 * hash) + getAddressType().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -2005,7 +2120,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpVersion()) {
       hash = (37 * hash) + IP_VERSION_FIELD_NUMBER;
-      hash = (53 * hash) + ipVersion_;
+      hash = (53 * hash) + getIpVersion().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -2021,7 +2136,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + networkTier_;
+      hash = (53 * hash) + getNetworkTier().hashCode();
     }
     if (hasPrefixLength()) {
       hash = (37 * hash) + PREFIX_LENGTH_FIELD_NUMBER;
@@ -2029,7 +2144,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPurpose()) {
       hash = (37 * hash) + PURPOSE_FIELD_NUMBER;
-      hash = (53 * hash) + purpose_;
+      hash = (53 * hash) + getPurpose().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -2041,7 +2156,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasSubnetwork()) {
       hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
@@ -2198,7 +2313,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       address_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      addressType_ = 0;
+      addressType_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -2206,7 +2321,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
       id_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
-      ipVersion_ = 0;
+      ipVersion_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -2214,17 +2329,17 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000080);
       network_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
-      networkTier_ = 0;
+      networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       prefixLength_ = 0;
       bitField0_ = (bitField0_ & ~0x00000400);
-      purpose_ = 0;
+      purpose_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00001000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       subnetwork_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
@@ -2382,7 +2497,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasAddressType()) {
-        setAddressType(other.getAddressType());
+        bitField0_ |= 0x00000002;
+        addressType_ = other.addressType_;
+        onChanged();
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000004;
@@ -2398,7 +2515,9 @@ private static final long serialVersionUID = 0L;
         setId(other.getId());
       }
       if (other.hasIpVersion()) {
-        setIpVersion(other.getIpVersion());
+        bitField0_ |= 0x00000020;
+        ipVersion_ = other.ipVersion_;
+        onChanged();
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000040;
@@ -2416,13 +2535,17 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        setNetworkTier(other.getNetworkTier());
+        bitField0_ |= 0x00000200;
+        networkTier_ = other.networkTier_;
+        onChanged();
       }
       if (other.hasPrefixLength()) {
         setPrefixLength(other.getPrefixLength());
       }
       if (other.hasPurpose()) {
-        setPurpose(other.getPurpose());
+        bitField0_ |= 0x00000800;
+        purpose_ = other.purpose_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00001000;
@@ -2435,7 +2558,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00004000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasSubnetwork()) {
         bitField0_ |= 0x00008000;
@@ -2589,40 +2714,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int addressType_ = 0;
+    private java.lang.Object addressType_ = "";
     /**
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
      * @return Whether the addressType field is set.
      */
-    @java.lang.Override public boolean hasAddressType() {
+    public boolean hasAddressType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-     * @return The enum numeric value on the wire for addressType.
+     * <code>optional string address_type = 264307877;</code>
+     * @return The addressType.
      */
-    @java.lang.Override public int getAddressTypeValue() {
-      return addressType_;
+    public java.lang.String getAddressType() {
+      java.lang.Object ref = addressType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        addressType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-     * @param value The enum numeric value on the wire for addressType to set.
+     * <code>optional string address_type = 264307877;</code>
+     * @return The bytes for addressType.
+     */
+    public com.google.protobuf.ByteString
+        getAddressTypeBytes() {
+      java.lang.Object ref = addressType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        addressType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string address_type = 264307877;</code>
+     * @param value The addressType to set.
      * @return This builder for chaining.
      */
-    public Builder setAddressTypeValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setAddressType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       addressType_ = value;
       onChanged();
       return this;
@@ -2630,46 +2793,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-     * @return The addressType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1small.Address.AddressType getAddressType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1small.Address.AddressType result = com.google.cloud.compute.v1small.Address.AddressType.valueOf(addressType_);
-      return result == null ? com.google.cloud.compute.v1small.Address.AddressType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
-     * @param value The addressType to set.
+     * <code>optional string address_type = 264307877;</code>
      * @return This builder for chaining.
      */
-    public Builder setAddressType(com.google.cloud.compute.v1small.Address.AddressType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      addressType_ = value.getNumber();
+    public Builder clearAddressType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      addressType_ = getDefaultInstance().getAddressType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+     * Check the AddressType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.AddressType address_type = 264307877;</code>
+     * <code>optional string address_type = 264307877;</code>
+     * @param value The bytes for addressType to set.
      * @return This builder for chaining.
      */
-    public Builder clearAddressType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      addressType_ = 0;
+    public Builder setAddressTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      addressType_ = value;
       onChanged();
       return this;
     }
@@ -2943,40 +3096,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int ipVersion_ = 0;
+    private java.lang.Object ipVersion_ = "";
     /**
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
      * @return Whether the ipVersion field is set.
      */
-    @java.lang.Override public boolean hasIpVersion() {
+    public boolean hasIpVersion() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-     * @return The enum numeric value on the wire for ipVersion.
+     * <code>optional string ip_version = 294959552;</code>
+     * @return The ipVersion.
      */
-    @java.lang.Override public int getIpVersionValue() {
-      return ipVersion_;
+    public java.lang.String getIpVersion() {
+      java.lang.Object ref = ipVersion_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipVersion_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-     * @param value The enum numeric value on the wire for ipVersion to set.
+     * <code>optional string ip_version = 294959552;</code>
+     * @return The bytes for ipVersion.
+     */
+    public com.google.protobuf.ByteString
+        getIpVersionBytes() {
+      java.lang.Object ref = ipVersion_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ip_version = 294959552;</code>
+     * @param value The ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder setIpVersionValue(int value) {
-      bitField0_ |= 0x00000020;
+    public Builder setIpVersion(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
       ipVersion_ = value;
       onChanged();
       return this;
@@ -2984,46 +3175,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-     * @return The ipVersion.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1small.Address.IpVersion getIpVersion() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1small.Address.IpVersion result = com.google.cloud.compute.v1small.Address.IpVersion.valueOf(ipVersion_);
-      return result == null ? com.google.cloud.compute.v1small.Address.IpVersion.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
-     * @param value The ipVersion to set.
+     * <code>optional string ip_version = 294959552;</code>
      * @return This builder for chaining.
      */
-    public Builder setIpVersion(com.google.cloud.compute.v1small.Address.IpVersion value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      ipVersion_ = value.getNumber();
+    public Builder clearIpVersion() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ipVersion_ = getDefaultInstance().getIpVersion();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+     * Check the IpVersion enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.IpVersion ip_version = 294959552;</code>
+     * <code>optional string ip_version = 294959552;</code>
+     * @param value The bytes for ipVersion to set.
      * @return This builder for chaining.
      */
-    public Builder clearIpVersion() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      ipVersion_ = 0;
+    public Builder setIpVersionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      ipVersion_ = value;
       onChanged();
       return this;
     }
@@ -3349,43 +3530,82 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int networkTier_ = 0;
+    private java.lang.Object networkTier_ = "";
     /**
      * <pre>
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
      * If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      * @return Whether the networkTier field is set.
      */
-    @java.lang.Override public boolean hasNetworkTier() {
+    public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
      * If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-     * @return The enum numeric value on the wire for networkTier.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The networkTier.
      */
-    @java.lang.Override public int getNetworkTierValue() {
-      return networkTier_;
+    public java.lang.String getNetworkTier() {
+      java.lang.Object ref = networkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
      * If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-     * @param value The enum numeric value on the wire for networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The bytes for networkTier.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkTierBytes() {
+      java.lang.Object ref = networkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
+     * If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkTierValue(int value) {
-      bitField0_ |= 0x00000200;
+    public Builder setNetworkTier(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000200;
       networkTier_ = value;
       onChanged();
       return this;
@@ -3394,33 +3614,15 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
      * If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-     * @return The networkTier.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1small.Address.NetworkTier getNetworkTier() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1small.Address.NetworkTier result = com.google.cloud.compute.v1small.Address.NetworkTier.valueOf(networkTier_);
-      return result == null ? com.google.cloud.compute.v1small.Address.NetworkTier.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
-     * If this field is not specified, it is assumed to be PREMIUM.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
-     * @param value The networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
      * @return This builder for chaining.
      */
-    public Builder setNetworkTier(com.google.cloud.compute.v1small.Address.NetworkTier value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000200;
-      networkTier_ = value.getNumber();
+    public Builder clearNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      networkTier_ = getDefaultInstance().getNetworkTier();
       onChanged();
       return this;
     }
@@ -3428,14 +3630,21 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Global forwarding rules can only be Premium Tier. Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to regional forwarding rules can be used with any external load balancer. Regional forwarding rules in Premium Tier can only be used with a network load balancer.
      * If this field is not specified, it is assumed to be PREMIUM.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The bytes for networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000200);
-      networkTier_ = 0;
+    public Builder setNetworkTierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000200;
+      networkTier_ = value;
       onChanged();
       return this;
     }
@@ -3495,7 +3704,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int purpose_ = 0;
+    private java.lang.Object purpose_ = "";
     /**
      * <pre>
      * The purpose of this resource, which can be one of the following values:
@@ -3503,12 +3712,13 @@ private static final long serialVersionUID = 0L;
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      * @return Whether the purpose field is set.
      */
-    @java.lang.Override public boolean hasPurpose() {
+    public boolean hasPurpose() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
@@ -3518,13 +3728,23 @@ private static final long serialVersionUID = 0L;
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-     * @return The enum numeric value on the wire for purpose.
+     * <code>optional string purpose = 316407070;</code>
+     * @return The purpose.
      */
-    @java.lang.Override public int getPurposeValue() {
-      return purpose_;
+    public java.lang.String getPurpose() {
+      java.lang.Object ref = purpose_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        purpose_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
@@ -3533,14 +3753,45 @@ private static final long serialVersionUID = 0L;
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-     * @param value The enum numeric value on the wire for purpose to set.
+     * <code>optional string purpose = 316407070;</code>
+     * @return The bytes for purpose.
+     */
+    public com.google.protobuf.ByteString
+        getPurposeBytes() {
+      java.lang.Object ref = purpose_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        purpose_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The purpose of this resource, which can be one of the following values:
+     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
+     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
+     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
+     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     * @param value The purpose to set.
      * @return This builder for chaining.
      */
-    public Builder setPurposeValue(int value) {
-      bitField0_ |= 0x00000800;
+    public Builder setPurpose(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
       purpose_ = value;
       onChanged();
       return this;
@@ -3552,36 +3803,15 @@ private static final long serialVersionUID = 0L;
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-     * @return The purpose.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1small.Address.Purpose getPurpose() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1small.Address.Purpose result = com.google.cloud.compute.v1small.Address.Purpose.valueOf(purpose_);
-      return result == null ? com.google.cloud.compute.v1small.Address.Purpose.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The purpose of this resource, which can be one of the following values:
-     * - `GCE_ENDPOINT` for addresses that are used by VM instances, alias IP ranges, internal load balancers, and similar resources.
-     * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
-     * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
-     * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
-     * @param value The purpose to set.
+     * <code>optional string purpose = 316407070;</code>
      * @return This builder for chaining.
      */
-    public Builder setPurpose(com.google.cloud.compute.v1small.Address.Purpose value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      purpose_ = value.getNumber();
+    public Builder clearPurpose() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      purpose_ = getDefaultInstance().getPurpose();
       onChanged();
       return this;
     }
@@ -3592,14 +3822,21 @@ private static final long serialVersionUID = 0L;
      * - `DNS_RESOLVER` for a DNS resolver address in a subnetwork
      * - `VPC_PEERING` for addresses that are reserved for VPC peer networks.
      * - `NAT_AUTO` for addresses that are external IP addresses automatically reserved for Cloud NAT.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
+     * @param value The bytes for purpose to set.
      * @return This builder for chaining.
      */
-    public Builder clearPurpose() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      purpose_ = 0;
+    public Builder setPurposeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      purpose_ = value;
       onChanged();
       return this;
     }
@@ -3818,40 +4055,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00004000;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
       return this;
@@ -3859,46 +4134,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1small.Address.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1small.Address.Status result = com.google.cloud.compute.v1small.Address.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1small.Address.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1small.Address.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1small.Address.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      status_ = value;
       onChanged();
       return this;
     }

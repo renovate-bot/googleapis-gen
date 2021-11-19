@@ -25,11 +25,11 @@ private static final long serialVersionUID = 0L;
     fingerprint_ = "";
     kind_ = "";
     locationHint_ = "";
-    maintenancePolicy_ = 0;
+    maintenancePolicy_ = "";
     name_ = "";
     nodeTemplate_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     zone_ = "";
   }
 
@@ -98,10 +98,10 @@ private static final long serialVersionUID = 0L;
             creationTimestamp_ = s;
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00002000;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case 1490998498: {
@@ -160,10 +160,10 @@ private static final long serialVersionUID = 0L;
             selfLink_ = s;
             break;
           }
-          case -68346128: {
-            int rawValue = input.readEnum();
+          case -68346126: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            maintenancePolicy_ = rawValue;
+            maintenancePolicy_ = s;
             break;
           }
           default: {
@@ -860,41 +860,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MAINTENANCE_POLICY_FIELD_NUMBER = 528327646;
-  private int maintenancePolicy_;
+  private volatile java.lang.Object maintenancePolicy_;
   /**
    * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+   * <code>optional string maintenance_policy = 528327646;</code>
    * @return Whether the maintenancePolicy field is set.
    */
-  @java.lang.Override public boolean hasMaintenancePolicy() {
+  @java.lang.Override
+  public boolean hasMaintenancePolicy() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-   * @return The enum numeric value on the wire for maintenancePolicy.
+   * <code>optional string maintenance_policy = 528327646;</code>
+   * @return The maintenancePolicy.
    */
-  @java.lang.Override public int getMaintenancePolicyValue() {
-    return maintenancePolicy_;
+  @java.lang.Override
+  public java.lang.String getMaintenancePolicy() {
+    java.lang.Object ref = maintenancePolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      maintenancePolicy_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-   * @return The maintenancePolicy.
+   * <code>optional string maintenance_policy = 528327646;</code>
+   * @return The bytes for maintenancePolicy.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy getMaintenancePolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy result = com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.valueOf(maintenancePolicy_);
-    return result == null ? com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getMaintenancePolicyBytes() {
+    java.lang.Object ref = maintenancePolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      maintenancePolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int MAINTENANCE_WINDOW_FIELD_NUMBER = 186374812;
@@ -1125,29 +1148,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
-   * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   * <pre>
+   * 
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00002000) != 0);
   }
   /**
-   * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
-   */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
-  }
-  /**
-   * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   * <pre>
+   * 
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    * @return The status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NodeGroup.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeGroup.Status result = com.google.cloud.compute.v1.NodeGroup.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.NodeGroup.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int ZONE_FIELD_NUMBER = 3744684;
@@ -1241,7 +1299,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(186374812, getMaintenanceWindow());
@@ -1265,7 +1323,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(528327646, maintenancePolicy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 528327646, maintenancePolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -1297,8 +1355,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00002000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1324,8 +1381,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(528327646, maintenancePolicy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(528327646, maintenancePolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1379,7 +1435,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMaintenancePolicy() != other.hasMaintenancePolicy()) return false;
     if (hasMaintenancePolicy()) {
-      if (maintenancePolicy_ != other.maintenancePolicy_) return false;
+      if (!getMaintenancePolicy()
+          .equals(other.getMaintenancePolicy())) return false;
     }
     if (hasMaintenanceWindow() != other.hasMaintenanceWindow()) return false;
     if (hasMaintenanceWindow()) {
@@ -1408,7 +1465,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasZone() != other.hasZone()) return false;
     if (hasZone()) {
@@ -1457,7 +1515,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMaintenancePolicy()) {
       hash = (37 * hash) + MAINTENANCE_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + maintenancePolicy_;
+      hash = (53 * hash) + getMaintenancePolicy().hashCode();
     }
     if (hasMaintenanceWindow()) {
       hash = (37 * hash) + MAINTENANCE_WINDOW_FIELD_NUMBER;
@@ -1481,7 +1539,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasZone()) {
       hash = (37 * hash) + ZONE_FIELD_NUMBER;
@@ -1644,7 +1702,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000020);
       locationHint_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
-      maintenancePolicy_ = 0;
+      maintenancePolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
       if (maintenanceWindowBuilder_ == null) {
         maintenanceWindow_ = null;
@@ -1660,7 +1718,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000800);
       size_ = 0;
       bitField0_ = (bitField0_ & ~0x00001000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
       zone_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
@@ -1841,7 +1899,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasMaintenancePolicy()) {
-        setMaintenancePolicy(other.getMaintenancePolicy());
+        bitField0_ |= 0x00000080;
+        maintenancePolicy_ = other.maintenancePolicy_;
+        onChanged();
       }
       if (other.hasMaintenanceWindow()) {
         mergeMaintenanceWindow(other.getMaintenanceWindow());
@@ -1865,7 +1925,9 @@ private static final long serialVersionUID = 0L;
         setSize(other.getSize());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00002000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasZone()) {
         bitField0_ |= 0x00004000;
@@ -2624,40 +2686,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int maintenancePolicy_ = 0;
+    private java.lang.Object maintenancePolicy_ = "";
     /**
      * <pre>
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+     * <code>optional string maintenance_policy = 528327646;</code>
      * @return Whether the maintenancePolicy field is set.
      */
-    @java.lang.Override public boolean hasMaintenancePolicy() {
+    public boolean hasMaintenancePolicy() {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-     * @return The enum numeric value on the wire for maintenancePolicy.
+     * <code>optional string maintenance_policy = 528327646;</code>
+     * @return The maintenancePolicy.
      */
-    @java.lang.Override public int getMaintenancePolicyValue() {
-      return maintenancePolicy_;
+    public java.lang.String getMaintenancePolicy() {
+      java.lang.Object ref = maintenancePolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        maintenancePolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-     * @param value The enum numeric value on the wire for maintenancePolicy to set.
+     * <code>optional string maintenance_policy = 528327646;</code>
+     * @return The bytes for maintenancePolicy.
+     */
+    public com.google.protobuf.ByteString
+        getMaintenancePolicyBytes() {
+      java.lang.Object ref = maintenancePolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        maintenancePolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string maintenance_policy = 528327646;</code>
+     * @param value The maintenancePolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setMaintenancePolicyValue(int value) {
-      bitField0_ |= 0x00000080;
+    public Builder setMaintenancePolicy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000080;
       maintenancePolicy_ = value;
       onChanged();
       return this;
@@ -2665,46 +2765,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-     * @return The maintenancePolicy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy getMaintenancePolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy result = com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.valueOf(maintenancePolicy_);
-      return result == null ? com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-     * @param value The maintenancePolicy to set.
+     * <code>optional string maintenance_policy = 528327646;</code>
      * @return This builder for chaining.
      */
-    public Builder setMaintenancePolicy(com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000080;
-      maintenancePolicy_ = value.getNumber();
+    public Builder clearMaintenancePolicy() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      maintenancePolicy_ = getDefaultInstance().getMaintenancePolicy();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+     * Check the MaintenancePolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+     * <code>optional string maintenance_policy = 528327646;</code>
+     * @param value The bytes for maintenancePolicy to set.
      * @return This builder for chaining.
      */
-    public Builder clearMaintenancePolicy() {
-      bitField0_ = (bitField0_ & ~0x00000080);
-      maintenancePolicy_ = 0;
+    public Builder setMaintenancePolicyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000080;
+      maintenancePolicy_ = value;
       onChanged();
       return this;
     }
@@ -3205,63 +3295,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
-     * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+     * <pre>
+     * 
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <pre>
+     * 
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <pre>
+     * 
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00002000;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
       status_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeGroup.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeGroup.Status result = com.google.cloud.compute.v1.NodeGroup.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.NodeGroup.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-     * @param value The status to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStatus(com.google.cloud.compute.v1.NodeGroup.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00002000;
-      status_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+     * <pre>
+     * 
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
     public Builder clearStatus() {
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = getDefaultInstance().getStatus();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00002000;
+      status_ = value;
       onChanged();
       return this;
     }

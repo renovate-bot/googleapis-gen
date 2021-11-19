@@ -26,19 +26,19 @@ private static final long serialVersionUID = 0L;
     fingerprint_ = "";
     gatewayAddress_ = "";
     ipCidrRange_ = "";
-    ipv6AccessType_ = 0;
+    ipv6AccessType_ = "";
     ipv6CidrRange_ = "";
     kind_ = "";
     name_ = "";
     network_ = "";
-    privateIpv6GoogleAccess_ = 0;
-    purpose_ = 0;
+    privateIpv6GoogleAccess_ = "";
+    purpose_ = "";
     region_ = "";
-    role_ = 0;
+    role_ = "";
     secondaryIpRanges_ = java.util.Collections.emptyList();
     selfLink_ = "";
-    stackType_ = 0;
-    state_ = 0;
+    stackType_ = "";
+    state_ = "";
   }
 
   @java.lang.Override
@@ -89,10 +89,10 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 28050352: {
-            int rawValue = input.readEnum();
+          case 28050354: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00040000;
-            role_ = rawValue;
+            role_ = s;
             break;
           }
           case 244202930: {
@@ -101,10 +101,10 @@ private static final long serialVersionUID = 0L;
             creationTimestamp_ = s;
             break;
           }
-          case 386216048: {
-            int rawValue = input.readEnum();
+          case 386216050: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00008000;
-            privateIpv6GoogleAccess_ = rawValue;
+            privateIpv6GoogleAccess_ = s;
             break;
           }
           case 784938578: {
@@ -113,10 +113,10 @@ private static final long serialVersionUID = 0L;
             ipCidrRange_ = s;
             break;
           }
-          case 878060680: {
-            int rawValue = input.readEnum();
+          case 878060682: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00200000;
-            state_ = rawValue;
+            state_ = s;
             break;
           }
           case 1093271322: {
@@ -163,10 +163,10 @@ private static final long serialVersionUID = 0L;
             ipv6CidrRange_ = s;
             break;
           }
-          case -1763710736: {
-            int rawValue = input.readEnum();
+          case -1763710734: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00010000;
-            purpose_ = rawValue;
+            purpose_ = s;
             break;
           }
           case -1484569366: {
@@ -193,10 +193,10 @@ private static final long serialVersionUID = 0L;
             description_ = s;
             break;
           }
-          case -887696248: {
-            int rawValue = input.readEnum();
+          case -887696246: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00100000;
-            stackType_ = rawValue;
+            stackType_ = s;
             break;
           }
           case -645248918: {
@@ -211,10 +211,10 @@ private static final long serialVersionUID = 0L;
             gatewayAddress_ = s;
             break;
           }
-          case -257698072: {
-            int rawValue = input.readEnum();
+          case -257698070: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000100;
-            ipv6AccessType_ = rawValue;
+            ipv6AccessType_ = s;
             break;
           }
           default: {
@@ -1586,41 +1586,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int IPV6_ACCESS_TYPE_FIELD_NUMBER = 504658653;
-  private int ipv6AccessType_;
+  private volatile java.lang.Object ipv6AccessType_;
   /**
    * <pre>
    * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   * <code>optional string ipv6_access_type = 504658653;</code>
    * @return Whether the ipv6AccessType field is set.
    */
-  @java.lang.Override public boolean hasIpv6AccessType() {
+  @java.lang.Override
+  public boolean hasIpv6AccessType() {
     return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <pre>
    * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The enum numeric value on the wire for ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The ipv6AccessType.
    */
-  @java.lang.Override public int getIpv6AccessTypeValue() {
-    return ipv6AccessType_;
+  @java.lang.Override
+  public java.lang.String getIpv6AccessType() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipv6AccessType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The bytes for ipv6AccessType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType getIpv6AccessType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType result = com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.valueOf(ipv6AccessType_);
-    return result == null ? com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIpv6AccessTypeBytes() {
+    java.lang.Object ref = ipv6AccessType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ipv6AccessType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int IPV6_CIDR_RANGE_FIELD_NUMBER = 273141258;
@@ -1921,79 +1944,125 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER = 48277006;
-  private int privateIpv6GoogleAccess_;
+  private volatile java.lang.Object privateIpv6GoogleAccess_;
   /**
    * <pre>
    * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
-  @java.lang.Override public boolean hasPrivateIpv6GoogleAccess() {
+  @java.lang.Override
+  public boolean hasPrivateIpv6GoogleAccess() {
     return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    * <pre>
    * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The privateIpv6GoogleAccess.
    */
-  @java.lang.Override public int getPrivateIpv6GoogleAccessValue() {
-    return privateIpv6GoogleAccess_;
+  @java.lang.Override
+  public java.lang.String getPrivateIpv6GoogleAccess() {
+    java.lang.Object ref = privateIpv6GoogleAccess_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      privateIpv6GoogleAccess_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess result = com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
-    return result == null ? com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPrivateIpv6GoogleAccessBytes() {
+    java.lang.Object ref = privateIpv6GoogleAccess_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      privateIpv6GoogleAccess_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PURPOSE_FIELD_NUMBER = 316407070;
-  private int purpose_;
+  private volatile java.lang.Object purpose_;
   /**
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    * @return Whether the purpose field is set.
    */
-  @java.lang.Override public boolean hasPurpose() {
+  @java.lang.Override
+  public boolean hasPurpose() {
     return ((bitField0_ & 0x00010000) != 0);
   }
   /**
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-   * @return The enum numeric value on the wire for purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The purpose.
    */
-  @java.lang.Override public int getPurposeValue() {
-    return purpose_;
+  @java.lang.Override
+  public java.lang.String getPurpose() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      purpose_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-   * @return The purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The bytes for purpose.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subnetwork.Purpose getPurpose() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subnetwork.Purpose result = com.google.cloud.compute.v1.Subnetwork.Purpose.valueOf(purpose_);
-    return result == null ? com.google.cloud.compute.v1.Subnetwork.Purpose.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPurposeBytes() {
+    java.lang.Object ref = purpose_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      purpose_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int REGION_FIELD_NUMBER = 138946292;
@@ -2055,41 +2124,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROLE_FIELD_NUMBER = 3506294;
-  private int role_;
+  private volatile java.lang.Object role_;
   /**
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+   * <code>optional string role = 3506294;</code>
    * @return Whether the role field is set.
    */
-  @java.lang.Override public boolean hasRole() {
+  @java.lang.Override
+  public boolean hasRole() {
     return ((bitField0_ & 0x00040000) != 0);
   }
   /**
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-   * @return The enum numeric value on the wire for role.
+   * <code>optional string role = 3506294;</code>
+   * @return The role.
    */
-  @java.lang.Override public int getRoleValue() {
-    return role_;
+  @java.lang.Override
+  public java.lang.String getRole() {
+    java.lang.Object ref = role_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      role_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-   * @return The role.
+   * <code>optional string role = 3506294;</code>
+   * @return The bytes for role.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subnetwork.Role getRole() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subnetwork.Role result = com.google.cloud.compute.v1.Subnetwork.Role.valueOf(role_);
-    return result == null ? com.google.cloud.compute.v1.Subnetwork.Role.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleBytes() {
+    java.lang.Object ref = role_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      role_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SECONDARY_IP_RANGES_FIELD_NUMBER = 136658915;
@@ -2211,79 +2303,125 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STACK_TYPE_FIELD_NUMBER = 425908881;
-  private int stackType_;
+  private volatile java.lang.Object stackType_;
   /**
    * <pre>
    * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   * <code>optional string stack_type = 425908881;</code>
    * @return Whether the stackType field is set.
    */
-  @java.lang.Override public boolean hasStackType() {
+  @java.lang.Override
+  public boolean hasStackType() {
     return ((bitField0_ & 0x00100000) != 0);
   }
   /**
    * <pre>
    * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-   * @return The enum numeric value on the wire for stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The stackType.
    */
-  @java.lang.Override public int getStackTypeValue() {
-    return stackType_;
+  @java.lang.Override
+  public java.lang.String getStackType() {
+    java.lang.Object ref = stackType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      stackType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-   * @return The stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The bytes for stackType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subnetwork.StackType getStackType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subnetwork.StackType result = com.google.cloud.compute.v1.Subnetwork.StackType.valueOf(stackType_);
-    return result == null ? com.google.cloud.compute.v1.Subnetwork.StackType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStackTypeBytes() {
+    java.lang.Object ref = stackType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      stackType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATE_FIELD_NUMBER = 109757585;
-  private int state_;
+  private volatile java.lang.Object state_;
   /**
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return Whether the state field is set.
    */
-  @java.lang.Override public boolean hasState() {
+  @java.lang.Override
+  public boolean hasState() {
     return ((bitField0_ & 0x00200000) != 0);
   }
   /**
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-   * @return The enum numeric value on the wire for state.
+   * <code>optional string state = 109757585;</code>
+   * @return The state.
    */
-  @java.lang.Override public int getStateValue() {
-    return state_;
+  @java.lang.Override
+  public java.lang.String getState() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      state_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-   * @return The state.
+   * <code>optional string state = 109757585;</code>
+   * @return The bytes for state.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subnetwork.State getState() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subnetwork.State result = com.google.cloud.compute.v1.Subnetwork.State.valueOf(state_);
-    return result == null ? com.google.cloud.compute.v1.Subnetwork.State.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStateBytes() {
+    java.lang.Object ref = state_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      state_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2310,19 +2448,19 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
-      output.writeEnum(3506294, role_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
-      output.writeEnum(48277006, privateIpv6GoogleAccess_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 48277006, privateIpv6GoogleAccess_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 98117322, ipCidrRange_);
     }
     if (((bitField0_ & 0x00200000) != 0)) {
-      output.writeEnum(109757585, state_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       output.writeMessage(136658915, secondaryIpRanges_.get(i));
@@ -2346,7 +2484,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 273141258, ipv6CidrRange_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      output.writeEnum(316407070, purpose_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 316407070, purpose_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       output.writeMessage(351299741, getLogConfig());
@@ -2358,7 +2496,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
-      output.writeEnum(425908881, stackType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 425908881, stackType_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
@@ -2367,7 +2505,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 459867385, gatewayAddress_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeEnum(504658653, ipv6AccessType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 504658653, ipv6AccessType_);
     }
     unknownFields.writeTo(output);
   }
@@ -2389,22 +2527,19 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00040000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3506294, role_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3506294, role_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(48277006, privateIpv6GoogleAccess_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(48277006, privateIpv6GoogleAccess_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(98117322, ipCidrRange_);
     }
     if (((bitField0_ & 0x00200000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(109757585, state_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -2430,8 +2565,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(273141258, ipv6CidrRange_);
     }
     if (((bitField0_ & 0x00010000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(316407070, purpose_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(316407070, purpose_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -2445,8 +2579,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
     }
     if (((bitField0_ & 0x00100000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(425908881, stackType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(425908881, stackType_);
     }
     if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
@@ -2455,8 +2588,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(459867385, gatewayAddress_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(504658653, ipv6AccessType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(504658653, ipv6AccessType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -2515,7 +2647,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpv6AccessType() != other.hasIpv6AccessType()) return false;
     if (hasIpv6AccessType()) {
-      if (ipv6AccessType_ != other.ipv6AccessType_) return false;
+      if (!getIpv6AccessType()
+          .equals(other.getIpv6AccessType())) return false;
     }
     if (hasIpv6CidrRange() != other.hasIpv6CidrRange()) return false;
     if (hasIpv6CidrRange()) {
@@ -2549,11 +2682,13 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPrivateIpv6GoogleAccess() != other.hasPrivateIpv6GoogleAccess()) return false;
     if (hasPrivateIpv6GoogleAccess()) {
-      if (privateIpv6GoogleAccess_ != other.privateIpv6GoogleAccess_) return false;
+      if (!getPrivateIpv6GoogleAccess()
+          .equals(other.getPrivateIpv6GoogleAccess())) return false;
     }
     if (hasPurpose() != other.hasPurpose()) return false;
     if (hasPurpose()) {
-      if (purpose_ != other.purpose_) return false;
+      if (!getPurpose()
+          .equals(other.getPurpose())) return false;
     }
     if (hasRegion() != other.hasRegion()) return false;
     if (hasRegion()) {
@@ -2562,7 +2697,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRole() != other.hasRole()) return false;
     if (hasRole()) {
-      if (role_ != other.role_) return false;
+      if (!getRole()
+          .equals(other.getRole())) return false;
     }
     if (!getSecondaryIpRangesList()
         .equals(other.getSecondaryIpRangesList())) return false;
@@ -2573,11 +2709,13 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStackType() != other.hasStackType()) return false;
     if (hasStackType()) {
-      if (stackType_ != other.stackType_) return false;
+      if (!getStackType()
+          .equals(other.getStackType())) return false;
     }
     if (hasState() != other.hasState()) return false;
     if (hasState()) {
-      if (state_ != other.state_) return false;
+      if (!getState()
+          .equals(other.getState())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -2626,7 +2764,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasIpv6AccessType()) {
       hash = (37 * hash) + IPV6_ACCESS_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + ipv6AccessType_;
+      hash = (53 * hash) + getIpv6AccessType().hashCode();
     }
     if (hasIpv6CidrRange()) {
       hash = (37 * hash) + IPV6_CIDR_RANGE_FIELD_NUMBER;
@@ -2655,11 +2793,11 @@ private static final long serialVersionUID = 0L;
     }
     if (hasPrivateIpv6GoogleAccess()) {
       hash = (37 * hash) + PRIVATE_IPV6_GOOGLE_ACCESS_FIELD_NUMBER;
-      hash = (53 * hash) + privateIpv6GoogleAccess_;
+      hash = (53 * hash) + getPrivateIpv6GoogleAccess().hashCode();
     }
     if (hasPurpose()) {
       hash = (37 * hash) + PURPOSE_FIELD_NUMBER;
-      hash = (53 * hash) + purpose_;
+      hash = (53 * hash) + getPurpose().hashCode();
     }
     if (hasRegion()) {
       hash = (37 * hash) + REGION_FIELD_NUMBER;
@@ -2667,7 +2805,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRole()) {
       hash = (37 * hash) + ROLE_FIELD_NUMBER;
-      hash = (53 * hash) + role_;
+      hash = (53 * hash) + getRole().hashCode();
     }
     if (getSecondaryIpRangesCount() > 0) {
       hash = (37 * hash) + SECONDARY_IP_RANGES_FIELD_NUMBER;
@@ -2679,11 +2817,11 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStackType()) {
       hash = (37 * hash) + STACK_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + stackType_;
+      hash = (53 * hash) + getStackType().hashCode();
     }
     if (hasState()) {
       hash = (37 * hash) + STATE_FIELD_NUMBER;
-      hash = (53 * hash) + state_;
+      hash = (53 * hash) + getState().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -2840,7 +2978,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       ipCidrRange_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      ipv6AccessType_ = 0;
+      ipv6AccessType_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       ipv6CidrRange_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -2858,13 +2996,13 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00002000);
       privateIpGoogleAccess_ = false;
       bitField0_ = (bitField0_ & ~0x00004000);
-      privateIpv6GoogleAccess_ = 0;
+      privateIpv6GoogleAccess_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
-      purpose_ = 0;
+      purpose_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
       region_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
-      role_ = 0;
+      role_ = "";
       bitField0_ = (bitField0_ & ~0x00040000);
       if (secondaryIpRangesBuilder_ == null) {
         secondaryIpRanges_ = java.util.Collections.emptyList();
@@ -2874,9 +3012,9 @@ private static final long serialVersionUID = 0L;
       }
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00100000);
-      stackType_ = 0;
+      stackType_ = "";
       bitField0_ = (bitField0_ & ~0x00200000);
-      state_ = 0;
+      state_ = "";
       bitField0_ = (bitField0_ & ~0x00400000);
       return this;
     }
@@ -3093,7 +3231,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasIpv6AccessType()) {
-        setIpv6AccessType(other.getIpv6AccessType());
+        bitField0_ |= 0x00000100;
+        ipv6AccessType_ = other.ipv6AccessType_;
+        onChanged();
       }
       if (other.hasIpv6CidrRange()) {
         bitField0_ |= 0x00000200;
@@ -3122,10 +3262,14 @@ private static final long serialVersionUID = 0L;
         setPrivateIpGoogleAccess(other.getPrivateIpGoogleAccess());
       }
       if (other.hasPrivateIpv6GoogleAccess()) {
-        setPrivateIpv6GoogleAccess(other.getPrivateIpv6GoogleAccess());
+        bitField0_ |= 0x00008000;
+        privateIpv6GoogleAccess_ = other.privateIpv6GoogleAccess_;
+        onChanged();
       }
       if (other.hasPurpose()) {
-        setPurpose(other.getPurpose());
+        bitField0_ |= 0x00010000;
+        purpose_ = other.purpose_;
+        onChanged();
       }
       if (other.hasRegion()) {
         bitField0_ |= 0x00020000;
@@ -3133,7 +3277,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasRole()) {
-        setRole(other.getRole());
+        bitField0_ |= 0x00040000;
+        role_ = other.role_;
+        onChanged();
       }
       if (secondaryIpRangesBuilder_ == null) {
         if (!other.secondaryIpRanges_.isEmpty()) {
@@ -3167,10 +3313,14 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasStackType()) {
-        setStackType(other.getStackType());
+        bitField0_ |= 0x00200000;
+        stackType_ = other.stackType_;
+        onChanged();
       }
       if (other.hasState()) {
-        setState(other.getState());
+        bitField0_ |= 0x00400000;
+        state_ = other.state_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3954,40 +4104,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int ipv6AccessType_ = 0;
+    private java.lang.Object ipv6AccessType_ = "";
     /**
      * <pre>
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     * <code>optional string ipv6_access_type = 504658653;</code>
      * @return Whether the ipv6AccessType field is set.
      */
-    @java.lang.Override public boolean hasIpv6AccessType() {
+    public boolean hasIpv6AccessType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @return The enum numeric value on the wire for ipv6AccessType.
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @return The ipv6AccessType.
      */
-    @java.lang.Override public int getIpv6AccessTypeValue() {
-      return ipv6AccessType_;
+    public java.lang.String getIpv6AccessType() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipv6AccessType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @param value The enum numeric value on the wire for ipv6AccessType to set.
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @return The bytes for ipv6AccessType.
+     */
+    public com.google.protobuf.ByteString
+        getIpv6AccessTypeBytes() {
+      java.lang.Object ref = ipv6AccessType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipv6AccessType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @param value The ipv6AccessType to set.
      * @return This builder for chaining.
      */
-    public Builder setIpv6AccessTypeValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setIpv6AccessType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       ipv6AccessType_ = value;
       onChanged();
       return this;
@@ -3995,46 +4183,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @return The ipv6AccessType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType getIpv6AccessType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType result = com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.valueOf(ipv6AccessType_);
-      return result == null ? com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @param value The ipv6AccessType to set.
+     * <code>optional string ipv6_access_type = 504658653;</code>
      * @return This builder for chaining.
      */
-    public Builder setIpv6AccessType(com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      ipv6AccessType_ = value.getNumber();
+    public Builder clearIpv6AccessType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ipv6AccessType_ = getDefaultInstance().getIpv6AccessType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     * <code>optional string ipv6_access_type = 504658653;</code>
+     * @param value The bytes for ipv6AccessType to set.
      * @return This builder for chaining.
      */
-    public Builder clearIpv6AccessType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      ipv6AccessType_ = 0;
+    public Builder setIpv6AccessTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      ipv6AccessType_ = value;
       onChanged();
       return this;
     }
@@ -4678,40 +4856,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int privateIpv6GoogleAccess_ = 0;
+    private java.lang.Object privateIpv6GoogleAccess_ = "";
     /**
      * <pre>
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      * @return Whether the privateIpv6GoogleAccess field is set.
      */
-    @java.lang.Override public boolean hasPrivateIpv6GoogleAccess() {
+    public boolean hasPrivateIpv6GoogleAccess() {
       return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <pre>
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return The privateIpv6GoogleAccess.
      */
-    @java.lang.Override public int getPrivateIpv6GoogleAccessValue() {
-      return privateIpv6GoogleAccess_;
+    public java.lang.String getPrivateIpv6GoogleAccess() {
+      java.lang.Object ref = privateIpv6GoogleAccess_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        privateIpv6GoogleAccess_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param value The enum numeric value on the wire for privateIpv6GoogleAccess to set.
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return The bytes for privateIpv6GoogleAccess.
+     */
+    public com.google.protobuf.ByteString
+        getPrivateIpv6GoogleAccessBytes() {
+      java.lang.Object ref = privateIpv6GoogleAccess_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        privateIpv6GoogleAccess_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param value The privateIpv6GoogleAccess to set.
      * @return This builder for chaining.
      */
-    public Builder setPrivateIpv6GoogleAccessValue(int value) {
-      bitField0_ |= 0x00008000;
+    public Builder setPrivateIpv6GoogleAccess(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00008000;
       privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
@@ -4719,84 +4935,112 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return The privateIpv6GoogleAccess.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess result = com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess.valueOf(privateIpv6GoogleAccess_);
-      return result == null ? com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param value The privateIpv6GoogleAccess to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPrivateIpv6GoogleAccess(com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00008000;
-      privateIpv6GoogleAccess_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
      * @return This builder for chaining.
      */
     public Builder clearPrivateIpv6GoogleAccess() {
       bitField0_ = (bitField0_ & ~0x00008000);
-      privateIpv6GoogleAccess_ = 0;
+      privateIpv6GoogleAccess_ = getDefaultInstance().getPrivateIpv6GoogleAccess();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param value The bytes for privateIpv6GoogleAccess to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrivateIpv6GoogleAccessBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00008000;
+      privateIpv6GoogleAccess_ = value;
       onChanged();
       return this;
     }
 
-    private int purpose_ = 0;
+    private java.lang.Object purpose_ = "";
     /**
      * <pre>
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
      * @return Whether the purpose field is set.
      */
-    @java.lang.Override public boolean hasPurpose() {
+    public boolean hasPurpose() {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <pre>
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-     * @return The enum numeric value on the wire for purpose.
+     * <code>optional string purpose = 316407070;</code>
+     * @return The purpose.
      */
-    @java.lang.Override public int getPurposeValue() {
-      return purpose_;
+    public java.lang.String getPurpose() {
+      java.lang.Object ref = purpose_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        purpose_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-     * @param value The enum numeric value on the wire for purpose to set.
+     * <code>optional string purpose = 316407070;</code>
+     * @return The bytes for purpose.
+     */
+    public com.google.protobuf.ByteString
+        getPurposeBytes() {
+      java.lang.Object ref = purpose_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        purpose_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string purpose = 316407070;</code>
+     * @param value The purpose to set.
      * @return This builder for chaining.
      */
-    public Builder setPurposeValue(int value) {
-      bitField0_ |= 0x00010000;
+    public Builder setPurpose(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00010000;
       purpose_ = value;
       onChanged();
       return this;
@@ -4804,46 +5048,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-     * @return The purpose.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subnetwork.Purpose getPurpose() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subnetwork.Purpose result = com.google.cloud.compute.v1.Subnetwork.Purpose.valueOf(purpose_);
-      return result == null ? com.google.cloud.compute.v1.Subnetwork.Purpose.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-     * @param value The purpose to set.
+     * <code>optional string purpose = 316407070;</code>
      * @return This builder for chaining.
      */
-    public Builder setPurpose(com.google.cloud.compute.v1.Subnetwork.Purpose value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00010000;
-      purpose_ = value.getNumber();
+    public Builder clearPurpose() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      purpose_ = getDefaultInstance().getPurpose();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * <code>optional string purpose = 316407070;</code>
+     * @param value The bytes for purpose to set.
      * @return This builder for chaining.
      */
-    public Builder clearPurpose() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      purpose_ = 0;
+    public Builder setPurposeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00010000;
+      purpose_ = value;
       onChanged();
       return this;
     }
@@ -4955,40 +5189,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int role_ = 0;
+    private java.lang.Object role_ = "";
     /**
      * <pre>
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+     * <code>optional string role = 3506294;</code>
      * @return Whether the role field is set.
      */
-    @java.lang.Override public boolean hasRole() {
+    public boolean hasRole() {
       return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      * <pre>
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-     * @return The enum numeric value on the wire for role.
+     * <code>optional string role = 3506294;</code>
+     * @return The role.
      */
-    @java.lang.Override public int getRoleValue() {
-      return role_;
+    public java.lang.String getRole() {
+      java.lang.Object ref = role_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        role_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-     * @param value The enum numeric value on the wire for role to set.
+     * <code>optional string role = 3506294;</code>
+     * @return The bytes for role.
+     */
+    public com.google.protobuf.ByteString
+        getRoleBytes() {
+      java.lang.Object ref = role_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        role_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string role = 3506294;</code>
+     * @param value The role to set.
      * @return This builder for chaining.
      */
-    public Builder setRoleValue(int value) {
-      bitField0_ |= 0x00040000;
+    public Builder setRole(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00040000;
       role_ = value;
       onChanged();
       return this;
@@ -4996,46 +5268,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-     * @return The role.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subnetwork.Role getRole() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subnetwork.Role result = com.google.cloud.compute.v1.Subnetwork.Role.valueOf(role_);
-      return result == null ? com.google.cloud.compute.v1.Subnetwork.Role.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-     * @param value The role to set.
+     * <code>optional string role = 3506294;</code>
      * @return This builder for chaining.
      */
-    public Builder setRole(com.google.cloud.compute.v1.Subnetwork.Role value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00040000;
-      role_ = value.getNumber();
+    public Builder clearRole() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      role_ = getDefaultInstance().getRole();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+     * <code>optional string role = 3506294;</code>
+     * @param value The bytes for role to set.
      * @return This builder for chaining.
      */
-    public Builder clearRole() {
-      bitField0_ = (bitField0_ & ~0x00040000);
-      role_ = 0;
+    public Builder setRoleBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00040000;
+      role_ = value;
       onChanged();
       return this;
     }
@@ -5459,40 +5721,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int stackType_ = 0;
+    private java.lang.Object stackType_ = "";
     /**
      * <pre>
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     * <code>optional string stack_type = 425908881;</code>
      * @return Whether the stackType field is set.
      */
-    @java.lang.Override public boolean hasStackType() {
+    public boolean hasStackType() {
       return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      * <pre>
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-     * @return The enum numeric value on the wire for stackType.
+     * <code>optional string stack_type = 425908881;</code>
+     * @return The stackType.
      */
-    @java.lang.Override public int getStackTypeValue() {
-      return stackType_;
+    public java.lang.String getStackType() {
+      java.lang.Object ref = stackType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        stackType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-     * @param value The enum numeric value on the wire for stackType to set.
+     * <code>optional string stack_type = 425908881;</code>
+     * @return The bytes for stackType.
+     */
+    public com.google.protobuf.ByteString
+        getStackTypeBytes() {
+      java.lang.Object ref = stackType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        stackType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     * @param value The stackType to set.
      * @return This builder for chaining.
      */
-    public Builder setStackTypeValue(int value) {
-      bitField0_ |= 0x00200000;
+    public Builder setStackType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00200000;
       stackType_ = value;
       onChanged();
       return this;
@@ -5500,84 +5800,112 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-     * @return The stackType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subnetwork.StackType getStackType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subnetwork.StackType result = com.google.cloud.compute.v1.Subnetwork.StackType.valueOf(stackType_);
-      return result == null ? com.google.cloud.compute.v1.Subnetwork.StackType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-     * @param value The stackType to set.
-     * @return This builder for chaining.
-     */
-    public Builder setStackType(com.google.cloud.compute.v1.Subnetwork.StackType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00200000;
-      stackType_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <pre>
-     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     * <code>optional string stack_type = 425908881;</code>
      * @return This builder for chaining.
      */
     public Builder clearStackType() {
       bitField0_ = (bitField0_ & ~0x00200000);
-      stackType_ = 0;
+      stackType_ = getDefaultInstance().getStackType();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string stack_type = 425908881;</code>
+     * @param value The bytes for stackType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStackTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00200000;
+      stackType_ = value;
       onChanged();
       return this;
     }
 
-    private int state_ = 0;
+    private java.lang.Object state_ = "";
     /**
      * <pre>
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
      * @return Whether the state field is set.
      */
-    @java.lang.Override public boolean hasState() {
+    public boolean hasState() {
       return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      * <pre>
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-     * @return The enum numeric value on the wire for state.
+     * <code>optional string state = 109757585;</code>
+     * @return The state.
      */
-    @java.lang.Override public int getStateValue() {
-      return state_;
+    public java.lang.String getState() {
+      java.lang.Object ref = state_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        state_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-     * @param value The enum numeric value on the wire for state to set.
+     * <code>optional string state = 109757585;</code>
+     * @return The bytes for state.
+     */
+    public com.google.protobuf.ByteString
+        getStateBytes() {
+      java.lang.Object ref = state_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        state_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string state = 109757585;</code>
+     * @param value The state to set.
      * @return This builder for chaining.
      */
-    public Builder setStateValue(int value) {
-      bitField0_ |= 0x00400000;
+    public Builder setState(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00400000;
       state_ = value;
       onChanged();
       return this;
@@ -5585,46 +5913,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-     * @return The state.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subnetwork.State getState() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subnetwork.State result = com.google.cloud.compute.v1.Subnetwork.State.valueOf(state_);
-      return result == null ? com.google.cloud.compute.v1.Subnetwork.State.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-     * @param value The state to set.
+     * <code>optional string state = 109757585;</code>
      * @return This builder for chaining.
      */
-    public Builder setState(com.google.cloud.compute.v1.Subnetwork.State value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00400000;
-      state_ = value.getNumber();
+    public Builder clearState() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      state_ = getDefaultInstance().getState();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+     * <code>optional string state = 109757585;</code>
+     * @param value The bytes for state to set.
      * @return This builder for chaining.
      */
-    public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00400000);
-      state_ = 0;
+    public Builder setStateBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00400000;
+      state_ = value;
       onChanged();
       return this;
     }

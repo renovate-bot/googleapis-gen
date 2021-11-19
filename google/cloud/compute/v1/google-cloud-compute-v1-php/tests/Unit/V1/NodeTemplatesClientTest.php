@@ -290,6 +290,7 @@ class NodeTemplatesClientTest extends GeneratedTest
         ]);
         $this->assertTrue($transport->isExhausted());
         // Mock response
+        $cpuOvercommitType = 'cpuOvercommitType247727959';
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
         $id = 3355;
@@ -298,8 +299,10 @@ class NodeTemplatesClientTest extends GeneratedTest
         $nodeType = 'nodeType465832791';
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
+        $status = 'status-892481550';
         $statusMessage = 'statusMessage-239442758';
         $expectedResponse = new NodeTemplate();
+        $expectedResponse->setCpuOvercommitType($cpuOvercommitType);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
         $expectedResponse->setId($id);
@@ -308,6 +311,7 @@ class NodeTemplatesClientTest extends GeneratedTest
         $expectedResponse->setNodeType($nodeType);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setStatusMessage($statusMessage);
         $transport->addResponse($expectedResponse);
         // Mock request

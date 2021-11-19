@@ -660,7 +660,7 @@ def test_list_instances_rest(transport: str = 'rest', request_type=compute.ListI
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "instance_group": "sample3"}
-    request_init["region_instance_groups_list_instances_request_resource"] = compute.RegionInstanceGroupsListInstancesRequest(instance_state=compute.RegionInstanceGroupsListInstancesRequest.InstanceState.ALL)
+    request_init["region_instance_groups_list_instances_request_resource"] = compute.RegionInstanceGroupsListInstancesRequest(instance_state='instance_state_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
@@ -697,7 +697,7 @@ def test_list_instances_rest_bad_request(transport: str = 'rest', request_type=c
 
     # send a request that will satisfy transcoding
     request_init = {"project": "sample1", "region": "sample2", "instance_group": "sample3"}
-    request_init["region_instance_groups_list_instances_request_resource"] = compute.RegionInstanceGroupsListInstancesRequest(instance_state=compute.RegionInstanceGroupsListInstancesRequest.InstanceState.ALL)
+    request_init["region_instance_groups_list_instances_request_resource"] = compute.RegionInstanceGroupsListInstancesRequest(instance_state='instance_state_value')
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -741,7 +741,7 @@ def test_list_instances_rest_flattened(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             instance_group='instance_group_value',
-            region_instance_groups_list_instances_request_resource=compute.RegionInstanceGroupsListInstancesRequest(instance_state=compute.RegionInstanceGroupsListInstancesRequest.InstanceState.ALL),
+            region_instance_groups_list_instances_request_resource=compute.RegionInstanceGroupsListInstancesRequest(instance_state='instance_state_value'),
         )
         mock_args.update(sample_request)
         client.list_instances(**mock_args)
@@ -767,7 +767,7 @@ def test_list_instances_rest_flattened_error(transport: str = 'rest'):
             project='project_value',
             region='region_value',
             instance_group='instance_group_value',
-            region_instance_groups_list_instances_request_resource=compute.RegionInstanceGroupsListInstancesRequest(instance_state=compute.RegionInstanceGroupsListInstancesRequest.InstanceState.ALL),
+            region_instance_groups_list_instances_request_resource=compute.RegionInstanceGroupsListInstancesRequest(instance_state='instance_state_value'),
         )
 
 
@@ -819,7 +819,7 @@ def test_list_instances_rest_pager():
             req.side_effect = return_values
 
             sample_request = {"project": "sample1", "region": "sample2", "instance_group": "sample3"}
-            sample_request["region_instance_groups_list_instances_request_resource"] = compute.RegionInstanceGroupsListInstancesRequest(instance_state=compute.RegionInstanceGroupsListInstancesRequest.InstanceState.ALL)
+            sample_request["region_instance_groups_list_instances_request_resource"] = compute.RegionInstanceGroupsListInstancesRequest(instance_state='instance_state_value')
 
             pager = client.list_instances(request=sample_request)
 

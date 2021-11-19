@@ -29,8 +29,9 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
     protected $ignore_child_exemptions = null;
     /**
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
+     * Generated from protobuf field <code>optional string log_type = 403115861;</code>
      */
     protected $log_type = null;
 
@@ -44,8 +45,9 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
      *           Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
      *     @type bool $ignore_child_exemptions
      *           This is deprecated and has no effect. Do not use.
-     *     @type int $log_type
+     *     @type string $log_type
      *           The log type that this config enables.
+     *           Check the LogType enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -117,13 +119,14 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string log_type = 403115861;</code>
+     * @return string
      */
     public function getLogType()
     {
-        return isset($this->log_type) ? $this->log_type : 0;
+        return isset($this->log_type) ? $this->log_type : '';
     }
 
     public function hasLogType()
@@ -138,14 +141,15 @@ class AuditLogConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The log type that this config enables.
+     * Check the LogType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AuditLogConfig.LogType log_type = 403115861;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string log_type = 403115861;</code>
+     * @param string $var
      * @return $this
      */
     public function setLogType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AuditLogConfig\LogType::class);
+        GPBUtil::checkString($var, True);
         $this->log_type = $var;
 
         return $this;

@@ -29,30 +29,34 @@ public interface QuotaOrBuilder extends
   /**
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+   * <code>optional string metric = 533067184;</code>
    * @return Whether the metric field is set.
    */
   boolean hasMetric();
   /**
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-   * @return The enum numeric value on the wire for metric.
+   * <code>optional string metric = 533067184;</code>
+   * @return The metric.
    */
-  int getMetricValue();
+  java.lang.String getMetric();
   /**
    * <pre>
    * [Output Only] Name of the quota metric.
+   * Check the Metric enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-   * @return The metric.
+   * <code>optional string metric = 533067184;</code>
+   * @return The bytes for metric.
    */
-  com.google.cloud.compute.v1.Quota.Metric getMetric();
+  com.google.protobuf.ByteString
+      getMetricBytes();
 
   /**
    * <pre>

@@ -216,6 +216,7 @@ public class TargetVpnGatewaysClientTest {
             .setNetwork("network1843485230")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
+            .setStatus("status-892481550")
             .addAllTunnels(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);

@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SecurityPolicyRuleMatcher() {
-    versionedExpr_ = 0;
+    versionedExpr_ = "";
   }
 
   @java.lang.Override
@@ -80,10 +80,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000001;
             break;
           }
-          case -1716679192: {
-            int rawValue = input.readEnum();
+          case -1716679190: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000004;
-            versionedExpr_ = rawValue;
+            versionedExpr_ = s;
             break;
           }
           default: {
@@ -324,41 +324,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int VERSIONED_EXPR_FIELD_NUMBER = 322286013;
-  private int versionedExpr_;
+  private volatile java.lang.Object versionedExpr_;
   /**
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
+   * <code>optional string versioned_expr = 322286013;</code>
    * @return Whether the versionedExpr field is set.
    */
-  @java.lang.Override public boolean hasVersionedExpr() {
+  @java.lang.Override
+  public boolean hasVersionedExpr() {
     return ((bitField0_ & 0x00000004) != 0);
   }
   /**
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-   * @return The enum numeric value on the wire for versionedExpr.
+   * <code>optional string versioned_expr = 322286013;</code>
+   * @return The versionedExpr.
    */
-  @java.lang.Override public int getVersionedExprValue() {
-    return versionedExpr_;
+  @java.lang.Override
+  public java.lang.String getVersionedExpr() {
+    java.lang.Object ref = versionedExpr_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      versionedExpr_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+   * Check the VersionedExpr enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-   * @return The versionedExpr.
+   * <code>optional string versioned_expr = 322286013;</code>
+   * @return The bytes for versionedExpr.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr getVersionedExpr() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr result = com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.valueOf(versionedExpr_);
-    return result == null ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getVersionedExprBytes() {
+    java.lang.Object ref = versionedExpr_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      versionedExpr_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -382,7 +405,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(255820610, getConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeEnum(322286013, versionedExpr_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 322286013, versionedExpr_);
     }
     unknownFields.writeTo(output);
   }
@@ -402,8 +425,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(255820610, getConfig());
     }
     if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(322286013, versionedExpr_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(322286013, versionedExpr_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -432,7 +454,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasVersionedExpr() != other.hasVersionedExpr()) return false;
     if (hasVersionedExpr()) {
-      if (versionedExpr_ != other.versionedExpr_) return false;
+      if (!getVersionedExpr()
+          .equals(other.getVersionedExpr())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -455,7 +478,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasVersionedExpr()) {
       hash = (37 * hash) + VERSIONED_EXPR_FIELD_NUMBER;
-      hash = (53 * hash) + versionedExpr_;
+      hash = (53 * hash) + getVersionedExpr().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -608,7 +631,7 @@ private static final long serialVersionUID = 0L;
         exprBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000002);
-      versionedExpr_ = 0;
+      versionedExpr_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
@@ -714,7 +737,9 @@ private static final long serialVersionUID = 0L;
         mergeExpr(other.getExpr());
       }
       if (other.hasVersionedExpr()) {
-        setVersionedExpr(other.getVersionedExpr());
+        bitField0_ |= 0x00000004;
+        versionedExpr_ = other.versionedExpr_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1058,40 +1083,78 @@ private static final long serialVersionUID = 0L;
       return exprBuilder_;
     }
 
-    private int versionedExpr_ = 0;
+    private java.lang.Object versionedExpr_ = "";
     /**
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
+     * <code>optional string versioned_expr = 322286013;</code>
      * @return Whether the versionedExpr field is set.
      */
-    @java.lang.Override public boolean hasVersionedExpr() {
+    public boolean hasVersionedExpr() {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-     * @return The enum numeric value on the wire for versionedExpr.
+     * <code>optional string versioned_expr = 322286013;</code>
+     * @return The versionedExpr.
      */
-    @java.lang.Override public int getVersionedExprValue() {
-      return versionedExpr_;
+    public java.lang.String getVersionedExpr() {
+      java.lang.Object ref = versionedExpr_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        versionedExpr_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-     * @param value The enum numeric value on the wire for versionedExpr to set.
+     * <code>optional string versioned_expr = 322286013;</code>
+     * @return The bytes for versionedExpr.
+     */
+    public com.google.protobuf.ByteString
+        getVersionedExprBytes() {
+      java.lang.Object ref = versionedExpr_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        versionedExpr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string versioned_expr = 322286013;</code>
+     * @param value The versionedExpr to set.
      * @return This builder for chaining.
      */
-    public Builder setVersionedExprValue(int value) {
-      bitField0_ |= 0x00000004;
+    public Builder setVersionedExpr(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
       versionedExpr_ = value;
       onChanged();
       return this;
@@ -1099,46 +1162,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-     * @return The versionedExpr.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr getVersionedExpr() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr result = com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.valueOf(versionedExpr_);
-      return result == null ? com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
-     * @param value The versionedExpr to set.
+     * <code>optional string versioned_expr = 322286013;</code>
      * @return This builder for chaining.
      */
-    public Builder setVersionedExpr(com.google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000004;
-      versionedExpr_ = value.getNumber();
+    public Builder clearVersionedExpr() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      versionedExpr_ = getDefaultInstance().getVersionedExpr();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Preconfigured versioned expression. If this field is specified, config must also be specified. Available preconfigured expressions along with their requirements are: SRC_IPS_V1 - must specify the corresponding src_ip_range field in config.
+     * Check the VersionedExpr enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyRuleMatcher.VersionedExpr versioned_expr = 322286013;</code>
+     * <code>optional string versioned_expr = 322286013;</code>
+     * @param value The bytes for versionedExpr to set.
      * @return This builder for chaining.
      */
-    public Builder clearVersionedExpr() {
-      bitField0_ = (bitField0_ & ~0x00000004);
-      versionedExpr_ = 0;
+    public Builder setVersionedExprBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000004;
+      versionedExpr_ = value;
       onChanged();
       return this;
     }

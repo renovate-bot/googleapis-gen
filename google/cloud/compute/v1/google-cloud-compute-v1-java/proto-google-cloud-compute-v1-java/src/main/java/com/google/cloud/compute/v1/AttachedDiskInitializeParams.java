@@ -23,7 +23,7 @@ private static final long serialVersionUID = 0L;
     description_ = "";
     diskName_ = "";
     diskType_ = "";
-    onUpdateAction_ = 0;
+    onUpdateAction_ = "";
     resourcePolicies_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     sourceImage_ = "";
     sourceSnapshot_ = "";
@@ -98,10 +98,10 @@ private static final long serialVersionUID = 0L;
             provisionedIops_ = input.readInt64();
             break;
           }
-          case 1619615840: {
-            int rawValue = input.readEnum();
+          case 1619615842: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000010;
-            onUpdateAction_ = rawValue;
+            onUpdateAction_ = s;
             break;
           }
           case -1865532718: {
@@ -663,41 +663,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ON_UPDATE_ACTION_FIELD_NUMBER = 202451980;
-  private int onUpdateAction_;
+  private volatile java.lang.Object onUpdateAction_;
   /**
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
+   * <code>optional string on_update_action = 202451980;</code>
    * @return Whether the onUpdateAction field is set.
    */
-  @java.lang.Override public boolean hasOnUpdateAction() {
+  @java.lang.Override
+  public boolean hasOnUpdateAction() {
     return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-   * @return The enum numeric value on the wire for onUpdateAction.
+   * <code>optional string on_update_action = 202451980;</code>
+   * @return The onUpdateAction.
    */
-  @java.lang.Override public int getOnUpdateActionValue() {
-    return onUpdateAction_;
+  @java.lang.Override
+  public java.lang.String getOnUpdateAction() {
+    java.lang.Object ref = onUpdateAction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      onUpdateAction_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-   * @return The onUpdateAction.
+   * <code>optional string on_update_action = 202451980;</code>
+   * @return The bytes for onUpdateAction.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction getOnUpdateAction() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction result = com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.valueOf(onUpdateAction_);
-    return result == null ? com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOnUpdateActionBytes() {
+    java.lang.Object ref = onUpdateAction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      onUpdateAction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PROVISIONED_IOPS_FIELD_NUMBER = 186769108;
@@ -1003,7 +1026,7 @@ private static final long serialVersionUID = 0L;
       output.writeInt64(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      output.writeEnum(202451980, onUpdateAction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 202451980, onUpdateAction_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(303679322, getSourceSnapshotEncryptionKey());
@@ -1057,8 +1080,7 @@ private static final long serialVersionUID = 0L;
         .computeInt64Size(186769108, provisionedIops_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(202451980, onUpdateAction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(202451980, onUpdateAction_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1124,7 +1146,8 @@ private static final long serialVersionUID = 0L;
         other.internalGetLabels())) return false;
     if (hasOnUpdateAction() != other.hasOnUpdateAction()) return false;
     if (hasOnUpdateAction()) {
-      if (onUpdateAction_ != other.onUpdateAction_) return false;
+      if (!getOnUpdateAction()
+          .equals(other.getOnUpdateAction())) return false;
     }
     if (hasProvisionedIops() != other.hasProvisionedIops()) return false;
     if (hasProvisionedIops()) {
@@ -1187,7 +1210,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasOnUpdateAction()) {
       hash = (37 * hash) + ON_UPDATE_ACTION_FIELD_NUMBER;
-      hash = (53 * hash) + onUpdateAction_;
+      hash = (53 * hash) + getOnUpdateAction().hashCode();
     }
     if (hasProvisionedIops()) {
       hash = (37 * hash) + PROVISIONED_IOPS_FIELD_NUMBER;
@@ -1384,7 +1407,7 @@ private static final long serialVersionUID = 0L;
       diskType_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       internalGetMutableLabels().clear();
-      onUpdateAction_ = 0;
+      onUpdateAction_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       provisionedIops_ = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
@@ -1559,7 +1582,9 @@ private static final long serialVersionUID = 0L;
       internalGetMutableLabels().mergeFrom(
           other.internalGetLabels());
       if (other.hasOnUpdateAction()) {
-        setOnUpdateAction(other.getOnUpdateAction());
+        bitField0_ |= 0x00000020;
+        onUpdateAction_ = other.onUpdateAction_;
+        onChanged();
       }
       if (other.hasProvisionedIops()) {
         setProvisionedIops(other.getProvisionedIops());
@@ -2152,40 +2177,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int onUpdateAction_ = 0;
+    private java.lang.Object onUpdateAction_ = "";
     /**
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
+     * <code>optional string on_update_action = 202451980;</code>
      * @return Whether the onUpdateAction field is set.
      */
-    @java.lang.Override public boolean hasOnUpdateAction() {
+    public boolean hasOnUpdateAction() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-     * @return The enum numeric value on the wire for onUpdateAction.
+     * <code>optional string on_update_action = 202451980;</code>
+     * @return The onUpdateAction.
      */
-    @java.lang.Override public int getOnUpdateActionValue() {
-      return onUpdateAction_;
+    public java.lang.String getOnUpdateAction() {
+      java.lang.Object ref = onUpdateAction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        onUpdateAction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-     * @param value The enum numeric value on the wire for onUpdateAction to set.
+     * <code>optional string on_update_action = 202451980;</code>
+     * @return The bytes for onUpdateAction.
+     */
+    public com.google.protobuf.ByteString
+        getOnUpdateActionBytes() {
+      java.lang.Object ref = onUpdateAction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        onUpdateAction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string on_update_action = 202451980;</code>
+     * @param value The onUpdateAction to set.
      * @return This builder for chaining.
      */
-    public Builder setOnUpdateActionValue(int value) {
-      bitField0_ |= 0x00000020;
+    public Builder setOnUpdateAction(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
       onUpdateAction_ = value;
       onChanged();
       return this;
@@ -2193,46 +2256,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-     * @return The onUpdateAction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction getOnUpdateAction() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction result = com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.valueOf(onUpdateAction_);
-      return result == null ? com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-     * @param value The onUpdateAction to set.
+     * <code>optional string on_update_action = 202451980;</code>
      * @return This builder for chaining.
      */
-    public Builder setOnUpdateAction(com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      onUpdateAction_ = value.getNumber();
+    public Builder clearOnUpdateAction() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onUpdateAction_ = getDefaultInstance().getOnUpdateAction();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+     * Check the OnUpdateAction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
+     * <code>optional string on_update_action = 202451980;</code>
+     * @param value The bytes for onUpdateAction to set.
      * @return This builder for chaining.
      */
-    public Builder clearOnUpdateAction() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      onUpdateAction_ = 0;
+    public Builder setOnUpdateActionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      onUpdateAction_ = value;
       onChanged();
       return this;
     }

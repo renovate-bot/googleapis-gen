@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ListPeeringRoutesNetworksRequest() {
-    direction_ = 0;
+    direction_ = "";
     filter_ = "";
     network_ = "";
     orderBy_ = "";
@@ -72,10 +72,10 @@ private static final long serialVersionUID = 0L;
             maxResults_ = input.readUInt32();
             break;
           }
-          case 889207800: {
-            int rawValue = input.readEnum();
+          case 889207802: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            direction_ = rawValue;
+            direction_ = s;
             break;
           }
           case 1111570338: {
@@ -298,41 +298,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int DIRECTION_FIELD_NUMBER = 111150975;
-  private int direction_;
+  private volatile java.lang.Object direction_;
   /**
    * <pre>
    * The direction of the exchanged routes.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
+   * <code>optional string direction = 111150975;</code>
    * @return Whether the direction field is set.
    */
-  @java.lang.Override public boolean hasDirection() {
+  @java.lang.Override
+  public boolean hasDirection() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * The direction of the exchanged routes.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-   * @return The enum numeric value on the wire for direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The direction.
    */
-  @java.lang.Override public int getDirectionValue() {
-    return direction_;
+  @java.lang.Override
+  public java.lang.String getDirection() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      direction_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The direction of the exchanged routes.
+   * Check the Direction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-   * @return The direction.
+   * <code>optional string direction = 111150975;</code>
+   * @return The bytes for direction.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction getDirection() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction result = com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.valueOf(direction_);
-    return result == null ? com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getDirectionBytes() {
+    java.lang.Object ref = direction_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      direction_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int FILTER_FIELD_NUMBER = 336120696;
@@ -792,7 +815,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32(54715419, maxResults_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(111150975, direction_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 111150975, direction_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
@@ -832,8 +855,7 @@ private static final long serialVersionUID = 0L;
         .computeUInt32Size(54715419, maxResults_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(111150975, direction_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(111150975, direction_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
@@ -874,7 +896,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasDirection() != other.hasDirection()) return false;
     if (hasDirection()) {
-      if (direction_ != other.direction_) return false;
+      if (!getDirection()
+          .equals(other.getDirection())) return false;
     }
     if (hasFilter() != other.hasFilter()) return false;
     if (hasFilter()) {
@@ -928,7 +951,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasDirection()) {
       hash = (37 * hash) + DIRECTION_FIELD_NUMBER;
-      hash = (53 * hash) + direction_;
+      hash = (53 * hash) + getDirection().hashCode();
     }
     if (hasFilter()) {
       hash = (37 * hash) + FILTER_FIELD_NUMBER;
@@ -1100,7 +1123,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      direction_ = 0;
+      direction_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       filter_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -1232,7 +1255,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest other) {
       if (other == com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.getDefaultInstance()) return this;
       if (other.hasDirection()) {
-        setDirection(other.getDirection());
+        bitField0_ |= 0x00000001;
+        direction_ = other.direction_;
+        onChanged();
       }
       if (other.hasFilter()) {
         bitField0_ |= 0x00000002;
@@ -1303,40 +1328,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int direction_ = 0;
+    private java.lang.Object direction_ = "";
     /**
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
      * @return Whether the direction field is set.
      */
-    @java.lang.Override public boolean hasDirection() {
+    public boolean hasDirection() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-     * @return The enum numeric value on the wire for direction.
+     * <code>optional string direction = 111150975;</code>
+     * @return The direction.
      */
-    @java.lang.Override public int getDirectionValue() {
-      return direction_;
+    public java.lang.String getDirection() {
+      java.lang.Object ref = direction_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        direction_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-     * @param value The enum numeric value on the wire for direction to set.
+     * <code>optional string direction = 111150975;</code>
+     * @return The bytes for direction.
+     */
+    public com.google.protobuf.ByteString
+        getDirectionBytes() {
+      java.lang.Object ref = direction_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        direction_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string direction = 111150975;</code>
+     * @param value The direction to set.
      * @return This builder for chaining.
      */
-    public Builder setDirectionValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setDirection(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       direction_ = value;
       onChanged();
       return this;
@@ -1344,46 +1407,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-     * @return The direction.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction getDirection() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction result = com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.valueOf(direction_);
-      return result == null ? com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The direction of the exchanged routes.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-     * @param value The direction to set.
+     * <code>optional string direction = 111150975;</code>
      * @return This builder for chaining.
      */
-    public Builder setDirection(com.google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      direction_ = value.getNumber();
+    public Builder clearDirection() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      direction_ = getDefaultInstance().getDirection();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
+     * <code>optional string direction = 111150975;</code>
+     * @param value The bytes for direction to set.
      * @return This builder for chaining.
      */
-    public Builder clearDirection() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      direction_ = 0;
+    public Builder setDirectionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      direction_ = value;
       onChanged();
       return this;
     }

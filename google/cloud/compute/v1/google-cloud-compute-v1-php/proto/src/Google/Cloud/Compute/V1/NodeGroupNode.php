@@ -22,8 +22,9 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     private $accelerators;
     /**
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
+     * Generated from protobuf field <code>optional string cpu_overcommit_type = 247727959;</code>
      */
     protected $cpu_overcommit_type = null;
     /**
@@ -69,7 +70,10 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
      */
     protected $server_id = null;
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
+     * 
+     * Check the Status enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
 
@@ -81,8 +85,9 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $accelerators
      *           Accelerators for this node.
-     *     @type int $cpu_overcommit_type
+     *     @type string $cpu_overcommit_type
      *           CPU overcommit.
+     *           Check the CpuOvercommitType enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\LocalDisk[]|\Google\Protobuf\Internal\RepeatedField $disks
      *           Local disk configurations.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $instances
@@ -97,7 +102,9 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
      *           Binding properties for the physical server.
      *     @type string $server_id
      *           Server ID associated with this node.
-     *     @type int $status
+     *     @type string $status
+     *           
+     *           Check the Status enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -133,13 +140,14 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
 
     /**
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @return string
      */
     public function getCpuOvercommitType()
     {
-        return isset($this->cpu_overcommit_type) ? $this->cpu_overcommit_type : 0;
+        return isset($this->cpu_overcommit_type) ? $this->cpu_overcommit_type : '';
     }
 
     public function hasCpuOvercommitType()
@@ -154,14 +162,15 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
 
     /**
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupNode.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @param string $var
      * @return $this
      */
     public function setCpuOvercommitType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeGroupNode\CpuOvercommitType::class);
+        GPBUtil::checkString($var, True);
         $this->cpu_overcommit_type = $var;
 
         return $this;
@@ -400,12 +409,15 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
-     * @return int
+     * 
+     * Check the Status enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -419,13 +431,16 @@ class NodeGroupNode extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupNode.Status status = 181260274;</code>
-     * @param int $var
+     * 
+     * Check the Status enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeGroupNode\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

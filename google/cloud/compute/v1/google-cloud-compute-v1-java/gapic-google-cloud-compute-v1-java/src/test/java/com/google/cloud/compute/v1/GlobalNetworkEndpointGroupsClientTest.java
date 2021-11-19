@@ -333,6 +333,7 @@ public class GlobalNetworkEndpointGroupsClientTest {
             .setKind("kind3292052")
             .setName("name3373707")
             .setNetwork("network1843485230")
+            .setNetworkEndpointType("networkEndpointType1733109693")
             .setRegion("region-934795532")
             .setSelfLink("selfLink1191800166")
             .setSize(3530753)

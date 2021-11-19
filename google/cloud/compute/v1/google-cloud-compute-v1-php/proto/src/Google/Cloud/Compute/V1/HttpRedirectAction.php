@@ -40,9 +40,10 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      */
     protected $prefix_redirect = null;
     /**
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+     * Generated from protobuf field <code>optional string redirect_response_code = 436710408;</code>
      */
     protected $redirect_response_code = null;
     /**
@@ -66,8 +67,9 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
      *           The path that will be used in the redirect response instead of the one that was supplied in the request. pathRedirect cannot be supplied together with prefixRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
      *     @type string $prefix_redirect
      *           The prefix that replaces the prefixMatch specified in the HttpRouteRuleMatch, retaining the remaining portion of the URL before redirecting the request. prefixRedirect cannot be supplied together with pathRedirect. Supply one alone or neither. If neither is supplied, the path of the original request will be used for the redirect. The value must be between 1 and 1024 characters.
-     *     @type int $redirect_response_code
-     *           The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     *     @type string $redirect_response_code
+     *           The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     *           Check the RedirectResponseCode enum for the list of possible values.
      *     @type bool $strip_query
      *           If set to true, any accompanying query portion of the original URL is removed prior to redirecting the request. If set to false, the query portion of the original URL is retained. The default is set to false.
      * }
@@ -222,14 +224,15 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string redirect_response_code = 436710408;</code>
+     * @return string
      */
     public function getRedirectResponseCode()
     {
-        return isset($this->redirect_response_code) ? $this->redirect_response_code : 0;
+        return isset($this->redirect_response_code) ? $this->redirect_response_code : '';
     }
 
     public function hasRedirectResponseCode()
@@ -243,15 +246,16 @@ class HttpRedirectAction extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+     * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+     * Check the RedirectResponseCode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string redirect_response_code = 436710408;</code>
+     * @param string $var
      * @return $this
      */
     public function setRedirectResponseCode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HttpRedirectAction\RedirectResponseCode::class);
+        GPBUtil::checkString($var, True);
         $this->redirect_response_code = $var;
 
         return $this;

@@ -77,8 +77,9 @@ class Reservation extends \Google\Protobuf\Internal\Message
     protected $specific_reservation_required = null;
     /**
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -114,8 +115,9 @@ class Reservation extends \Google\Protobuf\Internal\Message
      *           Reservation for instances with specific machine shapes.
      *     @type bool $specific_reservation_required
      *           Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the reservation.
+     *           Check the Status enum for the list of possible values.
      *     @type string $zone
      *           Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
      * }
@@ -487,13 +489,14 @@ class Reservation extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -508,14 +511,15 @@ class Reservation extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the reservation.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Reservation.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Reservation\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

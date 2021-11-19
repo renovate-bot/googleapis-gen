@@ -322,30 +322,34 @@ public interface InterconnectOrBuilder extends
   /**
    * <pre>
    * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
+   * <code>optional string interconnect_type = 515165259;</code>
    * @return Whether the interconnectType field is set.
    */
   boolean hasInterconnectType();
   /**
    * <pre>
    * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-   * @return The enum numeric value on the wire for interconnectType.
+   * <code>optional string interconnect_type = 515165259;</code>
+   * @return The interconnectType.
    */
-  int getInterconnectTypeValue();
+  java.lang.String getInterconnectType();
   /**
    * <pre>
    * Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
+   * Check the InterconnectType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.InterconnectType interconnect_type = 515165259;</code>
-   * @return The interconnectType.
+   * <code>optional string interconnect_type = 515165259;</code>
+   * @return The bytes for interconnectType.
    */
-  com.google.cloud.compute.v1.Interconnect.InterconnectType getInterconnectType();
+  com.google.protobuf.ByteString
+      getInterconnectTypeBytes();
 
   /**
    * <pre>
@@ -379,30 +383,34 @@ public interface InterconnectOrBuilder extends
   /**
    * <pre>
    * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Check the LinkType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
+   * <code>optional string link_type = 523207775;</code>
    * @return Whether the linkType field is set.
    */
   boolean hasLinkType();
   /**
    * <pre>
    * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Check the LinkType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-   * @return The enum numeric value on the wire for linkType.
+   * <code>optional string link_type = 523207775;</code>
+   * @return The linkType.
    */
-  int getLinkTypeValue();
+  java.lang.String getLinkType();
   /**
    * <pre>
    * Type of link requested, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR: A 10G Ethernet with LR optics - LINK_TYPE_ETHERNET_100G_LR: A 100G Ethernet with LR optics. Note that this field indicates the speed of each of the links in the bundle, not the speed of the entire bundle.
+   * Check the LinkType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.LinkType link_type = 523207775;</code>
-   * @return The linkType.
+   * <code>optional string link_type = 523207775;</code>
+   * @return The bytes for linkType.
    */
-  com.google.cloud.compute.v1.Interconnect.LinkType getLinkType();
+  com.google.protobuf.ByteString
+      getLinkTypeBytes();
 
   /**
    * <pre>
@@ -493,31 +501,35 @@ public interface InterconnectOrBuilder extends
 
   /**
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
+   * <code>optional string operational_status = 201070847;</code>
    * @return Whether the operationalStatus field is set.
    */
   boolean hasOperationalStatus();
   /**
    * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the OperationalStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
-   * @return The enum numeric value on the wire for operationalStatus.
-   */
-  int getOperationalStatusValue();
-  /**
-   * <pre>
-   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.Interconnect.OperationalStatus operational_status = 201070847;</code>
+   * <code>optional string operational_status = 201070847;</code>
    * @return The operationalStatus.
    */
-  com.google.cloud.compute.v1.Interconnect.OperationalStatus getOperationalStatus();
+  java.lang.String getOperationalStatus();
+  /**
+   * <pre>
+   * [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the OperationalStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string operational_status = 201070847;</code>
+   * @return The bytes for operationalStatus.
+   */
+  com.google.protobuf.ByteString
+      getOperationalStatusBytes();
 
   /**
    * <pre>
@@ -636,29 +648,33 @@ public interface InterconnectOrBuilder extends
 
   /**
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return Whether the state field is set.
    */
   boolean hasState();
   /**
    * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
-   * @return The enum numeric value on the wire for state.
-   */
-  int getStateValue();
-  /**
-   * <pre>
-   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.Interconnect.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return The state.
    */
-  com.google.cloud.compute.v1.Interconnect.State getState();
+  java.lang.String getState();
+  /**
+   * <pre>
+   * [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
+   * Check the State enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string state = 109757585;</code>
+   * @return The bytes for state.
+   */
+  com.google.protobuf.ByteString
+      getStateBytes();
 }

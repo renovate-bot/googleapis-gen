@@ -67,28 +67,32 @@ public interface RouterBgpPeerBfdOrBuilder extends
   /**
    * <pre>
    * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+   * Check the SessionInitializationMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
+   * <code>optional string session_initialization_mode = 105957049;</code>
    * @return Whether the sessionInitializationMode field is set.
    */
   boolean hasSessionInitializationMode();
   /**
    * <pre>
    * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+   * Check the SessionInitializationMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-   * @return The enum numeric value on the wire for sessionInitializationMode.
+   * <code>optional string session_initialization_mode = 105957049;</code>
+   * @return The sessionInitializationMode.
    */
-  int getSessionInitializationModeValue();
+  java.lang.String getSessionInitializationMode();
   /**
    * <pre>
    * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+   * Check the SessionInitializationMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-   * @return The sessionInitializationMode.
+   * <code>optional string session_initialization_mode = 105957049;</code>
+   * @return The bytes for sessionInitializationMode.
    */
-  com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode getSessionInitializationMode();
+  com.google.protobuf.ByteString
+      getSessionInitializationModeBytes();
 }

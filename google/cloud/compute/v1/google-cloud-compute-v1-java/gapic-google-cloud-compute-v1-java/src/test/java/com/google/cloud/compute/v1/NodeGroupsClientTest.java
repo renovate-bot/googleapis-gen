@@ -366,11 +366,13 @@ public class NodeGroupsClientTest {
             .setId(3355)
             .setKind("kind3292052")
             .setLocationHint("locationHint-58650660")
+            .setMaintenancePolicy("maintenancePolicy-1365923291")
             .setMaintenanceWindow(NodeGroupMaintenanceWindow.newBuilder().build())
             .setName("name3373707")
             .setNodeTemplate("nodeTemplate2118368412")
             .setSelfLink("selfLink1191800166")
             .setSize(3530753)
+            .setStatus("status-892481550")
             .setZone("zone3744684")
             .build();
     mockService.addResponse(expectedResponse);

@@ -53,8 +53,9 @@ class TargetInstance extends \Google\Protobuf\Internal\Message
     protected $name = null;
     /**
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+     * Generated from protobuf field <code>optional string nat_policy = 509780496;</code>
      */
     protected $nat_policy = null;
     /**
@@ -94,8 +95,9 @@ class TargetInstance extends \Google\Protobuf\Internal\Message
      *           [Output Only] The type of the resource. Always compute#targetInstance for target instances.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-     *     @type int $nat_policy
+     *     @type string $nat_policy
      *           NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     *           Check the NatPolicy enum for the list of possible values.
      *     @type string $network
      *           The URL of the network this target instance uses to forward traffic. If not specified, the traffic will be forwarded to the network that the default network interface belongs to.
      *     @type string $self_link
@@ -327,13 +329,14 @@ class TargetInstance extends \Google\Protobuf\Internal\Message
 
     /**
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string nat_policy = 509780496;</code>
+     * @return string
      */
     public function getNatPolicy()
     {
-        return isset($this->nat_policy) ? $this->nat_policy : 0;
+        return isset($this->nat_policy) ? $this->nat_policy : '';
     }
 
     public function hasNatPolicy()
@@ -348,14 +351,15 @@ class TargetInstance extends \Google\Protobuf\Internal\Message
 
     /**
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string nat_policy = 509780496;</code>
+     * @param string $var
      * @return $this
      */
     public function setNatPolicy($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\TargetInstance\NatPolicy::class);
+        GPBUtil::checkString($var, True);
         $this->nat_policy = $var;
 
         return $this;

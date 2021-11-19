@@ -50,9 +50,10 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
+     * Generated from protobuf field <code>optional string nat_ip_allocate_option = 429726845;</code>
      */
     protected $nat_ip_allocate_option = null;
     /**
@@ -69,8 +70,9 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     private $rules;
     /**
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * Generated from protobuf field <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
      */
     protected $source_subnetwork_ip_ranges_to_nat = null;
     /**
@@ -121,14 +123,16 @@ class RouterNat extends \Google\Protobuf\Internal\Message
      *           Minimum number of ports allocated to a VM from this NAT config. If not set, a default number of ports is allocated to a VM. This is rounded up to the nearest power of 2. For example, if the value of this field is 50, at least 64 ports are allocated to a VM.
      *     @type string $name
      *           Unique name of this Nat service. The name must be 1-63 characters long and comply with RFC1035.
-     *     @type int $nat_ip_allocate_option
-     *           Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     *     @type string $nat_ip_allocate_option
+     *           Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     *           Check the NatIpAllocateOption enum for the list of possible values.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $nat_ips
      *           A list of URLs of the IP resources used for this Nat service. These IP addresses must be valid static external IP addresses assigned to the project.
      *     @type \Google\Cloud\Compute\V1\RouterNatRule[]|\Google\Protobuf\Internal\RepeatedField $rules
      *           A list of rules associated with this NAT.
-     *     @type int $source_subnetwork_ip_ranges_to_nat
+     *     @type string $source_subnetwork_ip_ranges_to_nat
      *           Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     *           Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\RouterNatSubnetworkToNat[]|\Google\Protobuf\Internal\RepeatedField $subnetworks
      *           A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
      *     @type int $tcp_established_idle_timeout_sec
@@ -349,14 +353,15 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string nat_ip_allocate_option = 429726845;</code>
+     * @return string
      */
     public function getNatIpAllocateOption()
     {
-        return isset($this->nat_ip_allocate_option) ? $this->nat_ip_allocate_option : 0;
+        return isset($this->nat_ip_allocate_option) ? $this->nat_ip_allocate_option : '';
     }
 
     public function hasNatIpAllocateOption()
@@ -370,15 +375,16 @@ class RouterNat extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
+     * Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty.
+     * Check the NatIpAllocateOption enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterNat.NatIpAllocateOption nat_ip_allocate_option = 429726845;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string nat_ip_allocate_option = 429726845;</code>
+     * @param string $var
      * @return $this
      */
     public function setNatIpAllocateOption($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RouterNat\NatIpAllocateOption::class);
+        GPBUtil::checkString($var, True);
         $this->nat_ip_allocate_option = $var;
 
         return $this;
@@ -438,13 +444,14 @@ class RouterNat extends \Google\Protobuf\Internal\Message
 
     /**
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * @return string
      */
     public function getSourceSubnetworkIpRangesToNat()
     {
-        return isset($this->source_subnetwork_ip_ranges_to_nat) ? $this->source_subnetwork_ip_ranges_to_nat : 0;
+        return isset($this->source_subnetwork_ip_ranges_to_nat) ? $this->source_subnetwork_ip_ranges_to_nat : '';
     }
 
     public function hasSourceSubnetworkIpRangesToNat()
@@ -459,14 +466,15 @@ class RouterNat extends \Google\Protobuf\Internal\Message
 
     /**
      * Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+     * Check the SourceSubnetworkIpRangesToNat enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterNat.SourceSubnetworkIpRangesToNat source_subnetwork_ip_ranges_to_nat = 252213211;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string source_subnetwork_ip_ranges_to_nat = 252213211;</code>
+     * @param string $var
      * @return $this
      */
     public function setSourceSubnetworkIpRangesToNat($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RouterNat\SourceSubnetworkIpRangesToNat::class);
+        GPBUtil::checkString($var, True);
         $this->source_subnetwork_ip_ranges_to_nat = $var;
 
         return $this;

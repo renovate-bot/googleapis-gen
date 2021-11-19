@@ -10,28 +10,32 @@ public interface StatefulPolicyPreservedStateDiskDeviceOrBuilder extends
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
+   * <code>optional string auto_delete = 464761403;</code>
    * @return Whether the autoDelete field is set.
    */
   boolean hasAutoDelete();
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-   * @return The enum numeric value on the wire for autoDelete.
+   * <code>optional string auto_delete = 464761403;</code>
+   * @return The autoDelete.
    */
-  int getAutoDeleteValue();
+  java.lang.String getAutoDelete();
   /**
    * <pre>
    * These stateful disks will never be deleted during autohealing, update or VM instance recreate operations. This flag is used to configure if the disk should be deleted after it is no longer used by the group, e.g. when the given instance or the whole group is deleted. Note: disks attached in READ_ONLY mode cannot be auto-deleted.
+   * Check the AutoDelete enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete auto_delete = 464761403;</code>
-   * @return The autoDelete.
+   * <code>optional string auto_delete = 464761403;</code>
+   * @return The bytes for autoDelete.
    */
-  com.google.cloud.compute.v1.StatefulPolicyPreservedStateDiskDevice.AutoDelete getAutoDelete();
+  com.google.protobuf.ByteString
+      getAutoDeleteBytes();
 }

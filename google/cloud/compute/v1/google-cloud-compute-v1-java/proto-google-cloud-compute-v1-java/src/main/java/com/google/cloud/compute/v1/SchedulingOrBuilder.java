@@ -121,30 +121,34 @@ public interface SchedulingOrBuilder extends
   /**
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
+   * <code>optional string on_host_maintenance = 64616796;</code>
    * @return Whether the onHostMaintenance field is set.
    */
   boolean hasOnHostMaintenance();
   /**
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-   * @return The enum numeric value on the wire for onHostMaintenance.
+   * <code>optional string on_host_maintenance = 64616796;</code>
+   * @return The onHostMaintenance.
    */
-  int getOnHostMaintenanceValue();
+  java.lang.String getOnHostMaintenance();
   /**
    * <pre>
    * Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Setting Instance Scheduling Options.
+   * Check the OnHostMaintenance enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Scheduling.OnHostMaintenance on_host_maintenance = 64616796;</code>
-   * @return The onHostMaintenance.
+   * <code>optional string on_host_maintenance = 64616796;</code>
+   * @return The bytes for onHostMaintenance.
    */
-  com.google.cloud.compute.v1.Scheduling.OnHostMaintenance getOnHostMaintenance();
+  com.google.protobuf.ByteString
+      getOnHostMaintenanceBytes();
 
   /**
    * <pre>

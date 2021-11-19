@@ -22,12 +22,12 @@ private static final long serialVersionUID = 0L;
   private AttachedDisk() {
     deviceName_ = "";
     guestOsFeatures_ = java.util.Collections.emptyList();
-    interface_ = 0;
+    interface_ = "";
     kind_ = "";
     licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    mode_ = 0;
+    mode_ = "";
     source_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -72,16 +72,16 @@ private static final long serialVersionUID = 0L;
             kind_ = s;
             break;
           }
-          case 26856728: {
-            int rawValue = input.readEnum();
+          case 26856730: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000200;
-            mode_ = rawValue;
+            mode_ = s;
             break;
           }
-          case 28604880: {
-            int rawValue = input.readEnum();
+          case 28604882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00001000;
-            type_ = rawValue;
+            type_ = s;
             break;
           }
           case 141576362: {
@@ -168,10 +168,10 @@ private static final long serialVersionUID = 0L;
             autoDelete_ = input.readBool();
             break;
           }
-          case -273978936: {
-            int rawValue = input.readEnum();
+          case -273978934: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            interface_ = rawValue;
+            interface_ = s;
             break;
           }
           default: {
@@ -919,41 +919,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INTERFACE_FIELD_NUMBER = 502623545;
-  private int interface_;
+  private volatile java.lang.Object interface_;
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    * @return Whether the interface field is set.
    */
-  @java.lang.Override public boolean hasInterface() {
+  @java.lang.Override
+  public boolean hasInterface() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-   * @return The enum numeric value on the wire for interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The interface.
    */
-  @java.lang.Override public int getInterfaceValue() {
-    return interface_;
+  @java.lang.Override
+  public java.lang.String getInterface() {
+    java.lang.Object ref = interface_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      interface_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-   * @return The interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The bytes for interface.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AttachedDisk.Interface getInterface() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDisk.Interface result = com.google.cloud.compute.v1.AttachedDisk.Interface.valueOf(interface_);
-    return result == null ? com.google.cloud.compute.v1.AttachedDisk.Interface.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInterfaceBytes() {
+    java.lang.Object ref = interface_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      interface_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int KIND_FIELD_NUMBER = 3292052;
@@ -1066,41 +1089,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MODE_FIELD_NUMBER = 3357091;
-  private int mode_;
+  private volatile java.lang.Object mode_;
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    * @return Whether the mode field is set.
    */
-  @java.lang.Override public boolean hasMode() {
+  @java.lang.Override
+  public boolean hasMode() {
     return ((bitField0_ & 0x00000200) != 0);
   }
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-   * @return The enum numeric value on the wire for mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The mode.
    */
-  @java.lang.Override public int getModeValue() {
-    return mode_;
+  @java.lang.Override
+  public java.lang.String getMode() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      mode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-   * @return The mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The bytes for mode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AttachedDisk.Mode getMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDisk.Mode result = com.google.cloud.compute.v1.AttachedDisk.Mode.valueOf(mode_);
-    return result == null ? com.google.cloud.compute.v1.AttachedDisk.Mode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getModeBytes() {
+    java.lang.Object ref = mode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      mode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SHIELDED_INSTANCE_INITIAL_STATE_FIELD_NUMBER = 192356867;
@@ -1200,41 +1246,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
-  @java.lang.Override public boolean hasType() {
+  @java.lang.Override
+  public boolean hasType() {
     return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  @java.lang.Override public int getTypeValue() {
-    return type_;
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AttachedDisk.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AttachedDisk.Type result = com.google.cloud.compute.v1.AttachedDisk.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.AttachedDisk.Type.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1258,10 +1327,10 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3292052, kind_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      output.writeEnum(3357091, mode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3357091, mode_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(17697045, getInitializeParams());
@@ -1294,7 +1363,7 @@ private static final long serialVersionUID = 0L;
       output.writeBool(464761403, autoDelete_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(502623545, interface_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 502623545, interface_);
     }
     unknownFields.writeTo(output);
   }
@@ -1313,12 +1382,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3292052, kind_);
     }
     if (((bitField0_ & 0x00000200) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3357091, mode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3357091, mode_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -1363,8 +1430,7 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(464761403, autoDelete_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(502623545, interface_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(502623545, interface_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1420,7 +1486,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInterface() != other.hasInterface()) return false;
     if (hasInterface()) {
-      if (interface_ != other.interface_) return false;
+      if (!getInterface()
+          .equals(other.getInterface())) return false;
     }
     if (hasKind() != other.hasKind()) return false;
     if (hasKind()) {
@@ -1431,7 +1498,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getLicensesList())) return false;
     if (hasMode() != other.hasMode()) return false;
     if (hasMode()) {
-      if (mode_ != other.mode_) return false;
+      if (!getMode()
+          .equals(other.getMode())) return false;
     }
     if (hasShieldedInstanceInitialState() != other.hasShieldedInstanceInitialState()) return false;
     if (hasShieldedInstanceInitialState()) {
@@ -1445,7 +1513,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1495,7 +1564,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInterface()) {
       hash = (37 * hash) + INTERFACE_FIELD_NUMBER;
-      hash = (53 * hash) + interface_;
+      hash = (53 * hash) + getInterface().hashCode();
     }
     if (hasKind()) {
       hash = (37 * hash) + KIND_FIELD_NUMBER;
@@ -1507,7 +1576,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasMode()) {
       hash = (37 * hash) + MODE_FIELD_NUMBER;
-      hash = (53 * hash) + mode_;
+      hash = (53 * hash) + getMode().hashCode();
     }
     if (hasShieldedInstanceInitialState()) {
       hash = (37 * hash) + SHIELDED_INSTANCE_INITIAL_STATE_FIELD_NUMBER;
@@ -1519,7 +1588,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1690,13 +1759,13 @@ private static final long serialVersionUID = 0L;
         initializeParamsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000080);
-      interface_ = 0;
+      interface_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       kind_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
       licenses_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00000400);
-      mode_ = 0;
+      mode_ = "";
       bitField0_ = (bitField0_ & ~0x00000800);
       if (shieldedInstanceInitialStateBuilder_ == null) {
         shieldedInstanceInitialState_ = null;
@@ -1706,7 +1775,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00001000);
       source_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       return this;
     }
@@ -1913,7 +1982,9 @@ private static final long serialVersionUID = 0L;
         mergeInitializeParams(other.getInitializeParams());
       }
       if (other.hasInterface()) {
-        setInterface(other.getInterface());
+        bitField0_ |= 0x00000100;
+        interface_ = other.interface_;
+        onChanged();
       }
       if (other.hasKind()) {
         bitField0_ |= 0x00000200;
@@ -1931,7 +2002,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasMode()) {
-        setMode(other.getMode());
+        bitField0_ |= 0x00000800;
+        mode_ = other.mode_;
+        onChanged();
       }
       if (other.hasShieldedInstanceInitialState()) {
         mergeShieldedInstanceInitialState(other.getShieldedInstanceInitialState());
@@ -1942,7 +2015,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00004000;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2925,40 +3000,78 @@ private static final long serialVersionUID = 0L;
       return initializeParamsBuilder_;
     }
 
-    private int interface_ = 0;
+    private java.lang.Object interface_ = "";
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
      * @return Whether the interface field is set.
      */
-    @java.lang.Override public boolean hasInterface() {
+    public boolean hasInterface() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     * @return The enum numeric value on the wire for interface.
+     * <code>optional string interface = 502623545;</code>
+     * @return The interface.
      */
-    @java.lang.Override public int getInterfaceValue() {
-      return interface_;
+    public java.lang.String getInterface() {
+      java.lang.Object ref = interface_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interface_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     * @param value The enum numeric value on the wire for interface to set.
+     * <code>optional string interface = 502623545;</code>
+     * @return The bytes for interface.
+     */
+    public com.google.protobuf.ByteString
+        getInterfaceBytes() {
+      java.lang.Object ref = interface_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        interface_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string interface = 502623545;</code>
+     * @param value The interface to set.
      * @return This builder for chaining.
      */
-    public Builder setInterfaceValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setInterface(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       interface_ = value;
       onChanged();
       return this;
@@ -2966,46 +3079,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     * @return The interface.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDisk.Interface getInterface() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDisk.Interface result = com.google.cloud.compute.v1.AttachedDisk.Interface.valueOf(interface_);
-      return result == null ? com.google.cloud.compute.v1.AttachedDisk.Interface.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
-     * @param value The interface to set.
+     * <code>optional string interface = 502623545;</code>
      * @return This builder for chaining.
      */
-    public Builder setInterface(com.google.cloud.compute.v1.AttachedDisk.Interface value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      interface_ = value.getNumber();
+    public Builder clearInterface() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      interface_ = getDefaultInstance().getInterface();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. Persistent disks must always use SCSI and the request will fail if you attempt to attach a persistent disk in any other format than SCSI. Local SSDs can use either NVME or SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+     * Check the Interface enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Interface interface = 502623545;</code>
+     * <code>optional string interface = 502623545;</code>
+     * @param value The bytes for interface to set.
      * @return This builder for chaining.
      */
-    public Builder clearInterface() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      interface_ = 0;
+    public Builder setInterfaceBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      interface_ = value;
       onChanged();
       return this;
     }
@@ -3263,40 +3366,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int mode_ = 0;
+    private java.lang.Object mode_ = "";
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
      * @return Whether the mode field is set.
      */
-    @java.lang.Override public boolean hasMode() {
+    public boolean hasMode() {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     * @return The enum numeric value on the wire for mode.
+     * <code>optional string mode = 3357091;</code>
+     * @return The mode.
      */
-    @java.lang.Override public int getModeValue() {
-      return mode_;
+    public java.lang.String getMode() {
+      java.lang.Object ref = mode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     * @param value The enum numeric value on the wire for mode to set.
+     * <code>optional string mode = 3357091;</code>
+     * @return The bytes for mode.
+     */
+    public com.google.protobuf.ByteString
+        getModeBytes() {
+      java.lang.Object ref = mode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string mode = 3357091;</code>
+     * @param value The mode to set.
      * @return This builder for chaining.
      */
-    public Builder setModeValue(int value) {
-      bitField0_ |= 0x00000800;
+    public Builder setMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000800;
       mode_ = value;
       onChanged();
       return this;
@@ -3304,46 +3445,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     * @return The mode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDisk.Mode getMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDisk.Mode result = com.google.cloud.compute.v1.AttachedDisk.Mode.valueOf(mode_);
-      return result == null ? com.google.cloud.compute.v1.AttachedDisk.Mode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
-     * @param value The mode to set.
+     * <code>optional string mode = 3357091;</code>
      * @return This builder for chaining.
      */
-    public Builder setMode(com.google.cloud.compute.v1.AttachedDisk.Mode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000800;
-      mode_ = value.getNumber();
+    public Builder clearMode() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      mode_ = getDefaultInstance().getMode();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The mode in which to attach this disk, either READ_WRITE or READ_ONLY. If not specified, the default is to attach the disk in READ_WRITE mode.
+     * Check the Mode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Mode mode = 3357091;</code>
+     * <code>optional string mode = 3357091;</code>
+     * @param value The bytes for mode to set.
      * @return This builder for chaining.
      */
-    public Builder clearMode() {
-      bitField0_ = (bitField0_ & ~0x00000800);
-      mode_ = 0;
+    public Builder setModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000800;
+      mode_ = value;
       onChanged();
       return this;
     }
@@ -3611,40 +3742,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
+    public boolean hasType() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>optional string type = 3575610;</code>
+     * @return The type.
      */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     * @param value The enum numeric value on the wire for type to set.
+     * <code>optional string type = 3575610;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
-      bitField0_ |= 0x00004000;
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
       type_ = value;
       onChanged();
       return this;
@@ -3652,46 +3821,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AttachedDisk.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AttachedDisk.Type result = com.google.cloud.compute.v1.AttachedDisk.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.AttachedDisk.Type.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
-     * @param value The type to set.
+     * <code>optional string type = 3575610;</code>
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.AttachedDisk.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Specifies the type of the disk, either SCRATCH or PERSISTENT. If not specified, the default is PERSISTENT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AttachedDisk.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      type_ = 0;
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      type_ = value;
       onChanged();
       return this;
     }

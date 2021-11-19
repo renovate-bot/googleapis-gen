@@ -17,8 +17,9 @@ class Backend extends \Google\Protobuf\Internal\Message
 {
     /**
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+     * Generated from protobuf field <code>optional string balancing_mode = 430286217;</code>
      */
     protected $balancing_mode = null;
     /**
@@ -94,8 +95,9 @@ class Backend extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $balancing_mode
+     *     @type string $balancing_mode
      *           Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     *           Check the BalancingMode enum for the list of possible values.
      *     @type float $capacity_scaler
      *           A multiplier applied to the backend's target capacity of its balancing mode. The default value is 1, which means the group serves up to 100% of its configured capacity (depending on balancingMode). A setting of 0 means the group is completely drained, offering 0% of its available capacity. The valid ranges are 0.0 and [0.1,1.0]. You cannot configure a setting larger than 0 and smaller than 0.1. You cannot configure a setting of 0 when there is only one backend attached to the backend service.
      *     @type string $description
@@ -127,13 +129,14 @@ class Backend extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string balancing_mode = 430286217;</code>
+     * @return string
      */
     public function getBalancingMode()
     {
-        return isset($this->balancing_mode) ? $this->balancing_mode : 0;
+        return isset($this->balancing_mode) ? $this->balancing_mode : '';
     }
 
     public function hasBalancingMode()
@@ -148,14 +151,15 @@ class Backend extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+     * Check the BalancingMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string balancing_mode = 430286217;</code>
+     * @param string $var
      * @return $this
      */
     public function setBalancingMode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Backend\BalancingMode::class);
+        GPBUtil::checkString($var, True);
         $this->balancing_mode = $var;
 
         return $this;

@@ -215,6 +215,7 @@ class RoutesClientTest extends GeneratedTest
         $nextHopPeering = 'nextHopPeering-661059074';
         $nextHopVpnTunnel = 'nextHopVpnTunnel-1627639147';
         $priority = 1165461084;
+        $routeType = 'routeType912759664';
         $selfLink = 'selfLink-1691268851';
         $expectedResponse = new Route();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -232,6 +233,7 @@ class RoutesClientTest extends GeneratedTest
         $expectedResponse->setNextHopPeering($nextHopPeering);
         $expectedResponse->setNextHopVpnTunnel($nextHopVpnTunnel);
         $expectedResponse->setPriority($priority);
+        $expectedResponse->setRouteType($routeType);
         $expectedResponse->setSelfLink($selfLink);
         $transport->addResponse($expectedResponse);
         // Mock request

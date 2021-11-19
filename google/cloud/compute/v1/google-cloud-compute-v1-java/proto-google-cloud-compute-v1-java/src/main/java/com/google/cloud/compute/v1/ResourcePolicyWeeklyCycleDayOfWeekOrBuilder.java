@@ -10,30 +10,34 @@ public interface ResourcePolicyWeeklyCycleDayOfWeekOrBuilder extends
   /**
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+   * <code>optional string day = 99228;</code>
    * @return Whether the day field is set.
    */
   boolean hasDay();
   /**
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
-   * @return The enum numeric value on the wire for day.
+   * <code>optional string day = 99228;</code>
+   * @return The day.
    */
-  int getDayValue();
+  java.lang.String getDay();
   /**
    * <pre>
    * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+   * Check the Day enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
-   * @return The day.
+   * <code>optional string day = 99228;</code>
+   * @return The bytes for day.
    */
-  com.google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day getDay();
+  com.google.protobuf.ByteString
+      getDayBytes();
 
   /**
    * <pre>

@@ -65,8 +65,9 @@ class Region extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * [Output Only] Status of the region, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Region.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -104,8 +105,9 @@ class Region extends \Google\Protobuf\Internal\Message
      *           [Output Only] Quotas assigned to this region.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] Status of the region, either UP or DOWN.
+     *           Check the Status enum for the list of possible values.
      *     @type bool $supports_pzs
      *           [Output Only] Reserved for future use.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $zones
@@ -397,13 +399,14 @@ class Region extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Status of the region, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Region.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -418,14 +421,15 @@ class Region extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Status of the region, either UP or DOWN.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Region.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Region\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

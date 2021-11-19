@@ -34,9 +34,10 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
      */
     protected $city = null;
     /**
-     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+     * Check the Continent enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
+     * Generated from protobuf field <code>optional string continent = 133442996;</code>
      */
     protected $continent = null;
     /**
@@ -100,9 +101,10 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
      */
     protected $self_link = null;
     /**
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -124,8 +126,9 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
      *           [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
      *     @type string $city
      *           [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
-     *     @type int $continent
-     *           [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
+     *     @type string $continent
+     *           [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+     *           Check the Continent enum for the list of possible values.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
@@ -146,8 +149,9 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
      *           [Output Only] A list of InterconnectLocation.RegionInfo objects, that describe parameters pertaining to the relation between this InterconnectLocation and various Google Cloud regions.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $status
-     *           [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+     *     @type string $status
+     *           [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     *           Check the Status enum for the list of possible values.
      *     @type bool $supports_pzs
      *           [Output Only] Set to true for locations that support physical zone separation. Defaults to false if the field is not present.
      * }
@@ -266,14 +270,15 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+     * Check the Continent enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string continent = 133442996;</code>
+     * @return string
      */
     public function getContinent()
     {
-        return isset($this->continent) ? $this->continent : 0;
+        return isset($this->continent) ? $this->continent : '';
     }
 
     public function hasContinent()
@@ -287,15 +292,16 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 
+     * [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA
+     * Check the Continent enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectLocation.Continent continent = 133442996;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string continent = 133442996;</code>
+     * @param string $var
      * @return $this
      */
     public function setContinent($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\InterconnectLocation\Continent::class);
+        GPBUtil::checkString($var, True);
         $this->continent = $var;
 
         return $this;
@@ -652,14 +658,15 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -673,15 +680,16 @@ class InterconnectLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects. 
+     * [Output Only] The status of this InterconnectLocation, which can take one of the following values: - CLOSED: The InterconnectLocation is closed and is unavailable for provisioning new Interconnects. - AVAILABLE: The InterconnectLocation is available for provisioning new Interconnects.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InterconnectLocation.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\InterconnectLocation\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

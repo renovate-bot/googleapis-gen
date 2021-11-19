@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RawDisk() {
-    containerType_ = 0;
+    containerType_ = "";
     sha1Checksum_ = "";
     source_ = "";
   }
@@ -68,10 +68,10 @@ private static final long serialVersionUID = 0L;
             sha1Checksum_ = s;
             break;
           }
-          case -1744494144: {
-            int rawValue = input.readEnum();
+          case -1744494142: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            containerType_ = rawValue;
+            containerType_ = s;
             break;
           }
           default: {
@@ -228,41 +228,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int CONTAINER_TYPE_FIELD_NUMBER = 318809144;
-  private int containerType_;
+  private volatile java.lang.Object containerType_;
   /**
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+   * <code>optional string container_type = 318809144;</code>
    * @return Whether the containerType field is set.
    */
-  @java.lang.Override public boolean hasContainerType() {
+  @java.lang.Override
+  public boolean hasContainerType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-   * @return The enum numeric value on the wire for containerType.
+   * <code>optional string container_type = 318809144;</code>
+   * @return The containerType.
    */
-  @java.lang.Override public int getContainerTypeValue() {
-    return containerType_;
+  @java.lang.Override
+  public java.lang.String getContainerType() {
+    java.lang.Object ref = containerType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      containerType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+   * Check the ContainerType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-   * @return The containerType.
+   * <code>optional string container_type = 318809144;</code>
+   * @return The bytes for containerType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RawDisk.ContainerType getContainerType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RawDisk.ContainerType result = com.google.cloud.compute.v1.RawDisk.ContainerType.valueOf(containerType_);
-    return result == null ? com.google.cloud.compute.v1.RawDisk.ContainerType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getContainerTypeBytes() {
+    java.lang.Object ref = containerType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      containerType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SHA1_CHECKSUM_FIELD_NUMBER = 314444349;
@@ -402,7 +425,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 314444349, sha1Checksum_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(318809144, containerType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 318809144, containerType_);
     }
     unknownFields.writeTo(output);
   }
@@ -420,8 +443,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(314444349, sha1Checksum_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(318809144, containerType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(318809144, containerType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -440,7 +462,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasContainerType() != other.hasContainerType()) return false;
     if (hasContainerType()) {
-      if (containerType_ != other.containerType_) return false;
+      if (!getContainerType()
+          .equals(other.getContainerType())) return false;
     }
     if (hasSha1Checksum() != other.hasSha1Checksum()) return false;
     if (hasSha1Checksum()) {
@@ -465,7 +488,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasContainerType()) {
       hash = (37 * hash) + CONTAINER_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + containerType_;
+      hash = (53 * hash) + getContainerType().hashCode();
     }
     if (hasSha1Checksum()) {
       hash = (37 * hash) + SHA1_CHECKSUM_FIELD_NUMBER;
@@ -612,7 +635,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      containerType_ = 0;
+      containerType_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       sha1Checksum_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -708,7 +731,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.RawDisk other) {
       if (other == com.google.cloud.compute.v1.RawDisk.getDefaultInstance()) return this;
       if (other.hasContainerType()) {
-        setContainerType(other.getContainerType());
+        bitField0_ |= 0x00000001;
+        containerType_ = other.containerType_;
+        onChanged();
       }
       if (other.hasSha1Checksum()) {
         bitField0_ |= 0x00000002;
@@ -750,40 +775,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int containerType_ = 0;
+    private java.lang.Object containerType_ = "";
     /**
      * <pre>
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>optional string container_type = 318809144;</code>
      * @return Whether the containerType field is set.
      */
-    @java.lang.Override public boolean hasContainerType() {
+    public boolean hasContainerType() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-     * @return The enum numeric value on the wire for containerType.
+     * <code>optional string container_type = 318809144;</code>
+     * @return The containerType.
      */
-    @java.lang.Override public int getContainerTypeValue() {
-      return containerType_;
+    public java.lang.String getContainerType() {
+      java.lang.Object ref = containerType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        containerType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-     * @param value The enum numeric value on the wire for containerType to set.
+     * <code>optional string container_type = 318809144;</code>
+     * @return The bytes for containerType.
+     */
+    public com.google.protobuf.ByteString
+        getContainerTypeBytes() {
+      java.lang.Object ref = containerType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        containerType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string container_type = 318809144;</code>
+     * @param value The containerType to set.
      * @return This builder for chaining.
      */
-    public Builder setContainerTypeValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setContainerType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       containerType_ = value;
       onChanged();
       return this;
@@ -791,46 +854,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-     * @return The containerType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RawDisk.ContainerType getContainerType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RawDisk.ContainerType result = com.google.cloud.compute.v1.RawDisk.ContainerType.valueOf(containerType_);
-      return result == null ? com.google.cloud.compute.v1.RawDisk.ContainerType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-     * @param value The containerType to set.
+     * <code>optional string container_type = 318809144;</code>
      * @return This builder for chaining.
      */
-    public Builder setContainerType(com.google.cloud.compute.v1.RawDisk.ContainerType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      containerType_ = value.getNumber();
+    public Builder clearContainerType() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      containerType_ = getDefaultInstance().getContainerType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * <code>optional string container_type = 318809144;</code>
+     * @param value The bytes for containerType to set.
      * @return This builder for chaining.
      */
-    public Builder clearContainerType() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      containerType_ = 0;
+    public Builder setContainerTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      containerType_ = value;
       onChanged();
       return this;
     }

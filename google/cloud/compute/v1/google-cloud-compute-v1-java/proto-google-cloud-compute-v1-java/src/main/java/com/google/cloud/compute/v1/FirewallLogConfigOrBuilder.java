@@ -29,28 +29,32 @@ public interface FirewallLogConfigOrBuilder extends
   /**
    * <pre>
    * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
+   * <code>optional string metadata = 86866735;</code>
    * @return Whether the metadata field is set.
    */
   boolean hasMetadata();
   /**
    * <pre>
    * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-   * @return The enum numeric value on the wire for metadata.
+   * <code>optional string metadata = 86866735;</code>
+   * @return The metadata.
    */
-  int getMetadataValue();
+  java.lang.String getMetadata();
   /**
    * <pre>
    * This field can only be specified for a particular firewall rule if logging is enabled for that rule. This field denotes whether to include or exclude metadata for firewall logs.
+   * Check the Metadata enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.FirewallLogConfig.Metadata metadata = 86866735;</code>
-   * @return The metadata.
+   * <code>optional string metadata = 86866735;</code>
+   * @return The bytes for metadata.
    */
-  com.google.cloud.compute.v1.FirewallLogConfig.Metadata getMetadata();
+  com.google.protobuf.ByteString
+      getMetadataBytes();
 }

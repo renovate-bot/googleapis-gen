@@ -28,8 +28,9 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
     protected $min_nodes = null;
     /**
      * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
      */
     protected $mode = null;
 
@@ -43,8 +44,9 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
      *           The maximum number of nodes that the group should have. Must be set if autoscaling is enabled. Maximum value allowed is 100.
      *     @type int $min_nodes
      *           The minimum number of nodes that the group should have.
-     *     @type int $mode
+     *     @type string $mode
      *           The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     *           Check the Mode enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -126,13 +128,14 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
+     * @return string
      */
     public function getMode()
     {
-        return isset($this->mode) ? $this->mode : 0;
+        return isset($this->mode) ? $this->mode : '';
     }
 
     public function hasMode()
@@ -147,14 +150,15 @@ class NodeGroupAutoscalingPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
+     * @param string $var
      * @return $this
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeGroupAutoscalingPolicy\Mode::class);
+        GPBUtil::checkString($var, True);
         $this->mode = $var;
 
         return $this;

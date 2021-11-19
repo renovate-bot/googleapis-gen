@@ -220,7 +220,9 @@ class SnapshotsClientTest extends GeneratedTest
         $selfLink = 'selfLink-1691268851';
         $sourceDisk = 'sourceDisk-85117119';
         $sourceDiskId = 'sourceDiskId-1693292839';
+        $status = 'status-892481550';
         $storageBytes = 2035244455;
+        $storageBytesStatus = 'storageBytesStatus1027609994';
         $expectedResponse = new Snapshot();
         $expectedResponse->setAutoCreated($autoCreated);
         $expectedResponse->setChainName($chainName);
@@ -237,7 +239,9 @@ class SnapshotsClientTest extends GeneratedTest
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setSourceDisk($sourceDisk);
         $expectedResponse->setSourceDiskId($sourceDiskId);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setStorageBytes($storageBytes);
+        $expectedResponse->setStorageBytesStatus($storageBytesStatus);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';

@@ -39,30 +39,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
+   * <code>optional string address_type = 264307877;</code>
    * @return Whether the addressType field is set.
    */
   boolean hasAddressType();
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
-   * @return The enum numeric value on the wire for addressType.
+   * <code>optional string address_type = 264307877;</code>
+   * @return The addressType.
    */
-  int getAddressTypeValue();
+  java.lang.String getAddressType();
   /**
    * <pre>
    * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to EXTERNAL.
+   * Check the AddressType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.AddressType address_type = 264307877;</code>
-   * @return The addressType.
+   * <code>optional string address_type = 264307877;</code>
+   * @return The bytes for addressType.
    */
-  com.google.cloud.compute.v1.Address.AddressType getAddressType();
+  com.google.protobuf.ByteString
+      getAddressTypeBytes();
 
   /**
    * <pre>
@@ -144,30 +148,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    * @return Whether the ipVersion field is set.
    */
   boolean hasIpVersion();
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
-   * @return The enum numeric value on the wire for ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The ipVersion.
    */
-  int getIpVersionValue();
+  java.lang.String getIpVersion();
   /**
    * <pre>
    * The IP version that will be used by this address. Valid options are IPV4 or IPV6. This can only be specified for a global address.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.IpVersion ip_version = 294959552;</code>
-   * @return The ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The bytes for ipVersion.
    */
-  com.google.cloud.compute.v1.Address.IpVersion getIpVersion();
+  com.google.protobuf.ByteString
+      getIpVersionBytes();
 
   /**
    * <pre>
@@ -259,30 +267,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  int getNetworkTierValue();
+  java.lang.String getNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this address and can only take the following values: PREMIUM or STANDARD. Internal IP addresses are always Premium Tier; global external IP addresses are always Premium Tier; regional external IP addresses can be either Standard or Premium Tier. If this field is not specified, it is assumed to be PREMIUM.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  com.google.cloud.compute.v1.Address.NetworkTier getNetworkTier();
+  com.google.protobuf.ByteString
+      getNetworkTierBytes();
 
   /**
    * <pre>
@@ -305,31 +317,35 @@ public interface AddressOrBuilder extends
 
   /**
    * <pre>
-   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    * @return Whether the purpose field is set.
    */
   boolean hasPurpose();
   /**
    * <pre>
-   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
-   * @return The enum numeric value on the wire for purpose.
-   */
-  int getPurposeValue();
-  /**
-   * <pre>
-   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.Address.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    * @return The purpose.
    */
-  com.google.cloud.compute.v1.Address.Purpose getPurpose();
+  java.lang.String getPurpose();
+  /**
+   * <pre>
+   * The purpose of this resource, which can be one of the following values: - GCE_ENDPOINT for addresses that are used by VM instances, alias IP ranges, load balancers, and similar resources. - DNS_RESOLVER for a DNS resolver address in a subnetwork for a Cloud DNS inbound forwarder IP addresses (regional internal IP address in a subnet of a VPC network) - VPC_PEERING for global internal IP addresses used for private services access allocated ranges. - NAT_AUTO for the regional external IP addresses used by Cloud NAT when allocating addresses using . - IPSEC_INTERCONNECT for addresses created from a private IP range that are reserved for a VLAN attachment in an *IPsec-encrypted Cloud Interconnect* configuration. These addresses are regional resources. Not currently available publicly. - `SHARED_LOADBALANCER_VIP` for an internal IP address that is assigned to multiple internal forwarding rules. - `PRIVATE_SERVICE_CONNECT` for a private network address that is used to configure Private Service Connect. Only global internal addresses can use this purpose.
+   * Check the Purpose enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string purpose = 316407070;</code>
+   * @return The bytes for purpose.
+   */
+  com.google.protobuf.ByteString
+      getPurposeBytes();
 
   /**
    * <pre>
@@ -392,30 +408,34 @@ public interface AddressOrBuilder extends
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An address that is RESERVING is currently in the process of being reserved. A RESERVED address is currently reserved and available to use. An IN_USE address is currently being used by another resource and is not available.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Address.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Address.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

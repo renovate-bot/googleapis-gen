@@ -64,9 +64,10 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      */
     protected $proxy_bind = null;
     /**
-     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+     * Check the QuicOverride enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
+     * Generated from protobuf field <code>optional string quic_override = 456577197;</code>
      */
     protected $quic_override = null;
     /**
@@ -128,8 +129,9 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type bool $proxy_bind
      *           This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
-     *     @type int $quic_override
-     *           Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
+     *     @type string $quic_override
+     *           Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+     *           Check the QuicOverride enum for the list of possible values.
      *     @type string $region
      *           [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is not applicable to global TargetHttpsProxies.
      *     @type string $self_link
@@ -438,14 +440,15 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+     * Check the QuicOverride enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string quic_override = 456577197;</code>
+     * @return string
      */
     public function getQuicOverride()
     {
-        return isset($this->quic_override) ? $this->quic_override : 0;
+        return isset($this->quic_override) ? $this->quic_override : '';
     }
 
     public function hasQuicOverride()
@@ -459,15 +462,16 @@ class TargetHttpsProxy extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied. 
+     * Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, or DISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified, NONE is implied.
+     * Check the QuicOverride enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetHttpsProxy.QuicOverride quic_override = 456577197;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string quic_override = 456577197;</code>
+     * @param string $var
      * @return $this
      */
     public function setQuicOverride($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\TargetHttpsProxy\QuicOverride::class);
+        GPBUtil::checkString($var, True);
         $this->quic_override = $var;
 
         return $this;

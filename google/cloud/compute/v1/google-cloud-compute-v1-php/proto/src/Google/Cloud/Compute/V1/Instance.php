@@ -159,8 +159,9 @@ class Instance extends \Google\Protobuf\Internal\Message
     private $network_interfaces;
     /**
      * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
      */
     protected $private_ipv6_google_access = null;
     /**
@@ -215,8 +216,9 @@ class Instance extends \Google\Protobuf\Internal\Message
     protected $start_restricted = null;
     /**
      * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Instance.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -291,8 +293,9 @@ class Instance extends \Google\Protobuf\Internal\Message
      *           The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type \Google\Cloud\Compute\V1\NetworkInterface[]|\Google\Protobuf\Internal\RepeatedField $network_interfaces
      *           An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-     *     @type int $private_ipv6_google_access
+     *     @type string $private_ipv6_google_access
      *           The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     *           Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\ReservationAffinity $reservation_affinity
      *           Specifies the reservations that this instance can consume from.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $resource_policies
@@ -309,8 +312,9 @@ class Instance extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\Compute\V1\ShieldedInstanceIntegrityPolicy $shielded_instance_integrity_policy
      *     @type bool $start_restricted
      *           [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     *           Check the Status enum for the list of possible values.
      *     @type string $status_message
      *           [Output Only] An optional, human-readable explanation of the status.
      *     @type \Google\Cloud\Compute\V1\Tags $tags
@@ -1146,13 +1150,14 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return string
      */
     public function getPrivateIpv6GoogleAccess()
     {
-        return isset($this->private_ipv6_google_access) ? $this->private_ipv6_google_access : 0;
+        return isset($this->private_ipv6_google_access) ? $this->private_ipv6_google_access : '';
     }
 
     public function hasPrivateIpv6GoogleAccess()
@@ -1167,14 +1172,15 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * The private IPv6 google access type for the VM. If not specified, use INHERIT_FROM_SUBNETWORK as default.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Instance.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param string $var
      * @return $this
      */
     public function setPrivateIpv6GoogleAccess($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Instance\PrivateIpv6GoogleAccess::class);
+        GPBUtil::checkString($var, True);
         $this->private_ipv6_google_access = $var;
 
         return $this;
@@ -1478,13 +1484,14 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Instance.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -1499,14 +1506,15 @@ class Instance extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING, RUNNING, STOPPING, SUSPENDING, SUSPENDED, REPAIRING, and TERMINATED. For more information about the status of the instance, see Instance life cycle.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Instance.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Instance\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

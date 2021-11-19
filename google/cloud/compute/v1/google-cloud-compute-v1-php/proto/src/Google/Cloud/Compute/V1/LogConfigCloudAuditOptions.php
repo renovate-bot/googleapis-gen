@@ -23,8 +23,9 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
     protected $authorization_logging_options = null;
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+     * Generated from protobuf field <code>optional string log_name = 402913958;</code>
      */
     protected $log_name = null;
 
@@ -36,8 +37,9 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Compute\V1\AuthorizationLoggingOptions $authorization_logging_options
      *           This is deprecated and has no effect. Do not use.
-     *     @type int $log_name
+     *     @type string $log_name
      *           This is deprecated and has no effect. Do not use.
+     *           Check the LogName enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -83,13 +85,14 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string log_name = 402913958;</code>
+     * @return string
      */
     public function getLogName()
     {
-        return isset($this->log_name) ? $this->log_name : 0;
+        return isset($this->log_name) ? $this->log_name : '';
     }
 
     public function hasLogName()
@@ -104,14 +107,15 @@ class LogConfigCloudAuditOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string log_name = 402913958;</code>
+     * @param string $var
      * @return $this
      */
     public function setLogName($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\LogConfigCloudAuditOptions\LogName::class);
+        GPBUtil::checkString($var, True);
         $this->log_name = $var;
 
         return $this;

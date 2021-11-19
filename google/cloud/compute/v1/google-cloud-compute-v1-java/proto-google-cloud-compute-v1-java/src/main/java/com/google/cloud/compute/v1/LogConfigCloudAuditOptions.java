@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private LogConfigCloudAuditOptions() {
-    logName_ = 0;
+    logName_ = "";
   }
 
   @java.lang.Override
@@ -67,10 +67,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000001;
             break;
           }
-          case -1071655632: {
-            int rawValue = input.readEnum();
+          case -1071655630: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            logName_ = rawValue;
+            logName_ = s;
             break;
           }
           default: {
@@ -307,41 +307,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOG_NAME_FIELD_NUMBER = 402913958;
-  private int logName_;
+  private volatile java.lang.Object logName_;
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+   * <code>optional string log_name = 402913958;</code>
    * @return Whether the logName field is set.
    */
-  @java.lang.Override public boolean hasLogName() {
+  @java.lang.Override
+  public boolean hasLogName() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-   * @return The enum numeric value on the wire for logName.
+   * <code>optional string log_name = 402913958;</code>
+   * @return The logName.
    */
-  @java.lang.Override public int getLogNameValue() {
-    return logName_;
+  @java.lang.Override
+  public java.lang.String getLogName() {
+    java.lang.Object ref = logName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logName_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * This is deprecated and has no effect. Do not use.
+   * Check the LogName enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-   * @return The logName.
+   * <code>optional string log_name = 402913958;</code>
+   * @return The bytes for logName.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName getLogName() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName result = com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.valueOf(logName_);
-    return result == null ? com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogNameBytes() {
+    java.lang.Object ref = logName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -362,7 +385,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(217861624, getAuthorizationLoggingOptions());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(402913958, logName_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 402913958, logName_);
     }
     unknownFields.writeTo(output);
   }
@@ -378,8 +401,7 @@ private static final long serialVersionUID = 0L;
         .computeMessageSize(217861624, getAuthorizationLoggingOptions());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(402913958, logName_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(402913958, logName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -403,7 +425,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLogName() != other.hasLogName()) return false;
     if (hasLogName()) {
-      if (logName_ != other.logName_) return false;
+      if (!getLogName()
+          .equals(other.getLogName())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -422,7 +445,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasLogName()) {
       hash = (37 * hash) + LOG_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + logName_;
+      hash = (53 * hash) + getLogName().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -568,7 +591,7 @@ private static final long serialVersionUID = 0L;
         authorizationLoggingOptionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
-      logName_ = 0;
+      logName_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -663,7 +686,9 @@ private static final long serialVersionUID = 0L;
         mergeAuthorizationLoggingOptions(other.getAuthorizationLoggingOptions());
       }
       if (other.hasLogName()) {
-        setLogName(other.getLogName());
+        bitField0_ |= 0x00000002;
+        logName_ = other.logName_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -851,40 +876,78 @@ private static final long serialVersionUID = 0L;
       return authorizationLoggingOptionsBuilder_;
     }
 
-    private int logName_ = 0;
+    private java.lang.Object logName_ = "";
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+     * <code>optional string log_name = 402913958;</code>
      * @return Whether the logName field is set.
      */
-    @java.lang.Override public boolean hasLogName() {
+    public boolean hasLogName() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-     * @return The enum numeric value on the wire for logName.
+     * <code>optional string log_name = 402913958;</code>
+     * @return The logName.
      */
-    @java.lang.Override public int getLogNameValue() {
-      return logName_;
+    public java.lang.String getLogName() {
+      java.lang.Object ref = logName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-     * @param value The enum numeric value on the wire for logName to set.
+     * <code>optional string log_name = 402913958;</code>
+     * @return The bytes for logName.
+     */
+    public com.google.protobuf.ByteString
+        getLogNameBytes() {
+      java.lang.Object ref = logName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_name = 402913958;</code>
+     * @param value The logName to set.
      * @return This builder for chaining.
      */
-    public Builder setLogNameValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setLogName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       logName_ = value;
       onChanged();
       return this;
@@ -892,46 +955,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-     * @return The logName.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName getLogName() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName result = com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.valueOf(logName_);
-      return result == null ? com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * This is deprecated and has no effect. Do not use.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
-     * @param value The logName to set.
+     * <code>optional string log_name = 402913958;</code>
      * @return This builder for chaining.
      */
-    public Builder setLogName(com.google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      logName_ = value.getNumber();
+    public Builder clearLogName() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      logName_ = getDefaultInstance().getLogName();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * This is deprecated and has no effect. Do not use.
+     * Check the LogName enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.LogConfigCloudAuditOptions.LogName log_name = 402913958;</code>
+     * <code>optional string log_name = 402913958;</code>
+     * @param value The bytes for logName to set.
      * @return This builder for chaining.
      */
-    public Builder clearLogName() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      logName_ = 0;
+    public Builder setLogNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      logName_ = value;
       onChanged();
       return this;
     }

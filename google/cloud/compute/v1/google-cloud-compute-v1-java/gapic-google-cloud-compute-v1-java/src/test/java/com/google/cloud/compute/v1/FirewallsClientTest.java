@@ -154,6 +154,7 @@ public class FirewallsClientTest {
             .addAllDenied(new ArrayList<Denied>())
             .setDescription("description-1724546052")
             .addAllDestinationRanges(new ArrayList<String>())
+            .setDirection("direction-962590849")
             .setDisabled(true)
             .setId(3355)
             .setKind("kind3292052")

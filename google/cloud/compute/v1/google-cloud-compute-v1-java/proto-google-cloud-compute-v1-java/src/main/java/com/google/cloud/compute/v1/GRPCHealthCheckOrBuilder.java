@@ -87,28 +87,32 @@ public interface GRPCHealthCheckOrBuilder extends
   /**
    * <pre>
    * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;</code>
+   * <code>optional string port_specification = 51590597;</code>
    * @return Whether the portSpecification field is set.
    */
   boolean hasPortSpecification();
   /**
    * <pre>
    * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;</code>
-   * @return The enum numeric value on the wire for portSpecification.
+   * <code>optional string port_specification = 51590597;</code>
+   * @return The portSpecification.
    */
-  int getPortSpecificationValue();
+  java.lang.String getPortSpecification();
   /**
    * <pre>
    * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, gRPC health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.GRPCHealthCheck.PortSpecification port_specification = 51590597;</code>
-   * @return The portSpecification.
+   * <code>optional string port_specification = 51590597;</code>
+   * @return The bytes for portSpecification.
    */
-  com.google.cloud.compute.v1.GRPCHealthCheck.PortSpecification getPortSpecification();
+  com.google.protobuf.ByteString
+      getPortSpecificationBytes();
 }

@@ -39,30 +39,34 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+   * Check the IPProtocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
+   * <code>optional string I_p_protocol = 488094525;</code>
    * @return Whether the iPProtocol field is set.
    */
   boolean hasIPProtocol();
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+   * Check the IPProtocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-   * @return The enum numeric value on the wire for iPProtocol.
+   * <code>optional string I_p_protocol = 488094525;</code>
+   * @return The iPProtocol.
    */
-  int getIPProtocolValue();
+  java.lang.String getIPProtocol();
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
+   * Check the IPProtocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IPProtocol I_p_protocol = 488094525;</code>
-   * @return The iPProtocol.
+   * <code>optional string I_p_protocol = 488094525;</code>
+   * @return The bytes for iPProtocol.
    */
-  com.google.cloud.compute.v1.ForwardingRule.IPProtocol getIPProtocol();
+  com.google.protobuf.ByteString
+      getIPProtocolBytes();
 
   /**
    * <pre>
@@ -240,30 +244,34 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
+   * <code>optional string ip_version = 294959552;</code>
    * @return Whether the ipVersion field is set.
    */
   boolean hasIpVersion();
   /**
    * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-   * @return The enum numeric value on the wire for ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The ipVersion.
    */
-  int getIpVersionValue();
+  java.lang.String getIpVersion();
   /**
    * <pre>
    * The IP Version that will be used by this forwarding rule. Valid options are IPV4 or IPV6. This can only be specified for an external global forwarding rule.
+   * Check the IpVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.IpVersion ip_version = 294959552;</code>
-   * @return The ipVersion.
+   * <code>optional string ip_version = 294959552;</code>
+   * @return The bytes for ipVersion.
    */
-  com.google.cloud.compute.v1.ForwardingRule.IpVersion getIpVersion();
+  com.google.protobuf.ByteString
+      getIpVersionBytes();
 
   /**
    * <pre>
@@ -399,30 +407,34 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
    * @return Whether the loadBalancingScheme field is set.
    */
   boolean hasLoadBalancingScheme();
   /**
    * <pre>
    * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The enum numeric value on the wire for loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The loadBalancingScheme.
    */
-  int getLoadBalancingSchemeValue();
+  java.lang.String getLoadBalancingScheme();
   /**
    * <pre>
    * Specifies the forwarding rule type. For more information about forwarding rules, refer to Forwarding rule concepts.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The bytes for loadBalancingScheme.
    */
-  com.google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme getLoadBalancingScheme();
+  com.google.protobuf.ByteString
+      getLoadBalancingSchemeBytes();
 
   /**
    * <pre>
@@ -529,30 +541,34 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
   boolean hasNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  int getNetworkTierValue();
+  java.lang.String getNetworkTier();
   /**
    * <pre>
    * This signifies the networking tier used for configuring this load balancer and can only take the following values: PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM and STANDARD. For GlobalForwardingRule, the valid value is PREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  com.google.cloud.compute.v1.ForwardingRule.NetworkTier getNetworkTier();
+  com.google.protobuf.ByteString
+      getNetworkTierBytes();
 
   /**
    * <pre>
@@ -644,20 +660,36 @@ public interface ForwardingRuleOrBuilder extends
   long getPscConnectionId();
 
   /**
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+   * <pre>
+   * 
+   * Check the PscConnectionStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string psc_connection_status = 184149172;</code>
    * @return Whether the pscConnectionStatus field is set.
    */
   boolean hasPscConnectionStatus();
   /**
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
-   * @return The enum numeric value on the wire for pscConnectionStatus.
-   */
-  int getPscConnectionStatusValue();
-  /**
-   * <code>optional .google.cloud.compute.v1.ForwardingRule.PscConnectionStatus psc_connection_status = 184149172;</code>
+   * <pre>
+   * 
+   * Check the PscConnectionStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string psc_connection_status = 184149172;</code>
    * @return The pscConnectionStatus.
    */
-  com.google.cloud.compute.v1.ForwardingRule.PscConnectionStatus getPscConnectionStatus();
+  java.lang.String getPscConnectionStatus();
+  /**
+   * <pre>
+   * 
+   * Check the PscConnectionStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string psc_connection_status = 184149172;</code>
+   * @return The bytes for pscConnectionStatus.
+   */
+  com.google.protobuf.ByteString
+      getPscConnectionStatusBytes();
 
   /**
    * <pre>

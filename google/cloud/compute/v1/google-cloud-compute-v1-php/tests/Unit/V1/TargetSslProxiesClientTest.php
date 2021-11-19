@@ -209,6 +209,7 @@ class TargetSslProxiesClientTest extends GeneratedTest
         $id = 3355;
         $kind = 'kind3292052';
         $name = 'name3373707';
+        $proxyHeader = 'proxyHeader-1987109506';
         $selfLink = 'selfLink-1691268851';
         $service = 'service1984153269';
         $sslPolicy = 'sslPolicy-1852293435';
@@ -218,6 +219,7 @@ class TargetSslProxiesClientTest extends GeneratedTest
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
+        $expectedResponse->setProxyHeader($proxyHeader);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setService($service);
         $expectedResponse->setSslPolicy($sslPolicy);

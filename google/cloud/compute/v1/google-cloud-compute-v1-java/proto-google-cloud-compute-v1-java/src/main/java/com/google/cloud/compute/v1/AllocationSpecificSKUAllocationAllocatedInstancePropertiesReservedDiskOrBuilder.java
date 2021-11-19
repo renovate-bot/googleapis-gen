@@ -29,28 +29,32 @@ public interface AllocationSpecificSKUAllocationAllocatedInstancePropertiesReser
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
+   * <code>optional string interface = 502623545;</code>
    * @return Whether the interface field is set.
    */
   boolean hasInterface();
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-   * @return The enum numeric value on the wire for interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The interface.
    */
-  int getInterfaceValue();
+  java.lang.String getInterface();
   /**
    * <pre>
    * Specifies the disk interface to use for attaching this disk, which is either SCSI or NVME. The default is SCSI. For performance characteristics of SCSI over NVMe, see Local SSD performance.
+   * Check the Interface enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface interface = 502623545;</code>
-   * @return The interface.
+   * <code>optional string interface = 502623545;</code>
+   * @return The bytes for interface.
    */
-  com.google.cloud.compute.v1.AllocationSpecificSKUAllocationAllocatedInstancePropertiesReservedDisk.Interface getInterface();
+  com.google.protobuf.ByteString
+      getInterfaceBytes();
 }

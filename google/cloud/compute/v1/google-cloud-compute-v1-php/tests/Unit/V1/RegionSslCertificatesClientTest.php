@@ -215,6 +215,7 @@ class RegionSslCertificatesClientTest extends GeneratedTest
         $privateKey = 'privateKey1971943843';
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
+        $type = 'type3575610';
         $expectedResponse = new SslCertificate();
         $expectedResponse->setCertificate($certificate);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
@@ -226,6 +227,7 @@ class RegionSslCertificatesClientTest extends GeneratedTest
         $expectedResponse->setPrivateKey($privateKey);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setType($type);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';

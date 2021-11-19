@@ -34,7 +34,7 @@ private static final long serialVersionUID = 0L;
     nextHopNetwork_ = "";
     nextHopPeering_ = "";
     nextHopVpnTunnel_ = "";
-    routeType_ = 0;
+    routeType_ = "";
     selfLink_ = "";
     tags_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     warnings_ = java.util.Collections.emptyList();
@@ -136,10 +136,10 @@ private static final long serialVersionUID = 0L;
             nextHopNetwork_ = s;
             break;
           }
-          case -1287857280: {
-            int rawValue = input.readEnum();
+          case -1287857278: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00008000;
-            routeType_ = rawValue;
+            routeType_ = s;
             break;
           }
           case -1277564910: {
@@ -1256,41 +1256,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ROUTE_TYPE_FIELD_NUMBER = 375888752;
-  private int routeType_;
+  private volatile java.lang.Object routeType_;
   /**
    * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * Check the RouteType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+   * <code>optional string route_type = 375888752;</code>
    * @return Whether the routeType field is set.
    */
-  @java.lang.Override public boolean hasRouteType() {
+  @java.lang.Override
+  public boolean hasRouteType() {
     return ((bitField0_ & 0x00008000) != 0);
   }
   /**
    * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * Check the RouteType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-   * @return The enum numeric value on the wire for routeType.
+   * <code>optional string route_type = 375888752;</code>
+   * @return The routeType.
    */
-  @java.lang.Override public int getRouteTypeValue() {
-    return routeType_;
+  @java.lang.Override
+  public java.lang.String getRouteType() {
+    java.lang.Object ref = routeType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      routeType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * Check the RouteType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-   * @return The routeType.
+   * <code>optional string route_type = 375888752;</code>
+   * @return The bytes for routeType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Route.RouteType getRouteType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Route.RouteType result = com.google.cloud.compute.v1.Route.RouteType.valueOf(routeType_);
-    return result == null ? com.google.cloud.compute.v1.Route.RouteType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRouteTypeBytes() {
+    java.lang.Object ref = routeType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      routeType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int SELF_LINK_FIELD_NUMBER = 456214797;
@@ -1507,7 +1530,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 262295788, nextHopNetwork_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
-      output.writeEnum(375888752, routeType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 377175298, nextHopGateway_);
@@ -1583,8 +1606,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(262295788, nextHopNetwork_);
     }
     if (((bitField0_ & 0x00008000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(375888752, routeType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(375888752, routeType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(377175298, nextHopGateway_);
@@ -1709,7 +1731,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRouteType() != other.hasRouteType()) return false;
     if (hasRouteType()) {
-      if (routeType_ != other.routeType_) return false;
+      if (!getRouteType()
+          .equals(other.getRouteType())) return false;
     }
     if (hasSelfLink() != other.hasSelfLink()) return false;
     if (hasSelfLink()) {
@@ -1798,7 +1821,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRouteType()) {
       hash = (37 * hash) + ROUTE_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + routeType_;
+      hash = (53 * hash) + getRouteType().hashCode();
     }
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
@@ -1987,7 +2010,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00004000);
       priority_ = 0;
       bitField0_ = (bitField0_ & ~0x00008000);
-      routeType_ = 0;
+      routeType_ = "";
       bitField0_ = (bitField0_ & ~0x00010000);
       selfLink_ = "";
       bitField0_ = (bitField0_ & ~0x00020000);
@@ -2265,7 +2288,9 @@ private static final long serialVersionUID = 0L;
         setPriority(other.getPriority());
       }
       if (other.hasRouteType()) {
-        setRouteType(other.getRouteType());
+        bitField0_ |= 0x00010000;
+        routeType_ = other.routeType_;
+        onChanged();
       }
       if (other.hasSelfLink()) {
         bitField0_ |= 0x00020000;
@@ -4151,40 +4176,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int routeType_ = 0;
+    private java.lang.Object routeType_ = "";
     /**
      * <pre>
      * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * Check the RouteType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+     * <code>optional string route_type = 375888752;</code>
      * @return Whether the routeType field is set.
      */
-    @java.lang.Override public boolean hasRouteType() {
+    public boolean hasRouteType() {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <pre>
      * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * Check the RouteType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-     * @return The enum numeric value on the wire for routeType.
+     * <code>optional string route_type = 375888752;</code>
+     * @return The routeType.
      */
-    @java.lang.Override public int getRouteTypeValue() {
-      return routeType_;
+    public java.lang.String getRouteType() {
+      java.lang.Object ref = routeType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        routeType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * Check the RouteType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-     * @param value The enum numeric value on the wire for routeType to set.
+     * <code>optional string route_type = 375888752;</code>
+     * @return The bytes for routeType.
+     */
+    public com.google.protobuf.ByteString
+        getRouteTypeBytes() {
+      java.lang.Object ref = routeType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        routeType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * Check the RouteType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string route_type = 375888752;</code>
+     * @param value The routeType to set.
      * @return This builder for chaining.
      */
-    public Builder setRouteTypeValue(int value) {
-      bitField0_ |= 0x00010000;
+    public Builder setRouteType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00010000;
       routeType_ = value;
       onChanged();
       return this;
@@ -4192,46 +4255,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * Check the RouteType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-     * @return The routeType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Route.RouteType getRouteType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Route.RouteType result = com.google.cloud.compute.v1.Route.RouteType.valueOf(routeType_);
-      return result == null ? com.google.cloud.compute.v1.Route.RouteType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-     * @param value The routeType to set.
+     * <code>optional string route_type = 375888752;</code>
      * @return This builder for chaining.
      */
-    public Builder setRouteType(com.google.cloud.compute.v1.Route.RouteType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00010000;
-      routeType_ = value.getNumber();
+    public Builder clearRouteType() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      routeType_ = getDefaultInstance().getRouteType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+     * Check the RouteType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+     * <code>optional string route_type = 375888752;</code>
+     * @param value The bytes for routeType to set.
      * @return This builder for chaining.
      */
-    public Builder clearRouteType() {
-      bitField0_ = (bitField0_ & ~0x00010000);
-      routeType_ = 0;
+    public Builder setRouteTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00010000;
+      routeType_ = value;
       onChanged();
       return this;
     }

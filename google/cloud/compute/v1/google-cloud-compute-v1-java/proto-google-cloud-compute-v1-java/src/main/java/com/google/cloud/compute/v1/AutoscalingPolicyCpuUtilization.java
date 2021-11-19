@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private AutoscalingPolicyCpuUtilization() {
-    predictiveMethod_ = 0;
+    predictiveMethod_ = "";
   }
 
   @java.lang.Override
@@ -59,10 +59,10 @@ private static final long serialVersionUID = 0L;
             utilizationTarget_ = input.readDouble();
             break;
           }
-          case -1173201400: {
-            int rawValue = input.readEnum();
+          case -1173201398: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            predictiveMethod_ = rawValue;
+            predictiveMethod_ = s;
             break;
           }
           default: {
@@ -244,41 +244,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int PREDICTIVE_METHOD_FIELD_NUMBER = 390220737;
-  private int predictiveMethod_;
+  private volatile java.lang.Object predictiveMethod_;
   /**
    * <pre>
    * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
+   * <code>optional string predictive_method = 390220737;</code>
    * @return Whether the predictiveMethod field is set.
    */
-  @java.lang.Override public boolean hasPredictiveMethod() {
+  @java.lang.Override
+  public boolean hasPredictiveMethod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-   * @return The enum numeric value on the wire for predictiveMethod.
+   * <code>optional string predictive_method = 390220737;</code>
+   * @return The predictiveMethod.
    */
-  @java.lang.Override public int getPredictiveMethodValue() {
-    return predictiveMethod_;
+  @java.lang.Override
+  public java.lang.String getPredictiveMethod() {
+    java.lang.Object ref = predictiveMethod_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      predictiveMethod_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+   * Check the PredictiveMethod enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-   * @return The predictiveMethod.
+   * <code>optional string predictive_method = 390220737;</code>
+   * @return The bytes for predictiveMethod.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod getPredictiveMethod() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod result = com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.valueOf(predictiveMethod_);
-    return result == null ? com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPredictiveMethodBytes() {
+    java.lang.Object ref = predictiveMethod_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      predictiveMethod_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int UTILIZATION_TARGET_FIELD_NUMBER = 215905870;
@@ -326,7 +349,7 @@ private static final long serialVersionUID = 0L;
       output.writeDouble(215905870, utilizationTarget_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(390220737, predictiveMethod_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 390220737, predictiveMethod_);
     }
     unknownFields.writeTo(output);
   }
@@ -342,8 +365,7 @@ private static final long serialVersionUID = 0L;
         .computeDoubleSize(215905870, utilizationTarget_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(390220737, predictiveMethod_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(390220737, predictiveMethod_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -362,7 +384,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasPredictiveMethod() != other.hasPredictiveMethod()) return false;
     if (hasPredictiveMethod()) {
-      if (predictiveMethod_ != other.predictiveMethod_) return false;
+      if (!getPredictiveMethod()
+          .equals(other.getPredictiveMethod())) return false;
     }
     if (hasUtilizationTarget() != other.hasUtilizationTarget()) return false;
     if (hasUtilizationTarget()) {
@@ -383,7 +406,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasPredictiveMethod()) {
       hash = (37 * hash) + PREDICTIVE_METHOD_FIELD_NUMBER;
-      hash = (53 * hash) + predictiveMethod_;
+      hash = (53 * hash) + getPredictiveMethod().hashCode();
     }
     if (hasUtilizationTarget()) {
       hash = (37 * hash) + UTILIZATION_TARGET_FIELD_NUMBER;
@@ -527,7 +550,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      predictiveMethod_ = 0;
+      predictiveMethod_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       utilizationTarget_ = 0D;
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -617,7 +640,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization other) {
       if (other == com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.getDefaultInstance()) return this;
       if (other.hasPredictiveMethod()) {
-        setPredictiveMethod(other.getPredictiveMethod());
+        bitField0_ |= 0x00000001;
+        predictiveMethod_ = other.predictiveMethod_;
+        onChanged();
       }
       if (other.hasUtilizationTarget()) {
         setUtilizationTarget(other.getUtilizationTarget());
@@ -652,40 +677,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int predictiveMethod_ = 0;
+    private java.lang.Object predictiveMethod_ = "";
     /**
      * <pre>
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
+     * <code>optional string predictive_method = 390220737;</code>
      * @return Whether the predictiveMethod field is set.
      */
-    @java.lang.Override public boolean hasPredictiveMethod() {
+    public boolean hasPredictiveMethod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-     * @return The enum numeric value on the wire for predictiveMethod.
+     * <code>optional string predictive_method = 390220737;</code>
+     * @return The predictiveMethod.
      */
-    @java.lang.Override public int getPredictiveMethodValue() {
-      return predictiveMethod_;
+    public java.lang.String getPredictiveMethod() {
+      java.lang.Object ref = predictiveMethod_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        predictiveMethod_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-     * @param value The enum numeric value on the wire for predictiveMethod to set.
+     * <code>optional string predictive_method = 390220737;</code>
+     * @return The bytes for predictiveMethod.
+     */
+    public com.google.protobuf.ByteString
+        getPredictiveMethodBytes() {
+      java.lang.Object ref = predictiveMethod_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        predictiveMethod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string predictive_method = 390220737;</code>
+     * @param value The predictiveMethod to set.
      * @return This builder for chaining.
      */
-    public Builder setPredictiveMethodValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setPredictiveMethod(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       predictiveMethod_ = value;
       onChanged();
       return this;
@@ -693,46 +756,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-     * @return The predictiveMethod.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod getPredictiveMethod() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod result = com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.valueOf(predictiveMethod_);
-      return result == null ? com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
-     * @param value The predictiveMethod to set.
+     * <code>optional string predictive_method = 390220737;</code>
      * @return This builder for chaining.
      */
-    public Builder setPredictiveMethod(com.google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      predictiveMethod_ = value.getNumber();
+    public Builder clearPredictiveMethod() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      predictiveMethod_ = getDefaultInstance().getPredictiveMethod();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Indicates whether predictive autoscaling based on CPU metric is enabled. Valid values are: * NONE (default). No predictive method is used. The autoscaler scales the group to meet current demand based on real-time metrics. * OPTIMIZE_AVAILABILITY. Predictive autoscaling improves availability by monitoring daily and weekly load patterns and scaling out ahead of anticipated demand.
+     * Check the PredictiveMethod enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AutoscalingPolicyCpuUtilization.PredictiveMethod predictive_method = 390220737;</code>
+     * <code>optional string predictive_method = 390220737;</code>
+     * @param value The bytes for predictiveMethod to set.
      * @return This builder for chaining.
      */
-    public Builder clearPredictiveMethod() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      predictiveMethod_ = 0;
+    public Builder setPredictiveMethodBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      predictiveMethod_ = value;
       onChanged();
       return this;
     }

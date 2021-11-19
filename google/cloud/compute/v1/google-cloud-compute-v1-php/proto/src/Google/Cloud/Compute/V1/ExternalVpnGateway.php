@@ -65,8 +65,9 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
     protected $name = null;
     /**
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
+     * Generated from protobuf field <code>optional string redundancy_type = 271443740;</code>
      */
     protected $redundancy_type = null;
     /**
@@ -98,8 +99,9 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
      *           Labels for this resource. These can only be added or modified by the setLabels method. Each label key/value pair must comply with RFC1035. Label values may be empty.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-     *     @type int $redundancy_type
+     *     @type string $redundancy_type
      *           Indicates the user-supplied redundancy type of this external VPN gateway.
+     *           Check the RedundancyType enum for the list of possible values.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
      * }
@@ -379,13 +381,14 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string redundancy_type = 271443740;</code>
+     * @return string
      */
     public function getRedundancyType()
     {
-        return isset($this->redundancy_type) ? $this->redundancy_type : 0;
+        return isset($this->redundancy_type) ? $this->redundancy_type : '';
     }
 
     public function hasRedundancyType()
@@ -400,14 +403,15 @@ class ExternalVpnGateway extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates the user-supplied redundancy type of this external VPN gateway.
+     * Check the RedundancyType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ExternalVpnGateway.RedundancyType redundancy_type = 271443740;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string redundancy_type = 271443740;</code>
+     * @param string $var
      * @return $this
      */
     public function setRedundancyType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ExternalVpnGateway\RedundancyType::class);
+        GPBUtil::checkString($var, True);
         $this->redundancy_type = $var;
 
         return $this;

@@ -58,58 +58,66 @@ public interface TCPHealthCheckOrBuilder extends
   /**
    * <pre>
    * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, TCP health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TCPHealthCheck.PortSpecification port_specification = 51590597;</code>
+   * <code>optional string port_specification = 51590597;</code>
    * @return Whether the portSpecification field is set.
    */
   boolean hasPortSpecification();
   /**
    * <pre>
    * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, TCP health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TCPHealthCheck.PortSpecification port_specification = 51590597;</code>
-   * @return The enum numeric value on the wire for portSpecification.
+   * <code>optional string port_specification = 51590597;</code>
+   * @return The portSpecification.
    */
-  int getPortSpecificationValue();
+  java.lang.String getPortSpecification();
   /**
    * <pre>
    * Specifies how port is selected for health checking, can be one of following values: USE_FIXED_PORT: The port number in port is used for health checking. USE_NAMED_PORT: The portName is used for health checking. USE_SERVING_PORT: For NetworkEndpointGroup, the port specified for each network endpoint is used for health checking. For other backends, the port or named port specified in the Backend Service is used for health checking. If not specified, TCP health check follows behavior specified in port and portName fields.
+   * Check the PortSpecification enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TCPHealthCheck.PortSpecification port_specification = 51590597;</code>
-   * @return The portSpecification.
+   * <code>optional string port_specification = 51590597;</code>
+   * @return The bytes for portSpecification.
    */
-  com.google.cloud.compute.v1.TCPHealthCheck.PortSpecification getPortSpecification();
+  com.google.protobuf.ByteString
+      getPortSpecificationBytes();
 
   /**
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TCPHealthCheck.ProxyHeader proxy_header = 160374142;</code>
+   * <code>optional string proxy_header = 160374142;</code>
    * @return Whether the proxyHeader field is set.
    */
   boolean hasProxyHeader();
   /**
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TCPHealthCheck.ProxyHeader proxy_header = 160374142;</code>
-   * @return The enum numeric value on the wire for proxyHeader.
+   * <code>optional string proxy_header = 160374142;</code>
+   * @return The proxyHeader.
    */
-  int getProxyHeaderValue();
+  java.lang.String getProxyHeader();
   /**
    * <pre>
    * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+   * Check the ProxyHeader enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TCPHealthCheck.ProxyHeader proxy_header = 160374142;</code>
-   * @return The proxyHeader.
+   * <code>optional string proxy_header = 160374142;</code>
+   * @return The bytes for proxyHeader.
    */
-  com.google.cloud.compute.v1.TCPHealthCheck.ProxyHeader getProxyHeader();
+  com.google.protobuf.ByteString
+      getProxyHeaderBytes();
 
   /**
    * <pre>

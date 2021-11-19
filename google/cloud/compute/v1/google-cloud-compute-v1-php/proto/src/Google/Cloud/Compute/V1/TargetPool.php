@@ -83,8 +83,9 @@ class TargetPool extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
+     * Generated from protobuf field <code>optional string session_affinity = 463888561;</code>
      */
     protected $session_affinity = null;
 
@@ -116,8 +117,9 @@ class TargetPool extends \Google\Protobuf\Internal\Message
      *           [Output Only] URL of the region where the target pool resides.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $session_affinity
+     *     @type string $session_affinity
      *           Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     *           Check the SessionAffinity enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -503,13 +505,14 @@ class TargetPool extends \Google\Protobuf\Internal\Message
 
     /**
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string session_affinity = 463888561;</code>
+     * @return string
      */
     public function getSessionAffinity()
     {
-        return isset($this->session_affinity) ? $this->session_affinity : 0;
+        return isset($this->session_affinity) ? $this->session_affinity : '';
     }
 
     public function hasSessionAffinity()
@@ -524,14 +527,15 @@ class TargetPool extends \Google\Protobuf\Internal\Message
 
     /**
      * Session affinity option, must be one of the following values: NONE: Connections from the same client IP may go to any instance in the pool. CLIENT_IP: Connections from the same client IP will go to the same instance in the pool while that instance remains healthy. CLIENT_IP_PROTO: Connections from the same client IP with the same IP protocol will go to the same instance in the pool while that instance remains healthy.
+     * Check the SessionAffinity enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetPool.SessionAffinity session_affinity = 463888561;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string session_affinity = 463888561;</code>
+     * @param string $var
      * @return $this
      */
     public function setSessionAffinity($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\TargetPool\SessionAffinity::class);
+        GPBUtil::checkString($var, True);
         $this->session_affinity = $var;
 
         return $this;

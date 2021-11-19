@@ -23,8 +23,9 @@ class Quota extends \Google\Protobuf\Internal\Message
     protected $limit = null;
     /**
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
+     * Generated from protobuf field <code>optional string metric = 533067184;</code>
      */
     protected $metric = null;
     /**
@@ -48,8 +49,9 @@ class Quota extends \Google\Protobuf\Internal\Message
      *
      *     @type float $limit
      *           [Output Only] Quota limit for this metric.
-     *     @type int $metric
+     *     @type string $metric
      *           [Output Only] Name of the quota metric.
+     *           Check the Metric enum for the list of possible values.
      *     @type string $owner
      *           [Output Only] Owning resource. This is the resource on which this quota is applied.
      *     @type float $usage
@@ -99,13 +101,14 @@ class Quota extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string metric = 533067184;</code>
+     * @return string
      */
     public function getMetric()
     {
-        return isset($this->metric) ? $this->metric : 0;
+        return isset($this->metric) ? $this->metric : '';
     }
 
     public function hasMetric()
@@ -120,14 +123,15 @@ class Quota extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] Name of the quota metric.
+     * Check the Metric enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Quota.Metric metric = 533067184;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string metric = 533067184;</code>
+     * @param string $var
      * @return $this
      */
     public function setMetric($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Quota\Metric::class);
+        GPBUtil::checkString($var, True);
         $this->metric = $var;
 
         return $this;

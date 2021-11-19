@@ -536,13 +536,17 @@ class BackendServicesClientTest extends GeneratedTest
         $fingerprint = 'fingerprint-1375934236';
         $id = 3355;
         $kind = 'kind3292052';
+        $loadBalancingScheme = 'loadBalancingScheme1974502980';
+        $localityLbPolicy = 'localityLbPolicy-2016052161';
         $name = 'name3373707';
         $network = 'network1843485230';
         $port = 3446913;
         $portName = 'portName1115276169';
+        $protocol = 'protocol-989163880';
         $region = 'region-934795532';
         $securityPolicy = 'securityPolicy1781695249';
         $selfLink = 'selfLink-1691268851';
+        $sessionAffinity = 'sessionAffinity1000759473';
         $timeoutSec = 2067488653;
         $expectedResponse = new BackendService();
         $expectedResponse->setAffinityCookieTtlSec($affinityCookieTtlSec);
@@ -552,13 +556,17 @@ class BackendServicesClientTest extends GeneratedTest
         $expectedResponse->setFingerprint($fingerprint);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
+        $expectedResponse->setLoadBalancingScheme($loadBalancingScheme);
+        $expectedResponse->setLocalityLbPolicy($localityLbPolicy);
         $expectedResponse->setName($name);
         $expectedResponse->setNetwork($network);
         $expectedResponse->setPort($port);
         $expectedResponse->setPortName($portName);
+        $expectedResponse->setProtocol($protocol);
         $expectedResponse->setRegion($region);
         $expectedResponse->setSecurityPolicy($securityPolicy);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setSessionAffinity($sessionAffinity);
         $expectedResponse->setTimeoutSec($timeoutSec);
         $transport->addResponse($expectedResponse);
         // Mock request

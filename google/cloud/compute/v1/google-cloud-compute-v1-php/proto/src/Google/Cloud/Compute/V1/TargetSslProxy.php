@@ -47,8 +47,9 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
     protected $name = null;
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
      */
     protected $proxy_header = null;
     /**
@@ -92,8 +93,9 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
      *           [Output Only] Type of the resource. Always compute#targetSslProxy for target SSL proxies.
      *     @type string $name
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-     *     @type int $proxy_header
+     *     @type string $proxy_header
      *           Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     *           Check the ProxyHeader enum for the list of possible values.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
      *     @type string $service
@@ -291,13 +293,14 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
+     * @return string
      */
     public function getProxyHeader()
     {
-        return isset($this->proxy_header) ? $this->proxy_header : 0;
+        return isset($this->proxy_header) ? $this->proxy_header : '';
     }
 
     public function hasProxyHeader()
@@ -312,14 +315,15 @@ class TargetSslProxy extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetSslProxy.ProxyHeader proxy_header = 160374142;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
+     * @param string $var
      * @return $this
      */
     public function setProxyHeader($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\TargetSslProxy\ProxyHeader::class);
+        GPBUtil::checkString($var, True);
         $this->proxy_header = $var;
 
         return $this;

@@ -17,8 +17,9 @@ class Rule extends \Google\Protobuf\Internal\Message
 {
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the Action enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Rule.Action action = 187661878;</code>
+     * Generated from protobuf field <code>optional string action = 187661878;</code>
      */
     protected $action = null;
     /**
@@ -64,8 +65,9 @@ class Rule extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $action
+     *     @type string $action
      *           This is deprecated and has no effect. Do not use.
+     *           Check the Action enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\Condition[]|\Google\Protobuf\Internal\RepeatedField $conditions
      *           This is deprecated and has no effect. Do not use.
      *     @type string $description
@@ -87,13 +89,14 @@ class Rule extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the Action enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Rule.Action action = 187661878;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string action = 187661878;</code>
+     * @return string
      */
     public function getAction()
     {
-        return isset($this->action) ? $this->action : 0;
+        return isset($this->action) ? $this->action : '';
     }
 
     public function hasAction()
@@ -108,14 +111,15 @@ class Rule extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the Action enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Rule.Action action = 187661878;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string action = 187661878;</code>
+     * @param string $var
      * @return $this
      */
     public function setAction($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Rule\Action::class);
+        GPBUtil::checkString($var, True);
         $this->action = $var;
 
         return $this;

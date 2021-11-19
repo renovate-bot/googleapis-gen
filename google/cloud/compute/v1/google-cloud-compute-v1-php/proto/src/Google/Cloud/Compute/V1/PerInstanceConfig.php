@@ -34,8 +34,9 @@ class PerInstanceConfig extends \Google\Protobuf\Internal\Message
     protected $preserved_state = null;
     /**
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
 
@@ -51,8 +52,9 @@ class PerInstanceConfig extends \Google\Protobuf\Internal\Message
      *           The name of a per-instance config and its corresponding instance. Serves as a merge key during UpdatePerInstanceConfigs operations, that is, if a per-instance config with the same name exists then it will be updated, otherwise a new one will be created for the VM instance with the same name. An attempt to create a per-instance config for a VM instance that either doesn't exist or is not part of the group will result in an error.
      *     @type \Google\Cloud\Compute\V1\PreservedState $preserved_state
      *           The intended preserved state for the given instance. Does not contain preserved state generated from a stateful policy.
-     *     @type int $status
+     *     @type string $status
      *           The status of applying this per-instance config on the corresponding managed instance.
+     *           Check the Status enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -170,13 +172,14 @@ class PerInstanceConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -191,14 +194,15 @@ class PerInstanceConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * The status of applying this per-instance config on the corresponding managed instance.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.PerInstanceConfig.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\PerInstanceConfig\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

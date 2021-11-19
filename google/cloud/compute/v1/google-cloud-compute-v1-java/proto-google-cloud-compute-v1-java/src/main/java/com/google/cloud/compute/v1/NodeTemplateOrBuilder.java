@@ -34,30 +34,34 @@ public interface NodeTemplateOrBuilder extends
   /**
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    * @return Whether the cpuOvercommitType field is set.
    */
   boolean hasCpuOvercommitType();
   /**
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-   * @return The enum numeric value on the wire for cpuOvercommitType.
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
+   * @return The cpuOvercommitType.
    */
-  int getCpuOvercommitTypeValue();
+  java.lang.String getCpuOvercommitType();
   /**
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-   * @return The cpuOvercommitType.
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
+   * @return The bytes for cpuOvercommitType.
    */
-  com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType getCpuOvercommitType();
+  com.google.protobuf.ByteString
+      getCpuOvercommitTypeBytes();
 
   /**
    * <pre>
@@ -416,30 +420,34 @@ public interface NodeTemplateOrBuilder extends
   /**
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.NodeTemplate.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

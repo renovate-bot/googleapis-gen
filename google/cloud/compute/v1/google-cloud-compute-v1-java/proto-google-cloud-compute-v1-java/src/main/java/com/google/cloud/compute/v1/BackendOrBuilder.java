@@ -10,30 +10,34 @@ public interface BackendOrBuilder extends
   /**
    * <pre>
    * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+   * Check the BalancingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
+   * <code>optional string balancing_mode = 430286217;</code>
    * @return Whether the balancingMode field is set.
    */
   boolean hasBalancingMode();
   /**
    * <pre>
    * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+   * Check the BalancingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-   * @return The enum numeric value on the wire for balancingMode.
+   * <code>optional string balancing_mode = 430286217;</code>
+   * @return The balancingMode.
    */
-  int getBalancingModeValue();
+  java.lang.String getBalancingMode();
   /**
    * <pre>
    * Specifies how to determine whether the backend of a load balancer can handle additional traffic or is fully loaded. For usage guidelines, see Connection balancing mode. Backends must use compatible balancing modes. For more information, see Supported balancing modes and target capacity settings and Restrictions and guidance for instance groups. Note: Currently, if you use the API to configure incompatible balancing modes, the configuration might be accepted even though it has no impact and is ignored. Specifically, Backend.maxUtilization is ignored when Backend.balancingMode is RATE. In the future, this incompatible combination will be rejected.
+   * Check the BalancingMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Backend.BalancingMode balancing_mode = 430286217;</code>
-   * @return The balancingMode.
+   * <code>optional string balancing_mode = 430286217;</code>
+   * @return The bytes for balancingMode.
    */
-  com.google.cloud.compute.v1.Backend.BalancingMode getBalancingMode();
+  com.google.protobuf.ByteString
+      getBalancingModeBytes();
 
   /**
    * <pre>

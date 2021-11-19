@@ -47,8 +47,9 @@ class Firewall extends \Google\Protobuf\Internal\Message
     private $destination_ranges;
     /**
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
      */
     protected $direction = null;
     /**
@@ -146,8 +147,9 @@ class Firewall extends \Google\Protobuf\Internal\Message
      *           An optional description of this resource. Provide this field when you create the resource.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $destination_ranges
      *           If destination ranges are specified, the firewall rule applies only to traffic that has destination IP address in these ranges. These ranges must be expressed in CIDR format. Both IPv4 and IPv6 are supported.
-     *     @type int $direction
+     *     @type string $direction
      *           Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     *           Check the Direction enum for the list of possible values.
      *     @type bool $disabled
      *           Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
      *     @type int|string $id
@@ -333,13 +335,14 @@ class Firewall extends \Google\Protobuf\Internal\Message
 
     /**
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
+     * @return string
      */
     public function getDirection()
     {
-        return isset($this->direction) ? $this->direction : 0;
+        return isset($this->direction) ? $this->direction : '';
     }
 
     public function hasDirection()
@@ -354,14 +357,15 @@ class Firewall extends \Google\Protobuf\Internal\Message
 
     /**
      * Direction of traffic to which this firewall applies, either `INGRESS` or `EGRESS`. The default is `INGRESS`. For `INGRESS` traffic, you cannot specify the destinationRanges field, and for `EGRESS` traffic, you cannot specify the sourceRanges or sourceTags fields.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Firewall.Direction direction = 111150975;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
+     * @param string $var
      * @return $this
      */
     public function setDirection($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Firewall\Direction::class);
+        GPBUtil::checkString($var, True);
         $this->direction = $var;
 
         return $this;

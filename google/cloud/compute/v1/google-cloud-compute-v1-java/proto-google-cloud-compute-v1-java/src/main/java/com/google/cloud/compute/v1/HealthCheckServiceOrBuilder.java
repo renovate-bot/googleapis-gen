@@ -138,30 +138,34 @@ public interface HealthCheckServiceOrBuilder extends
   /**
    * <pre>
    * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+   * Check the HealthStatusAggregationPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
+   * <code>optional string health_status_aggregation_policy = 253163129;</code>
    * @return Whether the healthStatusAggregationPolicy field is set.
    */
   boolean hasHealthStatusAggregationPolicy();
   /**
    * <pre>
    * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+   * Check the HealthStatusAggregationPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-   * @return The enum numeric value on the wire for healthStatusAggregationPolicy.
+   * <code>optional string health_status_aggregation_policy = 253163129;</code>
+   * @return The healthStatusAggregationPolicy.
    */
-  int getHealthStatusAggregationPolicyValue();
+  java.lang.String getHealthStatusAggregationPolicy();
   /**
    * <pre>
    * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+   * Check the HealthStatusAggregationPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-   * @return The healthStatusAggregationPolicy.
+   * <code>optional string health_status_aggregation_policy = 253163129;</code>
+   * @return The bytes for healthStatusAggregationPolicy.
    */
-  com.google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy getHealthStatusAggregationPolicy();
+  com.google.protobuf.ByteString
+      getHealthStatusAggregationPolicyBytes();
 
   /**
    * <pre>

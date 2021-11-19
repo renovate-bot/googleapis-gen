@@ -33,9 +33,10 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
      */
     protected $linked_vpn_tunnel = null;
     /**
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
+     * Generated from protobuf field <code>optional string management_type = 173703606;</code>
      */
     protected $management_type = null;
     /**
@@ -75,8 +76,9 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
      *           URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
      *     @type string $linked_vpn_tunnel
      *           URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a virtual machine instance.
-     *     @type int $management_type
-     *           [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     *     @type string $management_type
+     *           [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     *           Check the ManagementType enum for the list of possible values.
      *     @type string $name
      *           Name of this interface entry. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type string $private_ip_address
@@ -201,14 +203,15 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string management_type = 173703606;</code>
+     * @return string
      */
     public function getManagementType()
     {
-        return isset($this->management_type) ? $this->management_type : 0;
+        return isset($this->management_type) ? $this->management_type : '';
     }
 
     public function hasManagementType()
@@ -222,15 +225,16 @@ class RouterInterface extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string management_type = 173703606;</code>
+     * @param string $var
      * @return $this
      */
     public function setManagementType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RouterInterface\ManagementType::class);
+        GPBUtil::checkString($var, True);
         $this->management_type = $var;
 
         return $this;

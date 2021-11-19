@@ -23,8 +23,9 @@ class ServiceAttachment extends \Google\Protobuf\Internal\Message
     private $connected_endpoints;
     /**
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
+     * Generated from protobuf field <code>optional string connection_preference = 285818076;</code>
      */
     protected $connection_preference = null;
     /**
@@ -126,8 +127,9 @@ class ServiceAttachment extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\Compute\V1\ServiceAttachmentConnectedEndpoint[]|\Google\Protobuf\Internal\RepeatedField $connected_endpoints
      *           [Output Only] An array of connections for all the consumers connected to this service attachment.
-     *     @type int $connection_preference
+     *     @type string $connection_preference
      *           The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     *           Check the ConnectionPreference enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\ServiceAttachmentConsumerProjectLimit[]|\Google\Protobuf\Internal\RepeatedField $consumer_accept_lists
      *           Projects that are allowed to connect to this service attachment.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $consumer_reject_lists
@@ -193,13 +195,14 @@ class ServiceAttachment extends \Google\Protobuf\Internal\Message
 
     /**
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string connection_preference = 285818076;</code>
+     * @return string
      */
     public function getConnectionPreference()
     {
-        return isset($this->connection_preference) ? $this->connection_preference : 0;
+        return isset($this->connection_preference) ? $this->connection_preference : '';
     }
 
     public function hasConnectionPreference()
@@ -214,14 +217,15 @@ class ServiceAttachment extends \Google\Protobuf\Internal\Message
 
     /**
      * The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
+     * Check the ConnectionPreference enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ServiceAttachment.ConnectionPreference connection_preference = 285818076;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string connection_preference = 285818076;</code>
+     * @param string $var
      * @return $this
      */
     public function setConnectionPreference($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ServiceAttachment\ConnectionPreference::class);
+        GPBUtil::checkString($var, True);
         $this->connection_preference = $var;
 
         return $this;

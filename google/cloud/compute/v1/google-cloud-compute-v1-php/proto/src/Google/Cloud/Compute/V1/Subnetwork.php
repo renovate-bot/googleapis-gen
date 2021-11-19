@@ -65,8 +65,9 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     protected $ip_cidr_range = null;
     /**
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+     * Generated from protobuf field <code>optional string ipv6_access_type = 504658653;</code>
      */
     protected $ipv6_access_type = null;
     /**
@@ -107,14 +108,16 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     protected $private_ip_google_access = null;
     /**
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
      */
     protected $private_ipv6_google_access = null;
     /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+     * Generated from protobuf field <code>optional string purpose = 316407070;</code>
      */
     protected $purpose = null;
     /**
@@ -125,8 +128,9 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     protected $region = null;
     /**
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+     * Generated from protobuf field <code>optional string role = 3506294;</code>
      */
     protected $role = null;
     /**
@@ -143,14 +147,16 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
     protected $self_link = null;
     /**
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+     * Generated from protobuf field <code>optional string stack_type = 425908881;</code>
      */
     protected $stack_type = null;
     /**
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
      */
     protected $state = null;
 
@@ -176,8 +182,9 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $ip_cidr_range
      *           The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example, 10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in the Valid ranges list. The range can be expanded after creation using expandIpCidrRange.
-     *     @type int $ipv6_access_type
+     *     @type string $ipv6_access_type
      *           The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     *           Check the Ipv6AccessType enum for the list of possible values.
      *     @type string $ipv6_cidr_range
      *           [Output Only] The range of internal IPv6 addresses that are owned by this subnetwork.
      *     @type string $kind
@@ -190,22 +197,27 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
      *           The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
      *     @type bool $private_ip_google_access
      *           Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
-     *     @type int $private_ipv6_google_access
+     *     @type string $private_ipv6_google_access
      *           The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
-     *     @type int $purpose
+     *           Check the PrivateIpv6GoogleAccess enum for the list of possible values.
+     *     @type string $purpose
      *           The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     *           Check the Purpose enum for the list of possible values.
      *     @type string $region
      *           URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
-     *     @type int $role
+     *     @type string $role
      *           The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     *           Check the Role enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\SubnetworkSecondaryRange[]|\Google\Protobuf\Internal\RepeatedField $secondary_ip_ranges
      *           An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
-     *     @type int $stack_type
+     *     @type string $stack_type
      *           The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
-     *     @type int $state
+     *           Check the StackType enum for the list of possible values.
+     *     @type string $state
      *           [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     *           Check the State enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -503,13 +515,14 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string ipv6_access_type = 504658653;</code>
+     * @return string
      */
     public function getIpv6AccessType()
     {
-        return isset($this->ipv6_access_type) ? $this->ipv6_access_type : 0;
+        return isset($this->ipv6_access_type) ? $this->ipv6_access_type : '';
     }
 
     public function hasIpv6AccessType()
@@ -524,14 +537,15 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+     * Check the Ipv6AccessType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string ipv6_access_type = 504658653;</code>
+     * @param string $var
      * @return $this
      */
     public function setIpv6AccessType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subnetwork\Ipv6AccessType::class);
+        GPBUtil::checkString($var, True);
         $this->ipv6_access_type = $var;
 
         return $this;
@@ -755,13 +769,14 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @return string
      */
     public function getPrivateIpv6GoogleAccess()
     {
-        return isset($this->private_ipv6_google_access) ? $this->private_ipv6_google_access : 0;
+        return isset($this->private_ipv6_google_access) ? $this->private_ipv6_google_access : '';
     }
 
     public function hasPrivateIpv6GoogleAccess()
@@ -776,14 +791,15 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+     * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string private_ipv6_google_access = 48277006;</code>
+     * @param string $var
      * @return $this
      */
     public function setPrivateIpv6GoogleAccess($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subnetwork\PrivateIpv6GoogleAccess::class);
+        GPBUtil::checkString($var, True);
         $this->private_ipv6_google_access = $var;
 
         return $this;
@@ -791,13 +807,14 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string purpose = 316407070;</code>
+     * @return string
      */
     public function getPurpose()
     {
-        return isset($this->purpose) ? $this->purpose : 0;
+        return isset($this->purpose) ? $this->purpose : '';
     }
 
     public function hasPurpose()
@@ -812,14 +829,15 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+     * Check the Purpose enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string purpose = 316407070;</code>
+     * @param string $var
      * @return $this
      */
     public function setPurpose($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subnetwork\Purpose::class);
+        GPBUtil::checkString($var, True);
         $this->purpose = $var;
 
         return $this;
@@ -863,13 +881,14 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string role = 3506294;</code>
+     * @return string
      */
     public function getRole()
     {
-        return isset($this->role) ? $this->role : 0;
+        return isset($this->role) ? $this->role : '';
     }
 
     public function hasRole()
@@ -884,14 +903,15 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+     * Check the Role enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string role = 3506294;</code>
+     * @param string $var
      * @return $this
      */
     public function setRole($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subnetwork\Role::class);
+        GPBUtil::checkString($var, True);
         $this->role = $var;
 
         return $this;
@@ -961,13 +981,14 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string stack_type = 425908881;</code>
+     * @return string
      */
     public function getStackType()
     {
-        return isset($this->stack_type) ? $this->stack_type : 0;
+        return isset($this->stack_type) ? $this->stack_type : '';
     }
 
     public function hasStackType()
@@ -982,14 +1003,15 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+     * Check the StackType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string stack_type = 425908881;</code>
+     * @param string $var
      * @return $this
      */
     public function setStackType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subnetwork\StackType::class);
+        GPBUtil::checkString($var, True);
         $this->stack_type = $var;
 
         return $this;
@@ -997,13 +1019,14 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @return string
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : 0;
+        return isset($this->state) ? $this->state : '';
     }
 
     public function hasState()
@@ -1018,14 +1041,15 @@ class Subnetwork extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @param string $var
      * @return $this
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\Subnetwork\State::class);
+        GPBUtil::checkString($var, True);
         $this->state = $var;
 
         return $this;

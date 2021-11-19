@@ -29,30 +29,34 @@ public interface ResourcePolicyGroupPlacementPolicyOrBuilder extends
   /**
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;</code>
+   * <code>optional string collocation = 511156533;</code>
    * @return Whether the collocation field is set.
    */
   boolean hasCollocation();
   /**
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;</code>
-   * @return The enum numeric value on the wire for collocation.
+   * <code>optional string collocation = 511156533;</code>
+   * @return The collocation.
    */
-  int getCollocationValue();
+  java.lang.String getCollocation();
   /**
    * <pre>
    * Specifies network collocation
+   * Check the Collocation enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation collocation = 511156533;</code>
-   * @return The collocation.
+   * <code>optional string collocation = 511156533;</code>
+   * @return The bytes for collocation.
    */
-  com.google.cloud.compute.v1.ResourcePolicyGroupPlacementPolicy.Collocation getCollocation();
+  com.google.protobuf.ByteString
+      getCollocationBytes();
 
   /**
    * <pre>

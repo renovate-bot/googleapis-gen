@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig() {
-    ruleVisibility_ = 0;
+    ruleVisibility_ = "";
   }
 
   @java.lang.Override
@@ -59,10 +59,10 @@ private static final long serialVersionUID = 0L;
             enable_ = input.readBool();
             break;
           }
-          case -668900952: {
-            int rawValue = input.readEnum();
+          case -668900950: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            ruleVisibility_ = rawValue;
+            ruleVisibility_ = s;
             break;
           }
           default: {
@@ -255,41 +255,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int RULE_VISIBILITY_FIELD_NUMBER = 453258293;
-  private int ruleVisibility_;
+  private volatile java.lang.Object ruleVisibility_;
   /**
    * <pre>
    * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
+   * <code>optional string rule_visibility = 453258293;</code>
    * @return Whether the ruleVisibility field is set.
    */
-  @java.lang.Override public boolean hasRuleVisibility() {
+  @java.lang.Override
+  public boolean hasRuleVisibility() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
    * <pre>
    * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-   * @return The enum numeric value on the wire for ruleVisibility.
+   * <code>optional string rule_visibility = 453258293;</code>
+   * @return The ruleVisibility.
    */
-  @java.lang.Override public int getRuleVisibilityValue() {
-    return ruleVisibility_;
+  @java.lang.Override
+  public java.lang.String getRuleVisibility() {
+    java.lang.Object ref = ruleVisibility_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ruleVisibility_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-   * @return The ruleVisibility.
+   * <code>optional string rule_visibility = 453258293;</code>
+   * @return The bytes for ruleVisibility.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility getRuleVisibility() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility result = com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility.valueOf(ruleVisibility_);
-    return result == null ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRuleVisibilityBytes() {
+    java.lang.Object ref = ruleVisibility_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ruleVisibility_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -310,7 +333,7 @@ private static final long serialVersionUID = 0L;
       output.writeBool(311764355, enable_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(453258293, ruleVisibility_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 453258293, ruleVisibility_);
     }
     unknownFields.writeTo(output);
   }
@@ -326,8 +349,7 @@ private static final long serialVersionUID = 0L;
         .computeBoolSize(311764355, enable_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(453258293, ruleVisibility_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(453258293, ruleVisibility_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -351,7 +373,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRuleVisibility() != other.hasRuleVisibility()) return false;
     if (hasRuleVisibility()) {
-      if (ruleVisibility_ != other.ruleVisibility_) return false;
+      if (!getRuleVisibility()
+          .equals(other.getRuleVisibility())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -371,7 +394,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasRuleVisibility()) {
       hash = (37 * hash) + RULE_VISIBILITY_FIELD_NUMBER;
-      hash = (53 * hash) + ruleVisibility_;
+      hash = (53 * hash) + getRuleVisibility().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -512,7 +535,7 @@ private static final long serialVersionUID = 0L;
       super.clear();
       enable_ = false;
       bitField0_ = (bitField0_ & ~0x00000001);
-      ruleVisibility_ = 0;
+      ruleVisibility_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -603,7 +626,9 @@ private static final long serialVersionUID = 0L;
         setEnable(other.getEnable());
       }
       if (other.hasRuleVisibility()) {
-        setRuleVisibility(other.getRuleVisibility());
+        bitField0_ |= 0x00000002;
+        ruleVisibility_ = other.ruleVisibility_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -690,40 +715,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int ruleVisibility_ = 0;
+    private java.lang.Object ruleVisibility_ = "";
     /**
      * <pre>
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
+     * <code>optional string rule_visibility = 453258293;</code>
      * @return Whether the ruleVisibility field is set.
      */
-    @java.lang.Override public boolean hasRuleVisibility() {
+    public boolean hasRuleVisibility() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-     * @return The enum numeric value on the wire for ruleVisibility.
+     * <code>optional string rule_visibility = 453258293;</code>
+     * @return The ruleVisibility.
      */
-    @java.lang.Override public int getRuleVisibilityValue() {
-      return ruleVisibility_;
+    public java.lang.String getRuleVisibility() {
+      java.lang.Object ref = ruleVisibility_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ruleVisibility_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-     * @param value The enum numeric value on the wire for ruleVisibility to set.
+     * <code>optional string rule_visibility = 453258293;</code>
+     * @return The bytes for ruleVisibility.
+     */
+    public com.google.protobuf.ByteString
+        getRuleVisibilityBytes() {
+      java.lang.Object ref = ruleVisibility_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ruleVisibility_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string rule_visibility = 453258293;</code>
+     * @param value The ruleVisibility to set.
      * @return This builder for chaining.
      */
-    public Builder setRuleVisibilityValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setRuleVisibility(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       ruleVisibility_ = value;
       onChanged();
       return this;
@@ -731,46 +794,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-     * @return The ruleVisibility.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility getRuleVisibility() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility result = com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility.valueOf(ruleVisibility_);
-      return result == null ? com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-     * @param value The ruleVisibility to set.
+     * <code>optional string rule_visibility = 453258293;</code>
      * @return This builder for chaining.
      */
-    public Builder setRuleVisibility(com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      ruleVisibility_ = value.getNumber();
+    public Builder clearRuleVisibility() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      ruleVisibility_ = getDefaultInstance().getRuleVisibility();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+     * Check the RuleVisibility enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
+     * <code>optional string rule_visibility = 453258293;</code>
+     * @param value The bytes for ruleVisibility to set.
      * @return This builder for chaining.
      */
-    public Builder clearRuleVisibility() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      ruleVisibility_ = 0;
+    public Builder setRuleVisibilityBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      ruleVisibility_ = value;
       onChanged();
       return this;
     }

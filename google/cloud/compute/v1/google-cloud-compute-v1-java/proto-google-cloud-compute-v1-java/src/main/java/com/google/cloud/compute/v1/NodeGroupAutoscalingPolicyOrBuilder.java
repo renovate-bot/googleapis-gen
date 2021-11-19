@@ -48,28 +48,32 @@ public interface NodeGroupAutoscalingPolicyOrBuilder extends
   /**
    * <pre>
    * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
+   * <code>optional string mode = 3357091;</code>
    * @return Whether the mode field is set.
    */
   boolean hasMode();
   /**
    * <pre>
    * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
-   * @return The enum numeric value on the wire for mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The mode.
    */
-  int getModeValue();
+  java.lang.String getMode();
   /**
    * <pre>
    * The autoscaling mode. Set to one of: ON, OFF, or ONLY_SCALE_OUT. For more information, see Autoscaler modes.
+   * Check the Mode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode mode = 3357091;</code>
-   * @return The mode.
+   * <code>optional string mode = 3357091;</code>
+   * @return The bytes for mode.
    */
-  com.google.cloud.compute.v1.NodeGroupAutoscalingPolicy.Mode getMode();
+  com.google.protobuf.ByteString
+      getModeBytes();
 }

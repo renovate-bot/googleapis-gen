@@ -16,8 +16,9 @@ class ResourcePolicyWeeklyCycleDayOfWeek extends \Google\Protobuf\Internal\Messa
 {
     /**
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
+     * Generated from protobuf field <code>optional string day = 99228;</code>
      */
     protected $day = null;
     /**
@@ -39,8 +40,9 @@ class ResourcePolicyWeeklyCycleDayOfWeek extends \Google\Protobuf\Internal\Messa
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $day
+     *     @type string $day
      *           Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     *           Check the Day enum for the list of possible values.
      *     @type string $duration
      *           [Output only] Duration of the time window, automatically chosen to be smallest possible in the given scenario.
      *     @type string $start_time
@@ -54,13 +56,14 @@ class ResourcePolicyWeeklyCycleDayOfWeek extends \Google\Protobuf\Internal\Messa
 
     /**
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string day = 99228;</code>
+     * @return string
      */
     public function getDay()
     {
-        return isset($this->day) ? $this->day : 0;
+        return isset($this->day) ? $this->day : '';
     }
 
     public function hasDay()
@@ -75,14 +78,15 @@ class ResourcePolicyWeeklyCycleDayOfWeek extends \Google\Protobuf\Internal\Messa
 
     /**
      * Defines a schedule that runs on specific days of the week. Specify one or more days. The following options are available: MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY.
+     * Check the Day enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ResourcePolicyWeeklyCycleDayOfWeek.Day day = 99228;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string day = 99228;</code>
+     * @param string $var
      * @return $this
      */
     public function setDay($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ResourcePolicyWeeklyCycleDayOfWeek\Day::class);
+        GPBUtil::checkString($var, True);
         $this->day = $var;
 
         return $this;

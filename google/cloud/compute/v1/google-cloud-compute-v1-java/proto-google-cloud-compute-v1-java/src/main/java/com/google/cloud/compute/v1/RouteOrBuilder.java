@@ -469,30 +469,34 @@ public interface RouteOrBuilder extends
   /**
    * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * Check the RouteType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
+   * <code>optional string route_type = 375888752;</code>
    * @return Whether the routeType field is set.
    */
   boolean hasRouteType();
   /**
    * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * Check the RouteType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-   * @return The enum numeric value on the wire for routeType.
+   * <code>optional string route_type = 375888752;</code>
+   * @return The routeType.
    */
-  int getRouteTypeValue();
+  java.lang.String getRouteType();
   /**
    * <pre>
    * [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route
+   * Check the RouteType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Route.RouteType route_type = 375888752;</code>
-   * @return The routeType.
+   * <code>optional string route_type = 375888752;</code>
+   * @return The bytes for routeType.
    */
-  com.google.cloud.compute.v1.Route.RouteType getRouteType();
+  com.google.protobuf.ByteString
+      getRouteTypeBytes();
 
   /**
    * <pre>

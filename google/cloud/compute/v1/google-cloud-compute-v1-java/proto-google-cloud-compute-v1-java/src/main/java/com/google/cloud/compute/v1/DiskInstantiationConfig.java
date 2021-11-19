@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
   private DiskInstantiationConfig() {
     customImage_ = "";
     deviceName_ = "";
-    instantiateFrom_ = 0;
+    instantiateFrom_ = "";
   }
 
   @java.lang.Override
@@ -68,10 +68,10 @@ private static final long serialVersionUID = 0L;
             customImage_ = s;
             break;
           }
-          case -1147896072: {
-            int rawValue = input.readEnum();
+          case -1147896070: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            instantiateFrom_ = rawValue;
+            instantiateFrom_ = s;
             break;
           }
           case -576876072: {
@@ -486,41 +486,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int INSTANTIATE_FROM_FIELD_NUMBER = 393383903;
-  private int instantiateFrom_;
+  private volatile java.lang.Object instantiateFrom_;
   /**
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+   * <code>optional string instantiate_from = 393383903;</code>
    * @return Whether the instantiateFrom field is set.
    */
-  @java.lang.Override public boolean hasInstantiateFrom() {
+  @java.lang.Override
+  public boolean hasInstantiateFrom() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-   * @return The enum numeric value on the wire for instantiateFrom.
+   * <code>optional string instantiate_from = 393383903;</code>
+   * @return The instantiateFrom.
    */
-  @java.lang.Override public int getInstantiateFromValue() {
-    return instantiateFrom_;
+  @java.lang.Override
+  public java.lang.String getInstantiateFrom() {
+    java.lang.Object ref = instantiateFrom_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      instantiateFrom_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+   * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+   * Check the InstantiateFrom enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-   * @return The instantiateFrom.
+   * <code>optional string instantiate_from = 393383903;</code>
+   * @return The bytes for instantiateFrom.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom getInstantiateFrom() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom result = com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom.valueOf(instantiateFrom_);
-    return result == null ? com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getInstantiateFromBytes() {
+    java.lang.Object ref = instantiateFrom_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      instantiateFrom_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -544,7 +567,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 184123149, customImage_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(393383903, instantiateFrom_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 393383903, instantiateFrom_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeBool(464761403, autoDelete_);
@@ -565,8 +588,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(184123149, customImage_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(393383903, instantiateFrom_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(393383903, instantiateFrom_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -604,7 +626,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInstantiateFrom() != other.hasInstantiateFrom()) return false;
     if (hasInstantiateFrom()) {
-      if (instantiateFrom_ != other.instantiateFrom_) return false;
+      if (!getInstantiateFrom()
+          .equals(other.getInstantiateFrom())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -632,7 +655,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasInstantiateFrom()) {
       hash = (37 * hash) + INSTANTIATE_FROM_FIELD_NUMBER;
-      hash = (53 * hash) + instantiateFrom_;
+      hash = (53 * hash) + getInstantiateFrom().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -777,7 +800,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       deviceName_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      instantiateFrom_ = 0;
+      instantiateFrom_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
@@ -886,7 +909,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasInstantiateFrom()) {
-        setInstantiateFrom(other.getInstantiateFrom());
+        bitField0_ |= 0x00000008;
+        instantiateFrom_ = other.instantiateFrom_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1187,87 +1212,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int instantiateFrom_ = 0;
+    private java.lang.Object instantiateFrom_ = "";
     /**
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+     * <code>optional string instantiate_from = 393383903;</code>
      * @return Whether the instantiateFrom field is set.
      */
-    @java.lang.Override public boolean hasInstantiateFrom() {
+    public boolean hasInstantiateFrom() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-     * @return The enum numeric value on the wire for instantiateFrom.
+     * <code>optional string instantiate_from = 393383903;</code>
+     * @return The instantiateFrom.
      */
-    @java.lang.Override public int getInstantiateFromValue() {
-      return instantiateFrom_;
+    public java.lang.String getInstantiateFrom() {
+      java.lang.Object ref = instantiateFrom_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        instantiateFrom_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-     * @param value The enum numeric value on the wire for instantiateFrom to set.
+     * <code>optional string instantiate_from = 393383903;</code>
+     * @return The bytes for instantiateFrom.
+     */
+    public com.google.protobuf.ByteString
+        getInstantiateFromBytes() {
+      java.lang.Object ref = instantiateFrom_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        instantiateFrom_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string instantiate_from = 393383903;</code>
+     * @param value The instantiateFrom to set.
      * @return This builder for chaining.
      */
-    public Builder setInstantiateFromValue(int value) {
-      bitField0_ |= 0x00000008;
+    public Builder setInstantiateFrom(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
       instantiateFrom_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-     * @return The instantiateFrom.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom getInstantiateFrom() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom result = com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom.valueOf(instantiateFrom_);
-      return result == null ? com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
-     * @param value The instantiateFrom to set.
+     * <code>optional string instantiate_from = 393383903;</code>
      * @return This builder for chaining.
      */
-    public Builder setInstantiateFrom(com.google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      instantiateFrom_ = value.getNumber();
+    public Builder clearInstantiateFrom() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      instantiateFrom_ = getDefaultInstance().getInstantiateFrom();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks. 
+     * Specifies whether to include the disk and what image to use. Possible values are: - source-image: to use the same image that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - source-image-family: to use the same image family that was used to create the source instance's corresponding disk. Applicable to the boot disk and additional read-write disks. - custom-image: to use a user-provided image url for disk creation. Applicable to the boot disk and additional read-write disks. - attach-read-only: to attach a read-only disk. Applicable to read-only disks. - do-not-include: to exclude a disk from the template. Applicable to additional read-write disks, local SSDs, and read-only disks.
+     * Check the InstantiateFrom enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.DiskInstantiationConfig.InstantiateFrom instantiate_from = 393383903;</code>
+     * <code>optional string instantiate_from = 393383903;</code>
+     * @param value The bytes for instantiateFrom to set.
      * @return This builder for chaining.
      */
-    public Builder clearInstantiateFrom() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      instantiateFrom_ = 0;
+    public Builder setInstantiateFromBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      instantiateFrom_ = value;
       onChanged();
       return this;
     }

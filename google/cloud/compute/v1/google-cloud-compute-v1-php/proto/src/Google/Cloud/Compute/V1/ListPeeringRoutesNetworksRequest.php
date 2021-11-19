@@ -17,8 +17,9 @@ class ListPeeringRoutesNetworksRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
      */
     protected $direction = null;
     /**
@@ -82,8 +83,9 @@ class ListPeeringRoutesNetworksRequest extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $direction
+     *     @type string $direction
      *           The direction of the exchanged routes.
+     *           Check the Direction enum for the list of possible values.
      *     @type string $filter
      *           A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
      *     @type int $max_results
@@ -111,13 +113,14 @@ class ListPeeringRoutesNetworksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
+     * @return string
      */
     public function getDirection()
     {
-        return isset($this->direction) ? $this->direction : 0;
+        return isset($this->direction) ? $this->direction : '';
     }
 
     public function hasDirection()
@@ -132,14 +135,15 @@ class ListPeeringRoutesNetworksRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The direction of the exchanged routes.
+     * Check the Direction enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ListPeeringRoutesNetworksRequest.Direction direction = 111150975;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string direction = 111150975;</code>
+     * @param string $var
      * @return $this
      */
     public function setDirection($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ListPeeringRoutesNetworksRequest\Direction::class);
+        GPBUtil::checkString($var, True);
         $this->direction = $var;
 
         return $this;

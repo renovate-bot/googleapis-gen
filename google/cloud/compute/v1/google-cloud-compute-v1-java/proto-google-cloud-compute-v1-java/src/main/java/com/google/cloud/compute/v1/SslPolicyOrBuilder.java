@@ -227,30 +227,34 @@ public interface SslPolicyOrBuilder extends
   /**
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
+   * <code>optional string min_tls_version = 8155943;</code>
    * @return Whether the minTlsVersion field is set.
    */
   boolean hasMinTlsVersion();
   /**
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-   * @return The enum numeric value on the wire for minTlsVersion.
+   * <code>optional string min_tls_version = 8155943;</code>
+   * @return The minTlsVersion.
    */
-  int getMinTlsVersionValue();
+  java.lang.String getMinTlsVersion();
   /**
    * <pre>
    * The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one of TLS_1_0, TLS_1_1, TLS_1_2.
+   * Check the MinTlsVersion enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.MinTlsVersion min_tls_version = 8155943;</code>
-   * @return The minTlsVersion.
+   * <code>optional string min_tls_version = 8155943;</code>
+   * @return The bytes for minTlsVersion.
    */
-  com.google.cloud.compute.v1.SslPolicy.MinTlsVersion getMinTlsVersion();
+  com.google.protobuf.ByteString
+      getMinTlsVersionBytes();
 
   /**
    * <pre>
@@ -284,30 +288,34 @@ public interface SslPolicyOrBuilder extends
   /**
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
+   * <code>optional string profile = 227445161;</code>
    * @return Whether the profile field is set.
    */
   boolean hasProfile();
   /**
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-   * @return The enum numeric value on the wire for profile.
+   * <code>optional string profile = 227445161;</code>
+   * @return The profile.
    */
-  int getProfileValue();
+  java.lang.String getProfile();
   /**
    * <pre>
    * Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one of COMPATIBLE, MODERN, RESTRICTED, or CUSTOM. If using CUSTOM, the set of SSL features to enable must be specified in the customFeatures field.
+   * Check the Profile enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslPolicy.Profile profile = 227445161;</code>
-   * @return The profile.
+   * <code>optional string profile = 227445161;</code>
+   * @return The bytes for profile.
    */
-  com.google.cloud.compute.v1.SslPolicy.Profile getProfile();
+  com.google.protobuf.ByteString
+      getProfileBytes();
 
   /**
    * <pre>

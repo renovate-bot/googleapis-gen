@@ -29,8 +29,9 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Protobuf\Internal\Messa
     protected $psc_connection_id = null;
     /**
      * The status of a connected endpoint to this service attachment.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
 
@@ -44,8 +45,9 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Protobuf\Internal\Messa
      *           The url of a connected endpoint.
      *     @type int|string $psc_connection_id
      *           The PSC connection id of the connected endpoint.
-     *     @type int $status
+     *     @type string $status
      *           The status of a connected endpoint to this service attachment.
+     *           Check the Status enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -127,13 +129,14 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Protobuf\Internal\Messa
 
     /**
      * The status of a connected endpoint to this service attachment.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -148,14 +151,15 @@ class ServiceAttachmentConnectedEndpoint extends \Google\Protobuf\Internal\Messa
 
     /**
      * The status of a connected endpoint to this service attachment.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ServiceAttachmentConnectedEndpoint\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

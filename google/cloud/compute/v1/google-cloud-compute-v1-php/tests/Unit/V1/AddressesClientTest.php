@@ -287,27 +287,37 @@ class AddressesClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $address2 = 'address2874543783';
+        $addressType = 'addressType264307877';
         $creationTimestamp = 'creationTimestamp567396278';
         $description = 'description-1724546052';
         $id = 3355;
+        $ipVersion = 'ipVersion-1315653184';
         $kind = 'kind3292052';
         $name = 'name3373707';
         $network = 'network1843485230';
+        $networkTier = 'networkTier-19473069';
         $prefixLength = 1157046989;
+        $purpose = 'purpose-220463842';
         $region2 = 'region2-690338393';
         $selfLink = 'selfLink-1691268851';
+        $status = 'status-892481550';
         $subnetwork = 'subnetwork-1302785042';
         $expectedResponse = new Address();
         $expectedResponse->setAddress($address2);
+        $expectedResponse->setAddressType($addressType);
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
         $expectedResponse->setId($id);
+        $expectedResponse->setIpVersion($ipVersion);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setNetworkTier($networkTier);
         $expectedResponse->setPrefixLength($prefixLength);
+        $expectedResponse->setPurpose($purpose);
         $expectedResponse->setRegion($region2);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setSubnetwork($subnetwork);
         $transport->addResponse($expectedResponse);
         // Mock request

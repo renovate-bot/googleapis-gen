@@ -369,7 +369,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetZoneRequest):
               name='name_value',
               region='region_value',
               self_link='self_link_value',
-              status=compute.Zone.Status.DOWN,
+              status='status_value',
               supports_pzs=True,
         )
 
@@ -391,7 +391,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetZoneRequest):
     assert response.name == 'name_value'
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
-    assert response.status == compute.Zone.Status.DOWN
+    assert response.status == 'status_value'
     assert response.supports_pzs is True
 
 

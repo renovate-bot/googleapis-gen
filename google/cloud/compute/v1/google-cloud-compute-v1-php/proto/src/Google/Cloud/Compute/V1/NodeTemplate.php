@@ -21,8 +21,9 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     private $accelerators;
     /**
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
+     * Generated from protobuf field <code>optional string cpu_overcommit_type = 247727959;</code>
      */
     protected $cpu_overcommit_type = null;
     /**
@@ -97,8 +98,9 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
     protected $server_binding = null;
     /**
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -115,8 +117,9 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Compute\V1\AcceleratorConfig[]|\Google\Protobuf\Internal\RepeatedField $accelerators
-     *     @type int $cpu_overcommit_type
+     *     @type string $cpu_overcommit_type
      *           CPU overcommit.
+     *           Check the CpuOvercommitType enum for the list of possible values.
      *     @type string $creation_timestamp
      *           [Output Only] Creation timestamp in RFC3339 text format.
      *     @type string $description
@@ -140,8 +143,9 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
      *           [Output Only] Server-defined URL for the resource.
      *     @type \Google\Cloud\Compute\V1\ServerBinding $server_binding
      *           Sets the binding properties for the physical server. Valid values include: - *[Default]* RESTART_NODE_ON_ANY_SERVER: Restarts VMs on any available physical server - RESTART_NODE_ON_MINIMAL_SERVER: Restarts VMs on the same physical server whenever possible See Sole-tenant node options for more information.
-     *     @type int $status
+     *     @type string $status
      *           [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     *           Check the Status enum for the list of possible values.
      *     @type string $status_message
      *           [Output Only] An optional, human-readable explanation of the status.
      * }
@@ -175,13 +179,14 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
 
     /**
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @return string
      */
     public function getCpuOvercommitType()
     {
-        return isset($this->cpu_overcommit_type) ? $this->cpu_overcommit_type : 0;
+        return isset($this->cpu_overcommit_type) ? $this->cpu_overcommit_type : '';
     }
 
     public function hasCpuOvercommitType()
@@ -196,14 +201,15 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
 
     /**
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @param string $var
      * @return $this
      */
     public function setCpuOvercommitType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeTemplate\CpuOvercommitType::class);
+        GPBUtil::checkString($var, True);
         $this->cpu_overcommit_type = $var;
 
         return $this;
@@ -619,13 +625,14 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -640,14 +647,15 @@ class NodeTemplate extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NodeTemplate\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

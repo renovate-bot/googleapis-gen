@@ -249,6 +249,8 @@ public class ImagesClientTest {
             .setSourceSnapshot("sourceSnapshot-1078634753")
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
+            .setSourceType("sourceType-1111431691")
+            .setStatus("status-892481550")
             .addAllStorageLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
@@ -323,6 +325,8 @@ public class ImagesClientTest {
             .setSourceSnapshot("sourceSnapshot-1078634753")
             .setSourceSnapshotEncryptionKey(CustomerEncryptionKey.newBuilder().build())
             .setSourceSnapshotId("sourceSnapshotId-1480876934")
+            .setSourceType("sourceType-1111431691")
+            .setStatus("status-892481550")
             .addAllStorageLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);

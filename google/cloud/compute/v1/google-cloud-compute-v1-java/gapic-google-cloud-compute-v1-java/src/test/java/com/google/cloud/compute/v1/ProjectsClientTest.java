@@ -358,6 +358,7 @@ public class ProjectsClientTest {
         Project.newBuilder()
             .setCommonInstanceMetadata(Metadata.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultNetworkTier("defaultNetworkTier-836540369")
             .setDefaultServiceAccount("defaultServiceAccount2129949273")
             .setDescription("description-1724546052")
             .addAllEnabledFeatures(new ArrayList<String>())
@@ -367,6 +368,7 @@ public class ProjectsClientTest {
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setUsageExportLocation(UsageExportLocation.newBuilder().build())
+            .setXpnProjectStatus("xpnProjectStatus-52109419")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -412,6 +414,7 @@ public class ProjectsClientTest {
         Project.newBuilder()
             .setCommonInstanceMetadata(Metadata.newBuilder().build())
             .setCreationTimestamp("creationTimestamp-370203401")
+            .setDefaultNetworkTier("defaultNetworkTier-836540369")
             .setDefaultServiceAccount("defaultServiceAccount2129949273")
             .setDescription("description-1724546052")
             .addAllEnabledFeatures(new ArrayList<String>())
@@ -421,6 +424,7 @@ public class ProjectsClientTest {
             .addAllQuotas(new ArrayList<Quota>())
             .setSelfLink("selfLink1191800166")
             .setUsageExportLocation(UsageExportLocation.newBuilder().build())
+            .setXpnProjectStatus("xpnProjectStatus-52109419")
             .build();
     mockService.addResponse(expectedResponse);
 

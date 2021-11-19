@@ -170,30 +170,34 @@ public interface AttachedDiskInitializeParamsOrBuilder extends
   /**
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
+   * <code>optional string on_update_action = 202451980;</code>
    * @return Whether the onUpdateAction field is set.
    */
   boolean hasOnUpdateAction();
   /**
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-   * @return The enum numeric value on the wire for onUpdateAction.
+   * <code>optional string on_update_action = 202451980;</code>
+   * @return The onUpdateAction.
    */
-  int getOnUpdateActionValue();
+  java.lang.String getOnUpdateAction();
   /**
    * <pre>
    * Specifies which action to take on instance update with this disk. Default is to use the existing disk.
+   * Check the OnUpdateAction enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction on_update_action = 202451980;</code>
-   * @return The onUpdateAction.
+   * <code>optional string on_update_action = 202451980;</code>
+   * @return The bytes for onUpdateAction.
    */
-  com.google.cloud.compute.v1.AttachedDiskInitializeParams.OnUpdateAction getOnUpdateAction();
+  com.google.protobuf.ByteString
+      getOnUpdateActionBytes();
 
   /**
    * <pre>

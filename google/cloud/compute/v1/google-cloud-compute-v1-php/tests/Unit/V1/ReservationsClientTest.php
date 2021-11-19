@@ -300,6 +300,7 @@ class ReservationsClientTest extends GeneratedTest
         $satisfiesPzs = false;
         $selfLink = 'selfLink-1691268851';
         $specificReservationRequired = false;
+        $status = 'status-892481550';
         $zone2 = 'zone2-696322977';
         $expectedResponse = new Reservation();
         $expectedResponse->setCommitment($commitment);
@@ -311,6 +312,7 @@ class ReservationsClientTest extends GeneratedTest
         $expectedResponse->setSatisfiesPzs($satisfiesPzs);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setSpecificReservationRequired($specificReservationRequired);
+        $expectedResponse->setStatus($status);
         $expectedResponse->setZone($zone2);
         $transport->addResponse($expectedResponse);
         // Mock request

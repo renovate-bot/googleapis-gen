@@ -21,7 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private NodeTemplate() {
     accelerators_ = java.util.Collections.emptyList();
-    cpuOvercommitType_ = 0;
+    cpuOvercommitType_ = "";
     creationTimestamp_ = "";
     description_ = "";
     disks_ = java.util.Collections.emptyList();
@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
     nodeType_ = "";
     region_ = "";
     selfLink_ = "";
-    status_ = 0;
+    status_ = "";
     statusMessage_ = "";
   }
 
@@ -103,10 +103,10 @@ private static final long serialVersionUID = 0L;
             region_ = s;
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000800;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case 1665436746: {
@@ -122,10 +122,10 @@ private static final long serialVersionUID = 0L;
             bitField0_ |= 0x00000400;
             break;
           }
-          case 1981823672: {
-            int rawValue = input.readEnum();
+          case 1981823674: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            cpuOvercommitType_ = rawValue;
+            cpuOvercommitType_ = s;
             break;
           }
           case -2138350782: {
@@ -596,41 +596,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CPU_OVERCOMMIT_TYPE_FIELD_NUMBER = 247727959;
-  private int cpuOvercommitType_;
+  private volatile java.lang.Object cpuOvercommitType_;
   /**
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
    * @return Whether the cpuOvercommitType field is set.
    */
-  @java.lang.Override public boolean hasCpuOvercommitType() {
+  @java.lang.Override
+  public boolean hasCpuOvercommitType() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-   * @return The enum numeric value on the wire for cpuOvercommitType.
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
+   * @return The cpuOvercommitType.
    */
-  @java.lang.Override public int getCpuOvercommitTypeValue() {
-    return cpuOvercommitType_;
+  @java.lang.Override
+  public java.lang.String getCpuOvercommitType() {
+    java.lang.Object ref = cpuOvercommitType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      cpuOvercommitType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * CPU overcommit.
+   * Check the CpuOvercommitType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-   * @return The cpuOvercommitType.
+   * <code>optional string cpu_overcommit_type = 247727959;</code>
+   * @return The bytes for cpuOvercommitType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType getCpuOvercommitType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType result = com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.valueOf(cpuOvercommitType_);
-    return result == null ? com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCpuOvercommitTypeBytes() {
+    java.lang.Object ref = cpuOvercommitType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      cpuOvercommitType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int CREATION_TIMESTAMP_FIELD_NUMBER = 30525366;
@@ -1280,41 +1303,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00000800) != 0);
   }
   /**
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.NodeTemplate.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.NodeTemplate.Status result = com.google.cloud.compute.v1.NodeTemplate.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.NodeTemplate.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 297428154;
@@ -1408,13 +1454,13 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 138946292, region_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       output.writeMessage(208179593, getServerBinding());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(247727959, cpuOvercommitType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 247727959, cpuOvercommitType_);
     }
     for (int i = 0; i < accelerators_.size(); i++) {
       output.writeMessage(269577064, accelerators_.get(i));
@@ -1470,16 +1516,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(138946292, region_);
     }
     if (((bitField0_ & 0x00000800) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(208179593, getServerBinding());
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(247727959, cpuOvercommitType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(247727959, cpuOvercommitType_);
     }
     for (int i = 0; i < accelerators_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
@@ -1530,7 +1574,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAcceleratorsList())) return false;
     if (hasCpuOvercommitType() != other.hasCpuOvercommitType()) return false;
     if (hasCpuOvercommitType()) {
-      if (cpuOvercommitType_ != other.cpuOvercommitType_) return false;
+      if (!getCpuOvercommitType()
+          .equals(other.getCpuOvercommitType())) return false;
     }
     if (hasCreationTimestamp() != other.hasCreationTimestamp()) return false;
     if (hasCreationTimestamp()) {
@@ -1588,7 +1633,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasStatusMessage() != other.hasStatusMessage()) return false;
     if (hasStatusMessage()) {
@@ -1612,7 +1658,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasCpuOvercommitType()) {
       hash = (37 * hash) + CPU_OVERCOMMIT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + cpuOvercommitType_;
+      hash = (53 * hash) + getCpuOvercommitType().hashCode();
     }
     if (hasCreationTimestamp()) {
       hash = (37 * hash) + CREATION_TIMESTAMP_FIELD_NUMBER;
@@ -1665,7 +1711,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasStatusMessage()) {
       hash = (37 * hash) + STATUS_MESSAGE_FIELD_NUMBER;
@@ -1840,7 +1886,7 @@ private static final long serialVersionUID = 0L;
       } else {
         acceleratorsBuilder_.clear();
       }
-      cpuOvercommitType_ = 0;
+      cpuOvercommitType_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       creationTimestamp_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -1877,7 +1923,7 @@ private static final long serialVersionUID = 0L;
         serverBindingBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00002000);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00004000);
       statusMessage_ = "";
       bitField0_ = (bitField0_ & ~0x00008000);
@@ -2065,7 +2111,9 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (other.hasCpuOvercommitType()) {
-        setCpuOvercommitType(other.getCpuOvercommitType());
+        bitField0_ |= 0x00000002;
+        cpuOvercommitType_ = other.cpuOvercommitType_;
+        onChanged();
       }
       if (other.hasCreationTimestamp()) {
         bitField0_ |= 0x00000004;
@@ -2140,7 +2188,9 @@ private static final long serialVersionUID = 0L;
         mergeServerBinding(other.getServerBinding());
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00004000;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasStatusMessage()) {
         bitField0_ |= 0x00008000;
@@ -2417,40 +2467,78 @@ private static final long serialVersionUID = 0L;
       return acceleratorsBuilder_;
     }
 
-    private int cpuOvercommitType_ = 0;
+    private java.lang.Object cpuOvercommitType_ = "";
     /**
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      * @return Whether the cpuOvercommitType field is set.
      */
-    @java.lang.Override public boolean hasCpuOvercommitType() {
+    public boolean hasCpuOvercommitType() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @return The enum numeric value on the wire for cpuOvercommitType.
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @return The cpuOvercommitType.
      */
-    @java.lang.Override public int getCpuOvercommitTypeValue() {
-      return cpuOvercommitType_;
+    public java.lang.String getCpuOvercommitType() {
+      java.lang.Object ref = cpuOvercommitType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cpuOvercommitType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @param value The enum numeric value on the wire for cpuOvercommitType to set.
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @return The bytes for cpuOvercommitType.
+     */
+    public com.google.protobuf.ByteString
+        getCpuOvercommitTypeBytes() {
+      java.lang.Object ref = cpuOvercommitType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cpuOvercommitType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @param value The cpuOvercommitType to set.
      * @return This builder for chaining.
      */
-    public Builder setCpuOvercommitTypeValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setCpuOvercommitType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       cpuOvercommitType_ = value;
       onChanged();
       return this;
@@ -2458,46 +2546,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @return The cpuOvercommitType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType getCpuOvercommitType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType result = com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.valueOf(cpuOvercommitType_);
-      return result == null ? com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * CPU overcommit.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
-     * @param value The cpuOvercommitType to set.
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
      * @return This builder for chaining.
      */
-    public Builder setCpuOvercommitType(com.google.cloud.compute.v1.NodeTemplate.CpuOvercommitType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      cpuOvercommitType_ = value.getNumber();
+    public Builder clearCpuOvercommitType() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      cpuOvercommitType_ = getDefaultInstance().getCpuOvercommitType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * CPU overcommit.
+     * Check the CpuOvercommitType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.CpuOvercommitType cpu_overcommit_type = 247727959;</code>
+     * <code>optional string cpu_overcommit_type = 247727959;</code>
+     * @param value The bytes for cpuOvercommitType to set.
      * @return This builder for chaining.
      */
-    public Builder clearCpuOvercommitType() {
-      bitField0_ = (bitField0_ & ~0x00000002);
-      cpuOvercommitType_ = 0;
+    public Builder setCpuOvercommitTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      cpuOvercommitType_ = value;
       onChanged();
       return this;
     }
@@ -4014,40 +4092,78 @@ private static final long serialVersionUID = 0L;
       return serverBindingBuilder_;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00004000;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00004000;
       status_ = value;
       onChanged();
       return this;
@@ -4055,46 +4171,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.NodeTemplate.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.NodeTemplate.Status result = com.google.cloud.compute.v1.NodeTemplate.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.NodeTemplate.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.NodeTemplate.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00004000;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] The status of the node template. One of the following values: CREATING, READY, and DELETING.
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.NodeTemplate.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00004000);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00004000;
+      status_ = value;
       onChanged();
       return this;
     }

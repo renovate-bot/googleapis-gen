@@ -20,7 +20,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Subsetting() {
-    policy_ = 0;
+    policy_ = "";
   }
 
   @java.lang.Override
@@ -54,10 +54,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 728574352: {
-            int rawValue = input.readEnum();
+          case 728574354: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            policy_ = rawValue;
+            policy_ = s;
             break;
           }
           default: {
@@ -238,29 +238,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int POLICY_FIELD_NUMBER = 91071794;
-  private int policy_;
+  private volatile java.lang.Object policy_;
   /**
-   * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+   * <pre>
+   * 
+   * Check the Policy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy = 91071794;</code>
    * @return Whether the policy field is set.
    */
-  @java.lang.Override public boolean hasPolicy() {
+  @java.lang.Override
+  public boolean hasPolicy() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-   * @return The enum numeric value on the wire for policy.
-   */
-  @java.lang.Override public int getPolicyValue() {
-    return policy_;
-  }
-  /**
-   * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+   * <pre>
+   * 
+   * Check the Policy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy = 91071794;</code>
    * @return The policy.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.Subsetting.Policy getPolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.Subsetting.Policy result = com.google.cloud.compute.v1.Subsetting.Policy.valueOf(policy_);
-    return result == null ? com.google.cloud.compute.v1.Subsetting.Policy.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getPolicy() {
+    java.lang.Object ref = policy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      policy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 
+   * Check the Policy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string policy = 91071794;</code>
+   * @return The bytes for policy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPolicyBytes() {
+    java.lang.Object ref = policy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      policy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -278,7 +313,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(91071794, policy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 91071794, policy_);
     }
     unknownFields.writeTo(output);
   }
@@ -290,8 +325,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(91071794, policy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(91071794, policy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -310,7 +344,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasPolicy() != other.hasPolicy()) return false;
     if (hasPolicy()) {
-      if (policy_ != other.policy_) return false;
+      if (!getPolicy()
+          .equals(other.getPolicy())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -325,7 +360,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasPolicy()) {
       hash = (37 * hash) + POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + policy_;
+      hash = (53 * hash) + getPolicy().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -464,7 +499,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      policy_ = 0;
+      policy_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       return this;
     }
@@ -548,7 +583,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.Subsetting other) {
       if (other == com.google.cloud.compute.v1.Subsetting.getDefaultInstance()) return this;
       if (other.hasPolicy()) {
-        setPolicy(other.getPolicy());
+        bitField0_ |= 0x00000001;
+        policy_ = other.policy_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -580,63 +617,115 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int policy_ = 0;
+    private java.lang.Object policy_ = "";
     /**
-     * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+     * <pre>
+     * 
+     * Check the Policy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy = 91071794;</code>
      * @return Whether the policy field is set.
      */
-    @java.lang.Override public boolean hasPolicy() {
+    public boolean hasPolicy() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-     * @return The enum numeric value on the wire for policy.
+     * <pre>
+     * 
+     * Check the Policy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy = 91071794;</code>
+     * @return The policy.
      */
-    @java.lang.Override public int getPolicyValue() {
-      return policy_;
+    public java.lang.String getPolicy() {
+      java.lang.Object ref = policy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-     * @param value The enum numeric value on the wire for policy to set.
+     * <pre>
+     * 
+     * Check the Policy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy = 91071794;</code>
+     * @return The bytes for policy.
+     */
+    public com.google.protobuf.ByteString
+        getPolicyBytes() {
+      java.lang.Object ref = policy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        policy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 
+     * Check the Policy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy = 91071794;</code>
+     * @param value The policy to set.
      * @return This builder for chaining.
      */
-    public Builder setPolicyValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setPolicy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       policy_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-     * @return The policy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.Subsetting.Policy getPolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.Subsetting.Policy result = com.google.cloud.compute.v1.Subsetting.Policy.valueOf(policy_);
-      return result == null ? com.google.cloud.compute.v1.Subsetting.Policy.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
-     * @param value The policy to set.
-     * @return This builder for chaining.
-     */
-    public Builder setPolicy(com.google.cloud.compute.v1.Subsetting.Policy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      policy_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.Subsetting.Policy policy = 91071794;</code>
+     * <pre>
+     * 
+     * Check the Policy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy = 91071794;</code>
      * @return This builder for chaining.
      */
     public Builder clearPolicy() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      policy_ = 0;
+      policy_ = getDefaultInstance().getPolicy();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 
+     * Check the Policy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string policy = 91071794;</code>
+     * @param value The bytes for policy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPolicyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      policy_ = value;
       onChanged();
       return this;
     }

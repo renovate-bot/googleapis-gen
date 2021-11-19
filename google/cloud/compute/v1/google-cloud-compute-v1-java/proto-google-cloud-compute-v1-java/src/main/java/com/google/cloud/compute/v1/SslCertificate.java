@@ -30,7 +30,7 @@ private static final long serialVersionUID = 0L;
     region_ = "";
     selfLink_ = "";
     subjectAlternativeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -81,10 +81,10 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 28604880: {
-            int rawValue = input.readEnum();
+          case 28604882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00001000;
-            type_ = rawValue;
+            type_ = s;
             break;
           }
           case 244202930: {
@@ -1031,41 +1031,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
    * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
-  @java.lang.Override public boolean hasType() {
+  @java.lang.Override
+  public boolean hasType() {
     return ((bitField0_ & 0x00001000) != 0);
   }
   /**
    * <pre>
    * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  @java.lang.Override public int getTypeValue() {
-    return type_;
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SslCertificate.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SslCertificate.Type result = com.google.cloud.compute.v1.SslCertificate.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.SslCertificate.Type.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1092,7 +1115,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 30525366, creationTimestamp_);
@@ -1144,8 +1167,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(30525366, creationTimestamp_);
@@ -1263,7 +1285,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getSubjectAlternativeNamesList())) return false;
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1331,7 +1354,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1506,7 +1529,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000800);
       subjectAlternativeNames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       bitField0_ = (bitField0_ & ~0x00001000);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00002000);
       return this;
     }
@@ -1715,7 +1738,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00002000;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -3223,40 +3248,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
+    public boolean hasType() {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>optional string type = 3575610;</code>
+     * @return The type.
      */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     * @param value The enum numeric value on the wire for type to set.
+     * <code>optional string type = 3575610;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
-      bitField0_ |= 0x00002000;
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00002000;
       type_ = value;
       onChanged();
       return this;
@@ -3264,46 +3327,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SslCertificate.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SslCertificate.Type result = com.google.cloud.compute.v1.SslCertificate.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.SslCertificate.Type.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
-     * @param value The type to set.
+     * <code>optional string type = 3575610;</code>
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.SslCertificate.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00002000;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fields certificate and private_key are used.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.SslCertificate.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00002000);
-      type_ = 0;
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00002000;
+      type_ = value;
       onChanged();
       return this;
     }

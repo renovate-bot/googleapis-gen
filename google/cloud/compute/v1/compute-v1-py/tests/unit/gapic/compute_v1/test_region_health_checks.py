@@ -522,7 +522,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetRegionHealthC
               region='region_value',
               self_link='self_link_value',
               timeout_sec=1185,
-              type_=compute.HealthCheck.Type.GRPC,
+              type_='type__value',
               unhealthy_threshold=2046,
         )
 
@@ -546,7 +546,7 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetRegionHealthC
     assert response.region == 'region_value'
     assert response.self_link == 'self_link_value'
     assert response.timeout_sec == 1185
-    assert response.type_ == compute.HealthCheck.Type.GRPC
+    assert response.type_ == 'type__value'
     assert response.unhealthy_threshold == 2046
 
 

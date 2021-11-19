@@ -209,6 +209,7 @@ public class ServiceAttachmentsClientTest {
     ServiceAttachment expectedResponse =
         ServiceAttachment.newBuilder()
             .addAllConnectedEndpoints(new ArrayList<ServiceAttachmentConnectedEndpoint>())
+            .setConnectionPreference("connectionPreference987798105")
             .addAllConsumerAcceptLists(new ArrayList<ServiceAttachmentConsumerProjectLimit>())
             .addAllConsumerRejectLists(new ArrayList<String>())
             .setCreationTimestamp("creationTimestamp-370203401")

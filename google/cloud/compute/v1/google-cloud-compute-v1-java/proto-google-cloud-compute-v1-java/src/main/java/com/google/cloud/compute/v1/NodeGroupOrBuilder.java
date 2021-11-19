@@ -189,30 +189,34 @@ public interface NodeGroupOrBuilder extends
   /**
    * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
+   * <code>optional string maintenance_policy = 528327646;</code>
    * @return Whether the maintenancePolicy field is set.
    */
   boolean hasMaintenancePolicy();
   /**
    * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-   * @return The enum numeric value on the wire for maintenancePolicy.
+   * <code>optional string maintenance_policy = 528327646;</code>
+   * @return The maintenancePolicy.
    */
-  int getMaintenancePolicyValue();
+  java.lang.String getMaintenancePolicy();
   /**
    * <pre>
    * Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
+   * Check the MaintenancePolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.NodeGroup.MaintenancePolicy maintenance_policy = 528327646;</code>
-   * @return The maintenancePolicy.
+   * <code>optional string maintenance_policy = 528327646;</code>
+   * @return The bytes for maintenancePolicy.
    */
-  com.google.cloud.compute.v1.NodeGroup.MaintenancePolicy getMaintenancePolicy();
+  com.google.protobuf.ByteString
+      getMaintenancePolicyBytes();
 
   /**
    * <code>optional .google.cloud.compute.v1.NodeGroupMaintenanceWindow maintenance_window = 186374812;</code>
@@ -336,20 +340,36 @@ public interface NodeGroupOrBuilder extends
   int getSize();
 
   /**
-   * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   * <pre>
+   * 
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
-   * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
-   */
-  int getStatusValue();
-  /**
-   * <code>optional .google.cloud.compute.v1.NodeGroup.Status status = 181260274;</code>
+   * <pre>
+   * 
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
    * @return The status.
    */
-  com.google.cloud.compute.v1.NodeGroup.Status getStatus();
+  java.lang.String getStatus();
+  /**
+   * <pre>
+   * 
+   * Check the Status enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
+   */
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>

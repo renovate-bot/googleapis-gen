@@ -24,9 +24,9 @@ private static final long serialVersionUID = 0L;
     kind_ = "";
     name_ = "";
     natIP_ = "";
-    networkTier_ = 0;
+    networkTier_ = "";
     publicPtrDomainName_ = "";
-    type_ = 0;
+    type_ = "";
   }
 
   @java.lang.Override
@@ -72,10 +72,10 @@ private static final long serialVersionUID = 0L;
             name_ = s;
             break;
           }
-          case 28604880: {
-            int rawValue = input.readEnum();
+          case 28604882: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000100;
-            type_ = rawValue;
+            type_ = s;
             break;
           }
           case 941076450: {
@@ -95,10 +95,10 @@ private static final long serialVersionUID = 0L;
             externalIpv6PrefixLength_ = input.readInt32();
             break;
           }
-          case -155784552: {
-            int rawValue = input.readEnum();
+          case -155784550: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000020;
-            networkTier_ = rawValue;
+            networkTier_ = s;
             break;
           }
           case -104005464: {
@@ -679,41 +679,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NETWORK_TIER_FIELD_NUMBER = 517397843;
-  private int networkTier_;
+  private volatile java.lang.Object networkTier_;
   /**
    * <pre>
    * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+   * <code>optional string network_tier = 517397843;</code>
    * @return Whether the networkTier field is set.
    */
-  @java.lang.Override public boolean hasNetworkTier() {
+  @java.lang.Override
+  public boolean hasNetworkTier() {
     return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    * <pre>
    * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-   * @return The enum numeric value on the wire for networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The networkTier.
    */
-  @java.lang.Override public int getNetworkTierValue() {
-    return networkTier_;
+  @java.lang.Override
+  public java.lang.String getNetworkTier() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      networkTier_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+   * Check the NetworkTier enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-   * @return The networkTier.
+   * <code>optional string network_tier = 517397843;</code>
+   * @return The bytes for networkTier.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AccessConfig.NetworkTier getNetworkTier() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AccessConfig.NetworkTier result = com.google.cloud.compute.v1.AccessConfig.NetworkTier.valueOf(networkTier_);
-    return result == null ? com.google.cloud.compute.v1.AccessConfig.NetworkTier.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNetworkTierBytes() {
+    java.lang.Object ref = networkTier_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      networkTier_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER = 316599167;
@@ -802,41 +825,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int TYPE_FIELD_NUMBER = 3575610;
-  private int type_;
+  private volatile java.lang.Object type_;
   /**
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+   * <code>optional string type = 3575610;</code>
    * @return Whether the type field is set.
    */
-  @java.lang.Override public boolean hasType() {
+  @java.lang.Override
+  public boolean hasType() {
     return ((bitField0_ & 0x00000100) != 0);
   }
   /**
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-   * @return The enum numeric value on the wire for type.
+   * <code>optional string type = 3575610;</code>
+   * @return The type.
    */
-  @java.lang.Override public int getTypeValue() {
-    return type_;
+  @java.lang.Override
+  public java.lang.String getType() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      type_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+   * Check the Type enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-   * @return The type.
+   * <code>optional string type = 3575610;</code>
+   * @return The bytes for type.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.AccessConfig.Type getType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.AccessConfig.Type result = com.google.cloud.compute.v1.AccessConfig.Type.valueOf(type_);
-    return result == null ? com.google.cloud.compute.v1.AccessConfig.Type.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTypeBytes() {
+    java.lang.Object ref = type_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      type_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -860,7 +906,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      output.writeEnum(3575610, type_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3575610, type_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 117634556, natIP_);
@@ -872,7 +918,7 @@ private static final long serialVersionUID = 0L;
       output.writeInt32(425672143, externalIpv6PrefixLength_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      output.writeEnum(517397843, networkTier_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 517397843, networkTier_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       output.writeBool(523870229, setPublicPtr_);
@@ -896,8 +942,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000100) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3575610, type_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3575610, type_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(117634556, natIP_);
@@ -910,8 +955,7 @@ private static final long serialVersionUID = 0L;
         .computeInt32Size(425672143, externalIpv6PrefixLength_);
     }
     if (((bitField0_ & 0x00000020) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(517397843, networkTier_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(517397843, networkTier_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -962,7 +1006,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkTier() != other.hasNetworkTier()) return false;
     if (hasNetworkTier()) {
-      if (networkTier_ != other.networkTier_) return false;
+      if (!getNetworkTier()
+          .equals(other.getNetworkTier())) return false;
     }
     if (hasPublicPtrDomainName() != other.hasPublicPtrDomainName()) return false;
     if (hasPublicPtrDomainName()) {
@@ -976,7 +1021,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType() != other.hasType()) return false;
     if (hasType()) {
-      if (type_ != other.type_) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -1011,7 +1057,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNetworkTier()) {
       hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + networkTier_;
+      hash = (53 * hash) + getNetworkTier().hashCode();
     }
     if (hasPublicPtrDomainName()) {
       hash = (37 * hash) + PUBLIC_PTR_DOMAIN_NAME_FIELD_NUMBER;
@@ -1024,7 +1070,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasType()) {
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
+      hash = (53 * hash) + getType().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -1173,13 +1219,13 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000008);
       natIP_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
-      networkTier_ = 0;
+      networkTier_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
       publicPtrDomainName_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       setPublicPtr_ = false;
       bitField0_ = (bitField0_ & ~0x00000080);
-      type_ = 0;
+      type_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       return this;
     }
@@ -1318,7 +1364,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNetworkTier()) {
-        setNetworkTier(other.getNetworkTier());
+        bitField0_ |= 0x00000020;
+        networkTier_ = other.networkTier_;
+        onChanged();
       }
       if (other.hasPublicPtrDomainName()) {
         bitField0_ |= 0x00000040;
@@ -1329,7 +1377,9 @@ private static final long serialVersionUID = 0L;
         setSetPublicPtr(other.getSetPublicPtr());
       }
       if (other.hasType()) {
-        setType(other.getType());
+        bitField0_ |= 0x00000100;
+        type_ = other.type_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -1844,40 +1894,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int networkTier_ = 0;
+    private java.lang.Object networkTier_ = "";
     /**
      * <pre>
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
      * @return Whether the networkTier field is set.
      */
-    @java.lang.Override public boolean hasNetworkTier() {
+    public boolean hasNetworkTier() {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-     * @return The enum numeric value on the wire for networkTier.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The networkTier.
      */
-    @java.lang.Override public int getNetworkTierValue() {
-      return networkTier_;
+    public java.lang.String getNetworkTier() {
+      java.lang.Object ref = networkTier_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        networkTier_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-     * @param value The enum numeric value on the wire for networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
+     * @return The bytes for networkTier.
+     */
+    public com.google.protobuf.ByteString
+        getNetworkTierBytes() {
+      java.lang.Object ref = networkTier_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        networkTier_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder setNetworkTierValue(int value) {
-      bitField0_ |= 0x00000020;
+    public Builder setNetworkTier(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
       networkTier_ = value;
       onChanged();
       return this;
@@ -1885,46 +1973,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-     * @return The networkTier.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AccessConfig.NetworkTier getNetworkTier() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AccessConfig.NetworkTier result = com.google.cloud.compute.v1.AccessConfig.NetworkTier.valueOf(networkTier_);
-      return result == null ? com.google.cloud.compute.v1.AccessConfig.NetworkTier.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
-     * @param value The networkTier to set.
+     * <code>optional string network_tier = 517397843;</code>
      * @return This builder for chaining.
      */
-    public Builder setNetworkTier(com.google.cloud.compute.v1.AccessConfig.NetworkTier value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000020;
-      networkTier_ = value.getNumber();
+    public Builder clearNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      networkTier_ = getDefaultInstance().getNetworkTier();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
+     * Check the NetworkTier enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.NetworkTier network_tier = 517397843;</code>
+     * <code>optional string network_tier = 517397843;</code>
+     * @param value The bytes for networkTier to set.
      * @return This builder for chaining.
      */
-    public Builder clearNetworkTier() {
-      bitField0_ = (bitField0_ & ~0x00000020);
-      networkTier_ = 0;
+    public Builder setNetworkTierBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000020;
+      networkTier_ = value;
       onChanged();
       return this;
     }
@@ -2091,40 +2169,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int type_ = 0;
+    private java.lang.Object type_ = "";
     /**
      * <pre>
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
      * @return Whether the type field is set.
      */
-    @java.lang.Override public boolean hasType() {
+    public boolean hasType() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>optional string type = 3575610;</code>
+     * @return The type.
      */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-     * @param value The enum numeric value on the wire for type to set.
+     * <code>optional string type = 3575610;</code>
+     * @return The bytes for type.
+     */
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string type = 3575610;</code>
+     * @param value The type to set.
      * @return This builder for chaining.
      */
-    public Builder setTypeValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       type_ = value;
       onChanged();
       return this;
@@ -2132,46 +2248,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-     * @return The type.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.AccessConfig.Type getType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.AccessConfig.Type result = com.google.cloud.compute.v1.AccessConfig.Type.valueOf(type_);
-      return result == null ? com.google.cloud.compute.v1.AccessConfig.Type.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
-     * @param value The type to set.
+     * <code>optional string type = 3575610;</code>
      * @return This builder for chaining.
      */
-    public Builder setType(com.google.cloud.compute.v1.AccessConfig.Type value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      type_ = value.getNumber();
+    public Builder clearType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      type_ = getDefaultInstance().getType();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+     * Check the Type enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.AccessConfig.Type type = 3575610;</code>
+     * <code>optional string type = 3575610;</code>
+     * @param value The bytes for type to set.
      * @return This builder for chaining.
      */
-    public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      type_ = 0;
+    public Builder setTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      type_ = value;
       onChanged();
       return this;
     }

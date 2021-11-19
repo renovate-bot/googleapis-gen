@@ -64,8 +64,9 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
     protected $state = null;
     /**
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
      */
     protected $status = null;
     /**
@@ -103,8 +104,9 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
      *           [Output only] URI of the VM instance that is used as third-party router appliances such as Next Gen Firewalls, Virtual Routers, or Router Appliances. The VM instance is the peer side of the BGP session.
      *     @type string $state
      *           BGP state as specified in RFC1771.
-     *     @type int $status
+     *     @type string $status
      *           Status of the BGP peer: {UP, DOWN}
+     *           Check the Status enum for the list of possible values.
      *     @type string $uptime
      *           Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59 seconds
      *     @type string $uptime_seconds
@@ -396,13 +398,14 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @return string
      */
     public function getStatus()
     {
-        return isset($this->status) ? $this->status : 0;
+        return isset($this->status) ? $this->status : '';
     }
 
     public function hasStatus()
@@ -417,14 +420,15 @@ class RouterStatusBgpPeerStatus extends \Google\Protobuf\Internal\Message
 
     /**
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string status = 181260274;</code>
+     * @param string $var
      * @return $this
      */
     public function setStatus($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RouterStatusBgpPeerStatus\Status::class);
+        GPBUtil::checkString($var, True);
         $this->status = $var;
 
         return $this;

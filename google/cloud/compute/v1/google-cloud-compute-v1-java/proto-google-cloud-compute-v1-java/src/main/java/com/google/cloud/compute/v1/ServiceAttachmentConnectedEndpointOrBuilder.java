@@ -58,28 +58,32 @@ public interface ServiceAttachmentConnectedEndpointOrBuilder extends
   /**
    * <pre>
    * The status of a connected endpoint to this service attachment.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * The status of a connected endpoint to this service attachment.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * The status of a connected endpoint to this service attachment.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.ServiceAttachmentConnectedEndpoint.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 }

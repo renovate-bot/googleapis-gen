@@ -488,58 +488,66 @@ public interface BackendServiceOrBuilder extends
   /**
    * <pre>
    * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
+   * <code>optional string load_balancing_scheme = 363890244;</code>
    * @return Whether the loadBalancingScheme field is set.
    */
   boolean hasLoadBalancingScheme();
   /**
    * <pre>
    * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The enum numeric value on the wire for loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The loadBalancingScheme.
    */
-  int getLoadBalancingSchemeValue();
+  java.lang.String getLoadBalancingScheme();
   /**
    * <pre>
    * Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Choosing a load balancer.
+   * Check the LoadBalancingScheme enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LoadBalancingScheme load_balancing_scheme = 363890244;</code>
-   * @return The loadBalancingScheme.
+   * <code>optional string load_balancing_scheme = 363890244;</code>
+   * @return The bytes for loadBalancingScheme.
    */
-  com.google.cloud.compute.v1.BackendService.LoadBalancingScheme getLoadBalancingScheme();
+  com.google.protobuf.ByteString
+      getLoadBalancingSchemeBytes();
 
   /**
    * <pre>
    * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
+   * <code>optional string locality_lb_policy = 131431487;</code>
    * @return Whether the localityLbPolicy field is set.
    */
   boolean hasLocalityLbPolicy();
   /**
    * <pre>
    * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-   * @return The enum numeric value on the wire for localityLbPolicy.
+   * <code>optional string locality_lb_policy = 131431487;</code>
+   * @return The localityLbPolicy.
    */
-  int getLocalityLbPolicyValue();
+  java.lang.String getLocalityLbPolicy();
   /**
    * <pre>
    * The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. If sessionAffinity is not NONE, and this field is not set to MAGLEV or RING_HASH, session affinity settings will not take effect. Only the default ROUND_ROBIN policy is supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the LocalityLbPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.LocalityLbPolicy locality_lb_policy = 131431487;</code>
-   * @return The localityLbPolicy.
+   * <code>optional string locality_lb_policy = 131431487;</code>
+   * @return The bytes for localityLbPolicy.
    */
-  com.google.cloud.compute.v1.BackendService.LocalityLbPolicy getLocalityLbPolicy();
+  com.google.protobuf.ByteString
+      getLocalityLbPolicyBytes();
 
   /**
    * <pre>
@@ -731,30 +739,34 @@ public interface BackendServiceOrBuilder extends
   /**
    * <pre>
    * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
+   * <code>optional string protocol = 84577944;</code>
    * @return Whether the protocol field is set.
    */
   boolean hasProtocol();
   /**
    * <pre>
    * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-   * @return The enum numeric value on the wire for protocol.
+   * <code>optional string protocol = 84577944;</code>
+   * @return The protocol.
    */
-  int getProtocolValue();
+  java.lang.String getProtocol();
   /**
    * <pre>
    * The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, TCP, SSL, UDP or GRPC. depending on the chosen load balancer or Traffic Director configuration. Refer to the documentation for the load balancers or for Traffic Director for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy.
+   * Check the Protocol enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.Protocol protocol = 84577944;</code>
-   * @return The protocol.
+   * <code>optional string protocol = 84577944;</code>
+   * @return The bytes for protocol.
    */
-  com.google.cloud.compute.v1.BackendService.Protocol getProtocol();
+  com.google.protobuf.ByteString
+      getProtocolBytes();
 
   /**
    * <pre>
@@ -873,30 +885,34 @@ public interface BackendServiceOrBuilder extends
   /**
    * <pre>
    * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
+   * <code>optional string session_affinity = 463888561;</code>
    * @return Whether the sessionAffinity field is set.
    */
   boolean hasSessionAffinity();
   /**
    * <pre>
    * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-   * @return The enum numeric value on the wire for sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The sessionAffinity.
    */
-  int getSessionAffinityValue();
+  java.lang.String getSessionAffinity();
   /**
    * <pre>
    * Type of session affinity to use. The default is NONE. For a detailed description of session affinity options, see: [Session affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
+   * Check the SessionAffinity enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.BackendService.SessionAffinity session_affinity = 463888561;</code>
-   * @return The sessionAffinity.
+   * <code>optional string session_affinity = 463888561;</code>
+   * @return The bytes for sessionAffinity.
    */
-  com.google.cloud.compute.v1.BackendService.SessionAffinity getSessionAffinity();
+  com.google.protobuf.ByteString
+      getSessionAffinityBytes();
 
   /**
    * <code>optional .google.cloud.compute.v1.Subsetting subsetting = 450283536;</code>

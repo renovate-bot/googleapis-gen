@@ -22,7 +22,7 @@ private static final long serialVersionUID = 0L;
     ipRange_ = "";
     linkedInterconnectAttachment_ = "";
     linkedVpnTunnel_ = "";
-    managementType_ = 0;
+    managementType_ = "";
     name_ = "";
     privateIpAddress_ = "";
     redundantInterface_ = "";
@@ -78,10 +78,10 @@ private static final long serialVersionUID = 0L;
             ipRange_ = s;
             break;
           }
-          case 1389628848: {
-            int rawValue = input.readEnum();
+          case 1389628850: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            managementType_ = rawValue;
+            managementType_ = s;
             break;
           }
           case -1832345742: {
@@ -461,41 +461,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MANAGEMENT_TYPE_FIELD_NUMBER = 173703606;
-  private int managementType_;
+  private volatile java.lang.Object managementType_;
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
+   * <code>optional string management_type = 173703606;</code>
    * @return Whether the managementType field is set.
    */
-  @java.lang.Override public boolean hasManagementType() {
+  @java.lang.Override
+  public boolean hasManagementType() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-   * @return The enum numeric value on the wire for managementType.
+   * <code>optional string management_type = 173703606;</code>
+   * @return The managementType.
    */
-  @java.lang.Override public int getManagementTypeValue() {
-    return managementType_;
+  @java.lang.Override
+  public java.lang.String getManagementType() {
+    java.lang.Object ref = managementType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      managementType_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
-   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+   * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+   * Check the ManagementType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-   * @return The managementType.
+   * <code>optional string management_type = 173703606;</code>
+   * @return The bytes for managementType.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterInterface.ManagementType getManagementType() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterInterface.ManagementType result = com.google.cloud.compute.v1.RouterInterface.ManagementType.valueOf(managementType_);
-    return result == null ? com.google.cloud.compute.v1.RouterInterface.ManagementType.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getManagementTypeBytes() {
+    java.lang.Object ref = managementType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      managementType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 3373707;
@@ -754,7 +777,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 145092645, ipRange_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(173703606, managementType_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 173703606, managementType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 307827694, subnetwork_);
@@ -787,8 +810,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(145092645, ipRange_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(173703606, managementType_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(173703606, managementType_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(307827694, subnetwork_);
@@ -834,7 +856,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasManagementType() != other.hasManagementType()) return false;
     if (hasManagementType()) {
-      if (managementType_ != other.managementType_) return false;
+      if (!getManagementType()
+          .equals(other.getManagementType())) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -881,7 +904,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasManagementType()) {
       hash = (37 * hash) + MANAGEMENT_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + managementType_;
+      hash = (53 * hash) + getManagementType().hashCode();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -1041,7 +1064,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       linkedVpnTunnel_ = "";
       bitField0_ = (bitField0_ & ~0x00000004);
-      managementType_ = 0;
+      managementType_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000010);
@@ -1176,7 +1199,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasManagementType()) {
-        setManagementType(other.getManagementType());
+        bitField0_ |= 0x00000008;
+        managementType_ = other.managementType_;
+        onChanged();
       }
       if (other.hasName()) {
         bitField0_ |= 0x00000010;
@@ -1549,87 +1574,115 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int managementType_ = 0;
+    private java.lang.Object managementType_ = "";
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
+     * <code>optional string management_type = 173703606;</code>
      * @return Whether the managementType field is set.
      */
-    @java.lang.Override public boolean hasManagementType() {
+    public boolean hasManagementType() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-     * @return The enum numeric value on the wire for managementType.
+     * <code>optional string management_type = 173703606;</code>
+     * @return The managementType.
      */
-    @java.lang.Override public int getManagementTypeValue() {
-      return managementType_;
+    public java.lang.String getManagementType() {
+      java.lang.Object ref = managementType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managementType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-     * @param value The enum numeric value on the wire for managementType to set.
+     * <code>optional string management_type = 173703606;</code>
+     * @return The bytes for managementType.
+     */
+    public com.google.protobuf.ByteString
+        getManagementTypeBytes() {
+      java.lang.Object ref = managementType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managementType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string management_type = 173703606;</code>
+     * @param value The managementType to set.
      * @return This builder for chaining.
      */
-    public Builder setManagementTypeValue(int value) {
-      bitField0_ |= 0x00000008;
+    public Builder setManagementType(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
       managementType_ = value;
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-     * @return The managementType.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterInterface.ManagementType getManagementType() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterInterface.ManagementType result = com.google.cloud.compute.v1.RouterInterface.ManagementType.valueOf(managementType_);
-      return result == null ? com.google.cloud.compute.v1.RouterInterface.ManagementType.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
-     * @param value The managementType to set.
+     * <code>optional string management_type = 173703606;</code>
      * @return This builder for chaining.
      */
-    public Builder setManagementType(com.google.cloud.compute.v1.RouterInterface.ManagementType value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      managementType_ = value.getNumber();
+    public Builder clearManagementType() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      managementType_ = getDefaultInstance().getManagementType();
       onChanged();
       return this;
     }
     /**
      * <pre>
-     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
+     * [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted.
+     * Check the ManagementType enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterInterface.ManagementType management_type = 173703606;</code>
+     * <code>optional string management_type = 173703606;</code>
+     * @param value The bytes for managementType to set.
      * @return This builder for chaining.
      */
-    public Builder clearManagementType() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      managementType_ = 0;
+    public Builder setManagementTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      managementType_ = value;
       onChanged();
       return this;
     }

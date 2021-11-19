@@ -71,8 +71,9 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
     protected $peer_mtu = null;
     /**
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
      */
     protected $state = null;
     /**
@@ -106,8 +107,9 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
      *           The URL of the peer network. It can be either full URL or partial URL. The peer network may belong to a different project. If the partial URL does not contain project, it is assumed that the peer network is in the same project as the current network.
      *     @type int $peer_mtu
      *           Maximum Transmission Unit in bytes.
-     *     @type int $state
+     *     @type string $state
      *           [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     *           Check the State enum for the list of possible values.
      *     @type string $state_details
      *           [Output Only] Details about the current state of the peering.
      * }
@@ -443,13 +445,14 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @return string
      */
     public function getState()
     {
-        return isset($this->state) ? $this->state : 0;
+        return isset($this->state) ? $this->state : '';
     }
 
     public function hasState()
@@ -464,14 +467,15 @@ class NetworkPeering extends \Google\Protobuf\Internal\Message
 
     /**
      * [Output Only] State for the peering, either `ACTIVE` or `INACTIVE`. The peering is `ACTIVE` when there's a matching configuration in the peer network.
+     * Check the State enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.NetworkPeering.State state = 109757585;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string state = 109757585;</code>
+     * @param string $var
      * @return $this
      */
     public function setState($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\NetworkPeering\State::class);
+        GPBUtil::checkString($var, True);
         $this->state = $var;
 
         return $this;

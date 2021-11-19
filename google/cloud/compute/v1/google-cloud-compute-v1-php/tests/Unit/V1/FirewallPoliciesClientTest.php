@@ -777,6 +777,7 @@ class FirewallPoliciesClientTest extends GeneratedTest
         // Mock response
         $action = 'action-1422950858';
         $description = 'description-1724546052';
+        $direction = 'direction-962590849';
         $disabled = true;
         $enableLogging = false;
         $kind = 'kind3292052';
@@ -785,6 +786,7 @@ class FirewallPoliciesClientTest extends GeneratedTest
         $expectedResponse = new FirewallPolicyRule();
         $expectedResponse->setAction($action);
         $expectedResponse->setDescription($description);
+        $expectedResponse->setDirection($direction);
         $expectedResponse->setDisabled($disabled);
         $expectedResponse->setEnableLogging($enableLogging);
         $expectedResponse->setKind($kind);

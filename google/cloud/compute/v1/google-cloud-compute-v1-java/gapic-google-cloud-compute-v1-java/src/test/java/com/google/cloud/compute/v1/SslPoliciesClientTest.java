@@ -157,7 +157,9 @@ public class SslPoliciesClientTest {
             .setFingerprint("fingerprint-1375934236")
             .setId(3355)
             .setKind("kind3292052")
+            .setMinTlsVersion("minTlsVersion-2026358961")
             .setName("name3373707")
+            .setProfile("profile-309425751")
             .setSelfLink("selfLink1191800166")
             .addAllWarnings(new ArrayList<Warnings>())
             .build();

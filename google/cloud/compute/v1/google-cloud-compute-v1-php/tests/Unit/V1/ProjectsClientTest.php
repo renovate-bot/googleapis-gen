@@ -557,20 +557,24 @@ class ProjectsClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $creationTimestamp = 'creationTimestamp567396278';
+        $defaultNetworkTier = 'defaultNetworkTier1545495185';
         $defaultServiceAccount = 'defaultServiceAccount-1848771419';
         $description = 'description-1724546052';
         $id = 3355;
         $kind = 'kind3292052';
         $name = 'name3373707';
         $selfLink = 'selfLink-1691268851';
+        $xpnProjectStatus = 'xpnProjectStatus-308451647';
         $expectedResponse = new Project();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
+        $expectedResponse->setDefaultNetworkTier($defaultNetworkTier);
         $expectedResponse->setDefaultServiceAccount($defaultServiceAccount);
         $expectedResponse->setDescription($description);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setXpnProjectStatus($xpnProjectStatus);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';
@@ -633,20 +637,24 @@ class ProjectsClientTest extends GeneratedTest
         $this->assertTrue($transport->isExhausted());
         // Mock response
         $creationTimestamp = 'creationTimestamp567396278';
+        $defaultNetworkTier = 'defaultNetworkTier1545495185';
         $defaultServiceAccount = 'defaultServiceAccount-1848771419';
         $description = 'description-1724546052';
         $id = 3355;
         $kind = 'kind3292052';
         $name = 'name3373707';
         $selfLink = 'selfLink-1691268851';
+        $xpnProjectStatus = 'xpnProjectStatus-308451647';
         $expectedResponse = new Project();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
+        $expectedResponse->setDefaultNetworkTier($defaultNetworkTier);
         $expectedResponse->setDefaultServiceAccount($defaultServiceAccount);
         $expectedResponse->setDescription($description);
         $expectedResponse->setId($id);
         $expectedResponse->setKind($kind);
         $expectedResponse->setName($name);
         $expectedResponse->setSelfLink($selfLink);
+        $expectedResponse->setXpnProjectStatus($xpnProjectStatus);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';

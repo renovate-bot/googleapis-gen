@@ -34,8 +34,9 @@ class RouterBgpPeerBfd extends \Google\Protobuf\Internal\Message
     protected $multiplier = null;
     /**
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
+     * Generated from protobuf field <code>optional string session_initialization_mode = 105957049;</code>
      */
     protected $session_initialization_mode = null;
 
@@ -51,8 +52,9 @@ class RouterBgpPeerBfd extends \Google\Protobuf\Internal\Message
      *           The minimum interval, in milliseconds, between BFD control packets transmitted to the peer router. The actual value is negotiated between the two routers and is equal to the greater of this value and the corresponding receive interval of the other router. If set, this value must be between 1000 and 30000. The default is 1000.
      *     @type int $multiplier
      *           The number of consecutive BFD packets that must be missed before BFD declares that a peer is unavailable. If set, the value must be a value between 5 and 16. The default is 5.
-     *     @type int $session_initialization_mode
+     *     @type string $session_initialization_mode
      *           The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     *           Check the SessionInitializationMode enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -170,13 +172,14 @@ class RouterBgpPeerBfd extends \Google\Protobuf\Internal\Message
 
     /**
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string session_initialization_mode = 105957049;</code>
+     * @return string
      */
     public function getSessionInitializationMode()
     {
-        return isset($this->session_initialization_mode) ? $this->session_initialization_mode : 0;
+        return isset($this->session_initialization_mode) ? $this->session_initialization_mode : '';
     }
 
     public function hasSessionInitializationMode()
@@ -191,14 +194,15 @@ class RouterBgpPeerBfd extends \Google\Protobuf\Internal\Message
 
     /**
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string session_initialization_mode = 105957049;</code>
+     * @param string $var
      * @return $this
      */
     public function setSessionInitializationMode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RouterBgpPeerBfd\SessionInitializationMode::class);
+        GPBUtil::checkString($var, True);
         $this->session_initialization_mode = $var;
 
         return $this;

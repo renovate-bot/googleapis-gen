@@ -29,28 +29,32 @@ public interface SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigOr
   /**
    * <pre>
    * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
+   * <code>optional string rule_visibility = 453258293;</code>
    * @return Whether the ruleVisibility field is set.
    */
   boolean hasRuleVisibility();
   /**
    * <pre>
    * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-   * @return The enum numeric value on the wire for ruleVisibility.
+   * <code>optional string rule_visibility = 453258293;</code>
+   * @return The ruleVisibility.
    */
-  int getRuleVisibilityValue();
+  java.lang.String getRuleVisibility();
   /**
    * <pre>
    * Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+   * Check the RuleVisibility enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility rule_visibility = 453258293;</code>
-   * @return The ruleVisibility.
+   * <code>optional string rule_visibility = 453258293;</code>
+   * @return The bytes for ruleVisibility.
    */
-  com.google.cloud.compute.v1.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig.RuleVisibility getRuleVisibility();
+  com.google.protobuf.ByteString
+      getRuleVisibilityBytes();
 }

@@ -40,8 +40,9 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
     protected $priority = null;
     /**
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
 
@@ -59,8 +60,9 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
      *           The region of peering route next hop, only applies to dynamic routes.
      *     @type int $priority
      *           The priority of the peering route.
-     *     @type int $type
+     *     @type string $type
      *           The type of the peering route.
+     *           Check the Type enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -214,13 +216,14 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -235,14 +238,15 @@ class ExchangedPeeringRoute extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of the peering route.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.ExchangedPeeringRoute.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\ExchangedPeeringRoute\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

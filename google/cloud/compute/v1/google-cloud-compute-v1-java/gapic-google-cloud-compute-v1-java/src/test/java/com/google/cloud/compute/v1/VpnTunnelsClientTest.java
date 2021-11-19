@@ -224,6 +224,7 @@ public class VpnTunnelsClientTest {
             .setSelfLink("selfLink1191800166")
             .setSharedSecret("sharedSecret-1054259339")
             .setSharedSecretHash("sharedSecretHash-205473245")
+            .setStatus("status-892481550")
             .setTargetVpnGateway("targetVpnGateway935274273")
             .setVpnGateway("vpnGateway1920916144")
             .setVpnGatewayInterface(632850035)

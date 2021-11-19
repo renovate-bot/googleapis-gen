@@ -53,8 +53,9 @@ class TargetTcpProxy extends \Google\Protobuf\Internal\Message
     protected $proxy_bind = null;
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetTcpProxy.ProxyHeader proxy_header = 160374142;</code>
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
      */
     protected $proxy_header = null;
     /**
@@ -88,8 +89,9 @@ class TargetTcpProxy extends \Google\Protobuf\Internal\Message
      *           Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
      *     @type bool $proxy_bind
      *           This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set to INTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
-     *     @type int $proxy_header
+     *     @type string $proxy_header
      *           Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     *           Check the ProxyHeader enum for the list of possible values.
      *     @type string $self_link
      *           [Output Only] Server-defined URL for the resource.
      *     @type string $service
@@ -319,13 +321,14 @@ class TargetTcpProxy extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetTcpProxy.ProxyHeader proxy_header = 160374142;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
+     * @return string
      */
     public function getProxyHeader()
     {
-        return isset($this->proxy_header) ? $this->proxy_header : 0;
+        return isset($this->proxy_header) ? $this->proxy_header : '';
     }
 
     public function hasProxyHeader()
@@ -340,14 +343,15 @@ class TargetTcpProxy extends \Google\Protobuf\Internal\Message
 
     /**
      * Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
+     * Check the ProxyHeader enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.TargetTcpProxy.ProxyHeader proxy_header = 160374142;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string proxy_header = 160374142;</code>
+     * @param string $var
      * @return $this
      */
     public function setProxyHeader($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\TargetTcpProxy\ProxyHeader::class);
+        GPBUtil::checkString($var, True);
         $this->proxy_header = $var;
 
         return $this;

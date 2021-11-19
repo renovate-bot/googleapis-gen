@@ -17,8 +17,9 @@ class RawDisk extends \Google\Protobuf\Internal\Message
 {
     /**
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
+     * Generated from protobuf field <code>optional string container_type = 318809144;</code>
      */
     protected $container_type = null;
     /**
@@ -40,8 +41,9 @@ class RawDisk extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $container_type
+     *     @type string $container_type
      *           The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     *           Check the ContainerType enum for the list of possible values.
      *     @type string $sha1_checksum
      *           [Deprecated] This field is deprecated. An optional SHA1 checksum of the disk image before unpackaging provided by the client when the disk image is created.
      *     @type string $source
@@ -55,13 +57,14 @@ class RawDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string container_type = 318809144;</code>
+     * @return string
      */
     public function getContainerType()
     {
-        return isset($this->container_type) ? $this->container_type : 0;
+        return isset($this->container_type) ? $this->container_type : '';
     }
 
     public function hasContainerType()
@@ -76,14 +79,15 @@ class RawDisk extends \Google\Protobuf\Internal\Message
 
     /**
      * The format used to encode and transmit the block device, which should be TAR. This is just a container and transmission format and not a runtime format. Provided by the client when the disk image is created.
+     * Check the ContainerType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.RawDisk.ContainerType container_type = 318809144;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string container_type = 318809144;</code>
+     * @param string $var
      * @return $this
      */
     public function setContainerType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\RawDisk\ContainerType::class);
+        GPBUtil::checkString($var, True);
         $this->container_type = $var;
 
         return $this;

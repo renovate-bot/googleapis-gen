@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private InstanceManagedByIgmErrorInstanceActionDetails() {
-    action_ = 0;
+    action_ = "";
     instance_ = "";
   }
 
@@ -60,10 +60,10 @@ private static final long serialVersionUID = 0L;
             instance_ = s;
             break;
           }
-          case 1501295024: {
-            int rawValue = input.readEnum();
+          case 1501295026: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            action_ = rawValue;
+            action_ = s;
             break;
           }
           case -1482103102: {
@@ -377,41 +377,64 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int ACTION_FIELD_NUMBER = 187661878;
-  private int action_;
+  private volatile java.lang.Object action_;
   /**
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
+   * <code>optional string action = 187661878;</code>
    * @return Whether the action field is set.
    */
-  @java.lang.Override public boolean hasAction() {
+  @java.lang.Override
+  public boolean hasAction() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-   * @return The enum numeric value on the wire for action.
+   * <code>optional string action = 187661878;</code>
+   * @return The action.
    */
-  @java.lang.Override public int getActionValue() {
-    return action_;
+  @java.lang.Override
+  public java.lang.String getAction() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      action_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+   * Check the Action enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-   * @return The action.
+   * <code>optional string action = 187661878;</code>
+   * @return The bytes for action.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action getAction() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action result = com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action.valueOf(action_);
-    return result == null ? com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getActionBytes() {
+    java.lang.Object ref = action_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      action_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 18257045;
@@ -528,7 +551,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18257045, instance_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(187661878, action_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 187661878, action_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(351608024, getVersion());
@@ -546,8 +569,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18257045, instance_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(187661878, action_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(187661878, action_);
     }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -570,7 +592,8 @@ private static final long serialVersionUID = 0L;
 
     if (hasAction() != other.hasAction()) return false;
     if (hasAction()) {
-      if (action_ != other.action_) return false;
+      if (!getAction()
+          .equals(other.getAction())) return false;
     }
     if (hasInstance() != other.hasInstance()) return false;
     if (hasInstance()) {
@@ -595,7 +618,7 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasAction()) {
       hash = (37 * hash) + ACTION_FIELD_NUMBER;
-      hash = (53 * hash) + action_;
+      hash = (53 * hash) + getAction().hashCode();
     }
     if (hasInstance()) {
       hash = (37 * hash) + INSTANCE_FIELD_NUMBER;
@@ -742,7 +765,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      action_ = 0;
+      action_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
       instance_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -846,7 +869,9 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails other) {
       if (other == com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.getDefaultInstance()) return this;
       if (other.hasAction()) {
-        setAction(other.getAction());
+        bitField0_ |= 0x00000001;
+        action_ = other.action_;
+        onChanged();
       }
       if (other.hasInstance()) {
         bitField0_ |= 0x00000002;
@@ -886,40 +911,78 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int action_ = 0;
+    private java.lang.Object action_ = "";
     /**
      * <pre>
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
      * @return Whether the action field is set.
      */
-    @java.lang.Override public boolean hasAction() {
+    public boolean hasAction() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-     * @return The enum numeric value on the wire for action.
+     * <code>optional string action = 187661878;</code>
+     * @return The action.
      */
-    @java.lang.Override public int getActionValue() {
-      return action_;
+    public java.lang.String getAction() {
+      java.lang.Object ref = action_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        action_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-     * @param value The enum numeric value on the wire for action to set.
+     * <code>optional string action = 187661878;</code>
+     * @return The bytes for action.
+     */
+    public com.google.protobuf.ByteString
+        getActionBytes() {
+      java.lang.Object ref = action_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        action_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string action = 187661878;</code>
+     * @param value The action to set.
      * @return This builder for chaining.
      */
-    public Builder setActionValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setAction(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       action_ = value;
       onChanged();
       return this;
@@ -927,46 +990,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-     * @return The action.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action getAction() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action result = com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action.valueOf(action_);
-      return result == null ? com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
-     * @param value The action to set.
+     * <code>optional string action = 187661878;</code>
      * @return This builder for chaining.
      */
-    public Builder setAction(com.google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      action_ = value.getNumber();
+    public Builder clearAction() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      action_ = getDefaultInstance().getAction();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * [Output Only] Action that managed instance group was executing on the instance when the error occurred. Possible values:
+     * Check the Action enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.InstanceManagedByIgmErrorInstanceActionDetails.Action action = 187661878;</code>
+     * <code>optional string action = 187661878;</code>
+     * @param value The bytes for action to set.
      * @return This builder for chaining.
      */
-    public Builder clearAction() {
-      bitField0_ = (bitField0_ & ~0x00000001);
-      action_ = 0;
+    public Builder setActionBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      action_ = value;
       onChanged();
       return this;
     }

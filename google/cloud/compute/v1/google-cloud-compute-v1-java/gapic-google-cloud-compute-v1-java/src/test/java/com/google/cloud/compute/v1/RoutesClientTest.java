@@ -165,6 +165,7 @@ public class RoutesClientTest {
             .setNextHopPeering("nextHopPeering-456329718")
             .setNextHopVpnTunnel("nextHopVpnTunnel2134841030")
             .setPriority(-1165461084)
+            .setRouteType("routeType167668003")
             .setSelfLink("selfLink1191800166")
             .addAllTags(new ArrayList<String>())
             .addAllWarnings(new ArrayList<Warnings>())

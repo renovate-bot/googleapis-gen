@@ -222,30 +222,34 @@ public interface SubnetworkOrBuilder extends
   /**
    * <pre>
    * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
+   * <code>optional string ipv6_access_type = 504658653;</code>
    * @return Whether the ipv6AccessType field is set.
    */
   boolean hasIpv6AccessType();
   /**
    * <pre>
    * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The enum numeric value on the wire for ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The ipv6AccessType.
    */
-  int getIpv6AccessTypeValue();
+  java.lang.String getIpv6AccessType();
   /**
    * <pre>
    * The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack. If the ipv6_type is EXTERNAL then this subnet cannot enable direct path.
+   * Check the Ipv6AccessType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Ipv6AccessType ipv6_access_type = 504658653;</code>
-   * @return The ipv6AccessType.
+   * <code>optional string ipv6_access_type = 504658653;</code>
+   * @return The bytes for ipv6AccessType.
    */
-  com.google.cloud.compute.v1.Subnetwork.Ipv6AccessType getIpv6AccessType();
+  com.google.protobuf.ByteString
+      getIpv6AccessTypeBytes();
 
   /**
    * <pre>
@@ -412,58 +416,66 @@ public interface SubnetworkOrBuilder extends
   /**
    * <pre>
    * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
    * @return Whether the privateIpv6GoogleAccess field is set.
    */
   boolean hasPrivateIpv6GoogleAccess();
   /**
    * <pre>
    * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The enum numeric value on the wire for privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The privateIpv6GoogleAccess.
    */
-  int getPrivateIpv6GoogleAccessValue();
+  java.lang.String getPrivateIpv6GoogleAccess();
   /**
    * <pre>
    * The private IPv6 google access type for the VMs in this subnet. This is an expanded field of enablePrivateV6Access. If both fields are set, privateIpv6GoogleAccess will take priority. This field can be both set at resource creation time and updated using patch.
+   * Check the PrivateIpv6GoogleAccess enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess private_ipv6_google_access = 48277006;</code>
-   * @return The privateIpv6GoogleAccess.
+   * <code>optional string private_ipv6_google_access = 48277006;</code>
+   * @return The bytes for privateIpv6GoogleAccess.
    */
-  com.google.cloud.compute.v1.Subnetwork.PrivateIpv6GoogleAccess getPrivateIpv6GoogleAccess();
+  com.google.protobuf.ByteString
+      getPrivateIpv6GoogleAccessBytes();
 
   /**
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
+   * <code>optional string purpose = 316407070;</code>
    * @return Whether the purpose field is set.
    */
   boolean hasPurpose();
   /**
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-   * @return The enum numeric value on the wire for purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The purpose.
    */
-  int getPurposeValue();
+  java.lang.String getPurpose();
   /**
    * <pre>
    * The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+   * Check the Purpose enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Purpose purpose = 316407070;</code>
-   * @return The purpose.
+   * <code>optional string purpose = 316407070;</code>
+   * @return The bytes for purpose.
    */
-  com.google.cloud.compute.v1.Subnetwork.Purpose getPurpose();
+  com.google.protobuf.ByteString
+      getPurposeBytes();
 
   /**
    * <pre>
@@ -497,30 +509,34 @@ public interface SubnetworkOrBuilder extends
   /**
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
+   * <code>optional string role = 3506294;</code>
    * @return Whether the role field is set.
    */
   boolean hasRole();
   /**
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-   * @return The enum numeric value on the wire for role.
+   * <code>optional string role = 3506294;</code>
+   * @return The role.
    */
-  int getRoleValue();
+  java.lang.String getRole();
   /**
    * <pre>
    * The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+   * Check the Role enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.Role role = 3506294;</code>
-   * @return The role.
+   * <code>optional string role = 3506294;</code>
+   * @return The bytes for role.
    */
-  com.google.cloud.compute.v1.Subnetwork.Role getRole();
+  com.google.protobuf.ByteString
+      getRoleBytes();
 
   /**
    * <pre>
@@ -598,56 +614,64 @@ public interface SubnetworkOrBuilder extends
   /**
    * <pre>
    * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
+   * <code>optional string stack_type = 425908881;</code>
    * @return Whether the stackType field is set.
    */
   boolean hasStackType();
   /**
    * <pre>
    * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-   * @return The enum numeric value on the wire for stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The stackType.
    */
-  int getStackTypeValue();
+  java.lang.String getStackType();
   /**
    * <pre>
    * The stack type for this subnet to identify whether the IPv6 feature is enabled or not. If not specified IPV4_ONLY will be used. This field can be both set at resource creation time and updated using patch.
+   * Check the StackType enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.StackType stack_type = 425908881;</code>
-   * @return The stackType.
+   * <code>optional string stack_type = 425908881;</code>
+   * @return The bytes for stackType.
    */
-  com.google.cloud.compute.v1.Subnetwork.StackType getStackType();
+  com.google.protobuf.ByteString
+      getStackTypeBytes();
 
   /**
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
+   * <code>optional string state = 109757585;</code>
    * @return Whether the state field is set.
    */
   boolean hasState();
   /**
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-   * @return The enum numeric value on the wire for state.
+   * <code>optional string state = 109757585;</code>
+   * @return The state.
    */
-  int getStateValue();
+  java.lang.String getState();
   /**
    * <pre>
    * [Output Only] The state of the subnetwork, which can be one of the following values: READY: Subnetwork is created and ready to use DRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status of READY
+   * Check the State enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Subnetwork.State state = 109757585;</code>
-   * @return The state.
+   * <code>optional string state = 109757585;</code>
+   * @return The bytes for state.
    */
-  com.google.cloud.compute.v1.Subnetwork.State getState();
+  com.google.protobuf.ByteString
+      getStateBytes();
 }

@@ -573,30 +573,34 @@ public interface SnapshotOrBuilder extends
   /**
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
   boolean hasStatus();
   /**
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  int getStatusValue();
+  java.lang.String getStatus();
   /**
    * <pre>
    * [Output Only] The status of the snapshot. This can be CREATING, DELETING, FAILED, READY, or UPLOADING.
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  com.google.cloud.compute.v1.Snapshot.Status getStatus();
+  com.google.protobuf.ByteString
+      getStatusBytes();
 
   /**
    * <pre>
@@ -620,30 +624,34 @@ public interface SnapshotOrBuilder extends
   /**
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
+   * <code>optional string storage_bytes_status = 490739082;</code>
    * @return Whether the storageBytesStatus field is set.
    */
   boolean hasStorageBytesStatus();
   /**
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-   * @return The enum numeric value on the wire for storageBytesStatus.
+   * <code>optional string storage_bytes_status = 490739082;</code>
+   * @return The storageBytesStatus.
    */
-  int getStorageBytesStatusValue();
+  java.lang.String getStorageBytesStatus();
   /**
    * <pre>
    * [Output Only] An indicator whether storageBytes is in a stable state or it is being adjusted as a result of shared storage reallocation. This status can either be UPDATING, meaning the size of the snapshot is being updated, or UP_TO_DATE, meaning the size of the snapshot is up-to-date.
+   * Check the StorageBytesStatus enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.Snapshot.StorageBytesStatus storage_bytes_status = 490739082;</code>
-   * @return The storageBytesStatus.
+   * <code>optional string storage_bytes_status = 490739082;</code>
+   * @return The bytes for storageBytesStatus.
    */
-  com.google.cloud.compute.v1.Snapshot.StorageBytesStatus getStorageBytesStatus();
+  com.google.protobuf.ByteString
+      getStorageBytesStatusBytes();
 
   /**
    * <pre>

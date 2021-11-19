@@ -40,8 +40,9 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
     protected $short_name = null;
     /**
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;</code>
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
      */
     protected $type = null;
 
@@ -59,8 +60,9 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
      *           The rules that apply to the network.
      *     @type string $short_name
      *           [Output Only] The short name of the firewall policy.
-     *     @type int $type
+     *     @type string $type
      *           [Output Only] The type of the firewall policy.
+     *           Check the Type enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -204,13 +206,14 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
 
     /**
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @return string
      */
     public function getType()
     {
-        return isset($this->type) ? $this->type : 0;
+        return isset($this->type) ? $this->type : '';
     }
 
     public function hasType()
@@ -225,14 +228,15 @@ class InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy extends \Goo
 
     /**
      * [Output Only] The type of the firewall policy.
+     * Check the Type enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.Type type = 3575610;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string type = 3575610;</code>
+     * @param string $var
      * @return $this
      */
     public function setType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy\Type::class);
+        GPBUtil::checkString($var, True);
         $this->type = $var;
 
         return $this;

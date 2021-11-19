@@ -115,31 +115,35 @@ public interface HttpRedirectActionOrBuilder extends
 
   /**
    * <pre>
-   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+   * <code>optional string redirect_response_code = 436710408;</code>
    * @return Whether the redirectResponseCode field is set.
    */
   boolean hasRedirectResponseCode();
   /**
    * <pre>
-   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
-   * @return The enum numeric value on the wire for redirectResponseCode.
-   */
-  int getRedirectResponseCodeValue();
-  /**
-   * <pre>
-   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained. 
-   * </pre>
-   *
-   * <code>optional .google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode redirect_response_code = 436710408;</code>
+   * <code>optional string redirect_response_code = 436710408;</code>
    * @return The redirectResponseCode.
    */
-  com.google.cloud.compute.v1.HttpRedirectAction.RedirectResponseCode getRedirectResponseCode();
+  java.lang.String getRedirectResponseCode();
+  /**
+   * <pre>
+   * The HTTP Status code to use for this RedirectAction. Supported values are: - MOVED_PERMANENTLY_DEFAULT, which is the default value and corresponds to 301. - FOUND, which corresponds to 302. - SEE_OTHER which corresponds to 303. - TEMPORARY_REDIRECT, which corresponds to 307. In this case, the request method will be retained. - PERMANENT_REDIRECT, which corresponds to 308. In this case, the request method will be retained.
+   * Check the RedirectResponseCode enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string redirect_response_code = 436710408;</code>
+   * @return The bytes for redirectResponseCode.
+   */
+  com.google.protobuf.ByteString
+      getRedirectResponseCodeBytes();
 
   /**
    * <pre>

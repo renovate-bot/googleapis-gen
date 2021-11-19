@@ -16,8 +16,9 @@ class LocationPolicyLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
+     * Generated from protobuf field <code>optional string preference = 150781147;</code>
      */
     protected $preference = null;
 
@@ -27,8 +28,9 @@ class LocationPolicyLocation extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $preference
+     *     @type string $preference
      *           Preference for a given location: ALLOW or DENY.
+     *           Check the Preference enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -38,13 +40,14 @@ class LocationPolicyLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string preference = 150781147;</code>
+     * @return string
      */
     public function getPreference()
     {
-        return isset($this->preference) ? $this->preference : 0;
+        return isset($this->preference) ? $this->preference : '';
     }
 
     public function hasPreference()
@@ -59,14 +62,15 @@ class LocationPolicyLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * Preference for a given location: ALLOW or DENY.
+     * Check the Preference enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.LocationPolicyLocation.Preference preference = 150781147;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string preference = 150781147;</code>
+     * @param string $var
      * @return $this
      */
     public function setPreference($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\LocationPolicyLocation\Preference::class);
+        GPBUtil::checkString($var, True);
         $this->preference = $var;
 
         return $this;

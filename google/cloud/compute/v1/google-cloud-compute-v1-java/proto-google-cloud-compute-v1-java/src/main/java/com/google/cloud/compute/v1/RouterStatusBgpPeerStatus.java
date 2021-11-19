@@ -26,7 +26,7 @@ private static final long serialVersionUID = 0L;
     peerIpAddress_ = "";
     routerApplianceInstance_ = "";
     state_ = "";
-    status_ = 0;
+    status_ = "";
     uptime_ = "";
     uptimeSeconds_ = "";
   }
@@ -85,10 +85,10 @@ private static final long serialVersionUID = 0L;
             numLearnedRoutes_ = input.readUInt32();
             break;
           }
-          case 1450082192: {
-            int rawValue = input.readEnum();
+          case 1450082194: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000080;
-            status_ = rawValue;
+            status_ = s;
             break;
           }
           case 1661886154: {
@@ -740,41 +740,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int STATUS_FIELD_NUMBER = 181260274;
-  private int status_;
+  private volatile java.lang.Object status_;
   /**
    * <pre>
    * Status of the BGP peer: {UP, DOWN}
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+   * <code>optional string status = 181260274;</code>
    * @return Whether the status field is set.
    */
-  @java.lang.Override public boolean hasStatus() {
+  @java.lang.Override
+  public boolean hasStatus() {
     return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    * <pre>
    * Status of the BGP peer: {UP, DOWN}
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-   * @return The enum numeric value on the wire for status.
+   * <code>optional string status = 181260274;</code>
+   * @return The status.
    */
-  @java.lang.Override public int getStatusValue() {
-    return status_;
+  @java.lang.Override
+  public java.lang.String getStatus() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      status_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * Status of the BGP peer: {UP, DOWN}
+   * Check the Status enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-   * @return The status.
+   * <code>optional string status = 181260274;</code>
+   * @return The bytes for status.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status getStatus() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status result = com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status.valueOf(status_);
-    return result == null ? com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getStatusBytes() {
+    java.lang.Object ref = status_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      status_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int UPTIME_FIELD_NUMBER = 235379688;
@@ -920,7 +943,7 @@ private static final long serialVersionUID = 0L;
       output.writeUInt32(135457535, numLearnedRoutes_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      output.writeEnum(181260274, status_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 207735769, peerIpAddress_);
@@ -963,8 +986,7 @@ private static final long serialVersionUID = 0L;
         .computeUInt32Size(135457535, numLearnedRoutes_);
     }
     if (((bitField0_ & 0x00000080) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(181260274, status_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(207735769, peerIpAddress_);
@@ -1039,7 +1061,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
     }
     if (hasUptime() != other.hasUptime()) return false;
     if (hasUptime()) {
@@ -1096,7 +1119,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
     }
     if (hasUptime()) {
       hash = (37 * hash) + UPTIME_FIELD_NUMBER;
@@ -1263,7 +1286,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000040);
       state_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
-      status_ = 0;
+      status_ = "";
       bitField0_ = (bitField0_ & ~0x00000100);
       uptime_ = "";
       bitField0_ = (bitField0_ & ~0x00000200);
@@ -1455,7 +1478,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasStatus()) {
-        setStatus(other.getStatus());
+        bitField0_ |= 0x00000100;
+        status_ = other.status_;
+        onChanged();
       }
       if (other.hasUptime()) {
         bitField0_ |= 0x00000200;
@@ -2506,40 +2531,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int status_ = 0;
+    private java.lang.Object status_ = "";
     /**
      * <pre>
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
      * @return Whether the status field is set.
      */
-    @java.lang.Override public boolean hasStatus() {
+    public boolean hasStatus() {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <pre>
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-     * @return The enum numeric value on the wire for status.
+     * <code>optional string status = 181260274;</code>
+     * @return The status.
      */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-     * @param value The enum numeric value on the wire for status to set.
+     * <code>optional string status = 181260274;</code>
+     * @return The bytes for status.
+     */
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string status = 181260274;</code>
+     * @param value The status to set.
      * @return This builder for chaining.
      */
-    public Builder setStatusValue(int value) {
-      bitField0_ |= 0x00000100;
+    public Builder setStatus(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000100;
       status_ = value;
       onChanged();
       return this;
@@ -2547,46 +2610,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-     * @return The status.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status getStatus() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status result = com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status.valueOf(status_);
-      return result == null ? com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * Status of the BGP peer: {UP, DOWN}
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
-     * @param value The status to set.
+     * <code>optional string status = 181260274;</code>
      * @return This builder for chaining.
      */
-    public Builder setStatus(com.google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000100;
-      status_ = value.getNumber();
+    public Builder clearStatus() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      status_ = getDefaultInstance().getStatus();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * Status of the BGP peer: {UP, DOWN}
+     * Check the Status enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterStatusBgpPeerStatus.Status status = 181260274;</code>
+     * <code>optional string status = 181260274;</code>
+     * @param value The bytes for status to set.
      * @return This builder for chaining.
      */
-    public Builder clearStatus() {
-      bitField0_ = (bitField0_ & ~0x00000100);
-      status_ = 0;
+    public Builder setStatusBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000100;
+      status_ = value;
       onChanged();
       return this;
     }

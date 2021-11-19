@@ -17,8 +17,9 @@ class AuthorizationLoggingOptions extends \Google\Protobuf\Internal\Message
 {
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
+     * Generated from protobuf field <code>optional string permission_type = 525978538;</code>
      */
     protected $permission_type = null;
 
@@ -28,8 +29,9 @@ class AuthorizationLoggingOptions extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $permission_type
+     *     @type string $permission_type
      *           This is deprecated and has no effect. Do not use.
+     *           Check the PermissionType enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,13 +41,14 @@ class AuthorizationLoggingOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string permission_type = 525978538;</code>
+     * @return string
      */
     public function getPermissionType()
     {
-        return isset($this->permission_type) ? $this->permission_type : 0;
+        return isset($this->permission_type) ? $this->permission_type : '';
     }
 
     public function hasPermissionType()
@@ -60,14 +63,15 @@ class AuthorizationLoggingOptions extends \Google\Protobuf\Internal\Message
 
     /**
      * This is deprecated and has no effect. Do not use.
+     * Check the PermissionType enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AuthorizationLoggingOptions.PermissionType permission_type = 525978538;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string permission_type = 525978538;</code>
+     * @param string $var
      * @return $this
      */
     public function setPermissionType($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AuthorizationLoggingOptions\PermissionType::class);
+        GPBUtil::checkString($var, True);
         $this->permission_type = $var;
 
         return $this;

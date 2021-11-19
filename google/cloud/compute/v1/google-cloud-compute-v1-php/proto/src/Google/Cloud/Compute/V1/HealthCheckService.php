@@ -41,8 +41,9 @@ class HealthCheckService extends \Google\Protobuf\Internal\Message
     private $health_checks;
     /**
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
+     * Generated from protobuf field <code>optional string health_status_aggregation_policy = 253163129;</code>
      */
     protected $health_status_aggregation_policy = null;
     /**
@@ -102,8 +103,9 @@ class HealthCheckService extends \Google\Protobuf\Internal\Message
      *           Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthCheckService. An up-to-date fingerprint must be provided in order to patch/update the HealthCheckService; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthCheckService.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $health_checks
      *           A list of URLs to the HealthCheck resources. Must have at least one HealthCheck, and not more than 10. HealthCheck resources must have portSpecification=USE_SERVING_PORT or portSpecification=USE_FIXED_PORT. For regional HealthCheckService, the HealthCheck must be regional and in the same region. For global HealthCheckService, HealthCheck must be global. Mix of regional and global HealthChecks is not supported. Multiple regional HealthChecks must belong to the same region. Regional HealthChecks must belong to the same region as zones of NEGs.
-     *     @type int $health_status_aggregation_policy
+     *     @type string $health_status_aggregation_policy
      *           Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     *           Check the HealthStatusAggregationPolicy enum for the list of possible values.
      *     @type int|string $id
      *           [Output Only] The unique identifier for the resource. This identifier is defined by the server.
      *     @type string $kind
@@ -261,13 +263,14 @@ class HealthCheckService extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string health_status_aggregation_policy = 253163129;</code>
+     * @return string
      */
     public function getHealthStatusAggregationPolicy()
     {
-        return isset($this->health_status_aggregation_policy) ? $this->health_status_aggregation_policy : 0;
+        return isset($this->health_status_aggregation_policy) ? $this->health_status_aggregation_policy : '';
     }
 
     public function hasHealthStatusAggregationPolicy()
@@ -282,14 +285,15 @@ class HealthCheckService extends \Google\Protobuf\Internal\Message
 
     /**
      * Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reports UNHEALTHY, then UNHEALTHY is the HealthState of the endpoint. If all health checks report HEALTHY, the HealthState of the endpoint is HEALTHY. .
+     * Check the HealthStatusAggregationPolicy enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.HealthCheckService.HealthStatusAggregationPolicy health_status_aggregation_policy = 253163129;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string health_status_aggregation_policy = 253163129;</code>
+     * @param string $var
      * @return $this
      */
     public function setHealthStatusAggregationPolicy($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\HealthCheckService\HealthStatusAggregationPolicy::class);
+        GPBUtil::checkString($var, True);
         $this->health_status_aggregation_policy = $var;
 
         return $this;

@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private RouterBgpPeerBfd() {
-    sessionInitializationMode_ = 0;
+    sessionInitializationMode_ = "";
   }
 
   @java.lang.Override
@@ -53,10 +53,10 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 847656392: {
-            int rawValue = input.readEnum();
+          case 847656394: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000008;
-            sessionInitializationMode_ = rawValue;
+            sessionInitializationMode_ = s;
             break;
           }
           case 1495852912: {
@@ -327,41 +327,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SESSION_INITIALIZATION_MODE_FIELD_NUMBER = 105957049;
-  private int sessionInitializationMode_;
+  private volatile java.lang.Object sessionInitializationMode_;
   /**
    * <pre>
    * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+   * Check the SessionInitializationMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
+   * <code>optional string session_initialization_mode = 105957049;</code>
    * @return Whether the sessionInitializationMode field is set.
    */
-  @java.lang.Override public boolean hasSessionInitializationMode() {
+  @java.lang.Override
+  public boolean hasSessionInitializationMode() {
     return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    * <pre>
    * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+   * Check the SessionInitializationMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-   * @return The enum numeric value on the wire for sessionInitializationMode.
+   * <code>optional string session_initialization_mode = 105957049;</code>
+   * @return The sessionInitializationMode.
    */
-  @java.lang.Override public int getSessionInitializationModeValue() {
-    return sessionInitializationMode_;
+  @java.lang.Override
+  public java.lang.String getSessionInitializationMode() {
+    java.lang.Object ref = sessionInitializationMode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sessionInitializationMode_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+   * Check the SessionInitializationMode enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-   * @return The sessionInitializationMode.
+   * <code>optional string session_initialization_mode = 105957049;</code>
+   * @return The bytes for sessionInitializationMode.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode getSessionInitializationMode() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode result = com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode.valueOf(sessionInitializationMode_);
-    return result == null ? com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSessionInitializationModeBytes() {
+    java.lang.Object ref = sessionInitializationMode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sessionInitializationMode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -379,7 +402,7 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000008) != 0)) {
-      output.writeEnum(105957049, sessionInitializationMode_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 105957049, sessionInitializationMode_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeUInt32(186981614, minReceiveInterval_);
@@ -400,8 +423,7 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000008) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(105957049, sessionInitializationMode_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(105957049, sessionInitializationMode_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream
@@ -447,7 +469,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSessionInitializationMode() != other.hasSessionInitializationMode()) return false;
     if (hasSessionInitializationMode()) {
-      if (sessionInitializationMode_ != other.sessionInitializationMode_) return false;
+      if (!getSessionInitializationMode()
+          .equals(other.getSessionInitializationMode())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -474,7 +497,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasSessionInitializationMode()) {
       hash = (37 * hash) + SESSION_INITIALIZATION_MODE_FIELD_NUMBER;
-      hash = (53 * hash) + sessionInitializationMode_;
+      hash = (53 * hash) + getSessionInitializationMode().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -618,7 +641,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000002);
       multiplier_ = 0;
       bitField0_ = (bitField0_ & ~0x00000004);
-      sessionInitializationMode_ = 0;
+      sessionInitializationMode_ = "";
       bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
@@ -723,7 +746,9 @@ private static final long serialVersionUID = 0L;
         setMultiplier(other.getMultiplier());
       }
       if (other.hasSessionInitializationMode()) {
-        setSessionInitializationMode(other.getSessionInitializationMode());
+        bitField0_ |= 0x00000008;
+        sessionInitializationMode_ = other.sessionInitializationMode_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -920,40 +945,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int sessionInitializationMode_ = 0;
+    private java.lang.Object sessionInitializationMode_ = "";
     /**
      * <pre>
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
+     * <code>optional string session_initialization_mode = 105957049;</code>
      * @return Whether the sessionInitializationMode field is set.
      */
-    @java.lang.Override public boolean hasSessionInitializationMode() {
+    public boolean hasSessionInitializationMode() {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <pre>
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-     * @return The enum numeric value on the wire for sessionInitializationMode.
+     * <code>optional string session_initialization_mode = 105957049;</code>
+     * @return The sessionInitializationMode.
      */
-    @java.lang.Override public int getSessionInitializationModeValue() {
-      return sessionInitializationMode_;
+    public java.lang.String getSessionInitializationMode() {
+      java.lang.Object ref = sessionInitializationMode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionInitializationMode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-     * @param value The enum numeric value on the wire for sessionInitializationMode to set.
+     * <code>optional string session_initialization_mode = 105957049;</code>
+     * @return The bytes for sessionInitializationMode.
+     */
+    public com.google.protobuf.ByteString
+        getSessionInitializationModeBytes() {
+      java.lang.Object ref = sessionInitializationMode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionInitializationMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string session_initialization_mode = 105957049;</code>
+     * @param value The sessionInitializationMode to set.
      * @return This builder for chaining.
      */
-    public Builder setSessionInitializationModeValue(int value) {
-      bitField0_ |= 0x00000008;
+    public Builder setSessionInitializationMode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
       sessionInitializationMode_ = value;
       onChanged();
       return this;
@@ -961,46 +1024,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-     * @return The sessionInitializationMode.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode getSessionInitializationMode() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode result = com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode.valueOf(sessionInitializationMode_);
-      return result == null ? com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
-     * @param value The sessionInitializationMode to set.
+     * <code>optional string session_initialization_mode = 105957049;</code>
      * @return This builder for chaining.
      */
-    public Builder setSessionInitializationMode(com.google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000008;
-      sessionInitializationMode_ = value.getNumber();
+    public Builder clearSessionInitializationMode() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      sessionInitializationMode_ = getDefaultInstance().getSessionInitializationMode();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * The BFD session initialization mode for this BGP peer. If set to ACTIVE, the Cloud Router will initiate the BFD session for this BGP peer. If set to PASSIVE, the Cloud Router will wait for the peer router to initiate the BFD session for this BGP peer. If set to DISABLED, BFD is disabled for this BGP peer. The default is PASSIVE.
+     * Check the SessionInitializationMode enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.RouterBgpPeerBfd.SessionInitializationMode session_initialization_mode = 105957049;</code>
+     * <code>optional string session_initialization_mode = 105957049;</code>
+     * @param value The bytes for sessionInitializationMode to set.
      * @return This builder for chaining.
      */
-    public Builder clearSessionInitializationMode() {
-      bitField0_ = (bitField0_ & ~0x00000008);
-      sessionInitializationMode_ = 0;
+    public Builder setSessionInitializationModeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000008;
+      sessionInitializationMode_ = value;
       onChanged();
       return this;
     }

@@ -25,7 +25,7 @@ private static final long serialVersionUID = 0L;
     instance_ = "";
     kind_ = "";
     name_ = "";
-    natPolicy_ = 0;
+    natPolicy_ = "";
     network_ = "";
     selfLink_ = "";
     zone_ = "";
@@ -115,10 +115,10 @@ private static final long serialVersionUID = 0L;
             selfLink_ = s;
             break;
           }
-          case -216723328: {
-            int rawValue = input.readEnum();
+          case -216723326: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000040;
-            natPolicy_ = rawValue;
+            natPolicy_ = s;
             break;
           }
           default: {
@@ -600,41 +600,64 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int NAT_POLICY_FIELD_NUMBER = 509780496;
-  private int natPolicy_;
+  private volatile java.lang.Object natPolicy_;
   /**
    * <pre>
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+   * <code>optional string nat_policy = 509780496;</code>
    * @return Whether the natPolicy field is set.
    */
-  @java.lang.Override public boolean hasNatPolicy() {
+  @java.lang.Override
+  public boolean hasNatPolicy() {
     return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    * <pre>
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-   * @return The enum numeric value on the wire for natPolicy.
+   * <code>optional string nat_policy = 509780496;</code>
+   * @return The natPolicy.
    */
-  @java.lang.Override public int getNatPolicyValue() {
-    return natPolicy_;
+  @java.lang.Override
+  public java.lang.String getNatPolicy() {
+    java.lang.Object ref = natPolicy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      natPolicy_ = s;
+      return s;
+    }
   }
   /**
    * <pre>
    * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+   * Check the NatPolicy enum for the list of possible values.
    * </pre>
    *
-   * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-   * @return The natPolicy.
+   * <code>optional string nat_policy = 509780496;</code>
+   * @return The bytes for natPolicy.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.TargetInstance.NatPolicy getNatPolicy() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.TargetInstance.NatPolicy result = com.google.cloud.compute.v1.TargetInstance.NatPolicy.valueOf(natPolicy_);
-    return result == null ? com.google.cloud.compute.v1.TargetInstance.NatPolicy.UNRECOGNIZED : result;
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getNatPolicyBytes() {
+    java.lang.Object ref = natPolicy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      natPolicy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int NETWORK_FIELD_NUMBER = 232872494;
@@ -853,7 +876,7 @@ private static final long serialVersionUID = 0L;
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      output.writeEnum(509780496, natPolicy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 509780496, natPolicy_);
     }
     unknownFields.writeTo(output);
   }
@@ -893,8 +916,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(509780496, natPolicy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(509780496, natPolicy_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -943,7 +965,8 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNatPolicy() != other.hasNatPolicy()) return false;
     if (hasNatPolicy()) {
-      if (natPolicy_ != other.natPolicy_) return false;
+      if (!getNatPolicy()
+          .equals(other.getNatPolicy())) return false;
     }
     if (hasNetwork() != other.hasNetwork()) return false;
     if (hasNetwork()) {
@@ -998,7 +1021,7 @@ private static final long serialVersionUID = 0L;
     }
     if (hasNatPolicy()) {
       hash = (37 * hash) + NAT_POLICY_FIELD_NUMBER;
-      hash = (53 * hash) + natPolicy_;
+      hash = (53 * hash) + getNatPolicy().hashCode();
     }
     if (hasNetwork()) {
       hash = (37 * hash) + NETWORK_FIELD_NUMBER;
@@ -1161,7 +1184,7 @@ private static final long serialVersionUID = 0L;
       bitField0_ = (bitField0_ & ~0x00000010);
       name_ = "";
       bitField0_ = (bitField0_ & ~0x00000020);
-      natPolicy_ = 0;
+      natPolicy_ = "";
       bitField0_ = (bitField0_ & ~0x00000040);
       network_ = "";
       bitField0_ = (bitField0_ & ~0x00000080);
@@ -1315,7 +1338,9 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       if (other.hasNatPolicy()) {
-        setNatPolicy(other.getNatPolicy());
+        bitField0_ |= 0x00000040;
+        natPolicy_ = other.natPolicy_;
+        onChanged();
       }
       if (other.hasNetwork()) {
         bitField0_ |= 0x00000080;
@@ -1952,40 +1977,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int natPolicy_ = 0;
+    private java.lang.Object natPolicy_ = "";
     /**
      * <pre>
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+     * <code>optional string nat_policy = 509780496;</code>
      * @return Whether the natPolicy field is set.
      */
-    @java.lang.Override public boolean hasNatPolicy() {
+    public boolean hasNatPolicy() {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-     * @return The enum numeric value on the wire for natPolicy.
+     * <code>optional string nat_policy = 509780496;</code>
+     * @return The natPolicy.
      */
-    @java.lang.Override public int getNatPolicyValue() {
-      return natPolicy_;
+    public java.lang.String getNatPolicy() {
+      java.lang.Object ref = natPolicy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        natPolicy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
      * <pre>
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-     * @param value The enum numeric value on the wire for natPolicy to set.
+     * <code>optional string nat_policy = 509780496;</code>
+     * @return The bytes for natPolicy.
+     */
+    public com.google.protobuf.ByteString
+        getNatPolicyBytes() {
+      java.lang.Object ref = natPolicy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        natPolicy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string nat_policy = 509780496;</code>
+     * @param value The natPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder setNatPolicyValue(int value) {
-      bitField0_ |= 0x00000040;
+    public Builder setNatPolicy(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000040;
       natPolicy_ = value;
       onChanged();
       return this;
@@ -1993,46 +2056,36 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-     * @return The natPolicy.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.TargetInstance.NatPolicy getNatPolicy() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.TargetInstance.NatPolicy result = com.google.cloud.compute.v1.TargetInstance.NatPolicy.valueOf(natPolicy_);
-      return result == null ? com.google.cloud.compute.v1.TargetInstance.NatPolicy.UNRECOGNIZED : result;
-    }
-    /**
-     * <pre>
-     * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
-     * </pre>
-     *
-     * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
-     * @param value The natPolicy to set.
+     * <code>optional string nat_policy = 509780496;</code>
      * @return This builder for chaining.
      */
-    public Builder setNatPolicy(com.google.cloud.compute.v1.TargetInstance.NatPolicy value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000040;
-      natPolicy_ = value.getNumber();
+    public Builder clearNatPolicy() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      natPolicy_ = getDefaultInstance().getNatPolicy();
       onChanged();
       return this;
     }
     /**
      * <pre>
      * NAT option controlling how IPs are NAT'ed to the instance. Currently only NO_NAT (default value) is supported.
+     * Check the NatPolicy enum for the list of possible values.
      * </pre>
      *
-     * <code>optional .google.cloud.compute.v1.TargetInstance.NatPolicy nat_policy = 509780496;</code>
+     * <code>optional string nat_policy = 509780496;</code>
+     * @param value The bytes for natPolicy to set.
      * @return This builder for chaining.
      */
-    public Builder clearNatPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000040);
-      natPolicy_ = 0;
+    public Builder setNatPolicyBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000040;
+      natPolicy_ = value;
       onChanged();
       return this;
     }

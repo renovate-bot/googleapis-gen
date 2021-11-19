@@ -53,8 +53,9 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
     protected $min_num_replicas = null;
     /**
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
      */
     protected $mode = null;
     /**
@@ -86,8 +87,9 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
      *           The maximum number of instances that the autoscaler can scale out to. This is required when creating or updating an autoscaler. The maximum number of replicas must not be lower than minimal number of replicas.
      *     @type int $min_num_replicas
      *           The minimum number of replicas that the autoscaler can scale in to. This cannot be less than 0. If not provided, autoscaler chooses a default value depending on maximum number of instances allowed.
-     *     @type int $mode
+     *     @type string $mode
      *           Defines operating mode for this policy.
+     *           Check the Mode enum for the list of possible values.
      *     @type \Google\Cloud\Compute\V1\AutoscalingPolicyScaleInControl $scale_in_control
      *     @type array|\Google\Protobuf\Internal\MapField $scaling_schedules
      *           Scaling schedules defined for an autoscaler. Multiple schedules can be set on an autoscaler, and they can overlap. During overlapping periods the greatest min_required_replicas of all scaling schedules is applied. Up to 128 scaling schedules are allowed.
@@ -306,13 +308,14 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
-     * @return int
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
+     * @return string
      */
     public function getMode()
     {
-        return isset($this->mode) ? $this->mode : 0;
+        return isset($this->mode) ? $this->mode : '';
     }
 
     public function hasMode()
@@ -327,14 +330,15 @@ class AutoscalingPolicy extends \Google\Protobuf\Internal\Message
 
     /**
      * Defines operating mode for this policy.
+     * Check the Mode enum for the list of possible values.
      *
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.AutoscalingPolicy.Mode mode = 3357091;</code>
-     * @param int $var
+     * Generated from protobuf field <code>optional string mode = 3357091;</code>
+     * @param string $var
      * @return $this
      */
     public function setMode($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\AutoscalingPolicy\Mode::class);
+        GPBUtil::checkString($var, True);
         $this->mode = $var;
 
         return $this;

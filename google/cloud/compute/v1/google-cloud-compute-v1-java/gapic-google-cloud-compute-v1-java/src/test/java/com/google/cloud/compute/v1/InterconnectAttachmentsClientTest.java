@@ -209,12 +209,15 @@ public class InterconnectAttachmentsClientTest {
     InterconnectAttachment expectedResponse =
         InterconnectAttachment.newBuilder()
             .setAdminEnabled(true)
+            .setBandwidth("bandwidth-1965768527")
             .addAllCandidateSubnets(new ArrayList<String>())
             .setCloudRouterIpAddress("cloudRouterIpAddress586092687")
             .setCreationTimestamp("creationTimestamp-370203401")
             .setCustomerRouterIpAddress("customerRouterIpAddress-2065119290")
             .setDataplaneVersion(1645532811)
             .setDescription("description-1724546052")
+            .setEdgeAvailabilityDomain("edgeAvailabilityDomain-659015012")
+            .setEncryption("encryption-1512632445")
             .setGoogleReferenceId("googleReferenceId600178125")
             .setId(3355)
             .setInterconnect("interconnect-849140594")
@@ -222,6 +225,7 @@ public class InterconnectAttachmentsClientTest {
             .setKind("kind3292052")
             .setMtu(108462)
             .setName("name3373707")
+            .setOperationalStatus("operationalStatus-2103166364")
             .setPairingKey("pairingKey-245611913")
             .setPartnerAsn(975037061)
             .setPartnerMetadata(InterconnectAttachmentPartnerMetadata.newBuilder().build())
@@ -230,6 +234,8 @@ public class InterconnectAttachmentsClientTest {
             .setRouter("router-925132983")
             .setSatisfiesPzs(true)
             .setSelfLink("selfLink1191800166")
+            .setState("state109757585")
+            .setType("type3575610")
             .setVlanTag8021Q(1730540572)
             .build();
     mockService.addResponse(expectedResponse);

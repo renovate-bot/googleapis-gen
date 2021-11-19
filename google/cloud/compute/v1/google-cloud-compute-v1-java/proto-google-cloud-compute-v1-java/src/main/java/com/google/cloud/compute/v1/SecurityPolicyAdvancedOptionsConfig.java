@@ -19,8 +19,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private SecurityPolicyAdvancedOptionsConfig() {
-    jsonParsing_ = 0;
-    logLevel_ = 0;
+    jsonParsing_ = "";
+    logLevel_ = "";
   }
 
   @java.lang.Override
@@ -54,16 +54,16 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 1124660808: {
-            int rawValue = input.readEnum();
+          case 1124660810: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000002;
-            logLevel_ = rawValue;
+            logLevel_ = s;
             break;
           }
-          case -2035019064: {
-            int rawValue = input.readEnum();
+          case -2035019062: {
+            java.lang.String s = input.readStringRequireUtf8();
             bitField0_ |= 0x00000001;
-            jsonParsing_ = rawValue;
+            jsonParsing_ = s;
             break;
           }
           default: {
@@ -356,55 +356,125 @@ private static final long serialVersionUID = 0L;
 
   private int bitField0_;
   public static final int JSON_PARSING_FIELD_NUMBER = 282493529;
-  private int jsonParsing_;
+  private volatile java.lang.Object jsonParsing_;
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+   * <pre>
+   * 
+   * Check the JsonParsing enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string json_parsing = 282493529;</code>
    * @return Whether the jsonParsing field is set.
    */
-  @java.lang.Override public boolean hasJsonParsing() {
+  @java.lang.Override
+  public boolean hasJsonParsing() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-   * @return The enum numeric value on the wire for jsonParsing.
-   */
-  @java.lang.Override public int getJsonParsingValue() {
-    return jsonParsing_;
-  }
-  /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+   * <pre>
+   * 
+   * Check the JsonParsing enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string json_parsing = 282493529;</code>
    * @return The jsonParsing.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing getJsonParsing() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing result = com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing.valueOf(jsonParsing_);
-    return result == null ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getJsonParsing() {
+    java.lang.Object ref = jsonParsing_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      jsonParsing_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 
+   * Check the JsonParsing enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string json_parsing = 282493529;</code>
+   * @return The bytes for jsonParsing.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getJsonParsingBytes() {
+    java.lang.Object ref = jsonParsing_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      jsonParsing_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   public static final int LOG_LEVEL_FIELD_NUMBER = 140582601;
-  private int logLevel_;
+  private volatile java.lang.Object logLevel_;
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+   * <pre>
+   * 
+   * Check the LogLevel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_level = 140582601;</code>
    * @return Whether the logLevel field is set.
    */
-  @java.lang.Override public boolean hasLogLevel() {
+  @java.lang.Override
+  public boolean hasLogLevel() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-   * @return The enum numeric value on the wire for logLevel.
-   */
-  @java.lang.Override public int getLogLevelValue() {
-    return logLevel_;
-  }
-  /**
-   * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+   * <pre>
+   * 
+   * Check the LogLevel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_level = 140582601;</code>
    * @return The logLevel.
    */
-  @java.lang.Override public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel getLogLevel() {
-    @SuppressWarnings("deprecation")
-    com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel result = com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel.valueOf(logLevel_);
-    return result == null ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel.UNRECOGNIZED : result;
+  @java.lang.Override
+  public java.lang.String getLogLevel() {
+    java.lang.Object ref = logLevel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      logLevel_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * 
+   * Check the LogLevel enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string log_level = 140582601;</code>
+   * @return The bytes for logLevel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLogLevelBytes() {
+    java.lang.Object ref = logLevel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      logLevel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -422,10 +492,10 @@ private static final long serialVersionUID = 0L;
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeEnum(140582601, logLevel_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 140582601, logLevel_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(282493529, jsonParsing_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 282493529, jsonParsing_);
     }
     unknownFields.writeTo(output);
   }
@@ -437,12 +507,10 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (((bitField0_ & 0x00000002) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(140582601, logLevel_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(140582601, logLevel_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(282493529, jsonParsing_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(282493529, jsonParsing_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -461,11 +529,13 @@ private static final long serialVersionUID = 0L;
 
     if (hasJsonParsing() != other.hasJsonParsing()) return false;
     if (hasJsonParsing()) {
-      if (jsonParsing_ != other.jsonParsing_) return false;
+      if (!getJsonParsing()
+          .equals(other.getJsonParsing())) return false;
     }
     if (hasLogLevel() != other.hasLogLevel()) return false;
     if (hasLogLevel()) {
-      if (logLevel_ != other.logLevel_) return false;
+      if (!getLogLevel()
+          .equals(other.getLogLevel())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -480,11 +550,11 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (hasJsonParsing()) {
       hash = (37 * hash) + JSON_PARSING_FIELD_NUMBER;
-      hash = (53 * hash) + jsonParsing_;
+      hash = (53 * hash) + getJsonParsing().hashCode();
     }
     if (hasLogLevel()) {
       hash = (37 * hash) + LOG_LEVEL_FIELD_NUMBER;
-      hash = (53 * hash) + logLevel_;
+      hash = (53 * hash) + getLogLevel().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -622,9 +692,9 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      jsonParsing_ = 0;
+      jsonParsing_ = "";
       bitField0_ = (bitField0_ & ~0x00000001);
-      logLevel_ = 0;
+      logLevel_ = "";
       bitField0_ = (bitField0_ & ~0x00000002);
       return this;
     }
@@ -712,10 +782,14 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig other) {
       if (other == com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.getDefaultInstance()) return this;
       if (other.hasJsonParsing()) {
-        setJsonParsing(other.getJsonParsing());
+        bitField0_ |= 0x00000001;
+        jsonParsing_ = other.jsonParsing_;
+        onChanged();
       }
       if (other.hasLogLevel()) {
-        setLogLevel(other.getLogLevel());
+        bitField0_ |= 0x00000002;
+        logLevel_ = other.logLevel_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -747,124 +821,228 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int jsonParsing_ = 0;
+    private java.lang.Object jsonParsing_ = "";
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+     * <pre>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string json_parsing = 282493529;</code>
      * @return Whether the jsonParsing field is set.
      */
-    @java.lang.Override public boolean hasJsonParsing() {
+    public boolean hasJsonParsing() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-     * @return The enum numeric value on the wire for jsonParsing.
+     * <pre>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string json_parsing = 282493529;</code>
+     * @return The jsonParsing.
      */
-    @java.lang.Override public int getJsonParsingValue() {
-      return jsonParsing_;
+    public java.lang.String getJsonParsing() {
+      java.lang.Object ref = jsonParsing_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        jsonParsing_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-     * @param value The enum numeric value on the wire for jsonParsing to set.
+     * <pre>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string json_parsing = 282493529;</code>
+     * @return The bytes for jsonParsing.
+     */
+    public com.google.protobuf.ByteString
+        getJsonParsingBytes() {
+      java.lang.Object ref = jsonParsing_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        jsonParsing_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string json_parsing = 282493529;</code>
+     * @param value The jsonParsing to set.
      * @return This builder for chaining.
      */
-    public Builder setJsonParsingValue(int value) {
-      bitField0_ |= 0x00000001;
+    public Builder setJsonParsing(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
       jsonParsing_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-     * @return The jsonParsing.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing getJsonParsing() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing result = com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing.valueOf(jsonParsing_);
-      return result == null ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-     * @param value The jsonParsing to set.
-     * @return This builder for chaining.
-     */
-    public Builder setJsonParsing(com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000001;
-      jsonParsing_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+     * <pre>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string json_parsing = 282493529;</code>
      * @return This builder for chaining.
      */
     public Builder clearJsonParsing() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      jsonParsing_ = 0;
+      jsonParsing_ = getDefaultInstance().getJsonParsing();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string json_parsing = 282493529;</code>
+     * @param value The bytes for jsonParsing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJsonParsingBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000001;
+      jsonParsing_ = value;
       onChanged();
       return this;
     }
 
-    private int logLevel_ = 0;
+    private java.lang.Object logLevel_ = "";
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+     * <pre>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_level = 140582601;</code>
      * @return Whether the logLevel field is set.
      */
-    @java.lang.Override public boolean hasLogLevel() {
+    public boolean hasLogLevel() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-     * @return The enum numeric value on the wire for logLevel.
+     * <pre>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_level = 140582601;</code>
+     * @return The logLevel.
      */
-    @java.lang.Override public int getLogLevelValue() {
-      return logLevel_;
+    public java.lang.String getLogLevel() {
+      java.lang.Object ref = logLevel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        logLevel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-     * @param value The enum numeric value on the wire for logLevel to set.
+     * <pre>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_level = 140582601;</code>
+     * @return The bytes for logLevel.
+     */
+    public com.google.protobuf.ByteString
+        getLogLevelBytes() {
+      java.lang.Object ref = logLevel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        logLevel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_level = 140582601;</code>
+     * @param value The logLevel to set.
      * @return This builder for chaining.
      */
-    public Builder setLogLevelValue(int value) {
-      bitField0_ |= 0x00000002;
+    public Builder setLogLevel(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
       logLevel_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-     * @return The logLevel.
-     */
-    @java.lang.Override
-    public com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel getLogLevel() {
-      @SuppressWarnings("deprecation")
-      com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel result = com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel.valueOf(logLevel_);
-      return result == null ? com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel.UNRECOGNIZED : result;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-     * @param value The logLevel to set.
-     * @return This builder for chaining.
-     */
-    public Builder setLogLevel(com.google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      bitField0_ |= 0x00000002;
-      logLevel_ = value.getNumber();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+     * <pre>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_level = 140582601;</code>
      * @return This builder for chaining.
      */
     public Builder clearLogLevel() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      logLevel_ = 0;
+      logLevel_ = getDefaultInstance().getLogLevel();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string log_level = 140582601;</code>
+     * @param value The bytes for logLevel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLogLevelBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      bitField0_ |= 0x00000002;
+      logLevel_ = value;
       onChanged();
       return this;
     }

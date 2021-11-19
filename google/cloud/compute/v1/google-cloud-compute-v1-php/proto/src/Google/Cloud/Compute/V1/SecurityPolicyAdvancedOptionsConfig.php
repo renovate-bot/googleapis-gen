@@ -15,11 +15,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class SecurityPolicyAdvancedOptionsConfig extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string json_parsing = 282493529;</code>
      */
     protected $json_parsing = null;
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string log_level = 140582601;</code>
      */
     protected $log_level = null;
 
@@ -29,8 +35,12 @@ class SecurityPolicyAdvancedOptionsConfig extends \Google\Protobuf\Internal\Mess
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type int $json_parsing
-     *     @type int $log_level
+     *     @type string $json_parsing
+     *           
+     *           Check the JsonParsing enum for the list of possible values.
+     *     @type string $log_level
+     *           
+     *           Check the LogLevel enum for the list of possible values.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,12 +49,15 @@ class SecurityPolicyAdvancedOptionsConfig extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-     * @return int
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string json_parsing = 282493529;</code>
+     * @return string
      */
     public function getJsonParsing()
     {
-        return isset($this->json_parsing) ? $this->json_parsing : 0;
+        return isset($this->json_parsing) ? $this->json_parsing : '';
     }
 
     public function hasJsonParsing()
@@ -58,25 +71,31 @@ class SecurityPolicyAdvancedOptionsConfig extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.JsonParsing json_parsing = 282493529;</code>
-     * @param int $var
+     * 
+     * Check the JsonParsing enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string json_parsing = 282493529;</code>
+     * @param string $var
      * @return $this
      */
     public function setJsonParsing($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SecurityPolicyAdvancedOptionsConfig\JsonParsing::class);
+        GPBUtil::checkString($var, True);
         $this->json_parsing = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-     * @return int
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string log_level = 140582601;</code>
+     * @return string
      */
     public function getLogLevel()
     {
-        return isset($this->log_level) ? $this->log_level : 0;
+        return isset($this->log_level) ? $this->log_level : '';
     }
 
     public function hasLogLevel()
@@ -90,13 +109,16 @@ class SecurityPolicyAdvancedOptionsConfig extends \Google\Protobuf\Internal\Mess
     }
 
     /**
-     * Generated from protobuf field <code>optional .google.cloud.compute.v1.SecurityPolicyAdvancedOptionsConfig.LogLevel log_level = 140582601;</code>
-     * @param int $var
+     * 
+     * Check the LogLevel enum for the list of possible values.
+     *
+     * Generated from protobuf field <code>optional string log_level = 140582601;</code>
+     * @param string $var
      * @return $this
      */
     public function setLogLevel($var)
     {
-        GPBUtil::checkEnum($var, \Google\Cloud\Compute\V1\SecurityPolicyAdvancedOptionsConfig\LogLevel::class);
+        GPBUtil::checkString($var, True);
         $this->log_level = $var;
 
         return $this;

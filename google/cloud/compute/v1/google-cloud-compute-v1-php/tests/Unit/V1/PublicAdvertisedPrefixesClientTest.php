@@ -210,6 +210,7 @@ class PublicAdvertisedPrefixesClientTest extends GeneratedTest
         $name = 'name3373707';
         $selfLink = 'selfLink-1691268851';
         $sharedSecret = 'sharedSecret-154938422';
+        $status = 'status-892481550';
         $expectedResponse = new PublicAdvertisedPrefix();
         $expectedResponse->setCreationTimestamp($creationTimestamp);
         $expectedResponse->setDescription($description);
@@ -221,6 +222,7 @@ class PublicAdvertisedPrefixesClientTest extends GeneratedTest
         $expectedResponse->setName($name);
         $expectedResponse->setSelfLink($selfLink);
         $expectedResponse->setSharedSecret($sharedSecret);
+        $expectedResponse->setStatus($status);
         $transport->addResponse($expectedResponse);
         // Mock request
         $project = 'project-309310695';
