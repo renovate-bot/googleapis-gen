@@ -32,7 +32,7 @@ function main(requests) {
   // const parent = 'abc123'
 
   // Imports the Documentai library
-  const {DocumentUnderstandingServiceClient} = require('documentai').v1beta1;
+  const {DocumentUnderstandingServiceClient} = require('@google-cloud/documentai').v1beta1;
 
   // Instantiates a client
   const documentaiClient = new DocumentUnderstandingServiceClient();

@@ -1,5 +1,5 @@
 {
-  "name": "documentai",
+  "name": "@google-cloud/documentai",
   "version": "0.1.0",
   "description": "Documentai client for Node.js",
   "repository": "googleapis/nodejs-documentai",
