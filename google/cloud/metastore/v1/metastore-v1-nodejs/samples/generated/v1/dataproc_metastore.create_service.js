@@ -55,7 +55,7 @@ function main(parent, serviceId, service) {
   // const requestId = 'abc123'
 
   // Imports the Metastore library
-  const {DataprocMetastoreClient} = require('@google-cloud/metastore').v1;
+  const {DataprocMetastoreClient} = require('@google-cloud/dataproc-metastore').v1;
 
   // Instantiates a client
   const metastoreClient = new DataprocMetastoreClient();
