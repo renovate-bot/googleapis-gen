@@ -28,12 +28,12 @@ module Google
         #     The type of {::Google::Cloud::Retail::V2beta::Product Product}s allowed to be
         #     ingested into the catalog. Acceptable values are:
         #
-        #     * `primary` (default): You can only ingest
-        #     {::Google::Cloud::Retail::V2beta::Product::Type::PRIMARY Product.Type.PRIMARY}
-        #       {::Google::Cloud::Retail::V2beta::Product Product}s. This means
-        #       {::Google::Cloud::Retail::V2beta::Product#primary_product_id Product.primary_product_id}
-        #       can only be empty or set to the same value as
-        #       {::Google::Cloud::Retail::V2beta::Product#id Product.id}.
+        #     * `primary` (default): You can ingest
+        #     {::Google::Cloud::Retail::V2beta::Product Product}s of all types. When
+        #       ingesting a {::Google::Cloud::Retail::V2beta::Product Product}, its type will
+        #       default to
+        #       {::Google::Cloud::Retail::V2beta::Product::Type::PRIMARY Product.Type.PRIMARY}
+        #       if unset.
         #     * `variant`: You can only ingest
         #     {::Google::Cloud::Retail::V2beta::Product::Type::VARIANT Product.Type.VARIANT}
         #     {::Google::Cloud::Retail::V2beta::Product Product}s.

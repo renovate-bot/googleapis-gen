@@ -105,12 +105,12 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
    * ingested into the catalog. Acceptable values are:
-   * * `primary` (default): You can only ingest
-   * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-   *   [Product][google.cloud.retail.v2beta.Product]s. This means
-   *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-   *   can only be empty or set to the same value as
-   *   [Product.id][google.cloud.retail.v2beta.Product.id].
+   * * `primary` (default): You can ingest
+   * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+   *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+   *   default to
+   *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+   *   if unset.
    * * `variant`: You can only ingest
    * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2beta.Product]s.
@@ -147,12 +147,12 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
    * ingested into the catalog. Acceptable values are:
-   * * `primary` (default): You can only ingest
-   * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-   *   [Product][google.cloud.retail.v2beta.Product]s. This means
-   *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-   *   can only be empty or set to the same value as
-   *   [Product.id][google.cloud.retail.v2beta.Product.id].
+   * * `primary` (default): You can ingest
+   * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+   *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+   *   default to
+   *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+   *   if unset.
    * * `variant`: You can only ingest
    * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
    * [Product][google.cloud.retail.v2beta.Product]s.
@@ -592,12 +592,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
-     * * `primary` (default): You can only ingest
-     * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-     *   [Product][google.cloud.retail.v2beta.Product]s. This means
-     *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-     *   can only be empty or set to the same value as
-     *   [Product.id][google.cloud.retail.v2beta.Product.id].
+     * * `primary` (default): You can ingest
+     * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+     *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+     *   default to
+     *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+     *   if unset.
      * * `variant`: You can only ingest
      * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s.
@@ -633,12 +633,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
-     * * `primary` (default): You can only ingest
-     * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-     *   [Product][google.cloud.retail.v2beta.Product]s. This means
-     *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-     *   can only be empty or set to the same value as
-     *   [Product.id][google.cloud.retail.v2beta.Product.id].
+     * * `primary` (default): You can ingest
+     * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+     *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+     *   default to
+     *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+     *   if unset.
      * * `variant`: You can only ingest
      * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s.
@@ -675,12 +675,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
-     * * `primary` (default): You can only ingest
-     * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-     *   [Product][google.cloud.retail.v2beta.Product]s. This means
-     *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-     *   can only be empty or set to the same value as
-     *   [Product.id][google.cloud.retail.v2beta.Product.id].
+     * * `primary` (default): You can ingest
+     * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+     *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+     *   default to
+     *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+     *   if unset.
      * * `variant`: You can only ingest
      * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s.
@@ -715,12 +715,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
-     * * `primary` (default): You can only ingest
-     * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-     *   [Product][google.cloud.retail.v2beta.Product]s. This means
-     *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-     *   can only be empty or set to the same value as
-     *   [Product.id][google.cloud.retail.v2beta.Product.id].
+     * * `primary` (default): You can ingest
+     * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+     *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+     *   default to
+     *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+     *   if unset.
      * * `variant`: You can only ingest
      * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s.
@@ -750,12 +750,12 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The type of [Product][google.cloud.retail.v2beta.Product]s allowed to be
      * ingested into the catalog. Acceptable values are:
-     * * `primary` (default): You can only ingest
-     * [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
-     *   [Product][google.cloud.retail.v2beta.Product]s. This means
-     *   [Product.primary_product_id][google.cloud.retail.v2beta.Product.primary_product_id]
-     *   can only be empty or set to the same value as
-     *   [Product.id][google.cloud.retail.v2beta.Product.id].
+     * * `primary` (default): You can ingest
+     * [Product][google.cloud.retail.v2beta.Product]s of all types. When
+     *   ingesting a [Product][google.cloud.retail.v2beta.Product], its type will
+     *   default to
+     *   [Product.Type.PRIMARY][google.cloud.retail.v2beta.Product.Type.PRIMARY]
+     *   if unset.
      * * `variant`: You can only ingest
      * [Product.Type.VARIANT][google.cloud.retail.v2beta.Product.Type.VARIANT]
      * [Product][google.cloud.retail.v2beta.Product]s.

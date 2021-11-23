@@ -28,12 +28,12 @@ module Google
         #     The type of {::Google::Cloud::Retail::V2alpha::Product Product}s allowed to be
         #     ingested into the catalog. Acceptable values are:
         #
-        #     * `primary` (default): You can only ingest
-        #     {::Google::Cloud::Retail::V2alpha::Product::Type::PRIMARY Product.Type.PRIMARY}
-        #       {::Google::Cloud::Retail::V2alpha::Product Product}s. This means
-        #       {::Google::Cloud::Retail::V2alpha::Product#primary_product_id Product.primary_product_id}
-        #       can only be empty or set to the same value as
-        #       {::Google::Cloud::Retail::V2alpha::Product#id Product.id}.
+        #     * `primary` (default): You can ingest
+        #     {::Google::Cloud::Retail::V2alpha::Product Product}s of all types. When
+        #       ingesting a {::Google::Cloud::Retail::V2alpha::Product Product}, its type will
+        #       default to
+        #       {::Google::Cloud::Retail::V2alpha::Product::Type::PRIMARY Product.Type.PRIMARY}
+        #       if unset.
         #     * `variant`: You can only ingest
         #     {::Google::Cloud::Retail::V2alpha::Product::Type::VARIANT Product.Type.VARIANT}
         #     {::Google::Cloud::Retail::V2alpha::Product Product}s.
@@ -100,8 +100,8 @@ module Google
         #     List of possible values can be found here.
         #     [https://support.google.com/merchants/answer/7501026]
         #     List of allowed string values:
-        #     "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
-        #     -ads", "free-listings", "free-local-listings"
+        #     "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
+        #     _ads", "Free_listings", "Free_local_listings"
         #     NOTE: The string values are case sensitive.
         class MerchantCenterLink
           include ::Google::Protobuf::MessageExts

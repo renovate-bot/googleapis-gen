@@ -53,8 +53,8 @@ public interface MerchantCenterLinkOrBuilder extends
    * List of possible values can be found here.
    * [https://support.google.com/merchants/answer/7501026]
    * List of allowed string values:
-   * "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
-   * -ads", "free-listings", "free-local-listings"
+   * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
+   * _ads", "Free_listings", "Free_local_listings"
    * NOTE: The string values are case sensitive.
    * </pre>
    *
@@ -69,8 +69,8 @@ public interface MerchantCenterLinkOrBuilder extends
    * List of possible values can be found here.
    * [https://support.google.com/merchants/answer/7501026]
    * List of allowed string values:
-   * "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
-   * -ads", "free-listings", "free-local-listings"
+   * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
+   * _ads", "Free_listings", "Free_local_listings"
    * NOTE: The string values are case sensitive.
    * </pre>
    *
@@ -84,8 +84,8 @@ public interface MerchantCenterLinkOrBuilder extends
    * List of possible values can be found here.
    * [https://support.google.com/merchants/answer/7501026]
    * List of allowed string values:
-   * "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
-   * -ads", "free-listings", "free-local-listings"
+   * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
+   * _ads", "Free_listings", "Free_local_listings"
    * NOTE: The string values are case sensitive.
    * </pre>
    *
@@ -100,8 +100,8 @@ public interface MerchantCenterLinkOrBuilder extends
    * List of possible values can be found here.
    * [https://support.google.com/merchants/answer/7501026]
    * List of allowed string values:
-   * "shopping-ads", "buy-on-google-listings", "display-ads", "local-inventory
-   * -ads", "free-listings", "free-local-listings"
+   * "Shopping_ads", "Buy_on_google_listings", "Display_ads", "Local_inventory
+   * _ads", "Free_listings", "Free_local_listings"
    * NOTE: The string values are case sensitive.
    * </pre>
    *

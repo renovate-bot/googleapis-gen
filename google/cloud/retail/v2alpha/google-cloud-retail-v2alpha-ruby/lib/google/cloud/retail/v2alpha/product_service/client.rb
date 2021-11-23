@@ -1461,7 +1461,7 @@ module Google
             #     not found, the local inventory will still be processed and retained for at
             #     most 1 day and processed once the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is created. If set to false,
-            #     an INVALID_ARGUMENT error is returned if the
+            #     a NOT_FOUND error is returned if the
             #     {::Google::Cloud::Retail::V2alpha::Product Product} is not found.
             #
             # @yield [response, operation] Access the result along with the RPC operation

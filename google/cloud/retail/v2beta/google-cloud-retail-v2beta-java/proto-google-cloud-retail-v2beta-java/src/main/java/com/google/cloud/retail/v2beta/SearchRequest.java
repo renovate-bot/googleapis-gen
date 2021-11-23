@@ -746,6 +746,7 @@ private static final long serialVersionUID = 0L;
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -753,6 +754,7 @@ private static final long serialVersionUID = 0L;
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -789,6 +791,7 @@ private static final long serialVersionUID = 0L;
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -796,6 +799,7 @@ private static final long serialVersionUID = 0L;
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1358,6 +1362,7 @@ private static final long serialVersionUID = 0L;
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -1365,6 +1370,7 @@ private static final long serialVersionUID = 0L;
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1413,6 +1419,7 @@ private static final long serialVersionUID = 0L;
        *     * "customFulfillment3"
        *     * "customFulfillment4"
        *     * "customFulfillment5"
+       *     * "inventory(place_id,attributes.key)"
        * * numerical_field =
        *     * "price"
        *     * "discount"
@@ -1420,6 +1427,7 @@ private static final long serialVersionUID = 0L;
        *     * "ratingCount"
        *     * "attributes.key"
        *     * "inventory(place_id,price)"
+       *     * "inventory(place_id,attributes.key)"
        * </pre>
        *
        * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2435,6 +2443,7 @@ private static final long serialVersionUID = 0L;
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2442,6 +2451,7 @@ private static final long serialVersionUID = 0L;
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2489,6 +2499,7 @@ private static final long serialVersionUID = 0L;
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2496,6 +2507,7 @@ private static final long serialVersionUID = 0L;
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2544,6 +2556,7 @@ private static final long serialVersionUID = 0L;
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2551,6 +2564,7 @@ private static final long serialVersionUID = 0L;
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2597,6 +2611,7 @@ private static final long serialVersionUID = 0L;
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2604,6 +2619,7 @@ private static final long serialVersionUID = 0L;
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2645,6 +2661,7 @@ private static final long serialVersionUID = 0L;
          *     * "customFulfillment3"
          *     * "customFulfillment4"
          *     * "customFulfillment5"
+         *     * "inventory(place_id,attributes.key)"
          * * numerical_field =
          *     * "price"
          *     * "discount"
@@ -2652,6 +2669,7 @@ private static final long serialVersionUID = 0L;
          *     * "ratingCount"
          *     * "attributes.key"
          *     * "inventory(place_id,price)"
+         *     * "inventory(place_id,attributes.key)"
          * </pre>
          *
          * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -9440,7 +9458,10 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9511,7 +9532,10 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9581,7 +9605,10 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -9652,7 +9679,10 @@ private static final long serialVersionUID = 0L;
    * * price
    * * originalPrice
    * * discount
+   * * variantId
    * * inventory(place_id,price)
+   * * inventory(place_id,attributes.key), where key is any key in the
+   *   [Product.inventories.attributes][] map.
    * * attributes.key, where key is any key in the
    *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
    * * pickupInStore.id, where id is any
@@ -12690,7 +12720,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12761,7 +12794,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12831,7 +12867,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12902,7 +12941,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -12974,7 +13016,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -13053,7 +13098,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -13131,7 +13179,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -13207,7 +13258,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any
@@ -13280,7 +13334,10 @@ private static final long serialVersionUID = 0L;
      * * price
      * * originalPrice
      * * discount
+     * * variantId
      * * inventory(place_id,price)
+     * * inventory(place_id,attributes.key), where key is any key in the
+     *   [Product.inventories.attributes][] map.
      * * attributes.key, where key is any key in the
      *   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
      * * pickupInStore.id, where id is any

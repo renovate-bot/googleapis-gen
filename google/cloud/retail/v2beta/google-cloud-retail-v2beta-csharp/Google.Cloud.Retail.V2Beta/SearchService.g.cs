@@ -512,7 +512,10 @@ namespace Google.Cloud.Retail.V2Beta {
     /// * price
     /// * originalPrice
     /// * discount
+    /// * variantId
     /// * inventory(place_id,price)
+    /// * inventory(place_id,attributes.key), where key is any key in the
+    ///   [Product.inventories.attributes][] map.
     /// * attributes.key, where key is any key in the
     ///   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
     /// * pickupInStore.id, where id is any
@@ -1638,6 +1641,7 @@ namespace Google.Cloud.Retail.V2Beta {
             ///     * "customFulfillment3"
             ///     * "customFulfillment4"
             ///     * "customFulfillment5"
+            ///     * "inventory(place_id,attributes.key)"
             ///
             /// * numerical_field =
             ///     * "price"
@@ -1646,6 +1650,7 @@ namespace Google.Cloud.Retail.V2Beta {
             ///     * "ratingCount"
             ///     * "attributes.key"
             ///     * "inventory(place_id,price)"
+            ///     * "inventory(place_id,attributes.key)"
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

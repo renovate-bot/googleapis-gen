@@ -3565,6 +3565,8 @@ namespace Google.Cloud.Retail.V2Alpha {
     /// * The attribute values must be of the same type (text or number).
     /// * The max number of values per attribute is 10.
     /// * For text values, the length limit is 10 UTF-8 characters.
+    /// * The attribute does not support search. The `searchable` field should be
+    ///   unset or set to false.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

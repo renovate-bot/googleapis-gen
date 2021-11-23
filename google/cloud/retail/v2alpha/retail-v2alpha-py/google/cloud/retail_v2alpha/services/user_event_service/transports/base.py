@@ -150,9 +150,9 @@ initial=0.1,maximum=300.0,multiplier=1.3,                    predicate=retries.i
                         core_exceptions.DeadlineExceeded,
                         core_exceptions.ServiceUnavailable,
                     ),
-                    deadline=300.0,
+                    deadline=600.0,
                 ),
-                default_timeout=300.0,
+                default_timeout=600.0,
                 client_info=client_info,
             ),
             self.rejoin_user_events: gapic_v1.method.wrap_method(

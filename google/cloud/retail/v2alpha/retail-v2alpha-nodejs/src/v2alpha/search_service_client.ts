@@ -445,7 +445,10 @@ export class SearchServiceClient {
  *   * price
  *   * originalPrice
  *   * discount
+ *   * variantId
  *   * inventory(place_id,price)
+ *   * inventory(place_id,attributes.key), where key is any key in the
+ *     {@link |Product.inventories.attributes} map.
  *   * attributes.key, where key is any key in the
  *     {@link google.cloud.retail.v2alpha.Product.attributes|Product.attributes} map.
  *   * pickupInStore.id, where id is any
@@ -717,7 +720,10 @@ export class SearchServiceClient {
  *   * price
  *   * originalPrice
  *   * discount
+ *   * variantId
  *   * inventory(place_id,price)
+ *   * inventory(place_id,attributes.key), where key is any key in the
+ *     {@link |Product.inventories.attributes} map.
  *   * attributes.key, where key is any key in the
  *     {@link google.cloud.retail.v2alpha.Product.attributes|Product.attributes} map.
  *   * pickupInStore.id, where id is any
@@ -956,7 +962,10 @@ export class SearchServiceClient {
  *   * price
  *   * originalPrice
  *   * discount
+ *   * variantId
  *   * inventory(place_id,price)
+ *   * inventory(place_id,attributes.key), where key is any key in the
+ *     {@link |Product.inventories.attributes} map.
  *   * attributes.key, where key is any key in the
  *     {@link google.cloud.retail.v2alpha.Product.attributes|Product.attributes} map.
  *   * pickupInStore.id, where id is any

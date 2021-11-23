@@ -42,6 +42,8 @@ class LocalInventory extends \Google\Protobuf\Internal\Message
      * * The attribute values must be of the same type (text or number).
      * * The max number of values per attribute is 10.
      * * For text values, the length limit is 10 UTF-8 characters.
+     * * The attribute does not support search. The `searchable` field should be
+     *   unset or set to false.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.retail.v2alpha.CustomAttribute> attributes = 3;</code>
      */
@@ -71,6 +73,8 @@ class LocalInventory extends \Google\Protobuf\Internal\Message
      *           * The attribute values must be of the same type (text or number).
      *           * The max number of values per attribute is 10.
      *           * For text values, the length limit is 10 UTF-8 characters.
+     *           * The attribute does not support search. The `searchable` field should be
+     *             unset or set to false.
      * }
      */
     public function __construct($data = NULL) {
@@ -156,6 +160,8 @@ class LocalInventory extends \Google\Protobuf\Internal\Message
      * * The attribute values must be of the same type (text or number).
      * * The max number of values per attribute is 10.
      * * For text values, the length limit is 10 UTF-8 characters.
+     * * The attribute does not support search. The `searchable` field should be
+     *   unset or set to false.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.retail.v2alpha.CustomAttribute> attributes = 3;</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -177,6 +183,8 @@ class LocalInventory extends \Google\Protobuf\Internal\Message
      * * The attribute values must be of the same type (text or number).
      * * The max number of values per attribute is 10.
      * * For text values, the length limit is 10 UTF-8 characters.
+     * * The attribute does not support search. The `searchable` field should be
+     *   unset or set to false.
      *
      * Generated from protobuf field <code>map<string, .google.cloud.retail.v2alpha.CustomAttribute> attributes = 3;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var

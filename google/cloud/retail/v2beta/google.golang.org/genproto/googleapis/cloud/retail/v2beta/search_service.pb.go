@@ -354,7 +354,10 @@ type SearchRequest struct {
 	// * price
 	// * originalPrice
 	// * discount
+	// * variantId
 	// * inventory(place_id,price)
+	// * inventory(place_id,attributes.key), where key is any key in the
+	//   [Product.inventories.attributes][] map.
 	// * attributes.key, where key is any key in the
 	//   [Product.attributes][google.cloud.retail.v2beta.Product.attributes] map.
 	// * pickupInStore.id, where id is any
@@ -1026,6 +1029,7 @@ type SearchRequest_FacetSpec_FacetKey struct {
 	//     * "customFulfillment3"
 	//     * "customFulfillment4"
 	//     * "customFulfillment5"
+	//     * "inventory(place_id,attributes.key)"
 	//
 	// * numerical_field =
 	//     * "price"
@@ -1034,6 +1038,7 @@ type SearchRequest_FacetSpec_FacetKey struct {
 	//     * "ratingCount"
 	//     * "attributes.key"
 	//     * "inventory(place_id,price)"
+	//     * "inventory(place_id,attributes.key)"
 	Key string `protobuf:"bytes,1,opt,name=key,proto3" json:"key,omitempty"`
 	// Set only if values should be bucketized into intervals. Must be set
 	// for facets with numerical values. Must not be set for facet with text
