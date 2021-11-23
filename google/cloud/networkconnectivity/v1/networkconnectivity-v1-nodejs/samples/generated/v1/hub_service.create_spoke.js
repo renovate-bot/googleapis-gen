@@ -49,7 +49,7 @@ function main(parent, spokeId, spoke) {
   // const requestId = 'abc123'
 
   // Imports the Networkconnectivity library
-  const {HubServiceClient} = require('@google-cloud/networkconnectivity').v1;
+  const {HubServiceClient} = require('@google-cloud/network-connectivity').v1;
 
   // Instantiates a client
   const networkconnectivityClient = new HubServiceClient();
