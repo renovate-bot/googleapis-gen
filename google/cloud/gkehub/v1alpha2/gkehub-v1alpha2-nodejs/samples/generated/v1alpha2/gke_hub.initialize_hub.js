@@ -27,7 +27,7 @@ function main(project) {
   // const project = 'my-project'
 
   // Imports the Gkehub library
-  const {GkeHubClient} = require('@google-cloud/gkehub').v1alpha2;
+  const {GkeHubClient} = require('@google-cloud/gke-hub').v1alpha2;
 
   // Instantiates a client
   const gkehubClient = new GkeHubClient();

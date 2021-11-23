@@ -18,7 +18,7 @@
 
 
 /* eslint-disable node/no-missing-require, no-unused-vars */
-const gkehub = require('@google-cloud/gkehub');
+const gkehub = require('@google-cloud/gke-hub');
 
 function main() {
   const gkeHubClient = new gkehub.GkeHubClient();

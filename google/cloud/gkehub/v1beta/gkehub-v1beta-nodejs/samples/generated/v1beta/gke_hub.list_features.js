@@ -56,7 +56,7 @@ function main() {
   // const orderBy = 'abc123'
 
   // Imports the Gkehub library
-  const {GkeHubClient} = require('@google-cloud/gkehub').v1beta;
+  const {GkeHubClient} = require('@google-cloud/gke-hub').v1beta;
 
   // Instantiates a client
   const gkehubClient = new GkeHubClient();
