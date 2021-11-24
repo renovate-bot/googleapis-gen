@@ -977,6 +977,7 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
     def insert(self,
             request: Union[compute.InsertFirewallPolicyRequest, dict] = None,
             *,
+            parent_id: str = None,
             firewall_policy_resource: compute.FirewallPolicy = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
@@ -990,6 +991,15 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
                 The request object. A request message for
                 FirewallPolicies.Insert. See the method description for
                 details.
+            parent_id (str):
+                Parent ID for this request. The ID can be either be
+                "folders/[FOLDER_ID]" if the parent is a folder or
+                "organizations/[ORGANIZATION_ID]" if the parent is an
+                organization.
+
+                This corresponds to the ``parent_id`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             firewall_policy_resource (google.cloud.compute_v1.types.FirewallPolicy):
                 The body resource for this request
                 This corresponds to the ``firewall_policy_resource`` field
@@ -1023,7 +1033,7 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([firewall_policy_resource])
+        has_flattened_params = any([parent_id, firewall_policy_resource])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -1036,6 +1046,8 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
             request = compute.InsertFirewallPolicyRequest(request)
             # If we have keyword arguments corresponding to fields on the
             # request, apply these.
+            if parent_id is not None:
+                request.parent_id = parent_id
             if firewall_policy_resource is not None:
                 request.firewall_policy_resource = firewall_policy_resource
 
@@ -1166,6 +1178,7 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
             request: Union[compute.MoveFirewallPolicyRequest, dict] = None,
             *,
             firewall_policy: str = None,
+            parent_id: str = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -1182,6 +1195,13 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
                 update.
 
                 This corresponds to the ``firewall_policy`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            parent_id (str):
+                The new parent of the firewall
+                policy.
+
+                This corresponds to the ``parent_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
@@ -1212,7 +1232,7 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        has_flattened_params = any([firewall_policy])
+        has_flattened_params = any([firewall_policy, parent_id])
         if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
@@ -1227,6 +1247,8 @@ class FirewallPoliciesClient(metaclass=FirewallPoliciesClientMeta):
             # request, apply these.
             if firewall_policy is not None:
                 request.firewall_policy = firewall_policy
+            if parent_id is not None:
+                request.parent_id = parent_id
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

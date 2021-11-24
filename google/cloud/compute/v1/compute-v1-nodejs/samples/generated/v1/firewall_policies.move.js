@@ -15,7 +15,7 @@
 
 'use strict';
 
-function main(firewallPolicy) {
+function main(firewallPolicy, parentId) {
   // [START compute_v1_generated_FirewallPolicies_Move_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
@@ -43,6 +43,7 @@ function main(firewallPolicy) {
     // Construct request
     const request = {
       firewallPolicy,
+      parentId,
     };
 
     // Run request

@@ -33,8 +33,9 @@ namespace Google.Cloud.Compute.V1.Snippets
             FirewallPoliciesClient firewallPoliciesClient = await FirewallPoliciesClient.CreateAsync();
             // Initialize request argument(s)
             string firewallPolicy = "";
+            string parentId = "";
             // Make the request
-            lro::Operation<Operation, Operation> response = await firewallPoliciesClient.MoveAsync(firewallPolicy);
+            lro::Operation<Operation, Operation> response = await firewallPoliciesClient.MoveAsync(firewallPolicy, parentId);
 
             // Poll until the returned long-running operation is complete
             lro::Operation<Operation, Operation> completedResponse = await response.PollUntilCompletedAsync();

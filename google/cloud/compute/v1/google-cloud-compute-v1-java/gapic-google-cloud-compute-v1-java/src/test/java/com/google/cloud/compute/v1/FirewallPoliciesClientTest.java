@@ -589,9 +589,10 @@ public class FirewallPoliciesClientTest {
             .build();
     mockService.addResponse(expectedResponse);
 
+    String parentId = "parentId1175162725";
     FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
 
-    Operation actualResponse = client.insertAsync(firewallPolicyResource).get();
+    Operation actualResponse = client.insertAsync(parentId, firewallPolicyResource).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -617,8 +618,9 @@ public class FirewallPoliciesClientTest {
     mockService.addException(exception);
 
     try {
+      String parentId = "parentId1175162725";
       FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-      client.insertAsync(firewallPolicyResource).get();
+      client.insertAsync(parentId, firewallPolicyResource).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }
@@ -758,8 +760,9 @@ public class FirewallPoliciesClientTest {
     mockService.addResponse(expectedResponse);
 
     String firewallPolicy = "firewallPolicy1819692626";
+    String parentId = "parentId1175162725";
 
-    Operation actualResponse = client.moveAsync(firewallPolicy).get();
+    Operation actualResponse = client.moveAsync(firewallPolicy, parentId).get();
     Assert.assertEquals(expectedResponse, actualResponse);
 
     List<String> actualRequests = mockService.getRequestPaths();
@@ -786,7 +789,8 @@ public class FirewallPoliciesClientTest {
 
     try {
       String firewallPolicy = "firewallPolicy1819692626";
-      client.moveAsync(firewallPolicy).get();
+      String parentId = "parentId1175162725";
+      client.moveAsync(firewallPolicy, parentId).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
     }

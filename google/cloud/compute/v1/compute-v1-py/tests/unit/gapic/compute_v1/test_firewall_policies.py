@@ -1537,6 +1537,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
 
         # get truthy value for each flattened field
         mock_args = dict(
+            parent_id='parent_id_value',
             firewall_policy_resource=compute.FirewallPolicy(associations=[compute.FirewallPolicyAssociation(attachment_target='attachment_target_value')]),
         )
         mock_args.update(sample_request)
@@ -1560,6 +1561,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     with pytest.raises(ValueError):
         client.insert(
             compute.InsertFirewallPolicyRequest(),
+            parent_id='parent_id_value',
             firewall_policy_resource=compute.FirewallPolicy(associations=[compute.FirewallPolicyAssociation(attachment_target='attachment_target_value')]),
         )
 
@@ -1858,6 +1860,7 @@ def test_move_rest_flattened(transport: str = 'rest'):
         # get truthy value for each flattened field
         mock_args = dict(
             firewall_policy='firewall_policy_value',
+            parent_id='parent_id_value',
         )
         mock_args.update(sample_request)
         client.move(**mock_args)
@@ -1881,6 +1884,7 @@ def test_move_rest_flattened_error(transport: str = 'rest'):
         client.move(
             compute.MoveFirewallPolicyRequest(),
             firewall_policy='firewall_policy_value',
+            parent_id='parent_id_value',
         )
 
 

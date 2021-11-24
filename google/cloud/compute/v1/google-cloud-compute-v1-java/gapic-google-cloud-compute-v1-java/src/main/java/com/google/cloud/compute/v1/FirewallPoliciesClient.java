@@ -859,18 +859,24 @@ public class FirewallPoliciesClient implements BackgroundResource {
    *
    * <pre>{@code
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
+   *   String parentId = "parentId1175162725";
    *   FirewallPolicy firewallPolicyResource = FirewallPolicy.newBuilder().build();
-   *   Operation response = firewallPoliciesClient.insertAsync(firewallPolicyResource).get();
+   *   Operation response =
+   *       firewallPoliciesClient.insertAsync(parentId, firewallPolicyResource).get();
    * }
    * }</pre>
    *
+   * @param parentId Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if
+   *     the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an
+   *     organization.
    * @param firewallPolicyResource The body resource for this request
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Operation, Operation> insertAsync(
-      FirewallPolicy firewallPolicyResource) {
+      String parentId, FirewallPolicy firewallPolicyResource) {
     InsertFirewallPolicyRequest request =
         InsertFirewallPolicyRequest.newBuilder()
+            .setParentId(parentId)
             .setFirewallPolicyResource(firewallPolicyResource)
             .build();
     return insertAsync(request);
@@ -1152,16 +1158,22 @@ public class FirewallPoliciesClient implements BackgroundResource {
    * <pre>{@code
    * try (FirewallPoliciesClient firewallPoliciesClient = FirewallPoliciesClient.create()) {
    *   String firewallPolicy = "firewallPolicy1819692626";
-   *   Operation response = firewallPoliciesClient.moveAsync(firewallPolicy).get();
+   *   String parentId = "parentId1175162725";
+   *   Operation response = firewallPoliciesClient.moveAsync(firewallPolicy, parentId).get();
    * }
    * }</pre>
    *
    * @param firewallPolicy Name of the firewall policy to update.
+   * @param parentId The new parent of the firewall policy.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final OperationFuture<Operation, Operation> moveAsync(String firewallPolicy) {
+  public final OperationFuture<Operation, Operation> moveAsync(
+      String firewallPolicy, String parentId) {
     MoveFirewallPolicyRequest request =
-        MoveFirewallPolicyRequest.newBuilder().setFirewallPolicy(firewallPolicy).build();
+        MoveFirewallPolicyRequest.newBuilder()
+            .setFirewallPolicy(firewallPolicy)
+            .setParentId(parentId)
+            .build();
     return moveAsync(request);
   }
 

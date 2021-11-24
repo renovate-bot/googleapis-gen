@@ -39,16 +39,7 @@ public interface InsertFirewallPolicyRequestOrBuilder extends
    * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
-   * <code>optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];</code>
-   * @return Whether the parentId field is set.
-   */
-  boolean hasParentId();
-  /**
-   * <pre>
-   * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
-   * </pre>
-   *
-   * <code>optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];</code>
+   * <code>string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];</code>
    * @return The parentId.
    */
   java.lang.String getParentId();
@@ -57,7 +48,7 @@ public interface InsertFirewallPolicyRequestOrBuilder extends
    * Parent ID for this request. The ID can be either be "folders/[FOLDER_ID]" if the parent is a folder or "organizations/[ORGANIZATION_ID]" if the parent is an organization.
    * </pre>
    *
-   * <code>optional string parent_id = 459714768 [(.google.cloud.operation_request_field) = "parent_id"];</code>
+   * <code>string parent_id = 459714768 [(.google.api.field_behavior) = REQUIRED, (.google.cloud.operation_request_field) = "parent_id"];</code>
    * @return The bytes for parentId.
    */
   com.google.protobuf.ByteString
