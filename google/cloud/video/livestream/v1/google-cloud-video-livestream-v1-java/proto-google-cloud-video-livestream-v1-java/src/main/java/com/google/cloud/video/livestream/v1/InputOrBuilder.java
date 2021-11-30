@@ -263,27 +263,27 @@ public interface InputOrBuilder extends
    * this input receives the input stream.
    * </pre>
    *
-   * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the streamInfo field is set.
+   * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the inputStreamProperty field is set.
    */
-  boolean hasStreamInfo();
+  boolean hasInputStreamProperty();
   /**
    * <pre>
    * Output only. The information for the input stream. This field will be present only when
    * this input receives the input stream.
    * </pre>
    *
-   * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The streamInfo.
+   * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The inputStreamProperty.
    */
-  com.google.cloud.video.livestream.v1.Input.StreamInfo getStreamInfo();
+  com.google.cloud.video.livestream.v1.InputStreamProperty getInputStreamProperty();
   /**
    * <pre>
    * Output only. The information for the input stream. This field will be present only when
    * this input receives the input stream.
    * </pre>
    *
-   * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
-  com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder getStreamInfoOrBuilder();
+  com.google.cloud.video.livestream.v1.InputStreamPropertyOrBuilder getInputStreamPropertyOrBuilder();
 }

@@ -26,10 +26,15 @@ from google.cloud.video.livestream_v1.types.outputs import SegmentSettings
 from google.cloud.video.livestream_v1.types.outputs import SpriteSheet
 from google.cloud.video.livestream_v1.types.outputs import TextStream
 from google.cloud.video.livestream_v1.types.outputs import VideoStream
+from google.cloud.video.livestream_v1.types.resources import AudioFormat
+from google.cloud.video.livestream_v1.types.resources import AudioStreamProperty
 from google.cloud.video.livestream_v1.types.resources import Channel
 from google.cloud.video.livestream_v1.types.resources import Event
 from google.cloud.video.livestream_v1.types.resources import Input
 from google.cloud.video.livestream_v1.types.resources import InputAttachment
+from google.cloud.video.livestream_v1.types.resources import InputStreamProperty
+from google.cloud.video.livestream_v1.types.resources import VideoFormat
+from google.cloud.video.livestream_v1.types.resources import VideoStreamProperty
 from google.cloud.video.livestream_v1.types.service import ChannelOperationResponse
 from google.cloud.video.livestream_v1.types.service import CreateChannelRequest
 from google.cloud.video.livestream_v1.types.service import CreateEventRequest
@@ -63,10 +68,15 @@ __all__ = ('LivestreamServiceClient',
     'SpriteSheet',
     'TextStream',
     'VideoStream',
+    'AudioFormat',
+    'AudioStreamProperty',
     'Channel',
     'Event',
     'Input',
     'InputAttachment',
+    'InputStreamProperty',
+    'VideoFormat',
+    'VideoStreamProperty',
     'ChannelOperationResponse',
     'CreateChannelRequest',
     'CreateEventRequest',

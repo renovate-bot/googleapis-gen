@@ -79,9 +79,9 @@ class Input extends \Google\Protobuf\Internal\Message
      * Output only. The information for the input stream. This field will be present only when
      * this input receives the input stream.
      *
-     * Generated from protobuf field <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    protected $stream_info = null;
+    protected $input_stream_property = null;
 
     /**
      * Constructor.
@@ -112,7 +112,7 @@ class Input extends \Google\Protobuf\Internal\Message
      *           Preprocessing configurations.
      *     @type \Google\Cloud\Video\Livestream\V1\Input\SecurityRule $security_rules
      *           Security rule for access control.
-     *     @type \Google\Cloud\Video\Livestream\V1\Input\StreamInfo $stream_info
+     *     @type \Google\Cloud\Video\Livestream\V1\InputStreamProperty $input_stream_property
      *           Output only. The information for the input stream. This field will be present only when
      *           this input receives the input stream.
      * }
@@ -410,36 +410,36 @@ class Input extends \Google\Protobuf\Internal\Message
      * Output only. The information for the input stream. This field will be present only when
      * this input receives the input stream.
      *
-     * Generated from protobuf field <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return \Google\Cloud\Video\Livestream\V1\Input\StreamInfo|null
+     * Generated from protobuf field <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Cloud\Video\Livestream\V1\InputStreamProperty|null
      */
-    public function getStreamInfo()
+    public function getInputStreamProperty()
     {
-        return $this->stream_info;
+        return $this->input_stream_property;
     }
 
-    public function hasStreamInfo()
+    public function hasInputStreamProperty()
     {
-        return isset($this->stream_info);
+        return isset($this->input_stream_property);
     }
 
-    public function clearStreamInfo()
+    public function clearInputStreamProperty()
     {
-        unset($this->stream_info);
+        unset($this->input_stream_property);
     }
 
     /**
      * Output only. The information for the input stream. This field will be present only when
      * this input receives the input stream.
      *
-     * Generated from protobuf field <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @param \Google\Cloud\Video\Livestream\V1\Input\StreamInfo $var
+     * Generated from protobuf field <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Cloud\Video\Livestream\V1\InputStreamProperty $var
      * @return $this
      */
-    public function setStreamInfo($var)
+    public function setInputStreamProperty($var)
     {
-        GPBUtil::checkMessage($var, \Google\Cloud\Video\Livestream\V1\Input\StreamInfo::class);
-        $this->stream_info = $var;
+        GPBUtil::checkMessage($var, \Google\Cloud\Video\Livestream\V1\InputStreamProperty::class);
+        $this->input_stream_property = $var;
 
         return $this;
     }

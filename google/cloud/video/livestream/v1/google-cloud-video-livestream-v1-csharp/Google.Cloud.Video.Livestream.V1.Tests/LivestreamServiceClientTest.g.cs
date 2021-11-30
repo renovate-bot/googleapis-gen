@@ -324,8 +324,8 @@ namespace Google.Cloud.Video.Livestream.V1.Tests
                 Uri = "uri3db70593",
                 PreprocessingConfig = new PreprocessingConfig(),
                 SecurityRules = new Input.Types.SecurityRule(),
-                StreamInfo = new Input.Types.StreamInfo(),
                 Tier = Input.Types.Tier.Sd,
+                InputStreamProperty = new InputStreamProperty(),
             };
             mockGrpcClient.Setup(x => x.GetInput(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             LivestreamServiceClient client = new LivestreamServiceClientImpl(mockGrpcClient.Object, null);
@@ -359,8 +359,8 @@ namespace Google.Cloud.Video.Livestream.V1.Tests
                 Uri = "uri3db70593",
                 PreprocessingConfig = new PreprocessingConfig(),
                 SecurityRules = new Input.Types.SecurityRule(),
-                StreamInfo = new Input.Types.StreamInfo(),
                 Tier = Input.Types.Tier.Sd,
+                InputStreamProperty = new InputStreamProperty(),
             };
             mockGrpcClient.Setup(x => x.GetInputAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Input>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             LivestreamServiceClient client = new LivestreamServiceClientImpl(mockGrpcClient.Object, null);
@@ -396,8 +396,8 @@ namespace Google.Cloud.Video.Livestream.V1.Tests
                 Uri = "uri3db70593",
                 PreprocessingConfig = new PreprocessingConfig(),
                 SecurityRules = new Input.Types.SecurityRule(),
-                StreamInfo = new Input.Types.StreamInfo(),
                 Tier = Input.Types.Tier.Sd,
+                InputStreamProperty = new InputStreamProperty(),
             };
             mockGrpcClient.Setup(x => x.GetInput(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             LivestreamServiceClient client = new LivestreamServiceClientImpl(mockGrpcClient.Object, null);
@@ -431,8 +431,8 @@ namespace Google.Cloud.Video.Livestream.V1.Tests
                 Uri = "uri3db70593",
                 PreprocessingConfig = new PreprocessingConfig(),
                 SecurityRules = new Input.Types.SecurityRule(),
-                StreamInfo = new Input.Types.StreamInfo(),
                 Tier = Input.Types.Tier.Sd,
+                InputStreamProperty = new InputStreamProperty(),
             };
             mockGrpcClient.Setup(x => x.GetInputAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Input>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             LivestreamServiceClient client = new LivestreamServiceClientImpl(mockGrpcClient.Object, null);
@@ -468,8 +468,8 @@ namespace Google.Cloud.Video.Livestream.V1.Tests
                 Uri = "uri3db70593",
                 PreprocessingConfig = new PreprocessingConfig(),
                 SecurityRules = new Input.Types.SecurityRule(),
-                StreamInfo = new Input.Types.StreamInfo(),
                 Tier = Input.Types.Tier.Sd,
+                InputStreamProperty = new InputStreamProperty(),
             };
             mockGrpcClient.Setup(x => x.GetInput(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             LivestreamServiceClient client = new LivestreamServiceClientImpl(mockGrpcClient.Object, null);
@@ -503,8 +503,8 @@ namespace Google.Cloud.Video.Livestream.V1.Tests
                 Uri = "uri3db70593",
                 PreprocessingConfig = new PreprocessingConfig(),
                 SecurityRules = new Input.Types.SecurityRule(),
-                StreamInfo = new Input.Types.StreamInfo(),
                 Tier = Input.Types.Tier.Sd,
+                InputStreamProperty = new InputStreamProperty(),
             };
             mockGrpcClient.Setup(x => x.GetInputAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Input>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             LivestreamServiceClient client = new LivestreamServiceClientImpl(mockGrpcClient.Object, null);

@@ -729,7 +729,7 @@ public class LivestreamServiceClientTest {
             .setUri("uri116076")
             .setPreprocessingConfig(PreprocessingConfig.newBuilder().build())
             .setSecurityRules(Input.SecurityRule.newBuilder().build())
-            .setStreamInfo(Input.StreamInfo.newBuilder().build())
+            .setInputStreamProperty(InputStreamProperty.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -788,7 +788,7 @@ public class LivestreamServiceClientTest {
             .setUri("uri116076")
             .setPreprocessingConfig(PreprocessingConfig.newBuilder().build())
             .setSecurityRules(Input.SecurityRule.newBuilder().build())
-            .setStreamInfo(Input.StreamInfo.newBuilder().build())
+            .setInputStreamProperty(InputStreamProperty.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -935,7 +935,7 @@ public class LivestreamServiceClientTest {
             .setUri("uri116076")
             .setPreprocessingConfig(PreprocessingConfig.newBuilder().build())
             .setSecurityRules(Input.SecurityRule.newBuilder().build())
-            .setStreamInfo(Input.StreamInfo.newBuilder().build())
+            .setInputStreamProperty(InputStreamProperty.newBuilder().build())
             .build();
     mockLivestreamService.addResponse(expectedResponse);
 
@@ -980,7 +980,7 @@ public class LivestreamServiceClientTest {
             .setUri("uri116076")
             .setPreprocessingConfig(PreprocessingConfig.newBuilder().build())
             .setSecurityRules(Input.SecurityRule.newBuilder().build())
-            .setStreamInfo(Input.StreamInfo.newBuilder().build())
+            .setInputStreamProperty(InputStreamProperty.newBuilder().build())
             .build();
     mockLivestreamService.addResponse(expectedResponse);
 
@@ -1109,7 +1109,7 @@ public class LivestreamServiceClientTest {
             .setUri("uri116076")
             .setPreprocessingConfig(PreprocessingConfig.newBuilder().build())
             .setSecurityRules(Input.SecurityRule.newBuilder().build())
-            .setStreamInfo(Input.StreamInfo.newBuilder().build())
+            .setInputStreamProperty(InputStreamProperty.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

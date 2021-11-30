@@ -22,17 +22,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :uri, :string, 6
       optional :preprocessing_config, :message, 9, "google.cloud.video.livestream.v1.PreprocessingConfig"
       optional :security_rules, :message, 12, "google.cloud.video.livestream.v1.Input.SecurityRule"
-      optional :stream_info, :message, 13, "google.cloud.video.livestream.v1.Input.StreamInfo"
+      optional :input_stream_property, :message, 15, "google.cloud.video.livestream.v1.InputStreamProperty"
     end
     add_message "google.cloud.video.livestream.v1.Input.SecurityRule" do
       repeated :ip_ranges, :string, 1
-    end
-    add_message "google.cloud.video.livestream.v1.Input.StreamInfo" do
-      optional :last_establish_time, :message, 1, "google.protobuf.Timestamp"
-      optional :video_codec, :string, 2
-      optional :audio_codec, :string, 3
-      optional :width_pixels, :int32, 4
-      optional :height_pixels, :int32, 5
     end
     add_enum "google.cloud.video.livestream.v1.Input.Type" do
       value :TYPE_UNSPECIFIED, 0
@@ -72,6 +65,30 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :STOPPED, 6
       value :STARTING, 7
       value :STOPPING, 8
+    end
+    add_message "google.cloud.video.livestream.v1.InputStreamProperty" do
+      optional :last_establish_time, :message, 1, "google.protobuf.Timestamp"
+      repeated :video_streams, :message, 2, "google.cloud.video.livestream.v1.VideoStreamProperty"
+      repeated :audio_streams, :message, 3, "google.cloud.video.livestream.v1.AudioStreamProperty"
+    end
+    add_message "google.cloud.video.livestream.v1.VideoStreamProperty" do
+      optional :index, :int32, 1
+      optional :video_format, :message, 2, "google.cloud.video.livestream.v1.VideoFormat"
+    end
+    add_message "google.cloud.video.livestream.v1.VideoFormat" do
+      optional :codec, :string, 1
+      optional :width_pixels, :int32, 2
+      optional :height_pixels, :int32, 3
+      optional :frame_rate, :double, 4
+    end
+    add_message "google.cloud.video.livestream.v1.AudioStreamProperty" do
+      optional :index, :int32, 1
+      optional :audio_format, :message, 2, "google.cloud.video.livestream.v1.AudioFormat"
+    end
+    add_message "google.cloud.video.livestream.v1.AudioFormat" do
+      optional :codec, :string, 1
+      optional :channel_count, :int32, 2
+      repeated :channel_layout, :string, 3
     end
     add_message "google.cloud.video.livestream.v1.InputAttachment" do
       optional :key, :string, 1
@@ -115,12 +132,16 @@ module Google
         module V1
           Input = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Input").msgclass
           Input::SecurityRule = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Input.SecurityRule").msgclass
-          Input::StreamInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Input.StreamInfo").msgclass
           Input::Type = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Input.Type").enummodule
           Input::Tier = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Input.Tier").enummodule
           Channel = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Channel").msgclass
           Channel::Output = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Channel.Output").msgclass
           Channel::StreamingState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Channel.StreamingState").enummodule
+          InputStreamProperty = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.InputStreamProperty").msgclass
+          VideoStreamProperty = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.VideoStreamProperty").msgclass
+          VideoFormat = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.VideoFormat").msgclass
+          AudioStreamProperty = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.AudioStreamProperty").msgclass
+          AudioFormat = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.AudioFormat").msgclass
           InputAttachment = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.InputAttachment").msgclass
           InputAttachment::AutomaticFailover = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.InputAttachment.AutomaticFailover").msgclass
           Event = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.video.livestream.v1.Event").msgclass

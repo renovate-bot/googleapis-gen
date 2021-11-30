@@ -26,6 +26,11 @@ __protobuf__ = proto.module(
     manifest={
         'Input',
         'Channel',
+        'InputStreamProperty',
+        'VideoStreamProperty',
+        'VideoFormat',
+        'AudioStreamProperty',
+        'AudioFormat',
         'InputAttachment',
         'Event',
     },
@@ -64,7 +69,7 @@ class Input(proto.Message):
             Preprocessing configurations.
         security_rules (google.cloud.video.livestream_v1.types.Input.SecurityRule):
             Security rule for access control.
-        stream_info (google.cloud.video.livestream_v1.types.Input.StreamInfo):
+        input_stream_property (google.cloud.video.livestream_v1.types.InputStreamProperty):
             Output only. The information for the input
             stream. This field will be present only when
             this input receives the input stream.
@@ -98,46 +103,6 @@ class Input(proto.Message):
         ip_ranges = proto.RepeatedField(
             proto.STRING,
             number=1,
-        )
-
-    class StreamInfo(proto.Message):
-        r"""The information for an input stream.
-
-        Attributes:
-            last_establish_time (google.protobuf.timestamp_pb2.Timestamp):
-                The time that the current input stream is
-                accepted and the connection is established. This
-                timestamp is updated when reconnections occur.
-            video_codec (str):
-                Video codec used in the input stream.
-            audio_codec (str):
-                Audio codec used in the input stream.
-            width_pixels (int):
-                The width of the input video in pixels.
-            height_pixels (int):
-                The height of the input video in pixels.
-        """
-
-        last_establish_time = proto.Field(
-            proto.MESSAGE,
-            number=1,
-            message=timestamp_pb2.Timestamp,
-        )
-        video_codec = proto.Field(
-            proto.STRING,
-            number=2,
-        )
-        audio_codec = proto.Field(
-            proto.STRING,
-            number=3,
-        )
-        width_pixels = proto.Field(
-            proto.INT32,
-            number=4,
-        )
-        height_pixels = proto.Field(
-            proto.INT32,
-            number=5,
         )
 
     name = proto.Field(
@@ -183,10 +148,10 @@ class Input(proto.Message):
         number=12,
         message=SecurityRule,
     )
-    stream_info = proto.Field(
+    input_stream_property = proto.Field(
         proto.MESSAGE,
-        number=13,
-        message=StreamInfo,
+        number=15,
+        message='InputStreamProperty',
     )
 
 
@@ -329,6 +294,137 @@ class Channel(proto.Message):
         proto.MESSAGE,
         number=18,
         message=status_pb2.Status,
+    )
+
+
+class InputStreamProperty(proto.Message):
+    r"""Properties of the input stream.
+
+    Attributes:
+        last_establish_time (google.protobuf.timestamp_pb2.Timestamp):
+            The time that the current input stream is
+            accepted and the connection is established.
+        video_streams (Sequence[google.cloud.video.livestream_v1.types.VideoStreamProperty]):
+            Properties of the video streams.
+        audio_streams (Sequence[google.cloud.video.livestream_v1.types.AudioStreamProperty]):
+            Properties of the audio streams.
+    """
+
+    last_establish_time = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=timestamp_pb2.Timestamp,
+    )
+    video_streams = proto.RepeatedField(
+        proto.MESSAGE,
+        number=2,
+        message='VideoStreamProperty',
+    )
+    audio_streams = proto.RepeatedField(
+        proto.MESSAGE,
+        number=3,
+        message='AudioStreamProperty',
+    )
+
+
+class VideoStreamProperty(proto.Message):
+    r"""Properties of the video stream.
+
+    Attributes:
+        index (int):
+            Index of this video stream.
+        video_format (google.cloud.video.livestream_v1.types.VideoFormat):
+            Properties of the video format.
+    """
+
+    index = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    video_format = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='VideoFormat',
+    )
+
+
+class VideoFormat(proto.Message):
+    r"""Properties of the video format.
+
+    Attributes:
+        codec (str):
+            Video codec used in this video stream.
+        width_pixels (int):
+            The width of the video stream in pixels.
+        height_pixels (int):
+            The height of the video stream in pixels.
+        frame_rate (float):
+            The frame rate of the input video stream.
+    """
+
+    codec = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    width_pixels = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    height_pixels = proto.Field(
+        proto.INT32,
+        number=3,
+    )
+    frame_rate = proto.Field(
+        proto.DOUBLE,
+        number=4,
+    )
+
+
+class AudioStreamProperty(proto.Message):
+    r"""Properties of the audio stream.
+
+    Attributes:
+        index (int):
+            Index of this audio stream.
+        audio_format (google.cloud.video.livestream_v1.types.AudioFormat):
+            Properties of the audio format.
+    """
+
+    index = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    audio_format = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message='AudioFormat',
+    )
+
+
+class AudioFormat(proto.Message):
+    r"""Properties of the audio format.
+
+    Attributes:
+        codec (str):
+            Audio codec used in this audio stream.
+        channel_count (int):
+            The number of audio channels.
+        channel_layout (Sequence[str]):
+            A list of channel names specifying the layout
+            of the audio channels.
+    """
+
+    codec = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    channel_count = proto.Field(
+        proto.INT32,
+        number=2,
+    )
+    channel_layout = proto.RepeatedField(
+        proto.STRING,
+        number=3,
     )
 
 

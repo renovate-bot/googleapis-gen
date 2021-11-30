@@ -25,10 +25,15 @@ from .outputs import (
     VideoStream,
 )
 from .resources import (
+    AudioFormat,
+    AudioStreamProperty,
     Channel,
     Event,
     Input,
     InputAttachment,
+    InputStreamProperty,
+    VideoFormat,
+    VideoStreamProperty,
 )
 from .service import (
     ChannelOperationResponse,
@@ -64,10 +69,15 @@ __all__ = (
     'SpriteSheet',
     'TextStream',
     'VideoStream',
+    'AudioFormat',
+    'AudioStreamProperty',
     'Channel',
     'Event',
     'Input',
     'InputAttachment',
+    'InputStreamProperty',
+    'VideoFormat',
+    'VideoStreamProperty',
     'ChannelOperationResponse',
     'CreateChannelRequest',
     'CreateEventRequest',

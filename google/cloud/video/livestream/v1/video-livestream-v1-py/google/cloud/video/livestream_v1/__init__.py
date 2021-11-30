@@ -26,10 +26,15 @@ from .types.outputs import SegmentSettings
 from .types.outputs import SpriteSheet
 from .types.outputs import TextStream
 from .types.outputs import VideoStream
+from .types.resources import AudioFormat
+from .types.resources import AudioStreamProperty
 from .types.resources import Channel
 from .types.resources import Event
 from .types.resources import Input
 from .types.resources import InputAttachment
+from .types.resources import InputStreamProperty
+from .types.resources import VideoFormat
+from .types.resources import VideoStreamProperty
 from .types.service import ChannelOperationResponse
 from .types.service import CreateChannelRequest
 from .types.service import CreateEventRequest
@@ -54,7 +59,9 @@ from .types.service import UpdateInputRequest
 
 __all__ = (
     'LivestreamServiceAsyncClient',
+'AudioFormat',
 'AudioStream',
+'AudioStreamProperty',
 'Channel',
 'ChannelOperationResponse',
 'CreateChannelRequest',
@@ -70,6 +77,7 @@ __all__ = (
 'GetInputRequest',
 'Input',
 'InputAttachment',
+'InputStreamProperty',
 'ListChannelsRequest',
 'ListChannelsResponse',
 'ListEventsRequest',
@@ -88,5 +96,7 @@ __all__ = (
 'TextStream',
 'UpdateChannelRequest',
 'UpdateInputRequest',
+'VideoFormat',
 'VideoStream',
+'VideoStreamProperty',
 )

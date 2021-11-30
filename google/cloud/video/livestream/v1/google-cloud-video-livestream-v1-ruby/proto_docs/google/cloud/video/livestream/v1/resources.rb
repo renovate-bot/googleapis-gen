@@ -57,8 +57,8 @@ module Google
           # @!attribute [rw] security_rules
           #   @return [::Google::Cloud::Video::Livestream::V1::Input::SecurityRule]
           #     Security rule for access control.
-          # @!attribute [r] stream_info
-          #   @return [::Google::Cloud::Video::Livestream::V1::Input::StreamInfo]
+          # @!attribute [r] input_stream_property
+          #   @return [::Google::Cloud::Video::Livestream::V1::InputStreamProperty]
           #     Output only. The information for the input stream. This field will be present only when
           #     this input receives the input stream.
           class Input
@@ -74,28 +74,6 @@ module Google
             #     defined by CIDR block: for example, `192.0.1.0/24` for a range and
             #     `192.0.1.0/32` for a single IP address.
             class SecurityRule
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The information for an input stream.
-            # @!attribute [rw] last_establish_time
-            #   @return [::Google::Protobuf::Timestamp]
-            #     The time that the current input stream is accepted and the connection is
-            #     established. This timestamp is updated when reconnections occur.
-            # @!attribute [rw] video_codec
-            #   @return [::String]
-            #     Video codec used in the input stream.
-            # @!attribute [rw] audio_codec
-            #   @return [::String]
-            #     Audio codec used in the input stream.
-            # @!attribute [rw] width_pixels
-            #   @return [::Integer]
-            #     The width of the input video in pixels.
-            # @!attribute [rw] height_pixels
-            #   @return [::Integer]
-            #     The height of the input video in pixels.
-            class StreamInfo
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -241,6 +219,79 @@ module Google
               # Channel is stopping.
               STOPPING = 8
             end
+          end
+
+          # Properties of the input stream.
+          # @!attribute [rw] last_establish_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     The time that the current input stream is accepted and the connection is
+          #     established.
+          # @!attribute [rw] video_streams
+          #   @return [::Array<::Google::Cloud::Video::Livestream::V1::VideoStreamProperty>]
+          #     Properties of the video streams.
+          # @!attribute [rw] audio_streams
+          #   @return [::Array<::Google::Cloud::Video::Livestream::V1::AudioStreamProperty>]
+          #     Properties of the audio streams.
+          class InputStreamProperty
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Properties of the video stream.
+          # @!attribute [rw] index
+          #   @return [::Integer]
+          #     Index of this video stream.
+          # @!attribute [rw] video_format
+          #   @return [::Google::Cloud::Video::Livestream::V1::VideoFormat]
+          #     Properties of the video format.
+          class VideoStreamProperty
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Properties of the video format.
+          # @!attribute [rw] codec
+          #   @return [::String]
+          #     Video codec used in this video stream.
+          # @!attribute [rw] width_pixels
+          #   @return [::Integer]
+          #     The width of the video stream in pixels.
+          # @!attribute [rw] height_pixels
+          #   @return [::Integer]
+          #     The height of the video stream in pixels.
+          # @!attribute [rw] frame_rate
+          #   @return [::Float]
+          #     The frame rate of the input video stream.
+          class VideoFormat
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Properties of the audio stream.
+          # @!attribute [rw] index
+          #   @return [::Integer]
+          #     Index of this audio stream.
+          # @!attribute [rw] audio_format
+          #   @return [::Google::Cloud::Video::Livestream::V1::AudioFormat]
+          #     Properties of the audio format.
+          class AudioStreamProperty
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Properties of the audio format.
+          # @!attribute [rw] codec
+          #   @return [::String]
+          #     Audio codec used in this audio stream.
+          # @!attribute [rw] channel_count
+          #   @return [::Integer]
+          #     The number of audio channels.
+          # @!attribute [rw] channel_layout
+          #   @return [::Array<::String>]
+          #     A list of channel names specifying the layout of the audio channels.
+          class AudioFormat
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
           end
 
           # A group of information for attaching an input resource to this channel.

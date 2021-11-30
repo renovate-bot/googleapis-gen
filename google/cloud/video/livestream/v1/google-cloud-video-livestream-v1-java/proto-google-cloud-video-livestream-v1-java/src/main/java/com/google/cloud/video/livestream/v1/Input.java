@@ -141,23 +141,23 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 106: {
-            com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder subBuilder = null;
-            if (streamInfo_ != null) {
-              subBuilder = streamInfo_.toBuilder();
-            }
-            streamInfo_ = input.readMessage(com.google.cloud.video.livestream.v1.Input.StreamInfo.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(streamInfo_);
-              streamInfo_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
           case 112: {
             int rawValue = input.readEnum();
 
             tier_ = rawValue;
+            break;
+          }
+          case 122: {
+            com.google.cloud.video.livestream.v1.InputStreamProperty.Builder subBuilder = null;
+            if (inputStreamProperty_ != null) {
+              subBuilder = inputStreamProperty_.toBuilder();
+            }
+            inputStreamProperty_ = input.readMessage(com.google.cloud.video.livestream.v1.InputStreamProperty.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(inputStreamProperty_);
+              inputStreamProperty_ = subBuilder.buildPartial();
+            }
+
             break;
           }
           default: {
@@ -1263,1262 +1263,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface StreamInfoOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.Input.StreamInfo)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * The time that the current input stream is accepted and the connection is
-     * established. This timestamp is updated when reconnections occur.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-     * @return Whether the lastEstablishTime field is set.
-     */
-    boolean hasLastEstablishTime();
-    /**
-     * <pre>
-     * The time that the current input stream is accepted and the connection is
-     * established. This timestamp is updated when reconnections occur.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-     * @return The lastEstablishTime.
-     */
-    com.google.protobuf.Timestamp getLastEstablishTime();
-    /**
-     * <pre>
-     * The time that the current input stream is accepted and the connection is
-     * established. This timestamp is updated when reconnections occur.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getLastEstablishTimeOrBuilder();
-
-    /**
-     * <pre>
-     * Video codec used in the input stream.
-     * </pre>
-     *
-     * <code>string video_codec = 2;</code>
-     * @return The videoCodec.
-     */
-    java.lang.String getVideoCodec();
-    /**
-     * <pre>
-     * Video codec used in the input stream.
-     * </pre>
-     *
-     * <code>string video_codec = 2;</code>
-     * @return The bytes for videoCodec.
-     */
-    com.google.protobuf.ByteString
-        getVideoCodecBytes();
-
-    /**
-     * <pre>
-     * Audio codec used in the input stream.
-     * </pre>
-     *
-     * <code>string audio_codec = 3;</code>
-     * @return The audioCodec.
-     */
-    java.lang.String getAudioCodec();
-    /**
-     * <pre>
-     * Audio codec used in the input stream.
-     * </pre>
-     *
-     * <code>string audio_codec = 3;</code>
-     * @return The bytes for audioCodec.
-     */
-    com.google.protobuf.ByteString
-        getAudioCodecBytes();
-
-    /**
-     * <pre>
-     * The width of the input video in pixels.
-     * </pre>
-     *
-     * <code>int32 width_pixels = 4;</code>
-     * @return The widthPixels.
-     */
-    int getWidthPixels();
-
-    /**
-     * <pre>
-     * The height of the input video in pixels.
-     * </pre>
-     *
-     * <code>int32 height_pixels = 5;</code>
-     * @return The heightPixels.
-     */
-    int getHeightPixels();
-  }
-  /**
-   * <pre>
-   * The information for an input stream.
-   * </pre>
-   *
-   * Protobuf type {@code google.cloud.video.livestream.v1.Input.StreamInfo}
-   */
-  public static final class StreamInfo extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.Input.StreamInfo)
-      StreamInfoOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use StreamInfo.newBuilder() to construct.
-    private StreamInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private StreamInfo() {
-      videoCodec_ = "";
-      audioCodec_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new StreamInfo();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private StreamInfo(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (lastEstablishTime_ != null) {
-                subBuilder = lastEstablishTime_.toBuilder();
-              }
-              lastEstablishTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(lastEstablishTime_);
-                lastEstablishTime_ = subBuilder.buildPartial();
-              }
-
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              videoCodec_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              audioCodec_ = s;
-              break;
-            }
-            case 32: {
-
-              widthPixels_ = input.readInt32();
-              break;
-            }
-            case 40: {
-
-              heightPixels_ = input.readInt32();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.video.livestream.v1.ResourcesProto.internal_static_google_cloud_video_livestream_v1_Input_StreamInfo_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.video.livestream.v1.ResourcesProto.internal_static_google_cloud_video_livestream_v1_Input_StreamInfo_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.video.livestream.v1.Input.StreamInfo.class, com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder.class);
-    }
-
-    public static final int LAST_ESTABLISH_TIME_FIELD_NUMBER = 1;
-    private com.google.protobuf.Timestamp lastEstablishTime_;
-    /**
-     * <pre>
-     * The time that the current input stream is accepted and the connection is
-     * established. This timestamp is updated when reconnections occur.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-     * @return Whether the lastEstablishTime field is set.
-     */
-    @java.lang.Override
-    public boolean hasLastEstablishTime() {
-      return lastEstablishTime_ != null;
-    }
-    /**
-     * <pre>
-     * The time that the current input stream is accepted and the connection is
-     * established. This timestamp is updated when reconnections occur.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-     * @return The lastEstablishTime.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Timestamp getLastEstablishTime() {
-      return lastEstablishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEstablishTime_;
-    }
-    /**
-     * <pre>
-     * The time that the current input stream is accepted and the connection is
-     * established. This timestamp is updated when reconnections occur.
-     * </pre>
-     *
-     * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getLastEstablishTimeOrBuilder() {
-      return getLastEstablishTime();
-    }
-
-    public static final int VIDEO_CODEC_FIELD_NUMBER = 2;
-    private volatile java.lang.Object videoCodec_;
-    /**
-     * <pre>
-     * Video codec used in the input stream.
-     * </pre>
-     *
-     * <code>string video_codec = 2;</code>
-     * @return The videoCodec.
-     */
-    @java.lang.Override
-    public java.lang.String getVideoCodec() {
-      java.lang.Object ref = videoCodec_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        videoCodec_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Video codec used in the input stream.
-     * </pre>
-     *
-     * <code>string video_codec = 2;</code>
-     * @return The bytes for videoCodec.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getVideoCodecBytes() {
-      java.lang.Object ref = videoCodec_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        videoCodec_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AUDIO_CODEC_FIELD_NUMBER = 3;
-    private volatile java.lang.Object audioCodec_;
-    /**
-     * <pre>
-     * Audio codec used in the input stream.
-     * </pre>
-     *
-     * <code>string audio_codec = 3;</code>
-     * @return The audioCodec.
-     */
-    @java.lang.Override
-    public java.lang.String getAudioCodec() {
-      java.lang.Object ref = audioCodec_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        audioCodec_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Audio codec used in the input stream.
-     * </pre>
-     *
-     * <code>string audio_codec = 3;</code>
-     * @return The bytes for audioCodec.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAudioCodecBytes() {
-      java.lang.Object ref = audioCodec_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        audioCodec_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int WIDTH_PIXELS_FIELD_NUMBER = 4;
-    private int widthPixels_;
-    /**
-     * <pre>
-     * The width of the input video in pixels.
-     * </pre>
-     *
-     * <code>int32 width_pixels = 4;</code>
-     * @return The widthPixels.
-     */
-    @java.lang.Override
-    public int getWidthPixels() {
-      return widthPixels_;
-    }
-
-    public static final int HEIGHT_PIXELS_FIELD_NUMBER = 5;
-    private int heightPixels_;
-    /**
-     * <pre>
-     * The height of the input video in pixels.
-     * </pre>
-     *
-     * <code>int32 height_pixels = 5;</code>
-     * @return The heightPixels.
-     */
-    @java.lang.Override
-    public int getHeightPixels() {
-      return heightPixels_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (lastEstablishTime_ != null) {
-        output.writeMessage(1, getLastEstablishTime());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(videoCodec_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, videoCodec_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioCodec_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, audioCodec_);
-      }
-      if (widthPixels_ != 0) {
-        output.writeInt32(4, widthPixels_);
-      }
-      if (heightPixels_ != 0) {
-        output.writeInt32(5, heightPixels_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (lastEstablishTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getLastEstablishTime());
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(videoCodec_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, videoCodec_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(audioCodec_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, audioCodec_);
-      }
-      if (widthPixels_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, widthPixels_);
-      }
-      if (heightPixels_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, heightPixels_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.cloud.video.livestream.v1.Input.StreamInfo)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.video.livestream.v1.Input.StreamInfo other = (com.google.cloud.video.livestream.v1.Input.StreamInfo) obj;
-
-      if (hasLastEstablishTime() != other.hasLastEstablishTime()) return false;
-      if (hasLastEstablishTime()) {
-        if (!getLastEstablishTime()
-            .equals(other.getLastEstablishTime())) return false;
-      }
-      if (!getVideoCodec()
-          .equals(other.getVideoCodec())) return false;
-      if (!getAudioCodec()
-          .equals(other.getAudioCodec())) return false;
-      if (getWidthPixels()
-          != other.getWidthPixels()) return false;
-      if (getHeightPixels()
-          != other.getHeightPixels()) return false;
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasLastEstablishTime()) {
-        hash = (37 * hash) + LAST_ESTABLISH_TIME_FIELD_NUMBER;
-        hash = (53 * hash) + getLastEstablishTime().hashCode();
-      }
-      hash = (37 * hash) + VIDEO_CODEC_FIELD_NUMBER;
-      hash = (53 * hash) + getVideoCodec().hashCode();
-      hash = (37 * hash) + AUDIO_CODEC_FIELD_NUMBER;
-      hash = (53 * hash) + getAudioCodec().hashCode();
-      hash = (37 * hash) + WIDTH_PIXELS_FIELD_NUMBER;
-      hash = (53 * hash) + getWidthPixels();
-      hash = (37 * hash) + HEIGHT_PIXELS_FIELD_NUMBER;
-      hash = (53 * hash) + getHeightPixels();
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.cloud.video.livestream.v1.Input.StreamInfo prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * The information for an input stream.
-     * </pre>
-     *
-     * Protobuf type {@code google.cloud.video.livestream.v1.Input.StreamInfo}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.Input.StreamInfo)
-        com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.video.livestream.v1.ResourcesProto.internal_static_google_cloud_video_livestream_v1_Input_StreamInfo_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.video.livestream.v1.ResourcesProto.internal_static_google_cloud_video_livestream_v1_Input_StreamInfo_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.video.livestream.v1.Input.StreamInfo.class, com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder.class);
-      }
-
-      // Construct using com.google.cloud.video.livestream.v1.Input.StreamInfo.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        if (lastEstablishTimeBuilder_ == null) {
-          lastEstablishTime_ = null;
-        } else {
-          lastEstablishTime_ = null;
-          lastEstablishTimeBuilder_ = null;
-        }
-        videoCodec_ = "";
-
-        audioCodec_ = "";
-
-        widthPixels_ = 0;
-
-        heightPixels_ = 0;
-
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.video.livestream.v1.ResourcesProto.internal_static_google_cloud_video_livestream_v1_Input_StreamInfo_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.video.livestream.v1.Input.StreamInfo getDefaultInstanceForType() {
-        return com.google.cloud.video.livestream.v1.Input.StreamInfo.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.video.livestream.v1.Input.StreamInfo build() {
-        com.google.cloud.video.livestream.v1.Input.StreamInfo result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.video.livestream.v1.Input.StreamInfo buildPartial() {
-        com.google.cloud.video.livestream.v1.Input.StreamInfo result = new com.google.cloud.video.livestream.v1.Input.StreamInfo(this);
-        if (lastEstablishTimeBuilder_ == null) {
-          result.lastEstablishTime_ = lastEstablishTime_;
-        } else {
-          result.lastEstablishTime_ = lastEstablishTimeBuilder_.build();
-        }
-        result.videoCodec_ = videoCodec_;
-        result.audioCodec_ = audioCodec_;
-        result.widthPixels_ = widthPixels_;
-        result.heightPixels_ = heightPixels_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.video.livestream.v1.Input.StreamInfo) {
-          return mergeFrom((com.google.cloud.video.livestream.v1.Input.StreamInfo)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.cloud.video.livestream.v1.Input.StreamInfo other) {
-        if (other == com.google.cloud.video.livestream.v1.Input.StreamInfo.getDefaultInstance()) return this;
-        if (other.hasLastEstablishTime()) {
-          mergeLastEstablishTime(other.getLastEstablishTime());
-        }
-        if (!other.getVideoCodec().isEmpty()) {
-          videoCodec_ = other.videoCodec_;
-          onChanged();
-        }
-        if (!other.getAudioCodec().isEmpty()) {
-          audioCodec_ = other.audioCodec_;
-          onChanged();
-        }
-        if (other.getWidthPixels() != 0) {
-          setWidthPixels(other.getWidthPixels());
-        }
-        if (other.getHeightPixels() != 0) {
-          setHeightPixels(other.getHeightPixels());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.cloud.video.livestream.v1.Input.StreamInfo parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.video.livestream.v1.Input.StreamInfo) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-
-      private com.google.protobuf.Timestamp lastEstablishTime_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastEstablishTimeBuilder_;
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       * @return Whether the lastEstablishTime field is set.
-       */
-      public boolean hasLastEstablishTime() {
-        return lastEstablishTimeBuilder_ != null || lastEstablishTime_ != null;
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       * @return The lastEstablishTime.
-       */
-      public com.google.protobuf.Timestamp getLastEstablishTime() {
-        if (lastEstablishTimeBuilder_ == null) {
-          return lastEstablishTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEstablishTime_;
-        } else {
-          return lastEstablishTimeBuilder_.getMessage();
-        }
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      public Builder setLastEstablishTime(com.google.protobuf.Timestamp value) {
-        if (lastEstablishTimeBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          lastEstablishTime_ = value;
-          onChanged();
-        } else {
-          lastEstablishTimeBuilder_.setMessage(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      public Builder setLastEstablishTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (lastEstablishTimeBuilder_ == null) {
-          lastEstablishTime_ = builderForValue.build();
-          onChanged();
-        } else {
-          lastEstablishTimeBuilder_.setMessage(builderForValue.build());
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      public Builder mergeLastEstablishTime(com.google.protobuf.Timestamp value) {
-        if (lastEstablishTimeBuilder_ == null) {
-          if (lastEstablishTime_ != null) {
-            lastEstablishTime_ =
-              com.google.protobuf.Timestamp.newBuilder(lastEstablishTime_).mergeFrom(value).buildPartial();
-          } else {
-            lastEstablishTime_ = value;
-          }
-          onChanged();
-        } else {
-          lastEstablishTimeBuilder_.mergeFrom(value);
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      public Builder clearLastEstablishTime() {
-        if (lastEstablishTimeBuilder_ == null) {
-          lastEstablishTime_ = null;
-          onChanged();
-        } else {
-          lastEstablishTime_ = null;
-          lastEstablishTimeBuilder_ = null;
-        }
-
-        return this;
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getLastEstablishTimeBuilder() {
-        
-        onChanged();
-        return getLastEstablishTimeFieldBuilder().getBuilder();
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getLastEstablishTimeOrBuilder() {
-        if (lastEstablishTimeBuilder_ != null) {
-          return lastEstablishTimeBuilder_.getMessageOrBuilder();
-        } else {
-          return lastEstablishTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : lastEstablishTime_;
-        }
-      }
-      /**
-       * <pre>
-       * The time that the current input stream is accepted and the connection is
-       * established. This timestamp is updated when reconnections occur.
-       * </pre>
-       *
-       * <code>.google.protobuf.Timestamp last_establish_time = 1;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getLastEstablishTimeFieldBuilder() {
-        if (lastEstablishTimeBuilder_ == null) {
-          lastEstablishTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getLastEstablishTime(),
-                  getParentForChildren(),
-                  isClean());
-          lastEstablishTime_ = null;
-        }
-        return lastEstablishTimeBuilder_;
-      }
-
-      private java.lang.Object videoCodec_ = "";
-      /**
-       * <pre>
-       * Video codec used in the input stream.
-       * </pre>
-       *
-       * <code>string video_codec = 2;</code>
-       * @return The videoCodec.
-       */
-      public java.lang.String getVideoCodec() {
-        java.lang.Object ref = videoCodec_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          videoCodec_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Video codec used in the input stream.
-       * </pre>
-       *
-       * <code>string video_codec = 2;</code>
-       * @return The bytes for videoCodec.
-       */
-      public com.google.protobuf.ByteString
-          getVideoCodecBytes() {
-        java.lang.Object ref = videoCodec_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          videoCodec_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Video codec used in the input stream.
-       * </pre>
-       *
-       * <code>string video_codec = 2;</code>
-       * @param value The videoCodec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVideoCodec(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        videoCodec_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Video codec used in the input stream.
-       * </pre>
-       *
-       * <code>string video_codec = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearVideoCodec() {
-        
-        videoCodec_ = getDefaultInstance().getVideoCodec();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Video codec used in the input stream.
-       * </pre>
-       *
-       * <code>string video_codec = 2;</code>
-       * @param value The bytes for videoCodec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setVideoCodecBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        videoCodec_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object audioCodec_ = "";
-      /**
-       * <pre>
-       * Audio codec used in the input stream.
-       * </pre>
-       *
-       * <code>string audio_codec = 3;</code>
-       * @return The audioCodec.
-       */
-      public java.lang.String getAudioCodec() {
-        java.lang.Object ref = audioCodec_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          audioCodec_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Audio codec used in the input stream.
-       * </pre>
-       *
-       * <code>string audio_codec = 3;</code>
-       * @return The bytes for audioCodec.
-       */
-      public com.google.protobuf.ByteString
-          getAudioCodecBytes() {
-        java.lang.Object ref = audioCodec_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          audioCodec_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Audio codec used in the input stream.
-       * </pre>
-       *
-       * <code>string audio_codec = 3;</code>
-       * @param value The audioCodec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAudioCodec(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        audioCodec_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Audio codec used in the input stream.
-       * </pre>
-       *
-       * <code>string audio_codec = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAudioCodec() {
-        
-        audioCodec_ = getDefaultInstance().getAudioCodec();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Audio codec used in the input stream.
-       * </pre>
-       *
-       * <code>string audio_codec = 3;</code>
-       * @param value The bytes for audioCodec to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAudioCodecBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        audioCodec_ = value;
-        onChanged();
-        return this;
-      }
-
-      private int widthPixels_ ;
-      /**
-       * <pre>
-       * The width of the input video in pixels.
-       * </pre>
-       *
-       * <code>int32 width_pixels = 4;</code>
-       * @return The widthPixels.
-       */
-      @java.lang.Override
-      public int getWidthPixels() {
-        return widthPixels_;
-      }
-      /**
-       * <pre>
-       * The width of the input video in pixels.
-       * </pre>
-       *
-       * <code>int32 width_pixels = 4;</code>
-       * @param value The widthPixels to set.
-       * @return This builder for chaining.
-       */
-      public Builder setWidthPixels(int value) {
-        
-        widthPixels_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The width of the input video in pixels.
-       * </pre>
-       *
-       * <code>int32 width_pixels = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearWidthPixels() {
-        
-        widthPixels_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int heightPixels_ ;
-      /**
-       * <pre>
-       * The height of the input video in pixels.
-       * </pre>
-       *
-       * <code>int32 height_pixels = 5;</code>
-       * @return The heightPixels.
-       */
-      @java.lang.Override
-      public int getHeightPixels() {
-        return heightPixels_;
-      }
-      /**
-       * <pre>
-       * The height of the input video in pixels.
-       * </pre>
-       *
-       * <code>int32 height_pixels = 5;</code>
-       * @param value The heightPixels to set.
-       * @return This builder for chaining.
-       */
-      public Builder setHeightPixels(int value) {
-        
-        heightPixels_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * The height of the input video in pixels.
-       * </pre>
-       *
-       * <code>int32 height_pixels = 5;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearHeightPixels() {
-        
-        heightPixels_ = 0;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.Input.StreamInfo)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.Input.StreamInfo)
-    private static final com.google.cloud.video.livestream.v1.Input.StreamInfo DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.Input.StreamInfo();
-    }
-
-    public static com.google.cloud.video.livestream.v1.Input.StreamInfo getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<StreamInfo>
-        PARSER = new com.google.protobuf.AbstractParser<StreamInfo>() {
-      @java.lang.Override
-      public StreamInfo parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StreamInfo(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<StreamInfo> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<StreamInfo> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.video.livestream.v1.Input.StreamInfo getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
@@ -2924,20 +1668,20 @@ private static final long serialVersionUID = 0L;
     return getSecurityRules();
   }
 
-  public static final int STREAM_INFO_FIELD_NUMBER = 13;
-  private com.google.cloud.video.livestream.v1.Input.StreamInfo streamInfo_;
+  public static final int INPUT_STREAM_PROPERTY_FIELD_NUMBER = 15;
+  private com.google.cloud.video.livestream.v1.InputStreamProperty inputStreamProperty_;
   /**
    * <pre>
    * Output only. The information for the input stream. This field will be present only when
    * this input receives the input stream.
    * </pre>
    *
-   * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return Whether the streamInfo field is set.
+   * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return Whether the inputStreamProperty field is set.
    */
   @java.lang.Override
-  public boolean hasStreamInfo() {
-    return streamInfo_ != null;
+  public boolean hasInputStreamProperty() {
+    return inputStreamProperty_ != null;
   }
   /**
    * <pre>
@@ -2945,12 +1689,12 @@ private static final long serialVersionUID = 0L;
    * this input receives the input stream.
    * </pre>
    *
-   * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-   * @return The streamInfo.
+   * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The inputStreamProperty.
    */
   @java.lang.Override
-  public com.google.cloud.video.livestream.v1.Input.StreamInfo getStreamInfo() {
-    return streamInfo_ == null ? com.google.cloud.video.livestream.v1.Input.StreamInfo.getDefaultInstance() : streamInfo_;
+  public com.google.cloud.video.livestream.v1.InputStreamProperty getInputStreamProperty() {
+    return inputStreamProperty_ == null ? com.google.cloud.video.livestream.v1.InputStreamProperty.getDefaultInstance() : inputStreamProperty_;
   }
   /**
    * <pre>
@@ -2958,11 +1702,11 @@ private static final long serialVersionUID = 0L;
    * this input receives the input stream.
    * </pre>
    *
-   * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
-  public com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder getStreamInfoOrBuilder() {
-    return getStreamInfo();
+  public com.google.cloud.video.livestream.v1.InputStreamPropertyOrBuilder getInputStreamPropertyOrBuilder() {
+    return getInputStreamProperty();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -3006,11 +1750,11 @@ private static final long serialVersionUID = 0L;
     if (securityRules_ != null) {
       output.writeMessage(12, getSecurityRules());
     }
-    if (streamInfo_ != null) {
-      output.writeMessage(13, getStreamInfo());
-    }
     if (tier_ != com.google.cloud.video.livestream.v1.Input.Tier.TIER_UNSPECIFIED.getNumber()) {
       output.writeEnum(14, tier_);
+    }
+    if (inputStreamProperty_ != null) {
+      output.writeMessage(15, getInputStreamProperty());
     }
     unknownFields.writeTo(output);
   }
@@ -3057,13 +1801,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(12, getSecurityRules());
     }
-    if (streamInfo_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getStreamInfo());
-    }
     if (tier_ != com.google.cloud.video.livestream.v1.Input.Tier.TIER_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(14, tier_);
+    }
+    if (inputStreamProperty_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(15, getInputStreamProperty());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -3108,10 +1852,10 @@ private static final long serialVersionUID = 0L;
       if (!getSecurityRules()
           .equals(other.getSecurityRules())) return false;
     }
-    if (hasStreamInfo() != other.hasStreamInfo()) return false;
-    if (hasStreamInfo()) {
-      if (!getStreamInfo()
-          .equals(other.getStreamInfo())) return false;
+    if (hasInputStreamProperty() != other.hasInputStreamProperty()) return false;
+    if (hasInputStreamProperty()) {
+      if (!getInputStreamProperty()
+          .equals(other.getInputStreamProperty())) return false;
     }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
@@ -3152,9 +1896,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + SECURITY_RULES_FIELD_NUMBER;
       hash = (53 * hash) + getSecurityRules().hashCode();
     }
-    if (hasStreamInfo()) {
-      hash = (37 * hash) + STREAM_INFO_FIELD_NUMBER;
-      hash = (53 * hash) + getStreamInfo().hashCode();
+    if (hasInputStreamProperty()) {
+      hash = (37 * hash) + INPUT_STREAM_PROPERTY_FIELD_NUMBER;
+      hash = (53 * hash) + getInputStreamProperty().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -3349,11 +2093,11 @@ private static final long serialVersionUID = 0L;
         securityRules_ = null;
         securityRulesBuilder_ = null;
       }
-      if (streamInfoBuilder_ == null) {
-        streamInfo_ = null;
+      if (inputStreamPropertyBuilder_ == null) {
+        inputStreamProperty_ = null;
       } else {
-        streamInfo_ = null;
-        streamInfoBuilder_ = null;
+        inputStreamProperty_ = null;
+        inputStreamPropertyBuilder_ = null;
       }
       return this;
     }
@@ -3408,10 +2152,10 @@ private static final long serialVersionUID = 0L;
       } else {
         result.securityRules_ = securityRulesBuilder_.build();
       }
-      if (streamInfoBuilder_ == null) {
-        result.streamInfo_ = streamInfo_;
+      if (inputStreamPropertyBuilder_ == null) {
+        result.inputStreamProperty_ = inputStreamProperty_;
       } else {
-        result.streamInfo_ = streamInfoBuilder_.build();
+        result.inputStreamProperty_ = inputStreamPropertyBuilder_.build();
       }
       onBuilt();
       return result;
@@ -3489,8 +2233,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasSecurityRules()) {
         mergeSecurityRules(other.getSecurityRules());
       }
-      if (other.hasStreamInfo()) {
-        mergeStreamInfo(other.getStreamInfo());
+      if (other.hasInputStreamProperty()) {
+        mergeInputStreamProperty(other.getInputStreamProperty());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -4663,20 +3407,20 @@ private static final long serialVersionUID = 0L;
       return securityRulesBuilder_;
     }
 
-    private com.google.cloud.video.livestream.v1.Input.StreamInfo streamInfo_;
+    private com.google.cloud.video.livestream.v1.InputStreamProperty inputStreamProperty_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.video.livestream.v1.Input.StreamInfo, com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder, com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder> streamInfoBuilder_;
+        com.google.cloud.video.livestream.v1.InputStreamProperty, com.google.cloud.video.livestream.v1.InputStreamProperty.Builder, com.google.cloud.video.livestream.v1.InputStreamPropertyOrBuilder> inputStreamPropertyBuilder_;
     /**
      * <pre>
      * Output only. The information for the input stream. This field will be present only when
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the streamInfo field is set.
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the inputStreamProperty field is set.
      */
-    public boolean hasStreamInfo() {
-      return streamInfoBuilder_ != null || streamInfo_ != null;
+    public boolean hasInputStreamProperty() {
+      return inputStreamPropertyBuilder_ != null || inputStreamProperty_ != null;
     }
     /**
      * <pre>
@@ -4684,14 +3428,14 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The streamInfo.
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The inputStreamProperty.
      */
-    public com.google.cloud.video.livestream.v1.Input.StreamInfo getStreamInfo() {
-      if (streamInfoBuilder_ == null) {
-        return streamInfo_ == null ? com.google.cloud.video.livestream.v1.Input.StreamInfo.getDefaultInstance() : streamInfo_;
+    public com.google.cloud.video.livestream.v1.InputStreamProperty getInputStreamProperty() {
+      if (inputStreamPropertyBuilder_ == null) {
+        return inputStreamProperty_ == null ? com.google.cloud.video.livestream.v1.InputStreamProperty.getDefaultInstance() : inputStreamProperty_;
       } else {
-        return streamInfoBuilder_.getMessage();
+        return inputStreamPropertyBuilder_.getMessage();
       }
     }
     /**
@@ -4700,17 +3444,17 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public Builder setStreamInfo(com.google.cloud.video.livestream.v1.Input.StreamInfo value) {
-      if (streamInfoBuilder_ == null) {
+    public Builder setInputStreamProperty(com.google.cloud.video.livestream.v1.InputStreamProperty value) {
+      if (inputStreamPropertyBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        streamInfo_ = value;
+        inputStreamProperty_ = value;
         onChanged();
       } else {
-        streamInfoBuilder_.setMessage(value);
+        inputStreamPropertyBuilder_.setMessage(value);
       }
 
       return this;
@@ -4721,15 +3465,15 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public Builder setStreamInfo(
-        com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder builderForValue) {
-      if (streamInfoBuilder_ == null) {
-        streamInfo_ = builderForValue.build();
+    public Builder setInputStreamProperty(
+        com.google.cloud.video.livestream.v1.InputStreamProperty.Builder builderForValue) {
+      if (inputStreamPropertyBuilder_ == null) {
+        inputStreamProperty_ = builderForValue.build();
         onChanged();
       } else {
-        streamInfoBuilder_.setMessage(builderForValue.build());
+        inputStreamPropertyBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
@@ -4740,19 +3484,19 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public Builder mergeStreamInfo(com.google.cloud.video.livestream.v1.Input.StreamInfo value) {
-      if (streamInfoBuilder_ == null) {
-        if (streamInfo_ != null) {
-          streamInfo_ =
-            com.google.cloud.video.livestream.v1.Input.StreamInfo.newBuilder(streamInfo_).mergeFrom(value).buildPartial();
+    public Builder mergeInputStreamProperty(com.google.cloud.video.livestream.v1.InputStreamProperty value) {
+      if (inputStreamPropertyBuilder_ == null) {
+        if (inputStreamProperty_ != null) {
+          inputStreamProperty_ =
+            com.google.cloud.video.livestream.v1.InputStreamProperty.newBuilder(inputStreamProperty_).mergeFrom(value).buildPartial();
         } else {
-          streamInfo_ = value;
+          inputStreamProperty_ = value;
         }
         onChanged();
       } else {
-        streamInfoBuilder_.mergeFrom(value);
+        inputStreamPropertyBuilder_.mergeFrom(value);
       }
 
       return this;
@@ -4763,15 +3507,15 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public Builder clearStreamInfo() {
-      if (streamInfoBuilder_ == null) {
-        streamInfo_ = null;
+    public Builder clearInputStreamProperty() {
+      if (inputStreamPropertyBuilder_ == null) {
+        inputStreamProperty_ = null;
         onChanged();
       } else {
-        streamInfo_ = null;
-        streamInfoBuilder_ = null;
+        inputStreamProperty_ = null;
+        inputStreamPropertyBuilder_ = null;
       }
 
       return this;
@@ -4782,12 +3526,12 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder getStreamInfoBuilder() {
+    public com.google.cloud.video.livestream.v1.InputStreamProperty.Builder getInputStreamPropertyBuilder() {
       
       onChanged();
-      return getStreamInfoFieldBuilder().getBuilder();
+      return getInputStreamPropertyFieldBuilder().getBuilder();
     }
     /**
      * <pre>
@@ -4795,14 +3539,14 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
-    public com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder getStreamInfoOrBuilder() {
-      if (streamInfoBuilder_ != null) {
-        return streamInfoBuilder_.getMessageOrBuilder();
+    public com.google.cloud.video.livestream.v1.InputStreamPropertyOrBuilder getInputStreamPropertyOrBuilder() {
+      if (inputStreamPropertyBuilder_ != null) {
+        return inputStreamPropertyBuilder_.getMessageOrBuilder();
       } else {
-        return streamInfo_ == null ?
-            com.google.cloud.video.livestream.v1.Input.StreamInfo.getDefaultInstance() : streamInfo_;
+        return inputStreamProperty_ == null ?
+            com.google.cloud.video.livestream.v1.InputStreamProperty.getDefaultInstance() : inputStreamProperty_;
       }
     }
     /**
@@ -4811,20 +3555,20 @@ private static final long serialVersionUID = 0L;
      * this input receives the input stream.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Input.StreamInfo stream_info = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>.google.cloud.video.livestream.v1.InputStreamProperty input_stream_property = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.video.livestream.v1.Input.StreamInfo, com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder, com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder> 
-        getStreamInfoFieldBuilder() {
-      if (streamInfoBuilder_ == null) {
-        streamInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.video.livestream.v1.Input.StreamInfo, com.google.cloud.video.livestream.v1.Input.StreamInfo.Builder, com.google.cloud.video.livestream.v1.Input.StreamInfoOrBuilder>(
-                getStreamInfo(),
+        com.google.cloud.video.livestream.v1.InputStreamProperty, com.google.cloud.video.livestream.v1.InputStreamProperty.Builder, com.google.cloud.video.livestream.v1.InputStreamPropertyOrBuilder> 
+        getInputStreamPropertyFieldBuilder() {
+      if (inputStreamPropertyBuilder_ == null) {
+        inputStreamPropertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.InputStreamProperty, com.google.cloud.video.livestream.v1.InputStreamProperty.Builder, com.google.cloud.video.livestream.v1.InputStreamPropertyOrBuilder>(
+                getInputStreamProperty(),
                 getParentForChildren(),
                 isClean());
-        streamInfo_ = null;
+        inputStreamProperty_ = null;
       }
-      return streamInfoBuilder_;
+      return inputStreamPropertyBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
