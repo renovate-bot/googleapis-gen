@@ -116,11 +116,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object parent_;
   /**
    * <pre>
-   * The resource project name and location using the form:
+   * Required. The resource project name and location using the form:
    * `projects/{project_id}/locations/global`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -138,11 +138,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource project name and location using the form:
+   * Required. The resource project name and location using the form:
    * `projects/{project_id}/locations/global`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   @java.lang.Override
@@ -164,19 +164,19 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object domainName_;
   /**
    * <pre>
-   * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+   * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
    *  * Must contain only lowercase letters, numbers, periods and hyphens.
    *  * Must start with a letter.
    *  * Must contain between 2-64 characters.
    *  * Must end with a number or a letter.
    *  * Must not start with period.
-   *  * First segement length (mydomain form example above) shouldn't exceed
+   *  * First segment length (mydomain form example above) shouldn't exceed
    *    15 chars.
    *  * The last segment cannot be fully numeric.
    *  * Must be unique within the customer project.
    * </pre>
    *
-   * <code>string domain_name = 2;</code>
+   * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The domainName.
    */
   @java.lang.Override
@@ -194,19 +194,19 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+   * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
    *  * Must contain only lowercase letters, numbers, periods and hyphens.
    *  * Must start with a letter.
    *  * Must contain between 2-64 characters.
    *  * Must end with a number or a letter.
    *  * Must not start with period.
-   *  * First segement length (mydomain form example above) shouldn't exceed
+   *  * First segment length (mydomain form example above) shouldn't exceed
    *    15 chars.
    *  * The last segment cannot be fully numeric.
    *  * Must be unique within the customer project.
    * </pre>
    *
-   * <code>string domain_name = 2;</code>
+   * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for domainName.
    */
   @java.lang.Override
@@ -228,10 +228,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.managedidentities.v1beta1.Domain domain_;
   /**
    * <pre>
-   * A Managed Identity domain resource.
+   * Required. A Managed Identity domain resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the domain field is set.
    */
   @java.lang.Override
@@ -240,10 +240,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Managed Identity domain resource.
+   * Required. A Managed Identity domain resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -252,10 +252,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A Managed Identity domain resource.
+   * Required. A Managed Identity domain resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1beta1.DomainOrBuilder getDomainOrBuilder() {
@@ -619,11 +619,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object parent_ = "";
     /**
      * <pre>
-     * The resource project name and location using the form:
+     * Required. The resource project name and location using the form:
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
     public java.lang.String getParent() {
@@ -640,11 +640,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource project name and location using the form:
+     * Required. The resource project name and location using the form:
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
@@ -662,11 +662,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource project name and location using the form:
+     * Required. The resource project name and location using the form:
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -682,11 +682,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource project name and location using the form:
+     * Required. The resource project name and location using the form:
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -697,11 +697,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource project name and location using the form:
+     * Required. The resource project name and location using the form:
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */
@@ -720,19 +720,19 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object domainName_ = "";
     /**
      * <pre>
-     * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+     * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
      *  * Must contain only lowercase letters, numbers, periods and hyphens.
      *  * Must start with a letter.
      *  * Must contain between 2-64 characters.
      *  * Must end with a number or a letter.
      *  * Must not start with period.
-     *  * First segement length (mydomain form example above) shouldn't exceed
+     *  * First segment length (mydomain form example above) shouldn't exceed
      *    15 chars.
      *  * The last segment cannot be fully numeric.
      *  * Must be unique within the customer project.
      * </pre>
      *
-     * <code>string domain_name = 2;</code>
+     * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The domainName.
      */
     public java.lang.String getDomainName() {
@@ -749,19 +749,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+     * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
      *  * Must contain only lowercase letters, numbers, periods and hyphens.
      *  * Must start with a letter.
      *  * Must contain between 2-64 characters.
      *  * Must end with a number or a letter.
      *  * Must not start with period.
-     *  * First segement length (mydomain form example above) shouldn't exceed
+     *  * First segment length (mydomain form example above) shouldn't exceed
      *    15 chars.
      *  * The last segment cannot be fully numeric.
      *  * Must be unique within the customer project.
      * </pre>
      *
-     * <code>string domain_name = 2;</code>
+     * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for domainName.
      */
     public com.google.protobuf.ByteString
@@ -779,19 +779,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+     * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
      *  * Must contain only lowercase letters, numbers, periods and hyphens.
      *  * Must start with a letter.
      *  * Must contain between 2-64 characters.
      *  * Must end with a number or a letter.
      *  * Must not start with period.
-     *  * First segement length (mydomain form example above) shouldn't exceed
+     *  * First segment length (mydomain form example above) shouldn't exceed
      *    15 chars.
      *  * The last segment cannot be fully numeric.
      *  * Must be unique within the customer project.
      * </pre>
      *
-     * <code>string domain_name = 2;</code>
+     * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The domainName to set.
      * @return This builder for chaining.
      */
@@ -807,19 +807,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+     * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
      *  * Must contain only lowercase letters, numbers, periods and hyphens.
      *  * Must start with a letter.
      *  * Must contain between 2-64 characters.
      *  * Must end with a number or a letter.
      *  * Must not start with period.
-     *  * First segement length (mydomain form example above) shouldn't exceed
+     *  * First segment length (mydomain form example above) shouldn't exceed
      *    15 chars.
      *  * The last segment cannot be fully numeric.
      *  * Must be unique within the customer project.
      * </pre>
      *
-     * <code>string domain_name = 2;</code>
+     * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearDomainName() {
@@ -830,19 +830,19 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+     * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
      *  * Must contain only lowercase letters, numbers, periods and hyphens.
      *  * Must start with a letter.
      *  * Must contain between 2-64 characters.
      *  * Must end with a number or a letter.
      *  * Must not start with period.
-     *  * First segement length (mydomain form example above) shouldn't exceed
+     *  * First segment length (mydomain form example above) shouldn't exceed
      *    15 chars.
      *  * The last segment cannot be fully numeric.
      *  * Must be unique within the customer project.
      * </pre>
      *
-     * <code>string domain_name = 2;</code>
+     * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for domainName to set.
      * @return This builder for chaining.
      */
@@ -863,10 +863,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.managedidentities.v1beta1.Domain, com.google.cloud.managedidentities.v1beta1.Domain.Builder, com.google.cloud.managedidentities.v1beta1.DomainOrBuilder> domainBuilder_;
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the domain field is set.
      */
     public boolean hasDomain() {
@@ -874,10 +874,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The domain.
      */
     public com.google.cloud.managedidentities.v1beta1.Domain getDomain() {
@@ -889,10 +889,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDomain(com.google.cloud.managedidentities.v1beta1.Domain value) {
       if (domainBuilder_ == null) {
@@ -909,10 +909,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDomain(
         com.google.cloud.managedidentities.v1beta1.Domain.Builder builderForValue) {
@@ -927,10 +927,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeDomain(com.google.cloud.managedidentities.v1beta1.Domain value) {
       if (domainBuilder_ == null) {
@@ -949,10 +949,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDomain() {
       if (domainBuilder_ == null) {
@@ -967,10 +967,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Domain.Builder getDomainBuilder() {
       
@@ -979,10 +979,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.DomainOrBuilder getDomainOrBuilder() {
       if (domainBuilder_ != null) {
@@ -994,10 +994,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A Managed Identity domain resource.
+     * Required. A Managed Identity domain resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.managedidentities.v1beta1.Domain, com.google.cloud.managedidentities.v1beta1.Domain.Builder, com.google.cloud.managedidentities.v1beta1.DomainOrBuilder> 

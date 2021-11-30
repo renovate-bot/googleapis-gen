@@ -9,21 +9,21 @@ public interface ResetAdminPasswordRequestOrBuilder extends
 
   /**
    * <pre>
-   * The domain resource name using the form:
+   * Required. The domain resource name using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The domain resource name using the form:
+   * Required. The domain resource name using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString

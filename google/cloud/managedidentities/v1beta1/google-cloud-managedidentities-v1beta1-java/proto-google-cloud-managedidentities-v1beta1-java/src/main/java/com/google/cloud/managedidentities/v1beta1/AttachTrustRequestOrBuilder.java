@@ -9,21 +9,21 @@ public interface AttachTrustRequestOrBuilder extends
 
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -31,28 +31,28 @@ public interface AttachTrustRequestOrBuilder extends
 
   /**
    * <pre>
-   * The domain trust resource.
+   * Required. The domain trust resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the trust field is set.
    */
   boolean hasTrust();
   /**
    * <pre>
-   * The domain trust resource.
+   * Required. The domain trust resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trust.
    */
   com.google.cloud.managedidentities.v1beta1.Trust getTrust();
   /**
    * <pre>
-   * The domain trust resource.
+   * Required. The domain trust resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.managedidentities.v1beta1.TrustOrBuilder getTrustOrBuilder();
 }

@@ -128,21 +128,21 @@ public interface TrustOrBuilder extends
 
   /**
    * <pre>
-   * Input only, and will not be stored. The trust secret used for the handshake
-   * with the target domain.
+   * Input only. The trust secret used for the handshake
+   * with the target domain. It will not be stored.
    * </pre>
    *
-   * <code>string trust_handshake_secret = 6;</code>
+   * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The trustHandshakeSecret.
    */
   java.lang.String getTrustHandshakeSecret();
   /**
    * <pre>
-   * Input only, and will not be stored. The trust secret used for the handshake
-   * with the target domain.
+   * Input only. The trust secret used for the handshake
+   * with the target domain. It will not be stored.
    * </pre>
    *
-   * <code>string trust_handshake_secret = 6;</code>
+   * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The bytes for trustHandshakeSecret.
    */
   com.google.protobuf.ByteString
@@ -153,7 +153,7 @@ public interface TrustOrBuilder extends
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
@@ -162,7 +162,7 @@ public interface TrustOrBuilder extends
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
@@ -171,7 +171,7 @@ public interface TrustOrBuilder extends
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -180,7 +180,7 @@ public interface TrustOrBuilder extends
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
@@ -189,7 +189,7 @@ public interface TrustOrBuilder extends
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
@@ -198,7 +198,7 @@ public interface TrustOrBuilder extends
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -207,7 +207,7 @@ public interface TrustOrBuilder extends
    * Output only. The current state of the trust.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
@@ -216,7 +216,7 @@ public interface TrustOrBuilder extends
    * Output only. The current state of the trust.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   com.google.cloud.managedidentities.v1beta1.Trust.State getState();
@@ -227,7 +227,7 @@ public interface TrustOrBuilder extends
    * trust, if available.
    * </pre>
    *
-   * <code>string state_description = 11;</code>
+   * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The stateDescription.
    */
   java.lang.String getStateDescription();
@@ -237,7 +237,7 @@ public interface TrustOrBuilder extends
    * trust, if available.
    * </pre>
    *
-   * <code>string state_description = 11;</code>
+   * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for stateDescription.
    */
   com.google.protobuf.ByteString
@@ -249,7 +249,7 @@ public interface TrustOrBuilder extends
    * connected.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the lastTrustHeartbeatTime field is set.
    */
   boolean hasLastTrustHeartbeatTime();
@@ -259,7 +259,7 @@ public interface TrustOrBuilder extends
    * connected.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The lastTrustHeartbeatTime.
    */
   com.google.protobuf.Timestamp getLastTrustHeartbeatTime();
@@ -269,7 +269,7 @@ public interface TrustOrBuilder extends
    * connected.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getLastTrustHeartbeatTimeOrBuilder();
 }

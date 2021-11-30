@@ -22,7 +22,10 @@ module Google
     module ManagedIdentities
       module V1beta1
         # Represents a managed Microsoft Active Directory domain.
-        # @!attribute [rw] name
+        # If the domain is being changed, it will be placed into the UPDATING state,
+        # which indicates that the resource is being reconciled. At this point, Get
+        # will reflect an intermediate state.
+        # @!attribute [r] name
         #   @return [::String]
         #     Output only. The unique name of the domain using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`.
@@ -53,25 +56,25 @@ module Google
         #   @return [::String]
         #     Optional. The name of delegated administrator account used to perform
         #     Active Directory operations. If not specified, `setupadmin` will be used.
-        # @!attribute [rw] fqdn
+        # @!attribute [r] fqdn
         #   @return [::String]
         #     Output only. The fully-qualified domain name of the exposed domain used by
         #     clients to connect to the service. Similar to what would be chosen for an
         #     Active Directory set up on an internal network.
-        # @!attribute [rw] create_time
+        # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The time the instance was created.
-        # @!attribute [rw] update_time
+        # @!attribute [r] update_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The last update time.
-        # @!attribute [rw] state
+        # @!attribute [r] state
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Domain::State]
         #     Output only. The current state of this domain.
-        # @!attribute [rw] status_message
+        # @!attribute [r] status_message
         #   @return [::String]
         #     Output only. Additional information about the current status of this
         #     domain, if available.
-        # @!attribute [rw] trusts
+        # @!attribute [r] trusts
         #   @return [::Array<::Google::Cloud::ManagedIdentities::V1beta1::Trust>]
         #     Output only. The current trusts associated with the domain.
         class Domain
@@ -140,22 +143,22 @@ module Google
         #     involved in the trust.
         # @!attribute [rw] trust_handshake_secret
         #   @return [::String]
-        #     Input only, and will not be stored. The trust secret used for the handshake
-        #     with the target domain.
-        # @!attribute [rw] create_time
+        #     Input only. The trust secret used for the handshake
+        #     with the target domain. It will not be stored.
+        # @!attribute [r] create_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The time the instance was created.
-        # @!attribute [rw] update_time
+        # @!attribute [r] update_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The last update time.
-        # @!attribute [rw] state
+        # @!attribute [r] state
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Trust::State]
         #     Output only. The current state of the trust.
-        # @!attribute [rw] state_description
+        # @!attribute [r] state_description
         #   @return [::String]
         #     Output only. Additional information about the current state of the
         #     trust, if available.
-        # @!attribute [rw] last_trust_heartbeat_time
+        # @!attribute [r] last_trust_heartbeat_time
         #   @return [::Google::Protobuf::Timestamp]
         #     Output only. The last heartbeat time when the trust was known to be
         #     connected.

@@ -29,6 +29,10 @@ __protobuf__ = proto.module(
 
 class Domain(proto.Message):
     r"""Represents a managed Microsoft Active Directory domain.
+    If the domain is being changed, it will be placed into the
+    UPDATING state, which indicates that the resource is being
+    reconciled. At this point, Get will reflect an intermediate
+    state.
 
     Attributes:
         name (str):
@@ -169,9 +173,9 @@ class Trust(proto.Message):
             The target DNS server IP addresses which can
             resolve the remote domain involved in the trust.
         trust_handshake_secret (str):
-            Input only, and will not be stored. The trust
-            secret used for the handshake with the target
-            domain.
+            Input only. The trust secret used for the
+            handshake with the target domain. It will not be
+            stored.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time the instance was
             created.

@@ -9,21 +9,21 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder extends
 
   /**
    * <pre>
-   * The resource project name and location using the form:
+   * Required. The resource project name and location using the form:
    * `projects/{project_id}/locations/global`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   java.lang.String getParent();
   /**
    * <pre>
-   * The resource project name and location using the form:
+   * Required. The resource project name and location using the form:
    * `projects/{project_id}/locations/global`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   com.google.protobuf.ByteString
@@ -31,37 +31,37 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder extends
 
   /**
    * <pre>
-   * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+   * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
    *  * Must contain only lowercase letters, numbers, periods and hyphens.
    *  * Must start with a letter.
    *  * Must contain between 2-64 characters.
    *  * Must end with a number or a letter.
    *  * Must not start with period.
-   *  * First segement length (mydomain form example above) shouldn't exceed
+   *  * First segment length (mydomain form example above) shouldn't exceed
    *    15 chars.
    *  * The last segment cannot be fully numeric.
    *  * Must be unique within the customer project.
    * </pre>
    *
-   * <code>string domain_name = 2;</code>
+   * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The domainName.
    */
   java.lang.String getDomainName();
   /**
    * <pre>
-   * A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+   * Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
    *  * Must contain only lowercase letters, numbers, periods and hyphens.
    *  * Must start with a letter.
    *  * Must contain between 2-64 characters.
    *  * Must end with a number or a letter.
    *  * Must not start with period.
-   *  * First segement length (mydomain form example above) shouldn't exceed
+   *  * First segment length (mydomain form example above) shouldn't exceed
    *    15 chars.
    *  * The last segment cannot be fully numeric.
    *  * Must be unique within the customer project.
    * </pre>
    *
-   * <code>string domain_name = 2;</code>
+   * <code>string domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for domainName.
    */
   com.google.protobuf.ByteString
@@ -69,28 +69,28 @@ public interface CreateMicrosoftAdDomainRequestOrBuilder extends
 
   /**
    * <pre>
-   * A Managed Identity domain resource.
+   * Required. A Managed Identity domain resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
   /**
    * <pre>
-   * A Managed Identity domain resource.
+   * Required. A Managed Identity domain resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The domain.
    */
   com.google.cloud.managedidentities.v1beta1.Domain getDomain();
   /**
    * <pre>
-   * A Managed Identity domain resource.
+   * Required. A Managed Identity domain resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.managedidentities.v1beta1.DomainOrBuilder getDomainOrBuilder();
 }

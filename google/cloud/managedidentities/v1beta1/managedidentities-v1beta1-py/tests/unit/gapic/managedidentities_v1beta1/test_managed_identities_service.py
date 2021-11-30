@@ -527,6 +527,112 @@ async def test_create_microsoft_ad_domain_field_headers_async():
     ) in kw['metadata']
 
 
+def test_create_microsoft_ad_domain_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_microsoft_ad_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.create_microsoft_ad_domain(
+            parent='parent_value',
+            domain_name='domain_name_value',
+            domain=resource.Domain(name='name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].domain_name
+        mock_val = 'domain_name_value'
+        assert arg == mock_val
+        arg = args[0].domain
+        mock_val = resource.Domain(name='name_value')
+        assert arg == mock_val
+
+
+def test_create_microsoft_ad_domain_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.create_microsoft_ad_domain(
+            managed_identities_service.CreateMicrosoftAdDomainRequest(),
+            parent='parent_value',
+            domain_name='domain_name_value',
+            domain=resource.Domain(name='name_value'),
+        )
+
+
+@pytest.mark.asyncio
+async def test_create_microsoft_ad_domain_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.create_microsoft_ad_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.create_microsoft_ad_domain(
+            parent='parent_value',
+            domain_name='domain_name_value',
+            domain=resource.Domain(name='name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+        arg = args[0].domain_name
+        mock_val = 'domain_name_value'
+        assert arg == mock_val
+        arg = args[0].domain
+        mock_val = resource.Domain(name='name_value')
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_create_microsoft_ad_domain_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.create_microsoft_ad_domain(
+            managed_identities_service.CreateMicrosoftAdDomainRequest(),
+            parent='parent_value',
+            domain_name='domain_name_value',
+            domain=resource.Domain(name='name_value'),
+        )
+
+
 def test_reset_admin_password(transport: str = 'grpc', request_type=managed_identities_service.ResetAdminPasswordRequest):
     client = ManagedIdentitiesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -676,6 +782,90 @@ async def test_reset_admin_password_field_headers_async():
         'x-goog-request-params',
         'name=name/value',
     ) in kw['metadata']
+
+
+def test_reset_admin_password_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reset_admin_password),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = managed_identities_service.ResetAdminPasswordResponse()
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.reset_admin_password(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+
+
+def test_reset_admin_password_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.reset_admin_password(
+            managed_identities_service.ResetAdminPasswordRequest(),
+            name='name_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_reset_admin_password_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reset_admin_password),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = managed_identities_service.ResetAdminPasswordResponse()
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(managed_identities_service.ResetAdminPasswordResponse())
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.reset_admin_password(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_reset_admin_password_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.reset_admin_password(
+            managed_identities_service.ResetAdminPasswordRequest(),
+            name='name_value',
+        )
 
 
 def test_list_domains(transport: str = 'grpc', request_type=managed_identities_service.ListDomainsRequest):
@@ -831,6 +1021,90 @@ async def test_list_domains_field_headers_async():
         'x-goog-request-params',
         'parent=parent/value',
     ) in kw['metadata']
+
+
+def test_list_domains_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_domains),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = managed_identities_service.ListDomainsResponse()
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.list_domains(
+            parent='parent_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+
+
+def test_list_domains_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.list_domains(
+            managed_identities_service.ListDomainsRequest(),
+            parent='parent_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_list_domains_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.list_domains),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = managed_identities_service.ListDomainsResponse()
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(managed_identities_service.ListDomainsResponse())
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.list_domains(
+            parent='parent_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].parent
+        mock_val = 'parent_value'
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_list_domains_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.list_domains(
+            managed_identities_service.ListDomainsRequest(),
+            parent='parent_value',
+        )
 
 
 def test_list_domains_pager():
@@ -1198,6 +1472,90 @@ async def test_get_domain_field_headers_async():
     ) in kw['metadata']
 
 
+def test_get_domain_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = resource.Domain()
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.get_domain(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+
+
+def test_get_domain_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.get_domain(
+            managed_identities_service.GetDomainRequest(),
+            name='name_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_get_domain_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = resource.Domain()
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(resource.Domain())
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.get_domain(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_get_domain_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.get_domain(
+            managed_identities_service.GetDomainRequest(),
+            name='name_value',
+        )
+
+
 def test_update_domain(transport: str = 'grpc', request_type=managed_identities_service.UpdateDomainRequest):
     client = ManagedIdentitiesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1343,6 +1701,102 @@ async def test_update_domain_field_headers_async():
         'x-goog-request-params',
         'domain.name=domain.name/value',
     ) in kw['metadata']
+
+
+def test_update_domain_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.update_domain(
+            domain=resource.Domain(name='name_value'),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].domain
+        mock_val = resource.Domain(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
+
+
+def test_update_domain_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.update_domain(
+            managed_identities_service.UpdateDomainRequest(),
+            domain=resource.Domain(name='name_value'),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
+        )
+
+
+@pytest.mark.asyncio
+async def test_update_domain_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.update_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.update_domain(
+            domain=resource.Domain(name='name_value'),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].domain
+        mock_val = resource.Domain(name='name_value')
+        assert arg == mock_val
+        arg = args[0].update_mask
+        mock_val = field_mask_pb2.FieldMask(paths=['paths_value'])
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_update_domain_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.update_domain(
+            managed_identities_service.UpdateDomainRequest(),
+            domain=resource.Domain(name='name_value'),
+            update_mask=field_mask_pb2.FieldMask(paths=['paths_value']),
+        )
 
 
 def test_delete_domain(transport: str = 'grpc', request_type=managed_identities_service.DeleteDomainRequest):
@@ -1492,6 +1946,92 @@ async def test_delete_domain_field_headers_async():
     ) in kw['metadata']
 
 
+def test_delete_domain_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.delete_domain(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+
+
+def test_delete_domain_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.delete_domain(
+            managed_identities_service.DeleteDomainRequest(),
+            name='name_value',
+        )
+
+
+@pytest.mark.asyncio
+async def test_delete_domain_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.delete_domain),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.delete_domain(
+            name='name_value',
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_delete_domain_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.delete_domain(
+            managed_identities_service.DeleteDomainRequest(),
+            name='name_value',
+        )
+
+
 def test_attach_trust(transport: str = 'grpc', request_type=managed_identities_service.AttachTrustRequest):
     client = ManagedIdentitiesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1637,6 +2177,102 @@ async def test_attach_trust_field_headers_async():
         'x-goog-request-params',
         'name=name/value',
     ) in kw['metadata']
+
+
+def test_attach_trust_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.attach_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.attach_trust(
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].trust
+        mock_val = resource.Trust(target_domain_name='target_domain_name_value')
+        assert arg == mock_val
+
+
+def test_attach_trust_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.attach_trust(
+            managed_identities_service.AttachTrustRequest(),
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+
+@pytest.mark.asyncio
+async def test_attach_trust_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.attach_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.attach_trust(
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].trust
+        mock_val = resource.Trust(target_domain_name='target_domain_name_value')
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_attach_trust_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.attach_trust(
+            managed_identities_service.AttachTrustRequest(),
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
 
 
 def test_reconfigure_trust(transport: str = 'grpc', request_type=managed_identities_service.ReconfigureTrustRequest):
@@ -1786,6 +2422,112 @@ async def test_reconfigure_trust_field_headers_async():
     ) in kw['metadata']
 
 
+def test_reconfigure_trust_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reconfigure_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.reconfigure_trust(
+            name='name_value',
+            target_domain_name='target_domain_name_value',
+            target_dns_ip_addresses=['target_dns_ip_addresses_value'],
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].target_domain_name
+        mock_val = 'target_domain_name_value'
+        assert arg == mock_val
+        arg = args[0].target_dns_ip_addresses
+        mock_val = ['target_dns_ip_addresses_value']
+        assert arg == mock_val
+
+
+def test_reconfigure_trust_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.reconfigure_trust(
+            managed_identities_service.ReconfigureTrustRequest(),
+            name='name_value',
+            target_domain_name='target_domain_name_value',
+            target_dns_ip_addresses=['target_dns_ip_addresses_value'],
+        )
+
+
+@pytest.mark.asyncio
+async def test_reconfigure_trust_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.reconfigure_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.reconfigure_trust(
+            name='name_value',
+            target_domain_name='target_domain_name_value',
+            target_dns_ip_addresses=['target_dns_ip_addresses_value'],
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].target_domain_name
+        mock_val = 'target_domain_name_value'
+        assert arg == mock_val
+        arg = args[0].target_dns_ip_addresses
+        mock_val = ['target_dns_ip_addresses_value']
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_reconfigure_trust_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.reconfigure_trust(
+            managed_identities_service.ReconfigureTrustRequest(),
+            name='name_value',
+            target_domain_name='target_domain_name_value',
+            target_dns_ip_addresses=['target_dns_ip_addresses_value'],
+        )
+
+
 def test_detach_trust(transport: str = 'grpc', request_type=managed_identities_service.DetachTrustRequest):
     client = ManagedIdentitiesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1933,6 +2675,102 @@ async def test_detach_trust_field_headers_async():
     ) in kw['metadata']
 
 
+def test_detach_trust_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.detach_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.detach_trust(
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].trust
+        mock_val = resource.Trust(target_domain_name='target_domain_name_value')
+        assert arg == mock_val
+
+
+def test_detach_trust_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.detach_trust(
+            managed_identities_service.DetachTrustRequest(),
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+
+@pytest.mark.asyncio
+async def test_detach_trust_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.detach_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.detach_trust(
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].trust
+        mock_val = resource.Trust(target_domain_name='target_domain_name_value')
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_detach_trust_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.detach_trust(
+            managed_identities_service.DetachTrustRequest(),
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+
 def test_validate_trust(transport: str = 'grpc', request_type=managed_identities_service.ValidateTrustRequest):
     client = ManagedIdentitiesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -2078,6 +2916,102 @@ async def test_validate_trust_field_headers_async():
         'x-goog-request-params',
         'name=name/value',
     ) in kw['metadata']
+
+
+def test_validate_trust_flattened():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.validate_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        client.validate_trust(
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls) == 1
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].trust
+        mock_val = resource.Trust(target_domain_name='target_domain_name_value')
+        assert arg == mock_val
+
+
+def test_validate_trust_flattened_error():
+    client = ManagedIdentitiesServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        client.validate_trust(
+            managed_identities_service.ValidateTrustRequest(),
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+
+@pytest.mark.asyncio
+async def test_validate_trust_flattened_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.validate_trust),
+            '__call__') as call:
+        # Designate an appropriate return value for the call.
+        call.return_value = operations_pb2.Operation(name='operations/op')
+
+        call.return_value = grpc_helpers_async.FakeUnaryUnaryCall(
+            operations_pb2.Operation(name='operations/spam')
+        )
+        # Call the method with a truthy value for each flattened field,
+        # using the keyword arguments to the method.
+        response = await client.validate_trust(
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
+
+        # Establish that the underlying call was made with the expected
+        # request object values.
+        assert len(call.mock_calls)
+        _, args, _ = call.mock_calls[0]
+        arg = args[0].name
+        mock_val = 'name_value'
+        assert arg == mock_val
+        arg = args[0].trust
+        mock_val = resource.Trust(target_domain_name='target_domain_name_value')
+        assert arg == mock_val
+
+
+@pytest.mark.asyncio
+async def test_validate_trust_flattened_error_async():
+    client = ManagedIdentitiesServiceAsyncClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+
+    # Attempting to call a method with both a request object and flattened
+    # fields is an error.
+    with pytest.raises(ValueError):
+        await client.validate_trust(
+            managed_identities_service.ValidateTrustRequest(),
+            name='name_value',
+            trust=resource.Trust(target_domain_name='target_domain_name_value'),
+        )
 
 
 def test_credentials_transport_error():
@@ -2499,8 +3433,29 @@ def test_managed_identities_service_grpc_lro_async_client():
     assert transport.operations_client is transport.operations_client
 
 
+def test_domain_path():
+    project = "squid"
+    location = "clam"
+    domain = "whelk"
+    expected = "projects/{project}/locations/{location}/domains/{domain}".format(project=project, location=location, domain=domain, )
+    actual = ManagedIdentitiesServiceClient.domain_path(project, location, domain)
+    assert expected == actual
+
+
+def test_parse_domain_path():
+    expected = {
+        "project": "octopus",
+        "location": "oyster",
+        "domain": "nudibranch",
+    }
+    path = ManagedIdentitiesServiceClient.domain_path(**expected)
+
+    # Check that the path construction is reversible.
+    actual = ManagedIdentitiesServiceClient.parse_domain_path(path)
+    assert expected == actual
+
 def test_common_billing_account_path():
-    billing_account = "squid"
+    billing_account = "cuttlefish"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = ManagedIdentitiesServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2508,7 +3463,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+        "billing_account": "mussel",
     }
     path = ManagedIdentitiesServiceClient.common_billing_account_path(**expected)
 
@@ -2517,7 +3472,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "whelk"
+    folder = "winkle"
     expected = "folders/{folder}".format(folder=folder, )
     actual = ManagedIdentitiesServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2525,7 +3480,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+        "folder": "nautilus",
     }
     path = ManagedIdentitiesServiceClient.common_folder_path(**expected)
 
@@ -2534,7 +3489,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "oyster"
+    organization = "scallop"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = ManagedIdentitiesServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2542,7 +3497,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+        "organization": "abalone",
     }
     path = ManagedIdentitiesServiceClient.common_organization_path(**expected)
 
@@ -2551,7 +3506,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "cuttlefish"
+    project = "squid"
     expected = "projects/{project}".format(project=project, )
     actual = ManagedIdentitiesServiceClient.common_project_path(project)
     assert expected == actual
@@ -2559,7 +3514,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+        "project": "clam",
     }
     path = ManagedIdentitiesServiceClient.common_project_path(**expected)
 
@@ -2568,8 +3523,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "winkle"
-    location = "nautilus"
+    project = "whelk"
+    location = "octopus"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = ManagedIdentitiesServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2577,8 +3532,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+        "project": "oyster",
+        "location": "nudibranch",
     }
     path = ManagedIdentitiesServiceClient.common_location_path(**expected)
 

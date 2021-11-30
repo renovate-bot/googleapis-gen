@@ -9,21 +9,21 @@ public interface ReconfigureTrustRequestOrBuilder extends
 
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   java.lang.String getName();
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -31,21 +31,21 @@ public interface ReconfigureTrustRequestOrBuilder extends
 
   /**
    * <pre>
-   * The fully-qualified target domain name which will be in trust with current
+   * Required. The fully-qualified target domain name which will be in trust with current
    * domain.
    * </pre>
    *
-   * <code>string target_domain_name = 2;</code>
+   * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The targetDomainName.
    */
   java.lang.String getTargetDomainName();
   /**
    * <pre>
-   * The fully-qualified target domain name which will be in trust with current
+   * Required. The fully-qualified target domain name which will be in trust with current
    * domain.
    * </pre>
    *
-   * <code>string target_domain_name = 2;</code>
+   * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for targetDomainName.
    */
   com.google.protobuf.ByteString
@@ -53,43 +53,43 @@ public interface ReconfigureTrustRequestOrBuilder extends
 
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the targetDnsIpAddresses.
    */
   java.util.List<java.lang.String>
       getTargetDnsIpAddressesList();
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of targetDnsIpAddresses.
    */
   int getTargetDnsIpAddressesCount();
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The targetDnsIpAddresses at the given index.
    */
   java.lang.String getTargetDnsIpAddresses(int index);
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the targetDnsIpAddresses at the given index.
    */

@@ -37,6 +37,7 @@ from google.cloud.managedidentities_v1beta1.services.managed_identities_service 
 from google.cloud.managedidentities_v1beta1.types import managed_identities_service
 from google.cloud.managedidentities_v1beta1.types import resource
 from google.protobuf import empty_pb2  # type: ignore
+from google.protobuf import field_mask_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from .transports.base import ManagedIdentitiesServiceTransport, DEFAULT_CLIENT_INFO
 from .transports.grpc_asyncio import ManagedIdentitiesServiceGrpcAsyncIOTransport
@@ -51,6 +52,8 @@ class ManagedIdentitiesServiceAsyncClient:
     DEFAULT_ENDPOINT = ManagedIdentitiesServiceClient.DEFAULT_ENDPOINT
     DEFAULT_MTLS_ENDPOINT = ManagedIdentitiesServiceClient.DEFAULT_MTLS_ENDPOINT
 
+    domain_path = staticmethod(ManagedIdentitiesServiceClient.domain_path)
+    parse_domain_path = staticmethod(ManagedIdentitiesServiceClient.parse_domain_path)
     common_billing_account_path = staticmethod(ManagedIdentitiesServiceClient.common_billing_account_path)
     parse_common_billing_account_path = staticmethod(ManagedIdentitiesServiceClient.parse_common_billing_account_path)
     common_folder_path = staticmethod(ManagedIdentitiesServiceClient.common_folder_path)
@@ -155,6 +158,9 @@ class ManagedIdentitiesServiceAsyncClient:
     async def create_microsoft_ad_domain(self,
             request: Union[managed_identities_service.CreateMicrosoftAdDomainRequest, dict] = None,
             *,
+            parent: str = None,
+            domain_name: str = None,
+            domain: resource.Domain = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -165,6 +171,38 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.CreateMicrosoftAdDomainRequest, dict]):
                 The request object. Request message for
                 [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomain]
+            parent (:class:`str`):
+                Required. The resource project name and location using
+                the form: ``projects/{project_id}/locations/global``
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            domain_name (:class:`str`):
+                Required. A domain name, e.g. mydomain.myorg.com, with
+                the following restrictions:
+
+                -  Must contain only lowercase letters, numbers, periods
+                   and hyphens.
+                -  Must start with a letter.
+                -  Must contain between 2-64 characters.
+                -  Must end with a number or a letter.
+                -  Must not start with period.
+                -  First segment length (mydomain form example above)
+                   shouldn't exceed 15 chars.
+                -  The last segment cannot be fully numeric.
+                -  Must be unique within the customer project.
+
+                This corresponds to the ``domain_name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            domain (:class:`google.cloud.managedidentities_v1beta1.types.Domain`):
+                Required. A Managed Identity domain
+                resource.
+
+                This corresponds to the ``domain`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -175,13 +213,31 @@ class ManagedIdentitiesServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:`google.cloud.managedidentities_v1beta1.types.Domain`
-                Represents a managed Microsoft Active Directory domain.
+                The result type for the operation will be :class:`google.cloud.managedidentities_v1beta1.types.Domain` Represents a managed Microsoft Active Directory domain.
+                   If the domain is being changed, it will be placed
+                   into the UPDATING state, which indicates that the
+                   resource is being reconciled. At this point, Get will
+                   reflect an intermediate state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent, domain_name, domain])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.CreateMicrosoftAdDomainRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if parent is not None:
+            request.parent = parent
+        if domain_name is not None:
+            request.domain_name = domain_name
+        if domain is not None:
+            request.domain = domain
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -221,6 +277,7 @@ class ManagedIdentitiesServiceAsyncClient:
     async def reset_admin_password(self,
             request: Union[managed_identities_service.ResetAdminPasswordRequest, dict] = None,
             *,
+            name: str = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -231,6 +288,13 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.ResetAdminPasswordRequest, dict]):
                 The request object. Request message for
                 [ResetAdminPassword][google.cloud.managedidentities.v1beta1.ResetAdminPassword]
+            name (:class:`str`):
+                Required. The domain resource name using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -244,7 +308,19 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.ResetAdminPasswordRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -276,6 +352,7 @@ class ManagedIdentitiesServiceAsyncClient:
     async def list_domains(self,
             request: Union[managed_identities_service.ListDomainsRequest, dict] = None,
             *,
+            parent: str = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -286,6 +363,13 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.ListDomainsRequest, dict]):
                 The request object. Request message for
                 [ListDomains][google.cloud.managedidentities.v1beta1.ListDomains]
+            parent (:class:`str`):
+                Required. The resource name of the domain location using
+                the form: ``projects/{project_id}/locations/global``
+
+                This corresponds to the ``parent`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -302,7 +386,19 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([parent])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.ListDomainsRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if parent is not None:
+            request.parent = parent
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -343,6 +439,7 @@ class ManagedIdentitiesServiceAsyncClient:
     async def get_domain(self,
             request: Union[managed_identities_service.GetDomainRequest, dict] = None,
             *,
+            name: str = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -353,6 +450,13 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.GetDomainRequest, dict]):
                 The request object. Request message for
                 [GetDomain][google.cloud.managedidentities.v1beta1.GetDomain]
+            name (:class:`str`):
+                Required. The domain resource name using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -362,11 +466,28 @@ class ManagedIdentitiesServiceAsyncClient:
         Returns:
             google.cloud.managedidentities_v1beta1.types.Domain:
                 Represents a managed Microsoft Active
-                Directory domain.
+                Directory domain. If the domain is being
+                changed, it will be placed into the
+                UPDATING state, which indicates that the
+                resource is being reconciled. At this
+                point, Get will reflect an intermediate
+                state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.GetDomainRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -398,6 +519,8 @@ class ManagedIdentitiesServiceAsyncClient:
     async def update_domain(self,
             request: Union[managed_identities_service.UpdateDomainRequest, dict] = None,
             *,
+            domain: resource.Domain = None,
+            update_mask: field_mask_pb2.FieldMask = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -408,6 +531,27 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.UpdateDomainRequest, dict]):
                 The request object. Request message for
                 [UpdateDomain][google.cloud.managedidentities.v1beta1.UpdateDomain]
+            domain (:class:`google.cloud.managedidentities_v1beta1.types.Domain`):
+                Required. Domain message with updated fields. Only
+                supported fields specified in update_mask are updated.
+
+                This corresponds to the ``domain`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+                Required. Mask of fields to update. At least one path
+                must be supplied in this field. The elements of the
+                repeated paths field may only include fields from
+                [Domain][google.cloud.managedidentities.v1beta1.Domain]:
+
+                -  ``labels``
+                -  ``locations``
+                -  ``authorized_networks``
+                -  ``audit_logs_enabled``
+
+                This corresponds to the ``update_mask`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -418,13 +562,29 @@ class ManagedIdentitiesServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:`google.cloud.managedidentities_v1beta1.types.Domain`
-                Represents a managed Microsoft Active Directory domain.
+                The result type for the operation will be :class:`google.cloud.managedidentities_v1beta1.types.Domain` Represents a managed Microsoft Active Directory domain.
+                   If the domain is being changed, it will be placed
+                   into the UPDATING state, which indicates that the
+                   resource is being reconciled. At this point, Get will
+                   reflect an intermediate state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([domain, update_mask])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.UpdateDomainRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if domain is not None:
+            request.domain = domain
+        if update_mask is not None:
+            request.update_mask = update_mask
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -464,6 +624,7 @@ class ManagedIdentitiesServiceAsyncClient:
     async def delete_domain(self,
             request: Union[managed_identities_service.DeleteDomainRequest, dict] = None,
             *,
+            name: str = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -474,6 +635,13 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.DeleteDomainRequest, dict]):
                 The request object. Request message for
                 [DeleteDomain][google.cloud.managedidentities.v1beta1.DeleteDomain]
+            name (:class:`str`):
+                Required. The domain resource name using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -500,7 +668,19 @@ class ManagedIdentitiesServiceAsyncClient:
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.DeleteDomainRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -540,6 +720,8 @@ class ManagedIdentitiesServiceAsyncClient:
     async def attach_trust(self,
             request: Union[managed_identities_service.AttachTrustRequest, dict] = None,
             *,
+            name: str = None,
+            trust: resource.Trust = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -550,6 +732,19 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.AttachTrustRequest, dict]):
                 The request object. Request message for
                 [AttachTrust][google.cloud.managedidentities.v1beta1.AttachTrust]
+            name (:class:`str`):
+                Required. The resource domain name, project name and
+                location using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            trust (:class:`google.cloud.managedidentities_v1beta1.types.Trust`):
+                Required. The domain trust resource.
+                This corresponds to the ``trust`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -560,13 +755,29 @@ class ManagedIdentitiesServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:`google.cloud.managedidentities_v1beta1.types.Domain`
-                Represents a managed Microsoft Active Directory domain.
+                The result type for the operation will be :class:`google.cloud.managedidentities_v1beta1.types.Domain` Represents a managed Microsoft Active Directory domain.
+                   If the domain is being changed, it will be placed
+                   into the UPDATING state, which indicates that the
+                   resource is being reconciled. At this point, Get will
+                   reflect an intermediate state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name, trust])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.AttachTrustRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
+        if trust is not None:
+            request.trust = trust
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -606,6 +817,9 @@ class ManagedIdentitiesServiceAsyncClient:
     async def reconfigure_trust(self,
             request: Union[managed_identities_service.ReconfigureTrustRequest, dict] = None,
             *,
+            name: str = None,
+            target_domain_name: str = None,
+            target_dns_ip_addresses: Sequence[str] = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -616,6 +830,30 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.ReconfigureTrustRequest, dict]):
                 The request object. Request message for
                 [ReconfigureTrust][google.cloud.managedidentities.v1beta1.ReconfigureTrust]
+            name (:class:`str`):
+                Required. The resource domain name, project name and
+                location using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            target_domain_name (:class:`str`):
+                Required. The fully-qualified target
+                domain name which will be in trust with
+                current domain.
+
+                This corresponds to the ``target_domain_name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            target_dns_ip_addresses (:class:`Sequence[str]`):
+                Required. The target DNS server IP
+                addresses to resolve the remote domain
+                involved in the trust.
+
+                This corresponds to the ``target_dns_ip_addresses`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -626,13 +864,31 @@ class ManagedIdentitiesServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:`google.cloud.managedidentities_v1beta1.types.Domain`
-                Represents a managed Microsoft Active Directory domain.
+                The result type for the operation will be :class:`google.cloud.managedidentities_v1beta1.types.Domain` Represents a managed Microsoft Active Directory domain.
+                   If the domain is being changed, it will be placed
+                   into the UPDATING state, which indicates that the
+                   resource is being reconciled. At this point, Get will
+                   reflect an intermediate state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name, target_domain_name, target_dns_ip_addresses])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.ReconfigureTrustRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
+        if target_domain_name is not None:
+            request.target_domain_name = target_domain_name
+        if target_dns_ip_addresses:
+            request.target_dns_ip_addresses.extend(target_dns_ip_addresses)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -672,6 +928,8 @@ class ManagedIdentitiesServiceAsyncClient:
     async def detach_trust(self,
             request: Union[managed_identities_service.DetachTrustRequest, dict] = None,
             *,
+            name: str = None,
+            trust: resource.Trust = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -682,6 +940,21 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.DetachTrustRequest, dict]):
                 The request object. Request message for
                 [DetachTrust][google.cloud.managedidentities.v1beta1.DetachTrust]
+            name (:class:`str`):
+                Required. The resource domain name, project name, and
+                location using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            trust (:class:`google.cloud.managedidentities_v1beta1.types.Trust`):
+                Required. The domain trust resource
+                to removed.
+
+                This corresponds to the ``trust`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -692,13 +965,29 @@ class ManagedIdentitiesServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:`google.cloud.managedidentities_v1beta1.types.Domain`
-                Represents a managed Microsoft Active Directory domain.
+                The result type for the operation will be :class:`google.cloud.managedidentities_v1beta1.types.Domain` Represents a managed Microsoft Active Directory domain.
+                   If the domain is being changed, it will be placed
+                   into the UPDATING state, which indicates that the
+                   resource is being reconciled. At this point, Get will
+                   reflect an intermediate state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name, trust])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.DetachTrustRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
+        if trust is not None:
+            request.trust = trust
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -738,6 +1027,8 @@ class ManagedIdentitiesServiceAsyncClient:
     async def validate_trust(self,
             request: Union[managed_identities_service.ValidateTrustRequest, dict] = None,
             *,
+            name: str = None,
+            trust: resource.Trust = None,
             retry: OptionalRetry = gapic_v1.method.DEFAULT,
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
@@ -750,6 +1041,21 @@ class ManagedIdentitiesServiceAsyncClient:
             request (Union[google.cloud.managedidentities_v1beta1.types.ValidateTrustRequest, dict]):
                 The request object. Request message for
                 [ValidateTrust][google.cloud.managedidentities.v1beta1.ValidateTrust]
+            name (:class:`str`):
+                Required. The resource domain name, project name, and
+                location using the form:
+                ``projects/{project_id}/locations/global/domains/{domain_name}``
+
+                This corresponds to the ``name`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
+            trust (:class:`google.cloud.managedidentities_v1beta1.types.Trust`):
+                Required. The domain trust to
+                validate trust state for.
+
+                This corresponds to the ``trust`` field
+                on the ``request`` instance; if ``request`` is provided, this
+                should not be set.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -760,13 +1066,29 @@ class ManagedIdentitiesServiceAsyncClient:
             google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be
-                :class:`google.cloud.managedidentities_v1beta1.types.Domain`
-                Represents a managed Microsoft Active Directory domain.
+                The result type for the operation will be :class:`google.cloud.managedidentities_v1beta1.types.Domain` Represents a managed Microsoft Active Directory domain.
+                   If the domain is being changed, it will be placed
+                   into the UPDATING state, which indicates that the
+                   resource is being reconciled. At this point, Get will
+                   reflect an intermediate state.
 
         """
         # Create or coerce a protobuf request object.
+        # Sanity check: If we got a request object, we should *not* have
+        # gotten any keyword arguments that map to the request.
+        has_flattened_params = any([name, trust])
+        if request is not None and has_flattened_params:
+            raise ValueError("If the `request` argument is set, then none of "
+                             "the individual field arguments should be set.")
+
         request = managed_identities_service.ValidateTrustRequest(request)
+
+        # If we have keyword arguments corresponding to fields on the
+        # request, apply these.
+        if name is not None:
+            request.name = name
+        if trust is not None:
+            request.trust = trust
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.

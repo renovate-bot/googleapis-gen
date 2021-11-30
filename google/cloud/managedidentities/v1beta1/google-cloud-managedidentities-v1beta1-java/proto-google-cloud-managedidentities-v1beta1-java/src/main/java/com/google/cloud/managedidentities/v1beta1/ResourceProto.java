@@ -40,57 +40,65 @@ public final class ResourceProto {
     java.lang.String[] descriptorData = {
       "\n5google/cloud/managedidentities/v1beta1" +
       "/resource.proto\022&google.cloud.managedide" +
-      "ntities.v1beta1\032\037google/protobuf/timesta" +
-      "mp.proto\032\034google/api/annotations.proto\"\211" +
-      "\005\n\006Domain\022\014\n\004name\030\001 \001(\t\022J\n\006labels\030\002 \003(\0132" +
-      ":.google.cloud.managedidentities.v1beta1" +
-      ".Domain.LabelsEntry\022\033\n\023authorized_networ" +
-      "ks\030\003 \003(\t\022\031\n\021reserved_ip_range\030\004 \001(\t\022\021\n\tl" +
-      "ocations\030\005 \003(\t\022\r\n\005admin\030\006 \001(\t\022\014\n\004fqdn\030\n " +
-      "\001(\t\022/\n\013create_time\030\013 \001(\0132\032.google.protob" +
-      "uf.Timestamp\022/\n\013update_time\030\014 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022C\n\005state\030\r \001(\01624.g" +
-      "oogle.cloud.managedidentities.v1beta1.Do" +
-      "main.State\022\026\n\016status_message\030\016 \001(\t\022=\n\006tr" +
-      "usts\030\017 \003(\0132-.google.cloud.managedidentit" +
-      "ies.v1beta1.Trust\032-\n\013LabelsEntry\022\013\n\003key\030" +
+      "ntities.v1beta1\032\037google/api/field_behavi" +
+      "or.proto\032\031google/api/resource.proto\032\037goo" +
+      "gle/protobuf/timestamp.proto\032\034google/api" +
+      "/annotations.proto\"\255\006\n\006Domain\022\021\n\004name\030\001 " +
+      "\001(\tB\003\340A\003\022O\n\006labels\030\002 \003(\0132:.google.cloud." +
+      "managedidentities.v1beta1.Domain.LabelsE" +
+      "ntryB\003\340A\001\022 \n\023authorized_networks\030\003 \003(\tB\003" +
+      "\340A\001\022\036\n\021reserved_ip_range\030\004 \001(\tB\003\340A\002\022\026\n\tl" +
+      "ocations\030\005 \003(\tB\003\340A\002\022\022\n\005admin\030\006 \001(\tB\003\340A\001\022" +
+      "\021\n\004fqdn\030\n \001(\tB\003\340A\003\0224\n\013create_time\030\013 \001(\0132" +
+      "\032.google.protobuf.TimestampB\003\340A\003\0224\n\013upda" +
+      "te_time\030\014 \001(\0132\032.google.protobuf.Timestam" +
+      "pB\003\340A\003\022H\n\005state\030\r \001(\01624.google.cloud.man" +
+      "agedidentities.v1beta1.Domain.StateB\003\340A\003" +
+      "\022\033\n\016status_message\030\016 \001(\tB\003\340A\003\022B\n\006trusts\030" +
+      "\017 \003(\0132-.google.cloud.managedidentities.v" +
+      "1beta1.TrustB\003\340A\003\032-\n\013LabelsEntry\022\013\n\003key\030" +
       "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\217\001\n\005State\022\025\n\021ST" +
       "ATE_UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\t\n\005READY" +
       "\020\002\022\014\n\010UPDATING\020\003\022\014\n\010DELETING\020\004\022\r\n\tREPAIR" +
       "ING\020\005\022\032\n\026PERFORMING_MAINTENANCE\020\006\022\017\n\013UNA" +
-      "VAILABLE\020\007\"\271\006\n\005Trust\022\032\n\022target_domain_na" +
-      "me\030\001 \001(\t\022K\n\ntrust_type\030\002 \001(\01627.google.cl" +
-      "oud.managedidentities.v1beta1.Trust.Trus" +
-      "tType\022U\n\017trust_direction\030\003 \001(\0162<.google." +
-      "cloud.managedidentities.v1beta1.Trust.Tr" +
-      "ustDirection\022 \n\030selective_authentication" +
-      "\030\004 \001(\010\022\037\n\027target_dns_ip_addresses\030\005 \003(\t\022" +
-      "\036\n\026trust_handshake_secret\030\006 \001(\t\022/\n\013creat" +
-      "e_time\030\007 \001(\0132\032.google.protobuf.Timestamp" +
-      "\022/\n\013update_time\030\010 \001(\0132\032.google.protobuf." +
-      "Timestamp\022B\n\005state\030\t \001(\01623.google.cloud." +
-      "managedidentities.v1beta1.Trust.State\022\031\n" +
-      "\021state_description\030\013 \001(\t\022=\n\031last_trust_h" +
-      "eartbeat_time\030\014 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\"i\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022" +
-      "\014\n\010CREATING\020\001\022\014\n\010UPDATING\020\002\022\014\n\010DELETING\020" +
-      "\003\022\r\n\tCONNECTED\020\004\022\020\n\014DISCONNECTED\020\005\"A\n\tTr" +
-      "ustType\022\032\n\026TRUST_TYPE_UNSPECIFIED\020\000\022\n\n\006F" +
-      "OREST\020\001\022\014\n\010EXTERNAL\020\002\"_\n\016TrustDirection\022" +
-      "\037\n\033TRUST_DIRECTION_UNSPECIFIED\020\000\022\013\n\007INBO" +
-      "UND\020\001\022\014\n\010OUTBOUND\020\002\022\021\n\rBIDIRECTIONAL\020\003B\224" +
-      "\002\n*com.google.cloud.managedidentities.v1" +
-      "beta1B\rResourceProtoP\001ZWgoogle.golang.or" +
-      "g/genproto/googleapis/cloud/managedident" +
-      "ities/v1beta1;managedidentities\252\002&Google" +
-      ".Cloud.ManagedIdentities.V1Beta1\312\002&Googl" +
-      "e\\Cloud\\ManagedIdentities\\V1beta1\352\002)Goog" +
-      "le::Cloud::ManagedIdentities::V1beta1b\006p" +
-      "roto3"
+      "VAILABLE\020\007:f\352Ac\n\'managedidentities.googl" +
+      "eapis.com/Domain\0228projects/{project}/loc" +
+      "ations/{location}/domains/{domain}\"\327\006\n\005T" +
+      "rust\022\032\n\022target_domain_name\030\001 \001(\t\022K\n\ntrus" +
+      "t_type\030\002 \001(\01627.google.cloud.managedident" +
+      "ities.v1beta1.Trust.TrustType\022U\n\017trust_d" +
+      "irection\030\003 \001(\0162<.google.cloud.managedide" +
+      "ntities.v1beta1.Trust.TrustDirection\022 \n\030" +
+      "selective_authentication\030\004 \001(\010\022\037\n\027target" +
+      "_dns_ip_addresses\030\005 \003(\t\022#\n\026trust_handsha" +
+      "ke_secret\030\006 \001(\tB\003\340A\004\0224\n\013create_time\030\007 \001(" +
+      "\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n\013up" +
+      "date_time\030\010 \001(\0132\032.google.protobuf.Timest" +
+      "ampB\003\340A\003\022G\n\005state\030\t \001(\01623.google.cloud.m" +
+      "anagedidentities.v1beta1.Trust.StateB\003\340A" +
+      "\003\022\036\n\021state_description\030\013 \001(\tB\003\340A\003\022B\n\031las" +
+      "t_trust_heartbeat_time\030\014 \001(\0132\032.google.pr" +
+      "otobuf.TimestampB\003\340A\003\"i\n\005State\022\025\n\021STATE_" +
+      "UNSPECIFIED\020\000\022\014\n\010CREATING\020\001\022\014\n\010UPDATING\020" +
+      "\002\022\014\n\010DELETING\020\003\022\r\n\tCONNECTED\020\004\022\020\n\014DISCON" +
+      "NECTED\020\005\"A\n\tTrustType\022\032\n\026TRUST_TYPE_UNSP" +
+      "ECIFIED\020\000\022\n\n\006FOREST\020\001\022\014\n\010EXTERNAL\020\002\"_\n\016T" +
+      "rustDirection\022\037\n\033TRUST_DIRECTION_UNSPECI" +
+      "FIED\020\000\022\013\n\007INBOUND\020\001\022\014\n\010OUTBOUND\020\002\022\021\n\rBID" +
+      "IRECTIONAL\020\003B\224\002\n*com.google.cloud.manage" +
+      "didentities.v1beta1B\rResourceProtoP\001ZWgo" +
+      "ogle.golang.org/genproto/googleapis/clou" +
+      "d/managedidentities/v1beta1;managedident" +
+      "ities\252\002&Google.Cloud.ManagedIdentities.V" +
+      "1Beta1\312\002&Google\\Cloud\\ManagedIdentities\\" +
+      "V1beta1\352\002)Google::Cloud::ManagedIdentiti" +
+      "es::V1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.google.api.AnnotationsProto.getDescriptor(),
         });
@@ -112,6 +120,14 @@ public final class ResourceProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_google_cloud_managedidentities_v1beta1_Trust_descriptor,
         new java.lang.String[] { "TargetDomainName", "TrustType", "TrustDirection", "SelectiveAuthentication", "TargetDnsIpAddresses", "TrustHandshakeSecret", "CreateTime", "UpdateTime", "State", "StateDescription", "LastTrustHeartbeatTime", });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resource);
+    com.google.protobuf.Descriptors.FileDescriptor
+        .internalUpdateFileDescriptor(descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.api.AnnotationsProto.getDescriptor();
   }

@@ -16,6 +16,7 @@
 
 namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
 {
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.ManagedIdentities.V1Beta1;
     using Google.LongRunning;
 
@@ -33,7 +34,7 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Initialize request argument(s)
             CreateMicrosoftAdDomainRequest request = new CreateMicrosoftAdDomainRequest
             {
-                Parent = "",
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 DomainName = "",
                 Domain = new Domain(),
             };

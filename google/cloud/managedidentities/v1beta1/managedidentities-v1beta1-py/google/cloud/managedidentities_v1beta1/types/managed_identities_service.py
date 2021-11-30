@@ -101,11 +101,11 @@ class CreateMicrosoftAdDomainRequest(proto.Message):
 
     Attributes:
         parent (str):
-            The resource project name and location using the form:
-            ``projects/{project_id}/locations/global``
+            Required. The resource project name and location using the
+            form: ``projects/{project_id}/locations/global``
         domain_name (str):
-            A domain name, e.g. mydomain.myorg.com, with the following
-            restrictions:
+            Required. A domain name, e.g. mydomain.myorg.com, with the
+            following restrictions:
 
             -  Must contain only lowercase letters, numbers, periods and
                hyphens.
@@ -113,12 +113,12 @@ class CreateMicrosoftAdDomainRequest(proto.Message):
             -  Must contain between 2-64 characters.
             -  Must end with a number or a letter.
             -  Must not start with period.
-            -  First segement length (mydomain form example above)
+            -  First segment length (mydomain form example above)
                shouldn't exceed 15 chars.
             -  The last segment cannot be fully numeric.
             -  Must be unique within the customer project.
         domain (google.cloud.managedidentities_v1beta1.types.Domain):
-            A Managed Identity domain resource.
+            Required. A Managed Identity domain resource.
     """
 
     parent = proto.Field(
@@ -142,7 +142,7 @@ class ResetAdminPasswordRequest(proto.Message):
 
     Attributes:
         name (str):
-            The domain resource name using the form:
+            Required. The domain resource name using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
     """
 
@@ -261,7 +261,7 @@ class GetDomainRequest(proto.Message):
 
     Attributes:
         name (str):
-            The domain resource name using the form:
+            Required. The domain resource name using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
     """
 
@@ -277,17 +277,18 @@ class UpdateDomainRequest(proto.Message):
 
     Attributes:
         update_mask (google.protobuf.field_mask_pb2.FieldMask):
-            Mask of fields to update. At least one path must be supplied
-            in this field. The elements of the repeated paths field may
-            only include fields from
+            Required. Mask of fields to update. At least one path must
+            be supplied in this field. The elements of the repeated
+            paths field may only include fields from
             [Domain][google.cloud.managedidentities.v1beta1.Domain]:
 
             -  ``labels``
             -  ``locations``
             -  ``authorized_networks``
+            -  ``audit_logs_enabled``
         domain (google.cloud.managedidentities_v1beta1.types.Domain):
-            Domain message with updated fields. Only supported fields
-            specified in update_mask are updated.
+            Required. Domain message with updated fields. Only supported
+            fields specified in update_mask are updated.
     """
 
     update_mask = proto.Field(
@@ -308,7 +309,7 @@ class DeleteDomainRequest(proto.Message):
 
     Attributes:
         name (str):
-            The domain resource name using the form:
+            Required. The domain resource name using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
     """
 
@@ -324,11 +325,11 @@ class AttachTrustRequest(proto.Message):
 
     Attributes:
         name (str):
-            The resource domain name, project name and location using
-            the form:
+            Required. The resource domain name, project name and
+            location using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
         trust (google.cloud.managedidentities_v1beta1.types.Trust):
-            The domain trust resource.
+            Required. The domain trust resource.
     """
 
     name = proto.Field(
@@ -348,15 +349,16 @@ class ReconfigureTrustRequest(proto.Message):
 
     Attributes:
         name (str):
-            The resource domain name, project name and location using
-            the form:
+            Required. The resource domain name, project name and
+            location using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
         target_domain_name (str):
-            The fully-qualified target domain name which
-            will be in trust with current domain.
+            Required. The fully-qualified target domain
+            name which will be in trust with current domain.
         target_dns_ip_addresses (Sequence[str]):
-            The target DNS server IP addresses to resolve
-            the remote domain involved in the trust.
+            Required. The target DNS server IP addresses
+            to resolve the remote domain involved in the
+            trust.
     """
 
     name = proto.Field(
@@ -379,11 +381,12 @@ class DetachTrustRequest(proto.Message):
 
     Attributes:
         name (str):
-            The resource domain name, project name, and location using
-            the form:
+            Required. The resource domain name, project name, and
+            location using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
         trust (google.cloud.managedidentities_v1beta1.types.Trust):
-            The domain trust resource to removed.
+            Required. The domain trust resource to
+            removed.
     """
 
     name = proto.Field(
@@ -403,11 +406,12 @@ class ValidateTrustRequest(proto.Message):
 
     Attributes:
         name (str):
-            The resource domain name, project name, and location using
-            the form:
+            Required. The resource domain name, project name, and
+            location using the form:
             ``projects/{project_id}/locations/global/domains/{domain_name}``
         trust (google.cloud.managedidentities_v1beta1.types.Trust):
-            The domain trust to validate trust state for.
+            Required. The domain trust to validate trust
+            state for.
     """
 
     name = proto.Field(

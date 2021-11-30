@@ -33,7 +33,7 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Initialize request argument(s)
             AttachTrustRequest request = new AttachTrustRequest
             {
-                Name = "",
+                DomainName = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]"),
                 Trust = new Trust(),
             };
             // Make the request

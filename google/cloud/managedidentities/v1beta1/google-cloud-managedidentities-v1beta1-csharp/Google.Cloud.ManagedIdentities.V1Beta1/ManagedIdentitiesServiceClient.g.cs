@@ -17,6 +17,7 @@
 using gax = Google.Api.Gax;
 using gaxgrpc = Google.Api.Gax.Grpc;
 using gaxgrpccore = Google.Api.Gax.Grpc.GrpcCore;
+using gagr = Google.Api.Gax.ResourceNames;
 using lro = Google.LongRunning;
 using proto = Google.Protobuf;
 using wkt = Google.Protobuf.WellKnownTypes;
@@ -543,6 +544,188 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
             lro::Operation<Domain, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), CreateMicrosoftAdDomainOperationsClient, callSettings);
 
         /// <summary>
+        /// Creates a Microsoft AD domain.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource project name and location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="domainName">
+        /// Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        /// * Must contain only lowercase letters, numbers, periods and hyphens.
+        /// * Must start with a letter.
+        /// * Must contain between 2-64 characters.
+        /// * Must end with a number or a letter.
+        /// * Must not start with period.
+        /// * First segment length (mydomain form example above) shouldn't exceed
+        /// 15 chars.
+        /// * The last segment cannot be fully numeric.
+        /// * Must be unique within the customer project.
+        /// </param>
+        /// <param name="domain">
+        /// Required. A Managed Identity domain resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> CreateMicrosoftAdDomain(string parent, string domainName, Domain domain, gaxgrpc::CallSettings callSettings = null) =>
+            CreateMicrosoftAdDomain(new CreateMicrosoftAdDomainRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                DomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(domainName, nameof(domainName)),
+                Domain = gax::GaxPreconditions.CheckNotNull(domain, nameof(domain)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a Microsoft AD domain.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource project name and location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="domainName">
+        /// Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        /// * Must contain only lowercase letters, numbers, periods and hyphens.
+        /// * Must start with a letter.
+        /// * Must contain between 2-64 characters.
+        /// * Must end with a number or a letter.
+        /// * Must not start with period.
+        /// * First segment length (mydomain form example above) shouldn't exceed
+        /// 15 chars.
+        /// * The last segment cannot be fully numeric.
+        /// * Must be unique within the customer project.
+        /// </param>
+        /// <param name="domain">
+        /// Required. A Managed Identity domain resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> CreateMicrosoftAdDomainAsync(string parent, string domainName, Domain domain, gaxgrpc::CallSettings callSettings = null) =>
+            CreateMicrosoftAdDomainAsync(new CreateMicrosoftAdDomainRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                DomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(domainName, nameof(domainName)),
+                Domain = gax::GaxPreconditions.CheckNotNull(domain, nameof(domain)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a Microsoft AD domain.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource project name and location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="domainName">
+        /// Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        /// * Must contain only lowercase letters, numbers, periods and hyphens.
+        /// * Must start with a letter.
+        /// * Must contain between 2-64 characters.
+        /// * Must end with a number or a letter.
+        /// * Must not start with period.
+        /// * First segment length (mydomain form example above) shouldn't exceed
+        /// 15 chars.
+        /// * The last segment cannot be fully numeric.
+        /// * Must be unique within the customer project.
+        /// </param>
+        /// <param name="domain">
+        /// Required. A Managed Identity domain resource.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> CreateMicrosoftAdDomainAsync(string parent, string domainName, Domain domain, st::CancellationToken cancellationToken) =>
+            CreateMicrosoftAdDomainAsync(parent, domainName, domain, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Creates a Microsoft AD domain.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource project name and location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="domainName">
+        /// Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        /// * Must contain only lowercase letters, numbers, periods and hyphens.
+        /// * Must start with a letter.
+        /// * Must contain between 2-64 characters.
+        /// * Must end with a number or a letter.
+        /// * Must not start with period.
+        /// * First segment length (mydomain form example above) shouldn't exceed
+        /// 15 chars.
+        /// * The last segment cannot be fully numeric.
+        /// * Must be unique within the customer project.
+        /// </param>
+        /// <param name="domain">
+        /// Required. A Managed Identity domain resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> CreateMicrosoftAdDomain(gagr::LocationName parent, string domainName, Domain domain, gaxgrpc::CallSettings callSettings = null) =>
+            CreateMicrosoftAdDomain(new CreateMicrosoftAdDomainRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                DomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(domainName, nameof(domainName)),
+                Domain = gax::GaxPreconditions.CheckNotNull(domain, nameof(domain)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a Microsoft AD domain.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource project name and location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="domainName">
+        /// Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        /// * Must contain only lowercase letters, numbers, periods and hyphens.
+        /// * Must start with a letter.
+        /// * Must contain between 2-64 characters.
+        /// * Must end with a number or a letter.
+        /// * Must not start with period.
+        /// * First segment length (mydomain form example above) shouldn't exceed
+        /// 15 chars.
+        /// * The last segment cannot be fully numeric.
+        /// * Must be unique within the customer project.
+        /// </param>
+        /// <param name="domain">
+        /// Required. A Managed Identity domain resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> CreateMicrosoftAdDomainAsync(gagr::LocationName parent, string domainName, Domain domain, gaxgrpc::CallSettings callSettings = null) =>
+            CreateMicrosoftAdDomainAsync(new CreateMicrosoftAdDomainRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                DomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(domainName, nameof(domainName)),
+                Domain = gax::GaxPreconditions.CheckNotNull(domain, nameof(domain)),
+            }, callSettings);
+
+        /// <summary>
+        /// Creates a Microsoft AD domain.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource project name and location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="domainName">
+        /// Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        /// * Must contain only lowercase letters, numbers, periods and hyphens.
+        /// * Must start with a letter.
+        /// * Must contain between 2-64 characters.
+        /// * Must end with a number or a letter.
+        /// * Must not start with period.
+        /// * First segment length (mydomain form example above) shouldn't exceed
+        /// 15 chars.
+        /// * The last segment cannot be fully numeric.
+        /// * Must be unique within the customer project.
+        /// </param>
+        /// <param name="domain">
+        /// Required. A Managed Identity domain resource.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> CreateMicrosoftAdDomainAsync(gagr::LocationName parent, string domainName, Domain domain, st::CancellationToken cancellationToken) =>
+            CreateMicrosoftAdDomainAsync(parent, domainName, domain, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
         /// Resets a domain's administrator password.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -570,6 +753,90 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
             ResetAdminPasswordAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
+        /// Resets a domain's administrator password.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual ResetAdminPasswordResponse ResetAdminPassword(string name, gaxgrpc::CallSettings callSettings = null) =>
+            ResetAdminPassword(new ResetAdminPasswordRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Resets a domain's administrator password.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<ResetAdminPasswordResponse> ResetAdminPasswordAsync(string name, gaxgrpc::CallSettings callSettings = null) =>
+            ResetAdminPasswordAsync(new ResetAdminPasswordRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Resets a domain's administrator password.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<ResetAdminPasswordResponse> ResetAdminPasswordAsync(string name, st::CancellationToken cancellationToken) =>
+            ResetAdminPasswordAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Resets a domain's administrator password.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual ResetAdminPasswordResponse ResetAdminPassword(DomainName name, gaxgrpc::CallSettings callSettings = null) =>
+            ResetAdminPassword(new ResetAdminPasswordRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Resets a domain's administrator password.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<ResetAdminPasswordResponse> ResetAdminPasswordAsync(DomainName name, gaxgrpc::CallSettings callSettings = null) =>
+            ResetAdminPasswordAsync(new ResetAdminPasswordRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Resets a domain's administrator password.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<ResetAdminPasswordResponse> ResetAdminPasswordAsync(DomainName name, st::CancellationToken cancellationToken) =>
+            ResetAdminPasswordAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
         /// Lists domains in a project.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -586,6 +853,106 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
         /// <returns>A pageable asynchronous sequence of <see cref="Domain"/> resources.</returns>
         public virtual gax::PagedAsyncEnumerable<ListDomainsResponse, Domain> ListDomainsAsync(ListDomainsRequest request, gaxgrpc::CallSettings callSettings = null) =>
             throw new sys::NotImplementedException();
+
+        /// <summary>
+        /// Lists domains in a project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name of the domain location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Domain"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListDomainsResponse, Domain> ListDomains(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListDomains(new ListDomainsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists domains in a project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name of the domain location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Domain"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListDomainsResponse, Domain> ListDomainsAsync(string parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListDomainsAsync(new ListDomainsRequest
+            {
+                Parent = gax::GaxPreconditions.CheckNotNullOrEmpty(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists domains in a project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name of the domain location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable sequence of <see cref="Domain"/> resources.</returns>
+        public virtual gax::PagedEnumerable<ListDomainsResponse, Domain> ListDomains(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListDomains(new ListDomainsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
+
+        /// <summary>
+        /// Lists domains in a project.
+        /// </summary>
+        /// <param name="parent">
+        /// Required. The resource name of the domain location using the form:
+        /// `projects/{project_id}/locations/global`
+        /// </param>
+        /// <param name="pageToken">
+        /// The token returned from the previous request. A value of <c>null</c> or an empty string retrieves the first
+        /// page.
+        /// </param>
+        /// <param name="pageSize">
+        /// The size of page to request. The response will not be larger than this, but may be smaller. A value of
+        /// <c>null</c> or <c>0</c> uses a server-defined page size.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A pageable asynchronous sequence of <see cref="Domain"/> resources.</returns>
+        public virtual gax::PagedAsyncEnumerable<ListDomainsResponse, Domain> ListDomainsAsync(gagr::LocationName parent, string pageToken = null, int? pageSize = null, gaxgrpc::CallSettings callSettings = null) =>
+            ListDomainsAsync(new ListDomainsRequest
+            {
+                ParentAsLocationName = gax::GaxPreconditions.CheckNotNull(parent, nameof(parent)),
+                PageToken = pageToken ?? "",
+                PageSize = pageSize ?? 0,
+            }, callSettings);
 
         /// <summary>
         /// Gets information about a domain.
@@ -613,6 +980,90 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
         /// <returns>A Task containing the RPC response.</returns>
         public virtual stt::Task<Domain> GetDomainAsync(GetDomainRequest request, st::CancellationToken cancellationToken) =>
             GetDomainAsync(request, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Domain GetDomain(string name, gaxgrpc::CallSettings callSettings = null) =>
+            GetDomain(new GetDomainRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Domain> GetDomainAsync(string name, gaxgrpc::CallSettings callSettings = null) =>
+            GetDomainAsync(new GetDomainRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Domain> GetDomainAsync(string name, st::CancellationToken cancellationToken) =>
+            GetDomainAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual Domain GetDomain(DomainName name, gaxgrpc::CallSettings callSettings = null) =>
+            GetDomain(new GetDomainRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Domain> GetDomainAsync(DomainName name, gaxgrpc::CallSettings callSettings = null) =>
+            GetDomainAsync(new GetDomainRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Gets information about a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<Domain> GetDomainAsync(DomainName name, st::CancellationToken cancellationToken) =>
+            GetDomainAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
         /// Updates the metadata and configuration of a domain.
@@ -668,6 +1119,77 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
             lro::Operation<Domain, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), UpdateDomainOperationsClient, callSettings);
 
         /// <summary>
+        /// Updates the metadata and configuration of a domain.
+        /// </summary>
+        /// <param name="domain">
+        /// Required. Domain message with updated fields. Only supported fields specified in
+        /// update_mask are updated.
+        /// </param>
+        /// <param name="updateMask">
+        /// Required. Mask of fields to update. At least one path must be supplied in this
+        /// field. The elements of the repeated paths field may only include
+        /// fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
+        /// * `labels`
+        /// * `locations`
+        /// * `authorized_networks`
+        /// * `audit_logs_enabled`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> UpdateDomain(Domain domain, wkt::FieldMask updateMask, gaxgrpc::CallSettings callSettings = null) =>
+            UpdateDomain(new UpdateDomainRequest
+            {
+                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
+                Domain = gax::GaxPreconditions.CheckNotNull(domain, nameof(domain)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates the metadata and configuration of a domain.
+        /// </summary>
+        /// <param name="domain">
+        /// Required. Domain message with updated fields. Only supported fields specified in
+        /// update_mask are updated.
+        /// </param>
+        /// <param name="updateMask">
+        /// Required. Mask of fields to update. At least one path must be supplied in this
+        /// field. The elements of the repeated paths field may only include
+        /// fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
+        /// * `labels`
+        /// * `locations`
+        /// * `authorized_networks`
+        /// * `audit_logs_enabled`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> UpdateDomainAsync(Domain domain, wkt::FieldMask updateMask, gaxgrpc::CallSettings callSettings = null) =>
+            UpdateDomainAsync(new UpdateDomainRequest
+            {
+                UpdateMask = gax::GaxPreconditions.CheckNotNull(updateMask, nameof(updateMask)),
+                Domain = gax::GaxPreconditions.CheckNotNull(domain, nameof(domain)),
+            }, callSettings);
+
+        /// <summary>
+        /// Updates the metadata and configuration of a domain.
+        /// </summary>
+        /// <param name="domain">
+        /// Required. Domain message with updated fields. Only supported fields specified in
+        /// update_mask are updated.
+        /// </param>
+        /// <param name="updateMask">
+        /// Required. Mask of fields to update. At least one path must be supplied in this
+        /// field. The elements of the repeated paths field may only include
+        /// fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
+        /// * `labels`
+        /// * `locations`
+        /// * `authorized_networks`
+        /// * `audit_logs_enabled`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> UpdateDomainAsync(Domain domain, wkt::FieldMask updateMask, st::CancellationToken cancellationToken) =>
+            UpdateDomainAsync(domain, updateMask, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
         /// Deletes a domain.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -719,6 +1241,90 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
         /// <returns>A task representing the result of polling the operation.</returns>
         public virtual stt::Task<lro::Operation<wkt::Empty, OpMetadata>> PollOnceDeleteDomainAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<wkt::Empty, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DeleteDomainOperationsClient, callSettings);
+
+        /// <summary>
+        /// Deletes a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<wkt::Empty, OpMetadata> DeleteDomain(string name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteDomain(new DeleteDomainRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, OpMetadata>> DeleteDomainAsync(string name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteDomainAsync(new DeleteDomainRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, OpMetadata>> DeleteDomainAsync(string name, st::CancellationToken cancellationToken) =>
+            DeleteDomainAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Deletes a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<wkt::Empty, OpMetadata> DeleteDomain(DomainName name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteDomain(new DeleteDomainRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, OpMetadata>> DeleteDomainAsync(DomainName name, gaxgrpc::CallSettings callSettings = null) =>
+            DeleteDomainAsync(new DeleteDomainRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+            }, callSettings);
+
+        /// <summary>
+        /// Deletes a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The domain resource name using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<wkt::Empty, OpMetadata>> DeleteDomainAsync(DomainName name, st::CancellationToken cancellationToken) =>
+            DeleteDomainAsync(name, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
         /// Adds an AD trust to a domain.
@@ -774,6 +1380,112 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
             lro::Operation<Domain, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), AttachTrustOperationsClient, callSettings);
 
         /// <summary>
+        /// Adds an AD trust to a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> AttachTrust(string name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            AttachTrust(new AttachTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Adds an AD trust to a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> AttachTrustAsync(string name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            AttachTrustAsync(new AttachTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Adds an AD trust to a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> AttachTrustAsync(string name, Trust trust, st::CancellationToken cancellationToken) =>
+            AttachTrustAsync(name, trust, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Adds an AD trust to a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> AttachTrust(DomainName name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            AttachTrust(new AttachTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Adds an AD trust to a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> AttachTrustAsync(DomainName name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            AttachTrustAsync(new AttachTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Adds an AD trust to a domain.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> AttachTrustAsync(DomainName name, Trust trust, st::CancellationToken cancellationToken) =>
+            AttachTrustAsync(name, trust, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
         /// Updates the DNS conditional forwarder.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -827,6 +1539,158 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
             lro::Operation<Domain, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), ReconfigureTrustOperationsClient, callSettings);
 
         /// <summary>
+        /// Updates the DNS conditional forwarder.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="targetDomainName">
+        /// Required. The fully-qualified target domain name which will be in trust with current
+        /// domain.
+        /// </param>
+        /// <param name="targetDnsIpAddresses">
+        /// Required. The target DNS server IP addresses to resolve the remote domain involved
+        /// in the trust.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> ReconfigureTrust(string name, string targetDomainName, scg::IEnumerable<string> targetDnsIpAddresses, gaxgrpc::CallSettings callSettings = null) =>
+            ReconfigureTrust(new ReconfigureTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                TargetDomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(targetDomainName, nameof(targetDomainName)),
+                TargetDnsIpAddresses =
+                {
+                    gax::GaxPreconditions.CheckNotNull(targetDnsIpAddresses, nameof(targetDnsIpAddresses)),
+                },
+            }, callSettings);
+
+        /// <summary>
+        /// Updates the DNS conditional forwarder.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="targetDomainName">
+        /// Required. The fully-qualified target domain name which will be in trust with current
+        /// domain.
+        /// </param>
+        /// <param name="targetDnsIpAddresses">
+        /// Required. The target DNS server IP addresses to resolve the remote domain involved
+        /// in the trust.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ReconfigureTrustAsync(string name, string targetDomainName, scg::IEnumerable<string> targetDnsIpAddresses, gaxgrpc::CallSettings callSettings = null) =>
+            ReconfigureTrustAsync(new ReconfigureTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                TargetDomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(targetDomainName, nameof(targetDomainName)),
+                TargetDnsIpAddresses =
+                {
+                    gax::GaxPreconditions.CheckNotNull(targetDnsIpAddresses, nameof(targetDnsIpAddresses)),
+                },
+            }, callSettings);
+
+        /// <summary>
+        /// Updates the DNS conditional forwarder.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="targetDomainName">
+        /// Required. The fully-qualified target domain name which will be in trust with current
+        /// domain.
+        /// </param>
+        /// <param name="targetDnsIpAddresses">
+        /// Required. The target DNS server IP addresses to resolve the remote domain involved
+        /// in the trust.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ReconfigureTrustAsync(string name, string targetDomainName, scg::IEnumerable<string> targetDnsIpAddresses, st::CancellationToken cancellationToken) =>
+            ReconfigureTrustAsync(name, targetDomainName, targetDnsIpAddresses, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Updates the DNS conditional forwarder.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="targetDomainName">
+        /// Required. The fully-qualified target domain name which will be in trust with current
+        /// domain.
+        /// </param>
+        /// <param name="targetDnsIpAddresses">
+        /// Required. The target DNS server IP addresses to resolve the remote domain involved
+        /// in the trust.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> ReconfigureTrust(DomainName name, string targetDomainName, scg::IEnumerable<string> targetDnsIpAddresses, gaxgrpc::CallSettings callSettings = null) =>
+            ReconfigureTrust(new ReconfigureTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                TargetDomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(targetDomainName, nameof(targetDomainName)),
+                TargetDnsIpAddresses =
+                {
+                    gax::GaxPreconditions.CheckNotNull(targetDnsIpAddresses, nameof(targetDnsIpAddresses)),
+                },
+            }, callSettings);
+
+        /// <summary>
+        /// Updates the DNS conditional forwarder.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="targetDomainName">
+        /// Required. The fully-qualified target domain name which will be in trust with current
+        /// domain.
+        /// </param>
+        /// <param name="targetDnsIpAddresses">
+        /// Required. The target DNS server IP addresses to resolve the remote domain involved
+        /// in the trust.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ReconfigureTrustAsync(DomainName name, string targetDomainName, scg::IEnumerable<string> targetDnsIpAddresses, gaxgrpc::CallSettings callSettings = null) =>
+            ReconfigureTrustAsync(new ReconfigureTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                TargetDomainName = gax::GaxPreconditions.CheckNotNullOrEmpty(targetDomainName, nameof(targetDomainName)),
+                TargetDnsIpAddresses =
+                {
+                    gax::GaxPreconditions.CheckNotNull(targetDnsIpAddresses, nameof(targetDnsIpAddresses)),
+                },
+            }, callSettings);
+
+        /// <summary>
+        /// Updates the DNS conditional forwarder.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="targetDomainName">
+        /// Required. The fully-qualified target domain name which will be in trust with current
+        /// domain.
+        /// </param>
+        /// <param name="targetDnsIpAddresses">
+        /// Required. The target DNS server IP addresses to resolve the remote domain involved
+        /// in the trust.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ReconfigureTrustAsync(DomainName name, string targetDomainName, scg::IEnumerable<string> targetDnsIpAddresses, st::CancellationToken cancellationToken) =>
+            ReconfigureTrustAsync(name, targetDomainName, targetDnsIpAddresses, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
         /// Removes an AD trust.
         /// </summary>
         /// <param name="request">The request object containing all of the parameters for the API call.</param>
@@ -878,6 +1742,112 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
         /// <returns>A task representing the result of polling the operation.</returns>
         public virtual stt::Task<lro::Operation<Domain, OpMetadata>> PollOnceDetachTrustAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<Domain, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), DetachTrustOperationsClient, callSettings);
+
+        /// <summary>
+        /// Removes an AD trust.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource to removed.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> DetachTrust(string name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            DetachTrust(new DetachTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Removes an AD trust.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource to removed.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> DetachTrustAsync(string name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            DetachTrustAsync(new DetachTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Removes an AD trust.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource to removed.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> DetachTrustAsync(string name, Trust trust, st::CancellationToken cancellationToken) =>
+            DetachTrustAsync(name, trust, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Removes an AD trust.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource to removed.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> DetachTrust(DomainName name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            DetachTrust(new DetachTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Removes an AD trust.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource to removed.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> DetachTrustAsync(DomainName name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            DetachTrustAsync(new DetachTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Removes an AD trust.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust resource to removed.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> DetachTrustAsync(DomainName name, Trust trust, st::CancellationToken cancellationToken) =>
+            DetachTrustAsync(name, trust, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
 
         /// <summary>
         /// Validates a trust state, that the target domain is reachable, and that the
@@ -934,6 +1904,118 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1
         /// <returns>A task representing the result of polling the operation.</returns>
         public virtual stt::Task<lro::Operation<Domain, OpMetadata>> PollOnceValidateTrustAsync(string operationName, gaxgrpc::CallSettings callSettings = null) =>
             lro::Operation<Domain, OpMetadata>.PollOnceFromNameAsync(gax::GaxPreconditions.CheckNotNullOrEmpty(operationName, nameof(operationName)), ValidateTrustOperationsClient, callSettings);
+
+        /// <summary>
+        /// Validates a trust state, that the target domain is reachable, and that the
+        /// target domain is able to accept incoming trust requests.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust to validate trust state for.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> ValidateTrust(string name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            ValidateTrust(new ValidateTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Validates a trust state, that the target domain is reachable, and that the
+        /// target domain is able to accept incoming trust requests.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust to validate trust state for.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ValidateTrustAsync(string name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            ValidateTrustAsync(new ValidateTrustRequest
+            {
+                Name = gax::GaxPreconditions.CheckNotNullOrEmpty(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Validates a trust state, that the target domain is reachable, and that the
+        /// target domain is able to accept incoming trust requests.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust to validate trust state for.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ValidateTrustAsync(string name, Trust trust, st::CancellationToken cancellationToken) =>
+            ValidateTrustAsync(name, trust, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
+
+        /// <summary>
+        /// Validates a trust state, that the target domain is reachable, and that the
+        /// target domain is able to accept incoming trust requests.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust to validate trust state for.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>The RPC response.</returns>
+        public virtual lro::Operation<Domain, OpMetadata> ValidateTrust(DomainName name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            ValidateTrust(new ValidateTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Validates a trust state, that the target domain is reachable, and that the
+        /// target domain is able to accept incoming trust requests.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust to validate trust state for.
+        /// </param>
+        /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ValidateTrustAsync(DomainName name, Trust trust, gaxgrpc::CallSettings callSettings = null) =>
+            ValidateTrustAsync(new ValidateTrustRequest
+            {
+                DomainName = gax::GaxPreconditions.CheckNotNull(name, nameof(name)),
+                Trust = gax::GaxPreconditions.CheckNotNull(trust, nameof(trust)),
+            }, callSettings);
+
+        /// <summary>
+        /// Validates a trust state, that the target domain is reachable, and that the
+        /// target domain is able to accept incoming trust requests.
+        /// </summary>
+        /// <param name="name">
+        /// Required. The resource domain name, project name, and location using the form:
+        /// `projects/{project_id}/locations/global/domains/{domain_name}`
+        /// </param>
+        /// <param name="trust">
+        /// Required. The domain trust to validate trust state for.
+        /// </param>
+        /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
+        /// <returns>A Task containing the RPC response.</returns>
+        public virtual stt::Task<lro::Operation<Domain, OpMetadata>> ValidateTrustAsync(DomainName name, Trust trust, st::CancellationToken cancellationToken) =>
+            ValidateTrustAsync(name, trust, gaxgrpc::CallSettings.FromCancellationToken(cancellationToken));
     }
 
     /// <summary>ManagedIdentitiesService client wrapper implementation, for convenient use.</summary>

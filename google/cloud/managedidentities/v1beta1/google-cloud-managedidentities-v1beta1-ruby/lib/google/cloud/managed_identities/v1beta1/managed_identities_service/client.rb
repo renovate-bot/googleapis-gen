@@ -28,6 +28,8 @@ module Google
           # Client for the ManagedIdentitiesService service.
           #
           class Client
+            include Paths
+
             # @private
             attr_reader :managed_identities_service_stub
 
@@ -171,21 +173,21 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param parent [::String]
-            #     The resource project name and location using the form:
+            #     Required. The resource project name and location using the form:
             #     `projects/{project_id}/locations/global`
             #   @param domain_name [::String]
-            #     A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+            #     Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
             #      * Must contain only lowercase letters, numbers, periods and hyphens.
             #      * Must start with a letter.
             #      * Must contain between 2-64 characters.
             #      * Must end with a number or a letter.
             #      * Must not start with period.
-            #      * First segement length (mydomain form example above) shouldn't exceed
+            #      * First segment length (mydomain form example above) shouldn't exceed
             #        15 chars.
             #      * The last segment cannot be fully numeric.
             #      * Must be unique within the customer project.
             #   @param domain [::Google::Cloud::ManagedIdentities::V1beta1::Domain, ::Hash]
-            #     A Managed Identity domain resource.
+            #     Required. A Managed Identity domain resource.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -278,7 +280,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The domain resource name using the form:
+            #     Required. The domain resource name using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -475,7 +477,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The domain resource name using the form:
+            #     Required. The domain resource name using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -561,14 +563,15 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param update_mask [::Google::Protobuf::FieldMask, ::Hash]
-            #     Mask of fields to update. At least one path must be supplied in this
+            #     Required. Mask of fields to update. At least one path must be supplied in this
             #     field. The elements of the repeated paths field may only include
             #     fields from {::Google::Cloud::ManagedIdentities::V1beta1::Domain Domain}:
             #      * `labels`
             #      * `locations`
             #      * `authorized_networks`
+            #      * `audit_logs_enabled`
             #   @param domain [::Google::Cloud::ManagedIdentities::V1beta1::Domain, ::Hash]
-            #     Domain message with updated fields. Only supported fields specified in
+            #     Required. Domain message with updated fields. Only supported fields specified in
             #     update_mask are updated.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -662,7 +665,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The domain resource name using the form:
+            #     Required. The domain resource name using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -756,10 +759,10 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The resource domain name, project name and location using the form:
+            #     Required. The resource domain name, project name and location using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #   @param trust [::Google::Cloud::ManagedIdentities::V1beta1::Trust, ::Hash]
-            #     The domain trust resource.
+            #     Required. The domain trust resource.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -852,13 +855,13 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The resource domain name, project name and location using the form:
+            #     Required. The resource domain name, project name and location using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #   @param target_domain_name [::String]
-            #     The fully-qualified target domain name which will be in trust with current
+            #     Required. The fully-qualified target domain name which will be in trust with current
             #     domain.
             #   @param target_dns_ip_addresses [::Array<::String>]
-            #     The target DNS server IP addresses to resolve the remote domain involved
+            #     Required. The target DNS server IP addresses to resolve the remote domain involved
             #     in the trust.
             #
             # @yield [response, operation] Access the result along with the RPC operation
@@ -952,10 +955,10 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The resource domain name, project name, and location using the form:
+            #     Required. The resource domain name, project name, and location using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #   @param trust [::Google::Cloud::ManagedIdentities::V1beta1::Trust, ::Hash]
-            #     The domain trust resource to removed.
+            #     Required. The domain trust resource to removed.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]
@@ -1049,10 +1052,10 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param name [::String]
-            #     The resource domain name, project name, and location using the form:
+            #     Required. The resource domain name, project name, and location using the form:
             #     `projects/{project_id}/locations/global/domains/{domain_name}`
             #   @param trust [::Google::Cloud::ManagedIdentities::V1beta1::Trust, ::Hash]
-            #     The domain trust to validate trust state for.
+            #     Required. The domain trust to validate trust state for.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

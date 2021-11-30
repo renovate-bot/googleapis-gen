@@ -15,22 +15,23 @@
 
 'use strict';
 
-function main() {
+function main(updateMask, domain) {
   // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_UpdateDomain_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Mask of fields to update. At least one path must be supplied in this
+   *  Required. Mask of fields to update. At least one path must be supplied in this
    *  field. The elements of the repeated paths field may only include
    *  fields from Domain google.cloud.managedidentities.v1beta1.Domain:
    *   * `labels`
    *   * `locations`
    *   * `authorized_networks`
+   *   * `audit_logs_enabled`
    */
   // const updateMask = {}
   /**
-   *  Domain message with updated fields. Only supported fields specified in
+   *  Required. Domain message with updated fields. Only supported fields specified in
    *  update_mask are updated.
    */
   // const domain = {}
@@ -44,6 +45,8 @@ function main() {
   async function callUpdateDomain() {
     // Construct request
     const request = {
+      updateMask,
+      domain,
     };
 
     // Run request

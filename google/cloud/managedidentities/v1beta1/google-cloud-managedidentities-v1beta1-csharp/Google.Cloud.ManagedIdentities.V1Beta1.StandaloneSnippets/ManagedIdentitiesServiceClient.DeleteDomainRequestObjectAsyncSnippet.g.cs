@@ -33,7 +33,10 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = await ManagedIdentitiesServiceClient.CreateAsync();
             // Initialize request argument(s)
-            DeleteDomainRequest request = new DeleteDomainRequest { Name = "", };
+            DeleteDomainRequest request = new DeleteDomainRequest
+            {
+                DomainName = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]"),
+            };
             // Make the request
             Operation<Empty, OpMetadata> response = await managedIdentitiesServiceClient.DeleteDomainAsync(request);
 

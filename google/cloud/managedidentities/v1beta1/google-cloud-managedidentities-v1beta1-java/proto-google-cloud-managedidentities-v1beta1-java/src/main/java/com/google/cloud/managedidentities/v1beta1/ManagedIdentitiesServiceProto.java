@@ -91,120 +91,138 @@ public final class ManagedIdentitiesServiceProto {
       "\nGgoogle/cloud/managedidentities/v1beta1" +
       "/managed_identities_service.proto\022&googl" +
       "e.cloud.managedidentities.v1beta1\032\034googl" +
-      "e/api/annotations.proto\032\037google/api/fiel" +
-      "d_behavior.proto\0325google/cloud/managedid" +
-      "entities/v1beta1/resource.proto\032#google/" +
-      "longrunning/operations.proto\032 google/pro" +
-      "tobuf/field_mask.proto\032\037google/protobuf/" +
-      "timestamp.proto\032\027google/api/client.proto" +
-      "\"\334\001\n\nOpMetadata\0224\n\013create_time\030\001 \001(\0132\032.g" +
-      "oogle.protobuf.TimestampB\003\340A\003\0221\n\010end_tim" +
-      "e\030\002 \001(\0132\032.google.protobuf.TimestampB\003\340A\003" +
-      "\022\023\n\006target\030\003 \001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003" +
-      "\022#\n\026requested_cancellation\030\005 \001(\010B\003\340A\003\022\030\n" +
-      "\013api_version\030\006 \001(\tB\003\340A\003\"\205\001\n\036CreateMicros" +
-      "oftAdDomainRequest\022\016\n\006parent\030\001 \001(\t\022\023\n\013do" +
-      "main_name\030\002 \001(\t\022>\n\006domain\030\003 \001(\0132..google" +
-      ".cloud.managedidentities.v1beta1.Domain\"" +
-      ")\n\031ResetAdminPasswordRequest\022\014\n\004name\030\001 \001" +
-      "(\t\".\n\032ResetAdminPasswordResponse\022\020\n\010pass" +
-      "word\030\001 \001(\t\"m\n\022ListDomainsRequest\022\016\n\006pare" +
-      "nt\030\001 \001(\t\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke" +
-      "n\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\022\020\n\010order_by\030\005 \001(" +
-      "\t\"\204\001\n\023ListDomainsResponse\022?\n\007domains\030\001 \003" +
-      "(\0132..google.cloud.managedidentities.v1be" +
-      "ta1.Domain\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013u" +
-      "nreachable\030\003 \003(\t\" \n\020GetDomainRequest\022\014\n\004" +
-      "name\030\001 \001(\t\"\206\001\n\023UpdateDomainRequest\022/\n\013up" +
-      "date_mask\030\001 \001(\0132\032.google.protobuf.FieldM" +
-      "ask\022>\n\006domain\030\002 \001(\0132..google.cloud.manag" +
-      "edidentities.v1beta1.Domain\"#\n\023DeleteDom" +
-      "ainRequest\022\014\n\004name\030\001 \001(\t\"`\n\022AttachTrustR" +
-      "equest\022\014\n\004name\030\001 \001(\t\022<\n\005trust\030\002 \001(\0132-.go" +
-      "ogle.cloud.managedidentities.v1beta1.Tru" +
-      "st\"d\n\027ReconfigureTrustRequest\022\014\n\004name\030\001 " +
-      "\001(\t\022\032\n\022target_domain_name\030\002 \001(\t\022\037\n\027targe" +
-      "t_dns_ip_addresses\030\003 \003(\t\"`\n\022DetachTrustR" +
-      "equest\022\014\n\004name\030\001 \001(\t\022<\n\005trust\030\002 \001(\0132-.go" +
-      "ogle.cloud.managedidentities.v1beta1.Tru" +
-      "st\"b\n\024ValidateTrustRequest\022\014\n\004name\030\001 \001(\t" +
-      "\022<\n\005trust\030\002 \001(\0132-.google.cloud.managedid" +
-      "entities.v1beta1.Trust2\274\021\n\030ManagedIdenti" +
-      "tiesService\022\336\001\n\027CreateMicrosoftAdDomain\022" +
-      "F.google.cloud.managedidentities.v1beta1" +
-      ".CreateMicrosoftAdDomainRequest\032\035.google" +
-      ".longrunning.Operation\"\\\202\323\344\223\002?\"5/v1beta1" +
-      "/{parent=projects/*/locations/global}/do" +
-      "mains:\006domain\312A\024\n\006Domain\022\nOpMetadata\022\360\001\n" +
-      "\022ResetAdminPassword\022A.google.cloud.manag" +
-      "edidentities.v1beta1.ResetAdminPasswordR" +
-      "equest\032B.google.cloud.managedidentities." +
-      "v1beta1.ResetAdminPasswordResponse\"S\202\323\344\223" +
-      "\002M\"H/v1beta1/{name=projects/*/locations/" +
-      "global/domains/*}:resetAdminPassword:\001*\022" +
-      "\305\001\n\013ListDomains\022:.google.cloud.managedid" +
-      "entities.v1beta1.ListDomainsRequest\032;.go" +
-      "ogle.cloud.managedidentities.v1beta1.Lis" +
-      "tDomainsResponse\"=\202\323\344\223\0027\0225/v1beta1/{pare" +
-      "nt=projects/*/locations/global}/domains\022" +
-      "\264\001\n\tGetDomain\0228.google.cloud.managediden" +
-      "tities.v1beta1.GetDomainRequest\032..google" +
-      ".cloud.managedidentities.v1beta1.Domain\"" +
-      "=\202\323\344\223\0027\0225/v1beta1/{name=projects/*/locat" +
-      "ions/global/domains/*}\022\317\001\n\014UpdateDomain\022" +
-      ";.google.cloud.managedidentities.v1beta1" +
-      ".UpdateDomainRequest\032\035.google.longrunnin" +
-      "g.Operation\"c\202\323\344\223\002F2</v1beta1/{domain.na" +
-      "me=projects/*/locations/global/domains/*" +
-      "}:\006domain\312A\024\n\006Domain\022\nOpMetadata\022\317\001\n\014Del" +
-      "eteDomain\022;.google.cloud.managedidentiti" +
-      "es.v1beta1.DeleteDomainRequest\032\035.google." +
-      "longrunning.Operation\"c\202\323\344\223\0027*5/v1beta1/" +
-      "{name=projects/*/locations/global/domain" +
-      "s/*}\312A#\n\025google.protobuf.Empty\022\nOpMetada" +
-      "ta\022\315\001\n\013AttachTrust\022:.google.cloud.manage" +
-      "didentities.v1beta1.AttachTrustRequest\032\035" +
-      ".google.longrunning.Operation\"c\202\323\344\223\002F\"A/" +
-      "v1beta1/{name=projects/*/locations/globa" +
-      "l/domains/*}:attachTrust:\001*\312A\024\n\006Domain\022\n" +
-      "OpMetadata\022\334\001\n\020ReconfigureTrust\022?.google" +
-      ".cloud.managedidentities.v1beta1.Reconfi" +
-      "gureTrustRequest\032\035.google.longrunning.Op" +
-      "eration\"h\202\323\344\223\002K\"F/v1beta1/{name=projects" +
-      "/*/locations/global/domains/*}:reconfigu" +
-      "reTrust:\001*\312A\024\n\006Domain\022\nOpMetadata\022\315\001\n\013De" +
-      "tachTrust\022:.google.cloud.managedidentiti" +
-      "es.v1beta1.DetachTrustRequest\032\035.google.l" +
-      "ongrunning.Operation\"c\202\323\344\223\002F\"A/v1beta1/{" +
+      "e/api/annotations.proto\032\027google/api/clie" +
+      "nt.proto\032\037google/api/field_behavior.prot" +
+      "o\032\031google/api/resource.proto\0325google/clo" +
+      "ud/managedidentities/v1beta1/resource.pr" +
+      "oto\032#google/longrunning/operations.proto" +
+      "\032 google/protobuf/field_mask.proto\032\037goog" +
+      "le/protobuf/timestamp.proto\"\334\001\n\nOpMetada" +
+      "ta\0224\n\013create_time\030\001 \001(\0132\032.google.protobu" +
+      "f.TimestampB\003\340A\003\0221\n\010end_time\030\002 \001(\0132\032.goo" +
+      "gle.protobuf.TimestampB\003\340A\003\022\023\n\006target\030\003 " +
+      "\001(\tB\003\340A\003\022\021\n\004verb\030\004 \001(\tB\003\340A\003\022#\n\026requested" +
+      "_cancellation\030\005 \001(\010B\003\340A\003\022\030\n\013api_version\030" +
+      "\006 \001(\tB\003\340A\003\"\300\001\n\036CreateMicrosoftAdDomainRe" +
+      "quest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'managedid" +
+      "entities.googleapis.com/Domain\022\030\n\013domain" +
+      "_name\030\002 \001(\tB\003\340A\002\022C\n\006domain\030\003 \001(\0132..googl" +
+      "e.cloud.managedidentities.v1beta1.Domain" +
+      "B\003\340A\002\"Z\n\031ResetAdminPasswordRequest\022=\n\004na" +
+      "me\030\001 \001(\tB/\340A\002\372A)\n\'managedidentities.goog" +
+      "leapis.com/Domain\".\n\032ResetAdminPasswordR" +
+      "esponse\022\020\n\010password\030\001 \001(\t\"\236\001\n\022ListDomain" +
+      "sRequest\022?\n\006parent\030\001 \001(\tB/\340A\002\372A)\022\'manage" +
+      "didentities.googleapis.com/Domain\022\021\n\tpag" +
+      "e_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filt" +
+      "er\030\004 \001(\t\022\020\n\010order_by\030\005 \001(\t\"\204\001\n\023ListDomai" +
+      "nsResponse\022?\n\007domains\030\001 \003(\0132..google.clo" +
+      "ud.managedidentities.v1beta1.Domain\022\027\n\017n" +
+      "ext_page_token\030\002 \001(\t\022\023\n\013unreachable\030\003 \003(" +
+      "\t\"Q\n\020GetDomainRequest\022=\n\004name\030\001 \001(\tB/\340A\002" +
+      "\372A)\n\'managedidentities.googleapis.com/Do" +
+      "main\"\220\001\n\023UpdateDomainRequest\0224\n\013update_m" +
+      "ask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340" +
+      "A\002\022C\n\006domain\030\002 \001(\0132..google.cloud.manage" +
+      "didentities.v1beta1.DomainB\003\340A\002\"T\n\023Delet" +
+      "eDomainRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'ma" +
+      "nagedidentities.googleapis.com/Domain\"\226\001" +
+      "\n\022AttachTrustRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372" +
+      "A)\n\'managedidentities.googleapis.com/Dom" +
+      "ain\022A\n\005trust\030\002 \001(\0132-.google.cloud.manage" +
+      "didentities.v1beta1.TrustB\003\340A\002\"\237\001\n\027Recon" +
+      "figureTrustRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)" +
+      "\n\'managedidentities.googleapis.com/Domai" +
+      "n\022\037\n\022target_domain_name\030\002 \001(\tB\003\340A\002\022$\n\027ta" +
+      "rget_dns_ip_addresses\030\003 \003(\tB\003\340A\002\"\226\001\n\022Det" +
+      "achTrustRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'m" +
+      "anagedidentities.googleapis.com/Domain\022A" +
+      "\n\005trust\030\002 \001(\0132-.google.cloud.managediden" +
+      "tities.v1beta1.TrustB\003\340A\002\"\230\001\n\024ValidateTr" +
+      "ustRequest\022=\n\004name\030\001 \001(\tB/\340A\002\372A)\n\'manage" +
+      "didentities.googleapis.com/Domain\022A\n\005tru" +
+      "st\030\002 \001(\0132-.google.cloud.managedidentitie" +
+      "s.v1beta1.TrustB\003\340A\0022\345\022\n\030ManagedIdentiti" +
+      "esService\022\372\001\n\027CreateMicrosoftAdDomain\022F." +
+      "google.cloud.managedidentities.v1beta1.C" +
+      "reateMicrosoftAdDomainRequest\032\035.google.l" +
+      "ongrunning.Operation\"x\202\323\344\223\002?\"5/v1beta1/{" +
+      "parent=projects/*/locations/global}/doma" +
+      "ins:\006domain\332A\031parent,domain_name,domain\312" +
+      "A\024\n\006Domain\022\nOpMetadata\022\367\001\n\022ResetAdminPas" +
+      "sword\022A.google.cloud.managedidentities.v" +
+      "1beta1.ResetAdminPasswordRequest\032B.googl" +
+      "e.cloud.managedidentities.v1beta1.ResetA" +
+      "dminPasswordResponse\"Z\202\323\344\223\002M\"H/v1beta1/{" +
       "name=projects/*/locations/global/domains" +
-      "/*}:detachTrust:\001*\312A\024\n\006Domain\022\nOpMetadat" +
-      "a\022\323\001\n\rValidateTrust\022<.google.cloud.manag" +
-      "edidentities.v1beta1.ValidateTrustReques" +
-      "t\032\035.google.longrunning.Operation\"e\202\323\344\223\002H" +
-      "\"C/v1beta1/{name=projects/*/locations/gl" +
-      "obal/domains/*}:validateTrust:\001*\312A\024\n\006Dom" +
-      "ain\022\nOpMetadata\032T\312A managedidentities.go" +
-      "ogleapis.com\322A.https://www.googleapis.co" +
-      "m/auth/cloud-platformB\253\002\n*com.google.clo" +
-      "ud.managedidentities.v1beta1B\035ManagedIde" +
-      "ntitiesServiceProtoP\001ZWgoogle.golang.org" +
-      "/genproto/googleapis/cloud/managedidenti" +
-      "ties/v1beta1;managedidentities\242\002\004GCMI\252\002&" +
-      "Google.Cloud.ManagedIdentities.V1Beta1\312\002" +
-      "&Google\\Cloud\\ManagedIdentities\\V1beta1\352" +
-      "\002)Google::Cloud::ManagedIdentities::V1be" +
-      "ta1b\006proto3"
+      "/*}:resetAdminPassword:\001*\332A\004name\022\316\001\n\013Lis" +
+      "tDomains\022:.google.cloud.managedidentitie" +
+      "s.v1beta1.ListDomainsRequest\032;.google.cl" +
+      "oud.managedidentities.v1beta1.ListDomain" +
+      "sResponse\"F\202\323\344\223\0027\0225/v1beta1/{parent=proj" +
+      "ects/*/locations/global}/domains\332A\006paren" +
+      "t\022\273\001\n\tGetDomain\0228.google.cloud.managedid" +
+      "entities.v1beta1.GetDomainRequest\032..goog" +
+      "le.cloud.managedidentities.v1beta1.Domai" +
+      "n\"D\202\323\344\223\0027\0225/v1beta1/{name=projects/*/loc" +
+      "ations/global/domains/*}\332A\004name\022\344\001\n\014Upda" +
+      "teDomain\022;.google.cloud.managedidentitie" +
+      "s.v1beta1.UpdateDomainRequest\032\035.google.l" +
+      "ongrunning.Operation\"x\202\323\344\223\002F2</v1beta1/{" +
+      "domain.name=projects/*/locations/global/" +
+      "domains/*}:\006domain\332A\022domain,update_mask\312" +
+      "A\024\n\006Domain\022\nOpMetadata\022\326\001\n\014DeleteDomain\022" +
+      ";.google.cloud.managedidentities.v1beta1" +
+      ".DeleteDomainRequest\032\035.google.longrunnin" +
+      "g.Operation\"j\202\323\344\223\0027*5/v1beta1/{name=proj" +
+      "ects/*/locations/global/domains/*}\332A\004nam" +
+      "e\312A#\n\025google.protobuf.Empty\022\nOpMetadata\022" +
+      "\332\001\n\013AttachTrust\022:.google.cloud.managedid" +
+      "entities.v1beta1.AttachTrustRequest\032\035.go" +
+      "ogle.longrunning.Operation\"p\202\323\344\223\002F\"A/v1b" +
+      "eta1/{name=projects/*/locations/global/d" +
+      "omains/*}:attachTrust:\001*\332A\nname,trust\312A\024" +
+      "\n\006Domain\022\nOpMetadata\022\217\002\n\020ReconfigureTrus" +
+      "t\022?.google.cloud.managedidentities.v1bet" +
+      "a1.ReconfigureTrustRequest\032\035.google.long" +
+      "running.Operation\"\232\001\202\323\344\223\002K\"F/v1beta1/{na" +
+      "me=projects/*/locations/global/domains/*" +
+      "}:reconfigureTrust:\001*\332A/name,target_doma" +
+      "in_name,target_dns_ip_addresses\312A\024\n\006Doma" +
+      "in\022\nOpMetadata\022\332\001\n\013DetachTrust\022:.google." +
+      "cloud.managedidentities.v1beta1.DetachTr" +
+      "ustRequest\032\035.google.longrunning.Operatio" +
+      "n\"p\202\323\344\223\002F\"A/v1beta1/{name=projects/*/loc" +
+      "ations/global/domains/*}:detachTrust:\001*\332" +
+      "A\nname,trust\312A\024\n\006Domain\022\nOpMetadata\022\340\001\n\r" +
+      "ValidateTrust\022<.google.cloud.managediden" +
+      "tities.v1beta1.ValidateTrustRequest\032\035.go" +
+      "ogle.longrunning.Operation\"r\202\323\344\223\002H\"C/v1b" +
+      "eta1/{name=projects/*/locations/global/d" +
+      "omains/*}:validateTrust:\001*\332A\nname,trust\312" +
+      "A\024\n\006Domain\022\nOpMetadata\032T\312A managedidenti" +
+      "ties.googleapis.com\322A.https://www.google" +
+      "apis.com/auth/cloud-platformB\253\002\n*com.goo" +
+      "gle.cloud.managedidentities.v1beta1B\035Man" +
+      "agedIdentitiesServiceProtoP\001ZWgoogle.gol" +
+      "ang.org/genproto/googleapis/cloud/manage" +
+      "didentities/v1beta1;managedidentities\242\002\004" +
+      "GCMI\252\002&Google.Cloud.ManagedIdentities.V1" +
+      "Beta1\312\002&Google\\Cloud\\ManagedIdentities\\V" +
+      "1beta1\352\002)Google::Cloud::ManagedIdentitie" +
+      "s::V1beta1b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
+          com.google.api.ClientProto.getDescriptor(),
           com.google.api.FieldBehaviorProto.getDescriptor(),
+          com.google.api.ResourceProto.getDescriptor(),
           com.google.cloud.managedidentities.v1beta1.ResourceProto.getDescriptor(),
           com.google.longrunning.OperationsProto.getDescriptor(),
           com.google.protobuf.FieldMaskProto.getDescriptor(),
           com.google.protobuf.TimestampProto.getDescriptor(),
-          com.google.api.ClientProto.getDescriptor(),
         });
     internal_static_google_cloud_managedidentities_v1beta1_OpMetadata_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -289,17 +307,20 @@ public final class ManagedIdentitiesServiceProto {
     registry.add(com.google.api.ClientProto.defaultHost);
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.AnnotationsProto.http);
+    registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor
         .internalUpdateFileDescriptor(descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.managedidentities.v1beta1.ResourceProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

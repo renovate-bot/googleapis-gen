@@ -23,6 +23,7 @@ require "gapic/config/method"
 require "google/cloud/managedidentities/v1beta1/version"
 
 require "google/cloud/managed_identities/v1beta1/managed_identities_service/credentials"
+require "google/cloud/managed_identities/v1beta1/managed_identities_service/paths"
 require "google/cloud/managed_identities/v1beta1/managed_identities_service/operations"
 require "google/cloud/managed_identities/v1beta1/managed_identities_service/client"
 

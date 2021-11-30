@@ -15,7 +15,9 @@
  */
 
 /**
- * The interfaces provided are listed below, along with usage samples.
+ * A client to Managed Service for Microsoft Active Directory API
+ *
+ * <p>The interfaces provided are listed below, along with usage samples.
  *
  * <p>======================= ManagedIdentitiesServiceClient =======================
  *
@@ -24,10 +26,8 @@
  * <pre>{@code
  * try (ManagedIdentitiesServiceClient managedIdentitiesServiceClient =
  *     ManagedIdentitiesServiceClient.create()) {
- *   ResetAdminPasswordRequest request =
- *       ResetAdminPasswordRequest.newBuilder().setName("name3373707").build();
- *   ResetAdminPasswordResponse response =
- *       managedIdentitiesServiceClient.resetAdminPassword(request);
+ *   DomainName name = DomainName.of("[PROJECT]", "[LOCATION]", "[DOMAIN]");
+ *   ResetAdminPasswordResponse response = managedIdentitiesServiceClient.resetAdminPassword(name);
  * }
  * }</pre>
  */

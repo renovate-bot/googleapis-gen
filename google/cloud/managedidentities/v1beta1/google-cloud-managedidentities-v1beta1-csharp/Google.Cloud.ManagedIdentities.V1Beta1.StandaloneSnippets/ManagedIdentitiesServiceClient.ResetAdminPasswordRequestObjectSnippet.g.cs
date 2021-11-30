@@ -30,7 +30,10 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = ManagedIdentitiesServiceClient.Create();
             // Initialize request argument(s)
-            ResetAdminPasswordRequest request = new ResetAdminPasswordRequest { Name = "", };
+            ResetAdminPasswordRequest request = new ResetAdminPasswordRequest
+            {
+                DomainName = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]"),
+            };
             // Make the request
             ResetAdminPasswordResponse response = managedIdentitiesServiceClient.ResetAdminPassword(request);
         }

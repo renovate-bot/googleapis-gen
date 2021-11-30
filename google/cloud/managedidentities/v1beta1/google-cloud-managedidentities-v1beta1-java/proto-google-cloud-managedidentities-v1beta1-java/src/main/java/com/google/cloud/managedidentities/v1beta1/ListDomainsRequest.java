@@ -126,7 +126,7 @@ private static final long serialVersionUID = 0L;
    * `projects/{project_id}/locations/global`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The parent.
    */
   @java.lang.Override
@@ -148,7 +148,7 @@ private static final long serialVersionUID = 0L;
    * `projects/{project_id}/locations/global`
    * </pre>
    *
-   * <code>string parent = 1;</code>
+   * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for parent.
    */
   @java.lang.Override
@@ -716,7 +716,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The parent.
      */
     public java.lang.String getParent() {
@@ -737,7 +737,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for parent.
      */
     public com.google.protobuf.ByteString
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The parent to set.
      * @return This builder for chaining.
      */
@@ -779,7 +779,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearParent() {
@@ -794,7 +794,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global`
      * </pre>
      *
-     * <code>string parent = 1;</code>
+     * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for parent to set.
      * @return This builder for chaining.
      */

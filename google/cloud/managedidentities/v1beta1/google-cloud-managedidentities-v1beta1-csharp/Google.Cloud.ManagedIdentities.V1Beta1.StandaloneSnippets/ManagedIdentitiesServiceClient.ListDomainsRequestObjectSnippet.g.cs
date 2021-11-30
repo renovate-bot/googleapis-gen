@@ -17,6 +17,7 @@
 namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
 {
     using Google.Api.Gax;
+    using Google.Api.Gax.ResourceNames;
     using Google.Cloud.ManagedIdentities.V1Beta1;
     using System;
 
@@ -34,7 +35,7 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Initialize request argument(s)
             ListDomainsRequest request = new ListDomainsRequest
             {
-                Parent = "",
+                ParentAsLocationName = LocationName.FromProjectLocation("[PROJECT]", "[LOCATION]"),
                 Filter = "",
                 OrderBy = "",
             };

@@ -52,23 +52,23 @@ module Google
         # [CreateMicrosoftAdDomain][google.cloud.managedidentities.v1beta1.CreateMicrosoftAdDomain]
         # @!attribute [rw] parent
         #   @return [::String]
-        #     The resource project name and location using the form:
+        #     Required. The resource project name and location using the form:
         #     `projects/{project_id}/locations/global`
         # @!attribute [rw] domain_name
         #   @return [::String]
-        #     A domain name, e.g. mydomain.myorg.com, with the following restrictions:
+        #     Required. A domain name, e.g. mydomain.myorg.com, with the following restrictions:
         #      * Must contain only lowercase letters, numbers, periods and hyphens.
         #      * Must start with a letter.
         #      * Must contain between 2-64 characters.
         #      * Must end with a number or a letter.
         #      * Must not start with period.
-        #      * First segement length (mydomain form example above) shouldn't exceed
+        #      * First segment length (mydomain form example above) shouldn't exceed
         #        15 chars.
         #      * The last segment cannot be fully numeric.
         #      * Must be unique within the customer project.
         # @!attribute [rw] domain
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Domain]
-        #     A Managed Identity domain resource.
+        #     Required. A Managed Identity domain resource.
         class CreateMicrosoftAdDomainRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -78,7 +78,7 @@ module Google
         # [ResetAdminPassword][google.cloud.managedidentities.v1beta1.ResetAdminPassword]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The domain resource name using the form:
+        #     Required. The domain resource name using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         class ResetAdminPasswordRequest
           include ::Google::Protobuf::MessageExts
@@ -149,7 +149,7 @@ module Google
         # [GetDomain][google.cloud.managedidentities.v1beta1.GetDomain]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The domain resource name using the form:
+        #     Required. The domain resource name using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         class GetDomainRequest
           include ::Google::Protobuf::MessageExts
@@ -160,15 +160,16 @@ module Google
         # [UpdateDomain][google.cloud.managedidentities.v1beta1.UpdateDomain]
         # @!attribute [rw] update_mask
         #   @return [::Google::Protobuf::FieldMask]
-        #     Mask of fields to update. At least one path must be supplied in this
+        #     Required. Mask of fields to update. At least one path must be supplied in this
         #     field. The elements of the repeated paths field may only include
         #     fields from {::Google::Cloud::ManagedIdentities::V1beta1::Domain Domain}:
         #      * `labels`
         #      * `locations`
         #      * `authorized_networks`
+        #      * `audit_logs_enabled`
         # @!attribute [rw] domain
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Domain]
-        #     Domain message with updated fields. Only supported fields specified in
+        #     Required. Domain message with updated fields. Only supported fields specified in
         #     update_mask are updated.
         class UpdateDomainRequest
           include ::Google::Protobuf::MessageExts
@@ -179,7 +180,7 @@ module Google
         # [DeleteDomain][google.cloud.managedidentities.v1beta1.DeleteDomain]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The domain resource name using the form:
+        #     Required. The domain resource name using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         class DeleteDomainRequest
           include ::Google::Protobuf::MessageExts
@@ -190,11 +191,11 @@ module Google
         # [AttachTrust][google.cloud.managedidentities.v1beta1.AttachTrust]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The resource domain name, project name and location using the form:
+        #     Required. The resource domain name, project name and location using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         # @!attribute [rw] trust
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Trust]
-        #     The domain trust resource.
+        #     Required. The domain trust resource.
         class AttachTrustRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -204,15 +205,15 @@ module Google
         # [ReconfigureTrust][google.cloud.managedidentities.v1beta1.ReconfigureTrust]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The resource domain name, project name and location using the form:
+        #     Required. The resource domain name, project name and location using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         # @!attribute [rw] target_domain_name
         #   @return [::String]
-        #     The fully-qualified target domain name which will be in trust with current
+        #     Required. The fully-qualified target domain name which will be in trust with current
         #     domain.
         # @!attribute [rw] target_dns_ip_addresses
         #   @return [::Array<::String>]
-        #     The target DNS server IP addresses to resolve the remote domain involved
+        #     Required. The target DNS server IP addresses to resolve the remote domain involved
         #     in the trust.
         class ReconfigureTrustRequest
           include ::Google::Protobuf::MessageExts
@@ -223,11 +224,11 @@ module Google
         # [DetachTrust][google.cloud.managedidentities.v1beta1.DetachTrust]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The resource domain name, project name, and location using the form:
+        #     Required. The resource domain name, project name, and location using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         # @!attribute [rw] trust
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Trust]
-        #     The domain trust resource to removed.
+        #     Required. The domain trust resource to removed.
         class DetachTrustRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -237,11 +238,11 @@ module Google
         # [ValidateTrust][google.cloud.managedidentities.v1beta1.ValidateTrust]
         # @!attribute [rw] name
         #   @return [::String]
-        #     The resource domain name, project name, and location using the form:
+        #     Required. The resource domain name, project name, and location using the form:
         #     `projects/{project_id}/locations/global/domains/{domain_name}`
         # @!attribute [rw] trust
         #   @return [::Google::Cloud::ManagedIdentities::V1beta1::Trust]
-        #     The domain trust to validate trust state for.
+        #     Required. The domain trust to validate trust state for.
         class ValidateTrustRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

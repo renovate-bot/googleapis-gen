@@ -115,15 +115,16 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Mask of fields to update. At least one path must be supplied in this
+   * Required. Mask of fields to update. At least one path must be supplied in this
    * field. The elements of the repeated paths field may only include
    * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
    *  * `labels`
    *  * `locations`
    *  * `authorized_networks`
+   *  * `audit_logs_enabled`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the updateMask field is set.
    */
   @java.lang.Override
@@ -132,15 +133,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Mask of fields to update. At least one path must be supplied in this
+   * Required. Mask of fields to update. At least one path must be supplied in this
    * field. The elements of the repeated paths field may only include
    * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
    *  * `labels`
    *  * `locations`
    *  * `authorized_networks`
+   *  * `audit_logs_enabled`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The updateMask.
    */
   @java.lang.Override
@@ -149,15 +151,16 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Mask of fields to update. At least one path must be supplied in this
+   * Required. Mask of fields to update. At least one path must be supplied in this
    * field. The elements of the repeated paths field may only include
    * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
    *  * `labels`
    *  * `locations`
    *  * `authorized_networks`
+   *  * `audit_logs_enabled`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
@@ -168,11 +171,11 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.managedidentities.v1beta1.Domain domain_;
   /**
    * <pre>
-   * Domain message with updated fields. Only supported fields specified in
+   * Required. Domain message with updated fields. Only supported fields specified in
    * update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the domain field is set.
    */
   @java.lang.Override
@@ -181,11 +184,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Domain message with updated fields. Only supported fields specified in
+   * Required. Domain message with updated fields. Only supported fields specified in
    * update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The domain.
    */
   @java.lang.Override
@@ -194,11 +197,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Domain message with updated fields. Only supported fields specified in
+   * Required. Domain message with updated fields. Only supported fields specified in
    * update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1beta1.DomainOrBuilder getDomainOrBuilder() {
@@ -560,15 +563,16 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the updateMask field is set.
      */
     public boolean hasUpdateMask() {
@@ -576,15 +580,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The updateMask.
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
@@ -596,15 +601,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -621,15 +627,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setUpdateMask(
         com.google.protobuf.FieldMask.Builder builderForValue) {
@@ -644,15 +651,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeUpdateMask(com.google.protobuf.FieldMask value) {
       if (updateMaskBuilder_ == null) {
@@ -671,15 +679,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearUpdateMask() {
       if (updateMaskBuilder_ == null) {
@@ -694,15 +703,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
       
@@ -711,15 +721,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder() {
       if (updateMaskBuilder_ != null) {
@@ -731,15 +742,16 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Mask of fields to update. At least one path must be supplied in this
+     * Required. Mask of fields to update. At least one path must be supplied in this
      * field. The elements of the repeated paths field may only include
      * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
      *  * `labels`
      *  * `locations`
      *  * `authorized_networks`
+     *  * `audit_logs_enabled`
      * </pre>
      *
-     * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+     * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
@@ -760,11 +772,11 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.managedidentities.v1beta1.Domain, com.google.cloud.managedidentities.v1beta1.Domain.Builder, com.google.cloud.managedidentities.v1beta1.DomainOrBuilder> domainBuilder_;
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the domain field is set.
      */
     public boolean hasDomain() {
@@ -772,11 +784,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The domain.
      */
     public com.google.cloud.managedidentities.v1beta1.Domain getDomain() {
@@ -788,11 +800,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDomain(com.google.cloud.managedidentities.v1beta1.Domain value) {
       if (domainBuilder_ == null) {
@@ -809,11 +821,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setDomain(
         com.google.cloud.managedidentities.v1beta1.Domain.Builder builderForValue) {
@@ -828,11 +840,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeDomain(com.google.cloud.managedidentities.v1beta1.Domain value) {
       if (domainBuilder_ == null) {
@@ -851,11 +863,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearDomain() {
       if (domainBuilder_ == null) {
@@ -870,11 +882,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Domain.Builder getDomainBuilder() {
       
@@ -883,11 +895,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.DomainOrBuilder getDomainOrBuilder() {
       if (domainBuilder_ != null) {
@@ -899,11 +911,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Domain message with updated fields. Only supported fields specified in
+     * Required. Domain message with updated fields. Only supported fields specified in
      * update_mask are updated.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.managedidentities.v1beta1.Domain, com.google.cloud.managedidentities.v1beta1.Domain.Builder, com.google.cloud.managedidentities.v1beta1.DomainOrBuilder> 

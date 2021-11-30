@@ -34,7 +34,7 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Initialize request argument(s)
             DetachTrustRequest request = new DetachTrustRequest
             {
-                Name = "",
+                DomainName = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]"),
                 Trust = new Trust(),
             };
             // Make the request

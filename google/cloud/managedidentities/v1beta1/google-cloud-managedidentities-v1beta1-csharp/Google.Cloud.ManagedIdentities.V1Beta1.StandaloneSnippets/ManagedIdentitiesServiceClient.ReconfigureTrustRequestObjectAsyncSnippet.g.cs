@@ -34,7 +34,7 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Initialize request argument(s)
             ReconfigureTrustRequest request = new ReconfigureTrustRequest
             {
-                Name = "",
+                DomainName = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]"),
                 TargetDomainName = "",
                 TargetDnsIpAddresses = { "", },
             };

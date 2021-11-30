@@ -6,6 +6,9 @@ package com.google.cloud.managedidentities.v1beta1;
 /**
  * <pre>
  * Represents a managed Microsoft Active Directory domain.
+ * If the domain is being changed, it will be placed into the UPDATING state,
+ * which indicates that the resource is being reconciled. At this point, Get
+ * will reflect an intermediate state.
  * </pre>
  *
  * Protobuf type {@code google.cloud.managedidentities.v1beta1.Domain}
@@ -457,7 +460,7 @@ private static final long serialVersionUID = 0L;
    * `projects/{project_id}/locations/global/domains/{domain_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -479,7 +482,7 @@ private static final long serialVersionUID = 0L;
    * `projects/{project_id}/locations/global/domains/{domain_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -528,7 +531,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   @java.lang.Override
@@ -550,7 +553,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
 
@@ -562,7 +565,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
 
@@ -579,7 +582,7 @@ private static final long serialVersionUID = 0L;
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
 
@@ -605,7 +608,7 @@ private static final long serialVersionUID = 0L;
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the authorizedNetworks.
    */
   public com.google.protobuf.ProtocolStringList
@@ -621,7 +624,7 @@ private static final long serialVersionUID = 0L;
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of authorizedNetworks.
    */
   public int getAuthorizedNetworksCount() {
@@ -636,7 +639,7 @@ private static final long serialVersionUID = 0L;
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The authorizedNetworks at the given index.
    */
@@ -652,7 +655,7 @@ private static final long serialVersionUID = 0L;
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the authorizedNetworks at the given index.
    */
@@ -671,7 +674,7 @@ private static final long serialVersionUID = 0L;
    * [Domain].[authorized_networks].
    * </pre>
    *
-   * <code>string reserved_ip_range = 4;</code>
+   * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The reservedIpRange.
    */
   @java.lang.Override
@@ -695,7 +698,7 @@ private static final long serialVersionUID = 0L;
    * [Domain].[authorized_networks].
    * </pre>
    *
-   * <code>string reserved_ip_range = 4;</code>
+   * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for reservedIpRange.
    */
   @java.lang.Override
@@ -724,7 +727,7 @@ private static final long serialVersionUID = 0L;
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the locations.
    */
   public com.google.protobuf.ProtocolStringList
@@ -740,7 +743,7 @@ private static final long serialVersionUID = 0L;
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of locations.
    */
   public int getLocationsCount() {
@@ -755,7 +758,7 @@ private static final long serialVersionUID = 0L;
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The locations at the given index.
    */
@@ -771,7 +774,7 @@ private static final long serialVersionUID = 0L;
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the locations at the given index.
    */
@@ -788,7 +791,7 @@ private static final long serialVersionUID = 0L;
    * Active Directory operations. If not specified, `setupadmin` will be used.
    * </pre>
    *
-   * <code>string admin = 6;</code>
+   * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The admin.
    */
   @java.lang.Override
@@ -810,7 +813,7 @@ private static final long serialVersionUID = 0L;
    * Active Directory operations. If not specified, `setupadmin` will be used.
    * </pre>
    *
-   * <code>string admin = 6;</code>
+   * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for admin.
    */
   @java.lang.Override
@@ -837,7 +840,7 @@ private static final long serialVersionUID = 0L;
    * Active Directory set up on an internal network.
    * </pre>
    *
-   * <code>string fqdn = 10;</code>
+   * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The fqdn.
    */
   @java.lang.Override
@@ -860,7 +863,7 @@ private static final long serialVersionUID = 0L;
    * Active Directory set up on an internal network.
    * </pre>
    *
-   * <code>string fqdn = 10;</code>
+   * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for fqdn.
    */
   @java.lang.Override
@@ -885,7 +888,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -897,7 +900,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -909,7 +912,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -923,7 +926,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -935,7 +938,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -947,7 +950,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -961,7 +964,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current state of this domain.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override public int getStateValue() {
@@ -972,7 +975,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current state of this domain.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   @java.lang.Override public com.google.cloud.managedidentities.v1beta1.Domain.State getState() {
@@ -989,7 +992,7 @@ private static final long serialVersionUID = 0L;
    * domain, if available.
    * </pre>
    *
-   * <code>string status_message = 14;</code>
+   * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -1011,7 +1014,7 @@ private static final long serialVersionUID = 0L;
    * domain, if available.
    * </pre>
    *
-   * <code>string status_message = 14;</code>
+   * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -1036,7 +1039,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.util.List<com.google.cloud.managedidentities.v1beta1.Trust> getTrustsList() {
@@ -1047,7 +1050,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.google.cloud.managedidentities.v1beta1.TrustOrBuilder> 
@@ -1059,7 +1062,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public int getTrustsCount() {
@@ -1070,7 +1073,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1beta1.Trust getTrusts(int index) {
@@ -1081,7 +1084,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1beta1.TrustOrBuilder getTrustsOrBuilder(
@@ -1397,6 +1400,9 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Represents a managed Microsoft Active Directory domain.
+   * If the domain is being changed, it will be placed into the UPDATING state,
+   * which indicates that the resource is being reconciled. At this point, Get
+   * will reflect an intermediate state.
    * </pre>
    *
    * Protobuf type {@code google.cloud.managedidentities.v1beta1.Domain}
@@ -1720,7 +1726,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global/domains/{domain_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1741,7 +1747,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global/domains/{domain_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -1763,7 +1769,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global/domains/{domain_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -1783,7 +1789,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global/domains/{domain_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -1798,7 +1804,7 @@ private static final long serialVersionUID = 0L;
      * `projects/{project_id}/locations/global/domains/{domain_name}`.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -1845,7 +1851,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     @java.lang.Override
@@ -1867,7 +1873,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
 
@@ -1879,7 +1885,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
 
@@ -1896,7 +1902,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
 
@@ -1921,7 +1927,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder removeLabels(
@@ -1944,7 +1950,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(
         java.lang.String key,
@@ -1960,7 +1966,7 @@ private static final long serialVersionUID = 0L;
      * Optional. Resource labels that can contain user-provided metadata.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 2;</code>
+     * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
 
     public Builder putAllLabels(
@@ -1986,7 +1992,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return A list containing the authorizedNetworks.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2002,7 +2008,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The count of authorizedNetworks.
      */
     public int getAuthorizedNetworksCount() {
@@ -2017,7 +2023,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the element to return.
      * @return The authorizedNetworks at the given index.
      */
@@ -2033,7 +2039,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index of the value to return.
      * @return The bytes of the authorizedNetworks at the given index.
      */
@@ -2050,7 +2056,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param index The index to set the value at.
      * @param value The authorizedNetworks to set.
      * @return This builder for chaining.
@@ -2074,7 +2080,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The authorizedNetworks to add.
      * @return This builder for chaining.
      */
@@ -2097,7 +2103,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param values The authorizedNetworks to add.
      * @return This builder for chaining.
      */
@@ -2118,7 +2124,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAuthorizedNetworks() {
@@ -2136,7 +2142,7 @@ private static final long serialVersionUID = 0L;
      * If CIDR subnets overlap between networks, domain creation will fail.
      * </pre>
      *
-     * <code>repeated string authorized_networks = 3;</code>
+     * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes of the authorizedNetworks to add.
      * @return This builder for chaining.
      */
@@ -2161,7 +2167,7 @@ private static final long serialVersionUID = 0L;
      * [Domain].[authorized_networks].
      * </pre>
      *
-     * <code>string reserved_ip_range = 4;</code>
+     * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The reservedIpRange.
      */
     public java.lang.String getReservedIpRange() {
@@ -2184,7 +2190,7 @@ private static final long serialVersionUID = 0L;
      * [Domain].[authorized_networks].
      * </pre>
      *
-     * <code>string reserved_ip_range = 4;</code>
+     * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for reservedIpRange.
      */
     public com.google.protobuf.ByteString
@@ -2208,7 +2214,7 @@ private static final long serialVersionUID = 0L;
      * [Domain].[authorized_networks].
      * </pre>
      *
-     * <code>string reserved_ip_range = 4;</code>
+     * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The reservedIpRange to set.
      * @return This builder for chaining.
      */
@@ -2230,7 +2236,7 @@ private static final long serialVersionUID = 0L;
      * [Domain].[authorized_networks].
      * </pre>
      *
-     * <code>string reserved_ip_range = 4;</code>
+     * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearReservedIpRange() {
@@ -2247,7 +2253,7 @@ private static final long serialVersionUID = 0L;
      * [Domain].[authorized_networks].
      * </pre>
      *
-     * <code>string reserved_ip_range = 4;</code>
+     * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for reservedIpRange to set.
      * @return This builder for chaining.
      */
@@ -2279,7 +2285,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the locations.
      */
     public com.google.protobuf.ProtocolStringList
@@ -2295,7 +2301,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of locations.
      */
     public int getLocationsCount() {
@@ -2310,7 +2316,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The locations at the given index.
      */
@@ -2326,7 +2332,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the locations at the given index.
      */
@@ -2343,7 +2349,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index to set the value at.
      * @param value The locations to set.
      * @return This builder for chaining.
@@ -2367,7 +2373,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The locations to add.
      * @return This builder for chaining.
      */
@@ -2390,7 +2396,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param values The locations to add.
      * @return This builder for chaining.
      */
@@ -2411,7 +2417,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearLocations() {
@@ -2429,7 +2435,7 @@ private static final long serialVersionUID = 0L;
      * block.
      * </pre>
      *
-     * <code>repeated string locations = 5;</code>
+     * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes of the locations to add.
      * @return This builder for chaining.
      */
@@ -2452,7 +2458,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory operations. If not specified, `setupadmin` will be used.
      * </pre>
      *
-     * <code>string admin = 6;</code>
+     * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The admin.
      */
     public java.lang.String getAdmin() {
@@ -2473,7 +2479,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory operations. If not specified, `setupadmin` will be used.
      * </pre>
      *
-     * <code>string admin = 6;</code>
+     * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for admin.
      */
     public com.google.protobuf.ByteString
@@ -2495,7 +2501,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory operations. If not specified, `setupadmin` will be used.
      * </pre>
      *
-     * <code>string admin = 6;</code>
+     * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The admin to set.
      * @return This builder for chaining.
      */
@@ -2515,7 +2521,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory operations. If not specified, `setupadmin` will be used.
      * </pre>
      *
-     * <code>string admin = 6;</code>
+     * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearAdmin() {
@@ -2530,7 +2536,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory operations. If not specified, `setupadmin` will be used.
      * </pre>
      *
-     * <code>string admin = 6;</code>
+     * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for admin to set.
      * @return This builder for chaining.
      */
@@ -2554,7 +2560,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory set up on an internal network.
      * </pre>
      *
-     * <code>string fqdn = 10;</code>
+     * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The fqdn.
      */
     public java.lang.String getFqdn() {
@@ -2576,7 +2582,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory set up on an internal network.
      * </pre>
      *
-     * <code>string fqdn = 10;</code>
+     * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for fqdn.
      */
     public com.google.protobuf.ByteString
@@ -2599,7 +2605,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory set up on an internal network.
      * </pre>
      *
-     * <code>string fqdn = 10;</code>
+     * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The fqdn to set.
      * @return This builder for chaining.
      */
@@ -2620,7 +2626,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory set up on an internal network.
      * </pre>
      *
-     * <code>string fqdn = 10;</code>
+     * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearFqdn() {
@@ -2636,7 +2642,7 @@ private static final long serialVersionUID = 0L;
      * Active Directory set up on an internal network.
      * </pre>
      *
-     * <code>string fqdn = 10;</code>
+     * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for fqdn to set.
      * @return This builder for chaining.
      */
@@ -2660,7 +2666,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
@@ -2671,7 +2677,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -2686,7 +2692,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2706,7 +2712,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2724,7 +2730,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2746,7 +2752,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2764,7 +2770,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -2776,7 +2782,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2791,7 +2797,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 11;</code>
+     * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2815,7 +2821,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
@@ -2826,7 +2832,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -2841,7 +2847,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2861,7 +2867,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2879,7 +2885,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2901,7 +2907,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2919,7 +2925,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       
@@ -2931,7 +2937,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -2946,7 +2952,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 12;</code>
+     * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2968,7 +2974,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of this domain.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -2979,7 +2985,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of this domain.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
@@ -2994,7 +3000,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of this domain.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The state.
      */
     @java.lang.Override
@@ -3008,7 +3014,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of this domain.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
@@ -3026,7 +3032,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of this domain.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
@@ -3043,7 +3049,7 @@ private static final long serialVersionUID = 0L;
      * domain, if available.
      * </pre>
      *
-     * <code>string status_message = 14;</code>
+     * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The statusMessage.
      */
     public java.lang.String getStatusMessage() {
@@ -3064,7 +3070,7 @@ private static final long serialVersionUID = 0L;
      * domain, if available.
      * </pre>
      *
-     * <code>string status_message = 14;</code>
+     * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for statusMessage.
      */
     public com.google.protobuf.ByteString
@@ -3086,7 +3092,7 @@ private static final long serialVersionUID = 0L;
      * domain, if available.
      * </pre>
      *
-     * <code>string status_message = 14;</code>
+     * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -3106,7 +3112,7 @@ private static final long serialVersionUID = 0L;
      * domain, if available.
      * </pre>
      *
-     * <code>string status_message = 14;</code>
+     * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearStatusMessage() {
@@ -3121,7 +3127,7 @@ private static final long serialVersionUID = 0L;
      * domain, if available.
      * </pre>
      *
-     * <code>string status_message = 14;</code>
+     * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */
@@ -3154,7 +3160,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.cloud.managedidentities.v1beta1.Trust> getTrustsList() {
       if (trustsBuilder_ == null) {
@@ -3168,7 +3174,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public int getTrustsCount() {
       if (trustsBuilder_ == null) {
@@ -3182,7 +3188,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Trust getTrusts(int index) {
       if (trustsBuilder_ == null) {
@@ -3196,7 +3202,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTrusts(
         int index, com.google.cloud.managedidentities.v1beta1.Trust value) {
@@ -3217,7 +3223,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setTrusts(
         int index, com.google.cloud.managedidentities.v1beta1.Trust.Builder builderForValue) {
@@ -3235,7 +3241,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addTrusts(com.google.cloud.managedidentities.v1beta1.Trust value) {
       if (trustsBuilder_ == null) {
@@ -3255,7 +3261,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addTrusts(
         int index, com.google.cloud.managedidentities.v1beta1.Trust value) {
@@ -3276,7 +3282,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addTrusts(
         com.google.cloud.managedidentities.v1beta1.Trust.Builder builderForValue) {
@@ -3294,7 +3300,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addTrusts(
         int index, com.google.cloud.managedidentities.v1beta1.Trust.Builder builderForValue) {
@@ -3312,7 +3318,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder addAllTrusts(
         java.lang.Iterable<? extends com.google.cloud.managedidentities.v1beta1.Trust> values) {
@@ -3331,7 +3337,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearTrusts() {
       if (trustsBuilder_ == null) {
@@ -3348,7 +3354,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder removeTrusts(int index) {
       if (trustsBuilder_ == null) {
@@ -3365,7 +3371,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Trust.Builder getTrustsBuilder(
         int index) {
@@ -3376,7 +3382,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.TrustOrBuilder getTrustsOrBuilder(
         int index) {
@@ -3390,7 +3396,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<? extends com.google.cloud.managedidentities.v1beta1.TrustOrBuilder> 
          getTrustsOrBuilderList() {
@@ -3405,7 +3411,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Trust.Builder addTrustsBuilder() {
       return getTrustsFieldBuilder().addBuilder(
@@ -3416,7 +3422,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Trust.Builder addTrustsBuilder(
         int index) {
@@ -3428,7 +3434,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current trusts associated with the domain.
      * </pre>
      *
-     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+     * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public java.util.List<com.google.cloud.managedidentities.v1beta1.Trust.Builder> 
          getTrustsBuilderList() {

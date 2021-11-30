@@ -871,11 +871,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object trustHandshakeSecret_;
   /**
    * <pre>
-   * Input only, and will not be stored. The trust secret used for the handshake
-   * with the target domain.
+   * Input only. The trust secret used for the handshake
+   * with the target domain. It will not be stored.
    * </pre>
    *
-   * <code>string trust_handshake_secret = 6;</code>
+   * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The trustHandshakeSecret.
    */
   @java.lang.Override
@@ -893,11 +893,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Input only, and will not be stored. The trust secret used for the handshake
-   * with the target domain.
+   * Input only. The trust secret used for the handshake
+   * with the target domain. It will not be stored.
    * </pre>
    *
-   * <code>string trust_handshake_secret = 6;</code>
+   * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
    * @return The bytes for trustHandshakeSecret.
    */
   @java.lang.Override
@@ -922,7 +922,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   @java.lang.Override
@@ -934,7 +934,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   @java.lang.Override
@@ -946,7 +946,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 7;</code>
+   * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
@@ -960,7 +960,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
@@ -972,7 +972,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   @java.lang.Override
@@ -984,7 +984,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 8;</code>
+   * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -998,7 +998,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current state of the trust.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for state.
    */
   @java.lang.Override public int getStateValue() {
@@ -1009,7 +1009,7 @@ private static final long serialVersionUID = 0L;
    * Output only. The current state of the trust.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   @java.lang.Override public com.google.cloud.managedidentities.v1beta1.Trust.State getState() {
@@ -1026,7 +1026,7 @@ private static final long serialVersionUID = 0L;
    * trust, if available.
    * </pre>
    *
-   * <code>string state_description = 11;</code>
+   * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The stateDescription.
    */
   @java.lang.Override
@@ -1048,7 +1048,7 @@ private static final long serialVersionUID = 0L;
    * trust, if available.
    * </pre>
    *
-   * <code>string state_description = 11;</code>
+   * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for stateDescription.
    */
   @java.lang.Override
@@ -1074,7 +1074,7 @@ private static final long serialVersionUID = 0L;
    * connected.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the lastTrustHeartbeatTime field is set.
    */
   @java.lang.Override
@@ -1087,7 +1087,7 @@ private static final long serialVersionUID = 0L;
    * connected.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The lastTrustHeartbeatTime.
    */
   @java.lang.Override
@@ -1100,7 +1100,7 @@ private static final long serialVersionUID = 0L;
    * connected.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+   * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getLastTrustHeartbeatTimeOrBuilder() {
@@ -2101,11 +2101,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object trustHandshakeSecret_ = "";
     /**
      * <pre>
-     * Input only, and will not be stored. The trust secret used for the handshake
-     * with the target domain.
+     * Input only. The trust secret used for the handshake
+     * with the target domain. It will not be stored.
      * </pre>
      *
-     * <code>string trust_handshake_secret = 6;</code>
+     * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The trustHandshakeSecret.
      */
     public java.lang.String getTrustHandshakeSecret() {
@@ -2122,11 +2122,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input only, and will not be stored. The trust secret used for the handshake
-     * with the target domain.
+     * Input only. The trust secret used for the handshake
+     * with the target domain. It will not be stored.
      * </pre>
      *
-     * <code>string trust_handshake_secret = 6;</code>
+     * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return The bytes for trustHandshakeSecret.
      */
     public com.google.protobuf.ByteString
@@ -2144,11 +2144,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input only, and will not be stored. The trust secret used for the handshake
-     * with the target domain.
+     * Input only. The trust secret used for the handshake
+     * with the target domain. It will not be stored.
      * </pre>
      *
-     * <code>string trust_handshake_secret = 6;</code>
+     * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param value The trustHandshakeSecret to set.
      * @return This builder for chaining.
      */
@@ -2164,11 +2164,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input only, and will not be stored. The trust secret used for the handshake
-     * with the target domain.
+     * Input only. The trust secret used for the handshake
+     * with the target domain. It will not be stored.
      * </pre>
      *
-     * <code>string trust_handshake_secret = 6;</code>
+     * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearTrustHandshakeSecret() {
@@ -2179,11 +2179,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Input only, and will not be stored. The trust secret used for the handshake
-     * with the target domain.
+     * Input only. The trust secret used for the handshake
+     * with the target domain. It will not be stored.
      * </pre>
      *
-     * <code>string trust_handshake_secret = 6;</code>
+     * <code>string trust_handshake_secret = 6 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param value The bytes for trustHandshakeSecret to set.
      * @return This builder for chaining.
      */
@@ -2207,7 +2207,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
@@ -2218,7 +2218,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The createTime.
      */
     public com.google.protobuf.Timestamp getCreateTime() {
@@ -2233,7 +2233,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2253,7 +2253,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setCreateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2271,7 +2271,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
@@ -2293,7 +2293,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearCreateTime() {
       if (createTimeBuilder_ == null) {
@@ -2311,7 +2311,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
       
@@ -2323,7 +2323,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
       if (createTimeBuilder_ != null) {
@@ -2338,7 +2338,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The time the instance was created.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp create_time = 7;</code>
+     * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2362,7 +2362,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
@@ -2373,7 +2373,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The updateTime.
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
@@ -2388,7 +2388,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2408,7 +2408,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setUpdateTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2426,7 +2426,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
@@ -2448,7 +2448,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearUpdateTime() {
       if (updateTimeBuilder_ == null) {
@@ -2466,7 +2466,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
       
@@ -2478,7 +2478,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
       if (updateTimeBuilder_ != null) {
@@ -2493,7 +2493,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The last update time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp update_time = 8;</code>
+     * <code>.google.protobuf.Timestamp update_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -2515,7 +2515,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of the trust.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The enum numeric value on the wire for state.
      */
     @java.lang.Override public int getStateValue() {
@@ -2526,7 +2526,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of the trust.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
@@ -2541,7 +2541,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of the trust.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The state.
      */
     @java.lang.Override
@@ -2555,7 +2555,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of the trust.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The state to set.
      * @return This builder for chaining.
      */
@@ -2573,7 +2573,7 @@ private static final long serialVersionUID = 0L;
      * Output only. The current state of the trust.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust.State state = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearState() {
@@ -2590,7 +2590,7 @@ private static final long serialVersionUID = 0L;
      * trust, if available.
      * </pre>
      *
-     * <code>string state_description = 11;</code>
+     * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The stateDescription.
      */
     public java.lang.String getStateDescription() {
@@ -2611,7 +2611,7 @@ private static final long serialVersionUID = 0L;
      * trust, if available.
      * </pre>
      *
-     * <code>string state_description = 11;</code>
+     * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The bytes for stateDescription.
      */
     public com.google.protobuf.ByteString
@@ -2633,7 +2633,7 @@ private static final long serialVersionUID = 0L;
      * trust, if available.
      * </pre>
      *
-     * <code>string state_description = 11;</code>
+     * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The stateDescription to set.
      * @return This builder for chaining.
      */
@@ -2653,7 +2653,7 @@ private static final long serialVersionUID = 0L;
      * trust, if available.
      * </pre>
      *
-     * <code>string state_description = 11;</code>
+     * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return This builder for chaining.
      */
     public Builder clearStateDescription() {
@@ -2668,7 +2668,7 @@ private static final long serialVersionUID = 0L;
      * trust, if available.
      * </pre>
      *
-     * <code>string state_description = 11;</code>
+     * <code>string state_description = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param value The bytes for stateDescription to set.
      * @return This builder for chaining.
      */
@@ -2693,7 +2693,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return Whether the lastTrustHeartbeatTime field is set.
      */
     public boolean hasLastTrustHeartbeatTime() {
@@ -2705,7 +2705,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return The lastTrustHeartbeatTime.
      */
     public com.google.protobuf.Timestamp getLastTrustHeartbeatTime() {
@@ -2721,7 +2721,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLastTrustHeartbeatTime(com.google.protobuf.Timestamp value) {
       if (lastTrustHeartbeatTimeBuilder_ == null) {
@@ -2742,7 +2742,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setLastTrustHeartbeatTime(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -2761,7 +2761,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeLastTrustHeartbeatTime(com.google.protobuf.Timestamp value) {
       if (lastTrustHeartbeatTimeBuilder_ == null) {
@@ -2784,7 +2784,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearLastTrustHeartbeatTime() {
       if (lastTrustHeartbeatTimeBuilder_ == null) {
@@ -2803,7 +2803,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastTrustHeartbeatTimeBuilder() {
       
@@ -2816,7 +2816,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.protobuf.TimestampOrBuilder getLastTrustHeartbeatTimeOrBuilder() {
       if (lastTrustHeartbeatTimeBuilder_ != null) {
@@ -2832,7 +2832,7 @@ private static final long serialVersionUID = 0L;
      * connected.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12;</code>
+     * <code>.google.protobuf.Timestamp last_trust_heartbeat_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

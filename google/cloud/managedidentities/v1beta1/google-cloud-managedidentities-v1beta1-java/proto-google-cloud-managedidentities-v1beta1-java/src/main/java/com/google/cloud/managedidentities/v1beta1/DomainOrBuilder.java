@@ -13,7 +13,7 @@ public interface DomainOrBuilder extends
    * `projects/{project_id}/locations/global/domains/{domain_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The name.
    */
   java.lang.String getName();
@@ -23,7 +23,7 @@ public interface DomainOrBuilder extends
    * `projects/{project_id}/locations/global/domains/{domain_name}`.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString
@@ -34,7 +34,7 @@ public interface DomainOrBuilder extends
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
@@ -42,7 +42,7 @@ public interface DomainOrBuilder extends
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(
       java.lang.String key);
@@ -57,7 +57,7 @@ public interface DomainOrBuilder extends
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String>
   getLabelsMap();
@@ -66,7 +66,7 @@ public interface DomainOrBuilder extends
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getLabelsOrDefault(
@@ -77,7 +77,7 @@ public interface DomainOrBuilder extends
    * Optional. Resource labels that can contain user-provided metadata.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 2;</code>
+   * <code>map&lt;string, string&gt; labels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
 
   java.lang.String getLabelsOrThrow(
@@ -92,7 +92,7 @@ public interface DomainOrBuilder extends
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return A list containing the authorizedNetworks.
    */
   java.util.List<java.lang.String>
@@ -106,7 +106,7 @@ public interface DomainOrBuilder extends
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The count of authorizedNetworks.
    */
   int getAuthorizedNetworksCount();
@@ -119,7 +119,7 @@ public interface DomainOrBuilder extends
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the element to return.
    * @return The authorizedNetworks at the given index.
    */
@@ -133,7 +133,7 @@ public interface DomainOrBuilder extends
    * If CIDR subnets overlap between networks, domain creation will fail.
    * </pre>
    *
-   * <code>repeated string authorized_networks = 3;</code>
+   * <code>repeated string authorized_networks = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @param index The index of the value to return.
    * @return The bytes of the authorizedNetworks at the given index.
    */
@@ -148,7 +148,7 @@ public interface DomainOrBuilder extends
    * [Domain].[authorized_networks].
    * </pre>
    *
-   * <code>string reserved_ip_range = 4;</code>
+   * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The reservedIpRange.
    */
   java.lang.String getReservedIpRange();
@@ -160,7 +160,7 @@ public interface DomainOrBuilder extends
    * [Domain].[authorized_networks].
    * </pre>
    *
-   * <code>string reserved_ip_range = 4;</code>
+   * <code>string reserved_ip_range = 4 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for reservedIpRange.
    */
   com.google.protobuf.ByteString
@@ -175,7 +175,7 @@ public interface DomainOrBuilder extends
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the locations.
    */
   java.util.List<java.lang.String>
@@ -189,7 +189,7 @@ public interface DomainOrBuilder extends
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of locations.
    */
   int getLocationsCount();
@@ -202,7 +202,7 @@ public interface DomainOrBuilder extends
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The locations at the given index.
    */
@@ -216,7 +216,7 @@ public interface DomainOrBuilder extends
    * block.
    * </pre>
    *
-   * <code>repeated string locations = 5;</code>
+   * <code>repeated string locations = 5 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the locations at the given index.
    */
@@ -229,7 +229,7 @@ public interface DomainOrBuilder extends
    * Active Directory operations. If not specified, `setupadmin` will be used.
    * </pre>
    *
-   * <code>string admin = 6;</code>
+   * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The admin.
    */
   java.lang.String getAdmin();
@@ -239,7 +239,7 @@ public interface DomainOrBuilder extends
    * Active Directory operations. If not specified, `setupadmin` will be used.
    * </pre>
    *
-   * <code>string admin = 6;</code>
+   * <code>string admin = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for admin.
    */
   com.google.protobuf.ByteString
@@ -252,7 +252,7 @@ public interface DomainOrBuilder extends
    * Active Directory set up on an internal network.
    * </pre>
    *
-   * <code>string fqdn = 10;</code>
+   * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The fqdn.
    */
   java.lang.String getFqdn();
@@ -263,7 +263,7 @@ public interface DomainOrBuilder extends
    * Active Directory set up on an internal network.
    * </pre>
    *
-   * <code>string fqdn = 10;</code>
+   * <code>string fqdn = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for fqdn.
    */
   com.google.protobuf.ByteString
@@ -274,7 +274,7 @@ public interface DomainOrBuilder extends
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the createTime field is set.
    */
   boolean hasCreateTime();
@@ -283,7 +283,7 @@ public interface DomainOrBuilder extends
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The createTime.
    */
   com.google.protobuf.Timestamp getCreateTime();
@@ -292,7 +292,7 @@ public interface DomainOrBuilder extends
    * Output only. The time the instance was created.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp create_time = 11;</code>
+   * <code>.google.protobuf.Timestamp create_time = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
@@ -301,7 +301,7 @@ public interface DomainOrBuilder extends
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return Whether the updateTime field is set.
    */
   boolean hasUpdateTime();
@@ -310,7 +310,7 @@ public interface DomainOrBuilder extends
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The updateTime.
    */
   com.google.protobuf.Timestamp getUpdateTime();
@@ -319,7 +319,7 @@ public interface DomainOrBuilder extends
    * Output only. The last update time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 12;</code>
+   * <code>.google.protobuf.Timestamp update_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
 
@@ -328,7 +328,7 @@ public interface DomainOrBuilder extends
    * Output only. The current state of this domain.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The enum numeric value on the wire for state.
    */
   int getStateValue();
@@ -337,7 +337,7 @@ public interface DomainOrBuilder extends
    * Output only. The current state of this domain.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain.State state = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The state.
    */
   com.google.cloud.managedidentities.v1beta1.Domain.State getState();
@@ -348,7 +348,7 @@ public interface DomainOrBuilder extends
    * domain, if available.
    * </pre>
    *
-   * <code>string status_message = 14;</code>
+   * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The statusMessage.
    */
   java.lang.String getStatusMessage();
@@ -358,7 +358,7 @@ public interface DomainOrBuilder extends
    * domain, if available.
    * </pre>
    *
-   * <code>string status_message = 14;</code>
+   * <code>string status_message = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    * @return The bytes for statusMessage.
    */
   com.google.protobuf.ByteString
@@ -369,7 +369,7 @@ public interface DomainOrBuilder extends
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.List<com.google.cloud.managedidentities.v1beta1.Trust> 
       getTrustsList();
@@ -378,7 +378,7 @@ public interface DomainOrBuilder extends
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.managedidentities.v1beta1.Trust getTrusts(int index);
   /**
@@ -386,7 +386,7 @@ public interface DomainOrBuilder extends
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   int getTrustsCount();
   /**
@@ -394,7 +394,7 @@ public interface DomainOrBuilder extends
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   java.util.List<? extends com.google.cloud.managedidentities.v1beta1.TrustOrBuilder> 
       getTrustsOrBuilderList();
@@ -403,7 +403,7 @@ public interface DomainOrBuilder extends
    * Output only. The current trusts associated with the domain.
    * </pre>
    *
-   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15;</code>
+   * <code>repeated .google.cloud.managedidentities.v1beta1.Trust trusts = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.managedidentities.v1beta1.TrustOrBuilder getTrustsOrBuilder(
       int index);

@@ -117,11 +117,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -139,11 +139,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -165,11 +165,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object targetDomainName_;
   /**
    * <pre>
-   * The fully-qualified target domain name which will be in trust with current
+   * Required. The fully-qualified target domain name which will be in trust with current
    * domain.
    * </pre>
    *
-   * <code>string target_domain_name = 2;</code>
+   * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The targetDomainName.
    */
   @java.lang.Override
@@ -187,11 +187,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The fully-qualified target domain name which will be in trust with current
+   * Required. The fully-qualified target domain name which will be in trust with current
    * domain.
    * </pre>
    *
-   * <code>string target_domain_name = 2;</code>
+   * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for targetDomainName.
    */
   @java.lang.Override
@@ -213,11 +213,11 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.LazyStringList targetDnsIpAddresses_;
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return A list containing the targetDnsIpAddresses.
    */
   public com.google.protobuf.ProtocolStringList
@@ -226,11 +226,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The count of targetDnsIpAddresses.
    */
   public int getTargetDnsIpAddressesCount() {
@@ -238,11 +238,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the element to return.
    * @return The targetDnsIpAddresses at the given index.
    */
@@ -251,11 +251,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The target DNS server IP addresses to resolve the remote domain involved
+   * Required. The target DNS server IP addresses to resolve the remote domain involved
    * in the trust.
    * </pre>
    *
-   * <code>repeated string target_dns_ip_addresses = 3;</code>
+   * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
    * @param index The index of the value to return.
    * @return The bytes of the targetDnsIpAddresses at the given index.
    */
@@ -627,11 +627,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -648,11 +648,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -670,11 +670,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -690,11 +690,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -705,11 +705,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -728,11 +728,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object targetDomainName_ = "";
     /**
      * <pre>
-     * The fully-qualified target domain name which will be in trust with current
+     * Required. The fully-qualified target domain name which will be in trust with current
      * domain.
      * </pre>
      *
-     * <code>string target_domain_name = 2;</code>
+     * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The targetDomainName.
      */
     public java.lang.String getTargetDomainName() {
@@ -749,11 +749,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fully-qualified target domain name which will be in trust with current
+     * Required. The fully-qualified target domain name which will be in trust with current
      * domain.
      * </pre>
      *
-     * <code>string target_domain_name = 2;</code>
+     * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for targetDomainName.
      */
     public com.google.protobuf.ByteString
@@ -771,11 +771,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fully-qualified target domain name which will be in trust with current
+     * Required. The fully-qualified target domain name which will be in trust with current
      * domain.
      * </pre>
      *
-     * <code>string target_domain_name = 2;</code>
+     * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The targetDomainName to set.
      * @return This builder for chaining.
      */
@@ -791,11 +791,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fully-qualified target domain name which will be in trust with current
+     * Required. The fully-qualified target domain name which will be in trust with current
      * domain.
      * </pre>
      *
-     * <code>string target_domain_name = 2;</code>
+     * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetDomainName() {
@@ -806,11 +806,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The fully-qualified target domain name which will be in trust with current
+     * Required. The fully-qualified target domain name which will be in trust with current
      * domain.
      * </pre>
      *
-     * <code>string target_domain_name = 2;</code>
+     * <code>string target_domain_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for targetDomainName to set.
      * @return This builder for chaining.
      */
@@ -835,11 +835,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return A list containing the targetDnsIpAddresses.
      */
     public com.google.protobuf.ProtocolStringList
@@ -848,11 +848,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The count of targetDnsIpAddresses.
      */
     public int getTargetDnsIpAddressesCount() {
@@ -860,11 +860,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the element to return.
      * @return The targetDnsIpAddresses at the given index.
      */
@@ -873,11 +873,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index of the value to return.
      * @return The bytes of the targetDnsIpAddresses at the given index.
      */
@@ -887,11 +887,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param index The index to set the value at.
      * @param value The targetDnsIpAddresses to set.
      * @return This builder for chaining.
@@ -908,11 +908,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The targetDnsIpAddresses to add.
      * @return This builder for chaining.
      */
@@ -928,11 +928,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param values The targetDnsIpAddresses to add.
      * @return This builder for chaining.
      */
@@ -946,11 +946,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearTargetDnsIpAddresses() {
@@ -961,11 +961,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The target DNS server IP addresses to resolve the remote domain involved
+     * Required. The target DNS server IP addresses to resolve the remote domain involved
      * in the trust.
      * </pre>
      *
-     * <code>repeated string target_dns_ip_addresses = 3;</code>
+     * <code>repeated string target_dns_ip_addresses = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes of the targetDnsIpAddresses to add.
      * @return This builder for chaining.
      */

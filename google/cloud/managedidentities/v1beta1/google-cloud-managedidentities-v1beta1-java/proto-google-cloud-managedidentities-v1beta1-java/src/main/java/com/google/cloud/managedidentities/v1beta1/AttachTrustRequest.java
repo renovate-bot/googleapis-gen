@@ -109,11 +109,11 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The name.
    */
   @java.lang.Override
@@ -131,11 +131,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The resource domain name, project name and location using the form:
+   * Required. The resource domain name, project name and location using the form:
    * `projects/{project_id}/locations/global/domains/{domain_name}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -157,10 +157,10 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.managedidentities.v1beta1.Trust trust_;
   /**
    * <pre>
-   * The domain trust resource.
+   * Required. The domain trust resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the trust field is set.
    */
   @java.lang.Override
@@ -169,10 +169,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The domain trust resource.
+   * Required. The domain trust resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The trust.
    */
   @java.lang.Override
@@ -181,10 +181,10 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The domain trust resource.
+   * Required. The domain trust resource.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   @java.lang.Override
   public com.google.cloud.managedidentities.v1beta1.TrustOrBuilder getTrustOrBuilder() {
@@ -531,11 +531,11 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -552,11 +552,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -574,11 +574,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -594,11 +594,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -609,11 +609,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The resource domain name, project name and location using the form:
+     * Required. The resource domain name, project name and location using the form:
      * `projects/{project_id}/locations/global/domains/{domain_name}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -634,10 +634,10 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.managedidentities.v1beta1.Trust, com.google.cloud.managedidentities.v1beta1.Trust.Builder, com.google.cloud.managedidentities.v1beta1.TrustOrBuilder> trustBuilder_;
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return Whether the trust field is set.
      */
     public boolean hasTrust() {
@@ -645,10 +645,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The trust.
      */
     public com.google.cloud.managedidentities.v1beta1.Trust getTrust() {
@@ -660,10 +660,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTrust(com.google.cloud.managedidentities.v1beta1.Trust value) {
       if (trustBuilder_ == null) {
@@ -680,10 +680,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder setTrust(
         com.google.cloud.managedidentities.v1beta1.Trust.Builder builderForValue) {
@@ -698,10 +698,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder mergeTrust(com.google.cloud.managedidentities.v1beta1.Trust value) {
       if (trustBuilder_ == null) {
@@ -720,10 +720,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public Builder clearTrust() {
       if (trustBuilder_ == null) {
@@ -738,10 +738,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.Trust.Builder getTrustBuilder() {
       
@@ -750,10 +750,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     public com.google.cloud.managedidentities.v1beta1.TrustOrBuilder getTrustOrBuilder() {
       if (trustBuilder_ != null) {
@@ -765,10 +765,10 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The domain trust resource.
+     * Required. The domain trust resource.
      * </pre>
      *
-     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2;</code>
+     * <code>.google.cloud.managedidentities.v1beta1.Trust trust = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.cloud.managedidentities.v1beta1.Trust, com.google.cloud.managedidentities.v1beta1.Trust.Builder, com.google.cloud.managedidentities.v1beta1.TrustOrBuilder> 

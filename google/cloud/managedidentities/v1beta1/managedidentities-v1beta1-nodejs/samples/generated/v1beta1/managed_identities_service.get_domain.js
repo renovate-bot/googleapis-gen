@@ -15,13 +15,13 @@
 
 'use strict';
 
-function main() {
+function main(name) {
   // [START managedidentities_v1beta1_generated_ManagedIdentitiesService_GetDomain_async]
   /**
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The domain resource name using the form:
+   *  Required. The domain resource name using the form:
    *  `projects/{project_id}/locations/global/domains/{domain_name}`
    */
   // const name = 'abc123'
@@ -35,6 +35,7 @@ function main() {
   async function callGetDomain() {
     // Construct request
     const request = {
+      name,
     };
 
     // Run request

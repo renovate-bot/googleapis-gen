@@ -9,73 +9,76 @@ public interface UpdateDomainRequestOrBuilder extends
 
   /**
    * <pre>
-   * Mask of fields to update. At least one path must be supplied in this
+   * Required. Mask of fields to update. At least one path must be supplied in this
    * field. The elements of the repeated paths field may only include
    * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
    *  * `labels`
    *  * `locations`
    *  * `authorized_networks`
+   *  * `audit_logs_enabled`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the updateMask field is set.
    */
   boolean hasUpdateMask();
   /**
    * <pre>
-   * Mask of fields to update. At least one path must be supplied in this
+   * Required. Mask of fields to update. At least one path must be supplied in this
    * field. The elements of the repeated paths field may only include
    * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
    *  * `labels`
    *  * `locations`
    *  * `authorized_networks`
+   *  * `audit_logs_enabled`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The updateMask.
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
    * <pre>
-   * Mask of fields to update. At least one path must be supplied in this
+   * Required. Mask of fields to update. At least one path must be supplied in this
    * field. The elements of the repeated paths field may only include
    * fields from [Domain][google.cloud.managedidentities.v1beta1.Domain]:
    *  * `labels`
    *  * `locations`
    *  * `authorized_networks`
+   *  * `audit_logs_enabled`
    * </pre>
    *
-   * <code>.google.protobuf.FieldMask update_mask = 1;</code>
+   * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
    * <pre>
-   * Domain message with updated fields. Only supported fields specified in
+   * Required. Domain message with updated fields. Only supported fields specified in
    * update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return Whether the domain field is set.
    */
   boolean hasDomain();
   /**
    * <pre>
-   * Domain message with updated fields. Only supported fields specified in
+   * Required. Domain message with updated fields. Only supported fields specified in
    * update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The domain.
    */
   com.google.cloud.managedidentities.v1beta1.Domain getDomain();
   /**
    * <pre>
-   * Domain message with updated fields. Only supported fields specified in
+   * Required. Domain message with updated fields. Only supported fields specified in
    * update_mask are updated.
    * </pre>
    *
-   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2;</code>
+   * <code>.google.cloud.managedidentities.v1beta1.Domain domain = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    */
   com.google.cloud.managedidentities.v1beta1.DomainOrBuilder getDomainOrBuilder();
 }

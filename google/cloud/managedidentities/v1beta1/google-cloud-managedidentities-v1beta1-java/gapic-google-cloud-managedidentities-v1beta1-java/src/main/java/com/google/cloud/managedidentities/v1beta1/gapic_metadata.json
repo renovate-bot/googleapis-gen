@@ -11,34 +11,34 @@
           "libraryClient": "ManagedIdentitiesServiceClient",
           "rpcs": {
             "AttachTrust": {
-              "methods": ["attachTrustAsync", "attachTrustOperationCallable", "attachTrustCallable"]
+              "methods": ["attachTrustAsync", "attachTrustAsync", "attachTrustAsync", "attachTrustOperationCallable", "attachTrustCallable"]
             },
             "CreateMicrosoftAdDomain": {
-              "methods": ["createMicrosoftAdDomainAsync", "createMicrosoftAdDomainOperationCallable", "createMicrosoftAdDomainCallable"]
+              "methods": ["createMicrosoftAdDomainAsync", "createMicrosoftAdDomainAsync", "createMicrosoftAdDomainAsync", "createMicrosoftAdDomainOperationCallable", "createMicrosoftAdDomainCallable"]
             },
             "DeleteDomain": {
-              "methods": ["deleteDomainAsync", "deleteDomainOperationCallable", "deleteDomainCallable"]
+              "methods": ["deleteDomainAsync", "deleteDomainAsync", "deleteDomainAsync", "deleteDomainOperationCallable", "deleteDomainCallable"]
             },
             "DetachTrust": {
-              "methods": ["detachTrustAsync", "detachTrustOperationCallable", "detachTrustCallable"]
+              "methods": ["detachTrustAsync", "detachTrustAsync", "detachTrustAsync", "detachTrustOperationCallable", "detachTrustCallable"]
             },
             "GetDomain": {
-              "methods": ["getDomain", "getDomainCallable"]
+              "methods": ["getDomain", "getDomain", "getDomain", "getDomainCallable"]
             },
             "ListDomains": {
-              "methods": ["listDomains", "listDomainsPagedCallable", "listDomainsCallable"]
+              "methods": ["listDomains", "listDomains", "listDomains", "listDomainsPagedCallable", "listDomainsCallable"]
             },
             "ReconfigureTrust": {
-              "methods": ["reconfigureTrustAsync", "reconfigureTrustOperationCallable", "reconfigureTrustCallable"]
+              "methods": ["reconfigureTrustAsync", "reconfigureTrustAsync", "reconfigureTrustAsync", "reconfigureTrustOperationCallable", "reconfigureTrustCallable"]
             },
             "ResetAdminPassword": {
-              "methods": ["resetAdminPassword", "resetAdminPasswordCallable"]
+              "methods": ["resetAdminPassword", "resetAdminPassword", "resetAdminPassword", "resetAdminPasswordCallable"]
             },
             "UpdateDomain": {
-              "methods": ["updateDomainAsync", "updateDomainOperationCallable", "updateDomainCallable"]
+              "methods": ["updateDomainAsync", "updateDomainAsync", "updateDomainOperationCallable", "updateDomainCallable"]
             },
             "ValidateTrust": {
-              "methods": ["validateTrustAsync", "validateTrustOperationCallable", "validateTrustCallable"]
+              "methods": ["validateTrustAsync", "validateTrustAsync", "validateTrustAsync", "validateTrustOperationCallable", "validateTrustCallable"]
             }
           }
         }

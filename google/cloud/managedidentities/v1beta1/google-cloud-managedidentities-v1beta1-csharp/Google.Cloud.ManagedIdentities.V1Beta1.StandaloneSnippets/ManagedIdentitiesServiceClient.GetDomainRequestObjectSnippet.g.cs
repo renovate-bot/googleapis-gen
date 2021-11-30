@@ -30,7 +30,10 @@ namespace Google.Cloud.ManagedIdentities.V1Beta1.Snippets
             // Create client
             ManagedIdentitiesServiceClient managedIdentitiesServiceClient = ManagedIdentitiesServiceClient.Create();
             // Initialize request argument(s)
-            GetDomainRequest request = new GetDomainRequest { Name = "", };
+            GetDomainRequest request = new GetDomainRequest
+            {
+                DomainName = DomainName.FromProjectLocationDomain("[PROJECT]", "[LOCATION]", "[DOMAIN]"),
+            };
             // Make the request
             Domain response = managedIdentitiesServiceClient.GetDomain(request);
         }
