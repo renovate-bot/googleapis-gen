@@ -35,18 +35,24 @@ from .types.cloud_speech import StreamingRecognizeRequest
 from .types.cloud_speech import StreamingRecognizeResponse
 from .types.cloud_speech import TranscriptOutputConfig
 from .types.cloud_speech import WordInfo
+from .types.resource import CustomClass
+from .types.resource import PhraseSet
+from .types.resource import SpeechAdaptation
 
 __all__ = (
     'SpeechAsyncClient',
+'CustomClass',
 'LongRunningRecognizeMetadata',
 'LongRunningRecognizeRequest',
 'LongRunningRecognizeResponse',
+'PhraseSet',
 'RecognitionAudio',
 'RecognitionConfig',
 'RecognitionMetadata',
 'RecognizeRequest',
 'RecognizeResponse',
 'SpeakerDiarizationConfig',
+'SpeechAdaptation',
 'SpeechClient',
 'SpeechContext',
 'SpeechRecognitionAlternative',

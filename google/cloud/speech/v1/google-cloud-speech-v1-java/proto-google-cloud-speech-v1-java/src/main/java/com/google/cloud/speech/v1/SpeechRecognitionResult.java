@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private SpeechRecognitionResult() {
     alternatives_ = java.util.Collections.emptyList();
+    languageCode_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +67,25 @@ private static final long serialVersionUID = 0L;
           case 16: {
 
             channelTag_ = input.readInt32();
+            break;
+          }
+          case 34: {
+            com.google.protobuf.Duration.Builder subBuilder = null;
+            if (resultEndTime_ != null) {
+              subBuilder = resultEndTime_.toBuilder();
+            }
+            resultEndTime_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(resultEndTime_);
+              resultEndTime_ = subBuilder.buildPartial();
+            }
+
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            languageCode_ = s;
             break;
           }
           default: {
@@ -195,6 +215,97 @@ private static final long serialVersionUID = 0L;
     return channelTag_;
   }
 
+  public static final int RESULT_END_TIME_FIELD_NUMBER = 4;
+  private com.google.protobuf.Duration resultEndTime_;
+  /**
+   * <pre>
+   * Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   * @return Whether the resultEndTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasResultEndTime() {
+    return resultEndTime_ != null;
+  }
+  /**
+   * <pre>
+   * Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   * @return The resultEndTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getResultEndTime() {
+    return resultEndTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : resultEndTime_;
+  }
+  /**
+   * <pre>
+   * Time offset of the end of this result relative to the
+   * beginning of the audio.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration result_end_time = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder() {
+    return getResultEndTime();
+  }
+
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 5;
+  private volatile java.lang.Object languageCode_;
+  /**
+   * <pre>
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+   * of the language in this result. This language code was detected to have
+   * the most likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+   * of the language in this result. This language code was detected to have
+   * the most likelihood of being spoken in the audio.
+   * </pre>
+   *
+   * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -215,6 +326,12 @@ private static final long serialVersionUID = 0L;
     if (channelTag_ != 0) {
       output.writeInt32(2, channelTag_);
     }
+    if (resultEndTime_ != null) {
+      output.writeMessage(4, getResultEndTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, languageCode_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -231,6 +348,13 @@ private static final long serialVersionUID = 0L;
     if (channelTag_ != 0) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(2, channelTag_);
+    }
+    if (resultEndTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(4, getResultEndTime());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -251,6 +375,13 @@ private static final long serialVersionUID = 0L;
         .equals(other.getAlternativesList())) return false;
     if (getChannelTag()
         != other.getChannelTag()) return false;
+    if (hasResultEndTime() != other.hasResultEndTime()) return false;
+    if (hasResultEndTime()) {
+      if (!getResultEndTime()
+          .equals(other.getResultEndTime())) return false;
+    }
+    if (!getLanguageCode()
+        .equals(other.getLanguageCode())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -268,6 +399,12 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + CHANNEL_TAG_FIELD_NUMBER;
     hash = (53 * hash) + getChannelTag();
+    if (hasResultEndTime()) {
+      hash = (37 * hash) + RESULT_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getResultEndTime().hashCode();
+    }
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -414,6 +551,14 @@ private static final long serialVersionUID = 0L;
       }
       channelTag_ = 0;
 
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTime_ = null;
+      } else {
+        resultEndTime_ = null;
+        resultEndTimeBuilder_ = null;
+      }
+      languageCode_ = "";
+
       return this;
     }
 
@@ -451,6 +596,12 @@ private static final long serialVersionUID = 0L;
         result.alternatives_ = alternativesBuilder_.build();
       }
       result.channelTag_ = channelTag_;
+      if (resultEndTimeBuilder_ == null) {
+        result.resultEndTime_ = resultEndTime_;
+      } else {
+        result.resultEndTime_ = resultEndTimeBuilder_.build();
+      }
+      result.languageCode_ = languageCode_;
       onBuilt();
       return result;
     }
@@ -527,6 +678,13 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getChannelTag() != 0) {
         setChannelTag(other.getChannelTag());
+      }
+      if (other.hasResultEndTime()) {
+        mergeResultEndTime(other.getResultEndTime());
+      }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -969,6 +1127,276 @@ private static final long serialVersionUID = 0L;
     public Builder clearChannelTag() {
       
       channelTag_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Duration resultEndTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> resultEndTimeBuilder_;
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     * @return Whether the resultEndTime field is set.
+     */
+    public boolean hasResultEndTime() {
+      return resultEndTimeBuilder_ != null || resultEndTime_ != null;
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     * @return The resultEndTime.
+     */
+    public com.google.protobuf.Duration getResultEndTime() {
+      if (resultEndTimeBuilder_ == null) {
+        return resultEndTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : resultEndTime_;
+      } else {
+        return resultEndTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder setResultEndTime(com.google.protobuf.Duration value) {
+      if (resultEndTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resultEndTime_ = value;
+        onChanged();
+      } else {
+        resultEndTimeBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder setResultEndTime(
+        com.google.protobuf.Duration.Builder builderForValue) {
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTime_ = builderForValue.build();
+        onChanged();
+      } else {
+        resultEndTimeBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder mergeResultEndTime(com.google.protobuf.Duration value) {
+      if (resultEndTimeBuilder_ == null) {
+        if (resultEndTime_ != null) {
+          resultEndTime_ =
+            com.google.protobuf.Duration.newBuilder(resultEndTime_).mergeFrom(value).buildPartial();
+        } else {
+          resultEndTime_ = value;
+        }
+        onChanged();
+      } else {
+        resultEndTimeBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public Builder clearResultEndTime() {
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTime_ = null;
+        onChanged();
+      } else {
+        resultEndTime_ = null;
+        resultEndTimeBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public com.google.protobuf.Duration.Builder getResultEndTimeBuilder() {
+      
+      onChanged();
+      return getResultEndTimeFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getResultEndTimeOrBuilder() {
+      if (resultEndTimeBuilder_ != null) {
+        return resultEndTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return resultEndTime_ == null ?
+            com.google.protobuf.Duration.getDefaultInstance() : resultEndTime_;
+      }
+    }
+    /**
+     * <pre>
+     * Time offset of the end of this result relative to the
+     * beginning of the audio.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration result_end_time = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+        getResultEndTimeFieldBuilder() {
+      if (resultEndTimeBuilder_ == null) {
+        resultEndTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
+                getResultEndTime(),
+                getParentForChildren(),
+                isClean());
+        resultEndTime_ = null;
+      }
+      return resultEndTimeBuilder_;
+    }
+
+    private java.lang.Object languageCode_ = "";
+    /**
+     * <pre>
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString
+        getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      languageCode_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag
+     * of the language in this result. This language code was detected to have
+     * the most likelihood of being spoken in the audio.
+     * </pre>
+     *
+     * <code>string language_code = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      languageCode_ = value;
       onChanged();
       return this;
     }

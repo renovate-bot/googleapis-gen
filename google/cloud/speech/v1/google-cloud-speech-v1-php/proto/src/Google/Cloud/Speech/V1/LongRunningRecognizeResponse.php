@@ -32,6 +32,18 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Duration total_billed_time = 3;</code>
      */
     protected $total_billed_time = null;
+    /**
+     * Original output config if present in the request.
+     *
+     * Generated from protobuf field <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
+     */
+    protected $output_config = null;
+    /**
+     * If the transcript output fails this field contains the relevant error.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status output_error = 7;</code>
+     */
+    protected $output_error = null;
 
     /**
      * Constructor.
@@ -44,6 +56,10 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
      *           sequential portions of audio.
      *     @type \Google\Protobuf\Duration $total_billed_time
      *           When available, billed audio seconds for the corresponding request.
+     *     @type \Google\Cloud\Speech\V1\TranscriptOutputConfig $output_config
+     *           Original output config if present in the request.
+     *     @type \Google\Rpc\Status $output_error
+     *           If the transcript output fails this field contains the relevant error.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,6 +127,78 @@ class LongRunningRecognizeResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Duration::class);
         $this->total_billed_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Original output config if present in the request.
+     *
+     * Generated from protobuf field <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
+     * @return \Google\Cloud\Speech\V1\TranscriptOutputConfig|null
+     */
+    public function getOutputConfig()
+    {
+        return $this->output_config;
+    }
+
+    public function hasOutputConfig()
+    {
+        return isset($this->output_config);
+    }
+
+    public function clearOutputConfig()
+    {
+        unset($this->output_config);
+    }
+
+    /**
+     * Original output config if present in the request.
+     *
+     * Generated from protobuf field <code>.google.cloud.speech.v1.TranscriptOutputConfig output_config = 6;</code>
+     * @param \Google\Cloud\Speech\V1\TranscriptOutputConfig $var
+     * @return $this
+     */
+    public function setOutputConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\Speech\V1\TranscriptOutputConfig::class);
+        $this->output_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * If the transcript output fails this field contains the relevant error.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status output_error = 7;</code>
+     * @return \Google\Rpc\Status|null
+     */
+    public function getOutputError()
+    {
+        return $this->output_error;
+    }
+
+    public function hasOutputError()
+    {
+        return isset($this->output_error);
+    }
+
+    public function clearOutputError()
+    {
+        unset($this->output_error);
+    }
+
+    /**
+     * If the transcript output fails this field contains the relevant error.
+     *
+     * Generated from protobuf field <code>.google.rpc.Status output_error = 7;</code>
+     * @param \Google\Rpc\Status $var
+     * @return $this
+     */
+    public function setOutputError($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Rpc\Status::class);
+        $this->output_error = $var;
 
         return $this;
     }
