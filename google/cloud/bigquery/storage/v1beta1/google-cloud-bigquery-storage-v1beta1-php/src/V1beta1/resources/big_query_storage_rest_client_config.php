@@ -55,6 +55,22 @@ return [
                     ],
                 ],
             ],
+            'ReadRows' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{read_position.stream.name=projects/*/streams/*}',
+                'placeholders' => [
+                    'read_position.stream.name' => [
+                        'getters' => [
+                            'getReadPosition',
+                            'getStream',
+                            'getName',
+                        ],
+                    ],
+                ],
+                'queryParams' => [
+                    'read_position',
+                ],
+            ],
             'SplitReadStream' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{original_stream.name=projects/*/streams/*}',

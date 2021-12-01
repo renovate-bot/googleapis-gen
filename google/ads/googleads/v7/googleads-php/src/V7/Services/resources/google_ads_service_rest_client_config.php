@@ -27,6 +27,18 @@ return [
                     ],
                 ],
             ],
+            'SearchStream' => [
+                'method' => 'post',
+                'uriTemplate' => '/v7/customers/{customer_id=*}/googleAds:searchStream',
+                'body' => '*',
+                'placeholders' => [
+                    'customer_id' => [
+                        'getters' => [
+                            'getCustomerId',
+                        ],
+                    ],
+                ],
+            ],
         ],
         'google.longrunning.Operations' => [
             'CancelOperation' => [

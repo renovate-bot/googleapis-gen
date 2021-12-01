@@ -236,6 +236,17 @@ return [
                     ],
                 ],
             ],
+            'ReadTensorboardBlobData' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:readBlobData',
+                'placeholders' => [
+                    'time_series' => [
+                        'getters' => [
+                            'getTimeSeries',
+                        ],
+                    ],
+                ],
+            ],
             'ReadTensorboardTimeSeriesData' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1beta1/{tensorboard_time_series=projects/*/locations/*/tensorboards/*/experiments/*/runs/*/timeSeries/*}:read',
