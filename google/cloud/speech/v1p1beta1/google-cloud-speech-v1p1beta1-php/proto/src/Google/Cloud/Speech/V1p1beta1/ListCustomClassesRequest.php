@@ -16,9 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class ListCustomClassesRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The parent, which owns this collection of custom classes.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/customClasses
+     * Required. The parent, which owns this collection of custom classes. Format:
+     * `projects/{project}/locations/{location}/customClasses`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -49,9 +53,13 @@ class ListCustomClassesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The parent, which owns this collection of custom classes.
-     *           Format:
-     *           {api_version}/projects/{project}/locations/{location}/customClasses
+     *           Required. The parent, which owns this collection of custom classes. Format:
+     *           `projects/{project}/locations/{location}/customClasses`
+     *           Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *           and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *           endpoint, use the `global` location. To specify a region, use a
+     *           [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *           `eu` location value.
      *     @type int $page_size
      *           The maximum number of custom classes to return. The service may return
      *           fewer than this value. If unspecified, at most 50 custom classes will be
@@ -70,9 +78,13 @@ class ListCustomClassesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The parent, which owns this collection of custom classes.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/customClasses
+     * Required. The parent, which owns this collection of custom classes. Format:
+     * `projects/{project}/locations/{location}/customClasses`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -83,9 +95,13 @@ class ListCustomClassesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The parent, which owns this collection of custom classes.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/customClasses
+     * Required. The parent, which owns this collection of custom classes. Format:
+     * `projects/{project}/locations/{location}/customClasses`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

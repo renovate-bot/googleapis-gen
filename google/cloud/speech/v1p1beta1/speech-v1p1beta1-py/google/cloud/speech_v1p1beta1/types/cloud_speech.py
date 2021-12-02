@@ -312,11 +312,10 @@ class RecognitionConfig(proto.Message):
             ``false`` or omitted, profanities won't be filtered out.
         adaptation (google.cloud.speech_v1p1beta1.types.SpeechAdaptation):
             Speech adaptation configuration improves the accuracy of
-            speech recognition. When speech adaptation is set it
-            supersedes the ``speech_contexts`` field. For more
-            information, see the `speech
+            speech recognition. For more information, see the `speech
             adaptation <https://cloud.google.com/speech-to-text/docs/adaptation>`__
-            documentation.
+            documentation. When speech adaptation is set it supersedes
+            the ``speech_contexts`` field.
         transcript_normalization (google.cloud.speech_v1p1beta1.types.TranscriptNormalization):
             Use transcription normalization to
             automatically replace parts of the transcript
@@ -449,7 +448,7 @@ class RecognitionConfig(proto.Message):
         codecs are used to capture or transmit audio, particularly if
         background noise is present. Lossy codecs include ``MULAW``,
         ``AMR``, ``AMR_WB``, ``OGG_OPUS``, ``SPEEX_WITH_HEADER_BYTE``,
-        ``MP3``.
+        ``MP3``, and ``WEBM_OPUS``.
 
         The ``FLAC`` and ``WAV`` audio file formats include a header that
         describes the included audio content. You can request recognition
@@ -1134,6 +1133,9 @@ class SpeechRecognitionResult(proto.Message):
             corresponding to the recognized result for the audio from
             that channel. For audio_channel_count = N, its output values
             can range from '1' to 'N'.
+        result_end_time (google.protobuf.duration_pb2.Duration):
+            Time offset of the end of this result
+            relative to the beginning of the audio.
         language_code (str):
             Output only. The
             `BCP-47 <https://www.rfc-editor.org/rfc/bcp/bcp47.txt>`__
@@ -1150,6 +1152,11 @@ class SpeechRecognitionResult(proto.Message):
     channel_tag = proto.Field(
         proto.INT32,
         number=2,
+    )
+    result_end_time = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=duration_pb2.Duration,
     )
     language_code = proto.Field(
         proto.STRING,

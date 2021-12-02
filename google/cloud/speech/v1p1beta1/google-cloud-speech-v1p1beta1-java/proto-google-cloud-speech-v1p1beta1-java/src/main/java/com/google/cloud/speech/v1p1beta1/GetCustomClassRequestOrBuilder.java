@@ -9,9 +9,8 @@ public interface GetCustomClassRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the custom class to retrieve.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+   * Required. The name of the custom class to retrieve. Format:
+   * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +19,8 @@ public interface GetCustomClassRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the custom class to retrieve.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+   * Required. The name of the custom class to retrieve. Format:
+   * `projects/{project}/locations/{location}/customClasses/{custom_class}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

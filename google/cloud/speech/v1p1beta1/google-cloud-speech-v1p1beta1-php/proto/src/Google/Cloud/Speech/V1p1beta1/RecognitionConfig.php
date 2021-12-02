@@ -111,10 +111,10 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
     protected $profanity_filter = false;
     /**
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
      */
@@ -343,10 +343,10 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
      *           won't be filtered out.
      *     @type \Google\Cloud\Speech\V1p1beta1\SpeechAdaptation $adaptation
      *           Speech adaptation configuration improves the accuracy of speech
-     *           recognition. When speech adaptation is set it supersedes the
-     *           `speech_contexts` field. For more information, see the [speech
+     *           recognition. For more information, see the [speech
      *           adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      *           documentation.
+     *           When speech adaptation is set it supersedes the `speech_contexts` field.
      *     @type \Google\Cloud\Speech\V1p1beta1\TranscriptNormalization $transcript_normalization
      *           Use transcription normalization to automatically replace parts of the
      *           transcript with phrases of your choosing. For StreamingRecognize, this
@@ -754,10 +754,10 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
      * @return \Google\Cloud\Speech\V1p1beta1\SpeechAdaptation|null
@@ -779,10 +779,10 @@ class RecognitionConfig extends \Google\Protobuf\Internal\Message
 
     /**
      * Speech adaptation configuration improves the accuracy of speech
-     * recognition. When speech adaptation is set it supersedes the
-     * `speech_contexts` field. For more information, see the [speech
+     * recognition. For more information, see the [speech
      * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
      * documentation.
+     * When speech adaptation is set it supersedes the `speech_contexts` field.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
      * @param \Google\Cloud\Speech\V1p1beta1\SpeechAdaptation $var

@@ -16,9 +16,13 @@ use Google\Protobuf\Internal\GPBUtil;
 class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The parent resource where this phrase set will be created.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/phraseSets
+     * Required. The parent resource where this phrase set will be created. Format:
+     * `projects/{project}/locations/{location}/phraseSets`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -46,9 +50,13 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $parent
-     *           Required. The parent resource where this phrase set will be created.
-     *           Format:
-     *           {api_version}/projects/{project}/locations/{location}/phraseSets
+     *           Required. The parent resource where this phrase set will be created. Format:
+     *           `projects/{project}/locations/{location}/phraseSets`
+     *           Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *           and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *           endpoint, use the `global` location. To specify a region, use a
+     *           [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *           `eu` location value.
      *     @type string $phrase_set_id
      *           Required. The ID to use for the phrase set, which will become the final
      *           component of the phrase set's resource name.
@@ -64,9 +72,13 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The parent resource where this phrase set will be created.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/phraseSets
+     * Required. The parent resource where this phrase set will be created. Format:
+     * `projects/{project}/locations/{location}/phraseSets`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -77,9 +89,13 @@ class CreatePhraseSetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The parent resource where this phrase set will be created.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/phraseSets
+     * Required. The parent resource where this phrase set will be created. Format:
+     * `projects/{project}/locations/{location}/phraseSets`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -19,7 +19,12 @@ class UpdateCustomClassRequest extends \Google\Protobuf\Internal\Message
      * Required. The custom class to update.
      * The custom class's `name` field is used to identify the custom class to be
      * updated. Format:
-     * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.CustomClass custom_class = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -41,7 +46,12 @@ class UpdateCustomClassRequest extends \Google\Protobuf\Internal\Message
      *           Required. The custom class to update.
      *           The custom class's `name` field is used to identify the custom class to be
      *           updated. Format:
-     *           {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     *           `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *           Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *           and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *           endpoint, use the `global` location. To specify a region, use a
+     *           [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *           `eu` location value.
      *     @type \Google\Protobuf\FieldMask $update_mask
      *           The list of fields to be updated.
      * }
@@ -55,7 +65,12 @@ class UpdateCustomClassRequest extends \Google\Protobuf\Internal\Message
      * Required. The custom class to update.
      * The custom class's `name` field is used to identify the custom class to be
      * updated. Format:
-     * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.CustomClass custom_class = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Cloud\Speech\V1p1beta1\CustomClass|null
@@ -79,7 +94,12 @@ class UpdateCustomClassRequest extends \Google\Protobuf\Internal\Message
      * Required. The custom class to update.
      * The custom class's `name` field is used to identify the custom class to be
      * updated. Format:
-     * {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     * `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     * Speech-to-Text supports three locations: `global`, `us` (US North America),
+     * and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     * endpoint, use the `global` location. To specify a region, use a
+     * [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     * `eu` location value.
      *
      * Generated from protobuf field <code>.google.cloud.speech.v1p1beta1.CustomClass custom_class = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Cloud\Speech\V1p1beta1\CustomClass $var

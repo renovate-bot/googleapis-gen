@@ -360,9 +360,15 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string      $parent        Required. The parent resource where this custom class will be created.
-     *                                   Format:
-     *                                   {api_version}/projects/{project}/locations/{location}/customClasses
+     * @param string      $parent        Required. The parent resource where this custom class will be created. Format:
+     *
+     *                                   `projects/{project}/locations/{location}/customClasses`
+     *
+     *                                   Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                                   and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                                   endpoint, use the `global` location. To specify a region, use a
+     *                                   [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                                   `eu` location value.
      * @param string      $customClassId Required. The ID to use for the custom class, which will become the final
      *                                   component of the custom class' resource name.
      *
@@ -416,9 +422,15 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string    $parent       Required. The parent resource where this phrase set will be created.
-     *                                Format:
-     *                                {api_version}/projects/{project}/locations/{location}/phraseSets
+     * @param string    $parent       Required. The parent resource where this phrase set will be created. Format:
+     *
+     *                                `projects/{project}/locations/{location}/phraseSets`
+     *
+     *                                Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                                and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                                endpoint, use the `global` location. To specify a region, use a
+     *                                [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                                `eu` location value.
      * @param string    $phraseSetId  Required. The ID to use for the phrase set, which will become the final
      *                                component of the phrase set's resource name.
      *
@@ -468,9 +480,15 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the custom class to delete.
-     *                             Format:
-     *                             {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     * @param string $name         Required. The name of the custom class to delete. Format:
+     *
+     *                             `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
+     *                             Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                             and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                             endpoint, use the `global` location. To specify a region, use a
+     *                             [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                             `eu` location value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -510,9 +528,9 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the phrase set to delete.
-     *                             Format:
-     *                             {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     * @param string $name         Required. The name of the phrase set to delete. Format:
+     *
+     *                             `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -552,9 +570,9 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the custom class to retrieve.
-     *                             Format:
-     *                             {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     * @param string $name         Required. The name of the custom class to retrieve. Format:
+     *
+     *                             `projects/{project}/locations/{location}/customClasses/{custom_class}`
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -596,9 +614,15 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the phrase set to retrieve.
-     *                             Format:
-     *                             {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     * @param string $name         Required. The name of the phrase set to retrieve. Format:
+     *
+     *                             `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
+     *
+     *                             Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                             and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                             endpoint, use the `global` location. To specify a region, use a
+     *                             [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                             `eu` location value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -652,9 +676,15 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The parent, which owns this collection of custom classes.
-     *                             Format:
-     *                             {api_version}/projects/{project}/locations/{location}/customClasses
+     * @param string $parent       Required. The parent, which owns this collection of custom classes. Format:
+     *
+     *                             `projects/{project}/locations/{location}/customClasses`
+     *
+     *                             Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                             and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                             endpoint, use the `global` location. To specify a region, use a
+     *                             [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                             `eu` location value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -725,9 +755,15 @@ class AdaptationGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The parent, which owns this collection of phrase set.
-     *                             Format:
-     *                             projects/{project}/locations/{location}
+     * @param string $parent       Required. The parent, which owns this collection of phrase set. Format:
+     *
+     *                             `projects/{project}/locations/{location}`
+     *
+     *                             Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                             and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                             endpoint, use the `global` location. To specify a region, use a
+     *                             [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                             `eu` location value.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -790,7 +826,14 @@ class AdaptationGapicClient
      *
      *                                  The custom class's `name` field is used to identify the custom class to be
      *                                  updated. Format:
-     *                                  {api_version}/projects/{project}/locations/{location}/customClasses/{custom_class}
+     *
+     *                                  `projects/{project}/locations/{location}/customClasses/{custom_class}`
+     *
+     *                                  Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                                  and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                                  endpoint, use the `global` location. To specify a region, use a
+     *                                  [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                                  `eu` location value.
      * @param array       $optionalArgs {
      *     Optional.
      *
@@ -842,7 +885,14 @@ class AdaptationGapicClient
      *
      *                                The phrase set's `name` field is used to identify the set to be
      *                                updated. Format:
-     *                                {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     *
+     *                                `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
+     *
+     *                                Speech-to-Text supports three locations: `global`, `us` (US North America),
+     *                                and `eu` (Europe). If you are calling the `speech.googleapis.com`
+     *                                endpoint, use the `global` location. To specify a region, use a
+     *                                [regional endpoint](/speech-to-text/docs/endpoints) with matching `us` or
+     *                                `eu` location value.
      * @param array     $optionalArgs {
      *     Optional.
      *

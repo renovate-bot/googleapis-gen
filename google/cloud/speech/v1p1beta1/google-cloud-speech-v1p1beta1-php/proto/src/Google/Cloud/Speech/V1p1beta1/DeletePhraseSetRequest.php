@@ -16,9 +16,8 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeletePhraseSetRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The name of the phrase set to delete.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     * Required. The name of the phrase set to delete. Format:
+     * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      */
@@ -31,9 +30,8 @@ class DeletePhraseSetRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           Required. The name of the phrase set to delete.
-     *           Format:
-     *           {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     *           Required. The name of the phrase set to delete. Format:
+     *           `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
      * }
      */
     public function __construct($data = NULL) {
@@ -42,9 +40,8 @@ class DeletePhraseSetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the phrase set to delete.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     * Required. The name of the phrase set to delete. Format:
+     * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @return string
@@ -55,9 +52,8 @@ class DeletePhraseSetRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the phrase set to delete.
-     * Format:
-     * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+     * Required. The name of the phrase set to delete. Format:
+     * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
      *
      * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
      * @param string $var

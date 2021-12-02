@@ -21,9 +21,8 @@ function main(name) {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Required. The name of the phrase set to delete.
-   *  Format:
-   *  {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+   *  Required. The name of the phrase set to delete. Format:
+   *  `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    */
   // const name = 'abc123'
 

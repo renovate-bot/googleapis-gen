@@ -9,9 +9,8 @@ public interface DeletePhraseSetRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. The name of the phrase set to delete.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+   * Required. The name of the phrase set to delete. Format:
+   * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -20,9 +19,8 @@ public interface DeletePhraseSetRequestOrBuilder extends
   java.lang.String getName();
   /**
    * <pre>
-   * Required. The name of the phrase set to delete.
-   * Format:
-   * {api_version}/projects/{project}/locations/{location}/phraseSets/{phrase_set}
+   * Required. The name of the phrase set to delete. Format:
+   * `projects/{project}/locations/{location}/phraseSets/{phrase_set}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

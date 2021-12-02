@@ -225,10 +225,10 @@ public interface RecognitionConfigOrBuilder extends
   /**
    * <pre>
    * Speech adaptation configuration improves the accuracy of speech
-   * recognition. When speech adaptation is set it supersedes the
-   * `speech_contexts` field. For more information, see the [speech
+   * recognition. For more information, see the [speech
    * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -238,10 +238,10 @@ public interface RecognitionConfigOrBuilder extends
   /**
    * <pre>
    * Speech adaptation configuration improves the accuracy of speech
-   * recognition. When speech adaptation is set it supersedes the
-   * `speech_contexts` field. For more information, see the [speech
+   * recognition. For more information, see the [speech
    * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
@@ -251,10 +251,10 @@ public interface RecognitionConfigOrBuilder extends
   /**
    * <pre>
    * Speech adaptation configuration improves the accuracy of speech
-   * recognition. When speech adaptation is set it supersedes the
-   * `speech_contexts` field. For more information, see the [speech
+   * recognition. For more information, see the [speech
    * adaptation](https://cloud.google.com/speech-to-text/docs/adaptation)
    * documentation.
+   * When speech adaptation is set it supersedes the `speech_contexts` field.
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.SpeechAdaptation adaptation = 20;</code>
