@@ -23,7 +23,7 @@ module Google
   module Cloud
     module VMMigration
       module V1
-        module VmMigration
+        module VMMigration
           ##
           # Client for the VmMigration service.
           #
@@ -38,13 +38,13 @@ module Google
             ##
             # Configure the VmMigration Client class.
             #
-            # See {::Google::Cloud::VMMigration::V1::VmMigration::Client::Configuration}
+            # See {::Google::Cloud::VMMigration::V1::VMMigration::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @example
             #
             #   # Modify the configuration for all VmMigration clients
-            #   ::Google::Cloud::VMMigration::V1::VmMigration::Client.configure do |config|
+            #   ::Google::Cloud::VMMigration::V1::VMMigration::Client.configure do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -85,7 +85,7 @@ module Google
             # but structural changes (adding new fields, etc.) are not allowed. Structural changes
             # should be made on {Client.configure}.
             #
-            # See {::Google::Cloud::VMMigration::V1::VmMigration::Client::Configuration}
+            # See {::Google::Cloud::VMMigration::V1::VMMigration::Client::Configuration}
             # for a description of the configuration fields.
             #
             # @yield [config] Configure the Client client.
@@ -104,10 +104,10 @@ module Google
             # @example
             #
             #   # Create a client using the default configuration
-            #   client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a client using a custom configuration
-            #   client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new do |config|
+            #   client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new do |config|
             #     config.timeout = 10.0
             #   end
             #
@@ -158,7 +158,7 @@ module Google
             ##
             # Get the associated client for long-running operations.
             #
-            # @return [::Google::Cloud::VMMigration::V1::VmMigration::Operations]
+            # @return [::Google::Cloud::VMMigration::V1::VMMigration::Operations]
             #
             attr_reader :operations_client
 
@@ -212,7 +212,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListSourcesRequest.new
@@ -243,7 +243,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -304,7 +304,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetSourceRequest.new
@@ -329,7 +329,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -407,7 +407,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateSourceRequest.new
@@ -439,7 +439,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -520,7 +520,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::UpdateSourceRequest.new
@@ -552,7 +552,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -627,7 +627,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::DeleteSourceRequest.new
@@ -659,7 +659,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -727,7 +727,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::FetchInventoryRequest.new
@@ -752,7 +752,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -830,7 +830,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListUtilizationReportsRequest.new
@@ -861,7 +861,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -925,7 +925,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetUtilizationReportRequest.new
@@ -950,7 +950,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1033,7 +1033,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateUtilizationReportRequest.new
@@ -1065,7 +1065,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1140,7 +1140,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::DeleteUtilizationReportRequest.new
@@ -1172,7 +1172,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1249,7 +1249,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListDatacenterConnectorsRequest.new
@@ -1280,7 +1280,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1341,7 +1341,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetDatacenterConnectorRequest.new
@@ -1366,7 +1366,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1447,7 +1447,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateDatacenterConnectorRequest.new
@@ -1479,7 +1479,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1554,7 +1554,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::DeleteDatacenterConnectorRequest.new
@@ -1586,7 +1586,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1665,7 +1665,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateMigratingVmRequest.new
@@ -1697,7 +1697,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1773,7 +1773,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListMigratingVmsRequest.new
@@ -1804,7 +1804,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1865,7 +1865,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetMigratingVmRequest.new
@@ -1890,7 +1890,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -1970,7 +1970,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::UpdateMigratingVmRequest.new
@@ -2002,7 +2002,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2063,7 +2063,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::DeleteMigratingVmRequest.new
@@ -2095,7 +2095,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2157,7 +2157,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::StartMigrationRequest.new
@@ -2189,7 +2189,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2253,7 +2253,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ResumeMigrationRequest.new
@@ -2285,7 +2285,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2348,7 +2348,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::PauseMigrationRequest.new
@@ -2380,7 +2380,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2442,7 +2442,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::FinalizeMigrationRequest.new
@@ -2474,7 +2474,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2553,7 +2553,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateCloneJobRequest.new
@@ -2585,7 +2585,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2646,7 +2646,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CancelCloneJobRequest.new
@@ -2678,7 +2678,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2754,7 +2754,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListCloneJobsRequest.new
@@ -2785,7 +2785,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2846,7 +2846,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetCloneJobRequest.new
@@ -2871,7 +2871,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -2951,7 +2951,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateCutoverJobRequest.new
@@ -2983,7 +2983,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3044,7 +3044,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CancelCutoverJobRequest.new
@@ -3076,7 +3076,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3152,7 +3152,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListCutoverJobsRequest.new
@@ -3183,7 +3183,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3244,7 +3244,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetCutoverJobRequest.new
@@ -3269,7 +3269,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3344,7 +3344,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListGroupsRequest.new
@@ -3375,7 +3375,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3436,7 +3436,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetGroupRequest.new
@@ -3461,7 +3461,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3539,7 +3539,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateGroupRequest.new
@@ -3571,7 +3571,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3652,7 +3652,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::UpdateGroupRequest.new
@@ -3684,7 +3684,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3759,7 +3759,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::DeleteGroupRequest.new
@@ -3791,7 +3791,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3854,7 +3854,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::AddGroupMigrationRequest.new
@@ -3886,7 +3886,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -3949,7 +3949,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::RemoveGroupMigrationRequest.new
@@ -3981,7 +3981,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -4060,7 +4060,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::ListTargetProjectsRequest.new
@@ -4091,7 +4091,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -4155,7 +4155,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::GetTargetProjectRequest.new
@@ -4180,7 +4180,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -4261,7 +4261,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::CreateTargetProjectRequest.new
@@ -4293,7 +4293,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -4377,7 +4377,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::UpdateTargetProjectRequest.new
@@ -4409,7 +4409,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -4487,7 +4487,7 @@ module Google
             #   require "google/cloud/vm_migration/v1"
             #
             #   # Create a client object. The client can be reused for multiple calls.
-            #   client = Google::Cloud::VMMigration::V1::VmMigration::Client.new
+            #   client = Google::Cloud::VMMigration::V1::VMMigration::Client.new
             #
             #   # Create a request. To set request fields, pass in keyword arguments.
             #   request = Google::Cloud::VMMigration::V1::DeleteTargetProjectRequest.new
@@ -4519,7 +4519,7 @@ module Google
               # Set x-goog-api-client and x-goog-user-project headers
               metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
                 lib_name: @config.lib_name, lib_version: @config.lib_version,
-                gapic_version: ::Google::Cloud::Vmmigration::V1::VERSION
+                gapic_version: ::Google::Cloud::VMMigration::V1::VERSION
               metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
 
               header_params = {}
@@ -4554,7 +4554,7 @@ module Google
             # providing control over timeouts, retry behavior, logging, transport
             # parameters, and other low-level controls. Certain parameters can also be
             # applied individually to specific RPCs. See
-            # {::Google::Cloud::VMMigration::V1::VmMigration::Client::Configuration::Rpcs}
+            # {::Google::Cloud::VMMigration::V1::VMMigration::Client::Configuration::Rpcs}
             # for a list of RPCs that can be configured independently.
             #
             # Configuration can be applied globally to all clients, or to a single client
@@ -4565,13 +4565,13 @@ module Google
             #   # Modify the global config, setting the timeout for
             #   # list_sources to 20 seconds,
             #   # and all remaining timeouts to 10 seconds.
-            #   ::Google::Cloud::VMMigration::V1::VmMigration::Client.configure do |config|
+            #   ::Google::Cloud::VMMigration::V1::VMMigration::Client.configure do |config|
             #     config.timeout = 10.0
             #     config.rpcs.list_sources.timeout = 20.0
             #   end
             #
             #   # Apply the above configuration only to a new client.
-            #   client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new do |config|
+            #   client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new do |config|
             #     config.timeout = 10.0
             #     config.rpcs.list_sources.timeout = 20.0
             #   end

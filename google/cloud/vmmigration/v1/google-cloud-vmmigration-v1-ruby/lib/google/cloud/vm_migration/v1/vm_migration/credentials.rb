@@ -22,7 +22,7 @@ module Google
   module Cloud
     module VMMigration
       module V1
-        module VmMigration
+        module VMMigration
           # Credentials for the VmMigration API.
           class Credentials < ::Google::Auth::Credentials
             self.scope = [

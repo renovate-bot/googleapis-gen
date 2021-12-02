@@ -1,6 +1,6 @@
 # Authentication
 
-In general, the google-cloud-vmmigration-v1 library uses
+In general, the google-cloud-vm_migration-v1 library uses
 [Service Account](https://cloud.google.com/iam/docs/creating-managing-service-accounts)
 credentials to connect to Google Cloud services. When running within
 [Google Cloud Platform environments](#google-cloud-platform-environments) the
@@ -27,12 +27,12 @@ export GOOGLE_CLOUD_CREDENTIALS=path/to/keyfile.json
 ```ruby
 require "google/cloud/vm_migration/v1"
 
-client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
+client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new
 ```
 
 ## Credential Lookup
 
-The google-cloud-vmmigration-v1 library aims to make authentication
+The google-cloud-vm_migration-v1 library aims to make authentication
 as simple as possible, and provides several mechanisms to configure your system
 without requiring **Service Account Credentials** directly in code.
 
@@ -62,9 +62,9 @@ the READMEs for the individual service gems for details.) The path to the
 **Credentials JSON** itself can be stored for environments such as Docker
 containers where writing files is difficult or not encouraged.
 
-The environment variables that google-cloud-vmmigration-v1
+The environment variables that google-cloud-vm_migration-v1
 checks for credentials are configured on the service Credentials class (such as
-{::Google::Cloud::VMMigration::V1::VmMigration::Credentials}):
+{::Google::Cloud::VMMigration::V1::VMMigration::Credentials}):
 
 * `GOOGLE_CLOUD_CREDENTIALS` - Path to JSON file, or JSON contents
 * `GOOGLE_CLOUD_KEYFILE` - Path to JSON file, or JSON contents
@@ -75,7 +75,7 @@ require "google/cloud/vm_migration/v1"
 
 ENV["GOOGLE_CLOUD_CREDENTIALS"] = "path/to/keyfile.json"
 
-client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
+client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new
 ```
 
 ### Configuration
@@ -86,7 +86,7 @@ it in an environment variable. Either on an individual client initialization:
 ```ruby
 require "google/cloud/vm_migration/v1"
 
-client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new do |config|
+client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new do |config|
   config.credentials = "path/to/keyfile.json"
 end
 ```
@@ -96,11 +96,11 @@ Or globally for all clients:
 ```ruby
 require "google/cloud/vm_migration/v1"
 
-::Google::Cloud::VMMigration::V1::VmMigration::Client.configure do |config|
+::Google::Cloud::VMMigration::V1::VMMigration::Client.configure do |config|
   config.credentials = "path/to/keyfile.json"
 end
 
-client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
+client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new
 ```
 
 ### Cloud SDK
@@ -131,7 +131,7 @@ To configure your system for this, simply:
 
 Google Cloud requires **Service Account Credentials** to
 connect to the APIs. You will use the **JSON key file** to
-connect to most services with google-cloud-vmmigration-v1.
+connect to most services with google-cloud-vm_migration-v1.
 
 If you are not running this client within
 [Google Cloud Platform environments](#google-cloud-platform-environments), you

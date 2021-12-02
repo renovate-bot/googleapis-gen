@@ -21,7 +21,7 @@ module Google
   module Cloud
     module VMMigration
       module V1
-        module VmMigration
+        module VMMigration
           # Path helper methods for the VmMigration API.
           module Paths
             ##

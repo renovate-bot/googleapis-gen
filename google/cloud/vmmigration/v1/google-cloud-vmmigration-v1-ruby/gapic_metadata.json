@@ -8,7 +8,7 @@
     "VmMigration": {
       "clients": {
         "grpc": {
-          "libraryClient": "::Google::Cloud::VMMigration::V1::VmMigration::Client",
+          "libraryClient": "::Google::Cloud::VMMigration::V1::VMMigration::Client",
           "rpcs": {
             "ListSources": {
               "methods": [

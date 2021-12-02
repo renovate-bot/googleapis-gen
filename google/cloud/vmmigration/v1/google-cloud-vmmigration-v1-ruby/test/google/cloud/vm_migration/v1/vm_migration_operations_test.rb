@@ -24,7 +24,7 @@ require "google/cloud/vmmigration/v1/vmmigration_pb"
 require "google/cloud/vmmigration/v1/vmmigration_services_pb"
 require "google/cloud/vm_migration/v1/vm_migration"
 
-class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::Test
+class ::Google::Cloud::VMMigration::V1::VMMigration::OperationsTest < Minitest::Test
   class ClientStub
     attr_accessor :call_rpc_count, :requests
 
@@ -72,7 +72,7 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
 
     Gapic::ServiceStub.stub :new, list_operations_client_stub do
       # Create client
-      client = ::Google::Cloud::VMMigration::V1::VmMigration::Operations.new do |config|
+      client = ::Google::Cloud::VMMigration::V1::VMMigration::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -135,7 +135,7 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
 
     Gapic::ServiceStub.stub :new, get_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::VMMigration::V1::VmMigration::Operations.new do |config|
+      client = ::Google::Cloud::VMMigration::V1::VMMigration::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -198,7 +198,7 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
 
     Gapic::ServiceStub.stub :new, delete_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::VMMigration::V1::VmMigration::Operations.new do |config|
+      client = ::Google::Cloud::VMMigration::V1::VMMigration::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -256,7 +256,7 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
 
     Gapic::ServiceStub.stub :new, cancel_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::VMMigration::V1::VmMigration::Operations.new do |config|
+      client = ::Google::Cloud::VMMigration::V1::VMMigration::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -316,7 +316,7 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
 
     Gapic::ServiceStub.stub :new, wait_operation_client_stub do
       # Create client
-      client = ::Google::Cloud::VMMigration::V1::VmMigration::Operations.new do |config|
+      client = ::Google::Cloud::VMMigration::V1::VMMigration::Operations.new do |config|
         config.credentials = grpc_channel
       end
 
@@ -365,7 +365,7 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
 
     client = block_config = config = nil
     Gapic::ServiceStub.stub :new, nil do
-      client = ::Google::Cloud::VMMigration::V1::VmMigration::Operations.new do |config|
+      client = ::Google::Cloud::VMMigration::V1::VMMigration::Operations.new do |config|
         config.credentials = grpc_channel
       end
     end
@@ -375,6 +375,6 @@ class ::Google::Cloud::VMMigration::V1::VmMigration::OperationsTest < Minitest::
     end
 
     assert_same block_config, config
-    assert_kind_of ::Google::Cloud::VMMigration::V1::VmMigration::Operations::Configuration, config
+    assert_kind_of ::Google::Cloud::VMMigration::V1::VMMigration::Operations::Configuration, config
   end
 end

@@ -20,7 +20,7 @@ require "gapic/common"
 require "gapic/config"
 require "gapic/config/method"
 
-require "google/cloud/vmmigration/v1/version"
+require "google/cloud/vm_migration/v1/version"
 
 require "google/cloud/vm_migration/v1/vm_migration/credentials"
 require "google/cloud/vm_migration/v1/vm_migration/paths"
@@ -37,9 +37,9 @@ module Google
         # To load this service and instantiate a client:
         #
         #     require "google/cloud/vm_migration/v1/vm_migration"
-        #     client = ::Google::Cloud::VMMigration::V1::VmMigration::Client.new
+        #     client = ::Google::Cloud::VMMigration::V1::VMMigration::Client.new
         #
-        module VmMigration
+        module VMMigration
         end
       end
     end
