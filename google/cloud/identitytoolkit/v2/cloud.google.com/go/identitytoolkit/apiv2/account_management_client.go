@@ -46,7 +46,6 @@ func defaultAccountManagementGRPCClientOptions() []option.ClientOption {
 		internaloption.WithDefaultAudience("https://identitytoolkit.googleapis.com/"),
 		internaloption.WithDefaultScopes(DefaultAuthScopes()...),
 		internaloption.EnableJwtWithScope(),
-		option.WithGRPCDialOption(grpc.WithDisableServiceConfig()),
 		option.WithGRPCDialOption(grpc.WithDefaultCallOptions(
 			grpc.MaxCallRecvMsgSize(math.MaxInt32))),
 	}
