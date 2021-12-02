@@ -6,10 +6,11 @@ package com.google.privacy.dlp.v2;
 /**
  * <pre>
  * This is a data encryption key (DEK) (as opposed to
- * a key encryption key (KEK) stored by KMS).
- * When using KMS to wrap/unwrap DEKs, be sure to set an appropriate
- * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
- * unwrap the data crypto key.
+ * a key encryption key (KEK) stored by Cloud Key Management Service
+ * (Cloud KMS).
+ * When using Cloud KMS to wrap or unwrap a DEK, be sure to set an appropriate
+ * IAM policy on the KEK to ensure an attacker cannot
+ * unwrap the DEK.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.CryptoKey}
@@ -262,7 +263,7 @@ private static final long serialVersionUID = 0L;
   public static final int KMS_WRAPPED_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -274,7 +275,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -289,7 +290,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -503,10 +504,11 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * This is a data encryption key (DEK) (as opposed to
-   * a key encryption key (KEK) stored by KMS).
-   * When using KMS to wrap/unwrap DEKs, be sure to set an appropriate
-   * IAM policy on the KMS CryptoKey (KEK) to ensure an attacker cannot
-   * unwrap the data crypto key.
+   * a key encryption key (KEK) stored by Cloud Key Management Service
+   * (Cloud KMS).
+   * When using Cloud KMS to wrap or unwrap a DEK, be sure to set an appropriate
+   * IAM policy on the KEK to ensure an attacker cannot
+   * unwrap the DEK.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CryptoKey}
@@ -1063,7 +1065,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.KmsWrappedCryptoKey, com.google.privacy.dlp.v2.KmsWrappedCryptoKey.Builder, com.google.privacy.dlp.v2.KmsWrappedCryptoKeyOrBuilder> kmsWrappedBuilder_;
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1075,7 +1077,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1097,7 +1099,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1117,7 +1119,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1135,7 +1137,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1161,7 +1163,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1184,7 +1186,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1194,7 +1196,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -1212,7 +1214,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Kms wrapped key
+     * Key wrapped using Cloud KMS
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>

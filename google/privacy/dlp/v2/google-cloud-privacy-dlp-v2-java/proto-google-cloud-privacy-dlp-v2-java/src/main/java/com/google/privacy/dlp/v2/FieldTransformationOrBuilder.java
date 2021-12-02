@@ -10,6 +10,9 @@ public interface FieldTransformationOrBuilder extends
   /**
    * <pre>
    * Required. Input field(s) to apply the transformation to.
+   * When you have columns that reference their position within a list,
+   * omit the index from the FieldId. FieldId name matching ignores the index.
+   * For example, instead of "contact.nums[0].type", use "contact.nums.type".
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -19,6 +22,9 @@ public interface FieldTransformationOrBuilder extends
   /**
    * <pre>
    * Required. Input field(s) to apply the transformation to.
+   * When you have columns that reference their position within a list,
+   * omit the index from the FieldId. FieldId name matching ignores the index.
+   * For example, instead of "contact.nums[0].type", use "contact.nums.type".
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -27,6 +33,9 @@ public interface FieldTransformationOrBuilder extends
   /**
    * <pre>
    * Required. Input field(s) to apply the transformation to.
+   * When you have columns that reference their position within a list,
+   * omit the index from the FieldId. FieldId name matching ignores the index.
+   * For example, instead of "contact.nums[0].type", use "contact.nums.type".
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -35,6 +44,9 @@ public interface FieldTransformationOrBuilder extends
   /**
    * <pre>
    * Required. Input field(s) to apply the transformation to.
+   * When you have columns that reference their position within a list,
+   * omit the index from the FieldId. FieldId name matching ignores the index.
+   * For example, instead of "contact.nums[0].type", use "contact.nums.type".
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,6 +56,9 @@ public interface FieldTransformationOrBuilder extends
   /**
    * <pre>
    * Required. Input field(s) to apply the transformation to.
+   * When you have columns that reference their position within a list,
+   * omit the index from the FieldId. FieldId name matching ignores the index.
+   * For example, instead of "contact.nums[0].type", use "contact.nums.type".
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.FieldId fields = 1 [(.google.api.field_behavior) = REQUIRED];</code>

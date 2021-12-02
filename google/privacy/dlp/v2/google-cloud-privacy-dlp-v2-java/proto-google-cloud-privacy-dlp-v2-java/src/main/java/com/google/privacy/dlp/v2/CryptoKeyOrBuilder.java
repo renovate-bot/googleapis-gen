@@ -63,7 +63,7 @@ public interface CryptoKeyOrBuilder extends
 
   /**
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -72,7 +72,7 @@ public interface CryptoKeyOrBuilder extends
   boolean hasKmsWrapped();
   /**
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>
@@ -81,7 +81,7 @@ public interface CryptoKeyOrBuilder extends
   com.google.privacy.dlp.v2.KmsWrappedCryptoKey getKmsWrapped();
   /**
    * <pre>
-   * Kms wrapped key
+   * Key wrapped using Cloud KMS
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.KmsWrappedCryptoKey kms_wrapped = 3;</code>

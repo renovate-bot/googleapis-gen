@@ -14,7 +14,7 @@ public enum DlpJobType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
    * <pre>
-   * Unused
+   * Defaults to INSPECT_JOB.
    * </pre>
    *
    * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>
@@ -41,7 +41,7 @@ public enum DlpJobType
 
   /**
    * <pre>
-   * Unused
+   * Defaults to INSPECT_JOB.
    * </pre>
    *
    * <code>DLP_JOB_TYPE_UNSPECIFIED = 0;</code>

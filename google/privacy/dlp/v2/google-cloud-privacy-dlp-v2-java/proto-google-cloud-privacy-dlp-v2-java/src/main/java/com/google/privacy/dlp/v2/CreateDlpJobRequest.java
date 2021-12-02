@@ -247,7 +247,7 @@ private static final long serialVersionUID = 0L;
   public static final int INSPECT_JOB_FIELD_NUMBER = 2;
   /**
    * <pre>
-   * Set to control what and how to inspect.
+   * An inspection job scans a storage repository for InfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -259,7 +259,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set to control what and how to inspect.
+   * An inspection job scans a storage repository for InfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -274,7 +274,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set to control what and how to inspect.
+   * An inspection job scans a storage repository for InfoTypes.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -290,7 +290,8 @@ private static final long serialVersionUID = 0L;
   public static final int RISK_JOB_FIELD_NUMBER = 3;
   /**
    * <pre>
-   * Set to choose what metric to calculate.
+   * A risk analysis job calculates re-identification risk metrics for a
+   * BigQuery table.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -302,7 +303,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set to choose what metric to calculate.
+   * A risk analysis job calculates re-identification risk metrics for a
+   * BigQuery table.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -317,7 +319,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Set to choose what metric to calculate.
+   * A risk analysis job calculates re-identification risk metrics for a
+   * BigQuery table.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1009,7 +1012,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.InspectJobConfig, com.google.privacy.dlp.v2.InspectJobConfig.Builder, com.google.privacy.dlp.v2.InspectJobConfigOrBuilder> inspectJobBuilder_;
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1021,7 +1024,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1043,7 +1046,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1063,7 +1066,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1081,7 +1084,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1107,7 +1110,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1130,7 +1133,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1140,7 +1143,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1158,7 +1161,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to control what and how to inspect.
+     * An inspection job scans a storage repository for InfoTypes.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectJobConfig inspect_job = 2;</code>
@@ -1186,7 +1189,8 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.RiskAnalysisJobConfig, com.google.privacy.dlp.v2.RiskAnalysisJobConfig.Builder, com.google.privacy.dlp.v2.RiskAnalysisJobConfigOrBuilder> riskJobBuilder_;
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1198,7 +1202,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1220,7 +1225,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1240,7 +1246,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1258,7 +1265,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1284,7 +1292,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1307,7 +1316,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1317,7 +1327,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>
@@ -1335,7 +1346,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Set to choose what metric to calculate.
+     * A risk analysis job calculates re-identification risk metrics for a
+     * BigQuery table.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.RiskAnalysisJobConfig risk_job = 3;</code>

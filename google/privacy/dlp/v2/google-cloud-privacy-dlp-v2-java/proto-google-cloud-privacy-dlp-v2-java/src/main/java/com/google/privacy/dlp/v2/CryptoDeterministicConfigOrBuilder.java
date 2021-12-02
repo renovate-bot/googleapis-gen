@@ -9,7 +9,9 @@ public interface CryptoDeterministicConfigOrBuilder extends
 
   /**
    * <pre>
-   * The key used by the encryption function.
+   * The key used by the encryption function. For deterministic encryption
+   * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+   * use.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -18,7 +20,9 @@ public interface CryptoDeterministicConfigOrBuilder extends
   boolean hasCryptoKey();
   /**
    * <pre>
-   * The key used by the encryption function.
+   * The key used by the encryption function. For deterministic encryption
+   * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+   * use.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -27,7 +31,9 @@ public interface CryptoDeterministicConfigOrBuilder extends
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
    * <pre>
-   * The key used by the encryption function.
+   * The key used by the encryption function. For deterministic encryption
+   * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+   * use.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>

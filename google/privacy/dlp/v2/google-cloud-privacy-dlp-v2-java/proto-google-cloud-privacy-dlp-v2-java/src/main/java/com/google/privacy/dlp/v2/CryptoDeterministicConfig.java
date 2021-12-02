@@ -129,7 +129,9 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.CryptoKey cryptoKey_;
   /**
    * <pre>
-   * The key used by the encryption function.
+   * The key used by the encryption function. For deterministic encryption
+   * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+   * use.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -141,7 +143,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The key used by the encryption function.
+   * The key used by the encryption function. For deterministic encryption
+   * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+   * use.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -153,7 +157,9 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The key used by the encryption function.
+   * The key used by the encryption function. For deterministic encryption
+   * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+   * use.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -739,7 +745,9 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.CryptoKey, com.google.privacy.dlp.v2.CryptoKey.Builder, com.google.privacy.dlp.v2.CryptoKeyOrBuilder> cryptoKeyBuilder_;
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -750,7 +758,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -765,7 +775,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -785,7 +797,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -803,7 +817,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -825,7 +841,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -843,7 +861,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -855,7 +875,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>
@@ -870,7 +892,9 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The key used by the encryption function.
+     * The key used by the encryption function. For deterministic encryption
+     * using AES-SIV, the provided key is internally expanded to 64 bytes prior to
+     * use.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.CryptoKey crypto_key = 1;</code>

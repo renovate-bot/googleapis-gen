@@ -375,4 +375,24 @@ public interface FindingOrBuilder extends
    */
   com.google.protobuf.ByteString
       getJobNameBytes();
+
+  /**
+   * <pre>
+   * The unique finding id.
+   * </pre>
+   *
+   * <code>string finding_id = 15;</code>
+   * @return The findingId.
+   */
+  java.lang.String getFindingId();
+  /**
+   * <pre>
+   * The unique finding id.
+   * </pre>
+   *
+   * <code>string finding_id = 15;</code>
+   * @return The bytes for findingId.
+   */
+  com.google.protobuf.ByteString
+      getFindingIdBytes();
 }

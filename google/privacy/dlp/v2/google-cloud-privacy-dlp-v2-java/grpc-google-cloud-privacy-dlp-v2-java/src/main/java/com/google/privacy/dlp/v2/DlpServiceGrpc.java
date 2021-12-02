@@ -1355,9 +1355,6 @@ public final class DlpServiceGrpc {
      * Inspect hybrid content and store findings to a trigger. The inspection
      * will be processed asynchronously. To review the findings monitor the
      * jobs within the trigger.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public void hybridInspectJobTrigger(com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request,
@@ -1540,11 +1537,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Inspect hybrid content and store findings to a job.
-     * To review the findings inspect the job. Inspection will occur
+     * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public void hybridInspectDlpJob(com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request,
@@ -1556,9 +1550,6 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finish a running hybrid DlpJob. Triggers the finalization steps and running
      * of any enabled actions that have not yet run.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public void finishDlpJob(com.google.privacy.dlp.v2.FinishDlpJobRequest request,
@@ -2069,9 +2060,6 @@ public final class DlpServiceGrpc {
      * Inspect hybrid content and store findings to a trigger. The inspection
      * will be processed asynchronously. To review the findings monitor the
      * jobs within the trigger.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public void hybridInspectJobTrigger(com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request,
@@ -2269,11 +2257,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Inspect hybrid content and store findings to a job.
-     * To review the findings inspect the job. Inspection will occur
+     * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public void hybridInspectDlpJob(com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request,
@@ -2286,9 +2271,6 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finish a running hybrid DlpJob. Triggers the finalization steps and running
      * of any enabled actions that have not yet run.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public void finishDlpJob(com.google.privacy.dlp.v2.FinishDlpJobRequest request,
@@ -2540,9 +2522,6 @@ public final class DlpServiceGrpc {
      * Inspect hybrid content and store findings to a trigger. The inspection
      * will be processed asynchronously. To review the findings monitor the
      * jobs within the trigger.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectJobTrigger(com.google.privacy.dlp.v2.HybridInspectJobTriggerRequest request) {
@@ -2725,11 +2704,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Inspect hybrid content and store findings to a job.
-     * To review the findings inspect the job. Inspection will occur
+     * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public com.google.privacy.dlp.v2.HybridInspectResponse hybridInspectDlpJob(com.google.privacy.dlp.v2.HybridInspectDlpJobRequest request) {
@@ -2741,9 +2717,6 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finish a running hybrid DlpJob. Triggers the finalization steps and running
      * of any enabled actions that have not yet run.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public com.google.protobuf.Empty finishDlpJob(com.google.privacy.dlp.v2.FinishDlpJobRequest request) {
@@ -3011,9 +2984,6 @@ public final class DlpServiceGrpc {
      * Inspect hybrid content and store findings to a trigger. The inspection
      * will be processed asynchronously. To review the findings monitor the
      * jobs within the trigger.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.HybridInspectResponse> hybridInspectJobTrigger(
@@ -3211,11 +3181,8 @@ public final class DlpServiceGrpc {
     /**
      * <pre>
      * Inspect hybrid content and store findings to a job.
-     * To review the findings inspect the job. Inspection will occur
+     * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.HybridInspectResponse> hybridInspectDlpJob(
@@ -3228,9 +3195,6 @@ public final class DlpServiceGrpc {
      * <pre>
      * Finish a running hybrid DlpJob. Triggers the finalization steps and running
      * of any enabled actions that have not yet run.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> finishDlpJob(

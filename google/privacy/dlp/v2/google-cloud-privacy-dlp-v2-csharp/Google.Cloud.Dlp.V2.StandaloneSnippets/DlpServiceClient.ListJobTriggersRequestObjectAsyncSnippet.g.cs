@@ -40,6 +40,7 @@ namespace Google.Cloud.Dlp.V2.Snippets
                 ParentAsProjectName = ProjectName.FromProject("[PROJECT]"),
                 OrderBy = "",
                 Filter = "",
+                Type = DlpJobType.Unspecified,
                 LocationId = "",
             };
             // Make the request

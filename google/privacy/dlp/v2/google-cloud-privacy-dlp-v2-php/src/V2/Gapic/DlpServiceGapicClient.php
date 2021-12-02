@@ -1254,9 +1254,10 @@ class DlpServiceGapicClient
      *     Optional.
      *
      *     @type InspectJobConfig $inspectJob
-     *           Set to control what and how to inspect.
+     *           An inspection job scans a storage repository for InfoTypes.
      *     @type RiskAnalysisJobConfig $riskJob
-     *           Set to choose what metric to calculate.
+     *           A risk analysis job calculates re-identification risk metrics for a
+     *           BigQuery table.
      *     @type string $jobId
      *           The job id can contain uppercase and lowercase letters,
      *           numbers, and hyphens; that is, it must match the regular
@@ -1858,9 +1859,6 @@ class DlpServiceGapicClient
     /**
      * Finish a running hybrid DlpJob. Triggers the finalization steps and running
      * of any enabled actions that have not yet run.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      *
      * Sample code:
      * ```
@@ -2114,11 +2112,8 @@ class DlpServiceGapicClient
 
     /**
      * Inspect hybrid content and store findings to a job.
-     * To review the findings inspect the job. Inspection will occur
+     * To review the findings, inspect the job. Inspection will occur
      * asynchronously.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      *
      * Sample code:
      * ```
@@ -2168,9 +2163,6 @@ class DlpServiceGapicClient
      * Inspect hybrid content and store findings to a trigger. The inspection
      * will be processed asynchronously. To review the findings monitor the
      * jobs within the trigger.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      *
      * Sample code:
      * ```
@@ -2838,7 +2830,7 @@ class DlpServiceGapicClient
      *           * Restrictions can be combined by `AND` or `OR` logical operators. A
      *           sequence of restrictions implicitly uses `AND`.
      *           * A restriction has the form of `{field} {operator} {value}`.
-     *           * Supported fields/values for inspect jobs:
+     *           * Supported fields/values for inspect triggers:
      *           - `status` - HEALTHY|PAUSED|CANCELLED
      *           - `inspected_storage` - DATASTORE|CLOUD_STORAGE|BIGQUERY
      *           - 'last_run_time` - RFC 3339 formatted timestamp, surrounded by
@@ -2854,6 +2846,9 @@ class DlpServiceGapicClient
      *           * last_run_time > \"2017-12-12T00:00:00+00:00\"
      *
      *           The length of this field should be no more than 500 characters.
+     *     @type int $type
+     *           The type of jobs. Will use `DlpJobType.INSPECT` if not set.
+     *           For allowed values, use constants defined on {@see \Google\Cloud\Dlp\V2\DlpJobType}
      *     @type string $locationId
      *           Deprecated. This field has no effect.
      *     @type RetrySettings|array $retrySettings
@@ -2887,6 +2882,10 @@ class DlpServiceGapicClient
 
         if (isset($optionalArgs['filter'])) {
             $request->setFilter($optionalArgs['filter']);
+        }
+
+        if (isset($optionalArgs['type'])) {
+            $request->setType($optionalArgs['type']);
         }
 
         if (isset($optionalArgs['locationId'])) {

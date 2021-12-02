@@ -381,7 +381,7 @@ private static final long serialVersionUID = 0L;
    * Plane](https://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane)
    * will be replaced with whitespace when scanning for matches, so the
    * dictionary phrase "Sam Johnson" will match all three phrases "sam johnson",
-   * "Sam, Johnson", and "Sam (Johnson)". Additionally, the characters
+   * Plane](https://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane)
    * surrounding any match must be of a different type than the adjacent
    * characters within the word, so letters must be next to non-letters and
    * digits next to non-digits. For example, the dictionary word "jen" will
@@ -393,7 +393,7 @@ private static final long serialVersionUID = 0L;
    * [limits](https://cloud.google.com/dlp/limits) page contains details about
    * the size limits of dictionaries. For dictionaries that do not fit within
    * these constraints, consider using `LargeCustomDictionaryConfig` in the
-   * `StoredInfoType` API.
+   * [limits](https://cloud.google.com/dlp/limits) page contains details about
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
@@ -1571,7 +1571,7 @@ private static final long serialVersionUID = 0L;
      * Plane](https://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane)
      * will be replaced with whitespace when scanning for matches, so the
      * dictionary phrase "Sam Johnson" will match all three phrases "sam johnson",
-     * "Sam, Johnson", and "Sam (Johnson)". Additionally, the characters
+     * Plane](https://en.wikipedia.org/wiki/Plane_%28Unicode%29#Basic_Multilingual_Plane)
      * surrounding any match must be of a different type than the adjacent
      * characters within the word, so letters must be next to non-letters and
      * digits next to non-digits. For example, the dictionary word "jen" will
@@ -1583,7 +1583,7 @@ private static final long serialVersionUID = 0L;
      * [limits](https://cloud.google.com/dlp/limits) page contains details about
      * the size limits of dictionaries. For dictionaries that do not fit within
      * these constraints, consider using `LargeCustomDictionaryConfig` in the
-     * `StoredInfoType` API.
+     * [limits](https://cloud.google.com/dlp/limits) page contains details about
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.CustomInfoType.Dictionary}
@@ -2216,6 +2216,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.
      * </pre>
@@ -2226,6 +2227,7 @@ private static final long serialVersionUID = 0L;
     java.util.List<java.lang.Integer> getGroupIndexesList();
     /**
      * <pre>
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.
      * </pre>
@@ -2236,6 +2238,7 @@ private static final long serialVersionUID = 0L;
     int getGroupIndexesCount();
     /**
      * <pre>
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.
      * </pre>
@@ -2414,6 +2417,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.Internal.IntList groupIndexes_;
     /**
      * <pre>
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.
      * </pre>
@@ -2428,6 +2432,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.
      * </pre>
@@ -2440,6 +2445,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
+     * (https://github.com/google/re2/wiki/Syntax) can be found under the
      * The index of the submatch to extract as findings. When not
      * specified, the entire match is returned. No more than 3 may be included.
      * </pre>
@@ -2921,6 +2927,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -2935,6 +2942,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -2947,6 +2955,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -2960,6 +2969,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -2978,6 +2988,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -2994,6 +3005,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -3012,6 +3024,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
+       * (https://github.com/google/re2/wiki/Syntax) can be found under the
        * The index of the submatch to extract as findings. When not
        * specified, the entire match is returned. No more than 3 may be included.
        * </pre>
@@ -3089,7 +3102,7 @@ private static final long serialVersionUID = 0L;
    * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
    * These types of transformations are
    * those that perform pseudonymization, thereby producing a "surrogate" as
-   * output. This should be used in conjunction with a field on the
+   * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
    * transformation such as `surrogate_info_type`. This CustomInfoType does
    * not support the use of `detection_rules`.
    * </pre>
@@ -3321,7 +3334,7 @@ private static final long serialVersionUID = 0L;
      * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
      * These types of transformations are
      * those that perform pseudonymization, thereby producing a "surrogate" as
-     * output. This should be used in conjunction with a field on the
+     * [`CryptoReplaceFfxFpeConfig`](https://cloud.google.com/dlp/docs/reference/rest/v2/organizations.deidentifyTemplates#cryptoreplaceffxfpeconfig).
      * transformation such as `surrogate_info_type`. This CustomInfoType does
      * not support the use of `detection_rules`.
      * </pre>

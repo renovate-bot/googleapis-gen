@@ -98,6 +98,7 @@ public interface CloudStorageRegexFileSetOrBuilder extends
 
   /**
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
@@ -113,6 +114,7 @@ public interface CloudStorageRegexFileSetOrBuilder extends
       getExcludeRegexList();
   /**
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
@@ -127,6 +129,7 @@ public interface CloudStorageRegexFileSetOrBuilder extends
   int getExcludeRegexCount();
   /**
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.
@@ -142,6 +145,7 @@ public interface CloudStorageRegexFileSetOrBuilder extends
   java.lang.String getExcludeRegex(int index);
   /**
    * <pre>
+   * [syntax](https://github.com/google/re2/wiki/Syntax); a guide can be found
    * A list of regular expressions matching file paths to exclude. All files in
    * the bucket that match at least one of these regular expressions will be
    * excluded from the scan.

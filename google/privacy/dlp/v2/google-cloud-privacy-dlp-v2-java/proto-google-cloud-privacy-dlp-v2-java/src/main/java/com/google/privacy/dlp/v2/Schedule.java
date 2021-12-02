@@ -5,7 +5,7 @@ package com.google.privacy.dlp.v2;
 
 /**
  * <pre>
- * Schedule for triggeredJobs.
+ * Schedule for inspect job triggers.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.Schedule}
@@ -365,7 +365,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Schedule for triggeredJobs.
+   * Schedule for inspect job triggers.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Schedule}

@@ -258,7 +258,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Configuration to control the number of findings returned.
+   * Configuration to control the number of findings returned. Cannot be set if
+   * de-identification is requested.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}
@@ -1463,7 +1464,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Configuration to control the number of findings returned.
+     * Configuration to control the number of findings returned. Cannot be set if
+     * de-identification is requested.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.InspectConfig.FindingLimits}

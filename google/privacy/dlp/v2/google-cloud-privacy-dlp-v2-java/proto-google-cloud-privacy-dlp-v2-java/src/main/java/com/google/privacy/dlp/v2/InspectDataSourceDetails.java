@@ -1153,9 +1153,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Statistics related to the processing of hybrid inspect.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -1165,9 +1162,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Statistics related to the processing of hybrid inspect.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -1177,9 +1171,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Statistics related to the processing of hybrid inspect.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -1404,9 +1395,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Statistics related to the processing of hybrid inspect.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -1419,9 +1407,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Statistics related to the processing of hybrid inspect.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -1434,9 +1419,6 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Statistics related to the processing of hybrid inspect.
-     * Early access feature is in a pre-release state and might change or have
-     * limited support. For more information, see
-     * https://cloud.google.com/products#product-launch-stages.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2280,9 +2262,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2294,9 +2273,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2312,9 +2288,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2335,9 +2308,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2356,9 +2326,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2381,9 +2348,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2402,9 +2366,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2417,9 +2378,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2435,9 +2393,6 @@ private static final long serialVersionUID = 0L;
       /**
        * <pre>
        * Statistics related to the processing of hybrid inspect.
-       * Early access feature is in a pre-release state and might change or have
-       * limited support. For more information, see
-       * https://cloud.google.com/products#product-launch-stages.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.HybridInspectStatistics hybrid_stats = 7;</code>
@@ -2550,7 +2505,7 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.InspectDataSourceDetails.Result result_;
   /**
    * <pre>
-   * A summary of the outcome of this inspect job.
+   * A summary of the outcome of this inspection job.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -2562,7 +2517,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A summary of the outcome of this inspect job.
+   * A summary of the outcome of this inspection job.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -2574,7 +2529,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A summary of the outcome of this inspect job.
+   * A summary of the outcome of this inspection job.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3093,7 +3048,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.InspectDataSourceDetails.Result, com.google.privacy.dlp.v2.InspectDataSourceDetails.Result.Builder, com.google.privacy.dlp.v2.InspectDataSourceDetails.ResultOrBuilder> resultBuilder_;
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3104,7 +3059,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3119,7 +3074,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3139,7 +3094,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3157,7 +3112,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3179,7 +3134,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3197,7 +3152,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3209,7 +3164,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>
@@ -3224,7 +3179,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A summary of the outcome of this inspect job.
+     * A summary of the outcome of this inspection job.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InspectDataSourceDetails.Result result = 3;</code>

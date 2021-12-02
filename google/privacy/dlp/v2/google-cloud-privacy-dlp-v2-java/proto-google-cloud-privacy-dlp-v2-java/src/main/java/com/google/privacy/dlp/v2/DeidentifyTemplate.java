@@ -369,7 +369,7 @@ private static final long serialVersionUID = 0L;
   private com.google.privacy.dlp.v2.DeidentifyConfig deidentifyConfig_;
   /**
    * <pre>
-   * ///////////// // The core content of the template  // ///////////////
+   * The core content of the template.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -381,7 +381,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ///////////// // The core content of the template  // ///////////////
+   * The core content of the template.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -393,7 +393,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * ///////////// // The core content of the template  // ///////////////
+   * The core content of the template.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1452,7 +1452,7 @@ private static final long serialVersionUID = 0L;
         com.google.privacy.dlp.v2.DeidentifyConfig, com.google.privacy.dlp.v2.DeidentifyConfig.Builder, com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder> deidentifyConfigBuilder_;
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1463,7 +1463,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1478,7 +1478,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1498,7 +1498,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1516,7 +1516,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1538,7 +1538,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1556,7 +1556,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1568,7 +1568,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
@@ -1583,7 +1583,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * ///////////// // The core content of the template  // ///////////////
+     * The core content of the template.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 6;</code>
