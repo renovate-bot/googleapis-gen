@@ -24,12 +24,13 @@ class EndpointService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-³ 
-6google/cloud/aiplatform/v1beta1/endpoint_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/cloud/aiplatform/v1beta1/endpoint.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"”
+ë 
+6google/cloud/aiplatform/v1beta1/endpoint_service.protogoogle.cloud.aiplatform.v1beta1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto.google/cloud/aiplatform/v1beta1/endpoint.proto/google/cloud/aiplatform/v1beta1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"®
 CreateEndpointRequest9
 parent (	B)àAúA#
 !locations.googleapis.com/Location@
-endpoint (2).google.cloud.aiplatform.v1beta1.EndpointBàA"v
+endpoint (2).google.cloud.aiplatform.v1beta1.EndpointBàA
+endpoint_id (	BàA"v
 CreateEndpointOperationMetadataS
 generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata"N
 GetEndpointRequest8
@@ -74,9 +75,9 @@ page_token (	BàA2
 value (:8"
 UndeployModelResponse"u
 UndeployModelOperationMetadataS
-generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata2·
-EndpointServiceî
-CreateEndpoint6.google.cloud.aiplatform.v1beta1.CreateEndpointRequest.google.longrunning.Operation"„‚Óä“>"2/v1beta1/{parent=projects/*/locations/*}/endpoints:endpointÚAparent,endpointÊA+
+generic_metadata (29.google.cloud.aiplatform.v1beta1.GenericOperationMetadata2Õ
+EndpointServiceŒ
+CreateEndpoint6.google.cloud.aiplatform.v1beta1.CreateEndpointRequest.google.longrunning.Operation"¢‚Óä“>"2/v1beta1/{parent=projects/*/locations/*}/endpoints:endpointÚAparent,endpointÚAparent,endpoint,endpoint_idÊA+
 EndpointCreateEndpointOperationMetadata°
 GetEndpoint3.google.cloud.aiplatform.v1beta1.GetEndpointRequest).google.cloud.aiplatform.v1beta1.Endpoint"A‚Óä“42/v1beta1/{name=projects/*/locations/*/endpoints/*}ÚAnameÃ
 ListEndpoints5.google.cloud.aiplatform.v1beta1.ListEndpointsRequest6.google.cloud.aiplatform.v1beta1.ListEndpointsResponse"C‚Óä“42/v1beta1/{parent=projects/*/locations/*}/endpointsÚAparentÙ

@@ -35,6 +35,7 @@ use Google\Cloud\AIPlatform\V1beta1\DeployIndexResponse;
 use Google\Cloud\AIPlatform\V1beta1\IndexEndpoint;
 use Google\Cloud\AIPlatform\V1beta1\IndexEndpointServiceClient;
 use Google\Cloud\AIPlatform\V1beta1\ListIndexEndpointsResponse;
+use Google\Cloud\AIPlatform\V1beta1\MutateDeployedIndexResponse;
 use Google\Cloud\AIPlatform\V1beta1\UndeployIndexResponse;
 use Google\LongRunning\GetOperationRequest;
 use Google\LongRunning\Operation;
@@ -106,12 +107,14 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $etag = 'etag3123477';
         $network = 'network1843485230';
+        $enablePrivateServiceConnect = true;
         $expectedResponse = new IndexEndpoint();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setEnablePrivateServiceConnect($enablePrivateServiceConnect);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -124,8 +127,6 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $indexEndpoint = new IndexEndpoint();
         $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
         $indexEndpoint->setDisplayName($indexEndpointDisplayName);
-        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
-        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $response = $client->createIndexEndpoint($formattedParent, $indexEndpoint);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -197,8 +198,6 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $indexEndpoint = new IndexEndpoint();
         $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
         $indexEndpoint->setDisplayName($indexEndpointDisplayName);
-        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
-        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $response = $client->createIndexEndpoint($formattedParent, $indexEndpoint);
         $this->assertFalse($response->isDone());
         $this->assertNull($response->getResult());
@@ -491,12 +490,14 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $etag = 'etag3123477';
         $network = 'network1843485230';
+        $enablePrivateServiceConnect = true;
         $expectedResponse = new IndexEndpoint();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setEnablePrivateServiceConnect($enablePrivateServiceConnect);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->indexEndpointName('[PROJECT]', '[LOCATION]', '[INDEX_ENDPOINT]');
@@ -617,6 +618,139 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         // Call popReceivedCalls to ensure the stub is exhausted
         $transport->popReceivedCalls();
         $this->assertTrue($transport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function mutateDeployedIndexTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/mutateDeployedIndexTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $expectedResponse = new MutateDeployedIndexResponse();
+        $anyResponse = new Any();
+        $anyResponse->setValue($expectedResponse->serializeToString());
+        $completeOperation = new Operation();
+        $completeOperation->setName('operations/mutateDeployedIndexTest');
+        $completeOperation->setDone(true);
+        $completeOperation->setResponse($anyResponse);
+        $operationsTransport->addResponse($completeOperation);
+        // Mock request
+        $formattedIndexEndpoint = $client->indexEndpointName('[PROJECT]', '[LOCATION]', '[INDEX_ENDPOINT]');
+        $deployedIndex = new DeployedIndex();
+        $deployedIndexId = 'deployedIndexId-1101212953';
+        $deployedIndex->setId($deployedIndexId);
+        $deployedIndexIndex = $client->indexName('[PROJECT]', '[LOCATION]', '[INDEX]');
+        $deployedIndex->setIndex($deployedIndexIndex);
+        $response = $client->mutateDeployedIndex($formattedIndexEndpoint, $deployedIndex);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $apiRequests = $transport->popReceivedCalls();
+        $this->assertSame(1, count($apiRequests));
+        $operationsRequestsEmpty = $operationsTransport->popReceivedCalls();
+        $this->assertSame(0, count($operationsRequestsEmpty));
+        $actualApiFuncCall = $apiRequests[0]->getFuncCall();
+        $actualApiRequestObject = $apiRequests[0]->getRequestObject();
+        $this->assertSame('/google.cloud.aiplatform.v1beta1.IndexEndpointService/MutateDeployedIndex', $actualApiFuncCall);
+        $actualValue = $actualApiRequestObject->getIndexEndpoint();
+        $this->assertProtobufEquals($formattedIndexEndpoint, $actualValue);
+        $actualValue = $actualApiRequestObject->getDeployedIndex();
+        $this->assertProtobufEquals($deployedIndex, $actualValue);
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/mutateDeployedIndexTest');
+        $response->pollUntilComplete([
+            'initialPollDelayMillis' => 1,
+        ]);
+        $this->assertTrue($response->isDone());
+        $this->assertEquals($expectedResponse, $response->getResult());
+        $apiRequestsEmpty = $transport->popReceivedCalls();
+        $this->assertSame(0, count($apiRequestsEmpty));
+        $operationsRequests = $operationsTransport->popReceivedCalls();
+        $this->assertSame(1, count($operationsRequests));
+        $actualOperationsFuncCall = $operationsRequests[0]->getFuncCall();
+        $actualOperationsRequestObject = $operationsRequests[0]->getRequestObject();
+        $this->assertSame('/google.longrunning.Operations/GetOperation', $actualOperationsFuncCall);
+        $this->assertEquals($expectedOperationsRequestObject, $actualOperationsRequestObject);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+    }
+
+    /**
+     * @test
+     */
+    public function mutateDeployedIndexExceptionTest()
+    {
+        $operationsTransport = $this->createTransport();
+        $operationsClient = new OperationsClient([
+            'serviceAddress' => '',
+            'transport' => $operationsTransport,
+            'credentials' => $this->createCredentials(),
+        ]);
+        $transport = $this->createTransport();
+        $client = $this->createClient([
+            'transport' => $transport,
+            'operationsClient' => $operationsClient,
+        ]);
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
+        // Mock response
+        $incompleteOperation = new Operation();
+        $incompleteOperation->setName('operations/mutateDeployedIndexTest');
+        $incompleteOperation->setDone(false);
+        $transport->addResponse($incompleteOperation);
+        $status = new stdClass();
+        $status->code = Code::DATA_LOSS;
+        $status->details = 'internal error';
+        $expectedExceptionMessage = json_encode([
+            'message' => 'internal error',
+            'code' => Code::DATA_LOSS,
+            'status' => 'DATA_LOSS',
+            'details' => [],
+        ], JSON_PRETTY_PRINT);
+        $operationsTransport->addResponse(null, $status);
+        // Mock request
+        $formattedIndexEndpoint = $client->indexEndpointName('[PROJECT]', '[LOCATION]', '[INDEX_ENDPOINT]');
+        $deployedIndex = new DeployedIndex();
+        $deployedIndexId = 'deployedIndexId-1101212953';
+        $deployedIndex->setId($deployedIndexId);
+        $deployedIndexIndex = $client->indexName('[PROJECT]', '[LOCATION]', '[INDEX]');
+        $deployedIndex->setIndex($deployedIndexIndex);
+        $response = $client->mutateDeployedIndex($formattedIndexEndpoint, $deployedIndex);
+        $this->assertFalse($response->isDone());
+        $this->assertNull($response->getResult());
+        $expectedOperationsRequestObject = new GetOperationRequest();
+        $expectedOperationsRequestObject->setName('operations/mutateDeployedIndexTest');
+        try {
+            $response->pollUntilComplete([
+                'initialPollDelayMillis' => 1,
+            ]);
+            // If the pollUntilComplete() method call did not throw, fail the test
+            $this->fail('Expected an ApiException, but no exception was thrown.');
+        } catch (ApiException $ex) {
+            $this->assertEquals($status->code, $ex->getCode());
+            $this->assertEquals($expectedExceptionMessage, $ex->getMessage());
+        }
+        // Call popReceivedCalls to ensure the stubs are exhausted
+        $transport->popReceivedCalls();
+        $operationsTransport->popReceivedCalls();
+        $this->assertTrue($transport->isExhausted());
+        $this->assertTrue($operationsTransport->isExhausted());
     }
 
     /**
@@ -760,19 +894,19 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $etag = 'etag3123477';
         $network = 'network1843485230';
+        $enablePrivateServiceConnect = true;
         $expectedResponse = new IndexEndpoint();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setEnablePrivateServiceConnect($enablePrivateServiceConnect);
         $transport->addResponse($expectedResponse);
         // Mock request
         $indexEndpoint = new IndexEndpoint();
         $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
         $indexEndpoint->setDisplayName($indexEndpointDisplayName);
-        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
-        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $updateMask = new FieldMask();
         $response = $client->updateIndexEndpoint($indexEndpoint, $updateMask);
         $this->assertEquals($expectedResponse, $response);
@@ -812,8 +946,6 @@ class IndexEndpointServiceClientTest extends GeneratedTest
         $indexEndpoint = new IndexEndpoint();
         $indexEndpointDisplayName = 'indexEndpointDisplayName-894895258';
         $indexEndpoint->setDisplayName($indexEndpointDisplayName);
-        $indexEndpointNetwork = 'indexEndpointNetwork-517872729';
-        $indexEndpoint->setNetwork($indexEndpointNetwork);
         $updateMask = new FieldMask();
         try {
             $client->updateIndexEndpoint($indexEndpoint, $updateMask);

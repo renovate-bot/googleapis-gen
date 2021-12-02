@@ -32,15 +32,15 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
      */
     protected $deployed_model_id = '';
     /**
-     * Output only. The name of the Model this DeployedModel, that served this prediction, was
-     * created from.
+     * Output only. The resource name of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
      *
      * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
     protected $model = '';
     /**
-     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
-     * that served this prediction, was created from.
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
+     * the DeployedModel that this prediction hits.
      *
      * Generated from protobuf field <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
@@ -61,11 +61,11 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
      *     @type string $deployed_model_id
      *           ID of the Endpoint's DeployedModel that served this prediction.
      *     @type string $model
-     *           Output only. The name of the Model this DeployedModel, that served this prediction, was
-     *           created from.
+     *           Output only. The resource name of the Model which is deployed as the DeployedModel that
+     *           this prediction hits.
      *     @type string $model_display_name
-     *           Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
-     *           that served this prediction, was created from.
+     *           Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
+     *           the DeployedModel that this prediction hits.
      * }
      */
     public function __construct($data = NULL) {
@@ -134,8 +134,8 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The name of the Model this DeployedModel, that served this prediction, was
-     * created from.
+     * Output only. The resource name of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
      *
      * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -146,8 +146,8 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The name of the Model this DeployedModel, that served this prediction, was
-     * created from.
+     * Output only. The resource name of the Model which is deployed as the DeployedModel that
+     * this prediction hits.
      *
      * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var
@@ -162,8 +162,8 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
-     * that served this prediction, was created from.
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
+     * the DeployedModel that this prediction hits.
      *
      * Generated from protobuf field <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
@@ -174,8 +174,8 @@ class PredictResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model this DeployedModel,
-     * that served this prediction, was created from.
+     * Output only. The [display name][google.cloud.aiplatform.v1beta1.Model.display_name] of the Model which is deployed as
+     * the DeployedModel that this prediction hits.
      *
      * Generated from protobuf field <code>string model_display_name = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var

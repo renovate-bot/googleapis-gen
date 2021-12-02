@@ -47,6 +47,7 @@ use Google\Cloud\AIPlatform\V1beta1\GetIndexEndpointRequest;
 use Google\Cloud\AIPlatform\V1beta1\IndexEndpoint;
 use Google\Cloud\AIPlatform\V1beta1\ListIndexEndpointsRequest;
 use Google\Cloud\AIPlatform\V1beta1\ListIndexEndpointsResponse;
+use Google\Cloud\AIPlatform\V1beta1\MutateDeployedIndexRequest;
 use Google\Cloud\AIPlatform\V1beta1\UndeployIndexRequest;
 use Google\Cloud\AIPlatform\V1beta1\UpdateIndexEndpointRequest;
 use Google\LongRunning\Operation;
@@ -758,6 +759,80 @@ class IndexEndpointServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListIndexEndpoints', $optionalArgs, ListIndexEndpointsResponse::class, $request);
+    }
+
+    /**
+     * Update an existing DeployedIndex under an IndexEndpoint.
+     *
+     * Sample code:
+     * ```
+     * $indexEndpointServiceClient = new IndexEndpointServiceClient();
+     * try {
+     *     $formattedIndexEndpoint = $indexEndpointServiceClient->indexEndpointName('[PROJECT]', '[LOCATION]', '[INDEX_ENDPOINT]');
+     *     $deployedIndex = new DeployedIndex();
+     *     $operationResponse = $indexEndpointServiceClient->mutateDeployedIndex($formattedIndexEndpoint, $deployedIndex);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $indexEndpointServiceClient->mutateDeployedIndex($formattedIndexEndpoint, $deployedIndex);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $indexEndpointServiceClient->resumeOperation($operationName, 'mutateDeployedIndex');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $indexEndpointServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string        $indexEndpoint Required. The name of the IndexEndpoint resource into which to deploy an Index.
+     *                                     Format:
+     *                                     `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+     * @param DeployedIndex $deployedIndex Required. The DeployedIndex to be updated within the IndexEndpoint.
+     *                                     Currently, the updatable fields are [DeployedIndex][automatic_resources]
+     *                                     and [DeployedIndex][dedicated_resources]
+     * @param array         $optionalArgs  {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function mutateDeployedIndex($indexEndpoint, $deployedIndex, array $optionalArgs = [])
+    {
+        $request = new MutateDeployedIndexRequest();
+        $requestParamHeaders = [];
+        $request->setIndexEndpoint($indexEndpoint);
+        $request->setDeployedIndex($deployedIndex);
+        $requestParamHeaders['index_endpoint'] = $indexEndpoint;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('MutateDeployedIndex', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**

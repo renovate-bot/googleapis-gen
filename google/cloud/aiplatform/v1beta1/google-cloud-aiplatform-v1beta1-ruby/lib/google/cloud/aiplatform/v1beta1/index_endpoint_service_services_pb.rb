@@ -50,6 +50,8 @@ module Google
             # Undeploys an Index from an IndexEndpoint, removing a DeployedIndex from it,
             # and freeing all resources it's using.
             rpc :UndeployIndex, ::Google::Cloud::AIPlatform::V1beta1::UndeployIndexRequest, ::Google::Longrunning::Operation
+            # Update an existing DeployedIndex under an IndexEndpoint.
+            rpc :MutateDeployedIndex, ::Google::Cloud::AIPlatform::V1beta1::MutateDeployedIndexRequest, ::Google::Longrunning::Operation
           end
 
           Stub = Service.rpc_stub_class

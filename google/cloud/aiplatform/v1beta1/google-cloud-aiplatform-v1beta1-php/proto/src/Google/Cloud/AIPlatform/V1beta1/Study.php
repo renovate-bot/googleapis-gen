@@ -9,6 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * LINT.IfChange
  * A message representing a Study.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.Study</code>

@@ -10,7 +10,10 @@ use Google\Protobuf\Internal\GPBUtil;
 
 /**
  * IndexPrivateEndpoints proto is used to provide paths for users to send
- * requests via private services access.
+ * requests via private endpoints (e.g. private service access, private service
+ * connect).
+ * To send request via private service access, use match_grpc_address.
+ * To send request via private service connect, use service_attachment.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.IndexPrivateEndpoints</code>
  */
@@ -22,6 +25,13 @@ class IndexPrivateEndpoints extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string match_grpc_address = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $match_grpc_address = '';
+    /**
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     *
+     * Generated from protobuf field <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $service_attachment = '';
 
     /**
      * Constructor.
@@ -31,6 +41,9 @@ class IndexPrivateEndpoints extends \Google\Protobuf\Internal\Message
      *
      *     @type string $match_grpc_address
      *           Output only. The ip address used to send match gRPC requests.
+     *     @type string $service_attachment
+     *           Output only. The name of the service attachment resource. Populated if private service
+     *           connect is enabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -60,6 +73,34 @@ class IndexPrivateEndpoints extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->match_grpc_address = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     *
+     * Generated from protobuf field <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getServiceAttachment()
+    {
+        return $this->service_attachment;
+    }
+
+    /**
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     *
+     * Generated from protobuf field <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setServiceAttachment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->service_attachment = $var;
 
         return $this;
     }

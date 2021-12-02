@@ -60,7 +60,7 @@ use Google\Protobuf\GPBEmpty;
 /**
  * Service Description: A service for creating and managing Vertex AI's pipelines. This includes both
  * `TrainingPipeline` resources (used for AutoML and custom training) and
- * `PipelineJob` resources (used for Vertex Pipelines).
+ * `PipelineJob` resources (used for Vertex AI Pipelines).
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -884,6 +884,7 @@ class PipelineServiceGapicClient
      *           * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
      *           for example, can check if pipeline's display_name contains *step* by doing
      *           display_name:\"*step*\"
+     *           * `state`: Supports `=` and `!=` comparisons.
      *           * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
      *           Values must be in RFC 3339 format.
      *           * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -927,6 +928,7 @@ class PipelineServiceGapicClient
      *           * `create_time`
      *           * `update_time`
      *           * `end_time`
+     *           * `start_time`
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry

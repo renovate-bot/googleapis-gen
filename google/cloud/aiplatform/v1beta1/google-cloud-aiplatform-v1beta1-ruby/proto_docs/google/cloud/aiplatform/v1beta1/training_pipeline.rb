@@ -147,6 +147,11 @@ module Google
         #     Supported only for tabular Datasets.
         #
         #     Split based on the timestamp of the input data pieces.
+        # @!attribute [rw] stratified_split
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::StratifiedSplit]
+        #     Supported only for tabular Datasets.
+        #
+        #     Split based on the distribution of the specified column.
         # @!attribute [rw] gcs_destination
         #   @return [::Google::Cloud::AIPlatform::V1beta1::GcsDestination]
         #     The Cloud Storage location where the training data is to be
@@ -332,6 +337,41 @@ module Google
         #     (e.g. 1985-04-12T23:20:50.52Z). If for a piece of data the key is not
         #     present or has an invalid value, that piece is ignored by the pipeline.
         class TimestampSplit
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Assigns input data to the training, validation, and test sets so that the
+        # distribution of values found in the categorical column (as specified by the
+        # `key` field) is mirrored within each split. The fraction values determine
+        # the relative sizes of the splits.
+        #
+        # For example, if the specified column has three values, with 50% of the rows
+        # having value "A", 25% value "B", and 25% value "C", and the split fractions
+        # are specified as 80/10/10, then the training set will constitute 80% of the
+        # training data, with about 50% of the training set rows having the value "A"
+        # for the specified column, about 25% having the value "B", and about 25%
+        # having the value "C".
+        #
+        # Only the top 500 occurring values are used; any values not in the top
+        # 500 values are randomly assigned to a split. If less than three rows contain
+        # a specific value, those rows are randomly assigned.
+        #
+        # Supported only for tabular Datasets.
+        # @!attribute [rw] training_fraction
+        #   @return [::Float]
+        #     The fraction of the input data that is to be used to train the Model.
+        # @!attribute [rw] validation_fraction
+        #   @return [::Float]
+        #     The fraction of the input data that is to be used to validate the Model.
+        # @!attribute [rw] test_fraction
+        #   @return [::Float]
+        #     The fraction of the input data that is to be used to evaluate the Model.
+        # @!attribute [rw] key
+        #   @return [::String]
+        #     Required. The key is a name of one of the Dataset's data columns.
+        #     The key provided must be for a categorical column.
+        class StratifiedSplit
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end

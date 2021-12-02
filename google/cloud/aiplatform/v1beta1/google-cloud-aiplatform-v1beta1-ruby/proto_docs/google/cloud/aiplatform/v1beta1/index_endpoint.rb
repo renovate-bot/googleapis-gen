@@ -61,17 +61,28 @@ module Google
         #     deployments of.
         # @!attribute [rw] network
         #   @return [::String]
-        #     Required. Immutable. The full name of the Google Compute Engine
+        #     Optional. The full name of the Google Compute Engine
         #     [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
         #     to which the IndexEndpoint should be peered.
         #
         #     Private services access must already be configured for the network. If left
         #     unspecified, the Endpoint is not peered with any network.
         #
+        #     Only one of the fields, {::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint#network network} or
+        #     {::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint#enable_private_service_connect enable_private_service_connect},
+        #     can be set.
+        #
         #     [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
         #     projects/\\{project}/global/networks/\\{network}.
         #     Where \\{project} is a project number, as in '12345', and \\{network} is
         #     network name.
+        # @!attribute [rw] enable_private_service_connect
+        #   @return [::Boolean]
+        #     Optional. If true, expose the IndexEndpoint via private service connect.
+        #
+        #     Only one of the fields, {::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint#network network} or
+        #     {::Google::Cloud::AIPlatform::V1beta1::IndexEndpoint#enable_private_service_connect enable_private_service_connect},
+        #     can be set.
         class IndexEndpoint
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -130,11 +141,10 @@ module Google
         #     Optional. A description of resources that the DeployedIndex uses, which to large
         #     degree are decided by Vertex AI, and optionally allows only a modest
         #     additional configuration.
-        #     If min_replica_count is not set, the default value is 1. If
-        #     max_replica_count is not set, the default value is min_replica_count. The
-        #     max allowed replica count is 1000.
-        #     The user is billed for the resources (at least their minimal amount)
-        #     even if the DeployedIndex receives no traffic.
+        #     If min_replica_count is not set, the default value is 2 (we don't provide
+        #     SLA when min_replica_count=1). If max_replica_count is not set, the
+        #     default value is min_replica_count. The max allowed replica count is
+        #     1000.
         # @!attribute [rw] enable_access_logging
         #   @return [::Boolean]
         #     Optional. If true, private endpoint's access logs are sent to StackDriver Logging.
@@ -209,10 +219,17 @@ module Google
         end
 
         # IndexPrivateEndpoints proto is used to provide paths for users to send
-        # requests via private services access.
+        # requests via private endpoints (e.g. private service access, private service
+        # connect).
+        # To send request via private service access, use match_grpc_address.
+        # To send request via private service connect, use service_attachment.
         # @!attribute [r] match_grpc_address
         #   @return [::String]
         #     Output only. The ip address used to send match gRPC requests.
+        # @!attribute [r] service_attachment
+        #   @return [::String]
+        #     Output only. The name of the service attachment resource. Populated if private service
+        #     connect is enabled.
         class IndexPrivateEndpoints
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

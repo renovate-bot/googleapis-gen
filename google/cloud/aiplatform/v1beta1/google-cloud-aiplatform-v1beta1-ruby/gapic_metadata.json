@@ -275,6 +275,11 @@
               "methods": [
                 "undeploy_index"
               ]
+            },
+            "MutateDeployedIndex": {
+              "methods": [
+                "mutate_deployed_index"
+              ]
             }
           }
         }

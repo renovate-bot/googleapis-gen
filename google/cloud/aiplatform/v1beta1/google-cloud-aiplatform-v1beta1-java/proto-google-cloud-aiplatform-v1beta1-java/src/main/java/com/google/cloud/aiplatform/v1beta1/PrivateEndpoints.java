@@ -5,8 +5,11 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * PrivateEndpoints is used to provide paths for users to send
- * requests via private services access.
+ * PrivateEndpoints proto is used to provide paths for users to send
+ * requests privately.
+ * To send request via private service access, use predict_http_uri,
+ * explain_http_uri or health_http_uri. To send request via private service
+ * connect, use service_attachment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.PrivateEndpoints}
@@ -24,6 +27,7 @@ private static final long serialVersionUID = 0L;
     predictHttpUri_ = "";
     explainHttpUri_ = "";
     healthHttpUri_ = "";
+    serviceAttachment_ = "";
   }
 
   @java.lang.Override
@@ -72,6 +76,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             healthHttpUri_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            serviceAttachment_ = s;
             break;
           }
           default: {
@@ -244,6 +254,54 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int SERVICE_ATTACHMENT_FIELD_NUMBER = 4;
+  private volatile java.lang.Object serviceAttachment_;
+  /**
+   * <pre>
+   * Output only. The name of the service attachment resource. Populated if private service
+   * connect is enabled.
+   * </pre>
+   *
+   * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The serviceAttachment.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAttachment() {
+    java.lang.Object ref = serviceAttachment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAttachment_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Output only. The name of the service attachment resource. Populated if private service
+   * connect is enabled.
+   * </pre>
+   *
+   * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for serviceAttachment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getServiceAttachmentBytes() {
+    java.lang.Object ref = serviceAttachment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      serviceAttachment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -267,6 +325,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthHttpUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, healthHttpUri_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, serviceAttachment_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -284,6 +345,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(healthHttpUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, healthHttpUri_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAttachment_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, serviceAttachment_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,6 +370,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getExplainHttpUri())) return false;
     if (!getHealthHttpUri()
         .equals(other.getHealthHttpUri())) return false;
+    if (!getServiceAttachment()
+        .equals(other.getServiceAttachment())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -323,6 +389,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getExplainHttpUri().hashCode();
     hash = (37 * hash) + HEALTH_HTTP_URI_FIELD_NUMBER;
     hash = (53 * hash) + getHealthHttpUri().hashCode();
+    hash = (37 * hash) + SERVICE_ATTACHMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getServiceAttachment().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -420,8 +488,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * PrivateEndpoints is used to provide paths for users to send
-   * requests via private services access.
+   * PrivateEndpoints proto is used to provide paths for users to send
+   * requests privately.
+   * To send request via private service access, use predict_http_uri,
+   * explain_http_uri or health_http_uri. To send request via private service
+   * connect, use service_attachment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.PrivateEndpoints}
@@ -467,6 +538,8 @@ private static final long serialVersionUID = 0L;
 
       healthHttpUri_ = "";
 
+      serviceAttachment_ = "";
+
       return this;
     }
 
@@ -496,6 +569,7 @@ private static final long serialVersionUID = 0L;
       result.predictHttpUri_ = predictHttpUri_;
       result.explainHttpUri_ = explainHttpUri_;
       result.healthHttpUri_ = healthHttpUri_;
+      result.serviceAttachment_ = serviceAttachment_;
       onBuilt();
       return result;
     }
@@ -554,6 +628,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getHealthHttpUri().isEmpty()) {
         healthHttpUri_ = other.healthHttpUri_;
+        onChanged();
+      }
+      if (!other.getServiceAttachment().isEmpty()) {
+        serviceAttachment_ = other.serviceAttachment_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -869,6 +947,107 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       healthHttpUri_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object serviceAttachment_ = "";
+    /**
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The serviceAttachment.
+     */
+    public java.lang.String getServiceAttachment() {
+      java.lang.Object ref = serviceAttachment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAttachment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The bytes for serviceAttachment.
+     */
+    public com.google.protobuf.ByteString
+        getServiceAttachmentBytes() {
+      java.lang.Object ref = serviceAttachment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        serviceAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The serviceAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAttachment(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      serviceAttachment_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAttachment() {
+      
+      serviceAttachment_ = getDefaultInstance().getServiceAttachment();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     * </pre>
+     *
+     * <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param value The bytes for serviceAttachment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAttachmentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      serviceAttachment_ = value;
       onChanged();
       return this;
     }

@@ -91,7 +91,7 @@ class Feature extends \Google\Protobuf\Internal\Message
     protected $monitoring_config = null;
     /**
      * Output only. A list of historical [Snapshot
-     * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
      *
@@ -147,7 +147,7 @@ class Feature extends \Google\Protobuf\Internal\Message
      *           config is same as the EntityType's this Feature belongs to.
      *     @type \Google\Cloud\AIPlatform\V1beta1\FeatureStatsAnomaly[]|\Google\Protobuf\Internal\RepeatedField $monitoring_stats
      *           Output only. A list of historical [Snapshot
-     *           Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     *           Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
      *           stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      *           descending.
      * }
@@ -445,7 +445,7 @@ class Feature extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A list of historical [Snapshot
-     * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
      *
@@ -459,7 +459,7 @@ class Feature extends \Google\Protobuf\Internal\Message
 
     /**
      * Output only. A list of historical [Snapshot
-     * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+     * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
      * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
      * descending.
      *

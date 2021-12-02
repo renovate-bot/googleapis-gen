@@ -16,7 +16,7 @@ class Algorithm
     /**
      * The default algorithm used by Vertex AI for [hyperparameter
      * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
-     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
+     * and [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      *
      * Generated from protobuf enum <code>ALGORITHM_UNSPECIFIED = 0;</code>
      */

@@ -43,6 +43,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
         optional :filter_split, :message, 3, "google.cloud.aiplatform.v1beta1.FilterSplit"
         optional :predefined_split, :message, 4, "google.cloud.aiplatform.v1beta1.PredefinedSplit"
         optional :timestamp_split, :message, 5, "google.cloud.aiplatform.v1beta1.TimestampSplit"
+        optional :stratified_split, :message, 12, "google.cloud.aiplatform.v1beta1.StratifiedSplit"
       end
       oneof :destination do
         optional :gcs_destination, :message, 8, "google.cloud.aiplatform.v1beta1.GcsDestination"
@@ -68,6 +69,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :test_fraction, :double, 3
       optional :key, :string, 4
     end
+    add_message "google.cloud.aiplatform.v1beta1.StratifiedSplit" do
+      optional :training_fraction, :double, 1
+      optional :validation_fraction, :double, 2
+      optional :test_fraction, :double, 3
+      optional :key, :string, 4
+    end
   end
 end
 
@@ -81,6 +88,7 @@ module Google
         FilterSplit = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.FilterSplit").msgclass
         PredefinedSplit = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.PredefinedSplit").msgclass
         TimestampSplit = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.TimestampSplit").msgclass
+        StratifiedSplit = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1beta1.StratifiedSplit").msgclass
       end
     end
   end

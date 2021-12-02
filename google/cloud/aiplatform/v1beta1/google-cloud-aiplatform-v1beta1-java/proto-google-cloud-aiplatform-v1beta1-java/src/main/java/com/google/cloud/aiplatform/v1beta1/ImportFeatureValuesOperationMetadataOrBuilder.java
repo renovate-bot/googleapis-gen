@@ -9,7 +9,7 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -18,7 +18,7 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder extends
   boolean hasGenericMetadata();
   /**
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -27,7 +27,7 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata getGenericMetadata();
   /**
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -46,7 +46,7 @@ public interface ImportFeatureValuesOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Number of feature values that have been imported by the operation.
+   * Number of Feature values that have been imported by the operation.
    * </pre>
    *
    * <code>int64 imported_feature_value_count = 3;</code>

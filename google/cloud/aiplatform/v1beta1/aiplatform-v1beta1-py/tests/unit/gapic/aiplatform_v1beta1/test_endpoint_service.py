@@ -552,6 +552,7 @@ def test_create_endpoint_flattened():
         client.create_endpoint(
             parent='parent_value',
             endpoint=gca_endpoint.Endpoint(name='name_value'),
+            endpoint_id='endpoint_id_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -563,6 +564,9 @@ def test_create_endpoint_flattened():
         assert arg == mock_val
         arg = args[0].endpoint
         mock_val = gca_endpoint.Endpoint(name='name_value')
+        assert arg == mock_val
+        arg = args[0].endpoint_id
+        mock_val = 'endpoint_id_value'
         assert arg == mock_val
 
 
@@ -578,6 +582,7 @@ def test_create_endpoint_flattened_error():
             endpoint_service.CreateEndpointRequest(),
             parent='parent_value',
             endpoint=gca_endpoint.Endpoint(name='name_value'),
+            endpoint_id='endpoint_id_value',
         )
 
 
@@ -602,6 +607,7 @@ async def test_create_endpoint_flattened_async():
         response = await client.create_endpoint(
             parent='parent_value',
             endpoint=gca_endpoint.Endpoint(name='name_value'),
+            endpoint_id='endpoint_id_value',
         )
 
         # Establish that the underlying call was made with the expected
@@ -613,6 +619,9 @@ async def test_create_endpoint_flattened_async():
         assert arg == mock_val
         arg = args[0].endpoint
         mock_val = gca_endpoint.Endpoint(name='name_value')
+        assert arg == mock_val
+        arg = args[0].endpoint_id
+        mock_val = 'endpoint_id_value'
         assert arg == mock_val
 
 
@@ -629,6 +638,7 @@ async def test_create_endpoint_flattened_error_async():
             endpoint_service.CreateEndpointRequest(),
             parent='parent_value',
             endpoint=gca_endpoint.Endpoint(name='name_value'),
+            endpoint_id='endpoint_id_value',
         )
 
 
@@ -653,6 +663,7 @@ def test_get_endpoint(transport: str = 'grpc', request_type=endpoint_service.Get
             description='description_value',
             etag='etag_value',
             network='network_value',
+            enable_private_service_connect=True,
             model_deployment_monitoring_job='model_deployment_monitoring_job_value',
         )
         response = client.get_endpoint(request)
@@ -669,6 +680,7 @@ def test_get_endpoint(transport: str = 'grpc', request_type=endpoint_service.Get
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.network == 'network_value'
+    assert response.enable_private_service_connect is True
     assert response.model_deployment_monitoring_job == 'model_deployment_monitoring_job_value'
 
 
@@ -716,6 +728,7 @@ async def test_get_endpoint_async(transport: str = 'grpc_asyncio', request_type=
             description='description_value',
             etag='etag_value',
             network='network_value',
+            enable_private_service_connect=True,
             model_deployment_monitoring_job='model_deployment_monitoring_job_value',
         ))
         response = await client.get_endpoint(request)
@@ -732,6 +745,7 @@ async def test_get_endpoint_async(transport: str = 'grpc_asyncio', request_type=
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.network == 'network_value'
+    assert response.enable_private_service_connect is True
     assert response.model_deployment_monitoring_job == 'model_deployment_monitoring_job_value'
 
 
@@ -1329,6 +1343,7 @@ def test_update_endpoint(transport: str = 'grpc', request_type=endpoint_service.
             description='description_value',
             etag='etag_value',
             network='network_value',
+            enable_private_service_connect=True,
             model_deployment_monitoring_job='model_deployment_monitoring_job_value',
         )
         response = client.update_endpoint(request)
@@ -1345,6 +1360,7 @@ def test_update_endpoint(transport: str = 'grpc', request_type=endpoint_service.
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.network == 'network_value'
+    assert response.enable_private_service_connect is True
     assert response.model_deployment_monitoring_job == 'model_deployment_monitoring_job_value'
 
 
@@ -1392,6 +1408,7 @@ async def test_update_endpoint_async(transport: str = 'grpc_asyncio', request_ty
             description='description_value',
             etag='etag_value',
             network='network_value',
+            enable_private_service_connect=True,
             model_deployment_monitoring_job='model_deployment_monitoring_job_value',
         ))
         response = await client.update_endpoint(request)
@@ -1408,6 +1425,7 @@ async def test_update_endpoint_async(transport: str = 'grpc_asyncio', request_ty
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.network == 'network_value'
+    assert response.enable_private_service_connect is True
     assert response.model_deployment_monitoring_job == 'model_deployment_monitoring_job_value'
 
 

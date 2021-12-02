@@ -251,7 +251,15 @@ module Google
             end
 
             ##
-            # Perform an online prediction with arbitrary http payload.
+            # Perform an online prediction with an arbitrary HTTP payload.
+            #
+            # The response includes the following HTTP headers:
+            #
+            # * `X-Vertex-AI-Endpoint-Id`: ID of the {::Google::Cloud::AIPlatform::V1beta1::Endpoint Endpoint} that served this
+            # prediction.
+            #
+            # * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's {::Google::Cloud::AIPlatform::V1beta1::DeployedModel DeployedModel}
+            # that served this prediction.
             #
             # @overload raw_predict(request, options = nil)
             #   Pass arguments to `raw_predict` via a request object, either of type

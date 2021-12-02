@@ -5,6 +5,7 @@ require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/cloud/aiplatform/v1beta1/encryption_spec_pb'
 require 'google/cloud/aiplatform/v1beta1/explanation_pb'
+require 'google/cloud/aiplatform/v1beta1/io_pb'
 require 'google/cloud/aiplatform/v1beta1/machine_resources_pb'
 require 'google/cloud/aiplatform/v1beta1/model_deployment_monitoring_job_pb'
 require 'google/cloud/aiplatform/v1beta1/model_monitoring_pb'
@@ -26,6 +27,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :update_time, :message, 9, "google.protobuf.Timestamp"
       optional :encryption_spec, :message, 10, "google.cloud.aiplatform.v1beta1.EncryptionSpec"
       optional :network, :string, 13
+      optional :enable_private_service_connect, :bool, 17
       optional :model_deployment_monitoring_job, :string, 14
     end
     add_message "google.cloud.aiplatform.v1beta1.DeployedModel" do
@@ -47,6 +49,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :predict_http_uri, :string, 1
       optional :explain_http_uri, :string, 2
       optional :health_http_uri, :string, 3
+      optional :service_attachment, :string, 4
     end
   end
 end

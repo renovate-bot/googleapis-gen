@@ -35,7 +35,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
      */
     protected $prediction_drift_detection_config = null;
     /**
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
      */
@@ -55,7 +55,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\AIPlatform\V1beta1\ModelMonitoringObjectiveConfig\PredictionDriftDetectionConfig $prediction_drift_detection_config
      *           The config for drift of prediction data.
      *     @type \Google\Cloud\AIPlatform\V1beta1\ModelMonitoringObjectiveConfig\ExplanationConfig $explanation_config
-     *           The config for integrated with Explainable AI.
+     *           The config for integrating with Vertex Explainable AI.
      * }
      */
     public function __construct($data = NULL) {
@@ -174,7 +174,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
      * @return \Google\Cloud\AIPlatform\V1beta1\ModelMonitoringObjectiveConfig\ExplanationConfig|null
@@ -195,7 +195,7 @@ class ModelMonitoringObjectiveConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\ModelMonitoringObjectiveConfig\ExplanationConfig $var

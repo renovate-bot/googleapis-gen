@@ -11,6 +11,7 @@ require 'google/cloud/aiplatform/v1beta1/job_state_pb'
 require 'google/cloud/aiplatform/v1beta1/machine_resources_pb'
 require 'google/cloud/aiplatform/v1beta1/manual_batch_tuning_parameters_pb'
 require 'google/cloud/aiplatform/v1beta1/model_monitoring_pb'
+require 'google/cloud/aiplatform/v1beta1/unmanaged_container_model_pb'
 require 'google/protobuf/struct_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/rpc/status_pb'
@@ -23,6 +24,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :display_name, :string, 2
       optional :model, :string, 3
+      optional :unmanaged_container_model, :message, 28, "google.cloud.aiplatform.v1beta1.UnmanagedContainerModel"
       optional :input_config, :message, 4, "google.cloud.aiplatform.v1beta1.BatchPredictionJob.InputConfig"
       optional :model_parameters, :message, 5, "google.protobuf.Value"
       optional :output_config, :message, 6, "google.cloud.aiplatform.v1beta1.BatchPredictionJob.OutputConfig"

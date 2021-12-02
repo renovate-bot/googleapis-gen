@@ -167,6 +167,7 @@ module Google
         #     * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
         #      for example, can check if pipeline's display_name contains *step* by doing
         #       display_name:\"*step*\"
+        #     * `state`: Supports `=` and `!=` comparisons.
         #     * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
         #       Values must be in RFC 3339 format.
         #     * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -211,6 +212,7 @@ module Google
         #       * `create_time`
         #       * `update_time`
         #       * `end_time`
+        #       * `start_time`
         class ListPipelineJobsRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

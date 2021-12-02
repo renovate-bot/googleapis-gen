@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Describes exporting Feature values as of the snapshot timestamp.
+ * Describes exporting the latest Feature values of all entities of the
+ * EntityType between [start_time, snapshot_time].
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport</code>
  */
@@ -23,6 +24,14 @@ class SnapshotExport extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp snapshot_time = 1;</code>
      */
     protected $snapshot_time = null;
+    /**
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2;</code>
+     */
+    protected $start_time = null;
 
     /**
      * Constructor.
@@ -34,6 +43,10 @@ class SnapshotExport extends \Google\Protobuf\Internal\Message
      *           Exports Feature values as of this timestamp. If not set,
      *           retrieve values as of now. Timestamp, if present, must not have higher
      *           than millisecond precision.
+     *     @type \Google\Protobuf\Timestamp $start_time
+     *           Excludes Feature values with feature generation timestamp before this
+     *           timestamp. If not set, retrieve oldest values kept in Feature Store.
+     *           Timestamp, if present, must not have higher than millisecond precision.
      * }
      */
     public function __construct($data = NULL) {
@@ -77,6 +90,46 @@ class SnapshotExport extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->snapshot_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getStartTime()
+    {
+        return $this->start_time;
+    }
+
+    public function hasStartTime()
+    {
+        return isset($this->start_time);
+    }
+
+    public function clearStartTime()
+    {
+        unset($this->start_time);
+    }
+
+    /**
+     * Excludes Feature values with feature generation timestamp before this
+     * timestamp. If not set, retrieve oldest values kept in Feature Store.
+     * Timestamp, if present, must not have higher than millisecond precision.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp start_time = 2;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartTime($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->start_time = $var;
 
         return $this;
     }

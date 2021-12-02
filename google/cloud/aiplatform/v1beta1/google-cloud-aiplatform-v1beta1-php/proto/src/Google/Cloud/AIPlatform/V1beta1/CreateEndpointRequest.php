@@ -28,6 +28,18 @@ class CreateEndpointRequest extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.Endpoint endpoint = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $endpoint = null;
+    /**
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     *
+     * Generated from protobuf field <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $endpoint_id = '';
 
     /**
      * Constructor.
@@ -40,6 +52,14 @@ class CreateEndpointRequest extends \Google\Protobuf\Internal\Message
      *           Format: `projects/{project}/locations/{location}`
      *     @type \Google\Cloud\AIPlatform\V1beta1\Endpoint $endpoint
      *           Required. The Endpoint to create.
+     *     @type string $endpoint_id
+     *           Immutable. The ID to use for endpoint, which will become the final
+     *           component of the endpoint resource name.
+     *           If not provided, Vertex AI will generate a value for this ID.
+     *           This value should be 1-10 characters, and valid characters are /[0-9]/.
+     *           When using HTTP/JSON, this field is populated based on a query string
+     *           argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     *           that are not included in either the URI or the body.
      * }
      */
     public function __construct($data = NULL) {
@@ -107,6 +127,44 @@ class CreateEndpointRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\Endpoint::class);
         $this->endpoint = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     *
+     * Generated from protobuf field <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return string
+     */
+    public function getEndpointId()
+    {
+        return $this->endpoint_id;
+    }
+
+    /**
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     *
+     * Generated from protobuf field <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEndpointId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->endpoint_id = $var;
 
         return $this;
     }

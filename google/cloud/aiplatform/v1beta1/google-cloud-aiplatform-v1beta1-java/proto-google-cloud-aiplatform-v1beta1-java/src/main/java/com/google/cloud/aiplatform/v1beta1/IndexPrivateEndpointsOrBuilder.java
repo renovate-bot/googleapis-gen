@@ -26,4 +26,26 @@ public interface IndexPrivateEndpointsOrBuilder extends
    */
   com.google.protobuf.ByteString
       getMatchGrpcAddressBytes();
+
+  /**
+   * <pre>
+   * Output only. The name of the service attachment resource. Populated if private service
+   * connect is enabled.
+   * </pre>
+   *
+   * <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The serviceAttachment.
+   */
+  java.lang.String getServiceAttachment();
+  /**
+   * <pre>
+   * Output only. The name of the service attachment resource. Populated if private service
+   * connect is enabled.
+   * </pre>
+   *
+   * <code>string service_attachment = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * @return The bytes for serviceAttachment.
+   */
+  com.google.protobuf.ByteString
+      getServiceAttachmentBytes();
 }

@@ -26,7 +26,7 @@ class SearchModelDeploymentMonitoringStatsAnomaliesRequest extends \Google\Proto
     protected $model_deployment_monitoring_job = '';
     /**
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      *
      * Generated from protobuf field <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -87,7 +87,7 @@ class SearchModelDeploymentMonitoringStatsAnomaliesRequest extends \Google\Proto
      *           `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
      *     @type string $deployed_model_id
      *           Required. The DeployedModel ID of the
-     *           [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     *           [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      *     @type string $feature_display_name
      *           The feature display name. If specified, only return the stats belonging to
      *           this feature. Format:
@@ -146,7 +146,7 @@ class SearchModelDeploymentMonitoringStatsAnomaliesRequest extends \Google\Proto
 
     /**
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      *
      * Generated from protobuf field <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -158,7 +158,7 @@ class SearchModelDeploymentMonitoringStatsAnomaliesRequest extends \Google\Proto
 
     /**
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      *
      * Generated from protobuf field <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

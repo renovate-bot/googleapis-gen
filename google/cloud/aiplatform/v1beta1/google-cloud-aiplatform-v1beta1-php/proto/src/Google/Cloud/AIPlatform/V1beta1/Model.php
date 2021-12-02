@@ -74,7 +74,8 @@ class Model extends \Google\Protobuf\Internal\Message
      */
     private $supported_export_formats;
     /**
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      *
      * Generated from protobuf field <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -283,7 +284,8 @@ class Model extends \Google\Protobuf\Internal\Message
      *           Output only. The formats in which this Model may be exported. If empty, this Model is
      *           not available for export.
      *     @type string $training_pipeline
-     *           Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     *           Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     *           any.
      *     @type \Google\Cloud\AIPlatform\V1beta1\ModelContainerSpec $container_spec
      *           Input only. The specification of the container that is to be used when deploying
      *           this Model. The specification is ingested upon
@@ -644,7 +646,8 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      *
      * Generated from protobuf field <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -655,7 +658,8 @@ class Model extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      *
      * Generated from protobuf field <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var

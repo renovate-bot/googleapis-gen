@@ -9,8 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * PrivateEndpoints is used to provide paths for users to send
- * requests via private services access.
+ * PrivateEndpoints proto is used to provide paths for users to send
+ * requests privately.
+ * To send request via private service access, use predict_http_uri,
+ * explain_http_uri or health_http_uri. To send request via private service
+ * connect, use service_attachment.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1beta1.PrivateEndpoints</code>
  */
@@ -34,6 +37,13 @@ class PrivateEndpoints extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string health_http_uri = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $health_http_uri = '';
+    /**
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     *
+     * Generated from protobuf field <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $service_attachment = '';
 
     /**
      * Constructor.
@@ -47,6 +57,9 @@ class PrivateEndpoints extends \Google\Protobuf\Internal\Message
      *           Output only. Http(s) path to send explain requests.
      *     @type string $health_http_uri
      *           Output only. Http(s) path to send health check requests.
+     *     @type string $service_attachment
+     *           Output only. The name of the service attachment resource. Populated if private service
+     *           connect is enabled.
      * }
      */
     public function __construct($data = NULL) {
@@ -128,6 +141,34 @@ class PrivateEndpoints extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->health_http_uri = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     *
+     * Generated from protobuf field <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getServiceAttachment()
+    {
+        return $this->service_attachment;
+    }
+
+    /**
+     * Output only. The name of the service attachment resource. Populated if private service
+     * connect is enabled.
+     *
+     * Generated from protobuf field <code>string service_attachment = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setServiceAttachment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->service_attachment = $var;
 
         return $this;
     }

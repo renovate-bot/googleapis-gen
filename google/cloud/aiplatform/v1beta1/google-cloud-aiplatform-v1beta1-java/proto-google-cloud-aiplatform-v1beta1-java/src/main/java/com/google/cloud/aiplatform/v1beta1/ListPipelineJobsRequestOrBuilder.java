@@ -38,6 +38,7 @@ public interface ListPipelineJobsRequestOrBuilder extends
    * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
    *  for example, can check if pipeline's display_name contains *step* by doing
    *   display_name:&#92;"*step*&#92;"
+   * * `state`: Supports `=` and `!=` comparisons.
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -71,6 +72,7 @@ public interface ListPipelineJobsRequestOrBuilder extends
    * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
    *  for example, can check if pipeline's display_name contains *step* by doing
    *   display_name:&#92;"*step*&#92;"
+   * * `state`: Supports `=` and `!=` comparisons.
    * * `create_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
    *   Values must be in RFC 3339 format.
    * * `update_time`: Supports `=`, `!=`, `&lt;`, `&gt;`, `&lt;=`, and `&gt;=` comparisons.
@@ -146,6 +148,7 @@ public interface ListPipelineJobsRequestOrBuilder extends
    *   * `create_time`
    *   * `update_time`
    *   * `end_time`
+   *   * `start_time`
    * </pre>
    *
    * <code>string order_by = 6;</code>
@@ -165,6 +168,7 @@ public interface ListPipelineJobsRequestOrBuilder extends
    *   * `create_time`
    *   * `update_time`
    *   * `end_time`
+   *   * `start_time`
    * </pre>
    *
    * <code>string order_by = 6;</code>

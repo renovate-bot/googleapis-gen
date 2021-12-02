@@ -75,19 +75,31 @@ class IndexEndpoint extends \Google\Protobuf\Internal\Message
      */
     protected $update_time = null;
     /**
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      *
-     * Generated from protobuf field <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     protected $network = '';
+    /**
+     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
+     *
+     * Generated from protobuf field <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    protected $enable_private_service_connect = false;
 
     /**
      * Constructor.
@@ -122,15 +134,23 @@ class IndexEndpoint extends \Google\Protobuf\Internal\Message
      *           updated, e.g. due to updates of the original Indexes they are the
      *           deployments of.
      *     @type string $network
-     *           Required. Immutable. The full name of the Google Compute Engine
+     *           Optional. The full name of the Google Compute Engine
      *           [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      *           to which the IndexEndpoint should be peered.
      *           Private services access must already be configured for the network. If left
      *           unspecified, the Endpoint is not peered with any network.
+     *           Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     *           [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     *           can be set.
      *           [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      *           projects/{project}/global/networks/{network}.
      *           Where {project} is a project number, as in '12345', and {network} is
      *           network name.
+     *     @type bool $enable_private_service_connect
+     *           Optional. If true, expose the IndexEndpoint via private service connect.
+     *           Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     *           [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     *           can be set.
      * }
      */
     public function __construct($data = NULL) {
@@ -387,17 +407,20 @@ class IndexEndpoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      *
-     * Generated from protobuf field <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return string
      */
     public function getNetwork()
@@ -406,17 +429,20 @@ class IndexEndpoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      *
-     * Generated from protobuf field <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param string $var
      * @return $this
      */
@@ -424,6 +450,38 @@ class IndexEndpoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->network = $var;
+
+        return $this;
+    }
+
+    /**
+     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
+     *
+     * Generated from protobuf field <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return bool
+     */
+    public function getEnablePrivateServiceConnect()
+    {
+        return $this->enable_private_service_connect;
+    }
+
+    /**
+     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
+     *
+     * Generated from protobuf field <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnablePrivateServiceConnect($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_private_service_connect = $var;
 
         return $this;
     }

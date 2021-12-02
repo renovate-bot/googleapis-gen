@@ -30,6 +30,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
      *  for example, can check if pipeline's display_name contains *step* by doing
      *   display_name:\"*step*\"
+     * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -79,6 +80,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      *   * `create_time`
      *   * `update_time`
      *   * `end_time`
+     *   * `start_time`
      *
      * Generated from protobuf field <code>string order_by = 6;</code>
      */
@@ -101,6 +103,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      *           * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
      *            for example, can check if pipeline's display_name contains *step* by doing
      *             display_name:\"*step*\"
+     *           * `state`: Supports `=` and `!=` comparisons.
      *           * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
      *             Values must be in RFC 3339 format.
      *           * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -138,6 +141,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      *             * `create_time`
      *             * `update_time`
      *             * `end_time`
+     *             * `start_time`
      * }
      */
     public function __construct($data = NULL) {
@@ -181,6 +185,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
      *  for example, can check if pipeline's display_name contains *step* by doing
      *   display_name:\"*step*\"
+     * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -216,6 +221,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      * * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
      *  for example, can check if pipeline's display_name contains *step* by doing
      *   display_name:\"*step*\"
+     * * `state`: Supports `=` and `!=` comparisons.
      * * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
      *   Values must be in RFC 3339 format.
      * * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -317,6 +323,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      *   * `create_time`
      *   * `update_time`
      *   * `end_time`
+     *   * `start_time`
      *
      * Generated from protobuf field <code>string order_by = 6;</code>
      * @return string
@@ -338,6 +345,7 @@ class ListPipelineJobsRequest extends \Google\Protobuf\Internal\Message
      *   * `create_time`
      *   * `update_time`
      *   * `end_time`
+     *   * `start_time`
      *
      * Generated from protobuf field <code>string order_by = 6;</code>
      * @param string $var

@@ -56,7 +56,7 @@ module Google
         #   @return [::Google::Cloud::AIPlatform::V1beta1::Artifact::State]
         #     The state of this Artifact. This is a property of the Artifact, and does
         #     not imply or capture any ongoing process. This property is managed by
-        #     clients (such as Vertex Pipelines), and the system does not prescribe
+        #     clients (such as Vertex AI Pipelines), and the system does not prescribe
         #     or check the validity of state transitions.
         # @!attribute [rw] schema_title
         #   @return [::String]
@@ -97,7 +97,7 @@ module Google
             # Unspecified state for the Artifact.
             STATE_UNSPECIFIED = 0
 
-            # A state used by systems like Vertex Pipelines to indicate that the
+            # A state used by systems like Vertex AI Pipelines to indicate that the
             # underlying data item represented by this Artifact is being created.
             PENDING = 1
 

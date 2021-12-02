@@ -196,6 +196,44 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
+
+        # Request message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#mutate_deployed_index IndexEndpointService.MutateDeployedIndex}.
+        # @!attribute [rw] index_endpoint
+        #   @return [::String]
+        #     Required. The name of the IndexEndpoint resource into which to deploy an Index.
+        #     Format:
+        #     `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+        # @!attribute [rw] deployed_index
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DeployedIndex]
+        #     Required. The DeployedIndex to be updated within the IndexEndpoint.
+        #     Currently, the updatable fields are [DeployedIndex][automatic_resources]
+        #     and [DeployedIndex][dedicated_resources]
+        class MutateDeployedIndexRequest
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Response message for {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#mutate_deployed_index IndexEndpointService.MutateDeployedIndex}.
+        # @!attribute [rw] deployed_index
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::DeployedIndex]
+        #     The DeployedIndex that had been updated in the IndexEndpoint.
+        class MutateDeployedIndexResponse
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Runtime operation information for
+        # {::Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client#mutate_deployed_index IndexEndpointService.MutateDeployedIndex}.
+        # @!attribute [rw] generic_metadata
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::GenericOperationMetadata]
+        #     The operation generic information.
+        # @!attribute [rw] deployed_index_id
+        #   @return [::String]
+        #     The unique index id specified by user
+        class MutateDeployedIndexOperationMetadata
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
       end
     end
   end

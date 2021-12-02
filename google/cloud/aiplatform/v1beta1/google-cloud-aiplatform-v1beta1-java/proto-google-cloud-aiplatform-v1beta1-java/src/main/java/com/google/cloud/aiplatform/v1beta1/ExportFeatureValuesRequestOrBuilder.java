@@ -9,8 +9,8 @@ public interface ExportFeatureValuesRequestOrBuilder extends
 
   /**
    * <pre>
-   * Exports Feature values of all entities of the EntityType as of a snapshot
-   * time.
+   * Exports the latest Feature values of all entities of the EntityType
+   * within a time range.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport snapshot_export = 3;</code>
@@ -19,8 +19,8 @@ public interface ExportFeatureValuesRequestOrBuilder extends
   boolean hasSnapshotExport();
   /**
    * <pre>
-   * Exports Feature values of all entities of the EntityType as of a snapshot
-   * time.
+   * Exports the latest Feature values of all entities of the EntityType
+   * within a time range.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport snapshot_export = 3;</code>
@@ -29,13 +29,43 @@ public interface ExportFeatureValuesRequestOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport getSnapshotExport();
   /**
    * <pre>
-   * Exports Feature values of all entities of the EntityType as of a snapshot
-   * time.
+   * Exports the latest Feature values of all entities of the EntityType
+   * within a time range.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport snapshot_export = 3;</code>
    */
   com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExportOrBuilder getSnapshotExportOrBuilder();
+
+  /**
+   * <pre>
+   * Exports all historical values of all entities of the EntityType within a
+   * time range
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;</code>
+   * @return Whether the fullExport field is set.
+   */
+  boolean hasFullExport();
+  /**
+   * <pre>
+   * Exports all historical values of all entities of the EntityType within a
+   * time range
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;</code>
+   * @return The fullExport.
+   */
+  com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport getFullExport();
+  /**
+   * <pre>
+   * Exports all historical values of all entities of the EntityType within a
+   * time range
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExportOrBuilder getFullExportOrBuilder();
 
   /**
    * <pre>

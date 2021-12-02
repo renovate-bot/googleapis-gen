@@ -305,7 +305,7 @@ public interface FeatureOrBuilder extends
   /**
    * <pre>
    * Output only. A list of historical [Snapshot
-   * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>
@@ -317,7 +317,7 @@ public interface FeatureOrBuilder extends
   /**
    * <pre>
    * Output only. A list of historical [Snapshot
-   * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>
@@ -328,7 +328,7 @@ public interface FeatureOrBuilder extends
   /**
    * <pre>
    * Output only. A list of historical [Snapshot
-   * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>
@@ -339,7 +339,7 @@ public interface FeatureOrBuilder extends
   /**
    * <pre>
    * Output only. A list of historical [Snapshot
-   * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>
@@ -351,7 +351,7 @@ public interface FeatureOrBuilder extends
   /**
    * <pre>
    * Output only. A list of historical [Snapshot
-   * Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+   * Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
    * stats requested by user, sorted by [FeatureStatsAnomaly.start_time][google.cloud.aiplatform.v1beta1.FeatureStatsAnomaly.start_time]
    * descending.
    * </pre>

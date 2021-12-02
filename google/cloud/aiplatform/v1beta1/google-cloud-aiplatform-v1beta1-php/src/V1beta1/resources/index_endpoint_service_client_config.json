@@ -51,6 +51,11 @@
                     "retry_codes_name": "no_retry_4_codes",
                     "retry_params_name": "no_retry_4_params"
                 },
+                "MutateDeployedIndex": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "no_retry_codes",
+                    "retry_params_name": "no_retry_params"
+                },
                 "UndeployIndex": {
                     "timeout_millis": 5000,
                     "retry_codes_name": "no_retry_4_codes",

@@ -854,6 +854,105 @@ module Google
             end
 
             ##
+            # Update an existing DeployedIndex under an IndexEndpoint.
+            #
+            # @overload mutate_deployed_index(request, options = nil)
+            #   Pass arguments to `mutate_deployed_index` via a request object, either of type
+            #   {::Google::Cloud::AIPlatform::V1beta1::MutateDeployedIndexRequest} or an equivalent Hash.
+            #
+            #   @param request [::Google::Cloud::AIPlatform::V1beta1::MutateDeployedIndexRequest, ::Hash]
+            #     A request object representing the call parameters. Required. To specify no
+            #     parameters, or to keep all the default parameter values, pass an empty Hash.
+            #   @param options [::Gapic::CallOptions, ::Hash]
+            #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
+            #
+            # @overload mutate_deployed_index(index_endpoint: nil, deployed_index: nil)
+            #   Pass arguments to `mutate_deployed_index` via keyword arguments. Note that at
+            #   least one keyword argument is required. To specify no parameters, or to keep all
+            #   the default parameter values, pass an empty Hash as a request object (see above).
+            #
+            #   @param index_endpoint [::String]
+            #     Required. The name of the IndexEndpoint resource into which to deploy an Index.
+            #     Format:
+            #     `projects/{project}/locations/{location}/indexEndpoints/{index_endpoint}`
+            #   @param deployed_index [::Google::Cloud::AIPlatform::V1beta1::DeployedIndex, ::Hash]
+            #     Required. The DeployedIndex to be updated within the IndexEndpoint.
+            #     Currently, the updatable fields are [DeployedIndex][automatic_resources]
+            #     and [DeployedIndex][dedicated_resources]
+            #
+            # @yield [response, operation] Access the result along with the RPC operation
+            # @yieldparam response [::Gapic::Operation]
+            # @yieldparam operation [::GRPC::ActiveCall::Operation]
+            #
+            # @return [::Gapic::Operation]
+            #
+            # @raise [::Google::Cloud::Error] if the RPC is aborted.
+            #
+            # @example Basic example
+            #   require "google/cloud/ai_platform/v1beta1"
+            #
+            #   # Create a client object. The client can be reused for multiple calls.
+            #   client = Google::Cloud::AIPlatform::V1beta1::IndexEndpointService::Client.new
+            #
+            #   # Create a request. To set request fields, pass in keyword arguments.
+            #   request = Google::Cloud::AIPlatform::V1beta1::MutateDeployedIndexRequest.new
+            #
+            #   # Call the mutate_deployed_index method.
+            #   result = client.mutate_deployed_index request
+            #
+            #   # The returned object is of type Gapic::Operation. You can use this
+            #   # object to check the status of an operation, cancel it, or wait
+            #   # for results. Here is how to block until completion:
+            #   result.wait_until_done! timeout: 60
+            #   if result.response?
+            #     p result.response
+            #   else
+            #     puts "Error!"
+            #   end
+            #
+            def mutate_deployed_index request, options = nil
+              raise ::ArgumentError, "request must be provided" if request.nil?
+
+              request = ::Gapic::Protobuf.coerce request, to: ::Google::Cloud::AIPlatform::V1beta1::MutateDeployedIndexRequest
+
+              # Converts hash and nil to an options object
+              options = ::Gapic::CallOptions.new(**options.to_h) if options.respond_to? :to_h
+
+              # Customize the options with defaults
+              metadata = @config.rpcs.mutate_deployed_index.metadata.to_h
+
+              # Set x-goog-api-client and x-goog-user-project headers
+              metadata[:"x-goog-api-client"] ||= ::Gapic::Headers.x_goog_api_client \
+                lib_name: @config.lib_name, lib_version: @config.lib_version,
+                gapic_version: ::Google::Cloud::Aiplatform::V1beta1::VERSION
+              metadata[:"x-goog-user-project"] = @quota_project_id if @quota_project_id
+
+              header_params = {}
+              if request.index_endpoint
+                header_params["index_endpoint"] = request.index_endpoint
+              end
+
+              request_params_header = header_params.map { |k, v| "#{k}=#{v}" }.join("&")
+              metadata[:"x-goog-request-params"] ||= request_params_header
+
+              options.apply_defaults timeout:      @config.rpcs.mutate_deployed_index.timeout,
+                                     metadata:     metadata,
+                                     retry_policy: @config.rpcs.mutate_deployed_index.retry_policy
+
+              options.apply_defaults timeout:      @config.timeout,
+                                     metadata:     @config.metadata,
+                                     retry_policy: @config.retry_policy
+
+              @index_endpoint_service_stub.call_rpc :mutate_deployed_index, request, options: options do |response, operation|
+                response = ::Gapic::Operation.new response, @operations_client, options: options
+                yield response, operation if block_given?
+                return response
+              end
+            rescue ::GRPC::BadStatus => e
+              raise ::Google::Cloud::Error.from_error(e)
+            end
+
+            ##
             # Configuration class for the IndexEndpointService API.
             #
             # This class represents the configuration for IndexEndpointService,
@@ -1023,6 +1122,11 @@ module Google
                 # @return [::Gapic::Config::Method]
                 #
                 attr_reader :undeploy_index
+                ##
+                # RPC-specific configuration for `mutate_deployed_index`
+                # @return [::Gapic::Config::Method]
+                #
+                attr_reader :mutate_deployed_index
 
                 # @private
                 def initialize parent_rpcs = nil
@@ -1040,6 +1144,8 @@ module Google
                   @deploy_index = ::Gapic::Config::Method.new deploy_index_config
                   undeploy_index_config = parent_rpcs.undeploy_index if parent_rpcs.respond_to? :undeploy_index
                   @undeploy_index = ::Gapic::Config::Method.new undeploy_index_config
+                  mutate_deployed_index_config = parent_rpcs.mutate_deployed_index if parent_rpcs.respond_to? :mutate_deployed_index
+                  @mutate_deployed_index = ::Gapic::Config::Method.new mutate_deployed_index_config
 
                   yield self if block_given?
                 end

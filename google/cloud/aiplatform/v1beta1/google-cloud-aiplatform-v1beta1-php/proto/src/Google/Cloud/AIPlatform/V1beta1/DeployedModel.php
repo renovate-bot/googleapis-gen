@@ -16,9 +16,11 @@ use Google\Protobuf\Internal\GPBUtil;
 class DeployedModel extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $id = '';
     /**
@@ -106,7 +108,9 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
      *           A description of resources that to large degree are decided by Vertex
      *           AI, and require only a modest additional configuration.
      *     @type string $id
-     *           Output only. The ID of the DeployedModel.
+     *           Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     *           will generate a value for this ID.
+     *           This value should be 1-10 characters, and valid characters are /[0-9]/.
      *     @type string $model
      *           Required. The name of the Model that this is the deployment of. Note that the Model
      *           may be in a different location than the DeployedModel's Endpoint.
@@ -219,9 +223,11 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return string
      */
     public function getId()
@@ -230,9 +236,11 @@ class DeployedModel extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      *
-     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * Generated from protobuf field <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param string $var
      * @return $this
      */

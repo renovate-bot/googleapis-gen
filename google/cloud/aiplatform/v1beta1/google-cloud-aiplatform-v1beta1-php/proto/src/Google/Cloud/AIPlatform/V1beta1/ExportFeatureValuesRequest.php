@@ -50,8 +50,11 @@ class ExportFeatureValuesRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport $snapshot_export
-     *           Exports Feature values of all entities of the EntityType as of a snapshot
-     *           time.
+     *           Exports the latest Feature values of all entities of the EntityType
+     *           within a time range.
+     *     @type \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\FullExport $full_export
+     *           Exports all historical values of all entities of the EntityType within a
+     *           time range
      *     @type string $entity_type
      *           Required. The resource name of the EntityType from which to export Feature values.
      *           Format:
@@ -70,8 +73,8 @@ class ExportFeatureValuesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport snapshot_export = 3;</code>
      * @return \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport|null
@@ -87,8 +90,8 @@ class ExportFeatureValuesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Exports Feature values of all entities of the EntityType as of a snapshot
-     * time.
+     * Exports the latest Feature values of all entities of the EntityType
+     * within a time range.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.SnapshotExport snapshot_export = 3;</code>
      * @param \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport $var
@@ -98,6 +101,39 @@ class ExportFeatureValuesRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport::class);
         $this->writeOneof(3, $var);
+
+        return $this;
+    }
+
+    /**
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;</code>
+     * @return \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\FullExport|null
+     */
+    public function getFullExport()
+    {
+        return $this->readOneof(7);
+    }
+
+    public function hasFullExport()
+    {
+        return $this->hasOneof(7);
+    }
+
+    /**
+     * Exports all historical values of all entities of the EntityType within a
+     * time range
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.ExportFeatureValuesRequest.FullExport full_export = 7;</code>
+     * @param \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\FullExport $var
+     * @return $this
+     */
+    public function setFullExport($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\FullExport::class);
+        $this->writeOneof(7, $var);
 
         return $this;
     }

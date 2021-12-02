@@ -31,8 +31,8 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * A default value for a `DOUBLE` parameter that is assumed to be a
      * relatively good starting point.  Unset value signals that there is no
      * offered starting point.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * Currently only supported by the Vertex AI Vizier service. Not supported
+     * by HyperparamterTuningJob or TrainingPipeline.
      *
      * Generated from protobuf field <code>optional double default_value = 4;</code>
      */
@@ -52,8 +52,8 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      *           A default value for a `DOUBLE` parameter that is assumed to be a
      *           relatively good starting point.  Unset value signals that there is no
      *           offered starting point.
-     *           Currently only supported by the Vizier service. Not supported by
-     *           HyperparamterTuningJob or TrainingPipeline.
+     *           Currently only supported by the Vertex AI Vizier service. Not supported
+     *           by HyperparamterTuningJob or TrainingPipeline.
      * }
      */
     public function __construct($data = NULL) {
@@ -117,8 +117,8 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * A default value for a `DOUBLE` parameter that is assumed to be a
      * relatively good starting point.  Unset value signals that there is no
      * offered starting point.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * Currently only supported by the Vertex AI Vizier service. Not supported
+     * by HyperparamterTuningJob or TrainingPipeline.
      *
      * Generated from protobuf field <code>optional double default_value = 4;</code>
      * @return float
@@ -142,8 +142,8 @@ class DoubleValueSpec extends \Google\Protobuf\Internal\Message
      * A default value for a `DOUBLE` parameter that is assumed to be a
      * relatively good starting point.  Unset value signals that there is no
      * offered starting point.
-     * Currently only supported by the Vizier service. Not supported by
-     * HyperparamterTuningJob or TrainingPipeline.
+     * Currently only supported by the Vertex AI Vizier service. Not supported
+     * by HyperparamterTuningJob or TrainingPipeline.
      *
      * Generated from protobuf field <code>optional double default_value = 4;</code>
      * @param float $var

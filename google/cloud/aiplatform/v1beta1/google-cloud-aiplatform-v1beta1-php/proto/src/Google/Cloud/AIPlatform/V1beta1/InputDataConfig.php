@@ -82,6 +82,9 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
      *     @type \Google\Cloud\AIPlatform\V1beta1\TimestampSplit $timestamp_split
      *           Supported only for tabular Datasets.
      *           Split based on the timestamp of the input data pieces.
+     *     @type \Google\Cloud\AIPlatform\V1beta1\StratifiedSplit $stratified_split
+     *           Supported only for tabular Datasets.
+     *           Split based on the distribution of the specified column.
      *     @type \Google\Cloud\AIPlatform\V1beta1\GcsDestination $gcs_destination
      *           The Cloud Storage location where the training data is to be
      *           written to. In the given directory a new directory is created with
@@ -281,6 +284,39 @@ class InputDataConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\TimestampSplit::class);
         $this->writeOneof(5, $var);
+
+        return $this;
+    }
+
+    /**
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     * @return \Google\Cloud\AIPlatform\V1beta1\StratifiedSplit|null
+     */
+    public function getStratifiedSplit()
+    {
+        return $this->readOneof(12);
+    }
+
+    public function hasStratifiedSplit()
+    {
+        return $this->hasOneof(12);
+    }
+
+    /**
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     * @param \Google\Cloud\AIPlatform\V1beta1\StratifiedSplit $var
+     * @return $this
+     */
+    public function setStratifiedSplit($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1beta1\StratifiedSplit::class);
+        $this->writeOneof(12, $var);
 
         return $this;
     }

@@ -93,7 +93,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder extends
 
   /**
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -102,7 +102,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder extends
   boolean hasExplanationConfig();
   /**
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -111,7 +111,7 @@ public interface ModelMonitoringObjectiveConfigOrBuilder extends
   com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig getExplanationConfig();
   /**
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>

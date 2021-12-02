@@ -58,6 +58,7 @@ use Google\Cloud\AIPlatform\V1beta1\DeleteFeaturestoreRequest;
 use Google\Cloud\AIPlatform\V1beta1\DestinationFeatureSetting;
 use Google\Cloud\AIPlatform\V1beta1\EntityType;
 use Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest;
+use Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\FullExport;
 use Google\Cloud\AIPlatform\V1beta1\ExportFeatureValuesRequest\SnapshotExport;
 use Google\Cloud\AIPlatform\V1beta1\Feature;
 use Google\Cloud\AIPlatform\V1beta1\FeatureSelector;
@@ -1194,8 +1195,11 @@ class FeaturestoreServiceGapicClient
      *     Optional.
      *
      *     @type SnapshotExport $snapshotExport
-     *           Exports Feature values of all entities of the EntityType as of a snapshot
-     *           time.
+     *           Exports the latest Feature values of all entities of the EntityType
+     *           within a time range.
+     *     @type FullExport $fullExport
+     *           Exports all historical values of all entities of the EntityType within a
+     *           time range
      *     @type DestinationFeatureSetting[] $settings
      *           Per-Feature export settings.
      *     @type RetrySettings|array $retrySettings
@@ -1221,6 +1225,10 @@ class FeaturestoreServiceGapicClient
         $requestParamHeaders['entity_type'] = $entityType;
         if (isset($optionalArgs['snapshotExport'])) {
             $request->setSnapshotExport($optionalArgs['snapshotExport']);
+        }
+
+        if (isset($optionalArgs['fullExport'])) {
+            $request->setFullExport($optionalArgs['fullExport']);
         }
 
         if (isset($optionalArgs['settings'])) {

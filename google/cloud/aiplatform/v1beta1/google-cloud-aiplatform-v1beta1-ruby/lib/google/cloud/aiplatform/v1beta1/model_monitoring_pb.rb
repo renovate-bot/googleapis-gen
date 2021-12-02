@@ -49,6 +49,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :BIGQUERY, 3
     end
     add_message "google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig" do
+      optional :enable_logging, :bool, 2
       oneof :alert do
         optional :email_alert_config, :message, 1, "google.cloud.aiplatform.v1beta1.ModelMonitoringAlertConfig.EmailAlertConfig"
       end

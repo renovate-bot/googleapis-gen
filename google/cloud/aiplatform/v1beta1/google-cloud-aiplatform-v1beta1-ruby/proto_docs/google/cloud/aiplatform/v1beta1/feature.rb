@@ -79,7 +79,7 @@ module Google
         # @!attribute [r] monitoring_stats
         #   @return [::Array<::Google::Cloud::AIPlatform::V1beta1::FeatureStatsAnomaly>]
         #     Output only. A list of historical [Snapshot
-        #     Analysis][google.cloud.aiplatform.master.FeaturestoreMonitoringConfig.SnapshotAnalysis]
+        #     Analysis][FeaturestoreMonitoringConfig.SnapshotAnalysis]
         #     stats requested by user, sorted by {::Google::Cloud::AIPlatform::V1beta1::FeatureStatsAnomaly#start_time FeatureStatsAnomaly.start_time}
         #     descending.
         class Feature

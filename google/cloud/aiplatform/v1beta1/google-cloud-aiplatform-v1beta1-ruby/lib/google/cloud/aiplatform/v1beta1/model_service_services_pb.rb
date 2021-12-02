@@ -43,10 +43,11 @@ module Google
             rpc :UpdateModel, ::Google::Cloud::AIPlatform::V1beta1::UpdateModelRequest, ::Google::Cloud::AIPlatform::V1beta1::Model
             # Deletes a Model.
             #
-            # Model can only be deleted if there are no [DeployedModels][] created
-            # from it.
+            # A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] resource has a
+            # [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel] based on the model in its
+            # [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models] field.
             rpc :DeleteModel, ::Google::Cloud::AIPlatform::V1beta1::DeleteModelRequest, ::Google::Longrunning::Operation
-            # Exports a trained, exportable, Model to a location specified by the
+            # Exports a trained, exportable Model to a location specified by the
             # user. A Model is considered to be exportable if it has at least one
             # [supported export format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].
             rpc :ExportModel, ::Google::Cloud::AIPlatform::V1beta1::ExportModelRequest, ::Google::Longrunning::Operation

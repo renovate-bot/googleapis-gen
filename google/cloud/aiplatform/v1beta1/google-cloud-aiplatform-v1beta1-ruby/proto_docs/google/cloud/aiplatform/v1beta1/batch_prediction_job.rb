@@ -33,10 +33,16 @@ module Google
         #     Required. The user-defined name of this BatchPredictionJob.
         # @!attribute [rw] model
         #   @return [::String]
-        #     Required. The name of the Model that produces the predictions via this job,
+        #     The name of the Model resoure that produces the predictions via this job,
         #     must share the same ancestor Location.
         #     Starting this job has no impact on any existing deployments of the Model
         #     and their resources.
+        #     Exactly one of model and unmanaged_container_model must be set.
+        # @!attribute [rw] unmanaged_container_model
+        #   @return [::Google::Cloud::AIPlatform::V1beta1::UnmanagedContainerModel]
+        #     Contains model information necessary to perform batch prediction without
+        #     requiring uploading to model registry.
+        #     Exactly one of model and unmanaged_container_model must be set.
         # @!attribute [rw] input_config
         #   @return [::Google::Cloud::AIPlatform::V1beta1::BatchPredictionJob::InputConfig]
         #     Required. Input configuration of the instances on which predictions are performed.

@@ -323,8 +323,10 @@ private static final long serialVersionUID = 0L;
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
-   * Private services access must already be configured for the network. If left
-   * unspecified, the job is not peered with any network.
+   * To specify this field, you must have already [configured VPC Network
+   * Peering for Vertex
+   * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
    * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -352,8 +354,10 @@ private static final long serialVersionUID = 0L;
    * is of the form `projects/{project}/global/networks/{network}`.
    * Where {project} is a project number, as in `12345`, and {network} is a
    * network name.
-   * Private services access must already be configured for the network. If left
-   * unspecified, the job is not peered with any network.
+   * To specify this field, you must have already [configured VPC Network
+   * Peering for Vertex
+   * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+   * If this field is left unspecified, the job is not peered with any network.
    * </pre>
    *
    * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -1633,8 +1637,10 @@ private static final long serialVersionUID = 0L;
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
      * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -1661,8 +1667,10 @@ private static final long serialVersionUID = 0L;
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
      * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -1690,8 +1698,10 @@ private static final long serialVersionUID = 0L;
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
      * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -1717,8 +1727,10 @@ private static final long serialVersionUID = 0L;
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
      * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>
@@ -1739,8 +1751,10 @@ private static final long serialVersionUID = 0L;
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      * </pre>
      *
      * <code>string network = 5 [(.google.api.resource_reference) = { ... }</code>

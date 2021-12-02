@@ -48,7 +48,15 @@ class PredictionServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Perform an online prediction with arbitrary http payload.
+     * Perform an online prediction with an arbitrary HTTP payload.
+     *
+     * The response includes the following HTTP headers:
+     *
+     * * `X-Vertex-AI-Endpoint-Id`: ID of the [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] that served this
+     * prediction.
+     *
+     * * `X-Vertex-AI-Deployed-Model-Id`: ID of the Endpoint's [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel]
+     * that served this prediction.
      * @param \Google\Cloud\AIPlatform\V1beta1\RawPredictRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

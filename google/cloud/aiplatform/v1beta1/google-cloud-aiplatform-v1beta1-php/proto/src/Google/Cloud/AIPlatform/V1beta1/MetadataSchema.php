@@ -24,7 +24,7 @@ class MetadataSchema extends \Google\Protobuf\Internal\Message
     /**
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      *
      * Generated from protobuf field <code>string schema_version = 2;</code>
      */
@@ -71,7 +71,7 @@ class MetadataSchema extends \Google\Protobuf\Internal\Message
      *     @type string $schema_version
      *           The version of the MetadataSchema. The version's format must match
      *           the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     *           allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     *           allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      *     @type string $schema
      *           Required. The raw YAML string representation of the MetadataSchema. The combination
      *           of [MetadataSchema.version] and the schema name given by `title` in
@@ -122,7 +122,7 @@ class MetadataSchema extends \Google\Protobuf\Internal\Message
     /**
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      *
      * Generated from protobuf field <code>string schema_version = 2;</code>
      * @return string
@@ -135,7 +135,7 @@ class MetadataSchema extends \Google\Protobuf\Internal\Message
     /**
      * The version of the MetadataSchema. The version's format must match
      * the following regular expression: `^[0-9]+[.][0-9]+[.][0-9]+$`, which would
-     * allow to order/compare different versions.Example: 1.0.0, 1.0.1, etc.
+     * allow to order/compare different versions. Example: 1.0.0, 1.0.1, etc.
      *
      * Generated from protobuf field <code>string schema_version = 2;</code>
      * @param string $var

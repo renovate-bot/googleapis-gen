@@ -171,6 +171,11 @@ private static final long serialVersionUID = 0L;
             modelDeploymentMonitoringJob_ = s;
             break;
           }
+          case 136: {
+
+            enablePrivateServiceConnect_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -835,13 +840,16 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The full name of the Google Compute Engine
-   * [network](/compute/docs/networks-and-firewalls#networks) to which the
-   * Endpoint should be peered.
+   * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+   * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-   * projects/{project}/global/networks/{network}.
-   * Where {project} is a project number, as in '12345', and {network} is
+   * `projects/{project}/global/networks/{network}`.
+   * Where `{project}` is a project number, as in `12345`, and `{network}` is
    * network name.
    * </pre>
    *
@@ -864,13 +872,16 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The full name of the Google Compute Engine
-   * [network](/compute/docs/networks-and-firewalls#networks) to which the
-   * Endpoint should be peered.
+   * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+   * to which the Endpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-   * projects/{project}/global/networks/{network}.
-   * Where {project} is a project number, as in '12345', and {network} is
+   * `projects/{project}/global/networks/{network}`.
+   * Where `{project}` is a project number, as in `12345`, and `{network}` is
    * network name.
    * </pre>
    *
@@ -890,6 +901,24 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ENABLE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 17;
+  private boolean enablePrivateServiceConnect_;
+  /**
+   * <pre>
+   * If true, expose the Endpoint via private service connect.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+   * can be set.
+   * </pre>
+   *
+   * <code>bool enable_private_service_connect = 17;</code>
+   * @return The enablePrivateServiceConnect.
+   */
+  @java.lang.Override
+  public boolean getEnablePrivateServiceConnect() {
+    return enablePrivateServiceConnect_;
   }
 
   public static final int MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER = 14;
@@ -1000,6 +1029,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDeploymentMonitoringJob_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 14, modelDeploymentMonitoringJob_);
     }
+    if (enablePrivateServiceConnect_ != false) {
+      output.writeBool(17, enablePrivateServiceConnect_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1063,6 +1095,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelDeploymentMonitoringJob_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, modelDeploymentMonitoringJob_);
     }
+    if (enablePrivateServiceConnect_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(17, enablePrivateServiceConnect_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1109,6 +1145,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNetwork()
         .equals(other.getNetwork())) return false;
+    if (getEnablePrivateServiceConnect()
+        != other.getEnablePrivateServiceConnect()) return false;
     if (!getModelDeploymentMonitoringJob()
         .equals(other.getModelDeploymentMonitoringJob())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
@@ -1156,6 +1194,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    hash = (37 * hash) + ENABLE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnablePrivateServiceConnect());
     hash = (37 * hash) + MODEL_DEPLOYMENT_MONITORING_JOB_FIELD_NUMBER;
     hash = (53 * hash) + getModelDeploymentMonitoringJob().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -1359,6 +1400,8 @@ private static final long serialVersionUID = 0L;
       }
       network_ = "";
 
+      enablePrivateServiceConnect_ = false;
+
       modelDeploymentMonitoringJob_ = "";
 
       return this;
@@ -1421,6 +1464,7 @@ private static final long serialVersionUID = 0L;
         result.encryptionSpec_ = encryptionSpecBuilder_.build();
       }
       result.network_ = network_;
+      result.enablePrivateServiceConnect_ = enablePrivateServiceConnect_;
       result.modelDeploymentMonitoringJob_ = modelDeploymentMonitoringJob_;
       onBuilt();
       return result;
@@ -1528,6 +1572,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
         onChanged();
+      }
+      if (other.getEnablePrivateServiceConnect() != false) {
+        setEnablePrivateServiceConnect(other.getEnablePrivateServiceConnect());
       }
       if (!other.getModelDeploymentMonitoringJob().isEmpty()) {
         modelDeploymentMonitoringJob_ = other.modelDeploymentMonitoringJob_;
@@ -3172,13 +3219,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the
-     * Endpoint should be peered.
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-     * projects/{project}/global/networks/{network}.
-     * Where {project} is a project number, as in '12345', and {network} is
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * network name.
      * </pre>
      *
@@ -3200,13 +3250,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the
-     * Endpoint should be peered.
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-     * projects/{project}/global/networks/{network}.
-     * Where {project} is a project number, as in '12345', and {network} is
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * network name.
      * </pre>
      *
@@ -3229,13 +3282,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the
-     * Endpoint should be peered.
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-     * projects/{project}/global/networks/{network}.
-     * Where {project} is a project number, as in '12345', and {network} is
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * network name.
      * </pre>
      *
@@ -3256,13 +3312,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the
-     * Endpoint should be peered.
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-     * projects/{project}/global/networks/{network}.
-     * Where {project} is a project number, as in '12345', and {network} is
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * network name.
      * </pre>
      *
@@ -3278,13 +3337,16 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The full name of the Google Compute Engine
-     * [network](/compute/docs/networks-and-firewalls#networks) to which the
-     * Endpoint should be peered.
+     * [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+     * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-     * projects/{project}/global/networks/{network}.
-     * Where {project} is a project number, as in '12345', and {network} is
+     * `projects/{project}/global/networks/{network}`.
+     * Where `{project}` is a project number, as in `12345`, and `{network}` is
      * network name.
      * </pre>
      *
@@ -3300,6 +3362,58 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       network_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean enablePrivateServiceConnect_ ;
+    /**
+     * <pre>
+     * If true, expose the Endpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
+     * </pre>
+     *
+     * <code>bool enable_private_service_connect = 17;</code>
+     * @return The enablePrivateServiceConnect.
+     */
+    @java.lang.Override
+    public boolean getEnablePrivateServiceConnect() {
+      return enablePrivateServiceConnect_;
+    }
+    /**
+     * <pre>
+     * If true, expose the Endpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
+     * </pre>
+     *
+     * <code>bool enable_private_service_connect = 17;</code>
+     * @param value The enablePrivateServiceConnect to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnablePrivateServiceConnect(boolean value) {
+      
+      enablePrivateServiceConnect_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * If true, expose the Endpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1beta1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1beta1.Endpoint.enable_private_service_connect],
+     * can be set.
+     * </pre>
+     *
+     * <code>bool enable_private_service_connect = 17;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnablePrivateServiceConnect() {
+      
+      enablePrivateServiceConnect_ = false;
       onChanged();
       return this;
     }

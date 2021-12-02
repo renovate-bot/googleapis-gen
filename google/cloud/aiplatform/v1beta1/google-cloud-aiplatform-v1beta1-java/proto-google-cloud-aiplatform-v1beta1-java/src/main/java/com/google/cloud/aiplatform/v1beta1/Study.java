@@ -5,6 +5,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
+ * LINT.IfChange
  * A message representing a Study.
  * </pre>
  *
@@ -765,6 +766,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
+   * LINT.IfChange
    * A message representing a Study.
    * </pre>
    *

@@ -358,8 +358,13 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
 
         Deletes a Model.
 
-        Model can only be deleted if there are no [DeployedModels][]
-        created from it.
+        A model cannot be deleted if any
+        [Endpoint][google.cloud.aiplatform.v1beta1.Endpoint] resource
+        has a
+        [DeployedModel][google.cloud.aiplatform.v1beta1.DeployedModel]
+        based on the model in its
+        [deployed_models][google.cloud.aiplatform.v1beta1.Endpoint.deployed_models]
+        field.
 
         Returns:
             Callable[[~.DeleteModelRequest],
@@ -385,7 +390,7 @@ class ModelServiceGrpcAsyncIOTransport(ModelServiceTransport):
             Awaitable[operations_pb2.Operation]]:
         r"""Return a callable for the export model method over gRPC.
 
-        Exports a trained, exportable, Model to a location specified by
+        Exports a trained, exportable Model to a location specified by
         the user. A Model is considered to be exportable if it has at
         least one [supported export
         format][google.cloud.aiplatform.v1beta1.Model.supported_export_formats].

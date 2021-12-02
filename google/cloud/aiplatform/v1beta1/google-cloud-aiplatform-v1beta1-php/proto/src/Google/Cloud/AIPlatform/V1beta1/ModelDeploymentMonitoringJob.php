@@ -176,9 +176,10 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      */
     protected $encryption_spec = null;
     /**
-     * If true, the scheduled monitoring pipeline status logs are sent to
-     * Google Cloud Logging. Please note the logs incur cost, which are subject to
-     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * If true, the scheduled monitoring pipeline logs are sent to
+     * Google Cloud Logging, including pipeline status and anomalies detected.
+     * Please note the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging#pricing).
      *
      * Generated from protobuf field <code>bool enable_monitoring_pipeline_logs = 22;</code>
      */
@@ -276,9 +277,10 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
      *           set, this ModelDeploymentMonitoringJob and all sub-resources of this
      *           ModelDeploymentMonitoringJob will be secured by this key.
      *     @type bool $enable_monitoring_pipeline_logs
-     *           If true, the scheduled monitoring pipeline status logs are sent to
-     *           Google Cloud Logging. Please note the logs incur cost, which are subject to
-     *           [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     *           If true, the scheduled monitoring pipeline logs are sent to
+     *           Google Cloud Logging, including pipeline status and anomalies detected.
+     *           Please note the logs incur cost, which are subject to [Cloud Logging
+     *           pricing](https://cloud.google.com/logging#pricing).
      *     @type \Google\Rpc\Status $error
      *           Output only. Only populated when the job's state is `JOB_STATE_FAILED` or
      *           `JOB_STATE_CANCELLED`.
@@ -986,9 +988,10 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, the scheduled monitoring pipeline status logs are sent to
-     * Google Cloud Logging. Please note the logs incur cost, which are subject to
-     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * If true, the scheduled monitoring pipeline logs are sent to
+     * Google Cloud Logging, including pipeline status and anomalies detected.
+     * Please note the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging#pricing).
      *
      * Generated from protobuf field <code>bool enable_monitoring_pipeline_logs = 22;</code>
      * @return bool
@@ -999,9 +1002,10 @@ class ModelDeploymentMonitoringJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * If true, the scheduled monitoring pipeline status logs are sent to
-     * Google Cloud Logging. Please note the logs incur cost, which are subject to
-     * [Cloud Logging pricing](https://cloud.google.com/logging#pricing).
+     * If true, the scheduled monitoring pipeline logs are sent to
+     * Google Cloud Logging, including pipeline status and anomalies detected.
+     * Please note the logs incur cost, which are subject to [Cloud Logging
+     * pricing](https://cloud.google.com/logging#pricing).
      *
      * Generated from protobuf field <code>bool enable_monitoring_pipeline_logs = 22;</code>
      * @param bool $var

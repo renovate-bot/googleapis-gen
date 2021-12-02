@@ -36,7 +36,7 @@ const version = require('../../../package.json').version;
 /**
  *  A service for creating and managing Vertex AI's pipelines. This includes both
  *  `TrainingPipeline` resources (used for AutoML and custom training) and
- *  `PipelineJob` resources (used for Vertex Pipelines).
+ *  `PipelineJob` resources (used for Vertex AI Pipelines).
  * @class
  * @memberof v1beta1
  */
@@ -1338,6 +1338,7 @@ export class PipelineServiceClient {
  *   * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
  *    for example, can check if pipeline's display_name contains *step* by doing
  *     display_name:\"*step*\"
+ *   * `state`: Supports `=` and `!=` comparisons.
  *   * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
  *     Values must be in RFC 3339 format.
  *   * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -1379,6 +1380,7 @@ export class PipelineServiceClient {
  *     * `create_time`
  *     * `update_time`
  *     * `end_time`
+ *     * `start_time`
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -1465,6 +1467,7 @@ export class PipelineServiceClient {
  *   * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
  *    for example, can check if pipeline's display_name contains *step* by doing
  *     display_name:\"*step*\"
+ *   * `state`: Supports `=` and `!=` comparisons.
  *   * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
  *     Values must be in RFC 3339 format.
  *   * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -1506,6 +1509,7 @@ export class PipelineServiceClient {
  *     * `create_time`
  *     * `update_time`
  *     * `end_time`
+ *     * `start_time`
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Stream}
@@ -1559,6 +1563,7 @@ export class PipelineServiceClient {
  *   * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
  *    for example, can check if pipeline's display_name contains *step* by doing
  *     display_name:\"*step*\"
+ *   * `state`: Supports `=` and `!=` comparisons.
  *   * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
  *     Values must be in RFC 3339 format.
  *   * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
@@ -1600,6 +1605,7 @@ export class PipelineServiceClient {
  *     * `create_time`
  *     * `update_time`
  *     * `end_time`
+ *     * `start_time`
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Object}

@@ -4686,8 +4686,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * If want to analyze the Explainable AI feature attribute scores or not.
-     * If set to true, Vertex AI will log the feature attributions from
+     * If want to analyze the Vertex Explainable AI feature attribute scores or
+     * not. If set to true, Vertex AI will log the feature attributions from
      * explain response and do the skew/drift detection for them.
      * </pre>
      *
@@ -4725,8 +4725,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The config for integrated with Explainable AI. Only applicable if the Model
-   * has explanation_spec populated.
+   * The config for integrating with Vertex Explainable AI. Only applicable if
+   * the Model has explanation_spec populated.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig}
@@ -6192,8 +6192,8 @@ private static final long serialVersionUID = 0L;
     private boolean enableFeatureAttributes_;
     /**
      * <pre>
-     * If want to analyze the Explainable AI feature attribute scores or not.
-     * If set to true, Vertex AI will log the feature attributions from
+     * If want to analyze the Vertex Explainable AI feature attribute scores or
+     * not. If set to true, Vertex AI will log the feature attributions from
      * explain response and do the skew/drift detection for them.
      * </pre>
      *
@@ -6417,8 +6417,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI. Only applicable if the Model
-     * has explanation_spec populated.
+     * The config for integrating with Vertex Explainable AI. Only applicable if
+     * the Model has explanation_spec populated.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig}
@@ -6584,8 +6584,8 @@ private static final long serialVersionUID = 0L;
       private boolean enableFeatureAttributes_ ;
       /**
        * <pre>
-       * If want to analyze the Explainable AI feature attribute scores or not.
-       * If set to true, Vertex AI will log the feature attributions from
+       * If want to analyze the Vertex Explainable AI feature attribute scores or
+       * not. If set to true, Vertex AI will log the feature attributions from
        * explain response and do the skew/drift detection for them.
        * </pre>
        *
@@ -6598,8 +6598,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * If want to analyze the Explainable AI feature attribute scores or not.
-       * If set to true, Vertex AI will log the feature attributions from
+       * If want to analyze the Vertex Explainable AI feature attribute scores or
+       * not. If set to true, Vertex AI will log the feature attributions from
        * explain response and do the skew/drift detection for them.
        * </pre>
        *
@@ -6615,8 +6615,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * If want to analyze the Explainable AI feature attribute scores or not.
-       * If set to true, Vertex AI will log the feature attributions from
+       * If want to analyze the Vertex Explainable AI feature attribute scores or
+       * not. If set to true, Vertex AI will log the feature attributions from
        * explain response and do the skew/drift detection for them.
        * </pre>
        *
@@ -6958,7 +6958,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanationConfig_;
   /**
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -6970,7 +6970,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -6982,7 +6982,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The config for integrated with Explainable AI.
+   * The config for integrating with Vertex Explainable AI.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7880,7 +7880,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig.Builder, com.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfigOrBuilder> explanationConfigBuilder_;
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7891,7 +7891,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7906,7 +7906,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7926,7 +7926,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7944,7 +7944,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7966,7 +7966,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7984,7 +7984,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -7996,7 +7996,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>
@@ -8011,7 +8011,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The config for integrated with Explainable AI.
+     * The config for integrating with Vertex Explainable AI.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.ModelMonitoringObjectiveConfig.ExplanationConfig explanation_config = 5;</code>

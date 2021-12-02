@@ -76,16 +76,27 @@ module Google
         # @!attribute [rw] network
         #   @return [::String]
         #     The full name of the Google Compute Engine
-        #     [network](/compute/docs/networks-and-firewalls#networks) to which the
-        #     Endpoint should be peered.
+        #     [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks)
+        #     to which the Endpoint should be peered.
         #
         #     Private services access must already be configured for the network. If left
         #     unspecified, the Endpoint is not peered with any network.
         #
+        #     Only one of the fields, {::Google::Cloud::AIPlatform::V1beta1::Endpoint#network network} or
+        #     {::Google::Cloud::AIPlatform::V1beta1::Endpoint#enable_private_service_connect enable_private_service_connect},
+        #     can be set.
+        #
         #     [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
-        #     projects/\\{project}/global/networks/\\{network}.
-        #     Where \\{project} is a project number, as in '12345', and \\{network} is
+        #     `projects/{project}/global/networks/{network}`.
+        #     Where `{project}` is a project number, as in `12345`, and `{network}` is
         #     network name.
+        # @!attribute [rw] enable_private_service_connect
+        #   @return [::Boolean]
+        #     If true, expose the Endpoint via private service connect.
+        #
+        #     Only one of the fields, {::Google::Cloud::AIPlatform::V1beta1::Endpoint#network network} or
+        #     {::Google::Cloud::AIPlatform::V1beta1::Endpoint#enable_private_service_connect enable_private_service_connect},
+        #     can be set.
         # @!attribute [r] model_deployment_monitoring_job
         #   @return [::String]
         #     Output only. Resource name of the Model Monitoring job associated with this Endpoint
@@ -124,9 +135,12 @@ module Google
         #   @return [::Google::Cloud::AIPlatform::V1beta1::AutomaticResources]
         #     A description of resources that to large degree are decided by Vertex
         #     AI, and require only a modest additional configuration.
-        # @!attribute [r] id
+        # @!attribute [rw] id
         #   @return [::String]
-        #     Output only. The ID of the DeployedModel.
+        #     Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+        #     will generate a value for this ID.
+        #
+        #     This value should be 1-10 characters, and valid characters are /[0-9]/.
         # @!attribute [rw] model
         #   @return [::String]
         #     Required. The name of the Model that this is the deployment of. Note that the Model
@@ -182,8 +196,11 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # PrivateEndpoints is used to provide paths for users to send
-        # requests via private services access.
+        # PrivateEndpoints proto is used to provide paths for users to send
+        # requests privately.
+        # To send request via private service access, use predict_http_uri,
+        # explain_http_uri or health_http_uri. To send request via private service
+        # connect, use service_attachment.
         # @!attribute [r] predict_http_uri
         #   @return [::String]
         #     Output only. Http(s) path to send prediction requests.
@@ -193,6 +210,10 @@ module Google
         # @!attribute [r] health_http_uri
         #   @return [::String]
         #     Output only. Http(s) path to send health check requests.
+        # @!attribute [r] service_attachment
+        #   @return [::String]
+        #     Output only. The name of the service attachment resource. Populated if private service
+        #     connect is enabled.
         class PrivateEndpoints
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

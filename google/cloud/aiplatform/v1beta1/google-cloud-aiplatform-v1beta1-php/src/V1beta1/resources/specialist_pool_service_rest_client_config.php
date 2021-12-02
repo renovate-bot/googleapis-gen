@@ -101,6 +101,43 @@ return [
                 ],
             ],
         ],
+        'google.iam.v1.IAMPolicy' => [
+            'GetIamPolicy' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1beta1/{resource=projects/*/locations/*/**}:getIamPolicy',
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'SetIamPolicy' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{resource=projects/*/locations/*/**}:setIamPolicy',
+                'body' => '*',
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
+                        ],
+                    ],
+                ],
+            ],
+            'TestIamPermissions' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1beta1/{resource=projects/*/locations/*/**}:testIamPermissions',
+                'body' => '*',
+                'placeholders' => [
+                    'resource' => [
+                        'getters' => [
+                            'getResource',
+                        ],
+                    ],
+                ],
+            ],
+        ],
         'google.longrunning.Operations' => [
             'CancelOperation' => [
                 'method' => 'post',

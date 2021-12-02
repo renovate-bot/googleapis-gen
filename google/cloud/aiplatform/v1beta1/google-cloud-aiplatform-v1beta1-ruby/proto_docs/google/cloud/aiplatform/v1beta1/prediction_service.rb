@@ -62,12 +62,12 @@ module Google
         #     ID of the Endpoint's DeployedModel that served this prediction.
         # @!attribute [r] model
         #   @return [::String]
-        #     Output only. The name of the Model this DeployedModel, that served this prediction, was
-        #     created from.
+        #     Output only. The resource name of the Model which is deployed as the DeployedModel that
+        #     this prediction hits.
         # @!attribute [r] model_display_name
         #   @return [::String]
-        #     Output only. The {::Google::Cloud::AIPlatform::V1beta1::Model#display_name display name} of the Model this DeployedModel,
-        #     that served this prediction, was created from.
+        #     Output only. The {::Google::Cloud::AIPlatform::V1beta1::Model#display_name display name} of the Model which is deployed as
+        #     the DeployedModel that this prediction hits.
         class PredictResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

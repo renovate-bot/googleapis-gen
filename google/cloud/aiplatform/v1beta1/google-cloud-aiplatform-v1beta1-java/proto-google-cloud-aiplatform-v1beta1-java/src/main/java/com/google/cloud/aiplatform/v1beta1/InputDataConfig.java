@@ -158,6 +158,20 @@ private static final long serialVersionUID = 0L;
             destinationCase_ = 10;
             break;
           }
+          case 98: {
+            com.google.cloud.aiplatform.v1beta1.StratifiedSplit.Builder subBuilder = null;
+            if (splitCase_ == 12) {
+              subBuilder = ((com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_).toBuilder();
+            }
+            split_ =
+                input.readMessage(com.google.cloud.aiplatform.v1beta1.StratifiedSplit.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_);
+              split_ = subBuilder.buildPartial();
+            }
+            splitCase_ = 12;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -199,6 +213,7 @@ private static final long serialVersionUID = 0L;
     FILTER_SPLIT(3),
     PREDEFINED_SPLIT(4),
     TIMESTAMP_SPLIT(5),
+    STRATIFIED_SPLIT(12),
     SPLIT_NOT_SET(0);
     private final int value;
     private SplitCase(int value) {
@@ -220,6 +235,7 @@ private static final long serialVersionUID = 0L;
         case 3: return FILTER_SPLIT;
         case 4: return PREDEFINED_SPLIT;
         case 5: return TIMESTAMP_SPLIT;
+        case 12: return STRATIFIED_SPLIT;
         case 0: return SPLIT_NOT_SET;
         default: return null;
       }
@@ -452,6 +468,52 @@ private static final long serialVersionUID = 0L;
        return (com.google.cloud.aiplatform.v1beta1.TimestampSplit) split_;
     }
     return com.google.cloud.aiplatform.v1beta1.TimestampSplit.getDefaultInstance();
+  }
+
+  public static final int STRATIFIED_SPLIT_FIELD_NUMBER = 12;
+  /**
+   * <pre>
+   * Supported only for tabular Datasets.
+   * Split based on the distribution of the specified column.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+   * @return Whether the stratifiedSplit field is set.
+   */
+  @java.lang.Override
+  public boolean hasStratifiedSplit() {
+    return splitCase_ == 12;
+  }
+  /**
+   * <pre>
+   * Supported only for tabular Datasets.
+   * Split based on the distribution of the specified column.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+   * @return The stratifiedSplit.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StratifiedSplit getStratifiedSplit() {
+    if (splitCase_ == 12) {
+       return (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance();
+  }
+  /**
+   * <pre>
+   * Supported only for tabular Datasets.
+   * Split based on the distribution of the specified column.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.StratifiedSplitOrBuilder getStratifiedSplitOrBuilder() {
+    if (splitCase_ == 12) {
+       return (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance();
   }
 
   public static final int GCS_DESTINATION_FIELD_NUMBER = 8;
@@ -864,6 +926,9 @@ private static final long serialVersionUID = 0L;
     if (destinationCase_ == 10) {
       output.writeMessage(10, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
     }
+    if (splitCase_ == 12) {
+      output.writeMessage(12, (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -906,6 +971,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, (com.google.cloud.aiplatform.v1beta1.BigQueryDestination) destination_);
     }
+    if (splitCase_ == 12) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(12, (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -944,6 +1013,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         if (!getTimestampSplit()
             .equals(other.getTimestampSplit())) return false;
+        break;
+      case 12:
+        if (!getStratifiedSplit()
+            .equals(other.getStratifiedSplit())) return false;
         break;
       case 0:
       default:
@@ -994,6 +1067,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + TIMESTAMP_SPLIT_FIELD_NUMBER;
         hash = (53 * hash) + getTimestampSplit().hashCode();
+        break;
+      case 12:
+        hash = (37 * hash) + STRATIFIED_SPLIT_FIELD_NUMBER;
+        hash = (53 * hash) + getStratifiedSplit().hashCode();
         break;
       case 0:
       default:
@@ -1212,6 +1289,13 @@ private static final long serialVersionUID = 0L;
           result.split_ = timestampSplitBuilder_.build();
         }
       }
+      if (splitCase_ == 12) {
+        if (stratifiedSplitBuilder_ == null) {
+          result.split_ = split_;
+        } else {
+          result.split_ = stratifiedSplitBuilder_.build();
+        }
+      }
       if (destinationCase_ == 8) {
         if (gcsDestinationBuilder_ == null) {
           result.destination_ = destination_;
@@ -1306,6 +1390,10 @@ private static final long serialVersionUID = 0L;
         }
         case TIMESTAMP_SPLIT: {
           mergeTimestampSplit(other.getTimestampSplit());
+          break;
+        }
+        case STRATIFIED_SPLIT: {
+          mergeStratifiedSplit(other.getStratifiedSplit());
           break;
         }
         case SPLIT_NOT_SET: {
@@ -2108,6 +2196,192 @@ private static final long serialVersionUID = 0L;
       splitCase_ = 5;
       onChanged();;
       return timestampSplitBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.StratifiedSplit, com.google.cloud.aiplatform.v1beta1.StratifiedSplit.Builder, com.google.cloud.aiplatform.v1beta1.StratifiedSplitOrBuilder> stratifiedSplitBuilder_;
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     * @return Whether the stratifiedSplit field is set.
+     */
+    @java.lang.Override
+    public boolean hasStratifiedSplit() {
+      return splitCase_ == 12;
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     * @return The stratifiedSplit.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StratifiedSplit getStratifiedSplit() {
+      if (stratifiedSplitBuilder_ == null) {
+        if (splitCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance();
+      } else {
+        if (splitCase_ == 12) {
+          return stratifiedSplitBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    public Builder setStratifiedSplit(com.google.cloud.aiplatform.v1beta1.StratifiedSplit value) {
+      if (stratifiedSplitBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        split_ = value;
+        onChanged();
+      } else {
+        stratifiedSplitBuilder_.setMessage(value);
+      }
+      splitCase_ = 12;
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    public Builder setStratifiedSplit(
+        com.google.cloud.aiplatform.v1beta1.StratifiedSplit.Builder builderForValue) {
+      if (stratifiedSplitBuilder_ == null) {
+        split_ = builderForValue.build();
+        onChanged();
+      } else {
+        stratifiedSplitBuilder_.setMessage(builderForValue.build());
+      }
+      splitCase_ = 12;
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    public Builder mergeStratifiedSplit(com.google.cloud.aiplatform.v1beta1.StratifiedSplit value) {
+      if (stratifiedSplitBuilder_ == null) {
+        if (splitCase_ == 12 &&
+            split_ != com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance()) {
+          split_ = com.google.cloud.aiplatform.v1beta1.StratifiedSplit.newBuilder((com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          split_ = value;
+        }
+        onChanged();
+      } else {
+        if (splitCase_ == 12) {
+          stratifiedSplitBuilder_.mergeFrom(value);
+        }
+        stratifiedSplitBuilder_.setMessage(value);
+      }
+      splitCase_ = 12;
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    public Builder clearStratifiedSplit() {
+      if (stratifiedSplitBuilder_ == null) {
+        if (splitCase_ == 12) {
+          splitCase_ = 0;
+          split_ = null;
+          onChanged();
+        }
+      } else {
+        if (splitCase_ == 12) {
+          splitCase_ = 0;
+          split_ = null;
+        }
+        stratifiedSplitBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.StratifiedSplit.Builder getStratifiedSplitBuilder() {
+      return getStratifiedSplitFieldBuilder().getBuilder();
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.StratifiedSplitOrBuilder getStratifiedSplitOrBuilder() {
+      if ((splitCase_ == 12) && (stratifiedSplitBuilder_ != null)) {
+        return stratifiedSplitBuilder_.getMessageOrBuilder();
+      } else {
+        if (splitCase_ == 12) {
+          return (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance();
+      }
+    }
+    /**
+     * <pre>
+     * Supported only for tabular Datasets.
+     * Split based on the distribution of the specified column.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.StratifiedSplit stratified_split = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.cloud.aiplatform.v1beta1.StratifiedSplit, com.google.cloud.aiplatform.v1beta1.StratifiedSplit.Builder, com.google.cloud.aiplatform.v1beta1.StratifiedSplitOrBuilder> 
+        getStratifiedSplitFieldBuilder() {
+      if (stratifiedSplitBuilder_ == null) {
+        if (!(splitCase_ == 12)) {
+          split_ = com.google.cloud.aiplatform.v1beta1.StratifiedSplit.getDefaultInstance();
+        }
+        stratifiedSplitBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.StratifiedSplit, com.google.cloud.aiplatform.v1beta1.StratifiedSplit.Builder, com.google.cloud.aiplatform.v1beta1.StratifiedSplitOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.StratifiedSplit) split_,
+                getParentForChildren(),
+                isClean());
+        split_ = null;
+      }
+      splitCase_ = 12;
+      onChanged();;
+      return stratifiedSplitBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<

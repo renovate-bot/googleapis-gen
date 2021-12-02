@@ -14,21 +14,18 @@ class LineageSubgraph
         if (static::$is_initialized == true) {
           return;
         }
-        \GPBMetadata\Google\Api\Resource::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Artifact::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Event::initOnce();
         \GPBMetadata\Google\Cloud\Aiplatform\V1Beta1\Execution::initOnce();
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ž
-6google/cloud/aiplatform/v1beta1/lineage_subgraph.protogoogle.cloud.aiplatform.v1beta1.google/cloud/aiplatform/v1beta1/artifact.proto+google/cloud/aiplatform/v1beta1/event.proto/google/cloud/aiplatform/v1beta1/execution.protogoogle/api/annotations.proto"š
-LineageSubgraphe
-	artifacts (2).google.cloud.aiplatform.v1beta1.ArtifactB\'úA$
-"aiplatform.googleapis.com/Artifacth
+›
+6google/cloud/aiplatform/v1beta1/lineage_subgraph.protogoogle.cloud.aiplatform.v1beta1+google/cloud/aiplatform/v1beta1/event.proto/google/cloud/aiplatform/v1beta1/execution.protogoogle/api/annotations.proto"Ç
+LineageSubgraph<
+	artifacts (2).google.cloud.aiplatform.v1beta1.Artifact>
 
-executions (2*.google.cloud.aiplatform.v1beta1.ExecutionB(úA%
-#aiplatform.googleapis.com/Execution6
+executions (2*.google.cloud.aiplatform.v1beta1.Execution6
 events (2&.google.cloud.aiplatform.v1beta1.EventBñ
 #com.google.cloud.aiplatform.v1beta1BLineageSubgraphProtoPZIgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1beta1;aiplatformªGoogle.Cloud.AIPlatform.V1Beta1ÊGoogle\\Cloud\\AIPlatform\\V1beta1ê"Google::Cloud::AIPlatform::V1beta1bproto3'
         , true);

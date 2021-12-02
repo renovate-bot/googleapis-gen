@@ -3267,7 +3267,7 @@ export class JobServiceClient {
  *   `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
  * @param {string} request.deployedModelId
  *   Required. The DeployedModel ID of the
- *   [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+ *   [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
  * @param {string} request.featureDisplayName
  *   The feature display name. If specified, only return the stats belonging to
  *   this feature. Format:
@@ -3367,7 +3367,7 @@ export class JobServiceClient {
  *   `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
  * @param {string} request.deployedModelId
  *   Required. The DeployedModel ID of the
- *   [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+ *   [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
  * @param {string} request.featureDisplayName
  *   The feature display name. If specified, only return the stats belonging to
  *   this feature. Format:
@@ -3434,7 +3434,7 @@ export class JobServiceClient {
  *   `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
  * @param {string} request.deployedModelId
  *   Required. The DeployedModel ID of the
- *   [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+ *   [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
  * @param {string} request.featureDisplayName
  *   The feature display name. If specified, only return the stats belonging to
  *   this feature. Format:

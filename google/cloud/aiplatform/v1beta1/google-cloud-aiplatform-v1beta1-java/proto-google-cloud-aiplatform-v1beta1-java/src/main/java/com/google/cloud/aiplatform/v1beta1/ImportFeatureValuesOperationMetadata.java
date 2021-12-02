@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1beta1;
 
 /**
  * <pre>
- * Details of operations that perform import feature values.
+ * Details of operations that perform import Feature values.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata}
@@ -116,7 +116,7 @@ private static final long serialVersionUID = 0L;
   private com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata genericMetadata_;
   /**
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -128,7 +128,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -140,7 +140,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Operation metadata for Featurestore import feature values.
+   * Operation metadata for Featurestore import Feature values.
    * </pre>
    *
    * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -169,7 +169,7 @@ private static final long serialVersionUID = 0L;
   private long importedFeatureValueCount_;
   /**
    * <pre>
-   * Number of feature values that have been imported by the operation.
+   * Number of Feature values that have been imported by the operation.
    * </pre>
    *
    * <code>int64 imported_feature_value_count = 3;</code>
@@ -397,7 +397,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Details of operations that perform import feature values.
+   * Details of operations that perform import Feature values.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ImportFeatureValuesOperationMetadata}
@@ -577,7 +577,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata, com.google.cloud.aiplatform.v1beta1.GenericOperationMetadata.Builder, com.google.cloud.aiplatform.v1beta1.GenericOperationMetadataOrBuilder> genericMetadataBuilder_;
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -588,7 +588,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -603,7 +603,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -623,7 +623,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -641,7 +641,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -663,7 +663,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -681,7 +681,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -693,7 +693,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -708,7 +708,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      * </pre>
      *
      * <code>.google.cloud.aiplatform.v1beta1.GenericOperationMetadata generic_metadata = 1;</code>
@@ -773,7 +773,7 @@ private static final long serialVersionUID = 0L;
     private long importedFeatureValueCount_ ;
     /**
      * <pre>
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      * </pre>
      *
      * <code>int64 imported_feature_value_count = 3;</code>
@@ -785,7 +785,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      * </pre>
      *
      * <code>int64 imported_feature_value_count = 3;</code>
@@ -800,7 +800,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      * </pre>
      *
      * <code>int64 imported_feature_value_count = 3;</code>
