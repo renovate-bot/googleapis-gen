@@ -33,6 +33,16 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'MutateDeployedIndex' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\AIPlatform\V1\MutateDeployedIndexResponse',
+                    'metadataReturnType' => '\Google\Cloud\AIPlatform\V1\MutateDeployedIndexOperationMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'UndeployIndex' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\AIPlatform\V1\UndeployIndexResponse',

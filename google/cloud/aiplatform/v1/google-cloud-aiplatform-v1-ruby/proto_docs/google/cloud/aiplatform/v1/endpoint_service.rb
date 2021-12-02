@@ -29,6 +29,16 @@ module Google
         # @!attribute [rw] endpoint
         #   @return [::Google::Cloud::AIPlatform::V1::Endpoint]
         #     Required. The Endpoint to create.
+        # @!attribute [rw] endpoint_id
+        #   @return [::String]
+        #     Immutable. The ID to use for endpoint, which will become the final
+        #     component of the endpoint resource name.
+        #     If not provided, Vertex AI will generate a value for this ID.
+        #
+        #     This value should be 1-10 characters, and valid characters are /[0-9]/.
+        #     When using HTTP/JSON, this field is populated based on a query string
+        #     argument, such as `?endpoint_id=12345`. This is the fallback for fields
+        #     that are not included in either the URI or the body.
         class CreateEndpointRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

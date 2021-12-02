@@ -2154,14 +2154,17 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload export_feature_values(snapshot_export: nil, entity_type: nil, destination: nil, feature_selector: nil, settings: nil)
+            # @overload export_feature_values(snapshot_export: nil, full_export: nil, entity_type: nil, destination: nil, feature_selector: nil, settings: nil)
             #   Pass arguments to `export_feature_values` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param snapshot_export [::Google::Cloud::AIPlatform::V1::ExportFeatureValuesRequest::SnapshotExport, ::Hash]
-            #     Exports Feature values of all entities of the EntityType as of a snapshot
-            #     time.
+            #     Exports the latest Feature values of all entities of the EntityType
+            #     within a time range.
+            #   @param full_export [::Google::Cloud::AIPlatform::V1::ExportFeatureValuesRequest::FullExport, ::Hash]
+            #     Exports all historical values of all entities of the EntityType within a
+            #     time range
             #   @param entity_type [::String]
             #     Required. The resource name of the EntityType from which to export Feature values.
             #     Format:

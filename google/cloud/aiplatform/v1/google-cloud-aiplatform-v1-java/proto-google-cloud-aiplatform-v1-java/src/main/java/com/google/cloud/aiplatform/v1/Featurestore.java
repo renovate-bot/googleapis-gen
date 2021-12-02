@@ -5,7 +5,7 @@ package com.google.cloud.aiplatform.v1;
 
 /**
  * <pre>
- * Vertex Feature Store provides a centralized repository for organizing,
+ * Vertex AI Feature Store provides a centralized repository for organizing,
  * storing, and serving ML features. The Featurestore is a top-level container
  * for your features and their values.
  * </pre>
@@ -1545,7 +1545,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Vertex Feature Store provides a centralized repository for organizing,
+   * Vertex AI Feature Store provides a centralized repository for organizing,
    * storing, and serving ML features. The Featurestore is a top-level container
    * for your features and their values.
    * </pre>

@@ -97,10 +97,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :settings, :message, 6, "google.cloud.aiplatform.v1.DestinationFeatureSetting"
       oneof :mode do
         optional :snapshot_export, :message, 3, "google.cloud.aiplatform.v1.ExportFeatureValuesRequest.SnapshotExport"
+        optional :full_export, :message, 7, "google.cloud.aiplatform.v1.ExportFeatureValuesRequest.FullExport"
       end
     end
     add_message "google.cloud.aiplatform.v1.ExportFeatureValuesRequest.SnapshotExport" do
       optional :snapshot_time, :message, 1, "google.protobuf.Timestamp"
+      optional :start_time, :message, 2, "google.protobuf.Timestamp"
+    end
+    add_message "google.cloud.aiplatform.v1.ExportFeatureValuesRequest.FullExport" do
+      optional :start_time, :message, 2, "google.protobuf.Timestamp"
+      optional :end_time, :message, 1, "google.protobuf.Timestamp"
     end
     add_message "google.cloud.aiplatform.v1.DestinationFeatureSetting" do
       optional :feature_id, :string, 1
@@ -238,6 +244,7 @@ module Google
         BatchReadFeatureValuesRequest::EntityTypeSpec = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.BatchReadFeatureValuesRequest.EntityTypeSpec").msgclass
         ExportFeatureValuesRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ExportFeatureValuesRequest").msgclass
         ExportFeatureValuesRequest::SnapshotExport = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ExportFeatureValuesRequest.SnapshotExport").msgclass
+        ExportFeatureValuesRequest::FullExport = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ExportFeatureValuesRequest.FullExport").msgclass
         DestinationFeatureSetting = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.DestinationFeatureSetting").msgclass
         FeatureValueDestination = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.FeatureValueDestination").msgclass
         ExportFeatureValuesResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.ExportFeatureValuesResponse").msgclass

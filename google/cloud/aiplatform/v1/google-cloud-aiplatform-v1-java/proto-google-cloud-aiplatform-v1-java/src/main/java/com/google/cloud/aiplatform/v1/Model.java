@@ -2121,7 +2121,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object trainingPipeline_;
   /**
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -2142,7 +2143,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -5147,7 +5149,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object trainingPipeline_ = "";
     /**
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -5167,7 +5170,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -5188,7 +5192,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -5207,7 +5212,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -5221,7 +5227,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+     * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+     * any.
      * </pre>
      *
      * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>

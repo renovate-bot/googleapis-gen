@@ -422,8 +422,9 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Deletes a Model.
-     * Model can only be deleted if there are no [DeployedModels][] created
-     * from it.
+     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
      * </pre>
      */
     public void deleteModel(com.google.cloud.aiplatform.v1.DeleteModelRequest request,
@@ -433,7 +434,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
+     * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
      * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
@@ -623,8 +624,9 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Deletes a Model.
-     * Model can only be deleted if there are no [DeployedModels][] created
-     * from it.
+     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
      * </pre>
      */
     public void deleteModel(com.google.cloud.aiplatform.v1.DeleteModelRequest request,
@@ -635,7 +637,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
+     * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
      * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
@@ -751,8 +753,9 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Deletes a Model.
-     * Model can only be deleted if there are no [DeployedModels][] created
-     * from it.
+     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
      * </pre>
      */
     public com.google.longrunning.Operation deleteModel(com.google.cloud.aiplatform.v1.DeleteModelRequest request) {
@@ -762,7 +765,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
+     * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
      * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>
@@ -877,8 +880,9 @@ public final class ModelServiceGrpc {
     /**
      * <pre>
      * Deletes a Model.
-     * Model can only be deleted if there are no [DeployedModels][] created
-     * from it.
+     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> deleteModel(
@@ -889,7 +893,7 @@ public final class ModelServiceGrpc {
 
     /**
      * <pre>
-     * Exports a trained, exportable, Model to a location specified by the
+     * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
      * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      * </pre>

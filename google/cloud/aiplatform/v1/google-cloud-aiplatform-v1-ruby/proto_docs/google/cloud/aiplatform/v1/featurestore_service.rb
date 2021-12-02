@@ -338,8 +338,12 @@ module Google
         # Request message for {::Google::Cloud::AIPlatform::V1::FeaturestoreService::Client#export_feature_values FeaturestoreService.ExportFeatureValues}.
         # @!attribute [rw] snapshot_export
         #   @return [::Google::Cloud::AIPlatform::V1::ExportFeatureValuesRequest::SnapshotExport]
-        #     Exports Feature values of all entities of the EntityType as of a snapshot
-        #     time.
+        #     Exports the latest Feature values of all entities of the EntityType
+        #     within a time range.
+        # @!attribute [rw] full_export
+        #   @return [::Google::Cloud::AIPlatform::V1::ExportFeatureValuesRequest::FullExport]
+        #     Exports all historical values of all entities of the EntityType within a
+        #     time range
         # @!attribute [rw] entity_type
         #   @return [::String]
         #     Required. The resource name of the EntityType from which to export Feature values.
@@ -358,13 +362,36 @@ module Google
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
 
-          # Describes exporting Feature values as of the snapshot timestamp.
+          # Describes exporting the latest Feature values of all entities of the
+          # EntityType between [start_time, snapshot_time].
           # @!attribute [rw] snapshot_time
           #   @return [::Google::Protobuf::Timestamp]
           #     Exports Feature values as of this timestamp. If not set,
           #     retrieve values as of now. Timestamp, if present, must not have higher
           #     than millisecond precision.
+          # @!attribute [rw] start_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     Excludes Feature values with feature generation timestamp before this
+          #     timestamp. If not set, retrieve oldest values kept in Feature Store.
+          #     Timestamp, if present, must not have higher than millisecond precision.
           class SnapshotExport
+            include ::Google::Protobuf::MessageExts
+            extend ::Google::Protobuf::MessageExts::ClassMethods
+          end
+
+          # Describes exporting all historical Feature values of all entities of the
+          # EntityType between [start_time, end_time].
+          # @!attribute [rw] start_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     Excludes Feature values with feature generation timestamp before this
+          #     timestamp. If not set, retrieve oldest values kept in Feature Store.
+          #     Timestamp, if present, must not have higher than millisecond precision.
+          # @!attribute [rw] end_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     Exports Feature values as of this timestamp. If not set,
+          #     retrieve values as of now. Timestamp, if present, must not have higher
+          #     than millisecond precision.
+          class FullExport
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
@@ -879,16 +906,16 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Details of operations that perform import feature values.
+        # Details of operations that perform import Feature values.
         # @!attribute [rw] generic_metadata
         #   @return [::Google::Cloud::AIPlatform::V1::GenericOperationMetadata]
-        #     Operation metadata for Featurestore import feature values.
+        #     Operation metadata for Featurestore import Feature values.
         # @!attribute [rw] imported_entity_count
         #   @return [::Integer]
         #     Number of entities that have been imported by the operation.
         # @!attribute [rw] imported_feature_value_count
         #   @return [::Integer]
-        #     Number of feature values that have been imported by the operation.
+        #     Number of Feature values that have been imported by the operation.
         # @!attribute [rw] invalid_row_count
         #   @return [::Integer]
         #     The number of rows in input source that weren't imported due to either

@@ -556,8 +556,9 @@ module Google
             ##
             # Deletes a Model.
             #
-            # Model can only be deleted if there are no [DeployedModels][] created
-            # from it.
+            # A model cannot be deleted if any {::Google::Cloud::AIPlatform::V1::Endpoint Endpoint} resource has a
+            # {::Google::Cloud::AIPlatform::V1::DeployedModel DeployedModel} based on the model in its
+            # {::Google::Cloud::AIPlatform::V1::Endpoint#deployed_models deployed_models} field.
             #
             # @overload delete_model(request, options = nil)
             #   Pass arguments to `delete_model` via a request object, either of type
@@ -651,7 +652,7 @@ module Google
             end
 
             ##
-            # Exports a trained, exportable, Model to a location specified by the
+            # Exports a trained, exportable Model to a location specified by the
             # user. A Model is considered to be exportable if it has at least one
             # {::Google::Cloud::AIPlatform::V1::Model#supported_export_formats supported export format}.
             #

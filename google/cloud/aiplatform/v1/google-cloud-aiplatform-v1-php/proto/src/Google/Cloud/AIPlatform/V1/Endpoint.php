@@ -98,6 +98,9 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
@@ -106,6 +109,15 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string network = 13 [(.google.api.resource_reference) = {</code>
      */
     protected $network = '';
+    /**
+     * If true, expose the Endpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     * can be set.
+     *
+     * Generated from protobuf field <code>bool enable_private_service_connect = 17;</code>
+     */
+    protected $enable_private_service_connect = false;
     /**
      * Output only. Resource name of the Model Monitoring job associated with this Endpoint
      * if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
@@ -164,10 +176,18 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      *           to which the Endpoint should be peered.
      *           Private services access must already be configured for the network. If left
      *           unspecified, the Endpoint is not peered with any network.
+     *           Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     *           [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     *           can be set.
      *           [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      *           `projects/{project}/global/networks/{network}`.
      *           Where `{project}` is a project number, as in `12345`, and `{network}` is
      *           network name.
+     *     @type bool $enable_private_service_connect
+     *           If true, expose the Endpoint via private service connect.
+     *           Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     *           [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     *           can be set.
      *     @type string $model_deployment_monitoring_job
      *           Output only. Resource name of the Model Monitoring job associated with this Endpoint
      *           if monitoring is enabled by [CreateModelDeploymentMonitoringJob][].
@@ -508,6 +528,9 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
@@ -527,6 +550,9 @@ class Endpoint extends \Google\Protobuf\Internal\Message
      * to which the Endpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * `projects/{project}/global/networks/{network}`.
      * Where `{project}` is a project number, as in `12345`, and `{network}` is
@@ -540,6 +566,38 @@ class Endpoint extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->network = $var;
+
+        return $this;
+    }
+
+    /**
+     * If true, expose the Endpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     * can be set.
+     *
+     * Generated from protobuf field <code>bool enable_private_service_connect = 17;</code>
+     * @return bool
+     */
+    public function getEnablePrivateServiceConnect()
+    {
+        return $this->enable_private_service_connect;
+    }
+
+    /**
+     * If true, expose the Endpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.Endpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.Endpoint.enable_private_service_connect],
+     * can be set.
+     *
+     * Generated from protobuf field <code>bool enable_private_service_connect = 17;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnablePrivateServiceConnect($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_private_service_connect = $var;
 
         return $this;
     }

@@ -32,6 +32,7 @@ __protobuf__ = proto.module(
         'XraiAttribution',
         'SmoothGradConfig',
         'FeatureNoiseSigma',
+        'BlurBaselineConfig',
         'ExplanationSpecOverride',
         'ExplanationMetadataOverride',
     },
@@ -427,6 +428,13 @@ class IntegratedGradientsAttribution(proto.Message):
             help improve the computed gradients. Refer to
             this paper for more details:
             https://arxiv.org/pdf/1706.03825.pdf
+        blur_baseline_config (google.cloud.aiplatform_v1.types.BlurBaselineConfig):
+            Config for IG with blur baseline.
+            When enabled, a linear path from the maximally
+            blurred image to the input image is created.
+            Using a blurred baseline instead of zero (black
+            image) is motivated by the BlurIG approach
+            explained here: https://arxiv.org/abs/2004.03383
     """
 
     step_count = proto.Field(
@@ -437,6 +445,11 @@ class IntegratedGradientsAttribution(proto.Message):
         proto.MESSAGE,
         number=2,
         message='SmoothGradConfig',
+    )
+    blur_baseline_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message='BlurBaselineConfig',
     )
 
 
@@ -465,6 +478,13 @@ class XraiAttribution(proto.Message):
             help improve the computed gradients. Refer to
             this paper for more details:
             https://arxiv.org/pdf/1706.03825.pdf
+        blur_baseline_config (google.cloud.aiplatform_v1.types.BlurBaselineConfig):
+            Config for XRAI with blur baseline.
+            When enabled, a linear path from the maximally
+            blurred image to the input image is created.
+            Using a blurred baseline instead of zero (black
+            image) is motivated by the BlurIG approach
+            explained here: https://arxiv.org/abs/2004.03383
     """
 
     step_count = proto.Field(
@@ -475,6 +495,11 @@ class XraiAttribution(proto.Message):
         proto.MESSAGE,
         number=2,
         message='SmoothGradConfig',
+    )
+    blur_baseline_config = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message='BlurBaselineConfig',
     )
 
 
@@ -588,6 +613,29 @@ class FeatureNoiseSigma(proto.Message):
         proto.MESSAGE,
         number=1,
         message=NoiseSigmaForFeature,
+    )
+
+
+class BlurBaselineConfig(proto.Message):
+    r"""Config for blur baseline.
+    When enabled, a linear path from the maximally blurred image to
+    the input image is created. Using a blurred baseline instead of
+    zero (black image) is motivated by the BlurIG approach explained
+    here:
+    https://arxiv.org/abs/2004.03383
+
+    Attributes:
+        max_blur_sigma (float):
+            The standard deviation of the blur kernel for
+            the blurred baseline. The same blurring
+            parameter is used for both the height and the
+            width dimension. If not set, the method defaults
+            to the zero (i.e. black for images) baseline.
+    """
+
+    max_blur_sigma = proto.Field(
+        proto.FLOAT,
+        number=1,
     )
 
 

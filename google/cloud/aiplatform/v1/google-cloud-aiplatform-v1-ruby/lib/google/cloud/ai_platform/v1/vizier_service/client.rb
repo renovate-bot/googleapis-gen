@@ -27,9 +27,9 @@ module Google
           ##
           # Client for the VizierService service.
           #
-          # Vertex Vizier API.
+          # Vertex AI Vizier API.
           #
-          # Vizier service is a GCP service to solve blackbox optimization problems,
+          # Vertex AI Vizier is a service to solve blackbox optimization problems,
           # such as tuning machine learning hyperparameters and searching over deep
           # learning architectures.
           #
@@ -611,7 +611,7 @@ module Google
 
             ##
             # Adds one or more Trials to a Study, with parameter values
-            # suggested by Vertex Vizier. Returns a long-running
+            # suggested by Vertex AI Vizier. Returns a long-running
             # operation associated with the generation of Trial suggestions.
             # When this long-running operation succeeds, it will contain
             # a [SuggestTrialsResponse][google.cloud.ml.v1.SuggestTrialsResponse].

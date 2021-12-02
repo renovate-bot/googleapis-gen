@@ -9,12 +9,22 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Next ID: 2
+ * Next ID: 3
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1.ModelMonitoringAlertConfig</code>
  */
 class ModelMonitoringAlertConfig extends \Google\Protobuf\Internal\Message
 {
+    /**
+     * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     * payload encoded from proto
+     * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     * This can be further sinked to Pub/Sub or any other services supported
+     * by Cloud Logging.
+     *
+     * Generated from protobuf field <code>bool enable_logging = 2;</code>
+     */
+    protected $enable_logging = false;
     protected $alert;
 
     /**
@@ -25,6 +35,12 @@ class ModelMonitoringAlertConfig extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Cloud\AIPlatform\V1\ModelMonitoringAlertConfig\EmailAlertConfig $email_alert_config
      *           Email alert config.
+     *     @type bool $enable_logging
+     *           Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     *           payload encoded from proto
+     *           [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     *           This can be further sinked to Pub/Sub or any other services supported
+     *           by Cloud Logging.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +75,40 @@ class ModelMonitoringAlertConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\ModelMonitoringAlertConfig\EmailAlertConfig::class);
         $this->writeOneof(1, $var);
+
+        return $this;
+    }
+
+    /**
+     * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     * payload encoded from proto
+     * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     * This can be further sinked to Pub/Sub or any other services supported
+     * by Cloud Logging.
+     *
+     * Generated from protobuf field <code>bool enable_logging = 2;</code>
+     * @return bool
+     */
+    public function getEnableLogging()
+    {
+        return $this->enable_logging;
+    }
+
+    /**
+     * Dump the anomalies to Cloud Logging. The anomalies will be put to json
+     * payload encoded from proto
+     * [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+     * This can be further sinked to Pub/Sub or any other services supported
+     * by Cloud Logging.
+     *
+     * Generated from protobuf field <code>bool enable_logging = 2;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableLogging($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_logging = $var;
 
         return $this;
     }

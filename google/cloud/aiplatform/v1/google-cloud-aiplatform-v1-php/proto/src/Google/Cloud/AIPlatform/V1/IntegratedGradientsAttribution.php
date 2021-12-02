@@ -36,6 +36,16 @@ class IntegratedGradientsAttribution extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.SmoothGradConfig smooth_grad_config = 2;</code>
      */
     protected $smooth_grad_config = null;
+    /**
+     * Config for IG with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     */
+    protected $blur_baseline_config = null;
 
     /**
      * Constructor.
@@ -54,6 +64,12 @@ class IntegratedGradientsAttribution extends \Google\Protobuf\Internal\Message
      *           from noisy samples in the vicinity of the inputs. Adding
      *           noise can help improve the computed gradients. Refer to this paper for more
      *           details: https://arxiv.org/pdf/1706.03825.pdf
+     *     @type \Google\Cloud\AIPlatform\V1\BlurBaselineConfig $blur_baseline_config
+     *           Config for IG with blur baseline.
+     *           When enabled, a linear path from the maximally blurred image to the input
+     *           image is created. Using a blurred baseline instead of zero (black image) is
+     *           motivated by the BlurIG approach explained here:
+     *           https://arxiv.org/abs/2004.03383
      * }
      */
     public function __construct($data = NULL) {
@@ -133,6 +149,50 @@ class IntegratedGradientsAttribution extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\SmoothGradConfig::class);
         $this->smooth_grad_config = $var;
+
+        return $this;
+    }
+
+    /**
+     * Config for IG with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     * @return \Google\Cloud\AIPlatform\V1\BlurBaselineConfig|null
+     */
+    public function getBlurBaselineConfig()
+    {
+        return $this->blur_baseline_config;
+    }
+
+    public function hasBlurBaselineConfig()
+    {
+        return isset($this->blur_baseline_config);
+    }
+
+    public function clearBlurBaselineConfig()
+    {
+        unset($this->blur_baseline_config);
+    }
+
+    /**
+     * Config for IG with blur baseline.
+     * When enabled, a linear path from the maximally blurred image to the input
+     * image is created. Using a blurred baseline instead of zero (black image) is
+     * motivated by the BlurIG approach explained here:
+     * https://arxiv.org/abs/2004.03383
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.BlurBaselineConfig blur_baseline_config = 3;</code>
+     * @param \Google\Cloud\AIPlatform\V1\BlurBaselineConfig $var
+     * @return $this
+     */
+    public function setBlurBaselineConfig($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\BlurBaselineConfig::class);
+        $this->blur_baseline_config = $var;
 
         return $this;
     }

@@ -494,6 +494,71 @@ class ::Google::Cloud::AIPlatform::V1::IndexEndpointService::ClientTest < Minite
     end
   end
 
+  def test_mutate_deployed_index
+    # Create GRPC objects.
+    grpc_response = ::Google::Longrunning::Operation.new
+    grpc_operation = GRPC::ActiveCall::Operation.new nil
+    grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    grpc_options = {}
+
+    # Create request parameters for a unary method.
+    index_endpoint = "hello world"
+    deployed_index = {}
+
+    mutate_deployed_index_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
+      assert_equal :mutate_deployed_index, name
+      assert_kind_of ::Google::Cloud::AIPlatform::V1::MutateDeployedIndexRequest, request
+      assert_equal "hello world", request["index_endpoint"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::AIPlatform::V1::DeployedIndex), request["deployed_index"]
+      refute_nil options
+    end
+
+    Gapic::ServiceStub.stub :new, mutate_deployed_index_client_stub do
+      # Create client
+      client = ::Google::Cloud::AIPlatform::V1::IndexEndpointService::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      # Use hash object
+      client.mutate_deployed_index({ index_endpoint: index_endpoint, deployed_index: deployed_index }) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use named arguments
+      client.mutate_deployed_index index_endpoint: index_endpoint, deployed_index: deployed_index do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object
+      client.mutate_deployed_index ::Google::Cloud::AIPlatform::V1::MutateDeployedIndexRequest.new(index_endpoint: index_endpoint, deployed_index: deployed_index) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use hash object with options
+      client.mutate_deployed_index({ index_endpoint: index_endpoint, deployed_index: deployed_index }, grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Use protobuf object with options
+      client.mutate_deployed_index(::Google::Cloud::AIPlatform::V1::MutateDeployedIndexRequest.new(index_endpoint: index_endpoint, deployed_index: deployed_index), grpc_options) do |response, operation|
+        assert_kind_of Gapic::Operation, response
+        assert_equal grpc_response, response.grpc_op
+        assert_equal grpc_operation, operation
+      end
+
+      # Verify method calls
+      assert_equal 5, mutate_deployed_index_client_stub.call_rpc_count
+    end
+  end
+
   def test_configure
     grpc_channel = GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
 

@@ -55,6 +55,9 @@ import com.google.cloud.aiplatform.v1.GetIndexEndpointRequest;
 import com.google.cloud.aiplatform.v1.IndexEndpoint;
 import com.google.cloud.aiplatform.v1.ListIndexEndpointsRequest;
 import com.google.cloud.aiplatform.v1.ListIndexEndpointsResponse;
+import com.google.cloud.aiplatform.v1.MutateDeployedIndexOperationMetadata;
+import com.google.cloud.aiplatform.v1.MutateDeployedIndexRequest;
+import com.google.cloud.aiplatform.v1.MutateDeployedIndexResponse;
 import com.google.cloud.aiplatform.v1.UndeployIndexOperationMetadata;
 import com.google.cloud.aiplatform.v1.UndeployIndexRequest;
 import com.google.cloud.aiplatform.v1.UndeployIndexResponse;
@@ -133,6 +136,12 @@ public class IndexEndpointServiceStubSettings
   private final OperationCallSettings<
           UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
       undeployIndexOperationSettings;
+  private final UnaryCallSettings<MutateDeployedIndexRequest, Operation>
+      mutateDeployedIndexSettings;
+  private final OperationCallSettings<
+          MutateDeployedIndexRequest, MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationSettings;
 
   private static final PagedListDescriptor<
           ListIndexEndpointsRequest, ListIndexEndpointsResponse, IndexEndpoint>
@@ -259,6 +268,19 @@ public class IndexEndpointServiceStubSettings
     return undeployIndexOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to mutateDeployedIndex. */
+  public UnaryCallSettings<MutateDeployedIndexRequest, Operation> mutateDeployedIndexSettings() {
+    return mutateDeployedIndexSettings;
+  }
+
+  /** Returns the object with the settings used for calls to mutateDeployedIndex. */
+  public OperationCallSettings<
+          MutateDeployedIndexRequest, MutateDeployedIndexResponse,
+          MutateDeployedIndexOperationMetadata>
+      mutateDeployedIndexOperationSettings() {
+    return mutateDeployedIndexOperationSettings;
+  }
+
   @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public IndexEndpointServiceStub createStub() throws IOException {
     if (getTransportChannelProvider()
@@ -348,6 +370,9 @@ public class IndexEndpointServiceStubSettings
     deployIndexOperationSettings = settingsBuilder.deployIndexOperationSettings().build();
     undeployIndexSettings = settingsBuilder.undeployIndexSettings().build();
     undeployIndexOperationSettings = settingsBuilder.undeployIndexOperationSettings().build();
+    mutateDeployedIndexSettings = settingsBuilder.mutateDeployedIndexSettings().build();
+    mutateDeployedIndexOperationSettings =
+        settingsBuilder.mutateDeployedIndexOperationSettings().build();
   }
 
   /** Builder for IndexEndpointServiceStubSettings. */
@@ -379,6 +404,12 @@ public class IndexEndpointServiceStubSettings
     private final OperationCallSettings.Builder<
             UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
         undeployIndexOperationSettings;
+    private final UnaryCallSettings.Builder<MutateDeployedIndexRequest, Operation>
+        mutateDeployedIndexSettings;
+    private final OperationCallSettings.Builder<
+            MutateDeployedIndexRequest, MutateDeployedIndexResponse,
+            MutateDeployedIndexOperationMetadata>
+        mutateDeployedIndexOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -417,6 +448,8 @@ public class IndexEndpointServiceStubSettings
       deployIndexOperationSettings = OperationCallSettings.newBuilder();
       undeployIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       undeployIndexOperationSettings = OperationCallSettings.newBuilder();
+      mutateDeployedIndexSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      mutateDeployedIndexOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -426,7 +459,8 @@ public class IndexEndpointServiceStubSettings
               updateIndexEndpointSettings,
               deleteIndexEndpointSettings,
               deployIndexSettings,
-              undeployIndexSettings);
+              undeployIndexSettings,
+              mutateDeployedIndexSettings);
       initDefaults(this);
     }
 
@@ -446,6 +480,9 @@ public class IndexEndpointServiceStubSettings
       deployIndexOperationSettings = settings.deployIndexOperationSettings.toBuilder();
       undeployIndexSettings = settings.undeployIndexSettings.toBuilder();
       undeployIndexOperationSettings = settings.undeployIndexOperationSettings.toBuilder();
+      mutateDeployedIndexSettings = settings.mutateDeployedIndexSettings.toBuilder();
+      mutateDeployedIndexOperationSettings =
+          settings.mutateDeployedIndexOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -455,7 +492,8 @@ public class IndexEndpointServiceStubSettings
               updateIndexEndpointSettings,
               deleteIndexEndpointSettings,
               deployIndexSettings,
-              undeployIndexSettings);
+              undeployIndexSettings,
+              mutateDeployedIndexSettings);
     }
 
     private static Builder createDefault() {
@@ -504,6 +542,11 @@ public class IndexEndpointServiceStubSettings
 
       builder
           .undeployIndexSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .mutateDeployedIndexSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -593,6 +636,32 @@ public class IndexEndpointServiceStubSettings
           .setMetadataTransformer(
               ProtoOperationTransformers.MetadataTransformer.create(
                   UndeployIndexOperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .mutateDeployedIndexOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<MutateDeployedIndexRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  MutateDeployedIndexResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(
+                  MutateDeployedIndexOperationMetadata.class))
           .setPollingAlgorithm(
               OperationTimedPollAlgorithm.create(
                   RetrySettings.newBuilder()
@@ -697,6 +766,22 @@ public class IndexEndpointServiceStubSettings
             UndeployIndexRequest, UndeployIndexResponse, UndeployIndexOperationMetadata>
         undeployIndexOperationSettings() {
       return undeployIndexOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedIndex. */
+    public UnaryCallSettings.Builder<MutateDeployedIndexRequest, Operation>
+        mutateDeployedIndexSettings() {
+      return mutateDeployedIndexSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to mutateDeployedIndex. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<
+            MutateDeployedIndexRequest, MutateDeployedIndexResponse,
+            MutateDeployedIndexOperationMetadata>
+        mutateDeployedIndexOperationSettings() {
+      return mutateDeployedIndexOperationSettings;
     }
 
     @Override

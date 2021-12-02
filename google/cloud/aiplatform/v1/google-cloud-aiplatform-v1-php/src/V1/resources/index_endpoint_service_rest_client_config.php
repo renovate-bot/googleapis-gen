@@ -60,6 +60,18 @@ return [
                     ],
                 ],
             ],
+            'MutateDeployedIndex' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:mutateDeployedIndex',
+                'body' => 'deployed_index',
+                'placeholders' => [
+                    'index_endpoint' => [
+                        'getters' => [
+                            'getIndexEndpoint',
+                        ],
+                    ],
+                ],
+            ],
             'UndeployIndex' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:undeployIndex',

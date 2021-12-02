@@ -16,6 +16,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1.CreateEndpointRequest" do
       optional :parent, :string, 1
       optional :endpoint, :message, 2, "google.cloud.aiplatform.v1.Endpoint"
+      optional :endpoint_id, :string, 4
     end
     add_message "google.cloud.aiplatform.v1.CreateEndpointOperationMetadata" do
       optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1.GenericOperationMetadata"

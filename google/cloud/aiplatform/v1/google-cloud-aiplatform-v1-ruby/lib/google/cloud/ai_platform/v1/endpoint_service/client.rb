@@ -169,7 +169,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload create_endpoint(parent: nil, endpoint: nil)
+            # @overload create_endpoint(parent: nil, endpoint: nil, endpoint_id: nil)
             #   Pass arguments to `create_endpoint` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -179,6 +179,15 @@ module Google
             #     Format: `projects/{project}/locations/{location}`
             #   @param endpoint [::Google::Cloud::AIPlatform::V1::Endpoint, ::Hash]
             #     Required. The Endpoint to create.
+            #   @param endpoint_id [::String]
+            #     Immutable. The ID to use for endpoint, which will become the final
+            #     component of the endpoint resource name.
+            #     If not provided, Vertex AI will generate a value for this ID.
+            #
+            #     This value should be 1-10 characters, and valid characters are /[0-9]/.
+            #     When using HTTP/JSON, this field is populated based on a query string
+            #     argument, such as `?endpoint_id=12345`. This is the fallback for fields
+            #     that are not included in either the URI or the body.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Gapic::Operation]

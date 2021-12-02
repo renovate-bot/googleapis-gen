@@ -24,12 +24,13 @@ class EndpointService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-ê
-1google/cloud/aiplatform/v1/endpoint_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto)google/cloud/aiplatform/v1/endpoint.proto*google/cloud/aiplatform/v1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"è
+…
+1google/cloud/aiplatform/v1/endpoint_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto)google/cloud/aiplatform/v1/endpoint.proto*google/cloud/aiplatform/v1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"©
 CreateEndpointRequest9
 parent (	B)‡A˙A#
 !locations.googleapis.com/Location;
-endpoint (2$.google.cloud.aiplatform.v1.EndpointB‡A"q
+endpoint (2$.google.cloud.aiplatform.v1.EndpointB‡A
+endpoint_id (	B‡A"q
 CreateEndpointOperationMetadataN
 generic_metadata (24.google.cloud.aiplatform.v1.GenericOperationMetadata"N
 GetEndpointRequest8
@@ -75,9 +76,9 @@ page_token (	B‡A2
 value (:8"
 UndeployModelResponse"p
 UndeployModelOperationMetadataN
-generic_metadata (24.google.cloud.aiplatform.v1.GenericOperationMetadata2·
-EndpointService„
-CreateEndpoint1.google.cloud.aiplatform.v1.CreateEndpointRequest.google.longrunning.Operation"Ç”‰ì9"-/v1/{parent=projects/*/locations/*}/endpoints:endpoint⁄Aparent,endpoint A+
+generic_metadata (24.google.cloud.aiplatform.v1.GenericOperationMetadata2Ä
+EndpointServiceÇ
+CreateEndpoint1.google.cloud.aiplatform.v1.CreateEndpointRequest.google.longrunning.Operation"ùÇ”‰ì9"-/v1/{parent=projects/*/locations/*}/endpoints:endpoint⁄Aparent,endpoint⁄Aparent,endpoint,endpoint_id A+
 EndpointCreateEndpointOperationMetadata°
 GetEndpoint..google.cloud.aiplatform.v1.GetEndpointRequest$.google.cloud.aiplatform.v1.Endpoint"<Ç”‰ì/-/v1/{name=projects/*/locations/*/endpoints/*}⁄Aname¥
 ListEndpoints0.google.cloud.aiplatform.v1.ListEndpointsRequest1.google.cloud.aiplatform.v1.ListEndpointsResponse">Ç”‰ì/-/v1/{parent=projects/*/locations/*}/endpoints⁄Aparent 

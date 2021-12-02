@@ -9,14 +9,14 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Details of operations that perform import feature values.
+ * Details of operations that perform import Feature values.
  *
  * Generated from protobuf message <code>google.cloud.aiplatform.v1.ImportFeatureValuesOperationMetadata</code>
  */
 class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      */
@@ -28,7 +28,7 @@ class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Mes
      */
     protected $imported_entity_count = 0;
     /**
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      *
      * Generated from protobuf field <code>int64 imported_feature_value_count = 3;</code>
      */
@@ -51,11 +51,11 @@ class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Mes
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\AIPlatform\V1\GenericOperationMetadata $generic_metadata
-     *           Operation metadata for Featurestore import feature values.
+     *           Operation metadata for Featurestore import Feature values.
      *     @type int|string $imported_entity_count
      *           Number of entities that have been imported by the operation.
      *     @type int|string $imported_feature_value_count
-     *           Number of feature values that have been imported by the operation.
+     *           Number of Feature values that have been imported by the operation.
      *     @type int|string $invalid_row_count
      *           The number of rows in input source that weren't imported due to either
      *           * Not having any featureValues.
@@ -70,7 +70,7 @@ class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      * @return \Google\Cloud\AIPlatform\V1\GenericOperationMetadata|null
@@ -91,7 +91,7 @@ class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Operation metadata for Featurestore import feature values.
+     * Operation metadata for Featurestore import Feature values.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.GenericOperationMetadata generic_metadata = 1;</code>
      * @param \Google\Cloud\AIPlatform\V1\GenericOperationMetadata $var
@@ -132,7 +132,7 @@ class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      *
      * Generated from protobuf field <code>int64 imported_feature_value_count = 3;</code>
      * @return int|string
@@ -143,7 +143,7 @@ class ImportFeatureValuesOperationMetadata extends \Google\Protobuf\Internal\Mes
     }
 
     /**
-     * Number of feature values that have been imported by the operation.
+     * Number of Feature values that have been imported by the operation.
      *
      * Generated from protobuf field <code>int64 imported_feature_value_count = 3;</code>
      * @param int|string $var

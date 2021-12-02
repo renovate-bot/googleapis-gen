@@ -21,6 +21,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :create_time, :message, 7, "google.protobuf.Timestamp"
       optional :update_time, :message, 8, "google.protobuf.Timestamp"
       optional :network, :string, 9
+      optional :enable_private_service_connect, :bool, 10
     end
     add_message "google.cloud.aiplatform.v1.DeployedIndex" do
       optional :id, :string, 1
@@ -44,6 +45,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.aiplatform.v1.IndexPrivateEndpoints" do
       optional :match_grpc_address, :string, 1
+      optional :service_attachment, :string, 2
     end
   end
 end

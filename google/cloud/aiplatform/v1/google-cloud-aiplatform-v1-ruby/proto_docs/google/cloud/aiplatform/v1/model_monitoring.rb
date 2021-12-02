@@ -34,7 +34,7 @@ module Google
         #     The config for drift of prediction data.
         # @!attribute [rw] explanation_config
         #   @return [::Google::Cloud::AIPlatform::V1::ModelMonitoringObjectiveConfig::ExplanationConfig]
-        #     The config for integrated with Explainable AI.
+        #     The config for integrating with Vertex Explainable AI.
         class ModelMonitoringObjectiveConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -146,12 +146,12 @@ module Google
             end
           end
 
-          # The config for integrated with Explainable AI. Only applicable if the Model
-          # has explanation_spec populated.
+          # The config for integrating with Vertex Explainable AI. Only applicable if
+          # the Model has explanation_spec populated.
           # @!attribute [rw] enable_feature_attributes
           #   @return [::Boolean]
-          #     If want to analyze the Explainable AI feature attribute scores or not.
-          #     If set to true, Vertex AI will log the feature attributions from
+          #     If want to analyze the Vertex Explainable AI feature attribute scores or
+          #     not. If set to true, Vertex AI will log the feature attributions from
           #     explain response and do the skew/drift detection for them.
           # @!attribute [rw] explanation_baseline
           #   @return [::Google::Cloud::AIPlatform::V1::ModelMonitoringObjectiveConfig::ExplanationConfig::ExplanationBaseline]
@@ -190,10 +190,17 @@ module Google
           end
         end
 
-        # Next ID: 2
+        # Next ID: 3
         # @!attribute [rw] email_alert_config
         #   @return [::Google::Cloud::AIPlatform::V1::ModelMonitoringAlertConfig::EmailAlertConfig]
         #     Email alert config.
+        # @!attribute [rw] enable_logging
+        #   @return [::Boolean]
+        #     Dump the anomalies to Cloud Logging. The anomalies will be put to json
+        #     payload encoded from proto
+        #     [google.cloud.aiplatform.logging.ModelMonitoringAnomaliesLogEntry][].
+        #     This can be further sinked to Pub/Sub or any other services supported
+        #     by Cloud Logging.
         class ModelMonitoringAlertConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

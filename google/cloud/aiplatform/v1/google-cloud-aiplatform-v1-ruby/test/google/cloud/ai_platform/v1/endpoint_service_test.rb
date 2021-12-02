@@ -57,12 +57,14 @@ class ::Google::Cloud::AIPlatform::V1::EndpointService::ClientTest < Minitest::T
     # Create request parameters for a unary method.
     parent = "hello world"
     endpoint = {}
+    endpoint_id = "hello world"
 
     create_endpoint_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :create_endpoint, name
       assert_kind_of ::Google::Cloud::AIPlatform::V1::CreateEndpointRequest, request
       assert_equal "hello world", request["parent"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::AIPlatform::V1::Endpoint), request["endpoint"]
+      assert_equal "hello world", request["endpoint_id"]
       refute_nil options
     end
 
@@ -73,35 +75,35 @@ class ::Google::Cloud::AIPlatform::V1::EndpointService::ClientTest < Minitest::T
       end
 
       # Use hash object
-      client.create_endpoint({ parent: parent, endpoint: endpoint }) do |response, operation|
+      client.create_endpoint({ parent: parent, endpoint: endpoint, endpoint_id: endpoint_id }) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.create_endpoint parent: parent, endpoint: endpoint do |response, operation|
+      client.create_endpoint parent: parent, endpoint: endpoint, endpoint_id: endpoint_id do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.create_endpoint ::Google::Cloud::AIPlatform::V1::CreateEndpointRequest.new(parent: parent, endpoint: endpoint) do |response, operation|
+      client.create_endpoint ::Google::Cloud::AIPlatform::V1::CreateEndpointRequest.new(parent: parent, endpoint: endpoint, endpoint_id: endpoint_id) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.create_endpoint({ parent: parent, endpoint: endpoint }, grpc_options) do |response, operation|
+      client.create_endpoint({ parent: parent, endpoint: endpoint, endpoint_id: endpoint_id }, grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.create_endpoint(::Google::Cloud::AIPlatform::V1::CreateEndpointRequest.new(parent: parent, endpoint: endpoint), grpc_options) do |response, operation|
+      client.create_endpoint(::Google::Cloud::AIPlatform::V1::CreateEndpointRequest.new(parent: parent, endpoint: endpoint, endpoint_id: endpoint_id), grpc_options) do |response, operation|
         assert_kind_of Gapic::Operation, response
         assert_equal grpc_response, response.grpc_op
         assert_equal grpc_operation, operation

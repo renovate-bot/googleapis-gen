@@ -226,7 +226,8 @@ public interface ModelOrBuilder extends
 
   /**
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>
@@ -235,7 +236,8 @@ public interface ModelOrBuilder extends
   java.lang.String getTrainingPipeline();
   /**
    * <pre>
-   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+   * Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+   * any.
    * </pre>
    *
    * <code>string training_pipeline = 7 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }</code>

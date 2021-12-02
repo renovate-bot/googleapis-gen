@@ -24,7 +24,7 @@ class IndexEndpointService
         \GPBMetadata\Google\Protobuf\FieldMask::initOnce();
         $pool->internalAddGeneratedFile(
             '
-˛
+‰$
 7google/cloud/aiplatform/v1/index_endpoint_service.protogoogle.cloud.aiplatform.v1google/api/client.protogoogle/api/field_behavior.protogoogle/api/resource.proto/google/cloud/aiplatform/v1/index_endpoint.proto*google/cloud/aiplatform/v1/operation.proto#google/longrunning/operations.proto google/protobuf/field_mask.proto"ü
 CreateIndexEndpointRequest9
 parent (	B)‡A˙A#
@@ -67,7 +67,16 @@ page_token (	B‡A2
 deployed_index_id (	B‡A"
 UndeployIndexResponse"p
 UndeployIndexOperationMetadataN
-generic_metadata (24.google.cloud.aiplatform.v1.GenericOperationMetadata2Ô
+generic_metadata (24.google.cloud.aiplatform.v1.GenericOperationMetadata"≠
+MutateDeployedIndexRequestG
+index_endpoint (	B/‡A˙A)
+\'aiplatform.googleapis.com/IndexEndpointF
+deployed_index (2).google.cloud.aiplatform.v1.DeployedIndexB‡A"`
+MutateDeployedIndexResponseA
+deployed_index (2).google.cloud.aiplatform.v1.DeployedIndex"ë
+$MutateDeployedIndexOperationMetadataN
+generic_metadata (24.google.cloud.aiplatform.v1.GenericOperationMetadata
+deployed_index_id (	2Ø
 IndexEndpointServiceâ
 CreateIndexEndpoint6.google.cloud.aiplatform.v1.CreateIndexEndpointRequest.google.longrunning.Operation"öÇ”‰ìD"2/v1/{parent=projects/*/locations/*}/indexEndpoints:index_endpoint⁄Aparent,index_endpoint A5
 IndexEndpoint$CreateIndexEndpointOperationMetadataµ
@@ -79,7 +88,9 @@ page_token (	B‡A2
 DeployIndex..google.cloud.aiplatform.v1.DeployIndexRequest.google.longrunning.Operation"©Ç”‰ìM"H/v1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:deployIndex:*⁄Aindex_endpoint,deployed_index A3
 DeployIndexResponseDeployIndexOperationMetadataï
 UndeployIndex0.google.cloud.aiplatform.v1.UndeployIndexRequest.google.longrunning.Operation"≤Ç”‰ìO"J/v1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:undeployIndex:*⁄A index_endpoint,deployed_index_id A7
-UndeployIndexResponseUndeployIndexOperationMetadataM Aaiplatform.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformB›
+UndeployIndexResponseUndeployIndexOperationMetadataΩ
+MutateDeployedIndex6.google.cloud.aiplatform.v1.MutateDeployedIndexRequest.google.longrunning.Operation"ŒÇ”‰ìb"P/v1/{index_endpoint=projects/*/locations/*/indexEndpoints/*}:mutateDeployedIndex:deployed_index⁄Aindex_endpoint,deployed_index AC
+MutateDeployedIndexResponse$MutateDeployedIndexOperationMetadataM Aaiplatform.googleapis.com“A.https://www.googleapis.com/auth/cloud-platformB›
 com.google.cloud.aiplatform.v1BIndexEndpointServiceProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatform™Google.Cloud.AIPlatform.V1 Google\\Cloud\\AIPlatform\\V1ÍGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 

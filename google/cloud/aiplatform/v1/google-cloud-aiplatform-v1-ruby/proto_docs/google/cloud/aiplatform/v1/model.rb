@@ -61,7 +61,8 @@ module Google
         #     not available for export.
         # @!attribute [r] training_pipeline
         #   @return [::String]
-        #     Output only. The resource name of the TrainingPipeline that uploaded this Model, if any.
+        #     Output only. The resource name of the TrainingPipeline that uploaded this Model, if
+        #     any.
         # @!attribute [rw] container_spec
         #   @return [::Google::Cloud::AIPlatform::V1::ModelContainerSpec]
         #     Input only. The specification of the container that is to be used when deploying

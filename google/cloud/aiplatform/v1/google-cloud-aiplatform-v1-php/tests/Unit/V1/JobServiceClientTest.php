@@ -363,8 +363,6 @@ class JobServiceClientTest extends GeneratedTest
         $batchPredictionJob = new BatchPredictionJob();
         $batchPredictionJobDisplayName = 'batchPredictionJobDisplayName-916867527';
         $batchPredictionJob->setDisplayName($batchPredictionJobDisplayName);
-        $batchPredictionJobModel = $client->modelName('[PROJECT]', '[LOCATION]', '[MODEL]');
-        $batchPredictionJob->setModel($batchPredictionJobModel);
         $batchPredictionJobInputConfig = new InputConfig();
         $inputConfigInstancesFormat = 'inputConfigInstancesFormat883633865';
         $batchPredictionJobInputConfig->setInstancesFormat($inputConfigInstancesFormat);
@@ -412,8 +410,6 @@ class JobServiceClientTest extends GeneratedTest
         $batchPredictionJob = new BatchPredictionJob();
         $batchPredictionJobDisplayName = 'batchPredictionJobDisplayName-916867527';
         $batchPredictionJob->setDisplayName($batchPredictionJobDisplayName);
-        $batchPredictionJobModel = $client->modelName('[PROJECT]', '[LOCATION]', '[MODEL]');
-        $batchPredictionJob->setModel($batchPredictionJobModel);
         $batchPredictionJobInputConfig = new InputConfig();
         $inputConfigInstancesFormat = 'inputConfigInstancesFormat883633865';
         $batchPredictionJobInputConfig->setInstancesFormat($inputConfigInstancesFormat);

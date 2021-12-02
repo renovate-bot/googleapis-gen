@@ -255,6 +255,14 @@ module Google
         #     from noisy samples in the vicinity of the inputs. Adding
         #     noise can help improve the computed gradients. Refer to this paper for more
         #     details: https://arxiv.org/pdf/1706.03825.pdf
+        # @!attribute [rw] blur_baseline_config
+        #   @return [::Google::Cloud::AIPlatform::V1::BlurBaselineConfig]
+        #     Config for IG with blur baseline.
+        #
+        #     When enabled, a linear path from the maximally blurred image to the input
+        #     image is created. Using a blurred baseline instead of zero (black image) is
+        #     motivated by the BlurIG approach explained here:
+        #     https://arxiv.org/abs/2004.03383
         class IntegratedGradientsAttribution
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -281,6 +289,14 @@ module Google
         #     from noisy samples in the vicinity of the inputs. Adding
         #     noise can help improve the computed gradients. Refer to this paper for more
         #     details: https://arxiv.org/pdf/1706.03825.pdf
+        # @!attribute [rw] blur_baseline_config
+        #   @return [::Google::Cloud::AIPlatform::V1::BlurBaselineConfig]
+        #     Config for XRAI with blur baseline.
+        #
+        #     When enabled, a linear path from the maximally blurred image to the input
+        #     image is created. Using a blurred baseline instead of zero (black image) is
+        #     motivated by the BlurIG approach explained here:
+        #     https://arxiv.org/abs/2004.03383
         class XraiAttribution
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -352,6 +368,23 @@ module Google
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
           end
+        end
+
+        # Config for blur baseline.
+        #
+        # When enabled, a linear path from the maximally blurred image to the input
+        # image is created. Using a blurred baseline instead of zero (black image) is
+        # motivated by the BlurIG approach explained here:
+        # https://arxiv.org/abs/2004.03383
+        # @!attribute [rw] max_blur_sigma
+        #   @return [::Float]
+        #     The standard deviation of the blur kernel for the blurred baseline. The
+        #     same blurring parameter is used for both the height and the width
+        #     dimension. If not set, the method defaults to the zero (i.e. black for
+        #     images) baseline.
+        class BlurBaselineConfig
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
         # The {::Google::Cloud::AIPlatform::V1::ExplanationSpec ExplanationSpec} entries that can be overridden at

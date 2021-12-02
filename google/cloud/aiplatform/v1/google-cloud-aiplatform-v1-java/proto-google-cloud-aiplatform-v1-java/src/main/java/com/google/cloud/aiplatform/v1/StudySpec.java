@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The default algorithm used by Vertex AI for [hyperparameter
      * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
-     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
+     * and [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      * </pre>
      *
      * <code>ALGORITHM_UNSPECIFIED = 0;</code>
@@ -203,7 +203,7 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The default algorithm used by Vertex AI for [hyperparameter
      * tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
-     * and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
+     * and [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
      * </pre>
      *
      * <code>ALGORITHM_UNSPECIFIED = 0;</code>
@@ -2110,8 +2110,8 @@ private static final long serialVersionUID = 0L;
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2123,8 +2123,8 @@ private static final long serialVersionUID = 0L;
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2267,8 +2267,8 @@ private static final long serialVersionUID = 0L;
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2283,8 +2283,8 @@ private static final long serialVersionUID = 0L;
        * A default value for a `DOUBLE` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional double default_value = 4;</code>
@@ -2745,8 +2745,8 @@ private static final long serialVersionUID = 0L;
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -2761,8 +2761,8 @@ private static final long serialVersionUID = 0L;
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -2777,8 +2777,8 @@ private static final long serialVersionUID = 0L;
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -2796,8 +2796,8 @@ private static final long serialVersionUID = 0L;
          * A default value for a `DOUBLE` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional double default_value = 4;</code>
@@ -2891,8 +2891,8 @@ private static final long serialVersionUID = 0L;
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -2904,8 +2904,8 @@ private static final long serialVersionUID = 0L;
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -3048,8 +3048,8 @@ private static final long serialVersionUID = 0L;
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -3064,8 +3064,8 @@ private static final long serialVersionUID = 0L;
        * A default value for an `INTEGER` parameter that is assumed to be a
        * relatively good starting point.  Unset value signals that there is no
        * offered starting point.
-       * Currently only supported by the Vizier service. Not supported by
-       * HyperparamterTuningJob or TrainingPipeline.
+       * Currently only supported by the Vertex AI Vizier service. Not supported
+       * by HyperparamterTuningJob or TrainingPipeline.
        * </pre>
        *
        * <code>optional int64 default_value = 4;</code>
@@ -3523,8 +3523,8 @@ private static final long serialVersionUID = 0L;
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -3539,8 +3539,8 @@ private static final long serialVersionUID = 0L;
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -3555,8 +3555,8 @@ private static final long serialVersionUID = 0L;
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -3574,8 +3574,8 @@ private static final long serialVersionUID = 0L;
          * A default value for an `INTEGER` parameter that is assumed to be a
          * relatively good starting point.  Unset value signals that there is no
          * offered starting point.
-         * Currently only supported by the Vizier service. Not supported by
-         * HyperparamterTuningJob or TrainingPipeline.
+         * Currently only supported by the Vertex AI Vizier service. Not supported
+         * by HyperparamterTuningJob or TrainingPipeline.
          * </pre>
          *
          * <code>optional int64 default_value = 4;</code>
@@ -12869,7 +12869,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The observation noise level of the study.
-   * Currently only supported by the Vizier service. Not supported by
+   * Currently only supported by the Vertex AI Vizier service. Not supported by
    * HyperparamterTuningJob or TrainingPipeline.
    * </pre>
    *
@@ -12882,7 +12882,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The observation noise level of the study.
-   * Currently only supported by the Vizier service. Not supported by
+   * Currently only supported by the Vertex AI Vizier service. Not supported by
    * HyperparamterTuningJob or TrainingPipeline.
    * </pre>
    *
@@ -14511,7 +14511,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      * </pre>
      *
@@ -14524,7 +14524,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      * </pre>
      *
@@ -14541,7 +14541,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      * </pre>
      *
@@ -14557,7 +14557,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      * </pre>
      *
@@ -14577,7 +14577,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      * </pre>
      *

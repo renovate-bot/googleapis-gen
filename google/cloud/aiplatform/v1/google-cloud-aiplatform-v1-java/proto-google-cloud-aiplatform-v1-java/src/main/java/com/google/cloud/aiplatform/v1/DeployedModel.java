@@ -326,10 +326,12 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object id_;
   /**
    * <pre>
-   * Output only. The ID of the DeployedModel.
+   * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+   * will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The id.
    */
   @java.lang.Override
@@ -347,10 +349,12 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. The ID of the DeployedModel.
+   * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+   * will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    * @return The bytes for id.
    */
   @java.lang.Override
@@ -1642,10 +1646,12 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object id_ = "";
     /**
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The id.
      */
     public java.lang.String getId() {
@@ -1662,10 +1668,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return The bytes for id.
      */
     public com.google.protobuf.ByteString
@@ -1683,10 +1691,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The id to set.
      * @return This builder for chaining.
      */
@@ -1702,10 +1712,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return This builder for chaining.
      */
     public Builder clearId() {
@@ -1716,10 +1728,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. The ID of the DeployedModel.
+     * Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI
+     * will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param value The bytes for id to set.
      * @return This builder for chaining.
      */

@@ -116,6 +116,7 @@ from .execution import (
 )
 from .explanation import (
     Attribution,
+    BlurBaselineConfig,
     Explanation,
     ExplanationMetadataOverride,
     ExplanationParameters,
@@ -213,6 +214,9 @@ from .index_endpoint_service import (
     GetIndexEndpointRequest,
     ListIndexEndpointsRequest,
     ListIndexEndpointsResponse,
+    MutateDeployedIndexOperationMetadata,
+    MutateDeployedIndexRequest,
+    MutateDeployedIndexResponse,
     UndeployIndexOperationMetadata,
     UndeployIndexRequest,
     UndeployIndexResponse,
@@ -523,6 +527,7 @@ from .training_pipeline import (
     FractionSplit,
     InputDataConfig,
     PredefinedSplit,
+    StratifiedSplit,
     TimestampSplit,
     TrainingPipeline,
 )
@@ -531,6 +536,9 @@ from .types import (
     DoubleArray,
     Int64Array,
     StringArray,
+)
+from .unmanaged_container_model import (
+    UnmanagedContainerModel,
 )
 from .user_action_reference import (
     UserActionReference,
@@ -627,6 +635,7 @@ __all__ = (
     'Event',
     'Execution',
     'Attribution',
+    'BlurBaselineConfig',
     'Explanation',
     'ExplanationMetadataOverride',
     'ExplanationParameters',
@@ -702,6 +711,9 @@ __all__ = (
     'GetIndexEndpointRequest',
     'ListIndexEndpointsRequest',
     'ListIndexEndpointsResponse',
+    'MutateDeployedIndexOperationMetadata',
+    'MutateDeployedIndexRequest',
+    'MutateDeployedIndexResponse',
     'UndeployIndexOperationMetadata',
     'UndeployIndexRequest',
     'UndeployIndexResponse',
@@ -952,12 +964,14 @@ __all__ = (
     'FractionSplit',
     'InputDataConfig',
     'PredefinedSplit',
+    'StratifiedSplit',
     'TimestampSplit',
     'TrainingPipeline',
     'BoolArray',
     'DoubleArray',
     'Int64Array',
     'StringArray',
+    'UnmanagedContainerModel',
     'UserActionReference',
     'Value',
     'AddTrialMeasurementRequest',

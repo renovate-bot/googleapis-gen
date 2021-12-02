@@ -230,7 +230,7 @@ public interface ArtifactOrBuilder extends
    * <pre>
    * The state of this Artifact. This is a property of the Artifact, and does
    * not imply or capture any ongoing process. This property is managed by
-   * clients (such as Vertex Pipelines), and the system does not prescribe
+   * clients (such as Vertex AI Pipelines), and the system does not prescribe
    * or check the validity of state transitions.
    * </pre>
    *
@@ -242,7 +242,7 @@ public interface ArtifactOrBuilder extends
    * <pre>
    * The state of this Artifact. This is a property of the Artifact, and does
    * not imply or capture any ongoing process. This property is managed by
-   * clients (such as Vertex Pipelines), and the system does not prescribe
+   * clients (such as Vertex AI Pipelines), and the system does not prescribe
    * or check the validity of state transitions.
    * </pre>
    *

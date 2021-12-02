@@ -2213,7 +2213,7 @@ module Google
             #     `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}
             #   @param deployed_model_id [::String]
             #     Required. The DeployedModel ID of the
-            #     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+            #     [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
             #   @param feature_display_name [::String]
             #     The feature display name. If specified, only return the stats belonging to
             #     this feature. Format:

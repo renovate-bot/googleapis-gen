@@ -140,4 +140,19 @@ class IndexEndpointServiceGrpcClient extends \Grpc\BaseStub {
         $metadata, $options);
     }
 
+    /**
+     * Update an existing DeployedIndex under an IndexEndpoint.
+     * @param \Google\Cloud\AIPlatform\V1\MutateDeployedIndexRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function MutateDeployedIndex(\Google\Cloud\AIPlatform\V1\MutateDeployedIndexRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.cloud.aiplatform.v1.IndexEndpointService/MutateDeployedIndex',
+        $argument,
+        ['\Google\LongRunning\Operation', 'decode'],
+        $metadata, $options);
+    }
+
 }

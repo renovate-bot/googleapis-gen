@@ -61,6 +61,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.aiplatform.v1.UndeployIndexOperationMetadata" do
       optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1.GenericOperationMetadata"
     end
+    add_message "google.cloud.aiplatform.v1.MutateDeployedIndexRequest" do
+      optional :index_endpoint, :string, 1
+      optional :deployed_index, :message, 2, "google.cloud.aiplatform.v1.DeployedIndex"
+    end
+    add_message "google.cloud.aiplatform.v1.MutateDeployedIndexResponse" do
+      optional :deployed_index, :message, 1, "google.cloud.aiplatform.v1.DeployedIndex"
+    end
+    add_message "google.cloud.aiplatform.v1.MutateDeployedIndexOperationMetadata" do
+      optional :generic_metadata, :message, 1, "google.cloud.aiplatform.v1.GenericOperationMetadata"
+      optional :deployed_index_id, :string, 2
+    end
   end
 end
 
@@ -81,6 +92,9 @@ module Google
         UndeployIndexRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.UndeployIndexRequest").msgclass
         UndeployIndexResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.UndeployIndexResponse").msgclass
         UndeployIndexOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.UndeployIndexOperationMetadata").msgclass
+        MutateDeployedIndexRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.MutateDeployedIndexRequest").msgclass
+        MutateDeployedIndexResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.MutateDeployedIndexResponse").msgclass
+        MutateDeployedIndexOperationMetadata = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.aiplatform.v1.MutateDeployedIndexOperationMetadata").msgclass
       end
     end
   end

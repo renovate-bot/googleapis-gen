@@ -266,6 +266,11 @@
                                 "listIndexEndpoints"
                             ]
                         },
+                        "MutateDeployedIndex": {
+                            "methods": [
+                                "mutateDeployedIndex"
+                            ]
+                        },
                         "UndeployIndex": {
                             "methods": [
                                 "undeployIndex"

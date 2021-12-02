@@ -21,6 +21,7 @@ private static final long serialVersionUID = 0L;
   }
   private CreateEndpointRequest() {
     parent_ = "";
+    endpointId_ = "";
   }
 
   @java.lang.Override
@@ -70,6 +71,12 @@ private static final long serialVersionUID = 0L;
               endpoint_ = subBuilder.buildPartial();
             }
 
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            endpointId_ = s;
             break;
           }
           default: {
@@ -190,6 +197,64 @@ private static final long serialVersionUID = 0L;
     return getEndpoint();
   }
 
+  public static final int ENDPOINT_ID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object endpointId_;
+  /**
+   * <pre>
+   * Immutable. The ID to use for endpoint, which will become the final
+   * component of the endpoint resource name.
+   * If not provided, Vertex AI will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   * When using HTTP/JSON, this field is populated based on a query string
+   * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+   * that are not included in either the URI or the body.
+   * </pre>
+   *
+   * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The endpointId.
+   */
+  @java.lang.Override
+  public java.lang.String getEndpointId() {
+    java.lang.Object ref = endpointId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      endpointId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Immutable. The ID to use for endpoint, which will become the final
+   * component of the endpoint resource name.
+   * If not provided, Vertex AI will generate a value for this ID.
+   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   * When using HTTP/JSON, this field is populated based on a query string
+   * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+   * that are not included in either the URI or the body.
+   * </pre>
+   *
+   * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The bytes for endpointId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEndpointIdBytes() {
+    java.lang.Object ref = endpointId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      endpointId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -210,6 +275,9 @@ private static final long serialVersionUID = 0L;
     if (endpoint_ != null) {
       output.writeMessage(2, getEndpoint());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, endpointId_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -225,6 +293,9 @@ private static final long serialVersionUID = 0L;
     if (endpoint_ != null) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(2, getEndpoint());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, endpointId_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -248,6 +319,8 @@ private static final long serialVersionUID = 0L;
       if (!getEndpoint()
           .equals(other.getEndpoint())) return false;
     }
+    if (!getEndpointId()
+        .equals(other.getEndpointId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -265,6 +338,8 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ENDPOINT_FIELD_NUMBER;
       hash = (53 * hash) + getEndpoint().hashCode();
     }
+    hash = (37 * hash) + ENDPOINT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getEndpointId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -410,6 +485,8 @@ private static final long serialVersionUID = 0L;
         endpoint_ = null;
         endpointBuilder_ = null;
       }
+      endpointId_ = "";
+
       return this;
     }
 
@@ -442,6 +519,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.endpoint_ = endpointBuilder_.build();
       }
+      result.endpointId_ = endpointId_;
       onBuilt();
       return result;
     }
@@ -496,6 +574,10 @@ private static final long serialVersionUID = 0L;
       }
       if (other.hasEndpoint()) {
         mergeEndpoint(other.getEndpoint());
+      }
+      if (!other.getEndpointId().isEmpty()) {
+        endpointId_ = other.endpointId_;
+        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -780,6 +862,132 @@ private static final long serialVersionUID = 0L;
         endpoint_ = null;
       }
       return endpointBuilder_;
+    }
+
+    private java.lang.Object endpointId_ = "";
+    /**
+     * <pre>
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     * </pre>
+     *
+     * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return The endpointId.
+     */
+    public java.lang.String getEndpointId() {
+      java.lang.Object ref = endpointId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpointId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     * </pre>
+     *
+     * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return The bytes for endpointId.
+     */
+    public com.google.protobuf.ByteString
+        getEndpointIdBytes() {
+      java.lang.Object ref = endpointId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        endpointId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     * </pre>
+     *
+     * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param value The endpointId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      endpointId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     * </pre>
+     *
+     * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEndpointId() {
+      
+      endpointId_ = getDefaultInstance().getEndpointId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Immutable. The ID to use for endpoint, which will become the final
+     * component of the endpoint resource name.
+     * If not provided, Vertex AI will generate a value for this ID.
+     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * When using HTTP/JSON, this field is populated based on a query string
+     * argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     * that are not included in either the URI or the body.
+     * </pre>
+     *
+     * <code>string endpoint_id = 4 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param value The bytes for endpointId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEndpointIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      endpointId_ = value;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

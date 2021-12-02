@@ -21,7 +21,7 @@ module Google
   module Cloud
     module AIPlatform
       module V1
-        # Vertex Feature Store provides a centralized repository for organizing,
+        # Vertex AI Feature Store provides a centralized repository for organizing,
         # storing, and serving ML features. The Featurestore is a top-level container
         # for your features and their values.
         # @!attribute [r] name

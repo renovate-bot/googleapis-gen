@@ -31,7 +31,7 @@ class Execution extends \Google\Protobuf\Internal\Message
     /**
      * The state of this Execution. This is a property of the Execution, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines) and the system does not prescribe
+     * clients (such as Vertex AI Pipelines) and the system does not prescribe
      * or check the validity of state transitions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Execution.State state = 6;</code>
@@ -113,7 +113,7 @@ class Execution extends \Google\Protobuf\Internal\Message
      *     @type int $state
      *           The state of this Execution. This is a property of the Execution, and does
      *           not imply or capture any ongoing process. This property is managed by
-     *           clients (such as Vertex Pipelines) and the system does not prescribe
+     *           clients (such as Vertex AI Pipelines) and the system does not prescribe
      *           or check the validity of state transitions.
      *     @type string $etag
      *           An eTag used to perform consistent read-modify-write updates. If not set, a
@@ -208,7 +208,7 @@ class Execution extends \Google\Protobuf\Internal\Message
     /**
      * The state of this Execution. This is a property of the Execution, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines) and the system does not prescribe
+     * clients (such as Vertex AI Pipelines) and the system does not prescribe
      * or check the validity of state transitions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Execution.State state = 6;</code>
@@ -222,7 +222,7 @@ class Execution extends \Google\Protobuf\Internal\Message
     /**
      * The state of this Execution. This is a property of the Execution, and does
      * not imply or capture any ongoing process. This property is managed by
-     * clients (such as Vertex Pipelines) and the system does not prescribe
+     * clients (such as Vertex AI Pipelines) and the system does not prescribe
      * or check the validity of state transitions.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.Execution.State state = 6;</code>

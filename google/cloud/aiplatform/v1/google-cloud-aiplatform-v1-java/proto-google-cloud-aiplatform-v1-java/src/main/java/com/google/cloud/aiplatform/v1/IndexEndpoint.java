@@ -138,6 +138,11 @@ private static final long serialVersionUID = 0L;
             network_ = s;
             break;
           }
+          case 80: {
+
+            enablePrivateServiceConnect_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -637,18 +642,21 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object network_;
   /**
    * <pre>
-   * Required. Immutable. The full name of the Google Compute Engine
+   * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
    * network name.
    * </pre>
    *
-   * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The network.
    */
   @java.lang.Override
@@ -666,18 +674,21 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. Immutable. The full name of the Google Compute Engine
+   * Optional. The full name of the Google Compute Engine
    * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
    * to which the IndexEndpoint should be peered.
    * Private services access must already be configured for the network. If left
    * unspecified, the Endpoint is not peered with any network.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+   * can be set.
    * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
    * projects/{project}/global/networks/{network}.
    * Where {project} is a project number, as in '12345', and {network} is
    * network name.
    * </pre>
    *
-   * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+   * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -693,6 +704,24 @@ private static final long serialVersionUID = 0L;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int ENABLE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER = 10;
+  private boolean enablePrivateServiceConnect_;
+  /**
+   * <pre>
+   * Optional. If true, expose the IndexEndpoint via private service connect.
+   * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+   * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+   * can be set.
+   * </pre>
+   *
+   * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The enablePrivateServiceConnect.
+   */
+  @java.lang.Override
+  public boolean getEnablePrivateServiceConnect() {
+    return enablePrivateServiceConnect_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -738,6 +767,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, network_);
+    }
+    if (enablePrivateServiceConnect_ != false) {
+      output.writeBool(10, enablePrivateServiceConnect_);
     }
     unknownFields.writeTo(output);
   }
@@ -785,6 +817,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, network_);
     }
+    if (enablePrivateServiceConnect_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(10, enablePrivateServiceConnect_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -824,6 +860,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getNetwork()
         .equals(other.getNetwork())) return false;
+    if (getEnablePrivateServiceConnect()
+        != other.getEnablePrivateServiceConnect()) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -861,6 +899,9 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
+    hash = (37 * hash) + ENABLE_PRIVATE_SERVICE_CONNECT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getEnablePrivateServiceConnect());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1051,6 +1092,8 @@ private static final long serialVersionUID = 0L;
       }
       network_ = "";
 
+      enablePrivateServiceConnect_ = false;
+
       return this;
     }
 
@@ -1104,6 +1147,7 @@ private static final long serialVersionUID = 0L;
         result.updateTime_ = updateTimeBuilder_.build();
       }
       result.network_ = network_;
+      result.enablePrivateServiceConnect_ = enablePrivateServiceConnect_;
       onBuilt();
       return result;
     }
@@ -1205,6 +1249,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
         onChanged();
+      }
+      if (other.getEnablePrivateServiceConnect() != false) {
+        setEnablePrivateServiceConnect(other.getEnablePrivateServiceConnect());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2471,18 +2518,21 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object network_ = "";
     /**
      * <pre>
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      * </pre>
      *
-     * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The network.
      */
     public java.lang.String getNetwork() {
@@ -2499,18 +2549,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      * </pre>
      *
-     * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return The bytes for network.
      */
     public com.google.protobuf.ByteString
@@ -2528,18 +2581,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      * </pre>
      *
-     * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -2555,18 +2611,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      * </pre>
      *
-     * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return This builder for chaining.
      */
     public Builder clearNetwork() {
@@ -2577,18 +2636,21 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. Immutable. The full name of the Google Compute Engine
+     * Optional. The full name of the Google Compute Engine
      * [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks)
      * to which the IndexEndpoint should be peered.
      * Private services access must already be configured for the network. If left
      * unspecified, the Endpoint is not peered with any network.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
      * [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert):
      * projects/{project}/global/networks/{network}.
      * Where {project} is a project number, as in '12345', and {network} is
      * network name.
      * </pre>
      *
-     * <code>string network = 9 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];</code>
+     * <code>string network = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -2600,6 +2662,58 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       network_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean enablePrivateServiceConnect_ ;
+    /**
+     * <pre>
+     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
+     * </pre>
+     *
+     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The enablePrivateServiceConnect.
+     */
+    @java.lang.Override
+    public boolean getEnablePrivateServiceConnect() {
+      return enablePrivateServiceConnect_;
+    }
+    /**
+     * <pre>
+     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
+     * </pre>
+     *
+     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The enablePrivateServiceConnect to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnablePrivateServiceConnect(boolean value) {
+      
+      enablePrivateServiceConnect_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. If true, expose the IndexEndpoint via private service connect.
+     * Only one of the fields, [network][google.cloud.aiplatform.v1.IndexEndpoint.network] or
+     * [enable_private_service_connect][google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect],
+     * can be set.
+     * </pre>
+     *
+     * <code>bool enable_private_service_connect = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEnablePrivateServiceConnect() {
+      
+      enablePrivateServiceConnect_ = false;
       onChanged();
       return this;
     }

@@ -47,8 +47,10 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      *
      * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      */
@@ -121,8 +123,10 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      *           is of the form `projects/{project}/global/networks/{network}`.
      *           Where {project} is a project number, as in `12345`, and {network} is a
      *           network name.
-     *           Private services access must already be configured for the network. If left
-     *           unspecified, the job is not peered with any network.
+     *           To specify this field, you must have already [configured VPC Network
+     *           Peering for Vertex
+     *           AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     *           If this field is left unspecified, the job is not peered with any network.
      *     @type \Google\Cloud\AIPlatform\V1\GcsDestination $base_output_directory
      *           The Cloud Storage location to store the output of this CustomJob or
      *           HyperparameterTuningJob. For HyperparameterTuningJob,
@@ -267,8 +271,10 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      *
      * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -286,8 +292,10 @@ class CustomJobSpec extends \Google\Protobuf\Internal\Message
      * is of the form `projects/{project}/global/networks/{network}`.
      * Where {project} is a project number, as in `12345`, and {network} is a
      * network name.
-     * Private services access must already be configured for the network. If left
-     * unspecified, the job is not peered with any network.
+     * To specify this field, you must have already [configured VPC Network
+     * Peering for Vertex
+     * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
+     * If this field is left unspecified, the job is not peered with any network.
      *
      * Generated from protobuf field <code>string network = 5 [(.google.api.resource_reference) = {</code>
      * @param string $var

@@ -268,9 +268,12 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -278,9 +281,12 @@ private static final long serialVersionUID = 0L;
     @java.lang.Deprecated int getParametersCount();
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -295,9 +301,12 @@ private static final long serialVersionUID = 0L;
     getParameters();
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -306,9 +315,12 @@ private static final long serialVersionUID = 0L;
     getParametersMap();
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -319,9 +331,12 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.aiplatform.v1.Value defaultValue);
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -366,7 +381,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -376,7 +393,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -393,7 +412,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -404,7 +425,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -417,7 +440,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -583,9 +608,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -607,9 +635,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -621,9 +652,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -640,9 +674,12 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+     * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
      * parameters of the PipelineJob. The parameters will be passed into
      * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+     * This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+     * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
      * </pre>
      *
      * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -748,7 +785,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -772,7 +811,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -786,7 +827,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -805,7 +848,9 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * The runtime parameters of the PipelineJob. The parameters will be
      * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-     * at runtime.
+     * at runtime. This field is used by pipelines built using
+     * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+     * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
      * </pre>
      *
      * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1239,9 +1284,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1263,9 +1311,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1277,9 +1328,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1296,9 +1350,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1323,9 +1380,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1348,9 +1408,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1366,9 +1429,12 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Deprecated. Use [RuntimeConfig.parameter_values] instead. The runtime
+       * Deprecated. Use [RuntimeConfig.parameter_values][google.cloud.aiplatform.v1.PipelineJob.RuntimeConfig.parameter_values] instead. The runtime
        * parameters of the PipelineJob. The parameters will be passed into
        * [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders at runtime.
+       * This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.0.0 or lower, such as
+       * pipelines built using Kubeflow Pipelines SDK 1.8 or lower.
        * </pre>
        *
        * <code>map&lt;string, .google.cloud.aiplatform.v1.Value&gt; parameters = 1 [deprecated = true];</code>
@@ -1537,7 +1603,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1561,7 +1629,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1575,7 +1645,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1594,7 +1666,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1621,7 +1695,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1646,7 +1722,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>
@@ -1664,7 +1742,9 @@ private static final long serialVersionUID = 0L;
        * <pre>
        * The runtime parameters of the PipelineJob. The parameters will be
        * passed into [PipelineJob.pipeline_spec][google.cloud.aiplatform.v1.PipelineJob.pipeline_spec] to replace the placeholders
-       * at runtime.
+       * at runtime. This field is used by pipelines built using
+       * `PipelineJob.pipeline_spec.schema_version` 2.1.0, such as pipelines built
+       * using Kubeflow Pipelines SDK 1.9 or higher and the v2 DSL.
        * </pre>
        *
        * <code>map&lt;string, .google.protobuf.Value&gt; parameter_values = 3;</code>

@@ -32,9 +32,9 @@ module Google
     module AIPlatform
       module V1
         ##
-        # Vertex Vizier API.
+        # Vertex AI Vizier API.
         #
-        # Vizier service is a GCP service to solve blackbox optimization problems,
+        # Vertex AI Vizier is a service to solve blackbox optimization problems,
         # such as tuning machine learning hyperparameters and searching over deep
         # learning architectures.
         #

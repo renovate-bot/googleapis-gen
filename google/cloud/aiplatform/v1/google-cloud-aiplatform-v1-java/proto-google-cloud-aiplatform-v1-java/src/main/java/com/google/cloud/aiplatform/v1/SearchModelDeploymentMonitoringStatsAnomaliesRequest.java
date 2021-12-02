@@ -861,7 +861,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The DeployedModel ID of the
-   * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
    * </pre>
    *
    * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -883,7 +883,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The DeployedModel ID of the
-   * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+   * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
    * </pre>
    *
    * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1765,7 +1765,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1786,7 +1786,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1808,7 +1808,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1828,7 +1828,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1843,7 +1843,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The DeployedModel ID of the
-     * [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+     * [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
      * </pre>
      *
      * <code>string deployed_model_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

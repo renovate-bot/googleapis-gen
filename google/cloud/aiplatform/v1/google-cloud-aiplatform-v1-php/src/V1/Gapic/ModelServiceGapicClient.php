@@ -462,8 +462,9 @@ class ModelServiceGapicClient
     /**
      * Deletes a Model.
      *
-     * Model can only be deleted if there are no [DeployedModels][] created
-     * from it.
+     * A model cannot be deleted if any [Endpoint][google.cloud.aiplatform.v1.Endpoint] resource has a
+     * [DeployedModel][google.cloud.aiplatform.v1.DeployedModel] based on the model in its
+     * [deployed_models][google.cloud.aiplatform.v1.Endpoint.deployed_models] field.
      *
      * Sample code:
      * ```
@@ -527,7 +528,7 @@ class ModelServiceGapicClient
     }
 
     /**
-     * Exports a trained, exportable, Model to a location specified by the
+     * Exports a trained, exportable Model to a location specified by the
      * user. A Model is considered to be exportable if it has at least one
      * [supported export format][google.cloud.aiplatform.v1.Model.supported_export_formats].
      *

@@ -21,6 +21,7 @@ module Google
   module Cloud
     module AIPlatform
       module V1
+        # LINT.IfChange
         # A message representing a Study.
         # @!attribute [r] name
         #   @return [::String]
@@ -96,9 +97,9 @@ module Google
         #   @return [::String]
         #     Output only. The identifier of the client that originally requested this Trial.
         #     Each client is identified by a unique client_id. When a client
-        #     asks for a suggestion, Vizier will assign it a Trial. The client should
-        #     evaluate the Trial, complete it, and report back to Vizier.
-        #     If suggestion is asked again by same client_id before the Trial is
+        #     asks for a suggestion, Vertex AI Vizier will assign it a Trial. The client
+        #     should evaluate the Trial, complete it, and report back to Vertex AI
+        #     Vizier. If suggestion is asked again by same client_id before the Trial is
         #     completed, the same Trial will be returned. Multiple clients with
         #     different client_ids can ask for suggestions simultaneously, each of them
         #     will get their own Trial.
@@ -199,7 +200,7 @@ module Google
         # @!attribute [rw] observation_noise
         #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::ObservationNoise]
         #     The observation noise level of the study.
-        #     Currently only supported by the Vizier service. Not supported by
+        #     Currently only supported by the Vertex AI Vizier service. Not supported by
         #     HyperparamterTuningJob or TrainingPipeline.
         # @!attribute [rw] measurement_selection_type
         #   @return [::Google::Cloud::AIPlatform::V1::StudySpec::MeasurementSelectionType]
@@ -278,8 +279,8 @@ module Google
             #     relatively good starting point.  Unset value signals that there is no
             #     offered starting point.
             #
-            #     Currently only supported by the Vizier service. Not supported by
-            #     HyperparamterTuningJob or TrainingPipeline.
+            #     Currently only supported by the Vertex AI Vizier service. Not supported
+            #     by HyperparamterTuningJob or TrainingPipeline.
             class DoubleValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -298,8 +299,8 @@ module Google
             #     relatively good starting point.  Unset value signals that there is no
             #     offered starting point.
             #
-            #     Currently only supported by the Vizier service. Not supported by
-            #     HyperparamterTuningJob or TrainingPipeline.
+            #     Currently only supported by the Vertex AI Vizier service. Not supported
+            #     by HyperparamterTuningJob or TrainingPipeline.
             class IntegerValueSpec
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -452,7 +453,7 @@ module Google
           module Algorithm
             # The default algorithm used by Vertex AI for [hyperparameter
             # tuning](https://cloud.google.com/vertex-ai/docs/training/hyperparameter-tuning-overview)
-            # and [Vertex Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
+            # and [Vertex AI Vizier](https://cloud.google.com/vertex-ai/docs/vizier).
             ALGORITHM_UNSPECIFIED = 0
 
             # Simple grid search within the feasible space. To use grid search,

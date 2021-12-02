@@ -106,6 +106,7 @@ class EndpointServiceClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $etag = 'etag3123477';
         $network = 'network1843485230';
+        $enablePrivateServiceConnect = true;
         $modelDeploymentMonitoringJob = 'modelDeploymentMonitoringJob1797127786';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name);
@@ -113,6 +114,7 @@ class EndpointServiceClientTest extends GeneratedTest
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setEnablePrivateServiceConnect($enablePrivateServiceConnect);
         $expectedResponse->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
@@ -485,6 +487,7 @@ class EndpointServiceClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $etag = 'etag3123477';
         $network = 'network1843485230';
+        $enablePrivateServiceConnect = true;
         $modelDeploymentMonitoringJob = 'modelDeploymentMonitoringJob1797127786';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name2);
@@ -492,6 +495,7 @@ class EndpointServiceClientTest extends GeneratedTest
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setEnablePrivateServiceConnect($enablePrivateServiceConnect);
         $expectedResponse->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
         $transport->addResponse($expectedResponse);
         // Mock request
@@ -756,6 +760,7 @@ class EndpointServiceClientTest extends GeneratedTest
         $description = 'description-1724546052';
         $etag = 'etag3123477';
         $network = 'network1843485230';
+        $enablePrivateServiceConnect = true;
         $modelDeploymentMonitoringJob = 'modelDeploymentMonitoringJob1797127786';
         $expectedResponse = new Endpoint();
         $expectedResponse->setName($name);
@@ -763,6 +768,7 @@ class EndpointServiceClientTest extends GeneratedTest
         $expectedResponse->setDescription($description);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setNetwork($network);
+        $expectedResponse->setEnablePrivateServiceConnect($enablePrivateServiceConnect);
         $expectedResponse->setModelDeploymentMonitoringJob($modelDeploymentMonitoringJob);
         $transport->addResponse($expectedResponse);
         // Mock request

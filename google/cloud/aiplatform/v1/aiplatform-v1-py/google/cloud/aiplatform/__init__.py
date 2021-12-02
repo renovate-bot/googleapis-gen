@@ -108,6 +108,7 @@ from google.cloud.aiplatform_v1.types.env_var import EnvVar
 from google.cloud.aiplatform_v1.types.event import Event
 from google.cloud.aiplatform_v1.types.execution import Execution
 from google.cloud.aiplatform_v1.types.explanation import Attribution
+from google.cloud.aiplatform_v1.types.explanation import BlurBaselineConfig
 from google.cloud.aiplatform_v1.types.explanation import Explanation
 from google.cloud.aiplatform_v1.types.explanation import ExplanationMetadataOverride
 from google.cloud.aiplatform_v1.types.explanation import ExplanationParameters
@@ -183,6 +184,9 @@ from google.cloud.aiplatform_v1.types.index_endpoint_service import DeployIndexR
 from google.cloud.aiplatform_v1.types.index_endpoint_service import GetIndexEndpointRequest
 from google.cloud.aiplatform_v1.types.index_endpoint_service import ListIndexEndpointsRequest
 from google.cloud.aiplatform_v1.types.index_endpoint_service import ListIndexEndpointsResponse
+from google.cloud.aiplatform_v1.types.index_endpoint_service import MutateDeployedIndexOperationMetadata
+from google.cloud.aiplatform_v1.types.index_endpoint_service import MutateDeployedIndexRequest
+from google.cloud.aiplatform_v1.types.index_endpoint_service import MutateDeployedIndexResponse
 from google.cloud.aiplatform_v1.types.index_endpoint_service import UndeployIndexOperationMetadata
 from google.cloud.aiplatform_v1.types.index_endpoint_service import UndeployIndexRequest
 from google.cloud.aiplatform_v1.types.index_endpoint_service import UndeployIndexResponse
@@ -433,12 +437,14 @@ from google.cloud.aiplatform_v1.types.training_pipeline import FilterSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import FractionSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import InputDataConfig
 from google.cloud.aiplatform_v1.types.training_pipeline import PredefinedSplit
+from google.cloud.aiplatform_v1.types.training_pipeline import StratifiedSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TimestampSplit
 from google.cloud.aiplatform_v1.types.training_pipeline import TrainingPipeline
 from google.cloud.aiplatform_v1.types.types import BoolArray
 from google.cloud.aiplatform_v1.types.types import DoubleArray
 from google.cloud.aiplatform_v1.types.types import Int64Array
 from google.cloud.aiplatform_v1.types.types import StringArray
+from google.cloud.aiplatform_v1.types.unmanaged_container_model import UnmanagedContainerModel
 from google.cloud.aiplatform_v1.types.user_action_reference import UserActionReference
 from google.cloud.aiplatform_v1.types.value import Value
 from google.cloud.aiplatform_v1.types.vizier_service import AddTrialMeasurementRequest
@@ -557,6 +563,7 @@ __all__ = ('DatasetServiceClient',
     'Event',
     'Execution',
     'Attribution',
+    'BlurBaselineConfig',
     'Explanation',
     'ExplanationMetadataOverride',
     'ExplanationParameters',
@@ -632,6 +639,9 @@ __all__ = ('DatasetServiceClient',
     'GetIndexEndpointRequest',
     'ListIndexEndpointsRequest',
     'ListIndexEndpointsResponse',
+    'MutateDeployedIndexOperationMetadata',
+    'MutateDeployedIndexRequest',
+    'MutateDeployedIndexResponse',
     'UndeployIndexOperationMetadata',
     'UndeployIndexRequest',
     'UndeployIndexResponse',
@@ -882,12 +892,14 @@ __all__ = ('DatasetServiceClient',
     'FractionSplit',
     'InputDataConfig',
     'PredefinedSplit',
+    'StratifiedSplit',
     'TimestampSplit',
     'TrainingPipeline',
     'BoolArray',
     'DoubleArray',
     'Int64Array',
     'StringArray',
+    'UnmanagedContainerModel',
     'UserActionReference',
     'Value',
     'AddTrialMeasurementRequest',

@@ -494,6 +494,15 @@ class EndpointServiceGapicClient
      * @param array    $optionalArgs {
      *     Optional.
      *
+     *     @type string $endpointId
+     *           Immutable. The ID to use for endpoint, which will become the final
+     *           component of the endpoint resource name.
+     *           If not provided, Vertex AI will generate a value for this ID.
+     *
+     *           This value should be 1-10 characters, and valid characters are /[0-9]/.
+     *           When using HTTP/JSON, this field is populated based on a query string
+     *           argument, such as `?endpoint_id=12345`. This is the fallback for fields
+     *           that are not included in either the URI or the body.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -512,6 +521,10 @@ class EndpointServiceGapicClient
         $request->setParent($parent);
         $request->setEndpoint($endpoint);
         $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['endpointId'])) {
+            $request->setEndpointId($optionalArgs['endpointId']);
+        }
+
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('CreateEndpoint', $optionalArgs, $request, $this->getOperationsClient())->wait();

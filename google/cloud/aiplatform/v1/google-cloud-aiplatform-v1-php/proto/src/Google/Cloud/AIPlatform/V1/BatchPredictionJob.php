@@ -31,14 +31,23 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      *
-     * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string model = 3 [(.google.api.resource_reference) = {</code>
      */
     protected $model = '';
+    /**
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;</code>
+     */
+    protected $unmanaged_container_model = null;
     /**
      * Required. Input configuration of the instances on which predictions are performed.
      * The schema of any single instance may be specified via
@@ -217,10 +226,15 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
      *     @type string $display_name
      *           Required. The user-defined name of this BatchPredictionJob.
      *     @type string $model
-     *           Required. The name of the Model that produces the predictions via this job,
+     *           The name of the Model resoure that produces the predictions via this job,
      *           must share the same ancestor Location.
      *           Starting this job has no impact on any existing deployments of the Model
      *           and their resources.
+     *           Exactly one of model and unmanaged_container_model must be set.
+     *     @type \Google\Cloud\AIPlatform\V1\UnmanagedContainerModel $unmanaged_container_model
+     *           Contains model information necessary to perform batch prediction without
+     *           requiring uploading to model registry.
+     *           Exactly one of model and unmanaged_container_model must be set.
      *     @type \Google\Cloud\AIPlatform\V1\BatchPredictionJob\InputConfig $input_config
      *           Required. Input configuration of the instances on which predictions are performed.
      *           The schema of any single instance may be specified via
@@ -371,12 +385,13 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      *
-     * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string model = 3 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getModel()
@@ -385,12 +400,13 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The name of the Model that produces the predictions via this job,
+     * The name of the Model resoure that produces the predictions via this job,
      * must share the same ancestor Location.
      * Starting this job has no impact on any existing deployments of the Model
      * and their resources.
+     * Exactly one of model and unmanaged_container_model must be set.
      *
-     * Generated from protobuf field <code>string model = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string model = 3 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */
@@ -398,6 +414,46 @@ class BatchPredictionJob extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->model = $var;
+
+        return $this;
+    }
+
+    /**
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;</code>
+     * @return \Google\Cloud\AIPlatform\V1\UnmanagedContainerModel|null
+     */
+    public function getUnmanagedContainerModel()
+    {
+        return $this->unmanaged_container_model;
+    }
+
+    public function hasUnmanagedContainerModel()
+    {
+        return isset($this->unmanaged_container_model);
+    }
+
+    public function clearUnmanagedContainerModel()
+    {
+        unset($this->unmanaged_container_model);
+    }
+
+    /**
+     * Contains model information necessary to perform batch prediction without
+     * requiring uploading to model registry.
+     * Exactly one of model and unmanaged_container_model must be set.
+     *
+     * Generated from protobuf field <code>.google.cloud.aiplatform.v1.UnmanagedContainerModel unmanaged_container_model = 28;</code>
+     * @param \Google\Cloud\AIPlatform\V1\UnmanagedContainerModel $var
+     * @return $this
+     */
+    public function setUnmanagedContainerModel($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Cloud\AIPlatform\V1\UnmanagedContainerModel::class);
+        $this->unmanaged_container_model = $var;
 
         return $this;
     }

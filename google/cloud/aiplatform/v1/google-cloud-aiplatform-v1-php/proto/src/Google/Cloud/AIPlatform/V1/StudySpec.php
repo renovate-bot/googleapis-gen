@@ -35,7 +35,7 @@ class StudySpec extends \Google\Protobuf\Internal\Message
     protected $algorithm = 0;
     /**
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ObservationNoise observation_noise = 6;</code>
@@ -67,7 +67,7 @@ class StudySpec extends \Google\Protobuf\Internal\Message
      *           The search algorithm specified for the Study.
      *     @type int $observation_noise
      *           The observation noise level of the study.
-     *           Currently only supported by the Vizier service. Not supported by
+     *           Currently only supported by the Vertex AI Vizier service. Not supported by
      *           HyperparamterTuningJob or TrainingPipeline.
      *     @type int $measurement_selection_type
      *           Describe which measurement selection type will be used
@@ -220,7 +220,7 @@ class StudySpec extends \Google\Protobuf\Internal\Message
 
     /**
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ObservationNoise observation_noise = 6;</code>
@@ -233,7 +233,7 @@ class StudySpec extends \Google\Protobuf\Internal\Message
 
     /**
      * The observation noise level of the study.
-     * Currently only supported by the Vizier service. Not supported by
+     * Currently only supported by the Vertex AI Vizier service. Not supported by
      * HyperparamterTuningJob or TrainingPipeline.
      *
      * Generated from protobuf field <code>.google.cloud.aiplatform.v1.StudySpec.ObservationNoise observation_noise = 6;</code>

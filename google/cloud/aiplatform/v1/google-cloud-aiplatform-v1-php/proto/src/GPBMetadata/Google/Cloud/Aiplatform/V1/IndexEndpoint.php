@@ -22,8 +22,8 @@ class IndexEndpoint
         \GPBMetadata\Google\Api\Annotations::initOnce();
         $pool->internalAddGeneratedFile(
             '
-Ø
-/google/cloud/aiplatform/v1/index_endpoint.protogoogle.cloud.aiplatform.v1google/api/field_behavior.protogoogle/api/resource.proto2google/cloud/aiplatform/v1/machine_resources.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"ú
+˙
+/google/cloud/aiplatform/v1/index_endpoint.protogoogle.cloud.aiplatform.v1google/api/field_behavior.protogoogle/api/resource.proto2google/cloud/aiplatform/v1/machine_resources.protogoogle/protobuf/timestamp.protogoogle/api/annotations.proto"∆
 IndexEndpoint
 name (	B‡A
 display_name (	B‡A
@@ -32,8 +32,10 @@ class IndexEndpoint
 etag (	E
 labels (25.google.cloud.aiplatform.v1.IndexEndpoint.LabelsEntry4
 create_time (2.google.protobuf.TimestampB‡A4
-update_time (2.google.protobuf.TimestampB‡A
-network	 (	B‡A‡A-
+update_time (2.google.protobuf.TimestampB‡A
+network	 (	B‡A+
+enable_private_service_connect
+ (B‡A-
 LabelsEntry
 key (	
 value (	:8:uÍAr
@@ -56,9 +58,10 @@ class IndexEndpoint
 auth_provider (2@.google.cloud.aiplatform.v1.DeployedIndexAuthConfig.AuthProvider:
 AuthProvider
 	audiences (	
-allowed_issuers (	"8
+allowed_issuers (	"Y
 IndexPrivateEndpoints
-match_grpc_address (	B‡AB÷
+match_grpc_address (	B‡A
+service_attachment (	B‡AB÷
 com.google.cloud.aiplatform.v1BIndexEndpointProtoPZDgoogle.golang.org/genproto/googleapis/cloud/aiplatform/v1;aiplatform™Google.Cloud.AIPlatform.V1 Google\\Cloud\\AIPlatform\\V1ÍGoogle::Cloud::AIPlatform::V1bproto3'
         , true);
 

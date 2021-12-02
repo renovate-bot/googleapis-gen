@@ -455,7 +455,7 @@ module Google
         # @!attribute [rw] deployed_model_id
         #   @return [::String]
         #     Required. The DeployedModel ID of the
-        #     [google.cloud.aiplatform.master.ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
+        #     [ModelDeploymentMonitoringObjectiveConfig.deployed_model_id].
         # @!attribute [rw] feature_display_name
         #   @return [::String]
         #     The feature display name. If specified, only return the stats belonging to

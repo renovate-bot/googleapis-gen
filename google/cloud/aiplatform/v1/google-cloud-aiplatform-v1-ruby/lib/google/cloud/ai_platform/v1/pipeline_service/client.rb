@@ -29,7 +29,7 @@ module Google
           #
           # A service for creating and managing Vertex AI's pipelines. This includes both
           # `TrainingPipeline` resources (used for AutoML and custom training) and
-          # `PipelineJob` resources (used for Vertex Pipelines).
+          # `PipelineJob` resources (used for Vertex AI Pipelines).
           #
           class Client
             include Paths
@@ -856,6 +856,7 @@ module Google
             #     * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard.
             #      for example, can check if pipeline's display_name contains *step* by doing
             #       display_name:\"*step*\"
+            #     * `state`: Supports `=` and `!=` comparisons.
             #     * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
             #       Values must be in RFC 3339 format.
             #     * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons.
