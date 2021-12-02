@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.networkservices.v1",
+  "libraryPackage": "com.google.cloud.networkservices.v1",
+  "services": {
+    "NetworkServices": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "NetworkServicesClient",
+          "rpcs": {
+            "CreateEndpointPolicy": {
+              "methods": ["createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyAsync", "createEndpointPolicyOperationCallable", "createEndpointPolicyCallable"]
+            },
+            "DeleteEndpointPolicy": {
+              "methods": ["deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyAsync", "deleteEndpointPolicyOperationCallable", "deleteEndpointPolicyCallable"]
+            },
+            "GetEndpointPolicy": {
+              "methods": ["getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicy", "getEndpointPolicyCallable"]
+            },
+            "ListEndpointPolicies": {
+              "methods": ["listEndpointPolicies", "listEndpointPolicies", "listEndpointPolicies", "listEndpointPoliciesPagedCallable", "listEndpointPoliciesCallable"]
+            },
+            "UpdateEndpointPolicy": {
+              "methods": ["updateEndpointPolicyAsync", "updateEndpointPolicyAsync", "updateEndpointPolicyOperationCallable", "updateEndpointPolicyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

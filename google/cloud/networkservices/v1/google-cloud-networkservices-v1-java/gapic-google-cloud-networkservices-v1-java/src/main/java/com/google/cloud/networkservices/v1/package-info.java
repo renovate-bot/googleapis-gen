@@ -32,6 +32,6 @@
  * }</pre>
  */
 @Generated("by gapic-generator-java")
-package com.google.cloud.networkservices.v1beta1;
+package com.google.cloud.networkservices.v1;
 
 import javax.annotation.Generated;
