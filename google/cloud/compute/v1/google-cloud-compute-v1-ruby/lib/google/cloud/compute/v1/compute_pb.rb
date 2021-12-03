@@ -2109,8 +2109,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       proto3_optional :subnetwork, :string, 307827694
       proto3_optional :target, :string, 192835985
     end
-    add_enum "google.cloud.compute.v1.ForwardingRule.IPProtocol" do
-      value :UNDEFINED_I_P_PROTOCOL, 0
+    add_enum "google.cloud.compute.v1.ForwardingRule.IPProtocolEnum" do
+      value :UNDEFINED_I_P_PROTOCOL_ENUM, 0
       value :AH, 2087
       value :ESP, 68962
       value :ICMP, 2241597
@@ -9462,7 +9462,7 @@ module Google
         FirewallPolicyRuleMatcherLayer4Config = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.FirewallPolicyRuleMatcherLayer4Config").msgclass
         FixedOrPercent = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.FixedOrPercent").msgclass
         ForwardingRule = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.ForwardingRule").msgclass
-        ForwardingRule::IPProtocol = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.ForwardingRule.IPProtocol").enummodule
+        ForwardingRule::IPProtocolEnum = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.ForwardingRule.IPProtocolEnum").enummodule
         ForwardingRule::IpVersion = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.ForwardingRule.IpVersion").enummodule
         ForwardingRule::LoadBalancingScheme = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.ForwardingRule.LoadBalancingScheme").enummodule
         ForwardingRule::NetworkTier = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.compute.v1.ForwardingRule.NetworkTier").enummodule

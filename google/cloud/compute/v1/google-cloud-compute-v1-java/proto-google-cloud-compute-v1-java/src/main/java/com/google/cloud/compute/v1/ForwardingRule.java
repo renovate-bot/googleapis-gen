@@ -326,18 +326,18 @@ private static final long serialVersionUID = 0L;
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
    * </pre>
    *
-   * Protobuf enum {@code google.cloud.compute.v1.ForwardingRule.IPProtocol}
+   * Protobuf enum {@code google.cloud.compute.v1.ForwardingRule.IPProtocolEnum}
    */
-  public enum IPProtocol
+  public enum IPProtocolEnum
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
      * <pre>
      * A value indicating that the enum field is not set.
      * </pre>
      *
-     * <code>UNDEFINED_I_P_PROTOCOL = 0;</code>
+     * <code>UNDEFINED_I_P_PROTOCOL_ENUM = 0;</code>
      */
-    UNDEFINED_I_P_PROTOCOL(0),
+    UNDEFINED_I_P_PROTOCOL_ENUM(0),
     /**
      * <code>AH = 2087;</code>
      */
@@ -370,9 +370,9 @@ private static final long serialVersionUID = 0L;
      * A value indicating that the enum field is not set.
      * </pre>
      *
-     * <code>UNDEFINED_I_P_PROTOCOL = 0;</code>
+     * <code>UNDEFINED_I_P_PROTOCOL_ENUM = 0;</code>
      */
-    public static final int UNDEFINED_I_P_PROTOCOL_VALUE = 0;
+    public static final int UNDEFINED_I_P_PROTOCOL_ENUM_VALUE = 0;
     /**
      * <code>AH = 2087;</code>
      */
@@ -413,7 +413,7 @@ private static final long serialVersionUID = 0L;
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static IPProtocol valueOf(int value) {
+    public static IPProtocolEnum valueOf(int value) {
       return forNumber(value);
     }
 
@@ -421,9 +421,9 @@ private static final long serialVersionUID = 0L;
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static IPProtocol forNumber(int value) {
+    public static IPProtocolEnum forNumber(int value) {
       switch (value) {
-        case 0: return UNDEFINED_I_P_PROTOCOL;
+        case 0: return UNDEFINED_I_P_PROTOCOL_ENUM;
         case 2087: return AH;
         case 68962: return ESP;
         case 2241597: return ICMP;
@@ -434,15 +434,15 @@ private static final long serialVersionUID = 0L;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<IPProtocol>
+    public static com.google.protobuf.Internal.EnumLiteMap<IPProtocolEnum>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        IPProtocol> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<IPProtocol>() {
-            public IPProtocol findValueByNumber(int number) {
-              return IPProtocol.forNumber(number);
+        IPProtocolEnum> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<IPProtocolEnum>() {
+            public IPProtocolEnum findValueByNumber(int number) {
+              return IPProtocolEnum.forNumber(number);
             }
           };
 
@@ -463,9 +463,9 @@ private static final long serialVersionUID = 0L;
       return com.google.cloud.compute.v1.ForwardingRule.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final IPProtocol[] VALUES = values();
+    private static final IPProtocolEnum[] VALUES = values();
 
-    public static IPProtocol valueOf(
+    public static IPProtocolEnum valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -479,11 +479,11 @@ private static final long serialVersionUID = 0L;
 
     private final int value;
 
-    private IPProtocol(int value) {
+    private IPProtocolEnum(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ForwardingRule.IPProtocol)
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.ForwardingRule.IPProtocolEnum)
   }
 
   /**
@@ -1176,7 +1176,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-   * Check the IPProtocol enum for the list of possible values.
+   * Check the IPProtocolEnum enum for the list of possible values.
    * </pre>
    *
    * <code>optional string I_p_protocol = 488094525;</code>
@@ -1189,7 +1189,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-   * Check the IPProtocol enum for the list of possible values.
+   * Check the IPProtocolEnum enum for the list of possible values.
    * </pre>
    *
    * <code>optional string I_p_protocol = 488094525;</code>
@@ -1211,7 +1211,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-   * Check the IPProtocol enum for the list of possible values.
+   * Check the IPProtocolEnum enum for the list of possible values.
    * </pre>
    *
    * <code>optional string I_p_protocol = 488094525;</code>
@@ -4010,7 +4010,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * Check the IPProtocol enum for the list of possible values.
+     * Check the IPProtocolEnum enum for the list of possible values.
      * </pre>
      *
      * <code>optional string I_p_protocol = 488094525;</code>
@@ -4022,7 +4022,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * Check the IPProtocol enum for the list of possible values.
+     * Check the IPProtocolEnum enum for the list of possible values.
      * </pre>
      *
      * <code>optional string I_p_protocol = 488094525;</code>
@@ -4043,7 +4043,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * Check the IPProtocol enum for the list of possible values.
+     * Check the IPProtocolEnum enum for the list of possible values.
      * </pre>
      *
      * <code>optional string I_p_protocol = 488094525;</code>
@@ -4065,7 +4065,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * Check the IPProtocol enum for the list of possible values.
+     * Check the IPProtocolEnum enum for the list of possible values.
      * </pre>
      *
      * <code>optional string I_p_protocol = 488094525;</code>
@@ -4085,7 +4085,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * Check the IPProtocol enum for the list of possible values.
+     * Check the IPProtocolEnum enum for the list of possible values.
      * </pre>
      *
      * <code>optional string I_p_protocol = 488094525;</code>
@@ -4100,7 +4100,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-     * Check the IPProtocol enum for the list of possible values.
+     * Check the IPProtocolEnum enum for the list of possible values.
      * </pre>
      *
      * <code>optional string I_p_protocol = 488094525;</code>

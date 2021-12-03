@@ -39,7 +39,7 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-   * Check the IPProtocol enum for the list of possible values.
+   * Check the IPProtocolEnum enum for the list of possible values.
    * </pre>
    *
    * <code>optional string I_p_protocol = 488094525;</code>
@@ -49,7 +49,7 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-   * Check the IPProtocol enum for the list of possible values.
+   * Check the IPProtocolEnum enum for the list of possible values.
    * </pre>
    *
    * <code>optional string I_p_protocol = 488094525;</code>
@@ -59,7 +59,7 @@ public interface ForwardingRuleOrBuilder extends
   /**
    * <pre>
    * The IP protocol to which this rule applies. For protocol forwarding, valid options are TCP, UDP, ESP, AH, SCTP, ICMP and L3_DEFAULT. The valid IP protocols are different for different load balancing products as described in [Load balancing features](https://cloud.google.com/load-balancing/docs/features#protocols_from_the_load_balancer_to_the_backends).
-   * Check the IPProtocol enum for the list of possible values.
+   * Check the IPProtocolEnum enum for the list of possible values.
    * </pre>
    *
    * <code>optional string I_p_protocol = 488094525;</code>

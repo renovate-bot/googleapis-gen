@@ -122,7 +122,7 @@ private static final long serialVersionUID = 0L;
   private boolean allInstances_;
   /**
    * <pre>
-   * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
+   * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
    * </pre>
    *
    * <code>optional bool all_instances = 403676512;</code>
@@ -134,7 +134,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
+   * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
    * </pre>
    *
    * <code>optional bool all_instances = 403676512;</code>
@@ -720,7 +720,7 @@ private static final long serialVersionUID = 0L;
     private boolean allInstances_ ;
     /**
      * <pre>
-     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
@@ -732,7 +732,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
@@ -744,7 +744,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
@@ -759,7 +759,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Flag to update all instances instead of specified list of ���instances���. If the flag is set to true then the instances may not be specified in the request.
+     * Flag to update all instances instead of specified list of “instances”. If the flag is set to true then the instances may not be specified in the request.
      * </pre>
      *
      * <code>optional bool all_instances = 403676512;</code>
