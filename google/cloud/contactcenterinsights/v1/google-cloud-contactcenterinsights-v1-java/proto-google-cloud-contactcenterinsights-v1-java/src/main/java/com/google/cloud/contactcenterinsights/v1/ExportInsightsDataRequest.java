@@ -23,6 +23,7 @@ private static final long serialVersionUID = 0L;
     parent_ = "";
     filter_ = "";
     kmsKey_ = "";
+    writeDisposition_ = 0;
   }
 
   @java.lang.Override
@@ -87,6 +88,12 @@ private static final long serialVersionUID = 0L;
             kmsKey_ = s;
             break;
           }
+          case 40: {
+            int rawValue = input.readEnum();
+
+            writeDisposition_ = rawValue;
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -117,6 +124,153 @@ private static final long serialVersionUID = 0L;
     return com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsProto.internal_static_google_cloud_contactcenterinsights_v1_ExportInsightsDataRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.class, com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.Builder.class);
+  }
+
+  /**
+   * <pre>
+   * Specifies the action that occurs if the destination table already exists.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition}
+   */
+  public enum WriteDisposition
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <pre>
+     * Write disposition is not specified. Defaults to WRITE_TRUNCATE.
+     * </pre>
+     *
+     * <code>WRITE_DISPOSITION_UNSPECIFIED = 0;</code>
+     */
+    WRITE_DISPOSITION_UNSPECIFIED(0),
+    /**
+     * <pre>
+     * If the table already exists, BigQuery will overwrite the table data and
+     * use the schema from the load.
+     * </pre>
+     *
+     * <code>WRITE_TRUNCATE = 1;</code>
+     */
+    WRITE_TRUNCATE(1),
+    /**
+     * <pre>
+     * If the table already exists, BigQuery will append data to the table.
+     * </pre>
+     *
+     * <code>WRITE_APPEND = 2;</code>
+     */
+    WRITE_APPEND(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     * <pre>
+     * Write disposition is not specified. Defaults to WRITE_TRUNCATE.
+     * </pre>
+     *
+     * <code>WRITE_DISPOSITION_UNSPECIFIED = 0;</code>
+     */
+    public static final int WRITE_DISPOSITION_UNSPECIFIED_VALUE = 0;
+    /**
+     * <pre>
+     * If the table already exists, BigQuery will overwrite the table data and
+     * use the schema from the load.
+     * </pre>
+     *
+     * <code>WRITE_TRUNCATE = 1;</code>
+     */
+    public static final int WRITE_TRUNCATE_VALUE = 1;
+    /**
+     * <pre>
+     * If the table already exists, BigQuery will append data to the table.
+     * </pre>
+     *
+     * <code>WRITE_APPEND = 2;</code>
+     */
+    public static final int WRITE_APPEND_VALUE = 2;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WriteDisposition valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WriteDisposition forNumber(int value) {
+      switch (value) {
+        case 0: return WRITE_DISPOSITION_UNSPECIFIED;
+        case 1: return WRITE_TRUNCATE;
+        case 2: return WRITE_APPEND;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WriteDisposition>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        WriteDisposition> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<WriteDisposition>() {
+            public WriteDisposition findValueByNumber(int number) {
+              return WriteDisposition.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final WriteDisposition[] VALUES = values();
+
+    public static WriteDisposition valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WriteDisposition(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition)
   }
 
   public interface BigQueryDestinationOrBuilder extends
@@ -1383,6 +1537,33 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int WRITE_DISPOSITION_FIELD_NUMBER = 5;
+  private int writeDisposition_;
+  /**
+   * <pre>
+   * Options for what to do if the destination table already exists.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+   * @return The enum numeric value on the wire for writeDisposition.
+   */
+  @java.lang.Override public int getWriteDispositionValue() {
+    return writeDisposition_;
+  }
+  /**
+   * <pre>
+   * Options for what to do if the destination table already exists.
+   * </pre>
+   *
+   * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+   * @return The writeDisposition.
+   */
+  @java.lang.Override public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition getWriteDisposition() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition result = com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition.valueOf(writeDisposition_);
+    return result == null ? com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -1409,6 +1590,9 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, kmsKey_);
     }
+    if (writeDisposition_ != com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition.WRITE_DISPOSITION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(5, writeDisposition_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -1431,6 +1615,10 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(kmsKey_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, kmsKey_);
     }
+    if (writeDisposition_ != com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition.WRITE_DISPOSITION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeEnumSize(5, writeDisposition_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1452,6 +1640,7 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFilter())) return false;
     if (!getKmsKey()
         .equals(other.getKmsKey())) return false;
+    if (writeDisposition_ != other.writeDisposition_) return false;
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 2:
@@ -1478,6 +1667,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + KMS_KEY_FIELD_NUMBER;
     hash = (53 * hash) + getKmsKey().hashCode();
+    hash = (37 * hash) + WRITE_DISPOSITION_FIELD_NUMBER;
+    hash = (53 * hash) + writeDisposition_;
     switch (destinationCase_) {
       case 2:
         hash = (37 * hash) + BIG_QUERY_DESTINATION_FIELD_NUMBER;
@@ -1629,6 +1820,8 @@ private static final long serialVersionUID = 0L;
 
       kmsKey_ = "";
 
+      writeDisposition_ = 0;
+
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -1667,6 +1860,7 @@ private static final long serialVersionUID = 0L;
       result.parent_ = parent_;
       result.filter_ = filter_;
       result.kmsKey_ = kmsKey_;
+      result.writeDisposition_ = writeDisposition_;
       result.destinationCase_ = destinationCase_;
       onBuilt();
       return result;
@@ -1727,6 +1921,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getKmsKey().isEmpty()) {
         kmsKey_ = other.kmsKey_;
         onChanged();
+      }
+      if (other.writeDisposition_ != 0) {
+        setWriteDispositionValue(other.getWriteDispositionValue());
       }
       switch (other.getDestinationCase()) {
         case BIG_QUERY_DESTINATION: {
@@ -2257,6 +2454,80 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       kmsKey_ = value;
+      onChanged();
+      return this;
+    }
+
+    private int writeDisposition_ = 0;
+    /**
+     * <pre>
+     * Options for what to do if the destination table already exists.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+     * @return The enum numeric value on the wire for writeDisposition.
+     */
+    @java.lang.Override public int getWriteDispositionValue() {
+      return writeDisposition_;
+    }
+    /**
+     * <pre>
+     * Options for what to do if the destination table already exists.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+     * @param value The enum numeric value on the wire for writeDisposition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteDispositionValue(int value) {
+      
+      writeDisposition_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Options for what to do if the destination table already exists.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+     * @return The writeDisposition.
+     */
+    @java.lang.Override
+    public com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition getWriteDisposition() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition result = com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition.valueOf(writeDisposition_);
+      return result == null ? com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition.UNRECOGNIZED : result;
+    }
+    /**
+     * <pre>
+     * Options for what to do if the destination table already exists.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+     * @param value The writeDisposition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWriteDisposition(com.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      writeDisposition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Options for what to do if the destination table already exists.
+     * </pre>
+     *
+     * <code>.google.cloud.contactcenterinsights.v1.ExportInsightsDataRequest.WriteDisposition write_disposition = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearWriteDisposition() {
+      
+      writeDisposition_ = 0;
       onChanged();
       return this;
     }

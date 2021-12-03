@@ -39,6 +39,10 @@ function main(parent) {
    *  projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryptoKeyVersions/{version}
    */
   // const kmsKey = 'abc123'
+  /**
+   *  Options for what to do if the destination table already exists.
+   */
+  // const writeDisposition = {}
 
   // Imports the Contactcenterinsights library
   const {ContactCenterInsightsClient} = require('@google-cloud/contact-center-insights').v1;
