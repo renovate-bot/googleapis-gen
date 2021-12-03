@@ -33,8 +33,7 @@ class VersionsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns the list of all versions in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * @param \Google\Cloud\Dialogflow\Cx\V3\ListVersionsRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -64,15 +63,13 @@ class VersionsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      *
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
      *
-     * - `metadata`:
-     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * @param \Google\Cloud\Dialogflow\Cx\V3\CreateVersionRequest $argument input argument
      * @param array $metadata metadata

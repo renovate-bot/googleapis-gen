@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for
- * [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
+ * The request message for [Webhooks.UpdateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.UpdateWebhook].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.UpdateWebhookRequest</code>
  */

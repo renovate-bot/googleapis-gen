@@ -354,15 +354,15 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $baseVersion   Required. Name of the base flow version to compare with the target version.
-     *                              Use version ID `0` to indicate the draft version of the specified flow.
+     * @param string $baseVersion   Required. Name of the base flow version to compare with the target version. Use
+     *                              version ID `0` to indicate the draft version of the specified flow.
      *
-     *                              Format:
-     *                              `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     *                              Format: `projects/<Project ID>/locations/<Location ID>/agents/
+     *                              <Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
      * @param string $targetVersion Required. Name of the target flow version to compare with the
      *                              base version. Use version ID `0` to indicate the draft version of the
-     *                              specified flow. Format:
-     *                              `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     *                              specified flow. Format: `projects/<Project ID>/locations/<Location
+     *                              ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>`.
      * @param array  $optionalArgs  {
      *     Optional.
      *
@@ -402,15 +402,13 @@ class VersionsGapicClient
     }
 
     /**
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      *
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
      *
-     * - `metadata`:
-     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      *
      * Sample code:
@@ -450,9 +448,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string  $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an
-     *                              [Version][google.cloud.dialogflow.cx.v3.Version] for. Format:
-     *                              `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
+     * @param string  $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to create an [Version][google.cloud.dialogflow.cx.v3.Version] for.
+     *                              Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                              ID>/flows/<Flow ID>`.
      * @param Version $version      Required. The version to create.
      * @param array   $optionalArgs {
      *     Optional.
@@ -494,9 +492,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version]
-     *                             to delete. Format:
-     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     * @param string $name         Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version] to delete.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -535,8 +533,8 @@ class VersionsGapicClient
      * ```
      *
      * @param string $name         Required. The name of the [Version][google.cloud.dialogflow.cx.v3.Version].
-     *                             Format:
-     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -563,8 +561,7 @@ class VersionsGapicClient
     }
 
     /**
-     * Returns the list of all versions in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      *
      * Sample code:
      * ```
@@ -589,9 +586,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all
-     *                             versions for. Format:
-     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>`.
+     * @param string $parent       Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow] to list all versions for.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -680,9 +677,9 @@ class VersionsGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded
-     *                             to draft flow. Format:
-     *                             `projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>`.
+     * @param string $name         Required. The [Version][google.cloud.dialogflow.cx.v3.Version] to be loaded to draft flow.
+     *                             Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *                             ID>/flows/<Flow ID>/versions/<Version ID>`.
      * @param array  $optionalArgs {
      *     Optional.
      *
@@ -733,8 +730,8 @@ class VersionsGapicClient
      * ```
      *
      * @param Version   $version      Required. The version to update.
-     * @param FieldMask $updateMask   Required. The mask to control which fields get updated. Currently only
-     *                                `description` and `display_name` can be updated.
+     * @param FieldMask $updateMask   Required. The mask to control which fields get updated. Currently only `description`
+     *                                and `display_name` can be updated.
      * @param array     $optionalArgs {
      *     Optional.
      *

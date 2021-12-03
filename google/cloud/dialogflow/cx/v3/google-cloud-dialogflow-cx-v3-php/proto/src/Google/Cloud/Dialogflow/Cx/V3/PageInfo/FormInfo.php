@@ -16,11 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class FormInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * parameters contained in the form. Note that the webhook cannot add or
-     * remove any form parameter.
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The parameters contained in the form. Note that the webhook cannot add
+     * or remove any form parameter.
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo parameter_info = 2;</code>
      */
@@ -33,11 +31,9 @@ class FormInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Cloud\Dialogflow\Cx\V3\PageInfo\FormInfo\ParameterInfo[]|\Google\Protobuf\Internal\RepeatedField $parameter_info
-     *           Optional for both
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     *           parameters contained in the form. Note that the webhook cannot add or
-     *           remove any form parameter.
+     *           Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     *           The parameters contained in the form. Note that the webhook cannot add
+     *           or remove any form parameter.
      * }
      */
     public function __construct($data = NULL) {
@@ -46,11 +42,9 @@ class FormInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * parameters contained in the form. Note that the webhook cannot add or
-     * remove any form parameter.
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The parameters contained in the form. Note that the webhook cannot add
+     * or remove any form parameter.
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo parameter_info = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -61,11 +55,9 @@ class FormInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * parameters contained in the form. Note that the webhook cannot add or
-     * remove any form parameter.
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The parameters contained in the form. Note that the webhook cannot add
+     * or remove any form parameter.
      *
      * Generated from protobuf field <code>repeated .google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo parameter_info = 2;</code>
      * @param \Google\Cloud\Dialogflow\Cx\V3\PageInfo\FormInfo\ParameterInfo[]|\Google\Protobuf\Internal\RepeatedField $var

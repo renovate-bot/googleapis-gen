@@ -25,8 +25,7 @@ class IntentInfo extends \Google\Protobuf\Internal\Message
      */
     protected $last_matched_intent = '';
     /**
-     * Always present. The display name of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
      *
      * Generated from protobuf field <code>string display_name = 3;</code>
      */
@@ -60,8 +59,7 @@ class IntentInfo extends \Google\Protobuf\Internal\Message
      *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *           ID>/intents/<Intent ID>`.
      *     @type string $display_name
-     *           Always present. The display name of the last matched
-     *           [intent][google.cloud.dialogflow.cx.v3.Intent].
+     *           Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
      *     @type array|\Google\Protobuf\Internal\MapField $parameters
      *           Parameters identified as a result of intent matching. This is a map of
      *           the name of the identified parameter to the value of the parameter
@@ -110,8 +108,7 @@ class IntentInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present. The display name of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
      *
      * Generated from protobuf field <code>string display_name = 3;</code>
      * @return string
@@ -122,8 +119,7 @@ class IntentInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present. The display name of the last matched
-     * [intent][google.cloud.dialogflow.cx.v3.Intent].
+     * Always present. The display name of the last matched [intent][google.cloud.dialogflow.cx.v3.Intent].
      *
      * Generated from protobuf field <code>string display_name = 3;</code>
      * @param string $var

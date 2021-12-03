@@ -366,7 +366,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
             parent (str):
                 Required. The [Flow][google.cloud.dialogflow.cx.v3.Flow]
                 to list all versions for. Format:
-                ``projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>``.
+                ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -380,7 +380,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         Returns:
             google.cloud.dialogflowcx_v3.services.versions.pagers.ListVersionsPager:
                 The response message for
-                   [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
+                [Versions.ListVersions][google.cloud.dialogflow.cx.v3.Versions.ListVersions].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -456,7 +456,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
                 Required. The name of the
                 [Version][google.cloud.dialogflow.cx.v3.Version].
                 Format:
-                ``projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>``.
+                ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -544,7 +544,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
                 to create an
                 [Version][google.cloud.dialogflow.cx.v3.Version] for.
                 Format:
-                ``projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>``.
+                ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>``.
 
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -723,7 +723,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
                 Required. The name of the
                 [Version][google.cloud.dialogflow.cx.v3.Version] to
                 delete. Format:
-                ``projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>``.
+                ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -801,7 +801,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
                 Required. The
                 [Version][google.cloud.dialogflow.cx.v3.Version] to be
                 loaded to draft flow. Format:
-                ``projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>``.
+                ``projects/<Project ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -902,7 +902,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
                 draft version of the specified flow.
 
                 Format:
-                ``projects/<ProjectID>/locations/<LocationID>/agents/<AgentID>/flows/<FlowID>/versions/<VersionID>``.
+                ``projects/<Project ID>/locations/<Location ID>/agents/ <Agent ID>/flows/<Flow ID>/versions/<Version ID>``.
 
                 This corresponds to the ``base_version`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -916,7 +916,7 @@ class VersionsClient(metaclass=VersionsClientMeta):
         Returns:
             google.cloud.dialogflowcx_v3.types.CompareVersionsResponse:
                 The response message for
-                   [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
+                [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
 
         """
         # Create or coerce a protobuf request object.

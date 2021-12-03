@@ -16,9 +16,7 @@ use Google\Protobuf\Internal\GPBUtil;
 class ParameterInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     * Required for
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
      * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * The human-readable name of the parameter, unique within the form. This
      * field cannot be modified by the webhook.
@@ -27,9 +25,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
      */
     protected $display_name = '';
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Indicates whether the parameter is required. Optional parameters will
      * not trigger prompts; however, they are filled if the user specifies
      * them. Required parameters must be filled before form filling concludes.
@@ -38,32 +34,25 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
      */
     protected $required = false;
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     * Required for
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * state of the parameter. This field can be set to
-     * [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID]
-     * by the webhook to invalidate the parameter; other values set by the
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The state of the parameter. This field can be set
+     * to [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID] by
+     * the webhook to invalidate the parameter; other values set by the
      * webhook will be ignored.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState state = 3;</code>
      */
     protected $state = 0;
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * value of the parameter. This field can be set by the webhook to change
-     * the parameter value.
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The value of the parameter. This field can be set by the webhook to
+     * change the parameter value.
      *
      * Generated from protobuf field <code>.google.protobuf.Value value = 4;</code>
      */
     protected $value = null;
     /**
-     * Optional for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored
-     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Indicates if the parameter value was just collected on the last
      * conversation turn.
      *
@@ -78,38 +67,27 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $display_name
-     *           Always present for
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     *           Required for
+     *           Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
      *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      *           The human-readable name of the parameter, unique within the form. This
      *           field cannot be modified by the webhook.
      *     @type bool $required
-     *           Optional for both
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     *           Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      *           Indicates whether the parameter is required. Optional parameters will
      *           not trigger prompts; however, they are filled if the user specifies
      *           them. Required parameters must be filled before form filling concludes.
      *     @type int $state
-     *           Always present for
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     *           Required for
-     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     *           state of the parameter. This field can be set to
-     *           [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID]
-     *           by the webhook to invalidate the parameter; other values set by the
+     *           Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
+     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The state of the parameter. This field can be set
+     *           to [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID] by
+     *           the webhook to invalidate the parameter; other values set by the
      *           webhook will be ignored.
      *     @type \Google\Protobuf\Value $value
-     *           Optional for both
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     *           value of the parameter. This field can be set by the webhook to change
-     *           the parameter value.
+     *           Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     *           The value of the parameter. This field can be set by the webhook to
+     *           change the parameter value.
      *     @type bool $just_collected
-     *           Optional for
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored
-     *           for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     *           Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      *           Indicates if the parameter value was just collected on the last
      *           conversation turn.
      * }
@@ -120,9 +98,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     * Required for
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
      * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * The human-readable name of the parameter, unique within the form. This
      * field cannot be modified by the webhook.
@@ -136,9 +112,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     * Required for
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
      * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * The human-readable name of the parameter, unique within the form. This
      * field cannot be modified by the webhook.
@@ -156,9 +130,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Indicates whether the parameter is required. Optional parameters will
      * not trigger prompts; however, they are filled if the user specifies
      * them. Required parameters must be filled before form filling concludes.
@@ -172,9 +144,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Indicates whether the parameter is required. Optional parameters will
      * not trigger prompts; however, they are filled if the user specifies
      * them. Required parameters must be filled before form filling concludes.
@@ -192,13 +162,10 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     * Required for
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * state of the parameter. This field can be set to
-     * [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID]
-     * by the webhook to invalidate the parameter; other values set by the
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The state of the parameter. This field can be set
+     * to [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID] by
+     * the webhook to invalidate the parameter; other values set by the
      * webhook will be ignored.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState state = 3;</code>
@@ -210,13 +177,10 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest].
-     * Required for
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * state of the parameter. This field can be set to
-     * [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID]
-     * by the webhook to invalidate the parameter; other values set by the
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Required for
+     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The state of the parameter. This field can be set
+     * to [INVALID][google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState.INVALID] by
+     * the webhook to invalidate the parameter; other values set by the
      * webhook will be ignored.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo.ParameterInfo.ParameterState state = 3;</code>
@@ -232,11 +196,9 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * value of the parameter. This field can be set by the webhook to change
-     * the parameter value.
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The value of the parameter. This field can be set by the webhook to
+     * change the parameter value.
      *
      * Generated from protobuf field <code>.google.protobuf.Value value = 4;</code>
      * @return \Google\Protobuf\Value|null
@@ -257,11 +219,9 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * value of the parameter. This field can be set by the webhook to change
-     * the parameter value.
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The value of the parameter. This field can be set by the webhook to
+     * change the parameter value.
      *
      * Generated from protobuf field <code>.google.protobuf.Value value = 4;</code>
      * @param \Google\Protobuf\Value $var
@@ -276,9 +236,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored
-     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Indicates if the parameter value was just collected on the last
      * conversation turn.
      *
@@ -291,9 +249,7 @@ class ParameterInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored
-     * for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Indicates if the parameter value was just collected on the last
      * conversation turn.
      *

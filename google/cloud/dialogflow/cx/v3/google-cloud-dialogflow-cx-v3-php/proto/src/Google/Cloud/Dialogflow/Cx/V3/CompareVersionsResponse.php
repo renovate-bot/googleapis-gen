@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The response message for
- * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
+ * The response message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.CompareVersionsResponse</code>
  */

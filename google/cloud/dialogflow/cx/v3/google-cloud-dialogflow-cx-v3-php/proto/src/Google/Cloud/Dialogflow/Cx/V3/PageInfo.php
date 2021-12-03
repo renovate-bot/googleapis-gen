@@ -16,20 +16,16 @@ use Google\Protobuf\Internal\GPBUtil;
 class PageInfo extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * unique identifier of the current page. Format: `projects/<Project
-     * ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page
-     * ID>`.
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The unique identifier of the current page.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/pages/<Page ID>`.
      *
      * Generated from protobuf field <code>string current_page = 1 [(.google.api.resource_reference) = {</code>
      */
     protected $current_page = '';
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Information about the form.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo form_info = 3;</code>
@@ -43,16 +39,12 @@ class PageInfo extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $current_page
-     *           Always present for
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
-     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     *           unique identifier of the current page. Format: `projects/<Project
-     *           ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page
-     *           ID>`.
+     *           Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     *           The unique identifier of the current page.
+     *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     *           ID>/flows/<Flow ID>/pages/<Page ID>`.
      *     @type \Google\Cloud\Dialogflow\Cx\V3\PageInfo\FormInfo $form_info
-     *           Optional for both
-     *           [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     *           [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     *           Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      *           Information about the form.
      * }
      */
@@ -62,12 +54,10 @@ class PageInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * unique identifier of the current page. Format: `projects/<Project
-     * ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page
-     * ID>`.
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The unique identifier of the current page.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/pages/<Page ID>`.
      *
      * Generated from protobuf field <code>string current_page = 1 [(.google.api.resource_reference) = {</code>
      * @return string
@@ -78,12 +68,10 @@ class PageInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Always present for
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse]. The
-     * unique identifier of the current page. Format: `projects/<Project
-     * ID>/locations/<Location ID>/agents/<Agent ID>/flows/<Flow ID>/pages/<Page
-     * ID>`.
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * The unique identifier of the current page.
+     * Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
+     * ID>/flows/<Flow ID>/pages/<Page ID>`.
      *
      * Generated from protobuf field <code>string current_page = 1 [(.google.api.resource_reference) = {</code>
      * @param string $var
@@ -98,9 +86,7 @@ class PageInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Information about the form.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo form_info = 3;</code>
@@ -122,9 +108,7 @@ class PageInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional for both
-     * [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and
-     * [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
+     * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3.WebhookResponse].
      * Information about the form.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.cx.v3.PageInfo.FormInfo form_info = 3;</code>

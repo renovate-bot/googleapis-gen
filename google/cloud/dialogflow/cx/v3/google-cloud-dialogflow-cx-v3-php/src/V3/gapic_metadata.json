@@ -458,6 +458,40 @@
                 }
             }
         },
+        "Webhooks": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "WebhooksGapicClient",
+                    "rpcs": {
+                        "CreateWebhook": {
+                            "methods": [
+                                "createWebhook"
+                            ]
+                        },
+                        "DeleteWebhook": {
+                            "methods": [
+                                "deleteWebhook"
+                            ]
+                        },
+                        "GetWebhook": {
+                            "methods": [
+                                "getWebhook"
+                            ]
+                        },
+                        "ListWebhooks": {
+                            "methods": [
+                                "listWebhooks"
+                            ]
+                        },
+                        "UpdateWebhook": {
+                            "methods": [
+                                "updateWebhook"
+                            ]
+                        }
+                    }
+                }
+            }
+        },
         "Environments": {
             "clients": {
                 "grpc": {
@@ -550,40 +584,6 @@
                         "UpdateExperiment": {
                             "methods": [
                                 "updateExperiment"
-                            ]
-                        }
-                    }
-                }
-            }
-        },
-        "Webhooks": {
-            "clients": {
-                "grpc": {
-                    "libraryClient": "WebhooksGapicClient",
-                    "rpcs": {
-                        "CreateWebhook": {
-                            "methods": [
-                                "createWebhook"
-                            ]
-                        },
-                        "DeleteWebhook": {
-                            "methods": [
-                                "deleteWebhook"
-                            ]
-                        },
-                        "GetWebhook": {
-                            "methods": [
-                                "getWebhook"
-                            ]
-                        },
-                        "ListWebhooks": {
-                            "methods": [
-                                "listWebhooks"
-                            ]
-                        },
-                        "UpdateWebhook": {
-                            "methods": [
-                                "updateWebhook"
                             ]
                         }
                     }

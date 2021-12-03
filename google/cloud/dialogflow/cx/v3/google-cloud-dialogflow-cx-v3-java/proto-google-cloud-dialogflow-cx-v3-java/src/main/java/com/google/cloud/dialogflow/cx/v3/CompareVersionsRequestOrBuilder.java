@@ -9,10 +9,10 @@ public interface CompareVersionsRequestOrBuilder extends
 
   /**
    * <pre>
-   * Required. Name of the base flow version to compare with the target version.
-   * Use version ID `0` to indicate the draft version of the specified flow.
-   * Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * Required. Name of the base flow version to compare with the target version. Use
+   * version ID `0` to indicate the draft version of the specified flow.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
+   * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>string base_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -21,10 +21,10 @@ public interface CompareVersionsRequestOrBuilder extends
   java.lang.String getBaseVersion();
   /**
    * <pre>
-   * Required. Name of the base flow version to compare with the target version.
-   * Use version ID `0` to indicate the draft version of the specified flow.
-   * Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * Required. Name of the base flow version to compare with the target version. Use
+   * version ID `0` to indicate the draft version of the specified flow.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/
+   * &lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>string base_version = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -37,8 +37,8 @@ public interface CompareVersionsRequestOrBuilder extends
    * <pre>
    * Required. Name of the target flow version to compare with the
    * base version. Use version ID `0` to indicate the draft version of the
-   * specified flow. Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * specified flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>string target_version = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>
@@ -49,8 +49,8 @@ public interface CompareVersionsRequestOrBuilder extends
    * <pre>
    * Required. Name of the target flow version to compare with the
    * base version. Use version ID `0` to indicate the draft version of the
-   * specified flow. Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * specified flow. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location
+   * ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>string target_version = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }</code>

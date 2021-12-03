@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3;
 
 /**
  * <pre>
- * The response message for
- * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
+ * The response message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CompareVersionsResponse}
@@ -424,8 +423,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The response message for
-   * [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
+   * The response message for [Versions.CompareVersions][google.cloud.dialogflow.cx.v3.Versions.CompareVersions].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CompareVersionsResponse}

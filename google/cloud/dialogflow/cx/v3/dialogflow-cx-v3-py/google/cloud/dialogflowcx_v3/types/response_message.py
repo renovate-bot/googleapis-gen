@@ -108,6 +108,12 @@ class ResponseMessage(proto.Message):
             supposed to be defined by the user.
 
             This field is a member of `oneof`_ ``message``.
+        telephony_transfer_call (google.cloud.dialogflowcx_v3.types.ResponseMessage.TelephonyTransferCall):
+            A signal that the client should transfer the
+            phone call connected to this agent to a third-
+            party endpoint.
+
+            This field is a member of `oneof`_ ``message``.
     """
 
     class Text(proto.Message):
@@ -335,6 +341,27 @@ class ResponseMessage(proto.Message):
             message='ResponseMessage.MixedAudio.Segment',
         )
 
+    class TelephonyTransferCall(proto.Message):
+        r"""Represents the signal that telles the client to transfer the
+        phone call connected to the agent to a third-party endpoint.
+
+
+        .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
+        Attributes:
+            phone_number (str):
+                Transfer the call to a phone number in `E.164
+                format <https://en.wikipedia.org/wiki/E.164>`__.
+
+                This field is a member of `oneof`_ ``endpoint``.
+        """
+
+        phone_number = proto.Field(
+            proto.STRING,
+            number=1,
+            oneof='endpoint',
+        )
+
     text = proto.Field(
         proto.MESSAGE,
         number=1,
@@ -382,6 +409,12 @@ class ResponseMessage(proto.Message):
         number=13,
         oneof='message',
         message=MixedAudio,
+    )
+    telephony_transfer_call = proto.Field(
+        proto.MESSAGE,
+        number=18,
+        oneof='message',
+        message=TelephonyTransferCall,
     )
 
 

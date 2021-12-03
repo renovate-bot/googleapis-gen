@@ -288,8 +288,7 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all versions in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public void listVersions(com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request,
@@ -309,13 +308,11 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`:
-     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -445,8 +442,7 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all versions in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public void listVersions(com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request,
@@ -468,13 +464,11 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`:
-     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -555,8 +549,7 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all versions in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public com.google.cloud.dialogflow.cx.v3.ListVersionsResponse listVersions(com.google.cloud.dialogflow.cx.v3.ListVersionsRequest request) {
@@ -576,13 +569,11 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`:
-     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */
@@ -658,8 +649,7 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Returns the list of all versions in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Returns the list of all versions in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.dialogflow.cx.v3.ListVersionsResponse> listVersions(
@@ -681,13 +671,11 @@ public final class VersionsGrpc {
 
     /**
      * <pre>
-     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified
-     * [Flow][google.cloud.dialogflow.cx.v3.Flow].
+     * Creates a [Version][google.cloud.dialogflow.cx.v3.Version] in the specified [Flow][google.cloud.dialogflow.cx.v3.Flow].
      * This method is a [long-running
      * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
      * The returned `Operation` type has the following method-specific fields:
-     * - `metadata`:
-     * [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
+     * - `metadata`: [CreateVersionOperationMetadata][google.cloud.dialogflow.cx.v3.CreateVersionOperationMetadata]
      * - `response`: [Version][google.cloud.dialogflow.cx.v3.Version]
      * </pre>
      */

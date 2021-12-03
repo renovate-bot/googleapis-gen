@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3;
 
 /**
  * <pre>
- * The request message for
- * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
+ * The request message for [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateWebhookRequest}
@@ -363,8 +362,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
+   * The request message for [Webhooks.CreateWebhook][google.cloud.dialogflow.cx.v3.Webhooks.CreateWebhook].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.CreateWebhookRequest}

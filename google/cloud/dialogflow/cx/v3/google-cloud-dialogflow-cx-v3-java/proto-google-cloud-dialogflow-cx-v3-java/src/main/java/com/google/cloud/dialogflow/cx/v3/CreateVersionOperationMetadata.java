@@ -97,8 +97,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Name of the created version.
-   * Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -120,8 +120,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Name of the created version.
-   * Format:
-   * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+   * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
    * </pre>
    *
    * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -453,8 +453,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the created version.
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -475,8 +475,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the created version.
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -498,8 +498,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the created version.
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -519,8 +519,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the created version.
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -535,8 +535,8 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Name of the created version.
-     * Format:
-     * `projects/&lt;ProjectID&gt;/locations/&lt;LocationID&gt;/agents/&lt;AgentID&gt;/flows/&lt;FlowID&gt;/versions/&lt;VersionID&gt;`.
+     * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+     * ID&gt;/flows/&lt;Flow ID&gt;/versions/&lt;Version ID&gt;`.
      * </pre>
      *
      * <code>string version = 1 [(.google.api.resource_reference) = { ... }</code>

@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.cx.v3;
 
 /**
  * <pre>
- * The request message for
- * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
+ * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateVersionRequest}
@@ -153,8 +152,8 @@ private static final long serialVersionUID = 0L;
   private com.google.protobuf.FieldMask updateMask_;
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only
-   * `description` and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only `description`
+   * and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,8 +165,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only
-   * `description` and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only `description`
+   * and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -179,8 +178,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The mask to control which fields get updated. Currently only
-   * `description` and `display_name` can be updated.
+   * Required. The mask to control which fields get updated. Currently only `description`
+   * and `display_name` can be updated.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -368,8 +367,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
+   * The request message for [Versions.UpdateVersion][google.cloud.dialogflow.cx.v3.Versions.UpdateVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.cx.v3.UpdateVersionRequest}
@@ -700,8 +698,8 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -712,8 +710,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -728,8 +726,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -749,8 +747,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -768,8 +766,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -791,8 +789,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -810,8 +808,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -823,8 +821,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -839,8 +837,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The mask to control which fields get updated. Currently only
-     * `description` and `display_name` can be updated.
+     * Required. The mask to control which fields get updated. Currently only `description`
+     * and `display_name` can be updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2 [(.google.api.field_behavior) = REQUIRED];</code>

@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The request message for
- * [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3.Webhooks.DeleteWebhook].
+ * The request message for [Webhooks.DeleteWebhook][google.cloud.dialogflow.cx.v3.Webhooks.DeleteWebhook].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.cx.v3.DeleteWebhookRequest</code>
  */
@@ -30,10 +29,9 @@ class DeleteWebhookRequest extends \Google\Protobuf\Internal\Message
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referenced resources.
      * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *    as any references to the webhook (i.e.
-     *    [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook] and
-     *    [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that
-     *    point to this webhook will be removed).
+     *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook]
+     *    and [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that point to this webhook
+     *    will be removed).
      *
      * Generated from protobuf field <code>bool force = 2;</code>
      */
@@ -55,10 +53,9 @@ class DeleteWebhookRequest extends \Google\Protobuf\Internal\Message
      *           *  If `force` is set to false, an error will be returned with message
      *              indicating the referenced resources.
      *           *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *              as any references to the webhook (i.e.
-     *              [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook] and
-     *              [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that
-     *              point to this webhook will be removed).
+     *              as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook]
+     *              and [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that point to this webhook
+     *              will be removed).
      * }
      */
     public function __construct($data = NULL) {
@@ -102,10 +99,9 @@ class DeleteWebhookRequest extends \Google\Protobuf\Internal\Message
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referenced resources.
      * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *    as any references to the webhook (i.e.
-     *    [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook] and
-     *    [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that
-     *    point to this webhook will be removed).
+     *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook]
+     *    and [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that point to this webhook
+     *    will be removed).
      *
      * Generated from protobuf field <code>bool force = 2;</code>
      * @return bool
@@ -121,10 +117,9 @@ class DeleteWebhookRequest extends \Google\Protobuf\Internal\Message
      * *  If `force` is set to false, an error will be returned with message
      *    indicating the referenced resources.
      * *  If `force` is set to true, Dialogflow will remove the webhook, as well
-     *    as any references to the webhook (i.e.
-     *    [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook] and
-     *    [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that
-     *    point to this webhook will be removed).
+     *    as any references to the webhook (i.e. [Webhook][google.cloud.dialogflow.cx.v3.Fulfillment.webhook]
+     *    and [tag][google.cloud.dialogflow.cx.v3.Fulfillment.tag]in fulfillments that point to this webhook
+     *    will be removed).
      *
      * Generated from protobuf field <code>bool force = 2;</code>
      * @param bool $var
