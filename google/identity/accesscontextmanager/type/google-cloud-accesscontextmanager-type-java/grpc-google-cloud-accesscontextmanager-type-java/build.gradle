@@ -1,26 +1,14 @@
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-}
-
-apply plugin: 'java'
-
 description = 'GRPC library for grpc-google-cloud-accesscontextmanager-type-java'
 group = 'com.google.api.grpc'
-version = (findProperty('version') == 'unspecified') ? '0.0.0-SNAPSHOT' : version
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+version = (version == 'unspecified') ? '0.0.0-SNAPSHOT' : version
 
-repositories {
-  mavenCentral()
-  mavenLocal()
-}
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.41.0'
-  compile 'io.grpc:grpc-protobuf:1.41.0'
-  compile project(':proto-google-cloud-accesscontextmanager-type-java')
+  implementation 'io.grpc:grpc-stub:1.42.1'
+  implementation 'io.grpc:grpc-protobuf:1.42.1'
+  implementation project(':proto-google-cloud-accesscontextmanager-type-java')
 }
 
 sourceSets {
@@ -44,6 +32,3 @@ task sourcesJar(type: Jar) {
 artifacts {
   archives javadocJar, sourcesJar
 }
-
-compileJava.options.encoding = 'UTF-8'
-javadoc.options.encoding = 'UTF-8'

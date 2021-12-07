@@ -1,27 +1,15 @@
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-}
-
-apply plugin: 'java'
-
 description = 'GRPC library for grpc-google-cloud-iap-v1beta1-java'
 group = 'com.google.api.grpc'
-version = (findProperty('version') == 'unspecified') ? '0.0.0-SNAPSHOT' : version
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+version = (version == 'unspecified') ? '0.0.0-SNAPSHOT' : version
 
-repositories {
-  mavenCentral()
-  mavenLocal()
-}
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
 
 dependencies {
-  compile 'io.grpc:grpc-stub:1.41.0'
-  compile 'io.grpc:grpc-protobuf:1.41.0'
-  compile project(':proto-google-cloud-iap-v1beta1-java')
-  compile 'com.google.api.grpc:proto-google-iam-v1:1.0.9'
+  implementation 'io.grpc:grpc-stub:1.42.1'
+  implementation 'io.grpc:grpc-protobuf:1.42.1'
+  implementation project(':proto-google-cloud-iap-v1beta1-java')
+  implementation 'com.google.api.grpc:proto-google-iam-v1:1.0.9'
 }
 
 sourceSets {
@@ -45,6 +33,3 @@ task sourcesJar(type: Jar) {
 artifacts {
   archives javadocJar, sourcesJar
 }
-
-compileJava.options.encoding = 'UTF-8'
-javadoc.options.encoding = 'UTF-8'
