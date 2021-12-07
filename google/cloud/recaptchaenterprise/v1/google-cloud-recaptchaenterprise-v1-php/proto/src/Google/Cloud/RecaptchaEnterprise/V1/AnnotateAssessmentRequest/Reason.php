@@ -20,12 +20,29 @@ class Reason
      */
     const REASON_UNSPECIFIED = 0;
     /**
-     * Indicates a chargeback for fraud was issued for the transaction
-     * associated with the assessment.
+     * Indicates a chargeback was issued for the transaction associated with the
+     * assessment, with no other details. When possible, specify the type by
+     * using CHARGEBACK_FRAUD or CHARGEBACK_DISPUTE instead.
      *
      * Generated from protobuf enum <code>CHARGEBACK = 1;</code>
      */
     const CHARGEBACK = 1;
+    /**
+     * Indicates a chargeback related to an alleged unauthorized transaction
+     * from the perspective of the cardholder (for example, the card number was
+     * stolen).
+     *
+     * Generated from protobuf enum <code>CHARGEBACK_FRAUD = 8;</code>
+     */
+    const CHARGEBACK_FRAUD = 8;
+    /**
+     * Indicates a chargeback related to the cardholder having provided their
+     * card but allegedly not being satisfied with the purchase
+     * (for example, misrepresentation, attempted cancellation).
+     *
+     * Generated from protobuf enum <code>CHARGEBACK_DISPUTE = 9;</code>
+     */
+    const CHARGEBACK_DISPUTE = 9;
     /**
      * Indicates the transaction associated with the assessment is suspected of
      * being fraudulent based on the payment method, billing details, shipping
@@ -71,6 +88,8 @@ class Reason
     private static $valueToName = [
         self::REASON_UNSPECIFIED => 'REASON_UNSPECIFIED',
         self::CHARGEBACK => 'CHARGEBACK',
+        self::CHARGEBACK_FRAUD => 'CHARGEBACK_FRAUD',
+        self::CHARGEBACK_DISPUTE => 'CHARGEBACK_DISPUTE',
         self::PAYMENT_HEURISTICS => 'PAYMENT_HEURISTICS',
         self::INITIATED_TWO_FACTOR => 'INITIATED_TWO_FACTOR',
         self::PASSED_TWO_FACTOR => 'PASSED_TWO_FACTOR',

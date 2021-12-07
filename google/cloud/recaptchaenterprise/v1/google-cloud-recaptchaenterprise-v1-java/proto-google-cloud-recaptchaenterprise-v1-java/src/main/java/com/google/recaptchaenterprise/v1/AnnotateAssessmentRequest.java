@@ -340,13 +340,34 @@ private static final long serialVersionUID = 0L;
     REASON_UNSPECIFIED(0),
     /**
      * <pre>
-     * Indicates a chargeback for fraud was issued for the transaction
-     * associated with the assessment.
+     * Indicates a chargeback was issued for the transaction associated with the
+     * assessment, with no other details. When possible, specify the type by
+     * using CHARGEBACK_FRAUD or CHARGEBACK_DISPUTE instead.
      * </pre>
      *
      * <code>CHARGEBACK = 1;</code>
      */
     CHARGEBACK(1),
+    /**
+     * <pre>
+     * Indicates a chargeback related to an alleged unauthorized transaction
+     * from the perspective of the cardholder (for example, the card number was
+     * stolen).
+     * </pre>
+     *
+     * <code>CHARGEBACK_FRAUD = 8;</code>
+     */
+    CHARGEBACK_FRAUD(8),
+    /**
+     * <pre>
+     * Indicates a chargeback related to the cardholder having provided their
+     * card but allegedly not being satisfied with the purchase
+     * (for example, misrepresentation, attempted cancellation).
+     * </pre>
+     *
+     * <code>CHARGEBACK_DISPUTE = 9;</code>
+     */
+    CHARGEBACK_DISPUTE(9),
     /**
      * <pre>
      * Indicates the transaction associated with the assessment is suspected of
@@ -413,13 +434,34 @@ private static final long serialVersionUID = 0L;
     public static final int REASON_UNSPECIFIED_VALUE = 0;
     /**
      * <pre>
-     * Indicates a chargeback for fraud was issued for the transaction
-     * associated with the assessment.
+     * Indicates a chargeback was issued for the transaction associated with the
+     * assessment, with no other details. When possible, specify the type by
+     * using CHARGEBACK_FRAUD or CHARGEBACK_DISPUTE instead.
      * </pre>
      *
      * <code>CHARGEBACK = 1;</code>
      */
     public static final int CHARGEBACK_VALUE = 1;
+    /**
+     * <pre>
+     * Indicates a chargeback related to an alleged unauthorized transaction
+     * from the perspective of the cardholder (for example, the card number was
+     * stolen).
+     * </pre>
+     *
+     * <code>CHARGEBACK_FRAUD = 8;</code>
+     */
+    public static final int CHARGEBACK_FRAUD_VALUE = 8;
+    /**
+     * <pre>
+     * Indicates a chargeback related to the cardholder having provided their
+     * card but allegedly not being satisfied with the purchase
+     * (for example, misrepresentation, attempted cancellation).
+     * </pre>
+     *
+     * <code>CHARGEBACK_DISPUTE = 9;</code>
+     */
+    public static final int CHARGEBACK_DISPUTE_VALUE = 9;
     /**
      * <pre>
      * Indicates the transaction associated with the assessment is suspected of
@@ -501,6 +543,8 @@ private static final long serialVersionUID = 0L;
       switch (value) {
         case 0: return REASON_UNSPECIFIED;
         case 1: return CHARGEBACK;
+        case 8: return CHARGEBACK_FRAUD;
+        case 9: return CHARGEBACK_DISPUTE;
         case 2: return PAYMENT_HEURISTICS;
         case 7: return INITIATED_TWO_FACTOR;
         case 3: return PASSED_TWO_FACTOR;
