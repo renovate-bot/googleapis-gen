@@ -90,7 +90,7 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grafeas.v1.IntotoStatement.internal_static_grafeas_v1_Subject_descriptor;
+    return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
@@ -108,7 +108,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.IntotoStatement.internal_static_grafeas_v1_Subject_fieldAccessorTable
+    return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.Subject.class, io.grafeas.v1.Subject.Builder.class);
   }
@@ -157,7 +157,7 @@ private static final long serialVersionUID = 0L;
         java.lang.String, java.lang.String> defaultEntry =
             com.google.protobuf.MapEntry
             .<java.lang.String, java.lang.String>newDefaultInstance(
-                io.grafeas.v1.IntotoStatement.internal_static_grafeas_v1_Subject_DigestEntry_descriptor, 
+                io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_DigestEntry_descriptor, 
                 com.google.protobuf.WireFormat.FieldType.STRING,
                 "",
                 com.google.protobuf.WireFormat.FieldType.STRING,
@@ -445,7 +445,7 @@ private static final long serialVersionUID = 0L;
       io.grafeas.v1.SubjectOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grafeas.v1.IntotoStatement.internal_static_grafeas_v1_Subject_descriptor;
+      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -473,7 +473,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.IntotoStatement.internal_static_grafeas_v1_Subject_fieldAccessorTable
+      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.Subject.class, io.grafeas.v1.Subject.Builder.class);
     }
@@ -505,7 +505,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grafeas.v1.IntotoStatement.internal_static_grafeas_v1_Subject_descriptor;
+      return io.grafeas.v1.InTotoStatementProto.internal_static_grafeas_v1_Subject_descriptor;
     }
 
     @java.lang.Override

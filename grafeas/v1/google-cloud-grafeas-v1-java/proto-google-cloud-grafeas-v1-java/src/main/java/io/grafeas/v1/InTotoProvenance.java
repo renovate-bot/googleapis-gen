@@ -122,13 +122,13 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return io.grafeas.v1.IntotoProvenance.internal_static_grafeas_v1_InTotoProvenance_descriptor;
+    return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1.IntotoProvenance.internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
+    return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             io.grafeas.v1.InTotoProvenance.class, io.grafeas.v1.InTotoProvenance.Builder.class);
   }
@@ -525,13 +525,13 @@ private static final long serialVersionUID = 0L;
       io.grafeas.v1.InTotoProvenanceOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return io.grafeas.v1.IntotoProvenance.internal_static_grafeas_v1_InTotoProvenance_descriptor;
+      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1.IntotoProvenance.internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
+      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1.InTotoProvenance.class, io.grafeas.v1.InTotoProvenance.Builder.class);
     }
@@ -580,7 +580,7 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return io.grafeas.v1.IntotoProvenance.internal_static_grafeas_v1_InTotoProvenance_descriptor;
+      return io.grafeas.v1.InTotoProvenanceProto.internal_static_grafeas_v1_InTotoProvenance_descriptor;
     }
 
     @java.lang.Override
