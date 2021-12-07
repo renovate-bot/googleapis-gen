@@ -149,4 +149,23 @@ public interface WriteStreamOrBuilder extends
    * <code>.google.cloud.bigquery.storage.v1.TableSchema table_schema = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.cloud.bigquery.storage.v1.TableSchemaOrBuilder getTableSchemaOrBuilder();
+
+  /**
+   * <pre>
+   * Immutable. Mode of the stream.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The enum numeric value on the wire for writeMode.
+   */
+  int getWriteModeValue();
+  /**
+   * <pre>
+   * Immutable. Mode of the stream.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   * @return The writeMode.
+   */
+  com.google.cloud.bigquery.storage.v1.WriteStream.WriteMode getWriteMode();
 }

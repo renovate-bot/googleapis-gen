@@ -53,6 +53,12 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1.TableSchema table_schema = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $table_schema = null;
+    /**
+     * Immutable. Mode of the stream.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     */
+    protected $write_mode = 0;
 
     /**
      * Constructor.
@@ -78,6 +84,8 @@ class WriteStream extends \Google\Protobuf\Internal\Message
      *           `CreateWriteStream` response. Caller should generate data that's
      *           compatible with this schema to send in initial `AppendRowsRequest`.
      *           The table schema could go out of date during the life time of the stream.
+     *     @type int $write_mode
+     *           Immutable. Mode of the stream.
      * }
      */
     public function __construct($data = NULL) {
@@ -257,6 +265,32 @@ class WriteStream extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Cloud\BigQuery\Storage\V1\TableSchema::class);
         $this->table_schema = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. Mode of the stream.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @return int
+     */
+    public function getWriteMode()
+    {
+        return $this->write_mode;
+    }
+
+    /**
+     * Immutable. Mode of the stream.
+     *
+     * Generated from protobuf field <code>.google.cloud.bigquery.storage.v1.WriteStream.WriteMode write_mode = 7 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setWriteMode($var)
+    {
+        GPBUtil::checkEnum($var, \Google\Cloud\BigQuery\Storage\V1\WriteStream\WriteMode::class);
+        $this->write_mode = $var;
 
         return $this;
     }
