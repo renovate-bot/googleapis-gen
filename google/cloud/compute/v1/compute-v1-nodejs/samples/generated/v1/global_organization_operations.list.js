@@ -57,8 +57,10 @@ function main() {
     };
 
     // Run request
-    const response = await computeClient.list(request);
-    console.log(response);
+    const iterable = await computeClient.listAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callList();

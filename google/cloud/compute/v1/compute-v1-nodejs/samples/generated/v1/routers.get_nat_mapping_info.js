@@ -68,8 +68,10 @@ function main(project, region, router) {
     };
 
     // Run request
-    const response = await computeClient.getNatMappingInfo(request);
-    console.log(response);
+    const iterable = await computeClient.getNatMappingInfoAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callGetNatMappingInfo();

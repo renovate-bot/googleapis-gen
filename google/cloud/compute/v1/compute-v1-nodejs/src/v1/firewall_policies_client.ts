@@ -18,8 +18,10 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
 
+import { Transform } from 'stream';
+import { RequestType } from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -96,6 +98,12 @@ export class FirewallPoliciesClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
+    // Implicitely set 'rest' value for the apis use rest as transport (eg. googleapis-discovery apis).
+    if (!opts) {
+      opts = {fallback: 'rest'};
+    } else {
+      opts.fallback = opts.fallback ?? 'rest';
+    }
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
     opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
@@ -115,9 +123,6 @@ export class FirewallPoliciesClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
-
-    // Set useJWTAccessWithScope on the auth object.
-    this.auth.useJWTAccessWithScope = true;
 
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
@@ -147,6 +152,14 @@ export class FirewallPoliciesClient {
     }
     // Load the applicable protos.
     this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
+
+    // Some of the methods on this service return "paged" results,
+    // (e.g. 50 results at a time, with tokens to get subsequent
+    // pages). Denote the keys used for pagination and results.
+    this.descriptors.page = {
+      list:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items')
+    };
 
     // Put together the default options sent with requests.
     this._defaults = this._gaxGrpc.constructSettings(
@@ -206,6 +219,7 @@ export class FirewallPoliciesClient {
         });
 
       const descriptor =
+        this.descriptors.page[methodName] ||
         undefined;
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
@@ -290,10 +304,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.add_association.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_AddAssociation_async
  */
@@ -301,8 +320,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IAddAssociationFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddAssociationFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   addAssociation(
       request: protos.google.cloud.compute.v1.IAddAssociationFirewallPolicyRequest,
@@ -328,8 +347,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IAddAssociationFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddAssociationFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -349,7 +368,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.addAssociation(request, options, callback);
+    return this.innerApiCalls.addAssociation(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Inserts a rule into a firewall policy.
@@ -365,10 +391,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.add_rule.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_AddRule_async
  */
@@ -376,8 +407,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IAddRuleFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddRuleFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   addRule(
       request: protos.google.cloud.compute.v1.IAddRuleFirewallPolicyRequest,
@@ -403,8 +434,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IAddRuleFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddRuleFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -424,7 +455,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.addRule(request, options, callback);
+    return this.innerApiCalls.addRule(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Copies rules to the specified firewall policy.
@@ -440,10 +478,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.clone_rules.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_CloneRules_async
  */
@@ -451,8 +494,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.ICloneRulesFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ICloneRulesFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   cloneRules(
       request: protos.google.cloud.compute.v1.ICloneRulesFirewallPolicyRequest,
@@ -478,8 +521,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.ICloneRulesFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ICloneRulesFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -499,7 +542,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.cloneRules(request, options, callback);
+    return this.innerApiCalls.cloneRules(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Deletes the specified policy.
@@ -513,10 +563,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.delete.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_Delete_async
  */
@@ -524,8 +579,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IDeleteFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDeleteFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   delete(
       request: protos.google.cloud.compute.v1.IDeleteFirewallPolicyRequest,
@@ -551,8 +606,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IDeleteFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDeleteFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -572,7 +627,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.delete(request, options, callback);
+    return this.innerApiCalls.delete(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Returns the specified firewall policy.
@@ -878,10 +940,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.insert.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_Insert_async
  */
@@ -889,8 +956,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IInsertFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IInsertFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   insert(
       request: protos.google.cloud.compute.v1.IInsertFirewallPolicyRequest,
@@ -916,8 +983,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IInsertFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IInsertFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -932,83 +999,14 @@ export class FirewallPoliciesClient {
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
     this.initialize();
-    return this.innerApiCalls.insert(request, options, callback);
-  }
-/**
- * Lists all the policies that have been configured for the specified folder or organization.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.filter
- *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
- * @param {number} request.maxResults
- *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
- * @param {string} request.orderBy
- *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
- * @param {string} request.pageToken
- *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
- * @param {string} request.parentId
- *   Parent ID for this request.
- * @param {boolean} request.returnPartialSuccess
- *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [FirewallPolicyList]{@link google.cloud.compute.v1.FirewallPolicyList}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/firewall_policies.list.js</caption>
- * region_tag:compute_v1_generated_FirewallPolicies_List_async
- */
-  list(
-      request?: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.IFirewallPolicyList,
-        protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|undefined, {}|undefined
-      ]>;
-  list(
-      request: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IFirewallPolicyList,
-          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IFirewallPolicyList,
-          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request?: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IFirewallPolicyList,
-          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IFirewallPolicyList,
-          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.IFirewallPolicyList,
-        protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    this.initialize();
-    return this.innerApiCalls.list(request, options, callback);
+    return this.innerApiCalls.insert(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Lists associations of a specified target, i.e., organization or folder.
@@ -1090,10 +1088,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.move.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_Move_async
  */
@@ -1101,8 +1104,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IMoveFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IMoveFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   move(
       request: protos.google.cloud.compute.v1.IMoveFirewallPolicyRequest,
@@ -1128,8 +1131,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IMoveFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IMoveFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1149,7 +1152,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.move(request, options, callback);
+    return this.innerApiCalls.move(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Patches the specified policy with the data included in the request.
@@ -1165,10 +1175,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.patch.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_Patch_async
  */
@@ -1176,8 +1191,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IPatchFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IPatchFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   patch(
       request: protos.google.cloud.compute.v1.IPatchFirewallPolicyRequest,
@@ -1203,8 +1218,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IPatchFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IPatchFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1224,7 +1239,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.patch(request, options, callback);
+    return this.innerApiCalls.patch(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Patches a rule of the specified priority.
@@ -1242,10 +1264,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.patch_rule.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_PatchRule_async
  */
@@ -1253,8 +1280,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IPatchRuleFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IPatchRuleFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   patchRule(
       request: protos.google.cloud.compute.v1.IPatchRuleFirewallPolicyRequest,
@@ -1280,8 +1307,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IPatchRuleFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IPatchRuleFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1301,7 +1328,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.patchRule(request, options, callback);
+    return this.innerApiCalls.patchRule(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Removes an association for the specified firewall policy.
@@ -1317,10 +1351,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.remove_association.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_RemoveAssociation_async
  */
@@ -1328,8 +1367,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IRemoveAssociationFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveAssociationFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   removeAssociation(
       request: protos.google.cloud.compute.v1.IRemoveAssociationFirewallPolicyRequest,
@@ -1355,8 +1394,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IRemoveAssociationFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveAssociationFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1376,7 +1415,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.removeAssociation(request, options, callback);
+    return this.innerApiCalls.removeAssociation(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Deletes a rule of the specified priority.
@@ -1392,10 +1438,15 @@ export class FirewallPoliciesClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/firewall_policies.remove_rule.js</caption>
  * region_tag:compute_v1_generated_FirewallPolicies_RemoveRule_async
  */
@@ -1403,8 +1454,8 @@ export class FirewallPoliciesClient {
       request?: protos.google.cloud.compute.v1.IRemoveRuleFirewallPolicyRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveRuleFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   removeRule(
       request: protos.google.cloud.compute.v1.IRemoveRuleFirewallPolicyRequest,
@@ -1430,8 +1481,8 @@ export class FirewallPoliciesClient {
           protos.google.cloud.compute.v1.IRemoveRuleFirewallPolicyRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveRuleFirewallPolicyRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1451,7 +1502,14 @@ export class FirewallPoliciesClient {
       'firewall_policy': request.firewallPolicy || '',
     });
     this.initialize();
-    return this.innerApiCalls.removeRule(request, options, callback);
+    return this.innerApiCalls.removeRule(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Sets the access control policy on the specified resource. Replaces any existing policy.
@@ -1600,6 +1658,182 @@ export class FirewallPoliciesClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
+ /**
+ * Lists all the policies that have been configured for the specified folder or organization.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.parentId
+ *   Parent ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [FirewallPolicy]{@link google.cloud.compute.v1.FirewallPolicy}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  list(
+      request?: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.compute.v1.IFirewallPolicy[],
+        protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|null,
+        protos.google.cloud.compute.v1.IFirewallPolicyList
+      ]>;
+  list(
+      request: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+          protos.google.cloud.compute.v1.IFirewallPolicyList|null|undefined,
+          protos.google.cloud.compute.v1.IFirewallPolicy>): void;
+  list(
+      request: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+          protos.google.cloud.compute.v1.IFirewallPolicyList|null|undefined,
+          protos.google.cloud.compute.v1.IFirewallPolicy>): void;
+  list(
+      request?: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+          protos.google.cloud.compute.v1.IFirewallPolicyList|null|undefined,
+          protos.google.cloud.compute.v1.IFirewallPolicy>,
+      callback?: PaginationCallback<
+          protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+          protos.google.cloud.compute.v1.IFirewallPolicyList|null|undefined,
+          protos.google.cloud.compute.v1.IFirewallPolicy>):
+      Promise<[
+        protos.google.cloud.compute.v1.IFirewallPolicy[],
+        protos.google.cloud.compute.v1.IListFirewallPoliciesRequest|null,
+        protos.google.cloud.compute.v1.IFirewallPolicyList
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    this.initialize();
+    return this.innerApiCalls.list(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.parentId
+ *   Parent ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [FirewallPolicy]{@link google.cloud.compute.v1.FirewallPolicy} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listStream(
+      request?: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    const defaultCallSettings = this._defaults['list'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.list.createStream(
+      this.innerApiCalls.list as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `list`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.parentId
+ *   Parent ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [FirewallPolicy]{@link google.cloud.compute.v1.FirewallPolicy}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/firewall_policies.list.js</caption>
+ * region_tag:compute_v1_generated_FirewallPolicies_List_async
+ */
+  listAsync(
+      request?: protos.google.cloud.compute.v1.IListFirewallPoliciesRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.compute.v1.IFirewallPolicy>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    const defaultCallSettings = this._defaults['list'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.list.asyncIterate(
+      this.innerApiCalls['list'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.compute.v1.IFirewallPolicy>;
+  }
 
   /**
    * Terminate the gRPC channel and close the client.

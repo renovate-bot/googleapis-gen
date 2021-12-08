@@ -76,8 +76,10 @@ function main(network, project) {
     };
 
     // Run request
-    const response = await computeClient.listPeeringRoutes(request);
-    console.log(response);
+    const iterable = await computeClient.listPeeringRoutesAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListPeeringRoutes();

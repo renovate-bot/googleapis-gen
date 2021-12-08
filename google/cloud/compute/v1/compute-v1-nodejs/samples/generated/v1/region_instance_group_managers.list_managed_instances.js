@@ -68,8 +68,10 @@ function main(instanceGroupManager, project, region) {
     };
 
     // Run request
-    const response = await computeClient.listManagedInstances(request);
-    console.log(response);
+    const iterable = await computeClient.listManagedInstancesAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListManagedInstances();

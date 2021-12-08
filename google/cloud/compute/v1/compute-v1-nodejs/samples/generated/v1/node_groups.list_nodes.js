@@ -68,8 +68,10 @@ function main(nodeGroup, project, zone) {
     };
 
     // Run request
-    const response = await computeClient.listNodes(request);
-    console.log(response);
+    const iterable = await computeClient.listNodesAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListNodes();

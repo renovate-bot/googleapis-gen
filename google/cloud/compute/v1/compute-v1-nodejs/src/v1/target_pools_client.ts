@@ -18,8 +18,10 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
 
+import { Transform } from 'stream';
+import { RequestType } from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -96,6 +98,12 @@ export class TargetPoolsClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
+    // Implicitely set 'rest' value for the apis use rest as transport (eg. googleapis-discovery apis).
+    if (!opts) {
+      opts = {fallback: 'rest'};
+    } else {
+      opts.fallback = opts.fallback ?? 'rest';
+    }
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
     opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
@@ -115,9 +123,6 @@ export class TargetPoolsClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
-
-    // Set useJWTAccessWithScope on the auth object.
-    this.auth.useJWTAccessWithScope = true;
 
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
@@ -147,6 +152,16 @@ export class TargetPoolsClient {
     }
     // Load the applicable protos.
     this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
+
+    // Some of the methods on this service return "paged" results,
+    // (e.g. 50 results at a time, with tokens to get subsequent
+    // pages). Denote the keys used for pagination and results.
+    this.descriptors.page = {
+      aggregatedList:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items'),
+      list:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items')
+    };
 
     // Put together the default options sent with requests.
     this._defaults = this._gaxGrpc.constructSettings(
@@ -206,6 +221,7 @@ export class TargetPoolsClient {
         });
 
       const descriptor =
+        this.descriptors.page[methodName] ||
         undefined;
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
@@ -292,10 +308,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.add_health_check.js</caption>
  * region_tag:compute_v1_generated_TargetPools_AddHealthCheck_async
  */
@@ -303,8 +324,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.IAddHealthCheckTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddHealthCheckTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   addHealthCheck(
       request: protos.google.cloud.compute.v1.IAddHealthCheckTargetPoolRequest,
@@ -330,8 +351,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.IAddHealthCheckTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddHealthCheckTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -351,7 +372,14 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.addHealthCheck(request, options, callback);
+    return this.innerApiCalls.addHealthCheck(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Adds an instance to a target pool.
@@ -371,10 +399,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.add_instance.js</caption>
  * region_tag:compute_v1_generated_TargetPools_AddInstance_async
  */
@@ -382,8 +415,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.IAddInstanceTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddInstanceTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   addInstance(
       request: protos.google.cloud.compute.v1.IAddInstanceTargetPoolRequest,
@@ -409,8 +442,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.IAddInstanceTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAddInstanceTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -430,90 +463,14 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.addInstance(request, options, callback);
-  }
-/**
- * Retrieves an aggregated list of target pools.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.filter
- *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
- * @param {boolean} request.includeAllScopes
- *   Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
- * @param {number} request.maxResults
- *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
- * @param {string} request.orderBy
- *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
- * @param {string} request.pageToken
- *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {boolean} request.returnPartialSuccess
- *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TargetPoolAggregatedList]{@link google.cloud.compute.v1.TargetPoolAggregatedList}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/target_pools.aggregated_list.js</caption>
- * region_tag:compute_v1_generated_TargetPools_AggregatedList_async
- */
-  aggregatedList(
-      request?: protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.ITargetPoolAggregatedList,
-        protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest|undefined, {}|undefined
-      ]>;
-  aggregatedList(
-      request: protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.ITargetPoolAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>): void;
-  aggregatedList(
-      request: protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.ITargetPoolAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>): void;
-  aggregatedList(
-      request?: protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.ITargetPoolAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.ITargetPoolAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.ITargetPoolAggregatedList,
-        protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
+    return this.innerApiCalls.addInstance(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
     });
-    this.initialize();
-    return this.innerApiCalls.aggregatedList(request, options, callback);
   }
 /**
  * Deletes the specified target pool.
@@ -531,10 +488,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.delete.js</caption>
  * region_tag:compute_v1_generated_TargetPools_Delete_async
  */
@@ -542,8 +504,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.IDeleteTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDeleteTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   delete(
       request: protos.google.cloud.compute.v1.IDeleteTargetPoolRequest,
@@ -569,8 +531,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.IDeleteTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDeleteTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -590,7 +552,14 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.delete(request, options, callback);
+    return this.innerApiCalls.delete(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Returns the specified target pool. Gets a list of available target pools by making a list() request.
@@ -760,10 +729,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.insert.js</caption>
  * region_tag:compute_v1_generated_TargetPools_Insert_async
  */
@@ -771,8 +745,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.IInsertTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IInsertTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   insert(
       request: protos.google.cloud.compute.v1.IInsertTargetPoolRequest,
@@ -798,8 +772,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.IInsertTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IInsertTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -819,90 +793,14 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.insert(request, options, callback);
-  }
-/**
- * Retrieves a list of target pools available to the specified project and region.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.filter
- *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
- * @param {number} request.maxResults
- *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
- * @param {string} request.orderBy
- *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
- * @param {string} request.pageToken
- *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {string} request.region
- *   Name of the region scoping this request.
- * @param {boolean} request.returnPartialSuccess
- *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [TargetPoolList]{@link google.cloud.compute.v1.TargetPoolList}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/target_pools.list.js</caption>
- * region_tag:compute_v1_generated_TargetPools_List_async
- */
-  list(
-      request?: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.ITargetPoolList,
-        protos.google.cloud.compute.v1.IListTargetPoolsRequest|undefined, {}|undefined
-      ]>;
-  list(
-      request: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.ITargetPoolList,
-          protos.google.cloud.compute.v1.IListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.ITargetPoolList,
-          protos.google.cloud.compute.v1.IListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request?: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.ITargetPoolList,
-          protos.google.cloud.compute.v1.IListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.ITargetPoolList,
-          protos.google.cloud.compute.v1.IListTargetPoolsRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.ITargetPoolList,
-        protos.google.cloud.compute.v1.IListTargetPoolsRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
+    return this.innerApiCalls.insert(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
     });
-    this.initialize();
-    return this.innerApiCalls.list(request, options, callback);
   }
 /**
  * Removes health check URL from a target pool.
@@ -922,10 +820,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.remove_health_check.js</caption>
  * region_tag:compute_v1_generated_TargetPools_RemoveHealthCheck_async
  */
@@ -933,8 +836,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.IRemoveHealthCheckTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveHealthCheckTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   removeHealthCheck(
       request: protos.google.cloud.compute.v1.IRemoveHealthCheckTargetPoolRequest,
@@ -960,8 +863,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.IRemoveHealthCheckTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveHealthCheckTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -981,7 +884,14 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.removeHealthCheck(request, options, callback);
+    return this.innerApiCalls.removeHealthCheck(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Removes instance URL from a target pool.
@@ -1001,10 +911,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.remove_instance.js</caption>
  * region_tag:compute_v1_generated_TargetPools_RemoveInstance_async
  */
@@ -1012,8 +927,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.IRemoveInstanceTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveInstanceTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   removeInstance(
       request: protos.google.cloud.compute.v1.IRemoveInstanceTargetPoolRequest,
@@ -1039,8 +954,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.IRemoveInstanceTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IRemoveInstanceTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1060,7 +975,14 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.removeInstance(request, options, callback);
+    return this.innerApiCalls.removeInstance(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Changes a backup target pool's configurations.
@@ -1082,10 +1004,15 @@ export class TargetPoolsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/target_pools.set_backup.js</caption>
  * region_tag:compute_v1_generated_TargetPools_SetBackup_async
  */
@@ -1093,8 +1020,8 @@ export class TargetPoolsClient {
       request?: protos.google.cloud.compute.v1.ISetBackupTargetPoolRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetBackupTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   setBackup(
       request: protos.google.cloud.compute.v1.ISetBackupTargetPoolRequest,
@@ -1120,8 +1047,8 @@ export class TargetPoolsClient {
           protos.google.cloud.compute.v1.ISetBackupTargetPoolRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetBackupTargetPoolRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -1141,9 +1068,269 @@ export class TargetPoolsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.setBackup(request, options, callback);
+    return this.innerApiCalls.setBackup(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 
+
+/**
+ * Equivalent to `aggregatedList`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {boolean} request.includeAllScopes
+ *   Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   as tuple [string, [TargetPoolsScopedList]{@link google.cloud.compute.v1.TargetPoolsScopedList}]. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/target_pools.aggregated_list.js</caption>
+ * region_tag:compute_v1_generated_TargetPools_AggregatedList_async
+ */
+  aggregatedListAsync(
+      request?: protos.google.cloud.compute.v1.IAggregatedListTargetPoolsRequest,
+      options?: CallOptions):
+    AsyncIterable<[string, protos.google.cloud.compute.v1.ITargetPoolsScopedList]>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['aggregatedList'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.aggregatedList.asyncIterate(
+      this.innerApiCalls['aggregatedList'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<[string, protos.google.cloud.compute.v1.ITargetPoolsScopedList]>;
+  }
+ /**
+ * Retrieves a list of target pools available to the specified project and region.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.region
+ *   Name of the region scoping this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [TargetPool]{@link google.cloud.compute.v1.TargetPool}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  list(
+      request?: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.compute.v1.ITargetPool[],
+        protos.google.cloud.compute.v1.IListTargetPoolsRequest|null,
+        protos.google.cloud.compute.v1.ITargetPoolList
+      ]>;
+  list(
+      request: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+          protos.google.cloud.compute.v1.ITargetPoolList|null|undefined,
+          protos.google.cloud.compute.v1.ITargetPool>): void;
+  list(
+      request: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+          protos.google.cloud.compute.v1.ITargetPoolList|null|undefined,
+          protos.google.cloud.compute.v1.ITargetPool>): void;
+  list(
+      request?: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+          protos.google.cloud.compute.v1.ITargetPoolList|null|undefined,
+          protos.google.cloud.compute.v1.ITargetPool>,
+      callback?: PaginationCallback<
+          protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+          protos.google.cloud.compute.v1.ITargetPoolList|null|undefined,
+          protos.google.cloud.compute.v1.ITargetPool>):
+      Promise<[
+        protos.google.cloud.compute.v1.ITargetPool[],
+        protos.google.cloud.compute.v1.IListTargetPoolsRequest|null,
+        protos.google.cloud.compute.v1.ITargetPoolList
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.list(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.region
+ *   Name of the region scoping this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [TargetPool]{@link google.cloud.compute.v1.TargetPool} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listStream(
+      request?: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['list'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.list.createStream(
+      this.innerApiCalls.list as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `list`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.region
+ *   Name of the region scoping this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [TargetPool]{@link google.cloud.compute.v1.TargetPool}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/target_pools.list.js</caption>
+ * region_tag:compute_v1_generated_TargetPools_List_async
+ */
+  listAsync(
+      request?: protos.google.cloud.compute.v1.IListTargetPoolsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.compute.v1.ITargetPool>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['list'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.list.asyncIterate(
+      this.innerApiCalls['list'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.compute.v1.ITargetPool>;
+  }
 
   /**
    * Terminate the gRPC channel and close the client.

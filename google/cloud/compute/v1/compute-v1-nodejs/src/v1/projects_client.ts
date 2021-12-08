@@ -18,8 +18,10 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
 
+import { Transform } from 'stream';
+import { RequestType } from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -96,6 +98,12 @@ export class ProjectsClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
+    // Implicitely set 'rest' value for the apis use rest as transport (eg. googleapis-discovery apis).
+    if (!opts) {
+      opts = {fallback: 'rest'};
+    } else {
+      opts.fallback = opts.fallback ?? 'rest';
+    }
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
     opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
@@ -115,9 +123,6 @@ export class ProjectsClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
-
-    // Set useJWTAccessWithScope on the auth object.
-    this.auth.useJWTAccessWithScope = true;
 
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
@@ -147,6 +152,16 @@ export class ProjectsClient {
     }
     // Load the applicable protos.
     this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
+
+    // Some of the methods on this service return "paged" results,
+    // (e.g. 50 results at a time, with tokens to get subsequent
+    // pages). Denote the keys used for pagination and results.
+    this.descriptors.page = {
+      getXpnResources:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'resources'),
+      listXpnHosts:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items')
+    };
 
     // Put together the default options sent with requests.
     this._defaults = this._gaxGrpc.constructSettings(
@@ -206,6 +221,7 @@ export class ProjectsClient {
         });
 
       const descriptor =
+        this.descriptors.page[methodName] ||
         undefined;
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
@@ -286,10 +302,15 @@ export class ProjectsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/projects.disable_xpn_host.js</caption>
  * region_tag:compute_v1_generated_Projects_DisableXpnHost_async
  */
@@ -297,8 +318,8 @@ export class ProjectsClient {
       request?: protos.google.cloud.compute.v1.IDisableXpnHostProjectRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDisableXpnHostProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   disableXpnHost(
       request: protos.google.cloud.compute.v1.IDisableXpnHostProjectRequest,
@@ -324,8 +345,8 @@ export class ProjectsClient {
           protos.google.cloud.compute.v1.IDisableXpnHostProjectRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDisableXpnHostProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -345,7 +366,14 @@ export class ProjectsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.disableXpnHost(request, options, callback);
+    return this.innerApiCalls.disableXpnHost(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Disable a service resource (also known as service project) associated with this host project.
@@ -361,10 +389,15 @@ export class ProjectsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/projects.disable_xpn_resource.js</caption>
  * region_tag:compute_v1_generated_Projects_DisableXpnResource_async
  */
@@ -372,8 +405,8 @@ export class ProjectsClient {
       request?: protos.google.cloud.compute.v1.IDisableXpnResourceProjectRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDisableXpnResourceProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   disableXpnResource(
       request: protos.google.cloud.compute.v1.IDisableXpnResourceProjectRequest,
@@ -399,8 +432,8 @@ export class ProjectsClient {
           protos.google.cloud.compute.v1.IDisableXpnResourceProjectRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDisableXpnResourceProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -420,7 +453,14 @@ export class ProjectsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.disableXpnResource(request, options, callback);
+    return this.innerApiCalls.disableXpnResource(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Enable this project as a shared VPC host project.
@@ -434,10 +474,15 @@ export class ProjectsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/projects.enable_xpn_host.js</caption>
  * region_tag:compute_v1_generated_Projects_EnableXpnHost_async
  */
@@ -445,8 +490,8 @@ export class ProjectsClient {
       request?: protos.google.cloud.compute.v1.IEnableXpnHostProjectRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IEnableXpnHostProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   enableXpnHost(
       request: protos.google.cloud.compute.v1.IEnableXpnHostProjectRequest,
@@ -472,8 +517,8 @@ export class ProjectsClient {
           protos.google.cloud.compute.v1.IEnableXpnHostProjectRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IEnableXpnHostProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -493,7 +538,14 @@ export class ProjectsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.enableXpnHost(request, options, callback);
+    return this.innerApiCalls.enableXpnHost(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Enable service resource (a.k.a service project) for a host project, so that subnets in the host project can be used by instances in the service project.
@@ -509,10 +561,15 @@ export class ProjectsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/projects.enable_xpn_resource.js</caption>
  * region_tag:compute_v1_generated_Projects_EnableXpnResource_async
  */
@@ -520,8 +577,8 @@ export class ProjectsClient {
       request?: protos.google.cloud.compute.v1.IEnableXpnResourceProjectRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IEnableXpnResourceProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   enableXpnResource(
       request: protos.google.cloud.compute.v1.IEnableXpnResourceProjectRequest,
@@ -547,8 +604,8 @@ export class ProjectsClient {
           protos.google.cloud.compute.v1.IEnableXpnResourceProjectRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IEnableXpnResourceProjectRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -568,7 +625,14 @@ export class ProjectsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.enableXpnResource(request, options, callback);
+    return this.innerApiCalls.enableXpnResource(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Returns the specified Project resource.
@@ -713,6 +777,442 @@ export class ProjectsClient {
     return this.innerApiCalls.getXpnHost(request, options, callback);
   }
 /**
+ * Moves a persistent disk from one zone to another.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.compute.v1.DiskMoveRequest} request.diskMoveRequestResource
+ *   The body resource for this request
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.requestId
+ *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
+ * @example <caption>include:samples/generated/v1/projects.move_disk.js</caption>
+ * region_tag:compute_v1_generated_Projects_MoveDisk_async
+ */
+  moveDisk(
+      request?: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>;
+  moveDisk(
+      request: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  moveDisk(
+      request: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  moveDisk(
+      request?: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.moveDisk(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
+  }
+/**
+ * Moves an instance and its attached persistent disks from one zone to another.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.compute.v1.InstanceMoveRequest} request.instanceMoveRequestResource
+ *   The body resource for this request
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.requestId
+ *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
+ * @example <caption>include:samples/generated/v1/projects.move_instance.js</caption>
+ * region_tag:compute_v1_generated_Projects_MoveInstance_async
+ */
+  moveInstance(
+      request?: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>;
+  moveInstance(
+      request: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  moveInstance(
+      request: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  moveInstance(
+      request?: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.moveInstance(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
+  }
+/**
+ * Sets metadata common to all instances within the specified project using the data included in the request.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {google.cloud.compute.v1.Metadata} request.metadataResource
+ *   The body resource for this request
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.requestId
+ *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
+ * @example <caption>include:samples/generated/v1/projects.set_common_instance_metadata.js</caption>
+ * region_tag:compute_v1_generated_Projects_SetCommonInstanceMetadata_async
+ */
+  setCommonInstanceMetadata(
+      request?: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>;
+  setCommonInstanceMetadata(
+      request: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  setCommonInstanceMetadata(
+      request: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  setCommonInstanceMetadata(
+      request?: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.setCommonInstanceMetadata(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
+  }
+/**
+ * Sets the default network tier of the project. The default network tier is used when an address/forwardingRule/instance is created without specifying the network tier field.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest} request.projectsSetDefaultNetworkTierRequestResource
+ *   The body resource for this request
+ * @param {string} request.requestId
+ *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
+ * @example <caption>include:samples/generated/v1/projects.set_default_network_tier.js</caption>
+ * region_tag:compute_v1_generated_Projects_SetDefaultNetworkTier_async
+ */
+  setDefaultNetworkTier(
+      request?: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>;
+  setDefaultNetworkTier(
+      request: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  setDefaultNetworkTier(
+      request: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  setDefaultNetworkTier(
+      request?: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.setDefaultNetworkTier(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
+  }
+/**
+ * Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {string} request.requestId
+ *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
+ * @param {google.cloud.compute.v1.UsageExportLocation} request.usageExportLocationResource
+ *   The body resource for this request
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is an object representing
+ *   a long running operation.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
+ *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
+ * @example <caption>include:samples/generated/v1/projects.set_usage_export_bucket.js</caption>
+ * region_tag:compute_v1_generated_Projects_SetUsageExportBucket_async
+ */
+  setUsageExportBucket(
+      request?: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
+      options?: CallOptions):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>;
+  setUsageExportBucket(
+      request: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
+      options: CallOptions,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  setUsageExportBucket(
+      request: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
+      callback: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
+          {}|null|undefined>): void;
+  setUsageExportBucket(
+      request?: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
+      optionsOrCallback?: CallOptions|Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
+          {}|null|undefined>,
+      callback?: Callback<
+          protos.google.cloud.compute.v1.IOperation,
+          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
+          {}|null|undefined>):
+      Promise<[
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.setUsageExportBucket(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
+  }
+
+ /**
  * Gets service resources (a.k.a service project) associated with this host project.
  *
  * @param {Object} request
@@ -732,46 +1232,51 @@ export class ProjectsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [ProjectsGetXpnResources]{@link google.cloud.compute.v1.ProjectsGetXpnResources}.
+ *   The first element of the array is Array of [XpnResourceId]{@link google.cloud.compute.v1.XpnResourceId}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `getXpnResourcesAsync()`
+ *   method described below for async iteration which you can stop as needed.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.get_xpn_resources.js</caption>
- * region_tag:compute_v1_generated_Projects_GetXpnResources_async
  */
   getXpnResources(
       request?: protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IProjectsGetXpnResources,
-        protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|undefined, {}|undefined
+        protos.google.cloud.compute.v1.IXpnResourceId[],
+        protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|null,
+        protos.google.cloud.compute.v1.IProjectsGetXpnResources
       ]>;
   getXpnResources(
       request: protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
       options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IProjectsGetXpnResources,
-          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|null|undefined,
-          {}|null|undefined>): void;
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
+          protos.google.cloud.compute.v1.IProjectsGetXpnResources|null|undefined,
+          protos.google.cloud.compute.v1.IXpnResourceId>): void;
   getXpnResources(
       request: protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IProjectsGetXpnResources,
-          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|null|undefined,
-          {}|null|undefined>): void;
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
+          protos.google.cloud.compute.v1.IProjectsGetXpnResources|null|undefined,
+          protos.google.cloud.compute.v1.IXpnResourceId>): void;
   getXpnResources(
       request?: protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IProjectsGetXpnResources,
-          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IProjectsGetXpnResources,
-          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|null|undefined,
-          {}|null|undefined>):
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
+          protos.google.cloud.compute.v1.IProjectsGetXpnResources|null|undefined,
+          protos.google.cloud.compute.v1.IXpnResourceId>,
+      callback?: PaginationCallback<
+          protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
+          protos.google.cloud.compute.v1.IProjectsGetXpnResources|null|undefined,
+          protos.google.cloud.compute.v1.IXpnResourceId>):
       Promise<[
-        protos.google.cloud.compute.v1.IProjectsGetXpnResources,
-        protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|undefined, {}|undefined
+        protos.google.cloud.compute.v1.IXpnResourceId[],
+        protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest|null,
+        protos.google.cloud.compute.v1.IProjectsGetXpnResources
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -793,7 +1298,112 @@ export class ProjectsClient {
     this.initialize();
     return this.innerApiCalls.getXpnResources(request, options, callback);
   }
+
 /**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [XpnResourceId]{@link google.cloud.compute.v1.XpnResourceId} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `getXpnResourcesAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  getXpnResourcesStream(
+      request?: protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['getXpnResources'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.getXpnResources.createStream(
+      this.innerApiCalls.getXpnResources as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `getXpnResources`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [XpnResourceId]{@link google.cloud.compute.v1.XpnResourceId}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/projects.get_xpn_resources.js</caption>
+ * region_tag:compute_v1_generated_Projects_GetXpnResources_async
+ */
+  getXpnResourcesAsync(
+      request?: protos.google.cloud.compute.v1.IGetXpnResourcesProjectsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.compute.v1.IXpnResourceId>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['getXpnResources'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.getXpnResources.asyncIterate(
+      this.innerApiCalls['getXpnResources'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.compute.v1.IXpnResourceId>;
+  }
+ /**
  * Lists all shared VPC host projects visible to the user in an organization.
  *
  * @param {Object} request
@@ -815,46 +1425,51 @@ export class ProjectsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [XpnHostList]{@link google.cloud.compute.v1.XpnHostList}.
+ *   The first element of the array is Array of [Project]{@link google.cloud.compute.v1.Project}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listXpnHostsAsync()`
+ *   method described below for async iteration which you can stop as needed.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.list_xpn_hosts.js</caption>
- * region_tag:compute_v1_generated_Projects_ListXpnHosts_async
  */
   listXpnHosts(
       request?: protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IXpnHostList,
-        protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|undefined, {}|undefined
+        protos.google.cloud.compute.v1.IProject[],
+        protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|null,
+        protos.google.cloud.compute.v1.IXpnHostList
       ]>;
   listXpnHosts(
       request: protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
       options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IXpnHostList,
-          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|null|undefined,
-          {}|null|undefined>): void;
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
+          protos.google.cloud.compute.v1.IXpnHostList|null|undefined,
+          protos.google.cloud.compute.v1.IProject>): void;
   listXpnHosts(
       request: protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IXpnHostList,
-          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|null|undefined,
-          {}|null|undefined>): void;
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
+          protos.google.cloud.compute.v1.IXpnHostList|null|undefined,
+          protos.google.cloud.compute.v1.IProject>): void;
   listXpnHosts(
       request?: protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IXpnHostList,
-          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IXpnHostList,
-          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|null|undefined,
-          {}|null|undefined>):
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
+          protos.google.cloud.compute.v1.IXpnHostList|null|undefined,
+          protos.google.cloud.compute.v1.IProject>,
+      callback?: PaginationCallback<
+          protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
+          protos.google.cloud.compute.v1.IXpnHostList|null|undefined,
+          protos.google.cloud.compute.v1.IProject>):
       Promise<[
-        protos.google.cloud.compute.v1.IXpnHostList,
-        protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|undefined, {}|undefined
+        protos.google.cloud.compute.v1.IProject[],
+        protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest|null,
+        protos.google.cloud.compute.v1.IXpnHostList
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -876,70 +1491,42 @@ export class ProjectsClient {
     this.initialize();
     return this.innerApiCalls.listXpnHosts(request, options, callback);
   }
+
 /**
- * Moves a persistent disk from one zone to another.
- *
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
  * @param {Object} request
  *   The request object that will be sent.
- * @param {google.cloud.compute.v1.DiskMoveRequest} request.diskMoveRequestResource
- *   The body resource for this request
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
  * @param {string} request.project
  *   Project ID for this request.
- * @param {string} request.requestId
- *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
+ * @param {google.cloud.compute.v1.ProjectsListXpnHostsRequest} request.projectsListXpnHostsRequestResource
+ *   The body resource for this request
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [Project]{@link google.cloud.compute.v1.Project} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listXpnHostsAsync()`
+ *   method described below for async iteration which you can stop as needed.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
  *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.move_disk.js</caption>
- * region_tag:compute_v1_generated_Projects_MoveDisk_async
  */
-  moveDisk(
-      request?: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
+  listXpnHostsStream(
+      request?: protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
       options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IMoveDiskProjectRequest|undefined, {}|undefined
-      ]>;
-  moveDisk(
-      request: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  moveDisk(
-      request: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  moveDisk(
-      request?: protos.google.cloud.compute.v1.IMoveDiskProjectRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveDiskProjectRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IMoveDiskProjectRequest|undefined, {}|undefined
-      ]>|void {
+    Transform{
     request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
     options = options || {};
     options.otherArgs = options.otherArgs || {};
     options.otherArgs.headers = options.otherArgs.headers || {};
@@ -948,310 +1535,71 @@ export class ProjectsClient {
     ] = gax.routingHeader.fromParams({
       'project': request.project || '',
     });
+    const defaultCallSettings = this._defaults['listXpnHosts'];
+    const callSettings = defaultCallSettings.merge(options);
     this.initialize();
-    return this.innerApiCalls.moveDisk(request, options, callback);
-  }
-/**
- * Moves an instance and its attached persistent disks from one zone to another.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.compute.v1.InstanceMoveRequest} request.instanceMoveRequestResource
- *   The body resource for this request
- * @param {string} request.project
- *   Project ID for this request.
- * @param {string} request.requestId
- *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.move_instance.js</caption>
- * region_tag:compute_v1_generated_Projects_MoveInstance_async
- */
-  moveInstance(
-      request?: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|undefined, {}|undefined
-      ]>;
-  moveInstance(
-      request: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  moveInstance(
-      request: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  moveInstance(
-      request?: protos.google.cloud.compute.v1.IMoveInstanceProjectRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IMoveInstanceProjectRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
-    });
-    this.initialize();
-    return this.innerApiCalls.moveInstance(request, options, callback);
-  }
-/**
- * Sets metadata common to all instances within the specified project using the data included in the request.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {google.cloud.compute.v1.Metadata} request.metadataResource
- *   The body resource for this request
- * @param {string} request.project
- *   Project ID for this request.
- * @param {string} request.requestId
- *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.set_common_instance_metadata.js</caption>
- * region_tag:compute_v1_generated_Projects_SetCommonInstanceMetadata_async
- */
-  setCommonInstanceMetadata(
-      request?: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|undefined, {}|undefined
-      ]>;
-  setCommonInstanceMetadata(
-      request: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  setCommonInstanceMetadata(
-      request: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  setCommonInstanceMetadata(
-      request?: protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetCommonInstanceMetadataProjectRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
-    });
-    this.initialize();
-    return this.innerApiCalls.setCommonInstanceMetadata(request, options, callback);
-  }
-/**
- * Sets the default network tier of the project. The default network tier is used when an address/forwardingRule/instance is created without specifying the network tier field.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {google.cloud.compute.v1.ProjectsSetDefaultNetworkTierRequest} request.projectsSetDefaultNetworkTierRequestResource
- *   The body resource for this request
- * @param {string} request.requestId
- *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.set_default_network_tier.js</caption>
- * region_tag:compute_v1_generated_Projects_SetDefaultNetworkTier_async
- */
-  setDefaultNetworkTier(
-      request?: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|undefined, {}|undefined
-      ]>;
-  setDefaultNetworkTier(
-      request: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  setDefaultNetworkTier(
-      request: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  setDefaultNetworkTier(
-      request?: protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetDefaultNetworkTierProjectRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
-    });
-    this.initialize();
-    return this.innerApiCalls.setDefaultNetworkTier(request, options, callback);
-  }
-/**
- * Enables the usage export feature and sets the usage export bucket where reports are stored. If you provide an empty request body using this method, the usage export feature will be disabled.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {string} request.requestId
- *   An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported ( 00000000-0000-0000-0000-000000000000).
- * @param {google.cloud.compute.v1.UsageExportLocation} request.usageExportLocationResource
- *   The body resource for this request
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/projects.set_usage_export_bucket.js</caption>
- * region_tag:compute_v1_generated_Projects_SetUsageExportBucket_async
- */
-  setUsageExportBucket(
-      request?: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|undefined, {}|undefined
-      ]>;
-  setUsageExportBucket(
-      request: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  setUsageExportBucket(
-      request: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
-          {}|null|undefined>): void;
-  setUsageExportBucket(
-      request?: protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.IOperation,
-          protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.ISetUsageExportBucketProjectRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
-    });
-    this.initialize();
-    return this.innerApiCalls.setUsageExportBucket(request, options, callback);
+    return this.descriptors.page.listXpnHosts.createStream(
+      this.innerApiCalls.listXpnHosts as gax.GaxCall,
+      request,
+      callSettings
+    );
   }
 
+/**
+ * Equivalent to `listXpnHosts`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {google.cloud.compute.v1.ProjectsListXpnHostsRequest} request.projectsListXpnHostsRequestResource
+ *   The body resource for this request
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [Project]{@link google.cloud.compute.v1.Project}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/projects.list_xpn_hosts.js</caption>
+ * region_tag:compute_v1_generated_Projects_ListXpnHosts_async
+ */
+  listXpnHostsAsync(
+      request?: protos.google.cloud.compute.v1.IListXpnHostsProjectsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.compute.v1.IProject>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['listXpnHosts'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.listXpnHosts.asyncIterate(
+      this.innerApiCalls['listXpnHosts'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.compute.v1.IProject>;
+  }
 
   /**
    * Terminate the gRPC channel and close the client.

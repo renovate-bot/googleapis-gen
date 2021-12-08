@@ -68,8 +68,10 @@ function main(instanceGroupManager, project, region) {
     };
 
     // Run request
-    const response = await computeClient.listErrors(request);
-    console.log(response);
+    const iterable = await computeClient.listErrorsAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListErrors();

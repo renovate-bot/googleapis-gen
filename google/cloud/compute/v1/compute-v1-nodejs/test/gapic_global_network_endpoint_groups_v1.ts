@@ -20,10 +20,12 @@ import * as protos from '../protos/protos';
 import * as assert from 'assert';
 import * as sinon from 'sinon';
 import {SinonStub} from 'sinon';
-import { describe, it } from 'mocha';
+import { describe, it, beforeEach, afterEach } from 'mocha';
 import * as globalnetworkendpointgroupsModule from '../src';
 
-import {protobuf} from 'google-gax';
+import {PassThrough} from 'stream';
+
+import {GoogleAuth, protobuf} from 'google-gax';
 
 function generateSampleMessage<T extends object>(instance: T) {
     const filledObject = (instance.constructor as typeof protobuf.Message)
@@ -39,7 +41,63 @@ function stubSimpleCallWithCallback<ResponseType>(response?: ResponseType, error
     return error ? sinon.stub().callsArgWith(2, error) : sinon.stub().callsArgWith(2, null, response);
 }
 
+function stubPageStreamingCall<ResponseType>(responses?: ResponseType[], error?: Error) {
+    const pagingStub = sinon.stub();
+    if (responses) {
+        for (let i = 0; i < responses.length; ++i) {
+            pagingStub.onCall(i).callsArgWith(2, null, responses[i]);
+        }
+    }
+    const transformStub = error ? sinon.stub().callsArgWith(2, error) : pagingStub;
+    const mockStream = new PassThrough({
+        objectMode: true,
+        transform: transformStub,
+    });
+    // trigger as many responses as needed
+    if (responses) {
+        for (let i = 0; i < responses.length; ++i) {
+            setImmediate(() => { mockStream.write({}); });
+        }
+        setImmediate(() => { mockStream.end(); });
+    } else {
+        setImmediate(() => { mockStream.write({}); });
+        setImmediate(() => { mockStream.end(); });
+    }
+    return sinon.stub().returns(mockStream);
+}
+
+function stubAsyncIterationCall<ResponseType>(responses?: ResponseType[], error?: Error) {
+    let counter = 0;
+    const asyncIterable = {
+        [Symbol.asyncIterator]() {
+            return {
+                async next() {
+                    if (error) {
+                        return Promise.reject(error);
+                    }
+                    if (counter >= responses!.length) {
+                        return Promise.resolve({done: true, value: undefined});
+                    }
+                    return Promise.resolve({done: false, value: responses![counter++]});
+                }
+            };
+        }
+    };
+    return sinon.stub().returns(asyncIterable);
+}
+
 describe('v1.GlobalNetworkEndpointGroupsClient', () => {
+  let googleAuth: GoogleAuth;
+  beforeEach(() => {
+    googleAuth = {
+      getClient: sinon.stub().resolves({
+        getRequestHeaders: sinon.stub().resolves({Authorization: 'Bearer SOME_TOKEN'}),
+      })
+    } as unknown as GoogleAuth;
+  });
+  afterEach(() => {
+    sinon.restore();
+  });
     it('has servicePath', () => {
         const servicePath = globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient.servicePath;
         assert(servicePath);
@@ -70,7 +128,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         assert.strictEqual(client.globalNetworkEndpointGroupsStub, undefined);
@@ -80,7 +138,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
     it('has close method', () => {
         const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.close();
@@ -89,7 +147,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
@@ -101,7 +159,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
@@ -121,7 +179,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     describe('attachNetworkEndpoints', () => {
         it('invokes attachNetworkEndpoints without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -138,14 +196,14 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.attachNetworkEndpoints = stubSimpleCall(expectedResponse);
             const [response] = await client.attachNetworkEndpoints(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.attachNetworkEndpoints as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes attachNetworkEndpoints without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -180,7 +238,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes attachNetworkEndpoints with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -205,7 +263,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     describe('delete', () => {
         it('invokes delete without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -222,14 +280,14 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.delete = stubSimpleCall(expectedResponse);
             const [response] = await client.delete(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.delete as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes delete without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -264,7 +322,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes delete with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -289,7 +347,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     describe('detachNetworkEndpoints', () => {
         it('invokes detachNetworkEndpoints without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -306,14 +364,14 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.detachNetworkEndpoints = stubSimpleCall(expectedResponse);
             const [response] = await client.detachNetworkEndpoints(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.detachNetworkEndpoints as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes detachNetworkEndpoints without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -348,7 +406,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes detachNetworkEndpoints with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -373,7 +431,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     describe('get', () => {
         it('invokes get without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -397,7 +455,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes get without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -432,7 +490,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes get with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -457,7 +515,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     describe('insert', () => {
         it('invokes insert without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -474,14 +532,14 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.insert = stubSimpleCall(expectedResponse);
             const [response] = await client.insert(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.insert as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes insert without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -516,7 +574,7 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes insert with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -541,9 +599,9 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
     describe('list', () => {
         it('invokes list without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
             request.project = '';
@@ -555,7 +613,11 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
                     },
                 },
             };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroupList());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+            ];
             client.innerApiCalls.list = stubSimpleCall(expectedResponse);
             const [response] = await client.list(request);
             assert.deepStrictEqual(response, expectedResponse);
@@ -565,9 +627,9 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes list without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
             request.project = '';
@@ -579,12 +641,16 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
                     },
                 },
             };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroupList());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+            ];
             client.innerApiCalls.list = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
                  client.list(
                     request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.INetworkEndpointGroupList|null) => {
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.INetworkEndpointGroup[]|null) => {
                         if (err) {
                             reject(err);
                         } else {
@@ -600,9 +666,9 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes list with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
             request.project = '';
@@ -620,14 +686,145 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
             assert((client.innerApiCalls.list as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
+
+        it('invokes listStream without error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+            ];
+            client.descriptors.page.list.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.NetworkEndpointGroup[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.NetworkEndpointGroup) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.list.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.list, request));
+            assert.strictEqual(
+                (client.descriptors.page.list.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listStream with error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.list.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.NetworkEndpointGroup[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.NetworkEndpointGroup) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.list.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.list, request));
+            assert.strictEqual(
+                (client.descriptors.page.list.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with list without error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroup()),
+            ];
+            client.descriptors.page.list.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.INetworkEndpointGroup[] = [];
+            const iterable = client.listAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with list with error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.list.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.INetworkEndpointGroup[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
     });
 
     describe('listNetworkEndpoints', () => {
         it('invokes listNetworkEndpoints without error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
             request.project = '';
@@ -639,7 +836,11 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
                     },
                 },
             };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+            ];
             client.innerApiCalls.listNetworkEndpoints = stubSimpleCall(expectedResponse);
             const [response] = await client.listNetworkEndpoints(request);
             assert.deepStrictEqual(response, expectedResponse);
@@ -649,9 +850,9 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes listNetworkEndpoints without error using callback', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
             request.project = '';
@@ -663,12 +864,16 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
                     },
                 },
             };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+            ];
             client.innerApiCalls.listNetworkEndpoints = stubSimpleCallWithCallback(expectedResponse);
             const promise = new Promise((resolve, reject) => {
                  client.listNetworkEndpoints(
                     request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints|null) => {
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus[]|null) => {
                         if (err) {
                             reject(err);
                         } else {
@@ -684,9 +889,9 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
 
         it('invokes listNetworkEndpoints with error', async () => {
             const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
             client.initialize();
             const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
             request.project = '';
@@ -703,6 +908,137 @@ describe('v1.GlobalNetworkEndpointGroupsClient', () => {
             await assert.rejects(client.listNetworkEndpoints(request), expectedError);
             assert((client.innerApiCalls.listNetworkEndpoints as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listNetworkEndpointsStream without error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+            ];
+            client.descriptors.page.listNetworkEndpoints.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listNetworkEndpointsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listNetworkEndpoints.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listNetworkEndpoints, request));
+            assert.strictEqual(
+                (client.descriptors.page.listNetworkEndpoints.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listNetworkEndpointsStream with error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listNetworkEndpoints.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listNetworkEndpointsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listNetworkEndpoints.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listNetworkEndpoints, request));
+            assert.strictEqual(
+                (client.descriptors.page.listNetworkEndpoints.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listNetworkEndpoints without error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.NetworkEndpointWithHealthStatus()),
+            ];
+            client.descriptors.page.listNetworkEndpoints.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus[] = [];
+            const iterable = client.listNetworkEndpointsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listNetworkEndpoints.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listNetworkEndpoints.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listNetworkEndpoints with error', async () => {
+            const client = new globalnetworkendpointgroupsModule.v1.GlobalNetworkEndpointGroupsClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListNetworkEndpointsGlobalNetworkEndpointGroupsRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.listNetworkEndpoints.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listNetworkEndpointsAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listNetworkEndpoints.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listNetworkEndpoints.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
         });
     });
 });

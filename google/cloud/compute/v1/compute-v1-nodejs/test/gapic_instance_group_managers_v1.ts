@@ -20,10 +20,12 @@ import * as protos from '../protos/protos';
 import * as assert from 'assert';
 import * as sinon from 'sinon';
 import {SinonStub} from 'sinon';
-import { describe, it } from 'mocha';
+import { describe, it, beforeEach, afterEach } from 'mocha';
 import * as instancegroupmanagersModule from '../src';
 
-import {protobuf} from 'google-gax';
+import {PassThrough} from 'stream';
+
+import {GoogleAuth, protobuf} from 'google-gax';
 
 function generateSampleMessage<T extends object>(instance: T) {
     const filledObject = (instance.constructor as typeof protobuf.Message)
@@ -39,7 +41,63 @@ function stubSimpleCallWithCallback<ResponseType>(response?: ResponseType, error
     return error ? sinon.stub().callsArgWith(2, error) : sinon.stub().callsArgWith(2, null, response);
 }
 
+function stubPageStreamingCall<ResponseType>(responses?: ResponseType[], error?: Error) {
+    const pagingStub = sinon.stub();
+    if (responses) {
+        for (let i = 0; i < responses.length; ++i) {
+            pagingStub.onCall(i).callsArgWith(2, null, responses[i]);
+        }
+    }
+    const transformStub = error ? sinon.stub().callsArgWith(2, error) : pagingStub;
+    const mockStream = new PassThrough({
+        objectMode: true,
+        transform: transformStub,
+    });
+    // trigger as many responses as needed
+    if (responses) {
+        for (let i = 0; i < responses.length; ++i) {
+            setImmediate(() => { mockStream.write({}); });
+        }
+        setImmediate(() => { mockStream.end(); });
+    } else {
+        setImmediate(() => { mockStream.write({}); });
+        setImmediate(() => { mockStream.end(); });
+    }
+    return sinon.stub().returns(mockStream);
+}
+
+function stubAsyncIterationCall<ResponseType>(responses?: ResponseType[], error?: Error) {
+    let counter = 0;
+    const asyncIterable = {
+        [Symbol.asyncIterator]() {
+            return {
+                async next() {
+                    if (error) {
+                        return Promise.reject(error);
+                    }
+                    if (counter >= responses!.length) {
+                        return Promise.resolve({done: true, value: undefined});
+                    }
+                    return Promise.resolve({done: false, value: responses![counter++]});
+                }
+            };
+        }
+    };
+    return sinon.stub().returns(asyncIterable);
+}
+
 describe('v1.InstanceGroupManagersClient', () => {
+  let googleAuth: GoogleAuth;
+  beforeEach(() => {
+    googleAuth = {
+      getClient: sinon.stub().resolves({
+        getRequestHeaders: sinon.stub().resolves({Authorization: 'Bearer SOME_TOKEN'}),
+      })
+    } as unknown as GoogleAuth;
+  });
+  afterEach(() => {
+    sinon.restore();
+  });
     it('has servicePath', () => {
         const servicePath = instancegroupmanagersModule.v1.InstanceGroupManagersClient.servicePath;
         assert(servicePath);
@@ -70,7 +128,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         assert.strictEqual(client.instanceGroupManagersStub, undefined);
@@ -80,7 +138,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
     it('has close method', () => {
         const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.close();
@@ -89,7 +147,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
@@ -101,7 +159,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
@@ -121,7 +179,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('abandonInstances', () => {
         it('invokes abandonInstances without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -138,14 +196,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.abandonInstances = stubSimpleCall(expectedResponse);
             const [response] = await client.abandonInstances(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.abandonInstances as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes abandonInstances without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -180,7 +238,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes abandonInstances with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -202,94 +260,10 @@ describe('v1.InstanceGroupManagersClient', () => {
         });
     });
 
-    describe('aggregatedList', () => {
-        it('invokes aggregatedList without error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagerAggregatedList());
-            client.innerApiCalls.aggregatedList = stubSimpleCall(expectedResponse);
-            const [response] = await client.aggregatedList(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.aggregatedList as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes aggregatedList without error using callback', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagerAggregatedList());
-            client.innerApiCalls.aggregatedList = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.aggregatedList(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceGroupManagerAggregatedList|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.aggregatedList as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes aggregatedList with error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedError = new Error('expected');
-            client.innerApiCalls.aggregatedList = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.aggregatedList(request), expectedError);
-            assert((client.innerApiCalls.aggregatedList as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
     describe('applyUpdatesToInstances', () => {
         it('invokes applyUpdatesToInstances without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -306,14 +280,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.applyUpdatesToInstances = stubSimpleCall(expectedResponse);
             const [response] = await client.applyUpdatesToInstances(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.applyUpdatesToInstances as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes applyUpdatesToInstances without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -348,7 +322,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes applyUpdatesToInstances with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -373,7 +347,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('createInstances', () => {
         it('invokes createInstances without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -390,14 +364,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.createInstances = stubSimpleCall(expectedResponse);
             const [response] = await client.createInstances(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.createInstances as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes createInstances without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -432,7 +406,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes createInstances with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -457,7 +431,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('delete', () => {
         it('invokes delete without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -474,14 +448,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.delete = stubSimpleCall(expectedResponse);
             const [response] = await client.delete(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.delete as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes delete without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -516,7 +490,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes delete with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -541,7 +515,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('deleteInstances', () => {
         it('invokes deleteInstances without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -558,14 +532,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.deleteInstances = stubSimpleCall(expectedResponse);
             const [response] = await client.deleteInstances(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.deleteInstances as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes deleteInstances without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -600,7 +574,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes deleteInstances with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -625,7 +599,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('deletePerInstanceConfigs', () => {
         it('invokes deletePerInstanceConfigs without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -642,14 +616,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.deletePerInstanceConfigs = stubSimpleCall(expectedResponse);
             const [response] = await client.deletePerInstanceConfigs(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.deletePerInstanceConfigs as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes deletePerInstanceConfigs without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -684,7 +658,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes deletePerInstanceConfigs with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -709,7 +683,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('get', () => {
         it('invokes get without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -733,7 +707,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes get without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -768,7 +742,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes get with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -793,7 +767,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('insert', () => {
         it('invokes insert without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -810,14 +784,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.insert = stubSimpleCall(expectedResponse);
             const [response] = await client.insert(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.insert as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes insert without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -852,7 +826,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes insert with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -874,346 +848,10 @@ describe('v1.InstanceGroupManagersClient', () => {
         });
     });
 
-    describe('list', () => {
-        it('invokes list without error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagerList());
-            client.innerApiCalls.list = stubSimpleCall(expectedResponse);
-            const [response] = await client.list(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.list as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes list without error using callback', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagerList());
-            client.innerApiCalls.list = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.list(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceGroupManagerList|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.list as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes list with error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedError = new Error('expected');
-            client.innerApiCalls.list = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.list(request), expectedError);
-            assert((client.innerApiCalls.list as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
-    describe('listErrors', () => {
-        it('invokes listErrors without error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse());
-            client.innerApiCalls.listErrors = stubSimpleCall(expectedResponse);
-            const [response] = await client.listErrors(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.listErrors as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes listErrors without error using callback', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersListErrorsResponse());
-            client.innerApiCalls.listErrors = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.listErrors(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceGroupManagersListErrorsResponse|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.listErrors as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes listErrors with error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedError = new Error('expected');
-            client.innerApiCalls.listErrors = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.listErrors(request), expectedError);
-            assert((client.innerApiCalls.listErrors as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
-    describe('listManagedInstances', () => {
-        it('invokes listManagedInstances without error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse());
-            client.innerApiCalls.listManagedInstances = stubSimpleCall(expectedResponse);
-            const [response] = await client.listManagedInstances(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.listManagedInstances as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes listManagedInstances without error using callback', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersListManagedInstancesResponse());
-            client.innerApiCalls.listManagedInstances = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.listManagedInstances(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceGroupManagersListManagedInstancesResponse|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.listManagedInstances as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes listManagedInstances with error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedError = new Error('expected');
-            client.innerApiCalls.listManagedInstances = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.listManagedInstances(request), expectedError);
-            assert((client.innerApiCalls.listManagedInstances as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
-    describe('listPerInstanceConfigs', () => {
-        it('invokes listPerInstanceConfigs without error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp());
-            client.innerApiCalls.listPerInstanceConfigs = stubSimpleCall(expectedResponse);
-            const [response] = await client.listPerInstanceConfigs(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.listPerInstanceConfigs as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes listPerInstanceConfigs without error using callback', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersListPerInstanceConfigsResp());
-            client.innerApiCalls.listPerInstanceConfigs = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.listPerInstanceConfigs(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceGroupManagersListPerInstanceConfigsResp|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.listPerInstanceConfigs as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes listPerInstanceConfigs with error', async () => {
-            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
-            request.project = '';
-            const expectedHeaderRequestParams = "project=";
-            const expectedOptions = {
-                otherArgs: {
-                    headers: {
-                        'x-goog-request-params': expectedHeaderRequestParams,
-                    },
-                },
-            };
-            const expectedError = new Error('expected');
-            client.innerApiCalls.listPerInstanceConfigs = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.listPerInstanceConfigs(request), expectedError);
-            assert((client.innerApiCalls.listPerInstanceConfigs as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
     describe('patch', () => {
         it('invokes patch without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1230,14 +868,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.patch = stubSimpleCall(expectedResponse);
             const [response] = await client.patch(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.patch as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes patch without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1272,7 +910,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes patch with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1297,7 +935,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('patchPerInstanceConfigs', () => {
         it('invokes patchPerInstanceConfigs without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1314,14 +952,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.patchPerInstanceConfigs = stubSimpleCall(expectedResponse);
             const [response] = await client.patchPerInstanceConfigs(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.patchPerInstanceConfigs as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes patchPerInstanceConfigs without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1356,7 +994,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes patchPerInstanceConfigs with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1381,7 +1019,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('recreateInstances', () => {
         it('invokes recreateInstances without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1398,14 +1036,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.recreateInstances = stubSimpleCall(expectedResponse);
             const [response] = await client.recreateInstances(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.recreateInstances as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes recreateInstances without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1440,7 +1078,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes recreateInstances with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1465,7 +1103,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('resize', () => {
         it('invokes resize without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1482,14 +1120,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.resize = stubSimpleCall(expectedResponse);
             const [response] = await client.resize(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.resize as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes resize without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1524,7 +1162,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes resize with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1549,7 +1187,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('setInstanceTemplate', () => {
         it('invokes setInstanceTemplate without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1566,14 +1204,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.setInstanceTemplate = stubSimpleCall(expectedResponse);
             const [response] = await client.setInstanceTemplate(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.setInstanceTemplate as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes setInstanceTemplate without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1608,7 +1246,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes setInstanceTemplate with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1633,7 +1271,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('setTargetPools', () => {
         it('invokes setTargetPools without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1650,14 +1288,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.setTargetPools = stubSimpleCall(expectedResponse);
             const [response] = await client.setTargetPools(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.setTargetPools as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes setTargetPools without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1692,7 +1330,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes setTargetPools with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1717,7 +1355,7 @@ describe('v1.InstanceGroupManagersClient', () => {
     describe('updatePerInstanceConfigs', () => {
         it('invokes updatePerInstanceConfigs without error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1734,14 +1372,14 @@ describe('v1.InstanceGroupManagersClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.updatePerInstanceConfigs = stubSimpleCall(expectedResponse);
             const [response] = await client.updatePerInstanceConfigs(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.updatePerInstanceConfigs as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes updatePerInstanceConfigs without error using callback', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1776,7 +1414,7 @@ describe('v1.InstanceGroupManagersClient', () => {
 
         it('invokes updatePerInstanceConfigs with error', async () => {
             const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1795,6 +1433,959 @@ describe('v1.InstanceGroupManagersClient', () => {
             await assert.rejects(client.updatePerInstanceConfigs(request), expectedError);
             assert((client.innerApiCalls.updatePerInstanceConfigs as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('aggregatedList', () => {
+
+        it('uses async iteration with aggregatedList without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              ['tuple_key_1', generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersScopedList())],
+              ['tuple_key_2', generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersScopedList())],
+              ['tuple_key_3', generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManagersScopedList())],
+            ];
+            client.descriptors.page.aggregatedList.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: Array<[string, protos.google.cloud.compute.v1.IInstanceGroupManagersScopedList]> = [];
+            const iterable = client.aggregatedListAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.aggregatedList.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.aggregatedList.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with aggregatedList with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.AggregatedListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.aggregatedList.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.aggregatedListAsync(request);
+            await assert.rejects(async () => {
+                const responses: Array<[string, protos.google.cloud.compute.v1.IInstanceGroupManagersScopedList]> = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.aggregatedList.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.aggregatedList.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
+    describe('list', () => {
+        it('invokes list without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+            ];
+            client.innerApiCalls.list = stubSimpleCall(expectedResponse);
+            const [response] = await client.list(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.list as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes list without error using callback', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+            ];
+            client.innerApiCalls.list = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.list(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceGroupManager[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.list as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes list with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.list = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.list(request), expectedError);
+            assert((client.innerApiCalls.list as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listStream without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+            ];
+            client.descriptors.page.list.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.InstanceGroupManager[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.InstanceGroupManager) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.list.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.list, request));
+            assert.strictEqual(
+                (client.descriptors.page.list.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listStream with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.list.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.InstanceGroupManager[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.InstanceGroupManager) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.list.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.list, request));
+            assert.strictEqual(
+                (client.descriptors.page.list.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with list without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceGroupManager()),
+            ];
+            client.descriptors.page.list.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.IInstanceGroupManager[] = [];
+            const iterable = client.listAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with list with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.list.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.IInstanceGroupManager[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
+    describe('listErrors', () => {
+        it('invokes listErrors without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+            ];
+            client.innerApiCalls.listErrors = stubSimpleCall(expectedResponse);
+            const [response] = await client.listErrors(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listErrors as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listErrors without error using callback', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+            ];
+            client.innerApiCalls.listErrors = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listErrors(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IInstanceManagedByIgmError[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listErrors as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listErrors with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listErrors = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listErrors(request), expectedError);
+            assert((client.innerApiCalls.listErrors as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listErrorsStream without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+            ];
+            client.descriptors.page.listErrors.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listErrorsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.InstanceManagedByIgmError[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.InstanceManagedByIgmError) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listErrors.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listErrors, request));
+            assert.strictEqual(
+                (client.descriptors.page.listErrors.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listErrorsStream with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listErrors.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listErrorsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.InstanceManagedByIgmError[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.InstanceManagedByIgmError) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listErrors.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listErrors, request));
+            assert.strictEqual(
+                (client.descriptors.page.listErrors.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listErrors without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.InstanceManagedByIgmError()),
+            ];
+            client.descriptors.page.listErrors.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.IInstanceManagedByIgmError[] = [];
+            const iterable = client.listErrorsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listErrors.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listErrors.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listErrors with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListErrorsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.listErrors.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listErrorsAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.IInstanceManagedByIgmError[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listErrors.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listErrors.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
+    describe('listManagedInstances', () => {
+        it('invokes listManagedInstances without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+            ];
+            client.innerApiCalls.listManagedInstances = stubSimpleCall(expectedResponse);
+            const [response] = await client.listManagedInstances(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listManagedInstances as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listManagedInstances without error using callback', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+            ];
+            client.innerApiCalls.listManagedInstances = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listManagedInstances(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IManagedInstance[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listManagedInstances as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listManagedInstances with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listManagedInstances = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listManagedInstances(request), expectedError);
+            assert((client.innerApiCalls.listManagedInstances as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listManagedInstancesStream without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+            ];
+            client.descriptors.page.listManagedInstances.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listManagedInstancesStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.ManagedInstance[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.ManagedInstance) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listManagedInstances.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listManagedInstances, request));
+            assert.strictEqual(
+                (client.descriptors.page.listManagedInstances.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listManagedInstancesStream with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listManagedInstances.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listManagedInstancesStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.ManagedInstance[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.ManagedInstance) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listManagedInstances.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listManagedInstances, request));
+            assert.strictEqual(
+                (client.descriptors.page.listManagedInstances.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listManagedInstances without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.ManagedInstance()),
+            ];
+            client.descriptors.page.listManagedInstances.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.IManagedInstance[] = [];
+            const iterable = client.listManagedInstancesAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listManagedInstances.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listManagedInstances.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listManagedInstances with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListManagedInstancesInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.listManagedInstances.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listManagedInstancesAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.IManagedInstance[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listManagedInstances.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listManagedInstances.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+    });
+
+    describe('listPerInstanceConfigs', () => {
+        it('invokes listPerInstanceConfigs without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+            ];
+            client.innerApiCalls.listPerInstanceConfigs = stubSimpleCall(expectedResponse);
+            const [response] = await client.listPerInstanceConfigs(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listPerInstanceConfigs as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listPerInstanceConfigs without error using callback', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+            ];
+            client.innerApiCalls.listPerInstanceConfigs = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.listPerInstanceConfigs(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IPerInstanceConfig[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.listPerInstanceConfigs as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes listPerInstanceConfigs with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedOptions = {
+                otherArgs: {
+                    headers: {
+                        'x-goog-request-params': expectedHeaderRequestParams,
+                    },
+                },
+            };
+            const expectedError = new Error('expected');
+            client.innerApiCalls.listPerInstanceConfigs = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.listPerInstanceConfigs(request), expectedError);
+            assert((client.innerApiCalls.listPerInstanceConfigs as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listPerInstanceConfigsStream without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+            ];
+            client.descriptors.page.listPerInstanceConfigs.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listPerInstanceConfigsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.PerInstanceConfig[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.PerInstanceConfig) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.listPerInstanceConfigs.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listPerInstanceConfigs, request));
+            assert.strictEqual(
+                (client.descriptors.page.listPerInstanceConfigs.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('invokes listPerInstanceConfigsStream with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedError = new Error('expected');
+            client.descriptors.page.listPerInstanceConfigs.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listPerInstanceConfigsStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.PerInstanceConfig[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.PerInstanceConfig) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.listPerInstanceConfigs.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.listPerInstanceConfigs, request));
+            assert.strictEqual(
+                (client.descriptors.page.listPerInstanceConfigs.createStream as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listPerInstanceConfigs without error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.PerInstanceConfig()),
+            ];
+            client.descriptors.page.listPerInstanceConfigs.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.IPerInstanceConfig[] = [];
+            const iterable = client.listPerInstanceConfigsAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.listPerInstanceConfigs.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listPerInstanceConfigs.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
+        });
+
+        it('uses async iteration with listPerInstanceConfigs with error', async () => {
+            const client = new instancegroupmanagersModule.v1.InstanceGroupManagersClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListPerInstanceConfigsInstanceGroupManagersRequest());
+            request.project = '';
+            const expectedHeaderRequestParams = "project=";const expectedError = new Error('expected');
+            client.descriptors.page.listPerInstanceConfigs.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listPerInstanceConfigsAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.IPerInstanceConfig[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.listPerInstanceConfigs.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+            assert.strictEqual(
+                (client.descriptors.page.listPerInstanceConfigs.asyncIterate as SinonStub)
+                    .getCall(0).args[2].otherArgs.headers['x-goog-request-params'],
+                expectedHeaderRequestParams
+            );
         });
     });
 });

@@ -10,11 +10,6 @@
         "grpc": {
           "libraryClient": "AddressesClient",
           "rpcs": {
-            "AggregatedList": {
-              "methods": [
-                "aggregatedList"
-              ]
-            },
             "Delete": {
               "methods": [
                 "delete"
@@ -25,9 +20,18 @@
                 "insert"
               ]
             },
+            "AggregatedList": {
+              "methods": [
+                "aggregatedList",
+                "aggregatedListStream",
+                "aggregatedListAsync"
+              ]
+            },
             "List": {
               "methods": [
-                "list"
+                "list",
+                "listStream",
+                "listAsync"
               ]
             }
           }
@@ -35,11 +39,6 @@
         "grpc-fallback": {
           "libraryClient": "AddressesClient",
           "rpcs": {
-            "AggregatedList": {
-              "methods": [
-                "aggregatedList"
-              ]
-            },
             "Delete": {
               "methods": [
                 "delete"
@@ -50,9 +49,18 @@
                 "insert"
               ]
             },
+            "AggregatedList": {
+              "methods": [
+                "aggregatedList",
+                "aggregatedListStream",
+                "aggregatedListAsync"
+              ]
+            },
             "List": {
               "methods": [
-                "list"
+                "list",
+                "listStream",
+                "listAsync"
               ]
             }
           }

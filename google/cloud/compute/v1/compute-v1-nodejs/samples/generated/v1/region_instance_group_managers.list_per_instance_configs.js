@@ -68,8 +68,10 @@ function main(instanceGroupManager, project, region) {
     };
 
     // Run request
-    const response = await computeClient.listPerInstanceConfigs(request);
-    console.log(response);
+    const iterable = await computeClient.listPerInstanceConfigsAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListPerInstanceConfigs();

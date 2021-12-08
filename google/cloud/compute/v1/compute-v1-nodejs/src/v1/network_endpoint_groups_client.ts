@@ -18,8 +18,10 @@
 
 /* global window */
 import * as gax from 'google-gax';
-import {Callback, CallOptions, Descriptors, ClientOptions} from 'google-gax';
+import {Callback, CallOptions, Descriptors, ClientOptions, LROperation, PaginationCallback, GaxCall} from 'google-gax';
 
+import { Transform } from 'stream';
+import { RequestType } from 'google-gax/build/src/apitypes';
 import * as protos from '../../protos/protos';
 import jsonProtos = require('../../protos/protos.json');
 /**
@@ -96,6 +98,12 @@ export class NetworkEndpointGroupsClient {
     this._providedCustomServicePath = !!(opts?.servicePath || opts?.apiEndpoint);
     const port = opts?.port || staticMembers.port;
     const clientConfig = opts?.clientConfig ?? {};
+    // Implicitely set 'rest' value for the apis use rest as transport (eg. googleapis-discovery apis).
+    if (!opts) {
+      opts = {fallback: 'rest'};
+    } else {
+      opts.fallback = opts.fallback ?? 'rest';
+    }
     const fallback = opts?.fallback ?? (typeof window !== 'undefined' && typeof window?.fetch === 'function');
     opts = Object.assign({servicePath, port, clientConfig, fallback}, opts);
 
@@ -115,9 +123,6 @@ export class NetworkEndpointGroupsClient {
 
     // Save the auth object to the client, for use by other methods.
     this.auth = (this._gaxGrpc.auth as gax.GoogleAuth);
-
-    // Set useJWTAccessWithScope on the auth object.
-    this.auth.useJWTAccessWithScope = true;
 
     // Set defaultServicePath on the auth object.
     this.auth.defaultServicePath = staticMembers.servicePath;
@@ -147,6 +152,18 @@ export class NetworkEndpointGroupsClient {
     }
     // Load the applicable protos.
     this._protos = this._gaxGrpc.loadProtoJSON(jsonProtos);
+
+    // Some of the methods on this service return "paged" results,
+    // (e.g. 50 results at a time, with tokens to get subsequent
+    // pages). Denote the keys used for pagination and results.
+    this.descriptors.page = {
+      aggregatedList:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items'),
+      list:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items'),
+      listNetworkEndpoints:
+          new this._gaxModule.PageDescriptor('pageToken', 'nextPageToken', 'items')
+    };
 
     // Put together the default options sent with requests.
     this._defaults = this._gaxGrpc.constructSettings(
@@ -206,6 +223,7 @@ export class NetworkEndpointGroupsClient {
         });
 
       const descriptor =
+        this.descriptors.page[methodName] ||
         undefined;
       const apiCall = this._gaxModule.createApiCall(
         callPromise,
@@ -275,89 +293,6 @@ export class NetworkEndpointGroupsClient {
   // -- Service calls --
   // -------------------
 /**
- * Retrieves the list of network endpoint groups and sorts them by zone.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.filter
- *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
- * @param {boolean} request.includeAllScopes
- *   Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
- * @param {number} request.maxResults
- *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
- * @param {string} request.orderBy
- *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
- * @param {string} request.pageToken
- *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {boolean} request.returnPartialSuccess
- *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [NetworkEndpointGroupAggregatedList]{@link google.cloud.compute.v1.NetworkEndpointGroupAggregatedList}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/network_endpoint_groups.aggregated_list.js</caption>
- * region_tag:compute_v1_generated_NetworkEndpointGroups_AggregatedList_async
- */
-  aggregatedList(
-      request?: protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.INetworkEndpointGroupAggregatedList,
-        protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest|undefined, {}|undefined
-      ]>;
-  aggregatedList(
-      request: protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  aggregatedList(
-      request: protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  aggregatedList(
-      request?: protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupAggregatedList,
-          protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.INetworkEndpointGroupAggregatedList,
-        protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
-    });
-    this.initialize();
-    return this.innerApiCalls.aggregatedList(request, options, callback);
-  }
-/**
  * Attach a list of network endpoints to the specified network endpoint group.
  *
  * @param {Object} request
@@ -375,10 +310,15 @@ export class NetworkEndpointGroupsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/network_endpoint_groups.attach_network_endpoints.js</caption>
  * region_tag:compute_v1_generated_NetworkEndpointGroups_AttachNetworkEndpoints_async
  */
@@ -386,8 +326,8 @@ export class NetworkEndpointGroupsClient {
       request?: protos.google.cloud.compute.v1.IAttachNetworkEndpointsNetworkEndpointGroupRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAttachNetworkEndpointsNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   attachNetworkEndpoints(
       request: protos.google.cloud.compute.v1.IAttachNetworkEndpointsNetworkEndpointGroupRequest,
@@ -413,8 +353,8 @@ export class NetworkEndpointGroupsClient {
           protos.google.cloud.compute.v1.IAttachNetworkEndpointsNetworkEndpointGroupRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IAttachNetworkEndpointsNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -434,7 +374,14 @@ export class NetworkEndpointGroupsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.attachNetworkEndpoints(request, options, callback);
+    return this.innerApiCalls.attachNetworkEndpoints(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Deletes the specified network endpoint group. The network endpoints in the NEG and the VM instances they belong to are not terminated when the NEG is deleted. Note that the NEG cannot be deleted if there are backend services referencing it.
@@ -452,10 +399,15 @@ export class NetworkEndpointGroupsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/network_endpoint_groups.delete.js</caption>
  * region_tag:compute_v1_generated_NetworkEndpointGroups_Delete_async
  */
@@ -463,8 +415,8 @@ export class NetworkEndpointGroupsClient {
       request?: protos.google.cloud.compute.v1.IDeleteNetworkEndpointGroupRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDeleteNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   delete(
       request: protos.google.cloud.compute.v1.IDeleteNetworkEndpointGroupRequest,
@@ -490,8 +442,8 @@ export class NetworkEndpointGroupsClient {
           protos.google.cloud.compute.v1.IDeleteNetworkEndpointGroupRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDeleteNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -511,7 +463,14 @@ export class NetworkEndpointGroupsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.delete(request, options, callback);
+    return this.innerApiCalls.delete(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Detach a list of network endpoints from the specified network endpoint group.
@@ -531,10 +490,15 @@ export class NetworkEndpointGroupsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/network_endpoint_groups.detach_network_endpoints.js</caption>
  * region_tag:compute_v1_generated_NetworkEndpointGroups_DetachNetworkEndpoints_async
  */
@@ -542,8 +506,8 @@ export class NetworkEndpointGroupsClient {
       request?: protos.google.cloud.compute.v1.IDetachNetworkEndpointsNetworkEndpointGroupRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDetachNetworkEndpointsNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   detachNetworkEndpoints(
       request: protos.google.cloud.compute.v1.IDetachNetworkEndpointsNetworkEndpointGroupRequest,
@@ -569,8 +533,8 @@ export class NetworkEndpointGroupsClient {
           protos.google.cloud.compute.v1.IDetachNetworkEndpointsNetworkEndpointGroupRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IDetachNetworkEndpointsNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -590,7 +554,14 @@ export class NetworkEndpointGroupsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.detachNetworkEndpoints(request, options, callback);
+    return this.innerApiCalls.detachNetworkEndpoints(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
+    });
   }
 /**
  * Returns the specified network endpoint group. Gets a list of available network endpoint groups by making a list() request.
@@ -683,10 +654,15 @@ export class NetworkEndpointGroupsClient {
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [Operation]{@link google.cloud.compute.v1.Operation}.
+ *   The first element of the array is an object representing
+ *   a long running operation.
  *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#long-running-operations)
  *   for more details and examples.
+ *   This method is considered to be in beta. This means while
+ *   stable it is still a work-in-progress and under active development,
+ *   and might get backwards-incompatible changes at any time.
+ *   `.promise()` is not supported yet.
  * @example <caption>include:samples/generated/v1/network_endpoint_groups.insert.js</caption>
  * region_tag:compute_v1_generated_NetworkEndpointGroups_Insert_async
  */
@@ -694,8 +670,8 @@ export class NetworkEndpointGroupsClient {
       request?: protos.google.cloud.compute.v1.IInsertNetworkEndpointGroupRequest,
       options?: CallOptions):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IInsertNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>;
   insert(
       request: protos.google.cloud.compute.v1.IInsertNetworkEndpointGroupRequest,
@@ -721,8 +697,8 @@ export class NetworkEndpointGroupsClient {
           protos.google.cloud.compute.v1.IInsertNetworkEndpointGroupRequest|null|undefined,
           {}|null|undefined>):
       Promise<[
-        protos.google.cloud.compute.v1.IOperation,
-        protos.google.cloud.compute.v1.IInsertNetworkEndpointGroupRequest|undefined, {}|undefined
+        LROperation<protos.google.cloud.compute.v1.IOperation, null>,
+        protos.google.cloud.compute.v1.IOperation|undefined, {}|undefined
       ]>|void {
     request = request || {};
     let options: CallOptions;
@@ -742,177 +718,14 @@ export class NetworkEndpointGroupsClient {
       'project': request.project || '',
     });
     this.initialize();
-    return this.innerApiCalls.insert(request, options, callback);
-  }
-/**
- * Retrieves the list of network endpoint groups that are located in the specified project and zone.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.filter
- *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
- * @param {number} request.maxResults
- *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
- * @param {string} request.orderBy
- *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
- * @param {string} request.pageToken
- *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {boolean} request.returnPartialSuccess
- *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
- * @param {string} request.zone
- *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [NetworkEndpointGroupList]{@link google.cloud.compute.v1.NetworkEndpointGroupList}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/network_endpoint_groups.list.js</caption>
- * region_tag:compute_v1_generated_NetworkEndpointGroups_List_async
- */
-  list(
-      request?: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.INetworkEndpointGroupList,
-        protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|undefined, {}|undefined
-      ]>;
-  list(
-      request: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupList,
-          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupList,
-          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  list(
-      request?: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupList,
-          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupList,
-          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.INetworkEndpointGroupList,
-        protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
+    return this.innerApiCalls.insert(request, options, callback)
+    .then(([response, operation, rawResponse]: [protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation, protos.google.cloud.compute.v1.IOperation]) => {
+      return [
+          { latestResponse: response, done: false, name: response.id, metadata: null, result: {}},
+          operation,
+          rawResponse
+        ];
     });
-    this.initialize();
-    return this.innerApiCalls.list(request, options, callback);
-  }
-/**
- * Lists the network endpoints in the specified network endpoint group.
- *
- * @param {Object} request
- *   The request object that will be sent.
- * @param {string} request.filter
- *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
- * @param {number} request.maxResults
- *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
- * @param {string} request.networkEndpointGroup
- *   The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
- * @param {google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest} request.networkEndpointGroupsListEndpointsRequestResource
- *   The body resource for this request
- * @param {string} request.orderBy
- *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
- * @param {string} request.pageToken
- *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
- * @param {string} request.project
- *   Project ID for this request.
- * @param {boolean} request.returnPartialSuccess
- *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
- * @param {string} request.zone
- *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
- * @param {object} [options]
- *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
- * @returns {Promise} - The promise which resolves to an array.
- *   The first element of the array is an object representing [NetworkEndpointGroupsListNetworkEndpoints]{@link google.cloud.compute.v1.NetworkEndpointGroupsListNetworkEndpoints}.
- *   Please see the
- *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#regular-methods)
- *   for more details and examples.
- * @example <caption>include:samples/generated/v1/network_endpoint_groups.list_network_endpoints.js</caption>
- * region_tag:compute_v1_generated_NetworkEndpointGroups_ListNetworkEndpoints_async
- */
-  listNetworkEndpoints(
-      request?: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
-      options?: CallOptions):
-      Promise<[
-        protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints,
-        protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|undefined, {}|undefined
-      ]>;
-  listNetworkEndpoints(
-      request: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
-      options: CallOptions,
-      callback: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints,
-          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listNetworkEndpoints(
-      request: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
-      callback: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints,
-          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>): void;
-  listNetworkEndpoints(
-      request?: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
-      optionsOrCallback?: CallOptions|Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints,
-          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>,
-      callback?: Callback<
-          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints,
-          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|null|undefined,
-          {}|null|undefined>):
-      Promise<[
-        protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints,
-        protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|undefined, {}|undefined
-      ]>|void {
-    request = request || {};
-    let options: CallOptions;
-    if (typeof optionsOrCallback === 'function' && callback === undefined) {
-      callback = optionsOrCallback;
-      options = {};
-    }
-    else {
-      options = optionsOrCallback as CallOptions;
-    }
-    options = options || {};
-    options.otherArgs = options.otherArgs || {};
-    options.otherArgs.headers = options.otherArgs.headers || {};
-    options.otherArgs.headers[
-      'x-goog-request-params'
-    ] = gax.routingHeader.fromParams({
-      'project': request.project || '',
-    });
-    this.initialize();
-    return this.innerApiCalls.listNetworkEndpoints(request, options, callback);
   }
 /**
  * Returns permissions that a caller has on the specified resource.
@@ -992,6 +805,468 @@ export class NetworkEndpointGroupsClient {
     return this.innerApiCalls.testIamPermissions(request, options, callback);
   }
 
+
+/**
+ * Equivalent to `aggregatedList`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {boolean} request.includeAllScopes
+ *   Indicates whether every visible scope for each scope type (zone, region, global) should be included in the response. For new resource types added after this field, the flag has no effect as new resource types will always include every visible scope for each scope type in response. For resource types which predate this field, if this flag is omitted or false, only scopes of the scope types where the resource type is expected to be found will be included.
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   as tuple [string, [NetworkEndpointGroupsScopedList]{@link google.cloud.compute.v1.NetworkEndpointGroupsScopedList}]. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/network_endpoint_groups.aggregated_list.js</caption>
+ * region_tag:compute_v1_generated_NetworkEndpointGroups_AggregatedList_async
+ */
+  aggregatedListAsync(
+      request?: protos.google.cloud.compute.v1.IAggregatedListNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+    AsyncIterable<[string, protos.google.cloud.compute.v1.INetworkEndpointGroupsScopedList]>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['aggregatedList'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.aggregatedList.asyncIterate(
+      this.innerApiCalls['aggregatedList'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<[string, protos.google.cloud.compute.v1.INetworkEndpointGroupsScopedList]>;
+  }
+ /**
+ * Retrieves the list of network endpoint groups that are located in the specified project and zone.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {string} request.zone
+ *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [NetworkEndpointGroup]{@link google.cloud.compute.v1.NetworkEndpointGroup}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  list(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.compute.v1.INetworkEndpointGroup[],
+        protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|null,
+        protos.google.cloud.compute.v1.INetworkEndpointGroupList
+      ]>;
+  list(
+      request: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupList|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointGroup>): void;
+  list(
+      request: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupList|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointGroup>): void;
+  list(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupList|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointGroup>,
+      callback?: PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupList|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointGroup>):
+      Promise<[
+        protos.google.cloud.compute.v1.INetworkEndpointGroup[],
+        protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest|null,
+        protos.google.cloud.compute.v1.INetworkEndpointGroupList
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.list(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {string} request.zone
+ *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [NetworkEndpointGroup]{@link google.cloud.compute.v1.NetworkEndpointGroup} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listStream(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['list'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.list.createStream(
+      this.innerApiCalls.list as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `list`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {string} request.zone
+ *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [NetworkEndpointGroup]{@link google.cloud.compute.v1.NetworkEndpointGroup}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/network_endpoint_groups.list.js</caption>
+ * region_tag:compute_v1_generated_NetworkEndpointGroups_List_async
+ */
+  listAsync(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.compute.v1.INetworkEndpointGroup>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['list'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.list.asyncIterate(
+      this.innerApiCalls['list'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.compute.v1.INetworkEndpointGroup>;
+  }
+ /**
+ * Lists the network endpoints in the specified network endpoint group.
+ *
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.networkEndpointGroup
+ *   The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
+ * @param {google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest} request.networkEndpointGroupsListEndpointsRequestResource
+ *   The body resource for this request
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {string} request.zone
+ *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Promise} - The promise which resolves to an array.
+ *   The first element of the array is Array of [NetworkEndpointWithHealthStatus]{@link google.cloud.compute.v1.NetworkEndpointWithHealthStatus}.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed and will merge results from all the pages into this array.
+ *   Note that it can affect your quota.
+ *   We recommend using `listNetworkEndpointsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listNetworkEndpoints(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+      Promise<[
+        protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus[],
+        protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|null,
+        protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints
+      ]>;
+  listNetworkEndpoints(
+      request: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+      options: CallOptions,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus>): void;
+  listNetworkEndpoints(
+      request: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+      callback: PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus>): void;
+  listNetworkEndpoints(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+      optionsOrCallback?: CallOptions|PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus>,
+      callback?: PaginationCallback<
+          protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+          protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints|null|undefined,
+          protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus>):
+      Promise<[
+        protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus[],
+        protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest|null,
+        protos.google.cloud.compute.v1.INetworkEndpointGroupsListNetworkEndpoints
+      ]>|void {
+    request = request || {};
+    let options: CallOptions;
+    if (typeof optionsOrCallback === 'function' && callback === undefined) {
+      callback = optionsOrCallback;
+      options = {};
+    }
+    else {
+      options = optionsOrCallback as CallOptions;
+    }
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    this.initialize();
+    return this.innerApiCalls.listNetworkEndpoints(request, options, callback);
+  }
+
+/**
+ * Equivalent to `method.name.toCamelCase()`, but returns a NodeJS Stream object.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.networkEndpointGroup
+ *   The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
+ * @param {google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest} request.networkEndpointGroupsListEndpointsRequestResource
+ *   The body resource for this request
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {string} request.zone
+ *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Stream}
+ *   An object stream which emits an object representing [NetworkEndpointWithHealthStatus]{@link google.cloud.compute.v1.NetworkEndpointWithHealthStatus} on 'data' event.
+ *   The client library will perform auto-pagination by default: it will call the API as many
+ *   times as needed. Note that it can affect your quota.
+ *   We recommend using `listNetworkEndpointsAsync()`
+ *   method described below for async iteration which you can stop as needed.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ */
+  listNetworkEndpointsStream(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+    Transform{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['listNetworkEndpoints'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.listNetworkEndpoints.createStream(
+      this.innerApiCalls.listNetworkEndpoints as gax.GaxCall,
+      request,
+      callSettings
+    );
+  }
+
+/**
+ * Equivalent to `listNetworkEndpoints`, but returns an iterable object.
+ *
+ * `for`-`await`-`of` syntax is used with the iterable to get response elements on-demand.
+ * @param {Object} request
+ *   The request object that will be sent.
+ * @param {string} request.filter
+ *   A filter expression that filters resources listed in the response. The expression must specify the field name, a comparison operator, and the value that you want to use for filtering. The value must be a string, a number, or a boolean. The comparison operator must be either `=`, `!=`, `>`, or `<`. For example, if you are filtering Compute Engine instances, you can exclude instances named `example-instance` by specifying `name != example-instance`. You can also filter nested fields. For example, you could specify `scheduling.automaticRestart = false` to include instances only if they are not scheduled for automatic restarts. You can use filtering on nested fields to filter based on resource labels. To filter on multiple expressions, provide each separate expression within parentheses. For example: ``` (scheduling.automaticRestart = true) (cpuPlatform = "Intel Skylake") ``` By default, each expression is an `AND` expression. However, you can include `AND` and `OR` expressions explicitly. For example: ``` (cpuPlatform = "Intel Skylake") OR (cpuPlatform = "Intel Broadwell") AND (scheduling.automaticRestart = true) ```
+ * @param {number} request.maxResults
+ *   The maximum number of results per page that should be returned. If the number of available results is larger than `maxResults`, Compute Engine returns a `nextPageToken` that can be used to get the next page of results in subsequent list requests. Acceptable values are `0` to `500`, inclusive. (Default: `500`)
+ * @param {string} request.networkEndpointGroup
+ *   The name of the network endpoint group from which you want to generate a list of included network endpoints. It should comply with RFC1035.
+ * @param {google.cloud.compute.v1.NetworkEndpointGroupsListEndpointsRequest} request.networkEndpointGroupsListEndpointsRequestResource
+ *   The body resource for this request
+ * @param {string} request.orderBy
+ *   Sorts list results by a certain order. By default, results are returned in alphanumerical order based on the resource name. You can also sort results in descending order based on the creation timestamp using `orderBy="creationTimestamp desc"`. This sorts results based on the `creationTimestamp` field in reverse chronological order (newest result first). Use this to sort resources like operations so that the newest operation is returned first. Currently, only sorting by `name` or `creationTimestamp desc` is supported.
+ * @param {string} request.pageToken
+ *   Specifies a page token to use. Set `pageToken` to the `nextPageToken` returned by a previous list request to get the next page of results.
+ * @param {string} request.project
+ *   Project ID for this request.
+ * @param {boolean} request.returnPartialSuccess
+ *   Opt-in for partial success behavior which provides partial results in case of failure. The default value is false.
+ * @param {string} request.zone
+ *   The name of the zone where the network endpoint group is located. It should comply with RFC1035.
+ * @param {object} [options]
+ *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
+ * @returns {Object}
+ *   An iterable Object that allows [async iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols).
+ *   When you iterate the returned iterable, each element will be an object representing
+ *   [NetworkEndpointWithHealthStatus]{@link google.cloud.compute.v1.NetworkEndpointWithHealthStatus}. The API will be called under the hood as needed, once per the page,
+ *   so you can stop the iteration when you don't need more results.
+ *   Please see the
+ *   [documentation](https://github.com/googleapis/gax-nodejs/blob/master/client-libraries.md#auto-pagination)
+ *   for more details and examples.
+ * @example <caption>include:samples/generated/v1/network_endpoint_groups.list_network_endpoints.js</caption>
+ * region_tag:compute_v1_generated_NetworkEndpointGroups_ListNetworkEndpoints_async
+ */
+  listNetworkEndpointsAsync(
+      request?: protos.google.cloud.compute.v1.IListNetworkEndpointsNetworkEndpointGroupsRequest,
+      options?: CallOptions):
+    AsyncIterable<protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus>{
+    request = request || {};
+    options = options || {};
+    options.otherArgs = options.otherArgs || {};
+    options.otherArgs.headers = options.otherArgs.headers || {};
+    options.otherArgs.headers[
+      'x-goog-request-params'
+    ] = gax.routingHeader.fromParams({
+      'project': request.project || '',
+    });
+    const defaultCallSettings = this._defaults['listNetworkEndpoints'];
+    const callSettings = defaultCallSettings.merge(options);
+    this.initialize();
+    return this.descriptors.page.listNetworkEndpoints.asyncIterate(
+      this.innerApiCalls['listNetworkEndpoints'] as GaxCall,
+      request as unknown as RequestType,
+      callSettings
+    ) as AsyncIterable<protos.google.cloud.compute.v1.INetworkEndpointWithHealthStatus>;
+  }
 
   /**
    * Terminate the gRPC channel and close the client.

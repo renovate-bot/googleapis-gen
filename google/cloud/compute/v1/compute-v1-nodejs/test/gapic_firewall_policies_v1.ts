@@ -20,10 +20,12 @@ import * as protos from '../protos/protos';
 import * as assert from 'assert';
 import * as sinon from 'sinon';
 import {SinonStub} from 'sinon';
-import { describe, it } from 'mocha';
+import { describe, it, beforeEach, afterEach } from 'mocha';
 import * as firewallpoliciesModule from '../src';
 
-import {protobuf} from 'google-gax';
+import {PassThrough} from 'stream';
+
+import {GoogleAuth, protobuf} from 'google-gax';
 
 function generateSampleMessage<T extends object>(instance: T) {
     const filledObject = (instance.constructor as typeof protobuf.Message)
@@ -39,7 +41,63 @@ function stubSimpleCallWithCallback<ResponseType>(response?: ResponseType, error
     return error ? sinon.stub().callsArgWith(2, error) : sinon.stub().callsArgWith(2, null, response);
 }
 
+function stubPageStreamingCall<ResponseType>(responses?: ResponseType[], error?: Error) {
+    const pagingStub = sinon.stub();
+    if (responses) {
+        for (let i = 0; i < responses.length; ++i) {
+            pagingStub.onCall(i).callsArgWith(2, null, responses[i]);
+        }
+    }
+    const transformStub = error ? sinon.stub().callsArgWith(2, error) : pagingStub;
+    const mockStream = new PassThrough({
+        objectMode: true,
+        transform: transformStub,
+    });
+    // trigger as many responses as needed
+    if (responses) {
+        for (let i = 0; i < responses.length; ++i) {
+            setImmediate(() => { mockStream.write({}); });
+        }
+        setImmediate(() => { mockStream.end(); });
+    } else {
+        setImmediate(() => { mockStream.write({}); });
+        setImmediate(() => { mockStream.end(); });
+    }
+    return sinon.stub().returns(mockStream);
+}
+
+function stubAsyncIterationCall<ResponseType>(responses?: ResponseType[], error?: Error) {
+    let counter = 0;
+    const asyncIterable = {
+        [Symbol.asyncIterator]() {
+            return {
+                async next() {
+                    if (error) {
+                        return Promise.reject(error);
+                    }
+                    if (counter >= responses!.length) {
+                        return Promise.resolve({done: true, value: undefined});
+                    }
+                    return Promise.resolve({done: false, value: responses![counter++]});
+                }
+            };
+        }
+    };
+    return sinon.stub().returns(asyncIterable);
+}
+
 describe('v1.FirewallPoliciesClient', () => {
+  let googleAuth: GoogleAuth;
+  beforeEach(() => {
+    googleAuth = {
+      getClient: sinon.stub().resolves({
+        getRequestHeaders: sinon.stub().resolves({Authorization: 'Bearer SOME_TOKEN'}),
+      })
+    } as unknown as GoogleAuth;
+  });
+  afterEach(() => {
+    sinon.restore();
+  });
     it('has servicePath', () => {
         const servicePath = firewallpoliciesModule.v1.FirewallPoliciesClient.servicePath;
         assert(servicePath);
@@ -70,7 +128,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
     it('has initialize method and supports deferred initialization', async () => {
         const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         assert.strictEqual(client.firewallPoliciesStub, undefined);
@@ -80,7 +138,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
     it('has close method', () => {
         const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.close();
@@ -89,7 +147,7 @@ describe('v1.FirewallPoliciesClient', () => {
     it('has getProjectId method', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().resolves(fakeProjectId);
@@ -101,7 +159,7 @@ describe('v1.FirewallPoliciesClient', () => {
     it('has getProjectId method with callback', async () => {
         const fakeProjectId = 'fake-project-id';
         const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
         client.auth.getProjectId = sinon.stub().callsArgWith(0, null, fakeProjectId);
@@ -121,7 +179,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('addAssociation', () => {
         it('invokes addAssociation without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -138,14 +196,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.addAssociation = stubSimpleCall(expectedResponse);
             const [response] = await client.addAssociation(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.addAssociation as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes addAssociation without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -180,7 +238,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes addAssociation with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -205,7 +263,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('addRule', () => {
         it('invokes addRule without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -222,14 +280,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.addRule = stubSimpleCall(expectedResponse);
             const [response] = await client.addRule(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.addRule as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes addRule without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -264,7 +322,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes addRule with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -289,7 +347,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('cloneRules', () => {
         it('invokes cloneRules without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -306,14 +364,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.cloneRules = stubSimpleCall(expectedResponse);
             const [response] = await client.cloneRules(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.cloneRules as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes cloneRules without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -348,7 +406,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes cloneRules with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -373,7 +431,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('delete', () => {
         it('invokes delete without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -390,14 +448,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.delete = stubSimpleCall(expectedResponse);
             const [response] = await client.delete(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.delete as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes delete without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -432,7 +490,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes delete with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -457,7 +515,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('get', () => {
         it('invokes get without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -481,7 +539,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes get without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -516,7 +574,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes get with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -541,7 +599,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('getAssociation', () => {
         it('invokes getAssociation without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -565,7 +623,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes getAssociation without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -600,7 +658,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes getAssociation with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -625,7 +683,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('getIamPolicy', () => {
         it('invokes getIamPolicy without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -649,7 +707,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes getIamPolicy without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -684,7 +742,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes getIamPolicy with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -709,7 +767,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('getRule', () => {
         it('invokes getRule without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -733,7 +791,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes getRule without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -768,7 +826,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes getRule with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -793,7 +851,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('insert', () => {
         it('invokes insert without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -802,14 +860,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.insert = stubSimpleCall(expectedResponse);
             const [response] = await client.insert(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.insert as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes insert without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -836,7 +894,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes insert with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -850,70 +908,10 @@ describe('v1.FirewallPoliciesClient', () => {
         });
     });
 
-    describe('list', () => {
-        it('invokes list without error', async () => {
-            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
-            const expectedOptions = {otherArgs: {headers: {}}};;
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicyList());
-            client.innerApiCalls.list = stubSimpleCall(expectedResponse);
-            const [response] = await client.list(request);
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.list as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-
-        it('invokes list without error using callback', async () => {
-            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
-            const expectedOptions = {otherArgs: {headers: {}}};;
-            const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicyList());
-            client.innerApiCalls.list = stubSimpleCallWithCallback(expectedResponse);
-            const promise = new Promise((resolve, reject) => {
-                 client.list(
-                    request,
-                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IFirewallPolicyList|null) => {
-                        if (err) {
-                            reject(err);
-                        } else {
-                            resolve(result);
-                        }
-                    });
-            });
-            const response = await promise;
-            assert.deepStrictEqual(response, expectedResponse);
-            assert((client.innerApiCalls.list as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
-        });
-
-        it('invokes list with error', async () => {
-            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
-              projectId: 'bogus',
-        });
-            client.initialize();
-            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
-            const expectedOptions = {otherArgs: {headers: {}}};;
-            const expectedError = new Error('expected');
-            client.innerApiCalls.list = stubSimpleCall(undefined, expectedError);
-            await assert.rejects(client.list(request), expectedError);
-            assert((client.innerApiCalls.list as SinonStub)
-                .getCall(0).calledWith(request, expectedOptions, undefined));
-        });
-    });
-
     describe('listAssociations', () => {
         it('invokes listAssociations without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -929,7 +927,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes listAssociations without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -956,7 +954,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes listAssociations with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -973,7 +971,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('move', () => {
         it('invokes move without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -990,14 +988,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.move = stubSimpleCall(expectedResponse);
             const [response] = await client.move(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.move as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes move without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1032,7 +1030,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes move with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1057,7 +1055,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('patch', () => {
         it('invokes patch without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1074,14 +1072,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.patch = stubSimpleCall(expectedResponse);
             const [response] = await client.patch(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.patch as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes patch without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1116,7 +1114,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes patch with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1141,7 +1139,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('patchRule', () => {
         it('invokes patchRule without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1158,14 +1156,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.patchRule = stubSimpleCall(expectedResponse);
             const [response] = await client.patchRule(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.patchRule as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes patchRule without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1200,7 +1198,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes patchRule with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1225,7 +1223,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('removeAssociation', () => {
         it('invokes removeAssociation without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1242,14 +1240,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.removeAssociation = stubSimpleCall(expectedResponse);
             const [response] = await client.removeAssociation(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.removeAssociation as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes removeAssociation without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1284,7 +1282,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes removeAssociation with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1309,7 +1307,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('removeRule', () => {
         it('invokes removeRule without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1326,14 +1324,14 @@ describe('v1.FirewallPoliciesClient', () => {
             const expectedResponse = generateSampleMessage(new protos.google.cloud.compute.v1.Operation());
             client.innerApiCalls.removeRule = stubSimpleCall(expectedResponse);
             const [response] = await client.removeRule(request);
-            assert.deepStrictEqual(response, expectedResponse);
+            assert.deepStrictEqual(response.latestResponse, expectedResponse);
             assert((client.innerApiCalls.removeRule as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
         });
 
         it('invokes removeRule without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1368,7 +1366,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes removeRule with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1393,7 +1391,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('setIamPolicy', () => {
         it('invokes setIamPolicy without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1417,7 +1415,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes setIamPolicy without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1452,7 +1450,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes setIamPolicy with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1477,7 +1475,7 @@ describe('v1.FirewallPoliciesClient', () => {
     describe('testIamPermissions', () => {
         it('invokes testIamPermissions without error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1501,7 +1499,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes testIamPermissions without error using callback', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1536,7 +1534,7 @@ describe('v1.FirewallPoliciesClient', () => {
 
         it('invokes testIamPermissions with error', async () => {
             const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
-              credentials: {client_email: 'bogus', private_key: 'bogus'},
+              auth: googleAuth,
               projectId: 'bogus',
         });
             client.initialize();
@@ -1555,6 +1553,177 @@ describe('v1.FirewallPoliciesClient', () => {
             await assert.rejects(client.testIamPermissions(request), expectedError);
             assert((client.innerApiCalls.testIamPermissions as SinonStub)
                 .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+    });
+
+    describe('list', () => {
+        it('invokes list without error', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
+            const expectedOptions = {otherArgs: {headers: {}}};;
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+            ];
+            client.innerApiCalls.list = stubSimpleCall(expectedResponse);
+            const [response] = await client.list(request);
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.list as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes list without error using callback', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
+            const expectedOptions = {otherArgs: {headers: {}}};;
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+            ];
+            client.innerApiCalls.list = stubSimpleCallWithCallback(expectedResponse);
+            const promise = new Promise((resolve, reject) => {
+                 client.list(
+                    request,
+                    (err?: Error|null, result?: protos.google.cloud.compute.v1.IFirewallPolicy[]|null) => {
+                        if (err) {
+                            reject(err);
+                        } else {
+                            resolve(result);
+                        }
+                    });
+            });
+            const response = await promise;
+            assert.deepStrictEqual(response, expectedResponse);
+            assert((client.innerApiCalls.list as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions /*, callback defined above */));
+        });
+
+        it('invokes list with error', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
+            const expectedOptions = {otherArgs: {headers: {}}};;
+            const expectedError = new Error('expected');
+            client.innerApiCalls.list = stubSimpleCall(undefined, expectedError);
+            await assert.rejects(client.list(request), expectedError);
+            assert((client.innerApiCalls.list as SinonStub)
+                .getCall(0).calledWith(request, expectedOptions, undefined));
+        });
+
+        it('invokes listStream without error', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+            ];
+            client.descriptors.page.list.createStream = stubPageStreamingCall(expectedResponse);
+            const stream = client.listStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.FirewallPolicy[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.FirewallPolicy) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            const responses = await promise;
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert((client.descriptors.page.list.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.list, request));
+        });
+
+        it('invokes listStream with error', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
+            const expectedError = new Error('expected');
+            client.descriptors.page.list.createStream = stubPageStreamingCall(undefined, expectedError);
+            const stream = client.listStream(request);
+            const promise = new Promise((resolve, reject) => {
+                const responses: protos.google.cloud.compute.v1.FirewallPolicy[] = [];
+                stream.on('data', (response: protos.google.cloud.compute.v1.FirewallPolicy) => {
+                    responses.push(response);
+                });
+                stream.on('end', () => {
+                    resolve(responses);
+                });
+                stream.on('error', (err: Error) => {
+                    reject(err);
+                });
+            });
+            await assert.rejects(promise, expectedError);
+            assert((client.descriptors.page.list.createStream as SinonStub)
+                .getCall(0).calledWith(client.innerApiCalls.list, request));
+        });
+
+        it('uses async iteration with list without error', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+              auth: googleAuth,
+              projectId: 'bogus',
+        });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());
+            const expectedResponse = [
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+              generateSampleMessage(new protos.google.cloud.compute.v1.FirewallPolicy()),
+            ];
+            client.descriptors.page.list.asyncIterate = stubAsyncIterationCall(expectedResponse);
+            const responses: protos.google.cloud.compute.v1.IFirewallPolicy[] = [];
+            const iterable = client.listAsync(request);
+            for await (const resource of iterable) {
+                responses.push(resource!);
+            }
+            assert.deepStrictEqual(responses, expectedResponse);
+            assert.deepStrictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
+        });
+
+        it('uses async iteration with list with error', async () => {
+            const client = new firewallpoliciesModule.v1.FirewallPoliciesClient({
+                credentials: {client_email: 'bogus', private_key: 'bogus'},
+                projectId: 'bogus',
+            });
+            client.initialize();
+            const request = generateSampleMessage(new protos.google.cloud.compute.v1.ListFirewallPoliciesRequest());const expectedError = new Error('expected');
+            client.descriptors.page.list.asyncIterate = stubAsyncIterationCall(undefined, expectedError);
+            const iterable = client.listAsync(request);
+            await assert.rejects(async () => {
+                const responses: protos.google.cloud.compute.v1.IFirewallPolicy[] = [];
+                for await (const resource of iterable) {
+                    responses.push(resource!);
+                }
+            });
+            assert.deepStrictEqual(
+                (client.descriptors.page.list.asyncIterate as SinonStub)
+                    .getCall(0).args[1], request);
         });
     });
 });

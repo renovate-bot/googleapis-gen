@@ -58,8 +58,10 @@ function main(project) {
     };
 
     // Run request
-    const response = await computeClient.listUsable(request);
-    console.log(response);
+    const iterable = await computeClient.listUsableAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListUsable();

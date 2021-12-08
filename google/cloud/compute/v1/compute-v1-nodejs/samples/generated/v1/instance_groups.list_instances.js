@@ -73,8 +73,10 @@ function main(instanceGroup, instanceGroupsListInstancesRequestResource, project
     };
 
     // Run request
-    const response = await computeClient.listInstances(request);
-    console.log(response);
+    const iterable = await computeClient.listInstancesAsync(request);
+    for await (const response of iterable) {
+        console.log(response);
+    }
   }
 
   callListInstances();
