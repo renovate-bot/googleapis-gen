@@ -252,8 +252,8 @@ private static final long serialVersionUID = 0L;
   private int complianceRegime_;
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -264,8 +264,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -996,8 +996,8 @@ private static final long serialVersionUID = 0L;
     private int complianceRegime_ = 0;
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1008,8 +1008,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1024,8 +1024,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1039,8 +1039,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1058,8 +1058,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

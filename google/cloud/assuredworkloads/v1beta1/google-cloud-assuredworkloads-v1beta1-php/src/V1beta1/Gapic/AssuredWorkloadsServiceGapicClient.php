@@ -414,8 +414,8 @@ class AssuredWorkloadsServiceGapicClient
      *     Optional.
      *
      *     @type string $externalId
-     *           Optional. A identifier associated with the workload and underlying projects which
-     *           allows for the break down of billing costs for a workload. The value
+     *           Optional. A identifier associated with the workload and underlying projects
+     *           which allows for the break down of billing costs for a workload. The value
      *           provided for the identifier will add a label to the workload and contained
      *           projects with the identifier as the value.
      *     @type RetrySettings|array $retrySettings
@@ -512,8 +512,8 @@ class AssuredWorkloadsServiceGapicClient
      * }
      * ```
      *
-     * @param string $name         Required. The resource name of the Workload to fetch. This is the workloads's
-     *                             relative path in the API, formatted as
+     * @param string $name         Required. The resource name of the Workload to fetch. This is the
+     *                             workloads's relative path in the API, formatted as
      *                             "organizations/{organization_id}/locations/{location_id}/workloads/{workload_id}".
      *                             For example,
      *                             "organizations/123/locations/us-east1/workloads/assured-workload-1".

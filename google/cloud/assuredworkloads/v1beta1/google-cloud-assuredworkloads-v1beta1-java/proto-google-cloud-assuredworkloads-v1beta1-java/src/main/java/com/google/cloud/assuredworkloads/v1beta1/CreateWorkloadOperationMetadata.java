@@ -266,8 +266,8 @@ private static final long serialVersionUID = 0L;
   private int complianceRegime_;
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -278,8 +278,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -295,8 +295,8 @@ private static final long serialVersionUID = 0L;
   private java.util.List<com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings> resourceSettings_;
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -307,8 +307,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -320,8 +320,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -332,8 +332,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -344,8 +344,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1132,8 +1132,8 @@ private static final long serialVersionUID = 0L;
     private int complianceRegime_ = 0;
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1144,8 +1144,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1160,8 +1160,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1175,8 +1175,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1194,8 +1194,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      * </pre>
      *
      * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1222,8 +1222,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1237,8 +1237,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1252,8 +1252,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1267,8 +1267,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1289,8 +1289,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1308,8 +1308,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1329,8 +1329,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1351,8 +1351,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1370,8 +1370,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1389,8 +1389,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1409,8 +1409,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1427,8 +1427,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1445,8 +1445,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1457,8 +1457,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1472,8 +1472,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1488,8 +1488,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1500,8 +1500,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1513,8 +1513,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. Resource properties in the input that are used for creating/customizing
-     * workload resources.
+     * Optional. Resource properties in the input that are used for
+     * creating/customizing workload resources.
      * </pre>
      *
      * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

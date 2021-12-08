@@ -76,8 +76,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86,8 +86,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
   int getComplianceRegimeValue();
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1beta1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -97,8 +97,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -107,8 +107,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
       getResourceSettingsList();
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -116,8 +116,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
   com.google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings getResourceSettings(int index);
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -125,8 +125,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
   int getResourceSettingsCount();
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -135,8 +135,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
       getResourceSettingsOrBuilderList();
   /**
    * <pre>
-   * Optional. Resource properties in the input that are used for creating/customizing
-   * workload resources.
+   * Optional. Resource properties in the input that are used for
+   * creating/customizing workload resources.
    * </pre>
    *
    * <code>repeated .google.cloud.assuredworkloads.v1beta1.Workload.ResourceSettings resource_settings = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

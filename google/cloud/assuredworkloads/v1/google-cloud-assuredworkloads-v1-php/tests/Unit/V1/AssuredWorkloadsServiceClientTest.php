@@ -104,12 +104,14 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $billingAccount = 'billingAccount-545871767';
         $etag = 'etag3123477';
         $provisionedResourcesParent = 'provisionedResourcesParent-158134097';
+        $enableSovereignControls = false;
         $expectedResponse = new Workload();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setBillingAccount($billingAccount);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setProvisionedResourcesParent($provisionedResourcesParent);
+        $expectedResponse->setEnableSovereignControls($enableSovereignControls);
         $anyResponse = new Any();
         $anyResponse->setValue($expectedResponse->serializeToString());
         $completeOperation = new Operation();
@@ -300,12 +302,14 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $billingAccount = 'billingAccount-545871767';
         $etag = 'etag3123477';
         $provisionedResourcesParent = 'provisionedResourcesParent-158134097';
+        $enableSovereignControls = false;
         $expectedResponse = new Workload();
         $expectedResponse->setName($name2);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setBillingAccount($billingAccount);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setProvisionedResourcesParent($provisionedResourcesParent);
+        $expectedResponse->setEnableSovereignControls($enableSovereignControls);
         $transport->addResponse($expectedResponse);
         // Mock request
         $formattedName = $client->workloadName('[ORGANIZATION]', '[LOCATION]', '[WORKLOAD]');
@@ -444,12 +448,14 @@ class AssuredWorkloadsServiceClientTest extends GeneratedTest
         $billingAccount = 'billingAccount-545871767';
         $etag = 'etag3123477';
         $provisionedResourcesParent = 'provisionedResourcesParent-158134097';
+        $enableSovereignControls = false;
         $expectedResponse = new Workload();
         $expectedResponse->setName($name);
         $expectedResponse->setDisplayName($displayName);
         $expectedResponse->setBillingAccount($billingAccount);
         $expectedResponse->setEtag($etag);
         $expectedResponse->setProvisionedResourcesParent($provisionedResourcesParent);
+        $expectedResponse->setEnableSovereignControls($enableSovereignControls);
         $transport->addResponse($expectedResponse);
         // Mock request
         $workload = new Workload();

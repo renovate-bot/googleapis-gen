@@ -34,8 +34,8 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      *
      * Generated from protobuf field <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
@@ -54,8 +54,8 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
      *     @type string $parent
      *           Optional. The parent of the workload.
      *     @type int $compliance_regime
-     *           Optional. Compliance controls that should be applied to the resources managed by
-     *           the workload.
+     *           Optional. Compliance controls that should be applied to the resources
+     *           managed by the workload.
      * }
      */
     public function __construct($data = NULL) {
@@ -152,8 +152,8 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      *
      * Generated from protobuf field <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @return int
@@ -164,8 +164,8 @@ class CreateWorkloadOperationMetadata extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Compliance controls that should be applied to the resources managed by
-     * the workload.
+     * Optional. Compliance controls that should be applied to the resources
+     * managed by the workload.
      *
      * Generated from protobuf field <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      * @param int $var

@@ -201,8 +201,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object externalId_;
   /**
    * <pre>
-   * Optional. A identifier associated with the workload and underlying projects which
-   * allows for the break down of billing costs for a workload. The value
+   * Optional. A identifier associated with the workload and underlying projects
+   * which allows for the break down of billing costs for a workload. The value
    * provided for the identifier will add a label to the workload and contained
    * projects with the identifier as the value.
    * </pre>
@@ -225,8 +225,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Optional. A identifier associated with the workload and underlying projects which
-   * allows for the break down of billing costs for a workload. The value
+   * Optional. A identifier associated with the workload and underlying projects
+   * which allows for the break down of billing costs for a workload. The value
    * provided for the identifier will add a label to the workload and contained
    * projects with the identifier as the value.
    * </pre>
@@ -861,8 +861,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object externalId_ = "";
     /**
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects which
-     * allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects
+     * which allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -884,8 +884,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects which
-     * allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects
+     * which allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -908,8 +908,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects which
-     * allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects
+     * which allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -930,8 +930,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects which
-     * allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects
+     * which allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>
@@ -947,8 +947,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Optional. A identifier associated with the workload and underlying projects which
-     * allows for the break down of billing costs for a workload. The value
+     * Optional. A identifier associated with the workload and underlying projects
+     * which allows for the break down of billing costs for a workload. The value
      * provided for the identifier will add a label to the workload and contained
      * projects with the identifier as the value.
      * </pre>

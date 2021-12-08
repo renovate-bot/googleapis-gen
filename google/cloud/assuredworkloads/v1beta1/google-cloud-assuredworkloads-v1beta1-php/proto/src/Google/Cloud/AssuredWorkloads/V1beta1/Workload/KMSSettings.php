@@ -16,16 +16,17 @@ use Google\Protobuf\Internal\GPBUtil;
 class KMSSettings extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp next_rotation_time = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $next_rotation_time = null;
     /**
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration rotation_period = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -38,12 +39,13 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Google\Protobuf\Timestamp $next_rotation_time
-     *           Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     *           new version of the crypto key and mark it as the primary.
+     *           Required. Input only. Immutable. The time at which the Key Management
+     *           Service will automatically create a new version of the crypto key and
+     *           mark it as the primary.
      *     @type \Google\Protobuf\Duration $rotation_period
-     *           Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     *           Management Service automatically rotates a key. Must be at least 24 hours
-     *           and at most 876,000 hours.
+     *           Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     *           this period when the Key Management Service automatically rotates a key.
+     *           Must be at least 24 hours and at most 876,000 hours.
      * }
      */
     public function __construct($data = NULL) {
@@ -52,8 +54,9 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp next_rotation_time = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -74,8 +77,9 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Input only. Immutable. The time at which the Key Management Service will automatically create a
-     * new version of the crypto key and mark it as the primary.
+     * Required. Input only. Immutable. The time at which the Key Management
+     * Service will automatically create a new version of the crypto key and
+     * mark it as the primary.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp next_rotation_time = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -90,9 +94,9 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration rotation_period = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @return \Google\Protobuf\Duration|null
@@ -113,9 +117,9 @@ class KMSSettings extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Input only. Immutable. [next_rotation_time] will be advanced by this period when the Key
-     * Management Service automatically rotates a key. Must be at least 24 hours
-     * and at most 876,000 hours.
+     * Required. Input only. Immutable. [next_rotation_time] will be advanced by
+     * this period when the Key Management Service automatically rotates a key.
+     * Must be at least 24 hours and at most 876,000 hours.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration rotation_period = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];</code>
      * @param \Google\Protobuf\Duration $var

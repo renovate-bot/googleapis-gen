@@ -76,8 +76,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -86,8 +86,8 @@ public interface CreateWorkloadOperationMetadataOrBuilder extends
   int getComplianceRegimeValue();
   /**
    * <pre>
-   * Optional. Compliance controls that should be applied to the resources managed by
-   * the workload.
+   * Optional. Compliance controls that should be applied to the resources
+   * managed by the workload.
    * </pre>
    *
    * <code>.google.cloud.assuredworkloads.v1.Workload.ComplianceRegime compliance_regime = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

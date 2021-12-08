@@ -648,6 +648,8 @@ def test_update_workload(transport: str = 'grpc', request_type=assuredworkloads.
             billing_account='billing_account_value',
             etag='etag_value',
             provisioned_resources_parent='provisioned_resources_parent_value',
+            kaj_enrollment_state=assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING,
+            enable_sovereign_controls=True,
         )
         response = client.update_workload(request)
 
@@ -664,6 +666,8 @@ def test_update_workload(transport: str = 'grpc', request_type=assuredworkloads.
     assert response.billing_account == 'billing_account_value'
     assert response.etag == 'etag_value'
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
+    assert response.kaj_enrollment_state == assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING
+    assert response.enable_sovereign_controls is True
 
 
 def test_update_workload_from_dict():
@@ -711,6 +715,8 @@ async def test_update_workload_async(transport: str = 'grpc_asyncio', request_ty
             billing_account='billing_account_value',
             etag='etag_value',
             provisioned_resources_parent='provisioned_resources_parent_value',
+            kaj_enrollment_state=assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING,
+            enable_sovereign_controls=True,
         ))
         response = await client.update_workload(request)
 
@@ -727,6 +733,8 @@ async def test_update_workload_async(transport: str = 'grpc_asyncio', request_ty
     assert response.billing_account == 'billing_account_value'
     assert response.etag == 'etag_value'
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
+    assert response.kaj_enrollment_state == assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING
+    assert response.enable_sovereign_controls is True
 
 
 @pytest.mark.asyncio
@@ -1142,6 +1150,8 @@ def test_get_workload(transport: str = 'grpc', request_type=assuredworkloads.Get
             billing_account='billing_account_value',
             etag='etag_value',
             provisioned_resources_parent='provisioned_resources_parent_value',
+            kaj_enrollment_state=assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING,
+            enable_sovereign_controls=True,
         )
         response = client.get_workload(request)
 
@@ -1158,6 +1168,8 @@ def test_get_workload(transport: str = 'grpc', request_type=assuredworkloads.Get
     assert response.billing_account == 'billing_account_value'
     assert response.etag == 'etag_value'
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
+    assert response.kaj_enrollment_state == assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING
+    assert response.enable_sovereign_controls is True
 
 
 def test_get_workload_from_dict():
@@ -1205,6 +1217,8 @@ async def test_get_workload_async(transport: str = 'grpc_asyncio', request_type=
             billing_account='billing_account_value',
             etag='etag_value',
             provisioned_resources_parent='provisioned_resources_parent_value',
+            kaj_enrollment_state=assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING,
+            enable_sovereign_controls=True,
         ))
         response = await client.get_workload(request)
 
@@ -1221,6 +1235,8 @@ async def test_get_workload_async(transport: str = 'grpc_asyncio', request_type=
     assert response.billing_account == 'billing_account_value'
     assert response.etag == 'etag_value'
     assert response.provisioned_resources_parent == 'provisioned_resources_parent_value'
+    assert response.kaj_enrollment_state == assuredworkloads.Workload.KajEnrollmentState.KAJ_ENROLLMENT_STATE_PENDING
+    assert response.enable_sovereign_controls is True
 
 
 @pytest.mark.asyncio
