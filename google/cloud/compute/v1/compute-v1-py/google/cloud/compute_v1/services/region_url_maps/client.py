@@ -325,7 +325,7 @@ class RegionUrlMapsClient(metaclass=RegionUrlMapsClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRegionUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -530,7 +530,7 @@ class RegionUrlMapsClient(metaclass=RegionUrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -716,7 +716,7 @@ class RegionUrlMapsClient(metaclass=RegionUrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchRegionUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -824,7 +824,7 @@ class RegionUrlMapsClient(metaclass=RegionUrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateRegionUrlMapRequest, dict] = None,
             *,
             project: str = None,

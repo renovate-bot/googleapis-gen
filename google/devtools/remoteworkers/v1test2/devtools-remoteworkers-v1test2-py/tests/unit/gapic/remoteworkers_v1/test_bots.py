@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -1271,15 +1272,17 @@ def test_bots_transport_channel_mtls_with_adc(
 
 
 def test_bot_session_path():
-    bot_session = "squid"
-    expected = "{unknown_path=**}/botSessions/{bot_session}".format(bot_session=bot_session, )
-    actual = BotsClient.bot_session_path(bot_session)
+    unknown_path = "squid"
+    bot_session = "clam"
+    expected = "{unknown_path=**}/botSessions/{bot_session}".format(unknown_path=unknown_path, bot_session=bot_session, )
+    actual = BotsClient.bot_session_path(unknown_path, bot_session)
     assert expected == actual
 
 
 def test_parse_bot_session_path():
     expected = {
-        "bot_session": "clam",
+        "unknown_path": "whelk",
+        "bot_session": "octopus",
     }
     path = BotsClient.bot_session_path(**expected)
 
@@ -1288,7 +1291,7 @@ def test_parse_bot_session_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "whelk"
+    billing_account = "oyster"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = BotsClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1296,7 +1299,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "octopus",
+        "billing_account": "nudibranch",
     }
     path = BotsClient.common_billing_account_path(**expected)
 
@@ -1305,7 +1308,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "oyster"
+    folder = "cuttlefish"
     expected = "folders/{folder}".format(folder=folder, )
     actual = BotsClient.common_folder_path(folder)
     assert expected == actual
@@ -1313,7 +1316,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "nudibranch",
+        "folder": "mussel",
     }
     path = BotsClient.common_folder_path(**expected)
 
@@ -1322,7 +1325,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "cuttlefish"
+    organization = "winkle"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = BotsClient.common_organization_path(organization)
     assert expected == actual
@@ -1330,7 +1333,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "mussel",
+        "organization": "nautilus",
     }
     path = BotsClient.common_organization_path(**expected)
 
@@ -1339,7 +1342,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "winkle"
+    project = "scallop"
     expected = "projects/{project}".format(project=project, )
     actual = BotsClient.common_project_path(project)
     assert expected == actual
@@ -1347,7 +1350,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nautilus",
+        "project": "abalone",
     }
     path = BotsClient.common_project_path(**expected)
 
@@ -1356,8 +1359,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "scallop"
-    location = "abalone"
+    project = "squid"
+    location = "clam"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = BotsClient.common_location_path(project, location)
     assert expected == actual
@@ -1365,8 +1368,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "squid",
-        "location": "clam",
+        "project": "whelk",
+        "location": "octopus",
     }
     path = BotsClient.common_location_path(**expected)
 

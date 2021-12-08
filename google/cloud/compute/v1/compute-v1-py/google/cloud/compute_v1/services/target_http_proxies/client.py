@@ -404,7 +404,7 @@ class TargetHttpProxiesClient(metaclass=TargetHttpProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteTargetHttpProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -582,7 +582,7 @@ class TargetHttpProxiesClient(metaclass=TargetHttpProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertTargetHttpProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -748,7 +748,7 @@ class TargetHttpProxiesClient(metaclass=TargetHttpProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchTargetHttpProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -848,7 +848,7 @@ class TargetHttpProxiesClient(metaclass=TargetHttpProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_url_map(self,
+    def set_url_map_unary(self,
             request: Union[compute.SetUrlMapTargetHttpProxyRequest, dict] = None,
             *,
             project: str = None,

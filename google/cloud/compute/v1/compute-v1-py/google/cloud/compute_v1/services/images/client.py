@@ -325,7 +325,7 @@ class ImagesClient(metaclass=ImagesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteImageRequest, dict] = None,
             *,
             project: str = None,
@@ -411,7 +411,7 @@ class ImagesClient(metaclass=ImagesClientMeta):
         # Done; return the response.
         return response
 
-    def deprecate(self,
+    def deprecate_unary(self,
             request: Union[compute.DeprecateImageRequest, dict] = None,
             *,
             project: str = None,
@@ -777,7 +777,7 @@ class ImagesClient(metaclass=ImagesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertImageRequest, dict] = None,
             *,
             project: str = None,
@@ -947,7 +947,7 @@ class ImagesClient(metaclass=ImagesClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchImageRequest, dict] = None,
             *,
             project: str = None,
@@ -1165,7 +1165,7 @@ class ImagesClient(metaclass=ImagesClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsImageRequest, dict] = None,
             *,
             project: str = None,

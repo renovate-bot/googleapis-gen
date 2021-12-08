@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -29,6 +30,7 @@ from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
+from google.api_core import operation
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
 from google.api_core import path_template
@@ -46,6 +48,7 @@ from google.cloud.recommendationengine_v1beta1.types import user_event
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
 from google.protobuf import field_mask_pb2  # type: ignore
+from google.protobuf import json_format
 from google.protobuf import timestamp_pb2  # type: ignore
 import google.auth
 
@@ -2544,16 +2547,18 @@ def test_catalog_item_path_path():
     project = "cuttlefish"
     location = "mussel"
     catalog = "winkle"
-    expected = "projects/{project}/locations/{location}/catalogs/{catalog}/catalogItems/{catalog_item_path=**}".format(project=project, location=location, catalog=catalog, )
-    actual = CatalogServiceClient.catalog_item_path_path(project, location, catalog)
+    catalog_item_path = "nautilus"
+    expected = "projects/{project}/locations/{location}/catalogs/{catalog}/catalogItems/{catalog_item_path=**}".format(project=project, location=location, catalog=catalog, catalog_item_path=catalog_item_path, )
+    actual = CatalogServiceClient.catalog_item_path_path(project, location, catalog, catalog_item_path)
     assert expected == actual
 
 
 def test_parse_catalog_item_path_path():
     expected = {
-        "project": "nautilus",
-        "location": "scallop",
-        "catalog": "abalone",
+        "project": "scallop",
+        "location": "abalone",
+        "catalog": "squid",
+        "catalog_item_path": "clam",
     }
     path = CatalogServiceClient.catalog_item_path_path(**expected)
 
@@ -2562,7 +2567,7 @@ def test_parse_catalog_item_path_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "squid"
+    billing_account = "whelk"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = CatalogServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -2570,7 +2575,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+        "billing_account": "octopus",
     }
     path = CatalogServiceClient.common_billing_account_path(**expected)
 
@@ -2579,7 +2584,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "whelk"
+    folder = "oyster"
     expected = "folders/{folder}".format(folder=folder, )
     actual = CatalogServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -2587,7 +2592,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+        "folder": "nudibranch",
     }
     path = CatalogServiceClient.common_folder_path(**expected)
 
@@ -2596,7 +2601,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "oyster"
+    organization = "cuttlefish"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = CatalogServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -2604,7 +2609,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+        "organization": "mussel",
     }
     path = CatalogServiceClient.common_organization_path(**expected)
 
@@ -2613,7 +2618,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "cuttlefish"
+    project = "winkle"
     expected = "projects/{project}".format(project=project, )
     actual = CatalogServiceClient.common_project_path(project)
     assert expected == actual
@@ -2621,7 +2626,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+        "project": "nautilus",
     }
     path = CatalogServiceClient.common_project_path(**expected)
 
@@ -2630,8 +2635,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "winkle"
-    location = "nautilus"
+    project = "scallop"
+    location = "abalone"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = CatalogServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -2639,8 +2644,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+        "project": "squid",
+        "location": "clam",
     }
     path = CatalogServiceClient.common_location_path(**expected)
 

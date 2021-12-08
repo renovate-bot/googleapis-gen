@@ -325,7 +325,7 @@ class ExternalVpnGatewaysClient(metaclass=ExternalVpnGatewaysClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteExternalVpnGatewayRequest, dict] = None,
             *,
             project: str = None,
@@ -504,7 +504,7 @@ class ExternalVpnGatewaysClient(metaclass=ExternalVpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertExternalVpnGatewayRequest, dict] = None,
             *,
             project: str = None,
@@ -671,7 +671,7 @@ class ExternalVpnGatewaysClient(metaclass=ExternalVpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsExternalVpnGatewayRequest, dict] = None,
             *,
             project: str = None,

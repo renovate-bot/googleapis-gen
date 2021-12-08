@@ -402,7 +402,7 @@ class ReservationsClient(metaclass=ReservationsClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteReservationRequest, dict] = None,
             *,
             project: str = None,
@@ -708,7 +708,7 @@ class ReservationsClient(metaclass=ReservationsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertReservationRequest, dict] = None,
             *,
             project: str = None,
@@ -889,7 +889,7 @@ class ReservationsClient(metaclass=ReservationsClientMeta):
         # Done; return the response.
         return response
 
-    def resize(self,
+    def resize_unary(self,
             request: Union[compute.ResizeReservationRequest, dict] = None,
             *,
             project: str = None,

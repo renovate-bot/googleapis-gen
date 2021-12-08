@@ -325,7 +325,7 @@ class RegionNetworkEndpointGroupsClient(metaclass=RegionNetworkEndpointGroupsCli
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRegionNetworkEndpointGroupRequest, dict] = None,
             *,
             project: str = None,
@@ -526,7 +526,7 @@ class RegionNetworkEndpointGroupsClient(metaclass=RegionNetworkEndpointGroupsCli
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionNetworkEndpointGroupRequest, dict] = None,
             *,
             project: str = None,

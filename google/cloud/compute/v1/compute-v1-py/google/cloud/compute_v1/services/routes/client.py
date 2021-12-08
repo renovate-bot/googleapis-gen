@@ -325,7 +325,7 @@ class RoutesClient(metaclass=RoutesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRouteRequest, dict] = None,
             *,
             project: str = None,
@@ -489,7 +489,7 @@ class RoutesClient(metaclass=RoutesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRouteRequest, dict] = None,
             *,
             project: str = None,

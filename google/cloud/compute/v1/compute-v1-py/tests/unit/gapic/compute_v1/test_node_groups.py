@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -347,7 +348,7 @@ def test_node_groups_client_client_options_credentials_file(client_class, transp
         )
 
 
-def test_add_nodes_rest(transport: str = 'rest', request_type=compute.AddNodesNodeGroupRequest):
+def test_add_nodes_unary_rest(transport: str = 'rest', request_type=compute.AddNodesNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -392,7 +393,7 @@ def test_add_nodes_rest(transport: str = 'rest', request_type=compute.AddNodesNo
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.add_nodes(request)
+        response = client.add_nodes_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -420,7 +421,102 @@ def test_add_nodes_rest(transport: str = 'rest', request_type=compute.AddNodesNo
     assert response.zone == 'zone_value'
 
 
-def test_add_nodes_rest_bad_request(transport: str = 'rest', request_type=compute.AddNodesNodeGroupRequest):
+def test_add_nodes_unary_rest_required_fields(request_type=compute.AddNodesNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._add_nodes_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._add_nodes_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.add_nodes_unary(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_add_nodes_unary_rest_bad_request(transport: str = 'rest', request_type=compute.AddNodesNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -438,14 +534,14 @@ def test_add_nodes_rest_bad_request(transport: str = 'rest', request_type=comput
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.add_nodes(request)
+        client.add_nodes_unary(request)
 
 
-def test_add_nodes_rest_from_dict():
-    test_add_nodes_rest(request_type=dict)
+def test_add_nodes_unary_rest_from_dict():
+    test_add_nodes_unary_rest(request_type=dict)
 
 
-def test_add_nodes_rest_flattened(transport: str = 'rest'):
+def test_add_nodes_unary_rest_flattened(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -475,7 +571,7 @@ def test_add_nodes_rest_flattened(transport: str = 'rest'):
             node_groups_add_nodes_request_resource=compute.NodeGroupsAddNodesRequest(additional_node_count=2214),
         )
         mock_args.update(sample_request)
-        client.add_nodes(**mock_args)
+        client.add_nodes_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -484,7 +580,7 @@ def test_add_nodes_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{node_group}/addNodes" % client.transport._host, args[1])
 
 
-def test_add_nodes_rest_flattened_error(transport: str = 'rest'):
+def test_add_nodes_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -493,7 +589,7 @@ def test_add_nodes_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.add_nodes(
+        client.add_nodes_unary(
             compute.AddNodesNodeGroupRequest(),
             project='project_value',
             zone='zone_value',
@@ -538,6 +634,78 @@ def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.Aggr
     assert response.next_page_token == 'next_page_token_value'
     assert response.self_link == 'self_link_value'
     assert response.unreachables == ['unreachables_value']
+
+
+def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedListNodeGroupsRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeGroupAggregatedList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeGroupAggregatedList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.aggregated_list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=compute.AggregatedListNodeGroupsRequest):
@@ -615,9 +783,10 @@ def test_aggregated_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_aggregated_list_rest_pager():
+def test_aggregated_list_rest_pager(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -686,7 +855,7 @@ def test_aggregated_list_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteNodeGroupRequest):
+def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -730,7 +899,7 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteNodeGro
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete(request)
+        response = client.delete_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -758,7 +927,101 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteNodeGro
     assert response.zone == 'zone_value'
 
 
-def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteNodeGroupRequest):
+def test_delete_unary_rest_required_fields(request_type=compute.DeleteNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "delete",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_unary(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -775,14 +1038,14 @@ def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.D
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete(request)
+        client.delete_unary(request)
 
 
-def test_delete_rest_from_dict():
-    test_delete_rest(request_type=dict)
+def test_delete_unary_rest_from_dict():
+    test_delete_unary_rest(request_type=dict)
 
 
-def test_delete_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -811,7 +1074,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
             node_group='node_group_value',
         )
         mock_args.update(sample_request)
-        client.delete(**mock_args)
+        client.delete_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -820,7 +1083,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{node_group}" % client.transport._host, args[1])
 
 
-def test_delete_rest_flattened_error(transport: str = 'rest'):
+def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -829,7 +1092,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete(
+        client.delete_unary(
             compute.DeleteNodeGroupRequest(),
             project='project_value',
             zone='zone_value',
@@ -837,7 +1100,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_delete_nodes_rest(transport: str = 'rest', request_type=compute.DeleteNodesNodeGroupRequest):
+def test_delete_nodes_unary_rest(transport: str = 'rest', request_type=compute.DeleteNodesNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -882,7 +1145,7 @@ def test_delete_nodes_rest(transport: str = 'rest', request_type=compute.DeleteN
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete_nodes(request)
+        response = client.delete_nodes_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -910,7 +1173,102 @@ def test_delete_nodes_rest(transport: str = 'rest', request_type=compute.DeleteN
     assert response.zone == 'zone_value'
 
 
-def test_delete_nodes_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteNodesNodeGroupRequest):
+def test_delete_nodes_unary_rest_required_fields(request_type=compute.DeleteNodesNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._delete_nodes_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._delete_nodes_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_nodes_unary(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_nodes_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteNodesNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -928,14 +1286,14 @@ def test_delete_nodes_rest_bad_request(transport: str = 'rest', request_type=com
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete_nodes(request)
+        client.delete_nodes_unary(request)
 
 
-def test_delete_nodes_rest_from_dict():
-    test_delete_nodes_rest(request_type=dict)
+def test_delete_nodes_unary_rest_from_dict():
+    test_delete_nodes_unary_rest(request_type=dict)
 
 
-def test_delete_nodes_rest_flattened(transport: str = 'rest'):
+def test_delete_nodes_unary_rest_flattened(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -965,7 +1323,7 @@ def test_delete_nodes_rest_flattened(transport: str = 'rest'):
             node_groups_delete_nodes_request_resource=compute.NodeGroupsDeleteNodesRequest(nodes=['nodes_value']),
         )
         mock_args.update(sample_request)
-        client.delete_nodes(**mock_args)
+        client.delete_nodes_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -974,7 +1332,7 @@ def test_delete_nodes_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{node_group}/deleteNodes" % client.transport._host, args[1])
 
 
-def test_delete_nodes_rest_flattened_error(transport: str = 'rest'):
+def test_delete_nodes_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -983,7 +1341,7 @@ def test_delete_nodes_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete_nodes(
+        client.delete_nodes_unary(
             compute.DeleteNodesNodeGroupRequest(),
             project='project_value',
             zone='zone_value',
@@ -1044,6 +1402,100 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetNodeGroupRequ
     assert response.size == 443
     assert response.status == 'status_value'
     assert response.zone == 'zone_value'
+
+
+def test_get_rest_required_fields(request_type=compute.GetNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeGroup()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeGroup.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetNodeGroupRequest):
@@ -1159,6 +1611,100 @@ def test_get_iam_policy_rest(transport: str = 'rest', request_type=compute.GetIa
     assert response.version == 774
 
 
+def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["resource"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "resource" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["resource"] = 'resource_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Policy()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Policy.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get_iam_policy(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=compute.GetIamPolicyNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1238,7 +1784,7 @@ def test_get_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_rest(transport: str = 'rest', request_type=compute.InsertNodeGroupRequest):
+def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1283,7 +1829,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertNodeGro
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.insert(request)
+        response = client.insert_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1311,7 +1857,102 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertNodeGro
     assert response.zone == 'zone_value'
 
 
-def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.InsertNodeGroupRequest):
+def test_insert_unary_rest_required_fields(request_type=compute.InsertNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["initial_node_count"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "initialNodeCount" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "initialNodeCount" in jsonified_request
+    assert jsonified_request["initialNodeCount"] == request_init["initial_node_count"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["initialNodeCount"] = 1911
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "initialNodeCount" in jsonified_request
+    assert jsonified_request["initialNodeCount"] == 1911
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.insert_unary(request)
+
+            expected_params = [
+                (
+                    "initial_node_count",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=compute.InsertNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1329,14 +1970,14 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.insert(request)
+        client.insert_unary(request)
 
 
-def test_insert_rest_from_dict():
-    test_insert_rest(request_type=dict)
+def test_insert_unary_rest_from_dict():
+    test_insert_unary_rest(request_type=dict)
 
 
-def test_insert_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1366,7 +2007,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
             node_group_resource=compute.NodeGroup(autoscaling_policy=compute.NodeGroupAutoscalingPolicy(max_nodes=958)),
         )
         mock_args.update(sample_request)
-        client.insert(**mock_args)
+        client.insert_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1375,7 +2016,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/zones/{zone}/nodeGroups" % client.transport._host, args[1])
 
 
-def test_insert_rest_flattened_error(transport: str = 'rest'):
+def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1384,7 +2025,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.insert(
+        client.insert_unary(
             compute.InsertNodeGroupRequest(),
             project='project_value',
             zone='zone_value',
@@ -1427,6 +2068,89 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListNodeGroupsR
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
     assert response.self_link == 'self_link_value'
+
+
+def test_list_rest_required_fields(request_type=compute.ListNodeGroupsRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeGroupList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeGroupList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListNodeGroupsRequest):
@@ -1506,9 +2230,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -1603,6 +2328,100 @@ def test_list_nodes_rest(transport: str = 'rest', request_type=compute.ListNodes
     assert response.self_link == 'self_link_value'
 
 
+def test_list_nodes_rest_required_fields(request_type=compute.ListNodesNodeGroupsRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._list_nodes_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._list_nodes_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeGroupsListNodes()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeGroupsListNodes.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list_nodes(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_list_nodes_rest_bad_request(transport: str = 'rest', request_type=compute.ListNodesNodeGroupsRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1682,9 +2501,10 @@ def test_list_nodes_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_nodes_rest_pager():
+def test_list_nodes_rest_pager(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -1743,7 +2563,7 @@ def test_list_nodes_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_patch_rest(transport: str = 'rest', request_type=compute.PatchNodeGroupRequest):
+def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1788,7 +2608,7 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchNodeGroup
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.patch(request)
+        response = client.patch_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1816,7 +2636,102 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchNodeGroup
     assert response.zone == 'zone_value'
 
 
-def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.PatchNodeGroupRequest):
+def test_patch_unary_rest_required_fields(request_type=compute.PatchNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "patch",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.patch_unary(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=compute.PatchNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1834,14 +2749,14 @@ def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.Pa
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.patch(request)
+        client.patch_unary(request)
 
 
-def test_patch_rest_from_dict():
-    test_patch_rest(request_type=dict)
+def test_patch_unary_rest_from_dict():
+    test_patch_unary_rest(request_type=dict)
 
 
-def test_patch_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1871,7 +2786,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
             node_group_resource=compute.NodeGroup(autoscaling_policy=compute.NodeGroupAutoscalingPolicy(max_nodes=958)),
         )
         mock_args.update(sample_request)
-        client.patch(**mock_args)
+        client.patch_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1880,7 +2795,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{node_group}" % client.transport._host, args[1])
 
 
-def test_patch_rest_flattened_error(transport: str = 'rest'):
+def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1889,7 +2804,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.patch(
+        client.patch_unary(
             compute.PatchNodeGroupRequest(),
             project='project_value',
             zone='zone_value',
@@ -1931,6 +2846,101 @@ def test_set_iam_policy_rest(transport: str = 'rest', request_type=compute.SetIa
     assert response.etag == 'etag_value'
     assert response.iam_owned is True
     assert response.version == 774
+
+
+def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["resource"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "resource" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["resource"] = 'resource_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Policy()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Policy.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_iam_policy(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=compute.SetIamPolicyNodeGroupRequest):
@@ -2015,7 +3025,7 @@ def test_set_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_node_template_rest(transport: str = 'rest', request_type=compute.SetNodeTemplateNodeGroupRequest):
+def test_set_node_template_unary_rest(transport: str = 'rest', request_type=compute.SetNodeTemplateNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2060,7 +3070,7 @@ def test_set_node_template_rest(transport: str = 'rest', request_type=compute.Se
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.set_node_template(request)
+        response = client.set_node_template_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -2088,7 +3098,102 @@ def test_set_node_template_rest(transport: str = 'rest', request_type=compute.Se
     assert response.zone == 'zone_value'
 
 
-def test_set_node_template_rest_bad_request(transport: str = 'rest', request_type=compute.SetNodeTemplateNodeGroupRequest):
+def test_set_node_template_unary_rest_required_fields(request_type=compute.SetNodeTemplateNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["node_group"] = ""
+    request_init["project"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._set_node_template_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == request_init["node_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["nodeGroup"] = 'node_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._set_node_template_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeGroup" in jsonified_request
+    assert jsonified_request["nodeGroup"] == 'node_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_node_template_unary(request)
+
+            expected_params = [
+                (
+                    "node_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_set_node_template_unary_rest_bad_request(transport: str = 'rest', request_type=compute.SetNodeTemplateNodeGroupRequest):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2106,14 +3211,14 @@ def test_set_node_template_rest_bad_request(transport: str = 'rest', request_typ
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.set_node_template(request)
+        client.set_node_template_unary(request)
 
 
-def test_set_node_template_rest_from_dict():
-    test_set_node_template_rest(request_type=dict)
+def test_set_node_template_unary_rest_from_dict():
+    test_set_node_template_unary_rest(request_type=dict)
 
 
-def test_set_node_template_rest_flattened(transport: str = 'rest'):
+def test_set_node_template_unary_rest_flattened(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2143,7 +3248,7 @@ def test_set_node_template_rest_flattened(transport: str = 'rest'):
             node_groups_set_node_template_request_resource=compute.NodeGroupsSetNodeTemplateRequest(node_template='node_template_value'),
         )
         mock_args.update(sample_request)
-        client.set_node_template(**mock_args)
+        client.set_node_template_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -2152,7 +3257,7 @@ def test_set_node_template_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/zones/{zone}/nodeGroups/{node_group}/setNodeTemplate" % client.transport._host, args[1])
 
 
-def test_set_node_template_rest_flattened_error(transport: str = 'rest'):
+def test_set_node_template_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2161,7 +3266,7 @@ def test_set_node_template_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.set_node_template(
+        client.set_node_template_unary(
             compute.SetNodeTemplateNodeGroupRequest(),
             project='project_value',
             zone='zone_value',
@@ -2199,6 +3304,101 @@ def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.TestPermissionsResponse)
     assert response.permissions == ['permissions_value']
+
+
+def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamPermissionsNodeGroupRequest):
+    transport_class = transports.NodeGroupsRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["resource"] = ""
+    request_init["zone"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "resource" not in jsonified_request
+    assert "zone" not in jsonified_request
+
+    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == request_init["zone"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["resource"] = 'resource_value'
+    jsonified_request["zone"] = 'zone_value'
+
+    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+    assert "zone" in jsonified_request
+    assert jsonified_request["zone"] == 'zone_value'
+
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.TestPermissionsResponse()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.test_iam_permissions(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+                (
+                    "zone",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_type=compute.TestIamPermissionsNodeGroupRequest):

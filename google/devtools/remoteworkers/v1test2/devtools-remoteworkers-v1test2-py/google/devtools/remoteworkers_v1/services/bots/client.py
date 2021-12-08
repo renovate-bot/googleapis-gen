@@ -192,14 +192,14 @@ class BotsClient(metaclass=BotsClientMeta):
         return self._transport
 
     @staticmethod
-    def bot_session_path(bot_session: str,) -> str:
+    def bot_session_path(unknown_path: str,bot_session: str,) -> str:
         """Returns a fully-qualified bot_session string."""
-        return "{unknown_path=**}/botSessions/{bot_session}".format(bot_session=bot_session, )
+        return "{unknown_path=**}/botSessions/{bot_session}".format(unknown_path=unknown_path, bot_session=bot_session, )
 
     @staticmethod
     def parse_bot_session_path(path: str) -> Dict[str,str]:
         """Parses a bot_session path into its component segments."""
-        m = re.match(r"^{unknown_path=**}/botSessions/(?P<bot_session>.+?)$", path)
+        m = re.match(r"^(?P<unknown_path>.+?)/botSessions/(?P<bot_session>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod

@@ -325,7 +325,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_peering(self,
+    def add_peering_unary(self,
             request: Union[compute.AddPeeringNetworkRequest, dict] = None,
             *,
             project: str = None,
@@ -422,7 +422,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteNetworkRequest, dict] = None,
             *,
             project: str = None,
@@ -657,7 +657,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertNetworkRequest, dict] = None,
             *,
             project: str = None,
@@ -906,7 +906,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchNetworkRequest, dict] = None,
             *,
             project: str = None,
@@ -1002,7 +1002,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
         # Done; return the response.
         return response
 
-    def remove_peering(self,
+    def remove_peering_unary(self,
             request: Union[compute.RemovePeeringNetworkRequest, dict] = None,
             *,
             project: str = None,
@@ -1099,7 +1099,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
         # Done; return the response.
         return response
 
-    def switch_to_custom_mode(self,
+    def switch_to_custom_mode_unary(self,
             request: Union[compute.SwitchToCustomModeNetworkRequest, dict] = None,
             *,
             project: str = None,
@@ -1187,7 +1187,7 @@ class NetworksClient(metaclass=NetworksClientMeta):
         # Done; return the response.
         return response
 
-    def update_peering(self,
+    def update_peering_unary(self,
             request: Union[compute.UpdatePeeringNetworkRequest, dict] = None,
             *,
             project: str = None,

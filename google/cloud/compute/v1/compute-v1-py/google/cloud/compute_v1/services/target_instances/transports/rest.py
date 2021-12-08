@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import TargetInstancesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __aggregated_list_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _aggregated_list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in TargetInstancesRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
+
     def _aggregated_list(self,
             request: compute.AggregatedListTargetInstancesRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -149,14 +154,6 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.AggregatedListTargetInstancesRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -171,14 +168,7 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -201,6 +191,13 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_required_fields_default_values =  {
+        "project" : ""        "targetInstance" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _delete_get_unset_required_fields(message_dict):
+        return {k: v for k, v in TargetInstancesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
 
     def _delete(self,
             request: compute.DeleteTargetInstanceRequest, *,
@@ -249,22 +246,6 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "target_instance",
-                "targetInstance"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.DeleteTargetInstanceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -279,14 +260,7 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -309,6 +283,13 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_required_fields_default_values =  {
+        "project" : ""        "targetInstance" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in TargetInstancesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
 
     def _get(self,
             request: compute.GetTargetInstanceRequest, *,
@@ -350,22 +331,6 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "target_instance",
-                "targetInstance"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.GetTargetInstanceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -380,14 +345,7 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -410,6 +368,13 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __insert_required_fields_default_values =  {
+        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _insert_get_unset_required_fields(message_dict):
+        return {k: v for k, v in TargetInstancesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
 
     def _insert(self,
             request: compute.InsertTargetInstanceRequest, *,
@@ -459,18 +424,6 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.InsertTargetInstanceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -492,14 +445,7 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._insert_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -523,6 +469,13 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_required_fields_default_values =  {
+        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in TargetInstancesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
 
     def _list(self,
             request: compute.ListTargetInstancesRequest, *,
@@ -558,18 +511,6 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.ListTargetInstancesRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -584,14 +525,7 @@ class TargetInstancesRestTransport(TargetInstancesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

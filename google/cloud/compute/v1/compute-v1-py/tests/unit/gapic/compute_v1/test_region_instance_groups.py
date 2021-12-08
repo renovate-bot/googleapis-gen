@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -399,6 +400,100 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetRegionInstanc
     assert response.zone == 'zone_value'
 
 
+def test_get_rest_required_fields(request_type=compute.GetRegionInstanceGroupRequest):
+    transport_class = transports.RegionInstanceGroupsRestTransport
+
+    request_init = {}
+    request_init["instance_group"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "instanceGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "instanceGroup" in jsonified_request
+    assert jsonified_request["instanceGroup"] == request_init["instance_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["instanceGroup"] = 'instance_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "instanceGroup" in jsonified_request
+    assert jsonified_request["instanceGroup"] == 'instance_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionInstanceGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.InstanceGroup()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.InstanceGroup.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "instance_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetRegionInstanceGroupRequest):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -514,6 +609,89 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListRegionInsta
     assert response.self_link == 'self_link_value'
 
 
+def test_list_rest_required_fields(request_type=compute.ListRegionInstanceGroupsRequest):
+    transport_class = transports.RegionInstanceGroupsRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionInstanceGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.RegionInstanceGroupList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.RegionInstanceGroupList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListRegionInstanceGroupsRequest):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -591,9 +769,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -689,6 +868,101 @@ def test_list_instances_rest(transport: str = 'rest', request_type=compute.ListI
     assert response.self_link == 'self_link_value'
 
 
+def test_list_instances_rest_required_fields(request_type=compute.ListInstancesRegionInstanceGroupsRequest):
+    transport_class = transports.RegionInstanceGroupsRestTransport
+
+    request_init = {}
+    request_init["instance_group"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "instanceGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._list_instances_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "instanceGroup" in jsonified_request
+    assert jsonified_request["instanceGroup"] == request_init["instance_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["instanceGroup"] = 'instance_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._list_instances_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "instanceGroup" in jsonified_request
+    assert jsonified_request["instanceGroup"] == 'instance_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionInstanceGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.RegionInstanceGroupsListInstances()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.RegionInstanceGroupsListInstances.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list_instances(request)
+
+            expected_params = [
+                (
+                    "instance_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_list_instances_rest_bad_request(transport: str = 'rest', request_type=compute.ListInstancesRegionInstanceGroupsRequest):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -771,9 +1045,10 @@ def test_list_instances_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_instances_rest_pager():
+def test_list_instances_rest_pager(transport: str = 'rest'):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -833,7 +1108,7 @@ def test_list_instances_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_set_named_ports_rest(transport: str = 'rest', request_type=compute.SetNamedPortsRegionInstanceGroupRequest):
+def test_set_named_ports_unary_rest(transport: str = 'rest', request_type=compute.SetNamedPortsRegionInstanceGroupRequest):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -878,7 +1153,7 @@ def test_set_named_ports_rest(transport: str = 'rest', request_type=compute.SetN
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.set_named_ports(request)
+        response = client.set_named_ports_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -906,7 +1181,102 @@ def test_set_named_ports_rest(transport: str = 'rest', request_type=compute.SetN
     assert response.zone == 'zone_value'
 
 
-def test_set_named_ports_rest_bad_request(transport: str = 'rest', request_type=compute.SetNamedPortsRegionInstanceGroupRequest):
+def test_set_named_ports_unary_rest_required_fields(request_type=compute.SetNamedPortsRegionInstanceGroupRequest):
+    transport_class = transports.RegionInstanceGroupsRestTransport
+
+    request_init = {}
+    request_init["instance_group"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "instanceGroup" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._set_named_ports_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "instanceGroup" in jsonified_request
+    assert jsonified_request["instanceGroup"] == request_init["instance_group"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["instanceGroup"] = 'instance_group_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._set_named_ports_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "instanceGroup" in jsonified_request
+    assert jsonified_request["instanceGroup"] == 'instance_group_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionInstanceGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_named_ports_unary(request)
+
+            expected_params = [
+                (
+                    "instance_group",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_set_named_ports_unary_rest_bad_request(transport: str = 'rest', request_type=compute.SetNamedPortsRegionInstanceGroupRequest):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -924,14 +1294,14 @@ def test_set_named_ports_rest_bad_request(transport: str = 'rest', request_type=
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.set_named_ports(request)
+        client.set_named_ports_unary(request)
 
 
-def test_set_named_ports_rest_from_dict():
-    test_set_named_ports_rest(request_type=dict)
+def test_set_named_ports_unary_rest_from_dict():
+    test_set_named_ports_unary_rest(request_type=dict)
 
 
-def test_set_named_ports_rest_flattened(transport: str = 'rest'):
+def test_set_named_ports_unary_rest_flattened(transport: str = 'rest'):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -961,7 +1331,7 @@ def test_set_named_ports_rest_flattened(transport: str = 'rest'):
             region_instance_groups_set_named_ports_request_resource=compute.RegionInstanceGroupsSetNamedPortsRequest(fingerprint='fingerprint_value'),
         )
         mock_args.update(sample_request)
-        client.set_named_ports(**mock_args)
+        client.set_named_ports_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -970,7 +1340,7 @@ def test_set_named_ports_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/instanceGroups/{instance_group}/setNamedPorts" % client.transport._host, args[1])
 
 
-def test_set_named_ports_rest_flattened_error(transport: str = 'rest'):
+def test_set_named_ports_unary_rest_flattened_error(transport: str = 'rest'):
     client = RegionInstanceGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -979,7 +1349,7 @@ def test_set_named_ports_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.set_named_ports(
+        client.set_named_ports_unary(
             compute.SetNamedPortsRegionInstanceGroupRequest(),
             project='project_value',
             region='region_value',

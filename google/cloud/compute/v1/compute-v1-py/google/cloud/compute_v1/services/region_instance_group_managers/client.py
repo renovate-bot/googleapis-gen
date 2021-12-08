@@ -325,7 +325,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
                 always_use_jwt_access=True,
             )
 
-    def abandon_instances(self,
+    def abandon_instances_unary(self,
             request: Union[compute.AbandonInstancesRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -445,7 +445,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def apply_updates_to_instances(self,
+    def apply_updates_to_instances_unary(self,
             request: Union[compute.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -553,7 +553,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def create_instances(self,
+    def create_instances_unary(self,
             request: Union[compute.CreateInstancesRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -668,7 +668,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -768,7 +768,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def delete_instances(self,
+    def delete_instances_unary(self,
             request: Union[compute.DeleteInstancesRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -887,7 +887,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def delete_per_instance_configs(self,
+    def delete_per_instance_configs_unary(self,
             request: Union[compute.DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1089,7 +1089,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1582,7 +1582,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1702,7 +1702,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def patch_per_instance_configs(self,
+    def patch_per_instance_configs_unary(self,
             request: Union[compute.PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1812,7 +1812,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def recreate_instances(self,
+    def recreate_instances_unary(self,
             request: Union[compute.RecreateInstancesRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1930,7 +1930,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def resize(self,
+    def resize_unary(self,
             request: Union[compute.ResizeRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2049,7 +2049,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def set_instance_template(self,
+    def set_instance_template_unary(self,
             request: Union[compute.SetInstanceTemplateRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2158,7 +2158,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def set_target_pools(self,
+    def set_target_pools_unary(self,
             request: Union[compute.SetTargetPoolsRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2265,7 +2265,7 @@ class RegionInstanceGroupManagersClient(metaclass=RegionInstanceGroupManagersCli
         # Done; return the response.
         return response
 
-    def update_per_instance_configs(self,
+    def update_per_instance_configs_unary(self,
             request: Union[compute.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,

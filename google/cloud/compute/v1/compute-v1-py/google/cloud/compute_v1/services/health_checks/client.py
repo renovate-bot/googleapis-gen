@@ -404,7 +404,7 @@ class HealthChecksClient(metaclass=HealthChecksClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteHealthCheckRequest, dict] = None,
             *,
             project: str = None,
@@ -588,7 +588,7 @@ class HealthChecksClient(metaclass=HealthChecksClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertHealthCheckRequest, dict] = None,
             *,
             project: str = None,
@@ -755,7 +755,7 @@ class HealthChecksClient(metaclass=HealthChecksClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchHealthCheckRequest, dict] = None,
             *,
             project: str = None,
@@ -855,7 +855,7 @@ class HealthChecksClient(metaclass=HealthChecksClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateHealthCheckRequest, dict] = None,
             *,
             project: str = None,

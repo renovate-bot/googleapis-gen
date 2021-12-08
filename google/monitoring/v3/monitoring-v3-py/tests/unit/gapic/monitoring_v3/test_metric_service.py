@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -3573,14 +3574,16 @@ def test_metric_service_transport_channel_mtls_with_adc(
 
 def test_metric_descriptor_path():
     project = "squid"
-    expected = "projects/{project}/metricDescriptors/{metric_descriptor=**}".format(project=project, )
-    actual = MetricServiceClient.metric_descriptor_path(project)
+    metric_descriptor = "clam"
+    expected = "projects/{project}/metricDescriptors/{metric_descriptor=**}".format(project=project, metric_descriptor=metric_descriptor, )
+    actual = MetricServiceClient.metric_descriptor_path(project, metric_descriptor)
     assert expected == actual
 
 
 def test_parse_metric_descriptor_path():
     expected = {
-        "project": "clam",
+        "project": "whelk",
+        "metric_descriptor": "octopus",
     }
     path = MetricServiceClient.metric_descriptor_path(**expected)
 
@@ -3589,8 +3592,8 @@ def test_parse_metric_descriptor_path():
     assert expected == actual
 
 def test_monitored_resource_descriptor_path():
-    project = "whelk"
-    monitored_resource_descriptor = "octopus"
+    project = "oyster"
+    monitored_resource_descriptor = "nudibranch"
     expected = "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}".format(project=project, monitored_resource_descriptor=monitored_resource_descriptor, )
     actual = MetricServiceClient.monitored_resource_descriptor_path(project, monitored_resource_descriptor)
     assert expected == actual
@@ -3598,8 +3601,8 @@ def test_monitored_resource_descriptor_path():
 
 def test_parse_monitored_resource_descriptor_path():
     expected = {
-        "project": "oyster",
-        "monitored_resource_descriptor": "nudibranch",
+        "project": "cuttlefish",
+        "monitored_resource_descriptor": "mussel",
     }
     path = MetricServiceClient.monitored_resource_descriptor_path(**expected)
 
@@ -3608,8 +3611,8 @@ def test_parse_monitored_resource_descriptor_path():
     assert expected == actual
 
 def test_time_series_path():
-    project = "cuttlefish"
-    time_series = "mussel"
+    project = "winkle"
+    time_series = "nautilus"
     expected = "projects/{project}/timeSeries/{time_series}".format(project=project, time_series=time_series, )
     actual = MetricServiceClient.time_series_path(project, time_series)
     assert expected == actual
@@ -3617,8 +3620,8 @@ def test_time_series_path():
 
 def test_parse_time_series_path():
     expected = {
-        "project": "winkle",
-        "time_series": "nautilus",
+        "project": "scallop",
+        "time_series": "abalone",
     }
     path = MetricServiceClient.time_series_path(**expected)
 
@@ -3627,7 +3630,7 @@ def test_parse_time_series_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "scallop"
+    billing_account = "squid"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = MetricServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -3635,7 +3638,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "abalone",
+        "billing_account": "clam",
     }
     path = MetricServiceClient.common_billing_account_path(**expected)
 
@@ -3644,7 +3647,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "squid"
+    folder = "whelk"
     expected = "folders/{folder}".format(folder=folder, )
     actual = MetricServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -3652,7 +3655,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "clam",
+        "folder": "octopus",
     }
     path = MetricServiceClient.common_folder_path(**expected)
 
@@ -3661,7 +3664,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "whelk"
+    organization = "oyster"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = MetricServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -3669,7 +3672,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "octopus",
+        "organization": "nudibranch",
     }
     path = MetricServiceClient.common_organization_path(**expected)
 
@@ -3678,7 +3681,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "oyster"
+    project = "cuttlefish"
     expected = "projects/{project}".format(project=project, )
     actual = MetricServiceClient.common_project_path(project)
     assert expected == actual
@@ -3686,7 +3689,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "nudibranch",
+        "project": "mussel",
     }
     path = MetricServiceClient.common_project_path(**expected)
 
@@ -3695,8 +3698,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "cuttlefish"
-    location = "mussel"
+    project = "winkle"
+    location = "nautilus"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = MetricServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -3704,8 +3707,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "winkle",
-        "location": "nautilus",
+        "project": "scallop",
+        "location": "abalone",
     }
     path = MetricServiceClient.common_location_path(**expected)
 

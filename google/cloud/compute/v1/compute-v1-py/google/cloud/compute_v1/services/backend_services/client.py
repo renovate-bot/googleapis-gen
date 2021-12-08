@@ -325,7 +325,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_signed_url_key(self,
+    def add_signed_url_key_unary(self,
             request: Union[compute.AddSignedUrlKeyBackendServiceRequest, dict] = None,
             *,
             project: str = None,
@@ -506,7 +506,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteBackendServiceRequest, dict] = None,
             *,
             project: str = None,
@@ -595,7 +595,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
         # Done; return the response.
         return response
 
-    def delete_signed_url_key(self,
+    def delete_signed_url_key_unary(self,
             request: Union[compute.DeleteSignedUrlKeyBackendServiceRequest, dict] = None,
             *,
             project: str = None,
@@ -871,7 +871,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertBackendServiceRequest, dict] = None,
             *,
             project: str = None,
@@ -1039,7 +1039,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchBackendServiceRequest, dict] = None,
             *,
             project: str = None,
@@ -1140,7 +1140,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
         # Done; return the response.
         return response
 
-    def set_security_policy(self,
+    def set_security_policy_unary(self,
             request: Union[compute.SetSecurityPolicyBackendServiceRequest, dict] = None,
             *,
             project: str = None,
@@ -1240,7 +1240,7 @@ class BackendServicesClient(metaclass=BackendServicesClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateBackendServiceRequest, dict] = None,
             *,
             project: str = None,

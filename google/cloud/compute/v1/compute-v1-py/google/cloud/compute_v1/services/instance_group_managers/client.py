@@ -325,7 +325,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def abandon_instances(self,
+    def abandon_instances_unary(self,
             request: Union[compute.AbandonInstancesInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -525,7 +525,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def apply_updates_to_instances(self,
+    def apply_updates_to_instances_unary(self,
             request: Union[compute.ApplyUpdatesToInstancesInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -635,7 +635,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def create_instances(self,
+    def create_instances_unary(self,
             request: Union[compute.CreateInstancesInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -750,7 +750,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -852,7 +852,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def delete_instances(self,
+    def delete_instances_unary(self,
             request: Union[compute.DeleteInstancesInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -973,7 +973,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def delete_per_instance_configs(self,
+    def delete_per_instance_configs_unary(self,
             request: Union[compute.DeletePerInstanceConfigsInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1177,7 +1177,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1675,7 +1675,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1795,7 +1795,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def patch_per_instance_configs(self,
+    def patch_per_instance_configs_unary(self,
             request: Union[compute.PatchPerInstanceConfigsInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -1906,7 +1906,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def recreate_instances(self,
+    def recreate_instances_unary(self,
             request: Union[compute.RecreateInstancesInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2026,7 +2026,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def resize(self,
+    def resize_unary(self,
             request: Union[compute.ResizeInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2158,7 +2158,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def set_instance_template(self,
+    def set_instance_template_unary(self,
             request: Union[compute.SetInstanceTemplateInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2269,7 +2269,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def set_target_pools(self,
+    def set_target_pools_unary(self,
             request: Union[compute.SetTargetPoolsInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,
@@ -2383,7 +2383,7 @@ class InstanceGroupManagersClient(metaclass=InstanceGroupManagersClientMeta):
         # Done; return the response.
         return response
 
-    def update_per_instance_configs(self,
+    def update_per_instance_configs_unary(self,
             request: Union[compute.UpdatePerInstanceConfigsInstanceGroupManagerRequest, dict] = None,
             *,
             project: str = None,

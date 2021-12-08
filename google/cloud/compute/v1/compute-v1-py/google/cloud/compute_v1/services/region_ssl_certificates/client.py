@@ -325,7 +325,7 @@ class RegionSslCertificatesClient(metaclass=RegionSslCertificatesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRegionSslCertificateRequest, dict] = None,
             *,
             project: str = None,
@@ -527,7 +527,7 @@ class RegionSslCertificatesClient(metaclass=RegionSslCertificatesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionSslCertificateRequest, dict] = None,
             *,
             project: str = None,

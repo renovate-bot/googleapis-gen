@@ -402,7 +402,7 @@ class PacketMirroringsClient(metaclass=PacketMirroringsClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeletePacketMirroringRequest, dict] = None,
             *,
             project: str = None,
@@ -591,7 +591,7 @@ class PacketMirroringsClient(metaclass=PacketMirroringsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertPacketMirroringRequest, dict] = None,
             *,
             project: str = None,
@@ -775,7 +775,7 @@ class PacketMirroringsClient(metaclass=PacketMirroringsClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchPacketMirroringRequest, dict] = None,
             *,
             project: str = None,

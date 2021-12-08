@@ -401,7 +401,7 @@ class AutoscalersClient(metaclass=AutoscalersClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteAutoscalerRequest, dict] = None,
             *,
             project: str = None,
@@ -588,7 +588,7 @@ class AutoscalersClient(metaclass=AutoscalersClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertAutoscalerRequest, dict] = None,
             *,
             project: str = None,
@@ -771,7 +771,7 @@ class AutoscalersClient(metaclass=AutoscalersClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchAutoscalerRequest, dict] = None,
             *,
             project: str = None,
@@ -869,7 +869,7 @@ class AutoscalersClient(metaclass=AutoscalersClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateAutoscalerRequest, dict] = None,
             *,
             project: str = None,

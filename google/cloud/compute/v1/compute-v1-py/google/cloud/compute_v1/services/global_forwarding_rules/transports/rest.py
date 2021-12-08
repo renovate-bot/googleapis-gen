@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import GlobalForwardingRulesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __delete_required_fields_default_values =  {
+        "forwardingRule" : ""        "project" : ""    }
+
+    @staticmethod
+    def _delete_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+
     def _delete(self,
             request: compute.DeleteGlobalForwardingRuleRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -164,18 +169,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "forwarding_rule",
-                "forwardingRule"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.DeleteGlobalForwardingRuleRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -190,14 +183,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -220,6 +206,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_required_fields_default_values =  {
+        "forwardingRule" : ""        "project" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
 
     def _get(self,
             request: compute.GetGlobalForwardingRuleRequest, *,
@@ -265,18 +258,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "forwarding_rule",
-                "forwardingRule"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.GetGlobalForwardingRuleRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -291,14 +272,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -321,6 +295,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __insert_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _insert_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
 
     def _insert(self,
             request: compute.InsertGlobalForwardingRuleRequest, *,
@@ -370,14 +351,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.InsertGlobalForwardingRuleRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -399,14 +372,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._insert_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -430,6 +396,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
 
     def _list(self,
             request: compute.ListGlobalForwardingRulesRequest, *,
@@ -465,14 +438,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.ListGlobalForwardingRulesRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -487,14 +452,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -517,6 +475,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __patch_required_fields_default_values =  {
+        "forwardingRule" : ""        "project" : ""    }
+
+    @staticmethod
+    def _patch_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
 
     def _patch(self,
             request: compute.PatchGlobalForwardingRuleRequest, *,
@@ -566,18 +531,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "forwarding_rule",
-                "forwardingRule"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.PatchGlobalForwardingRuleRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -599,14 +552,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._patch_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -630,6 +576,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_labels_required_fields_default_values =  {
+        "project" : ""        "resource" : ""    }
+
+    @staticmethod
+    def _set_labels_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__set_labels_required_fields_default_values.items() if k not in message_dict}
 
     def _set_labels(self,
             request: compute.SetLabelsGlobalForwardingRuleRequest, *,
@@ -679,18 +632,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-        ]
-
         request_kwargs = compute.SetLabelsGlobalForwardingRuleRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -712,14 +653,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_labels_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -743,6 +677,13 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_target_required_fields_default_values =  {
+        "forwardingRule" : ""        "project" : ""    }
+
+    @staticmethod
+    def _set_target_get_unset_required_fields(message_dict):
+        return {k: v for k, v in GlobalForwardingRulesRestTransport.__set_target_required_fields_default_values.items() if k not in message_dict}
 
     def _set_target(self,
             request: compute.SetTargetGlobalForwardingRuleRequest, *,
@@ -792,18 +733,6 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "forwarding_rule",
-                "forwardingRule"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.SetTargetGlobalForwardingRuleRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -825,14 +754,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_target_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

@@ -325,7 +325,7 @@ class LicensesClient(metaclass=LicensesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteLicenseRequest, dict] = None,
             *,
             project: str = None,
@@ -611,7 +611,7 @@ class LicensesClient(metaclass=LicensesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertLicenseRequest, dict] = None,
             *,
             project: str = None,

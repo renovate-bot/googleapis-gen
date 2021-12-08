@@ -325,7 +325,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_health_check(self,
+    def add_health_check_unary(self,
             request: Union[compute.AddHealthCheckTargetPoolRequest, dict] = None,
             *,
             project: str = None,
@@ -432,7 +432,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
         # Done; return the response.
         return response
 
-    def add_instance(self,
+    def add_instance_unary(self,
             request: Union[compute.AddInstanceTargetPoolRequest, dict] = None,
             *,
             project: str = None,
@@ -615,7 +615,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteTargetPoolRequest, dict] = None,
             *,
             project: str = None,
@@ -900,7 +900,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertTargetPoolRequest, dict] = None,
             *,
             project: str = None,
@@ -1087,7 +1087,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
         # Done; return the response.
         return response
 
-    def remove_health_check(self,
+    def remove_health_check_unary(self,
             request: Union[compute.RemoveHealthCheckTargetPoolRequest, dict] = None,
             *,
             project: str = None,
@@ -1192,7 +1192,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
         # Done; return the response.
         return response
 
-    def remove_instance(self,
+    def remove_instance_unary(self,
             request: Union[compute.RemoveInstanceTargetPoolRequest, dict] = None,
             *,
             project: str = None,
@@ -1299,7 +1299,7 @@ class TargetPoolsClient(metaclass=TargetPoolsClientMeta):
         # Done; return the response.
         return response
 
-    def set_backup(self,
+    def set_backup_unary(self,
             request: Union[compute.SetBackupTargetPoolRequest, dict] = None,
             *,
             project: str = None,

@@ -325,7 +325,7 @@ class SecurityPoliciesClient(metaclass=SecurityPoliciesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_rule(self,
+    def add_rule_unary(self,
             request: Union[compute.AddRuleSecurityPolicyRequest, dict] = None,
             *,
             project: str = None,
@@ -422,7 +422,7 @@ class SecurityPoliciesClient(metaclass=SecurityPoliciesClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteSecurityPolicyRequest, dict] = None,
             *,
             project: str = None,
@@ -668,7 +668,7 @@ class SecurityPoliciesClient(metaclass=SecurityPoliciesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertSecurityPolicyRequest, dict] = None,
             *,
             project: str = None,
@@ -898,7 +898,7 @@ class SecurityPoliciesClient(metaclass=SecurityPoliciesClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchSecurityPolicyRequest, dict] = None,
             *,
             project: str = None,
@@ -998,7 +998,7 @@ class SecurityPoliciesClient(metaclass=SecurityPoliciesClientMeta):
         # Done; return the response.
         return response
 
-    def patch_rule(self,
+    def patch_rule_unary(self,
             request: Union[compute.PatchRuleSecurityPolicyRequest, dict] = None,
             *,
             project: str = None,
@@ -1095,7 +1095,7 @@ class SecurityPoliciesClient(metaclass=SecurityPoliciesClientMeta):
         # Done; return the response.
         return response
 
-    def remove_rule(self,
+    def remove_rule_unary(self,
             request: Union[compute.RemoveRuleSecurityPolicyRequest, dict] = None,
             *,
             project: str = None,

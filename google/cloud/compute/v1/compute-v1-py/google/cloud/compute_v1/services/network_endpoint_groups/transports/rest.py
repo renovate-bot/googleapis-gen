@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import NetworkEndpointGroupsTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __aggregated_list_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _aggregated_list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
+
     def _aggregated_list(self,
             request: compute.AggregatedListNetworkEndpointGroupsRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -149,14 +154,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.AggregatedListNetworkEndpointGroupsRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -171,14 +168,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -201,6 +191,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __attach_network_endpoints_required_fields_default_values =  {
+        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _attach_network_endpoints_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__attach_network_endpoints_required_fields_default_values.items() if k not in message_dict}
 
     def _attach_network_endpoints(self,
             request: compute.AttachNetworkEndpointsNetworkEndpointGroupRequest, *,
@@ -250,22 +247,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "network_endpoint_group",
-                "networkEndpointGroup"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.AttachNetworkEndpointsNetworkEndpointGroupRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -287,14 +268,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._attach_network_endpoints_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -318,6 +292,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_required_fields_default_values =  {
+        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _delete_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
 
     def _delete(self,
             request: compute.DeleteNetworkEndpointGroupRequest, *,
@@ -366,22 +347,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "network_endpoint_group",
-                "networkEndpointGroup"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.DeleteNetworkEndpointGroupRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -396,14 +361,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -426,6 +384,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __detach_network_endpoints_required_fields_default_values =  {
+        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _detach_network_endpoints_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__detach_network_endpoints_required_fields_default_values.items() if k not in message_dict}
 
     def _detach_network_endpoints(self,
             request: compute.DetachNetworkEndpointsNetworkEndpointGroupRequest, *,
@@ -475,22 +440,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "network_endpoint_group",
-                "networkEndpointGroup"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.DetachNetworkEndpointsNetworkEndpointGroupRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -512,14 +461,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._detach_network_endpoints_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -543,6 +485,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_required_fields_default_values =  {
+        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
 
     def _get(self,
             request: compute.GetNetworkEndpointGroupRequest, *,
@@ -587,22 +536,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "network_endpoint_group",
-                "networkEndpointGroup"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.GetNetworkEndpointGroupRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -617,14 +550,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -647,6 +573,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __insert_required_fields_default_values =  {
+        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _insert_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
 
     def _insert(self,
             request: compute.InsertNetworkEndpointGroupRequest, *,
@@ -696,18 +629,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.InsertNetworkEndpointGroupRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -729,14 +650,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._insert_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -760,6 +674,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_required_fields_default_values =  {
+        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
 
     def _list(self,
             request: compute.ListNetworkEndpointGroupsRequest, *,
@@ -793,18 +714,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.ListNetworkEndpointGroupsRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -819,14 +728,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -849,6 +751,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_network_endpoints_required_fields_default_values =  {
+        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _list_network_endpoints_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__list_network_endpoints_required_fields_default_values.items() if k not in message_dict}
 
     def _list_network_endpoints(self,
             request: compute.ListNetworkEndpointsNetworkEndpointGroupsRequest, *,
@@ -883,22 +792,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "network_endpoint_group",
-                "networkEndpointGroup"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.ListNetworkEndpointsNetworkEndpointGroupsRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -920,14 +813,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_network_endpoints_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -951,6 +837,13 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __test_iam_permissions_required_fields_default_values =  {
+        "project" : ""        "resource" : ""        "zone" : ""    }
+
+    @staticmethod
+    def _test_iam_permissions_get_unset_required_fields(message_dict):
+        return {k: v for k, v in NetworkEndpointGroupsRestTransport.__test_iam_permissions_required_fields_default_values.items() if k not in message_dict}
 
     def _test_iam_permissions(self,
             request: compute.TestIamPermissionsNetworkEndpointGroupRequest, *,
@@ -985,22 +878,6 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-            (
-                "zone",
-                "zone"
-            ),
-        ]
-
         request_kwargs = compute.TestIamPermissionsNetworkEndpointGroupRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1022,14 +899,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._test_iam_permissions_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

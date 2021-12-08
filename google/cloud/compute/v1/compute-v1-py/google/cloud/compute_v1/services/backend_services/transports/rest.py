@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import BackendServicesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __add_signed_url_key_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _add_signed_url_key_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__add_signed_url_key_required_fields_default_values.items() if k not in message_dict}
+
     def _add_signed_url_key(self,
             request: compute.AddSignedUrlKeyBackendServiceRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -165,18 +170,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.AddSignedUrlKeyBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -198,14 +191,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._add_signed_url_key_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -229,6 +215,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __aggregated_list_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _aggregated_list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
 
     def _aggregated_list(self,
             request: compute.AggregatedListBackendServicesRequest, *,
@@ -264,14 +257,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.AggregatedListBackendServicesRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -286,14 +271,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -316,6 +294,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _delete_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
 
     def _delete(self,
             request: compute.DeleteBackendServiceRequest, *,
@@ -364,18 +349,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.DeleteBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -390,14 +363,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -420,6 +386,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_signed_url_key_required_fields_default_values =  {
+        "backendService" : ""        "keyName" : ""        "project" : ""    }
+
+    @staticmethod
+    def _delete_signed_url_key_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__delete_signed_url_key_required_fields_default_values.items() if k not in message_dict}
 
     def _delete_signed_url_key(self,
             request: compute.DeleteSignedUrlKeyBackendServiceRequest, *,
@@ -468,22 +441,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "key_name",
-                "keyName"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.DeleteSignedUrlKeyBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -498,14 +455,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_signed_url_key_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -528,6 +478,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
 
     def _get(self,
             request: compute.GetBackendServiceRequest, *,
@@ -576,18 +533,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.GetBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -602,14 +547,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -632,6 +570,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_health_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _get_health_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__get_health_required_fields_default_values.items() if k not in message_dict}
 
     def _get_health(self,
             request: compute.GetHealthBackendServiceRequest, *,
@@ -666,18 +611,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.GetHealthBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -699,14 +632,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_health_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -730,6 +656,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __insert_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _insert_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
 
     def _insert(self,
             request: compute.InsertBackendServiceRequest, *,
@@ -779,14 +712,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.InsertBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -808,14 +733,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._insert_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -839,6 +757,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
 
     def _list(self,
             request: compute.ListBackendServicesRequest, *,
@@ -874,14 +799,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.ListBackendServicesRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -896,14 +813,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -926,6 +836,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __patch_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _patch_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
 
     def _patch(self,
             request: compute.PatchBackendServiceRequest, *,
@@ -975,18 +892,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.PatchBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1008,14 +913,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._patch_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1039,6 +937,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_security_policy_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _set_security_policy_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__set_security_policy_required_fields_default_values.items() if k not in message_dict}
 
     def _set_security_policy(self,
             request: compute.SetSecurityPolicyBackendServiceRequest, *,
@@ -1088,18 +993,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.SetSecurityPolicyBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1121,14 +1014,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_security_policy_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1152,6 +1038,13 @@ class BackendServicesRestTransport(BackendServicesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __update_required_fields_default_values =  {
+        "backendService" : ""        "project" : ""    }
+
+    @staticmethod
+    def _update_get_unset_required_fields(message_dict):
+        return {k: v for k, v in BackendServicesRestTransport.__update_required_fields_default_values.items() if k not in message_dict}
 
     def _update(self,
             request: compute.UpdateBackendServiceRequest, *,
@@ -1201,18 +1094,6 @@ class BackendServicesRestTransport(BackendServicesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "backend_service",
-                "backendService"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.UpdateBackendServiceRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1234,14 +1115,7 @@ class BackendServicesRestTransport(BackendServicesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._update_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

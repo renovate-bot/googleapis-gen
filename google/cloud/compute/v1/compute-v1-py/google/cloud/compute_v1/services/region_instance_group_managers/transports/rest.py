@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import RegionInstanceGroupManagersTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __abandon_instances_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _abandon_instances_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__abandon_instances_required_fields_default_values.items() if k not in message_dict}
+
     def _abandon_instances(self,
             request: compute.AbandonInstancesRegionInstanceGroupManagerRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -165,22 +170,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.AbandonInstancesRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -202,14 +191,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._abandon_instances_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -233,6 +215,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __apply_updates_to_instances_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _apply_updates_to_instances_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__apply_updates_to_instances_required_fields_default_values.items() if k not in message_dict}
 
     def _apply_updates_to_instances(self,
             request: compute.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest, *,
@@ -283,22 +272,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.ApplyUpdatesToInstancesRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -320,14 +293,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._apply_updates_to_instances_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -351,6 +317,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __create_instances_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _create_instances_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__create_instances_required_fields_default_values.items() if k not in message_dict}
 
     def _create_instances(self,
             request: compute.CreateInstancesRegionInstanceGroupManagerRequest, *,
@@ -400,22 +373,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.CreateInstancesRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -437,14 +394,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._create_instances_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -468,6 +418,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _delete_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
 
     def _delete(self,
             request: compute.DeleteRegionInstanceGroupManagerRequest, *,
@@ -516,22 +473,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.DeleteRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -546,14 +487,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -576,6 +510,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_instances_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _delete_instances_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__delete_instances_required_fields_default_values.items() if k not in message_dict}
 
     def _delete_instances(self,
             request: compute.DeleteInstancesRegionInstanceGroupManagerRequest, *,
@@ -625,22 +566,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.DeleteInstancesRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -662,14 +587,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_instances_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -693,6 +611,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __delete_per_instance_configs_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _delete_per_instance_configs_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__delete_per_instance_configs_required_fields_default_values.items() if k not in message_dict}
 
     def _delete_per_instance_configs(self,
             request: compute.DeletePerInstanceConfigsRegionInstanceGroupManagerRequest, *,
@@ -743,22 +668,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.DeletePerInstanceConfigsRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -780,14 +689,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_per_instance_configs_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -811,6 +713,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
 
     def _get(self,
             request: compute.GetRegionInstanceGroupManagerRequest, *,
@@ -853,22 +762,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.GetRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -883,14 +776,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -913,6 +799,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __insert_required_fields_default_values =  {
+        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _insert_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
 
     def _insert(self,
             request: compute.InsertRegionInstanceGroupManagerRequest, *,
@@ -962,18 +855,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.InsertRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -995,14 +876,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._insert_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1026,6 +900,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_required_fields_default_values =  {
+        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
 
     def _list(self,
             request: compute.ListRegionInstanceGroupManagersRequest, *,
@@ -1061,18 +942,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.ListRegionInstanceGroupManagersRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1087,14 +956,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1117,6 +979,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_errors_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _list_errors_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__list_errors_required_fields_default_values.items() if k not in message_dict}
 
     def _list_errors(self,
             request: compute.ListErrorsRegionInstanceGroupManagersRequest, *,
@@ -1150,22 +1019,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.ListErrorsRegionInstanceGroupManagersRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1180,14 +1033,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_errors_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1210,6 +1056,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_managed_instances_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _list_managed_instances_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__list_managed_instances_required_fields_default_values.items() if k not in message_dict}
 
     def _list_managed_instances(self,
             request: compute.ListManagedInstancesRegionInstanceGroupManagersRequest, *,
@@ -1243,22 +1096,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.ListManagedInstancesRegionInstanceGroupManagersRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1273,14 +1110,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_managed_instances_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1303,6 +1133,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_per_instance_configs_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _list_per_instance_configs_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__list_per_instance_configs_required_fields_default_values.items() if k not in message_dict}
 
     def _list_per_instance_configs(self,
             request: compute.ListPerInstanceConfigsRegionInstanceGroupManagersRequest, *,
@@ -1336,22 +1173,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.ListPerInstanceConfigsRegionInstanceGroupManagersRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1366,14 +1187,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_per_instance_configs_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1396,6 +1210,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __patch_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _patch_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
 
     def _patch(self,
             request: compute.PatchRegionInstanceGroupManagerRequest, *,
@@ -1445,22 +1266,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.PatchRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1482,14 +1287,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._patch_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1513,6 +1311,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __patch_per_instance_configs_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _patch_per_instance_configs_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__patch_per_instance_configs_required_fields_default_values.items() if k not in message_dict}
 
     def _patch_per_instance_configs(self,
             request: compute.PatchPerInstanceConfigsRegionInstanceGroupManagerRequest, *,
@@ -1563,22 +1368,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.PatchPerInstanceConfigsRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1600,14 +1389,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._patch_per_instance_configs_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1631,6 +1413,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __recreate_instances_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _recreate_instances_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__recreate_instances_required_fields_default_values.items() if k not in message_dict}
 
     def _recreate_instances(self,
             request: compute.RecreateInstancesRegionInstanceGroupManagerRequest, *,
@@ -1680,22 +1469,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.RecreateInstancesRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1717,14 +1490,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._recreate_instances_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1748,6 +1514,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __resize_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""        "size" : ""    }
+
+    @staticmethod
+    def _resize_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__resize_required_fields_default_values.items() if k not in message_dict}
 
     def _resize(self,
             request: compute.ResizeRegionInstanceGroupManagerRequest, *,
@@ -1796,26 +1569,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-            (
-                "size",
-                "size"
-            ),
-        ]
-
         request_kwargs = compute.ResizeRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1830,14 +1583,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._resize_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1860,6 +1606,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_instance_template_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _set_instance_template_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__set_instance_template_required_fields_default_values.items() if k not in message_dict}
 
     def _set_instance_template(self,
             request: compute.SetInstanceTemplateRegionInstanceGroupManagerRequest, *,
@@ -1909,22 +1662,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.SetInstanceTemplateRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -1946,14 +1683,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_instance_template_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -1977,6 +1707,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_target_pools_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _set_target_pools_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__set_target_pools_required_fields_default_values.items() if k not in message_dict}
 
     def _set_target_pools(self,
             request: compute.SetTargetPoolsRegionInstanceGroupManagerRequest, *,
@@ -2026,22 +1763,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.SetTargetPoolsRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -2063,14 +1784,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_target_pools_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -2094,6 +1808,13 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             response.content,
             ignore_unknown_fields=True
         )
+
+    __update_per_instance_configs_required_fields_default_values =  {
+        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+
+    @staticmethod
+    def _update_per_instance_configs_get_unset_required_fields(message_dict):
+        return {k: v for k, v in RegionInstanceGroupManagersRestTransport.__update_per_instance_configs_required_fields_default_values.items() if k not in message_dict}
 
     def _update_per_instance_configs(self,
             request: compute.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest, *,
@@ -2144,22 +1865,6 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "instance_group_manager",
-                "instanceGroupManager"
-            ),
-            (
-                "project",
-                "project"
-            ),
-            (
-                "region",
-                "region"
-            ),
-        ]
-
         request_kwargs = compute.UpdatePerInstanceConfigsRegionInstanceGroupManagerRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -2181,14 +1886,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._update_per_instance_configs_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

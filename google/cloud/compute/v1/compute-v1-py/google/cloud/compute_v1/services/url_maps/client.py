@@ -404,7 +404,7 @@ class UrlMapsClient(metaclass=UrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -587,7 +587,7 @@ class UrlMapsClient(metaclass=UrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -674,7 +674,7 @@ class UrlMapsClient(metaclass=UrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def invalidate_cache(self,
+    def invalidate_cache_unary(self,
             request: Union[compute.InvalidateCacheUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -851,7 +851,7 @@ class UrlMapsClient(metaclass=UrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchUrlMapRequest, dict] = None,
             *,
             project: str = None,
@@ -948,7 +948,7 @@ class UrlMapsClient(metaclass=UrlMapsClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateUrlMapRequest, dict] = None,
             *,
             project: str = None,

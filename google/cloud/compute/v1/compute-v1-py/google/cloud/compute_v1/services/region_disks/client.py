@@ -325,7 +325,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_resource_policies(self,
+    def add_resource_policies_unary(self,
             request: Union[compute.AddResourcePoliciesRegionDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -432,7 +432,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
         # Done; return the response.
         return response
 
-    def create_snapshot(self,
+    def create_snapshot_unary(self,
             request: Union[compute.CreateSnapshotRegionDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -537,7 +537,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRegionDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -855,7 +855,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -1037,7 +1037,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
         # Done; return the response.
         return response
 
-    def remove_resource_policies(self,
+    def remove_resource_policies_unary(self,
             request: Union[compute.RemoveResourcePoliciesRegionDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -1142,7 +1142,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
         # Done; return the response.
         return response
 
-    def resize(self,
+    def resize_unary(self,
             request: Union[compute.ResizeRegionDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -1377,7 +1377,7 @@ class RegionDisksClient(metaclass=RegionDisksClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsRegionDiskRequest, dict] = None,
             *,
             project: str = None,

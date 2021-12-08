@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -416,6 +417,100 @@ def test_get_rest(transport: str = 'rest', request_type=compute_small.GetRegionO
     assert response.zone == 'zone_value'
 
 
+def test_get_rest_required_fields(request_type=compute_small.GetRegionOperationRequest):
+    transport_class = transports.RegionOperationsRestTransport
+
+    request_init = {}
+    request_init["operation"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "operation" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "operation" in jsonified_request
+    assert jsonified_request["operation"] == request_init["operation"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["operation"] = 'operation_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "operation" in jsonified_request
+    assert jsonified_request["operation"] == 'operation_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionOperationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute_small.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute_small.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "operation",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute_small.GetRegionOperationRequest):
     client = RegionOperationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -563,6 +658,100 @@ def test_wait_rest(transport: str = 'rest', request_type=compute_small.WaitRegio
     assert response.target_link == 'target_link_value'
     assert response.user == 'user_value'
     assert response.zone == 'zone_value'
+
+
+def test_wait_rest_required_fields(request_type=compute_small.WaitRegionOperationRequest):
+    transport_class = transports.RegionOperationsRestTransport
+
+    request_init = {}
+    request_init["operation"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "operation" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._wait_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "operation" in jsonified_request
+    assert jsonified_request["operation"] == request_init["operation"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["operation"] = 'operation_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._wait_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "operation" in jsonified_request
+    assert jsonified_request["operation"] == 'operation_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionOperationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute_small.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute_small.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.wait(request)
+
+            expected_params = [
+                (
+                    "operation",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_wait_rest_bad_request(transport: str = 'rest', request_type=compute_small.WaitRegionOperationRequest):

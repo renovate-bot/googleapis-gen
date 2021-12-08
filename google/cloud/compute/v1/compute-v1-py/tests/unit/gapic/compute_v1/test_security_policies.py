@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -347,7 +348,7 @@ def test_security_policies_client_client_options_credentials_file(client_class, 
         )
 
 
-def test_add_rule_rest(transport: str = 'rest', request_type=compute.AddRuleSecurityPolicyRequest):
+def test_add_rule_unary_rest(transport: str = 'rest', request_type=compute.AddRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -392,7 +393,7 @@ def test_add_rule_rest(transport: str = 'rest', request_type=compute.AddRuleSecu
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.add_rule(request)
+        response = client.add_rule_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -420,7 +421,91 @@ def test_add_rule_rest(transport: str = 'rest', request_type=compute.AddRuleSecu
     assert response.zone == 'zone_value'
 
 
-def test_add_rule_rest_bad_request(transport: str = 'rest', request_type=compute.AddRuleSecurityPolicyRequest):
+def test_add_rule_unary_rest_required_fields(request_type=compute.AddRuleSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._add_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._add_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.add_rule_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_add_rule_unary_rest_bad_request(transport: str = 'rest', request_type=compute.AddRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -438,14 +523,14 @@ def test_add_rule_rest_bad_request(transport: str = 'rest', request_type=compute
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.add_rule(request)
+        client.add_rule_unary(request)
 
 
-def test_add_rule_rest_from_dict():
-    test_add_rule_rest(request_type=dict)
+def test_add_rule_unary_rest_from_dict():
+    test_add_rule_unary_rest(request_type=dict)
 
 
-def test_add_rule_rest_flattened(transport: str = 'rest'):
+def test_add_rule_unary_rest_flattened(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -474,7 +559,7 @@ def test_add_rule_rest_flattened(transport: str = 'rest'):
             security_policy_rule_resource=compute.SecurityPolicyRule(action='action_value'),
         )
         mock_args.update(sample_request)
-        client.add_rule(**mock_args)
+        client.add_rule_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -483,7 +568,7 @@ def test_add_rule_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/securityPolicies/{security_policy}/addRule" % client.transport._host, args[1])
 
 
-def test_add_rule_rest_flattened_error(transport: str = 'rest'):
+def test_add_rule_unary_rest_flattened_error(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -492,7 +577,7 @@ def test_add_rule_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.add_rule(
+        client.add_rule_unary(
             compute.AddRuleSecurityPolicyRequest(),
             project='project_value',
             security_policy='security_policy_value',
@@ -500,7 +585,7 @@ def test_add_rule_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteSecurityPolicyRequest):
+def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -544,7 +629,7 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteSecurit
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete(request)
+        response = client.delete_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -572,7 +657,90 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteSecurit
     assert response.zone == 'zone_value'
 
 
-def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteSecurityPolicyRequest):
+def test_delete_unary_rest_required_fields(request_type=compute.DeleteSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "delete",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -589,14 +757,14 @@ def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.D
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete(request)
+        client.delete_unary(request)
 
 
-def test_delete_rest_from_dict():
-    test_delete_rest(request_type=dict)
+def test_delete_unary_rest_from_dict():
+    test_delete_unary_rest(request_type=dict)
 
 
-def test_delete_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -624,7 +792,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
             security_policy='security_policy_value',
         )
         mock_args.update(sample_request)
-        client.delete(**mock_args)
+        client.delete_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -633,7 +801,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/securityPolicies/{security_policy}" % client.transport._host, args[1])
 
 
-def test_delete_rest_flattened_error(transport: str = 'rest'):
+def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -642,7 +810,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete(
+        client.delete_unary(
             compute.DeleteSecurityPolicyRequest(),
             project='project_value',
             security_policy='security_policy_value',
@@ -689,6 +857,89 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetSecurityPolic
     assert response.kind == 'kind_value'
     assert response.name == 'name_value'
     assert response.self_link == 'self_link_value'
+
+
+def test_get_rest_required_fields(request_type=compute.GetSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.SecurityPolicy()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.SecurityPolicy.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetSecurityPolicyRequest):
@@ -806,6 +1057,89 @@ def test_get_rule_rest(transport: str = 'rest', request_type=compute.GetRuleSecu
     assert response.priority == 898
 
 
+def test_get_rule_rest_required_fields(request_type=compute.GetRuleSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._get_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._get_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.SecurityPolicyRule()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.SecurityPolicyRule.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get_rule(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_rule_rest_bad_request(transport: str = 'rest', request_type=compute.GetRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -883,7 +1217,7 @@ def test_get_rule_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_rest(transport: str = 'rest', request_type=compute.InsertSecurityPolicyRequest):
+def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -928,7 +1262,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertSecurit
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.insert(request)
+        response = client.insert_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -956,7 +1290,80 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertSecurit
     assert response.zone == 'zone_value'
 
 
-def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.InsertSecurityPolicyRequest):
+def test_insert_unary_rest_required_fields(request_type=compute.InsertSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.insert_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=compute.InsertSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -974,14 +1381,14 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.insert(request)
+        client.insert_unary(request)
 
 
-def test_insert_rest_from_dict():
-    test_insert_rest(request_type=dict)
+def test_insert_unary_rest_from_dict():
+    test_insert_unary_rest(request_type=dict)
 
 
-def test_insert_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1009,7 +1416,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
             security_policy_resource=compute.SecurityPolicy(adaptive_protection_config=compute.SecurityPolicyAdaptiveProtectionConfig(layer7_ddos_defense_config=compute.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig(enable=True))),
         )
         mock_args.update(sample_request)
-        client.insert(**mock_args)
+        client.insert_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1018,7 +1425,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/securityPolicies" % client.transport._host, args[1])
 
 
-def test_insert_rest_flattened_error(transport: str = 'rest'):
+def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1027,7 +1434,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.insert(
+        client.insert_unary(
             compute.InsertSecurityPolicyRequest(),
             project='project_value',
             security_policy_resource=compute.SecurityPolicy(adaptive_protection_config=compute.SecurityPolicyAdaptiveProtectionConfig(layer7_ddos_defense_config=compute.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig(enable=True))),
@@ -1066,6 +1473,78 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListSecurityPol
     assert response.id == 'id_value'
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
+
+
+def test_list_rest_required_fields(request_type=compute.ListSecurityPoliciesRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.SecurityPolicyList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.SecurityPolicyList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListSecurityPoliciesRequest):
@@ -1143,9 +1622,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -1232,6 +1712,78 @@ def test_list_preconfigured_expression_sets_rest(transport: str = 'rest', reques
     assert isinstance(response, compute.SecurityPoliciesListPreconfiguredExpressionSetsResponse)
 
 
+def test_list_preconfigured_expression_sets_rest_required_fields(request_type=compute.ListPreconfiguredExpressionSetsSecurityPoliciesRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._list_preconfigured_expression_sets_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._list_preconfigured_expression_sets_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.SecurityPoliciesListPreconfiguredExpressionSetsResponse()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.SecurityPoliciesListPreconfiguredExpressionSetsResponse.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list_preconfigured_expression_sets(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_list_preconfigured_expression_sets_rest_bad_request(transport: str = 'rest', request_type=compute.ListPreconfiguredExpressionSetsSecurityPoliciesRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -1307,7 +1859,7 @@ def test_list_preconfigured_expression_sets_rest_flattened_error(transport: str 
         )
 
 
-def test_patch_rest(transport: str = 'rest', request_type=compute.PatchSecurityPolicyRequest):
+def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1352,7 +1904,7 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchSecurityP
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.patch(request)
+        response = client.patch_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1380,7 +1932,91 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchSecurityP
     assert response.zone == 'zone_value'
 
 
-def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.PatchSecurityPolicyRequest):
+def test_patch_unary_rest_required_fields(request_type=compute.PatchSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "patch",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.patch_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=compute.PatchSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1398,14 +2034,14 @@ def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.Pa
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.patch(request)
+        client.patch_unary(request)
 
 
-def test_patch_rest_from_dict():
-    test_patch_rest(request_type=dict)
+def test_patch_unary_rest_from_dict():
+    test_patch_unary_rest(request_type=dict)
 
 
-def test_patch_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1434,7 +2070,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
             security_policy_resource=compute.SecurityPolicy(adaptive_protection_config=compute.SecurityPolicyAdaptiveProtectionConfig(layer7_ddos_defense_config=compute.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig(enable=True))),
         )
         mock_args.update(sample_request)
-        client.patch(**mock_args)
+        client.patch_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1443,7 +2079,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/securityPolicies/{security_policy}" % client.transport._host, args[1])
 
 
-def test_patch_rest_flattened_error(transport: str = 'rest'):
+def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1452,7 +2088,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.patch(
+        client.patch_unary(
             compute.PatchSecurityPolicyRequest(),
             project='project_value',
             security_policy='security_policy_value',
@@ -1460,7 +2096,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_patch_rule_rest(transport: str = 'rest', request_type=compute.PatchRuleSecurityPolicyRequest):
+def test_patch_rule_unary_rest(transport: str = 'rest', request_type=compute.PatchRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1505,7 +2141,7 @@ def test_patch_rule_rest(transport: str = 'rest', request_type=compute.PatchRule
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.patch_rule(request)
+        response = client.patch_rule_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1533,7 +2169,91 @@ def test_patch_rule_rest(transport: str = 'rest', request_type=compute.PatchRule
     assert response.zone == 'zone_value'
 
 
-def test_patch_rule_rest_bad_request(transport: str = 'rest', request_type=compute.PatchRuleSecurityPolicyRequest):
+def test_patch_rule_unary_rest_required_fields(request_type=compute.PatchRuleSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._patch_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._patch_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.patch_rule_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_patch_rule_unary_rest_bad_request(transport: str = 'rest', request_type=compute.PatchRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1551,14 +2271,14 @@ def test_patch_rule_rest_bad_request(transport: str = 'rest', request_type=compu
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.patch_rule(request)
+        client.patch_rule_unary(request)
 
 
-def test_patch_rule_rest_from_dict():
-    test_patch_rule_rest(request_type=dict)
+def test_patch_rule_unary_rest_from_dict():
+    test_patch_rule_unary_rest(request_type=dict)
 
 
-def test_patch_rule_rest_flattened(transport: str = 'rest'):
+def test_patch_rule_unary_rest_flattened(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1587,7 +2307,7 @@ def test_patch_rule_rest_flattened(transport: str = 'rest'):
             security_policy_rule_resource=compute.SecurityPolicyRule(action='action_value'),
         )
         mock_args.update(sample_request)
-        client.patch_rule(**mock_args)
+        client.patch_rule_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1596,7 +2316,7 @@ def test_patch_rule_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/securityPolicies/{security_policy}/patchRule" % client.transport._host, args[1])
 
 
-def test_patch_rule_rest_flattened_error(transport: str = 'rest'):
+def test_patch_rule_unary_rest_flattened_error(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1605,7 +2325,7 @@ def test_patch_rule_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.patch_rule(
+        client.patch_rule_unary(
             compute.PatchRuleSecurityPolicyRequest(),
             project='project_value',
             security_policy='security_policy_value',
@@ -1613,7 +2333,7 @@ def test_patch_rule_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_remove_rule_rest(transport: str = 'rest', request_type=compute.RemoveRuleSecurityPolicyRequest):
+def test_remove_rule_unary_rest(transport: str = 'rest', request_type=compute.RemoveRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1657,7 +2377,7 @@ def test_remove_rule_rest(transport: str = 'rest', request_type=compute.RemoveRu
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.remove_rule(request)
+        response = client.remove_rule_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1685,7 +2405,90 @@ def test_remove_rule_rest(transport: str = 'rest', request_type=compute.RemoveRu
     assert response.zone == 'zone_value'
 
 
-def test_remove_rule_rest_bad_request(transport: str = 'rest', request_type=compute.RemoveRuleSecurityPolicyRequest):
+def test_remove_rule_unary_rest_required_fields(request_type=compute.RemoveRuleSecurityPolicyRequest):
+    transport_class = transports.SecurityPoliciesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["security_policy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "securityPolicy" not in jsonified_request
+
+    unset_fields = transport_class._remove_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == request_init["security_policy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["securityPolicy"] = 'security_policy_value'
+
+    unset_fields = transport_class._remove_rule_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "securityPolicy" in jsonified_request
+    assert jsonified_request["securityPolicy"] == 'security_policy_value'
+
+    client = SecurityPoliciesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.remove_rule_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "security_policy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_remove_rule_unary_rest_bad_request(transport: str = 'rest', request_type=compute.RemoveRuleSecurityPolicyRequest):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1702,14 +2505,14 @@ def test_remove_rule_rest_bad_request(transport: str = 'rest', request_type=comp
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.remove_rule(request)
+        client.remove_rule_unary(request)
 
 
-def test_remove_rule_rest_from_dict():
-    test_remove_rule_rest(request_type=dict)
+def test_remove_rule_unary_rest_from_dict():
+    test_remove_rule_unary_rest(request_type=dict)
 
 
-def test_remove_rule_rest_flattened(transport: str = 'rest'):
+def test_remove_rule_unary_rest_flattened(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1737,7 +2540,7 @@ def test_remove_rule_rest_flattened(transport: str = 'rest'):
             security_policy='security_policy_value',
         )
         mock_args.update(sample_request)
-        client.remove_rule(**mock_args)
+        client.remove_rule_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1746,7 +2549,7 @@ def test_remove_rule_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/securityPolicies/{security_policy}/removeRule" % client.transport._host, args[1])
 
 
-def test_remove_rule_rest_flattened_error(transport: str = 'rest'):
+def test_remove_rule_unary_rest_flattened_error(transport: str = 'rest'):
     client = SecurityPoliciesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1755,7 +2558,7 @@ def test_remove_rule_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.remove_rule(
+        client.remove_rule_unary(
             compute.RemoveRuleSecurityPolicyRequest(),
             project='project_value',
             security_policy='security_policy_value',

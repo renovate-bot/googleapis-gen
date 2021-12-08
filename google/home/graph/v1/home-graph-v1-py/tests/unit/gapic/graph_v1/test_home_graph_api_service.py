@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -1729,13 +1730,15 @@ def test_home_graph_api_service_transport_channel_mtls_with_adc(
 
 
 def test_agent_user_path_path():
-    expected = "agentUsers/{agent_user_path=**}".format()
-    actual = HomeGraphApiServiceClient.agent_user_path_path()
+    agent_user_path = "squid"
+    expected = "agentUsers/{agent_user_path=**}".format(agent_user_path=agent_user_path, )
+    actual = HomeGraphApiServiceClient.agent_user_path_path(agent_user_path)
     assert expected == actual
 
 
 def test_parse_agent_user_path_path():
     expected = {
+        "agent_user_path": "clam",
     }
     path = HomeGraphApiServiceClient.agent_user_path_path(**expected)
 
@@ -1744,7 +1747,7 @@ def test_parse_agent_user_path_path():
     assert expected == actual
 
 def test_common_billing_account_path():
-    billing_account = "squid"
+    billing_account = "whelk"
     expected = "billingAccounts/{billing_account}".format(billing_account=billing_account, )
     actual = HomeGraphApiServiceClient.common_billing_account_path(billing_account)
     assert expected == actual
@@ -1752,7 +1755,7 @@ def test_common_billing_account_path():
 
 def test_parse_common_billing_account_path():
     expected = {
-        "billing_account": "clam",
+        "billing_account": "octopus",
     }
     path = HomeGraphApiServiceClient.common_billing_account_path(**expected)
 
@@ -1761,7 +1764,7 @@ def test_parse_common_billing_account_path():
     assert expected == actual
 
 def test_common_folder_path():
-    folder = "whelk"
+    folder = "oyster"
     expected = "folders/{folder}".format(folder=folder, )
     actual = HomeGraphApiServiceClient.common_folder_path(folder)
     assert expected == actual
@@ -1769,7 +1772,7 @@ def test_common_folder_path():
 
 def test_parse_common_folder_path():
     expected = {
-        "folder": "octopus",
+        "folder": "nudibranch",
     }
     path = HomeGraphApiServiceClient.common_folder_path(**expected)
 
@@ -1778,7 +1781,7 @@ def test_parse_common_folder_path():
     assert expected == actual
 
 def test_common_organization_path():
-    organization = "oyster"
+    organization = "cuttlefish"
     expected = "organizations/{organization}".format(organization=organization, )
     actual = HomeGraphApiServiceClient.common_organization_path(organization)
     assert expected == actual
@@ -1786,7 +1789,7 @@ def test_common_organization_path():
 
 def test_parse_common_organization_path():
     expected = {
-        "organization": "nudibranch",
+        "organization": "mussel",
     }
     path = HomeGraphApiServiceClient.common_organization_path(**expected)
 
@@ -1795,7 +1798,7 @@ def test_parse_common_organization_path():
     assert expected == actual
 
 def test_common_project_path():
-    project = "cuttlefish"
+    project = "winkle"
     expected = "projects/{project}".format(project=project, )
     actual = HomeGraphApiServiceClient.common_project_path(project)
     assert expected == actual
@@ -1803,7 +1806,7 @@ def test_common_project_path():
 
 def test_parse_common_project_path():
     expected = {
-        "project": "mussel",
+        "project": "nautilus",
     }
     path = HomeGraphApiServiceClient.common_project_path(**expected)
 
@@ -1812,8 +1815,8 @@ def test_parse_common_project_path():
     assert expected == actual
 
 def test_common_location_path():
-    project = "winkle"
-    location = "nautilus"
+    project = "scallop"
+    location = "abalone"
     expected = "projects/{project}/locations/{location}".format(project=project, location=location, )
     actual = HomeGraphApiServiceClient.common_location_path(project, location)
     assert expected == actual
@@ -1821,8 +1824,8 @@ def test_common_location_path():
 
 def test_parse_common_location_path():
     expected = {
-        "project": "scallop",
-        "location": "abalone",
+        "project": "squid",
+        "location": "clam",
     }
     path = HomeGraphApiServiceClient.common_location_path(**expected)
 

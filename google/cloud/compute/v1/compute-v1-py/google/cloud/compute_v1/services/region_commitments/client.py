@@ -493,7 +493,7 @@ class RegionCommitmentsClient(metaclass=RegionCommitmentsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionCommitmentRequest, dict] = None,
             *,
             project: str = None,

@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -347,7 +348,7 @@ def test_global_forwarding_rules_client_client_options_credentials_file(client_c
         )
 
 
-def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteGlobalForwardingRuleRequest):
+def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -391,7 +392,7 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteGlobalF
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete(request)
+        response = client.delete_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -419,7 +420,90 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteGlobalF
     assert response.zone == 'zone_value'
 
 
-def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteGlobalForwardingRuleRequest):
+def test_delete_unary_rest_required_fields(request_type=compute.DeleteGlobalForwardingRuleRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["forwarding_rule"] = ""
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "forwardingRule" not in jsonified_request
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == request_init["forwarding_rule"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["forwardingRule"] = 'forwarding_rule_value'
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == 'forwarding_rule_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "delete",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_unary(request)
+
+            expected_params = [
+                (
+                    "forwarding_rule",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -436,14 +520,14 @@ def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.D
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete(request)
+        client.delete_unary(request)
 
 
-def test_delete_rest_from_dict():
-    test_delete_rest(request_type=dict)
+def test_delete_unary_rest_from_dict():
+    test_delete_unary_rest(request_type=dict)
 
 
-def test_delete_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -471,7 +555,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
             forwarding_rule='forwarding_rule_value',
         )
         mock_args.update(sample_request)
-        client.delete(**mock_args)
+        client.delete_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -480,7 +564,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/forwardingRules/{forwarding_rule}" % client.transport._host, args[1])
 
 
-def test_delete_rest_flattened_error(transport: str = 'rest'):
+def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -489,7 +573,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete(
+        client.delete_unary(
             compute.DeleteGlobalForwardingRuleRequest(),
             project='project_value',
             forwarding_rule='forwarding_rule_value',
@@ -578,6 +662,89 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetGlobalForward
     assert response.target == 'target_value'
 
 
+def test_get_rest_required_fields(request_type=compute.GetGlobalForwardingRuleRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["forwarding_rule"] = ""
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "forwardingRule" not in jsonified_request
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == request_init["forwarding_rule"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["forwardingRule"] = 'forwarding_rule_value'
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == 'forwarding_rule_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.ForwardingRule()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.ForwardingRule.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "forwarding_rule",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -655,7 +822,7 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_rest(transport: str = 'rest', request_type=compute.InsertGlobalForwardingRuleRequest):
+def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -700,7 +867,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertGlobalF
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.insert(request)
+        response = client.insert_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -728,7 +895,80 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertGlobalF
     assert response.zone == 'zone_value'
 
 
-def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.InsertGlobalForwardingRuleRequest):
+def test_insert_unary_rest_required_fields(request_type=compute.InsertGlobalForwardingRuleRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.insert_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=compute.InsertGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -746,14 +986,14 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.insert(request)
+        client.insert_unary(request)
 
 
-def test_insert_rest_from_dict():
-    test_insert_rest(request_type=dict)
+def test_insert_unary_rest_from_dict():
+    test_insert_unary_rest(request_type=dict)
 
 
-def test_insert_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -781,7 +1021,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
             forwarding_rule_resource=compute.ForwardingRule(I_p_address='I_p_address_value'),
         )
         mock_args.update(sample_request)
-        client.insert(**mock_args)
+        client.insert_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -790,7 +1030,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/forwardingRules" % client.transport._host, args[1])
 
 
-def test_insert_rest_flattened_error(transport: str = 'rest'):
+def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -799,7 +1039,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.insert(
+        client.insert_unary(
             compute.InsertGlobalForwardingRuleRequest(),
             project='project_value',
             forwarding_rule_resource=compute.ForwardingRule(I_p_address='I_p_address_value'),
@@ -840,6 +1080,78 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListGlobalForwa
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
     assert response.self_link == 'self_link_value'
+
+
+def test_list_rest_required_fields(request_type=compute.ListGlobalForwardingRulesRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.ForwardingRuleList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.ForwardingRuleList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListGlobalForwardingRulesRequest):
@@ -917,9 +1229,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -978,7 +1291,7 @@ def test_list_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_patch_rest(transport: str = 'rest', request_type=compute.PatchGlobalForwardingRuleRequest):
+def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1023,7 +1336,7 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchGlobalFor
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.patch(request)
+        response = client.patch_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1051,7 +1364,91 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchGlobalFor
     assert response.zone == 'zone_value'
 
 
-def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.PatchGlobalForwardingRuleRequest):
+def test_patch_unary_rest_required_fields(request_type=compute.PatchGlobalForwardingRuleRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["forwarding_rule"] = ""
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "forwardingRule" not in jsonified_request
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == request_init["forwarding_rule"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["forwardingRule"] = 'forwarding_rule_value'
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == 'forwarding_rule_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "patch",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.patch_unary(request)
+
+            expected_params = [
+                (
+                    "forwarding_rule",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=compute.PatchGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1069,14 +1466,14 @@ def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.Pa
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.patch(request)
+        client.patch_unary(request)
 
 
-def test_patch_rest_from_dict():
-    test_patch_rest(request_type=dict)
+def test_patch_unary_rest_from_dict():
+    test_patch_unary_rest(request_type=dict)
 
 
-def test_patch_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1105,7 +1502,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
             forwarding_rule_resource=compute.ForwardingRule(I_p_address='I_p_address_value'),
         )
         mock_args.update(sample_request)
-        client.patch(**mock_args)
+        client.patch_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1114,7 +1511,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/forwardingRules/{forwarding_rule}" % client.transport._host, args[1])
 
 
-def test_patch_rest_flattened_error(transport: str = 'rest'):
+def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1123,7 +1520,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.patch(
+        client.patch_unary(
             compute.PatchGlobalForwardingRuleRequest(),
             project='project_value',
             forwarding_rule='forwarding_rule_value',
@@ -1131,7 +1528,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_labels_rest(transport: str = 'rest', request_type=compute.SetLabelsGlobalForwardingRuleRequest):
+def test_set_labels_unary_rest(transport: str = 'rest', request_type=compute.SetLabelsGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1176,7 +1573,7 @@ def test_set_labels_rest(transport: str = 'rest', request_type=compute.SetLabels
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.set_labels(request)
+        response = client.set_labels_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1204,7 +1601,91 @@ def test_set_labels_rest(transport: str = 'rest', request_type=compute.SetLabels
     assert response.zone == 'zone_value'
 
 
-def test_set_labels_rest_bad_request(transport: str = 'rest', request_type=compute.SetLabelsGlobalForwardingRuleRequest):
+def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsGlobalForwardingRuleRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["resource"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "resource" not in jsonified_request
+
+    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["resource"] = 'resource_value'
+
+    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_labels_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type=compute.SetLabelsGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1222,14 +1703,14 @@ def test_set_labels_rest_bad_request(transport: str = 'rest', request_type=compu
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.set_labels(request)
+        client.set_labels_unary(request)
 
 
-def test_set_labels_rest_from_dict():
-    test_set_labels_rest(request_type=dict)
+def test_set_labels_unary_rest_from_dict():
+    test_set_labels_unary_rest(request_type=dict)
 
 
-def test_set_labels_rest_flattened(transport: str = 'rest'):
+def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1258,7 +1739,7 @@ def test_set_labels_rest_flattened(transport: str = 'rest'):
             global_set_labels_request_resource=compute.GlobalSetLabelsRequest(label_fingerprint='label_fingerprint_value'),
         )
         mock_args.update(sample_request)
-        client.set_labels(**mock_args)
+        client.set_labels_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1267,7 +1748,7 @@ def test_set_labels_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/forwardingRules/{resource}/setLabels" % client.transport._host, args[1])
 
 
-def test_set_labels_rest_flattened_error(transport: str = 'rest'):
+def test_set_labels_unary_rest_flattened_error(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1276,7 +1757,7 @@ def test_set_labels_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.set_labels(
+        client.set_labels_unary(
             compute.SetLabelsGlobalForwardingRuleRequest(),
             project='project_value',
             resource='resource_value',
@@ -1284,7 +1765,7 @@ def test_set_labels_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_target_rest(transport: str = 'rest', request_type=compute.SetTargetGlobalForwardingRuleRequest):
+def test_set_target_unary_rest(transport: str = 'rest', request_type=compute.SetTargetGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1329,7 +1810,7 @@ def test_set_target_rest(transport: str = 'rest', request_type=compute.SetTarget
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.set_target(request)
+        response = client.set_target_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1357,7 +1838,91 @@ def test_set_target_rest(transport: str = 'rest', request_type=compute.SetTarget
     assert response.zone == 'zone_value'
 
 
-def test_set_target_rest_bad_request(transport: str = 'rest', request_type=compute.SetTargetGlobalForwardingRuleRequest):
+def test_set_target_unary_rest_required_fields(request_type=compute.SetTargetGlobalForwardingRuleRequest):
+    transport_class = transports.GlobalForwardingRulesRestTransport
+
+    request_init = {}
+    request_init["forwarding_rule"] = ""
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "forwardingRule" not in jsonified_request
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._set_target_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == request_init["forwarding_rule"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["forwardingRule"] = 'forwarding_rule_value'
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._set_target_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "forwardingRule" in jsonified_request
+    assert jsonified_request["forwardingRule"] == 'forwarding_rule_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = GlobalForwardingRulesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_target_unary(request)
+
+            expected_params = [
+                (
+                    "forwarding_rule",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_set_target_unary_rest_bad_request(transport: str = 'rest', request_type=compute.SetTargetGlobalForwardingRuleRequest):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1375,14 +1940,14 @@ def test_set_target_rest_bad_request(transport: str = 'rest', request_type=compu
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.set_target(request)
+        client.set_target_unary(request)
 
 
-def test_set_target_rest_from_dict():
-    test_set_target_rest(request_type=dict)
+def test_set_target_unary_rest_from_dict():
+    test_set_target_unary_rest(request_type=dict)
 
 
-def test_set_target_rest_flattened(transport: str = 'rest'):
+def test_set_target_unary_rest_flattened(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1411,7 +1976,7 @@ def test_set_target_rest_flattened(transport: str = 'rest'):
             target_reference_resource=compute.TargetReference(target='target_value'),
         )
         mock_args.update(sample_request)
-        client.set_target(**mock_args)
+        client.set_target_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1420,7 +1985,7 @@ def test_set_target_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/forwardingRules/{forwarding_rule}/setTarget" % client.transport._host, args[1])
 
 
-def test_set_target_rest_flattened_error(transport: str = 'rest'):
+def test_set_target_unary_rest_flattened_error(transport: str = 'rest'):
     client = GlobalForwardingRulesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1429,7 +1994,7 @@ def test_set_target_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.set_target(
+        client.set_target_unary(
             compute.SetTargetGlobalForwardingRuleRequest(),
             project='project_value',
             forwarding_rule='forwarding_rule_value',

@@ -401,7 +401,7 @@ class NodeTemplatesClient(metaclass=NodeTemplatesClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteNodeTemplateRequest, dict] = None,
             *,
             project: str = None,
@@ -712,7 +712,7 @@ class NodeTemplatesClient(metaclass=NodeTemplatesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertNodeTemplateRequest, dict] = None,
             *,
             project: str = None,

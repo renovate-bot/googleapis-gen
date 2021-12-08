@@ -404,7 +404,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -581,7 +581,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -748,7 +748,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -848,7 +848,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_quic_override(self,
+    def set_quic_override_unary(self,
             request: Union[compute.SetQuicOverrideTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -946,7 +946,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_ssl_certificates(self,
+    def set_ssl_certificates_unary(self,
             request: Union[compute.SetSslCertificatesTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -1043,7 +1043,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_ssl_policy(self,
+    def set_ssl_policy_unary(self,
             request: Union[compute.SetSslPolicyTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -1146,7 +1146,7 @@ class TargetHttpsProxiesClient(metaclass=TargetHttpsProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_url_map(self,
+    def set_url_map_unary(self,
             request: Union[compute.SetUrlMapTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,

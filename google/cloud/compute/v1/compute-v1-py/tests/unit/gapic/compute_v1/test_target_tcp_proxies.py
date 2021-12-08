@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -347,7 +348,7 @@ def test_target_tcp_proxies_client_client_options_credentials_file(client_class,
         )
 
 
-def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteTargetTcpProxyRequest):
+def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -391,7 +392,7 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteTargetT
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete(request)
+        response = client.delete_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -419,7 +420,90 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteTargetT
     assert response.zone == 'zone_value'
 
 
-def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteTargetTcpProxyRequest):
+def test_delete_unary_rest_required_fields(request_type=compute.DeleteTargetTcpProxyRequest):
+    transport_class = transports.TargetTcpProxiesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["target_tcp_proxy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "targetTcpProxy" not in jsonified_request
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == request_init["target_tcp_proxy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["targetTcpProxy"] = 'target_tcp_proxy_value'
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == 'target_tcp_proxy_value'
+
+    client = TargetTcpProxiesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "delete",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "target_tcp_proxy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -436,14 +520,14 @@ def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.D
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete(request)
+        client.delete_unary(request)
 
 
-def test_delete_rest_from_dict():
-    test_delete_rest(request_type=dict)
+def test_delete_unary_rest_from_dict():
+    test_delete_unary_rest(request_type=dict)
 
 
-def test_delete_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -471,7 +555,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
             target_tcp_proxy='target_tcp_proxy_value',
         )
         mock_args.update(sample_request)
-        client.delete(**mock_args)
+        client.delete_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -480,7 +564,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/targetTcpProxies/{target_tcp_proxy}" % client.transport._host, args[1])
 
 
-def test_delete_rest_flattened_error(transport: str = 'rest'):
+def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -489,7 +573,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete(
+        client.delete_unary(
             compute.DeleteTargetTcpProxyRequest(),
             project='project_value',
             target_tcp_proxy='target_tcp_proxy_value',
@@ -540,6 +624,89 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetTargetTcpProx
     assert response.proxy_header == 'proxy_header_value'
     assert response.self_link == 'self_link_value'
     assert response.service == 'service_value'
+
+
+def test_get_rest_required_fields(request_type=compute.GetTargetTcpProxyRequest):
+    transport_class = transports.TargetTcpProxiesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["target_tcp_proxy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "targetTcpProxy" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == request_init["target_tcp_proxy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["targetTcpProxy"] = 'target_tcp_proxy_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == 'target_tcp_proxy_value'
+
+    client = TargetTcpProxiesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.TargetTcpProxy()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.TargetTcpProxy.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "target_tcp_proxy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetTargetTcpProxyRequest):
@@ -619,7 +786,7 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_rest(transport: str = 'rest', request_type=compute.InsertTargetTcpProxyRequest):
+def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -664,7 +831,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertTargetT
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.insert(request)
+        response = client.insert_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -692,7 +859,80 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertTargetT
     assert response.zone == 'zone_value'
 
 
-def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.InsertTargetTcpProxyRequest):
+def test_insert_unary_rest_required_fields(request_type=compute.InsertTargetTcpProxyRequest):
+    transport_class = transports.TargetTcpProxiesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = TargetTcpProxiesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.insert_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=compute.InsertTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -710,14 +950,14 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.insert(request)
+        client.insert_unary(request)
 
 
-def test_insert_rest_from_dict():
-    test_insert_rest(request_type=dict)
+def test_insert_unary_rest_from_dict():
+    test_insert_unary_rest(request_type=dict)
 
 
-def test_insert_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -745,7 +985,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
             target_tcp_proxy_resource=compute.TargetTcpProxy(creation_timestamp='creation_timestamp_value'),
         )
         mock_args.update(sample_request)
-        client.insert(**mock_args)
+        client.insert_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -754,7 +994,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/targetTcpProxies" % client.transport._host, args[1])
 
 
-def test_insert_rest_flattened_error(transport: str = 'rest'):
+def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -763,7 +1003,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.insert(
+        client.insert_unary(
             compute.InsertTargetTcpProxyRequest(),
             project='project_value',
             target_tcp_proxy_resource=compute.TargetTcpProxy(creation_timestamp='creation_timestamp_value'),
@@ -804,6 +1044,78 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListTargetTcpPr
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
     assert response.self_link == 'self_link_value'
+
+
+def test_list_rest_required_fields(request_type=compute.ListTargetTcpProxiesRequest):
+    transport_class = transports.TargetTcpProxiesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = TargetTcpProxiesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.TargetTcpProxyList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.TargetTcpProxyList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListTargetTcpProxiesRequest):
@@ -881,9 +1193,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -942,7 +1255,7 @@ def test_list_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_set_backend_service_rest(transport: str = 'rest', request_type=compute.SetBackendServiceTargetTcpProxyRequest):
+def test_set_backend_service_unary_rest(transport: str = 'rest', request_type=compute.SetBackendServiceTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -987,7 +1300,7 @@ def test_set_backend_service_rest(transport: str = 'rest', request_type=compute.
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.set_backend_service(request)
+        response = client.set_backend_service_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1015,7 +1328,91 @@ def test_set_backend_service_rest(transport: str = 'rest', request_type=compute.
     assert response.zone == 'zone_value'
 
 
-def test_set_backend_service_rest_bad_request(transport: str = 'rest', request_type=compute.SetBackendServiceTargetTcpProxyRequest):
+def test_set_backend_service_unary_rest_required_fields(request_type=compute.SetBackendServiceTargetTcpProxyRequest):
+    transport_class = transports.TargetTcpProxiesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["target_tcp_proxy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "targetTcpProxy" not in jsonified_request
+
+    unset_fields = transport_class._set_backend_service_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == request_init["target_tcp_proxy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["targetTcpProxy"] = 'target_tcp_proxy_value'
+
+    unset_fields = transport_class._set_backend_service_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == 'target_tcp_proxy_value'
+
+    client = TargetTcpProxiesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_backend_service_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "target_tcp_proxy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_set_backend_service_unary_rest_bad_request(transport: str = 'rest', request_type=compute.SetBackendServiceTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1033,14 +1430,14 @@ def test_set_backend_service_rest_bad_request(transport: str = 'rest', request_t
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.set_backend_service(request)
+        client.set_backend_service_unary(request)
 
 
-def test_set_backend_service_rest_from_dict():
-    test_set_backend_service_rest(request_type=dict)
+def test_set_backend_service_unary_rest_from_dict():
+    test_set_backend_service_unary_rest(request_type=dict)
 
 
-def test_set_backend_service_rest_flattened(transport: str = 'rest'):
+def test_set_backend_service_unary_rest_flattened(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1069,7 +1466,7 @@ def test_set_backend_service_rest_flattened(transport: str = 'rest'):
             target_tcp_proxies_set_backend_service_request_resource=compute.TargetTcpProxiesSetBackendServiceRequest(service='service_value'),
         )
         mock_args.update(sample_request)
-        client.set_backend_service(**mock_args)
+        client.set_backend_service_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1078,7 +1475,7 @@ def test_set_backend_service_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/targetTcpProxies/{target_tcp_proxy}/setBackendService" % client.transport._host, args[1])
 
 
-def test_set_backend_service_rest_flattened_error(transport: str = 'rest'):
+def test_set_backend_service_unary_rest_flattened_error(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1087,7 +1484,7 @@ def test_set_backend_service_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.set_backend_service(
+        client.set_backend_service_unary(
             compute.SetBackendServiceTargetTcpProxyRequest(),
             project='project_value',
             target_tcp_proxy='target_tcp_proxy_value',
@@ -1095,7 +1492,7 @@ def test_set_backend_service_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_proxy_header_rest(transport: str = 'rest', request_type=compute.SetProxyHeaderTargetTcpProxyRequest):
+def test_set_proxy_header_unary_rest(transport: str = 'rest', request_type=compute.SetProxyHeaderTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1140,7 +1537,7 @@ def test_set_proxy_header_rest(transport: str = 'rest', request_type=compute.Set
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.set_proxy_header(request)
+        response = client.set_proxy_header_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1168,7 +1565,91 @@ def test_set_proxy_header_rest(transport: str = 'rest', request_type=compute.Set
     assert response.zone == 'zone_value'
 
 
-def test_set_proxy_header_rest_bad_request(transport: str = 'rest', request_type=compute.SetProxyHeaderTargetTcpProxyRequest):
+def test_set_proxy_header_unary_rest_required_fields(request_type=compute.SetProxyHeaderTargetTcpProxyRequest):
+    transport_class = transports.TargetTcpProxiesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["target_tcp_proxy"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "targetTcpProxy" not in jsonified_request
+
+    unset_fields = transport_class._set_proxy_header_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == request_init["target_tcp_proxy"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["targetTcpProxy"] = 'target_tcp_proxy_value'
+
+    unset_fields = transport_class._set_proxy_header_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "targetTcpProxy" in jsonified_request
+    assert jsonified_request["targetTcpProxy"] == 'target_tcp_proxy_value'
+
+    client = TargetTcpProxiesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_proxy_header_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "target_tcp_proxy",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_set_proxy_header_unary_rest_bad_request(transport: str = 'rest', request_type=compute.SetProxyHeaderTargetTcpProxyRequest):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1186,14 +1667,14 @@ def test_set_proxy_header_rest_bad_request(transport: str = 'rest', request_type
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.set_proxy_header(request)
+        client.set_proxy_header_unary(request)
 
 
-def test_set_proxy_header_rest_from_dict():
-    test_set_proxy_header_rest(request_type=dict)
+def test_set_proxy_header_unary_rest_from_dict():
+    test_set_proxy_header_unary_rest(request_type=dict)
 
 
-def test_set_proxy_header_rest_flattened(transport: str = 'rest'):
+def test_set_proxy_header_unary_rest_flattened(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1222,7 +1703,7 @@ def test_set_proxy_header_rest_flattened(transport: str = 'rest'):
             target_tcp_proxies_set_proxy_header_request_resource=compute.TargetTcpProxiesSetProxyHeaderRequest(proxy_header='proxy_header_value'),
         )
         mock_args.update(sample_request)
-        client.set_proxy_header(**mock_args)
+        client.set_proxy_header_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1231,7 +1712,7 @@ def test_set_proxy_header_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/global/targetTcpProxies/{target_tcp_proxy}/setProxyHeader" % client.transport._host, args[1])
 
 
-def test_set_proxy_header_rest_flattened_error(transport: str = 'rest'):
+def test_set_proxy_header_unary_rest_flattened_error(transport: str = 'rest'):
     client = TargetTcpProxiesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1240,7 +1721,7 @@ def test_set_proxy_header_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.set_proxy_header(
+        client.set_proxy_header_unary(
             compute.SetProxyHeaderTargetTcpProxyRequest(),
             project='project_value',
             target_tcp_proxy='target_tcp_proxy_value',

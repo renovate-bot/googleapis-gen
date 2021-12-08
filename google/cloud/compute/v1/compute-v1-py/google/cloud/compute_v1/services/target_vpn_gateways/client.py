@@ -401,7 +401,7 @@ class TargetVpnGatewaysClient(metaclass=TargetVpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteTargetVpnGatewayRequest, dict] = None,
             *,
             project: str = None,
@@ -587,7 +587,7 @@ class TargetVpnGatewaysClient(metaclass=TargetVpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertTargetVpnGatewayRequest, dict] = None,
             *,
             project: str = None,

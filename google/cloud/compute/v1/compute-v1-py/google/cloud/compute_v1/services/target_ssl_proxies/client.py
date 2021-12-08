@@ -325,7 +325,7 @@ class TargetSslProxiesClient(metaclass=TargetSslProxiesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteTargetSslProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -498,7 +498,7 @@ class TargetSslProxiesClient(metaclass=TargetSslProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertTargetSslProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -665,7 +665,7 @@ class TargetSslProxiesClient(metaclass=TargetSslProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_backend_service(self,
+    def set_backend_service_unary(self,
             request: Union[compute.SetBackendServiceTargetSslProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -763,7 +763,7 @@ class TargetSslProxiesClient(metaclass=TargetSslProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_proxy_header(self,
+    def set_proxy_header_unary(self,
             request: Union[compute.SetProxyHeaderTargetSslProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -860,7 +860,7 @@ class TargetSslProxiesClient(metaclass=TargetSslProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_ssl_certificates(self,
+    def set_ssl_certificates_unary(self,
             request: Union[compute.SetSslCertificatesTargetSslProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -958,7 +958,7 @@ class TargetSslProxiesClient(metaclass=TargetSslProxiesClientMeta):
         # Done; return the response.
         return response
 
-    def set_ssl_policy(self,
+    def set_ssl_policy_unary(self,
             request: Union[compute.SetSslPolicyTargetSslProxyRequest, dict] = None,
             *,
             project: str = None,

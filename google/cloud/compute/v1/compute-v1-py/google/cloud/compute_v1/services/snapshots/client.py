@@ -325,7 +325,7 @@ class SnapshotsClient(metaclass=SnapshotsClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteSnapshotRequest, dict] = None,
             *,
             project: str = None,
@@ -813,7 +813,7 @@ class SnapshotsClient(metaclass=SnapshotsClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsSnapshotRequest, dict] = None,
             *,
             project: str = None,

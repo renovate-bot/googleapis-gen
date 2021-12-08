@@ -402,7 +402,7 @@ class RoutersClient(metaclass=RoutersClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRouterRequest, dict] = None,
             *,
             project: str = None,
@@ -762,7 +762,7 @@ class RoutersClient(metaclass=RoutersClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRouterRequest, dict] = None,
             *,
             project: str = None,
@@ -942,7 +942,7 @@ class RoutersClient(metaclass=RoutersClientMeta):
         # Done; return the response.
         return response
 
-    def patch(self,
+    def patch_unary(self,
             request: Union[compute.PatchRouterRequest, dict] = None,
             *,
             project: str = None,
@@ -1136,7 +1136,7 @@ class RoutersClient(metaclass=RoutersClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateRouterRequest, dict] = None,
             *,
             project: str = None,

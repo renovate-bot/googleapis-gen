@@ -325,7 +325,7 @@ class RegionTargetHttpsProxiesClient(metaclass=RegionTargetHttpsProxiesClientMet
                 always_use_jwt_access=True,
             )
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteRegionTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -522,7 +522,7 @@ class RegionTargetHttpsProxiesClient(metaclass=RegionTargetHttpsProxiesClientMet
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertRegionTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -711,7 +711,7 @@ class RegionTargetHttpsProxiesClient(metaclass=RegionTargetHttpsProxiesClientMet
         # Done; return the response.
         return response
 
-    def set_ssl_certificates(self,
+    def set_ssl_certificates_unary(self,
             request: Union[compute.SetSslCertificatesRegionTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,
@@ -818,7 +818,7 @@ class RegionTargetHttpsProxiesClient(metaclass=RegionTargetHttpsProxiesClientMet
         # Done; return the response.
         return response
 
-    def set_url_map(self,
+    def set_url_map_unary(self,
             request: Union[compute.SetUrlMapRegionTargetHttpsProxyRequest, dict] = None,
             *,
             project: str = None,

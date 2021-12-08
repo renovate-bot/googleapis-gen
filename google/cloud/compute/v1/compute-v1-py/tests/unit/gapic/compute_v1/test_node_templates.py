@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -385,6 +386,78 @@ def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.Aggr
     assert response.unreachables == ['unreachables_value']
 
 
+def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedListNodeTemplatesRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+
+    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+
+    jsonified_request["project"] = 'project_value'
+
+    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeTemplateAggregatedList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeTemplateAggregatedList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.aggregated_list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=compute.AggregatedListNodeTemplatesRequest):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -460,9 +533,10 @@ def test_aggregated_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_aggregated_list_rest_pager():
+def test_aggregated_list_rest_pager(transport: str = 'rest'):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -531,7 +605,7 @@ def test_aggregated_list_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteNodeTemplateRequest):
+def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteNodeTemplateRequest):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -575,7 +649,7 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteNodeTem
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete(request)
+        response = client.delete_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -603,7 +677,101 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteNodeTem
     assert response.zone == 'zone_value'
 
 
-def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteNodeTemplateRequest):
+def test_delete_unary_rest_required_fields(request_type=compute.DeleteNodeTemplateRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["node_template"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeTemplate" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeTemplate" in jsonified_request
+    assert jsonified_request["nodeTemplate"] == request_init["node_template"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["nodeTemplate"] = 'node_template_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeTemplate" in jsonified_request
+    assert jsonified_request["nodeTemplate"] == 'node_template_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "delete",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_unary(request)
+
+            expected_params = [
+                (
+                    "node_template",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteNodeTemplateRequest):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -620,14 +788,14 @@ def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.D
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete(request)
+        client.delete_unary(request)
 
 
-def test_delete_rest_from_dict():
-    test_delete_rest(request_type=dict)
+def test_delete_unary_rest_from_dict():
+    test_delete_unary_rest(request_type=dict)
 
 
-def test_delete_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened(transport: str = 'rest'):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -656,7 +824,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
             node_template='node_template_value',
         )
         mock_args.update(sample_request)
-        client.delete(**mock_args)
+        client.delete_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -665,7 +833,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/nodeTemplates/{node_template}" % client.transport._host, args[1])
 
 
-def test_delete_rest_flattened_error(transport: str = 'rest'):
+def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -674,7 +842,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete(
+        client.delete_unary(
             compute.DeleteNodeTemplateRequest(),
             project='project_value',
             region='region_value',
@@ -730,6 +898,100 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetNodeTemplateR
     assert response.self_link == 'self_link_value'
     assert response.status == 'status_value'
     assert response.status_message == 'status_message_value'
+
+
+def test_get_rest_required_fields(request_type=compute.GetNodeTemplateRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["node_template"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "nodeTemplate" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "nodeTemplate" in jsonified_request
+    assert jsonified_request["nodeTemplate"] == request_init["node_template"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["nodeTemplate"] = 'node_template_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "nodeTemplate" in jsonified_request
+    assert jsonified_request["nodeTemplate"] == 'node_template_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeTemplate()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeTemplate.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "node_template",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetNodeTemplateRequest):
@@ -845,6 +1107,100 @@ def test_get_iam_policy_rest(transport: str = 'rest', request_type=compute.GetIa
     assert response.version == 774
 
 
+def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyNodeTemplateRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request_init["resource"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+    assert "resource" not in jsonified_request
+
+    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+    jsonified_request["resource"] = 'resource_value'
+
+    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Policy()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Policy.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get_iam_policy(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=compute.GetIamPolicyNodeTemplateRequest):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -924,7 +1280,7 @@ def test_get_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_rest(transport: str = 'rest', request_type=compute.InsertNodeTemplateRequest):
+def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertNodeTemplateRequest):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -969,7 +1325,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertNodeTem
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.insert(request)
+        response = client.insert_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -997,7 +1353,91 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertNodeTem
     assert response.zone == 'zone_value'
 
 
-def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.InsertNodeTemplateRequest):
+def test_insert_unary_rest_required_fields(request_type=compute.InsertNodeTemplateRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.insert_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=compute.InsertNodeTemplateRequest):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1015,14 +1455,14 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.insert(request)
+        client.insert_unary(request)
 
 
-def test_insert_rest_from_dict():
-    test_insert_rest(request_type=dict)
+def test_insert_unary_rest_from_dict():
+    test_insert_unary_rest(request_type=dict)
 
 
-def test_insert_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened(transport: str = 'rest'):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1051,7 +1491,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
             node_template_resource=compute.NodeTemplate(accelerators=[compute.AcceleratorConfig(accelerator_count=1805)]),
         )
         mock_args.update(sample_request)
-        client.insert(**mock_args)
+        client.insert_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1060,7 +1500,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/nodeTemplates" % client.transport._host, args[1])
 
 
-def test_insert_rest_flattened_error(transport: str = 'rest'):
+def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1069,7 +1509,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.insert(
+        client.insert_unary(
             compute.InsertNodeTemplateRequest(),
             project='project_value',
             region='region_value',
@@ -1111,6 +1551,89 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListNodeTemplat
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
     assert response.self_link == 'self_link_value'
+
+
+def test_list_rest_required_fields(request_type=compute.ListNodeTemplatesRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.NodeTemplateList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.NodeTemplateList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListNodeTemplatesRequest):
@@ -1190,9 +1713,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = NodeTemplatesClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -1284,6 +1808,101 @@ def test_set_iam_policy_rest(transport: str = 'rest', request_type=compute.SetIa
     assert response.etag == 'etag_value'
     assert response.iam_owned is True
     assert response.version == 774
+
+
+def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyNodeTemplateRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request_init["resource"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+    assert "resource" not in jsonified_request
+
+    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+    jsonified_request["resource"] = 'resource_value'
+
+    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Policy()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Policy.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.set_iam_policy(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=compute.SetIamPolicyNodeTemplateRequest):
@@ -1397,6 +2016,101 @@ def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.TestPermissionsResponse)
     assert response.permissions == ['permissions_value']
+
+
+def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamPermissionsNodeTemplateRequest):
+    transport_class = transports.NodeTemplatesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request_init["resource"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+    assert "resource" not in jsonified_request
+
+    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == request_init["resource"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+    jsonified_request["resource"] = 'resource_value'
+
+    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+    assert "resource" in jsonified_request
+    assert jsonified_request["resource"] == 'resource_value'
+
+    client = NodeTemplatesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.TestPermissionsResponse()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.test_iam_permissions(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+                (
+                    "resource",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_type=compute.TestIamPermissionsNodeTemplateRequest):

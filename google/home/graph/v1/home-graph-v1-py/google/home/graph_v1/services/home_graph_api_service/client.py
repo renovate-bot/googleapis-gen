@@ -166,14 +166,14 @@ class HomeGraphApiServiceClient(metaclass=HomeGraphApiServiceClientMeta):
         return self._transport
 
     @staticmethod
-    def agent_user_path_path() -> str:
+    def agent_user_path_path(agent_user_path: str,) -> str:
         """Returns a fully-qualified agent_user_path string."""
-        return "agentUsers/{agent_user_path=**}".format()
+        return "agentUsers/{agent_user_path=**}".format(agent_user_path=agent_user_path, )
 
     @staticmethod
     def parse_agent_user_path_path(path: str) -> Dict[str,str]:
         """Parses a agent_user_path path into its component segments."""
-        m = re.match(r"^agentUsers/{agent_user_path=**}$", path)
+        m = re.match(r"^agentUsers/(?P<agent_user_path>.+?)$", path)
         return m.groupdict() if m else {}
 
     @staticmethod

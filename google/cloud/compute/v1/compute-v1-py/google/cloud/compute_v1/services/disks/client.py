@@ -325,7 +325,7 @@ class DisksClient(metaclass=DisksClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_resource_policies(self,
+    def add_resource_policies_unary(self,
             request: Union[compute.AddResourcePoliciesDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -508,7 +508,7 @@ class DisksClient(metaclass=DisksClientMeta):
         # Done; return the response.
         return response
 
-    def create_snapshot(self,
+    def create_snapshot_unary(self,
             request: Union[compute.CreateSnapshotDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -615,7 +615,7 @@ class DisksClient(metaclass=DisksClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -937,7 +937,7 @@ class DisksClient(metaclass=DisksClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -1126,7 +1126,7 @@ class DisksClient(metaclass=DisksClientMeta):
         # Done; return the response.
         return response
 
-    def remove_resource_policies(self,
+    def remove_resource_policies_unary(self,
             request: Union[compute.RemoveResourcePoliciesDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -1231,7 +1231,7 @@ class DisksClient(metaclass=DisksClientMeta):
         # Done; return the response.
         return response
 
-    def resize(self,
+    def resize_unary(self,
             request: Union[compute.ResizeDiskRequest, dict] = None,
             *,
             project: str = None,
@@ -1468,7 +1468,7 @@ class DisksClient(metaclass=DisksClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsDiskRequest, dict] = None,
             *,
             project: str = None,

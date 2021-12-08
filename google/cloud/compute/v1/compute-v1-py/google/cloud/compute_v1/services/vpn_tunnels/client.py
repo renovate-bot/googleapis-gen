@@ -401,7 +401,7 @@ class VpnTunnelsClient(metaclass=VpnTunnelsClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteVpnTunnelRequest, dict] = None,
             *,
             project: str = None,
@@ -583,7 +583,7 @@ class VpnTunnelsClient(metaclass=VpnTunnelsClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertVpnTunnelRequest, dict] = None,
             *,
             project: str = None,

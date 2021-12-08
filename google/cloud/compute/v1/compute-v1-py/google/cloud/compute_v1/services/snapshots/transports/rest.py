@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import SnapshotsTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __delete_required_fields_default_values =  {
+        "project" : ""        "snapshot" : ""    }
+
+    @staticmethod
+    def _delete_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+
     def _delete(self,
             request: compute.DeleteSnapshotRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -164,18 +169,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "snapshot",
-                "snapshot"
-            ),
-        ]
-
         request_kwargs = compute.DeleteSnapshotRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -190,14 +183,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._delete_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -220,6 +206,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_required_fields_default_values =  {
+        "project" : ""        "snapshot" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
 
     def _get(self,
             request: compute.GetSnapshotRequest, *,
@@ -257,18 +250,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "snapshot",
-                "snapshot"
-            ),
-        ]
-
         request_kwargs = compute.GetSnapshotRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -283,14 +264,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -313,6 +287,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __get_iam_policy_required_fields_default_values =  {
+        "project" : ""        "resource" : ""    }
+
+    @staticmethod
+    def _get_iam_policy_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__get_iam_policy_required_fields_default_values.items() if k not in message_dict}
 
     def _get_iam_policy(self,
             request: compute.GetIamPolicySnapshotRequest, *,
@@ -386,18 +367,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-        ]
-
         request_kwargs = compute.GetIamPolicySnapshotRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -412,14 +381,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_iam_policy_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -442,6 +404,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __list_required_fields_default_values =  {
+        "project" : ""    }
+
+    @staticmethod
+    def _list_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
 
     def _list(self,
             request: compute.ListSnapshotsRequest, *,
@@ -476,14 +445,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.ListSnapshotsRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -498,14 +459,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._list_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -528,6 +482,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_iam_policy_required_fields_default_values =  {
+        "project" : ""        "resource" : ""    }
+
+    @staticmethod
+    def _set_iam_policy_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__set_iam_policy_required_fields_default_values.items() if k not in message_dict}
 
     def _set_iam_policy(self,
             request: compute.SetIamPolicySnapshotRequest, *,
@@ -602,18 +563,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-        ]
-
         request_kwargs = compute.SetIamPolicySnapshotRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -635,14 +584,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_iam_policy_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -666,6 +608,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __set_labels_required_fields_default_values =  {
+        "project" : ""        "resource" : ""    }
+
+    @staticmethod
+    def _set_labels_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__set_labels_required_fields_default_values.items() if k not in message_dict}
 
     def _set_labels(self,
             request: compute.SetLabelsSnapshotRequest, *,
@@ -715,18 +664,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-        ]
-
         request_kwargs = compute.SetLabelsSnapshotRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -748,14 +685,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._set_labels_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -779,6 +709,13 @@ class SnapshotsRestTransport(SnapshotsTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __test_iam_permissions_required_fields_default_values =  {
+        "project" : ""        "resource" : ""    }
+
+    @staticmethod
+    def _test_iam_permissions_get_unset_required_fields(message_dict):
+        return {k: v for k, v in SnapshotsRestTransport.__test_iam_permissions_required_fields_default_values.items() if k not in message_dict}
 
     def _test_iam_permissions(self,
             request: compute.TestIamPermissionsSnapshotRequest, *,
@@ -813,18 +750,6 @@ class SnapshotsRestTransport(SnapshotsTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-        ]
-
         request_kwargs = compute.TestIamPermissionsSnapshotRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -846,14 +771,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._test_iam_permissions_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

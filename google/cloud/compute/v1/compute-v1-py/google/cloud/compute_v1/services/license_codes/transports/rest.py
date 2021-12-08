@@ -33,8 +33,6 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
-
-
 from google.cloud.compute_v1.types import compute
 
 from .base import LicenseCodesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -117,6 +115,13 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
+    __get_required_fields_default_values =  {
+        "licenseCode" : ""        "project" : ""    }
+
+    @staticmethod
+    def _get_get_unset_required_fields(message_dict):
+        return {k: v for k, v in LicenseCodesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+
     def _get(self,
             request: compute.GetLicenseCodeRequest, *,
             retry: OptionalRetry=gapic_v1.method.DEFAULT,
@@ -154,18 +159,6 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "license_code",
-                "licenseCode"
-            ),
-            (
-                "project",
-                "project"
-            ),
-        ]
-
         request_kwargs = compute.GetLicenseCodeRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -180,14 +173,7 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._get_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)
@@ -210,6 +196,13 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
             response.content,
             ignore_unknown_fields=True
         )
+
+    __test_iam_permissions_required_fields_default_values =  {
+        "project" : ""        "resource" : ""    }
+
+    @staticmethod
+    def _test_iam_permissions_get_unset_required_fields(message_dict):
+        return {k: v for k, v in LicenseCodesRestTransport.__test_iam_permissions_required_fields_default_values.items() if k not in message_dict}
 
     def _test_iam_permissions(self,
             request: compute.TestIamPermissionsLicenseCodeRequest, *,
@@ -244,18 +237,6 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
             },
         ]
 
-        required_fields = [
-            # (snake_case_name, camel_case_name)
-            (
-                "project",
-                "project"
-            ),
-            (
-                "resource",
-                "resource"
-            ),
-        ]
-
         request_kwargs = compute.TestIamPermissionsLicenseCodeRequest.to_dict(request)
         transcoded_request = path_template.transcode(
             http_options, **request_kwargs)
@@ -277,14 +258,7 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
             use_integers_for_enums=False
         ))
 
-        # Ensure required fields have values in query_params.
-        # If a required field has a default value, it can get lost
-        # by the to_json call above.
-        orig_query_params = transcoded_request["query_params"]
-        for snake_case_name, camel_case_name in required_fields:
-            if snake_case_name in orig_query_params:
-                if camel_case_name not in query_params:
-                    query_params[camel_case_name] = orig_query_params[snake_case_name]
+        query_params.update(self._test_iam_permissions_get_unset_required_fields(query_params))
 
         # Send the request
         headers = dict(metadata)

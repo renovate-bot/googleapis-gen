@@ -18,6 +18,7 @@ import mock
 
 import grpc
 from grpc.experimental import aio
+import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -347,7 +348,7 @@ def test_region_backend_services_client_client_options_credentials_file(client_c
         )
 
 
-def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteRegionBackendServiceRequest):
+def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -391,7 +392,7 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteRegionB
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.delete(request)
+        response = client.delete_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -419,7 +420,101 @@ def test_delete_rest(transport: str = 'rest', request_type=compute.DeleteRegionB
     assert response.zone == 'zone_value'
 
 
-def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteRegionBackendServiceRequest):
+def test_delete_unary_rest_required_fields(request_type=compute.DeleteRegionBackendServiceRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["backend_service"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "backendService" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == request_init["backend_service"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["backendService"] = 'backend_service_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == 'backend_service_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "delete",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.delete_unary(request)
+
+            expected_params = [
+                (
+                    "backend_service",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=compute.DeleteRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -436,14 +531,14 @@ def test_delete_rest_bad_request(transport: str = 'rest', request_type=compute.D
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.delete(request)
+        client.delete_unary(request)
 
 
-def test_delete_rest_from_dict():
-    test_delete_rest(request_type=dict)
+def test_delete_unary_rest_from_dict():
+    test_delete_unary_rest(request_type=dict)
 
 
-def test_delete_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -472,7 +567,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
             backend_service='backend_service_value',
         )
         mock_args.update(sample_request)
-        client.delete(**mock_args)
+        client.delete_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -481,7 +576,7 @@ def test_delete_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/backendServices/{backend_service}" % client.transport._host, args[1])
 
 
-def test_delete_rest_flattened_error(transport: str = 'rest'):
+def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -490,7 +585,7 @@ def test_delete_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.delete(
+        client.delete_unary(
             compute.DeleteRegionBackendServiceRequest(),
             project='project_value',
             region='region_value',
@@ -568,6 +663,100 @@ def test_get_rest(transport: str = 'rest', request_type=compute.GetRegionBackend
     assert response.self_link == 'self_link_value'
     assert response.session_affinity == 'session_affinity_value'
     assert response.timeout_sec == 1185
+
+
+def test_get_rest_required_fields(request_type=compute.GetRegionBackendServiceRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["backend_service"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "backendService" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == request_init["backend_service"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["backendService"] = 'backend_service_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == 'backend_service_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.BackendService()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.BackendService.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get(request)
+
+            expected_params = [
+                (
+                    "backend_service",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetRegionBackendServiceRequest):
@@ -680,6 +869,101 @@ def test_get_health_rest(transport: str = 'rest', request_type=compute.GetHealth
     assert response.kind == 'kind_value'
 
 
+def test_get_health_rest_required_fields(request_type=compute.GetHealthRegionBackendServiceRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["backend_service"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "backendService" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._get_health_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == request_init["backend_service"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["backendService"] = 'backend_service_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._get_health_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == 'backend_service_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.BackendServiceGroupHealth()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.BackendServiceGroupHealth.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.get_health(request)
+
+            expected_params = [
+                (
+                    "backend_service",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
 def test_get_health_rest_bad_request(transport: str = 'rest', request_type=compute.GetHealthRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
@@ -762,7 +1046,7 @@ def test_get_health_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_rest(transport: str = 'rest', request_type=compute.InsertRegionBackendServiceRequest):
+def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -807,7 +1091,7 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertRegionB
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.insert(request)
+        response = client.insert_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -835,7 +1119,91 @@ def test_insert_rest(transport: str = 'rest', request_type=compute.InsertRegionB
     assert response.zone == 'zone_value'
 
 
-def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.InsertRegionBackendServiceRequest):
+def test_insert_unary_rest_required_fields(request_type=compute.InsertRegionBackendServiceRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "post",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.insert_unary(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=compute.InsertRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -853,14 +1221,14 @@ def test_insert_rest_bad_request(transport: str = 'rest', request_type=compute.I
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.insert(request)
+        client.insert_unary(request)
 
 
-def test_insert_rest_from_dict():
-    test_insert_rest(request_type=dict)
+def test_insert_unary_rest_from_dict():
+    test_insert_unary_rest(request_type=dict)
 
 
-def test_insert_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -889,7 +1257,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
             backend_service_resource=compute.BackendService(affinity_cookie_ttl_sec=2432),
         )
         mock_args.update(sample_request)
-        client.insert(**mock_args)
+        client.insert_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -898,7 +1266,7 @@ def test_insert_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/backendServices" % client.transport._host, args[1])
 
 
-def test_insert_rest_flattened_error(transport: str = 'rest'):
+def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -907,7 +1275,7 @@ def test_insert_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.insert(
+        client.insert_unary(
             compute.InsertRegionBackendServiceRequest(),
             project='project_value',
             region='region_value',
@@ -949,6 +1317,89 @@ def test_list_rest(transport: str = 'rest', request_type=compute.ListRegionBacke
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
     assert response.self_link == 'self_link_value'
+
+
+def test_list_rest_required_fields(request_type=compute.ListRegionBackendServicesRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.BackendServiceList()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "get",
+                'query_params': request_init,
+            }
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.BackendServiceList.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.list(request)
+
+            expected_params = [
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
 
 
 def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.ListRegionBackendServicesRequest):
@@ -1028,9 +1479,10 @@ def test_list_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest_pager():
+def test_list_rest_pager(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
+        transport=transport,
     )
 
     # Mock the http request call within the method and fake a response.
@@ -1089,7 +1541,7 @@ def test_list_rest_pager():
                 assert page_.raw_page.next_page_token == token
 
 
-def test_patch_rest(transport: str = 'rest', request_type=compute.PatchRegionBackendServiceRequest):
+def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1134,7 +1586,7 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchRegionBac
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.patch(request)
+        response = client.patch_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1162,7 +1614,102 @@ def test_patch_rest(transport: str = 'rest', request_type=compute.PatchRegionBac
     assert response.zone == 'zone_value'
 
 
-def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.PatchRegionBackendServiceRequest):
+def test_patch_unary_rest_required_fields(request_type=compute.PatchRegionBackendServiceRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["backend_service"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "backendService" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == request_init["backend_service"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["backendService"] = 'backend_service_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == 'backend_service_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "patch",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.patch_unary(request)
+
+            expected_params = [
+                (
+                    "backend_service",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=compute.PatchRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1180,14 +1727,14 @@ def test_patch_rest_bad_request(transport: str = 'rest', request_type=compute.Pa
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.patch(request)
+        client.patch_unary(request)
 
 
-def test_patch_rest_from_dict():
-    test_patch_rest(request_type=dict)
+def test_patch_unary_rest_from_dict():
+    test_patch_unary_rest(request_type=dict)
 
 
-def test_patch_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1217,7 +1764,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
             backend_service_resource=compute.BackendService(affinity_cookie_ttl_sec=2432),
         )
         mock_args.update(sample_request)
-        client.patch(**mock_args)
+        client.patch_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1226,7 +1773,7 @@ def test_patch_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/backendServices/{backend_service}" % client.transport._host, args[1])
 
 
-def test_patch_rest_flattened_error(transport: str = 'rest'):
+def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1235,7 +1782,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.patch(
+        client.patch_unary(
             compute.PatchRegionBackendServiceRequest(),
             project='project_value',
             region='region_value',
@@ -1244,7 +1791,7 @@ def test_patch_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_update_rest(transport: str = 'rest', request_type=compute.UpdateRegionBackendServiceRequest):
+def test_update_unary_rest(transport: str = 'rest', request_type=compute.UpdateRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1289,7 +1836,7 @@ def test_update_rest(transport: str = 'rest', request_type=compute.UpdateRegionB
         json_return_value = compute.Operation.to_json(return_value)
         response_value._content = json_return_value.encode('UTF-8')
         req.return_value = response_value
-        response = client.update(request)
+        response = client.update_unary(request)
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, compute.Operation)
@@ -1317,7 +1864,102 @@ def test_update_rest(transport: str = 'rest', request_type=compute.UpdateRegionB
     assert response.zone == 'zone_value'
 
 
-def test_update_rest_bad_request(transport: str = 'rest', request_type=compute.UpdateRegionBackendServiceRequest):
+def test_update_unary_rest_required_fields(request_type=compute.UpdateRegionBackendServiceRequest):
+    transport_class = transports.RegionBackendServicesRestTransport
+
+    request_init = {}
+    request_init["backend_service"] = ""
+    request_init["project"] = ""
+    request_init["region"] = ""
+    request = request_type(request_init)
+    jsonified_request = json.loads(request_type.to_json(
+        request,
+        including_default_value_fields=False,
+        use_integers_for_enums=False
+        ))
+
+    # verify fields with default values are dropped
+    assert "backendService" not in jsonified_request
+    assert "project" not in jsonified_request
+    assert "region" not in jsonified_request
+
+    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with default values are now present
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == request_init["backend_service"]
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == request_init["project"]
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == request_init["region"]
+
+    jsonified_request["backendService"] = 'backend_service_value'
+    jsonified_request["project"] = 'project_value'
+    jsonified_request["region"] = 'region_value'
+
+    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    jsonified_request.update(unset_fields)
+
+    # verify required fields with non-default values are left alone
+    assert "backendService" in jsonified_request
+    assert jsonified_request["backendService"] == 'backend_service_value'
+    assert "project" in jsonified_request
+    assert jsonified_request["project"] == 'project_value'
+    assert "region" in jsonified_request
+    assert jsonified_request["region"] == 'region_value'
+
+    client = RegionBackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest',
+    )
+    request = request_type(request_init)
+
+    # Designate an appropriate value for the returned response.
+    return_value = compute.Operation()
+    # Mock the http request call within the method and fake a response.
+    with mock.patch.object(Session, 'request') as req:
+        # We need to mock transcode() because providing default values
+        # for required fields will fail the real version if the http_options
+        # expect actual values for those fields.
+        with mock.patch.object(path_template, 'transcode') as transcode:
+            # A uri without fields and an empty body will force all the
+            # request fields to show up in the query_params.
+            transcode_result = {
+                'uri': 'v1/sample_method',
+                'method': "put",
+                'query_params': request_init,
+            }
+            transcode_result['body'] = {}
+            transcode.return_value = transcode_result
+
+            response_value = Response()
+            response_value.status_code = 200
+            json_return_value = compute.Operation.to_json(return_value)
+            response_value._content = json_return_value.encode('UTF-8')
+            req.return_value = response_value
+
+            response = client.update_unary(request)
+
+            expected_params = [
+                (
+                    "backend_service",
+                    ""
+                )
+                (
+                    "project",
+                    ""
+                )
+                (
+                    "region",
+                    ""
+                )
+            ]
+            actual_params = req.call_args.kwargs['params']
+            assert expected_params == actual_params
+
+
+def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=compute.UpdateRegionBackendServiceRequest):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1335,14 +1977,14 @@ def test_update_rest_bad_request(transport: str = 'rest', request_type=compute.U
         response_value.status_code = 400
         response_value.request = Request()
         req.return_value = response_value
-        client.update(request)
+        client.update_unary(request)
 
 
-def test_update_rest_from_dict():
-    test_update_rest(request_type=dict)
+def test_update_unary_rest_from_dict():
+    test_update_unary_rest(request_type=dict)
 
 
-def test_update_rest_flattened(transport: str = 'rest'):
+def test_update_unary_rest_flattened(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1372,7 +2014,7 @@ def test_update_rest_flattened(transport: str = 'rest'):
             backend_service_resource=compute.BackendService(affinity_cookie_ttl_sec=2432),
         )
         mock_args.update(sample_request)
-        client.update(**mock_args)
+        client.update_unary(**mock_args)
 
         # Establish that the underlying call was made with the expected
         # request object values.
@@ -1381,7 +2023,7 @@ def test_update_rest_flattened(transport: str = 'rest'):
         assert path_template.validate("https://%s/compute/v1/projects/{project}/regions/{region}/backendServices/{backend_service}" % client.transport._host, args[1])
 
 
-def test_update_rest_flattened_error(transport: str = 'rest'):
+def test_update_unary_rest_flattened_error(transport: str = 'rest'):
     client = RegionBackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1390,7 +2032,7 @@ def test_update_rest_flattened_error(transport: str = 'rest'):
     # Attempting to call a method with both a request object and flattened
     # fields is an error.
     with pytest.raises(ValueError):
-        client.update(
+        client.update_unary(
             compute.UpdateRegionBackendServiceRequest(),
             project='project_value',
             region='region_value',

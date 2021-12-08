@@ -325,7 +325,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
                 always_use_jwt_access=True,
             )
 
-    def add_access_config(self,
+    def add_access_config_unary(self,
             request: Union[compute.AddAccessConfigInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -441,7 +441,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def add_resource_policies(self,
+    def add_resource_policies_unary(self,
             request: Union[compute.AddResourcePoliciesInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -628,7 +628,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def attach_disk(self,
+    def attach_disk_unary(self,
             request: Union[compute.AttachDiskInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -737,7 +737,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def bulk_insert(self,
+    def bulk_insert_unary(self,
             request: Union[compute.BulkInsertInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -835,7 +835,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -935,7 +935,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def delete_access_config(self,
+    def delete_access_config_unary(self,
             request: Union[compute.DeleteAccessConfigInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -1051,7 +1051,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def detach_disk(self,
+    def detach_disk_unary(self,
             request: Union[compute.DetachDiskInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -1805,7 +1805,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2095,7 +2095,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def remove_resource_policies(self,
+    def remove_resource_policies_unary(self,
             request: Union[compute.RemoveResourcePoliciesInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2200,7 +2200,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def reset(self,
+    def reset_unary(self,
             request: Union[compute.ResetInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2387,7 +2387,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_deletion_protection(self,
+    def set_deletion_protection_unary(self,
             request: Union[compute.SetDeletionProtectionInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2486,7 +2486,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_disk_auto_delete(self,
+    def set_disk_auto_delete_unary(self,
             request: Union[compute.SetDiskAutoDeleteInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2738,7 +2738,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2846,7 +2846,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_machine_resources(self,
+    def set_machine_resources_unary(self,
             request: Union[compute.SetMachineResourcesInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -2954,7 +2954,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_machine_type(self,
+    def set_machine_type_unary(self,
             request: Union[compute.SetMachineTypeInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3062,7 +3062,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_metadata(self,
+    def set_metadata_unary(self,
             request: Union[compute.SetMetadataInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3170,7 +3170,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_min_cpu_platform(self,
+    def set_min_cpu_platform_unary(self,
             request: Union[compute.SetMinCpuPlatformInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3280,7 +3280,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_scheduling(self,
+    def set_scheduling_unary(self,
             request: Union[compute.SetSchedulingInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3388,7 +3388,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_service_account(self,
+    def set_service_account_unary(self,
             request: Union[compute.SetServiceAccountInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3497,7 +3497,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_shielded_instance_integrity_policy(self,
+    def set_shielded_instance_integrity_policy_unary(self,
             request: Union[compute.SetShieldedInstanceIntegrityPolicyInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3607,7 +3607,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def set_tags(self,
+    def set_tags_unary(self,
             request: Union[compute.SetTagsInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3715,7 +3715,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def simulate_maintenance_event(self,
+    def simulate_maintenance_event_unary(self,
             request: Union[compute.SimulateMaintenanceEventInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3814,7 +3814,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def start(self,
+    def start_unary(self,
             request: Union[compute.StartInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -3914,7 +3914,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def start_with_encryption_key(self,
+    def start_with_encryption_key_unary(self,
             request: Union[compute.StartWithEncryptionKeyInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -4023,7 +4023,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def stop(self,
+    def stop_unary(self,
             request: Union[compute.StopInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -4220,7 +4220,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def update(self,
+    def update_unary(self,
             request: Union[compute.UpdateInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -4330,7 +4330,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def update_access_config(self,
+    def update_access_config_unary(self,
             request: Union[compute.UpdateAccessConfigInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -4448,7 +4448,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def update_display_device(self,
+    def update_display_device_unary(self,
             request: Union[compute.UpdateDisplayDeviceInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -4558,7 +4558,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def update_network_interface(self,
+    def update_network_interface_unary(self,
             request: Union[compute.UpdateNetworkInterfaceInstanceRequest, dict] = None,
             *,
             project: str = None,
@@ -4679,7 +4679,7 @@ class InstancesClient(metaclass=InstancesClientMeta):
         # Done; return the response.
         return response
 
-    def update_shielded_instance_config(self,
+    def update_shielded_instance_config_unary(self,
             request: Union[compute.UpdateShieldedInstanceConfigInstanceRequest, dict] = None,
             *,
             project: str = None,

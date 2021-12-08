@@ -401,7 +401,7 @@ class VpnGatewaysClient(metaclass=VpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def delete(self,
+    def delete_unary(self,
             request: Union[compute.DeleteVpnGatewayRequest, dict] = None,
             *,
             project: str = None,
@@ -665,7 +665,7 @@ class VpnGatewaysClient(metaclass=VpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def insert(self,
+    def insert_unary(self,
             request: Union[compute.InsertVpnGatewayRequest, dict] = None,
             *,
             project: str = None,
@@ -848,7 +848,7 @@ class VpnGatewaysClient(metaclass=VpnGatewaysClientMeta):
         # Done; return the response.
         return response
 
-    def set_labels(self,
+    def set_labels_unary(self,
             request: Union[compute.SetLabelsVpnGatewayRequest, dict] = None,
             *,
             project: str = None,
