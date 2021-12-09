@@ -730,8 +730,8 @@ namespace Google.Ads.GoogleAds.V9.Services {
     /// <summary>Field number for the "update" field.</summary>
     public const int UpdateFieldNumber = 2;
     /// <summary>
-    /// Update operation: The conversion action is expected to have a valid
-    /// resource name.
+    /// Update operation: The conversion value rule set is expected to have a
+    /// valid resource name.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -746,8 +746,8 @@ namespace Google.Ads.GoogleAds.V9.Services {
     /// <summary>Field number for the "remove" field.</summary>
     public const int RemoveFieldNumber = 3;
     /// <summary>
-    /// Remove operation: A resource name for the removed conversion action is
-    /// expected, in this format:
+    /// Remove operation: A resource name for the removed conversion value rule
+    /// set is expected, in this format:
     ///
     /// `customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}`
     /// </summary>

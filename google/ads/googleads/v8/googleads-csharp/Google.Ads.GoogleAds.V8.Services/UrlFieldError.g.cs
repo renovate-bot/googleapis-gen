@@ -456,7 +456,7 @@ namespace Google.Ads.GoogleAds.V8.Errors {
         /// </summary>
         [pbr::OriginalName("INVALID_TAG_IN_FINAL_URL_SUFFIX")] InvalidTagInFinalUrlSuffix = 51,
         /// <summary>
-        /// The top level domain is invalid, e.g, not a public top level domain
+        /// The top level domain is invalid, e.g. not a public top level domain
         /// listed in publicsuffix.org.
         /// </summary>
         [pbr::OriginalName("INVALID_TOP_LEVEL_DOMAIN")] InvalidTopLevelDomain = 53,

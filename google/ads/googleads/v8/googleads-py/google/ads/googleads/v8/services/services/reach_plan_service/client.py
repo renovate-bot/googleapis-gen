@@ -405,10 +405,9 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
                 The request object. Request to list available products
                 in a given location.
             plannable_location_id (:class:`str`):
-                Required. The ID of the selected
-                location for planning. To list the
-                available plannable location ids use
-                ListPlannableLocations.
+                Required. The ID of the selected location for planning.
+                To list the available plannable location ids use
+                [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
 
                 This corresponds to the ``plannable_location_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -488,9 +487,9 @@ class ReachPlanServiceClient(metaclass=ReachPlanServiceClientMeta):
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
             plannable_location_id (:class:`str`):
-                Required. The ID of the location,
-                this is one of the ids returned by
-                ListPlannableLocations.
+                Required. The ID of the location, this is one of the ids
+                returned by
+                [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
 
                 This corresponds to the ``plannable_location_id`` field
                 on the ``request`` instance; if ``request`` is provided, this

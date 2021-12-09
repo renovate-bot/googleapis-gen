@@ -26,6 +26,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :YOUTUBE_VIDEO_TOO_LONG, 14
       value :YOUTUBE_VIDEO_TOO_SHORT, 15
       value :INVALID_STATUS, 17
+      value :YOUTUBE_VIDEO_DURATION_NOT_DEFINED, 18
     end
   end
 end

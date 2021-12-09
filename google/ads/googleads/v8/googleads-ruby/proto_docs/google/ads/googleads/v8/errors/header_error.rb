@@ -35,10 +35,10 @@ module Google
               # The received error code is not known in this version.
               UNKNOWN = 1
 
-              # The login customer id could not be validated.
+              # The login customer ID could not be validated.
               INVALID_LOGIN_CUSTOMER_ID = 3
 
-              # The linked customer id could not be validated.
+              # The linked customer ID could not be validated.
               INVALID_LINKED_CUSTOMER_ID = 7
             end
           end

@@ -87,7 +87,7 @@ module Google
               # The business account is not valid.
               INVALID_BUSINESS_ACCOUNT = 18
 
-              # Business account cannot access Google My Business account.
+              # Business account cannot access Business Profile.
               BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT = 19
 
               # Invalid chain ID provided for affiliate location feed.
@@ -96,7 +96,7 @@ module Google
               # There is already a feed with the given system feed generation data.
               DUPLICATE_SYSTEM_FEED = 21
 
-              # An error occurred accessing GMB account.
+              # An error occurred accessing Business Profile.
               GMB_ACCESS_ERROR = 22
 
               # A customer cannot have both LOCATION and AFFILIATE_LOCATION feeds.

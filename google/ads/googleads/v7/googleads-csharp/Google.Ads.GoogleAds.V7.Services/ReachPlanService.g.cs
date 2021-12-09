@@ -402,8 +402,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// The list of locations available for planning (Countries, DMAs,
     /// sub-countries).
-    /// For locations like Countries, DMAs see
-    /// https://developers.google.com/adwords/api/docs/appendix/geotargeting for
+    /// For locations like Countries and DMAs see
+    /// https://developers.google.com/google-ads/api/reference/data/geotargets for
     /// more information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -645,10 +645,11 @@ namespace Google.Ads.GoogleAds.V7.Services {
     public const int ParentCountryIdFieldNumber = 6;
     private long parentCountryId_;
     /// <summary>
-    /// The parent country code, not present if location is a country.
-    /// If present will always be a criterion id: additional information, such as
-    /// country name are returned both via ListPlannableLocations or directly by
-    /// accessing GeoTargetConstantService with the criterion id.
+    /// The parent country, not present if location is a country.
+    /// If present will always be a GeoTargetConstant ID. Additional information,
+    /// such as country name is provided by
+    /// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+    /// [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v7.services.GeoTargetConstantService.GetGeoTargetConstant].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -905,7 +906,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private string plannableLocationId_ = "";
     /// <summary>
     /// Required. The ID of the selected location for planning. To list the available
-    /// plannable location ids use ListPlannableLocations.
+    /// plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1617,6 +1618,9 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private readonly pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.DeviceInfo> devices_ = new pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.DeviceInfo>();
     /// <summary>
     /// Targetable devices for the ad product.
+    /// TABLET device targeting is automatically applied to reported metrics
+    /// when MOBILE targeting is selected for CPM_MASTHEAD,
+    /// GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1878,7 +1882,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private string plannableLocationId_ = "";
     /// <summary>
     /// Required. The ID of the location, this is one of the ids returned by
-    /// ListPlannableLocations.
+    /// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2831,7 +2835,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// Selected product for planning. The product codes returned are within the
     /// set of the ones returned by ListPlannableProducts when using the same
-    /// location id.
+    /// location ID.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3197,7 +3201,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// This is equivalent to the frequency cap exposed in Google Ads when creating
     /// a campaign, it represents the maximum number of times an ad can be shown to
     /// the same user during a specified time interval.
-    /// If not specified, no cap is applied.
+    /// If not specified, a default of 0 (no cap) is applied.
     ///
     /// This field replaces the deprecated cookie_frequency_cap field.
     /// </summary>
@@ -3218,6 +3222,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// exposed to the ad) for the reported reach metrics [1-10].
     /// This won't affect the targeting, but just the reporting.
     /// If not specified, a default of 1 is applied.
+    ///
+    /// This field cannot be combined with the effective_frequency_limit field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3251,9 +3257,6 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// advertising product, please consult an implementation specialist.
     ///
     /// See specific metrics for details on how targeting affects them.
-    ///
-    /// In some cases, targeting may be overridden using the
-    /// PlannedProduct.advanced_product_targeting field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3888,8 +3891,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     public const int PlannableLocationIdFieldNumber = 6;
     private string plannableLocationId_;
     /// <summary>
-    /// Required. The ID of the selected location.
-    /// Plannable locations ID can be obtained from ListPlannableLocations.
+    /// Required. The ID of the selected location. Plannable location IDs can be
+    /// obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3917,7 +3920,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private global::Google.Ads.GoogleAds.V7.Enums.ReachPlanAgeRangeEnum.Types.ReachPlanAgeRange ageRange_ = global::Google.Ads.GoogleAds.V7.Enums.ReachPlanAgeRangeEnum.Types.ReachPlanAgeRange.Unspecified;
     /// <summary>
     /// Targeted age range.
-    /// If not specified, targets all age ranges.
+    /// An unset value is equivalent to targeting all ages.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3935,7 +3938,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private readonly pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.GenderInfo> genders_ = new pbc::RepeatedField<global::Google.Ads.GoogleAds.V7.Common.GenderInfo>();
     /// <summary>
     /// Targeted genders.
-    /// If not specified, targets all genders.
+    /// An unset value is equivalent to targeting MALE and FEMALE.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3951,7 +3954,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// Targeted devices.
     /// If not specified, targets all applicable devices. Applicable devices vary
-    /// by product and region and can be obtained from ListPlannableProducts.
+    /// by product and region and can be obtained from
+    /// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v7.services.ReachPlanService.ListPlannableProducts].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3965,7 +3969,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// Targetable network for the ad product.
     /// If not specified, targets all applicable networks. Applicable networks vary
-    /// by product and region and can be obtained from ListPlannableProducts.
+    /// by product and region and can be obtained from
+    /// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v7.services.ReachPlanService.ListPlannableProducts].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4239,6 +4244,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private int durationInDays_;
     /// <summary>
     /// The duration value in days.
+    ///
+    /// This field cannot be combined with the date_range field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4451,7 +4458,8 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// Required. Selected product for planning.
     /// The code associated with the ad product. E.g. Trueview, Bumper
-    /// To list the available plannable product codes use ListPlannableProducts.
+    /// To list the available plannable product codes use
+    /// [ReachPlanService.ListPlannableProducts][google.ads.googleads.v7.services.ReachPlanService.ListPlannableProducts].
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5430,8 +5438,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private long onTargetReach_;
     /// <summary>
     /// Number of unique people reached at least
-    /// GenerateReachForecastRequest.min_effective_frequency times that exactly
+    /// GenerateReachForecastRequest.min_effective_frequency or
+    /// GenerateReachForecastRequest.effective_frequency_limit times that exactly
     /// matches the Targeting.
+    ///
+    /// Note that a minimum number of unique people must be reached in order for
+    /// data to be reported. If the minimum number is not met, the on_target_reach
+    /// value will be rounded to 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5460,8 +5473,13 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private long totalReach_;
     /// <summary>
     /// Total number of unique people reached at least
-    /// GenerateReachForecastRequest.min_effective_frequency times. This includes
+    /// GenerateReachForecastRequest.min_effective_frequency or
+    /// GenerateReachForecastRequest.effective_frequency_limit times. This includes
     /// people that may fall outside the specified Targeting.
+    ///
+    /// Note that a minimum number of unique people must be reached in order for
+    /// data to be reported. If the minimum number is not met, the total_reach
+    /// value will be rounded to 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -5859,7 +5877,7 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// Selected product for planning. The product codes returned are within the
     /// set of the ones returned by ListPlannableProducts when using the same
-    /// location id.
+    /// location ID.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6150,6 +6168,10 @@ namespace Google.Ads.GoogleAds.V7.Services {
     private long onTargetReach_;
     /// <summary>
     /// Number of unique people reached that exactly matches the Targeting.
+    ///
+    /// Note that a minimum number of unique people must be reached in order for
+    /// data to be reported. If the minimum number is not met, the on_target_reach
+    /// value will be rounded to 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6166,6 +6188,10 @@ namespace Google.Ads.GoogleAds.V7.Services {
     /// <summary>
     /// Number of unique people reached. This includes people that may fall
     /// outside the specified Targeting.
+    ///
+    /// Note that a minimum number of unique people must be reached in order for
+    /// data to be reported. If the minimum number is not met, the total_reach
+    /// value will be rounded to 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

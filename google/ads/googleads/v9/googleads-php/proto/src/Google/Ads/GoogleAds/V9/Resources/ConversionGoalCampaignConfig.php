@@ -36,9 +36,9 @@ class ConversionGoalCampaignConfig extends \Google\Protobuf\Internal\Message
      */
     protected $goal_config_level = 0;
     /**
-     * Immutable. The custom conversion goal the campaign is using for optimization.
+     * The custom conversion goal the campaign is using for optimization.
      *
-     * Generated from protobuf field <code>string custom_conversion_goal = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string custom_conversion_goal = 4 [(.google.api.resource_reference) = {</code>
      */
     protected $custom_conversion_goal = '';
 
@@ -57,7 +57,7 @@ class ConversionGoalCampaignConfig extends \Google\Protobuf\Internal\Message
      *     @type int $goal_config_level
      *           The level of goal config the campaign is using.
      *     @type string $custom_conversion_goal
-     *           Immutable. The custom conversion goal the campaign is using for optimization.
+     *           The custom conversion goal the campaign is using for optimization.
      * }
      */
     public function __construct($data = NULL) {
@@ -148,9 +148,9 @@ class ConversionGoalCampaignConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The custom conversion goal the campaign is using for optimization.
+     * The custom conversion goal the campaign is using for optimization.
      *
-     * Generated from protobuf field <code>string custom_conversion_goal = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string custom_conversion_goal = 4 [(.google.api.resource_reference) = {</code>
      * @return string
      */
     public function getCustomConversionGoal()
@@ -159,9 +159,9 @@ class ConversionGoalCampaignConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The custom conversion goal the campaign is using for optimization.
+     * The custom conversion goal the campaign is using for optimization.
      *
-     * Generated from protobuf field <code>string custom_conversion_goal = 4 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * Generated from protobuf field <code>string custom_conversion_goal = 4 [(.google.api.resource_reference) = {</code>
      * @param string $var
      * @return $this
      */

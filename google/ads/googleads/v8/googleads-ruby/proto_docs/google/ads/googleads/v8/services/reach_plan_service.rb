@@ -51,10 +51,11 @@ module Google
           #     The unique location name in english.
           # @!attribute [rw] parent_country_id
           #   @return [::Integer]
-          #     The parent country code, not present if location is a country.
-          #     If present will always be a criterion id: additional information, such as
-          #     country name are returned both via ListPlannableLocations or directly by
-          #     accessing GeoTargetConstantService with the criterion id.
+          #     The parent country, not present if location is a country.
+          #     If present will always be a GeoTargetConstant ID. Additional information,
+          #     such as country name is provided by
+          #     {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_locations ReachPlanService.ListPlannableLocations} or directly by accessing
+          #     {::Google::Ads::GoogleAds::V8::Services::GeoTargetConstantService::Client#get_geo_target_constant GeoTargetConstantService.GetGeoTargetConstant}.
           class PlannableLocation
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -64,7 +65,7 @@ module Google
           # @!attribute [rw] plannable_location_id
           #   @return [::String]
           #     Required. The ID of the selected location for planning. To list the available
-          #     plannable location ids use ListPlannableLocations.
+          #     plannable location ids use {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_locations ReachPlanService.ListPlannableLocations}.
           class ListPlannableProductsRequest
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -107,6 +108,9 @@ module Google
           # @!attribute [rw] devices
           #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::DeviceInfo>]
           #     Targetable devices for the ad product.
+          #     TABLET device targeting is automatically applied to reported metrics
+          #     when MOBILE targeting is selected for CPM_MASTHEAD,
+          #     GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
           # @!attribute [rw] networks
           #   @return [::Array<::Google::Ads::GoogleAds::V8::Enums::ReachPlanNetworkEnum::ReachPlanNetwork>]
           #     Targetable networks for the ad product.
@@ -122,7 +126,7 @@ module Google
           # @!attribute [rw] plannable_location_id
           #   @return [::String]
           #     Required. The ID of the location, this is one of the ids returned by
-          #     ListPlannableLocations.
+          #     {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_locations ReachPlanService.ListPlannableLocations}.
           # @!attribute [rw] currency_code
           #   @return [::String]
           #     Required. Currency code.
@@ -182,7 +186,7 @@ module Google
           #   @return [::String]
           #     Selected product for planning. The product codes returned are within the
           #     set of the ones returned by ListPlannableProducts when using the same
-          #     location id.
+          #     location ID.
           # @!attribute [rw] budget_micros
           #   @return [::Integer]
           #     The value to be allocated for the suggested product in requested currency.
@@ -219,7 +223,7 @@ module Google
           #     This is equivalent to the frequency cap exposed in Google Ads when creating
           #     a campaign, it represents the maximum number of times an ad can be shown to
           #     the same user during a specified time interval.
-          #     If not specified, no cap is applied.
+          #     If not specified, a default of 0 (no cap) is applied.
           #
           #     This field replaces the deprecated cookie_frequency_cap field.
           # @!attribute [rw] min_effective_frequency
@@ -286,26 +290,28 @@ module Google
           # The targeting for which traffic metrics will be reported.
           # @!attribute [rw] plannable_location_id
           #   @return [::String]
-          #     Required. The ID of the selected location.
-          #     Plannable locations ID can be obtained from ListPlannableLocations.
+          #     Required. The ID of the selected location. Plannable location IDs can be
+          #     obtained from {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_locations ReachPlanService.ListPlannableLocations}.
           # @!attribute [rw] age_range
           #   @return [::Google::Ads::GoogleAds::V8::Enums::ReachPlanAgeRangeEnum::ReachPlanAgeRange]
           #     Targeted age range.
-          #     If not specified, targets all age ranges.
+          #     An unset value is equivalent to targeting all ages.
           # @!attribute [rw] genders
           #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::GenderInfo>]
           #     Targeted genders.
-          #     If not specified, targets all genders.
+          #     An unset value is equivalent to targeting MALE and FEMALE.
           # @!attribute [rw] devices
           #   @return [::Array<::Google::Ads::GoogleAds::V8::Common::DeviceInfo>]
           #     Targeted devices.
           #     If not specified, targets all applicable devices. Applicable devices vary
-          #     by product and region and can be obtained from ListPlannableProducts.
+          #     by product and region and can be obtained from
+          #     {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_products ReachPlanService.ListPlannableProducts}.
           # @!attribute [rw] network
           #   @return [::Google::Ads::GoogleAds::V8::Enums::ReachPlanNetworkEnum::ReachPlanNetwork]
           #     Targetable network for the ad product.
           #     If not specified, targets all applicable networks. Applicable networks vary
-          #     by product and region and can be obtained from ListPlannableProducts.
+          #     by product and region and can be obtained from
+          #     {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_products ReachPlanService.ListPlannableProducts}.
           class Targeting
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -315,6 +321,8 @@ module Google
           # @!attribute [rw] duration_in_days
           #   @return [::Integer]
           #     The duration value in days.
+          #
+          #     This field cannot be combined with the date_range field.
           class CampaignDuration
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -325,7 +333,8 @@ module Google
           #   @return [::String]
           #     Required. Selected product for planning.
           #     The code associated with the ad product. E.g. Trueview, Bumper
-          #     To list the available plannable product codes use ListPlannableProducts.
+          #     To list the available plannable product codes use
+          #     {::Google::Ads::GoogleAds::V8::Services::ReachPlanService::Client#list_plannable_products ReachPlanService.ListPlannableProducts}.
           # @!attribute [rw] budget_micros
           #   @return [::Integer]
           #     Required. Maximum budget allocation in micros for the selected product.
@@ -425,7 +434,7 @@ module Google
           #   @return [::String]
           #     Selected product for planning. The product codes returned are within the
           #     set of the ones returned by ListPlannableProducts when using the same
-          #     location id.
+          #     location ID.
           # @!attribute [rw] cost_micros
           #   @return [::Integer]
           #     The cost in micros. This may differ from the product's input allocation

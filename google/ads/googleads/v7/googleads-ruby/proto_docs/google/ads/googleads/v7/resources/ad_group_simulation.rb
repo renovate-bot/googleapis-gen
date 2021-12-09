@@ -33,8 +33,6 @@ module Google
           # 5. DISPLAY - CPC_BID - DEFAULT
           # 6. DISPLAY - CPC_BID - UNIFORM
           # 7. DISPLAY - TARGET_CPA - UNIFORM
-          # 8. VIDEO - CPV_BID - DEFAULT
-          # 9. VIDEO - CPV_BID - UNIFORM
           # @!attribute [r] resource_name
           #   @return [::String]
           #     Output only. The resource name of the ad group simulation.

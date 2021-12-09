@@ -29,7 +29,7 @@ module Google
           #     The list of errors that occurred.
           # @!attribute [rw] request_id
           #   @return [::String]
-          #     The unique id of the request that is used for debugging purposes.
+          #     The unique ID of the request that is used for debugging purposes.
           class GoogleAdsFailure
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

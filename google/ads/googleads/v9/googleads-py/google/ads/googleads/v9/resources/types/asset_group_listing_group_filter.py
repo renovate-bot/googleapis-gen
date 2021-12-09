@@ -205,20 +205,6 @@ class ListingGroupFilterDimension(proto.Message):
             enum=listing_group_filter_product_channel.ListingGroupFilterProductChannelEnum.ListingGroupFilterProductChannel,
         )
 
-    class ProductCondition(proto.Message):
-        r"""Condition of a product offer.
-
-        Attributes:
-            condition (google.ads.googleads.v9.enums.types.ListingGroupFilterProductConditionEnum.ListingGroupFilterProductCondition):
-                Value of the condition.
-        """
-
-        condition = proto.Field(
-            proto.ENUM,
-            number=1,
-            enum=listing_group_filter_product_condition.ListingGroupFilterProductConditionEnum.ListingGroupFilterProductCondition,
-        )
-
     class ProductCustomAttribute(proto.Message):
         r"""Custom attribute of a product offer.
 
@@ -240,6 +226,20 @@ class ListingGroupFilterDimension(proto.Message):
             proto.ENUM,
             number=2,
             enum=listing_group_filter_custom_attribute_index.ListingGroupFilterCustomAttributeIndexEnum.ListingGroupFilterCustomAttributeIndex,
+        )
+
+    class ProductCondition(proto.Message):
+        r"""Condition of a product offer.
+
+        Attributes:
+            condition (google.ads.googleads.v9.enums.types.ListingGroupFilterProductConditionEnum.ListingGroupFilterProductCondition):
+                Value of the condition.
+        """
+
+        condition = proto.Field(
+            proto.ENUM,
+            number=1,
+            enum=listing_group_filter_product_condition.ListingGroupFilterProductConditionEnum.ListingGroupFilterProductCondition,
         )
 
     class ProductItemId(proto.Message):

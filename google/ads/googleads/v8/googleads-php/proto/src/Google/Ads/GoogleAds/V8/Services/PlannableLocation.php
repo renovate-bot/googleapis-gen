@@ -29,10 +29,11 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      *
      * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      */
@@ -49,10 +50,11 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *           The unique location name in english.
      *     @type int|string $parent_country_id
-     *           The parent country code, not present if location is a country.
-     *           If present will always be a criterion id: additional information, such as
-     *           country name are returned both via ListPlannableLocations or directly by
-     *           accessing GeoTargetConstantService with the criterion id.
+     *           The parent country, not present if location is a country.
+     *           If present will always be a GeoTargetConstant ID. Additional information,
+     *           such as country name is provided by
+     *           [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     *           [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      * }
      */
     public function __construct($data = NULL) {
@@ -133,10 +135,11 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      *
      * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      * @return int|string
@@ -157,10 +160,11 @@ class PlannableLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      *
      * Generated from protobuf field <code>optional int64 parent_country_id = 6;</code>
      * @param int|string $var

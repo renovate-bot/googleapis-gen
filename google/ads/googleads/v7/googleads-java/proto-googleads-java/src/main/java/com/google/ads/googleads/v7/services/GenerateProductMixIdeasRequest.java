@@ -174,7 +174,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The ID of the location, this is one of the ids returned by
-   * ListPlannableLocations.
+   * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -196,7 +196,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The ID of the location, this is one of the ids returned by
-   * ListPlannableLocations.
+   * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -813,7 +813,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -834,7 +834,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -856,7 +856,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -876,7 +876,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -891,7 +891,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>

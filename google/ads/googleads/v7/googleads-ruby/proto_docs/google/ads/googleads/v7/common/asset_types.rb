@@ -137,7 +137,7 @@ module Google
           #     and the aspect ratio must be 1.91:1 (+-1%).
           # @!attribute [rw] desired_intent
           #   @return [::Google::Ads::GoogleAds::V7::Enums::LeadFormDesiredIntentEnum::LeadFormDesiredIntent]
-          #     Desired intent for the lead form, e.g. more volume or higher intent.
+          #     Desired intent for the lead form, e.g. more volume or more qualified.
           # @!attribute [rw] custom_disclosure
           #   @return [::String]
           #     Custom disclosure shown along with Google disclaimer on the lead form.

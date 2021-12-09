@@ -38,7 +38,7 @@ module Google
               # Deliver more leads at a potentially lower quality.
               LOW_INTENT = 2
 
-              # Only leads with a high level of intent are desired.
+              # Deliver leads that are more qualified.
               HIGH_INTENT = 3
             end
           end

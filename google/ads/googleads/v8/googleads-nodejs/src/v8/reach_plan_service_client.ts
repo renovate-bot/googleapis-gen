@@ -768,7 +768,7 @@ export class ReachPlanServiceClient {
  *   The request object that will be sent.
  * @param {string} request.plannableLocationId
  *   Required. The ID of the selected location for planning. To list the available
- *   plannable location ids use ListPlannableLocations.
+ *   plannable location ids use {@link google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations|ReachPlanService.ListPlannableLocations}.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -848,7 +848,7 @@ export class ReachPlanServiceClient {
  *   Required. The ID of the customer.
  * @param {string} request.plannableLocationId
  *   Required. The ID of the location, this is one of the ids returned by
- *   ListPlannableLocations.
+ *   {@link google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations|ReachPlanService.ListPlannableLocations}.
  * @param {string} request.currencyCode
  *   Required. Currency code.
  *   Three-character ISO 4217 currency code.
@@ -960,7 +960,7 @@ export class ReachPlanServiceClient {
  *   This is equivalent to the frequency cap exposed in Google Ads when creating
  *   a campaign, it represents the maximum number of times an ad can be shown to
  *   the same user during a specified time interval.
- *   If not specified, no cap is applied.
+ *   If not specified, a default of 0 (no cap) is applied.
  *
  *   This field replaces the deprecated cookie_frequency_cap field.
  * @param {number} request.minEffectiveFrequency

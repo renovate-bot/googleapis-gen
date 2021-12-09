@@ -69,12 +69,12 @@ module Google
           #     value rule.
           # @!attribute [rw] update
           #   @return [::Google::Ads::GoogleAds::V8::Resources::ConversionValueRule]
-          #     Update operation: The conversion action is expected to have a valid
+          #     Update operation: The conversion value rule is expected to have a valid
           #     resource name.
           # @!attribute [rw] remove
           #   @return [::String]
-          #     Remove operation: A resource name for the removed conversion action is
-          #     expected, in this format:
+          #     Remove operation: A resource name for the removed conversion value rule
+          #     is expected, in this format:
           #
           #     `customers/{customer_id}/conversionValueRules/{conversion_value_rule_id}`
           class ConversionValueRuleOperation

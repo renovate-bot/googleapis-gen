@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Data used to configure a location feed populated from Google My Business
- * Locations.
+ * Data used to configure a location feed populated from Business Profile.
  *
  * Generated from protobuf message <code>google.ads.googleads.v7.resources.Feed.PlacesLocationFeedData</code>
  */
@@ -25,8 +24,8 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     protected $oauth_info = null;
     /**
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      *
      * Generated from protobuf field <code>optional string email_address = 7;</code>
      */
@@ -41,7 +40,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     protected $business_account_id = '';
     /**
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      *
@@ -49,7 +48,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     protected $business_name_filter = null;
     /**
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -58,7 +57,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      */
     private $category_filters;
     /**
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -78,24 +77,24 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
      *           This field can only be specified in a create request. All its subfields
      *           are not selectable.
      *     @type string $email_address
-     *           Email address of a Google My Business account or email address of a
-     *           manager of the Google My Business account. Required.
+     *           Email address of a Business Profile or email address of a
+     *           manager of the Business Profile. Required.
      *     @type string $business_account_id
      *           Plus page ID of the managed business whose locations should be used. If
      *           this field is not set, then all businesses accessible by the user
      *           (specified by email_address) are used.
      *           This field is mutate-only and is not selectable.
      *     @type string $business_name_filter
-     *           Used to filter Google My Business listings by business name. If
+     *           Used to filter Business Profile listings by business name. If
      *           business_name_filter is set, only listings with a matching business name
      *           are candidates to be sync'd into FeedItems.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $category_filters
-     *           Used to filter Google My Business listings by categories. If entries
+     *           Used to filter Business Profile listings by categories. If entries
      *           exist in category_filters, only listings that belong to any of the
      *           categories are candidates to be sync'd into FeedItems. If no entries
      *           exist in category_filters, then all listings are candidates for syncing.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $label_filters
-     *           Used to filter Google My Business listings by labels. If entries exist in
+     *           Used to filter Business Profile listings by labels. If entries exist in
      *           label_filters, only listings that has any of the labels set are
      *           candidates to be synchronized into FeedItems. If no entries exist in
      *           label_filters, then all listings are candidates for syncing.
@@ -147,8 +146,8 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      *
      * Generated from protobuf field <code>optional string email_address = 7;</code>
      * @return string
@@ -169,8 +168,8 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      *
      * Generated from protobuf field <code>optional string email_address = 7;</code>
      * @param string $var
@@ -217,7 +216,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      *
@@ -240,7 +239,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      *
@@ -257,7 +256,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -271,7 +270,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -289,7 +288,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -303,7 +302,7 @@ class PlacesLocationFeedData extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.

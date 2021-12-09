@@ -13,8 +13,7 @@ use Google\Protobuf\Internal\GPBUtil;
  * channel type, criterion ids, simulation type and simulation modification
  * method is detailed below respectively.
  * 1. SEARCH - 30000,30001,30002 - BID_MODIFIER - UNIFORM
- * 2. SHOPPING - 30000,30001,30002 - BID_MODIFIER - UNIFORM
- * 3. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
+ * 2. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
  *
  * Generated from protobuf message <code>google.ads.googleads.v9.resources.CampaignCriterionSimulation</code>
  */

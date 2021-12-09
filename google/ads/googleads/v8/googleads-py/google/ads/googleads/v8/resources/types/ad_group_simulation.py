@@ -41,8 +41,6 @@ class AdGroupSimulation(proto.Message):
     5. DISPLAY - CPC_BID - DEFAULT
     6. DISPLAY - CPC_BID - UNIFORM
     7. DISPLAY - TARGET_CPA - UNIFORM
-    8. VIDEO - CPV_BID - DEFAULT
-    9. VIDEO - CPV_BID - UNIFORM
 
     This message has `oneof`_ fields (mutually exclusive fields).
     For each oneof, at most one member field can be set at the same time.

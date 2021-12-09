@@ -18,6 +18,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :KEYWORD_HAS_TOO_MANY_WORDS, 6
       value :INVALID_KEYWORD_TEXT, 7
       value :NEGATIVE_KEYWORD_HAS_CPC_BID, 8
+      value :NEW_BMM_KEYWORDS_NOT_ALLOWED, 9
     end
   end
 end

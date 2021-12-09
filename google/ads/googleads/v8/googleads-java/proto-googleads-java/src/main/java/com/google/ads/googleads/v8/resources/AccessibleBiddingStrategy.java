@@ -1274,760 +1274,6 @@ private static final long serialVersionUID = 0L;
 
   }
 
-  public interface TargetSpendOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * Output only. The spend target under which to maximize clicks.
-     * A TargetSpend bidder will attempt to spend the smaller of this value
-     * or the natural throttling spend amount.
-     * If not specified, the budget is used as the spend target.
-     * This field is deprecated and should no longer be used. See
-     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-     * for details.
-     * </pre>
-     *
-     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the targetSpendMicros field is set.
-     */
-    @java.lang.Deprecated boolean hasTargetSpendMicros();
-    /**
-     * <pre>
-     * Output only. The spend target under which to maximize clicks.
-     * A TargetSpend bidder will attempt to spend the smaller of this value
-     * or the natural throttling spend amount.
-     * If not specified, the budget is used as the spend target.
-     * This field is deprecated and should no longer be used. See
-     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-     * for details.
-     * </pre>
-     *
-     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The targetSpendMicros.
-     */
-    @java.lang.Deprecated long getTargetSpendMicros();
-
-    /**
-     * <pre>
-     * Output only. Maximum bid limit that can be set by the bid strategy.
-     * The limit applies to all keywords managed by the strategy.
-     * </pre>
-     *
-     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the cpcBidCeilingMicros field is set.
-     */
-    boolean hasCpcBidCeilingMicros();
-    /**
-     * <pre>
-     * Output only. Maximum bid limit that can be set by the bid strategy.
-     * The limit applies to all keywords managed by the strategy.
-     * </pre>
-     *
-     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The cpcBidCeilingMicros.
-     */
-    long getCpcBidCeilingMicros();
-  }
-  /**
-   * <pre>
-   * An automated bid strategy that sets your bids to help get as many clicks
-   * as possible within your budget.
-   * </pre>
-   *
-   * Protobuf type {@code google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend}
-   */
-  public static final class TargetSpend extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
-      TargetSpendOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use TargetSpend.newBuilder() to construct.
-    private TargetSpend(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private TargetSpend() {
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new TargetSpend();
-    }
-
-    @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
-      return this.unknownFields;
-    }
-    private TargetSpend(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      this();
-      if (extensionRegistry == null) {
-        throw new java.lang.NullPointerException();
-      }
-      int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
-      try {
-        boolean done = false;
-        while (!done) {
-          int tag = input.readTag();
-          switch (tag) {
-            case 0:
-              done = true;
-              break;
-            case 8: {
-              bitField0_ |= 0x00000001;
-              targetSpendMicros_ = input.readInt64();
-              break;
-            }
-            case 16: {
-              bitField0_ |= 0x00000002;
-              cpcBidCeilingMicros_ = input.readInt64();
-              break;
-            }
-            default: {
-              if (!parseUnknownField(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-          }
-        }
-      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        throw e.setUnfinishedMessage(this);
-      } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
-      } finally {
-        this.unknownFields = unknownFields.build();
-        makeExtensionsImmutable();
-      }
-    }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.class, com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int TARGET_SPEND_MICROS_FIELD_NUMBER = 1;
-    private long targetSpendMicros_;
-    /**
-     * <pre>
-     * Output only. The spend target under which to maximize clicks.
-     * A TargetSpend bidder will attempt to spend the smaller of this value
-     * or the natural throttling spend amount.
-     * If not specified, the budget is used as the spend target.
-     * This field is deprecated and should no longer be used. See
-     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-     * for details.
-     * </pre>
-     *
-     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the targetSpendMicros field is set.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public boolean hasTargetSpendMicros() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <pre>
-     * Output only. The spend target under which to maximize clicks.
-     * A TargetSpend bidder will attempt to spend the smaller of this value
-     * or the natural throttling spend amount.
-     * If not specified, the budget is used as the spend target.
-     * This field is deprecated and should no longer be used. See
-     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-     * for details.
-     * </pre>
-     *
-     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The targetSpendMicros.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated public long getTargetSpendMicros() {
-      return targetSpendMicros_;
-    }
-
-    public static final int CPC_BID_CEILING_MICROS_FIELD_NUMBER = 2;
-    private long cpcBidCeilingMicros_;
-    /**
-     * <pre>
-     * Output only. Maximum bid limit that can be set by the bid strategy.
-     * The limit applies to all keywords managed by the strategy.
-     * </pre>
-     *
-     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return Whether the cpcBidCeilingMicros field is set.
-     */
-    @java.lang.Override
-    public boolean hasCpcBidCeilingMicros() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <pre>
-     * Output only. Maximum bid limit that can be set by the bid strategy.
-     * The limit applies to all keywords managed by the strategy.
-     * </pre>
-     *
-     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-     * @return The cpcBidCeilingMicros.
-     */
-    @java.lang.Override
-    public long getCpcBidCeilingMicros() {
-      return cpcBidCeilingMicros_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt64(1, targetSpendMicros_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt64(2, cpcBidCeilingMicros_);
-      }
-      unknownFields.writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, targetSpendMicros_);
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, cpcBidCeilingMicros_);
-      }
-      size += unknownFields.getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)) {
-        return super.equals(obj);
-      }
-      com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend other = (com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend) obj;
-
-      if (hasTargetSpendMicros() != other.hasTargetSpendMicros()) return false;
-      if (hasTargetSpendMicros()) {
-        if (getTargetSpendMicros()
-            != other.getTargetSpendMicros()) return false;
-      }
-      if (hasCpcBidCeilingMicros() != other.hasCpcBidCeilingMicros()) return false;
-      if (hasCpcBidCeilingMicros()) {
-        if (getCpcBidCeilingMicros()
-            != other.getCpcBidCeilingMicros()) return false;
-      }
-      if (!unknownFields.equals(other.unknownFields)) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasTargetSpendMicros()) {
-        hash = (37 * hash) + TARGET_SPEND_MICROS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getTargetSpendMicros());
-      }
-      if (hasCpcBidCeilingMicros()) {
-        hash = (37 * hash) + CPC_BID_CEILING_MICROS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getCpcBidCeilingMicros());
-      }
-      hash = (29 * hash) + unknownFields.hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * <pre>
-     * An automated bid strategy that sets your bids to help get as many clicks
-     * as possible within your budget.
-     * </pre>
-     *
-     * Protobuf type {@code google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
-        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpendOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.class, com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.Builder.class);
-      }
-
-      // Construct using com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        targetSpendMicros_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        cpcBidCeilingMicros_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00000002);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend getDefaultInstanceForType() {
-        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend build() {
-        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend buildPartial() {
-        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend result = new com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.targetSpendMicros_ = targetSpendMicros_;
-          to_bitField0_ |= 0x00000001;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.cpcBidCeilingMicros_ = cpcBidCeilingMicros_;
-          to_bitField0_ |= 0x00000002;
-        }
-        result.bitField0_ = to_bitField0_;
-        onBuilt();
-        return result;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend) {
-          return mergeFrom((com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend other) {
-        if (other == com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.getDefaultInstance()) return this;
-        if (other.hasTargetSpendMicros()) {
-          setTargetSpendMicros(other.getTargetSpendMicros());
-        }
-        if (other.hasCpcBidCeilingMicros()) {
-          setCpcBidCeilingMicros(other.getCpcBidCeilingMicros());
-        }
-        this.mergeUnknownFields(other.unknownFields);
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parsedMessage = null;
-        try {
-          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend) e.getUnfinishedMessage();
-          throw e.unwrapIOException();
-        } finally {
-          if (parsedMessage != null) {
-            mergeFrom(parsedMessage);
-          }
-        }
-        return this;
-      }
-      private int bitField0_;
-
-      private long targetSpendMicros_ ;
-      /**
-       * <pre>
-       * Output only. The spend target under which to maximize clicks.
-       * A TargetSpend bidder will attempt to spend the smaller of this value
-       * or the natural throttling spend amount.
-       * If not specified, the budget is used as the spend target.
-       * This field is deprecated and should no longer be used. See
-       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-       * for details.
-       * </pre>
-       *
-       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return Whether the targetSpendMicros field is set.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated public boolean hasTargetSpendMicros() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <pre>
-       * Output only. The spend target under which to maximize clicks.
-       * A TargetSpend bidder will attempt to spend the smaller of this value
-       * or the natural throttling spend amount.
-       * If not specified, the budget is used as the spend target.
-       * This field is deprecated and should no longer be used. See
-       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-       * for details.
-       * </pre>
-       *
-       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The targetSpendMicros.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated public long getTargetSpendMicros() {
-        return targetSpendMicros_;
-      }
-      /**
-       * <pre>
-       * Output only. The spend target under which to maximize clicks.
-       * A TargetSpend bidder will attempt to spend the smaller of this value
-       * or the natural throttling spend amount.
-       * If not specified, the budget is used as the spend target.
-       * This field is deprecated and should no longer be used. See
-       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-       * for details.
-       * </pre>
-       *
-       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The targetSpendMicros to set.
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder setTargetSpendMicros(long value) {
-        bitField0_ |= 0x00000001;
-        targetSpendMicros_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. The spend target under which to maximize clicks.
-       * A TargetSpend bidder will attempt to spend the smaller of this value
-       * or the natural throttling spend amount.
-       * If not specified, the budget is used as the spend target.
-       * This field is deprecated and should no longer be used. See
-       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-       * for details.
-       * </pre>
-       *
-       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return This builder for chaining.
-       */
-      @java.lang.Deprecated public Builder clearTargetSpendMicros() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        targetSpendMicros_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long cpcBidCeilingMicros_ ;
-      /**
-       * <pre>
-       * Output only. Maximum bid limit that can be set by the bid strategy.
-       * The limit applies to all keywords managed by the strategy.
-       * </pre>
-       *
-       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return Whether the cpcBidCeilingMicros field is set.
-       */
-      @java.lang.Override
-      public boolean hasCpcBidCeilingMicros() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <pre>
-       * Output only. Maximum bid limit that can be set by the bid strategy.
-       * The limit applies to all keywords managed by the strategy.
-       * </pre>
-       *
-       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return The cpcBidCeilingMicros.
-       */
-      @java.lang.Override
-      public long getCpcBidCeilingMicros() {
-        return cpcBidCeilingMicros_;
-      }
-      /**
-       * <pre>
-       * Output only. Maximum bid limit that can be set by the bid strategy.
-       * The limit applies to all keywords managed by the strategy.
-       * </pre>
-       *
-       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @param value The cpcBidCeilingMicros to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCpcBidCeilingMicros(long value) {
-        bitField0_ |= 0x00000002;
-        cpcBidCeilingMicros_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Output only. Maximum bid limit that can be set by the bid strategy.
-       * The limit applies to all keywords managed by the strategy.
-       * </pre>
-       *
-       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCpcBidCeilingMicros() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        cpcBidCeilingMicros_ = 0L;
-        onChanged();
-        return this;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
-    private static final com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend();
-    }
-
-    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<TargetSpend>
-        PARSER = new com.google.protobuf.AbstractParser<TargetSpend>() {
-      @java.lang.Override
-      public TargetSpend parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return new TargetSpend(input, extensionRegistry);
-      }
-    };
-
-    public static com.google.protobuf.Parser<TargetSpend> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<TargetSpend> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface TargetCpaOrBuilder extends
       // @@protoc_insertion_point(interface_extends:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetCpa)
       com.google.protobuf.MessageOrBuilder {
@@ -4039,6 +3285,760 @@ private static final long serialVersionUID = 0L;
 
     @java.lang.Override
     public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetRoas getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TargetSpendOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Output only. The spend target under which to maximize clicks.
+     * A TargetSpend bidder will attempt to spend the smaller of this value
+     * or the natural throttling spend amount.
+     * If not specified, the budget is used as the spend target.
+     * This field is deprecated and should no longer be used. See
+     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+     * for details.
+     * </pre>
+     *
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the targetSpendMicros field is set.
+     */
+    @java.lang.Deprecated boolean hasTargetSpendMicros();
+    /**
+     * <pre>
+     * Output only. The spend target under which to maximize clicks.
+     * A TargetSpend bidder will attempt to spend the smaller of this value
+     * or the natural throttling spend amount.
+     * If not specified, the budget is used as the spend target.
+     * This field is deprecated and should no longer be used. See
+     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+     * for details.
+     * </pre>
+     *
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The targetSpendMicros.
+     */
+    @java.lang.Deprecated long getTargetSpendMicros();
+
+    /**
+     * <pre>
+     * Output only. Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     * </pre>
+     *
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the cpcBidCeilingMicros field is set.
+     */
+    boolean hasCpcBidCeilingMicros();
+    /**
+     * <pre>
+     * Output only. Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     * </pre>
+     *
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The cpcBidCeilingMicros.
+     */
+    long getCpcBidCeilingMicros();
+  }
+  /**
+   * <pre>
+   * An automated bid strategy that sets your bids to help get as many clicks
+   * as possible within your budget.
+   * </pre>
+   *
+   * Protobuf type {@code google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend}
+   */
+  public static final class TargetSpend extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
+      TargetSpendOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TargetSpend.newBuilder() to construct.
+    private TargetSpend(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TargetSpend() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TargetSpend();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private TargetSpend(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 8: {
+              bitField0_ |= 0x00000001;
+              targetSpendMicros_ = input.readInt64();
+              break;
+            }
+            case 16: {
+              bitField0_ |= 0x00000002;
+              cpcBidCeilingMicros_ = input.readInt64();
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.class, com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int TARGET_SPEND_MICROS_FIELD_NUMBER = 1;
+    private long targetSpendMicros_;
+    /**
+     * <pre>
+     * Output only. The spend target under which to maximize clicks.
+     * A TargetSpend bidder will attempt to spend the smaller of this value
+     * or the natural throttling spend amount.
+     * If not specified, the budget is used as the spend target.
+     * This field is deprecated and should no longer be used. See
+     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+     * for details.
+     * </pre>
+     *
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the targetSpendMicros field is set.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public boolean hasTargetSpendMicros() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * Output only. The spend target under which to maximize clicks.
+     * A TargetSpend bidder will attempt to spend the smaller of this value
+     * or the natural throttling spend amount.
+     * If not specified, the budget is used as the spend target.
+     * This field is deprecated and should no longer be used. See
+     * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+     * for details.
+     * </pre>
+     *
+     * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The targetSpendMicros.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated public long getTargetSpendMicros() {
+      return targetSpendMicros_;
+    }
+
+    public static final int CPC_BID_CEILING_MICROS_FIELD_NUMBER = 2;
+    private long cpcBidCeilingMicros_;
+    /**
+     * <pre>
+     * Output only. Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     * </pre>
+     *
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return Whether the cpcBidCeilingMicros field is set.
+     */
+    @java.lang.Override
+    public boolean hasCpcBidCeilingMicros() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * Output only. Maximum bid limit that can be set by the bid strategy.
+     * The limit applies to all keywords managed by the strategy.
+     * </pre>
+     *
+     * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return The cpcBidCeilingMicros.
+     */
+    @java.lang.Override
+    public long getCpcBidCeilingMicros() {
+      return cpcBidCeilingMicros_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeInt64(1, targetSpendMicros_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt64(2, cpcBidCeilingMicros_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(1, targetSpendMicros_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, cpcBidCeilingMicros_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)) {
+        return super.equals(obj);
+      }
+      com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend other = (com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend) obj;
+
+      if (hasTargetSpendMicros() != other.hasTargetSpendMicros()) return false;
+      if (hasTargetSpendMicros()) {
+        if (getTargetSpendMicros()
+            != other.getTargetSpendMicros()) return false;
+      }
+      if (hasCpcBidCeilingMicros() != other.hasCpcBidCeilingMicros()) return false;
+      if (hasCpcBidCeilingMicros()) {
+        if (getCpcBidCeilingMicros()
+            != other.getCpcBidCeilingMicros()) return false;
+      }
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasTargetSpendMicros()) {
+        hash = (37 * hash) + TARGET_SPEND_MICROS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getTargetSpendMicros());
+      }
+      if (hasCpcBidCeilingMicros()) {
+        hash = (37 * hash) + CPC_BID_CEILING_MICROS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getCpcBidCeilingMicros());
+      }
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * An automated bid strategy that sets your bids to help get as many clicks
+     * as possible within your budget.
+     * </pre>
+     *
+     * Protobuf type {@code google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
+        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpendOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.class, com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.Builder.class);
+      }
+
+      // Construct using com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        targetSpendMicros_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        cpcBidCeilingMicros_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategyProto.internal_static_google_ads_googleads_v8_resources_AccessibleBiddingStrategy_TargetSpend_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend getDefaultInstanceForType() {
+        return com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend build() {
+        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend buildPartial() {
+        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend result = new com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.targetSpendMicros_ = targetSpendMicros_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.cpcBidCeilingMicros_ = cpcBidCeilingMicros_;
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend) {
+          return mergeFrom((com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend other) {
+        if (other == com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend.getDefaultInstance()) return this;
+        if (other.hasTargetSpendMicros()) {
+          setTargetSpendMicros(other.getTargetSpendMicros());
+        }
+        if (other.hasCpcBidCeilingMicros()) {
+          setCpcBidCeilingMicros(other.getCpcBidCeilingMicros());
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private long targetSpendMicros_ ;
+      /**
+       * <pre>
+       * Output only. The spend target under which to maximize clicks.
+       * A TargetSpend bidder will attempt to spend the smaller of this value
+       * or the natural throttling spend amount.
+       * If not specified, the budget is used as the spend target.
+       * This field is deprecated and should no longer be used. See
+       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+       * for details.
+       * </pre>
+       *
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the targetSpendMicros field is set.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated public boolean hasTargetSpendMicros() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <pre>
+       * Output only. The spend target under which to maximize clicks.
+       * A TargetSpend bidder will attempt to spend the smaller of this value
+       * or the natural throttling spend amount.
+       * If not specified, the budget is used as the spend target.
+       * This field is deprecated and should no longer be used. See
+       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+       * for details.
+       * </pre>
+       *
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The targetSpendMicros.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated public long getTargetSpendMicros() {
+        return targetSpendMicros_;
+      }
+      /**
+       * <pre>
+       * Output only. The spend target under which to maximize clicks.
+       * A TargetSpend bidder will attempt to spend the smaller of this value
+       * or the natural throttling spend amount.
+       * If not specified, the budget is used as the spend target.
+       * This field is deprecated and should no longer be used. See
+       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+       * for details.
+       * </pre>
+       *
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The targetSpendMicros to set.
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated public Builder setTargetSpendMicros(long value) {
+        bitField0_ |= 0x00000001;
+        targetSpendMicros_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. The spend target under which to maximize clicks.
+       * A TargetSpend bidder will attempt to spend the smaller of this value
+       * or the natural throttling spend amount.
+       * If not specified, the budget is used as the spend target.
+       * This field is deprecated and should no longer be used. See
+       * https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+       * for details.
+       * </pre>
+       *
+       * <code>optional int64 target_spend_micros = 1 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      @java.lang.Deprecated public Builder clearTargetSpendMicros() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        targetSpendMicros_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long cpcBidCeilingMicros_ ;
+      /**
+       * <pre>
+       * Output only. Maximum bid limit that can be set by the bid strategy.
+       * The limit applies to all keywords managed by the strategy.
+       * </pre>
+       *
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return Whether the cpcBidCeilingMicros field is set.
+       */
+      @java.lang.Override
+      public boolean hasCpcBidCeilingMicros() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       * Output only. Maximum bid limit that can be set by the bid strategy.
+       * The limit applies to all keywords managed by the strategy.
+       * </pre>
+       *
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return The cpcBidCeilingMicros.
+       */
+      @java.lang.Override
+      public long getCpcBidCeilingMicros() {
+        return cpcBidCeilingMicros_;
+      }
+      /**
+       * <pre>
+       * Output only. Maximum bid limit that can be set by the bid strategy.
+       * The limit applies to all keywords managed by the strategy.
+       * </pre>
+       *
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @param value The cpcBidCeilingMicros to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCpcBidCeilingMicros(long value) {
+        bitField0_ |= 0x00000002;
+        cpcBidCeilingMicros_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Output only. Maximum bid limit that can be set by the bid strategy.
+       * The limit applies to all keywords managed by the strategy.
+       * </pre>
+       *
+       * <code>optional int64 cpc_bid_ceiling_micros = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCpcBidCeilingMicros() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        cpcBidCeilingMicros_ = 0L;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend)
+    private static final com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend();
+    }
+
+    public static com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TargetSpend>
+        PARSER = new com.google.protobuf.AbstractParser<TargetSpend>() {
+      @java.lang.Override
+      public TargetSpend parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new TargetSpend(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<TargetSpend> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TargetSpend> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.ads.googleads.v8.resources.AccessibleBiddingStrategy.TargetSpend getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 

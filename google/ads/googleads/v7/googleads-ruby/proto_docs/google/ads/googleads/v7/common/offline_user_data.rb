@@ -87,6 +87,10 @@ module Google
           # @!attribute [rw] transaction_amount_micros
           #   @return [::Float]
           #     Transaction amount in micros. Required.
+          #     Transaction amount in micros needs to be greater than 1000.
+          #     If item Attributes are provided, it represents the total value of the
+          #     items, after multiplying the unit price per item by the quantity provided
+          #     in the ItemAttributes.
           # @!attribute [rw] currency_code
           #   @return [::String]
           #     Transaction currency code. ISO 4217 three-letter code is used. Required.

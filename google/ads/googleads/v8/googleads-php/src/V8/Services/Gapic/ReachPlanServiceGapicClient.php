@@ -211,7 +211,7 @@ class ReachPlanServiceGapicClient
      *
      * @param string $customerId          Required. The ID of the customer.
      * @param string $plannableLocationId Required. The ID of the location, this is one of the ids returned by
-     *                                    ListPlannableLocations.
+     *                                    [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * @param string $currencyCode        Required. Currency code.
      *                                    Three-character ISO 4217 currency code.
      * @param int    $budgetMicros        Required. Total budget.
@@ -303,7 +303,7 @@ class ReachPlanServiceGapicClient
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
-     *           If not specified, no cap is applied.
+     *           If not specified, a default of 0 (no cap) is applied.
      *
      *           This field replaces the deprecated cookie_frequency_cap field.
      *     @type int $minEffectiveFrequency
@@ -444,7 +444,7 @@ class ReachPlanServiceGapicClient
      * ```
      *
      * @param string $plannableLocationId Required. The ID of the selected location for planning. To list the available
-     *                                    plannable location ids use ListPlannableLocations.
+     *                                    plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * @param array  $optionalArgs        {
      *     Optional.
      *

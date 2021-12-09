@@ -27,8 +27,7 @@ module Google
           # method is detailed below respectively.
           #
           # 1. SEARCH - 30000,30001,30002 - BID_MODIFIER - UNIFORM
-          # 2. SHOPPING - 30000,30001,30002 - BID_MODIFIER - UNIFORM
-          # 3. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
+          # 2. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
           # @!attribute [r] resource_name
           #   @return [::String]
           #     Output only. The resource name of the campaign criterion simulation.

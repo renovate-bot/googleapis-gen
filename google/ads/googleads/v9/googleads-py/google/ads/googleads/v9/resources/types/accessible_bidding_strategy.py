@@ -159,42 +159,6 @@ class AccessibleBiddingStrategy(proto.Message):
             optional=True,
         )
 
-    class TargetSpend(proto.Message):
-        r"""An automated bid strategy that sets your bids to help get as
-        many clicks as possible within your budget.
-
-        Attributes:
-            target_spend_micros (int):
-                Output only. The spend target under which to
-                maximize clicks. A TargetSpend bidder will
-                attempt to spend the smaller of this value or
-                the natural throttling spend amount.
-                If not specified, the budget is used as the
-                spend target. This field is deprecated and
-                should no longer be used. See https://ads-
-                developers.googleblog.com/2020/05/reminder-
-                about-sunset-creation-of.html for details.
-
-                This field is a member of `oneof`_ ``_target_spend_micros``.
-            cpc_bid_ceiling_micros (int):
-                Output only. Maximum bid limit that can be
-                set by the bid strategy. The limit applies to
-                all keywords managed by the strategy.
-
-                This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
-        """
-
-        target_spend_micros = proto.Field(
-            proto.INT64,
-            number=1,
-            optional=True,
-        )
-        cpc_bid_ceiling_micros = proto.Field(
-            proto.INT64,
-            number=2,
-            optional=True,
-        )
-
     class TargetCpa(proto.Message):
         r"""An automated bid strategy that sets bids to help get as many
         conversions as possible at the target cost-per-acquisition (CPA)
@@ -254,6 +218,42 @@ class AccessibleBiddingStrategy(proto.Message):
         cpc_bid_ceiling_micros = proto.Field(
             proto.INT64,
             number=3,
+            optional=True,
+        )
+
+    class TargetSpend(proto.Message):
+        r"""An automated bid strategy that sets your bids to help get as
+        many clicks as possible within your budget.
+
+        Attributes:
+            target_spend_micros (int):
+                Output only. The spend target under which to
+                maximize clicks. A TargetSpend bidder will
+                attempt to spend the smaller of this value or
+                the natural throttling spend amount.
+                If not specified, the budget is used as the
+                spend target. This field is deprecated and
+                should no longer be used. See https://ads-
+                developers.googleblog.com/2020/05/reminder-
+                about-sunset-creation-of.html for details.
+
+                This field is a member of `oneof`_ ``_target_spend_micros``.
+            cpc_bid_ceiling_micros (int):
+                Output only. Maximum bid limit that can be
+                set by the bid strategy. The limit applies to
+                all keywords managed by the strategy.
+
+                This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
+        """
+
+        target_spend_micros = proto.Field(
+            proto.INT64,
+            number=1,
+            optional=True,
+        )
+        cpc_bid_ceiling_micros = proto.Field(
+            proto.INT64,
+            number=2,
             optional=True,
         )
 

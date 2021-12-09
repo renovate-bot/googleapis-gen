@@ -96,8 +96,7 @@ class Feed extends \Google\Protobuf\Internal\Message
      *           Output only. Status of the feed.
      *           This field is read-only.
      *     @type \Google\Ads\GoogleAds\V9\Resources\Feed\PlacesLocationFeedData $places_location_feed_data
-     *           Data used to configure a location feed populated from Google My Business
-     *           Locations.
+     *           Data used to configure a location feed populated from Business Profile.
      *     @type \Google\Ads\GoogleAds\V9\Resources\Feed\AffiliateLocationFeedData $affiliate_location_feed_data
      *           Data used to configure an affiliate location feed populated with
      *           the specified chains.
@@ -327,8 +326,7 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
      * @return \Google\Ads\GoogleAds\V9\Resources\Feed\PlacesLocationFeedData|null
@@ -344,8 +342,7 @@ class Feed extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
      * @param \Google\Ads\GoogleAds\V9\Resources\Feed\PlacesLocationFeedData $var

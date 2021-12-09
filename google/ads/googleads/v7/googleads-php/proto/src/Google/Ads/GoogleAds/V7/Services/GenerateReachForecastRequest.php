@@ -51,7 +51,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
@@ -62,6 +62,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      *
      * Generated from protobuf field <code>optional int32 min_effective_frequency = 11;</code>
      */
@@ -71,8 +72,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
      */
@@ -111,20 +110,19 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
-     *           If not specified, no cap is applied.
+     *           If not specified, a default of 0 (no cap) is applied.
      *           This field replaces the deprecated cookie_frequency_cap field.
      *     @type int $min_effective_frequency
      *           Desired minimum effective frequency (the number of times a person was
      *           exposed to the ad) for the reported reach metrics [1-10].
      *           This won't affect the targeting, but just the reporting.
      *           If not specified, a default of 1 is applied.
+     *           This field cannot be combined with the effective_frequency_limit field.
      *     @type \Google\Ads\GoogleAds\V7\Services\Targeting $targeting
      *           The targeting to be applied to all products selected in the product mix.
      *           This is planned targeting: execution details might vary based on the
      *           advertising product, please consult an implementation specialist.
      *           See specific metrics for details on how targeting affects them.
-     *           In some cases, targeting may be overridden using the
-     *           PlannedProduct.advanced_product_targeting field.
      *     @type \Google\Ads\GoogleAds\V7\Services\PlannedProduct[]|\Google\Protobuf\Internal\RepeatedField $planned_products
      *           Required. The products to be forecast.
      *           The max number of allowed planned products is 15.
@@ -288,7 +286,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
@@ -314,7 +312,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.services.FrequencyCap cookie_frequency_cap_setting = 8;</code>
@@ -334,6 +332,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      *
      * Generated from protobuf field <code>optional int32 min_effective_frequency = 11;</code>
      * @return int
@@ -358,6 +357,7 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      *
      * Generated from protobuf field <code>optional int32 min_effective_frequency = 11;</code>
      * @param int $var
@@ -376,8 +376,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
      * @return \Google\Ads\GoogleAds\V7\Services\Targeting|null
@@ -402,8 +400,6 @@ class GenerateReachForecastRequest extends \Google\Protobuf\Internal\Message
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
      * @param \Google\Ads\GoogleAds\V7\Services\Targeting $var

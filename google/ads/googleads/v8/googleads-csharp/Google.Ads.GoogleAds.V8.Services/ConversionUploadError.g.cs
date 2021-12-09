@@ -271,8 +271,8 @@ namespace Google.Ads.GoogleAds.V8.Errors {
         /// </summary>
         [pbr::OriginalName("GCLID_NOT_FOUND")] GclidNotFound = 7,
         /// <summary>
-        /// The click associated with the given gclid is owned by a customer
-        /// account that the uploading customer does not manage.
+        /// The click associated with the given gclid is owned by a customer account
+        /// that the uploading customer does not manage.
         /// </summary>
         [pbr::OriginalName("UNAUTHORIZED_CUSTOMER")] UnauthorizedCustomer = 8,
         /// <summary>
@@ -357,7 +357,7 @@ namespace Google.Ads.GoogleAds.V8.Errors {
         /// </summary>
         [pbr::OriginalName("CUSTOM_VARIABLE_VALUE_CONTAINS_PII")] CustomVariableValueContainsPii = 29,
         /// <summary>
-        /// The click associated with the given GCLID isn't from the account where
+        /// The click associated with the given gclid isn't from the account where
         /// conversion tracking is set up.
         /// </summary>
         [pbr::OriginalName("INVALID_CUSTOMER_FOR_CLICK")] InvalidCustomerForClick = 30,

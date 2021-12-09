@@ -18,7 +18,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
     /**
      * Selected product for planning. The product codes returned are within the
      * set of the ones returned by ListPlannableProducts when using the same
-     * location id.
+     * location ID.
      *
      * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      */
@@ -40,7 +40,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
      *     @type string $plannable_product_code
      *           Selected product for planning. The product codes returned are within the
      *           set of the ones returned by ListPlannableProducts when using the same
-     *           location id.
+     *           location ID.
      *     @type int|string $budget_micros
      *           The value to be allocated for the suggested product in requested currency.
      *           Amount in micros. One million is equivalent to one unit.
@@ -54,7 +54,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
     /**
      * Selected product for planning. The product codes returned are within the
      * set of the ones returned by ListPlannableProducts when using the same
-     * location id.
+     * location ID.
      *
      * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @return string
@@ -77,7 +77,7 @@ class ProductAllocation extends \Google\Protobuf\Internal\Message
     /**
      * Selected product for planning. The product codes returned are within the
      * set of the ones returned by ListPlannableProducts when using the same
-     * location id.
+     * location ID.
      *
      * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @param string $var

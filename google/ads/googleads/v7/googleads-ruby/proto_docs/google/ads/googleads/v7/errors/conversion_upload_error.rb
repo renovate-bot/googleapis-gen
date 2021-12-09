@@ -59,8 +59,8 @@ module Google
               # Ads clicks.
               GCLID_NOT_FOUND = 7
 
-              # The click associated with the given gclid is owned by a customer
-              # account that the uploading customer does not manage.
+              # The click associated with the given gclid is owned by a customer account
+              # that the uploading customer does not manage.
               UNAUTHORIZED_CUSTOMER = 8
 
               # No upload eligible conversion action that matches the provided

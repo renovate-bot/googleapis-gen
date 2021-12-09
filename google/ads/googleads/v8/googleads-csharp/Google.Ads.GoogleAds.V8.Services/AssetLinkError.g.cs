@@ -26,8 +26,8 @@ namespace Google.Ads.GoogleAds.V8.Errors {
           string.Concat(
             "CjVnb29nbGUvYWRzL2dvb2dsZWFkcy92OC9lcnJvcnMvYXNzZXRfbGlua19l",
             "cnJvci5wcm90bxIeZ29vZ2xlLmFkcy5nb29nbGVhZHMudjguZXJyb3JzGhxn",
-            "b29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIpoFChJBc3NldExpbmtFcnJv",
-            "ckVudW0igwUKDkFzc2V0TGlua0Vycm9yEg8KC1VOU1BFQ0lGSUVEEAASCwoH",
+            "b29nbGUvYXBpL2Fubm90YXRpb25zLnByb3RvIsIFChJBc3NldExpbmtFcnJv",
+            "ckVudW0iqwUKDkFzc2V0TGlua0Vycm9yEg8KC1VOU1BFQ0lGSUVEEAASCwoH",
             "VU5LTk9XThABEhcKE1BJTk5JTkdfVU5TVVBQT1JURUQQAhIaChZVTlNVUFBP",
             "UlRFRF9GSUVMRF9UWVBFEAMSKwonRklFTERfVFlQRV9JTkNPTVBBVElCTEVf",
             "V0lUSF9BU1NFVF9UWVBFEAQSLgoqRklFTERfVFlQRV9JTkNPTVBBVElCTEVf",
@@ -41,12 +41,13 @@ namespace Google.Ads.GoogleAds.V8.Errors {
             "TEVfQVNTRVRfTElOS1NfV0lUSF9GQUxMQkFDS19GT1JfVkFMSURfQ09NQklO",
             "QVRJT04QDBIZChVZT1VUVUJFX1ZJREVPX1JFTU9WRUQQDRIaChZZT1VUVUJF",
             "X1ZJREVPX1RPT19MT05HEA4SGwoXWU9VVFVCRV9WSURFT19UT09fU0hPUlQQ",
-            "DxISCg5JTlZBTElEX1NUQVRVUxARQu4BCiJjb20uZ29vZ2xlLmFkcy5nb29n",
-            "bGVhZHMudjguZXJyb3JzQhNBc3NldExpbmtFcnJvclByb3RvUAFaRGdvb2ds",
-            "ZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFwaXMvYWRzL2dvb2dsZWFk",
-            "cy92OC9lcnJvcnM7ZXJyb3JzogIDR0FBqgIeR29vZ2xlLkFkcy5Hb29nbGVB",
-            "ZHMuVjguRXJyb3JzygIeR29vZ2xlXEFkc1xHb29nbGVBZHNcVjhcRXJyb3Jz",
-            "6gIiR29vZ2xlOjpBZHM6Okdvb2dsZUFkczo6Vjg6OkVycm9yc2IGcHJvdG8z"));
+            "DxISCg5JTlZBTElEX1NUQVRVUxAREiYKIllPVVRVQkVfVklERU9fRFVSQVRJ",
+            "T05fTk9UX0RFRklORUQQEkLuAQoiY29tLmdvb2dsZS5hZHMuZ29vZ2xlYWRz",
+            "LnY4LmVycm9yc0ITQXNzZXRMaW5rRXJyb3JQcm90b1ABWkRnb29nbGUuZ29s",
+            "YW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL2Fkcy9nb29nbGVhZHMvdjgv",
+            "ZXJyb3JzO2Vycm9yc6ICA0dBQaoCHkdvb2dsZS5BZHMuR29vZ2xlQWRzLlY4",
+            "LkVycm9yc8oCHkdvb2dsZVxBZHNcR29vZ2xlQWRzXFY4XEVycm9yc+oCIkdv",
+            "b2dsZTo6QWRzOjpHb29nbGVBZHM6OlY4OjpFcnJvcnNiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
@@ -300,6 +301,13 @@ namespace Google.Ads.GoogleAds.V8.Errors {
         /// The status is invalid for the operation specified.
         /// </summary>
         [pbr::OriginalName("INVALID_STATUS")] InvalidStatus = 17,
+        /// <summary>
+        /// The YouTube video referenced in the provided asset has unknown duration.
+        /// This might be the case for a livestream video or a video being currently
+        /// uploaded to YouTube. In both cases, the video duration should eventually
+        /// get resolved.
+        /// </summary>
+        [pbr::OriginalName("YOUTUBE_VIDEO_DURATION_NOT_DEFINED")] YoutubeVideoDurationNotDefined = 18,
       }
 
     }

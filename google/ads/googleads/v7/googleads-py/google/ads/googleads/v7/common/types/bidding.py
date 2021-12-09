@@ -105,10 +105,14 @@ class MaximizeConversions(proto.Message):
 
     Attributes:
         target_cpa (int):
-            The target cost per acquisition (CPA) option.
-            This is the average amount that you would like
-            to spend per acquisition.
-            This field is read-only.
+            The target cost-per-action (CPA) option. This
+            is the average amount that you would like to
+            spend per conversion action. If set, the bid
+            strategy will get as many conversions as
+            possible at or below the target cost-per-action.
+            If the target CPA is not set, the bid strategy
+            will aim to achieve the lowest possible CPA
+            given the budget.
     """
 
     target_cpa = proto.Field(
@@ -158,13 +162,15 @@ class TargetCpa(proto.Message):
         cpc_bid_ceiling_micros (int):
             Maximum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
-            managed by the strategy.
+            managed by the strategy. This should only be set
+            for portfolio bid strategies.
 
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         cpc_bid_floor_micros (int):
             Minimum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
-            managed by the strategy.
+            managed by the strategy. This should only be set
+            for portfolio bid strategies.
 
             This field is a member of `oneof`_ ``_cpc_bid_floor_micros``.
     """
@@ -249,13 +255,15 @@ class TargetRoas(proto.Message):
         cpc_bid_ceiling_micros (int):
             Maximum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
-            managed by the strategy.
+            managed by the strategy. This should only be set
+            for portfolio bid strategies.
 
             This field is a member of `oneof`_ ``_cpc_bid_ceiling_micros``.
         cpc_bid_floor_micros (int):
             Minimum bid limit that can be set by the bid
             strategy. The limit applies to all keywords
-            managed by the strategy.
+            managed by the strategy. This should only be set
+            for portfolio bid strategies.
 
             This field is a member of `oneof`_ ``_cpc_bid_floor_micros``.
     """

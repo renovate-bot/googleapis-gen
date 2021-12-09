@@ -245,7 +245,7 @@ class LeadFormAsset(proto.Message):
             This field is a member of `oneof`_ ``_background_image_asset``.
         desired_intent (google.ads.googleads.v7.enums.types.LeadFormDesiredIntentEnum.LeadFormDesiredIntent):
             Desired intent for the lead form, e.g. more
-            volume or higher intent.
+            volume or more qualified.
         custom_disclosure (str):
             Custom disclosure shown along with Google
             disclaimer on the lead form. Accessible to

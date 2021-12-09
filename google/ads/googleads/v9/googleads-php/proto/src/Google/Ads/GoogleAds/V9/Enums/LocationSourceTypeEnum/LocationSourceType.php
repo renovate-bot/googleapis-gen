@@ -26,8 +26,7 @@ class LocationSourceType
      */
     const UNKNOWN = 1;
     /**
-     * Locations associated with the customer's linked Google My Business
-     * account.
+     * Locations associated with the customer's linked Business Profile.
      *
      * Generated from protobuf enum <code>GOOGLE_MY_BUSINESS = 2;</code>
      */

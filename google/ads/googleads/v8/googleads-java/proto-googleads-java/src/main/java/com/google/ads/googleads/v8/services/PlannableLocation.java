@@ -226,10 +226,11 @@ private static final long serialVersionUID = 0L;
   private long parentCountryId_;
   /**
    * <pre>
-   * The parent country code, not present if location is a country.
-   * If present will always be a criterion id: additional information, such as
-   * country name are returned both via ListPlannableLocations or directly by
-   * accessing GeoTargetConstantService with the criterion id.
+   * The parent country, not present if location is a country.
+   * If present will always be a GeoTargetConstant ID. Additional information,
+   * such as country name is provided by
+   * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+   * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
    * </pre>
    *
    * <code>optional int64 parent_country_id = 6;</code>
@@ -241,10 +242,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The parent country code, not present if location is a country.
-   * If present will always be a criterion id: additional information, such as
-   * country name are returned both via ListPlannableLocations or directly by
-   * accessing GeoTargetConstantService with the criterion id.
+   * The parent country, not present if location is a country.
+   * If present will always be a GeoTargetConstant ID. Additional information,
+   * such as country name is provided by
+   * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+   * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
    * </pre>
    *
    * <code>optional int64 parent_country_id = 6;</code>
@@ -844,10 +846,11 @@ private static final long serialVersionUID = 0L;
     private long parentCountryId_ ;
     /**
      * <pre>
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      * </pre>
      *
      * <code>optional int64 parent_country_id = 6;</code>
@@ -859,10 +862,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      * </pre>
      *
      * <code>optional int64 parent_country_id = 6;</code>
@@ -874,10 +878,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      * </pre>
      *
      * <code>optional int64 parent_country_id = 6;</code>
@@ -892,10 +897,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The parent country code, not present if location is a country.
-     * If present will always be a criterion id: additional information, such as
-     * country name are returned both via ListPlannableLocations or directly by
-     * accessing GeoTargetConstantService with the criterion id.
+     * The parent country, not present if location is a country.
+     * If present will always be a GeoTargetConstant ID. Additional information,
+     * such as country name is provided by
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations] or directly by accessing
+     * [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
      * </pre>
      *
      * <code>optional int64 parent_country_id = 6;</code>

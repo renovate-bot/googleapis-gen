@@ -265,8 +265,8 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         /// </summary>
         [pbr::OriginalName("GCLID_NOT_FOUND")] GclidNotFound = 7,
         /// <summary>
-        /// The click associated with the given gclid is owned by a customer
-        /// account that the uploading customer does not manage.
+        /// The click associated with the given gclid is owned by a customer account
+        /// that the uploading customer does not manage.
         /// </summary>
         [pbr::OriginalName("UNAUTHORIZED_CUSTOMER")] UnauthorizedCustomer = 8,
         /// <summary>

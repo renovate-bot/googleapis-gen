@@ -420,6 +420,37 @@ class Campaign(proto.Message):
             optional=True,
         )
 
+    class SelectiveOptimization(proto.Message):
+        r"""Selective optimization setting for this campaign, which
+        includes a set of conversion actions to optimize this campaign
+        towards.
+
+        Attributes:
+            conversion_actions (Sequence[str]):
+                The selected set of conversion actions for
+                optimizing this campaign.
+        """
+
+        conversion_actions = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
+
+    class OptimizationGoalSetting(proto.Message):
+        r"""Optimization goal setting for this campaign, which includes a
+        set of optimization goal types.
+
+        Attributes:
+            optimization_goal_types (Sequence[google.ads.googleads.v7.enums.types.OptimizationGoalTypeEnum.OptimizationGoalType]):
+                The list of optimization goal types.
+        """
+
+        optimization_goal_types = proto.RepeatedField(
+            proto.ENUM,
+            number=1,
+            enum=optimization_goal_type.OptimizationGoalTypeEnum.OptimizationGoalType,
+        )
+
     class ShoppingSetting(proto.Message):
         r"""The setting for Shopping campaigns. Defines the universe of
         products that can be advertised by the campaign, and how this
@@ -433,11 +464,11 @@ class Campaign(proto.Message):
 
                 This field is a member of `oneof`_ ``_merchant_id``.
             sales_country (str):
-                Immutable. Sales country of products to
-                include in the campaign. This field is required
-                for Shopping campaigns. This field is immutable.
-                This field is optional for non-Shopping
-                campaigns, but it must be equal to 'ZZ' if set.
+                Sales country of products to include in the
+                campaign. This field is required for Shopping
+                campaigns. This field is optional for non-
+                Shopping campaigns, but it must be equal to 'ZZ'
+                if set.
 
                 This field is a member of `oneof`_ ``_sales_country``.
             campaign_priority (int):
@@ -501,40 +532,6 @@ class Campaign(proto.Message):
             enum=gage_negative_geo_target_type.NegativeGeoTargetTypeEnum.NegativeGeoTargetType,
         )
 
-    class AppCampaignSetting(proto.Message):
-        r"""Campaign-level settings for App Campaigns.
-
-        Attributes:
-            bidding_strategy_goal_type (google.ads.googleads.v7.enums.types.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType):
-                Represents the goal which the bidding
-                strategy of this app campaign should optimize
-                towards.
-            app_id (str):
-                Immutable. A string that uniquely identifies
-                a mobile application.
-
-                This field is a member of `oneof`_ ``_app_id``.
-            app_store (google.ads.googleads.v7.enums.types.AppCampaignAppStoreEnum.AppCampaignAppStore):
-                Immutable. The application store that
-                distributes this specific app.
-        """
-
-        bidding_strategy_goal_type = proto.Field(
-            proto.ENUM,
-            number=1,
-            enum=app_campaign_bidding_strategy_goal_type.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType,
-        )
-        app_id = proto.Field(
-            proto.STRING,
-            number=4,
-            optional=True,
-        )
-        app_store = proto.Field(
-            proto.ENUM,
-            number=3,
-            enum=app_campaign_app_store.AppCampaignAppStoreEnum.AppCampaignAppStore,
-        )
-
     class LocalCampaignSetting(proto.Message):
         r"""Campaign setting for local campaigns.
 
@@ -574,35 +571,38 @@ class Campaign(proto.Message):
             enum=gage_vanity_pharma_text.VanityPharmaTextEnum.VanityPharmaText,
         )
 
-    class SelectiveOptimization(proto.Message):
-        r"""Selective optimization setting for this campaign, which
-        includes a set of conversion actions to optimize this campaign
-        towards.
+    class AppCampaignSetting(proto.Message):
+        r"""Campaign-level settings for App Campaigns.
 
         Attributes:
-            conversion_actions (Sequence[str]):
-                The selected set of conversion actions for
-                optimizing this campaign.
+            bidding_strategy_goal_type (google.ads.googleads.v7.enums.types.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType):
+                Represents the goal which the bidding
+                strategy of this app campaign should optimize
+                towards.
+            app_id (str):
+                Immutable. A string that uniquely identifies
+                a mobile application.
+
+                This field is a member of `oneof`_ ``_app_id``.
+            app_store (google.ads.googleads.v7.enums.types.AppCampaignAppStoreEnum.AppCampaignAppStore):
+                Immutable. The application store that
+                distributes this specific app.
         """
 
-        conversion_actions = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
-
-    class OptimizationGoalSetting(proto.Message):
-        r"""Optimization goal setting for this campaign, which includes a
-        set of optimization goal types.
-
-        Attributes:
-            optimization_goal_types (Sequence[google.ads.googleads.v7.enums.types.OptimizationGoalTypeEnum.OptimizationGoalType]):
-                The list of optimization goal types.
-        """
-
-        optimization_goal_types = proto.RepeatedField(
+        bidding_strategy_goal_type = proto.Field(
             proto.ENUM,
             number=1,
-            enum=optimization_goal_type.OptimizationGoalTypeEnum.OptimizationGoalType,
+            enum=app_campaign_bidding_strategy_goal_type.AppCampaignBiddingStrategyGoalTypeEnum.AppCampaignBiddingStrategyGoalType,
+        )
+        app_id = proto.Field(
+            proto.STRING,
+            number=4,
+            optional=True,
+        )
+        app_store = proto.Field(
+            proto.ENUM,
+            number=3,
+            enum=app_campaign_app_store.AppCampaignAppStoreEnum.AppCampaignAppStore,
         )
 
     resource_name = proto.Field(

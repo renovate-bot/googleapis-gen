@@ -32,7 +32,7 @@ class LeadFormDesiredIntent
      */
     const LOW_INTENT = 2;
     /**
-     * Only leads with a high level of intent are desired.
+     * Deliver leads that are more qualified.
      *
      * Generated from protobuf enum <code>HIGH_INTENT = 3;</code>
      */

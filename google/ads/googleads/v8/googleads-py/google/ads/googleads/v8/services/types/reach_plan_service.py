@@ -96,12 +96,12 @@ class PlannableLocation(proto.Message):
 
             This field is a member of `oneof`_ ``_name``.
         parent_country_id (int):
-            The parent country code, not present if
-            location is a country. If present will always be
-            a criterion id: additional information, such as
-            country name are returned both via
-            ListPlannableLocations or directly by accessing
-            GeoTargetConstantService with the criterion id.
+            The parent country, not present if location is a country. If
+            present will always be a GeoTargetConstant ID. Additional
+            information, such as country name is provided by
+            [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations]
+            or directly by accessing
+            [GeoTargetConstantService.GetGeoTargetConstant][google.ads.googleads.v8.services.GeoTargetConstantService.GetGeoTargetConstant].
 
             This field is a member of `oneof`_ ``_parent_country_id``.
     """
@@ -128,9 +128,9 @@ class ListPlannableProductsRequest(proto.Message):
 
     Attributes:
         plannable_location_id (str):
-            Required. The ID of the selected location for
-            planning. To list the available plannable
-            location ids use ListPlannableLocations.
+            Required. The ID of the selected location for planning. To
+            list the available plannable location ids use
+            [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
     """
 
     plannable_location_id = proto.Field(
@@ -200,7 +200,10 @@ class PlannableTargeting(proto.Message):
         genders (Sequence[google.ads.googleads.v8.common.types.GenderInfo]):
             Targetable genders for the ad product.
         devices (Sequence[google.ads.googleads.v8.common.types.DeviceInfo]):
-            Targetable devices for the ad product.
+            Targetable devices for the ad product. TABLET device
+            targeting is automatically applied to reported metrics when
+            MOBILE targeting is selected for CPM_MASTHEAD,
+            GOOGLE_PREFERRED_BUMPER and GOOGLE_PREFERRED_SHORT products.
         networks (Sequence[google.ads.googleads.v8.enums.types.ReachPlanNetworkEnum.ReachPlanNetwork]):
             Targetable networks for the ad product.
     """
@@ -235,8 +238,9 @@ class GenerateProductMixIdeasRequest(proto.Message):
         customer_id (str):
             Required. The ID of the customer.
         plannable_location_id (str):
-            Required. The ID of the location, this is one
-            of the ids returned by ListPlannableLocations.
+            Required. The ID of the location, this is one of the ids
+            returned by
+            [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
         currency_code (str):
             Required. Currency code.
             Three-character ISO 4217 currency code.
@@ -355,7 +359,7 @@ class ProductAllocation(proto.Message):
             Selected product for planning. The product
             codes returned are within the set of the ones
             returned by ListPlannableProducts when using the
-            same location id.
+            same location ID.
 
             This field is a member of `oneof`_ ``_plannable_product_code``.
         budget_micros (int):
@@ -409,7 +413,7 @@ class GenerateReachForecastRequest(proto.Message):
             exposed in Google Ads when creating a campaign, it
             represents the maximum number of times an ad can be shown to
             the same user during a specified time interval. If not
-            specified, no cap is applied.
+            specified, a default of 0 (no cap) is applied.
 
             This field replaces the deprecated cookie_frequency_cap
             field.
@@ -543,29 +547,29 @@ class Targeting(proto.Message):
 
     Attributes:
         plannable_location_id (str):
-            Required. The ID of the selected location.
-            Plannable locations ID can be obtained from
-            ListPlannableLocations.
+            Required. The ID of the selected location. Plannable
+            location IDs can be obtained from
+            [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
 
             This field is a member of `oneof`_ ``_plannable_location_id``.
         age_range (google.ads.googleads.v8.enums.types.ReachPlanAgeRangeEnum.ReachPlanAgeRange):
             Targeted age range.
-            If not specified, targets all age ranges.
+            An unset value is equivalent to targeting all
+            ages.
         genders (Sequence[google.ads.googleads.v8.common.types.GenderInfo]):
             Targeted genders.
-            If not specified, targets all genders.
+            An unset value is equivalent to targeting MALE
+            and FEMALE.
         devices (Sequence[google.ads.googleads.v8.common.types.DeviceInfo]):
-            Targeted devices.
-            If not specified, targets all applicable
-            devices. Applicable devices vary by product and
-            region and can be obtained from
-            ListPlannableProducts.
+            Targeted devices. If not specified, targets all applicable
+            devices. Applicable devices vary by product and region and
+            can be obtained from
+            [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
         network (google.ads.googleads.v8.enums.types.ReachPlanNetworkEnum.ReachPlanNetwork):
-            Targetable network for the ad product.
-            If not specified, targets all applicable
-            networks. Applicable networks vary by product
-            and region and can be obtained from
-            ListPlannableProducts.
+            Targetable network for the ad product. If not specified,
+            targets all applicable networks. Applicable networks vary by
+            product and region and can be obtained from
+            [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
     """
 
     plannable_location_id = proto.Field(
@@ -602,6 +606,8 @@ class CampaignDuration(proto.Message):
         duration_in_days (int):
             The duration value in days.
 
+            This field cannot be combined with the date_range field.
+
             This field is a member of `oneof`_ ``_duration_in_days``.
     """
 
@@ -617,10 +623,10 @@ class PlannedProduct(proto.Message):
 
     Attributes:
         plannable_product_code (str):
-            Required. Selected product for planning.
-            The code associated with the ad product. E.g.
-            Trueview, Bumper To list the available plannable
-            product codes use ListPlannableProducts.
+            Required. Selected product for planning. The code associated
+            with the ad product. E.g. Trueview, Bumper To list the
+            available plannable product codes use
+            [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
 
             This field is a member of `oneof`_ ``_plannable_product_code``.
         budget_micros (int):
@@ -810,7 +816,7 @@ class PlannedProductReachForecast(proto.Message):
             Selected product for planning. The product
             codes returned are within the set of the ones
             returned by ListPlannableProducts when using the
-            same location id.
+            same location ID.
         cost_micros (int):
             The cost in micros. This may differ from the
             product's input allocation if one or more

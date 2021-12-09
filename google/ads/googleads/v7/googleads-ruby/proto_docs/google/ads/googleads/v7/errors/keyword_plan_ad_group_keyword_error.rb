@@ -58,6 +58,9 @@ module Google
 
               # Cpc Bid set for negative keyword.
               NEGATIVE_KEYWORD_HAS_CPC_BID = 8
+
+              # New broad match modifier (BMM) KpAdGroupKeywords are not allowed.
+              NEW_BMM_KEYWORDS_NOT_ALLOWED = 9
             end
           end
         end

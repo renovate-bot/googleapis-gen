@@ -48,7 +48,7 @@ function main(customerId, campaignDuration, plannedProducts) {
    *  This is equivalent to the frequency cap exposed in Google Ads when creating
    *  a campaign, it represents the maximum number of times an ad can be shown to
    *  the same user during a specified time interval.
-   *  If not specified, no cap is applied.
+   *  If not specified, a default of 0 (no cap) is applied.
    *  This field replaces the deprecated cookie_frequency_cap field.
    */
   // const cookieFrequencyCapSetting = {}

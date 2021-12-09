@@ -211,8 +211,8 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      * </pre>
      *
      * <code>optional string email_address = 7;</code>
@@ -221,8 +221,8 @@ private static final long serialVersionUID = 0L;
     boolean hasEmailAddress();
     /**
      * <pre>
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      * </pre>
      *
      * <code>optional string email_address = 7;</code>
@@ -231,8 +231,8 @@ private static final long serialVersionUID = 0L;
     java.lang.String getEmailAddress();
     /**
      * <pre>
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      * </pre>
      *
      * <code>optional string email_address = 7;</code>
@@ -269,7 +269,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      * </pre>
@@ -280,7 +280,7 @@ private static final long serialVersionUID = 0L;
     boolean hasBusinessNameFilter();
     /**
      * <pre>
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      * </pre>
@@ -291,7 +291,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getBusinessNameFilter();
     /**
      * <pre>
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      * </pre>
@@ -304,7 +304,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -317,7 +317,7 @@ private static final long serialVersionUID = 0L;
         getCategoryFiltersList();
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -329,7 +329,7 @@ private static final long serialVersionUID = 0L;
     int getCategoryFiltersCount();
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -342,7 +342,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getCategoryFilters(int index);
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -357,7 +357,7 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -370,7 +370,7 @@ private static final long serialVersionUID = 0L;
         getLabelFiltersList();
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -382,7 +382,7 @@ private static final long serialVersionUID = 0L;
     int getLabelFiltersCount();
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -395,7 +395,7 @@ private static final long serialVersionUID = 0L;
     java.lang.String getLabelFilters(int index);
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -410,8 +410,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * Protobuf type {@code google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData}
@@ -1713,8 +1712,8 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object emailAddress_;
     /**
      * <pre>
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      * </pre>
      *
      * <code>optional string email_address = 7;</code>
@@ -1726,8 +1725,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      * </pre>
      *
      * <code>optional string email_address = 7;</code>
@@ -1748,8 +1747,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Email address of a Google My Business account or email address of a
-     * manager of the Google My Business account. Required.
+     * Email address of a Business Profile or email address of a
+     * manager of the Business Profile. Required.
      * </pre>
      *
      * <code>optional string email_address = 7;</code>
@@ -1826,7 +1825,7 @@ private static final long serialVersionUID = 0L;
     private volatile java.lang.Object businessNameFilter_;
     /**
      * <pre>
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      * </pre>
@@ -1840,7 +1839,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      * </pre>
@@ -1863,7 +1862,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by business name. If
+     * Used to filter Business Profile listings by business name. If
      * business_name_filter is set, only listings with a matching business name
      * are candidates to be sync'd into FeedItems.
      * </pre>
@@ -1890,7 +1889,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.LazyStringList categoryFilters_;
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -1905,7 +1904,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -1919,7 +1918,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -1934,7 +1933,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by categories. If entries
+     * Used to filter Business Profile listings by categories. If entries
      * exist in category_filters, only listings that belong to any of the
      * categories are candidates to be sync'd into FeedItems. If no entries
      * exist in category_filters, then all listings are candidates for syncing.
@@ -1953,7 +1952,7 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.LazyStringList labelFilters_;
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -1968,7 +1967,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -1982,7 +1981,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -1997,7 +1996,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Used to filter Google My Business listings by labels. If entries exist in
+     * Used to filter Business Profile listings by labels. If entries exist in
      * label_filters, only listings that has any of the labels set are
      * candidates to be synchronized into FeedItems. If no entries exist in
      * label_filters, then all listings are candidates for syncing.
@@ -2248,8 +2247,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * Protobuf type {@code google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData}
@@ -2649,8 +2647,8 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object emailAddress_ = "";
       /**
        * <pre>
-       * Email address of a Google My Business account or email address of a
-       * manager of the Google My Business account. Required.
+       * Email address of a Business Profile or email address of a
+       * manager of the Business Profile. Required.
        * </pre>
        *
        * <code>optional string email_address = 7;</code>
@@ -2661,8 +2659,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Email address of a Google My Business account or email address of a
-       * manager of the Google My Business account. Required.
+       * Email address of a Business Profile or email address of a
+       * manager of the Business Profile. Required.
        * </pre>
        *
        * <code>optional string email_address = 7;</code>
@@ -2682,8 +2680,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Email address of a Google My Business account or email address of a
-       * manager of the Google My Business account. Required.
+       * Email address of a Business Profile or email address of a
+       * manager of the Business Profile. Required.
        * </pre>
        *
        * <code>optional string email_address = 7;</code>
@@ -2704,8 +2702,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Email address of a Google My Business account or email address of a
-       * manager of the Google My Business account. Required.
+       * Email address of a Business Profile or email address of a
+       * manager of the Business Profile. Required.
        * </pre>
        *
        * <code>optional string email_address = 7;</code>
@@ -2724,8 +2722,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Email address of a Google My Business account or email address of a
-       * manager of the Google My Business account. Required.
+       * Email address of a Business Profile or email address of a
+       * manager of the Business Profile. Required.
        * </pre>
        *
        * <code>optional string email_address = 7;</code>
@@ -2739,8 +2737,8 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Email address of a Google My Business account or email address of a
-       * manager of the Google My Business account. Required.
+       * Email address of a Business Profile or email address of a
+       * manager of the Business Profile. Required.
        * </pre>
        *
        * <code>optional string email_address = 7;</code>
@@ -2873,7 +2871,7 @@ private static final long serialVersionUID = 0L;
       private java.lang.Object businessNameFilter_ = "";
       /**
        * <pre>
-       * Used to filter Google My Business listings by business name. If
+       * Used to filter Business Profile listings by business name. If
        * business_name_filter is set, only listings with a matching business name
        * are candidates to be sync'd into FeedItems.
        * </pre>
@@ -2886,7 +2884,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by business name. If
+       * Used to filter Business Profile listings by business name. If
        * business_name_filter is set, only listings with a matching business name
        * are candidates to be sync'd into FeedItems.
        * </pre>
@@ -2908,7 +2906,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by business name. If
+       * Used to filter Business Profile listings by business name. If
        * business_name_filter is set, only listings with a matching business name
        * are candidates to be sync'd into FeedItems.
        * </pre>
@@ -2931,7 +2929,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by business name. If
+       * Used to filter Business Profile listings by business name. If
        * business_name_filter is set, only listings with a matching business name
        * are candidates to be sync'd into FeedItems.
        * </pre>
@@ -2952,7 +2950,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by business name. If
+       * Used to filter Business Profile listings by business name. If
        * business_name_filter is set, only listings with a matching business name
        * are candidates to be sync'd into FeedItems.
        * </pre>
@@ -2968,7 +2966,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by business name. If
+       * Used to filter Business Profile listings by business name. If
        * business_name_filter is set, only listings with a matching business name
        * are candidates to be sync'd into FeedItems.
        * </pre>
@@ -2998,7 +2996,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3013,7 +3011,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3027,7 +3025,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3042,7 +3040,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3058,7 +3056,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3081,7 +3079,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3103,7 +3101,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3123,7 +3121,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3140,7 +3138,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by categories. If entries
+       * Used to filter Business Profile listings by categories. If entries
        * exist in category_filters, only listings that belong to any of the
        * categories are candidates to be sync'd into FeedItems. If no entries
        * exist in category_filters, then all listings are candidates for syncing.
@@ -3171,7 +3169,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3186,7 +3184,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3200,7 +3198,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3215,7 +3213,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3231,7 +3229,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3254,7 +3252,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3276,7 +3274,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3296,7 +3294,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -3313,7 +3311,7 @@ private static final long serialVersionUID = 0L;
       }
       /**
        * <pre>
-       * Used to filter Google My Business listings by labels. If entries exist in
+       * Used to filter Business Profile listings by labels. If entries exist in
        * label_filters, only listings that has any of the labels set are
        * candidates to be synchronized into FeedItems. If no entries exist in
        * label_filters, then all listings are candidates for syncing.
@@ -4598,8 +4596,7 @@ private static final long serialVersionUID = 0L;
   public static final int PLACES_LOCATION_FEED_DATA_FIELD_NUMBER = 6;
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -4611,8 +4608,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -4627,8 +4623,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6400,8 +6395,7 @@ private static final long serialVersionUID = 0L;
         com.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData, com.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData.Builder, com.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedDataOrBuilder> placesLocationFeedDataBuilder_;
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6413,8 +6407,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6436,8 +6429,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6457,8 +6449,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6476,8 +6467,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6503,8 +6493,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6527,8 +6516,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6538,8 +6526,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -6557,8 +6544,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Data used to configure a location feed populated from Google My Business
-     * Locations.
+     * Data used to configure a location feed populated from Business Profile.
      * </pre>
      *
      * <code>.google.ads.googleads.v9.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>

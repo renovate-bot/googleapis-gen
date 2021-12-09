@@ -23,7 +23,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
     protected $customer_id = '';
     /**
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -61,7 +61,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
      *           Required. The ID of the customer.
      *     @type string $plannable_location_id
      *           Required. The ID of the location, this is one of the ids returned by
-     *           ListPlannableLocations.
+     *           [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      *     @type string $currency_code
      *           Required. Currency code.
      *           Three-character ISO 4217 currency code.
@@ -107,7 +107,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -119,7 +119,7 @@ class GenerateProductMixIdeasRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. The ID of the location, this is one of the ids returned by
-     * ListPlannableLocations.
+     * [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>string plannable_location_id = 6 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

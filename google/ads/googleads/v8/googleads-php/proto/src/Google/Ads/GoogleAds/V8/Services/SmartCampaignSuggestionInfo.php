@@ -64,11 +64,11 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\BusinessContext $business_context
      *           Optional. Context describing the business to advertise.
      *     @type int|string $business_location_id
-     *           Optional. The ID of the Google My Business (GMB) Location.
-     *           The location ID can be fetched by GMB API with its form:
+     *           Optional. The ID of the Business Profile location.
+     *           The location ID can be fetched by Business Profile API with its form:
      *           accounts/{accountId}/locations/{locationId}. The last {locationId}
-     *           component from the GMB API represents the business_location_id.
-     *           See the [Google My Business API]
+     *           component from the Business Profile API represents the
+     *           business_location_id. See the [Business Profile API]
      *           (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *     @type \Google\Ads\GoogleAds\V8\Services\SmartCampaignSuggestionInfo\LocationList $location_list
      *           Optional. The targeting geo location by locations.
@@ -221,11 +221,11 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * Optional. The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *
      * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -242,11 +242,11 @@ class SmartCampaignSuggestionInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * Optional. The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *
      * Generated from protobuf field <code>int64 business_location_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -17,16 +17,24 @@ class Forecast extends \Google\Protobuf\Internal\Message
 {
     /**
      * Number of unique people reached at least
-     * GenerateReachForecastRequest.min_effective_frequency times that exactly
+     * GenerateReachForecastRequest.min_effective_frequency or
+     * GenerateReachForecastRequest.effective_frequency_limit times that exactly
      * matches the Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the on_target_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>optional int64 on_target_reach = 5;</code>
      */
     protected $on_target_reach = null;
     /**
      * Total number of unique people reached at least
-     * GenerateReachForecastRequest.min_effective_frequency times. This includes
+     * GenerateReachForecastRequest.min_effective_frequency or
+     * GenerateReachForecastRequest.effective_frequency_limit times. This includes
      * people that may fall outside the specified Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the total_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>optional int64 total_reach = 6;</code>
      */
@@ -63,12 +71,20 @@ class Forecast extends \Google\Protobuf\Internal\Message
      *
      *     @type int|string $on_target_reach
      *           Number of unique people reached at least
-     *           GenerateReachForecastRequest.min_effective_frequency times that exactly
+     *           GenerateReachForecastRequest.min_effective_frequency or
+     *           GenerateReachForecastRequest.effective_frequency_limit times that exactly
      *           matches the Targeting.
+     *           Note that a minimum number of unique people must be reached in order for
+     *           data to be reported. If the minimum number is not met, the on_target_reach
+     *           value will be rounded to 0.
      *     @type int|string $total_reach
      *           Total number of unique people reached at least
-     *           GenerateReachForecastRequest.min_effective_frequency times. This includes
+     *           GenerateReachForecastRequest.min_effective_frequency or
+     *           GenerateReachForecastRequest.effective_frequency_limit times. This includes
      *           people that may fall outside the specified Targeting.
+     *           Note that a minimum number of unique people must be reached in order for
+     *           data to be reported. If the minimum number is not met, the total_reach
+     *           value will be rounded to 0.
      *     @type int|string $on_target_impressions
      *           Number of ad impressions that exactly matches the Targeting.
      *     @type int|string $total_impressions
@@ -89,8 +105,12 @@ class Forecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of unique people reached at least
-     * GenerateReachForecastRequest.min_effective_frequency times that exactly
+     * GenerateReachForecastRequest.min_effective_frequency or
+     * GenerateReachForecastRequest.effective_frequency_limit times that exactly
      * matches the Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the on_target_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>optional int64 on_target_reach = 5;</code>
      * @return int|string
@@ -112,8 +132,12 @@ class Forecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Number of unique people reached at least
-     * GenerateReachForecastRequest.min_effective_frequency times that exactly
+     * GenerateReachForecastRequest.min_effective_frequency or
+     * GenerateReachForecastRequest.effective_frequency_limit times that exactly
      * matches the Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the on_target_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>optional int64 on_target_reach = 5;</code>
      * @param int|string $var
@@ -129,8 +153,12 @@ class Forecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Total number of unique people reached at least
-     * GenerateReachForecastRequest.min_effective_frequency times. This includes
+     * GenerateReachForecastRequest.min_effective_frequency or
+     * GenerateReachForecastRequest.effective_frequency_limit times. This includes
      * people that may fall outside the specified Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the total_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>optional int64 total_reach = 6;</code>
      * @return int|string
@@ -152,8 +180,12 @@ class Forecast extends \Google\Protobuf\Internal\Message
 
     /**
      * Total number of unique people reached at least
-     * GenerateReachForecastRequest.min_effective_frequency times. This includes
+     * GenerateReachForecastRequest.min_effective_frequency or
+     * GenerateReachForecastRequest.effective_frequency_limit times. This includes
      * people that may fall outside the specified Targeting.
+     * Note that a minimum number of unique people must be reached in order for
+     * data to be reported. If the minimum number is not met, the total_reach
+     * value will be rounded to 0.
      *
      * Generated from protobuf field <code>optional int64 total_reach = 6;</code>
      * @param int|string $var

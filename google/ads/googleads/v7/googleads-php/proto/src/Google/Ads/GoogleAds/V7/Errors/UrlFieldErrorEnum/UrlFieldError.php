@@ -321,7 +321,7 @@ class UrlFieldError
      */
     const INVALID_TAG_IN_FINAL_URL_SUFFIX = 51;
     /**
-     * The top level domain is invalid, e.g, not a public top level domain
+     * The top level domain is invalid, e.g. not a public top level domain
      * listed in publicsuffix.org.
      *
      * Generated from protobuf enum <code>INVALID_TOP_LEVEL_DOMAIN = 53;</code>

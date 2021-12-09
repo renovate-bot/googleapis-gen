@@ -70,11 +70,11 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
      *     @type string $business_name
      *           The name of the business.
      *     @type int|string $business_location_id
-     *           The ID of the Google My Business (GMB) Location.
-     *           The location ID can be fetched by GMB API with its form:
+     *           The ID of the Business Profile location.
+     *           The location ID can be fetched by Business Profile API with its form:
      *           accounts/{accountId}/locations/{locationId}. The last {locationId}
-     *           component from the GMB API represents the business_location_id.
-     *           See the [Google My Business API]
+     *           component from the Business Profile API represents the
+     *           business_location_id. See the [Business Profile API]
      *           (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      * }
      */
@@ -259,11 +259,11 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *
      * Generated from protobuf field <code>int64 business_location_id = 6;</code>
@@ -280,11 +280,11 @@ class SmartCampaignSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      *
      * Generated from protobuf field <code>int64 business_location_id = 6;</code>

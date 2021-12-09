@@ -19,7 +19,7 @@ class PlannedProductReachForecast extends \Google\Protobuf\Internal\Message
     /**
      * Selected product for planning. The product codes returned are within the
      * set of the ones returned by ListPlannableProducts when using the same
-     * location id.
+     * location ID.
      *
      * Generated from protobuf field <code>string plannable_product_code = 1;</code>
      */
@@ -48,7 +48,7 @@ class PlannedProductReachForecast extends \Google\Protobuf\Internal\Message
      *     @type string $plannable_product_code
      *           Selected product for planning. The product codes returned are within the
      *           set of the ones returned by ListPlannableProducts when using the same
-     *           location id.
+     *           location ID.
      *     @type int|string $cost_micros
      *           The cost in micros. This may differ from the product's input allocation
      *           if one or more planned products cannot fulfill the budget because of
@@ -65,7 +65,7 @@ class PlannedProductReachForecast extends \Google\Protobuf\Internal\Message
     /**
      * Selected product for planning. The product codes returned are within the
      * set of the ones returned by ListPlannableProducts when using the same
-     * location id.
+     * location ID.
      *
      * Generated from protobuf field <code>string plannable_product_code = 1;</code>
      * @return string
@@ -78,7 +78,7 @@ class PlannedProductReachForecast extends \Google\Protobuf\Internal\Message
     /**
      * Selected product for planning. The product codes returned are within the
      * set of the ones returned by ListPlannableProducts when using the same
-     * location id.
+     * location ID.
      *
      * Generated from protobuf field <code>string plannable_product_code = 1;</code>
      * @param string $var

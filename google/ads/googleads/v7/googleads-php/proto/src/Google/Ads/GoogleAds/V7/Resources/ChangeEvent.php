@@ -24,7 +24,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The resource name of the change event.
      * Change event resource names have the form:
-     * `customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}`
+     * `customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      */
@@ -118,7 +118,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
      *     @type string $resource_name
      *           Output only. The resource name of the change event.
      *           Change event resource names have the form:
-     *           `customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}`
+     *           `customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}`
      *     @type string $change_date_time
      *           Output only. Time at which the change was committed on this resource.
      *     @type int $change_resource_type
@@ -156,7 +156,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The resource name of the change event.
      * Change event resource names have the form:
-     * `customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}`
+     * `customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @return string
@@ -169,7 +169,7 @@ class ChangeEvent extends \Google\Protobuf\Internal\Message
     /**
      * Output only. The resource name of the change event.
      * Change event resource names have the form:
-     * `customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}`
+     * `customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}`
      *
      * Generated from protobuf field <code>string resource_name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = {</code>
      * @param string $var

@@ -19,7 +19,7 @@
 namespace Google\Ads\GoogleAds\V7\Services;
 
 /**
- * Proto file describing the GoogleAdsFieldService
+ * Proto file describing the GoogleAdsFieldService.
  *
  * Service to fetch Google Ads API fields.
  */

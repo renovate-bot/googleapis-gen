@@ -62,7 +62,7 @@ class ManagerLinkError
      */
     const ALREADY_MANAGED_IN_HIERARCHY = 7;
     /**
-     * Manger and sub-manager to be linked have duplicate client.
+     * Manager and sub-manager to be linked have duplicate client.
      *
      * Generated from protobuf enum <code>DUPLICATE_CHILD_FOUND = 8;</code>
      */

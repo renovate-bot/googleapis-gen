@@ -11,7 +11,8 @@ public interface PlannedProductOrBuilder extends
    * <pre>
    * Required. Selected product for planning.
    * The code associated with the ad product. E.g. Trueview, Bumper
-   * To list the available plannable product codes use ListPlannableProducts.
+   * To list the available plannable product codes use
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>optional string plannable_product_code = 3;</code>
@@ -22,7 +23,8 @@ public interface PlannedProductOrBuilder extends
    * <pre>
    * Required. Selected product for planning.
    * The code associated with the ad product. E.g. Trueview, Bumper
-   * To list the available plannable product codes use ListPlannableProducts.
+   * To list the available plannable product codes use
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>optional string plannable_product_code = 3;</code>
@@ -33,7 +35,8 @@ public interface PlannedProductOrBuilder extends
    * <pre>
    * Required. Selected product for planning.
    * The code associated with the ad product. E.g. Trueview, Bumper
-   * To list the available plannable product codes use ListPlannableProducts.
+   * To list the available plannable product codes use
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>optional string plannable_product_code = 3;</code>

@@ -197,8 +197,18 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # The Search Partners Opt-In recommendation.
-            class SearchPartnersOptInRecommendation
+            # The Target ROAS opt-in recommendation.
+            # @!attribute [r] recommended_target_roas
+            #   @return [::Float]
+            #     Output only. The recommended target ROAS (revenue per unit of spend).
+            #     The value is between 0.01 and 1000.0, inclusive.
+            # @!attribute [r] required_campaign_budget_amount_micros
+            #   @return [::Integer]
+            #     Output only. The minimum campaign budget, in local currency for the account,
+            #     required to achieve the target ROAS.
+            #     Amount is specified in micros, where one million is equivalent to one
+            #     currency unit.
+            class TargetRoasOptInRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -217,6 +227,16 @@ module Google
             #     applied.
             #     YYYY-MM-DD format, e.g., 2018-04-17.
             class TextAdRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Maximize Clicks opt-in recommendation.
+            # @!attribute [r] recommended_budget_amount_micros
+            #   @return [::Integer]
+            #     Output only. The recommended new budget amount.
+            #     Only set if the current budget is too high.
+            class MaximizeClicksOptInRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -255,37 +275,6 @@ module Google
               end
             end
 
-            # The add responsive search ad recommendation.
-            # @!attribute [r] ad
-            #   @return [::Google::Ads::GoogleAds::V9::Resources::Ad]
-            #     Output only. Recommended ad.
-            class ResponsiveSearchAdRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Enhanced Cost-Per-Click Opt-In recommendation.
-            class EnhancedCpcOptInRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
-            # The Target ROAS opt-in recommendation.
-            # @!attribute [r] recommended_target_roas
-            #   @return [::Float]
-            #     Output only. The recommended target ROAS (revenue per unit of spend).
-            #     The value is between 0.01 and 1000.0, inclusive.
-            # @!attribute [r] required_campaign_budget_amount_micros
-            #   @return [::Integer]
-            #     Output only. The minimum campaign budget, in local currency for the account,
-            #     required to achieve the target ROAS.
-            #     Amount is specified in micros, where one million is equivalent to one
-            #     currency unit.
-            class TargetRoasOptInRecommendation
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # The Maximize Conversions Opt-In recommendation.
             # @!attribute [r] recommended_budget_amount_micros
             #   @return [::Integer]
@@ -295,12 +284,26 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # The Maximize Clicks opt-in recommendation.
-            # @!attribute [r] recommended_budget_amount_micros
-            #   @return [::Integer]
-            #     Output only. The recommended new budget amount.
-            #     Only set if the current budget is too high.
-            class MaximizeClicksOptInRecommendation
+            # The Search Partners Opt-In recommendation.
+            class SearchPartnersOptInRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The move unused budget recommendation.
+            # @!attribute [r] excess_campaign_budget
+            #   @return [::String]
+            #     Output only. The excess budget's resource_name.
+            # @!attribute [r] budget_recommendation
+            #   @return [::Google::Ads::GoogleAds::V9::Resources::Recommendation::CampaignBudgetRecommendation]
+            #     Output only. The recommendation for the constrained budget to increase.
+            class MoveUnusedBudgetRecommendation
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # The Enhanced Cost-Per-Click Opt-In recommendation.
+            class EnhancedCpcOptInRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
@@ -350,14 +353,11 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # The move unused budget recommendation.
-            # @!attribute [r] excess_campaign_budget
-            #   @return [::String]
-            #     Output only. The excess budget's resource_name.
-            # @!attribute [r] budget_recommendation
-            #   @return [::Google::Ads::GoogleAds::V9::Resources::Recommendation::CampaignBudgetRecommendation]
-            #     Output only. The recommendation for the constrained budget to increase.
-            class MoveUnusedBudgetRecommendation
+            # The add responsive search ad recommendation.
+            # @!attribute [r] ad
+            #   @return [::Google::Ads::GoogleAds::V9::Resources::Ad]
+            #     Output only. Recommended ad.
+            class ResponsiveSearchAdRecommendation
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

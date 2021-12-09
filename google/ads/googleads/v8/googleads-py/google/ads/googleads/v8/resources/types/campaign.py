@@ -376,39 +376,6 @@ class Campaign(proto.Message):
             optional=True,
         )
 
-    class TrackingSetting(proto.Message):
-        r"""Campaign-level settings for tracking information.
-
-        Attributes:
-            tracking_url (str):
-                Output only. The url used for dynamic
-                tracking.
-
-                This field is a member of `oneof`_ ``_tracking_url``.
-        """
-
-        tracking_url = proto.Field(
-            proto.STRING,
-            number=2,
-            optional=True,
-        )
-
-    class SelectiveOptimization(proto.Message):
-        r"""Selective optimization setting for this campaign, which
-        includes a set of conversion actions to optimize this campaign
-        towards.
-
-        Attributes:
-            conversion_actions (Sequence[str]):
-                The selected set of conversion actions for
-                optimizing this campaign.
-        """
-
-        conversion_actions = proto.RepeatedField(
-            proto.STRING,
-            number=2,
-        )
-
     class DynamicSearchAdsSetting(proto.Message):
         r"""The setting for controlling Dynamic Search Ads (DSA).
 
@@ -448,6 +415,22 @@ class Campaign(proto.Message):
             number=9,
         )
 
+    class SelectiveOptimization(proto.Message):
+        r"""Selective optimization setting for this campaign, which
+        includes a set of conversion actions to optimize this campaign
+        towards.
+
+        Attributes:
+            conversion_actions (Sequence[str]):
+                The selected set of conversion actions for
+                optimizing this campaign.
+        """
+
+        conversion_actions = proto.RepeatedField(
+            proto.STRING,
+            number=2,
+        )
+
     class ShoppingSetting(proto.Message):
         r"""The setting for Shopping campaigns. Defines the universe of
         products that can be advertised by the campaign, and how this
@@ -461,11 +444,11 @@ class Campaign(proto.Message):
 
                 This field is a member of `oneof`_ ``_merchant_id``.
             sales_country (str):
-                Immutable. Sales country of products to
-                include in the campaign. This field is required
-                for Shopping campaigns. This field is immutable.
-                This field is optional for non-Shopping
-                campaigns, but it must be equal to 'ZZ' if set.
+                Sales country of products to include in the
+                campaign. This field is required for Shopping
+                campaigns. This field is optional for non-
+                Shopping campaigns, but it must be equal to 'ZZ'
+                if set.
 
                 This field is a member of `oneof`_ ``_sales_country``.
             campaign_priority (int):
@@ -505,28 +488,36 @@ class Campaign(proto.Message):
             optional=True,
         )
 
-    class VanityPharma(proto.Message):
-        r"""Describes how unbranded pharma ads will be displayed.
+    class OptimizationGoalSetting(proto.Message):
+        r"""Optimization goal setting for this campaign, which includes a
+        set of optimization goal types.
 
         Attributes:
-            vanity_pharma_display_url_mode (google.ads.googleads.v8.enums.types.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode):
-                The display mode for vanity pharma URLs.
-            vanity_pharma_text (google.ads.googleads.v8.enums.types.VanityPharmaTextEnum.VanityPharmaText):
-                The text that will be displayed in display
-                URL of the text ad when website description is
-                the selected display mode for vanity pharma
-                URLs.
+            optimization_goal_types (Sequence[google.ads.googleads.v8.enums.types.OptimizationGoalTypeEnum.OptimizationGoalType]):
+                The list of optimization goal types.
         """
 
-        vanity_pharma_display_url_mode = proto.Field(
+        optimization_goal_types = proto.RepeatedField(
             proto.ENUM,
             number=1,
-            enum=gage_vanity_pharma_display_url_mode.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode,
+            enum=optimization_goal_type.OptimizationGoalTypeEnum.OptimizationGoalType,
         )
-        vanity_pharma_text = proto.Field(
-            proto.ENUM,
+
+    class TrackingSetting(proto.Message):
+        r"""Campaign-level settings for tracking information.
+
+        Attributes:
+            tracking_url (str):
+                Output only. The url used for dynamic
+                tracking.
+
+                This field is a member of `oneof`_ ``_tracking_url``.
+        """
+
+        tracking_url = proto.Field(
+            proto.STRING,
             number=2,
-            enum=gage_vanity_pharma_text.VanityPharmaTextEnum.VanityPharmaText,
+            optional=True,
         )
 
     class GeoTargetTypeSetting(proto.Message):
@@ -602,19 +593,28 @@ class Campaign(proto.Message):
             enum=app_campaign_app_store.AppCampaignAppStoreEnum.AppCampaignAppStore,
         )
 
-    class OptimizationGoalSetting(proto.Message):
-        r"""Optimization goal setting for this campaign, which includes a
-        set of optimization goal types.
+    class VanityPharma(proto.Message):
+        r"""Describes how unbranded pharma ads will be displayed.
 
         Attributes:
-            optimization_goal_types (Sequence[google.ads.googleads.v8.enums.types.OptimizationGoalTypeEnum.OptimizationGoalType]):
-                The list of optimization goal types.
+            vanity_pharma_display_url_mode (google.ads.googleads.v8.enums.types.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode):
+                The display mode for vanity pharma URLs.
+            vanity_pharma_text (google.ads.googleads.v8.enums.types.VanityPharmaTextEnum.VanityPharmaText):
+                The text that will be displayed in display
+                URL of the text ad when website description is
+                the selected display mode for vanity pharma
+                URLs.
         """
 
-        optimization_goal_types = proto.RepeatedField(
+        vanity_pharma_display_url_mode = proto.Field(
             proto.ENUM,
             number=1,
-            enum=optimization_goal_type.OptimizationGoalTypeEnum.OptimizationGoalType,
+            enum=gage_vanity_pharma_display_url_mode.VanityPharmaDisplayUrlModeEnum.VanityPharmaDisplayUrlMode,
+        )
+        vanity_pharma_text = proto.Field(
+            proto.ENUM,
+            number=2,
+            enum=gage_vanity_pharma_text.VanityPharmaTextEnum.VanityPharmaText,
         )
 
     resource_name = proto.Field(

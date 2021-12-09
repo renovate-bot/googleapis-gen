@@ -222,8 +222,8 @@ class CallOnlyAdInfo(proto.Message):
         conversion_action (str):
             The conversion action to attribute a call conversion to. If
             not set a default conversion action is used. This field only
-            has effect if call_tracked is set to true. Otherwise this
-            field is ignored.
+            has effect if ``call_tracked`` is set to ``true``. Otherwise
+            this field is ignored.
 
             This field is a member of `oneof`_ ``_conversion_action``.
         conversion_reporting_state (google.ads.googleads.v7.enums.types.CallConversionReportingStateEnum.CallConversionReportingState):
@@ -502,8 +502,8 @@ class DisplayCallToAction(proto.Message):
 
             This field is a member of `oneof`_ ``_text_color``.
         url_collection_id (str):
-            Identifies the url collection in the ad.url_collections
-            field. If not set the url defaults to final_url.
+            Identifies the URL collection in the ``ad.url_collections``
+            field. If not set, the URL defaults to ``final_url``.
 
             This field is a member of `oneof`_ ``_url_collection_id``.
     """
@@ -1000,14 +1000,13 @@ class ResponsiveSearchAdInfo(proto.Message):
             the ad serves the descriptions will be selected
             from this list.
         path1 (str):
-            First part of text that may appear appended
-            to the url displayed in the ad.
+            First part of text that can be appended to
+            the URL in the ad.
 
             This field is a member of `oneof`_ ``_path1``.
         path2 (str):
-            Second part of text that may appear appended
-            to the url displayed in the ad. This field can
-            only be set when path1 is also set.
+            Second part of text that can be appended to the URL in the
+            ad. This field can only be set when ``path1`` is also set.
 
             This field is a member of `oneof`_ ``_path2``.
     """
@@ -1059,20 +1058,20 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
             Advertiser's consent to allow flexible color. When true, the
             ad may be served with different color if necessary. When
             false, the ad will be served with the specified colors or a
-            neutral color. The default value is true. Must be true if
-            main_color and accent_color are not set.
+            neutral color. The default value is ``true``. Must be true
+            if ``main_color`` and ``accent_color`` are not set.
 
             This field is a member of `oneof`_ ``_allow_flexible_color``.
         accent_color (str):
             The accent color of the ad in hexadecimal, e.g. #ffffff for
-            white. If one of main_color and accent_color is set, the
-            other is required as well.
+            white. If one of ``main_color`` and ``accent_color`` is set,
+            the other is required as well.
 
             This field is a member of `oneof`_ ``_accent_color``.
         main_color (str):
             The main color of the ad in hexadecimal, e.g. #ffffff for
-            white. If one of main_color and accent_color is set, the
-            other is required as well.
+            white. If one of ``main_color`` and ``accent_color`` is set,
+            the other is required as well.
 
             This field is a member of `oneof`_ ``_main_color``.
         call_to_action_text (str):
@@ -1107,7 +1106,7 @@ class LegacyResponsiveDisplayAdInfo(proto.Message):
 
             This field is a member of `oneof`_ ``_price_prefix``.
         promo_text (str):
-            Promotion text used for dyanmic formats of
+            Promotion text used for dynamic formats of
             responsive ads. For example 'Free two-day
             shipping'.
 
@@ -1300,7 +1299,7 @@ class LegacyAppInstallAdInfo(proto.Message):
 
     Attributes:
         app_id (str):
-            The id of the mobile app.
+            The ID of the mobile app.
 
             This field is a member of `oneof`_ ``_app_id``.
         app_store (google.ads.googleads.v7.enums.types.LegacyAppInstallAdAppStoreEnum.LegacyAppInstallAdAppStore):
@@ -1354,24 +1353,24 @@ class ResponsiveDisplayAdInfo(proto.Message):
             Marketing images to be used in the ad. Valid image types are
             GIF, JPEG, and PNG. The minimum size is 600x314 and the
             aspect ratio must be 1.91:1 (+-1%). At least one
-            marketing_image is required. Combined with
-            square_marketing_images the maximum is 15.
+            ``marketing_image`` is required. Combined with
+            ``square_marketing_images``, the maximum is 15.
         square_marketing_images (Sequence[google.ads.googleads.v7.common.types.AdImageAsset]):
             Square marketing images to be used in the ad. Valid image
             types are GIF, JPEG, and PNG. The minimum size is 300x300
             and the aspect ratio must be 1:1 (+-1%). At least one square
-            marketing_image is required. Combined with marketing_images
-            the maximum is 15.
+            ``marketing_image`` is required. Combined with
+            ``marketing_images``, the maximum is 15.
         logo_images (Sequence[google.ads.googleads.v7.common.types.AdImageAsset]):
             Logo images to be used in the ad. Valid image types are GIF,
             JPEG, and PNG. The minimum size is 512x128 and the aspect
-            ratio must be 4:1 (+-1%). Combined with square_logo_images
-            the maximum is 5.
+            ratio must be 4:1 (+-1%). Combined with
+            ``square_logo_images``, the maximum is 5.
         square_logo_images (Sequence[google.ads.googleads.v7.common.types.AdImageAsset]):
             Square logo images to be used in the ad. Valid image types
             are GIF, JPEG, and PNG. The minimum size is 128x128 and the
             aspect ratio must be 1:1 (+-1%). Combined with
-            square_logo_images the maximum is 5.
+            ``square_logo_images``, the maximum is 5.
         headlines (Sequence[google.ads.googleads.v7.common.types.AdTextAsset]):
             Short format headlines for the ad. The
             maximum length is 30 characters. At least 1 and
@@ -1393,22 +1392,22 @@ class ResponsiveDisplayAdInfo(proto.Message):
             This field is a member of `oneof`_ ``_business_name``.
         main_color (str):
             The main color of the ad in hexadecimal, e.g. #ffffff for
-            white. If one of main_color and accent_color is set, the
-            other is required as well.
+            white. If one of ``main_color`` and ``accent_color`` is set,
+            the other is required as well.
 
             This field is a member of `oneof`_ ``_main_color``.
         accent_color (str):
             The accent color of the ad in hexadecimal, e.g. #ffffff for
-            white. If one of main_color and accent_color is set, the
-            other is required as well.
+            white. If one of ``main_color`` and ``accent_color`` is set,
+            the other is required as well.
 
             This field is a member of `oneof`_ ``_accent_color``.
         allow_flexible_color (bool):
             Advertiser's consent to allow flexible color. When true, the
             ad may be served with different color if necessary. When
             false, the ad will be served with the specified colors or a
-            neutral color. The default value is true. Must be true if
-            main_color and accent_color are not set.
+            neutral color. The default value is ``true``. Must be true
+            if ``main_color`` and ``accent_color`` are not set.
 
             This field is a member of `oneof`_ ``_allow_flexible_color``.
         call_to_action_text (str):
@@ -1421,7 +1420,7 @@ class ResponsiveDisplayAdInfo(proto.Message):
 
             This field is a member of `oneof`_ ``_price_prefix``.
         promo_text (str):
-            Promotion text used for dyanmic formats of
+            Promotion text used for dynamic formats of
             responsive ads. For example 'Free two-day
             shipping'.
 
@@ -1555,14 +1554,14 @@ class LocalAdInfo(proto.Message):
             displayed with the ad. Videos are optional and
             at most 20 can be specified.
         path1 (str):
-            First part of optional text that may appear
-            appended to the url displayed in the ad.
+            First part of optional text that can be
+            appended to the URL in the ad.
 
             This field is a member of `oneof`_ ``_path1``.
         path2 (str):
-            Second part of optional text that may appear
-            appended to the url displayed in the ad. This
-            field can only be set when path1 is also set.
+            Second part of optional text that can be appended to the URL
+            in the ad. This field can only be set when ``path1`` is also
+            set.
 
             This field is a member of `oneof`_ ``_path2``.
     """
@@ -1611,8 +1610,8 @@ class LocalAdInfo(proto.Message):
 
 class DisplayUploadAdInfo(proto.Message):
     r"""A generic type of display ad. The exact ad format is controlled by
-    the display_upload_product_type field, which determines what kinds
-    of data need to be included with the ad.
+    the ``display_upload_product_type`` field, which determines what
+    kinds of data need to be included with the ad.
 
 
     .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
@@ -1623,7 +1622,7 @@ class DisplayUploadAdInfo(proto.Message):
             the enum for details.
         media_bundle (google.ads.googleads.v7.common.types.AdMediaBundleAsset):
             A media bundle asset to be used in the ad. For information
-            about the media bundle for HTML5_UPLOAD_AD see
+            about the media bundle for HTML5_UPLOAD_AD, see
             https://support.google.com/google-ads/answer/1722096 Media
             bundles that are part of dynamic product types use a special
             format that needs to be created through the Google Web

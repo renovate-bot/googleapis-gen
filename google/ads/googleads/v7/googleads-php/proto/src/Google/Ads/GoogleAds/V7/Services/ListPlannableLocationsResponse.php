@@ -18,8 +18,8 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
     /**
      * The list of locations available for planning (Countries, DMAs,
      * sub-countries).
-     * For locations like Countries, DMAs see
-     * https://developers.google.com/adwords/api/docs/appendix/geotargeting for
+     * For locations like Countries and DMAs see
+     * https://developers.google.com/google-ads/api/reference/data/geotargets for
      * more information.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v7.services.PlannableLocation plannable_locations = 1;</code>
@@ -35,8 +35,8 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V7\Services\PlannableLocation[]|\Google\Protobuf\Internal\RepeatedField $plannable_locations
      *           The list of locations available for planning (Countries, DMAs,
      *           sub-countries).
-     *           For locations like Countries, DMAs see
-     *           https://developers.google.com/adwords/api/docs/appendix/geotargeting for
+     *           For locations like Countries and DMAs see
+     *           https://developers.google.com/google-ads/api/reference/data/geotargets for
      *           more information.
      * }
      */
@@ -48,8 +48,8 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
     /**
      * The list of locations available for planning (Countries, DMAs,
      * sub-countries).
-     * For locations like Countries, DMAs see
-     * https://developers.google.com/adwords/api/docs/appendix/geotargeting for
+     * For locations like Countries and DMAs see
+     * https://developers.google.com/google-ads/api/reference/data/geotargets for
      * more information.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v7.services.PlannableLocation plannable_locations = 1;</code>
@@ -63,8 +63,8 @@ class ListPlannableLocationsResponse extends \Google\Protobuf\Internal\Message
     /**
      * The list of locations available for planning (Countries, DMAs,
      * sub-countries).
-     * For locations like Countries, DMAs see
-     * https://developers.google.com/adwords/api/docs/appendix/geotargeting for
+     * For locations like Countries and DMAs see
+     * https://developers.google.com/google-ads/api/reference/data/geotargets for
      * more information.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v7.services.PlannableLocation plannable_locations = 1;</code>

@@ -253,7 +253,7 @@ module Google
               #
               #   @param plannable_location_id [::String]
               #     Required. The ID of the selected location for planning. To list the available
-              #     plannable location ids use ListPlannableLocations.
+              #     plannable location ids use {::Google::Ads::GoogleAds::V7::Services::ReachPlanService::Client#list_plannable_locations ReachPlanService.ListPlannableLocations}.
               #
               # @yield [response, operation] Access the result along with the RPC operation
               # @yieldparam response [::Google::Ads::GoogleAds::V7::Services::ListPlannableProductsResponse]
@@ -346,7 +346,7 @@ module Google
               #     Required. The ID of the customer.
               #   @param plannable_location_id [::String]
               #     Required. The ID of the location, this is one of the ids returned by
-              #     ListPlannableLocations.
+              #     {::Google::Ads::GoogleAds::V7::Services::ReachPlanService::Client#list_plannable_locations ReachPlanService.ListPlannableLocations}.
               #   @param currency_code [::String]
               #     Required. Currency code.
               #     Three-character ISO 4217 currency code.
@@ -474,7 +474,7 @@ module Google
               #     This is equivalent to the frequency cap exposed in Google Ads when creating
               #     a campaign, it represents the maximum number of times an ad can be shown to
               #     the same user during a specified time interval.
-              #     If not specified, no cap is applied.
+              #     If not specified, a default of 0 (no cap) is applied.
               #
               #     This field replaces the deprecated cookie_frequency_cap field.
               #   @param min_effective_frequency [::Integer]
@@ -482,6 +482,8 @@ module Google
               #     exposed to the ad) for the reported reach metrics [1-10].
               #     This won't affect the targeting, but just the reporting.
               #     If not specified, a default of 1 is applied.
+              #
+              #     This field cannot be combined with the effective_frequency_limit field.
               #   @param targeting [::Google::Ads::GoogleAds::V7::Services::Targeting, ::Hash]
               #     The targeting to be applied to all products selected in the product mix.
               #
@@ -489,9 +491,6 @@ module Google
               #     advertising product, please consult an implementation specialist.
               #
               #     See specific metrics for details on how targeting affects them.
-              #
-              #     In some cases, targeting may be overridden using the
-              #     PlannedProduct.advanced_product_targeting field.
               #   @param planned_products [::Array<::Google::Ads::GoogleAds::V7::Services::PlannedProduct, ::Hash>]
               #     Required. The products to be forecast.
               #     The max number of allowed planned products is 15.

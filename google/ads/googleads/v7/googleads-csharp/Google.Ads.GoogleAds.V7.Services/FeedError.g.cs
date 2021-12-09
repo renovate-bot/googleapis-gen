@@ -301,7 +301,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         /// </summary>
         [pbr::OriginalName("INVALID_BUSINESS_ACCOUNT")] InvalidBusinessAccount = 18,
         /// <summary>
-        /// Business account cannot access Google My Business account.
+        /// Business account cannot access Business Profile.
         /// </summary>
         [pbr::OriginalName("BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT")] BusinessAccountCannotAccessLocationAccount = 19,
         /// <summary>
@@ -313,7 +313,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
         /// </summary>
         [pbr::OriginalName("DUPLICATE_SYSTEM_FEED")] DuplicateSystemFeed = 21,
         /// <summary>
-        /// An error occurred accessing GMB account.
+        /// An error occurred accessing Business Profile.
         /// </summary>
         [pbr::OriginalName("GMB_ACCESS_ERROR")] GmbAccessError = 22,
         /// <summary>

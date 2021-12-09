@@ -252,7 +252,7 @@ namespace Google.Ads.GoogleAds.V9.Errors {
         /// </summary>
         [pbr::OriginalName("ALREADY_MANAGED_IN_HIERARCHY")] AlreadyManagedInHierarchy = 7,
         /// <summary>
-        /// Manger and sub-manager to be linked have duplicate client.
+        /// Manager and sub-manager to be linked have duplicate client.
         /// </summary>
         [pbr::OriginalName("DUPLICATE_CHILD_FOUND")] DuplicateChildFound = 8,
         /// <summary>

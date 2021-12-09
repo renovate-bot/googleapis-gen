@@ -210,7 +210,7 @@ class ReachPlanServiceGapicClient
      *
      * @param string $customerId          Required. The ID of the customer.
      * @param string $plannableLocationId Required. The ID of the location, this is one of the ids returned by
-     *                                    ListPlannableLocations.
+     *                                    [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * @param string $currencyCode        Required. Currency code.
      *                                    Three-character ISO 4217 currency code.
      * @param int    $budgetMicros        Required. Total budget.
@@ -302,7 +302,7 @@ class ReachPlanServiceGapicClient
      *           This is equivalent to the frequency cap exposed in Google Ads when creating
      *           a campaign, it represents the maximum number of times an ad can be shown to
      *           the same user during a specified time interval.
-     *           If not specified, no cap is applied.
+     *           If not specified, a default of 0 (no cap) is applied.
      *
      *           This field replaces the deprecated cookie_frequency_cap field.
      *     @type int $minEffectiveFrequency
@@ -310,6 +310,8 @@ class ReachPlanServiceGapicClient
      *           exposed to the ad) for the reported reach metrics [1-10].
      *           This won't affect the targeting, but just the reporting.
      *           If not specified, a default of 1 is applied.
+     *
+     *           This field cannot be combined with the effective_frequency_limit field.
      *     @type Targeting $targeting
      *           The targeting to be applied to all products selected in the product mix.
      *
@@ -317,9 +319,6 @@ class ReachPlanServiceGapicClient
      *           advertising product, please consult an implementation specialist.
      *
      *           See specific metrics for details on how targeting affects them.
-     *
-     *           In some cases, targeting may be overridden using the
-     *           PlannedProduct.advanced_product_targeting field.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -429,7 +428,7 @@ class ReachPlanServiceGapicClient
      * ```
      *
      * @param string $plannableLocationId Required. The ID of the selected location for planning. To list the available
-     *                                    plannable location ids use ListPlannableLocations.
+     *                                    plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * @param array  $optionalArgs        {
      *     Optional.
      *

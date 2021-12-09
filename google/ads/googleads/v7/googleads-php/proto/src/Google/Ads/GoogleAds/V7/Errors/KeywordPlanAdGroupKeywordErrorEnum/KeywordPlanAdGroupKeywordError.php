@@ -69,6 +69,12 @@ class KeywordPlanAdGroupKeywordError
      * Generated from protobuf enum <code>NEGATIVE_KEYWORD_HAS_CPC_BID = 8;</code>
      */
     const NEGATIVE_KEYWORD_HAS_CPC_BID = 8;
+    /**
+     * New broad match modifier (BMM) KpAdGroupKeywords are not allowed.
+     *
+     * Generated from protobuf enum <code>NEW_BMM_KEYWORDS_NOT_ALLOWED = 9;</code>
+     */
+    const NEW_BMM_KEYWORDS_NOT_ALLOWED = 9;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -80,6 +86,7 @@ class KeywordPlanAdGroupKeywordError
         self::KEYWORD_HAS_TOO_MANY_WORDS => 'KEYWORD_HAS_TOO_MANY_WORDS',
         self::INVALID_KEYWORD_TEXT => 'INVALID_KEYWORD_TEXT',
         self::NEGATIVE_KEYWORD_HAS_CPC_BID => 'NEGATIVE_KEYWORD_HAS_CPC_BID',
+        self::NEW_BMM_KEYWORDS_NOT_ALLOWED => 'NEW_BMM_KEYWORDS_NOT_ALLOWED',
     ];
 
     public static function name($value)

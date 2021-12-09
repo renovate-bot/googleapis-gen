@@ -145,8 +145,8 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
      *     @type \Google\Ads\GoogleAds\V7\Common\PromotionFeedItem $promotion_feed_item
      *           Promotion extension.
      *     @type \Google\Ads\GoogleAds\V7\Common\LocationFeedItem $location_feed_item
-     *           Output only. Location extension. Locations are synced from a GMB account into a feed.
-     *           This field is read-only.
+     *           Output only. Location extension. Locations are synced from a Business Profile into a
+     *           feed. This field is read-only.
      *     @type \Google\Ads\GoogleAds\V7\Common\AffiliateLocationFeedItem $affiliate_location_feed_item
      *           Output only. Affiliate location extension. Feed locations are populated by Google Ads
      *           based on a chain ID.
@@ -749,8 +749,8 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Ads\GoogleAds\V7\Common\LocationFeedItem|null
@@ -766,8 +766,8 @@ class ExtensionFeedItem extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Ads\GoogleAds\V7\Common\LocationFeedItem $var

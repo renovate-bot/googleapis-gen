@@ -515,8 +515,8 @@ public interface ExtensionFeedItemOrBuilder extends
 
   /**
    * <pre>
-   * Output only. Location extension. Locations are synced from a GMB account into a feed.
-   * This field is read-only.
+   * Output only. Location extension. Locations are synced from a Business Profile into a
+   * feed. This field is read-only.
    * </pre>
    *
    * <code>.google.ads.googleads.v9.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -525,8 +525,8 @@ public interface ExtensionFeedItemOrBuilder extends
   boolean hasLocationFeedItem();
   /**
    * <pre>
-   * Output only. Location extension. Locations are synced from a GMB account into a feed.
-   * This field is read-only.
+   * Output only. Location extension. Locations are synced from a Business Profile into a
+   * feed. This field is read-only.
    * </pre>
    *
    * <code>.google.ads.googleads.v9.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -535,8 +535,8 @@ public interface ExtensionFeedItemOrBuilder extends
   com.google.ads.googleads.v9.common.LocationFeedItem getLocationFeedItem();
   /**
    * <pre>
-   * Output only. Location extension. Locations are synced from a GMB account into a feed.
-   * This field is read-only.
+   * Output only. Location extension. Locations are synced from a Business Profile into a
+   * feed. This field is read-only.
    * </pre>
    *
    * <code>.google.ads.googleads.v9.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

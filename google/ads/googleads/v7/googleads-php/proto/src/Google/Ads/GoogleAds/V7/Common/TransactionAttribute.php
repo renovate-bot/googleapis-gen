@@ -27,6 +27,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
     protected $transaction_date_time = null;
     /**
      * Transaction amount in micros. Required.
+     * Transaction amount in micros needs to be greater than 1000.
+     * If item Attributes are provided, it represents the total value of the
+     * items, after multiplying the unit price per item by the quantity provided
+     * in the ItemAttributes.
      *
      * Generated from protobuf field <code>optional double transaction_amount_micros = 9;</code>
      */
@@ -80,6 +84,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
      *           Examples: "2018-03-05 09:15:00" or "2018-02-01 14:34:30+03:00"
      *     @type float $transaction_amount_micros
      *           Transaction amount in micros. Required.
+     *           Transaction amount in micros needs to be greater than 1000.
+     *           If item Attributes are provided, it represents the total value of the
+     *           items, after multiplying the unit price per item by the quantity provided
+     *           in the ItemAttributes.
      *     @type string $currency_code
      *           Transaction currency code. ISO 4217 three-letter code is used. Required.
      *     @type string $conversion_action
@@ -147,6 +155,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Transaction amount in micros. Required.
+     * Transaction amount in micros needs to be greater than 1000.
+     * If item Attributes are provided, it represents the total value of the
+     * items, after multiplying the unit price per item by the quantity provided
+     * in the ItemAttributes.
      *
      * Generated from protobuf field <code>optional double transaction_amount_micros = 9;</code>
      * @return float
@@ -168,6 +180,10 @@ class TransactionAttribute extends \Google\Protobuf\Internal\Message
 
     /**
      * Transaction amount in micros. Required.
+     * Transaction amount in micros needs to be greater than 1000.
+     * If item Attributes are provided, it represents the total value of the
+     * items, after multiplying the unit price per item by the quantity provided
+     * in the ItemAttributes.
      *
      * Generated from protobuf field <code>optional double transaction_amount_micros = 9;</code>
      * @param float $var

@@ -45,12 +45,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductChannel" do
       optional :channel, :enum, 1, "google.ads.googleads.v9.enums.ListingGroupFilterProductChannelEnum.ListingGroupFilterProductChannel"
     end
-    add_message "google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductCondition" do
-      optional :condition, :enum, 1, "google.ads.googleads.v9.enums.ListingGroupFilterProductConditionEnum.ListingGroupFilterProductCondition"
-    end
     add_message "google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductCustomAttribute" do
       proto3_optional :value, :string, 1
       optional :index, :enum, 2, "google.ads.googleads.v9.enums.ListingGroupFilterCustomAttributeIndexEnum.ListingGroupFilterCustomAttributeIndex"
+    end
+    add_message "google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductCondition" do
+      optional :condition, :enum, 1, "google.ads.googleads.v9.enums.ListingGroupFilterProductConditionEnum.ListingGroupFilterProductCondition"
     end
     add_message "google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductItemId" do
       proto3_optional :value, :string, 1
@@ -72,8 +72,8 @@ module Google
           ListingGroupFilterDimension::ProductBiddingCategory = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductBiddingCategory").msgclass
           ListingGroupFilterDimension::ProductBrand = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductBrand").msgclass
           ListingGroupFilterDimension::ProductChannel = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductChannel").msgclass
-          ListingGroupFilterDimension::ProductCondition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductCondition").msgclass
           ListingGroupFilterDimension::ProductCustomAttribute = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductCustomAttribute").msgclass
+          ListingGroupFilterDimension::ProductCondition = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductCondition").msgclass
           ListingGroupFilterDimension::ProductItemId = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductItemId").msgclass
           ListingGroupFilterDimension::ProductType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.ads.googleads.v9.resources.ListingGroupFilterDimension.ProductType").msgclass
         end

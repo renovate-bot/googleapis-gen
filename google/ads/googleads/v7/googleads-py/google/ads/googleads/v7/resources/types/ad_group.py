@@ -102,7 +102,12 @@ class AdGroup(proto.Message):
 
             This field is a member of `oneof`_ ``_cpm_bid_micros``.
         target_cpa_micros (int):
-            The target CPA (cost-per-acquisition).
+            The target CPA (cost-per-acquisition). If the ad group's
+            campaign bidding strategy is TargetCpa or
+            MaximizeConversions (with its target_cpa field set), then
+            this field overrides the target CPA specified in the
+            campaign's bidding strategy. Otherwise, this value is
+            ignored.
 
             This field is a member of `oneof`_ ``_target_cpa_micros``.
         cpv_bid_micros (int):
@@ -116,12 +121,12 @@ class AdGroup(proto.Message):
 
             This field is a member of `oneof`_ ``_target_cpm_micros``.
         target_roas (float):
-            The target ROAS (return-on-ad-spend)
-            override. If the ad group's campaign bidding
-            strategy is a standard Target ROAS strategy,
-            then this field overrides the target ROAS
-            specified in the campaign's bidding strategy.
-            Otherwise, this value is ignored.
+            The target ROAS (return-on-ad-spend) override. If the ad
+            group's campaign bidding strategy is TargetRoas or
+            MaximizeConversionValue (with its target_roas field set),
+            then this field overrides the target ROAS specified in the
+            campaign's bidding strategy. Otherwise, this value is
+            ignored.
 
             This field is a member of `oneof`_ ``_target_roas``.
         percent_cpc_bid_micros (int):

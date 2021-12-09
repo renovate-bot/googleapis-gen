@@ -57,7 +57,7 @@ class ChangeEvent(proto.Message):
             Output only. The resource name of the change event. Change
             event resource names have the form:
 
-            ``customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}``
+            ``customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}``
         change_date_time (str):
             Output only. Time at which the change was
             committed on this resource.

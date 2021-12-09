@@ -40,7 +40,6 @@ use Google\Auth\FetchAuthTokenInterface;
 
 /**
  * Service Description: Service to manage user data uploads.
- * Accessible only to customers on the allow-list.
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:

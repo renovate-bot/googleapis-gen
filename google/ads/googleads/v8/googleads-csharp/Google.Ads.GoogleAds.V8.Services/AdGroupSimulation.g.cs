@@ -83,8 +83,6 @@ namespace Google.Ads.GoogleAds.V8.Resources {
   /// 5. DISPLAY - CPC_BID - DEFAULT
   /// 6. DISPLAY - CPC_BID - UNIFORM
   /// 7. DISPLAY - TARGET_CPA - UNIFORM
-  /// 8. VIDEO - CPV_BID - DEFAULT
-  /// 9. VIDEO - CPV_BID - UNIFORM
   /// </summary>
   public sealed partial class AdGroupSimulation : pb::IMessage<AdGroupSimulation>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

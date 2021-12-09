@@ -26,12 +26,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      */
     protected $merchant_id = null;
     /**
-     * Immutable. Sales country of products to include in the campaign.
-     * This field is required for Shopping campaigns. This field is immutable.
+     * Sales country of products to include in the campaign.
+     * This field is required for Shopping campaigns.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string sales_country = 6;</code>
      */
     protected $sales_country = null;
     /**
@@ -63,8 +63,8 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
      *           This field is required for create operations. This field is immutable for
      *           Shopping campaigns.
      *     @type string $sales_country
-     *           Immutable. Sales country of products to include in the campaign.
-     *           This field is required for Shopping campaigns. This field is immutable.
+     *           Sales country of products to include in the campaign.
+     *           This field is required for Shopping campaigns.
      *           This field is optional for non-Shopping campaigns, but it must be equal
      *           to 'ZZ' if set.
      *     @type int $campaign_priority
@@ -124,12 +124,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Sales country of products to include in the campaign.
-     * This field is required for Shopping campaigns. This field is immutable.
+     * Sales country of products to include in the campaign.
+     * This field is required for Shopping campaigns.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string sales_country = 6;</code>
      * @return string
      */
     public function getSalesCountry()
@@ -148,12 +148,12 @@ class ShoppingSetting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. Sales country of products to include in the campaign.
-     * This field is required for Shopping campaigns. This field is immutable.
+     * Sales country of products to include in the campaign.
+     * This field is required for Shopping campaigns.
      * This field is optional for non-Shopping campaigns, but it must be equal
      * to 'ZZ' if set.
      *
-     * Generated from protobuf field <code>optional string sales_country = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     * Generated from protobuf field <code>optional string sales_country = 6;</code>
      * @param string $var
      * @return $this
      */

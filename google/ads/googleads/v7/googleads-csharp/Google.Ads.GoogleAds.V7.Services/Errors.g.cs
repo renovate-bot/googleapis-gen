@@ -593,7 +593,7 @@ namespace Google.Ads.GoogleAds.V7.Errors {
     public const int RequestIdFieldNumber = 2;
     private string requestId_ = "";
     /// <summary>
-    /// The unique id of the request that is used for debugging purposes.
+    /// The unique ID of the request that is used for debugging purposes.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

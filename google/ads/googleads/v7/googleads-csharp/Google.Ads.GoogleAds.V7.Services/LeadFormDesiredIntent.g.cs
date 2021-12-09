@@ -220,7 +220,7 @@ namespace Google.Ads.GoogleAds.V7.Enums {
         /// </summary>
         [pbr::OriginalName("LOW_INTENT")] LowIntent = 2,
         /// <summary>
-        /// Only leads with a high level of intent are desired.
+        /// Deliver leads that are more qualified.
         /// </summary>
         [pbr::OriginalName("HIGH_INTENT")] HighIntent = 3,
       }

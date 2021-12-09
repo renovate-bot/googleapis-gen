@@ -68,8 +68,8 @@ class ConversionUploadError
      */
     const GCLID_NOT_FOUND = 7;
     /**
-     * The click associated with the given gclid is owned by a customer
-     * account that the uploading customer does not manage.
+     * The click associated with the given gclid is owned by a customer account
+     * that the uploading customer does not manage.
      *
      * Generated from protobuf enum <code>UNAUTHORIZED_CUSTOMER = 8;</code>
      */

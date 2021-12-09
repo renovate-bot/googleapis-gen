@@ -43,6 +43,7 @@ class KeywordPlanAdGroupKeywordErrorEnum(proto.Message):
         KEYWORD_HAS_TOO_MANY_WORDS = 6
         INVALID_KEYWORD_TEXT = 7
         NEGATIVE_KEYWORD_HAS_CPC_BID = 8
+        NEW_BMM_KEYWORDS_NOT_ALLOWED = 9
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

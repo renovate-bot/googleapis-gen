@@ -25,7 +25,7 @@ module Google
       module V7
         module Services
           module GoogleAdsFieldService
-            # Proto file describing the GoogleAdsFieldService
+            # Proto file describing the GoogleAdsFieldService.
             #
             # Service to fetch Google Ads API fields.
             class Service

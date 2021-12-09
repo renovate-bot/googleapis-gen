@@ -92,8 +92,8 @@ module Google
           #     Promotion extension.
           # @!attribute [r] location_feed_item
           #   @return [::Google::Ads::GoogleAds::V8::Common::LocationFeedItem]
-          #     Output only. Location extension. Locations are synced from a GMB account into a feed.
-          #     This field is read-only.
+          #     Output only. Location extension. Locations are synced from a Business Profile into a
+          #     feed. This field is read-only.
           # @!attribute [r] affiliate_location_feed_item
           #   @return [::Google::Ads::GoogleAds::V8::Common::AffiliateLocationFeedItem]
           #     Output only. Affiliate location extension. Feed locations are populated by Google Ads

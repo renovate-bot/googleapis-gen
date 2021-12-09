@@ -37,7 +37,7 @@ module Google
           #     The level of goal config the campaign is using.
           # @!attribute [rw] custom_conversion_goal
           #   @return [::String]
-          #     Immutable. The custom conversion goal the campaign is using for optimization.
+          #     The custom conversion goal the campaign is using for optimization.
           class ConversionGoalCampaignConfig
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods

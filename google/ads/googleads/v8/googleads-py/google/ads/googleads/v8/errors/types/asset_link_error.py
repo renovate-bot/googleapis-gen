@@ -47,6 +47,7 @@ class AssetLinkErrorEnum(proto.Message):
         YOUTUBE_VIDEO_TOO_LONG = 14
         YOUTUBE_VIDEO_TOO_SHORT = 15
         INVALID_STATUS = 17
+        YOUTUBE_VIDEO_DURATION_NOT_DEFINED = 18
 
 
 __all__ = tuple(sorted(__protobuf__.manifest))

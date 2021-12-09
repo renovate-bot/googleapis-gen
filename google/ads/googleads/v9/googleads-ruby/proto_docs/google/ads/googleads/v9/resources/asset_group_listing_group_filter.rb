@@ -119,15 +119,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # Condition of a product offer.
-            # @!attribute [rw] condition
-            #   @return [::Google::Ads::GoogleAds::V9::Enums::ListingGroupFilterProductConditionEnum::ListingGroupFilterProductCondition]
-            #     Value of the condition.
-            class ProductCondition
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # Custom attribute of a product offer.
             # @!attribute [rw] value
             #   @return [::String]
@@ -136,6 +127,15 @@ module Google
             #   @return [::Google::Ads::GoogleAds::V9::Enums::ListingGroupFilterCustomAttributeIndexEnum::ListingGroupFilterCustomAttributeIndex]
             #     Indicates the index of the custom attribute.
             class ProductCustomAttribute
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # Condition of a product offer.
+            # @!attribute [rw] condition
+            #   @return [::Google::Ads::GoogleAds::V9::Enums::ListingGroupFilterProductConditionEnum::ListingGroupFilterProductCondition]
+            #     Value of the condition.
+            class ProductCondition
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

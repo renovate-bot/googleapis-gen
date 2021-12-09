@@ -1929,8 +1929,7 @@
  *
  * <p>======================= UserDataServiceClient =======================
  *
- * <p>Service Description: Service to manage user data uploads. Accessible only to customers on the
- * allow-list.
+ * <p>Service Description: Service to manage user data uploads.
  *
  * <p>Sample for UserDataServiceClient:
  *

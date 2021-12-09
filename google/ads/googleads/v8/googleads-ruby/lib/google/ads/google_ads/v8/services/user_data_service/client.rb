@@ -29,7 +29,6 @@ module Google
             # Client for the UserDataService service.
             #
             # Service to manage user data uploads.
-            # Accessible only to customers on the allow-list.
             #
             class Client
               # @private

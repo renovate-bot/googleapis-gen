@@ -1356,11 +1356,11 @@ private static final long serialVersionUID = 0L;
   public static final int BUSINESS_LOCATION_ID_FIELD_NUMBER = 6;
   /**
    * <pre>
-   * The ID of the Google My Business (GMB) Location.
-   * The location ID can be fetched by GMB API with its form:
+   * The ID of the Business Profile location.
+   * The location ID can be fetched by Business Profile API with its form:
    * accounts/{accountId}/locations/{locationId}. The last {locationId}
-   * component from the GMB API represents the business_location_id.
-   * See the [Google My Business API]
+   * component from the Business Profile API represents the
+   * business_location_id. See the [Business Profile API]
    * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
    * </pre>
    *
@@ -1373,11 +1373,11 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The ID of the Google My Business (GMB) Location.
-   * The location ID can be fetched by GMB API with its form:
+   * The ID of the Business Profile location.
+   * The location ID can be fetched by Business Profile API with its form:
    * accounts/{accountId}/locations/{locationId}. The last {locationId}
-   * component from the GMB API represents the business_location_id.
-   * See the [Google My Business API]
+   * component from the Business Profile API represents the
+   * business_location_id. See the [Business Profile API]
    * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
    * </pre>
    *
@@ -2531,11 +2531,11 @@ private static final long serialVersionUID = 0L;
 
     /**
      * <pre>
-     * The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      * </pre>
      *
@@ -2547,11 +2547,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      * </pre>
      *
@@ -2566,11 +2566,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      * </pre>
      *
@@ -2586,11 +2586,11 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * The ID of the Google My Business (GMB) Location.
-     * The location ID can be fetched by GMB API with its form:
+     * The ID of the Business Profile location.
+     * The location ID can be fetched by Business Profile API with its form:
      * accounts/{accountId}/locations/{locationId}. The last {locationId}
-     * component from the GMB API represents the business_location_id.
-     * See the [Google My Business API]
+     * component from the Business Profile API represents the
+     * business_location_id. See the [Business Profile API]
      * (https://developers.google.com/my-business/reference/rest/v4/accounts.locations)
      * </pre>
      *

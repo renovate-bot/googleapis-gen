@@ -112,26 +112,6 @@ module Google
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end
 
-            # An automated bid strategy that sets your bids to help get as many clicks
-            # as possible within your budget.
-            # @!attribute [r] target_spend_micros
-            #   @return [::Integer]
-            #     Output only. The spend target under which to maximize clicks.
-            #     A TargetSpend bidder will attempt to spend the smaller of this value
-            #     or the natural throttling spend amount.
-            #     If not specified, the budget is used as the spend target.
-            #     This field is deprecated and should no longer be used. See
-            #     https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
-            #     for details.
-            # @!attribute [r] cpc_bid_ceiling_micros
-            #   @return [::Integer]
-            #     Output only. Maximum bid limit that can be set by the bid strategy.
-            #     The limit applies to all keywords managed by the strategy.
-            class TargetSpend
-              include ::Google::Protobuf::MessageExts
-              extend ::Google::Protobuf::MessageExts::ClassMethods
-            end
-
             # An automated bid strategy that sets bids to help get as many conversions as
             # possible at the target cost-per-acquisition (CPA) you set.
             # @!attribute [r] target_cpa_micros
@@ -160,6 +140,26 @@ module Google
             #     This is a required field entered by the advertiser that sets the ceiling
             #     and specified in local micros.
             class TargetImpressionShare
+              include ::Google::Protobuf::MessageExts
+              extend ::Google::Protobuf::MessageExts::ClassMethods
+            end
+
+            # An automated bid strategy that sets your bids to help get as many clicks
+            # as possible within your budget.
+            # @!attribute [r] target_spend_micros
+            #   @return [::Integer]
+            #     Output only. The spend target under which to maximize clicks.
+            #     A TargetSpend bidder will attempt to spend the smaller of this value
+            #     or the natural throttling spend amount.
+            #     If not specified, the budget is used as the spend target.
+            #     This field is deprecated and should no longer be used. See
+            #     https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html
+            #     for details.
+            # @!attribute [r] cpc_bid_ceiling_micros
+            #   @return [::Integer]
+            #     Output only. Maximum bid limit that can be set by the bid strategy.
+            #     The limit applies to all keywords managed by the strategy.
+            class TargetSpend
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
             end

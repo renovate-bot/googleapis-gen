@@ -123,8 +123,8 @@ class ExtensionFeedItem(proto.Message):
             This field is a member of `oneof`_ ``extension``.
         location_feed_item (google.ads.googleads.v9.common.types.LocationFeedItem):
             Output only. Location extension. Locations
-            are synced from a GMB account into a feed. This
-            field is read-only.
+            are synced from a Business Profile into a feed.
+            This field is read-only.
 
             This field is a member of `oneof`_ ``extension``.
         affiliate_location_feed_item (google.ads.googleads.v9.common.types.AffiliateLocationFeedItem):

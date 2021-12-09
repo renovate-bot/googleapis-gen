@@ -17,6 +17,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
 {
     /**
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      *
      * Generated from protobuf field <code>optional int32 duration_in_days = 2;</code>
      */
@@ -30,6 +31,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
      *
      *     @type int $duration_in_days
      *           The duration value in days.
+     *           This field cannot be combined with the date_range field.
      * }
      */
     public function __construct($data = NULL) {
@@ -39,6 +41,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
 
     /**
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      *
      * Generated from protobuf field <code>optional int32 duration_in_days = 2;</code>
      * @return int
@@ -60,6 +63,7 @@ class CampaignDuration extends \Google\Protobuf\Internal\Message
 
     /**
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      *
      * Generated from protobuf field <code>optional int32 duration_in_days = 2;</code>
      * @param int $var

@@ -354,7 +354,7 @@ private static final long serialVersionUID = 0L;
    * This is equivalent to the frequency cap exposed in Google Ads when creating
    * a campaign, it represents the maximum number of times an ad can be shown to
    * the same user during a specified time interval.
-   * If not specified, no cap is applied.
+   * If not specified, a default of 0 (no cap) is applied.
    * This field replaces the deprecated cookie_frequency_cap field.
    * </pre>
    *
@@ -371,7 +371,7 @@ private static final long serialVersionUID = 0L;
    * This is equivalent to the frequency cap exposed in Google Ads when creating
    * a campaign, it represents the maximum number of times an ad can be shown to
    * the same user during a specified time interval.
-   * If not specified, no cap is applied.
+   * If not specified, a default of 0 (no cap) is applied.
    * This field replaces the deprecated cookie_frequency_cap field.
    * </pre>
    *
@@ -388,7 +388,7 @@ private static final long serialVersionUID = 0L;
    * This is equivalent to the frequency cap exposed in Google Ads when creating
    * a campaign, it represents the maximum number of times an ad can be shown to
    * the same user during a specified time interval.
-   * If not specified, no cap is applied.
+   * If not specified, a default of 0 (no cap) is applied.
    * This field replaces the deprecated cookie_frequency_cap field.
    * </pre>
    *
@@ -407,6 +407,7 @@ private static final long serialVersionUID = 0L;
    * exposed to the ad) for the reported reach metrics [1-10].
    * This won't affect the targeting, but just the reporting.
    * If not specified, a default of 1 is applied.
+   * This field cannot be combined with the effective_frequency_limit field.
    * </pre>
    *
    * <code>optional int32 min_effective_frequency = 11;</code>
@@ -422,6 +423,7 @@ private static final long serialVersionUID = 0L;
    * exposed to the ad) for the reported reach metrics [1-10].
    * This won't affect the targeting, but just the reporting.
    * If not specified, a default of 1 is applied.
+   * This field cannot be combined with the effective_frequency_limit field.
    * </pre>
    *
    * <code>optional int32 min_effective_frequency = 11;</code>
@@ -440,8 +442,6 @@ private static final long serialVersionUID = 0L;
    * This is planned targeting: execution details might vary based on the
    * advertising product, please consult an implementation specialist.
    * See specific metrics for details on how targeting affects them.
-   * In some cases, targeting may be overridden using the
-   * PlannedProduct.advanced_product_targeting field.
    * </pre>
    *
    * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -457,8 +457,6 @@ private static final long serialVersionUID = 0L;
    * This is planned targeting: execution details might vary based on the
    * advertising product, please consult an implementation specialist.
    * See specific metrics for details on how targeting affects them.
-   * In some cases, targeting may be overridden using the
-   * PlannedProduct.advanced_product_targeting field.
    * </pre>
    *
    * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -474,8 +472,6 @@ private static final long serialVersionUID = 0L;
    * This is planned targeting: execution details might vary based on the
    * advertising product, please consult an implementation specialist.
    * See specific metrics for details on how targeting affects them.
-   * In some cases, targeting may be overridden using the
-   * PlannedProduct.advanced_product_targeting field.
    * </pre>
    *
    * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1533,7 +1529,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1549,7 +1545,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1569,7 +1565,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1594,7 +1590,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1617,7 +1613,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1644,7 +1640,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1667,7 +1663,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1684,7 +1680,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1704,7 +1700,7 @@ private static final long serialVersionUID = 0L;
      * This is equivalent to the frequency cap exposed in Google Ads when creating
      * a campaign, it represents the maximum number of times an ad can be shown to
      * the same user during a specified time interval.
-     * If not specified, no cap is applied.
+     * If not specified, a default of 0 (no cap) is applied.
      * This field replaces the deprecated cookie_frequency_cap field.
      * </pre>
      *
@@ -1731,6 +1727,7 @@ private static final long serialVersionUID = 0L;
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      * </pre>
      *
      * <code>optional int32 min_effective_frequency = 11;</code>
@@ -1746,6 +1743,7 @@ private static final long serialVersionUID = 0L;
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      * </pre>
      *
      * <code>optional int32 min_effective_frequency = 11;</code>
@@ -1761,6 +1759,7 @@ private static final long serialVersionUID = 0L;
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      * </pre>
      *
      * <code>optional int32 min_effective_frequency = 11;</code>
@@ -1779,6 +1778,7 @@ private static final long serialVersionUID = 0L;
      * exposed to the ad) for the reported reach metrics [1-10].
      * This won't affect the targeting, but just the reporting.
      * If not specified, a default of 1 is applied.
+     * This field cannot be combined with the effective_frequency_limit field.
      * </pre>
      *
      * <code>optional int32 min_effective_frequency = 11;</code>
@@ -1800,8 +1800,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1816,8 +1814,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1836,8 +1832,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1861,8 +1855,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1884,8 +1876,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1911,8 +1901,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1934,8 +1922,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1951,8 +1937,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>
@@ -1971,8 +1955,6 @@ private static final long serialVersionUID = 0L;
      * This is planned targeting: execution details might vary based on the
      * advertising product, please consult an implementation specialist.
      * See specific metrics for details on how targeting affects them.
-     * In some cases, targeting may be overridden using the
-     * PlannedProduct.advanced_product_targeting field.
      * </pre>
      *
      * <code>.google.ads.googleads.v7.services.Targeting targeting = 6;</code>

@@ -464,7 +464,11 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     public const int TargetCpaMicrosFieldNumber = 41;
     private long targetCpaMicros_;
     /// <summary>
-    /// The target CPA (cost-per-acquisition).
+    /// The target CPA (cost-per-acquisition). If the ad group's campaign
+    /// bidding strategy is TargetCpa or MaximizeConversions (with its target_cpa
+    /// field set), then this field overrides the target CPA specified in the
+    /// campaign's bidding strategy.
+    /// Otherwise, this value is ignored.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -550,8 +554,9 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     private double targetRoas_;
     /// <summary>
     /// The target ROAS (return-on-ad-spend) override. If the ad group's campaign
-    /// bidding strategy is a standard Target ROAS strategy, then this field
-    /// overrides the target ROAS specified in the campaign's bidding strategy.
+    /// bidding strategy is TargetRoas or MaximizeConversionValue (with its
+    /// target_roas field set), then this field overrides the target ROAS specified
+    /// in the campaign's bidding strategy.
     /// Otherwise, this value is ignored.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

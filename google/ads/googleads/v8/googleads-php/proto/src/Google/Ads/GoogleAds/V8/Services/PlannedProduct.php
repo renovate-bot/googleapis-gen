@@ -18,7 +18,8 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     /**
      * Required. Selected product for planning.
      * The code associated with the ad product. E.g. Trueview, Bumper
-     * To list the available plannable product codes use ListPlannableProducts.
+     * To list the available plannable product codes use
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      */
@@ -41,7 +42,8 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
      *     @type string $plannable_product_code
      *           Required. Selected product for planning.
      *           The code associated with the ad product. E.g. Trueview, Bumper
-     *           To list the available plannable product codes use ListPlannableProducts.
+     *           To list the available plannable product codes use
+     *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *     @type int|string $budget_micros
      *           Required. Maximum budget allocation in micros for the selected product.
      *           The value is specified in the selected planning currency_code.
@@ -56,7 +58,8 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     /**
      * Required. Selected product for planning.
      * The code associated with the ad product. E.g. Trueview, Bumper
-     * To list the available plannable product codes use ListPlannableProducts.
+     * To list the available plannable product codes use
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @return string
@@ -79,7 +82,8 @@ class PlannedProduct extends \Google\Protobuf\Internal\Message
     /**
      * Required. Selected product for planning.
      * The code associated with the ad product. E.g. Trueview, Bumper
-     * To list the available plannable product codes use ListPlannableProducts.
+     * To list the available plannable product codes use
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>optional string plannable_product_code = 3;</code>
      * @param string $var

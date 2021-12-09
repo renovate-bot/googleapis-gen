@@ -165,7 +165,7 @@ class GoogleAdsFailure(proto.Message):
         errors (Sequence[google.ads.googleads.v7.errors.types.GoogleAdsError]):
             The list of errors that occurred.
         request_id (str):
-            The unique id of the request that is used for
+            The unique ID of the request that is used for
             debugging purposes.
     """
 

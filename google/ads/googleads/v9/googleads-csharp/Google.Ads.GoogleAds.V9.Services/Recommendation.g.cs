@@ -126,58 +126,58 @@ namespace Google.Ads.GoogleAds.V9.Resources {
             "bWVuZGF0aW9uEkEKB2tleXdvcmQYASABKAsyKy5nb29nbGUuYWRzLmdvb2ds",
             "ZWFkcy52OS5jb21tb24uS2V5d29yZEluZm9CA+BBAxIsChpyZWNvbW1lbmRl",
             "ZF9jcGNfYmlkX21pY3JvcxgDIAEoA0ID4EEDSACIAQFCHQobX3JlY29tbWVu",
-            "ZGVkX2NwY19iaWRfbWljcm9zGiMKIVNlYXJjaFBhcnRuZXJzT3B0SW5SZWNv",
-            "bW1lbmRhdGlvbhq4AQoUVGV4dEFkUmVjb21tZW5kYXRpb24SNgoCYWQYASAB",
-            "KAsyJS5nb29nbGUuYWRzLmdvb2dsZWFkcy52OS5yZXNvdXJjZXMuQWRCA+BB",
-            "AxIfCg1jcmVhdGlvbl9kYXRlGAQgASgJQgPgQQNIAIgBARIhCg9hdXRvX2Fw",
-            "cGx5X2RhdGUYBSABKAlCA+BBA0gBiAEBQhAKDl9jcmVhdGlvbl9kYXRlQhIK",
-            "EF9hdXRvX2FwcGx5X2RhdGUamAUKHFRhcmdldENwYU9wdEluUmVjb21tZW5k",
-            "YXRpb24ShwEKB29wdGlvbnMYASADKAsycS5nb29nbGUuYWRzLmdvb2dsZWFk",
-            "cy52OS5yZXNvdXJjZXMuUmVjb21tZW5kYXRpb24uVGFyZ2V0Q3BhT3B0SW5S",
-            "ZWNvbW1lbmRhdGlvbi5UYXJnZXRDcGFPcHRJblJlY29tbWVuZGF0aW9uT3B0",
-            "aW9uQgPgQQMSLwodcmVjb21tZW5kZWRfdGFyZ2V0X2NwYV9taWNyb3MYAyAB",
-            "KANCA+BBA0gAiAEBGpoDCiJUYXJnZXRDcGFPcHRJblJlY29tbWVuZGF0aW9u",
-            "T3B0aW9uEncKBGdvYWwYASABKA4yZC5nb29nbGUuYWRzLmdvb2dsZWFkcy52",
-            "OS5lbnVtcy5UYXJnZXRDcGFPcHRJblJlY29tbWVuZGF0aW9uR29hbEVudW0u",
-            "VGFyZ2V0Q3BhT3B0SW5SZWNvbW1lbmRhdGlvbkdvYWxCA+BBAxIjChF0YXJn",
-            "ZXRfY3BhX21pY3JvcxgFIAEoA0ID4EEDSACIAQESOAomcmVxdWlyZWRfY2Ft",
-            "cGFpZ25fYnVkZ2V0X2Ftb3VudF9taWNyb3MYBiABKANCA+BBA0gBiAEBElsK",
-            "BmltcGFjdBgEIAEoCzJGLmdvb2dsZS5hZHMuZ29vZ2xlYWRzLnY5LnJlc291",
-            "cmNlcy5SZWNvbW1lbmRhdGlvbi5SZWNvbW1lbmRhdGlvbkltcGFjdEID4EED",
-            "QhQKEl90YXJnZXRfY3BhX21pY3Jvc0IpCidfcmVxdWlyZWRfY2FtcGFpZ25f",
-            "YnVkZ2V0X2Ftb3VudF9taWNyb3NCIAoeX3JlY29tbWVuZGVkX3RhcmdldF9j",
-            "cGFfbWljcm9zGloKIFJlc3BvbnNpdmVTZWFyY2hBZFJlY29tbWVuZGF0aW9u",
-            "EjYKAmFkGAEgASgLMiUuZ29vZ2xlLmFkcy5nb29nbGVhZHMudjkucmVzb3Vy",
-            "Y2VzLkFkQgPgQQMaIAoeRW5oYW5jZWRDcGNPcHRJblJlY29tbWVuZGF0aW9u",
-            "GssBCh1UYXJnZXRSb2FzT3B0SW5SZWNvbW1lbmRhdGlvbhIpChdyZWNvbW1l",
-            "bmRlZF90YXJnZXRfcm9hcxgBIAEoAUID4EEDSACIAQESOAomcmVxdWlyZWRf",
-            "Y2FtcGFpZ25fYnVkZ2V0X2Ftb3VudF9taWNyb3MYAiABKANCA+BBA0gBiAEB",
-            "QhoKGF9yZWNvbW1lbmRlZF90YXJnZXRfcm9hc0IpCidfcmVxdWlyZWRfY2Ft",
-            "cGFpZ25fYnVkZ2V0X2Ftb3VudF9taWNyb3MagQEKJk1heGltaXplQ29udmVy",
-            "c2lvbnNPcHRJblJlY29tbWVuZGF0aW9uEjIKIHJlY29tbWVuZGVkX2J1ZGdl",
-            "dF9hbW91bnRfbWljcm9zGAIgASgDQgPgQQNIAIgBAUIjCiFfcmVjb21tZW5k",
-            "ZWRfYnVkZ2V0X2Ftb3VudF9taWNyb3MafAohTWF4aW1pemVDbGlja3NPcHRJ",
-            "blJlY29tbWVuZGF0aW9uEjIKIHJlY29tbWVuZGVkX2J1ZGdldF9hbW91bnRf",
-            "bWljcm9zGAIgASgDQgPgQQNIAIgBAUIjCiFfcmVjb21tZW5kZWRfYnVkZ2V0",
-            "X2Ftb3VudF9taWNyb3MaIgogT3B0aW1pemVBZFJvdGF0aW9uUmVjb21tZW5k",
-            "YXRpb24adgoeQ2FsbG91dEV4dGVuc2lvblJlY29tbWVuZGF0aW9uElQKFnJl",
-            "Y29tbWVuZGVkX2V4dGVuc2lvbnMYASADKAsyLy5nb29nbGUuYWRzLmdvb2ds",
-            "ZWFkcy52OS5jb21tb24uQ2FsbG91dEZlZWRJdGVtQgPgQQMaeAofU2l0ZWxp",
-            "bmtFeHRlbnNpb25SZWNvbW1lbmRhdGlvbhJVChZyZWNvbW1lbmRlZF9leHRl",
-            "bnNpb25zGAEgAygLMjAuZ29vZ2xlLmFkcy5nb29nbGVhZHMudjkuY29tbW9u",
-            "LlNpdGVsaW5rRmVlZEl0ZW1CA+BBAxpwChtDYWxsRXh0ZW5zaW9uUmVjb21t",
-            "ZW5kYXRpb24SUQoWcmVjb21tZW5kZWRfZXh0ZW5zaW9ucxgBIAMoCzIsLmdv",
-            "b2dsZS5hZHMuZ29vZ2xlYWRzLnY5LmNvbW1vbi5DYWxsRmVlZEl0ZW1CA+BB",
-            "AxrOAQoeS2V5d29yZE1hdGNoVHlwZVJlY29tbWVuZGF0aW9uEkEKB2tleXdv",
-            "cmQYASABKAsyKy5nb29nbGUuYWRzLmdvb2dsZWFkcy52OS5jb21tb24uS2V5",
-            "d29yZEluZm9CA+BBAxJpChZyZWNvbW1lbmRlZF9tYXRjaF90eXBlGAIgASgO",
-            "MkQuZ29vZ2xlLmFkcy5nb29nbGVhZHMudjkuZW51bXMuS2V5d29yZE1hdGNo",
-            "VHlwZUVudW0uS2V5d29yZE1hdGNoVHlwZUID4EEDGtkBCh5Nb3ZlVW51c2Vk",
-            "QnVkZ2V0UmVjb21tZW5kYXRpb24SKAoWZXhjZXNzX2NhbXBhaWduX2J1ZGdl",
-            "dBgDIAEoCUID4EEDSACIAQEScgoVYnVkZ2V0X3JlY29tbWVuZGF0aW9uGAIg",
-            "ASgLMk4uZ29vZ2xlLmFkcy5nb29nbGVhZHMudjkucmVzb3VyY2VzLlJlY29t",
-            "bWVuZGF0aW9uLkNhbXBhaWduQnVkZ2V0UmVjb21tZW5kYXRpb25CA+BBA0IZ",
-            "ChdfZXhjZXNzX2NhbXBhaWduX2J1ZGdldDpp6kFmCidnb29nbGVhZHMuZ29v",
+            "ZGVkX2NwY19iaWRfbWljcm9zGssBCh1UYXJnZXRSb2FzT3B0SW5SZWNvbW1l",
+            "bmRhdGlvbhIpChdyZWNvbW1lbmRlZF90YXJnZXRfcm9hcxgBIAEoAUID4EED",
+            "SACIAQESOAomcmVxdWlyZWRfY2FtcGFpZ25fYnVkZ2V0X2Ftb3VudF9taWNy",
+            "b3MYAiABKANCA+BBA0gBiAEBQhoKGF9yZWNvbW1lbmRlZF90YXJnZXRfcm9h",
+            "c0IpCidfcmVxdWlyZWRfY2FtcGFpZ25fYnVkZ2V0X2Ftb3VudF9taWNyb3Ma",
+            "uAEKFFRleHRBZFJlY29tbWVuZGF0aW9uEjYKAmFkGAEgASgLMiUuZ29vZ2xl",
+            "LmFkcy5nb29nbGVhZHMudjkucmVzb3VyY2VzLkFkQgPgQQMSHwoNY3JlYXRp",
+            "b25fZGF0ZRgEIAEoCUID4EEDSACIAQESIQoPYXV0b19hcHBseV9kYXRlGAUg",
+            "ASgJQgPgQQNIAYgBAUIQCg5fY3JlYXRpb25fZGF0ZUISChBfYXV0b19hcHBs",
+            "eV9kYXRlGnwKIU1heGltaXplQ2xpY2tzT3B0SW5SZWNvbW1lbmRhdGlvbhIy",
+            "CiByZWNvbW1lbmRlZF9idWRnZXRfYW1vdW50X21pY3JvcxgCIAEoA0ID4EED",
+            "SACIAQFCIwohX3JlY29tbWVuZGVkX2J1ZGdldF9hbW91bnRfbWljcm9zGpgF",
+            "ChxUYXJnZXRDcGFPcHRJblJlY29tbWVuZGF0aW9uEocBCgdvcHRpb25zGAEg",
+            "AygLMnEuZ29vZ2xlLmFkcy5nb29nbGVhZHMudjkucmVzb3VyY2VzLlJlY29t",
+            "bWVuZGF0aW9uLlRhcmdldENwYU9wdEluUmVjb21tZW5kYXRpb24uVGFyZ2V0",
+            "Q3BhT3B0SW5SZWNvbW1lbmRhdGlvbk9wdGlvbkID4EEDEi8KHXJlY29tbWVu",
+            "ZGVkX3RhcmdldF9jcGFfbWljcm9zGAMgASgDQgPgQQNIAIgBARqaAwoiVGFy",
+            "Z2V0Q3BhT3B0SW5SZWNvbW1lbmRhdGlvbk9wdGlvbhJ3CgRnb2FsGAEgASgO",
+            "MmQuZ29vZ2xlLmFkcy5nb29nbGVhZHMudjkuZW51bXMuVGFyZ2V0Q3BhT3B0",
+            "SW5SZWNvbW1lbmRhdGlvbkdvYWxFbnVtLlRhcmdldENwYU9wdEluUmVjb21t",
+            "ZW5kYXRpb25Hb2FsQgPgQQMSIwoRdGFyZ2V0X2NwYV9taWNyb3MYBSABKANC",
+            "A+BBA0gAiAEBEjgKJnJlcXVpcmVkX2NhbXBhaWduX2J1ZGdldF9hbW91bnRf",
+            "bWljcm9zGAYgASgDQgPgQQNIAYgBARJbCgZpbXBhY3QYBCABKAsyRi5nb29n",
+            "bGUuYWRzLmdvb2dsZWFkcy52OS5yZXNvdXJjZXMuUmVjb21tZW5kYXRpb24u",
+            "UmVjb21tZW5kYXRpb25JbXBhY3RCA+BBA0IUChJfdGFyZ2V0X2NwYV9taWNy",
+            "b3NCKQonX3JlcXVpcmVkX2NhbXBhaWduX2J1ZGdldF9hbW91bnRfbWljcm9z",
+            "QiAKHl9yZWNvbW1lbmRlZF90YXJnZXRfY3BhX21pY3JvcxqBAQomTWF4aW1p",
+            "emVDb252ZXJzaW9uc09wdEluUmVjb21tZW5kYXRpb24SMgogcmVjb21tZW5k",
+            "ZWRfYnVkZ2V0X2Ftb3VudF9taWNyb3MYAiABKANCA+BBA0gAiAEBQiMKIV9y",
+            "ZWNvbW1lbmRlZF9idWRnZXRfYW1vdW50X21pY3JvcxojCiFTZWFyY2hQYXJ0",
+            "bmVyc09wdEluUmVjb21tZW5kYXRpb24a2QEKHk1vdmVVbnVzZWRCdWRnZXRS",
+            "ZWNvbW1lbmRhdGlvbhIoChZleGNlc3NfY2FtcGFpZ25fYnVkZ2V0GAMgASgJ",
+            "QgPgQQNIAIgBARJyChVidWRnZXRfcmVjb21tZW5kYXRpb24YAiABKAsyTi5n",
+            "b29nbGUuYWRzLmdvb2dsZWFkcy52OS5yZXNvdXJjZXMuUmVjb21tZW5kYXRp",
+            "b24uQ2FtcGFpZ25CdWRnZXRSZWNvbW1lbmRhdGlvbkID4EEDQhkKF19leGNl",
+            "c3NfY2FtcGFpZ25fYnVkZ2V0GiAKHkVuaGFuY2VkQ3BjT3B0SW5SZWNvbW1l",
+            "bmRhdGlvbhoiCiBPcHRpbWl6ZUFkUm90YXRpb25SZWNvbW1lbmRhdGlvbhp2",
+            "Ch5DYWxsb3V0RXh0ZW5zaW9uUmVjb21tZW5kYXRpb24SVAoWcmVjb21tZW5k",
+            "ZWRfZXh0ZW5zaW9ucxgBIAMoCzIvLmdvb2dsZS5hZHMuZ29vZ2xlYWRzLnY5",
+            "LmNvbW1vbi5DYWxsb3V0RmVlZEl0ZW1CA+BBAxp4Ch9TaXRlbGlua0V4dGVu",
+            "c2lvblJlY29tbWVuZGF0aW9uElUKFnJlY29tbWVuZGVkX2V4dGVuc2lvbnMY",
+            "ASADKAsyMC5nb29nbGUuYWRzLmdvb2dsZWFkcy52OS5jb21tb24uU2l0ZWxp",
+            "bmtGZWVkSXRlbUID4EEDGnAKG0NhbGxFeHRlbnNpb25SZWNvbW1lbmRhdGlv",
+            "bhJRChZyZWNvbW1lbmRlZF9leHRlbnNpb25zGAEgAygLMiwuZ29vZ2xlLmFk",
+            "cy5nb29nbGVhZHMudjkuY29tbW9uLkNhbGxGZWVkSXRlbUID4EEDGs4BCh5L",
+            "ZXl3b3JkTWF0Y2hUeXBlUmVjb21tZW5kYXRpb24SQQoHa2V5d29yZBgBIAEo",
+            "CzIrLmdvb2dsZS5hZHMuZ29vZ2xlYWRzLnY5LmNvbW1vbi5LZXl3b3JkSW5m",
+            "b0ID4EEDEmkKFnJlY29tbWVuZGVkX21hdGNoX3R5cGUYAiABKA4yRC5nb29n",
+            "bGUuYWRzLmdvb2dsZWFkcy52OS5lbnVtcy5LZXl3b3JkTWF0Y2hUeXBlRW51",
+            "bS5LZXl3b3JkTWF0Y2hUeXBlQgPgQQMaWgogUmVzcG9uc2l2ZVNlYXJjaEFk",
+            "UmVjb21tZW5kYXRpb24SNgoCYWQYASABKAsyJS5nb29nbGUuYWRzLmdvb2ds",
+            "ZWFkcy52OS5yZXNvdXJjZXMuQWRCA+BBAzpp6kFmCidnb29nbGVhZHMuZ29v",
             "Z2xlYXBpcy5jb20vUmVjb21tZW5kYXRpb24SO2N1c3RvbWVycy97Y3VzdG9t",
             "ZXJfaWR9L3JlY29tbWVuZGF0aW9ucy97cmVjb21tZW5kYXRpb25faWR9QhAK",
             "DnJlY29tbWVuZGF0aW9uQhIKEF9jYW1wYWlnbl9idWRnZXRCCwoJX2NhbXBh",
@@ -195,20 +195,20 @@ namespace Google.Ads.GoogleAds.V9.Resources {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.RecommendationMetrics), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.RecommendationMetrics.Parser, new[]{ "Impressions", "Clicks", "CostMicros", "Conversions", "VideoViews" }, new[]{ "Impressions", "Clicks", "CostMicros", "Conversions", "VideoViews" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation.Parser, new[]{ "CurrentBudgetAmountMicros", "RecommendedBudgetAmountMicros", "BudgetOptions" }, new[]{ "CurrentBudgetAmountMicros", "RecommendedBudgetAmountMicros" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation.Types.CampaignBudgetRecommendationOption), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation.Types.CampaignBudgetRecommendationOption.Parser, new[]{ "BudgetAmountMicros", "Impact" }, new[]{ "BudgetAmountMicros" }, null, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.KeywordRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.KeywordRecommendation.Parser, new[]{ "Keyword", "RecommendedCpcBidMicros" }, new[]{ "RecommendedCpcBidMicros" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.SearchPartnersOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.SearchPartnersOptInRecommendation.Parser, null, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TextAdRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TextAdRecommendation.Parser, new[]{ "Ad", "CreationDate", "AutoApplyDate" }, new[]{ "CreationDate", "AutoApplyDate" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Parser, new[]{ "Options", "RecommendedTargetCpaMicros" }, new[]{ "RecommendedTargetCpaMicros" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Types.TargetCpaOptInRecommendationOption), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Types.TargetCpaOptInRecommendationOption.Parser, new[]{ "Goal", "TargetCpaMicros", "RequiredCampaignBudgetAmountMicros", "Impact" }, new[]{ "TargetCpaMicros", "RequiredCampaignBudgetAmountMicros" }, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.ResponsiveSearchAdRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.ResponsiveSearchAdRecommendation.Parser, new[]{ "Ad" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.EnhancedCpcOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.EnhancedCpcOptInRecommendation.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetRoasOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetRoasOptInRecommendation.Parser, new[]{ "RecommendedTargetRoas", "RequiredCampaignBudgetAmountMicros" }, new[]{ "RecommendedTargetRoas", "RequiredCampaignBudgetAmountMicros" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MaximizeConversionsOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MaximizeConversionsOptInRecommendation.Parser, new[]{ "RecommendedBudgetAmountMicros" }, new[]{ "RecommendedBudgetAmountMicros" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TextAdRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TextAdRecommendation.Parser, new[]{ "Ad", "CreationDate", "AutoApplyDate" }, new[]{ "CreationDate", "AutoApplyDate" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MaximizeClicksOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MaximizeClicksOptInRecommendation.Parser, new[]{ "RecommendedBudgetAmountMicros" }, new[]{ "RecommendedBudgetAmountMicros" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Parser, new[]{ "Options", "RecommendedTargetCpaMicros" }, new[]{ "RecommendedTargetCpaMicros" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Types.TargetCpaOptInRecommendationOption), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.TargetCpaOptInRecommendation.Types.TargetCpaOptInRecommendationOption.Parser, new[]{ "Goal", "TargetCpaMicros", "RequiredCampaignBudgetAmountMicros", "Impact" }, new[]{ "TargetCpaMicros", "RequiredCampaignBudgetAmountMicros" }, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MaximizeConversionsOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MaximizeConversionsOptInRecommendation.Parser, new[]{ "RecommendedBudgetAmountMicros" }, new[]{ "RecommendedBudgetAmountMicros" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.SearchPartnersOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.SearchPartnersOptInRecommendation.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MoveUnusedBudgetRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MoveUnusedBudgetRecommendation.Parser, new[]{ "ExcessCampaignBudget", "BudgetRecommendation" }, new[]{ "ExcessCampaignBudget" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.EnhancedCpcOptInRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.EnhancedCpcOptInRecommendation.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.OptimizeAdRotationRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.OptimizeAdRotationRecommendation.Parser, null, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CalloutExtensionRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CalloutExtensionRecommendation.Parser, new[]{ "RecommendedExtensions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.SitelinkExtensionRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.SitelinkExtensionRecommendation.Parser, new[]{ "RecommendedExtensions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CallExtensionRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CallExtensionRecommendation.Parser, new[]{ "RecommendedExtensions" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.KeywordMatchTypeRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.KeywordMatchTypeRecommendation.Parser, new[]{ "Keyword", "RecommendedMatchType" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MoveUnusedBudgetRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.MoveUnusedBudgetRecommendation.Parser, new[]{ "ExcessCampaignBudget", "BudgetRecommendation" }, new[]{ "ExcessCampaignBudget" }, null, null, null)})
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.ResponsiveSearchAdRecommendation), global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.ResponsiveSearchAdRecommendation.Parser, new[]{ "Ad" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -3265,18 +3265,19 @@ namespace Google.Ads.GoogleAds.V9.Resources {
       }
 
       /// <summary>
-      /// The Search Partners Opt-In recommendation.
+      /// The Target ROAS opt-in recommendation.
       /// </summary>
-      public sealed partial class SearchPartnersOptInRecommendation : pb::IMessage<SearchPartnersOptInRecommendation>
+      public sealed partial class TargetRoasOptInRecommendation : pb::IMessage<TargetRoasOptInRecommendation>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
       #endif
       {
-        private static readonly pb::MessageParser<SearchPartnersOptInRecommendation> _parser = new pb::MessageParser<SearchPartnersOptInRecommendation>(() => new SearchPartnersOptInRecommendation());
+        private static readonly pb::MessageParser<TargetRoasOptInRecommendation> _parser = new pb::MessageParser<TargetRoasOptInRecommendation>(() => new TargetRoasOptInRecommendation());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<SearchPartnersOptInRecommendation> Parser { get { return _parser; } }
+        public static pb::MessageParser<TargetRoasOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3292,7 +3293,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public SearchPartnersOptInRecommendation() {
+        public TargetRoasOptInRecommendation() {
           OnConstruction();
         }
 
@@ -3300,31 +3301,96 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public SearchPartnersOptInRecommendation(SearchPartnersOptInRecommendation other) : this() {
+        public TargetRoasOptInRecommendation(TargetRoasOptInRecommendation other) : this() {
+          _hasBits0 = other._hasBits0;
+          recommendedTargetRoas_ = other.recommendedTargetRoas_;
+          requiredCampaignBudgetAmountMicros_ = other.requiredCampaignBudgetAmountMicros_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public SearchPartnersOptInRecommendation Clone() {
-          return new SearchPartnersOptInRecommendation(this);
+        public TargetRoasOptInRecommendation Clone() {
+          return new TargetRoasOptInRecommendation(this);
+        }
+
+        /// <summary>Field number for the "recommended_target_roas" field.</summary>
+        public const int RecommendedTargetRoasFieldNumber = 1;
+        private double recommendedTargetRoas_;
+        /// <summary>
+        /// Output only. The recommended target ROAS (revenue per unit of spend).
+        /// The value is between 0.01 and 1000.0, inclusive.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public double RecommendedTargetRoas {
+          get { if ((_hasBits0 & 1) != 0) { return recommendedTargetRoas_; } else { return 0D; } }
+          set {
+            _hasBits0 |= 1;
+            recommendedTargetRoas_ = value;
+          }
+        }
+        /// <summary>Gets whether the "recommended_target_roas" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasRecommendedTargetRoas {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "recommended_target_roas" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearRecommendedTargetRoas() {
+          _hasBits0 &= ~1;
+        }
+
+        /// <summary>Field number for the "required_campaign_budget_amount_micros" field.</summary>
+        public const int RequiredCampaignBudgetAmountMicrosFieldNumber = 2;
+        private long requiredCampaignBudgetAmountMicros_;
+        /// <summary>
+        /// Output only. The minimum campaign budget, in local currency for the account,
+        /// required to achieve the target ROAS.
+        /// Amount is specified in micros, where one million is equivalent to one
+        /// currency unit.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public long RequiredCampaignBudgetAmountMicros {
+          get { if ((_hasBits0 & 2) != 0) { return requiredCampaignBudgetAmountMicros_; } else { return 0L; } }
+          set {
+            _hasBits0 |= 2;
+            requiredCampaignBudgetAmountMicros_ = value;
+          }
+        }
+        /// <summary>Gets whether the "required_campaign_budget_amount_micros" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasRequiredCampaignBudgetAmountMicros {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "required_campaign_budget_amount_micros" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearRequiredCampaignBudgetAmountMicros() {
+          _hasBits0 &= ~2;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
-          return Equals(other as SearchPartnersOptInRecommendation);
+          return Equals(other as TargetRoasOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(SearchPartnersOptInRecommendation other) {
+        public bool Equals(TargetRoasOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
+          if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(RecommendedTargetRoas, other.RecommendedTargetRoas)) return false;
+          if (RequiredCampaignBudgetAmountMicros != other.RequiredCampaignBudgetAmountMicros) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -3332,6 +3398,8 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
+          if (HasRecommendedTargetRoas) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(RecommendedTargetRoas);
+          if (HasRequiredCampaignBudgetAmountMicros) hash ^= RequiredCampaignBudgetAmountMicros.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -3350,6 +3418,14 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
+          if (HasRecommendedTargetRoas) {
+            output.WriteRawTag(9);
+            output.WriteDouble(RecommendedTargetRoas);
+          }
+          if (HasRequiredCampaignBudgetAmountMicros) {
+            output.WriteRawTag(16);
+            output.WriteInt64(RequiredCampaignBudgetAmountMicros);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -3360,6 +3436,14 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (HasRecommendedTargetRoas) {
+            output.WriteRawTag(9);
+            output.WriteDouble(RecommendedTargetRoas);
+          }
+          if (HasRequiredCampaignBudgetAmountMicros) {
+            output.WriteRawTag(16);
+            output.WriteInt64(RequiredCampaignBudgetAmountMicros);
+          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -3370,6 +3454,12 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
+          if (HasRecommendedTargetRoas) {
+            size += 1 + 8;
+          }
+          if (HasRequiredCampaignBudgetAmountMicros) {
+            size += 1 + pb::CodedOutputStream.ComputeInt64Size(RequiredCampaignBudgetAmountMicros);
+          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -3378,9 +3468,15 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(SearchPartnersOptInRecommendation other) {
+        public void MergeFrom(TargetRoasOptInRecommendation other) {
           if (other == null) {
             return;
+          }
+          if (other.HasRecommendedTargetRoas) {
+            RecommendedTargetRoas = other.RecommendedTargetRoas;
+          }
+          if (other.HasRequiredCampaignBudgetAmountMicros) {
+            RequiredCampaignBudgetAmountMicros = other.RequiredCampaignBudgetAmountMicros;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -3397,6 +3493,14 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
+              case 9: {
+                RecommendedTargetRoas = input.ReadDouble();
+                break;
+              }
+              case 16: {
+                RequiredCampaignBudgetAmountMicros = input.ReadInt64();
+                break;
+              }
             }
           }
         #endif
@@ -3412,6 +3516,14 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
+              case 9: {
+                RecommendedTargetRoas = input.ReadDouble();
+                break;
+              }
+              case 16: {
+                RequiredCampaignBudgetAmountMicros = input.ReadInt64();
+                break;
+              }
             }
           }
         }
@@ -3731,6 +3843,217 @@ namespace Google.Ads.GoogleAds.V9.Resources {
       }
 
       /// <summary>
+      /// The Maximize Clicks opt-in recommendation.
+      /// </summary>
+      public sealed partial class MaximizeClicksOptInRecommendation : pb::IMessage<MaximizeClicksOptInRecommendation>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<MaximizeClicksOptInRecommendation> _parser = new pb::MessageParser<MaximizeClicksOptInRecommendation>(() => new MaximizeClicksOptInRecommendation());
+        private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<MaximizeClicksOptInRecommendation> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[6]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MaximizeClicksOptInRecommendation() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MaximizeClicksOptInRecommendation(MaximizeClicksOptInRecommendation other) : this() {
+          _hasBits0 = other._hasBits0;
+          recommendedBudgetAmountMicros_ = other.recommendedBudgetAmountMicros_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MaximizeClicksOptInRecommendation Clone() {
+          return new MaximizeClicksOptInRecommendation(this);
+        }
+
+        /// <summary>Field number for the "recommended_budget_amount_micros" field.</summary>
+        public const int RecommendedBudgetAmountMicrosFieldNumber = 2;
+        private long recommendedBudgetAmountMicros_;
+        /// <summary>
+        /// Output only. The recommended new budget amount.
+        /// Only set if the current budget is too high.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public long RecommendedBudgetAmountMicros {
+          get { if ((_hasBits0 & 1) != 0) { return recommendedBudgetAmountMicros_; } else { return 0L; } }
+          set {
+            _hasBits0 |= 1;
+            recommendedBudgetAmountMicros_ = value;
+          }
+        }
+        /// <summary>Gets whether the "recommended_budget_amount_micros" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasRecommendedBudgetAmountMicros {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "recommended_budget_amount_micros" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearRecommendedBudgetAmountMicros() {
+          _hasBits0 &= ~1;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as MaximizeClicksOptInRecommendation);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(MaximizeClicksOptInRecommendation other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (RecommendedBudgetAmountMicros != other.RecommendedBudgetAmountMicros) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (HasRecommendedBudgetAmountMicros) hash ^= RecommendedBudgetAmountMicros.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (HasRecommendedBudgetAmountMicros) {
+            output.WriteRawTag(16);
+            output.WriteInt64(RecommendedBudgetAmountMicros);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (HasRecommendedBudgetAmountMicros) {
+            output.WriteRawTag(16);
+            output.WriteInt64(RecommendedBudgetAmountMicros);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (HasRecommendedBudgetAmountMicros) {
+            size += 1 + pb::CodedOutputStream.ComputeInt64Size(RecommendedBudgetAmountMicros);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(MaximizeClicksOptInRecommendation other) {
+          if (other == null) {
+            return;
+          }
+          if (other.HasRecommendedBudgetAmountMicros) {
+            RecommendedBudgetAmountMicros = other.RecommendedBudgetAmountMicros;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 16: {
+                RecommendedBudgetAmountMicros = input.ReadInt64();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 16: {
+                RecommendedBudgetAmountMicros = input.ReadInt64();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      /// <summary>
       /// The Target CPA opt-in recommendation.
       /// </summary>
       public sealed partial class TargetCpaOptInRecommendation : pb::IMessage<TargetCpaOptInRecommendation>
@@ -3748,7 +4071,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[6]; }
+          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4334,632 +4657,6 @@ namespace Google.Ads.GoogleAds.V9.Resources {
       }
 
       /// <summary>
-      /// The add responsive search ad recommendation.
-      /// </summary>
-      public sealed partial class ResponsiveSearchAdRecommendation : pb::IMessage<ResponsiveSearchAdRecommendation>
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          , pb::IBufferMessage
-      #endif
-      {
-        private static readonly pb::MessageParser<ResponsiveSearchAdRecommendation> _parser = new pb::MessageParser<ResponsiveSearchAdRecommendation>(() => new ResponsiveSearchAdRecommendation());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<ResponsiveSearchAdRecommendation> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[7]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public ResponsiveSearchAdRecommendation() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public ResponsiveSearchAdRecommendation(ResponsiveSearchAdRecommendation other) : this() {
-          ad_ = other.ad_ != null ? other.ad_.Clone() : null;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public ResponsiveSearchAdRecommendation Clone() {
-          return new ResponsiveSearchAdRecommendation(this);
-        }
-
-        /// <summary>Field number for the "ad" field.</summary>
-        public const int AdFieldNumber = 1;
-        private global::Google.Ads.GoogleAds.V9.Resources.Ad ad_;
-        /// <summary>
-        /// Output only. Recommended ad.
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Google.Ads.GoogleAds.V9.Resources.Ad Ad {
-          get { return ad_; }
-          set {
-            ad_ = value;
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override bool Equals(object other) {
-          return Equals(other as ResponsiveSearchAdRecommendation);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(ResponsiveSearchAdRecommendation other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (!object.Equals(Ad, other.Ad)) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (ad_ != null) hash ^= Ad.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void WriteTo(pb::CodedOutputStream output) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          output.WriteRawMessage(this);
-        #else
-          if (ad_ != null) {
-            output.WriteRawTag(10);
-            output.WriteMessage(Ad);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (ad_ != null) {
-            output.WriteRawTag(10);
-            output.WriteMessage(Ad);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(ref output);
-          }
-        }
-        #endif
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int CalculateSize() {
-          int size = 0;
-          if (ad_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Ad);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(ResponsiveSearchAdRecommendation other) {
-          if (other == null) {
-            return;
-          }
-          if (other.ad_ != null) {
-            if (ad_ == null) {
-              Ad = new global::Google.Ads.GoogleAds.V9.Resources.Ad();
-            }
-            Ad.MergeFrom(other.Ad);
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(pb::CodedInputStream input) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          input.ReadRawMessage(this);
-        #else
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 10: {
-                if (ad_ == null) {
-                  Ad = new global::Google.Ads.GoogleAds.V9.Resources.Ad();
-                }
-                input.ReadMessage(Ad);
-                break;
-              }
-            }
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-                break;
-              case 10: {
-                if (ad_ == null) {
-                  Ad = new global::Google.Ads.GoogleAds.V9.Resources.Ad();
-                }
-                input.ReadMessage(Ad);
-                break;
-              }
-            }
-          }
-        }
-        #endif
-
-      }
-
-      /// <summary>
-      /// The Enhanced Cost-Per-Click Opt-In recommendation.
-      /// </summary>
-      public sealed partial class EnhancedCpcOptInRecommendation : pb::IMessage<EnhancedCpcOptInRecommendation>
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          , pb::IBufferMessage
-      #endif
-      {
-        private static readonly pb::MessageParser<EnhancedCpcOptInRecommendation> _parser = new pb::MessageParser<EnhancedCpcOptInRecommendation>(() => new EnhancedCpcOptInRecommendation());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<EnhancedCpcOptInRecommendation> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[8]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public EnhancedCpcOptInRecommendation() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public EnhancedCpcOptInRecommendation(EnhancedCpcOptInRecommendation other) : this() {
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public EnhancedCpcOptInRecommendation Clone() {
-          return new EnhancedCpcOptInRecommendation(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override bool Equals(object other) {
-          return Equals(other as EnhancedCpcOptInRecommendation);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(EnhancedCpcOptInRecommendation other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void WriteTo(pb::CodedOutputStream output) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          output.WriteRawMessage(this);
-        #else
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(ref output);
-          }
-        }
-        #endif
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int CalculateSize() {
-          int size = 0;
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(EnhancedCpcOptInRecommendation other) {
-          if (other == null) {
-            return;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(pb::CodedInputStream input) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          input.ReadRawMessage(this);
-        #else
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-            }
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-                break;
-            }
-          }
-        }
-        #endif
-
-      }
-
-      /// <summary>
-      /// The Target ROAS opt-in recommendation.
-      /// </summary>
-      public sealed partial class TargetRoasOptInRecommendation : pb::IMessage<TargetRoasOptInRecommendation>
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          , pb::IBufferMessage
-      #endif
-      {
-        private static readonly pb::MessageParser<TargetRoasOptInRecommendation> _parser = new pb::MessageParser<TargetRoasOptInRecommendation>(() => new TargetRoasOptInRecommendation());
-        private pb::UnknownFieldSet _unknownFields;
-        private int _hasBits0;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<TargetRoasOptInRecommendation> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[9]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public TargetRoasOptInRecommendation() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public TargetRoasOptInRecommendation(TargetRoasOptInRecommendation other) : this() {
-          _hasBits0 = other._hasBits0;
-          recommendedTargetRoas_ = other.recommendedTargetRoas_;
-          requiredCampaignBudgetAmountMicros_ = other.requiredCampaignBudgetAmountMicros_;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public TargetRoasOptInRecommendation Clone() {
-          return new TargetRoasOptInRecommendation(this);
-        }
-
-        /// <summary>Field number for the "recommended_target_roas" field.</summary>
-        public const int RecommendedTargetRoasFieldNumber = 1;
-        private double recommendedTargetRoas_;
-        /// <summary>
-        /// Output only. The recommended target ROAS (revenue per unit of spend).
-        /// The value is between 0.01 and 1000.0, inclusive.
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public double RecommendedTargetRoas {
-          get { if ((_hasBits0 & 1) != 0) { return recommendedTargetRoas_; } else { return 0D; } }
-          set {
-            _hasBits0 |= 1;
-            recommendedTargetRoas_ = value;
-          }
-        }
-        /// <summary>Gets whether the "recommended_target_roas" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool HasRecommendedTargetRoas {
-          get { return (_hasBits0 & 1) != 0; }
-        }
-        /// <summary>Clears the value of the "recommended_target_roas" field</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void ClearRecommendedTargetRoas() {
-          _hasBits0 &= ~1;
-        }
-
-        /// <summary>Field number for the "required_campaign_budget_amount_micros" field.</summary>
-        public const int RequiredCampaignBudgetAmountMicrosFieldNumber = 2;
-        private long requiredCampaignBudgetAmountMicros_;
-        /// <summary>
-        /// Output only. The minimum campaign budget, in local currency for the account,
-        /// required to achieve the target ROAS.
-        /// Amount is specified in micros, where one million is equivalent to one
-        /// currency unit.
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public long RequiredCampaignBudgetAmountMicros {
-          get { if ((_hasBits0 & 2) != 0) { return requiredCampaignBudgetAmountMicros_; } else { return 0L; } }
-          set {
-            _hasBits0 |= 2;
-            requiredCampaignBudgetAmountMicros_ = value;
-          }
-        }
-        /// <summary>Gets whether the "required_campaign_budget_amount_micros" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool HasRequiredCampaignBudgetAmountMicros {
-          get { return (_hasBits0 & 2) != 0; }
-        }
-        /// <summary>Clears the value of the "required_campaign_budget_amount_micros" field</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void ClearRequiredCampaignBudgetAmountMicros() {
-          _hasBits0 &= ~2;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override bool Equals(object other) {
-          return Equals(other as TargetRoasOptInRecommendation);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(TargetRoasOptInRecommendation other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(RecommendedTargetRoas, other.RecommendedTargetRoas)) return false;
-          if (RequiredCampaignBudgetAmountMicros != other.RequiredCampaignBudgetAmountMicros) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (HasRecommendedTargetRoas) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(RecommendedTargetRoas);
-          if (HasRequiredCampaignBudgetAmountMicros) hash ^= RequiredCampaignBudgetAmountMicros.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void WriteTo(pb::CodedOutputStream output) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          output.WriteRawMessage(this);
-        #else
-          if (HasRecommendedTargetRoas) {
-            output.WriteRawTag(9);
-            output.WriteDouble(RecommendedTargetRoas);
-          }
-          if (HasRequiredCampaignBudgetAmountMicros) {
-            output.WriteRawTag(16);
-            output.WriteInt64(RequiredCampaignBudgetAmountMicros);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (HasRecommendedTargetRoas) {
-            output.WriteRawTag(9);
-            output.WriteDouble(RecommendedTargetRoas);
-          }
-          if (HasRequiredCampaignBudgetAmountMicros) {
-            output.WriteRawTag(16);
-            output.WriteInt64(RequiredCampaignBudgetAmountMicros);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(ref output);
-          }
-        }
-        #endif
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int CalculateSize() {
-          int size = 0;
-          if (HasRecommendedTargetRoas) {
-            size += 1 + 8;
-          }
-          if (HasRequiredCampaignBudgetAmountMicros) {
-            size += 1 + pb::CodedOutputStream.ComputeInt64Size(RequiredCampaignBudgetAmountMicros);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(TargetRoasOptInRecommendation other) {
-          if (other == null) {
-            return;
-          }
-          if (other.HasRecommendedTargetRoas) {
-            RecommendedTargetRoas = other.RecommendedTargetRoas;
-          }
-          if (other.HasRequiredCampaignBudgetAmountMicros) {
-            RequiredCampaignBudgetAmountMicros = other.RequiredCampaignBudgetAmountMicros;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(pb::CodedInputStream input) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          input.ReadRawMessage(this);
-        #else
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 9: {
-                RecommendedTargetRoas = input.ReadDouble();
-                break;
-              }
-              case 16: {
-                RequiredCampaignBudgetAmountMicros = input.ReadInt64();
-                break;
-              }
-            }
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-                break;
-              case 9: {
-                RecommendedTargetRoas = input.ReadDouble();
-                break;
-              }
-              case 16: {
-                RequiredCampaignBudgetAmountMicros = input.ReadInt64();
-                break;
-              }
-            }
-          }
-        }
-        #endif
-
-      }
-
-      /// <summary>
       /// The Maximize Conversions Opt-In recommendation.
       /// </summary>
       public sealed partial class MaximizeConversionsOptInRecommendation : pb::IMessage<MaximizeConversionsOptInRecommendation>
@@ -4977,7 +4674,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[10]; }
+          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5170,24 +4867,23 @@ namespace Google.Ads.GoogleAds.V9.Resources {
       }
 
       /// <summary>
-      /// The Maximize Clicks opt-in recommendation.
+      /// The Search Partners Opt-In recommendation.
       /// </summary>
-      public sealed partial class MaximizeClicksOptInRecommendation : pb::IMessage<MaximizeClicksOptInRecommendation>
+      public sealed partial class SearchPartnersOptInRecommendation : pb::IMessage<SearchPartnersOptInRecommendation>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
       #endif
       {
-        private static readonly pb::MessageParser<MaximizeClicksOptInRecommendation> _parser = new pb::MessageParser<MaximizeClicksOptInRecommendation>(() => new MaximizeClicksOptInRecommendation());
+        private static readonly pb::MessageParser<SearchPartnersOptInRecommendation> _parser = new pb::MessageParser<SearchPartnersOptInRecommendation>(() => new SearchPartnersOptInRecommendation());
         private pb::UnknownFieldSet _unknownFields;
-        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<MaximizeClicksOptInRecommendation> Parser { get { return _parser; } }
+        public static pb::MessageParser<SearchPartnersOptInRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[11]; }
+          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[9]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -5198,7 +4894,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public MaximizeClicksOptInRecommendation() {
+        public SearchPartnersOptInRecommendation() {
           OnConstruction();
         }
 
@@ -5206,63 +4902,31 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public MaximizeClicksOptInRecommendation(MaximizeClicksOptInRecommendation other) : this() {
-          _hasBits0 = other._hasBits0;
-          recommendedBudgetAmountMicros_ = other.recommendedBudgetAmountMicros_;
+        public SearchPartnersOptInRecommendation(SearchPartnersOptInRecommendation other) : this() {
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public MaximizeClicksOptInRecommendation Clone() {
-          return new MaximizeClicksOptInRecommendation(this);
-        }
-
-        /// <summary>Field number for the "recommended_budget_amount_micros" field.</summary>
-        public const int RecommendedBudgetAmountMicrosFieldNumber = 2;
-        private long recommendedBudgetAmountMicros_;
-        /// <summary>
-        /// Output only. The recommended new budget amount.
-        /// Only set if the current budget is too high.
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public long RecommendedBudgetAmountMicros {
-          get { if ((_hasBits0 & 1) != 0) { return recommendedBudgetAmountMicros_; } else { return 0L; } }
-          set {
-            _hasBits0 |= 1;
-            recommendedBudgetAmountMicros_ = value;
-          }
-        }
-        /// <summary>Gets whether the "recommended_budget_amount_micros" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool HasRecommendedBudgetAmountMicros {
-          get { return (_hasBits0 & 1) != 0; }
-        }
-        /// <summary>Clears the value of the "recommended_budget_amount_micros" field</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void ClearRecommendedBudgetAmountMicros() {
-          _hasBits0 &= ~1;
+        public SearchPartnersOptInRecommendation Clone() {
+          return new SearchPartnersOptInRecommendation(this);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
-          return Equals(other as MaximizeClicksOptInRecommendation);
+          return Equals(other as SearchPartnersOptInRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(MaximizeClicksOptInRecommendation other) {
+        public bool Equals(SearchPartnersOptInRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (RecommendedBudgetAmountMicros != other.RecommendedBudgetAmountMicros) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -5270,7 +4934,6 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (HasRecommendedBudgetAmountMicros) hash ^= RecommendedBudgetAmountMicros.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -5289,10 +4952,6 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (HasRecommendedBudgetAmountMicros) {
-            output.WriteRawTag(16);
-            output.WriteInt64(RecommendedBudgetAmountMicros);
-          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
           }
@@ -5303,10 +4962,6 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (HasRecommendedBudgetAmountMicros) {
-            output.WriteRawTag(16);
-            output.WriteInt64(RecommendedBudgetAmountMicros);
-          }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
           }
@@ -5317,9 +4972,6 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (HasRecommendedBudgetAmountMicros) {
-            size += 1 + pb::CodedOutputStream.ComputeInt64Size(RecommendedBudgetAmountMicros);
-          }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
           }
@@ -5328,12 +4980,9 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(MaximizeClicksOptInRecommendation other) {
+        public void MergeFrom(SearchPartnersOptInRecommendation other) {
           if (other == null) {
             return;
-          }
-          if (other.HasRecommendedBudgetAmountMicros) {
-            RecommendedBudgetAmountMicros = other.RecommendedBudgetAmountMicros;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -5350,8 +4999,249 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 16: {
-                RecommendedBudgetAmountMicros = input.ReadInt64();
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+            }
+          }
+        }
+        #endif
+
+      }
+
+      /// <summary>
+      /// The move unused budget recommendation.
+      /// </summary>
+      public sealed partial class MoveUnusedBudgetRecommendation : pb::IMessage<MoveUnusedBudgetRecommendation>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<MoveUnusedBudgetRecommendation> _parser = new pb::MessageParser<MoveUnusedBudgetRecommendation>(() => new MoveUnusedBudgetRecommendation());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<MoveUnusedBudgetRecommendation> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[10]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MoveUnusedBudgetRecommendation() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MoveUnusedBudgetRecommendation(MoveUnusedBudgetRecommendation other) : this() {
+          excessCampaignBudget_ = other.excessCampaignBudget_;
+          budgetRecommendation_ = other.budgetRecommendation_ != null ? other.budgetRecommendation_.Clone() : null;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public MoveUnusedBudgetRecommendation Clone() {
+          return new MoveUnusedBudgetRecommendation(this);
+        }
+
+        /// <summary>Field number for the "excess_campaign_budget" field.</summary>
+        public const int ExcessCampaignBudgetFieldNumber = 3;
+        private string excessCampaignBudget_;
+        /// <summary>
+        /// Output only. The excess budget's resource_name.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public string ExcessCampaignBudget {
+          get { return excessCampaignBudget_ ?? ""; }
+          set {
+            excessCampaignBudget_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+          }
+        }
+        /// <summary>Gets whether the "excess_campaign_budget" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasExcessCampaignBudget {
+          get { return excessCampaignBudget_ != null; }
+        }
+        /// <summary>Clears the value of the "excess_campaign_budget" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearExcessCampaignBudget() {
+          excessCampaignBudget_ = null;
+        }
+
+        /// <summary>Field number for the "budget_recommendation" field.</summary>
+        public const int BudgetRecommendationFieldNumber = 2;
+        private global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation budgetRecommendation_;
+        /// <summary>
+        /// Output only. The recommendation for the constrained budget to increase.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation BudgetRecommendation {
+          get { return budgetRecommendation_; }
+          set {
+            budgetRecommendation_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as MoveUnusedBudgetRecommendation);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(MoveUnusedBudgetRecommendation other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (ExcessCampaignBudget != other.ExcessCampaignBudget) return false;
+          if (!object.Equals(BudgetRecommendation, other.BudgetRecommendation)) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (HasExcessCampaignBudget) hash ^= ExcessCampaignBudget.GetHashCode();
+          if (budgetRecommendation_ != null) hash ^= BudgetRecommendation.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (budgetRecommendation_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(BudgetRecommendation);
+          }
+          if (HasExcessCampaignBudget) {
+            output.WriteRawTag(26);
+            output.WriteString(ExcessCampaignBudget);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (budgetRecommendation_ != null) {
+            output.WriteRawTag(18);
+            output.WriteMessage(BudgetRecommendation);
+          }
+          if (HasExcessCampaignBudget) {
+            output.WriteRawTag(26);
+            output.WriteString(ExcessCampaignBudget);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (HasExcessCampaignBudget) {
+            size += 1 + pb::CodedOutputStream.ComputeStringSize(ExcessCampaignBudget);
+          }
+          if (budgetRecommendation_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(BudgetRecommendation);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(MoveUnusedBudgetRecommendation other) {
+          if (other == null) {
+            return;
+          }
+          if (other.HasExcessCampaignBudget) {
+            ExcessCampaignBudget = other.ExcessCampaignBudget;
+          }
+          if (other.budgetRecommendation_ != null) {
+            if (budgetRecommendation_ == null) {
+              BudgetRecommendation = new global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation();
+            }
+            BudgetRecommendation.MergeFrom(other.BudgetRecommendation);
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 18: {
+                if (budgetRecommendation_ == null) {
+                  BudgetRecommendation = new global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation();
+                }
+                input.ReadMessage(BudgetRecommendation);
+                break;
+              }
+              case 26: {
+                ExcessCampaignBudget = input.ReadString();
                 break;
               }
             }
@@ -5369,10 +5259,172 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
-              case 16: {
-                RecommendedBudgetAmountMicros = input.ReadInt64();
+              case 18: {
+                if (budgetRecommendation_ == null) {
+                  BudgetRecommendation = new global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation();
+                }
+                input.ReadMessage(BudgetRecommendation);
                 break;
               }
+              case 26: {
+                ExcessCampaignBudget = input.ReadString();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      /// <summary>
+      /// The Enhanced Cost-Per-Click Opt-In recommendation.
+      /// </summary>
+      public sealed partial class EnhancedCpcOptInRecommendation : pb::IMessage<EnhancedCpcOptInRecommendation>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<EnhancedCpcOptInRecommendation> _parser = new pb::MessageParser<EnhancedCpcOptInRecommendation>(() => new EnhancedCpcOptInRecommendation());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<EnhancedCpcOptInRecommendation> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Descriptor.NestedTypes[11]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public EnhancedCpcOptInRecommendation() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public EnhancedCpcOptInRecommendation(EnhancedCpcOptInRecommendation other) : this() {
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public EnhancedCpcOptInRecommendation Clone() {
+          return new EnhancedCpcOptInRecommendation(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as EnhancedCpcOptInRecommendation);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(EnhancedCpcOptInRecommendation other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(EnhancedCpcOptInRecommendation other) {
+          if (other == null) {
+            return;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
             }
           }
         }
@@ -6332,18 +6384,18 @@ namespace Google.Ads.GoogleAds.V9.Resources {
       }
 
       /// <summary>
-      /// The move unused budget recommendation.
+      /// The add responsive search ad recommendation.
       /// </summary>
-      public sealed partial class MoveUnusedBudgetRecommendation : pb::IMessage<MoveUnusedBudgetRecommendation>
+      public sealed partial class ResponsiveSearchAdRecommendation : pb::IMessage<ResponsiveSearchAdRecommendation>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           , pb::IBufferMessage
       #endif
       {
-        private static readonly pb::MessageParser<MoveUnusedBudgetRecommendation> _parser = new pb::MessageParser<MoveUnusedBudgetRecommendation>(() => new MoveUnusedBudgetRecommendation());
+        private static readonly pb::MessageParser<ResponsiveSearchAdRecommendation> _parser = new pb::MessageParser<ResponsiveSearchAdRecommendation>(() => new ResponsiveSearchAdRecommendation());
         private pb::UnknownFieldSet _unknownFields;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<MoveUnusedBudgetRecommendation> Parser { get { return _parser; } }
+        public static pb::MessageParser<ResponsiveSearchAdRecommendation> Parser { get { return _parser; } }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -6359,7 +6411,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public MoveUnusedBudgetRecommendation() {
+        public ResponsiveSearchAdRecommendation() {
           OnConstruction();
         }
 
@@ -6367,77 +6419,48 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public MoveUnusedBudgetRecommendation(MoveUnusedBudgetRecommendation other) : this() {
-          excessCampaignBudget_ = other.excessCampaignBudget_;
-          budgetRecommendation_ = other.budgetRecommendation_ != null ? other.budgetRecommendation_.Clone() : null;
+        public ResponsiveSearchAdRecommendation(ResponsiveSearchAdRecommendation other) : this() {
+          ad_ = other.ad_ != null ? other.ad_.Clone() : null;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public MoveUnusedBudgetRecommendation Clone() {
-          return new MoveUnusedBudgetRecommendation(this);
+        public ResponsiveSearchAdRecommendation Clone() {
+          return new ResponsiveSearchAdRecommendation(this);
         }
 
-        /// <summary>Field number for the "excess_campaign_budget" field.</summary>
-        public const int ExcessCampaignBudgetFieldNumber = 3;
-        private string excessCampaignBudget_;
+        /// <summary>Field number for the "ad" field.</summary>
+        public const int AdFieldNumber = 1;
+        private global::Google.Ads.GoogleAds.V9.Resources.Ad ad_;
         /// <summary>
-        /// Output only. The excess budget's resource_name.
+        /// Output only. Recommended ad.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public string ExcessCampaignBudget {
-          get { return excessCampaignBudget_ ?? ""; }
+        public global::Google.Ads.GoogleAds.V9.Resources.Ad Ad {
+          get { return ad_; }
           set {
-            excessCampaignBudget_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-          }
-        }
-        /// <summary>Gets whether the "excess_campaign_budget" field is set</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool HasExcessCampaignBudget {
-          get { return excessCampaignBudget_ != null; }
-        }
-        /// <summary>Clears the value of the "excess_campaign_budget" field</summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void ClearExcessCampaignBudget() {
-          excessCampaignBudget_ = null;
-        }
-
-        /// <summary>Field number for the "budget_recommendation" field.</summary>
-        public const int BudgetRecommendationFieldNumber = 2;
-        private global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation budgetRecommendation_;
-        /// <summary>
-        /// Output only. The recommendation for the constrained budget to increase.
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation BudgetRecommendation {
-          get { return budgetRecommendation_; }
-          set {
-            budgetRecommendation_ = value;
+            ad_ = value;
           }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override bool Equals(object other) {
-          return Equals(other as MoveUnusedBudgetRecommendation);
+          return Equals(other as ResponsiveSearchAdRecommendation);
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(MoveUnusedBudgetRecommendation other) {
+        public bool Equals(ResponsiveSearchAdRecommendation other) {
           if (ReferenceEquals(other, null)) {
             return false;
           }
           if (ReferenceEquals(other, this)) {
             return true;
           }
-          if (ExcessCampaignBudget != other.ExcessCampaignBudget) return false;
-          if (!object.Equals(BudgetRecommendation, other.BudgetRecommendation)) return false;
+          if (!object.Equals(Ad, other.Ad)) return false;
           return Equals(_unknownFields, other._unknownFields);
         }
 
@@ -6445,8 +6468,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (HasExcessCampaignBudget) hash ^= ExcessCampaignBudget.GetHashCode();
-          if (budgetRecommendation_ != null) hash ^= BudgetRecommendation.GetHashCode();
+          if (ad_ != null) hash ^= Ad.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -6465,13 +6487,9 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (budgetRecommendation_ != null) {
-            output.WriteRawTag(18);
-            output.WriteMessage(BudgetRecommendation);
-          }
-          if (HasExcessCampaignBudget) {
-            output.WriteRawTag(26);
-            output.WriteString(ExcessCampaignBudget);
+          if (ad_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Ad);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(output);
@@ -6483,13 +6501,9 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (budgetRecommendation_ != null) {
-            output.WriteRawTag(18);
-            output.WriteMessage(BudgetRecommendation);
-          }
-          if (HasExcessCampaignBudget) {
-            output.WriteRawTag(26);
-            output.WriteString(ExcessCampaignBudget);
+          if (ad_ != null) {
+            output.WriteRawTag(10);
+            output.WriteMessage(Ad);
           }
           if (_unknownFields != null) {
             _unknownFields.WriteTo(ref output);
@@ -6501,11 +6515,8 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (HasExcessCampaignBudget) {
-            size += 1 + pb::CodedOutputStream.ComputeStringSize(ExcessCampaignBudget);
-          }
-          if (budgetRecommendation_ != null) {
-            size += 1 + pb::CodedOutputStream.ComputeMessageSize(BudgetRecommendation);
+          if (ad_ != null) {
+            size += 1 + pb::CodedOutputStream.ComputeMessageSize(Ad);
           }
           if (_unknownFields != null) {
             size += _unknownFields.CalculateSize();
@@ -6515,18 +6526,15 @@ namespace Google.Ads.GoogleAds.V9.Resources {
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(MoveUnusedBudgetRecommendation other) {
+        public void MergeFrom(ResponsiveSearchAdRecommendation other) {
           if (other == null) {
             return;
           }
-          if (other.HasExcessCampaignBudget) {
-            ExcessCampaignBudget = other.ExcessCampaignBudget;
-          }
-          if (other.budgetRecommendation_ != null) {
-            if (budgetRecommendation_ == null) {
-              BudgetRecommendation = new global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation();
+          if (other.ad_ != null) {
+            if (ad_ == null) {
+              Ad = new global::Google.Ads.GoogleAds.V9.Resources.Ad();
             }
-            BudgetRecommendation.MergeFrom(other.BudgetRecommendation);
+            Ad.MergeFrom(other.Ad);
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
         }
@@ -6543,15 +6551,11 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
-              case 18: {
-                if (budgetRecommendation_ == null) {
-                  BudgetRecommendation = new global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation();
+              case 10: {
+                if (ad_ == null) {
+                  Ad = new global::Google.Ads.GoogleAds.V9.Resources.Ad();
                 }
-                input.ReadMessage(BudgetRecommendation);
-                break;
-              }
-              case 26: {
-                ExcessCampaignBudget = input.ReadString();
+                input.ReadMessage(Ad);
                 break;
               }
             }
@@ -6569,15 +6573,11 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               default:
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
-              case 18: {
-                if (budgetRecommendation_ == null) {
-                  BudgetRecommendation = new global::Google.Ads.GoogleAds.V9.Resources.Recommendation.Types.CampaignBudgetRecommendation();
+              case 10: {
+                if (ad_ == null) {
+                  Ad = new global::Google.Ads.GoogleAds.V9.Resources.Ad();
                 }
-                input.ReadMessage(BudgetRecommendation);
-                break;
-              }
-              case 26: {
-                ExcessCampaignBudget = input.ReadString();
+                input.ReadMessage(Ad);
                 break;
               }
             }

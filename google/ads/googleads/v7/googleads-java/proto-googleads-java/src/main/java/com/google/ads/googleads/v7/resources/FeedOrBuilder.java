@@ -231,8 +231,7 @@ public interface FeedOrBuilder extends
 
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * <code>.google.ads.googleads.v7.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -241,8 +240,7 @@ public interface FeedOrBuilder extends
   boolean hasPlacesLocationFeedData();
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * <code>.google.ads.googleads.v7.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>
@@ -251,8 +249,7 @@ public interface FeedOrBuilder extends
   com.google.ads.googleads.v7.resources.Feed.PlacesLocationFeedData getPlacesLocationFeedData();
   /**
    * <pre>
-   * Data used to configure a location feed populated from Google My Business
-   * Locations.
+   * Data used to configure a location feed populated from Business Profile.
    * </pre>
    *
    * <code>.google.ads.googleads.v7.resources.Feed.PlacesLocationFeedData places_location_feed_data = 6;</code>

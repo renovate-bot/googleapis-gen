@@ -536,8 +536,8 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// <summary>Field number for the "location_feed_item" field.</summary>
     public const int LocationFeedItemFieldNumber = 14;
     /// <summary>
-    /// Output only. Location extension. Locations are synced from a GMB account into a feed.
-    /// This field is read-only.
+    /// Output only. Location extension. Locations are synced from a Business Profile into a
+    /// feed. This field is read-only.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

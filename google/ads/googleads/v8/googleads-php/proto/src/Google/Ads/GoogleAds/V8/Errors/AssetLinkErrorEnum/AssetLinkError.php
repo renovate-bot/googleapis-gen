@@ -128,6 +128,15 @@ class AssetLinkError
      * Generated from protobuf enum <code>INVALID_STATUS = 17;</code>
      */
     const INVALID_STATUS = 17;
+    /**
+     * The YouTube video referenced in the provided asset has unknown duration.
+     * This might be the case for a livestream video or a video being currently
+     * uploaded to YouTube. In both cases, the video duration should eventually
+     * get resolved.
+     *
+     * Generated from protobuf enum <code>YOUTUBE_VIDEO_DURATION_NOT_DEFINED = 18;</code>
+     */
+    const YOUTUBE_VIDEO_DURATION_NOT_DEFINED = 18;
 
     private static $valueToName = [
         self::UNSPECIFIED => 'UNSPECIFIED',
@@ -147,6 +156,7 @@ class AssetLinkError
         self::YOUTUBE_VIDEO_TOO_LONG => 'YOUTUBE_VIDEO_TOO_LONG',
         self::YOUTUBE_VIDEO_TOO_SHORT => 'YOUTUBE_VIDEO_TOO_SHORT',
         self::INVALID_STATUS => 'INVALID_STATUS',
+        self::YOUTUBE_VIDEO_DURATION_NOT_DEFINED => 'YOUTUBE_VIDEO_DURATION_NOT_DEFINED',
     ];
 
     public static function name($value)

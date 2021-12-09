@@ -96,7 +96,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The ID of the selected location for planning. To list the available
-   * plannable location ids use ListPlannableLocations.
+   * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -118,7 +118,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Required. The ID of the selected location for planning. To list the available
-   * plannable location ids use ListPlannableLocations.
+   * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -449,7 +449,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use ListPlannableLocations.
+     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -470,7 +470,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use ListPlannableLocations.
+     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -492,7 +492,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use ListPlannableLocations.
+     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -512,7 +512,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use ListPlannableLocations.
+     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -527,7 +527,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Required. The ID of the selected location for planning. To list the available
-     * plannable location ids use ListPlannableLocations.
+     * plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>string plannable_location_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>

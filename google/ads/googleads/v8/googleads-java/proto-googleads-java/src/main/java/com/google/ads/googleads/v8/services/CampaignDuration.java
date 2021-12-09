@@ -96,6 +96,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The duration value in days.
+   * This field cannot be combined with the date_range field.
    * </pre>
    *
    * <code>optional int32 duration_in_days = 2;</code>
@@ -108,6 +109,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * The duration value in days.
+   * This field cannot be combined with the date_range field.
    * </pre>
    *
    * <code>optional int32 duration_in_days = 2;</code>
@@ -440,6 +442,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      * </pre>
      *
      * <code>optional int32 duration_in_days = 2;</code>
@@ -452,6 +455,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      * </pre>
      *
      * <code>optional int32 duration_in_days = 2;</code>
@@ -464,6 +468,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      * </pre>
      *
      * <code>optional int32 duration_in_days = 2;</code>
@@ -479,6 +484,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * The duration value in days.
+     * This field cannot be combined with the date_range field.
      * </pre>
      *
      * <code>optional int32 duration_in_days = 2;</code>

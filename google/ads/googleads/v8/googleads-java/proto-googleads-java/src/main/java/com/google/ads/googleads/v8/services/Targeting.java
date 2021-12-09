@@ -137,8 +137,8 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object plannableLocationId_;
   /**
    * <pre>
-   * Required. The ID of the selected location.
-   * Plannable locations ID can be obtained from ListPlannableLocations.
+   * Required. The ID of the selected location. Plannable location IDs can be
+   * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>optional string plannable_location_id = 6;</code>
@@ -150,8 +150,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The ID of the selected location.
-   * Plannable locations ID can be obtained from ListPlannableLocations.
+   * Required. The ID of the selected location. Plannable location IDs can be
+   * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>optional string plannable_location_id = 6;</code>
@@ -172,8 +172,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Required. The ID of the selected location.
-   * Plannable locations ID can be obtained from ListPlannableLocations.
+   * Required. The ID of the selected location. Plannable location IDs can be
+   * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
    * </pre>
    *
    * <code>optional string plannable_location_id = 6;</code>
@@ -199,7 +199,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted age range.
-   * If not specified, targets all age ranges.
+   * An unset value is equivalent to targeting all ages.
    * </pre>
    *
    * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -211,7 +211,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted age range.
-   * If not specified, targets all age ranges.
+   * An unset value is equivalent to targeting all ages.
    * </pre>
    *
    * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -228,7 +228,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted genders.
-   * If not specified, targets all genders.
+   * An unset value is equivalent to targeting MALE and FEMALE.
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -240,7 +240,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted genders.
-   * If not specified, targets all genders.
+   * An unset value is equivalent to targeting MALE and FEMALE.
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -253,7 +253,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted genders.
-   * If not specified, targets all genders.
+   * An unset value is equivalent to targeting MALE and FEMALE.
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -265,7 +265,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted genders.
-   * If not specified, targets all genders.
+   * An unset value is equivalent to targeting MALE and FEMALE.
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -277,7 +277,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Targeted genders.
-   * If not specified, targets all genders.
+   * An unset value is equivalent to targeting MALE and FEMALE.
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -294,7 +294,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targeted devices.
    * If not specified, targets all applicable devices. Applicable devices vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -307,7 +308,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targeted devices.
    * If not specified, targets all applicable devices. Applicable devices vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -321,7 +323,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targeted devices.
    * If not specified, targets all applicable devices. Applicable devices vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -334,7 +337,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targeted devices.
    * If not specified, targets all applicable devices. Applicable devices vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -347,7 +351,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targeted devices.
    * If not specified, targets all applicable devices. Applicable devices vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -364,7 +369,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targetable network for the ad product.
    * If not specified, targets all applicable networks. Applicable networks vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
@@ -377,7 +383,8 @@ private static final long serialVersionUID = 0L;
    * <pre>
    * Targetable network for the ad product.
    * If not specified, targets all applicable networks. Applicable networks vary
-   * by product and region and can be obtained from ListPlannableProducts.
+   * by product and region and can be obtained from
+   * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
    * </pre>
    *
    * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
@@ -853,8 +860,8 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object plannableLocationId_ = "";
     /**
      * <pre>
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>optional string plannable_location_id = 6;</code>
@@ -865,8 +872,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>optional string plannable_location_id = 6;</code>
@@ -886,8 +893,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>optional string plannable_location_id = 6;</code>
@@ -908,8 +915,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>optional string plannable_location_id = 6;</code>
@@ -928,8 +935,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>optional string plannable_location_id = 6;</code>
@@ -943,8 +950,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      * </pre>
      *
      * <code>optional string plannable_location_id = 6;</code>
@@ -967,7 +974,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -979,7 +986,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -995,7 +1002,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -1010,7 +1017,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -1029,7 +1036,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
@@ -1057,7 +1064,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1072,7 +1079,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1087,7 +1094,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1102,7 +1109,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1124,7 +1131,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1143,7 +1150,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1164,7 +1171,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1186,7 +1193,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1205,7 +1212,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1224,7 +1231,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1244,7 +1251,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1262,7 +1269,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1280,7 +1287,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1292,7 +1299,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1307,7 +1314,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1323,7 +1330,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1335,7 +1342,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1348,7 +1355,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
@@ -1388,7 +1395,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1404,7 +1412,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1420,7 +1429,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1436,7 +1446,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1459,7 +1470,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1479,7 +1491,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1501,7 +1514,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1524,7 +1538,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1544,7 +1559,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1564,7 +1580,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1585,7 +1602,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1604,7 +1622,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1623,7 +1642,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1636,7 +1656,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1652,7 +1673,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1669,7 +1691,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1682,7 +1705,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1696,7 +1720,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
@@ -1725,7 +1750,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
@@ -1738,7 +1764,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
@@ -1755,7 +1782,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
@@ -1771,7 +1799,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
@@ -1791,7 +1820,8 @@ private static final long serialVersionUID = 0L;
      * <pre>
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * </pre>
      *
      * <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>

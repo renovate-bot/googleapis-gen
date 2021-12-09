@@ -500,7 +500,7 @@ private static final long serialVersionUID = 0L;
     INVALID_TAG_IN_FINAL_URL_SUFFIX(51),
     /**
      * <pre>
-     * The top level domain is invalid, e.g, not a public top level domain
+     * The top level domain is invalid, e.g. not a public top level domain
      * listed in publicsuffix.org.
      * </pre>
      *
@@ -957,7 +957,7 @@ private static final long serialVersionUID = 0L;
     public static final int INVALID_TAG_IN_FINAL_URL_SUFFIX_VALUE = 51;
     /**
      * <pre>
-     * The top level domain is invalid, e.g, not a public top level domain
+     * The top level domain is invalid, e.g. not a public top level domain
      * listed in publicsuffix.org.
      * </pre>
      *

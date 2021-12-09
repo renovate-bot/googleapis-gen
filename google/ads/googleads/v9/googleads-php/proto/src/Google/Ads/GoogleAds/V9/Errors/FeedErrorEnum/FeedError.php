@@ -129,7 +129,7 @@ class FeedError
      */
     const INVALID_BUSINESS_ACCOUNT = 18;
     /**
-     * Business account cannot access Google My Business account.
+     * Business account cannot access Business Profile.
      *
      * Generated from protobuf enum <code>BUSINESS_ACCOUNT_CANNOT_ACCESS_LOCATION_ACCOUNT = 19;</code>
      */
@@ -147,7 +147,7 @@ class FeedError
      */
     const DUPLICATE_SYSTEM_FEED = 21;
     /**
-     * An error occurred accessing GMB account.
+     * An error occurred accessing Business Profile.
      *
      * Generated from protobuf enum <code>GMB_ACCESS_ERROR = 22;</code>
      */

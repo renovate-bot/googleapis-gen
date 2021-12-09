@@ -216,8 +216,7 @@ namespace Google.Ads.GoogleAds.V9.Enums {
         /// </summary>
         [pbr::OriginalName("UNKNOWN")] Unknown = 1,
         /// <summary>
-        /// Locations associated with the customer's linked Google My Business
-        /// account.
+        /// Locations associated with the customer's linked Business Profile.
         /// </summary>
         [pbr::OriginalName("GOOGLE_MY_BUSINESS")] GoogleMyBusiness = 2,
         /// <summary>

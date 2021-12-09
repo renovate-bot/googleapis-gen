@@ -350,9 +350,36 @@ class Recommendation(proto.Message):
             optional=True,
         )
 
-    class SearchPartnersOptInRecommendation(proto.Message):
-        r"""The Search Partners Opt-In recommendation.
+    class TargetRoasOptInRecommendation(proto.Message):
+        r"""The Target ROAS opt-in recommendation.
+
+        Attributes:
+            recommended_target_roas (float):
+                Output only. The recommended target ROAS
+                (revenue per unit of spend). The value is
+                between 0.01 and 1000.0, inclusive.
+
+                This field is a member of `oneof`_ ``_recommended_target_roas``.
+            required_campaign_budget_amount_micros (int):
+                Output only. The minimum campaign budget, in
+                local currency for the account, required to
+                achieve the target ROAS. Amount is specified in
+                micros, where one million is equivalent to one
+                currency unit.
+
+                This field is a member of `oneof`_ ``_required_campaign_budget_amount_micros``.
         """
+
+        recommended_target_roas = proto.Field(
+            proto.DOUBLE,
+            number=1,
+            optional=True,
+        )
+        required_campaign_budget_amount_micros = proto.Field(
+            proto.INT64,
+            number=2,
+            optional=True,
+        )
 
     class TextAdRecommendation(proto.Message):
         r"""The text ad recommendation.
@@ -386,6 +413,24 @@ class Recommendation(proto.Message):
         auto_apply_date = proto.Field(
             proto.STRING,
             number=5,
+            optional=True,
+        )
+
+    class MaximizeClicksOptInRecommendation(proto.Message):
+        r"""The Maximize Clicks opt-in recommendation.
+
+        Attributes:
+            recommended_budget_amount_micros (int):
+                Output only. The recommended new budget
+                amount. Only set if the current budget is too
+                high.
+
+                This field is a member of `oneof`_ ``_recommended_budget_amount_micros``.
+        """
+
+        recommended_budget_amount_micros = proto.Field(
+            proto.INT64,
+            number=2,
             optional=True,
         )
 
@@ -460,55 +505,6 @@ class Recommendation(proto.Message):
             optional=True,
         )
 
-    class ResponsiveSearchAdRecommendation(proto.Message):
-        r"""The add responsive search ad recommendation.
-
-        Attributes:
-            ad (google.ads.googleads.v9.resources.types.Ad):
-                Output only. Recommended ad.
-        """
-
-        ad = proto.Field(
-            proto.MESSAGE,
-            number=1,
-            message=gagr_ad.Ad,
-        )
-
-    class EnhancedCpcOptInRecommendation(proto.Message):
-        r"""The Enhanced Cost-Per-Click Opt-In recommendation.
-        """
-
-    class TargetRoasOptInRecommendation(proto.Message):
-        r"""The Target ROAS opt-in recommendation.
-
-        Attributes:
-            recommended_target_roas (float):
-                Output only. The recommended target ROAS
-                (revenue per unit of spend). The value is
-                between 0.01 and 1000.0, inclusive.
-
-                This field is a member of `oneof`_ ``_recommended_target_roas``.
-            required_campaign_budget_amount_micros (int):
-                Output only. The minimum campaign budget, in
-                local currency for the account, required to
-                achieve the target ROAS. Amount is specified in
-                micros, where one million is equivalent to one
-                currency unit.
-
-                This field is a member of `oneof`_ ``_required_campaign_budget_amount_micros``.
-        """
-
-        recommended_target_roas = proto.Field(
-            proto.DOUBLE,
-            number=1,
-            optional=True,
-        )
-        required_campaign_budget_amount_micros = proto.Field(
-            proto.INT64,
-            number=2,
-            optional=True,
-        )
-
     class MaximizeConversionsOptInRecommendation(proto.Message):
         r"""The Maximize Conversions Opt-In recommendation.
 
@@ -526,23 +522,37 @@ class Recommendation(proto.Message):
             optional=True,
         )
 
-    class MaximizeClicksOptInRecommendation(proto.Message):
-        r"""The Maximize Clicks opt-in recommendation.
-
-        Attributes:
-            recommended_budget_amount_micros (int):
-                Output only. The recommended new budget
-                amount. Only set if the current budget is too
-                high.
-
-                This field is a member of `oneof`_ ``_recommended_budget_amount_micros``.
+    class SearchPartnersOptInRecommendation(proto.Message):
+        r"""The Search Partners Opt-In recommendation.
         """
 
-        recommended_budget_amount_micros = proto.Field(
-            proto.INT64,
-            number=2,
+    class MoveUnusedBudgetRecommendation(proto.Message):
+        r"""The move unused budget recommendation.
+
+        Attributes:
+            excess_campaign_budget (str):
+                Output only. The excess budget's resource_name.
+
+                This field is a member of `oneof`_ ``_excess_campaign_budget``.
+            budget_recommendation (google.ads.googleads.v9.resources.types.Recommendation.CampaignBudgetRecommendation):
+                Output only. The recommendation for the
+                constrained budget to increase.
+        """
+
+        excess_campaign_budget = proto.Field(
+            proto.STRING,
+            number=3,
             optional=True,
         )
+        budget_recommendation = proto.Field(
+            proto.MESSAGE,
+            number=2,
+            message='Recommendation.CampaignBudgetRecommendation',
+        )
+
+    class EnhancedCpcOptInRecommendation(proto.Message):
+        r"""The Enhanced Cost-Per-Click Opt-In recommendation.
+        """
 
     class OptimizeAdRotationRecommendation(proto.Message):
         r"""The Optimize Ad Rotation recommendation.
@@ -615,28 +625,18 @@ class Recommendation(proto.Message):
             enum=keyword_match_type.KeywordMatchTypeEnum.KeywordMatchType,
         )
 
-    class MoveUnusedBudgetRecommendation(proto.Message):
-        r"""The move unused budget recommendation.
+    class ResponsiveSearchAdRecommendation(proto.Message):
+        r"""The add responsive search ad recommendation.
 
         Attributes:
-            excess_campaign_budget (str):
-                Output only. The excess budget's resource_name.
-
-                This field is a member of `oneof`_ ``_excess_campaign_budget``.
-            budget_recommendation (google.ads.googleads.v9.resources.types.Recommendation.CampaignBudgetRecommendation):
-                Output only. The recommendation for the
-                constrained budget to increase.
+            ad (google.ads.googleads.v9.resources.types.Ad):
+                Output only. Recommended ad.
         """
 
-        excess_campaign_budget = proto.Field(
-            proto.STRING,
-            number=3,
-            optional=True,
-        )
-        budget_recommendation = proto.Field(
+        ad = proto.Field(
             proto.MESSAGE,
-            number=2,
-            message='Recommendation.CampaignBudgetRecommendation',
+            number=1,
+            message=gagr_ad.Ad,
         )
 
     resource_name = proto.Field(

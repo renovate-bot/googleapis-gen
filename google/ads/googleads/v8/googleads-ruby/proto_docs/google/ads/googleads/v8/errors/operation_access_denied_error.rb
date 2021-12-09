@@ -47,7 +47,7 @@ module Google
               # Unauthorized UPDATE operation in invoking a service's mutate method.
               UPDATE_OPERATION_NOT_PERMITTED = 5
 
-              # A mutate action is not allowed on this campaign, from this client.
+              # A mutate action is not allowed on this resource, from this client.
               MUTATE_ACTION_NOT_PERMITTED_FOR_CLIENT = 6
 
               # This operation is not permitted on this campaign type
@@ -56,7 +56,7 @@ module Google
               # A CREATE operation may not set status to REMOVED.
               CREATE_AS_REMOVED_NOT_PERMITTED = 8
 
-              # This operation is not allowed because the campaign or adgroup is removed.
+              # This operation is not allowed because the resource is removed.
               OPERATION_NOT_PERMITTED_FOR_REMOVED_RESOURCE = 9
 
               # This operation is not permitted on this ad group type.

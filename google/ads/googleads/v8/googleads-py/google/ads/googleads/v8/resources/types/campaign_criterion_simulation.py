@@ -35,8 +35,7 @@ class CampaignCriterionSimulation(proto.Message):
     simulation modification method is detailed below respectively.
 
     1. SEARCH - 30000,30001,30002 - BID_MODIFIER - UNIFORM
-    2. SHOPPING - 30000,30001,30002 - BID_MODIFIER - UNIFORM
-    3. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
+    2. DISPLAY - 30001 - BID_MODIFIER - UNIFORM
 
 
     .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields

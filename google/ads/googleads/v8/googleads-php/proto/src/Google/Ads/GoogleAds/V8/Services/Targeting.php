@@ -16,22 +16,22 @@ use Google\Protobuf\Internal\GPBUtil;
 class Targeting extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
      */
     protected $plannable_location_id = null;
     /**
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      */
     protected $age_range = 0;
     /**
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
      */
@@ -39,7 +39,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     /**
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
      */
@@ -47,7 +48,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     /**
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
      */
@@ -60,22 +62,24 @@ class Targeting extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $plannable_location_id
-     *           Required. The ID of the selected location.
-     *           Plannable locations ID can be obtained from ListPlannableLocations.
+     *           Required. The ID of the selected location. Plannable location IDs can be
+     *           obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      *     @type int $age_range
      *           Targeted age range.
-     *           If not specified, targets all age ranges.
+     *           An unset value is equivalent to targeting all ages.
      *     @type \Google\Ads\GoogleAds\V8\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $genders
      *           Targeted genders.
-     *           If not specified, targets all genders.
+     *           An unset value is equivalent to targeting MALE and FEMALE.
      *     @type \Google\Ads\GoogleAds\V8\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $devices
      *           Targeted devices.
      *           If not specified, targets all applicable devices. Applicable devices vary
-     *           by product and region and can be obtained from ListPlannableProducts.
+     *           by product and region and can be obtained from
+     *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *     @type int $network
      *           Targetable network for the ad product.
      *           If not specified, targets all applicable networks. Applicable networks vary
-     *           by product and region and can be obtained from ListPlannableProducts.
+     *           by product and region and can be obtained from
+     *           [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      * }
      */
     public function __construct($data = NULL) {
@@ -84,8 +88,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
      * @return string
@@ -106,8 +110,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The ID of the selected location.
-     * Plannable locations ID can be obtained from ListPlannableLocations.
+     * Required. The ID of the selected location. Plannable location IDs can be
+     * obtained from [ReachPlanService.ListPlannableLocations][google.ads.googleads.v8.services.ReachPlanService.ListPlannableLocations].
      *
      * Generated from protobuf field <code>optional string plannable_location_id = 6;</code>
      * @param string $var
@@ -123,7 +127,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
 
     /**
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      * @return int
@@ -135,7 +139,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
 
     /**
      * Targeted age range.
-     * If not specified, targets all age ranges.
+     * An unset value is equivalent to targeting all ages.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ReachPlanAgeRangeEnum.ReachPlanAgeRange age_range = 2;</code>
      * @param int $var
@@ -151,7 +155,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
 
     /**
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -163,7 +167,7 @@ class Targeting extends \Google\Protobuf\Internal\Message
 
     /**
      * Targeted genders.
-     * If not specified, targets all genders.
+     * An unset value is equivalent to targeting MALE and FEMALE.
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.GenderInfo genders = 3;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\GenderInfo[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -180,7 +184,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     /**
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -193,7 +198,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     /**
      * Targeted devices.
      * If not specified, targets all applicable devices. Applicable devices vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>repeated .google.ads.googleads.v8.common.DeviceInfo devices = 4;</code>
      * @param \Google\Ads\GoogleAds\V8\Common\DeviceInfo[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -210,7 +216,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     /**
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
      * @return int
@@ -223,7 +230,8 @@ class Targeting extends \Google\Protobuf\Internal\Message
     /**
      * Targetable network for the ad product.
      * If not specified, targets all applicable networks. Applicable networks vary
-     * by product and region and can be obtained from ListPlannableProducts.
+     * by product and region and can be obtained from
+     * [ReachPlanService.ListPlannableProducts][google.ads.googleads.v8.services.ReachPlanService.ListPlannableProducts].
      *
      * Generated from protobuf field <code>.google.ads.googleads.v8.enums.ReachPlanNetworkEnum.ReachPlanNetwork network = 5;</code>
      * @param int $var

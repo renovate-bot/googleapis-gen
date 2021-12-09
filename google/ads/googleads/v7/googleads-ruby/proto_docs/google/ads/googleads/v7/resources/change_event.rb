@@ -34,7 +34,7 @@ module Google
           #     Output only. The resource name of the change event.
           #     Change event resource names have the form:
           #
-          #     `customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}`
+          #     `customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}`
           # @!attribute [r] change_date_time
           #   @return [::String]
           #     Output only. Time at which the change was committed on this resource.

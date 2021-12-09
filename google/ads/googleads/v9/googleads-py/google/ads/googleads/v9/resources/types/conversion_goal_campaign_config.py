@@ -44,8 +44,8 @@ class ConversionGoalCampaignConfig(proto.Message):
             The level of goal config the campaign is
             using.
         custom_conversion_goal (str):
-            Immutable. The custom conversion goal the
-            campaign is using for optimization.
+            The custom conversion goal the campaign is
+            using for optimization.
     """
 
     resource_name = proto.Field(

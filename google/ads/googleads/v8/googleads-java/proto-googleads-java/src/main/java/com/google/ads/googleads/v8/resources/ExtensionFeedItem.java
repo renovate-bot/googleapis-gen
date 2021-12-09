@@ -1257,8 +1257,8 @@ private static final long serialVersionUID = 0L;
   public static final int LOCATION_FEED_ITEM_FIELD_NUMBER = 14;
   /**
    * <pre>
-   * Output only. Location extension. Locations are synced from a GMB account into a feed.
-   * This field is read-only.
+   * Output only. Location extension. Locations are synced from a Business Profile into a
+   * feed. This field is read-only.
    * </pre>
    *
    * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1270,8 +1270,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Location extension. Locations are synced from a GMB account into a feed.
-   * This field is read-only.
+   * Output only. Location extension. Locations are synced from a Business Profile into a
+   * feed. This field is read-only.
    * </pre>
    *
    * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1286,8 +1286,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Output only. Location extension. Locations are synced from a GMB account into a feed.
-   * This field is read-only.
+   * Output only. Location extension. Locations are synced from a Business Profile into a
+   * feed. This field is read-only.
    * </pre>
    *
    * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5205,8 +5205,8 @@ private static final long serialVersionUID = 0L;
         com.google.ads.googleads.v8.common.LocationFeedItem, com.google.ads.googleads.v8.common.LocationFeedItem.Builder, com.google.ads.googleads.v8.common.LocationFeedItemOrBuilder> locationFeedItemBuilder_;
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5218,8 +5218,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5241,8 +5241,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5262,8 +5262,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5281,8 +5281,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5308,8 +5308,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5332,8 +5332,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5343,8 +5343,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5362,8 +5362,8 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Output only. Location extension. Locations are synced from a GMB account into a feed.
-     * This field is read-only.
+     * Output only. Location extension. Locations are synced from a Business Profile into a
+     * feed. This field is read-only.
      * </pre>
      *
      * <code>.google.ads.googleads.v8.common.LocationFeedItem location_feed_item = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

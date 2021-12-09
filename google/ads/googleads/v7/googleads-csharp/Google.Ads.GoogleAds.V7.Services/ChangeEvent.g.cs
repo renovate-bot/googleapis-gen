@@ -188,7 +188,7 @@ namespace Google.Ads.GoogleAds.V7.Resources {
     /// Output only. The resource name of the change event.
     /// Change event resource names have the form:
     ///
-    /// `customers/{customer_id}/changeEvent/{timestamp_micros}~{command_index}~{mutate_index}`
+    /// `customers/{customer_id}/changeEvents/{timestamp_micros}~{command_index}~{mutate_index}`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

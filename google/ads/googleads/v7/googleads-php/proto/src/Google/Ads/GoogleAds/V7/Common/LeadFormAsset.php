@@ -97,7 +97,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      */
     protected $background_image_asset = null;
     /**
-     * Desired intent for the lead form, e.g. more volume or higher intent.
+     * Desired intent for the lead form, e.g. more volume or more qualified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent desired_intent = 21;</code>
      */
@@ -150,7 +150,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
      *           Asset resource name of the background image. The minimum size is 600x314
      *           and the aspect ratio must be 1.91:1 (+-1%).
      *     @type int $desired_intent
-     *           Desired intent for the lead form, e.g. more volume or higher intent.
+     *           Desired intent for the lead form, e.g. more volume or more qualified.
      *     @type string $custom_disclosure
      *           Custom disclosure shown along with Google disclaimer on the lead form.
      *           Accessible to allowed customers only.
@@ -522,7 +522,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired intent for the lead form, e.g. more volume or higher intent.
+     * Desired intent for the lead form, e.g. more volume or more qualified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent desired_intent = 21;</code>
      * @return int
@@ -533,7 +533,7 @@ class LeadFormAsset extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Desired intent for the lead form, e.g. more volume or higher intent.
+     * Desired intent for the lead form, e.g. more volume or more qualified.
      *
      * Generated from protobuf field <code>.google.ads.googleads.v7.enums.LeadFormDesiredIntentEnum.LeadFormDesiredIntent desired_intent = 21;</code>
      * @param int $var

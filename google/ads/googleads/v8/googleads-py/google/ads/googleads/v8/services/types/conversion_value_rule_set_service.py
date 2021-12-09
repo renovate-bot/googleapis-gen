@@ -121,13 +121,13 @@ class ConversionValueRuleSetOperation(proto.Message):
 
             This field is a member of `oneof`_ ``operation``.
         update (google.ads.googleads.v8.resources.types.ConversionValueRuleSet):
-            Update operation: The conversion action is
-            expected to have a valid resource name.
+            Update operation: The conversion value rule
+            set is expected to have a valid resource name.
 
             This field is a member of `oneof`_ ``operation``.
         remove (str):
             Remove operation: A resource name for the removed conversion
-            action is expected, in this format:
+            value rule set is expected, in this format:
 
             ``customers/{customer_id}/conversionValueRuleSets/{conversion_value_rule_set_id}``
 

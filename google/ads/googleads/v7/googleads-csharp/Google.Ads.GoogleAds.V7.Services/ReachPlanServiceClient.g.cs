@@ -422,7 +422,7 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// </summary>
         /// <param name="plannableLocationId">
         /// Required. The ID of the selected location for planning. To list the available
-        /// plannable location ids use ListPlannableLocations.
+        /// plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>The RPC response.</returns>
@@ -446,7 +446,7 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// </summary>
         /// <param name="plannableLocationId">
         /// Required. The ID of the selected location for planning. To list the available
-        /// plannable location ids use ListPlannableLocations.
+        /// plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
         /// </param>
         /// <param name="callSettings">If not null, applies overrides to this RPC call.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -470,7 +470,7 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// </summary>
         /// <param name="plannableLocationId">
         /// Required. The ID of the selected location for planning. To list the available
-        /// plannable location ids use ListPlannableLocations.
+        /// plannable location ids use [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
         /// </param>
         /// <param name="cancellationToken">A <see cref="st::CancellationToken"/> to use for this RPC.</param>
         /// <returns>A Task containing the RPC response.</returns>
@@ -556,7 +556,7 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// </param>
         /// <param name="plannableLocationId">
         /// Required. The ID of the location, this is one of the ids returned by
-        /// ListPlannableLocations.
+        /// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
         /// </param>
         /// <param name="currencyCode">
         /// Required. Currency code.
@@ -596,7 +596,7 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// </param>
         /// <param name="plannableLocationId">
         /// Required. The ID of the location, this is one of the ids returned by
-        /// ListPlannableLocations.
+        /// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
         /// </param>
         /// <param name="currencyCode">
         /// Required. Currency code.
@@ -636,7 +636,7 @@ namespace Google.Ads.GoogleAds.V7.Services
         /// </param>
         /// <param name="plannableLocationId">
         /// Required. The ID of the location, this is one of the ids returned by
-        /// ListPlannableLocations.
+        /// [ReachPlanService.ListPlannableLocations][google.ads.googleads.v7.services.ReachPlanService.ListPlannableLocations].
         /// </param>
         /// <param name="currencyCode">
         /// Required. Currency code.

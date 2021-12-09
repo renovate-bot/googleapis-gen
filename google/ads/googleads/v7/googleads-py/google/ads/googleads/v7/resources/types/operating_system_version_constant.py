@@ -30,7 +30,7 @@ __protobuf__ = proto.module(
 class OperatingSystemVersionConstant(proto.Message):
     r"""A mobile operating system version or a range of versions, depending
     on ``operator_type``. List of available mobile platforms at
-    https://developers.google.com/adwords/api/docs/appendix/codes-formats#mobile-platforms
+    https://developers.google.com/google-ads/api/reference/data/codes-formats#mobile-platforms
 
     Attributes:
         resource_name (str):

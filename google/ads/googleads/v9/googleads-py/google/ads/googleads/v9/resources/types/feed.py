@@ -75,7 +75,7 @@ class Feed(proto.Message):
             This field is read-only.
         places_location_feed_data (google.ads.googleads.v9.resources.types.Feed.PlacesLocationFeedData):
             Data used to configure a location feed
-            populated from Google My Business Locations.
+            populated from Business Profile.
 
             This field is a member of `oneof`_ ``system_feed_generation_data``.
         affiliate_location_feed_data (google.ads.googleads.v9.resources.types.Feed.AffiliateLocationFeedData):
@@ -86,8 +86,8 @@ class Feed(proto.Message):
     """
 
     class PlacesLocationFeedData(proto.Message):
-        r"""Data used to configure a location feed populated from Google
-        My Business Locations.
+        r"""Data used to configure a location feed populated from
+        Business Profile.
 
         Attributes:
             oauth_info (google.ads.googleads.v9.resources.types.Feed.PlacesLocationFeedData.OAuthInfo):
@@ -96,9 +96,9 @@ class Feed(proto.Message):
                 only be specified in a create request. All its
                 subfields are not selectable.
             email_address (str):
-                Email address of a Google My Business account
-                or email address of a manager of the Google My
-                Business account. Required.
+                Email address of a Business Profile or email
+                address of a manager of the Business Profile.
+                Required.
 
                 This field is a member of `oneof`_ ``_email_address``.
             business_account_id (str):
@@ -107,20 +107,20 @@ class Feed(proto.Message):
                 accessible by the user (specified by email_address) are
                 used. This field is mutate-only and is not selectable.
             business_name_filter (str):
-                Used to filter Google My Business listings by business name.
+                Used to filter Business Profile listings by business name.
                 If business_name_filter is set, only listings with a
                 matching business name are candidates to be sync'd into
                 FeedItems.
 
                 This field is a member of `oneof`_ ``_business_name_filter``.
             category_filters (Sequence[str]):
-                Used to filter Google My Business listings by categories. If
+                Used to filter Business Profile listings by categories. If
                 entries exist in category_filters, only listings that belong
                 to any of the categories are candidates to be sync'd into
                 FeedItems. If no entries exist in category_filters, then all
                 listings are candidates for syncing.
             label_filters (Sequence[str]):
-                Used to filter Google My Business listings by labels. If
+                Used to filter Business Profile listings by labels. If
                 entries exist in label_filters, only listings that has any
                 of the labels set are candidates to be synchronized into
                 FeedItems. If no entries exist in label_filters, then all

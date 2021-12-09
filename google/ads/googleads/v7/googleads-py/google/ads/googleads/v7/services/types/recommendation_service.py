@@ -258,10 +258,10 @@ class ApplyRecommendationOperation(proto.Message):
 
         Attributes:
             target_roas (float):
-                Average ROAS (revenue per unit of spend) to
-                use for Target ROAS bidding strategy. The value
-                is between 0.01 and 1000.0, inclusive. This is a
-                required field.
+                Average ROAS (revenue per unit of spend) to use for Target
+                ROAS bidding strategy. The value is between 0.01 and 1000.0,
+                inclusive. This is a required field, unless
+                new_campaign_budget_amount_micros is set.
 
                 This field is a member of `oneof`_ ``_target_roas``.
             new_campaign_budget_amount_micros (int):

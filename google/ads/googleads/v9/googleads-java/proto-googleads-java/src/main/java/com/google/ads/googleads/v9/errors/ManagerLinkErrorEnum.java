@@ -159,7 +159,7 @@ private static final long serialVersionUID = 0L;
     ALREADY_MANAGED_IN_HIERARCHY(7),
     /**
      * <pre>
-     * Manger and sub-manager to be linked have duplicate client.
+     * Manager and sub-manager to be linked have duplicate client.
      * </pre>
      *
      * <code>DUPLICATE_CHILD_FOUND = 8;</code>
@@ -332,7 +332,7 @@ private static final long serialVersionUID = 0L;
     public static final int ALREADY_MANAGED_IN_HIERARCHY_VALUE = 7;
     /**
      * <pre>
-     * Manger and sub-manager to be linked have duplicate client.
+     * Manager and sub-manager to be linked have duplicate client.
      * </pre>
      *
      * <code>DUPLICATE_CHILD_FOUND = 8;</code>

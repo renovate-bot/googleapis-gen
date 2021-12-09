@@ -24,7 +24,7 @@ module Google
         module Resources
           # A mobile operating system version or a range of versions, depending on
           # `operator_type`. List of available mobile platforms at
-          # https://developers.google.com/adwords/api/docs/appendix/codes-formats#mobile-platforms
+          # https://developers.google.com/google-ads/api/reference/data/codes-formats#mobile-platforms
           # @!attribute [r] resource_name
           #   @return [::String]
           #     Output only. The resource name of the operating system version constant.

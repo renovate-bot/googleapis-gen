@@ -386,8 +386,6 @@ class AdGroupSimulationServiceClient(metaclass=AdGroupSimulationServiceClientMet
                    5. DISPLAY - CPC_BID - DEFAULT
                    6. DISPLAY - CPC_BID - UNIFORM
                    7. DISPLAY - TARGET_CPA - UNIFORM
-                   8. VIDEO - CPV_BID - DEFAULT
-                   9. VIDEO - CPV_BID - UNIFORM
 
         """
         # Create or coerce a protobuf request object.

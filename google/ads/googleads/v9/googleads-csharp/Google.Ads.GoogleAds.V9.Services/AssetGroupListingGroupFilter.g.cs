@@ -82,15 +82,15 @@ namespace Google.Ads.GoogleAds.V9.Resources {
             "QnJhbmQSEgoFdmFsdWUYASABKAlIAIgBAUIICgZfdmFsdWUahwEKDlByb2R1",
             "Y3RDaGFubmVsEnUKB2NoYW5uZWwYASABKA4yZC5nb29nbGUuYWRzLmdvb2ds",
             "ZWFkcy52OS5lbnVtcy5MaXN0aW5nR3JvdXBGaWx0ZXJQcm9kdWN0Q2hhbm5l",
-            "bEVudW0uTGlzdGluZ0dyb3VwRmlsdGVyUHJvZHVjdENoYW5uZWwajwEKEFBy",
-            "b2R1Y3RDb25kaXRpb24SewoJY29uZGl0aW9uGAEgASgOMmguZ29vZ2xlLmFk",
-            "cy5nb29nbGVhZHMudjkuZW51bXMuTGlzdGluZ0dyb3VwRmlsdGVyUHJvZHVj",
-            "dENvbmRpdGlvbkVudW0uTGlzdGluZ0dyb3VwRmlsdGVyUHJvZHVjdENvbmRp",
-            "dGlvbhq3AQoWUHJvZHVjdEN1c3RvbUF0dHJpYnV0ZRISCgV2YWx1ZRgBIAEo",
-            "CUgAiAEBEn8KBWluZGV4GAIgASgOMnAuZ29vZ2xlLmFkcy5nb29nbGVhZHMu",
-            "djkuZW51bXMuTGlzdGluZ0dyb3VwRmlsdGVyQ3VzdG9tQXR0cmlidXRlSW5k",
-            "ZXhFbnVtLkxpc3RpbmdHcm91cEZpbHRlckN1c3RvbUF0dHJpYnV0ZUluZGV4",
-            "QggKBl92YWx1ZRotCg1Qcm9kdWN0SXRlbUlkEhIKBXZhbHVlGAEgASgJSACI",
+            "bEVudW0uTGlzdGluZ0dyb3VwRmlsdGVyUHJvZHVjdENoYW5uZWwatwEKFlBy",
+            "b2R1Y3RDdXN0b21BdHRyaWJ1dGUSEgoFdmFsdWUYASABKAlIAIgBARJ/CgVp",
+            "bmRleBgCIAEoDjJwLmdvb2dsZS5hZHMuZ29vZ2xlYWRzLnY5LmVudW1zLkxp",
+            "c3RpbmdHcm91cEZpbHRlckN1c3RvbUF0dHJpYnV0ZUluZGV4RW51bS5MaXN0",
+            "aW5nR3JvdXBGaWx0ZXJDdXN0b21BdHRyaWJ1dGVJbmRleEIICgZfdmFsdWUa",
+            "jwEKEFByb2R1Y3RDb25kaXRpb24SewoJY29uZGl0aW9uGAEgASgOMmguZ29v",
+            "Z2xlLmFkcy5nb29nbGVhZHMudjkuZW51bXMuTGlzdGluZ0dyb3VwRmlsdGVy",
+            "UHJvZHVjdENvbmRpdGlvbkVudW0uTGlzdGluZ0dyb3VwRmlsdGVyUHJvZHVj",
+            "dENvbmRpdGlvbhotCg1Qcm9kdWN0SXRlbUlkEhIKBXZhbHVlGAEgASgJSACI",
             "AQFCCAoGX3ZhbHVlGqQBCgtQcm9kdWN0VHlwZRISCgV2YWx1ZRgBIAEoCUgA",
             "iAEBEncKBWxldmVsGAIgASgOMmguZ29vZ2xlLmFkcy5nb29nbGVhZHMudjku",
             "ZW51bXMuTGlzdGluZ0dyb3VwRmlsdGVyUHJvZHVjdFR5cGVMZXZlbEVudW0u",
@@ -109,8 +109,8 @@ namespace Google.Ads.GoogleAds.V9.Resources {
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Parser, new[]{ "ProductBiddingCategory", "ProductBrand", "ProductChannel", "ProductCondition", "ProductCustomAttribute", "ProductItemId", "ProductType" }, new[]{ "Dimension" }, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductBiddingCategory), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductBiddingCategory.Parser, new[]{ "Id", "Level" }, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductBrand), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductBrand.Parser, new[]{ "Value" }, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductChannel), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductChannel.Parser, new[]{ "Channel" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductCondition), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductCondition.Parser, new[]{ "Condition" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductCustomAttribute), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductCustomAttribute.Parser, new[]{ "Value", "Index" }, new[]{ "Value" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductCondition), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductCondition.Parser, new[]{ "Condition" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductItemId), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductItemId.Parser, new[]{ "Value" }, new[]{ "Value" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductType), global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Types.ProductType.Parser, new[]{ "Value", "Level" }, new[]{ "Value" }, null, null, null)})
           }));
@@ -1807,201 +1807,6 @@ namespace Google.Ads.GoogleAds.V9.Resources {
       }
 
       /// <summary>
-      /// Condition of a product offer.
-      /// </summary>
-      public sealed partial class ProductCondition : pb::IMessage<ProductCondition>
-      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          , pb::IBufferMessage
-      #endif
-      {
-        private static readonly pb::MessageParser<ProductCondition> _parser = new pb::MessageParser<ProductCondition>(() => new ProductCondition());
-        private pb::UnknownFieldSet _unknownFields;
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pb::MessageParser<ProductCondition> Parser { get { return _parser; } }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Descriptor.NestedTypes[3]; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        pbr::MessageDescriptor pb::IMessage.Descriptor {
-          get { return Descriptor; }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public ProductCondition() {
-          OnConstruction();
-        }
-
-        partial void OnConstruction();
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public ProductCondition(ProductCondition other) : this() {
-          condition_ = other.condition_;
-          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public ProductCondition Clone() {
-          return new ProductCondition(this);
-        }
-
-        /// <summary>Field number for the "condition" field.</summary>
-        public const int ConditionFieldNumber = 1;
-        private global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition condition_ = global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified;
-        /// <summary>
-        /// Value of the condition.
-        /// </summary>
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition Condition {
-          get { return condition_; }
-          set {
-            condition_ = value;
-          }
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override bool Equals(object other) {
-          return Equals(other as ProductCondition);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public bool Equals(ProductCondition other) {
-          if (ReferenceEquals(other, null)) {
-            return false;
-          }
-          if (ReferenceEquals(other, this)) {
-            return true;
-          }
-          if (Condition != other.Condition) return false;
-          return Equals(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override int GetHashCode() {
-          int hash = 1;
-          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) hash ^= Condition.GetHashCode();
-          if (_unknownFields != null) {
-            hash ^= _unknownFields.GetHashCode();
-          }
-          return hash;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public override string ToString() {
-          return pb::JsonFormatter.ToDiagnosticString(this);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void WriteTo(pb::CodedOutputStream output) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          output.WriteRawMessage(this);
-        #else
-          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
-            output.WriteRawTag(8);
-            output.WriteEnum((int) Condition);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(output);
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
-            output.WriteRawTag(8);
-            output.WriteEnum((int) Condition);
-          }
-          if (_unknownFields != null) {
-            _unknownFields.WriteTo(ref output);
-          }
-        }
-        #endif
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public int CalculateSize() {
-          int size = 0;
-          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
-            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Condition);
-          }
-          if (_unknownFields != null) {
-            size += _unknownFields.CalculateSize();
-          }
-          return size;
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(ProductCondition other) {
-          if (other == null) {
-            return;
-          }
-          if (other.Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
-            Condition = other.Condition;
-          }
-          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-        }
-
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public void MergeFrom(pb::CodedInputStream input) {
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-          input.ReadRawMessage(this);
-        #else
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-                break;
-              case 8: {
-                Condition = (global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition) input.ReadEnum();
-                break;
-              }
-            }
-          }
-        #endif
-        }
-
-        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-          uint tag;
-          while ((tag = input.ReadTag()) != 0) {
-            switch(tag) {
-              default:
-                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-                break;
-              case 8: {
-                Condition = (global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition) input.ReadEnum();
-                break;
-              }
-            }
-          }
-        }
-        #endif
-
-      }
-
-      /// <summary>
       /// Custom attribute of a product offer.
       /// </summary>
       public sealed partial class ProductCustomAttribute : pb::IMessage<ProductCustomAttribute>
@@ -2018,7 +1823,7 @@ namespace Google.Ads.GoogleAds.V9.Resources {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Descriptor.NestedTypes[4]; }
+          get { return global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2239,6 +2044,201 @@ namespace Google.Ads.GoogleAds.V9.Resources {
               }
               case 16: {
                 Index = (global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterCustomAttributeIndexEnum.Types.ListingGroupFilterCustomAttributeIndex) input.ReadEnum();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+      }
+
+      /// <summary>
+      /// Condition of a product offer.
+      /// </summary>
+      public sealed partial class ProductCondition : pb::IMessage<ProductCondition>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<ProductCondition> _parser = new pb::MessageParser<ProductCondition>(() => new ProductCondition());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<ProductCondition> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Google.Ads.GoogleAds.V9.Resources.ListingGroupFilterDimension.Descriptor.NestedTypes[4]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public ProductCondition() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public ProductCondition(ProductCondition other) : this() {
+          condition_ = other.condition_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public ProductCondition Clone() {
+          return new ProductCondition(this);
+        }
+
+        /// <summary>Field number for the "condition" field.</summary>
+        public const int ConditionFieldNumber = 1;
+        private global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition condition_ = global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified;
+        /// <summary>
+        /// Value of the condition.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition Condition {
+          get { return condition_; }
+          set {
+            condition_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as ProductCondition);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(ProductCondition other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Condition != other.Condition) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) hash ^= Condition.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Condition);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Condition);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Condition);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(ProductCondition other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Condition != global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition.Unspecified) {
+            Condition = other.Condition;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Condition = (global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition) input.ReadEnum();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Condition = (global::Google.Ads.GoogleAds.V9.Enums.ListingGroupFilterProductConditionEnum.Types.ListingGroupFilterProductCondition) input.ReadEnum();
                 break;
               }
             }

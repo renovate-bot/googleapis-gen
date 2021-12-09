@@ -82,7 +82,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
-     * call_tracked is set to true. Otherwise this field is ignored.
+     * `call_tracked` is set to `true`. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>optional string conversion_action = 23;</code>
      */
@@ -128,7 +128,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
      *     @type string $conversion_action
      *           The conversion action to attribute a call conversion to. If not set a
      *           default conversion action is used. This field only has effect if
-     *           call_tracked is set to true. Otherwise this field is ignored.
+     *           `call_tracked` is set to `true`. Otherwise this field is ignored.
      *     @type int $conversion_reporting_state
      *           The call conversion behavior of this call only ad. It can use its own call
      *           conversion setting, inherit the account level setting, or be disabled.
@@ -510,7 +510,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
-     * call_tracked is set to true. Otherwise this field is ignored.
+     * `call_tracked` is set to `true`. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>optional string conversion_action = 23;</code>
      * @return string
@@ -533,7 +533,7 @@ class CallOnlyAdInfo extends \Google\Protobuf\Internal\Message
     /**
      * The conversion action to attribute a call conversion to. If not set a
      * default conversion action is used. This field only has effect if
-     * call_tracked is set to true. Otherwise this field is ignored.
+     * `call_tracked` is set to `true`. Otherwise this field is ignored.
      *
      * Generated from protobuf field <code>optional string conversion_action = 23;</code>
      * @param string $var

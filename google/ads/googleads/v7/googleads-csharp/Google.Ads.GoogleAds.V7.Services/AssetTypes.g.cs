@@ -1759,7 +1759,7 @@ namespace Google.Ads.GoogleAds.V7.Common {
     public const int DesiredIntentFieldNumber = 21;
     private global::Google.Ads.GoogleAds.V7.Enums.LeadFormDesiredIntentEnum.Types.LeadFormDesiredIntent desiredIntent_ = global::Google.Ads.GoogleAds.V7.Enums.LeadFormDesiredIntentEnum.Types.LeadFormDesiredIntent.Unspecified;
     /// <summary>
-    /// Desired intent for the lead form, e.g. more volume or higher intent.
+    /// Desired intent for the lead form, e.g. more volume or more qualified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
