@@ -1,0 +1,47 @@
+description = 'GAPIC library for gapic-google-cloud-eventarc-publishing-v1-java'
+group = 'com.google.cloud'
+version = (version == 'unspecified') ? '0.0.0-SNAPSHOT' : version
+
+compileJava.options.encoding = 'UTF-8'
+javadoc.options.encoding = 'UTF-8'
+
+dependencies {
+  implementation 'com.google.api:gax:2.7.1'
+  testImplementation 'com.google.api:gax:2.7.1:testlib'
+  implementation 'com.google.api:gax-grpc:2.7.1'
+  testImplementation 'com.google.api:gax-grpc:2.7.1:testlib'
+  testImplementation 'io.grpc:grpc-netty-shaded:1.42.1'
+  testImplementation 'junit:junit:4.13.2'
+  implementation project(':proto-google-cloud-eventarc-publishing-v1-java')
+  testImplementation project(':grpc-google-cloud-eventarc-publishing-v1-java')
+}
+
+task smokeTest(type: Test) {
+  filter {
+    includeTestsMatching "*SmokeTest"
+    setFailOnNoMatchingTests false
+  }
+}
+
+test {
+  exclude "**/*SmokeTest*"
+}
+
+sourceSets {
+  main {
+    java {
+      srcDir 'src/main/java'
+    }
+  }
+}
+
+clean {
+  delete 'all-jars'
+}
+
+task allJars(type: Copy) {
+  dependsOn test, jar
+  into 'all-jars'
+  // Replace with `from configurations.testRuntimeOnly, jar` to include test dependencies
+  from configurations.runtimeOnly, jar
+}
