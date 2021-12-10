@@ -116,7 +116,7 @@ class ImageFamilyViewsRestTransport(ImageFamilyViewsTransport):
         self._prep_wrapped_messages(client_info)
 
     __get_required_fields_default_values =  {
-        "family" : ""        "project" : ""        "zone" : ""    }
+        "family" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):

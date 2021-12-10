@@ -116,7 +116,7 @@ class RegionInstancesRestTransport(RegionInstancesTransport):
         self._prep_wrapped_messages(client_info)
 
     __bulk_insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _bulk_insert_get_unset_required_fields(message_dict):

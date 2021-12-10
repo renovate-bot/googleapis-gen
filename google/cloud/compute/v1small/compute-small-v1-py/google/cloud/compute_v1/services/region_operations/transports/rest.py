@@ -116,7 +116,7 @@ class RegionOperationsRestTransport(RegionOperationsTransport):
         self._prep_wrapped_messages(client_info)
 
     __get_required_fields_default_values =  {
-        "operation" : ""        "project" : ""        "region" : ""    }
+        "operation" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -221,7 +221,7 @@ class RegionOperationsRestTransport(RegionOperationsTransport):
         )
 
     __wait_required_fields_default_values =  {
-        "operation" : ""        "project" : ""        "region" : ""    }
+        "operation" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _wait_get_unset_required_fields(message_dict):

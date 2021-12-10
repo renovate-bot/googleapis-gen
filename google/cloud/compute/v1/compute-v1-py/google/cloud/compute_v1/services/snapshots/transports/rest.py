@@ -116,7 +116,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "snapshot" : ""    }
+        "project" : "",        "snapshot" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "snapshot" : ""    }
+        "project" : "",        "snapshot" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -289,7 +289,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""    }
+        "project" : "",        "resource" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -406,7 +406,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -484,7 +484,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""    }
+        "project" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -610,7 +610,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         )
 
     __set_labels_required_fields_default_values =  {
-        "project" : ""        "resource" : ""    }
+        "project" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_labels_get_unset_required_fields(message_dict):
@@ -711,7 +711,7 @@ class SnapshotsRestTransport(SnapshotsTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "resource" : ""    }
+        "project" : "",        "resource" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

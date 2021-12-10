@@ -116,7 +116,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "targetHttpProxy" : ""    }
+        "project" : "",        "targetHttpProxy" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -285,7 +285,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "targetHttpProxy" : ""    }
+        "project" : "",        "targetHttpProxy" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -375,7 +375,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -476,7 +476,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -553,7 +553,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "targetHttpProxy" : ""    }
+        "project" : "",        "targetHttpProxy" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -654,7 +654,7 @@ class TargetHttpProxiesRestTransport(TargetHttpProxiesTransport):
         )
 
     __set_url_map_required_fields_default_values =  {
-        "project" : ""        "targetHttpProxy" : ""    }
+        "project" : "",        "targetHttpProxy" : "",    }
 
     @staticmethod
     def _set_url_map_get_unset_required_fields(message_dict):

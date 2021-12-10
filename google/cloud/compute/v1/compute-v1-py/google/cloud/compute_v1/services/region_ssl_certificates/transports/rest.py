@@ -116,7 +116,7 @@ class RegionSslCertificatesRestTransport(RegionSslCertificatesTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "sslCertificate" : ""    }
+        "project" : "",        "region" : "",        "sslCertificate" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class RegionSslCertificatesRestTransport(RegionSslCertificatesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "sslCertificate" : ""    }
+        "project" : "",        "region" : "",        "sslCertificate" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -301,7 +301,7 @@ class RegionSslCertificatesRestTransport(RegionSslCertificatesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -402,7 +402,7 @@ class RegionSslCertificatesRestTransport(RegionSslCertificatesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):

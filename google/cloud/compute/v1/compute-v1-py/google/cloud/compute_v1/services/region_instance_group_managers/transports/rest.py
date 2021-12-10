@@ -116,7 +116,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         self._prep_wrapped_messages(client_info)
 
     __abandon_instances_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _abandon_instances_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __apply_updates_to_instances_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _apply_updates_to_instances_get_unset_required_fields(message_dict):
@@ -319,7 +319,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __create_instances_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _create_instances_get_unset_required_fields(message_dict):
@@ -420,7 +420,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __delete_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -512,7 +512,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __delete_instances_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_instances_get_unset_required_fields(message_dict):
@@ -613,7 +613,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __delete_per_instance_configs_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_per_instance_configs_get_unset_required_fields(message_dict):
@@ -715,7 +715,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __get_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -801,7 +801,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -902,7 +902,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -981,7 +981,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __list_errors_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_errors_get_unset_required_fields(message_dict):
@@ -1058,7 +1058,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __list_managed_instances_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_managed_instances_get_unset_required_fields(message_dict):
@@ -1135,7 +1135,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __list_per_instance_configs_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_per_instance_configs_get_unset_required_fields(message_dict):
@@ -1212,7 +1212,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __patch_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -1313,7 +1313,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __patch_per_instance_configs_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _patch_per_instance_configs_get_unset_required_fields(message_dict):
@@ -1415,7 +1415,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __recreate_instances_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _recreate_instances_get_unset_required_fields(message_dict):
@@ -1516,7 +1516,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __resize_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""        "size" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",        "size" : "",    }
 
     @staticmethod
     def _resize_get_unset_required_fields(message_dict):
@@ -1608,7 +1608,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __set_instance_template_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _set_instance_template_get_unset_required_fields(message_dict):
@@ -1709,7 +1709,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __set_target_pools_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _set_target_pools_get_unset_required_fields(message_dict):
@@ -1810,7 +1810,7 @@ class RegionInstanceGroupManagersRestTransport(RegionInstanceGroupManagersTransp
         )
 
     __update_per_instance_configs_required_fields_default_values =  {
-        "instanceGroupManager" : ""        "project" : ""        "region" : ""    }
+        "instanceGroupManager" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _update_per_instance_configs_get_unset_required_fields(message_dict):

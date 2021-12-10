@@ -116,7 +116,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __attach_network_endpoints_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _attach_network_endpoints_get_unset_required_fields(message_dict):
@@ -294,7 +294,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -386,7 +386,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __detach_network_endpoints_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _detach_network_endpoints_get_unset_required_fields(message_dict):
@@ -487,7 +487,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -575,7 +575,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -676,7 +676,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -753,7 +753,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __list_network_endpoints_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "zone" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_network_endpoints_get_unset_required_fields(message_dict):
@@ -839,7 +839,7 @@ class NetworkEndpointGroupsRestTransport(NetworkEndpointGroupsTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

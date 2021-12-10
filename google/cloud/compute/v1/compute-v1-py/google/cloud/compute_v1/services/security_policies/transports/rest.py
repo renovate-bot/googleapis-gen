@@ -116,7 +116,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_rule_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _add_rule_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -309,7 +309,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -392,7 +392,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __get_rule_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _get_rule_get_unset_required_fields(message_dict):
@@ -473,7 +473,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -574,7 +574,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -651,7 +651,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __list_preconfigured_expression_sets_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_preconfigured_expression_sets_get_unset_required_fields(message_dict):
@@ -729,7 +729,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -830,7 +830,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __patch_rule_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _patch_rule_get_unset_required_fields(message_dict):
@@ -931,7 +931,7 @@ class SecurityPoliciesRestTransport(SecurityPoliciesTransport):
         )
 
     __remove_rule_required_fields_default_values =  {
-        "project" : ""        "securityPolicy" : ""    }
+        "project" : "",        "securityPolicy" : "",    }
 
     @staticmethod
     def _remove_rule_get_unset_required_fields(message_dict):

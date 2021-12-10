@@ -116,7 +116,7 @@ class RegionTargetHttpsProxiesRestTransport(RegionTargetHttpsProxiesTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "region" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class RegionTargetHttpsProxiesRestTransport(RegionTargetHttpsProxiesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "region" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -297,7 +297,7 @@ class RegionTargetHttpsProxiesRestTransport(RegionTargetHttpsProxiesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -398,7 +398,7 @@ class RegionTargetHttpsProxiesRestTransport(RegionTargetHttpsProxiesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -477,7 +477,7 @@ class RegionTargetHttpsProxiesRestTransport(RegionTargetHttpsProxiesTransport):
         )
 
     __set_ssl_certificates_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "region" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _set_ssl_certificates_get_unset_required_fields(message_dict):
@@ -578,7 +578,7 @@ class RegionTargetHttpsProxiesRestTransport(RegionTargetHttpsProxiesTransport):
         )
 
     __set_url_map_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "region" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _set_url_map_get_unset_required_fields(message_dict):

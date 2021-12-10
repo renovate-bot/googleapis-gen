@@ -116,7 +116,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_association_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _add_association_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __add_rule_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _add_rule_get_unset_required_fields(message_dict):
@@ -318,7 +318,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __clone_rules_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _clone_rules_get_unset_required_fields(message_dict):
@@ -410,7 +410,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -502,7 +502,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -581,7 +581,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __get_association_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _get_association_get_unset_required_fields(message_dict):
@@ -658,7 +658,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "resource" : ""    }
+        "resource" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -775,7 +775,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __get_rule_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _get_rule_get_unset_required_fields(message_dict):
@@ -856,7 +856,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "parentId" : ""    }
+        "parentId" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -1093,7 +1093,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __move_required_fields_default_values =  {
-        "firewallPolicy" : ""        "parentId" : ""    }
+        "firewallPolicy" : "",        "parentId" : "",    }
 
     @staticmethod
     def _move_get_unset_required_fields(message_dict):
@@ -1185,7 +1185,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -1286,7 +1286,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __patch_rule_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _patch_rule_get_unset_required_fields(message_dict):
@@ -1387,7 +1387,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __remove_association_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _remove_association_get_unset_required_fields(message_dict):
@@ -1479,7 +1479,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __remove_rule_required_fields_default_values =  {
-        "firewallPolicy" : ""    }
+        "firewallPolicy" : "",    }
 
     @staticmethod
     def _remove_rule_get_unset_required_fields(message_dict):
@@ -1571,7 +1571,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "resource" : ""    }
+        "resource" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -1697,7 +1697,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "resource" : ""    }
+        "resource" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class InterconnectsRestTransport(InterconnectsTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "interconnect" : ""        "project" : ""    }
+        "interconnect" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class InterconnectsRestTransport(InterconnectsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "interconnect" : ""        "project" : ""    }
+        "interconnect" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -291,7 +291,7 @@ class InterconnectsRestTransport(InterconnectsTransport):
         )
 
     __get_diagnostics_required_fields_default_values =  {
-        "interconnect" : ""        "project" : ""    }
+        "interconnect" : "",        "project" : "",    }
 
     @staticmethod
     def _get_diagnostics_get_unset_required_fields(message_dict):
@@ -370,7 +370,7 @@ class InterconnectsRestTransport(InterconnectsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -471,7 +471,7 @@ class InterconnectsRestTransport(InterconnectsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -550,7 +550,7 @@ class InterconnectsRestTransport(InterconnectsTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "interconnect" : ""        "project" : ""    }
+        "interconnect" : "",        "project" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):

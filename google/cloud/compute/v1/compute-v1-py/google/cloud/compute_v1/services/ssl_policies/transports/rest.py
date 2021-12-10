@@ -116,7 +116,7 @@ class SslPoliciesRestTransport(SslPoliciesTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "sslPolicy" : ""    }
+        "project" : "",        "sslPolicy" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class SslPoliciesRestTransport(SslPoliciesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "sslPolicy" : ""    }
+        "project" : "",        "sslPolicy" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -291,7 +291,7 @@ class SslPoliciesRestTransport(SslPoliciesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -392,7 +392,7 @@ class SslPoliciesRestTransport(SslPoliciesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -469,7 +469,7 @@ class SslPoliciesRestTransport(SslPoliciesTransport):
         )
 
     __list_available_features_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_available_features_get_unset_required_fields(message_dict):
@@ -546,7 +546,7 @@ class SslPoliciesRestTransport(SslPoliciesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "sslPolicy" : ""    }
+        "project" : "",        "sslPolicy" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):

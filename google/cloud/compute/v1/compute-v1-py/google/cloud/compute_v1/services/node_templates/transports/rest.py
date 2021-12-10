@@ -116,7 +116,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "nodeTemplate" : ""        "project" : ""        "region" : ""    }
+        "nodeTemplate" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -285,7 +285,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "nodeTemplate" : ""        "project" : ""        "region" : ""    }
+        "nodeTemplate" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -367,7 +367,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -484,7 +484,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -585,7 +585,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -662,7 +662,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -788,7 +788,7 @@ class NodeTemplatesRestTransport(NodeTemplatesTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

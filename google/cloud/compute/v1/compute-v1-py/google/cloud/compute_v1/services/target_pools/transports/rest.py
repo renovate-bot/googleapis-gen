@@ -116,7 +116,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_health_check_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _add_health_check_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __add_instance_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _add_instance_get_unset_required_fields(message_dict):
@@ -318,7 +318,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -395,7 +395,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -487,7 +487,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -572,7 +572,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __get_health_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _get_health_get_unset_required_fields(message_dict):
@@ -658,7 +658,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -759,7 +759,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -838,7 +838,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __remove_health_check_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _remove_health_check_get_unset_required_fields(message_dict):
@@ -939,7 +939,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __remove_instance_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _remove_instance_get_unset_required_fields(message_dict):
@@ -1040,7 +1040,7 @@ class TargetPoolsRestTransport(TargetPoolsTransport):
         )
 
     __set_backup_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "targetPool" : ""    }
+        "project" : "",        "region" : "",        "targetPool" : "",    }
 
     @staticmethod
     def _set_backup_get_unset_required_fields(message_dict):

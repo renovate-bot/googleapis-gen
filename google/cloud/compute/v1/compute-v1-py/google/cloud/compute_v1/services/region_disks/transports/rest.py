@@ -116,7 +116,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_resource_policies_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "region" : ""    }
+        "disk" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _add_resource_policies_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __create_snapshot_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "region" : ""    }
+        "disk" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _create_snapshot_get_unset_required_fields(message_dict):
@@ -318,7 +318,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "region" : ""    }
+        "disk" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -410,7 +410,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __get_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "region" : ""    }
+        "disk" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -499,7 +499,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -616,7 +616,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -717,7 +717,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -794,7 +794,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __remove_resource_policies_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "region" : ""    }
+        "disk" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _remove_resource_policies_get_unset_required_fields(message_dict):
@@ -895,7 +895,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __resize_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "region" : ""    }
+        "disk" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _resize_get_unset_required_fields(message_dict):
@@ -996,7 +996,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -1122,7 +1122,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __set_labels_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_labels_get_unset_required_fields(message_dict):
@@ -1223,7 +1223,7 @@ class RegionDisksRestTransport(RegionDisksTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

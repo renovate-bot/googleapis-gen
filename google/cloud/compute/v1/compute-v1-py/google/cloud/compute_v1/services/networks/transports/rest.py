@@ -116,7 +116,7 @@ class NetworksRestTransport(NetworksTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_peering_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _add_peering_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -309,7 +309,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __get_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -390,7 +390,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __get_effective_firewalls_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _get_effective_firewalls_get_unset_required_fields(message_dict):
@@ -467,7 +467,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -568,7 +568,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -644,7 +644,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __list_peering_routes_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _list_peering_routes_get_unset_required_fields(message_dict):
@@ -721,7 +721,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -821,7 +821,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __remove_peering_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _remove_peering_get_unset_required_fields(message_dict):
@@ -922,7 +922,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __switch_to_custom_mode_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _switch_to_custom_mode_get_unset_required_fields(message_dict):
@@ -1014,7 +1014,7 @@ class NetworksRestTransport(NetworksTransport):
         )
 
     __update_peering_required_fields_default_values =  {
-        "network" : ""        "project" : ""    }
+        "network" : "",        "project" : "",    }
 
     @staticmethod
     def _update_peering_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class RegionInstanceGroupsRestTransport(RegionInstanceGroupsTransport):
         self._prep_wrapped_messages(client_info)
 
     __get_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "region" : ""    }
+        "instanceGroup" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -207,7 +207,7 @@ class RegionInstanceGroupsRestTransport(RegionInstanceGroupsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -286,7 +286,7 @@ class RegionInstanceGroupsRestTransport(RegionInstanceGroupsTransport):
         )
 
     __list_instances_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "region" : ""    }
+        "instanceGroup" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_instances_get_unset_required_fields(message_dict):
@@ -372,7 +372,7 @@ class RegionInstanceGroupsRestTransport(RegionInstanceGroupsTransport):
         )
 
     __set_named_ports_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "region" : ""    }
+        "instanceGroup" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _set_named_ports_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class PublicAdvertisedPrefixesRestTransport(PublicAdvertisedPrefixesTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "publicAdvertisedPrefix" : ""    }
+        "project" : "",        "publicAdvertisedPrefix" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class PublicAdvertisedPrefixesRestTransport(PublicAdvertisedPrefixesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "publicAdvertisedPrefix" : ""    }
+        "project" : "",        "publicAdvertisedPrefix" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -291,7 +291,7 @@ class PublicAdvertisedPrefixesRestTransport(PublicAdvertisedPrefixesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -392,7 +392,7 @@ class PublicAdvertisedPrefixesRestTransport(PublicAdvertisedPrefixesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -469,7 +469,7 @@ class PublicAdvertisedPrefixesRestTransport(PublicAdvertisedPrefixesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "publicAdvertisedPrefix" : ""    }
+        "project" : "",        "publicAdvertisedPrefix" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):

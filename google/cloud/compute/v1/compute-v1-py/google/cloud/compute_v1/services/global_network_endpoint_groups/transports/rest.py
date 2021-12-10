@@ -116,7 +116,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         self._prep_wrapped_messages(client_info)
 
     __attach_network_endpoints_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",    }
 
     @staticmethod
     def _attach_network_endpoints_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         )
 
     __delete_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -309,7 +309,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         )
 
     __detach_network_endpoints_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",    }
 
     @staticmethod
     def _detach_network_endpoints_get_unset_required_fields(message_dict):
@@ -410,7 +410,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         )
 
     __get_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -498,7 +498,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -599,7 +599,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -676,7 +676,7 @@ class GlobalNetworkEndpointGroupsRestTransport(GlobalNetworkEndpointGroupsTransp
         )
 
     __list_network_endpoints_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",    }
 
     @staticmethod
     def _list_network_endpoints_get_unset_required_fields(message_dict):

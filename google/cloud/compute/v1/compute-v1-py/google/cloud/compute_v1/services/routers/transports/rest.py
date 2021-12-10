@@ -116,7 +116,7 @@ class RoutersRestTransport(RoutersTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -284,7 +284,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -363,7 +363,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __get_nat_mapping_info_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _get_nat_mapping_info_get_unset_required_fields(message_dict):
@@ -442,7 +442,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __get_router_status_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _get_router_status_get_unset_required_fields(message_dict):
@@ -519,7 +519,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -619,7 +619,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -695,7 +695,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -795,7 +795,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __preview_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _preview_get_unset_required_fields(message_dict):
@@ -881,7 +881,7 @@ class RoutersRestTransport(RoutersTransport):
         )
 
     __update_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "router" : ""    }
+        "project" : "",        "region" : "",        "router" : "",    }
 
     @staticmethod
     def _update_get_unset_required_fields(message_dict):

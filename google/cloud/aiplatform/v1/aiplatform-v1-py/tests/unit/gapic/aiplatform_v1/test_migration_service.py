@@ -18,7 +18,6 @@ import mock
 
 import grpc
 from grpc.experimental import aio
-import json
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
@@ -30,7 +29,6 @@ from google.api_core import future
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
 from google.api_core import grpc_helpers_async
-from google.api_core import operation
 from google.api_core import operation_async  # type: ignore
 from google.api_core import operations_v1
 from google.api_core import path_template
@@ -44,7 +42,6 @@ from google.cloud.aiplatform_v1.types import migratable_resource
 from google.cloud.aiplatform_v1.types import migration_service
 from google.longrunning import operations_pb2
 from google.oauth2 import service_account
-from google.protobuf import json_format
 import google.auth
 
 
@@ -1500,18 +1497,16 @@ def test_parse_dataset_path():
 
 def test_dataset_path():
     project = "squid"
-    location = "clam"
-    dataset = "whelk"
-    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, location, dataset)
+    dataset = "clam"
+    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "octopus",
-        "location": "oyster",
-        "dataset": "nudibranch",
+        "project": "whelk",
+        "dataset": "octopus",
     }
     path = MigrationServiceClient.dataset_path(**expected)
 
@@ -1520,16 +1515,18 @@ def test_parse_dataset_path():
     assert expected == actual
 
 def test_dataset_path():
-    project = "cuttlefish"
-    dataset = "mussel"
-    expected = "projects/{project}/datasets/{dataset}".format(project=project, dataset=dataset, )
-    actual = MigrationServiceClient.dataset_path(project, dataset)
+    project = "oyster"
+    location = "nudibranch"
+    dataset = "cuttlefish"
+    expected = "projects/{project}/locations/{location}/datasets/{dataset}".format(project=project, location=location, dataset=dataset, )
+    actual = MigrationServiceClient.dataset_path(project, location, dataset)
     assert expected == actual
 
 
 def test_parse_dataset_path():
     expected = {
-        "project": "winkle",
+        "project": "mussel",
+        "location": "winkle",
         "dataset": "nautilus",
     }
     path = MigrationServiceClient.dataset_path(**expected)

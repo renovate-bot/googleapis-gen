@@ -116,7 +116,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "packetMirroring" : ""        "project" : ""        "region" : ""    }
+        "packetMirroring" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -285,7 +285,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "packetMirroring" : ""        "project" : ""        "region" : ""    }
+        "packetMirroring" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -372,7 +372,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -473,7 +473,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -552,7 +552,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "packetMirroring" : ""        "project" : ""        "region" : ""    }
+        "packetMirroring" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -653,7 +653,7 @@ class PacketMirroringsRestTransport(PacketMirroringsTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class RegionNetworkEndpointGroupsRestTransport(RegionNetworkEndpointGroupsTransp
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "region" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class RegionNetworkEndpointGroupsRestTransport(RegionNetworkEndpointGroupsTransp
         )
 
     __get_required_fields_default_values =  {
-        "networkEndpointGroup" : ""        "project" : ""        "region" : ""    }
+        "networkEndpointGroup" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -296,7 +296,7 @@ class RegionNetworkEndpointGroupsRestTransport(RegionNetworkEndpointGroupsTransp
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -397,7 +397,7 @@ class RegionNetworkEndpointGroupsRestTransport(RegionNetworkEndpointGroupsTransp
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class DisksRestTransport(DisksTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_resource_policies_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "zone" : ""    }
+        "disk" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _add_resource_policies_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -294,7 +294,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __create_snapshot_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "zone" : ""    }
+        "disk" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _create_snapshot_get_unset_required_fields(message_dict):
@@ -395,7 +395,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "zone" : ""    }
+        "disk" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -486,7 +486,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __get_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "zone" : ""    }
+        "disk" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -574,7 +574,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -691,7 +691,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -791,7 +791,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -867,7 +867,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __remove_resource_policies_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "zone" : ""    }
+        "disk" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _remove_resource_policies_get_unset_required_fields(message_dict):
@@ -968,7 +968,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __resize_required_fields_default_values =  {
-        "disk" : ""        "project" : ""        "zone" : ""    }
+        "disk" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _resize_get_unset_required_fields(message_dict):
@@ -1068,7 +1068,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -1194,7 +1194,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __set_labels_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_labels_get_unset_required_fields(message_dict):
@@ -1295,7 +1295,7 @@ class DisksRestTransport(DisksTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

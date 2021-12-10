@@ -116,7 +116,7 @@ class MachineTypesRestTransport(MachineTypesTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class MachineTypesRestTransport(MachineTypesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "machineType" : ""        "project" : ""        "zone" : ""    }
+        "machineType" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -275,7 +275,7 @@ class MachineTypesRestTransport(MachineTypesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class InstancesRestTransport(InstancesTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_access_config_required_fields_default_values =  {
-        "instance" : ""        "networkInterface" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "networkInterface" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _add_access_config_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __add_resource_policies_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _add_resource_policies_get_unset_required_fields(message_dict):
@@ -318,7 +318,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -395,7 +395,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __attach_disk_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _attach_disk_get_unset_required_fields(message_dict):
@@ -496,7 +496,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __bulk_insert_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _bulk_insert_get_unset_required_fields(message_dict):
@@ -597,7 +597,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -689,7 +689,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __delete_access_config_required_fields_default_values =  {
-        "accessConfig" : ""        "instance" : ""        "networkInterface" : ""        "project" : ""        "zone" : ""    }
+        "accessConfig" : "",        "instance" : "",        "networkInterface" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_access_config_get_unset_required_fields(message_dict):
@@ -781,7 +781,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __detach_disk_required_fields_default_values =  {
-        "deviceName" : ""        "instance" : ""        "project" : ""        "zone" : ""    }
+        "deviceName" : "",        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _detach_disk_get_unset_required_fields(message_dict):
@@ -873,7 +873,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -954,7 +954,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_effective_firewalls_required_fields_default_values =  {
-        "instance" : ""        "networkInterface" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "networkInterface" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_effective_firewalls_get_unset_required_fields(message_dict):
@@ -1031,7 +1031,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_guest_attributes_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_guest_attributes_get_unset_required_fields(message_dict):
@@ -1108,7 +1108,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -1225,7 +1225,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_screenshot_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_screenshot_get_unset_required_fields(message_dict):
@@ -1302,7 +1302,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_serial_port_output_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_serial_port_output_get_unset_required_fields(message_dict):
@@ -1379,7 +1379,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __get_shielded_instance_identity_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_shielded_instance_identity_get_unset_required_fields(message_dict):
@@ -1457,7 +1457,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -1558,7 +1558,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -1634,7 +1634,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __list_referrers_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_referrers_get_unset_required_fields(message_dict):
@@ -1713,7 +1713,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __remove_resource_policies_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _remove_resource_policies_get_unset_required_fields(message_dict):
@@ -1814,7 +1814,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __reset_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _reset_get_unset_required_fields(message_dict):
@@ -1906,7 +1906,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __send_diagnostic_interrupt_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _send_diagnostic_interrupt_get_unset_required_fields(message_dict):
@@ -1986,7 +1986,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_deletion_protection_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_deletion_protection_get_unset_required_fields(message_dict):
@@ -2078,7 +2078,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_disk_auto_delete_required_fields_default_values =  {
-        "autoDelete" : ""        "deviceName" : ""        "instance" : ""        "project" : ""        "zone" : ""    }
+        "autoDelete" : "",        "deviceName" : "",        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_disk_auto_delete_get_unset_required_fields(message_dict):
@@ -2170,7 +2170,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -2296,7 +2296,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_labels_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_labels_get_unset_required_fields(message_dict):
@@ -2397,7 +2397,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_machine_resources_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_machine_resources_get_unset_required_fields(message_dict):
@@ -2498,7 +2498,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_machine_type_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_machine_type_get_unset_required_fields(message_dict):
@@ -2599,7 +2599,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_metadata_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_metadata_get_unset_required_fields(message_dict):
@@ -2700,7 +2700,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_min_cpu_platform_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_min_cpu_platform_get_unset_required_fields(message_dict):
@@ -2801,7 +2801,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_scheduling_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_scheduling_get_unset_required_fields(message_dict):
@@ -2902,7 +2902,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_service_account_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_service_account_get_unset_required_fields(message_dict):
@@ -3003,7 +3003,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_shielded_instance_integrity_policy_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_shielded_instance_integrity_policy_get_unset_required_fields(message_dict):
@@ -3105,7 +3105,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __set_tags_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_tags_get_unset_required_fields(message_dict):
@@ -3206,7 +3206,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __simulate_maintenance_event_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _simulate_maintenance_event_get_unset_required_fields(message_dict):
@@ -3299,7 +3299,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __start_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _start_get_unset_required_fields(message_dict):
@@ -3391,7 +3391,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __start_with_encryption_key_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _start_with_encryption_key_get_unset_required_fields(message_dict):
@@ -3492,7 +3492,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __stop_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _stop_get_unset_required_fields(message_dict):
@@ -3583,7 +3583,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):
@@ -3669,7 +3669,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __update_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _update_get_unset_required_fields(message_dict):
@@ -3770,7 +3770,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __update_access_config_required_fields_default_values =  {
-        "instance" : ""        "networkInterface" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "networkInterface" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _update_access_config_get_unset_required_fields(message_dict):
@@ -3871,7 +3871,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __update_display_device_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _update_display_device_get_unset_required_fields(message_dict):
@@ -3972,7 +3972,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __update_network_interface_required_fields_default_values =  {
-        "instance" : ""        "networkInterface" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "networkInterface" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _update_network_interface_get_unset_required_fields(message_dict):
@@ -4073,7 +4073,7 @@ class InstancesRestTransport(InstancesTransport):
         )
 
     __update_shielded_instance_config_required_fields_default_values =  {
-        "instance" : ""        "project" : ""        "zone" : ""    }
+        "instance" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _update_shielded_instance_config_get_unset_required_fields(message_dict):

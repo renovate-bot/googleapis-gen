@@ -116,7 +116,7 @@ class AddressesRestTransport(AddressesTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class AddressesRestTransport(AddressesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "address" : ""        "project" : ""        "region" : ""    }
+        "address" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -285,7 +285,7 @@ class AddressesRestTransport(AddressesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "address" : ""        "project" : ""        "region" : ""    }
+        "address" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -368,7 +368,7 @@ class AddressesRestTransport(AddressesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -469,7 +469,7 @@ class AddressesRestTransport(AddressesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):

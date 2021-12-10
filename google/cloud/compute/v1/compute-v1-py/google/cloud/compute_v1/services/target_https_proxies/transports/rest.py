@@ -116,7 +116,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -285,7 +285,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -374,7 +374,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -475,7 +475,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -554,7 +554,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -655,7 +655,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __set_quic_override_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _set_quic_override_get_unset_required_fields(message_dict):
@@ -756,7 +756,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __set_ssl_certificates_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _set_ssl_certificates_get_unset_required_fields(message_dict):
@@ -857,7 +857,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __set_ssl_policy_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _set_ssl_policy_get_unset_required_fields(message_dict):
@@ -958,7 +958,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
         )
 
     __set_url_map_required_fields_default_values =  {
-        "project" : ""        "targetHttpsProxy" : ""    }
+        "project" : "",        "targetHttpsProxy" : "",    }
 
     @staticmethod
     def _set_url_map_get_unset_required_fields(message_dict):

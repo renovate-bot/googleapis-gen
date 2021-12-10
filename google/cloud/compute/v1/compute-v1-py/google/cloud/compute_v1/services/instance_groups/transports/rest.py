@@ -116,7 +116,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_instances_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "zone" : ""    }
+        "instanceGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _add_instances_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -294,7 +294,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "zone" : ""    }
+        "instanceGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -386,7 +386,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "zone" : ""    }
+        "instanceGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -477,7 +477,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -578,7 +578,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -655,7 +655,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __list_instances_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "zone" : ""    }
+        "instanceGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_instances_get_unset_required_fields(message_dict):
@@ -741,7 +741,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __remove_instances_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "zone" : ""    }
+        "instanceGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _remove_instances_get_unset_required_fields(message_dict):
@@ -842,7 +842,7 @@ class InstanceGroupsRestTransport(InstanceGroupsTransport):
         )
 
     __set_named_ports_required_fields_default_values =  {
-        "instanceGroup" : ""        "project" : ""        "zone" : ""    }
+        "instanceGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_named_ports_get_unset_required_fields(message_dict):

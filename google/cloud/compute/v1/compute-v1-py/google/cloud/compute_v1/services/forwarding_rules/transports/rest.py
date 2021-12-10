@@ -116,7 +116,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""        "region" : ""    }
+        "forwardingRule" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -285,7 +285,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""        "region" : ""    }
+        "forwardingRule" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -374,7 +374,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -475,7 +475,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -554,7 +554,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""        "region" : ""    }
+        "forwardingRule" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -655,7 +655,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __set_labels_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "resource" : ""    }
+        "project" : "",        "region" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_labels_get_unset_required_fields(message_dict):
@@ -756,7 +756,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
         )
 
     __set_target_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""        "region" : ""    }
+        "forwardingRule" : "",        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _set_target_get_unset_required_fields(message_dict):

@@ -116,7 +116,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "urlMap" : ""    }
+        "project" : "",        "region" : "",        "urlMap" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "urlMap" : ""    }
+        "project" : "",        "region" : "",        "urlMap" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -306,7 +306,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -407,7 +407,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "region" : ""    }
+        "project" : "",        "region" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -484,7 +484,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "urlMap" : ""    }
+        "project" : "",        "region" : "",        "urlMap" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -585,7 +585,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         )
 
     __update_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "urlMap" : ""    }
+        "project" : "",        "region" : "",        "urlMap" : "",    }
 
     @staticmethod
     def _update_get_unset_required_fields(message_dict):
@@ -686,7 +686,7 @@ class RegionUrlMapsRestTransport(RegionUrlMapsTransport):
         )
 
     __validate_required_fields_default_values =  {
-        "project" : ""        "region" : ""        "urlMap" : ""    }
+        "project" : "",        "region" : "",        "urlMap" : "",    }
 
     @staticmethod
     def _validate_get_unset_required_fields(message_dict):

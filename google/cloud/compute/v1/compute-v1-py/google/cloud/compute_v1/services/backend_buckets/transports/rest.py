@@ -116,7 +116,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_signed_url_key_required_fields_default_values =  {
-        "backendBucket" : ""        "project" : ""    }
+        "backendBucket" : "",        "project" : "",    }
 
     @staticmethod
     def _add_signed_url_key_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "backendBucket" : ""        "project" : ""    }
+        "backendBucket" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -309,7 +309,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __delete_signed_url_key_required_fields_default_values =  {
-        "backendBucket" : ""        "keyName" : ""        "project" : ""    }
+        "backendBucket" : "",        "keyName" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_signed_url_key_get_unset_required_fields(message_dict):
@@ -401,7 +401,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "backendBucket" : ""        "project" : ""    }
+        "backendBucket" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -483,7 +483,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -584,7 +584,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -663,7 +663,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "backendBucket" : ""        "project" : ""    }
+        "backendBucket" : "",        "project" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -764,7 +764,7 @@ class BackendBucketsRestTransport(BackendBucketsTransport):
         )
 
     __update_required_fields_default_values =  {
-        "backendBucket" : ""        "project" : ""    }
+        "backendBucket" : "",        "project" : "",    }
 
     @staticmethod
     def _update_get_unset_required_fields(message_dict):

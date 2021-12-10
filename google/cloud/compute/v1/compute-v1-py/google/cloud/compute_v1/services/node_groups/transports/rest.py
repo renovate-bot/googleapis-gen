@@ -116,7 +116,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         self._prep_wrapped_messages(client_info)
 
     __add_nodes_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _add_nodes_get_unset_required_fields(message_dict):
@@ -217,7 +217,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -294,7 +294,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -386,7 +386,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __delete_nodes_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _delete_nodes_get_unset_required_fields(message_dict):
@@ -487,7 +487,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -574,7 +574,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __get_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _get_iam_policy_get_unset_required_fields(message_dict):
@@ -691,7 +691,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "initialNodeCount" : ""        "project" : ""        "zone" : ""    }
+        "initialNodeCount" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -792,7 +792,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""        "zone" : ""    }
+        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -869,7 +869,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __list_nodes_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _list_nodes_get_unset_required_fields(message_dict):
@@ -946,7 +946,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -1047,7 +1047,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __set_iam_policy_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_iam_policy_get_unset_required_fields(message_dict):
@@ -1173,7 +1173,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __set_node_template_required_fields_default_values =  {
-        "nodeGroup" : ""        "project" : ""        "zone" : ""    }
+        "nodeGroup" : "",        "project" : "",        "zone" : "",    }
 
     @staticmethod
     def _set_node_template_get_unset_required_fields(message_dict):
@@ -1274,7 +1274,7 @@ class NodeGroupsRestTransport(NodeGroupsTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "resource" : ""        "zone" : ""    }
+        "project" : "",        "resource" : "",        "zone" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):

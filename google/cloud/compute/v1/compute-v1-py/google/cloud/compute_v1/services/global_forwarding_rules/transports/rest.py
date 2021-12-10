@@ -116,7 +116,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         self._prep_wrapped_messages(client_info)
 
     __delete_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""    }
+        "forwardingRule" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         )
 
     __get_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""    }
+        "forwardingRule" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -297,7 +297,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         )
 
     __insert_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _insert_get_unset_required_fields(message_dict):
@@ -398,7 +398,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -477,7 +477,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         )
 
     __patch_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""    }
+        "forwardingRule" : "",        "project" : "",    }
 
     @staticmethod
     def _patch_get_unset_required_fields(message_dict):
@@ -578,7 +578,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         )
 
     __set_labels_required_fields_default_values =  {
-        "project" : ""        "resource" : ""    }
+        "project" : "",        "resource" : "",    }
 
     @staticmethod
     def _set_labels_get_unset_required_fields(message_dict):
@@ -679,7 +679,7 @@ class GlobalForwardingRulesRestTransport(GlobalForwardingRulesTransport):
         )
 
     __set_target_required_fields_default_values =  {
-        "forwardingRule" : ""        "project" : ""    }
+        "forwardingRule" : "",        "project" : "",    }
 
     @staticmethod
     def _set_target_get_unset_required_fields(message_dict):

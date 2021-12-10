@@ -116,7 +116,7 @@ class ProjectsRestTransport(ProjectsTransport):
         self._prep_wrapped_messages(client_info)
 
     __disable_xpn_host_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _disable_xpn_host_get_unset_required_fields(message_dict):
@@ -208,7 +208,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __disable_xpn_resource_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _disable_xpn_resource_get_unset_required_fields(message_dict):
@@ -309,7 +309,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __enable_xpn_host_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _enable_xpn_host_get_unset_required_fields(message_dict):
@@ -401,7 +401,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __enable_xpn_resource_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _enable_xpn_resource_get_unset_required_fields(message_dict):
@@ -502,7 +502,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -583,7 +583,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __get_xpn_host_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _get_xpn_host_get_unset_required_fields(message_dict):
@@ -665,7 +665,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __get_xpn_resources_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _get_xpn_resources_get_unset_required_fields(message_dict):
@@ -742,7 +742,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __list_xpn_hosts_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_xpn_hosts_get_unset_required_fields(message_dict):
@@ -828,7 +828,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __move_disk_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _move_disk_get_unset_required_fields(message_dict):
@@ -929,7 +929,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __move_instance_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _move_instance_get_unset_required_fields(message_dict):
@@ -1030,7 +1030,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __set_common_instance_metadata_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _set_common_instance_metadata_get_unset_required_fields(message_dict):
@@ -1132,7 +1132,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __set_default_network_tier_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _set_default_network_tier_get_unset_required_fields(message_dict):
@@ -1233,7 +1233,7 @@ class ProjectsRestTransport(ProjectsTransport):
         )
 
     __set_usage_export_bucket_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _set_usage_export_bucket_get_unset_required_fields(message_dict):

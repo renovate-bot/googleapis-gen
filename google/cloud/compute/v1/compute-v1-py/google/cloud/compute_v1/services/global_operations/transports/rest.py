@@ -116,7 +116,7 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
         self._prep_wrapped_messages(client_info)
 
     __aggregated_list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _aggregated_list_get_unset_required_fields(message_dict):
@@ -193,7 +193,7 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
         )
 
     __delete_required_fields_default_values =  {
-        "operation" : ""        "project" : ""    }
+        "operation" : "",        "project" : "",    }
 
     @staticmethod
     def _delete_get_unset_required_fields(message_dict):
@@ -273,7 +273,7 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
         )
 
     __get_required_fields_default_values =  {
-        "operation" : ""        "project" : ""    }
+        "operation" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -365,7 +365,7 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
         )
 
     __list_required_fields_default_values =  {
-        "project" : ""    }
+        "project" : "",    }
 
     @staticmethod
     def _list_get_unset_required_fields(message_dict):
@@ -444,7 +444,7 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
         )
 
     __wait_required_fields_default_values =  {
-        "operation" : ""        "project" : ""    }
+        "operation" : "",        "project" : "",    }
 
     @staticmethod
     def _wait_get_unset_required_fields(message_dict):

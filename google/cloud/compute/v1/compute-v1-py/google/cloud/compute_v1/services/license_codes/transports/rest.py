@@ -116,7 +116,7 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
         self._prep_wrapped_messages(client_info)
 
     __get_required_fields_default_values =  {
-        "licenseCode" : ""        "project" : ""    }
+        "licenseCode" : "",        "project" : "",    }
 
     @staticmethod
     def _get_get_unset_required_fields(message_dict):
@@ -198,7 +198,7 @@ class LicenseCodesRestTransport(LicenseCodesTransport):
         )
 
     __test_iam_permissions_required_fields_default_values =  {
-        "project" : ""        "resource" : ""    }
+        "project" : "",        "resource" : "",    }
 
     @staticmethod
     def _test_iam_permissions_get_unset_required_fields(message_dict):
