@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.v2;
 
 /**
  * <pre>
- * The request message for
- * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
+ * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.SuggestFaqAnswersRequest}
@@ -467,8 +466,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
+   * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.SuggestFaqAnswersRequest}

@@ -9,9 +9,7 @@ public interface AutomatedAgentReplyOrBuilder extends
 
   /**
    * <pre>
-   * Response of the Dialogflow
-   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
-   * call.
+   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -20,9 +18,7 @@ public interface AutomatedAgentReplyOrBuilder extends
   boolean hasDetectIntentResponse();
   /**
    * <pre>
-   * Response of the Dialogflow
-   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
-   * call.
+   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>
@@ -31,9 +27,7 @@ public interface AutomatedAgentReplyOrBuilder extends
   com.google.cloud.dialogflow.v2.DetectIntentResponse getDetectIntentResponse();
   /**
    * <pre>
-   * Response of the Dialogflow
-   * [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent]
-   * call.
+   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2.Sessions.DetectIntent] call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.DetectIntentResponse detect_intent_response = 1;</code>

@@ -18,11 +18,11 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
     /**
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their
-     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
+     * ```
      * documents_metadata_filters {
      *   key: "market"
      *   value: "US,CA"
@@ -31,6 +31,7 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
      *   key: "user"
      *   value: "agent"
      * }
+     * ```
      *
      * Generated from protobuf field <code>map<string, string> documents_metadata_filters = 1;</code>
      */
@@ -45,11 +46,11 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
      *     @type array|\Google\Protobuf\Internal\MapField $documents_metadata_filters
      *           Key-value filters on the metadata of documents returned by article
      *           suggestion. If specified, article suggestion only returns suggested
-     *           documents that match all filters in their
-     *           [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     *           documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      *           values for a metadata key should be concatenated by comma. For example,
      *           filters to match all documents that have 'US' or 'CA' in their market
      *           metadata values and 'agent' in their user metadata values will be
+     *           ```
      *           documents_metadata_filters {
      *             key: "market"
      *             value: "US,CA"
@@ -58,6 +59,7 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
      *             key: "user"
      *             value: "agent"
      *           }
+     *           ```
      * }
      */
     public function __construct($data = NULL) {
@@ -68,11 +70,11 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
     /**
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their
-     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
+     * ```
      * documents_metadata_filters {
      *   key: "market"
      *   value: "US,CA"
@@ -81,6 +83,7 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
      *   key: "user"
      *   value: "agent"
      * }
+     * ```
      *
      * Generated from protobuf field <code>map<string, string> documents_metadata_filters = 1;</code>
      * @return \Google\Protobuf\Internal\MapField
@@ -93,11 +96,11 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
     /**
      * Key-value filters on the metadata of documents returned by article
      * suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their
-     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
+     * ```
      * documents_metadata_filters {
      *   key: "market"
      *   value: "US,CA"
@@ -106,6 +109,7 @@ class AssistQueryParameters extends \Google\Protobuf\Internal\Message
      *   key: "user"
      *   value: "agent"
      * }
+     * ```
      *
      * Generated from protobuf field <code>map<string, string> documents_metadata_filters = 1;</code>
      * @param array|\Google\Protobuf\Internal\MapField $var

@@ -33,8 +33,8 @@ public interface ParticipantOrBuilder extends
 
   /**
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field
-   * must be set during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field must be set
+   * during participant creation and is then immutable.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -43,8 +43,8 @@ public interface ParticipantOrBuilder extends
   int getRoleValue();
   /**
    * <pre>
-   * Immutable. The role this participant plays in the conversation. This field
-   * must be set during participant creation and is then immutable.
+   * Immutable. The role this participant plays in the conversation. This field must be set
+   * during participant creation and is then immutable.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -78,10 +78,9 @@ public interface ParticipantOrBuilder extends
 
   /**
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by
-   * article suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their
-   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by article
+   * suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -102,10 +101,9 @@ public interface ParticipantOrBuilder extends
   int getDocumentsMetadataFiltersCount();
   /**
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by
-   * article suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their
-   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by article
+   * suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -133,10 +131,9 @@ public interface ParticipantOrBuilder extends
   getDocumentsMetadataFilters();
   /**
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by
-   * article suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their
-   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by article
+   * suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -158,10 +155,9 @@ public interface ParticipantOrBuilder extends
   getDocumentsMetadataFiltersMap();
   /**
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by
-   * article suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their
-   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by article
+   * suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be
@@ -185,10 +181,9 @@ public interface ParticipantOrBuilder extends
       java.lang.String defaultValue);
   /**
    * <pre>
-   * Optional. Key-value filters on the metadata of documents returned by
-   * article suggestion. If specified, article suggestion only returns suggested
-   * documents that match all filters in their
-   * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+   * Optional. Key-value filters on the metadata of documents returned by article
+   * suggestion. If specified, article suggestion only returns suggested
+   * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
    * values for a metadata key should be concatenated by comma. For example,
    * filters to match all documents that have 'US' or 'CA' in their market
    * metadata values and 'agent' in their user metadata values will be

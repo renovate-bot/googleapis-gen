@@ -24,8 +24,8 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Immutable. The role this participant plays in the conversation. This field
-     * must be set during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field must be set
+     * during participant creation and is then immutable.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
@@ -39,10 +39,9 @@ class Participant extends \Google\Protobuf\Internal\Message
      */
     protected $sip_recording_media_label = '';
     /**
-     * Optional. Key-value filters on the metadata of documents returned by
-     * article suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their
-     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by article
+     * suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -72,17 +71,16 @@ class Participant extends \Google\Protobuf\Internal\Message
      *           Format: `projects/<Project ID>/locations/<Location
      *           ID>/conversations/<Conversation ID>/participants/<Participant ID>`.
      *     @type int $role
-     *           Immutable. The role this participant plays in the conversation. This field
-     *           must be set during participant creation and is then immutable.
+     *           Immutable. The role this participant plays in the conversation. This field must be set
+     *           during participant creation and is then immutable.
      *     @type string $sip_recording_media_label
      *           Optional. Label applied to streams representing this participant in SIPREC
      *           XML metadata and SDP. This is used to assign transcriptions from that
      *           media stream to this participant. This field can be updated.
      *     @type array|\Google\Protobuf\Internal\MapField $documents_metadata_filters
-     *           Optional. Key-value filters on the metadata of documents returned by
-     *           article suggestion. If specified, article suggestion only returns suggested
-     *           documents that match all filters in their
-     *           [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     *           Optional. Key-value filters on the metadata of documents returned by article
+     *           suggestion. If specified, article suggestion only returns suggested
+     *           documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      *           values for a metadata key should be concatenated by comma. For example,
      *           filters to match all documents that have 'US' or 'CA' in their market
      *           metadata values and 'agent' in their user metadata values will be
@@ -134,8 +132,8 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The role this participant plays in the conversation. This field
-     * must be set during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field must be set
+     * during participant creation and is then immutable.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
@@ -146,8 +144,8 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Immutable. The role this participant plays in the conversation. This field
-     * must be set during participant creation and is then immutable.
+     * Immutable. The role this participant plays in the conversation. This field must be set
+     * during participant creation and is then immutable.
      *
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2.Participant.Role role = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
@@ -192,10 +190,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Key-value filters on the metadata of documents returned by
-     * article suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their
-     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by article
+     * suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be
@@ -219,10 +216,9 @@ class Participant extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Optional. Key-value filters on the metadata of documents returned by
-     * article suggestion. If specified, article suggestion only returns suggested
-     * documents that match all filters in their
-     * [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
+     * Optional. Key-value filters on the metadata of documents returned by article
+     * suggestion. If specified, article suggestion only returns suggested
+     * documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2.Document.metadata]. Multiple
      * values for a metadata key should be concatenated by comma. For example,
      * filters to match all documents that have 'US' or 'CA' in their market
      * metadata values and 'agent' in their user metadata values will be

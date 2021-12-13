@@ -353,7 +353,7 @@ class ParticipantsAsyncClient:
         Returns:
             google.cloud.dialogflow_v2.services.participants.pagers.ListParticipantsAsyncPager:
                 The response message for
-                   [Participants.ListParticipants][google.cloud.dialogflow.v2.Participants.ListParticipants].
+                [Participants.ListParticipants][google.cloud.dialogflow.v2.Participants.ListParticipants].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -543,7 +543,7 @@ class ParticipantsAsyncClient:
         Returns:
             google.cloud.dialogflow_v2.types.AnalyzeContentResponse:
                 The response message for
-                   [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
+                [Participants.AnalyzeContent][google.cloud.dialogflow.v2.Participants.AnalyzeContent].
 
         """
         # Create or coerce a protobuf request object.
@@ -630,7 +630,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Returns:
             google.cloud.dialogflow_v2.types.SuggestArticlesResponse:
                 The response message for
-                   [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
+                [Participants.SuggestArticles][google.cloud.dialogflow.v2.Participants.SuggestArticles].
 
         """
         # Create or coerce a protobuf request object.
@@ -707,7 +707,7 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
         Returns:
             google.cloud.dialogflow_v2.types.SuggestFaqAnswersResponse:
                 The request message for
-                   [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
+                [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2.Participants.SuggestFaqAnswers].
 
         """
         # Create or coerce a protobuf request object.
