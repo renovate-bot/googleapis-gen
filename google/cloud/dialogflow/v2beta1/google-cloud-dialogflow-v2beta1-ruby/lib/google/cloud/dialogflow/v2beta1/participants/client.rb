@@ -27,8 +27,7 @@ module Google
           ##
           # Client for the Participants service.
           #
-          # Service for managing
-          # {::Google::Cloud::Dialogflow::V2beta1::Participant Participants}.
+          # Service for managing {::Google::Cloud::Dialogflow::V2beta1::Participant Participants}.
           #
           class Client
             include Paths
@@ -646,12 +645,9 @@ module Google
             # Gets suggested articles for a participant based on specific historical
             # messages.
             #
-            # Note that
-            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions}
-            # will only list the auto-generated suggestions, while
-            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion}
-            # will try to compile suggestion based on the provided conversation context
-            # in the real time.
+            # Note that {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions} will only list the auto-generated
+            # suggestions, while {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion} will try to compile suggestion
+            # based on the provided conversation context in the real time.
             #
             # @overload suggest_articles(request, options = nil)
             #   Pass arguments to `suggest_articles` via a request object, either of type
@@ -680,9 +676,8 @@ module Google
             #     ID>/conversations/<Conversation ID>/messages/<Message ID>`.
             #   @param context_size [::Integer]
             #     Optional. Max number of messages prior to and including
-            #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest#latest_message latest_message}
-            #     to use as context when compiling the suggestion. By default 20 and at
-            #     most 50.
+            #     {::Google::Cloud::Dialogflow::V2beta1::SuggestArticlesRequest#latest_message latest_message} to use as context
+            #     when compiling the suggestion. By default 20 and at most 50.
             #   @param assist_query_params [::Google::Cloud::Dialogflow::V2beta1::AssistQueryParameters, ::Hash]
             #     Optional. Parameters for a human assist query.
             #
@@ -955,9 +950,9 @@ module Google
             ##
             # Deprecated: Use inline suggestion, event based suggestion or
             # Suggestion* API instead.
-            # See
-            # [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-            # for more details. Removal Date: 2020-09-01.
+            # See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+            # details.
+            # Removal Date: 2020-09-01.
             #
             # Retrieves suggestions for live agents.
             #
@@ -1082,21 +1077,14 @@ module Google
             end
 
             ##
-            # Deprecated. use
-            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles SuggestArticles}
-            # and
-            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers SuggestFaqAnswers}
-            # instead.
+            # Deprecated. use {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_articles SuggestArticles} and {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#suggest_faq_answers SuggestFaqAnswers} instead.
             #
             # Gets suggestions for a participant based on specific historical
             # messages.
             #
-            # Note that
-            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions}
-            # will only list the auto-generated suggestions, while
-            # {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion}
-            # will try to compile suggestion based on the provided conversation context
-            # in the real time.
+            # Note that {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#list_suggestions ListSuggestions} will only list the auto-generated
+            # suggestions, while {::Google::Cloud::Dialogflow::V2beta1::Participants::Client#compile_suggestion CompileSuggestion} will try to compile suggestion
+            # based on the provided conversation context in the real time.
             #
             # @deprecated This method is deprecated and may be removed in the next major version update.
             #

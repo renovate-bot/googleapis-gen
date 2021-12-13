@@ -57,37 +57,37 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
             "X2NvbmZpZxgDIAEoCzI3Lmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LnYyYmV0",
             "YTEuU3ludGhlc2l6ZVNwZWVjaENvbmZpZyJaChNUZWxlcGhvbnlEdG1mRXZl",
             "bnRzEkMKC2R0bWZfZXZlbnRzGAEgAygOMi4uZ29vZ2xlLmNsb3VkLmRpYWxv",
-            "Z2Zsb3cudjJiZXRhMS5UZWxlcGhvbnlEdG1mImwKElNwZWVjaFRvVGV4dENv",
-            "bmZpZxJWChRzcGVlY2hfbW9kZWxfdmFyaWFudBgBIAEoDjIzLmdvb2dsZS5j",
-            "bG91ZC5kaWFsb2dmbG93LnYyYmV0YTEuU3BlZWNoTW9kZWxWYXJpYW50QgPg",
-            "QQEq+wEKDUF1ZGlvRW5jb2RpbmcSHgoaQVVESU9fRU5DT0RJTkdfVU5TUEVD",
-            "SUZJRUQQABIcChhBVURJT19FTkNPRElOR19MSU5FQVJfMTYQARIXChNBVURJ",
-            "T19FTkNPRElOR19GTEFDEAISGAoUQVVESU9fRU5DT0RJTkdfTVVMQVcQAxIW",
-            "ChJBVURJT19FTkNPRElOR19BTVIQBBIZChVBVURJT19FTkNPRElOR19BTVJf",
-            "V0IQBRIbChdBVURJT19FTkNPRElOR19PR0dfT1BVUxAGEikKJUFVRElPX0VO",
-            "Q09ESU5HX1NQRUVYX1dJVEhfSEVBREVSX0JZVEUQByp2ChJTcGVlY2hNb2Rl",
-            "bFZhcmlhbnQSJAogU1BFRUNIX01PREVMX1ZBUklBTlRfVU5TUEVDSUZJRUQQ",
-            "ABIWChJVU0VfQkVTVF9BVkFJTEFCTEUQARIQCgxVU0VfU1RBTkRBUkQQAhIQ",
-            "CgxVU0VfRU5IQU5DRUQQAyqNAQoPU3NtbFZvaWNlR2VuZGVyEiEKHVNTTUxf",
-            "Vk9JQ0VfR0VOREVSX1VOU1BFQ0lGSUVEEAASGgoWU1NNTF9WT0lDRV9HRU5E",
-            "RVJfTUFMRRABEhwKGFNTTUxfVk9JQ0VfR0VOREVSX0ZFTUFMRRACEh0KGVNT",
-            "TUxfVk9JQ0VfR0VOREVSX05FVVRSQUwQAyrsAQoTT3V0cHV0QXVkaW9FbmNv",
-            "ZGluZxIlCiFPVVRQVVRfQVVESU9fRU5DT0RJTkdfVU5TUEVDSUZJRUQQABIj",
-            "Ch9PVVRQVVRfQVVESU9fRU5DT0RJTkdfTElORUFSXzE2EAESHQoZT1VUUFVU",
-            "X0FVRElPX0VOQ09ESU5HX01QMxACEiUKIU9VVFBVVF9BVURJT19FTkNPRElO",
-            "R19NUDNfNjRfS0JQUxAEEiIKHk9VVFBVVF9BVURJT19FTkNPRElOR19PR0df",
-            "T1BVUxADEh8KG09VVFBVVF9BVURJT19FTkNPRElOR19NVUxBVxAFKpQCCg1U",
-            "ZWxlcGhvbnlEdG1mEh4KGlRFTEVQSE9OWV9EVE1GX1VOU1BFQ0lGSUVEEAAS",
-            "DAoIRFRNRl9PTkUQARIMCghEVE1GX1RXTxACEg4KCkRUTUZfVEhSRUUQAxIN",
-            "CglEVE1GX0ZPVVIQBBINCglEVE1GX0ZJVkUQBRIMCghEVE1GX1NJWBAGEg4K",
-            "CkRUTUZfU0VWRU4QBxIOCgpEVE1GX0VJR0hUEAgSDQoJRFRNRl9OSU5FEAkS",
-            "DQoJRFRNRl9aRVJPEAoSCgoGRFRNRl9BEAsSCgoGRFRNRl9CEAwSCgoGRFRN",
-            "Rl9DEA0SCgoGRFRNRl9EEA4SDQoJRFRNRl9TVEFSEA8SDgoKRFRNRl9QT1VO",
-            "RBAQQq4BCiNjb20uZ29vZ2xlLmNsb3VkLmRpYWxvZ2Zsb3cudjJiZXRhMUIQ",
-            "QXVkaW9Db25maWdQcm90b1ABWklnb29nbGUuZ29sYW5nLm9yZy9nZW5wcm90",
-            "by9nb29nbGVhcGlzL2Nsb3VkL2RpYWxvZ2Zsb3cvdjJiZXRhMTtkaWFsb2dm",
-            "bG93+AEBogICREaqAh9Hb29nbGUuQ2xvdWQuRGlhbG9nZmxvdy5WMmJldGEx",
-            "YgZwcm90bzM="));
+            "Z2Zsb3cudjJiZXRhMS5UZWxlcGhvbnlEdG1mImcKElNwZWVjaFRvVGV4dENv",
+            "bmZpZxJRChRzcGVlY2hfbW9kZWxfdmFyaWFudBgBIAEoDjIzLmdvb2dsZS5j",
+            "bG91ZC5kaWFsb2dmbG93LnYyYmV0YTEuU3BlZWNoTW9kZWxWYXJpYW50KvsB",
+            "Cg1BdWRpb0VuY29kaW5nEh4KGkFVRElPX0VOQ09ESU5HX1VOU1BFQ0lGSUVE",
+            "EAASHAoYQVVESU9fRU5DT0RJTkdfTElORUFSXzE2EAESFwoTQVVESU9fRU5D",
+            "T0RJTkdfRkxBQxACEhgKFEFVRElPX0VOQ09ESU5HX01VTEFXEAMSFgoSQVVE",
+            "SU9fRU5DT0RJTkdfQU1SEAQSGQoVQVVESU9fRU5DT0RJTkdfQU1SX1dCEAUS",
+            "GwoXQVVESU9fRU5DT0RJTkdfT0dHX09QVVMQBhIpCiVBVURJT19FTkNPRElO",
+            "R19TUEVFWF9XSVRIX0hFQURFUl9CWVRFEAcqdgoSU3BlZWNoTW9kZWxWYXJp",
+            "YW50EiQKIFNQRUVDSF9NT0RFTF9WQVJJQU5UX1VOU1BFQ0lGSUVEEAASFgoS",
+            "VVNFX0JFU1RfQVZBSUxBQkxFEAESEAoMVVNFX1NUQU5EQVJEEAISEAoMVVNF",
+            "X0VOSEFOQ0VEEAMqjQEKD1NzbWxWb2ljZUdlbmRlchIhCh1TU01MX1ZPSUNF",
+            "X0dFTkRFUl9VTlNQRUNJRklFRBAAEhoKFlNTTUxfVk9JQ0VfR0VOREVSX01B",
+            "TEUQARIcChhTU01MX1ZPSUNFX0dFTkRFUl9GRU1BTEUQAhIdChlTU01MX1ZP",
+            "SUNFX0dFTkRFUl9ORVVUUkFMEAMq7AEKE091dHB1dEF1ZGlvRW5jb2RpbmcS",
+            "JQohT1VUUFVUX0FVRElPX0VOQ09ESU5HX1VOU1BFQ0lGSUVEEAASIwofT1VU",
+            "UFVUX0FVRElPX0VOQ09ESU5HX0xJTkVBUl8xNhABEh0KGU9VVFBVVF9BVURJ",
+            "T19FTkNPRElOR19NUDMQAhIlCiFPVVRQVVRfQVVESU9fRU5DT0RJTkdfTVAz",
+            "XzY0X0tCUFMQBBIiCh5PVVRQVVRfQVVESU9fRU5DT0RJTkdfT0dHX09QVVMQ",
+            "AxIfChtPVVRQVVRfQVVESU9fRU5DT0RJTkdfTVVMQVcQBSqUAgoNVGVsZXBo",
+            "b255RHRtZhIeChpURUxFUEhPTllfRFRNRl9VTlNQRUNJRklFRBAAEgwKCERU",
+            "TUZfT05FEAESDAoIRFRNRl9UV08QAhIOCgpEVE1GX1RIUkVFEAMSDQoJRFRN",
+            "Rl9GT1VSEAQSDQoJRFRNRl9GSVZFEAUSDAoIRFRNRl9TSVgQBhIOCgpEVE1G",
+            "X1NFVkVOEAcSDgoKRFRNRl9FSUdIVBAIEg0KCURUTUZfTklORRAJEg0KCURU",
+            "TUZfWkVSTxAKEgoKBkRUTUZfQRALEgoKBkRUTUZfQhAMEgoKBkRUTUZfQxAN",
+            "EgoKBkRUTUZfRBAOEg0KCURUTUZfU1RBUhAPEg4KCkRUTUZfUE9VTkQQEEKu",
+            "AQojY29tLmdvb2dsZS5jbG91ZC5kaWFsb2dmbG93LnYyYmV0YTFCEEF1ZGlv",
+            "Q29uZmlnUHJvdG9QAVpJZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29v",
+            "Z2xlYXBpcy9jbG91ZC9kaWFsb2dmbG93L3YyYmV0YTE7ZGlhbG9nZmxvd/gB",
+            "AaICAkRGqgIfR29vZ2xlLkNsb3VkLkRpYWxvZ2Zsb3cuVjJiZXRhMWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Api.AnnotationsReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Google.Cloud.Dialogflow.V2beta1.AudioEncoding), typeof(global::Google.Cloud.Dialogflow.V2beta1.SpeechModelVariant), typeof(global::Google.Cloud.Dialogflow.V2beta1.SsmlVoiceGender), typeof(global::Google.Cloud.Dialogflow.V2beta1.OutputAudioEncoding), typeof(global::Google.Cloud.Dialogflow.V2beta1.TelephonyDtmf), }, null, new pbr::GeneratedClrTypeInfo[] {
@@ -2607,7 +2607,7 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
   }
 
   /// <summary>
-  /// Configures speech transcription for  [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile].
+  /// Configures speech transcription for [ConversationProfile][google.cloud.dialogflow.v2beta1.ConversationProfile].
   /// </summary>
   public sealed partial class SpeechToTextConfig : pb::IMessage<SpeechToTextConfig>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2657,10 +2657,13 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
     public const int SpeechModelVariantFieldNumber = 1;
     private global::Google.Cloud.Dialogflow.V2beta1.SpeechModelVariant speechModelVariant_ = global::Google.Cloud.Dialogflow.V2beta1.SpeechModelVariant.Unspecified;
     /// <summary>
-    /// Optional. The speech model used in speech to text.
+    /// The speech model used in speech to text.
     /// `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
     /// `USE_ENHANCED`. It can be overridden in [AnalyzeContentRequest][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest] and
     /// [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest] request.
+    /// If enhanced model variant is specified and an enhanced
+    /// version of the specified model for the language does not exist, then it
+    /// would emit an error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

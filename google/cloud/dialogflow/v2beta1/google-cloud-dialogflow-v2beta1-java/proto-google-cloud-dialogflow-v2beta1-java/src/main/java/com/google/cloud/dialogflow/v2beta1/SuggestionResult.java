@@ -6,12 +6,8 @@ package com.google.cloud.dialogflow.v2beta1;
 /**
  * <pre>
  * One response of different type of suggestion response which is used in
- * the response of
- * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
- * and
- * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent],
- * as well as
- * [HumanAgentAssistantEvent][google.cloud.dialogflow.v2beta1.HumanAgentAssistantEvent].
+ * the response of [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+ * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent], as well as [HumanAgentAssistantEvent][google.cloud.dialogflow.v2beta1.HumanAgentAssistantEvent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestionResult}
@@ -579,12 +575,8 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * One response of different type of suggestion response which is used in
-   * the response of
-   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
-   * and
-   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent],
-   * as well as
-   * [HumanAgentAssistantEvent][google.cloud.dialogflow.v2beta1.HumanAgentAssistantEvent].
+   * the response of [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+   * [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent], as well as [HumanAgentAssistantEvent][google.cloud.dialogflow.v2beta1.HumanAgentAssistantEvent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestionResult}

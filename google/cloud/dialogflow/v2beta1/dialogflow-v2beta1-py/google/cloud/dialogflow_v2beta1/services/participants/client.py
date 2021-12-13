@@ -590,7 +590,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.services.participants.pagers.ListParticipantsPager:
                 The response message for
-                   [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
+                [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -780,7 +780,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.types.AnalyzeContentResponse:
                 The response message for
-                   [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
+                [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
 
         """
         # Create or coerce a protobuf request object.
@@ -868,7 +868,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.types.SuggestArticlesResponse:
                 The response message for
-                   [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
+                [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
 
         """
         # Create or coerce a protobuf request object.
@@ -945,7 +945,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.types.SuggestFaqAnswersResponse:
                 The request message for
-                   [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+                [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
 
         """
         # Create or coerce a protobuf request object.
@@ -1022,7 +1022,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.types.SuggestSmartRepliesResponse:
                 The response message for
-                   [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+                [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
 
         """
         # Create or coerce a protobuf request object.
@@ -1108,7 +1108,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.services.participants.pagers.ListSuggestionsPager:
                 The response message for
-                   [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
+                [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -1193,7 +1193,7 @@ class ParticipantsClient(metaclass=ParticipantsClientMeta):
         Returns:
             google.cloud.dialogflow_v2beta1.types.CompileSuggestionResponse:
                 The response message for
-                   [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+                [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
 
         """
         warnings.warn("ParticipantsClient.compile_suggestion is deprecated",

@@ -399,9 +399,7 @@ private static final long serialVersionUID = 0L;
   public static final int DETECT_INTENT_RESPONSE_FIELD_NUMBER = 1;
   /**
    * <pre>
-   * Response of the Dialogflow
-   * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-   * call.
+   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -413,9 +411,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Response of the Dialogflow
-   * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-   * call.
+   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -430,9 +426,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Response of the Dialogflow
-   * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-   * call.
+   * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1390,9 +1384,7 @@ private static final long serialVersionUID = 0L;
         com.google.cloud.dialogflow.v2beta1.DetectIntentResponse, com.google.cloud.dialogflow.v2beta1.DetectIntentResponse.Builder, com.google.cloud.dialogflow.v2beta1.DetectIntentResponseOrBuilder> detectIntentResponseBuilder_;
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1404,9 +1396,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1428,9 +1418,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1450,9 +1438,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1470,9 +1456,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1498,9 +1482,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1523,9 +1505,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1535,9 +1515,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>
@@ -1555,9 +1533,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Response of the Dialogflow
-     * [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-     * call.
+     * Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2beta1.DetectIntentResponse detect_intent_response = 1;</code>

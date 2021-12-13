@@ -322,6 +322,9 @@ module Google
         # @!attribute [r] state
         #   @return [::Google::Cloud::Dialogflow::V2beta1::KnowledgeOperationMetadata::State]
         #     Required. Output only. The current state of this operation.
+        # @!attribute [rw] knowledge_base
+        #   @return [::String]
+        #     The name of the knowledge base interacted with during the operation.
         class KnowledgeOperationMetadata
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The response message for
- * [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+ * The response message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
  *
  * Generated from protobuf message <code>google.cloud.dialogflow.v2beta1.CompileSuggestionResponse</code>
  */
@@ -35,9 +34,8 @@ class CompileSuggestionResponse extends \Google\Protobuf\Internal\Message
      * Number of messages prior to and including
      * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      * to compile the suggestion. It may be smaller than the
-     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     * there aren't that many messages in the conversation.
      *
      * Generated from protobuf field <code>int32 context_size = 3;</code>
      */
@@ -60,9 +58,8 @@ class CompileSuggestionResponse extends \Google\Protobuf\Internal\Message
      *           Number of messages prior to and including
      *           [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      *           to compile the suggestion. It may be smaller than the
-     *           [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     *           field in the request if there aren't that many messages in the
-     *           conversation.
+     *           [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     *           there aren't that many messages in the conversation.
      * }
      */
     public function __construct($data = NULL) {
@@ -142,9 +139,8 @@ class CompileSuggestionResponse extends \Google\Protobuf\Internal\Message
      * Number of messages prior to and including
      * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      * to compile the suggestion. It may be smaller than the
-     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     * there aren't that many messages in the conversation.
      *
      * Generated from protobuf field <code>int32 context_size = 3;</code>
      * @return int
@@ -158,9 +154,8 @@ class CompileSuggestionResponse extends \Google\Protobuf\Internal\Message
      * Number of messages prior to and including
      * [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
      * to compile the suggestion. It may be smaller than the
-     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+     * there aren't that many messages in the conversation.
      *
      * Generated from protobuf field <code>int32 context_size = 3;</code>
      * @param int $var

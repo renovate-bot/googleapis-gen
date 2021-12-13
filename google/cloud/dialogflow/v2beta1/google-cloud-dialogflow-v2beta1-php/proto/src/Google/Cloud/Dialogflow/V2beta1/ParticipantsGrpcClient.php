@@ -19,8 +19,7 @@
 namespace Google\Cloud\Dialogflow\V2beta1;
 
 /**
- * Service for managing
- * [Participants][google.cloud.dialogflow.v2beta1.Participant].
+ * Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
  */
 class ParticipantsGrpcClient extends \Grpc\BaseStub {
 
@@ -117,12 +116,9 @@ class ParticipantsGrpcClient extends \Grpc\BaseStub {
      * Gets suggested articles for a participant based on specific historical
      * messages.
      *
-     * Note that
-     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-     * will only list the auto-generated suggestions, while
-     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-     * will try to compile suggestion based on the provided conversation context
-     * in the real time.
+     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+     * based on the provided conversation context in the real time.
      * @param \Google\Cloud\Dialogflow\V2beta1\SuggestArticlesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -171,9 +167,9 @@ class ParticipantsGrpcClient extends \Grpc\BaseStub {
     /**
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-     * for more details. Removal Date: 2020-09-01.
+     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+     * details.
+     * Removal Date: 2020-09-01.
      *
      * Retrieves suggestions for live agents.
      *
@@ -203,21 +199,14 @@ class ParticipantsGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Deprecated. use
-     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-     * and
-     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-     * instead.
+     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
      *
      * Gets suggestions for a participant based on specific historical
      * messages.
      *
-     * Note that
-     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-     * will only list the auto-generated suggestions, while
-     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-     * will try to compile suggestion based on the provided conversation context
-     * in the real time.
+     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+     * based on the provided conversation context in the real time.
      * @param \Google\Cloud\Dialogflow\V2beta1\CompileSuggestionRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

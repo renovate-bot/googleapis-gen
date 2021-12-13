@@ -24,8 +24,7 @@ using grpc = global::Grpc.Core;
 
 namespace Google.Cloud.Dialogflow.V2beta1 {
   /// <summary>
-  /// Service for managing
-  /// [Participants][google.cloud.dialogflow.v2beta1.Participant].
+  /// Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
   /// </summary>
   public static partial class Participants
   {
@@ -260,12 +259,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// Gets suggested articles for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -305,9 +301,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// <summary>
       /// Deprecated: Use inline suggestion, event based suggestion or
       /// Suggestion* API instead.
-      /// See
-      /// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-      /// for more details. Removal Date: 2020-09-01.
+      /// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+      /// details.
+      /// Removal Date: 2020-09-01.
       ///
       /// Retrieves suggestions for live agents.
       ///
@@ -334,21 +330,14 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       }
 
       /// <summary>
-      /// Deprecated. use
-      /// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-      /// and
-      /// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-      /// instead.
+      /// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
       ///
       /// Gets suggestions for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -652,12 +641,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// Gets suggested articles for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -673,12 +659,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// Gets suggested articles for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -692,12 +675,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// Gets suggested articles for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -713,12 +693,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// Gets suggested articles for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -835,9 +812,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// <summary>
       /// Deprecated: Use inline suggestion, event based suggestion or
       /// Suggestion* API instead.
-      /// See
-      /// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-      /// for more details. Removal Date: 2020-09-01.
+      /// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+      /// details.
+      /// Removal Date: 2020-09-01.
       ///
       /// Retrieves suggestions for live agents.
       ///
@@ -867,9 +844,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// <summary>
       /// Deprecated: Use inline suggestion, event based suggestion or
       /// Suggestion* API instead.
-      /// See
-      /// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-      /// for more details. Removal Date: 2020-09-01.
+      /// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+      /// details.
+      /// Removal Date: 2020-09-01.
       ///
       /// Retrieves suggestions for live agents.
       ///
@@ -897,9 +874,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// <summary>
       /// Deprecated: Use inline suggestion, event based suggestion or
       /// Suggestion* API instead.
-      /// See
-      /// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-      /// for more details. Removal Date: 2020-09-01.
+      /// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+      /// details.
+      /// Removal Date: 2020-09-01.
       ///
       /// Retrieves suggestions for live agents.
       ///
@@ -929,9 +906,9 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
       /// <summary>
       /// Deprecated: Use inline suggestion, event based suggestion or
       /// Suggestion* API instead.
-      /// See
-      /// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-      /// for more details. Removal Date: 2020-09-01.
+      /// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+      /// details.
+      /// Removal Date: 2020-09-01.
       ///
       /// Retrieves suggestions for live agents.
       ///
@@ -957,21 +934,14 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListSuggestions, null, options, request);
       }
       /// <summary>
-      /// Deprecated. use
-      /// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-      /// and
-      /// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-      /// instead.
+      /// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
       ///
       /// Gets suggestions for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -984,21 +954,14 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
         return CompileSuggestion(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Deprecated. use
-      /// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-      /// and
-      /// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-      /// instead.
+      /// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
       ///
       /// Gets suggestions for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -1009,21 +972,14 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
         return CallInvoker.BlockingUnaryCall(__Method_CompileSuggestion, null, options, request);
       }
       /// <summary>
-      /// Deprecated. use
-      /// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-      /// and
-      /// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-      /// instead.
+      /// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
       ///
       /// Gets suggestions for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -1036,21 +992,14 @@ namespace Google.Cloud.Dialogflow.V2beta1 {
         return CompileSuggestionAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// Deprecated. use
-      /// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-      /// and
-      /// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-      /// instead.
+      /// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
       ///
       /// Gets suggestions for a participant based on specific historical
       /// messages.
       ///
-      /// Note that
-      /// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-      /// will only list the auto-generated suggestions, while
-      /// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-      /// will try to compile suggestion based on the provided conversation context
-      /// in the real time.
+      /// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+      /// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+      /// based on the provided conversation context in the real time.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

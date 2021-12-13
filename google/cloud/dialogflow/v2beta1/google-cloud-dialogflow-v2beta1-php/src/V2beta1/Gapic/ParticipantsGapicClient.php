@@ -63,8 +63,7 @@ use Google\Protobuf\FieldMask;
 use Google\Protobuf\Timestamp;
 
 /**
- * Service Description: Service for managing
- * [Participants][google.cloud.dialogflow.v2beta1.Participant].
+ * Service Description: Service for managing [Participants][google.cloud.dialogflow.v2beta1.Participant].
  *
  * This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -670,21 +669,14 @@ class ParticipantsGapicClient
     }
 
     /**
-     * Deprecated. use
-     * [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-     * and
-     * [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-     * instead.
+     * Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
      *
      * Gets suggestions for a participant based on specific historical
      * messages.
      *
-     * Note that
-     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-     * will only list the auto-generated suggestions, while
-     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-     * will try to compile suggestion based on the provided conversation context
-     * in the real time.
+     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+     * based on the provided conversation context in the real time.
      *
      * Sample code:
      * ```
@@ -917,9 +909,9 @@ class ParticipantsGapicClient
     /**
      * Deprecated: Use inline suggestion, event based suggestion or
      * Suggestion* API instead.
-     * See
-     * [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-     * for more details. Removal Date: 2020-09-01.
+     * See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+     * details.
+     * Removal Date: 2020-09-01.
      *
      * Retrieves suggestions for live agents.
      *
@@ -1028,12 +1020,9 @@ class ParticipantsGapicClient
      * Gets suggested articles for a participant based on specific historical
      * messages.
      *
-     * Note that
-     * [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-     * will only list the auto-generated suggestions, while
-     * [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-     * will try to compile suggestion based on the provided conversation context
-     * in the real time.
+     * Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+     * suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+     * based on the provided conversation context in the real time.
      *
      * Sample code:
      * ```
@@ -1060,9 +1049,8 @@ class ParticipantsGapicClient
      *           ID>/conversations/<Conversation ID>/messages/<Message ID>`.
      *     @type int $contextSize
      *           Optional. Max number of messages prior to and including
-     *           [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
-     *           to use as context when compiling the suggestion. By default 20 and at
-     *           most 50.
+     *           [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
+     *           when compiling the suggestion. By default 20 and at most 50.
      *     @type AssistQueryParameters $assistQueryParams
      *           Optional. Parameters for a human assist query.
      *     @type RetrySettings|array $retrySettings

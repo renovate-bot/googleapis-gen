@@ -31,8 +31,7 @@ module Google
     module Dialogflow
       module V2beta1
         ##
-        # Service for managing
-        # {::Google::Cloud::Dialogflow::V2beta1::Participant Participants}.
+        # Service for managing {::Google::Cloud::Dialogflow::V2beta1::Participant Participants}.
         #
         # To load this service and instantiate a client:
         #

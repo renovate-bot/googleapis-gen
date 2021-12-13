@@ -25,4 +25,24 @@ public interface KnowledgeOperationMetadataOrBuilder extends
    * @return The state.
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State getState();
+
+  /**
+   * <pre>
+   * The name of the knowledge base interacted with during the operation.
+   * </pre>
+   *
+   * <code>string knowledge_base = 3;</code>
+   * @return The knowledgeBase.
+   */
+  java.lang.String getKnowledgeBase();
+  /**
+   * <pre>
+   * The name of the knowledge base interacted with during the operation.
+   * </pre>
+   *
+   * <code>string knowledge_base = 3;</code>
+   * @return The bytes for knowledgeBase.
+   */
+  com.google.protobuf.ByteString
+      getKnowledgeBaseBytes();
 }

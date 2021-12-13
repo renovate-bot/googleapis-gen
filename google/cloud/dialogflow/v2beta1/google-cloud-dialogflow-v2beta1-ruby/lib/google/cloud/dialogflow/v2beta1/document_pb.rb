@@ -83,6 +83,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata" do
       optional :state, :enum, 1, "google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State"
+      optional :knowledge_base, :string, 3
     end
     add_enum "google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State" do
       value :STATE_UNSPECIFIED, 0

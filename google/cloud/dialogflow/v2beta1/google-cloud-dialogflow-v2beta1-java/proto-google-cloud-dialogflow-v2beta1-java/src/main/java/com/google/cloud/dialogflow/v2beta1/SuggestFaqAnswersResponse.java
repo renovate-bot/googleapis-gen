@@ -5,8 +5,7 @@ package com.google.cloud.dialogflow.v2beta1;
 
 /**
  * <pre>
- * The request message for
- * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+ * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse}
@@ -228,11 +227,10 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Number of messages prior to and including
-   * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message]
-   * to compile the suggestion. It may be smaller than the
-   * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size]
-   * field in the request if there aren't that many messages in the
-   * conversation.
+   * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message] to compile the
+   * suggestion. It may be smaller than the
+   * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size] field in the request if there
+   * aren't that many messages in the conversation.
    * </pre>
    *
    * <code>int32 context_size = 3;</code>
@@ -423,8 +421,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * The request message for
-   * [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+   * The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse}
@@ -1051,11 +1048,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message]
-     * to compile the suggestion. It may be smaller than the
-     * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message] to compile the
+     * suggestion. It may be smaller than the
+     * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size] field in the request if there
+     * aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1068,11 +1064,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message]
-     * to compile the suggestion. It may be smaller than the
-     * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message] to compile the
+     * suggestion. It may be smaller than the
+     * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size] field in the request if there
+     * aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>
@@ -1088,11 +1083,10 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Number of messages prior to and including
-     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message]
-     * to compile the suggestion. It may be smaller than the
-     * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size]
-     * field in the request if there aren't that many messages in the
-     * conversation.
+     * [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message] to compile the
+     * suggestion. It may be smaller than the
+     * [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size] field in the request if there
+     * aren't that many messages in the conversation.
      * </pre>
      *
      * <code>int32 context_size = 3;</code>

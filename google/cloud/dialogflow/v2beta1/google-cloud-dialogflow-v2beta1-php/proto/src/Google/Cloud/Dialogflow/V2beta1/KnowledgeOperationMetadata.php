@@ -21,6 +21,12 @@ class KnowledgeOperationMetadata extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata.State state = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $state = 0;
+    /**
+     * The name of the knowledge base interacted with during the operation.
+     *
+     * Generated from protobuf field <code>string knowledge_base = 3;</code>
+     */
+    protected $knowledge_base = '';
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class KnowledgeOperationMetadata extends \Google\Protobuf\Internal\Message
      *
      *     @type int $state
      *           Required. Output only. The current state of this operation.
+     *     @type string $knowledge_base
+     *           The name of the knowledge base interacted with during the operation.
      * }
      */
     public function __construct($data = NULL) {
@@ -59,6 +67,32 @@ class KnowledgeOperationMetadata extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Google\Cloud\Dialogflow\V2beta1\KnowledgeOperationMetadata\State::class);
         $this->state = $var;
+
+        return $this;
+    }
+
+    /**
+     * The name of the knowledge base interacted with during the operation.
+     *
+     * Generated from protobuf field <code>string knowledge_base = 3;</code>
+     * @return string
+     */
+    public function getKnowledgeBase()
+    {
+        return $this->knowledge_base;
+    }
+
+    /**
+     * The name of the knowledge base interacted with during the operation.
+     *
+     * Generated from protobuf field <code>string knowledge_base = 3;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setKnowledgeBase($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->knowledge_base = $var;
 
         return $this;
     }

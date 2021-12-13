@@ -250,13 +250,16 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Configures speech transcription for  {::Google::Cloud::Dialogflow::V2beta1::ConversationProfile ConversationProfile}.
+        # Configures speech transcription for {::Google::Cloud::Dialogflow::V2beta1::ConversationProfile ConversationProfile}.
         # @!attribute [rw] speech_model_variant
         #   @return [::Google::Cloud::Dialogflow::V2beta1::SpeechModelVariant]
-        #     Optional. The speech model used in speech to text.
+        #     The speech model used in speech to text.
         #     `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as
         #     `USE_ENHANCED`. It can be overridden in {::Google::Cloud::Dialogflow::V2beta1::AnalyzeContentRequest AnalyzeContentRequest} and
         #     [StreamingAnalyzeContentRequest][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest] request.
+        #     If enhanced model variant is specified and an enhanced
+        #     version of the specified model for the language does not exist, then it
+        #     would emit an error.
         class SpeechToTextConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

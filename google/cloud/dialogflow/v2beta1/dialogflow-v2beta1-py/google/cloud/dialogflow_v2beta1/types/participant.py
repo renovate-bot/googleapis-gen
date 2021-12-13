@@ -123,14 +123,14 @@ class Participant(proto.Message):
 
             ::
 
-                documents_metadata_filters {
-                  key: "market"
-                  value: "US,CA"
-                }
-                documents_metadata_filters {
-                  key: "user"
-                  value: "agent"
-                }
+               documents_metadata_filters {
+                 key: "market"
+                 value: "US,CA"
+               }
+               documents_metadata_filters {
+                 key: "user"
+                 value: "agent"
+               }
     """
     class Role(proto.Enum):
         r"""Enumeration of the roles a participant can play in a
@@ -531,14 +531,14 @@ class AssistQueryParameters(proto.Message):
 
             ::
 
-                documents_metadata_filters {
-                  key: "market"
-                  value: "US,CA"
-                }
-                documents_metadata_filters {
-                  key: "user"
-                  value: "agent"
-                }
+               documents_metadata_filters {
+                 key: "market"
+                 value: "US,CA"
+               }
+               documents_metadata_filters {
+                 key: "user"
+                 value: "agent"
+               }
     """
 
     documents_metadata_filters = proto.MapField(

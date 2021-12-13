@@ -230,26 +230,22 @@ type Participant struct {
 	// Format: `projects/<Project ID>/locations/<Location
 	// ID>/conversations/<Conversation ID>/participants/<Participant ID>`.
 	Name string `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	// Immutable. The role this participant plays in the conversation. This field
-	// must be set during participant creation and is then immutable.
+	// Immutable. The role this participant plays in the conversation. This field must be set
+	// during participant creation and is then immutable.
 	Role Participant_Role `protobuf:"varint,2,opt,name=role,proto3,enum=google.cloud.dialogflow.v2beta1.Participant_Role" json:"role,omitempty"`
-	// Optional. Obfuscated user id that should be associated with the created
-	// participant.
+	// Optional. Obfuscated user id that should be associated with the created participant.
 	//
 	// You can specify a user id as follows:
 	//
 	// 1. If you set this field in
-	//    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant]
-	//    or
+	//    [CreateParticipantRequest][google.cloud.dialogflow.v2beta1.CreateParticipantRequest.participant] or
 	//    [UpdateParticipantRequest][google.cloud.dialogflow.v2beta1.UpdateParticipantRequest.participant],
 	//    Dialogflow adds the obfuscated user id with the participant.
 	//
 	// 2. If you set this field in
-	//    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id]
-	//    or
+	//    [AnalyzeContent][google.cloud.dialogflow.v2beta1.AnalyzeContentRequest.obfuscated_external_user_id] or
 	//    [StreamingAnalyzeContent][google.cloud.dialogflow.v2beta1.StreamingAnalyzeContentRequest.obfuscated_external_user_id],
-	//    Dialogflow will update
-	//    [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
+	//    Dialogflow will update [Participant.obfuscated_external_user_id][google.cloud.dialogflow.v2beta1.Participant.obfuscated_external_user_id].
 	//
 	// Dialogflow uses this user id for following purposes:
 	// 1) Billing and measurement. If user with the same
@@ -266,22 +262,22 @@ type Participant struct {
 	//   hash function like SHA-512.
 	// * The length of the user id must be <= 256 characters.
 	ObfuscatedExternalUserId string `protobuf:"bytes,7,opt,name=obfuscated_external_user_id,json=obfuscatedExternalUserId,proto3" json:"obfuscated_external_user_id,omitempty"`
-	// Optional. Key-value filters on the metadata of documents returned by
-	// article suggestion. If specified, article suggestion only returns suggested
-	// documents that match all filters in their
-	// [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
-	// Multiple values for a metadata key should be concatenated by comma. For
-	// example, filters to match all documents that have 'US' or 'CA' in their
-	// market metadata values and 'agent' in their user metadata values will be
-	//
-	//     documents_metadata_filters {
-	//       key: "market"
-	//       value: "US,CA"
-	//     }
-	//     documents_metadata_filters {
-	//       key: "user"
-	//       value: "agent"
-	//     }
+	// Optional. Key-value filters on the metadata of documents returned by article
+	// suggestion. If specified, article suggestion only returns suggested
+	// documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
+	// values for a metadata key should be concatenated by comma. For example,
+	// filters to match all documents that have 'US' or 'CA' in their market
+	// metadata values and 'agent' in their user metadata values will be
+	// ```
+	// documents_metadata_filters {
+	//   key: "market"
+	//   value: "US,CA"
+	// }
+	// documents_metadata_filters {
+	//   key: "user"
+	//   value: "agent"
+	// }
+	// ```
 	DocumentsMetadataFilters map[string]string `protobuf:"bytes,8,rep,name=documents_metadata_filters,json=documentsMetadataFilters,proto3" json:"documents_metadata_filters,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
@@ -470,8 +466,7 @@ func (x *Message) GetSentimentAnalysis() *SentimentAnalysisResult {
 	return nil
 }
 
-// The request message for
-// [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
+// The request message for [Participants.CreateParticipant][google.cloud.dialogflow.v2beta1.Participants.CreateParticipant].
 type CreateParticipantRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -531,8 +526,7 @@ func (x *CreateParticipantRequest) GetParticipant() *Participant {
 	return nil
 }
 
-// The request message for
-// [Participants.GetParticipant][google.cloud.dialogflow.v2beta1.Participants.GetParticipant].
+// The request message for [Participants.GetParticipant][google.cloud.dialogflow.v2beta1.Participants.GetParticipant].
 type GetParticipantRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -583,8 +577,7 @@ func (x *GetParticipantRequest) GetName() string {
 	return ""
 }
 
-// The request message for
-// [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
+// The request message for [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
 type ListParticipantsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -654,8 +647,7 @@ func (x *ListParticipantsRequest) GetPageToken() string {
 	return ""
 }
 
-// The response message for
-// [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
+// The response message for [Participants.ListParticipants][google.cloud.dialogflow.v2beta1.Participants.ListParticipants].
 type ListParticipantsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -715,8 +707,7 @@ func (x *ListParticipantsResponse) GetNextPageToken() string {
 	return ""
 }
 
-// The request message for
-// [Participants.UpdateParticipant][google.cloud.dialogflow.v2beta1.Participants.UpdateParticipant].
+// The request message for [Participants.UpdateParticipant][google.cloud.dialogflow.v2beta1.Participants.UpdateParticipant].
 type UpdateParticipantRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -990,9 +981,7 @@ type isAutomatedAgentReply_Response interface {
 }
 
 type AutomatedAgentReply_DetectIntentResponse struct {
-	// Response of the Dialogflow
-	// [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent]
-	// call.
+	// Response of the Dialogflow [Sessions.DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] call.
 	DetectIntentResponse *DetectIntentResponse `protobuf:"bytes,1,opt,name=detect_intent_response,json=detectIntentResponse,proto3,oneof"`
 }
 
@@ -1079,20 +1068,20 @@ type AssistQueryParameters struct {
 
 	// Key-value filters on the metadata of documents returned by article
 	// suggestion. If specified, article suggestion only returns suggested
-	// documents that match all filters in their
-	// [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata].
-	// Multiple values for a metadata key should be concatenated by comma. For
-	// example, filters to match all documents that have 'US' or 'CA' in their
-	// market metadata values and 'agent' in their user metadata values will be
-	//
-	//     documents_metadata_filters {
-	//       key: "market"
-	//       value: "US,CA"
-	//     }
-	//     documents_metadata_filters {
-	//       key: "user"
-	//       value: "agent"
-	//     }
+	// documents that match all filters in their [Document.metadata][google.cloud.dialogflow.v2beta1.Document.metadata]. Multiple
+	// values for a metadata key should be concatenated by comma. For example,
+	// filters to match all documents that have 'US' or 'CA' in their market
+	// metadata values and 'agent' in their user metadata values will be
+	// ```
+	// documents_metadata_filters {
+	//   key: "market"
+	//   value: "US,CA"
+	// }
+	// documents_metadata_filters {
+	//   key: "user"
+	//   value: "agent"
+	// }
+	// ```
 	DocumentsMetadataFilters map[string]string `protobuf:"bytes,1,rep,name=documents_metadata_filters,json=documentsMetadataFilters,proto3" json:"documents_metadata_filters,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
 }
 
@@ -1135,8 +1124,7 @@ func (x *AssistQueryParameters) GetDocumentsMetadataFilters() map[string]string 
 	return nil
 }
 
-// The request message for
-// [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
+// The request message for [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
 type AnalyzeContentRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1345,8 +1333,7 @@ func (x *DtmfParameters) GetAcceptsDtmfInput() bool {
 	return false
 }
 
-// The response message for
-// [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
+// The response message for [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent].
 type AnalyzeContentResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1371,20 +1358,16 @@ type AnalyzeContentResponse struct {
 	// Optional. Only set if a Dialogflow automated agent has responded.
 	// Note that: [AutomatedAgentReply.detect_intent_response.output_audio][]
 	// and [AutomatedAgentReply.detect_intent_response.output_audio_config][]
-	// are always empty, use
-	// [reply_audio][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.reply_audio]
-	// instead.
+	// are always empty, use [reply_audio][google.cloud.dialogflow.v2beta1.AnalyzeContentResponse.reply_audio] instead.
 	AutomatedAgentReply *AutomatedAgentReply `protobuf:"bytes,3,opt,name=automated_agent_reply,json=automatedAgentReply,proto3" json:"automated_agent_reply,omitempty"`
 	// Output only. Message analyzed by CCAI.
 	Message *Message `protobuf:"bytes,5,opt,name=message,proto3" json:"message,omitempty"`
 	// The suggestions for most recent human agent. The order is the same as
-	// [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
-	// of
+	// [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
 	// [HumanAgentAssistantConfig.human_agent_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.human_agent_suggestion_config].
 	HumanAgentSuggestionResults []*SuggestionResult `protobuf:"bytes,6,rep,name=human_agent_suggestion_results,json=humanAgentSuggestionResults,proto3" json:"human_agent_suggestion_results,omitempty"`
 	// The suggestions for end user. The order is the same as
-	// [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs]
-	// of
+	// [HumanAgentAssistantConfig.SuggestionConfig.feature_configs][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionConfig.feature_configs] of
 	// [HumanAgentAssistantConfig.end_user_suggestion_config][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.end_user_suggestion_config].
 	EndUserSuggestionResults []*SuggestionResult `protobuf:"bytes,7,rep,name=end_user_suggestion_results,json=endUserSuggestionResults,proto3" json:"end_user_suggestion_results,omitempty"`
 	// Indicates the parameters of DTMF.
@@ -1876,12 +1859,8 @@ func (x *SmartReplyAnswer) GetAnswerRecord() string {
 }
 
 // One response of different type of suggestion response which is used in
-// the response of
-// [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent]
-// and
-// [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent],
-// as well as
-// [HumanAgentAssistantEvent][google.cloud.dialogflow.v2beta1.HumanAgentAssistantEvent].
+// the response of [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent] and
+// [Participants.AnalyzeContent][google.cloud.dialogflow.v2beta1.Participants.AnalyzeContent], as well as [HumanAgentAssistantEvent][google.cloud.dialogflow.v2beta1.HumanAgentAssistantEvent].
 type SuggestionResult struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -1996,8 +1975,7 @@ func (*SuggestionResult_SuggestFaqAnswersResponse) isSuggestionResult_Suggestion
 
 func (*SuggestionResult_SuggestSmartRepliesResponse) isSuggestionResult_SuggestionResponse() {}
 
-// The request message for
-// [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
+// The request message for [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
 type SuggestArticlesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2014,9 +1992,8 @@ type SuggestArticlesRequest struct {
 	// ID>/conversations/<Conversation ID>/messages/<Message ID>`.
 	LatestMessage string `protobuf:"bytes,2,opt,name=latest_message,json=latestMessage,proto3" json:"latest_message,omitempty"`
 	// Optional. Max number of messages prior to and including
-	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message]
-	// to use as context when compiling the suggestion. By default 20 and at
-	// most 50.
+	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesRequest.latest_message] to use as context
+	// when compiling the suggestion. By default 20 and at most 50.
 	ContextSize int32 `protobuf:"varint,3,opt,name=context_size,json=contextSize,proto3" json:"context_size,omitempty"`
 	// Optional. Parameters for a human assist query.
 	AssistQueryParams *AssistQueryParameters `protobuf:"bytes,4,opt,name=assist_query_params,json=assistQueryParams,proto3" json:"assist_query_params,omitempty"`
@@ -2082,8 +2059,7 @@ func (x *SuggestArticlesRequest) GetAssistQueryParams() *AssistQueryParameters {
 	return nil
 }
 
-// The response message for
-// [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
+// The response message for [Participants.SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles].
 type SuggestArticlesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2098,11 +2074,10 @@ type SuggestArticlesResponse struct {
 	// ID>/conversations/<Conversation ID>/messages/<Message ID>`.
 	LatestMessage string `protobuf:"bytes,2,opt,name=latest_message,json=latestMessage,proto3" json:"latest_message,omitempty"`
 	// Number of messages prior to and including
-	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.latest_message]
-	// to compile the suggestion. It may be smaller than the
-	// [SuggestArticlesResponse.context_size][google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.context_size]
-	// field in the request if there aren't that many messages in the
-	// conversation.
+	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.latest_message] to compile the
+	// suggestion. It may be smaller than the
+	// [SuggestArticlesResponse.context_size][google.cloud.dialogflow.v2beta1.SuggestArticlesResponse.context_size] field in the request if there
+	// aren't that many messages in the conversation.
 	ContextSize int32 `protobuf:"varint,3,opt,name=context_size,json=contextSize,proto3" json:"context_size,omitempty"`
 }
 
@@ -2159,8 +2134,7 @@ func (x *SuggestArticlesResponse) GetContextSize() int32 {
 	return 0
 }
 
-// The request message for
-// [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+// The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
 type SuggestFaqAnswersRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2244,8 +2218,7 @@ func (x *SuggestFaqAnswersRequest) GetAssistQueryParams() *AssistQueryParameters
 	return nil
 }
 
-// The request message for
-// [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
+// The request message for [Participants.SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers].
 type SuggestFaqAnswersResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2260,11 +2233,10 @@ type SuggestFaqAnswersResponse struct {
 	// ID>/conversations/<Conversation ID>/messages/<Message ID>`.
 	LatestMessage string `protobuf:"bytes,2,opt,name=latest_message,json=latestMessage,proto3" json:"latest_message,omitempty"`
 	// Number of messages prior to and including
-	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message]
-	// to compile the suggestion. It may be smaller than the
-	// [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size]
-	// field in the request if there aren't that many messages in the
-	// conversation.
+	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersResponse.latest_message] to compile the
+	// suggestion. It may be smaller than the
+	// [SuggestFaqAnswersRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestFaqAnswersRequest.context_size] field in the request if there
+	// aren't that many messages in the conversation.
 	ContextSize int32 `protobuf:"varint,3,opt,name=context_size,json=contextSize,proto3" json:"context_size,omitempty"`
 }
 
@@ -2321,8 +2293,7 @@ func (x *SuggestFaqAnswersResponse) GetContextSize() int32 {
 	return 0
 }
 
-// The request message for
-// [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+// The request message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
 type SuggestSmartRepliesRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2408,8 +2379,7 @@ func (x *SuggestSmartRepliesRequest) GetContextSize() int32 {
 	return 0
 }
 
-// The response message for
-// [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
+// The response message for [Participants.SuggestSmartReplies][google.cloud.dialogflow.v2beta1.Participants.SuggestSmartReplies].
 type SuggestSmartRepliesResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -2426,11 +2396,10 @@ type SuggestSmartRepliesResponse struct {
 	// ID>/conversations/<Conversation ID>/messages/<Message ID>`.
 	LatestMessage string `protobuf:"bytes,2,opt,name=latest_message,json=latestMessage,proto3" json:"latest_message,omitempty"`
 	// Number of messages prior to and including
-	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message]
-	// to compile the suggestion. It may be smaller than the
-	// [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size]
-	// field in the request if there aren't that many messages in the
-	// conversation.
+	// [latest_message][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesResponse.latest_message] to compile the
+	// suggestion. It may be smaller than the
+	// [SuggestSmartRepliesRequest.context_size][google.cloud.dialogflow.v2beta1.SuggestSmartRepliesRequest.context_size] field in the request if there
+	// aren't that many messages in the conversation.
 	ContextSize int32 `protobuf:"varint,3,opt,name=context_size,json=contextSize,proto3" json:"context_size,omitempty"`
 }
 
@@ -2580,8 +2549,7 @@ func (x *Suggestion) GetLatestMessage() string {
 	return ""
 }
 
-// The request message for
-// [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
+// The request message for [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
 //
 // Deprecated: Do not use.
 type ListSuggestionsRequest struct {
@@ -2669,8 +2637,7 @@ func (x *ListSuggestionsRequest) GetFilter() string {
 	return ""
 }
 
-// The response message for
-// [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
+// The response message for [Participants.ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions].
 //
 // Deprecated: Do not use.
 type ListSuggestionsResponse struct {
@@ -2733,8 +2700,7 @@ func (x *ListSuggestionsResponse) GetNextPageToken() string {
 	return ""
 }
 
-// The request message for
-// [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+// The request message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
 //
 // Deprecated: Do not use.
 type CompileSuggestionRequest struct {
@@ -2811,8 +2777,7 @@ func (x *CompileSuggestionRequest) GetContextSize() int32 {
 	return 0
 }
 
-// The response message for
-// [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
+// The response message for [Participants.CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion].
 //
 // Deprecated: Do not use.
 type CompileSuggestionResponse struct {
@@ -2831,9 +2796,8 @@ type CompileSuggestionResponse struct {
 	// Number of messages prior to and including
 	// [latest_message][google.cloud.dialogflow.v2beta1.CompileSuggestionResponse.latest_message]
 	// to compile the suggestion. It may be smaller than the
-	// [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size]
-	// field in the request if there aren't that many messages in the
-	// conversation.
+	// [CompileSuggestionRequest.context_size][google.cloud.dialogflow.v2beta1.CompileSuggestionRequest.context_size] field in the request if
+	// there aren't that many messages in the conversation.
 	ContextSize int32 `protobuf:"varint,3,opt,name=context_size,json=contextSize,proto3" json:"context_size,omitempty"`
 }
 
@@ -5044,12 +5008,9 @@ type ParticipantsClient interface {
 	// Gets suggested articles for a participant based on specific historical
 	// messages.
 	//
-	// Note that
-	// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-	// will only list the auto-generated suggestions, while
-	// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-	// will try to compile suggestion based on the provided conversation context
-	// in the real time.
+	// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+	// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+	// based on the provided conversation context in the real time.
 	SuggestArticles(ctx context.Context, in *SuggestArticlesRequest, opts ...grpc.CallOption) (*SuggestArticlesResponse, error)
 	// Gets suggested faq answers for a participant based on specific historical
 	// messages.
@@ -5060,9 +5021,9 @@ type ParticipantsClient interface {
 	// Deprecated: Do not use.
 	// Deprecated: Use inline suggestion, event based suggestion or
 	// Suggestion* API instead.
-	// See
-	// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-	// for more details. Removal Date: 2020-09-01.
+	// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+	// details.
+	// Removal Date: 2020-09-01.
 	//
 	// Retrieves suggestions for live agents.
 	//
@@ -5080,21 +5041,14 @@ type ParticipantsClient interface {
 	// request]` and empty page_token.
 	ListSuggestions(ctx context.Context, in *ListSuggestionsRequest, opts ...grpc.CallOption) (*ListSuggestionsResponse, error)
 	// Deprecated: Do not use.
-	// Deprecated. use
-	// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-	// and
-	// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-	// instead.
+	// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
 	//
 	// Gets suggestions for a participant based on specific historical
 	// messages.
 	//
-	// Note that
-	// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-	// will only list the auto-generated suggestions, while
-	// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-	// will try to compile suggestion based on the provided conversation context
-	// in the real time.
+	// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+	// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+	// based on the provided conversation context in the real time.
 	CompileSuggestion(ctx context.Context, in *CompileSuggestionRequest, opts ...grpc.CallOption) (*CompileSuggestionResponse, error)
 }
 
@@ -5218,12 +5172,9 @@ type ParticipantsServer interface {
 	// Gets suggested articles for a participant based on specific historical
 	// messages.
 	//
-	// Note that
-	// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-	// will only list the auto-generated suggestions, while
-	// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-	// will try to compile suggestion based on the provided conversation context
-	// in the real time.
+	// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+	// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+	// based on the provided conversation context in the real time.
 	SuggestArticles(context.Context, *SuggestArticlesRequest) (*SuggestArticlesResponse, error)
 	// Gets suggested faq answers for a participant based on specific historical
 	// messages.
@@ -5234,9 +5185,9 @@ type ParticipantsServer interface {
 	// Deprecated: Do not use.
 	// Deprecated: Use inline suggestion, event based suggestion or
 	// Suggestion* API instead.
-	// See
-	// [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name]
-	// for more details. Removal Date: 2020-09-01.
+	// See [HumanAgentAssistantConfig.name][google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.name] for more
+	// details.
+	// Removal Date: 2020-09-01.
 	//
 	// Retrieves suggestions for live agents.
 	//
@@ -5254,21 +5205,14 @@ type ParticipantsServer interface {
 	// request]` and empty page_token.
 	ListSuggestions(context.Context, *ListSuggestionsRequest) (*ListSuggestionsResponse, error)
 	// Deprecated: Do not use.
-	// Deprecated. use
-	// [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles]
-	// and
-	// [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers]
-	// instead.
+	// Deprecated. use [SuggestArticles][google.cloud.dialogflow.v2beta1.Participants.SuggestArticles] and [SuggestFaqAnswers][google.cloud.dialogflow.v2beta1.Participants.SuggestFaqAnswers] instead.
 	//
 	// Gets suggestions for a participant based on specific historical
 	// messages.
 	//
-	// Note that
-	// [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions]
-	// will only list the auto-generated suggestions, while
-	// [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion]
-	// will try to compile suggestion based on the provided conversation context
-	// in the real time.
+	// Note that [ListSuggestions][google.cloud.dialogflow.v2beta1.Participants.ListSuggestions] will only list the auto-generated
+	// suggestions, while [CompileSuggestion][google.cloud.dialogflow.v2beta1.Participants.CompileSuggestion] will try to compile suggestion
+	// based on the provided conversation context in the real time.
 	CompileSuggestion(context.Context, *CompileSuggestionRequest) (*CompileSuggestionResponse, error)
 }
 
