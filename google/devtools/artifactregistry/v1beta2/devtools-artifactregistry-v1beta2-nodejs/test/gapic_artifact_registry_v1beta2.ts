@@ -2893,7 +2893,7 @@ describe('v1beta2.ArtifactRegistryClient', () => {
             const expectedParameters = {
                 project: "projectValue",
                 location: "locationValue",
-                repo: "repoValue",
+                repository: "repositoryValue",
                 file: "fileValue",
             };
             const client = new artifactregistryModule.v1beta2.ArtifactRegistryClient({
@@ -2907,7 +2907,7 @@ describe('v1beta2.ArtifactRegistryClient', () => {
                 sinon.stub().returns(expectedParameters);
 
             it('filePath', () => {
-                const result = client.filePath("projectValue", "locationValue", "repoValue", "fileValue");
+                const result = client.filePath("projectValue", "locationValue", "repositoryValue", "fileValue");
                 assert.strictEqual(result, fakePath);
                 assert((client.pathTemplates.filePathTemplate.render as SinonStub)
                     .getCall(-1).calledWith(expectedParameters));
@@ -2927,9 +2927,9 @@ describe('v1beta2.ArtifactRegistryClient', () => {
                     .getCall(-1).calledWith(fakePath));
             });
 
-            it('matchRepoFromFileName', () => {
-                const result = client.matchRepoFromFileName(fakePath);
-                assert.strictEqual(result, "repoValue");
+            it('matchRepositoryFromFileName', () => {
+                const result = client.matchRepositoryFromFileName(fakePath);
+                assert.strictEqual(result, "repositoryValue");
                 assert((client.pathTemplates.filePathTemplate.match as SinonStub)
                     .getCall(-1).calledWith(fakePath));
             });
