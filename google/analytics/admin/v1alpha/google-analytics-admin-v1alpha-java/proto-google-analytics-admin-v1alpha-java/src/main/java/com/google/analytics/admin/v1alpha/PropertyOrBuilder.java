@@ -291,4 +291,28 @@ public interface PropertyOrBuilder extends
    * <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   * <pre>
+   * Immutable. The resource name of the parent account
+   * Format: accounts/{account_id}
+   * Example: "accounts/123"
+   * </pre>
+   *
+   * <code>string account = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return The account.
+   */
+  java.lang.String getAccount();
+  /**
+   * <pre>
+   * Immutable. The resource name of the parent account
+   * Format: accounts/{account_id}
+   * Example: "accounts/123"
+   * </pre>
+   *
+   * <code>string account = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }</code>
+   * @return The bytes for account.
+   */
+  com.google.protobuf.ByteString
+      getAccountBytes();
 }

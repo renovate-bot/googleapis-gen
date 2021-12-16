@@ -73,6 +73,16 @@ return [
                     'resourcesGetMethod' => 'getCustomMetrics',
                 ],
             ],
+            'ListDataStreams' => [
+                'pageStreaming' => [
+                    'requestPageTokenGetMethod' => 'getPageToken',
+                    'requestPageTokenSetMethod' => 'setPageToken',
+                    'requestPageSizeGetMethod' => 'getPageSize',
+                    'requestPageSizeSetMethod' => 'setPageSize',
+                    'responsePageTokenGetMethod' => 'getNextPageToken',
+                    'resourcesGetMethod' => 'getDataStreams',
+                ],
+            ],
             'ListDisplayVideo360AdvertiserLinkProposals' => [
                 'pageStreaming' => [
                     'requestPageTokenGetMethod' => 'getPageToken',

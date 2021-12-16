@@ -99,6 +99,14 @@ class Property extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>.google.protobuf.Timestamp expire_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $expire_time = null;
+    /**
+     * Immutable. The resource name of the parent account
+     * Format: accounts/{account_id}
+     * Example: "accounts/123"
+     *
+     * Generated from protobuf field <code>string account = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     */
+    protected $account = '';
 
     /**
      * Constructor.
@@ -146,6 +154,10 @@ class Property extends \Google\Protobuf\Internal\Message
      *           Output only. If set, the time at which this trashed property will be permanently
      *           deleted. If not set, then this property is not currently in the trash can
      *           and is not slated to be deleted.
+     *     @type string $account
+     *           Immutable. The resource name of the parent account
+     *           Format: accounts/{account_id}
+     *           Example: "accounts/123"
      * }
      */
     public function __construct($data = NULL) {
@@ -511,6 +523,36 @@ class Property extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
         $this->expire_time = $var;
+
+        return $this;
+    }
+
+    /**
+     * Immutable. The resource name of the parent account
+     * Format: accounts/{account_id}
+     * Example: "accounts/123"
+     *
+     * Generated from protobuf field <code>string account = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * @return string
+     */
+    public function getAccount()
+    {
+        return $this->account;
+    }
+
+    /**
+     * Immutable. The resource name of the parent account
+     * Format: accounts/{account_id}
+     * Example: "accounts/123"
+     *
+     * Generated from protobuf field <code>string account = 13 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = {</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAccount($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->account = $var;
 
         return $this;
     }

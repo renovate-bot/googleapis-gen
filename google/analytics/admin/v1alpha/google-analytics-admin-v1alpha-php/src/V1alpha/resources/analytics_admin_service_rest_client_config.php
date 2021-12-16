@@ -3,6 +3,18 @@
 return [
     'interfaces' => [
         'google.analytics.admin.v1alpha.AnalyticsAdminService' => [
+            'AcknowledgeUserDataCollection' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha/{property=properties/*}:acknowledgeUserDataCollection',
+                'body' => '*',
+                'placeholders' => [
+                    'property' => [
+                        'getters' => [
+                            'getProperty',
+                        ],
+                    ],
+                ],
+            ],
             'ApproveDisplayVideo360AdvertiserLinkProposal' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1alpha/{name=properties/*/displayVideo360AdvertiserLinkProposals/*}:approve',
@@ -180,6 +192,18 @@ return [
                     ],
                 ],
             ],
+            'CreateDataStream' => [
+                'method' => 'post',
+                'uriTemplate' => '/v1alpha/{parent=properties/*}/dataStreams',
+                'body' => 'data_stream',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
             'CreateDisplayVideo360AdvertiserLink' => [
                 'method' => 'post',
                 'uriTemplate' => '/v1alpha/{parent=properties/*}/displayVideo360AdvertiserLinks',
@@ -313,6 +337,17 @@ return [
             'DeleteConversionEvent' => [
                 'method' => 'delete',
                 'uriTemplate' => '/v1alpha/{name=properties/*/conversionEvents/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
+            'DeleteDataStream' => [
+                'method' => 'delete',
+                'uriTemplate' => '/v1alpha/{name=properties/*/dataStreams/*}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -513,6 +548,17 @@ return [
                     ],
                 ],
             ],
+            'GetDataStream' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{name=properties/*/dataStreams/*}',
+                'placeholders' => [
+                    'name' => [
+                        'getters' => [
+                            'getName',
+                        ],
+                    ],
+                ],
+            ],
             'GetDisplayVideo360AdvertiserLink' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1alpha/{name=properties/*/displayVideo360AdvertiserLinks/*}',
@@ -527,17 +573,6 @@ return [
             'GetDisplayVideo360AdvertiserLinkProposal' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1alpha/{name=properties/*/displayVideo360AdvertiserLinkProposals/*}',
-                'placeholders' => [
-                    'name' => [
-                        'getters' => [
-                            'getName',
-                        ],
-                    ],
-                ],
-            ],
-            'GetEnhancedMeasurementSettings' => [
-                'method' => 'get',
-                'uriTemplate' => '/v1alpha/{name=properties/*/webDataStreams/*/enhancedMeasurementSettings}',
                 'placeholders' => [
                     'name' => [
                         'getters' => [
@@ -683,6 +718,17 @@ return [
             'ListCustomMetrics' => [
                 'method' => 'get',
                 'uriTemplate' => '/v1alpha/{parent=properties/*}/customMetrics',
+                'placeholders' => [
+                    'parent' => [
+                        'getters' => [
+                            'getParent',
+                        ],
+                    ],
+                ],
+            ],
+            'ListDataStreams' => [
+                'method' => 'get',
+                'uriTemplate' => '/v1alpha/{parent=properties/*}/dataStreams',
                 'placeholders' => [
                     'parent' => [
                         'getters' => [
@@ -899,14 +945,14 @@ return [
                     'update_mask',
                 ],
             ],
-            'UpdateDisplayVideo360AdvertiserLink' => [
+            'UpdateDataStream' => [
                 'method' => 'patch',
-                'uriTemplate' => '/v1alpha/{display_video_360_advertiser_link.name=properties/*/displayVideo360AdvertiserLinks/*}',
-                'body' => 'display_video_360_advertiser_link',
+                'uriTemplate' => '/v1alpha/{data_stream.name=properties/*/dataStreams/*}',
+                'body' => 'data_stream',
                 'placeholders' => [
-                    'display_video_360_advertiser_link.name' => [
+                    'data_stream.name' => [
                         'getters' => [
-                            'getDisplayVideo360AdvertiserLink',
+                            'getDataStream',
                             'getName',
                         ],
                     ],
@@ -915,14 +961,14 @@ return [
                     'update_mask',
                 ],
             ],
-            'UpdateEnhancedMeasurementSettings' => [
+            'UpdateDisplayVideo360AdvertiserLink' => [
                 'method' => 'patch',
-                'uriTemplate' => '/v1alpha/{enhanced_measurement_settings.name=properties/*/webDataStreams/*/enhancedMeasurementSettings}',
-                'body' => 'enhanced_measurement_settings',
+                'uriTemplate' => '/v1alpha/{display_video_360_advertiser_link.name=properties/*/displayVideo360AdvertiserLinks/*}',
+                'body' => 'display_video_360_advertiser_link',
                 'placeholders' => [
-                    'enhanced_measurement_settings.name' => [
+                    'display_video_360_advertiser_link.name' => [
                         'getters' => [
-                            'getEnhancedMeasurementSettings',
+                            'getDisplayVideo360AdvertiserLink',
                             'getName',
                         ],
                     ],

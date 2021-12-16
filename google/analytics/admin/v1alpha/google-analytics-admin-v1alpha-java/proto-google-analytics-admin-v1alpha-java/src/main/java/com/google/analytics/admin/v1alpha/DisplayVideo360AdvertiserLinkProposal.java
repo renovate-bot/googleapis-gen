@@ -5,7 +5,7 @@ package com.google.analytics.admin.v1alpha;
 
 /**
  * <pre>
- * A proposal for a link between an GA4 property and a Display &amp; Video 360
+ * A proposal for a link between a GA4 property and a Display &amp; Video 360
  * advertiser.
  * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
  * Google Analytics admins approve inbound proposals while Display &amp; Video 360
@@ -495,7 +495,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360.
-   * This can only be enabled if campaign_data_import_enabled is enabled.
+   * This can only be enabled if campaign_data_sharing_enabled is enabled.
    * If this field is not set on create, it will be defaulted to true.
    * </pre>
    *
@@ -509,7 +509,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360.
-   * This can only be enabled if campaign_data_import_enabled is enabled.
+   * This can only be enabled if campaign_data_sharing_enabled is enabled.
    * If this field is not set on create, it will be defaulted to true.
    * </pre>
    *
@@ -523,7 +523,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360.
-   * This can only be enabled if campaign_data_import_enabled is enabled.
+   * This can only be enabled if campaign_data_sharing_enabled is enabled.
    * If this field is not set on create, it will be defaulted to true.
    * </pre>
    *
@@ -784,7 +784,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A proposal for a link between an GA4 property and a Display &amp; Video 360
+   * A proposal for a link between a GA4 property and a Display &amp; Video 360
    * advertiser.
    * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
    * Google Analytics admins approve inbound proposals while Display &amp; Video 360
@@ -1933,7 +1933,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -1946,7 +1946,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -1963,7 +1963,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -1985,7 +1985,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -2005,7 +2005,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -2029,7 +2029,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -2049,7 +2049,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -2063,7 +2063,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *
@@ -2080,7 +2080,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      * </pre>
      *

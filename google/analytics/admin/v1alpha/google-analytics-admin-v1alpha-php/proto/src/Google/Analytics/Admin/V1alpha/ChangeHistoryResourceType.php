@@ -97,6 +97,18 @@ class ChangeHistoryResourceType
      * Generated from protobuf enum <code>DATA_RETENTION_SETTINGS = 13;</code>
      */
     const DATA_RETENTION_SETTINGS = 13;
+    /**
+     * DisplayVideo360AdvertiserLink resource
+     *
+     * Generated from protobuf enum <code>DISPLAY_VIDEO_360_ADVERTISER_LINK = 14;</code>
+     */
+    const DISPLAY_VIDEO_360_ADVERTISER_LINK = 14;
+    /**
+     * DisplayVideo360AdvertiserLinkProposal resource
+     *
+     * Generated from protobuf enum <code>DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;</code>
+     */
+    const DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL = 15;
 
     private static $valueToName = [
         self::CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED => 'CHANGE_HISTORY_RESOURCE_TYPE_UNSPECIFIED',
@@ -113,6 +125,8 @@ class ChangeHistoryResourceType
         self::CUSTOM_DIMENSION => 'CUSTOM_DIMENSION',
         self::CUSTOM_METRIC => 'CUSTOM_METRIC',
         self::DATA_RETENTION_SETTINGS => 'DATA_RETENTION_SETTINGS',
+        self::DISPLAY_VIDEO_360_ADVERTISER_LINK => 'DISPLAY_VIDEO_360_ADVERTISER_LINK',
+        self::DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL => 'DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL',
     ];
 
     public static function name($value)

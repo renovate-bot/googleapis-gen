@@ -154,7 +154,7 @@ public interface WebDataStreamOrBuilder extends
   /**
    * <pre>
    * Required. Human-readable display name for the Data Stream.
-   * The max allowed display name length is 100 UTF-16 code units.
+   * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
    * <code>string display_name = 7 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -164,7 +164,7 @@ public interface WebDataStreamOrBuilder extends
   /**
    * <pre>
    * Required. Human-readable display name for the Data Stream.
-   * The max allowed display name length is 100 UTF-16 code units.
+   * The max allowed display name length is 255 UTF-16 code units.
    * </pre>
    *
    * <code>string display_name = 7 [(.google.api.field_behavior) = REQUIRED];</code>

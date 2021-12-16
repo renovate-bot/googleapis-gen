@@ -27,9 +27,11 @@
 namespace Google\Analytics\Admin\V1alpha\Gapic;
 
 use Google\Analytics\Admin\V1alpha\Account;
+use Google\Analytics\Admin\V1alpha\AcknowledgeUserDataCollectionRequest;
+use Google\Analytics\Admin\V1alpha\AcknowledgeUserDataCollectionResponse;
+
 use Google\Analytics\Admin\V1alpha\AndroidAppDataStream;
 use Google\Analytics\Admin\V1alpha\ApproveDisplayVideo360AdvertiserLinkProposalRequest;
-
 use Google\Analytics\Admin\V1alpha\ApproveDisplayVideo360AdvertiserLinkProposalResponse;
 use Google\Analytics\Admin\V1alpha\ArchiveCustomDimensionRequest;
 use Google\Analytics\Admin\V1alpha\ArchiveCustomMetricRequest;
@@ -47,6 +49,7 @@ use Google\Analytics\Admin\V1alpha\ConversionEvent;
 use Google\Analytics\Admin\V1alpha\CreateConversionEventRequest;
 use Google\Analytics\Admin\V1alpha\CreateCustomDimensionRequest;
 use Google\Analytics\Admin\V1alpha\CreateCustomMetricRequest;
+use Google\Analytics\Admin\V1alpha\CreateDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\CreateDisplayVideo360AdvertiserLinkProposalRequest;
 use Google\Analytics\Admin\V1alpha\CreateDisplayVideo360AdvertiserLinkRequest;
 use Google\Analytics\Admin\V1alpha\CreateFirebaseLinkRequest;
@@ -59,9 +62,11 @@ use Google\Analytics\Admin\V1alpha\CustomDimension;
 use Google\Analytics\Admin\V1alpha\CustomMetric;
 use Google\Analytics\Admin\V1alpha\DataRetentionSettings;
 use Google\Analytics\Admin\V1alpha\DataSharingSettings;
+use Google\Analytics\Admin\V1alpha\DataStream;
 use Google\Analytics\Admin\V1alpha\DeleteAccountRequest;
 use Google\Analytics\Admin\V1alpha\DeleteAndroidAppDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\DeleteConversionEventRequest;
+use Google\Analytics\Admin\V1alpha\DeleteDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\DeleteDisplayVideo360AdvertiserLinkProposalRequest;
 use Google\Analytics\Admin\V1alpha\DeleteDisplayVideo360AdvertiserLinkRequest;
 use Google\Analytics\Admin\V1alpha\DeleteFirebaseLinkRequest;
@@ -73,7 +78,6 @@ use Google\Analytics\Admin\V1alpha\DeleteUserLinkRequest;
 use Google\Analytics\Admin\V1alpha\DeleteWebDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\DisplayVideo360AdvertiserLink;
 use Google\Analytics\Admin\V1alpha\DisplayVideo360AdvertiserLinkProposal;
-use Google\Analytics\Admin\V1alpha\EnhancedMeasurementSettings;
 use Google\Analytics\Admin\V1alpha\FirebaseLink;
 use Google\Analytics\Admin\V1alpha\GetAccountRequest;
 use Google\Analytics\Admin\V1alpha\GetAndroidAppDataStreamRequest;
@@ -82,9 +86,9 @@ use Google\Analytics\Admin\V1alpha\GetCustomDimensionRequest;
 use Google\Analytics\Admin\V1alpha\GetCustomMetricRequest;
 use Google\Analytics\Admin\V1alpha\GetDataRetentionSettingsRequest;
 use Google\Analytics\Admin\V1alpha\GetDataSharingSettingsRequest;
+use Google\Analytics\Admin\V1alpha\GetDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\GetDisplayVideo360AdvertiserLinkProposalRequest;
 use Google\Analytics\Admin\V1alpha\GetDisplayVideo360AdvertiserLinkRequest;
-use Google\Analytics\Admin\V1alpha\GetEnhancedMeasurementSettingsRequest;
 use Google\Analytics\Admin\V1alpha\GetGlobalSiteTagRequest;
 use Google\Analytics\Admin\V1alpha\GetGoogleSignalsSettingsRequest;
 use Google\Analytics\Admin\V1alpha\GetIosAppDataStreamRequest;
@@ -109,6 +113,8 @@ use Google\Analytics\Admin\V1alpha\ListCustomDimensionsRequest;
 use Google\Analytics\Admin\V1alpha\ListCustomDimensionsResponse;
 use Google\Analytics\Admin\V1alpha\ListCustomMetricsRequest;
 use Google\Analytics\Admin\V1alpha\ListCustomMetricsResponse;
+use Google\Analytics\Admin\V1alpha\ListDataStreamsRequest;
+use Google\Analytics\Admin\V1alpha\ListDataStreamsResponse;
 use Google\Analytics\Admin\V1alpha\ListDisplayVideo360AdvertiserLinkProposalsRequest;
 use Google\Analytics\Admin\V1alpha\ListDisplayVideo360AdvertiserLinkProposalsResponse;
 use Google\Analytics\Admin\V1alpha\ListDisplayVideo360AdvertiserLinksRequest;
@@ -138,8 +144,8 @@ use Google\Analytics\Admin\V1alpha\UpdateAndroidAppDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\UpdateCustomDimensionRequest;
 use Google\Analytics\Admin\V1alpha\UpdateCustomMetricRequest;
 use Google\Analytics\Admin\V1alpha\UpdateDataRetentionSettingsRequest;
+use Google\Analytics\Admin\V1alpha\UpdateDataStreamRequest;
 use Google\Analytics\Admin\V1alpha\UpdateDisplayVideo360AdvertiserLinkRequest;
-use Google\Analytics\Admin\V1alpha\UpdateEnhancedMeasurementSettingsRequest;
 use Google\Analytics\Admin\V1alpha\UpdateGoogleAdsLinkRequest;
 use Google\Analytics\Admin\V1alpha\UpdateGoogleSignalsSettingsRequest;
 use Google\Analytics\Admin\V1alpha\UpdateIosAppDataStreamRequest;
@@ -171,8 +177,9 @@ use Google\Protobuf\Timestamp;
  * ```
  * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
  * try {
- *     $formattedName = $analyticsAdminServiceClient->displayVideo360AdvertiserLinkProposalName('[PROPERTY]', '[DISPLAY_VIDEO_360_ADVERTISER_LINK_PROPOSAL]');
- *     $response = $analyticsAdminServiceClient->approveDisplayVideo360AdvertiserLinkProposal($formattedName);
+ *     $formattedProperty = $analyticsAdminServiceClient->propertyName('[PROPERTY]');
+ *     $acknowledgement = 'acknowledgement';
+ *     $response = $analyticsAdminServiceClient->acknowledgeUserDataCollection($formattedProperty, $acknowledgement);
  * } finally {
  *     $analyticsAdminServiceClient->close();
  * }
@@ -235,11 +242,11 @@ class AnalyticsAdminServiceGapicClient
 
     private static $dataSharingSettingsNameTemplate;
 
+    private static $dataStreamNameTemplate;
+
     private static $displayVideo360AdvertiserLinkNameTemplate;
 
     private static $displayVideo360AdvertiserLinkProposalNameTemplate;
-
-    private static $enhancedMeasurementSettingsNameTemplate;
 
     private static $firebaseLinkNameTemplate;
 
@@ -354,6 +361,15 @@ class AnalyticsAdminServiceGapicClient
         return self::$dataSharingSettingsNameTemplate;
     }
 
+    private static function getDataStreamNameTemplate()
+    {
+        if (self::$dataStreamNameTemplate == null) {
+            self::$dataStreamNameTemplate = new PathTemplate('properties/{property}/dataStreams/{data_stream}');
+        }
+
+        return self::$dataStreamNameTemplate;
+    }
+
     private static function getDisplayVideo360AdvertiserLinkNameTemplate()
     {
         if (self::$displayVideo360AdvertiserLinkNameTemplate == null) {
@@ -370,15 +386,6 @@ class AnalyticsAdminServiceGapicClient
         }
 
         return self::$displayVideo360AdvertiserLinkProposalNameTemplate;
-    }
-
-    private static function getEnhancedMeasurementSettingsNameTemplate()
-    {
-        if (self::$enhancedMeasurementSettingsNameTemplate == null) {
-            self::$enhancedMeasurementSettingsNameTemplate = new PathTemplate('properties/{property}/webDataStreams/{web_data_stream}/enhancedMeasurementSettings');
-        }
-
-        return self::$enhancedMeasurementSettingsNameTemplate;
     }
 
     private static function getFirebaseLinkNameTemplate()
@@ -483,9 +490,9 @@ class AnalyticsAdminServiceGapicClient
                 'customMetric' => self::getCustomMetricNameTemplate(),
                 'dataRetentionSettings' => self::getDataRetentionSettingsNameTemplate(),
                 'dataSharingSettings' => self::getDataSharingSettingsNameTemplate(),
+                'dataStream' => self::getDataStreamNameTemplate(),
                 'displayVideo360AdvertiserLink' => self::getDisplayVideo360AdvertiserLinkNameTemplate(),
                 'displayVideo360AdvertiserLinkProposal' => self::getDisplayVideo360AdvertiserLinkProposalNameTemplate(),
-                'enhancedMeasurementSettings' => self::getEnhancedMeasurementSettingsNameTemplate(),
                 'firebaseLink' => self::getFirebaseLinkNameTemplate(),
                 'globalSiteTag' => self::getGlobalSiteTagNameTemplate(),
                 'googleAdsLink' => self::getGoogleAdsLinkNameTemplate(),
@@ -645,6 +652,25 @@ class AnalyticsAdminServiceGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a data_stream
+     * resource.
+     *
+     * @param string $property
+     * @param string $dataStream
+     *
+     * @return string The formatted data_stream resource.
+     *
+     * @experimental
+     */
+    public static function dataStreamName($property, $dataStream)
+    {
+        return self::getDataStreamNameTemplate()->render([
+            'property' => $property,
+            'data_stream' => $dataStream,
+        ]);
+    }
+
+    /**
      * Formats a string containing the fully-qualified path to represent a
      * display_video360_advertiser_link resource.
      *
@@ -679,25 +705,6 @@ class AnalyticsAdminServiceGapicClient
         return self::getDisplayVideo360AdvertiserLinkProposalNameTemplate()->render([
             'property' => $property,
             'display_video_360_advertiser_link_proposal' => $displayVideo360AdvertiserLinkProposal,
-        ]);
-    }
-
-    /**
-     * Formats a string containing the fully-qualified path to represent a
-     * enhanced_measurement_settings resource.
-     *
-     * @param string $property
-     * @param string $webDataStream
-     *
-     * @return string The formatted enhanced_measurement_settings resource.
-     *
-     * @experimental
-     */
-    public static function enhancedMeasurementSettingsName($property, $webDataStream)
-    {
-        return self::getEnhancedMeasurementSettingsNameTemplate()->render([
-            'property' => $property,
-            'web_data_stream' => $webDataStream,
         ]);
     }
 
@@ -899,9 +906,9 @@ class AnalyticsAdminServiceGapicClient
      * - customMetric: properties/{property}/customMetrics
      * - dataRetentionSettings: properties/{property}/dataRetentionSettings
      * - dataSharingSettings: accounts/{account}/dataSharingSettings
+     * - dataStream: properties/{property}/dataStreams/{data_stream}
      * - displayVideo360AdvertiserLink: properties/{property}/displayVideo360AdvertiserLinks/{display_video_360_advertiser_link}
      * - displayVideo360AdvertiserLinkProposal: properties/{property}/displayVideo360AdvertiserLinkProposals/{display_video_360_advertiser_link_proposal}
-     * - enhancedMeasurementSettings: properties/{property}/webDataStreams/{web_data_stream}/enhancedMeasurementSettings
      * - firebaseLink: properties/{property}/firebaseLinks/{firebase_link}
      * - globalSiteTag: properties/{property}/globalSiteTag
      * - googleAdsLink: properties/{property}/googleAdsLinks/{google_ads_link}
@@ -1010,6 +1017,61 @@ class AnalyticsAdminServiceGapicClient
     {
         $clientOptions = $this->buildClientOptions($options);
         $this->setClientOptions($clientOptions);
+    }
+
+    /**
+     * Acknowledges the terms of user data collection for the specified property.
+     *
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or via this API) before MeasurementProtocolSecret resources may be created.
+     *
+     * Sample code:
+     * ```
+     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
+     * try {
+     *     $formattedProperty = $analyticsAdminServiceClient->propertyName('[PROPERTY]');
+     *     $acknowledgement = 'acknowledgement';
+     *     $response = $analyticsAdminServiceClient->acknowledgeUserDataCollection($formattedProperty, $acknowledgement);
+     * } finally {
+     *     $analyticsAdminServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $property        Required. The property for which to acknowledge user data collection.
+     * @param string $acknowledgement Required. An acknowledgement that the caller of this method understands the terms
+     *                                of user data collection.
+     *
+     *                                This field must contain the exact value:
+     *                                "I acknowledge that I have the necessary privacy disclosures and rights
+     *                                from my end users for the collection and processing of their data,
+     *                                including the association of such data with the visitation information
+     *                                Google Analytics collects from my site and/or app property."
+     * @param array  $optionalArgs    {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Analytics\Admin\V1alpha\AcknowledgeUserDataCollectionResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function acknowledgeUserDataCollection($property, $acknowledgement, array $optionalArgs = [])
+    {
+        $request = new AcknowledgeUserDataCollectionRequest();
+        $requestParamHeaders = [];
+        $request->setProperty($property);
+        $request->setAcknowledgement($acknowledgement);
+        $requestParamHeaders['property'] = $property;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('AcknowledgeUserDataCollection', AcknowledgeUserDataCollectionResponse::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -1610,6 +1672,51 @@ class AnalyticsAdminServiceGapicClient
     }
 
     /**
+     * Creates a DataStream.
+     *
+     * Sample code:
+     * ```
+     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
+     * try {
+     *     $formattedParent = $analyticsAdminServiceClient->propertyName('[PROPERTY]');
+     *     $dataStream = new DataStream();
+     *     $response = $analyticsAdminServiceClient->createDataStream($formattedParent, $dataStream);
+     * } finally {
+     *     $analyticsAdminServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string     $parent       Required. Example format: properties/1234
+     * @param DataStream $dataStream   Required. The DataStream to create.
+     * @param array      $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Analytics\Admin\V1alpha\DataStream
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function createDataStream($parent, $dataStream, array $optionalArgs = [])
+    {
+        $request = new CreateDataStreamRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $request->setDataStream($dataStream);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('CreateDataStream', DataStream::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Creates a DisplayVideo360AdvertiserLink.
      * This can only be utilized by users who have proper authorization both on
      * the Google Analytics property and on the Display & Video 360 advertiser.
@@ -2119,6 +2226,47 @@ class AnalyticsAdminServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('DeleteConversionEvent', GPBEmpty::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
+     * Deletes a DataStream on a property.
+     *
+     * Sample code:
+     * ```
+     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
+     * try {
+     *     $formattedName = $analyticsAdminServiceClient->dataStreamName('[PROPERTY]', '[DATA_STREAM]');
+     *     $analyticsAdminServiceClient->deleteDataStream($formattedName);
+     * } finally {
+     *     $analyticsAdminServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the DataStream to delete.
+     *                             Example format: properties/1234/dataStreams/5678
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function deleteDataStream($name, array $optionalArgs = [])
+    {
+        $request = new DeleteDataStreamRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('DeleteDataStream', GPBEmpty::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -2816,6 +2964,49 @@ class AnalyticsAdminServiceGapicClient
     }
 
     /**
+     * Lookup for a single DataStream.
+     *
+     * Sample code:
+     * ```
+     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
+     * try {
+     *     $formattedName = $analyticsAdminServiceClient->dataStreamName('[PROPERTY]', '[DATA_STREAM]');
+     *     $response = $analyticsAdminServiceClient->getDataStream($formattedName);
+     * } finally {
+     *     $analyticsAdminServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. The name of the DataStream to get.
+     *                             Example format: properties/1234/dataStreams/5678
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Analytics\Admin\V1alpha\DataStream
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function getDataStream($name, array $optionalArgs = [])
+    {
+        $request = new GetDataStreamRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetDataStream', DataStream::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Look up a single DisplayVideo360AdvertiserLink
      *
      * Sample code:
@@ -2899,53 +3090,6 @@ class AnalyticsAdminServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('GetDisplayVideo360AdvertiserLinkProposal', DisplayVideo360AdvertiserLinkProposal::class, $optionalArgs, $request)->wait();
-    }
-
-    /**
-     * Returns the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     *
-     * Sample code:
-     * ```
-     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
-     * try {
-     *     $formattedName = $analyticsAdminServiceClient->enhancedMeasurementSettingsName('[PROPERTY]', '[WEB_DATA_STREAM]');
-     *     $response = $analyticsAdminServiceClient->getEnhancedMeasurementSettings($formattedName);
-     * } finally {
-     *     $analyticsAdminServiceClient->close();
-     * }
-     * ```
-     *
-     * @param string $name         Required. The name of the settings to lookup.
-     *                             Format:
-     *                             properties/{property_id}/webDataStreams/{stream_id}/enhancedMeasurementSettings
-     *                             Example: "properties/1000/webDataStreams/2000/enhancedMeasurementSettings"
-     * @param array  $optionalArgs {
-     *     Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Analytics\Admin\V1alpha\EnhancedMeasurementSettings
-     *
-     * @throws ApiException if the remote call fails
-     *
-     * @experimental
-     */
-    public function getEnhancedMeasurementSettings($name, array $optionalArgs = [])
-    {
-        $request = new GetEnhancedMeasurementSettingsRequest();
-        $requestParamHeaders = [];
-        $request->setName($name);
-        $requestParamHeaders['name'] = $name;
-        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
-        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('GetEnhancedMeasurementSettings', EnhancedMeasurementSettings::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -3687,6 +3831,77 @@ class AnalyticsAdminServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListCustomMetrics', $optionalArgs, ListCustomMetricsResponse::class, $request);
+    }
+
+    /**
+     * Lists DataStreams on a property.
+     *
+     * Sample code:
+     * ```
+     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
+     * try {
+     *     $formattedParent = $analyticsAdminServiceClient->propertyName('[PROPERTY]');
+     *     // Iterate over pages of elements
+     *     $pagedResponse = $analyticsAdminServiceClient->listDataStreams($formattedParent);
+     *     foreach ($pagedResponse->iteratePages() as $page) {
+     *         foreach ($page as $element) {
+     *             // doSomethingWith($element);
+     *         }
+     *     }
+     *     // Alternatively:
+     *     // Iterate through all elements
+     *     $pagedResponse = $analyticsAdminServiceClient->listDataStreams($formattedParent);
+     *     foreach ($pagedResponse->iterateAllElements() as $element) {
+     *         // doSomethingWith($element);
+     *     }
+     * } finally {
+     *     $analyticsAdminServiceClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. Example format: properties/1234
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type int $pageSize
+     *           The maximum number of resources contained in the underlying API
+     *           response. The API may return fewer values in a page, even if
+     *           there are additional values to be retrieved.
+     *     @type string $pageToken
+     *           A page token is used to specify a page of values to be returned.
+     *           If no page token is specified (the default), the first page
+     *           of values will be returned. Any page token used here must have
+     *           been generated by a previous call to the API.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\PagedListResponse
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function listDataStreams($parent, array $optionalArgs = [])
+    {
+        $request = new ListDataStreamsRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        if (isset($optionalArgs['pageSize'])) {
+            $request->setPageSize($optionalArgs['pageSize']);
+        }
+
+        if (isset($optionalArgs['pageToken'])) {
+            $request->setPageToken($optionalArgs['pageToken']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->getPagedListResponse('ListDataStreams', $optionalArgs, ListDataStreamsResponse::class, $request);
     }
 
     /**
@@ -4770,6 +4985,55 @@ class AnalyticsAdminServiceGapicClient
     }
 
     /**
+     * Updates a DataStream on a property.
+     *
+     * Sample code:
+     * ```
+     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
+     * try {
+     *     $updateMask = new FieldMask();
+     *     $response = $analyticsAdminServiceClient->updateDataStream($updateMask);
+     * } finally {
+     *     $analyticsAdminServiceClient->close();
+     * }
+     * ```
+     *
+     * @param FieldMask $updateMask   Required. The list of fields to be updated. Omitted fields will not be updated.
+     *                                To replace the entire entity, use one path with the string "*" to match
+     *                                all fields.
+     * @param array     $optionalArgs {
+     *     Optional.
+     *
+     *     @type DataStream $dataStream
+     *           The DataStream to update
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Analytics\Admin\V1alpha\DataStream
+     *
+     * @throws ApiException if the remote call fails
+     *
+     * @experimental
+     */
+    public function updateDataStream($updateMask, array $optionalArgs = [])
+    {
+        $request = new UpdateDataStreamRequest();
+        $requestParamHeaders = [];
+        $request->setUpdateMask($updateMask);
+        if (isset($optionalArgs['dataStream'])) {
+            $request->setDataStream($optionalArgs['dataStream']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('UpdateDataStream', DataStream::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Updates a DisplayVideo360AdvertiserLink on a property.
      *
      * Sample code:
@@ -4816,56 +5080,6 @@ class AnalyticsAdminServiceGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startCall('UpdateDisplayVideo360AdvertiserLink', DisplayVideo360AdvertiserLink::class, $optionalArgs, $request)->wait();
-    }
-
-    /**
-     * Updates the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     *
-     * Sample code:
-     * ```
-     * $analyticsAdminServiceClient = new AnalyticsAdminServiceClient();
-     * try {
-     *     $enhancedMeasurementSettings = new EnhancedMeasurementSettings();
-     *     $updateMask = new FieldMask();
-     *     $response = $analyticsAdminServiceClient->updateEnhancedMeasurementSettings($enhancedMeasurementSettings, $updateMask);
-     * } finally {
-     *     $analyticsAdminServiceClient->close();
-     * }
-     * ```
-     *
-     * @param EnhancedMeasurementSettings $enhancedMeasurementSettings Required. The settings to update.
-     *                                                                 The `name` field is used to identify the settings to be updated.
-     * @param FieldMask                   $updateMask                  Required. The list of fields to be updated. Field names must be in snake case
-     *                                                                 (e.g., "field_to_update"). Omitted fields will not be updated. To replace
-     *                                                                 the entire entity, use one path with the string "*" to match all fields.
-     * @param array                       $optionalArgs                {
-     *     Optional.
-     *
-     *     @type RetrySettings|array $retrySettings
-     *           Retry settings to use for this call. Can be a
-     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
-     *           settings parameters. See the documentation on
-     *           {@see Google\ApiCore\RetrySettings} for example usage.
-     * }
-     *
-     * @return \Google\Analytics\Admin\V1alpha\EnhancedMeasurementSettings
-     *
-     * @throws ApiException if the remote call fails
-     *
-     * @experimental
-     */
-    public function updateEnhancedMeasurementSettings($enhancedMeasurementSettings, $updateMask, array $optionalArgs = [])
-    {
-        $request = new UpdateEnhancedMeasurementSettingsRequest();
-        $requestParamHeaders = [];
-        $request->setEnhancedMeasurementSettings($enhancedMeasurementSettings);
-        $request->setUpdateMask($updateMask);
-        $requestParamHeaders['enhanced_measurement_settings.name'] = $enhancedMeasurementSettings->getName();
-        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
-        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
-        return $this->startCall('UpdateEnhancedMeasurementSettings', EnhancedMeasurementSettings::class, $optionalArgs, $request)->wait();
     }
 
     /**

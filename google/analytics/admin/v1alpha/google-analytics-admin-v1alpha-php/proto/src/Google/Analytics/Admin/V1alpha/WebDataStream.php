@@ -58,7 +58,7 @@ class WebDataStream extends \Google\Protobuf\Internal\Message
     protected $default_uri = '';
     /**
      * Required. Human-readable display name for the Data Stream.
-     * The max allowed display name length is 100 UTF-16 code units.
+     * The max allowed display name length is 255 UTF-16 code units.
      *
      * Generated from protobuf field <code>string display_name = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -89,7 +89,7 @@ class WebDataStream extends \Google\Protobuf\Internal\Message
      *           Example: "http://www.google.com", "https://www.google.com"
      *     @type string $display_name
      *           Required. Human-readable display name for the Data Stream.
-     *           The max allowed display name length is 100 UTF-16 code units.
+     *           The max allowed display name length is 255 UTF-16 code units.
      * }
      */
     public function __construct($data = NULL) {
@@ -285,7 +285,7 @@ class WebDataStream extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Human-readable display name for the Data Stream.
-     * The max allowed display name length is 100 UTF-16 code units.
+     * The max allowed display name length is 255 UTF-16 code units.
      *
      * Generated from protobuf field <code>string display_name = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -297,7 +297,7 @@ class WebDataStream extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Human-readable display name for the Data Stream.
-     * The max allowed display name length is 100 UTF-16 code units.
+     * The max allowed display name length is 255 UTF-16 code units.
      *
      * Generated from protobuf field <code>string display_name = 7 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var

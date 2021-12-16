@@ -379,7 +379,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-   * property. This can only be enabled if campaign_data_import_enabled is
+   * property. This can only be enabled if campaign_data_sharing_enabled is
    * enabled. After link creation, this can only be updated from the Display &amp;
    * Video 360 product.
    * If this field is not set on create, it will be defaulted to true.
@@ -395,7 +395,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-   * property. This can only be enabled if campaign_data_import_enabled is
+   * property. This can only be enabled if campaign_data_sharing_enabled is
    * enabled. After link creation, this can only be updated from the Display &amp;
    * Video 360 product.
    * If this field is not set on create, it will be defaulted to true.
@@ -411,7 +411,7 @@ private static final long serialVersionUID = 0L;
   /**
    * <pre>
    * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-   * property. This can only be enabled if campaign_data_import_enabled is
+   * property. This can only be enabled if campaign_data_sharing_enabled is
    * enabled. After link creation, this can only be updated from the Display &amp;
    * Video 360 product.
    * If this field is not set on create, it will be defaulted to true.
@@ -1504,7 +1504,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1519,7 +1519,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1538,7 +1538,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1562,7 +1562,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1584,7 +1584,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1610,7 +1610,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1632,7 +1632,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1648,7 +1648,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.
@@ -1667,7 +1667,7 @@ private static final long serialVersionUID = 0L;
     /**
      * <pre>
      * Immutable. Enables the import of cost data from Display &amp; Video 360 into the GA4
-     * property. This can only be enabled if campaign_data_import_enabled is
+     * property. This can only be enabled if campaign_data_sharing_enabled is
      * enabled. After link creation, this can only be updated from the Display &amp;
      * Video 360 product.
      * If this field is not set on create, it will be defaulted to true.

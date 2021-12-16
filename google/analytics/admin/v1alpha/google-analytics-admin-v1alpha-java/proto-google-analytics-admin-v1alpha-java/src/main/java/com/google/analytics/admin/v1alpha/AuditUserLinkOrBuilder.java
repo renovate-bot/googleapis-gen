@@ -50,7 +50,7 @@ public interface AuditUserLinkOrBuilder extends
   /**
    * <pre>
    * Roles directly assigned to this user for this entity.
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -63,7 +63,7 @@ public interface AuditUserLinkOrBuilder extends
   /**
    * <pre>
    * Roles directly assigned to this user for this entity.
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -75,7 +75,7 @@ public interface AuditUserLinkOrBuilder extends
   /**
    * <pre>
    * Roles directly assigned to this user for this entity.
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -88,7 +88,7 @@ public interface AuditUserLinkOrBuilder extends
   /**
    * <pre>
    * Roles directly assigned to this user for this entity.
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * Excludes roles that are inherited from an account (if this is for a
    * property), group, or organization admin role.
    * </pre>
@@ -104,7 +104,7 @@ public interface AuditUserLinkOrBuilder extends
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * </pre>
    *
    * <code>repeated string effective_roles = 4;</code>
@@ -116,7 +116,7 @@ public interface AuditUserLinkOrBuilder extends
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * </pre>
    *
    * <code>repeated string effective_roles = 4;</code>
@@ -127,7 +127,7 @@ public interface AuditUserLinkOrBuilder extends
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * </pre>
    *
    * <code>repeated string effective_roles = 4;</code>
@@ -139,7 +139,7 @@ public interface AuditUserLinkOrBuilder extends
    * <pre>
    * Union of all permissions a user has at this account or property (includes
    * direct permissions, group-inherited permissions, etc.).
-   * Format: predefinedRoles/read
+   * Format: predefinedRoles/viewer
    * </pre>
    *
    * <code>repeated string effective_roles = 4;</code>

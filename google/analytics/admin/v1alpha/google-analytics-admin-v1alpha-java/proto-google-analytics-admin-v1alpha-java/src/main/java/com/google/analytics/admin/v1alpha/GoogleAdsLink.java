@@ -5,7 +5,7 @@ package com.google.analytics.admin.v1alpha;
 
 /**
  * <pre>
- * A link between an GA4 property and a Google Ads account.
+ * A link between a GA4 property and a Google Ads account.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.GoogleAdsLink}
@@ -665,7 +665,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A link between an GA4 property and a Google Ads account.
+   * A link between a GA4 property and a Google Ads account.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.GoogleAdsLink}

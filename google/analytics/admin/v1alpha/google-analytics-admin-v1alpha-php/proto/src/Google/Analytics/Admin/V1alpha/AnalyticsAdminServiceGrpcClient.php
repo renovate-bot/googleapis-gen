@@ -596,40 +596,6 @@ class AnalyticsAdminServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * Returns the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * @param \Google\Analytics\Admin\V1alpha\GetEnhancedMeasurementSettingsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function GetEnhancedMeasurementSettings(\Google\Analytics\Admin\V1alpha\GetEnhancedMeasurementSettingsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/GetEnhancedMeasurementSettings',
-        $argument,
-        ['\Google\Analytics\Admin\V1alpha\EnhancedMeasurementSettings', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
-     * Updates the singleton enhanced measurement settings for this web stream.
-     * Note that the stream must enable enhanced measurement for these settings to
-     * take effect.
-     * @param \Google\Analytics\Admin\V1alpha\UpdateEnhancedMeasurementSettingsRequest $argument input argument
-     * @param array $metadata metadata
-     * @param array $options call options
-     * @return \Grpc\UnaryCall
-     */
-    public function UpdateEnhancedMeasurementSettings(\Google\Analytics\Admin\V1alpha\UpdateEnhancedMeasurementSettingsRequest $argument,
-      $metadata = [], $options = []) {
-        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateEnhancedMeasurementSettings',
-        $argument,
-        ['\Google\Analytics\Admin\V1alpha\EnhancedMeasurementSettings', 'decode'],
-        $metadata, $options);
-    }
-
-    /**
      * Creates a FirebaseLink.
      *
      * Properties can have at most one FirebaseLink.
@@ -842,6 +808,24 @@ class AnalyticsAdminServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateMeasurementProtocolSecret',
         $argument,
         ['\Google\Analytics\Admin\V1alpha\MeasurementProtocolSecret', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Acknowledges the terms of user data collection for the specified property.
+     *
+     * This acknowledgement must be completed (either in the Google Analytics UI
+     * or via this API) before MeasurementProtocolSecret resources may be created.
+     * @param \Google\Analytics\Admin\V1alpha\AcknowledgeUserDataCollectionRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function AcknowledgeUserDataCollection(\Google\Analytics\Admin\V1alpha\AcknowledgeUserDataCollectionRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/AcknowledgeUserDataCollection',
+        $argument,
+        ['\Google\Analytics\Admin\V1alpha\AcknowledgeUserDataCollectionResponse', 'decode'],
         $metadata, $options);
     }
 
@@ -1306,6 +1290,81 @@ class AnalyticsAdminServiceGrpcClient extends \Grpc\BaseStub {
         return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDataRetentionSettings',
         $argument,
         ['\Google\Analytics\Admin\V1alpha\DataRetentionSettings', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Creates a DataStream.
+     * @param \Google\Analytics\Admin\V1alpha\CreateDataStreamRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function CreateDataStream(\Google\Analytics\Admin\V1alpha\CreateDataStreamRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/CreateDataStream',
+        $argument,
+        ['\Google\Analytics\Admin\V1alpha\DataStream', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Deletes a DataStream on a property.
+     * @param \Google\Analytics\Admin\V1alpha\DeleteDataStreamRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function DeleteDataStream(\Google\Analytics\Admin\V1alpha\DeleteDataStreamRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteDataStream',
+        $argument,
+        ['\Google\Protobuf\GPBEmpty', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Updates a DataStream on a property.
+     * @param \Google\Analytics\Admin\V1alpha\UpdateDataStreamRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function UpdateDataStream(\Google\Analytics\Admin\V1alpha\UpdateDataStreamRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateDataStream',
+        $argument,
+        ['\Google\Analytics\Admin\V1alpha\DataStream', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lists DataStreams on a property.
+     * @param \Google\Analytics\Admin\V1alpha\ListDataStreamsRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function ListDataStreams(\Google\Analytics\Admin\V1alpha\ListDataStreamsRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/ListDataStreams',
+        $argument,
+        ['\Google\Analytics\Admin\V1alpha\ListDataStreamsResponse', 'decode'],
+        $metadata, $options);
+    }
+
+    /**
+     * Lookup for a single DataStream.
+     * @param \Google\Analytics\Admin\V1alpha\GetDataStreamRequest $argument input argument
+     * @param array $metadata metadata
+     * @param array $options call options
+     * @return \Grpc\UnaryCall
+     */
+    public function GetDataStream(\Google\Analytics\Admin\V1alpha\GetDataStreamRequest $argument,
+      $metadata = [], $options = []) {
+        return $this->_simpleRequest('/google.analytics.admin.v1alpha.AnalyticsAdminService/GetDataStream',
+        $argument,
+        ['\Google\Analytics\Admin\V1alpha\DataStream', 'decode'],
         $metadata, $options);
     }
 

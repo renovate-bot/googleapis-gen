@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * A proposal for a link between an GA4 property and a Display & Video 360
+ * A proposal for a link between a GA4 property and a Display & Video 360
  * advertiser.
  * A proposal is converted to a DisplayVideo360AdvertiserLink once approved.
  * Google Analytics admins approve inbound proposals while Display & Video 360
@@ -74,7 +74,7 @@ class DisplayVideo360AdvertiserLinkProposal extends \Google\Protobuf\Internal\Me
     protected $campaign_data_sharing_enabled = null;
     /**
      * Immutable. Enables the import of cost data from Display & Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue cost_data_sharing_enabled = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -114,7 +114,7 @@ class DisplayVideo360AdvertiserLinkProposal extends \Google\Protobuf\Internal\Me
      *           If this field is not set on create, it will be defaulted to true.
      *     @type \Google\Protobuf\BoolValue $cost_data_sharing_enabled
      *           Immutable. Enables the import of cost data from Display & Video 360.
-     *           This can only be enabled if campaign_data_import_enabled is enabled.
+     *           This can only be enabled if campaign_data_sharing_enabled is enabled.
      *           If this field is not set on create, it will be defaulted to true.
      * }
      */
@@ -417,7 +417,7 @@ class DisplayVideo360AdvertiserLinkProposal extends \Google\Protobuf\Internal\Me
 
     /**
      * Immutable. Enables the import of cost data from Display & Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue cost_data_sharing_enabled = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -442,7 +442,7 @@ class DisplayVideo360AdvertiserLinkProposal extends \Google\Protobuf\Internal\Me
      * Returns the unboxed value from <code>getCostDataSharingEnabled()</code>
 
      * Immutable. Enables the import of cost data from Display & Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue cost_data_sharing_enabled = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -455,7 +455,7 @@ class DisplayVideo360AdvertiserLinkProposal extends \Google\Protobuf\Internal\Me
 
     /**
      * Immutable. Enables the import of cost data from Display & Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue cost_data_sharing_enabled = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -474,7 +474,7 @@ class DisplayVideo360AdvertiserLinkProposal extends \Google\Protobuf\Internal\Me
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
      * Immutable. Enables the import of cost data from Display & Video 360.
-     * This can only be enabled if campaign_data_import_enabled is enabled.
+     * This can only be enabled if campaign_data_sharing_enabled is enabled.
      * If this field is not set on create, it will be defaulted to true.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue cost_data_sharing_enabled = 8 [(.google.api.field_behavior) = IMMUTABLE];</code>

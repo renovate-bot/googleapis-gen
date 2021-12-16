@@ -5,7 +5,7 @@ package com.google.analytics.admin.v1alpha;
 
 /**
  * <pre>
- * A virtual resource representing metadata for an GA4 property.
+ * A virtual resource representing metadata for a GA4 property.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.PropertySummary}
@@ -152,7 +152,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object displayName_;
   /**
    * <pre>
-   * Display name for the property referred to in this account summary.
+   * Display name for the property referred to in this property summary.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -173,7 +173,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Display name for the property referred to in this account summary.
+   * Display name for the property referred to in this property summary.
    * </pre>
    *
    * <code>string display_name = 2;</code>
@@ -360,7 +360,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A virtual resource representing metadata for an GA4 property.
+   * A virtual resource representing metadata for a GA4 property.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.PropertySummary}
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object displayName_ = "";
     /**
      * <pre>
-     * Display name for the property referred to in this account summary.
+     * Display name for the property referred to in this property summary.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -646,7 +646,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display name for the property referred to in this account summary.
+     * Display name for the property referred to in this property summary.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -667,7 +667,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display name for the property referred to in this account summary.
+     * Display name for the property referred to in this property summary.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -686,7 +686,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display name for the property referred to in this account summary.
+     * Display name for the property referred to in this property summary.
      * </pre>
      *
      * <code>string display_name = 2;</code>
@@ -700,7 +700,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * Display name for the property referred to in this account summary.
+     * Display name for the property referred to in this property summary.
      * </pre>
      *
      * <code>string display_name = 2;</code>

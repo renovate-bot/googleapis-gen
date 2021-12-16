@@ -5,7 +5,7 @@ package com.google.analytics.admin.v1alpha;
 
 /**
  * <pre>
- * A link between an GA4 property and a Firebase project.
+ * A link between a GA4 property and a Firebase project.
  * </pre>
  *
  * Protobuf type {@code google.analytics.admin.v1alpha.FirebaseLink}
@@ -433,7 +433,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A link between an GA4 property and a Firebase project.
+   * A link between a GA4 property and a Firebase project.
    * </pre>
    *
    * Protobuf type {@code google.analytics.admin.v1alpha.FirebaseLink}
