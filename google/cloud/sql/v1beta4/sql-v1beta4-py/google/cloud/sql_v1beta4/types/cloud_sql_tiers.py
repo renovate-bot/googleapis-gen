@@ -67,10 +67,9 @@ class Tier(proto.Message):
 
     Attributes:
         tier (str):
-            An identifier for the machine type, for
-            example, db-custom-1-3840. For related
-            information, see <a
-            href="/sql/pricing">Pricing</a>.
+            An identifier for the machine type, for example,
+            db-custom-1-3840. For related information, see
+            `Pricing </sql/pricing>`__.
         RAM (int):
             The maximum RAM usage of this tier in bytes.
         kind (str):

@@ -33,8 +33,6 @@ from .grpc import SqlBackupRunsServiceGrpcTransport
 class SqlBackupRunsServiceGrpcAsyncIOTransport(SqlBackupRunsServiceTransport):
     """gRPC AsyncIO backend transport for SqlBackupRunsService.
 
-    LINT.IfChange
-
     This class defines the same methods as the primary client, so the
     primary client can load the underlying transport implementation
     and call it.
@@ -283,8 +281,7 @@ class SqlBackupRunsServiceGrpcAsyncIOTransport(SqlBackupRunsServiceTransport):
             Awaitable[cloud_sql_resources.Operation]]:
         r"""Return a callable for the insert method over gRPC.
 
-        Creates a new backup run on demand. This method is
-        applicable only to Second Generation instances.
+        Creates a new backup run on demand.
 
         Returns:
             Callable[[~.SqlBackupRunsInsertRequest],
@@ -310,9 +307,9 @@ class SqlBackupRunsServiceGrpcAsyncIOTransport(SqlBackupRunsServiceTransport):
             Awaitable[cloud_sql_resources.BackupRunsListResponse]]:
         r"""Return a callable for the list method over gRPC.
 
-        Lists all backup runs associated with a given
-        instance and configuration in the reverse chronological
-        order of the backup initiation time.
+        Lists all backup runs associated with the project or
+        a given instance and configuration in the reverse
+        chronological order of the backup initiation time.
 
         Returns:
             Callable[[~.SqlBackupRunsListRequest],

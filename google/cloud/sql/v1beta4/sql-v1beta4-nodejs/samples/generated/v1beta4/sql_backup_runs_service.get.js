@@ -21,7 +21,7 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The ID of this Backup Run.
+   *  The ID of this backup run.
    */
   // const id = 1234
   /**

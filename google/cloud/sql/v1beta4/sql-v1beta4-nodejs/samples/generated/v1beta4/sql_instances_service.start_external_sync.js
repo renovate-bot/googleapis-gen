@@ -36,6 +36,10 @@ function main() {
    *  Whether to skip the verification step (VESS).
    */
   // const skipVerification = true
+  /**
+   *  MySQL-specific settings for start external sync.
+   */
+  // const mysqlSyncConfig = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1beta4;

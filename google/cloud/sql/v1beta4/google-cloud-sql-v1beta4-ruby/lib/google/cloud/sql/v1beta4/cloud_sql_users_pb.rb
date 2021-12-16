@@ -4,6 +4,8 @@
 require 'google/api/annotations_pb'
 require 'google/api/field_behavior_pb'
 require 'google/cloud/sql/v1beta4/cloud_sql_resources_pb'
+require 'google/protobuf/duration_pb'
+require 'google/protobuf/timestamp_pb'
 require 'google/api/client_pb'
 require 'google/protobuf'
 
@@ -31,6 +33,16 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :instance, :string, 1
       optional :project, :string, 2
     end
+    add_message "google.cloud.sql.v1beta4.UserPasswordValidationPolicy" do
+      optional :allowed_failed_attempts, :int32, 1
+      optional :password_expiration_duration, :message, 2, "google.protobuf.Duration"
+      optional :enable_failed_attempts_check, :bool, 3
+      optional :status, :message, 4, "google.cloud.sql.v1beta4.PasswordStatus"
+    end
+    add_message "google.cloud.sql.v1beta4.PasswordStatus" do
+      optional :locked, :bool, 1
+      optional :password_expiration_time, :message, 2, "google.protobuf.Timestamp"
+    end
     add_message "google.cloud.sql.v1beta4.User" do
       optional :kind, :string, 1
       optional :password, :string, 2
@@ -40,6 +52,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :instance, :string, 6
       optional :project, :string, 7
       optional :type, :enum, 8, "google.cloud.sql.v1beta4.User.SqlUserType"
+      optional :password_policy, :message, 12, "google.cloud.sql.v1beta4.UserPasswordValidationPolicy"
       oneof :user_details do
         optional :sqlserver_user_details, :message, 9, "google.cloud.sql.v1beta4.SqlServerUserDetails"
       end
@@ -69,6 +82,8 @@ module Google
         SqlUsersUpdateRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlUsersUpdateRequest").msgclass
         SqlUsersInsertRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlUsersInsertRequest").msgclass
         SqlUsersListRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlUsersListRequest").msgclass
+        UserPasswordValidationPolicy = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.UserPasswordValidationPolicy").msgclass
+        PasswordStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.PasswordStatus").msgclass
         User = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.User").msgclass
         User::SqlUserType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.User.SqlUserType").enummodule
         SqlServerUserDetails = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlServerUserDetails").msgclass

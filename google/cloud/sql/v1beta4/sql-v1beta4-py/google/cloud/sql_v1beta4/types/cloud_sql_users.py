@@ -15,6 +15,9 @@
 #
 import proto  # type: ignore
 
+from google.protobuf import duration_pb2  # type: ignore
+from google.protobuf import timestamp_pb2  # type: ignore
+
 
 __protobuf__ = proto.module(
     package='google.cloud.sql.v1beta4',
@@ -23,6 +26,8 @@ __protobuf__ = proto.module(
         'SqlUsersUpdateRequest',
         'SqlUsersInsertRequest',
         'SqlUsersListRequest',
+        'UserPasswordValidationPolicy',
+        'PasswordStatus',
         'User',
         'SqlServerUserDetails',
         'UsersListResponse',
@@ -156,6 +161,64 @@ class SqlUsersListRequest(proto.Message):
     )
 
 
+class UserPasswordValidationPolicy(proto.Message):
+    r"""User level password validation policy.
+
+    Attributes:
+        allowed_failed_attempts (int):
+            Number of failed login attempts allowed
+            before user get locked.
+        password_expiration_duration (google.protobuf.duration_pb2.Duration):
+            Expiration duration after password is
+            updated.
+        enable_failed_attempts_check (bool):
+            If true, failed login attempts check will be
+            enabled.
+        status (google.cloud.sql_v1beta4.types.PasswordStatus):
+            Output only. Read-only password status.
+    """
+
+    allowed_failed_attempts = proto.Field(
+        proto.INT32,
+        number=1,
+    )
+    password_expiration_duration = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=duration_pb2.Duration,
+    )
+    enable_failed_attempts_check = proto.Field(
+        proto.BOOL,
+        number=3,
+    )
+    status = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message='PasswordStatus',
+    )
+
+
+class PasswordStatus(proto.Message):
+    r"""Read-only password status.
+
+    Attributes:
+        locked (bool):
+            If true, user does not have login privileges.
+        password_expiration_time (google.protobuf.timestamp_pb2.Timestamp):
+            The expiration time of the current password.
+    """
+
+    locked = proto.Field(
+        proto.BOOL,
+        number=1,
+    )
+    password_expiration_time = proto.Field(
+        proto.MESSAGE,
+        number=2,
+        message=timestamp_pb2.Timestamp,
+    )
+
+
 class User(proto.Message):
     r"""A Cloud SQL user resource.
 
@@ -170,16 +233,16 @@ class User(proto.Message):
             This field is deprecated and will be removed
             from a future version of the API.
         name (str):
-            The name of the user in the Cloud SQL
-            instance. Can be omitted for <b>update</b> since
-            it is already specified in the URL.
+            The name of the user in the Cloud SQL instance. Can be
+            omitted for **update** since it is already specified in the
+            URL.
         host (str):
-            The host name from which the user can
-            connect. For <b>insert</b> operations, host
-            defaults to an empty string. For <b>update</b>
-            operations, host is specified as part of the
-            request URL. The host name cannot be updated
-            after insertion.
+            Optional. The host name from which the user can connect. For
+            **insert** operations, host defaults to an empty string. For
+            **update** operations, host is specified as part of the
+            request URL. The host name cannot be updated after
+            insertion. For a MySQL instance, it's required; for a
+            PostgreSQL or SQL Server instance, it's optional.
         instance (str):
             The name of the Cloud SQL instance. This does
             not include the project ID. Can be omitted for
@@ -198,6 +261,8 @@ class User(proto.Message):
         sqlserver_user_details (google.cloud.sql_v1beta4.types.SqlServerUserDetails):
 
             This field is a member of `oneof`_ ``user_details``.
+        password_policy (google.cloud.sql_v1beta4.types.UserPasswordValidationPolicy):
+            User level password validation policy.
     """
     class SqlUserType(proto.Enum):
         r"""The user type."""
@@ -243,6 +308,11 @@ class User(proto.Message):
         number=9,
         oneof='user_details',
         message='SqlServerUserDetails',
+    )
+    password_policy = proto.Field(
+        proto.MESSAGE,
+        number=12,
+        message='UserPasswordValidationPolicy',
     )
 
 

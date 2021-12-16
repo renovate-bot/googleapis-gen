@@ -22,6 +22,7 @@
     "google sql",
     "sql",
     "sql backup runs service",
+    "sql connect service",
     "sql databases service",
     "sql flags service",
     "sql instances service",

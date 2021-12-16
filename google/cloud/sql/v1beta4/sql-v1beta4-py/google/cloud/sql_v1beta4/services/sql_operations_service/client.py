@@ -402,8 +402,7 @@ class SqlOperationsServiceClient(metaclass=SqlOperationsServiceClientMeta):
 
         Returns:
             google.cloud.sql_v1beta4.services.sql_operations_service.pagers.ListPager:
-                Database instance list operations
-                response.
+                Operations list response.
                 Iterating over this object will yield
                 results and resolve additional pages
                 automatically.

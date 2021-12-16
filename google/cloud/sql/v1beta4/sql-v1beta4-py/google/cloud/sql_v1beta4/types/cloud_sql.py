@@ -71,8 +71,10 @@ class SqlBackupRunsDeleteRequest(proto.Message):
 
     Attributes:
         id (int):
-            The ID of the Backup Run to delete. To find a Backup Run ID,
-            use the list method.
+            The ID of the backup run to delete. To find a backup run ID,
+            use the
+            `list <https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/backupRuns/list>`__
+            method.
         instance (str):
             Cloud SQL instance ID. This does not include
             the project ID.
@@ -100,7 +102,7 @@ class SqlBackupRunsGetRequest(proto.Message):
 
     Attributes:
         id (int):
-            The ID of this Backup Run.
+            The ID of this backup run.
         instance (str):
             Cloud SQL instance ID. This does not include
             the project ID.
@@ -157,8 +159,8 @@ class SqlBackupRunsListRequest(proto.Message):
 
     Attributes:
         instance (str):
-            Cloud SQL instance ID. This does not include
-            the project ID.
+            Cloud SQL instance ID, or "-" for all
+            instances. This does not include the project ID.
         max_results (int):
             Maximum number of backup runs per response.
         page_token (str):
@@ -927,6 +929,8 @@ class SqlInstancesRescheduleMaintenanceRequest(proto.Message):
 class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
     r"""
 
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
+
     Attributes:
         instance (str):
             Cloud SQL instance ID. This does not include
@@ -938,6 +942,14 @@ class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
             Flag to enable verifying connection only
         sync_mode (google.cloud.sql_v1beta4.types.SqlInstancesVerifyExternalSyncSettingsRequest.ExternalSyncMode):
             External sync mode
+        verify_replication_only (bool):
+            Optional. Flag to verify settings required by
+            replication setup only
+        mysql_sync_config (google.cloud.sql_v1beta4.types.MySqlSyncConfig):
+            Optional. MySQL-specific settings for start
+            external sync.
+
+            This field is a member of `oneof`_ ``sync_config``.
     """
     class ExternalSyncMode(proto.Enum):
         r""""""
@@ -962,10 +974,22 @@ class SqlInstancesVerifyExternalSyncSettingsRequest(proto.Message):
         number=4,
         enum=ExternalSyncMode,
     )
+    verify_replication_only = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
+    mysql_sync_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='sync_config',
+        message=cloud_sql_resources.MySqlSyncConfig,
+    )
 
 
 class SqlInstancesStartExternalSyncRequest(proto.Message):
     r"""
+
+    .. _oneof: https://proto-plus-python.readthedocs.io/en/stable/fields.html#oneofs-mutually-exclusive-fields
 
     Attributes:
         instance (str):
@@ -977,6 +1001,11 @@ class SqlInstancesStartExternalSyncRequest(proto.Message):
             External sync mode.
         skip_verification (bool):
             Whether to skip the verification step (VESS).
+        mysql_sync_config (google.cloud.sql_v1beta4.types.MySqlSyncConfig):
+            MySQL-specific settings for start external
+            sync.
+
+            This field is a member of `oneof`_ ``sync_config``.
     """
 
     instance = proto.Field(
@@ -995,6 +1024,12 @@ class SqlInstancesStartExternalSyncRequest(proto.Message):
     skip_verification = proto.Field(
         proto.BOOL,
         number=4,
+    )
+    mysql_sync_config = proto.Field(
+        proto.MESSAGE,
+        number=6,
+        oneof='sync_config',
+        message=cloud_sql_resources.MySqlSyncConfig,
     )
 
 

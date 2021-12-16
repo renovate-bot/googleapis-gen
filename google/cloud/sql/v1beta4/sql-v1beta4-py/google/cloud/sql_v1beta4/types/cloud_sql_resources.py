@@ -15,6 +15,7 @@
 #
 import proto  # type: ignore
 
+from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
 
@@ -49,6 +50,8 @@ __protobuf__ = proto.module(
         'Database',
         'SqlServerDatabaseDetails',
         'DatabaseFlags',
+        'SyncFlags',
+        'InstanceReference',
         'DatabaseInstance',
         'DatabasesListResponse',
         'DemoteMasterConfiguration',
@@ -64,6 +67,7 @@ __protobuf__ = proto.module(
         'InstancesExportRequest',
         'InstancesFailoverRequest',
         'InstancesImportRequest',
+        'MySqlSyncConfig',
         'InstancesListResponse',
         'InstancesListServerCasResponse',
         'InstancesRestoreBackupRequest',
@@ -84,6 +88,7 @@ __protobuf__ = proto.module(
         'Operation',
         'OperationError',
         'OperationErrors',
+        'PasswordValidationPolicy',
         'OperationsListResponse',
         'ReplicaConfiguration',
         'RestoreBackupContext',
@@ -98,6 +103,7 @@ __protobuf__ = proto.module(
         'SslCertsListResponse',
         'TruncateLogContext',
         'SqlActiveDirectoryConfig',
+        'SqlServerAuditConfig',
     },
 )
 
@@ -179,7 +185,14 @@ class SqlDatabaseVersion(proto.Enum):
     POSTGRES_10 = 18
     POSTGRES_12 = 19
     MYSQL_8_0 = 20
+    MYSQL_8_0_18 = 41
+    MYSQL_8_0_26 = 85
     POSTGRES_13 = 23
+    POSTGRES_14 = 110
+    SQLSERVER_2019_STANDARD = 26
+    SQLSERVER_2019_ENTERPRISE = 27
+    SQLSERVER_2019_EXPRESS = 28
+    SQLSERVER_2019_WEB = 29
 
 
 class SqlSuspensionReason(proto.Enum):
@@ -230,7 +243,7 @@ class SqlUpdateTrack(proto.Enum):
 
 
 class SqlFlagType(proto.Enum):
-    r"""LINT.IfChange(sql_flag_type)"""
+    r""""""
     SQL_FLAG_TYPE_UNSPECIFIED = 0
     BOOLEAN = 1
     STRING = 2
@@ -249,15 +262,13 @@ class AclEntry(proto.Message):
             The allowlisted value for the access control
             list.
         expiration_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time when this access control entry
-            expires in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time when this access control entry expires in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         name (str):
             Optional. A label to identify this entry.
         kind (str):
-            This is always <b>sql#aclEntry</b>.
+            This is always **sql#aclEntry**.
     """
 
     value = proto.Field(
@@ -344,14 +355,12 @@ class BackupConfiguration(proto.Message):
 
     Attributes:
         start_time (str):
-            Start time for the daily backup configuration
-            in UTC timezone in the 24 hour format -
-            <b>HH:MM</b>.
+            Start time for the daily backup configuration in UTC
+            timezone in the 24 hour format - **HH:MM**.
         enabled (google.protobuf.wrappers_pb2.BoolValue):
             Whether this configuration is enabled.
         kind (str):
-            This is always
-            <b>sql#backupConfiguration</b>.
+            This is always **sql#backupConfiguration**.
         binary_log_enabled (google.protobuf.wrappers_pb2.BoolValue):
             (MySQL only) Whether binary log is enabled.
             If backup configuration is disabled, binarylog
@@ -361,7 +370,8 @@ class BackupConfiguration(proto.Message):
         location (str):
             Location of the backup
         point_in_time_recovery_enabled (google.protobuf.wrappers_pb2.BoolValue):
-            Reserved for future use.
+            (Postgres only) Whether point in time
+            recovery is enabled.
         transaction_log_retention_days (google.protobuf.wrappers_pb2.Int32Value):
             The number of days of transaction logs we
             retain for point in time restore, from 1-7.
@@ -418,30 +428,25 @@ class BackupRun(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#backupRun</b>.
+            This is always **sql#backupRun**.
         status (google.cloud.sql_v1beta4.types.SqlBackupRunStatus):
             The status of this run.
         enqueued_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time the run was enqueued in UTC timezone
-            in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time the run was enqueued in UTC timezone in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         id (int):
             The identifier for this backup run. Unique
             only for a specific Cloud SQL instance.
         start_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time the backup operation actually
-            started in UTC timezone in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time the backup operation actually started in UTC
+            timezone in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         end_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time the backup operation completed in
-            UTC timezone in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time the backup operation completed in UTC timezone in
+            `RFC 3339 <https://tools.ietf.org/html/rfc3339>`__ format,
+            for example **2012-11-15T16:19:00.094Z**.
         error (google.cloud.sql_v1beta4.types.OperationError):
             Information about why the backup operation
             failed. This is only present if the run has the
@@ -454,11 +459,10 @@ class BackupRun(proto.Message):
             The description of this run, only applicable
             to on-demand backups.
         window_start_time (google.protobuf.timestamp_pb2.Timestamp):
-            The start time of the backup window during
-            which this the backup was attempted in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The start time of the backup window during which this the
+            backup was attempted in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         instance (str):
             Name of the database instance.
         self_link (str):
@@ -467,11 +471,9 @@ class BackupRun(proto.Message):
             Location of the backups.
         disk_encryption_configuration (google.cloud.sql_v1beta4.types.DiskEncryptionConfiguration):
             Encryption configuration specific to a
-            backup. Applies only to Second Generation
-            instances.
+            backup.
         disk_encryption_status (google.cloud.sql_v1beta4.types.DiskEncryptionStatus):
             Encryption status specific to a backup.
-            Applies only to Second Generation instances.
         backup_kind (google.cloud.sql_v1beta4.types.SqlBackupKind):
             Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
     """
@@ -557,7 +559,7 @@ class BackupRunsListResponse(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#backupRunsList</b>.
+            This is always **sql#backupRunsList**.
         items (Sequence[google.cloud.sql_v1beta4.types.BackupRun]):
             A list of backup runs in reverse
             chronological order of the enqueued time.
@@ -597,7 +599,7 @@ class BinLogCoordinates(proto.Message):
         bin_log_position (int):
             Position (offset) within the binary log file.
         kind (str):
-            This is always <b>sql#binLogCoordinates</b>.
+            This is always **sql#binLogCoordinates**.
     """
 
     bin_log_file_name = proto.Field(
@@ -621,7 +623,7 @@ class BackupContext(proto.Message):
         backup_id (int):
             The identifier of the backup.
         kind (str):
-            This is always <b>sql#backupContext</b>.
+            This is always **sql#backupContext**.
     """
 
     backup_id = proto.Field(
@@ -639,7 +641,7 @@ class CloneContext(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#cloneContext</b>.
+            This is always **sql#cloneContext**.
         pitr_timestamp_ms (int):
             Reserved for future use.
         destination_instance_name (str):
@@ -652,7 +654,8 @@ class CloneContext(proto.Message):
             instance is cloned up to the most recent binary
             log coordinates.
         point_in_time (google.protobuf.timestamp_pb2.Timestamp):
-            Reserved for future use.
+            Timestamp, if specified, identifies the time
+            to which the source instance is cloned.
     """
 
     kind = proto.Field(
@@ -686,7 +689,7 @@ class Database(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#database</b>.
+            This is always **sql#database**.
         charset (str):
             The Cloud SQL charset value.
         collation (str):
@@ -778,19 +781,16 @@ class DatabaseFlags(proto.Message):
 
     Attributes:
         name (str):
-            The name of the flag. These flags are passed
-            at instance startup, so include both server
-            options and system variables for MySQL. Flags
-            are specified with underscores, not hyphens. For
-            more information, see <a
-            href="/sql/docs/mysql/flags">Configuring
-            Database Flags</a> in the Cloud SQL
-            documentation.
+            The name of the flag. These flags are passed at instance
+            startup, so include both server options and system
+            variables. Flags are specified with underscores, not
+            hyphens. For more information, see `Configuring Database
+            Flags <https://cloud.google.com/sql/docs/mysql/flags>`__ in
+            the Cloud SQL documentation.
         value (str):
-            The value of the flag. Booleans are set to
-            <b>on</b> for true and <b>off</b> for false.
-            This field must be omitted if the flag doesn't
-            take a value.
+            The value of the flag. Booleans are set to **on** for true
+            and **off** for false. This field must be omitted if the
+            flag doesn't take a value.
     """
 
     name = proto.Field(
@@ -803,41 +803,80 @@ class DatabaseFlags(proto.Message):
     )
 
 
+class SyncFlags(proto.Message):
+    r"""Initial sync flags for certain Cloud SQL APIs.
+    Currently used for the MySQL external server initial dump.
+
+    Attributes:
+        name (str):
+            The name of the flag.
+        value (str):
+            The value of the flag. This field must be
+            omitted if the flag doesn't take a value.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    value = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class InstanceReference(proto.Message):
+    r"""Reference to another Cloud SQL instance.
+
+    Attributes:
+        name (str):
+            The name of the Cloud SQL instance being
+            referenced. This does not include the project
+            ID.
+        region (str):
+            The region of the Cloud SQL instance being
+            referenced.
+        project (str):
+            The project ID of the Cloud SQL instance
+            being referenced. The default is the same
+            project ID as the instance references it.
+    """
+
+    name = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    region = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+    project = proto.Field(
+        proto.STRING,
+        number=3,
+    )
+
+
 class DatabaseInstance(proto.Message):
     r"""A Cloud SQL instance resource.
 
     Attributes:
         kind (str):
-            This is always <b>sql#instance</b>.
+            This is always **sql#instance**.
         state (google.cloud.sql_v1beta4.types.DatabaseInstance.SqlInstanceState):
-            The current serving state of the Cloud SQL instance. This
-            can be one of the following. SQL_INSTANCE_STATE_UNSPECIFIED:
-            The state of the instance is unknown. RUNNABLE: The instance
-            is running, or has been stopped by owner. SUSPENDED: The
-            instance is not available, for example due to problems with
-            billing. PENDING_DELETE: The instance is being deleted.
-            PENDING_CREATE: The instance is being created. MAINTENANCE:
-            The instance is down for maintenance. FAILED: The instance
-            creation failed.
+            The current serving state of the Cloud SQL
+            instance.
         database_version (google.cloud.sql_v1beta4.types.SqlDatabaseVersion):
-            The database engine type and version. The databaseVersion
-            field cannot be changed after instance creation. MySQL
-            instances: MYSQL_8_0, MYSQL_5_7 (default), or MYSQL_5_6.
-            PostgreSQL instances: POSTGRES_9_6, POSTGRES_10,
-            POSTGRES_11, POSTGRES_12, or POSTGRES_13 (default). SQL
-            Server instances: SQLSERVER_2017_STANDARD (default),
-            SQLSERVER_2017_ENTERPRISE, SQLSERVER_2017_EXPRESS, or
-            SQLSERVER_2017_WEB.
+            The database engine type and version. The
+            **databaseVersion** field cannot be changed after instance
+            creation.
         settings (google.cloud.sql_v1beta4.types.Settings):
             The user settings.
         etag (str):
-            This field is deprecated and will be removed
-            from a future version of the API. Use the
-            <b>settings.settingsVersion</b> field instead.
+            This field is deprecated and will be removed from a future
+            version of the API. Use the **settings.settingsVersion**
+            field instead.
         failover_replica (google.cloud.sql_v1beta4.types.DatabaseInstance.SqlFailoverReplica):
             The name and status of the failover replica.
-            This property is applicable only to Second
-            Generation instances.
         master_instance_name (str):
             The name of the instance which will act as
             primary in the replication setup.
@@ -850,19 +889,15 @@ class DatabaseInstance(proto.Message):
             The current disk usage of the instance in bytes. This
             property has been deprecated. Use the
             "cloudsql.googleapis.com/database/disk/bytes_used" metric in
-            Cloud Monitoring API instead. Please see this announcement
+            Cloud Monitoring API instead. Please see `this
+            announcement <https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ>`__
             for details.
         ip_addresses (Sequence[google.cloud.sql_v1beta4.types.IpMapping]):
             The assigned IP addresses for the instance.
         server_ca_cert (google.cloud.sql_v1beta4.types.SslCert):
             SSL configuration.
         instance_type (google.cloud.sql_v1beta4.types.SqlInstanceType):
-            The instance type. This can be one of the following.
-            CLOUD_SQL_INSTANCE: A Cloud SQL instance that is not
-            replicating from a primary instance. ON_PREMISES_INSTANCE:
-            An instance running on the customer's premises.
-            READ_REPLICA_INSTANCE: A Cloud SQL instance configured as a
-            read-replica.
+            The instance type.
         project (str):
             The project ID of the project containing the
             Cloud SQL instance. The Google apps domain is
@@ -881,10 +916,12 @@ class DatabaseInstance(proto.Message):
             Configuration specific to failover replicas
             and read replicas.
         backend_type (google.cloud.sql_v1beta4.types.SqlBackendType):
-            SECOND_GEN: Cloud SQL database instance. EXTERNAL: A
-            database server that is not managed by Google. This property
-            is read-only; use the tier property in the settings object
-            to determine the database type.
+            The backend type. **SECOND_GEN**: Cloud SQL database
+            instance. **EXTERNAL**: A database server that is not
+            managed by Google.
+
+            This property is read-only; use the **tier** property in the
+            **settings** object to determine the database type.
         self_link (str):
             The URI of this resource.
         suspension_reason (Sequence[google.cloud.sql_v1beta4.types.SqlSuspensionReason]):
@@ -897,17 +934,22 @@ class DatabaseInstance(proto.Message):
             Name of the Cloud SQL instance. This does not
             include the project ID.
         region (str):
-            The geographical region. Can be us-central (FIRST_GEN
-            instances only) us-central1 (SECOND_GEN instances only)
-            asia-east1 or europe-west1. Defaults to us-central or
-            us-central1 depending on the instance type. The region
-            cannot be changed after instance creation.
+            The geographical region. Can be:
+
+            -  **us-central** (**FIRST_GEN** instances only)
+            -  **us-central1** (**SECOND_GEN** instances only)
+            -  **asia-east1** or **europe-west1**.
+
+            Defaults to **us-central** or **us-central1** depending on
+            the instance type. The region cannot be changed after
+            instance creation.
         gce_zone (str):
             The Compute Engine zone that the instance is
             currently serving from. This value could be
             different from the zone that was specified when
             the instance was created if the instance has
-            failed over to its secondary zone.
+            failed over to its secondary zone. WARNING:
+            Changing this might restart the instance.
         secondary_gce_zone (str):
             The Compute Engine zone that the failover
             instance is currently serving from for a
@@ -918,12 +960,10 @@ class DatabaseInstance(proto.Message):
             for future use.
         disk_encryption_configuration (google.cloud.sql_v1beta4.types.DiskEncryptionConfiguration):
             Disk encryption configuration specific to an
-            instance. Applies only to Second Generation
-            instances.
+            instance.
         disk_encryption_status (google.cloud.sql_v1beta4.types.DiskEncryptionStatus):
             Disk encryption status specific to an
-            instance. Applies only to Second Generation
-            instances.
+            instance.
         root_password (str):
             Initial root password. Use only on creation.
         scheduled_maintenance (google.cloud.sql_v1beta4.types.DatabaseInstance.SqlScheduledMaintenance):
@@ -932,15 +972,24 @@ class DatabaseInstance(proto.Message):
         satisfies_pzs (google.protobuf.wrappers_pb2.BoolValue):
             The status indicating if instance
             satisfiesPzs. Reserved for future use.
+        database_installed_version (str):
+            Output only. Stores the current database version running on
+            the instance including minor version such as
+            **MYSQL_8_0_18**.
         out_of_disk_report (google.cloud.sql_v1beta4.types.DatabaseInstance.SqlOutOfDiskReport):
-            This field represents the report generated by
-            the proactive database wellness job for
-            OutOfDisk issues. Writers:
-               -- the proactive database wellness job for
-            OOD. Readers:
-               -- the proactive database wellness job
+            This field represents the report generated by the proactive
+            database wellness job for OutOfDisk issues.
+
+            -  Writers:
+            -  the proactive database wellness job for OOD.
+            -  Readers:
+            -  the proactive database wellness job
 
             This field is a member of `oneof`_ ``_out_of_disk_report``.
+        create_time (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. The time when the instance was created in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
     """
     class SqlInstanceState(proto.Enum):
         r"""The current serving state of the database instance."""
@@ -951,6 +1000,7 @@ class DatabaseInstance(proto.Message):
         PENDING_CREATE = 4
         MAINTENANCE = 5
         FAILED = 6
+        ONLINE_MAINTENANCE = 7
 
     class SqlFailoverReplica(proto.Message):
         r"""
@@ -960,8 +1010,7 @@ class DatabaseInstance(proto.Message):
                 The name of the failover replica. If
                 specified at instance creation, a failover
                 replica is created for the instance. The name
-                doesn't include the project ID. This property is
-                applicable only to Second Generation instances.
+                doesn't include the project ID.
             available (google.protobuf.wrappers_pb2.BoolValue):
                 The availability status of the failover
                 replica. A false status indicates that the
@@ -992,6 +1041,11 @@ class DatabaseInstance(proto.Message):
             can_reschedule (bool):
                 If the scheduled maintenance can be
                 rescheduled.
+            schedule_deadline_time (google.protobuf.timestamp_pb2.Timestamp):
+                Maintenance cannot be rescheduled to start
+                beyond this deadline.
+
+                This field is a member of `oneof`_ ``_schedule_deadline_time``.
         """
 
         start_time = proto.Field(
@@ -1007,6 +1061,12 @@ class DatabaseInstance(proto.Message):
             proto.BOOL,
             number=3,
         )
+        schedule_deadline_time = proto.Field(
+            proto.MESSAGE,
+            number=4,
+            optional=True,
+            message=timestamp_pb2.Timestamp,
+        )
 
     class SqlOutOfDiskReport(proto.Message):
         r"""This message wraps up the information written by out-of-disk
@@ -1014,20 +1074,22 @@ class DatabaseInstance(proto.Message):
 
         Attributes:
             sql_out_of_disk_state (google.cloud.sql_v1beta4.types.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState):
-                This field represents the state generated by
-                the proactive database wellness job for
-                OutOfDisk issues. Writers:
-                   -- the proactive database wellness job for
-                OOD. Readers:
-                   -- the proactive database wellness job
+                This field represents the state generated by the proactive
+                database wellness job for OutOfDisk issues.
+
+                -  Writers:
+                -  the proactive database wellness job for OOD.
+                -  Readers:
+                -  the proactive database wellness job
 
                 This field is a member of `oneof`_ ``_sql_out_of_disk_state``.
             sql_min_recommended_increase_size_gb (int):
-                The minimum recommended increase size in
-                GigaBytes This field is consumed by the frontend
-                Writers:
-                   -- the proactive database wellness job for
-                OOD.
+                The minimum recommended increase size in GigaBytes This
+                field is consumed by the frontend
+
+                -  Writers:
+                -  the proactive database wellness job for OOD.
+                -  Readers:
 
                 This field is a member of `oneof`_ ``_sql_min_recommended_increase_size_gb``.
         """
@@ -1192,11 +1254,20 @@ class DatabaseInstance(proto.Message):
         number=35,
         message=wrappers_pb2.BoolValue,
     )
+    database_installed_version = proto.Field(
+        proto.STRING,
+        number=40,
+    )
     out_of_disk_report = proto.Field(
         proto.MESSAGE,
         number=38,
         optional=True,
         message=SqlOutOfDiskReport,
+    )
+    create_time = proto.Field(
+        proto.MESSAGE,
+        number=39,
+        message=timestamp_pb2.Timestamp,
     )
 
 
@@ -1205,7 +1276,7 @@ class DatabasesListResponse(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#databasesList</b>.
+            This is always **sql#databasesList**.
         items (Sequence[google.cloud.sql_v1beta4.types.Database]):
             List of database resources in the instance.
     """
@@ -1227,18 +1298,15 @@ class DemoteMasterConfiguration(proto.Message):
 
     Attributes:
         kind (str):
-            This is always
-            <b>sql#demoteMasterConfiguration</b>.
+            This is always **sql#demoteMasterConfiguration**.
         mysql_replica_configuration (google.cloud.sql_v1beta4.types.DemoteMasterMySqlReplicaConfiguration):
-            MySQL specific configuration when replicating
-            from a MySQL on-premises primary instance.
-            Replication configuration information such as
-            the username, password, certificates, and keys
-            are not stored in the instance metadata. The
-            configuration information is used only to set up
-            the replication connection and is stored by
-            MySQL in a file named <b>master.info</b> in the
-            data directory.
+            MySQL specific configuration when replicating from a MySQL
+            on-premises primary instance. Replication configuration
+            information such as the username, password, certificates,
+            and keys are not stored in the instance metadata. The
+            configuration information is used only to set up the
+            replication connection and is stored by MySQL in a file
+            named **master.info** in the data directory.
     """
 
     kind = proto.Field(
@@ -1257,20 +1325,16 @@ class DemoteMasterContext(proto.Message):
 
     Attributes:
         kind (str):
-            This is always
-            <b>sql#demoteMasterContext</b>.
+            This is always **sql#demoteMasterContext**.
         verify_gtid_consistency (google.protobuf.wrappers_pb2.BoolValue):
-            Verify GTID consistency for demote operation.
-            Default value: <b>True</b>. Second Generation
-            instances only.  Setting this flag to false
-            enables you to bypass GTID consistency check
-            between on-premises primary instance and Cloud
-            SQL instance during the demotion operation but
-            also exposes you to the risk of future
-            replication failures. Change the value only if
-            you know the reason for the GTID divergence and
-            are confident that doing so will not cause any
-            replication issues.
+            Verify GTID consistency for demote operation. Default value:
+            **True**. Setting this flag to false enables you to bypass
+            GTID consistency check between on-premises primary instance
+            and Cloud SQL instance during the demotion operation but
+            also exposes you to the risk of future replication failures.
+            Change the value only if you know the reason for the GTID
+            divergence and are confident that doing so will not cause
+            any replication issues.
         master_instance_name (str):
             The name of the instance which will act as
             on-premises primary instance in the replication
@@ -1278,6 +1342,9 @@ class DemoteMasterContext(proto.Message):
         replica_configuration (google.cloud.sql_v1beta4.types.DemoteMasterConfiguration):
             Configuration specific to read-replicas
             replicating from the on-premises primary
+            instance.
+        skip_replication_setup (bool):
+            Flag to skip replication setup on the
             instance.
     """
 
@@ -1299,6 +1366,10 @@ class DemoteMasterContext(proto.Message):
         number=4,
         message='DemoteMasterConfiguration',
     )
+    skip_replication_setup = proto.Field(
+        proto.BOOL,
+        number=5,
+    )
 
 
 class DemoteMasterMySqlReplicaConfiguration(proto.Message):
@@ -1307,7 +1378,7 @@ class DemoteMasterMySqlReplicaConfiguration(proto.Message):
     Attributes:
         kind (str):
             This is always
-            <b>sql#demoteMasterMysqlReplicaConfiguration</b>.
+            **sql#demoteMasterMysqlReplicaConfiguration**.
         username (str):
             The username for the replication connection.
         password (str):
@@ -1357,45 +1428,34 @@ class ExportContext(proto.Message):
 
     Attributes:
         uri (str):
-            The path to the file in Google Cloud Storage
-            where the export will be stored. The URI is in
-            the form <b>gs://bucketName/fileName</b>. If the
-            file already exists, the request succeeds, but
-            the operation fails. <br>If <b>fileType</b> is
-            <b>SQL</b> and the filename ends with .gz, the
+            The path to the file in Google Cloud Storage where the
+            export will be stored. The URI is in the form
+            **gs://bucketName/fileName**. If the file already exists,
+            the request succeeds, but the operation fails. If
+            **fileType** is **SQL** and the filename ends with .gz, the
             contents are compressed.
         databases (Sequence[str]):
-            Databases to be exported. <br /> <b>MySQL
-            instances:</b> If <b>fileType</b> is <b>SQL</b>
-            and no database is specified, all databases are
-            exported, except for the <b>mysql</b> system
-            database. If <b>fileType</b> is <b>CSV</b>, you
-            can specify one database, either by using this
-            property or by using the
-            <b>csvExportOptions.selectQuery</b> property,
-            which takes precedence over this property. <br
-            /> <b>PostgreSQL instances:</b> You must specify
-            one database to be exported. If <b>fileType</b>
-            is <b>CSV</b>, this database must match the one
-            specified in the
-            <b>csvExportOptions.selectQuery</b> property.
-            <br /> <b>SQL Server instances:</b> You must
-            specify one database to be exported, and the
-            <b>fileType</b> must be <b>BAK</b>.
+            Databases to be exported. **MySQL instances:** If
+            **fileType** is **SQL** and no database is specified, all
+            databases are exported, except for the **mysql** system
+            database. If **fileType** is **CSV**, you can specify one
+            database, either by using this property or by using the
+            **csvExportOptions.selectQuery** property, which takes
+            precedence over this property. **PostgreSQL instances:** You
+            must specify one database to be exported. If **fileType** is
+            **CSV**, this database must match the one specified in the
+            **csvExportOptions.selectQuery** property. **SQL Server
+            instances:** You must specify one database to be exported,
+            and the **fileType** must be **BAK**.
         kind (str):
-            This is always <b>sql#exportContext</b>.
+            This is always **sql#exportContext**.
         sql_export_options (google.cloud.sql_v1beta4.types.ExportContext.SqlExportOptions):
             Options for exporting data as SQL statements.
         csv_export_options (google.cloud.sql_v1beta4.types.ExportContext.SqlCsvExportOptions):
-            Options for exporting data as CSV.
-            <b>MySQL</b> and <b>PostgreSQL</b> instances
-            only.
+            Options for exporting data as CSV. **MySQL** and
+            **PostgreSQL** instances only.
         file_type (google.cloud.sql_v1beta4.types.SqlFileType):
             The file type for the specified uri.
-            <br><b>SQL</b>: The file contains SQL
-            statements. <br><b>CSV</b>: The file contains
-            CSV data. <br><b>BAK</b>: The file contains
-            backup data for a SQL Server instance.
         offload (google.protobuf.wrappers_pb2.BoolValue):
             Option for export offload.
     """
@@ -1406,11 +1466,41 @@ class ExportContext(proto.Message):
         Attributes:
             select_query (str):
                 The select query used to extract the data.
+            escape_character (str):
+                Specifies the character that should appear
+                before a data character that needs to be
+                escaped.
+            quote_character (str):
+                Specifies the quoting character to be used
+                when a data value is quoted.
+            fields_terminated_by (str):
+                Specifies the character that separates
+                columns within each row (line) of the file.
+            lines_terminated_by (str):
+                This is used to separate lines. If a line
+                does not contain all fields, the rest of the
+                columns are set to their default values.
         """
 
         select_query = proto.Field(
             proto.STRING,
             number=1,
+        )
+        escape_character = proto.Field(
+            proto.STRING,
+            number=2,
+        )
+        quote_character = proto.Field(
+            proto.STRING,
+            number=3,
+        )
+        fields_terminated_by = proto.Field(
+            proto.STRING,
+            number=4,
+        )
+        lines_terminated_by = proto.Field(
+            proto.STRING,
+            number=6,
         )
 
     class SqlExportOptions(proto.Message):
@@ -1434,15 +1524,12 @@ class ExportContext(proto.Message):
 
             Attributes:
                 master_data (google.protobuf.wrappers_pb2.Int32Value):
-                    Option to include SQL statement required to
-                    set up replication. <br>If set to <b>1</b>, the
-                    dump file includes  a CHANGE MASTER TO statement
-                    with the binary log coordinates,  and --set-
-                    gtid-purged is set to ON.
-                    <br>If set to <b>2</b>, the CHANGE MASTER TO
-                    statement is written as  a SQL comment and has
-                    no effect.
-                    <br>If set to any value other than <b>1</b>,
+                    Option to include SQL statement required to set up
+                    replication. If set to **1**, the dump file includes a
+                    CHANGE MASTER TO statement with the binary log coordinates,
+                    and --set-gtid-purged is set to ON. If set to **2**, the
+                    CHANGE MASTER TO statement is written as a SQL comment and
+                    has no effect. If set to any value other than **1**,
                     --set-gtid-purged is set to OFF.
             """
 
@@ -1511,7 +1598,7 @@ class FailoverContext(proto.Message):
             version doesn't match the current settings
             version.
         kind (str):
-            This is always <b>sql#failoverContext</b>.
+            This is always **sql#failoverContext**.
     """
 
     settings_version = proto.Field(
@@ -1530,29 +1617,29 @@ class Flag(proto.Message):
     Attributes:
         name (str):
             This is the name of the flag. Flag names always use
-            underscores, not hyphens, for example: max_allowed_packet
+            underscores, not hyphens, for example:
+            **max_allowed_packet**
         type_ (google.cloud.sql_v1beta4.types.SqlFlagType):
-            The type of the flag. Flags are typed to being BOOLEAN,
-            STRING, INTEGER or NONE. NONE is used for flags which do not
-            take a value, such as skip_grant_tables.
+            The type of the flag. Flags are typed to being **BOOLEAN**,
+            **STRING**, **INTEGER** or **NONE**. **NONE** is used for
+            flags which do not take a value, such as
+            **skip_grant_tables**.
         applies_to (Sequence[google.cloud.sql_v1beta4.types.SqlDatabaseVersion]):
-            The database version this flag applies to. Can be MYSQL_8_0,
-            MYSQL_5_6, or MYSQL_5_7.
+            The database version this flag applies to. Can be
+            **MYSQL_8_0**, **MYSQL_5_6**, or **MYSQL_5_7**.
         allowed_string_values (Sequence[str]):
-            For <b>STRING</b> flags, a list of strings
-            that the value can be set to.
+            For **STRING** flags, a list of strings that the value can
+            be set to.
         min_value (google.protobuf.wrappers_pb2.Int64Value):
-            For <b>INTEGER</b> flags, the minimum allowed
-            value.
+            For **INTEGER** flags, the minimum allowed value.
         max_value (google.protobuf.wrappers_pb2.Int64Value):
-            For <b>INTEGER</b> flags, the maximum allowed
-            value.
+            For **INTEGER** flags, the maximum allowed value.
         requires_restart (google.protobuf.wrappers_pb2.BoolValue):
             Indicates whether changing this flag will
             trigger a database restart. Only applicable to
             Second Generation instances.
         kind (str):
-            This is always <b>sql#flag</b>.
+            This is always **sql#flag**.
         in_beta (google.protobuf.wrappers_pb2.BoolValue):
             Whether or not the flag is considered in
             beta.
@@ -1615,7 +1702,7 @@ class FlagsListResponse(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#flagsList</b>.
+            This is always **sql#flagsList**.
         items (Sequence[google.cloud.sql_v1beta4.types.Flag]):
             List of flags.
     """
@@ -1636,27 +1723,26 @@ class ImportContext(proto.Message):
 
     Attributes:
         uri (str):
-            Path to the import file in Cloud Storage, in
-            the form <b>gs://bucketName/fileName</b>.
-            Compressed gzip files (.gz) are supported when
-            <b>fileType</b> is <b>SQL</b>. The instance must
-            have write permissions to the bucket and read
-            access to the file.
+            Path to the import file in Cloud Storage, in the form
+            **gs://bucketName/fileName**. Compressed gzip files (.gz)
+            are supported when **fileType** is **SQL**. The instance
+            must have write permissions to the bucket and read access to
+            the file.
         database (str):
-            The target database for the import. If
-            <b>fileType</b> is <b>SQL</b>, this field is
-            required only if the import file does not
-            specify a database, and is overridden by any
-            database specification in the import file. If
-            <b>fileType</b> is <b>CSV</b>, one database must
-            be specified.
+            The target database for the import. If **fileType** is
+            **SQL**, this field is required only if the import file does
+            not specify a database, and is overridden by any database
+            specification in the import file. If **fileType** is
+            **CSV**, one database must be specified.
         kind (str):
-            This is always <b>sql#importContext</b>.
+            This is always **sql#importContext**.
         file_type (google.cloud.sql_v1beta4.types.SqlFileType):
             The file type for the specified uri.
-            <br><b>SQL</b>: The file contains SQL
-            statements. <br><b>CSV</b>: The file contains
-            CSV data.
+
+            -  **SQL**: The file contains SQL statements.
+            -  **CSV**: The file contains CSV data.
+            -  **BAK**: The file contains backup data for a SQL Server
+               instance.
         csv_import_options (google.cloud.sql_v1beta4.types.ImportContext.SqlCsvImportOptions):
             Options for importing data as CSV.
         import_user (str):
@@ -1677,6 +1763,20 @@ class ImportContext(proto.Message):
                 The columns to which CSV data is imported. If
                 not specified, all columns of the database table
                 are loaded with CSV data.
+            escape_character (str):
+                Specifies the character that should appear
+                before a data character that needs to be
+                escaped.
+            quote_character (str):
+                Specifies the quoting character to be used
+                when a data value is quoted.
+            fields_terminated_by (str):
+                Specifies the character that separates
+                columns within each row (line) of the file.
+            lines_terminated_by (str):
+                This is used to separate lines. If a line
+                does not contain all fields, the rest of the
+                columns are set to their default values.
         """
 
         table = proto.Field(
@@ -1686,6 +1786,22 @@ class ImportContext(proto.Message):
         columns = proto.RepeatedField(
             proto.STRING,
             number=2,
+        )
+        escape_character = proto.Field(
+            proto.STRING,
+            number=4,
+        )
+        quote_character = proto.Field(
+            proto.STRING,
+            number=5,
+        )
+        fields_terminated_by = proto.Field(
+            proto.STRING,
+            number=6,
+        )
+        lines_terminated_by = proto.Field(
+            proto.STRING,
+            number=8,
         )
 
     class SqlBakImportOptions(proto.Message):
@@ -1701,17 +1817,14 @@ class ImportContext(proto.Message):
 
             Attributes:
                 cert_path (str):
-                    Path to the Certificate (.cer) in Cloud
-                    Storage, in the form
-                    <b>gs://bucketName/fileName</b>. The instance
-                    must have write permissions to the bucket and
-                    read access to the file.
+                    Path to the Certificate (.cer) in Cloud Storage, in the form
+                    **gs://bucketName/fileName**. The instance must have write
+                    permissions to the bucket and read access to the file.
                 pvk_path (str):
-                    Path to the Certificate Private Key (.pvk)
-                    in Cloud Storage, in the form
-                    <b>gs://bucketName/fileName</b>. The instance
-                    must have write permissions to the bucket and
-                    read access to the file.
+                    Path to the Certificate Private Key (.pvk) in Cloud Storage,
+                    in the form **gs://bucketName/fileName**. The instance must
+                    have write permissions to the bucket and read access to the
+                    file.
                 pvk_password (str):
                     Password that encrypts the private key
             """
@@ -1844,12 +1957,27 @@ class InstancesImportRequest(proto.Message):
     )
 
 
+class MySqlSyncConfig(proto.Message):
+    r"""MySQL-specific external server sync settings.
+
+    Attributes:
+        initial_sync_flags (Sequence[google.cloud.sql_v1beta4.types.SyncFlags]):
+            Flags to use for the initial dump.
+    """
+
+    initial_sync_flags = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message='SyncFlags',
+    )
+
+
 class InstancesListResponse(proto.Message):
     r"""Database instances list response.
 
     Attributes:
         kind (str):
-            This is always <b>sql#instancesList</b>.
+            This is always **sql#instancesList**.
         warnings (Sequence[google.cloud.sql_v1beta4.types.ApiWarning]):
             List of warnings that occurred while handling
             the request.
@@ -1896,8 +2024,7 @@ class InstancesListServerCasResponse(proto.Message):
         active_version (str):
 
         kind (str):
-            This is always
-            <b>sql#instancesListServerCas</b>.
+            This is always **sql#instancesListServerCas**.
     """
 
     certs = proto.RepeatedField(
@@ -1968,8 +2095,7 @@ class SqlInstancesVerifyExternalSyncSettingsResponse(proto.Message):
 
     Attributes:
         kind (str):
-            This is always
-            <b>sql#migrationSettingErrorList</b>.
+            This is always **sql#migrationSettingErrorList**.
         errors (Sequence[google.cloud.sql_v1beta4.types.SqlExternalSyncSettingError]):
             List of migration violations.
         warnings (Sequence[google.cloud.sql_v1beta4.types.SqlExternalSyncSettingError]):
@@ -1997,8 +2123,8 @@ class SqlExternalSyncSettingError(proto.Message):
 
     Attributes:
         kind (str):
-            Can be <b>sql#externalSyncSettingError</b> or
-            <b>sql#externalSyncSettingWarning</b>.
+            Can be **sql#externalSyncSettingError** or
+            **sql#externalSyncSettingWarning**.
         type_ (google.cloud.sql_v1beta4.types.SqlExternalSyncSettingError.SqlExternalSyncSettingErrorType):
             Identifies the specific error that occurred.
         detail (str):
@@ -2029,6 +2155,10 @@ class SqlExternalSyncSettingError(proto.Message):
         SQLSERVER_AGENT_NOT_RUNNING = 19
         UNSUPPORTED_TABLE_DEFINITION = 20
         UNSUPPORTED_DEFINER = 21
+        SQLSERVER_SERVERNAME_MISMATCH = 22
+        PRIMARY_ALREADY_SETUP = 23
+        UNSUPPORTED_BINLOG_FORMAT = 24
+        BINLOG_RETENTION_SETTING = 25
 
     kind = proto.Field(
         proto.STRING,
@@ -2053,20 +2183,27 @@ class IpConfiguration(proto.Message):
             Whether the instance is assigned a public IP
             address or not.
         private_network (str):
-            The resource link for the VPC network from
-            which the Cloud SQL instance is accessible for
-            private IP. For example,
-            <b>/projects/myProject/global/networks/default</b>.
-            This setting can be updated, but it cannot be
-            removed after it is set.
+            The resource link for the VPC network from which the Cloud
+            SQL instance is accessible for private IP. For example,
+            **/projects/myProject/global/networks/default**. This
+            setting can be updated, but it cannot be removed after it is
+            set.
         require_ssl (google.protobuf.wrappers_pb2.BoolValue):
             Whether SSL connections over IP are enforced
             or not.
         authorized_networks (Sequence[google.cloud.sql_v1beta4.types.AclEntry]):
-            The list of external networks that are
-            allowed to connect to the instance using the IP.
-            In 'CIDR' notation, also known as 'slash'
-            notation (for example: <b>192.168.100.0/24</b>).
+            The list of external networks that are allowed to connect to
+            the instance using the IP. In 'CIDR' notation, also known as
+            'slash' notation (for example: **157.197.200.0/24**).
+        allocated_ip_range (str):
+            The name of the allocated ip range for the private ip
+            CloudSQL instance. For example:
+            "google-managed-services-default". If set, the instance ip
+            will be created in the allocated range. The range name must
+            comply with `RFC
+            1035 <https://tools.ietf.org/html/rfc1035>`__. Specifically,
+            the name must be 1-63 characters long and match the regular
+            expression ``[a-z]([-a-z0-9]*[a-z0-9])?.``
     """
 
     ipv4_enabled = proto.Field(
@@ -2088,6 +2225,10 @@ class IpConfiguration(proto.Message):
         number=4,
         message='AclEntry',
     )
+    allocated_ip_range = proto.Field(
+        proto.STRING,
+        number=6,
+    )
 
 
 class IpMapping(proto.Message):
@@ -2095,22 +2236,19 @@ class IpMapping(proto.Message):
 
     Attributes:
         type_ (google.cloud.sql_v1beta4.types.SqlIpAddressType):
-            The type of this IP address. A <b>PRIMARY</b>
-            address is a public address that can accept
-            incoming connections. A <b>PRIVATE</b> address
-            is a private address that can accept incoming
-            connections. An <b>OUTGOING</b> address is the
-            source address of connections originating from
-            the instance, if supported.
+            The type of this IP address. A **PRIMARY** address is a
+            public address that can accept incoming connections. A
+            **PRIVATE** address is a private address that can accept
+            incoming connections. An **OUTGOING** address is the source
+            address of connections originating from the instance, if
+            supported.
         ip_address (str):
             The IP address assigned.
         time_to_retire (google.protobuf.timestamp_pb2.Timestamp):
-            The due time for this IP to be retired in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>. This field is
-            only available when the IP is scheduled to be
-            retired.
+            The due time for this IP to be retired in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**. This field is only
+            available when the IP is scheduled to be retired.
     """
 
     type_ = proto.Field(
@@ -2131,25 +2269,27 @@ class IpMapping(proto.Message):
 
 class LocationPreference(proto.Message):
     r"""Preferred location. This specifies where a Cloud SQL instance
-    is located, either in a specific Compute Engine zone, or co-
-    located with an App Engine application. Note that if the
-    preferred location is not available, the instance will be
-    located as close as possible within the region. Only one
-    location may be specified.
+    is located. Note that if the preferred location is not
+    available, the instance will be located as close as possible
+    within the region. Only one location may be specified.
 
     Attributes:
         follow_gae_application (str):
             The App Engine application to follow, it must
             be in the same region as the Cloud SQL instance.
+            WARNING: Changing this might restart the
+            instance.
         zone (str):
             The preferred Compute Engine zone (for
             example: us-central1-a, us-central1-b, etc.).
+            WARNING: Changing this might restart the
+            instance.
         secondary_zone (str):
             The preferred Compute Engine zone for the
             secondary/failover (for example: us-central1-a,
             us-central1-b, etc.). Reserved for future use.
         kind (str):
-            This is always <b>sql#locationPreference</b>.
+            This is always **sql#locationPreference**.
     """
 
     follow_gae_application = proto.Field(
@@ -2180,10 +2320,11 @@ class MaintenanceWindow(proto.Message):
         day (google.protobuf.wrappers_pb2.Int32Value):
             day of week (1-7), starting on Monday.
         update_track (google.cloud.sql_v1beta4.types.SqlUpdateTrack):
-            Maintenance timing setting: canary (Earlier) or stable
-            (Later). Learn more.
+            Maintenance timing setting: **canary** (Earlier) or
+            **stable** (Later). `Learn
+            more <https://cloud.google.com/sql/docs/mysql/instance-settings#maintenance-timing-2ndgen>`__.
         kind (str):
-            This is always <b>sql#maintenanceWindow</b>.
+            This is always **sql#maintenanceWindow**.
     """
 
     hour = proto.Field(
@@ -2267,9 +2408,9 @@ class InsightsConfig(proto.Message):
             length will be the default value. Changing query
             length will restart the database.
         query_plans_per_minute (google.protobuf.wrappers_pb2.Int32Value):
-            Number of query plans generated by Insights
-            per minute. Default is 5. Changing this will
-            restart the database.
+            Number of query execution plans captured by
+            Insights per minute for all queries combined.
+            Default is 5.
     """
 
     query_insights_enabled = proto.Field(
@@ -2337,8 +2478,7 @@ class MySqlReplicaConfiguration(proto.Message):
             instance's Common Name value in the certificate
             that it sends during the SSL handshake.
         kind (str):
-            This is always
-            <b>sql#mysqlReplicaConfiguration</b>.
+            This is always **sql#mysqlReplicaConfiguration**.
     """
 
     dump_file_path = proto.Field(
@@ -2398,8 +2538,7 @@ class OnPremisesConfiguration(proto.Message):
             The host and port of the on-premises instance
             in host:port format
         kind (str):
-            This is always
-            <b>sql#onPremisesConfiguration</b>.
+            This is always **sql#onPremisesConfiguration**.
         username (str):
             The username for connecting to on-premises
             instance.
@@ -2419,6 +2558,9 @@ class OnPremisesConfiguration(proto.Message):
         dump_file_path (str):
             The dump file to create the Cloud SQL
             replica.
+        source_instance (google.cloud.sql_v1beta4.types.InstanceReference):
+            The reference to Cloud SQL instance if the
+            source is Cloud SQL.
     """
 
     host_port = proto.Field(
@@ -2453,6 +2595,11 @@ class OnPremisesConfiguration(proto.Message):
         proto.STRING,
         number=8,
     )
+    source_instance = proto.Field(
+        proto.MESSAGE,
+        number=15,
+        message='InstanceReference',
+    )
 
 
 class DiskEncryptionConfiguration(proto.Message):
@@ -2462,8 +2609,7 @@ class DiskEncryptionConfiguration(proto.Message):
         kms_key_name (str):
             Resource name of KMS key for disk encryption
         kind (str):
-            This is always
-            <b>sql#diskEncryptionConfiguration</b>.
+            This is always **sql#diskEncryptionConfiguration**.
     """
 
     kms_key_name = proto.Field(
@@ -2484,8 +2630,7 @@ class DiskEncryptionStatus(proto.Message):
             KMS key version used to encrypt the Cloud SQL
             instance resource
         kind (str):
-            This is always
-            <b>sql#diskEncryptionStatus</b>.
+            This is always **sql#diskEncryptionStatus**.
     """
 
     kms_key_version_name = proto.Field(
@@ -2505,40 +2650,44 @@ class Operation(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#operation</b>.
+            This is always **sql#operation**.
         target_link (str):
 
         status (google.cloud.sql_v1beta4.types.Operation.SqlOperationStatus):
-            The status of an operation. Valid values are: PENDING
-            RUNNING DONE SQL_OPERATION_STATUS_UNSPECIFIED
+            The status of an operation.
         user (str):
             The email address of the user who initiated
             this operation.
         insert_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time this operation was enqueued in UTC
-            timezone in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time this operation was enqueued in UTC timezone in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         start_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time this operation actually started in
-            UTC timezone in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time this operation actually started in UTC timezone in
+            `RFC 3339 <https://tools.ietf.org/html/rfc3339>`__ format,
+            for example **2012-11-15T16:19:00.094Z**.
         end_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time this operation finished in UTC
-            timezone in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time this operation finished in UTC timezone in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         error (google.cloud.sql_v1beta4.types.OperationErrors):
             If errors occurred during processing of this
             operation, this field will be populated.
         operation_type (google.cloud.sql_v1beta4.types.Operation.SqlOperationType):
-            The type of the operation. Valid values are: CREATE DELETE
-            UPDATE RESTART IMPORT EXPORT BACKUP_VOLUME RESTORE_VOLUME
-            CREATE_USER DELETE_USER CREATE_DATABASE DELETE_DATABASE
+            The type of the operation. Valid values are:
+
+            -  **CREATE**
+            -  **DELETE**
+            -  **UPDATE**
+            -  **RESTART**
+            -  **IMPORT**
+            -  **EXPORT**
+            -  **BACKUP_VOLUME**
+            -  **RESTORE_VOLUME**
+            -  **CREATE_USER**
+            -  **DELETE_USER**
+            -  **CREATE_DATABASE**
+            -  **DELETE_DATABASE**
         import_context (google.cloud.sql_v1beta4.types.ImportContext):
             The context for import operation, if
             applicable.
@@ -2687,7 +2836,7 @@ class OperationError(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#operationError</b>.
+            This is always **sql#operationError**.
         code (str):
             Identifies the specific error that occurred.
         message (str):
@@ -2714,7 +2863,7 @@ class OperationErrors(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#operationErrors</b>.
+            This is always **sql#operationErrors**.
         errors (Sequence[google.cloud.sql_v1beta4.types.OperationError]):
             The list of errors encountered while
             processing this operation.
@@ -2731,12 +2880,62 @@ class OperationErrors(proto.Message):
     )
 
 
+class PasswordValidationPolicy(proto.Message):
+    r"""Database instance local user password validation policy
+
+    Attributes:
+        min_length (google.protobuf.wrappers_pb2.Int32Value):
+            Minimum number of characters allowed.
+        complexity (google.cloud.sql_v1beta4.types.PasswordValidationPolicy.Complexity):
+            The complexity of the password.
+        reuse_interval (google.protobuf.wrappers_pb2.Int32Value):
+            Number of previous passwords that cannot be
+            reused.
+        disallow_username_substring (google.protobuf.wrappers_pb2.BoolValue):
+            Disallow username as a part of the password.
+        password_change_interval (google.protobuf.duration_pb2.Duration):
+            Minimum interval after which the password can
+            be changed. This flag is only supported for
+            PostgresSQL.
+    """
+    class Complexity(proto.Enum):
+        r"""The complexity choices of the password."""
+        COMPLEXITY_UNSPECIFIED = 0
+        COMPLEXITY_DEFAULT = 1
+
+    min_length = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message=wrappers_pb2.Int32Value,
+    )
+    complexity = proto.Field(
+        proto.ENUM,
+        number=2,
+        enum=Complexity,
+    )
+    reuse_interval = proto.Field(
+        proto.MESSAGE,
+        number=3,
+        message=wrappers_pb2.Int32Value,
+    )
+    disallow_username_substring = proto.Field(
+        proto.MESSAGE,
+        number=4,
+        message=wrappers_pb2.BoolValue,
+    )
+    password_change_interval = proto.Field(
+        proto.MESSAGE,
+        number=5,
+        message=duration_pb2.Duration,
+    )
+
+
 class OperationsListResponse(proto.Message):
-    r"""Database instance list operations response.
+    r"""Operations list response.
 
     Attributes:
         kind (str):
-            This is always <b>sql#operationsList</b>.
+            This is always **sql#operationsList**.
         items (Sequence[google.cloud.sql_v1beta4.types.Operation]):
             List of operation resources.
         next_page_token (str):
@@ -2771,28 +2970,23 @@ class ReplicaConfiguration(proto.Message):
 
     Attributes:
         kind (str):
-            This is always
-            <b>sql#replicaConfiguration</b>.
+            This is always **sql#replicaConfiguration**.
         mysql_replica_configuration (google.cloud.sql_v1beta4.types.MySqlReplicaConfiguration):
-            MySQL specific configuration when replicating
-            from a MySQL on-premises primary instance.
-            Replication configuration information such as
-            the username, password, certificates, and keys
-            are not stored in the instance metadata. The
-            configuration information is used only to set up
-            the replication connection and is stored by
-            MySQL in a file named <b>master.info</b> in the
-            data directory.
+            MySQL specific configuration when replicating from a MySQL
+            on-premises primary instance. Replication configuration
+            information such as the username, password, certificates,
+            and keys are not stored in the instance metadata. The
+            configuration information is used only to set up the
+            replication connection and is stored by MySQL in a file
+            named **master.info** in the data directory.
         failover_target (google.protobuf.wrappers_pb2.BoolValue):
-            Specifies if the replica is the failover
-            target. If the field is set to <b>true</b> the
-            replica will be designated as a failover
-            replica. In case the primary instance fails, the
-            replica instance will be promoted as the new
-            primary instance.  <p>Only one replica can be
-            specified as failover target, and the replica
-            has to be in different zone with the primary
-            instance.
+            Specifies if the replica is the failover target. If the
+            field is set to **true** the replica will be designated as a
+            failover replica. In case the primary instance fails, the
+            replica instance will be promoted as the new primary
+            instance. Only one replica can be specified as failover
+            target, and the replica has to be in different zone with the
+            primary instance.
     """
 
     kind = proto.Field(
@@ -2817,8 +3011,7 @@ class RestoreBackupContext(proto.Message):
 
     Attributes:
         kind (str):
-            This is always
-            <b>sql#restoreBackupContext</b>.
+            This is always **sql#restoreBackupContext**.
         backup_run_id (int):
             The ID of the backup run to restore from.
         instance_id (str):
@@ -2851,8 +3044,7 @@ class RotateServerCaContext(proto.Message):
 
     Attributes:
         kind (str):
-            This is always
-            <b>sql#rotateServerCaContext</b>.
+            This is always **sql#rotateServerCaContext**.
         next_version (str):
             The fingerprint of the next version to be
             rotated to. If left unspecified, will be rotated
@@ -2885,49 +3077,48 @@ class Settings(proto.Message):
             instance. (Deprecated) Applied to First
             Generation instances only.
         tier (str):
-            The tier (or machine type) for this instance,
-            for example <b>db-custom-1-3840</b>.
+            The tier (or machine type) for this instance, for example
+            **db-custom-1-3840**. WARNING: Changing this restarts the
+            instance.
         kind (str):
-            This is always <b>sql#settings</b>.
+            This is always **sql#settings**.
         user_labels (Sequence[google.cloud.sql_v1beta4.types.Settings.UserLabelsEntry]):
             User-provided labels, represented as a
             dictionary where each label is a single key
             value pair.
         availability_type (google.cloud.sql_v1beta4.types.SqlAvailabilityType):
             Availability type. Potential values:
-            <br><b>ZONAL</b>: The instance serves data from
-            only one zone. Outages in that zone affect data
-            accessibility.   <br><b>REGIONAL</b>: The
-            instance can serve data from more than one zone
-            in a region
-            (it is highly available). <br>For more
-            information, see <a
-            href="/sql/docs/postgres/high-availability">
-            Overview of the High Availability
-            Configuration</a>.
+
+            -  **ZONAL**: The instance serves data from only one zone.
+               Outages in that zone affect data accessibility.
+            -  **REGIONAL**: The instance can serve data from more than
+               one zone in a region (it is highly available)./
+
+            For more information, see `Overview of the High Availability
+            Configuration <https://cloud.google.com/sql/docs/mysql/high-availability>`__.
         pricing_plan (google.cloud.sql_v1beta4.types.SqlPricingPlan):
             The pricing plan for this instance. This can be either
-            PER_USE or PACKAGE. Only PER_USE is supported for Second
-            Generation instances.
+            **PER_USE** or **PACKAGE**. Only **PER_USE** is supported
+            for Second Generation instances.
         replication_type (google.cloud.sql_v1beta4.types.SqlReplicationType):
             The type of replication this instance uses. This can be
-            either ASYNCHRONOUS or SYNCHRONOUS. (Deprecated\_ This
-            property was only applicable to First Generation instances.
+            either **ASYNCHRONOUS** or **SYNCHRONOUS**. (Deprecated)
+            This property was only applicable to First Generation
+            instances.
         storage_auto_resize_limit (google.protobuf.wrappers_pb2.Int64Value):
             The maximum size to which storage capacity
             can be automatically increased. The default
             value is 0, which specifies that there is no
             limit.
         activation_policy (google.cloud.sql_v1beta4.types.Settings.SqlActivationPolicy):
-            The activation policy specifies when the
-            instance is activated; it is applicable only
-            when the instance state is RUNNABLE. Valid
-            values:   <br><b>ALWAYS</b>: The instance is on,
-            and remains so even in the absence of connection
-            requests.
-              <br><b>NEVER</b>: The instance is off; it is
-            not activated, even if a   connection request
-            arrives.
+            The activation policy specifies when the instance is
+            activated; it is applicable only when the instance state is
+            RUNNABLE. Valid values:
+
+            -  **ALWAYS**: The instance is on, and remains so even in
+               the absence of connection requests.
+            -  **NEVER**: The instance is off; it is not activated, even
+               if a connection request arrives.
         ip_configuration (google.cloud.sql_v1beta4.types.IpConfiguration):
             The settings for IP Management. This allows
             to enable or disable the instance IP and manage
@@ -2948,8 +3139,8 @@ class Settings(proto.Message):
             The database flags passed to the instance at
             startup.
         data_disk_type (google.cloud.sql_v1beta4.types.SqlDataDiskType):
-            The type of data disk: PD_SSD (default) or PD_HDD. Not used
-            for First Generation instances.
+            The type of data disk: **PD_SSD** (default) or **PD_HDD**.
+            Not used for First Generation instances.
         maintenance_window (google.cloud.sql_v1beta4.types.MaintenanceWindow):
             The maintenance window for this instance.
             This specifies when the instance can be
@@ -2960,7 +3151,8 @@ class Settings(proto.Message):
         database_replication_enabled (google.protobuf.wrappers_pb2.BoolValue):
             Configuration specific to read replica
             instances. Indicates whether replication is
-            enabled or not.
+            enabled or not. WARNING: Changing this restarts
+            the instance.
         crash_safe_replication_enabled (google.protobuf.wrappers_pb2.BoolValue):
             Configuration specific to read replica
             instances. Indicates whether database flags for
@@ -2980,6 +3172,11 @@ class Settings(proto.Message):
         insights_config (google.cloud.sql_v1beta4.types.InsightsConfig):
             Insights configuration, for now relevant only
             for Postgres.
+        password_validation_policy (google.cloud.sql_v1beta4.types.PasswordValidationPolicy):
+            The local user password validation policy of
+            the instance.
+        sql_server_audit_config (google.cloud.sql_v1beta4.types.SqlServerAuditConfig):
+            SQL Server specific audit configuration.
     """
     class SqlActivationPolicy(proto.Enum):
         r"""Specifies when the instance is activated."""
@@ -3104,6 +3301,16 @@ class Settings(proto.Message):
         number=25,
         message='InsightsConfig',
     )
+    password_validation_policy = proto.Field(
+        proto.MESSAGE,
+        number=27,
+        message='PasswordValidationPolicy',
+    )
+    sql_server_audit_config = proto.Field(
+        proto.MESSAGE,
+        number=29,
+        message='SqlServerAuditConfig',
+    )
 
 
 class SslCert(proto.Message):
@@ -3111,25 +3318,22 @@ class SslCert(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#sslCert</b>.
+            This is always **sql#sslCert**.
         cert_serial_number (str):
             Serial number, as extracted from the
             certificate.
         cert (str):
             PEM representation.
         create_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time when the certificate was created in
-            <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>
+            The time when the certificate was created in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         common_name (str):
             User supplied name. Constrained to [a-zA-Z.-\_ ]+.
         expiration_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time when the certificate expires in <a
-            href="https://tools.ietf.org/html/rfc3339">RFC
-            3339</a> format, for example
-            <b>2012-11-15T16:19:00.094Z</b>.
+            The time when the certificate expires in `RFC
+            3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+            example **2012-11-15T16:19:00.094Z**.
         sha1_fingerprint (str):
             Sha1 Fingerprint.
         instance (str):
@@ -3261,8 +3465,9 @@ class SqlInstancesRescheduleMaintenanceRequestBody(proto.Message):
                 Required. The type of the reschedule.
             schedule_time (google.protobuf.timestamp_pb2.Timestamp):
                 Optional. Timestamp when the maintenance shall be
-                rescheduled to if reschedule_type=SPECIFIC_TIME, in RFC 3339
-                format, for example 2012-11-15T16:19:00.094Z.
+                rescheduled to if reschedule_type=SPECIFIC_TIME, in `RFC
+                3339 <https://tools.ietf.org/html/rfc3339>`__ format, for
+                example **2012-11-15T16:19:00.094Z**.
         """
 
         reschedule_type = proto.Field(
@@ -3288,7 +3493,7 @@ class SslCertsInsertResponse(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#sslCertsInsert</b>.
+            This is always **sql#sslCertsInsert**.
         operation (google.cloud.sql_v1beta4.types.Operation):
             The operation to track the ssl certs insert
             request.
@@ -3327,7 +3532,7 @@ class SslCertsListResponse(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#sslCertsList</b>.
+            This is always **sql#sslCertsList**.
         items (Sequence[google.cloud.sql_v1beta4.types.SslCert]):
             List of client certificates for the instance.
     """
@@ -3348,10 +3553,10 @@ class TruncateLogContext(proto.Message):
 
     Attributes:
         kind (str):
-            This is always <b>sql#truncateLogContext</b>.
+            This is always **sql#truncateLogContext**.
         log_type (str):
             The type of log to truncate. Valid values are
-            MYSQL_GENERAL_TABLE and MYSQL_SLOW_TABLE.
+            **MYSQL_GENERAL_TABLE** and **MYSQL_SLOW_TABLE**.
     """
 
     kind = proto.Field(
@@ -3380,6 +3585,27 @@ class SqlActiveDirectoryConfig(proto.Message):
         number=1,
     )
     domain = proto.Field(
+        proto.STRING,
+        number=2,
+    )
+
+
+class SqlServerAuditConfig(proto.Message):
+    r"""SQL Server specific audit configuration.
+
+    Attributes:
+        kind (str):
+            This is always sql#sqlServerAuditConfig
+        bucket (str):
+            The name of the destination bucket (e.g.,
+            gs://mybucket).
+    """
+
+    kind = proto.Field(
+        proto.STRING,
+        number=1,
+    )
+    bucket = proto.Field(
         proto.STRING,
         number=2,
     )

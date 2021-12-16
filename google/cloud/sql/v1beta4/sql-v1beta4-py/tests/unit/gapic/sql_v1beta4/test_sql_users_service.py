@@ -37,6 +37,7 @@ from google.cloud.sql_v1beta4.services.sql_users_service import transports
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
 from google.cloud.sql_v1beta4.types import cloud_sql_users
 from google.oauth2 import service_account
+from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 import google.auth
 

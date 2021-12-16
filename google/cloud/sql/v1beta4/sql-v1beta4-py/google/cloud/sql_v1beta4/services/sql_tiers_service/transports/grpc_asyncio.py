@@ -229,9 +229,9 @@ class SqlTiersServiceGrpcAsyncIOTransport(SqlTiersServiceTransport):
             Awaitable[cloud_sql_tiers.TiersListResponse]]:
         r"""Return a callable for the list method over gRPC.
 
-        Lists all available machine types (tiers) for Cloud
-        SQL, for example, db-custom-1-3840. For related
-        information, see <a href="/sql/pricing">Pricing</a>.
+        Lists all available machine types (tiers) for Cloud SQL, for
+        example, db-custom-1-3840. For related information, see
+        `Pricing </sql/pricing>`__.
 
         Returns:
             Callable[[~.SqlTiersListRequest],

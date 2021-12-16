@@ -225,7 +225,7 @@ class SqlFlagsServiceGrpcTransport(SqlFlagsServiceTransport):
             cloud_sql_resources.FlagsListResponse]:
         r"""Return a callable for the list method over gRPC.
 
-        List all available database flags for Cloud SQL
+        Lists all available database flags for Cloud SQL
         instances.
 
         Returns:

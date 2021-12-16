@@ -4,6 +4,7 @@ Services for Google Cloud Sql v1beta4 API
     :maxdepth: 2
 
     sql_backup_runs_service
+    sql_connect_service
     sql_databases_service
     sql_flags_service
     sql_instances_service

@@ -2,6 +2,7 @@
 # source: google/cloud/sql/v1beta4/cloud_sql_resources.proto
 
 require 'google/api/field_behavior_pb'
+require 'google/protobuf/duration_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/protobuf/wrappers_pb'
 require 'google/protobuf'
@@ -102,6 +103,15 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :name, :string, 1
       optional :value, :string, 2
     end
+    add_message "google.cloud.sql.v1beta4.SyncFlags" do
+      optional :name, :string, 1
+      optional :value, :string, 2
+    end
+    add_message "google.cloud.sql.v1beta4.InstanceReference" do
+      optional :name, :string, 1
+      optional :region, :string, 2
+      optional :project, :string, 3
+    end
     add_message "google.cloud.sql.v1beta4.DatabaseInstance" do
       optional :kind, :string, 1
       optional :state, :enum, 2, "google.cloud.sql.v1beta4.DatabaseInstance.SqlInstanceState"
@@ -134,7 +144,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :root_password, :string, 29
       optional :scheduled_maintenance, :message, 30, "google.cloud.sql.v1beta4.DatabaseInstance.SqlScheduledMaintenance"
       optional :satisfies_pzs, :message, 35, "google.protobuf.BoolValue"
+      optional :database_installed_version, :string, 40
       proto3_optional :out_of_disk_report, :message, 38, "google.cloud.sql.v1beta4.DatabaseInstance.SqlOutOfDiskReport"
+      optional :create_time, :message, 39, "google.protobuf.Timestamp"
     end
     add_message "google.cloud.sql.v1beta4.DatabaseInstance.SqlFailoverReplica" do
       optional :name, :string, 1
@@ -144,6 +156,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :start_time, :message, 1, "google.protobuf.Timestamp"
       optional :can_defer, :bool, 2
       optional :can_reschedule, :bool, 3
+      proto3_optional :schedule_deadline_time, :message, 4, "google.protobuf.Timestamp"
     end
     add_message "google.cloud.sql.v1beta4.DatabaseInstance.SqlOutOfDiskReport" do
       proto3_optional :sql_out_of_disk_state, :enum, 1, "google.cloud.sql.v1beta4.DatabaseInstance.SqlOutOfDiskReport.SqlOutOfDiskState"
@@ -162,6 +175,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :PENDING_CREATE, 4
       value :MAINTENANCE, 5
       value :FAILED, 6
+      value :ONLINE_MAINTENANCE, 7
     end
     add_message "google.cloud.sql.v1beta4.DatabasesListResponse" do
       optional :kind, :string, 1
@@ -176,6 +190,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :verify_gtid_consistency, :message, 2, "google.protobuf.BoolValue"
       optional :master_instance_name, :string, 3
       optional :replica_configuration, :message, 4, "google.cloud.sql.v1beta4.DemoteMasterConfiguration"
+      optional :skip_replication_setup, :bool, 5
     end
     add_message "google.cloud.sql.v1beta4.DemoteMasterMySqlReplicaConfiguration" do
       optional :kind, :string, 1
@@ -196,6 +211,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.sql.v1beta4.ExportContext.SqlCsvExportOptions" do
       optional :select_query, :string, 1
+      optional :escape_character, :string, 2
+      optional :quote_character, :string, 3
+      optional :fields_terminated_by, :string, 4
+      optional :lines_terminated_by, :string, 6
     end
     add_message "google.cloud.sql.v1beta4.ExportContext.SqlExportOptions" do
       repeated :tables, :string, 1
@@ -237,6 +256,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.sql.v1beta4.ImportContext.SqlCsvImportOptions" do
       optional :table, :string, 1
       repeated :columns, :string, 2
+      optional :escape_character, :string, 4
+      optional :quote_character, :string, 5
+      optional :fields_terminated_by, :string, 6
+      optional :lines_terminated_by, :string, 8
     end
     add_message "google.cloud.sql.v1beta4.ImportContext.SqlBakImportOptions" do
       optional :encryption_options, :message, 1, "google.cloud.sql.v1beta4.ImportContext.SqlBakImportOptions.EncryptionOptions"
@@ -260,6 +283,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     end
     add_message "google.cloud.sql.v1beta4.InstancesImportRequest" do
       optional :import_context, :message, 1, "google.cloud.sql.v1beta4.ImportContext"
+    end
+    add_message "google.cloud.sql.v1beta4.MySqlSyncConfig" do
+      repeated :initial_sync_flags, :message, 1, "google.cloud.sql.v1beta4.SyncFlags"
     end
     add_message "google.cloud.sql.v1beta4.InstancesListResponse" do
       optional :kind, :string, 1
@@ -314,12 +340,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :SQLSERVER_AGENT_NOT_RUNNING, 19
       value :UNSUPPORTED_TABLE_DEFINITION, 20
       value :UNSUPPORTED_DEFINER, 21
+      value :SQLSERVER_SERVERNAME_MISMATCH, 22
+      value :PRIMARY_ALREADY_SETUP, 23
+      value :UNSUPPORTED_BINLOG_FORMAT, 24
+      value :BINLOG_RETENTION_SETTING, 25
     end
     add_message "google.cloud.sql.v1beta4.IpConfiguration" do
       optional :ipv4_enabled, :message, 1, "google.protobuf.BoolValue"
       optional :private_network, :string, 2
       optional :require_ssl, :message, 3, "google.protobuf.BoolValue"
       repeated :authorized_networks, :message, 4, "google.cloud.sql.v1beta4.AclEntry"
+      optional :allocated_ip_range, :string, 6
     end
     add_message "google.cloud.sql.v1beta4.IpMapping" do
       optional :type, :enum, 1, "google.cloud.sql.v1beta4.SqlIpAddressType"
@@ -372,6 +403,7 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :client_certificate, :string, 6
       optional :client_key, :string, 7
       optional :dump_file_path, :string, 8
+      optional :source_instance, :message, 15, "google.cloud.sql.v1beta4.InstanceReference"
     end
     add_message "google.cloud.sql.v1beta4.DiskEncryptionConfiguration" do
       optional :kms_key_name, :string, 1
@@ -451,6 +483,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :kind, :string, 1
       repeated :errors, :message, 2, "google.cloud.sql.v1beta4.OperationError"
     end
+    add_message "google.cloud.sql.v1beta4.PasswordValidationPolicy" do
+      optional :min_length, :message, 1, "google.protobuf.Int32Value"
+      optional :complexity, :enum, 2, "google.cloud.sql.v1beta4.PasswordValidationPolicy.Complexity"
+      optional :reuse_interval, :message, 3, "google.protobuf.Int32Value"
+      optional :disallow_username_substring, :message, 4, "google.protobuf.BoolValue"
+      optional :password_change_interval, :message, 5, "google.protobuf.Duration"
+    end
+    add_enum "google.cloud.sql.v1beta4.PasswordValidationPolicy.Complexity" do
+      value :COMPLEXITY_UNSPECIFIED, 0
+      value :COMPLEXITY_DEFAULT, 1
+    end
     add_message "google.cloud.sql.v1beta4.OperationsListResponse" do
       optional :kind, :string, 1
       repeated :items, :message, 2, "google.cloud.sql.v1beta4.Operation"
@@ -496,6 +539,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :collation, :string, 23
       repeated :deny_maintenance_periods, :message, 24, "google.cloud.sql.v1beta4.DenyMaintenancePeriod"
       optional :insights_config, :message, 25, "google.cloud.sql.v1beta4.InsightsConfig"
+      optional :password_validation_policy, :message, 27, "google.cloud.sql.v1beta4.PasswordValidationPolicy"
+      optional :sql_server_audit_config, :message, 29, "google.cloud.sql.v1beta4.SqlServerAuditConfig"
     end
     add_enum "google.cloud.sql.v1beta4.Settings.SqlActivationPolicy" do
       value :SQL_ACTIVATION_POLICY_UNSPECIFIED, 0
@@ -555,6 +600,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "google.cloud.sql.v1beta4.SqlActiveDirectoryConfig" do
       optional :kind, :string, 1
       optional :domain, :string, 2
+    end
+    add_message "google.cloud.sql.v1beta4.SqlServerAuditConfig" do
+      optional :kind, :string, 1
+      optional :bucket, :string, 2
     end
     add_enum "google.cloud.sql.v1beta4.SqlFileType" do
       value :SQL_FILE_TYPE_UNSPECIFIED, 0
@@ -618,7 +667,14 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       value :POSTGRES_10, 18
       value :POSTGRES_12, 19
       value :MYSQL_8_0, 20
+      value :MYSQL_8_0_18, 41
+      value :MYSQL_8_0_26, 85
       value :POSTGRES_13, 23
+      value :POSTGRES_14, 110
+      value :SQLSERVER_2019_STANDARD, 26
+      value :SQLSERVER_2019_ENTERPRISE, 27
+      value :SQLSERVER_2019_EXPRESS, 28
+      value :SQLSERVER_2019_WEB, 29
     end
     add_enum "google.cloud.sql.v1beta4.SqlSuspensionReason" do
       value :SQL_SUSPENSION_REASON_UNSPECIFIED, 0
@@ -684,6 +740,8 @@ module Google
         Database = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.Database").msgclass
         SqlServerDatabaseDetails = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlServerDatabaseDetails").msgclass
         DatabaseFlags = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.DatabaseFlags").msgclass
+        SyncFlags = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SyncFlags").msgclass
+        InstanceReference = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstanceReference").msgclass
         DatabaseInstance = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.DatabaseInstance").msgclass
         DatabaseInstance::SqlFailoverReplica = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.DatabaseInstance.SqlFailoverReplica").msgclass
         DatabaseInstance::SqlScheduledMaintenance = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.DatabaseInstance.SqlScheduledMaintenance").msgclass
@@ -710,6 +768,7 @@ module Google
         InstancesExportRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstancesExportRequest").msgclass
         InstancesFailoverRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstancesFailoverRequest").msgclass
         InstancesImportRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstancesImportRequest").msgclass
+        MySqlSyncConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.MySqlSyncConfig").msgclass
         InstancesListResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstancesListResponse").msgclass
         InstancesListServerCasResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstancesListServerCasResponse").msgclass
         InstancesRestoreBackupRequest = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.InstancesRestoreBackupRequest").msgclass
@@ -733,6 +792,8 @@ module Google
         Operation::SqlOperationStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.Operation.SqlOperationStatus").enummodule
         OperationError = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.OperationError").msgclass
         OperationErrors = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.OperationErrors").msgclass
+        PasswordValidationPolicy = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.PasswordValidationPolicy").msgclass
+        PasswordValidationPolicy::Complexity = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.PasswordValidationPolicy.Complexity").enummodule
         OperationsListResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.OperationsListResponse").msgclass
         ReplicaConfiguration = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.ReplicaConfiguration").msgclass
         RestoreBackupContext = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.RestoreBackupContext").msgclass
@@ -750,6 +811,7 @@ module Google
         SslCertsListResponse = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SslCertsListResponse").msgclass
         TruncateLogContext = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.TruncateLogContext").msgclass
         SqlActiveDirectoryConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlActiveDirectoryConfig").msgclass
+        SqlServerAuditConfig = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlServerAuditConfig").msgclass
         SqlFileType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlFileType").enummodule
         SqlBackupRunStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlBackupRunStatus").enummodule
         SqlBackupRunType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("google.cloud.sql.v1beta4.SqlBackupRunType").enummodule

@@ -274,7 +274,7 @@ export class SqlFlagsServiceClient {
   // -- Service calls --
   // -------------------
 /**
- * List all available database flags for Cloud SQL instances.
+ * Lists all available database flags for Cloud SQL instances.
  *
  * @param {Object} request
  *   The request object that will be sent.

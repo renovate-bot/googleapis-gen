@@ -596,9 +596,14 @@ class SqlInstancesServiceClient(metaclass=SqlInstancesServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
-        r"""Failover the instance to its failover replica
-        instance. Using this operation might cause your instance
-        to restart.
+        r"""Initiates a manual failover of a high availability (HA) primary
+        instance to a standby instance, which becomes the primary
+        instance. Users are then rerouted to the new primary. For more
+        information, see the `Overview of high
+        availability <https://cloud.google.com/sql/docs/mysql/high-availability>`__
+        page in the Cloud SQL documentation. If using Legacy HA (MySQL
+        only), this causes the instance to failover to its failover
+        replica instance.
 
         Args:
             request (Union[google.cloud.sql_v1beta4.types.SqlInstancesFailoverRequest, dict]):

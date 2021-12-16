@@ -38,6 +38,7 @@ from google.cloud.sql_v1beta4.services.sql_instances_service import transports
 from google.cloud.sql_v1beta4.types import cloud_sql
 from google.cloud.sql_v1beta4.types import cloud_sql_resources
 from google.oauth2 import service_account
+from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
 import google.auth
@@ -1131,6 +1132,7 @@ def test_get(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesGetRequ
             gce_zone='gce_zone_value',
             secondary_gce_zone='secondary_gce_zone_value',
             root_password='root_password_value',
+            database_installed_version='database_installed_version_value',
         )
         response = client.get(request)
 
@@ -1160,6 +1162,7 @@ def test_get(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesGetRequ
     assert response.gce_zone == 'gce_zone_value'
     assert response.secondary_gce_zone == 'secondary_gce_zone_value'
     assert response.root_password == 'root_password_value'
+    assert response.database_installed_version == 'database_installed_version_value'
 
 
 def test_get_from_dict():
@@ -1220,6 +1223,7 @@ async def test_get_async(transport: str = 'grpc_asyncio', request_type=cloud_sql
             gce_zone='gce_zone_value',
             secondary_gce_zone='secondary_gce_zone_value',
             root_password='root_password_value',
+            database_installed_version='database_installed_version_value',
         ))
         response = await client.get(request)
 
@@ -1249,6 +1253,7 @@ async def test_get_async(transport: str = 'grpc_asyncio', request_type=cloud_sql
     assert response.gce_zone == 'gce_zone_value'
     assert response.secondary_gce_zone == 'secondary_gce_zone_value'
     assert response.root_password == 'root_password_value'
+    assert response.database_installed_version == 'database_installed_version_value'
 
 
 @pytest.mark.asyncio

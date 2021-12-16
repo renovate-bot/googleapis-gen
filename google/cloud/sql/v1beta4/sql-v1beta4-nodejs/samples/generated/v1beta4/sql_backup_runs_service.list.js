@@ -21,7 +21,8 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  Cloud SQL instance ID. This does not include the project ID.
+   *  Cloud SQL instance ID, or "-" for all instances. This does not include
+   *  the project ID.
    */
   // const instance = 'abc123'
   /**

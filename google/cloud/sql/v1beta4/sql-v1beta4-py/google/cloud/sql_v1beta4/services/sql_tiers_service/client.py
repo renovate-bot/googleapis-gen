@@ -333,9 +333,9 @@ class SqlTiersServiceClient(metaclass=SqlTiersServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_tiers.TiersListResponse:
-        r"""Lists all available machine types (tiers) for Cloud
-        SQL, for example, db-custom-1-3840. For related
-        information, see <a href="/sql/pricing">Pricing</a>.
+        r"""Lists all available machine types (tiers) for Cloud SQL, for
+        example, db-custom-1-3840. For related information, see
+        `Pricing </sql/pricing>`__.
 
         Args:
             request (Union[google.cloud.sql_v1beta4.types.SqlTiersListRequest, dict]):

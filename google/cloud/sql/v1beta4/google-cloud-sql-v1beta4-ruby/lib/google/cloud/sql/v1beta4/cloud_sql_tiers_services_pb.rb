@@ -36,8 +36,7 @@ module Google
             self.service_name = 'google.cloud.sql.v1beta4.SqlTiersService'
 
             # Lists all available machine types (tiers) for Cloud SQL, for example,
-            # db-custom-1-3840. For related information, see <a
-            # href="/sql/pricing">Pricing</a>.
+            # db-custom-1-3840. For related information, see [Pricing](/sql/pricing).
             rpc :List, ::Google::Cloud::Sql::V1beta4::SqlTiersListRequest, ::Google::Cloud::Sql::V1beta4::TiersListResponse
           end
 

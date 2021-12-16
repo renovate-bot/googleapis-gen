@@ -27,15 +27,15 @@ module Google
         #     The allowlisted value for the access control list.
         # @!attribute [rw] expiration_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time when this access control entry expires in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time when this access control entry expires in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] name
         #   @return [::String]
         #     Optional. A label to identify this entry.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#aclEntry</b>.
+        #     This is always **sql#aclEntry**.
         class AclEntry
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -93,13 +93,13 @@ module Google
         # @!attribute [rw] start_time
         #   @return [::String]
         #     Start time for the daily backup configuration in UTC timezone in the 24
-        #     hour format - <b>HH:MM</b>.
+        #     hour format - **HH:MM**.
         # @!attribute [rw] enabled
         #   @return [::Google::Protobuf::BoolValue]
         #     Whether this configuration is enabled.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#backupConfiguration</b>.
+        #     This is always **sql#backupConfiguration**.
         # @!attribute [rw] binary_log_enabled
         #   @return [::Google::Protobuf::BoolValue]
         #     (MySQL only) Whether binary log is enabled. If backup configuration is
@@ -112,7 +112,7 @@ module Google
         #     Location of the backup
         # @!attribute [rw] point_in_time_recovery_enabled
         #   @return [::Google::Protobuf::BoolValue]
-        #     Reserved for future use.
+        #     (Postgres only) Whether point in time recovery is enabled.
         # @!attribute [rw] transaction_log_retention_days
         #   @return [::Google::Protobuf::Int32Value]
         #     The number of days of transaction logs we retain for point in time
@@ -128,29 +128,29 @@ module Google
         # A BackupRun resource.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#backupRun</b>.
+        #     This is always **sql#backupRun**.
         # @!attribute [rw] status
         #   @return [::Google::Cloud::Sql::V1beta4::SqlBackupRunStatus]
         #     The status of this run.
         # @!attribute [rw] enqueued_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time the run was enqueued in UTC timezone in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time the run was enqueued in UTC timezone in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] id
         #   @return [::Integer]
         #     The identifier for this backup run. Unique only for a specific Cloud SQL
         #     instance.
         # @!attribute [rw] start_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time the backup operation actually started in UTC timezone in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time the backup operation actually started in UTC timezone in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] end_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time the backup operation completed in UTC timezone in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time the backup operation completed in UTC timezone in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] error
         #   @return [::Google::Cloud::Sql::V1beta4::OperationError]
         #     Information about why the backup operation failed. This is only present if
@@ -165,8 +165,8 @@ module Google
         # @!attribute [rw] window_start_time
         #   @return [::Google::Protobuf::Timestamp]
         #     The start time of the backup window during which this the backup was
-        #     attempted in <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>
-        #     format, for example <b>2012-11-15T16:19:00.094Z</b>.
+        #     attempted in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for
+        #     example **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] instance
         #   @return [::String]
         #     Name of the database instance.
@@ -179,11 +179,9 @@ module Google
         # @!attribute [rw] disk_encryption_configuration
         #   @return [::Google::Cloud::Sql::V1beta4::DiskEncryptionConfiguration]
         #     Encryption configuration specific to a backup.
-        #     Applies only to Second Generation instances.
         # @!attribute [rw] disk_encryption_status
         #   @return [::Google::Cloud::Sql::V1beta4::DiskEncryptionStatus]
         #     Encryption status specific to a backup.
-        #     Applies only to Second Generation instances.
         # @!attribute [rw] backup_kind
         #   @return [::Google::Cloud::Sql::V1beta4::SqlBackupKind]
         #     Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
@@ -195,7 +193,7 @@ module Google
         # Backup run list results.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#backupRunsList</b>.
+        #     This is always **sql#backupRunsList**.
         # @!attribute [rw] items
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::BackupRun>]
         #     A list of backup runs in reverse chronological order of the enqueued time.
@@ -217,7 +215,7 @@ module Google
         #     Position (offset) within the binary log file.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#binLogCoordinates</b>.
+        #     This is always **sql#binLogCoordinates**.
         class BinLogCoordinates
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -229,7 +227,7 @@ module Google
         #     The identifier of the backup.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#backupContext</b>.
+        #     This is always **sql#backupContext**.
         class BackupContext
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -238,7 +236,7 @@ module Google
         # Database instance clone context.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#cloneContext</b>.
+        #     This is always **sql#cloneContext**.
         # @!attribute [rw] pitr_timestamp_ms
         #   @return [::Integer]
         #     Reserved for future use.
@@ -252,7 +250,8 @@ module Google
         #     cloned up to the most recent binary log coordinates.
         # @!attribute [rw] point_in_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     Reserved for future use.
+        #     Timestamp, if specified, identifies the time to which the source instance
+        #     is cloned.
         class CloneContext
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -261,7 +260,7 @@ module Google
         # Represents a SQL database on the Cloud SQL instance.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#database</b>.
+        #     This is always **sql#database**.
         # @!attribute [rw] charset
         #   @return [::String]
         #     The Cloud SQL charset value.
@@ -309,16 +308,47 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     The name of the flag. These flags are passed at instance startup, so
-        #     include both server options and system variables for MySQL. Flags are
-        #     specified with underscores, not hyphens. For more information, see <a
-        #     href="/sql/docs/mysql/flags">Configuring Database Flags</a> in the Cloud
-        #     SQL documentation.
+        #     include both server options and system variables. Flags are
+        #     specified with underscores, not hyphens. For more information, see
+        #     [Configuring Database Flags](https://cloud.google.com/sql/docs/mysql/flags)
+        #     in the Cloud SQL documentation.
         # @!attribute [rw] value
         #   @return [::String]
-        #     The value of the flag. Booleans are set to <b>on</b> for true
-        #     and <b>off</b> for false. This field must be omitted if the flag
+        #     The value of the flag. Booleans are set to **on** for true
+        #     and **off** for false. This field must be omitted if the flag
         #     doesn't take a value.
         class DatabaseFlags
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Initial sync flags for certain Cloud SQL APIs.
+        # Currently used for the MySQL external server initial dump.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     The name of the flag.
+        # @!attribute [rw] value
+        #   @return [::String]
+        #     The value of the flag. This field must be omitted if the flag
+        #     doesn't take a value.
+        class SyncFlags
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Reference to another Cloud SQL instance.
+        # @!attribute [rw] name
+        #   @return [::String]
+        #     The name of the Cloud SQL instance being referenced.
+        #     This does not include the project ID.
+        # @!attribute [rw] region
+        #   @return [::String]
+        #     The region of the Cloud SQL instance being referenced.
+        # @!attribute [rw] project
+        #   @return [::String]
+        #     The project ID of the Cloud SQL instance being referenced.
+        #     The default is the same project ID as the instance references it.
+        class InstanceReference
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
@@ -326,41 +356,24 @@ module Google
         # A Cloud SQL instance resource.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#instance</b>.
+        #     This is always **sql#instance**.
         # @!attribute [rw] state
         #   @return [::Google::Cloud::Sql::V1beta4::DatabaseInstance::SqlInstanceState]
-        #     The current serving state of the Cloud SQL instance. This can be one of the
-        #     following. <br><b>SQL_INSTANCE_STATE_UNSPECIFIED</b>: The state of the
-        #     instance is unknown. <br><b>RUNNABLE</b>: The instance is running, or has
-        #     been stopped by owner.
-        #     <br><b>SUSPENDED</b>: The instance is not available, for example due to
-        #     problems with billing.
-        #     <br><b>PENDING_DELETE</b>: The instance is being deleted.
-        #     <br><b>PENDING_CREATE</b>: The instance is being created.
-        #     <br><b>MAINTENANCE</b>: The instance is down for maintenance.
-        #     <br><b>FAILED</b>: The instance creation failed.
+        #     The current serving state of the Cloud SQL instance.
         # @!attribute [rw] database_version
         #   @return [::Google::Cloud::Sql::V1beta4::SqlDatabaseVersion]
-        #     The database engine type and version. The <b>databaseVersion</b>
-        #     field cannot be changed after instance creation.
-        #     <br>MySQL instances: <b>MYSQL_8_0</b>, <b>MYSQL_5_7</b> (default),
-        #     or <b>MYSQL_5_6</b>.
-        #     <br>PostgreSQL instances: <b>POSTGRES_9_6</b>, <b>POSTGRES_10</b>,
-        #     <b>POSTGRES_11</b>, <b>POSTGRES_12</b>, or <b>POSTGRES_13</b> (default).
-        #     <br>SQL Server instances: <b>SQLSERVER_2017_STANDARD</b> (default),
-        #     <b>SQLSERVER_2017_ENTERPRISE</b>, <b>SQLSERVER_2017_EXPRESS</b>, or
-        #     <b>SQLSERVER_2017_WEB</b>.
+        #     The database engine type and version. The **databaseVersion** field cannot
+        #     be changed after instance creation.
         # @!attribute [rw] settings
         #   @return [::Google::Cloud::Sql::V1beta4::Settings]
         #     The user settings.
         # @!attribute [rw] etag
         #   @return [::String]
         #     This field is deprecated and will be removed from a future version of the
-        #     API. Use the <b>settings.settingsVersion</b> field instead.
+        #     API. Use the **settings.settingsVersion** field instead.
         # @!attribute [rw] failover_replica
         #   @return [::Google::Cloud::Sql::V1beta4::DatabaseInstance::SqlFailoverReplica]
-        #     The name and status of the failover replica. This property is applicable
-        #     only to Second Generation instances.
+        #     The name and status of the failover replica.
         # @!attribute [rw] master_instance_name
         #   @return [::String]
         #     The name of the instance which will act as primary in the replication
@@ -376,9 +389,9 @@ module Google
         #     The current disk usage of the instance in bytes. This property has been
         #     deprecated. Use the
         #     "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud
-        #     Monitoring API instead. Please see <a
-        #     href="https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ">this
-        #     announcement</a> for details.
+        #     Monitoring API instead. Please see [this
+        #     announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ)
+        #     for details.
         # @!attribute [rw] ip_addresses
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::IpMapping>]
         #     The assigned IP addresses for the instance.
@@ -387,11 +400,7 @@ module Google
         #     SSL configuration.
         # @!attribute [rw] instance_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlInstanceType]
-        #     The instance type. This can be one of the following.
-        #     <br><b>CLOUD_SQL_INSTANCE</b>: A Cloud SQL instance that is not replicating
-        #     from a primary instance. <br><b>ON_PREMISES_INSTANCE</b>: An instance
-        #     running on the customer's premises. <br><b>READ_REPLICA_INSTANCE</b>: A
-        #     Cloud SQL instance configured as a read-replica.
+        #     The instance type.
         # @!attribute [rw] project
         #   @return [::String]
         #     The project ID of the project containing the Cloud SQL instance. The Google
@@ -413,11 +422,12 @@ module Google
         #     Configuration specific to failover replicas and read replicas.
         # @!attribute [rw] backend_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlBackendType]
-        #     <br><b>SECOND_GEN</b>: Cloud SQL database instance.
-        #     <br><b>EXTERNAL</b>: A database server that is not
-        #     managed by Google. <br>This property is read-only; use the
-        #     <b>tier</b> property in the <b>settings</b> object to determine
-        #     the database type.
+        #     The backend type.
+        #     **SECOND_GEN**: Cloud SQL database instance.
+        #     **EXTERNAL**: A database server that is not managed by Google.
+        #
+        #     This property is read-only; use the **tier** property in the **settings**
+        #     object to determine the database type.
         # @!attribute [rw] self_link
         #   @return [::String]
         #     The URI of this resource.
@@ -432,18 +442,19 @@ module Google
         #     Name of the Cloud SQL instance. This does not include the project ID.
         # @!attribute [rw] region
         #   @return [::String]
-        #     The geographical region. Can be
-        #     <br><b>us-central</b> (<b>FIRST_GEN</b> instances only)
-        #     <br><b>us-central1</b> (<b>SECOND_GEN</b> instances only)
-        #     <br><b>asia-east1</b> or <b>europe-west1</b>.
-        #     <br>Defaults to <b>us-central</b> or
-        #     <b>us-central1</b> depending on the instance type.
-        #     The region cannot be changed after instance creation.
+        #     The geographical region. Can be:
+        #     *  **us-central** (**FIRST_GEN** instances only)
+        #     *  **us-central1** (**SECOND_GEN** instances only)
+        #     *  **asia-east1** or **europe-west1**.
+        #
+        #     Defaults to **us-central** or **us-central1** depending on the instance
+        #     type. The region cannot be changed after instance creation.
         # @!attribute [rw] gce_zone
         #   @return [::String]
         #     The Compute Engine zone that the instance is currently serving from. This
         #     value could be different from the zone that was specified when the instance
-        #     was created if the instance has failed over to its secondary zone.
+        #     was created if the instance has failed over to its secondary zone. WARNING:
+        #     Changing this might restart the instance.
         # @!attribute [rw] secondary_gce_zone
         #   @return [::String]
         #     The Compute Engine zone that the failover instance is currently serving
@@ -454,11 +465,9 @@ module Google
         # @!attribute [rw] disk_encryption_configuration
         #   @return [::Google::Cloud::Sql::V1beta4::DiskEncryptionConfiguration]
         #     Disk encryption configuration specific to an instance.
-        #     Applies only to Second Generation instances.
         # @!attribute [rw] disk_encryption_status
         #   @return [::Google::Cloud::Sql::V1beta4::DiskEncryptionStatus]
         #     Disk encryption status specific to an instance.
-        #     Applies only to Second Generation instances.
         # @!attribute [rw] root_password
         #   @return [::String]
         #     Initial root password. Use only on creation.
@@ -469,14 +478,23 @@ module Google
         #   @return [::Google::Protobuf::BoolValue]
         #     The status indicating if instance satisfiesPzs.
         #     Reserved for future use.
+        # @!attribute [r] database_installed_version
+        #   @return [::String]
+        #     Output only. Stores the current database version running on the instance including
+        #     minor version such as **MYSQL_8_0_18**.
         # @!attribute [rw] out_of_disk_report
         #   @return [::Google::Cloud::Sql::V1beta4::DatabaseInstance::SqlOutOfDiskReport]
         #     This field represents the report generated by the proactive database
         #     wellness job for OutOfDisk issues.
-        #     Writers:
-        #        -- the proactive database wellness job for OOD.
-        #     Readers:
-        #        -- the proactive database wellness job
+        #     *  Writers:
+        #       *  the proactive database wellness job for OOD.
+        #     *  Readers:
+        #       *  the proactive database wellness job
+        # @!attribute [r] create_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     Output only. The time when the instance was created in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         class DatabaseInstance
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -485,8 +503,7 @@ module Google
           #   @return [::String]
           #     The name of the failover replica. If specified at instance creation, a
           #     failover replica is created for the instance. The name
-          #     doesn't include the project ID. This property is applicable only to
-          #     Second Generation instances.
+          #     doesn't include the project ID.
           # @!attribute [rw] available
           #   @return [::Google::Protobuf::BoolValue]
           #     The availability status of the failover replica. A false status indicates
@@ -506,6 +523,9 @@ module Google
           # @!attribute [rw] can_reschedule
           #   @return [::Boolean]
           #     If the scheduled maintenance can be rescheduled.
+          # @!attribute [rw] schedule_deadline_time
+          #   @return [::Google::Protobuf::Timestamp]
+          #     Maintenance cannot be rescheduled to start beyond this deadline.
           class SqlScheduledMaintenance
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -516,16 +536,17 @@ module Google
           #   @return [::Google::Cloud::Sql::V1beta4::DatabaseInstance::SqlOutOfDiskReport::SqlOutOfDiskState]
           #     This field represents the state generated by the proactive database
           #     wellness job for OutOfDisk issues.
-          #     Writers:
-          #        -- the proactive database wellness job for OOD.
-          #     Readers:
-          #        -- the proactive database wellness job
+          #     *  Writers:
+          #       *  the proactive database wellness job for OOD.
+          #     *  Readers:
+          #       *  the proactive database wellness job
           # @!attribute [rw] sql_min_recommended_increase_size_gb
           #   @return [::Integer]
           #     The minimum recommended increase size in GigaBytes
           #     This field is consumed by the frontend
-          #     Writers:
-          #        -- the proactive database wellness job for OOD.
+          #     *  Writers:
+          #       *  the proactive database wellness job for OOD.
+          #     *  Readers:
           class SqlOutOfDiskReport
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -567,13 +588,16 @@ module Google
             # The creation of the instance failed or a fatal error occurred during
             # maintenance.
             FAILED = 6
+
+            # Deprecated
+            ONLINE_MAINTENANCE = 7
           end
         end
 
         # Database list response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#databasesList</b>.
+        #     This is always **sql#databasesList**.
         # @!attribute [rw] items
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::Database>]
         #     List of database resources in the instance.
@@ -586,7 +610,7 @@ module Google
         # instance.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#demoteMasterConfiguration</b>.
+        #     This is always **sql#demoteMasterConfiguration**.
         # @!attribute [rw] mysql_replica_configuration
         #   @return [::Google::Cloud::Sql::V1beta4::DemoteMasterMySqlReplicaConfiguration]
         #     MySQL specific configuration when replicating from a MySQL on-premises
@@ -594,7 +618,7 @@ module Google
         #     username, password, certificates, and keys are not stored in the instance
         #     metadata. The configuration information is used only to set up the
         #     replication connection and is stored by MySQL in a file named
-        #     <b>master.info</b> in the data directory.
+        #     **master.info** in the data directory.
         class DemoteMasterConfiguration
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -603,16 +627,16 @@ module Google
         # Database instance demote primary instance context.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#demoteMasterContext</b>.
+        #     This is always **sql#demoteMasterContext**.
         # @!attribute [rw] verify_gtid_consistency
         #   @return [::Google::Protobuf::BoolValue]
         #     Verify GTID consistency for demote operation. Default value:
-        #     <b>True</b>. Second Generation instances only.  Setting this flag to
-        #     false enables you to bypass GTID consistency check between on-premises
-        #     primary instance and Cloud SQL instance during the demotion operation but
-        #     also exposes you to the risk of future replication failures. Change the
-        #     value only if you know the reason for the GTID divergence and are confident
-        #     that doing so will not cause any replication issues.
+        #     **True**. Setting this flag to false enables you to bypass GTID consistency
+        #     check between on-premises primary instance and Cloud SQL instance during
+        #     the demotion operation but also exposes you to the risk of future
+        #     replication failures. Change the value only if you know the reason for the
+        #     GTID divergence and are confident that doing so will not cause any
+        #     replication issues.
         # @!attribute [rw] master_instance_name
         #   @return [::String]
         #     The name of the instance which will act as on-premises primary instance
@@ -621,6 +645,9 @@ module Google
         #   @return [::Google::Cloud::Sql::V1beta4::DemoteMasterConfiguration]
         #     Configuration specific to read-replicas replicating from the on-premises
         #     primary instance.
+        # @!attribute [rw] skip_replication_setup
+        #   @return [::Boolean]
+        #     Flag to skip replication setup on the instance.
         class DemoteMasterContext
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -629,7 +656,7 @@ module Google
         # Read-replica configuration specific to MySQL databases.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#demoteMasterMysqlReplicaConfiguration</b>.
+        #     This is always **sql#demoteMasterMysqlReplicaConfiguration**.
         # @!attribute [rw] username
         #   @return [::String]
         #     The username for the replication connection.
@@ -656,39 +683,37 @@ module Google
         # @!attribute [rw] uri
         #   @return [::String]
         #     The path to the file in Google Cloud Storage where the export will be
-        #     stored. The URI is in the form <b>gs://bucketName/fileName</b>. If the file
-        #     already exists, the request succeeds, but the operation fails.
-        #     <br>If <b>fileType</b> is <b>SQL</b> and the filename ends with .gz,
+        #     stored. The URI is in the form **gs://bucketName/fileName**. If the file
+        #     already exists, the request succeeds, but the operation fails. If
+        #     **fileType** is **SQL** and the filename ends with .gz,
         #     the contents are compressed.
         # @!attribute [rw] databases
         #   @return [::Array<::String>]
-        #     Databases to be exported. <br /> <b>MySQL instances:</b> If
-        #     <b>fileType</b> is <b>SQL</b> and no database is specified, all
-        #     databases are exported, except for the <b>mysql</b> system database.
-        #     If <b>fileType</b> is <b>CSV</b>, you can specify one database,
+        #     Databases to be exported. <br /> **MySQL instances:** If
+        #     **fileType** is **SQL** and no database is specified, all
+        #     databases are exported, except for the **mysql** system database.
+        #     If **fileType** is **CSV**, you can specify one database,
         #     either by using this property or by using the
-        #     <b>csvExportOptions.selectQuery</b> property, which takes precedence
-        #     over this property. <br /> <b>PostgreSQL instances:</b> You must specify
-        #     one database to be exported. If <b>fileType</b> is <b>CSV</b>,
+        #     **csvExportOptions.selectQuery** property, which takes precedence
+        #     over this property. <br /> **PostgreSQL instances:** You must specify
+        #     one database to be exported. If **fileType** is **CSV**,
         #     this database must match the one specified in the
-        #     <b>csvExportOptions.selectQuery</b> property. <br /> <b>SQL Server
-        #     instances:</b> You must specify one database to be exported, and the
-        #     <b>fileType</b> must be <b>BAK</b>.
+        #     **csvExportOptions.selectQuery** property. <br /> **SQL Server
+        #     instances:** You must specify one database to be exported, and the
+        #     **fileType** must be **BAK**.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#exportContext</b>.
+        #     This is always **sql#exportContext**.
         # @!attribute [rw] sql_export_options
         #   @return [::Google::Cloud::Sql::V1beta4::ExportContext::SqlExportOptions]
         #     Options for exporting data as SQL statements.
         # @!attribute [rw] csv_export_options
         #   @return [::Google::Cloud::Sql::V1beta4::ExportContext::SqlCsvExportOptions]
-        #     Options for exporting data as CSV. <b>MySQL</b> and <b>PostgreSQL</b>
+        #     Options for exporting data as CSV. **MySQL** and **PostgreSQL**
         #     instances only.
         # @!attribute [rw] file_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlFileType]
-        #     The file type for the specified uri. <br><b>SQL</b>: The file
-        #     contains SQL statements. <br><b>CSV</b>: The file contains CSV data.
-        #     <br><b>BAK</b>: The file contains backup data for a SQL Server instance.
+        #     The file type for the specified uri.
         # @!attribute [rw] offload
         #   @return [::Google::Protobuf::BoolValue]
         #     Option for export offload.
@@ -699,6 +724,21 @@ module Google
           # @!attribute [rw] select_query
           #   @return [::String]
           #     The select query used to extract the data.
+          # @!attribute [rw] escape_character
+          #   @return [::String]
+          #     Specifies the character that should appear before a data character that
+          #     needs to be escaped.
+          # @!attribute [rw] quote_character
+          #   @return [::String]
+          #     Specifies the quoting character to be used when a data value is quoted.
+          # @!attribute [rw] fields_terminated_by
+          #   @return [::String]
+          #     Specifies the character that separates columns within each row (line) of
+          #     the file.
+          # @!attribute [rw] lines_terminated_by
+          #   @return [::String]
+          #     This is used to separate lines. If a line does not contain all fields,
+          #     the rest of the columns are set to their default values.
           class SqlCsvExportOptions
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -721,14 +761,12 @@ module Google
             # Options for exporting from MySQL.
             # @!attribute [rw] master_data
             #   @return [::Google::Protobuf::Int32Value]
-            #     Option to include SQL statement required to set up replication.
-            #     <br>If set to <b>1</b>, the dump file includes
-            #      a CHANGE MASTER TO statement with the binary log coordinates,
-            #      and --set-gtid-purged is set to ON.
-            #     <br>If set to <b>2</b>, the CHANGE MASTER TO statement is written as
-            #      a SQL comment and has no effect.
-            #     <br>If set to any value other than <b>1</b>, --set-gtid-purged is set
-            #     to OFF.
+            #     Option to include SQL statement required to set up replication. If set
+            #     to **1**, the dump file includes a CHANGE MASTER TO statement with the
+            #     binary log coordinates, and --set-gtid-purged is set to ON. If set to
+            #     **2**, the CHANGE MASTER TO statement is written as a SQL comment and
+            #     has no effect. If set to any value other than **1**, --set-gtid-purged
+            #     is set to OFF.
             class MysqlExportOptions
               include ::Google::Protobuf::MessageExts
               extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -743,7 +781,7 @@ module Google
         #     this version doesn't match the current settings version.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#failoverContext</b>.
+        #     This is always **sql#failoverContext**.
         class FailoverContext
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -753,34 +791,32 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     This is the name of the flag. Flag names always use underscores, not
-        #     hyphens, for example: <b>max_allowed_packet</b>
+        #     hyphens, for example: **max_allowed_packet**
         # @!attribute [rw] type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlFlagType]
-        #     The type of the flag. Flags are typed to being <b>BOOLEAN</b>,
-        #     <b>STRING</b>, <b>INTEGER</b> or <b>NONE</b>.
-        #     <b>NONE</b> is used for flags which do not take a value, such as
-        #     <b>skip_grant_tables</b>.
+        #     The type of the flag. Flags are typed to being **BOOLEAN**, **STRING**,
+        #     **INTEGER** or **NONE**. **NONE** is used for flags which do not take a
+        #     value, such as **skip_grant_tables**.
         # @!attribute [rw] applies_to
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::SqlDatabaseVersion>]
-        #     The database version this flag applies to. Can be <b>MYSQL_8_0</b>,
-        #     <b>MYSQL_5_6</b>, or <b>MYSQL_5_7</b>.
+        #     The database version this flag applies to. Can be **MYSQL_8_0**,
+        #     **MYSQL_5_6**, or **MYSQL_5_7**.
         # @!attribute [rw] allowed_string_values
         #   @return [::Array<::String>]
-        #     For <b>STRING</b> flags, a list of strings that the value can be set
-        #     to.
+        #     For **STRING** flags, a list of strings that the value can be set to.
         # @!attribute [rw] min_value
         #   @return [::Google::Protobuf::Int64Value]
-        #     For <b>INTEGER</b> flags, the minimum allowed value.
+        #     For **INTEGER** flags, the minimum allowed value.
         # @!attribute [rw] max_value
         #   @return [::Google::Protobuf::Int64Value]
-        #     For <b>INTEGER</b> flags, the maximum allowed value.
+        #     For **INTEGER** flags, the maximum allowed value.
         # @!attribute [rw] requires_restart
         #   @return [::Google::Protobuf::BoolValue]
         #     Indicates whether changing this flag will trigger a database restart. Only
         #     applicable to Second Generation instances.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#flag</b>.
+        #     This is always **sql#flag**.
         # @!attribute [rw] in_beta
         #   @return [::Google::Protobuf::BoolValue]
         #     Whether or not the flag is considered in beta.
@@ -796,7 +832,7 @@ module Google
         # Flags list response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#flagsList</b>.
+        #     This is always **sql#flagsList**.
         # @!attribute [rw] items
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::Flag>]
         #     List of flags.
@@ -809,23 +845,24 @@ module Google
         # @!attribute [rw] uri
         #   @return [::String]
         #     Path to the import file in Cloud Storage, in the form
-        #     <b>gs://bucketName/fileName</b>. Compressed gzip files (.gz) are supported
-        #     when <b>fileType</b> is <b>SQL</b>. The instance must have
+        #     **gs://bucketName/fileName**. Compressed gzip files (.gz) are supported
+        #     when **fileType** is **SQL**. The instance must have
         #     write permissions to the bucket and read access to the file.
         # @!attribute [rw] database
         #   @return [::String]
-        #     The target database for the import. If <b>fileType</b> is
-        #     <b>SQL</b>, this field is required only if the import file does not
-        #     specify a database, and is overridden by any database specification in the
-        #     import file. If <b>fileType</b> is <b>CSV</b>, one database
-        #     must be specified.
+        #     The target database for the import. If **fileType** is **SQL**, this field
+        #     is required only if the import file does not specify a database, and is
+        #     overridden by any database specification in the import file. If
+        #     **fileType** is **CSV**, one database must be specified.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#importContext</b>.
+        #     This is always **sql#importContext**.
         # @!attribute [rw] file_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlFileType]
-        #     The file type for the specified uri. <br><b>SQL</b>: The file
-        #     contains SQL statements. <br><b>CSV</b>: The file contains CSV data.
+        #     The file type for the specified uri.
+        #     *  **SQL**: The file contains SQL statements.
+        #     *  **CSV**: The file contains CSV data.
+        #     *  **BAK**: The file contains backup data for a SQL Server instance.
         # @!attribute [rw] csv_import_options
         #   @return [::Google::Cloud::Sql::V1beta4::ImportContext::SqlCsvImportOptions]
         #     Options for importing data as CSV.
@@ -846,6 +883,21 @@ module Google
           #   @return [::Array<::String>]
           #     The columns to which CSV data is imported. If not specified, all columns
           #     of the database table are loaded with CSV data.
+          # @!attribute [rw] escape_character
+          #   @return [::String]
+          #     Specifies the character that should appear before a data character that
+          #     needs to be escaped.
+          # @!attribute [rw] quote_character
+          #   @return [::String]
+          #     Specifies the quoting character to be used when a data value is quoted.
+          # @!attribute [rw] fields_terminated_by
+          #   @return [::String]
+          #     Specifies the character that separates columns within each row (line) of
+          #     the file.
+          # @!attribute [rw] lines_terminated_by
+          #   @return [::String]
+          #     This is used to separate lines. If a line does not contain all fields,
+          #     the rest of the columns are set to their default values.
           class SqlCsvImportOptions
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -860,13 +912,13 @@ module Google
             # @!attribute [rw] cert_path
             #   @return [::String]
             #     Path to the Certificate (.cer) in Cloud Storage, in the form
-            #     <b>gs://bucketName/fileName</b>. The instance must have
-            #     write permissions to the bucket and read access to the file.
+            #     **gs://bucketName/fileName**. The instance must have write permissions
+            #     to the bucket and read access to the file.
             # @!attribute [rw] pvk_path
             #   @return [::String]
             #     Path to the Certificate Private Key (.pvk)  in Cloud Storage, in the
-            #     form <b>gs://bucketName/fileName</b>. The instance must have
-            #     write permissions to the bucket and read access to the file.
+            #     form **gs://bucketName/fileName**. The instance must have write
+            #     permissions to the bucket and read access to the file.
             # @!attribute [rw] pvk_password
             #   @return [::String]
             #     Password that encrypts the private key
@@ -922,10 +974,19 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # MySQL-specific external server sync settings.
+        # @!attribute [rw] initial_sync_flags
+        #   @return [::Array<::Google::Cloud::Sql::V1beta4::SyncFlags>]
+        #     Flags to use for the initial dump.
+        class MySqlSyncConfig
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # Database instances list response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#instancesList</b>.
+        #     This is always **sql#instancesList**.
         # @!attribute [rw] warnings
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::ApiWarning>]
         #     List of warnings that occurred while handling the request.
@@ -949,7 +1010,7 @@ module Google
         #   @return [::String]
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#instancesListServerCas</b>.
+        #     This is always **sql#instancesListServerCas**.
         class InstancesListServerCasResponse
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -985,7 +1046,7 @@ module Google
         # Instance verify external sync settings response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#migrationSettingErrorList</b>.
+        #     This is always **sql#migrationSettingErrorList**.
         # @!attribute [rw] errors
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::SqlExternalSyncSettingError>]
         #     List of migration violations.
@@ -1000,8 +1061,8 @@ module Google
         # External primary instance migration setting error/warning.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     Can be <b>sql#externalSyncSettingError</b> or
-        #     <b>sql#externalSyncSettingWarning</b>.
+        #     Can be **sql#externalSyncSettingError** or
+        #     **sql#externalSyncSettingWarning**.
         # @!attribute [rw] type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlExternalSyncSettingError::SqlExternalSyncSettingErrorType]
         #     Identifies the specific error that occurred.
@@ -1075,6 +1136,18 @@ module Google
 
             # The customer has a definer that will break EM setup.
             UNSUPPORTED_DEFINER = 21
+
+            # SQL Server @@SERVERNAME does not match actual host name
+            SQLSERVER_SERVERNAME_MISMATCH = 22
+
+            # The primary instance has been setup and will fail the setup.
+            PRIMARY_ALREADY_SETUP = 23
+
+            # The primary instance has unsupported binary log format.
+            UNSUPPORTED_BINLOG_FORMAT = 24
+
+            # The primary instance's binary log retention setting.
+            BINLOG_RETENTION_SETTING = 25
           end
         end
 
@@ -1086,7 +1159,7 @@ module Google
         #   @return [::String]
         #     The resource link for the VPC network from which the Cloud SQL instance is
         #     accessible for private IP. For example,
-        #     <b>/projects/myProject/global/networks/default</b>. This setting can
+        #     **/projects/myProject/global/networks/default**. This setting can
         #     be updated, but it cannot be removed after it is set.
         # @!attribute [rw] require_ssl
         #   @return [::Google::Protobuf::BoolValue]
@@ -1095,7 +1168,15 @@ module Google
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::AclEntry>]
         #     The list of external networks that are allowed to connect to the instance
         #     using the IP. In 'CIDR' notation, also known as 'slash' notation (for
-        #     example: <b>192.168.100.0/24</b>).
+        #     example: **157.197.200.0/24**).
+        # @!attribute [rw] allocated_ip_range
+        #   @return [::String]
+        #     The name of the allocated ip range for the private ip CloudSQL instance.
+        #     For example: "google-managed-services-default". If set, the instance ip
+        #     will be created in the allocated range. The range name must comply with
+        #     [RFC 1035](https://tools.ietf.org/html/rfc1035). Specifically, the name
+        #     must be 1-63 characters long and match the regular expression
+        #     `[a-z]([-a-z0-9]*[a-z0-9])?.`
         class IpConfiguration
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1104,38 +1185,36 @@ module Google
         # Database instance IP Mapping.
         # @!attribute [rw] type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlIpAddressType]
-        #     The type of this IP address. A <b>PRIMARY</b> address is a public
-        #     address that can accept incoming connections. A <b>PRIVATE</b>
-        #     address is a private address that can accept incoming connections. An
-        #     <b>OUTGOING</b> address is the source address of connections
-        #     originating from the instance, if supported.
+        #     The type of this IP address. A **PRIMARY** address is a public address that
+        #     can accept incoming connections. A **PRIVATE** address is a private address
+        #     that can accept incoming connections. An **OUTGOING** address is the source
+        #     address of connections originating from the instance, if supported.
         # @!attribute [rw] ip_address
         #   @return [::String]
         #     The IP address assigned.
         # @!attribute [rw] time_to_retire
         #   @return [::Google::Protobuf::Timestamp]
-        #     The due time for this IP to be retired in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>. This field is only available when
+        #     The due time for this IP to be retired in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**. This field is only available when
         #     the IP is scheduled to be retired.
         class IpMapping
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Preferred location. This specifies where a Cloud SQL instance
-        # is located, either in a specific Compute Engine zone, or
-        # co-located with an App Engine application. Note that if the preferred
-        # location is not available, the instance will be located as close as possible
-        # within the region. Only one location may be specified.
+        # Preferred location. This specifies where a Cloud SQL instance is located.
+        # Note that if the preferred location is not available, the instance will be
+        # located as close as possible within the region. Only one location may be
+        # specified.
         # @!attribute [rw] follow_gae_application
         #   @return [::String]
         #     The App Engine application to follow, it must be in the same region as the
-        #     Cloud SQL instance.
+        #     Cloud SQL instance. WARNING: Changing this might restart the instance.
         # @!attribute [rw] zone
         #   @return [::String]
         #     The preferred Compute Engine zone (for example: us-central1-a,
-        #     us-central1-b, etc.).
+        #     us-central1-b, etc.). WARNING: Changing this might restart the instance.
         # @!attribute [rw] secondary_zone
         #   @return [::String]
         #     The preferred Compute Engine zone for the secondary/failover
@@ -1143,7 +1222,7 @@ module Google
         #     Reserved for future use.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#locationPreference</b>.
+        #     This is always **sql#locationPreference**.
         class LocationPreference
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1159,13 +1238,12 @@ module Google
         #     day of week (1-7), starting on Monday.
         # @!attribute [rw] update_track
         #   @return [::Google::Cloud::Sql::V1beta4::SqlUpdateTrack]
-        #     Maintenance timing setting: <b>canary</b> (Earlier) or
-        #     <b>stable</b> (Later). <br /><a
-        #     href="/sql/docs/db_path/instance-settings#maintenance-timing-2ndgen">
-        #     Learn more</a>.
+        #     Maintenance timing setting: **canary** (Earlier) or **stable** (Later).
+        #     [Learn
+        #     more](https://cloud.google.com/sql/docs/mysql/instance-settings#maintenance-timing-2ndgen).
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#maintenanceWindow</b>.
+        #     This is always **sql#maintenanceWindow**.
         class MaintenanceWindow
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1214,8 +1292,8 @@ module Google
         #     value. Changing query length will restart the database.
         # @!attribute [rw] query_plans_per_minute
         #   @return [::Google::Protobuf::Int32Value]
-        #     Number of query plans generated by Insights per minute. Default is 5.
-        #     Changing this will restart the database.
+        #     Number of query execution plans captured by Insights per minute
+        #     for all queries combined. Default is 5.
         class InsightsConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1261,7 +1339,7 @@ module Google
         #     certificate that it sends during the SSL handshake.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#mysqlReplicaConfiguration</b>.
+        #     This is always **sql#mysqlReplicaConfiguration**.
         class MySqlReplicaConfiguration
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1273,7 +1351,7 @@ module Google
         #     The host and port of the on-premises instance in host:port format
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#onPremisesConfiguration</b>.
+        #     This is always **sql#onPremisesConfiguration**.
         # @!attribute [rw] username
         #   @return [::String]
         #     The username for connecting to on-premises instance.
@@ -1293,6 +1371,9 @@ module Google
         # @!attribute [rw] dump_file_path
         #   @return [::String]
         #     The dump file to create the Cloud SQL replica.
+        # @!attribute [rw] source_instance
+        #   @return [::Google::Cloud::Sql::V1beta4::InstanceReference]
+        #     The reference to Cloud SQL instance if the source is Cloud SQL.
         class OnPremisesConfiguration
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1304,7 +1385,7 @@ module Google
         #     Resource name of KMS key for disk encryption
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#diskEncryptionConfiguration</b>.
+        #     This is always **sql#diskEncryptionConfiguration**.
         class DiskEncryptionConfiguration
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1316,7 +1397,7 @@ module Google
         #     KMS key version used to encrypt the Cloud SQL instance resource
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#diskEncryptionStatus</b>.
+        #     This is always **sql#diskEncryptionStatus**.
         class DiskEncryptionStatus
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1327,34 +1408,30 @@ module Google
         # in the resource.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#operation</b>.
+        #     This is always **sql#operation**.
         # @!attribute [rw] target_link
         #   @return [::String]
         # @!attribute [rw] status
         #   @return [::Google::Cloud::Sql::V1beta4::Operation::SqlOperationStatus]
-        #     The status of an operation. Valid values are:
-        #     <br><b>PENDING</b>
-        #     <br><b>RUNNING</b>
-        #     <br><b>DONE</b>
-        #     <br><b>SQL_OPERATION_STATUS_UNSPECIFIED</b>
+        #     The status of an operation.
         # @!attribute [rw] user
         #   @return [::String]
         #     The email address of the user who initiated this operation.
         # @!attribute [rw] insert_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time this operation was enqueued in UTC timezone in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time this operation was enqueued in UTC timezone in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] start_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time this operation actually started in UTC timezone in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time this operation actually started in UTC timezone in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] end_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time this operation finished in UTC timezone in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time this operation finished in UTC timezone in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] error
         #   @return [::Google::Cloud::Sql::V1beta4::OperationErrors]
         #     If errors occurred during processing of this operation, this field will be
@@ -1362,18 +1439,18 @@ module Google
         # @!attribute [rw] operation_type
         #   @return [::Google::Cloud::Sql::V1beta4::Operation::SqlOperationType]
         #     The type of the operation. Valid values are:
-        #     <br><b>CREATE</b>
-        #     <br><b>DELETE</b>
-        #     <br><b>UPDATE</b>
-        #     <br><b>RESTART</b>
-        #     <br><b>IMPORT</b>
-        #     <br><b>EXPORT</b>
-        #     <br><b>BACKUP_VOLUME</b>
-        #     <br><b>RESTORE_VOLUME</b>
-        #     <br><b>CREATE_USER</b>
-        #     <br><b>DELETE_USER</b>
-        #     <br><b>CREATE_DATABASE</b>
-        #     <br><b>DELETE_DATABASE</b>
+        #     *  **CREATE**
+        #     *  **DELETE**
+        #     *  **UPDATE**
+        #     *  **RESTART**
+        #     *  **IMPORT**
+        #     *  **EXPORT**
+        #     *  **BACKUP_VOLUME**
+        #     *  **RESTORE_VOLUME**
+        #     *  **CREATE_USER**
+        #     *  **DELETE_USER**
+        #     *  **CREATE_DATABASE**
+        #     *  **DELETE_DATABASE**
         # @!attribute [rw] import_context
         #   @return [::Google::Cloud::Sql::V1beta4::ImportContext]
         #     The context for import operation, if applicable.
@@ -1529,7 +1606,7 @@ module Google
         # Database instance operation error.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#operationError</b>.
+        #     This is always **sql#operationError**.
         # @!attribute [rw] code
         #   @return [::String]
         #     Identifies the specific error that occurred.
@@ -1544,7 +1621,7 @@ module Google
         # Database instance operation errors list wrapper.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#operationErrors</b>.
+        #     This is always **sql#operationErrors**.
         # @!attribute [rw] errors
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::OperationError>]
         #     The list of errors encountered while processing this operation.
@@ -1553,10 +1630,42 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
-        # Database instance list operations response.
+        # Database instance local user password validation policy
+        # @!attribute [rw] min_length
+        #   @return [::Google::Protobuf::Int32Value]
+        #     Minimum number of characters allowed.
+        # @!attribute [rw] complexity
+        #   @return [::Google::Cloud::Sql::V1beta4::PasswordValidationPolicy::Complexity]
+        #     The complexity of the password.
+        # @!attribute [rw] reuse_interval
+        #   @return [::Google::Protobuf::Int32Value]
+        #     Number of previous passwords that cannot be reused.
+        # @!attribute [rw] disallow_username_substring
+        #   @return [::Google::Protobuf::BoolValue]
+        #     Disallow username as a part of the password.
+        # @!attribute [rw] password_change_interval
+        #   @return [::Google::Protobuf::Duration]
+        #     Minimum interval after which the password can be changed. This flag is only
+        #     supported for PostgresSQL.
+        class PasswordValidationPolicy
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # The complexity choices of the password.
+          module Complexity
+            # Complexity check is not specified.
+            COMPLEXITY_UNSPECIFIED = 0
+
+            # A combination of lowercase, uppercase, numeric, and non-alphanumeric
+            # characters.
+            COMPLEXITY_DEFAULT = 1
+          end
+        end
+
+        # Operations list response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#operationsList</b>.
+        #     This is always **sql#operationsList**.
         # @!attribute [rw] items
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::Operation>]
         #     List of operation resources.
@@ -1572,7 +1681,7 @@ module Google
         # Read-replica configuration for connecting to the primary instance.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#replicaConfiguration</b>.
+        #     This is always **sql#replicaConfiguration**.
         # @!attribute [rw] mysql_replica_configuration
         #   @return [::Google::Cloud::Sql::V1beta4::MySqlReplicaConfiguration]
         #     MySQL specific configuration when replicating from a MySQL on-premises
@@ -1580,15 +1689,14 @@ module Google
         #     username, password, certificates, and keys are not stored in the instance
         #     metadata. The configuration information is used only to set up the
         #     replication connection and is stored by MySQL in a file named
-        #     <b>master.info</b> in the data directory.
+        #     **master.info** in the data directory.
         # @!attribute [rw] failover_target
         #   @return [::Google::Protobuf::BoolValue]
         #     Specifies if the replica is the failover target. If the field is set to
-        #     <b>true</b> the replica will be designated as a failover replica. In
-        #     case the primary instance fails, the replica instance will be promoted as
-        #     the new primary instance.  <p>Only one replica can be specified as failover
-        #     target, and the replica has to be in different zone with the primary
-        #     instance.
+        #     **true** the replica will be designated as a failover replica. In case the
+        #     primary instance fails, the replica instance will be promoted as the new
+        #     primary instance. Only one replica can be specified as failover target, and
+        #     the replica has to be in different zone with the primary instance.
         class ReplicaConfiguration
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1598,7 +1706,7 @@ module Google
         # Backup context contains source instance id and project id.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#restoreBackupContext</b>.
+        #     This is always **sql#restoreBackupContext**.
         # @!attribute [rw] backup_run_id
         #   @return [::Integer]
         #     The ID of the backup run to restore from.
@@ -1616,7 +1724,7 @@ module Google
         # Instance rotate server CA context.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#rotateServerCaContext</b>.
+        #     This is always **sql#rotateServerCaContext**.
         # @!attribute [rw] next_version
         #   @return [::String]
         #     The fingerprint of the next version to be rotated to. If left unspecified,
@@ -1640,10 +1748,10 @@ module Google
         # @!attribute [rw] tier
         #   @return [::String]
         #     The tier (or machine type) for this instance, for example
-        #     <b>db-custom-1-3840</b>.
+        #     **db-custom-1-3840**. WARNING: Changing this restarts the instance.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#settings</b>.
+        #     This is always **sql#settings**.
         # @!attribute [rw] user_labels
         #   @return [::Google::Protobuf::Map{::String => ::String}]
         #     User-provided labels, represented as a dictionary where each label is a
@@ -1651,24 +1759,22 @@ module Google
         # @!attribute [rw] availability_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlAvailabilityType]
         #     Availability type. Potential values:
-        #       <br><b>ZONAL</b>: The instance serves data from only one zone.
-        #     Outages in that zone affect data accessibility.
-        #       <br><b>REGIONAL</b>: The instance can serve data from more than one zone
-        #       in a region
-        #     (it is highly available). <br>For more information, see
-        #     <a href="/sql/docs/postgres/high-availability">
-        #     Overview of the High Availability Configuration</a>.
+        #     *  **ZONAL**: The instance serves data from only one zone. Outages in that
+        #     zone affect data accessibility.
+        #     *  **REGIONAL**: The instance can serve data from more than one zone in a
+        #     region (it is highly available)./
+        #
+        #     For more information, see [Overview of the High Availability
+        #     Configuration](https://cloud.google.com/sql/docs/mysql/high-availability).
         # @!attribute [rw] pricing_plan
         #   @return [::Google::Cloud::Sql::V1beta4::SqlPricingPlan]
-        #     The pricing plan for this instance. This can be either <b>PER_USE</b>
-        #     or <b>PACKAGE</b>. Only <b>PER_USE</b> is supported for Second
-        #     Generation instances.
+        #     The pricing plan for this instance. This can be either **PER_USE** or
+        #     **PACKAGE**. Only **PER_USE** is supported for Second Generation instances.
         # @!attribute [rw] replication_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlReplicationType]
         #     The type of replication this instance uses. This can be either
-        #     <b>ASYNCHRONOUS</b> or <b>SYNCHRONOUS</b>.
-        #     (Deprecated_ This property was only applicable to
-        #     First Generation instances.
+        #     **ASYNCHRONOUS** or **SYNCHRONOUS**. (Deprecated) This property was only
+        #     applicable to First Generation instances.
         # @!attribute [rw] storage_auto_resize_limit
         #   @return [::Google::Protobuf::Int64Value]
         #     The maximum size to which storage capacity can be automatically increased.
@@ -1677,10 +1783,10 @@ module Google
         #   @return [::Google::Cloud::Sql::V1beta4::Settings::SqlActivationPolicy]
         #     The activation policy specifies when the instance is activated; it is
         #     applicable only when the instance state is RUNNABLE. Valid values:
-        #       <br><b>ALWAYS</b>: The instance is on, and remains so even in
-        #     the absence of connection requests.
-        #       <br><b>NEVER</b>: The instance is off; it is not activated, even if a
-        #       connection request arrives.
+        #     *  **ALWAYS**: The instance is on, and remains so even in the absence of
+        #     connection requests.
+        #     *  **NEVER**: The instance is off; it is not activated, even if a
+        #     connection request arrives.
         # @!attribute [rw] ip_configuration
         #   @return [::Google::Cloud::Sql::V1beta4::IpConfiguration]
         #     The settings for IP Management. This allows to enable or disable the
@@ -1701,8 +1807,8 @@ module Google
         #     The database flags passed to the instance at startup.
         # @!attribute [rw] data_disk_type
         #   @return [::Google::Cloud::Sql::V1beta4::SqlDataDiskType]
-        #     The type of data disk: PD_SSD (default) or
-        #     PD_HDD. Not used for First Generation instances.
+        #     The type of data disk: **PD_SSD** (default) or **PD_HDD**. Not used for
+        #     First Generation instances.
         # @!attribute [rw] maintenance_window
         #   @return [::Google::Cloud::Sql::V1beta4::MaintenanceWindow]
         #     The maintenance window for this instance. This specifies when the instance
@@ -1713,7 +1819,8 @@ module Google
         # @!attribute [rw] database_replication_enabled
         #   @return [::Google::Protobuf::BoolValue]
         #     Configuration specific to read replica instances. Indicates whether
-        #     replication is enabled or not.
+        #     replication is enabled or not. WARNING: Changing this restarts the
+        #     instance.
         # @!attribute [rw] crash_safe_replication_enabled
         #   @return [::Google::Protobuf::BoolValue]
         #     Configuration specific to read replica instances. Indicates whether
@@ -1734,6 +1841,12 @@ module Google
         # @!attribute [rw] insights_config
         #   @return [::Google::Cloud::Sql::V1beta4::InsightsConfig]
         #     Insights configuration, for now relevant only for Postgres.
+        # @!attribute [rw] password_validation_policy
+        #   @return [::Google::Cloud::Sql::V1beta4::PasswordValidationPolicy]
+        #     The local user password validation policy of the instance.
+        # @!attribute [rw] sql_server_audit_config
+        #   @return [::Google::Cloud::Sql::V1beta4::SqlServerAuditConfig]
+        #     SQL Server specific audit configuration.
         class Settings
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1766,7 +1879,7 @@ module Google
         # SslCerts Resource
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#sslCert</b>.
+        #     This is always **sql#sslCert**.
         # @!attribute [rw] cert_serial_number
         #   @return [::String]
         #     Serial number, as extracted from the certificate.
@@ -1775,17 +1888,17 @@ module Google
         #     PEM representation.
         # @!attribute [rw] create_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time when the certificate was created in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>
+        #     The time when the certificate was created in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] common_name
         #   @return [::String]
         #     User supplied name.  Constrained to [a-zA-Z.-_ ]+.
         # @!attribute [rw] expiration_time
         #   @return [::Google::Protobuf::Timestamp]
-        #     The time when the certificate expires in <a
-        #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for example
-        #     <b>2012-11-15T16:19:00.094Z</b>.
+        #     The time when the certificate expires in
+        #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+        #     **2012-11-15T16:19:00.094Z**.
         # @!attribute [rw] sha1_fingerprint
         #   @return [::String]
         #     Sha1 Fingerprint.
@@ -1849,9 +1962,9 @@ module Google
           # @!attribute [rw] schedule_time
           #   @return [::Google::Protobuf::Timestamp]
           #     Optional. Timestamp when the maintenance shall be rescheduled to if
-          #     reschedule_type=SPECIFIC_TIME, in <a
-          #     href="https://tools.ietf.org/html/rfc3339">RFC 3339</a> format, for
-          #     example <b>2012-11-15T16:19:00.094Z</b>.
+          #     reschedule_type=SPECIFIC_TIME, in
+          #     [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example
+          #     **2012-11-15T16:19:00.094Z**.
           class Reschedule
             include ::Google::Protobuf::MessageExts
             extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1860,14 +1973,14 @@ module Google
           module RescheduleType
             RESCHEDULE_TYPE_UNSPECIFIED = 0
 
-            # If the user wants to schedule the maintenance to happen now.
+            # Reschedules maintenance to happen now (within 5 minutes).
             IMMEDIATE = 1
 
-            # If the user wants to use the existing maintenance policy to find the
-            # next available window.
+            # Reschedules maintenance to occur within one week from the originally
+            # scheduled day and time.
             NEXT_AVAILABLE_WINDOW = 2
 
-            # If the user wants to reschedule the maintenance to a specific time.
+            # Reschedules maintenance to a specific time and day.
             SPECIFIC_TIME = 3
           end
         end
@@ -1875,7 +1988,7 @@ module Google
         # SslCert insert response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#sslCertsInsert</b>.
+        #     This is always **sql#sslCertsInsert**.
         # @!attribute [rw] operation
         #   @return [::Google::Cloud::Sql::V1beta4::Operation]
         #     The operation to track the ssl certs insert request.
@@ -1895,7 +2008,7 @@ module Google
         # SslCerts list response.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#sslCertsList</b>.
+        #     This is always **sql#sslCertsList**.
         # @!attribute [rw] items
         #   @return [::Array<::Google::Cloud::Sql::V1beta4::SslCert>]
         #     List of client certificates for the instance.
@@ -1907,11 +2020,11 @@ module Google
         # Database Instance truncate log context.
         # @!attribute [rw] kind
         #   @return [::String]
-        #     This is always <b>sql#truncateLogContext</b>.
+        #     This is always **sql#truncateLogContext**.
         # @!attribute [rw] log_type
         #   @return [::String]
-        #     The type of log to truncate. Valid values are
-        #     <b>MYSQL_GENERAL_TABLE</b> and <b>MYSQL_SLOW_TABLE</b>.
+        #     The type of log to truncate. Valid values are **MYSQL_GENERAL_TABLE** and
+        #     **MYSQL_SLOW_TABLE**.
         class TruncateLogContext
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -1925,6 +2038,18 @@ module Google
         #   @return [::String]
         #     The name of the domain (e.g., mydomain.com).
         class SqlActiveDirectoryConfig
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # SQL Server specific audit configuration.
+        # @!attribute [rw] kind
+        #   @return [::String]
+        #     This is always sql#sqlServerAuditConfig
+        # @!attribute [rw] bucket
+        #   @return [::String]
+        #     The name of the destination bucket (e.g., gs://mybucket).
+        class SqlServerAuditConfig
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
@@ -2042,7 +2167,8 @@ module Google
           # This is an unknown Cloud SQL instance type.
           SQL_INSTANCE_TYPE_UNSPECIFIED = 0
 
-          # A regular Cloud SQL instance.
+          # A regular Cloud SQL instance that is not replicating from a primary
+          # instance.
           CLOUD_SQL_INSTANCE = 1
 
           # An instance running on the customer's premises that is not managed by
@@ -2097,8 +2223,29 @@ module Google
           # The database version is MySQL 8.
           MYSQL_8_0 = 20
 
+          # The database major version is MySQL 8.0 and the minor version is 18.
+          MYSQL_8_0_18 = 41
+
+          # The database major version is MySQL 8.0 and the minor version is 26.
+          MYSQL_8_0_26 = 85
+
           # The database version is PostgreSQL 13.
           POSTGRES_13 = 23
+
+          # The database version is PostgreSQL 14.
+          POSTGRES_14 = 110
+
+          # The database version is SQL Server 2019 Standard.
+          SQLSERVER_2019_STANDARD = 26
+
+          # The database version is SQL Server 2019 Enterprise.
+          SQLSERVER_2019_ENTERPRISE = 27
+
+          # The database version is SQL Server 2019 Express.
+          SQLSERVER_2019_EXPRESS = 28
+
+          # The database version is SQL Server 2019 Web.
+          SQLSERVER_2019_WEB = 29
         end
 
         # The suspension reason of the database instance if the state is SUSPENDED.
@@ -2192,7 +2339,6 @@ module Google
           stable = 2
         end
 
-        # LINT.IfChange(sql_flag_type)
         module SqlFlagType
           # This is an unknown flag type.
           SQL_FLAG_TYPE_UNSPECIFIED = 0

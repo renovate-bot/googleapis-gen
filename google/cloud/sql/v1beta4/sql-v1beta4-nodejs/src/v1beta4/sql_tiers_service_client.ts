@@ -276,8 +276,7 @@ export class SqlTiersServiceClient {
   // -------------------
 /**
  * Lists all available machine types (tiers) for Cloud SQL, for example,
- * db-custom-1-3840. For related information, see <a
- * href="/sql/pricing">Pricing</a>.
+ * db-custom-1-3840. For related information, see [Pricing](/sql/pricing).
  *
  * @param {Object} request
  *   The request object that will be sent.

@@ -161,8 +161,8 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param id [::Integer]
-            #     The ID of the Backup Run to delete. To find a Backup Run ID, use the <a
-            #     href="/sql/docs/db_path/admin-api/rest/v1beta4/backupRuns/list">list</a>
+            #     The ID of the backup run to delete. To find a backup run ID, use the
+            #     [list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/backupRuns/list)
             #     method.
             #   @param instance [::String]
             #     Cloud SQL instance ID. This does not include the project ID.
@@ -258,7 +258,7 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param id [::Integer]
-            #     The ID of this Backup Run.
+            #     The ID of this backup run.
             #   @param instance [::String]
             #     Cloud SQL instance ID. This does not include the project ID.
             #   @param project [::String]
@@ -335,8 +335,7 @@ module Google
             end
 
             ##
-            # Creates a new backup run on demand. This method is applicable only to
-            # Second Generation instances.
+            # Creates a new backup run on demand.
             #
             # @overload insert(request, options = nil)
             #   Pass arguments to `insert` via a request object, either of type
@@ -427,8 +426,9 @@ module Google
             end
 
             ##
-            # Lists all backup runs associated with a given instance and configuration in
-            # the reverse chronological order of the backup initiation time.
+            # Lists all backup runs associated with the project or a given instance and
+            # configuration in the reverse chronological order of the backup initiation
+            # time.
             #
             # @overload list(request, options = nil)
             #   Pass arguments to `list` via a request object, either of type
@@ -446,7 +446,8 @@ module Google
             #   the default parameter values, pass an empty Hash as a request object (see above).
             #
             #   @param instance [::String]
-            #     Cloud SQL instance ID. This does not include the project ID.
+            #     Cloud SQL instance ID, or "-" for all instances. This does not include
+            #     the project ID.
             #   @param max_results [::Integer]
             #     Maximum number of backup runs per response.
             #   @param page_token [::String]

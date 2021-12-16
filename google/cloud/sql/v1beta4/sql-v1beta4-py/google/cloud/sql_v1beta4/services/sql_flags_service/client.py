@@ -334,7 +334,7 @@ class SqlFlagsServiceClient(metaclass=SqlFlagsServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.FlagsListResponse:
-        r"""List all available database flags for Cloud SQL
+        r"""Lists all available database flags for Cloud SQL
         instances.
 
         Args:

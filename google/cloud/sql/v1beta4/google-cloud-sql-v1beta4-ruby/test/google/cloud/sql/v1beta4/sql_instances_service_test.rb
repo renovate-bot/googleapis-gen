@@ -1467,6 +1467,8 @@ class ::Google::Cloud::Sql::V1beta4::SqlInstancesService::ClientTest < Minitest:
     project = "hello world"
     verify_connection_only = true
     sync_mode = :EXTERNAL_SYNC_MODE_UNSPECIFIED
+    verify_replication_only = true
+    mysql_sync_config = {}
 
     verify_external_sync_settings_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :verify_external_sync_settings, name
@@ -1475,6 +1477,9 @@ class ::Google::Cloud::Sql::V1beta4::SqlInstancesService::ClientTest < Minitest:
       assert_equal "hello world", request["project"]
       assert_equal true, request["verify_connection_only"]
       assert_equal :EXTERNAL_SYNC_MODE_UNSPECIFIED, request["sync_mode"]
+      assert_equal true, request["verify_replication_only"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Sql::V1beta4::MySqlSyncConfig), request["mysql_sync_config"]
+      assert_equal :mysql_sync_config, request.sync_config
       refute_nil options
     end
 
@@ -1485,31 +1490,31 @@ class ::Google::Cloud::Sql::V1beta4::SqlInstancesService::ClientTest < Minitest:
       end
 
       # Use hash object
-      client.verify_external_sync_settings({ instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode }) do |response, operation|
+      client.verify_external_sync_settings({ instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode, verify_replication_only: verify_replication_only, mysql_sync_config: mysql_sync_config }) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.verify_external_sync_settings instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode do |response, operation|
+      client.verify_external_sync_settings instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode, verify_replication_only: verify_replication_only, mysql_sync_config: mysql_sync_config do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.verify_external_sync_settings ::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsRequest.new(instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode) do |response, operation|
+      client.verify_external_sync_settings ::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsRequest.new(instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode, verify_replication_only: verify_replication_only, mysql_sync_config: mysql_sync_config) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.verify_external_sync_settings({ instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode }, grpc_options) do |response, operation|
+      client.verify_external_sync_settings({ instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode, verify_replication_only: verify_replication_only, mysql_sync_config: mysql_sync_config }, grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.verify_external_sync_settings(::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsRequest.new(instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode), grpc_options) do |response, operation|
+      client.verify_external_sync_settings(::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsRequest.new(instance: instance, project: project, verify_connection_only: verify_connection_only, sync_mode: sync_mode, verify_replication_only: verify_replication_only, mysql_sync_config: mysql_sync_config), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
@@ -1531,6 +1536,7 @@ class ::Google::Cloud::Sql::V1beta4::SqlInstancesService::ClientTest < Minitest:
     project = "hello world"
     sync_mode = :EXTERNAL_SYNC_MODE_UNSPECIFIED
     skip_verification = true
+    mysql_sync_config = {}
 
     start_external_sync_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :start_external_sync, name
@@ -1539,6 +1545,8 @@ class ::Google::Cloud::Sql::V1beta4::SqlInstancesService::ClientTest < Minitest:
       assert_equal "hello world", request["project"]
       assert_equal :EXTERNAL_SYNC_MODE_UNSPECIFIED, request["sync_mode"]
       assert_equal true, request["skip_verification"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Cloud::Sql::V1beta4::MySqlSyncConfig), request["mysql_sync_config"]
+      assert_equal :mysql_sync_config, request.sync_config
       refute_nil options
     end
 
@@ -1549,31 +1557,31 @@ class ::Google::Cloud::Sql::V1beta4::SqlInstancesService::ClientTest < Minitest:
       end
 
       # Use hash object
-      client.start_external_sync({ instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification }) do |response, operation|
+      client.start_external_sync({ instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification, mysql_sync_config: mysql_sync_config }) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.start_external_sync instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification do |response, operation|
+      client.start_external_sync instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification, mysql_sync_config: mysql_sync_config do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.start_external_sync ::Google::Cloud::Sql::V1beta4::SqlInstancesStartExternalSyncRequest.new(instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification) do |response, operation|
+      client.start_external_sync ::Google::Cloud::Sql::V1beta4::SqlInstancesStartExternalSyncRequest.new(instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification, mysql_sync_config: mysql_sync_config) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.start_external_sync({ instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification }, grpc_options) do |response, operation|
+      client.start_external_sync({ instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification, mysql_sync_config: mysql_sync_config }, grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.start_external_sync(::Google::Cloud::Sql::V1beta4::SqlInstancesStartExternalSyncRequest.new(instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification), grpc_options) do |response, operation|
+      client.start_external_sync(::Google::Cloud::Sql::V1beta4::SqlInstancesStartExternalSyncRequest.new(instance: instance, project: project, sync_mode: sync_mode, skip_verification: skip_verification, mysql_sync_config: mysql_sync_config), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

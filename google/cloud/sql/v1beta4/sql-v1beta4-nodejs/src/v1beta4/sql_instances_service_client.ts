@@ -650,8 +650,14 @@ export class SqlInstancesServiceClient {
     return this.innerApiCalls.export(request, options, callback);
   }
 /**
- * Failover the instance to its failover replica instance. Using this
- * operation might cause your instance to restart.
+ * Initiates a manual failover of a high availability (HA) primary instance
+ * to a standby instance, which becomes the primary instance. Users are
+ * then rerouted to the new primary. For more information, see the
+ * [Overview of high
+ * availability](https://cloud.google.com/sql/docs/mysql/high-availability)
+ * page in the Cloud SQL documentation.
+ * If using Legacy HA (MySQL only), this causes the instance to failover to
+ * its failover replica instance.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -2014,6 +2020,10 @@ export class SqlInstancesServiceClient {
  *   Flag to enable verifying connection only
  * @param {google.cloud.sql.v1beta4.SqlInstancesVerifyExternalSyncSettingsRequest.ExternalSyncMode} request.syncMode
  *   External sync mode
+ * @param {boolean} [request.verifyReplicationOnly]
+ *   Optional. Flag to verify settings required by replication setup only
+ * @param {google.cloud.sql.v1beta4.MySqlSyncConfig} [request.mysqlSyncConfig]
+ *   Optional. MySQL-specific settings for start external sync.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -2091,6 +2101,8 @@ export class SqlInstancesServiceClient {
  *   External sync mode.
  * @param {boolean} request.skipVerification
  *   Whether to skip the verification step (VESS).
+ * @param {google.cloud.sql.v1beta4.MySqlSyncConfig} request.mysqlSyncConfig
+ *   MySQL-specific settings for start external sync.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.

@@ -16,10 +16,13 @@
 // ** https://github.com/googleapis/gapic-generator-typescript **
 // ** All changes to this file may be overwritten. **
 
-import {SqlBackupRunsServiceClient, SqlDatabasesServiceClient, SqlFlagsServiceClient, SqlInstancesServiceClient, SqlOperationsServiceClient, SqlSslCertsServiceClient, SqlTiersServiceClient, SqlUsersServiceClient} from '@google-cloud/sql';
+import {SqlBackupRunsServiceClient, SqlConnectServiceClient, SqlDatabasesServiceClient, SqlFlagsServiceClient, SqlInstancesServiceClient, SqlOperationsServiceClient, SqlSslCertsServiceClient, SqlTiersServiceClient, SqlUsersServiceClient} from '@google-cloud/sql';
 
 // check that the client class type name can be used
 function doStuffWithSqlBackupRunsServiceClient(client: SqlBackupRunsServiceClient) {
+  client.close();
+}
+function doStuffWithSqlConnectServiceClient(client: SqlConnectServiceClient) {
   client.close();
 }
 function doStuffWithSqlDatabasesServiceClient(client: SqlDatabasesServiceClient) {
@@ -48,6 +51,9 @@ function main() {
   // check that the client instance can be created
   const sqlBackupRunsServiceClient = new SqlBackupRunsServiceClient();
   doStuffWithSqlBackupRunsServiceClient(sqlBackupRunsServiceClient);
+  // check that the client instance can be created
+  const sqlConnectServiceClient = new SqlConnectServiceClient();
+  doStuffWithSqlConnectServiceClient(sqlConnectServiceClient);
   // check that the client instance can be created
   const sqlDatabasesServiceClient = new SqlDatabasesServiceClient();
   doStuffWithSqlDatabasesServiceClient(sqlDatabasesServiceClient);

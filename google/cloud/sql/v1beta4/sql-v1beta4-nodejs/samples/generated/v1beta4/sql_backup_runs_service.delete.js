@@ -21,8 +21,8 @@ function main() {
    * TODO(developer): Uncomment these variables before running the sample.
    */
   /**
-   *  The ID of the Backup Run to delete. To find a Backup Run ID, use the <a
-   *  href="/sql/docs/db_path/admin-api/rest/v1beta4/backupRuns/list">list</a>
+   *  The ID of the backup run to delete. To find a backup run ID, use the
+   *  list (https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/backupRuns/list)
    *  method.
    */
   // const id = 1234

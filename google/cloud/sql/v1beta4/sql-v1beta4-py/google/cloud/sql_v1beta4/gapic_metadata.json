@@ -59,6 +59,40 @@
         }
       }
     },
+    "SqlConnectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "SqlConnectServiceClient",
+          "rpcs": {
+            "GenerateEphemeralCert": {
+              "methods": [
+                "generate_ephemeral_cert"
+              ]
+            },
+            "GetConnectSettings": {
+              "methods": [
+                "get_connect_settings"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "SqlConnectServiceAsyncClient",
+          "rpcs": {
+            "GenerateEphemeralCert": {
+              "methods": [
+                "generate_ephemeral_cert"
+              ]
+            },
+            "GetConnectSettings": {
+              "methods": [
+                "get_connect_settings"
+              ]
+            }
+          }
+        }
+      }
+    },
     "SqlDatabasesService": {
       "clients": {
         "grpc": {

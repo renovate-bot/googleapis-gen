@@ -81,6 +81,36 @@ module Google
           extend ::Google::Protobuf::MessageExts::ClassMethods
         end
 
+        # User level password validation policy.
+        # @!attribute [rw] allowed_failed_attempts
+        #   @return [::Integer]
+        #     Number of failed login attempts allowed before user get locked.
+        # @!attribute [rw] password_expiration_duration
+        #   @return [::Google::Protobuf::Duration]
+        #     Expiration duration after password is updated.
+        # @!attribute [rw] enable_failed_attempts_check
+        #   @return [::Boolean]
+        #     If true, failed login attempts check will be enabled.
+        # @!attribute [r] status
+        #   @return [::Google::Cloud::Sql::V1beta4::PasswordStatus]
+        #     Output only. Read-only password status.
+        class UserPasswordValidationPolicy
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
+        # Read-only password status.
+        # @!attribute [rw] locked
+        #   @return [::Boolean]
+        #     If true, user does not have login privileges.
+        # @!attribute [rw] password_expiration_time
+        #   @return [::Google::Protobuf::Timestamp]
+        #     The expiration time of the current password.
+        class PasswordStatus
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+        end
+
         # A Cloud SQL user resource.
         # @!attribute [rw] kind
         #   @return [::String]
@@ -95,13 +125,14 @@ module Google
         # @!attribute [rw] name
         #   @return [::String]
         #     The name of the user in the Cloud SQL instance. Can be omitted for
-        #     <b>update</b> since it is already specified in the URL.
+        #     **update** since it is already specified in the URL.
         # @!attribute [rw] host
         #   @return [::String]
-        #     The host name from which the user can connect. For <b>insert</b>
-        #     operations, host defaults to an empty string. For <b>update</b>
+        #     Optional. The host name from which the user can connect. For **insert**
+        #     operations, host defaults to an empty string. For **update**
         #     operations, host is specified as part of the request URL. The host name
-        #     cannot be updated after insertion.
+        #     cannot be updated after insertion.  For a MySQL instance, it's required;
+        #     for a PostgreSQL or SQL Server instance, it's optional.
         # @!attribute [rw] instance
         #   @return [::String]
         #     The name of the Cloud SQL instance. This does not include the project ID.
@@ -118,6 +149,9 @@ module Google
         #     login. The default is the database's built-in user type.
         # @!attribute [rw] sqlserver_user_details
         #   @return [::Google::Cloud::Sql::V1beta4::SqlServerUserDetails]
+        # @!attribute [rw] password_policy
+        #   @return [::Google::Cloud::Sql::V1beta4::UserPasswordValidationPolicy]
+        #     User level password validation policy.
         class User
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

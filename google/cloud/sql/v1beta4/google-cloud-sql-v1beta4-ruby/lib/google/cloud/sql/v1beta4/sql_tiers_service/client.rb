@@ -146,8 +146,7 @@ module Google
 
             ##
             # Lists all available machine types (tiers) for Cloud SQL, for example,
-            # db-custom-1-3840. For related information, see <a
-            # href="/sql/pricing">Pricing</a>.
+            # db-custom-1-3840. For related information, see [Pricing](/sql/pricing).
             #
             # @overload list(request, options = nil)
             #   Pass arguments to `list` via a request object, either of type

@@ -143,7 +143,7 @@ module Google
             # Service calls
 
             ##
-            # List all available database flags for Cloud SQL instances.
+            # Lists all available database flags for Cloud SQL instances.
             #
             # @overload list(request, options = nil)
             #   Pass arguments to `list` via a request object, either of type

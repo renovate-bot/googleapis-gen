@@ -36,6 +36,14 @@ function main() {
    *  External sync mode
    */
   // const syncMode = {}
+  /**
+   *  Optional. Flag to verify settings required by replication setup only
+   */
+  // const verifyReplicationOnly = true
+  /**
+   *  Optional. MySQL-specific settings for start external sync.
+   */
+  // const mysqlSyncConfig = {}
 
   // Imports the Sql library
   const {SqlInstancesServiceClient} = require('@google-cloud/sql').v1beta4;

@@ -279,8 +279,8 @@ export class SqlBackupRunsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {number} request.id
- *   The ID of the Backup Run to delete. To find a Backup Run ID, use the <a
- *   href="/sql/docs/db_path/admin-api/rest/v1beta4/backupRuns/list">list</a>
+ *   The ID of the backup run to delete. To find a backup run ID, use the
+ *   [list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/backupRuns/list)
  *   method.
  * @param {string} request.instance
  *   Cloud SQL instance ID. This does not include the project ID.
@@ -356,7 +356,7 @@ export class SqlBackupRunsServiceClient {
  * @param {Object} request
  *   The request object that will be sent.
  * @param {number} request.id
- *   The ID of this Backup Run.
+ *   The ID of this backup run.
  * @param {string} request.instance
  *   Cloud SQL instance ID. This does not include the project ID.
  * @param {string} request.project
@@ -426,8 +426,7 @@ export class SqlBackupRunsServiceClient {
     return this.innerApiCalls.get(request, options, callback);
   }
 /**
- * Creates a new backup run on demand. This method is applicable only to
- * Second Generation instances.
+ * Creates a new backup run on demand.
  *
  * @param {Object} request
  *   The request object that will be sent.
@@ -501,13 +500,15 @@ export class SqlBackupRunsServiceClient {
     return this.innerApiCalls.insert(request, options, callback);
   }
 /**
- * Lists all backup runs associated with a given instance and configuration in
- * the reverse chronological order of the backup initiation time.
+ * Lists all backup runs associated with the project or a given instance and
+ * configuration in the reverse chronological order of the backup initiation
+ * time.
  *
  * @param {Object} request
  *   The request object that will be sent.
  * @param {string} request.instance
- *   Cloud SQL instance ID. This does not include the project ID.
+ *   Cloud SQL instance ID, or "-" for all instances. This does not include
+ *   the project ID.
  * @param {number} request.maxResults
  *   Maximum number of backup runs per response.
  * @param {string} request.pageToken

@@ -24,8 +24,6 @@ module Google
     module Sql
       module V1beta4
         module SqlBackupRunsService
-          # LINT.IfChange
-          #
           class Service
 
             include ::GRPC::GenericService
@@ -38,11 +36,11 @@ module Google
             rpc :Delete, ::Google::Cloud::Sql::V1beta4::SqlBackupRunsDeleteRequest, ::Google::Cloud::Sql::V1beta4::Operation
             # Retrieves a resource containing information about a backup run.
             rpc :Get, ::Google::Cloud::Sql::V1beta4::SqlBackupRunsGetRequest, ::Google::Cloud::Sql::V1beta4::BackupRun
-            # Creates a new backup run on demand. This method is applicable only to
-            # Second Generation instances.
+            # Creates a new backup run on demand.
             rpc :Insert, ::Google::Cloud::Sql::V1beta4::SqlBackupRunsInsertRequest, ::Google::Cloud::Sql::V1beta4::Operation
-            # Lists all backup runs associated with a given instance and configuration in
-            # the reverse chronological order of the backup initiation time.
+            # Lists all backup runs associated with the project or a given instance and
+            # configuration in the reverse chronological order of the backup initiation
+            # time.
             rpc :List, ::Google::Cloud::Sql::V1beta4::SqlBackupRunsListRequest, ::Google::Cloud::Sql::V1beta4::BackupRunsListResponse
           end
 
@@ -86,7 +84,7 @@ module Google
             self.unmarshal_class_method = :decode
             self.service_name = 'google.cloud.sql.v1beta4.SqlFlagsService'
 
-            # List all available database flags for Cloud SQL instances.
+            # Lists all available database flags for Cloud SQL instances.
             rpc :List, ::Google::Cloud::Sql::V1beta4::SqlFlagsListRequest, ::Google::Cloud::Sql::V1beta4::FlagsListResponse
           end
 
@@ -118,8 +116,14 @@ module Google
             # Exports data from a Cloud SQL instance to a Cloud Storage bucket as a SQL
             # dump or CSV file.
             rpc :Export, ::Google::Cloud::Sql::V1beta4::SqlInstancesExportRequest, ::Google::Cloud::Sql::V1beta4::Operation
-            # Failover the instance to its failover replica instance. Using this
-            # operation might cause your instance to restart.
+            # Initiates a manual failover of a high availability (HA) primary instance
+            # to a standby instance, which becomes the primary instance. Users are
+            # then rerouted to the new primary. For more information, see the
+            # [Overview of high
+            # availability](https://cloud.google.com/sql/docs/mysql/high-availability)
+            # page in the Cloud SQL documentation.
+            # If using Legacy HA (MySQL only), this causes the instance to failover to
+            # its failover replica instance.
             rpc :Failover, ::Google::Cloud::Sql::V1beta4::SqlInstancesFailoverRequest, ::Google::Cloud::Sql::V1beta4::Operation
             # Retrieves a resource containing information about a Cloud SQL instance.
             rpc :Get, ::Google::Cloud::Sql::V1beta4::SqlInstancesGetRequest, ::Google::Cloud::Sql::V1beta4::DatabaseInstance

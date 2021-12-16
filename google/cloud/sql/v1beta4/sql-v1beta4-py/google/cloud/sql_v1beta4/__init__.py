@@ -16,6 +16,8 @@
 
 from .services.sql_backup_runs_service import SqlBackupRunsServiceClient
 from .services.sql_backup_runs_service import SqlBackupRunsServiceAsyncClient
+from .services.sql_connect_service import SqlConnectServiceClient
+from .services.sql_connect_service import SqlConnectServiceAsyncClient
 from .services.sql_databases_service import SqlDatabasesServiceClient
 from .services.sql_databases_service import SqlDatabasesServiceAsyncClient
 from .services.sql_flags_service import SqlFlagsServiceClient
@@ -72,6 +74,10 @@ from .types.cloud_sql import SqlSslCertsDeleteRequest
 from .types.cloud_sql import SqlSslCertsGetRequest
 from .types.cloud_sql import SqlSslCertsInsertRequest
 from .types.cloud_sql import SqlSslCertsListRequest
+from .types.cloud_sql_connect import ConnectSettings
+from .types.cloud_sql_connect import GenerateEphemeralCertRequest
+from .types.cloud_sql_connect import GenerateEphemeralCertResponse
+from .types.cloud_sql_connect import GetConnectSettingsRequest
 from .types.cloud_sql_resources import AclEntry
 from .types.cloud_sql_resources import ApiWarning
 from .types.cloud_sql_resources import BackupConfiguration
@@ -97,6 +103,7 @@ from .types.cloud_sql_resources import Flag
 from .types.cloud_sql_resources import FlagsListResponse
 from .types.cloud_sql_resources import ImportContext
 from .types.cloud_sql_resources import InsightsConfig
+from .types.cloud_sql_resources import InstanceReference
 from .types.cloud_sql_resources import InstancesCloneRequest
 from .types.cloud_sql_resources import InstancesDemoteMasterRequest
 from .types.cloud_sql_resources import InstancesExportRequest
@@ -112,11 +119,13 @@ from .types.cloud_sql_resources import IpMapping
 from .types.cloud_sql_resources import LocationPreference
 from .types.cloud_sql_resources import MaintenanceWindow
 from .types.cloud_sql_resources import MySqlReplicaConfiguration
+from .types.cloud_sql_resources import MySqlSyncConfig
 from .types.cloud_sql_resources import OnPremisesConfiguration
 from .types.cloud_sql_resources import Operation
 from .types.cloud_sql_resources import OperationError
 from .types.cloud_sql_resources import OperationErrors
 from .types.cloud_sql_resources import OperationsListResponse
+from .types.cloud_sql_resources import PasswordValidationPolicy
 from .types.cloud_sql_resources import ReplicaConfiguration
 from .types.cloud_sql_resources import RestoreBackupContext
 from .types.cloud_sql_resources import RotateServerCaContext
@@ -125,6 +134,7 @@ from .types.cloud_sql_resources import SqlActiveDirectoryConfig
 from .types.cloud_sql_resources import SqlExternalSyncSettingError
 from .types.cloud_sql_resources import SqlInstancesRescheduleMaintenanceRequestBody
 from .types.cloud_sql_resources import SqlInstancesVerifyExternalSyncSettingsResponse
+from .types.cloud_sql_resources import SqlServerAuditConfig
 from .types.cloud_sql_resources import SqlServerDatabaseDetails
 from .types.cloud_sql_resources import SslCert
 from .types.cloud_sql_resources import SslCertDetail
@@ -132,6 +142,7 @@ from .types.cloud_sql_resources import SslCertsCreateEphemeralRequest
 from .types.cloud_sql_resources import SslCertsInsertRequest
 from .types.cloud_sql_resources import SslCertsInsertResponse
 from .types.cloud_sql_resources import SslCertsListResponse
+from .types.cloud_sql_resources import SyncFlags
 from .types.cloud_sql_resources import TruncateLogContext
 from .types.cloud_sql_resources import SqlAvailabilityType
 from .types.cloud_sql_resources import SqlBackendType
@@ -151,16 +162,19 @@ from .types.cloud_sql_resources import SqlUpdateTrack
 from .types.cloud_sql_tiers import SqlTiersListRequest
 from .types.cloud_sql_tiers import Tier
 from .types.cloud_sql_tiers import TiersListResponse
+from .types.cloud_sql_users import PasswordStatus
 from .types.cloud_sql_users import SqlServerUserDetails
 from .types.cloud_sql_users import SqlUsersDeleteRequest
 from .types.cloud_sql_users import SqlUsersInsertRequest
 from .types.cloud_sql_users import SqlUsersListRequest
 from .types.cloud_sql_users import SqlUsersUpdateRequest
 from .types.cloud_sql_users import User
+from .types.cloud_sql_users import UserPasswordValidationPolicy
 from .types.cloud_sql_users import UsersListResponse
 
 __all__ = (
     'SqlBackupRunsServiceAsyncClient',
+    'SqlConnectServiceAsyncClient',
     'SqlDatabasesServiceAsyncClient',
     'SqlFlagsServiceAsyncClient',
     'SqlInstancesServiceAsyncClient',
@@ -177,6 +191,7 @@ __all__ = (
 'BackupRunsListResponse',
 'BinLogCoordinates',
 'CloneContext',
+'ConnectSettings',
 'Database',
 'DatabaseFlags',
 'DatabaseInstance',
@@ -191,8 +206,12 @@ __all__ = (
 'FailoverContext',
 'Flag',
 'FlagsListResponse',
+'GenerateEphemeralCertRequest',
+'GenerateEphemeralCertResponse',
+'GetConnectSettingsRequest',
 'ImportContext',
 'InsightsConfig',
+'InstanceReference',
 'InstancesCloneRequest',
 'InstancesDemoteMasterRequest',
 'InstancesExportRequest',
@@ -208,11 +227,14 @@ __all__ = (
 'LocationPreference',
 'MaintenanceWindow',
 'MySqlReplicaConfiguration',
+'MySqlSyncConfig',
 'OnPremisesConfiguration',
 'Operation',
 'OperationError',
 'OperationErrors',
 'OperationsListResponse',
+'PasswordStatus',
+'PasswordValidationPolicy',
 'ReplicaConfiguration',
 'RestoreBackupContext',
 'RotateServerCaContext',
@@ -228,6 +250,7 @@ __all__ = (
 'SqlBackupRunsInsertRequest',
 'SqlBackupRunsListRequest',
 'SqlBackupRunsServiceClient',
+'SqlConnectServiceClient',
 'SqlDataDiskType',
 'SqlDatabaseVersion',
 'SqlDatabasesDeleteRequest',
@@ -276,6 +299,7 @@ __all__ = (
 'SqlOperationsServiceClient',
 'SqlPricingPlan',
 'SqlReplicationType',
+'SqlServerAuditConfig',
 'SqlServerDatabaseDetails',
 'SqlServerUserDetails',
 'SqlSslCertsDeleteRequest',
@@ -298,9 +322,11 @@ __all__ = (
 'SslCertsInsertRequest',
 'SslCertsInsertResponse',
 'SslCertsListResponse',
+'SyncFlags',
 'Tier',
 'TiersListResponse',
 'TruncateLogContext',
 'User',
+'UserPasswordValidationPolicy',
 'UsersListResponse',
 )

@@ -16,6 +16,8 @@
 
 from google.cloud.sql_v1beta4.services.sql_backup_runs_service.client import SqlBackupRunsServiceClient
 from google.cloud.sql_v1beta4.services.sql_backup_runs_service.async_client import SqlBackupRunsServiceAsyncClient
+from google.cloud.sql_v1beta4.services.sql_connect_service.client import SqlConnectServiceClient
+from google.cloud.sql_v1beta4.services.sql_connect_service.async_client import SqlConnectServiceAsyncClient
 from google.cloud.sql_v1beta4.services.sql_databases_service.client import SqlDatabasesServiceClient
 from google.cloud.sql_v1beta4.services.sql_databases_service.async_client import SqlDatabasesServiceAsyncClient
 from google.cloud.sql_v1beta4.services.sql_flags_service.client import SqlFlagsServiceClient
@@ -72,6 +74,10 @@ from google.cloud.sql_v1beta4.types.cloud_sql import SqlSslCertsDeleteRequest
 from google.cloud.sql_v1beta4.types.cloud_sql import SqlSslCertsGetRequest
 from google.cloud.sql_v1beta4.types.cloud_sql import SqlSslCertsInsertRequest
 from google.cloud.sql_v1beta4.types.cloud_sql import SqlSslCertsListRequest
+from google.cloud.sql_v1beta4.types.cloud_sql_connect import ConnectSettings
+from google.cloud.sql_v1beta4.types.cloud_sql_connect import GenerateEphemeralCertRequest
+from google.cloud.sql_v1beta4.types.cloud_sql_connect import GenerateEphemeralCertResponse
+from google.cloud.sql_v1beta4.types.cloud_sql_connect import GetConnectSettingsRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import AclEntry
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import ApiWarning
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import BackupConfiguration
@@ -97,6 +103,7 @@ from google.cloud.sql_v1beta4.types.cloud_sql_resources import Flag
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import FlagsListResponse
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import ImportContext
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import InsightsConfig
+from google.cloud.sql_v1beta4.types.cloud_sql_resources import InstanceReference
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import InstancesCloneRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import InstancesDemoteMasterRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import InstancesExportRequest
@@ -112,11 +119,13 @@ from google.cloud.sql_v1beta4.types.cloud_sql_resources import IpMapping
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import LocationPreference
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import MaintenanceWindow
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import MySqlReplicaConfiguration
+from google.cloud.sql_v1beta4.types.cloud_sql_resources import MySqlSyncConfig
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import OnPremisesConfiguration
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import Operation
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import OperationError
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import OperationErrors
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import OperationsListResponse
+from google.cloud.sql_v1beta4.types.cloud_sql_resources import PasswordValidationPolicy
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import ReplicaConfiguration
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import RestoreBackupContext
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import RotateServerCaContext
@@ -125,6 +134,7 @@ from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlActiveDirector
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlExternalSyncSettingError
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlInstancesRescheduleMaintenanceRequestBody
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlInstancesVerifyExternalSyncSettingsResponse
+from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlServerAuditConfig
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlServerDatabaseDetails
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SslCert
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SslCertDetail
@@ -132,6 +142,7 @@ from google.cloud.sql_v1beta4.types.cloud_sql_resources import SslCertsCreateEph
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SslCertsInsertRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SslCertsInsertResponse
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SslCertsListResponse
+from google.cloud.sql_v1beta4.types.cloud_sql_resources import SyncFlags
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import TruncateLogContext
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlAvailabilityType
 from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlBackendType
@@ -151,16 +162,20 @@ from google.cloud.sql_v1beta4.types.cloud_sql_resources import SqlUpdateTrack
 from google.cloud.sql_v1beta4.types.cloud_sql_tiers import SqlTiersListRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_tiers import Tier
 from google.cloud.sql_v1beta4.types.cloud_sql_tiers import TiersListResponse
+from google.cloud.sql_v1beta4.types.cloud_sql_users import PasswordStatus
 from google.cloud.sql_v1beta4.types.cloud_sql_users import SqlServerUserDetails
 from google.cloud.sql_v1beta4.types.cloud_sql_users import SqlUsersDeleteRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_users import SqlUsersInsertRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_users import SqlUsersListRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_users import SqlUsersUpdateRequest
 from google.cloud.sql_v1beta4.types.cloud_sql_users import User
+from google.cloud.sql_v1beta4.types.cloud_sql_users import UserPasswordValidationPolicy
 from google.cloud.sql_v1beta4.types.cloud_sql_users import UsersListResponse
 
 __all__ = ('SqlBackupRunsServiceClient',
     'SqlBackupRunsServiceAsyncClient',
+    'SqlConnectServiceClient',
+    'SqlConnectServiceAsyncClient',
     'SqlDatabasesServiceClient',
     'SqlDatabasesServiceAsyncClient',
     'SqlFlagsServiceClient',
@@ -216,6 +231,10 @@ __all__ = ('SqlBackupRunsServiceClient',
     'SqlSslCertsGetRequest',
     'SqlSslCertsInsertRequest',
     'SqlSslCertsListRequest',
+    'ConnectSettings',
+    'GenerateEphemeralCertRequest',
+    'GenerateEphemeralCertResponse',
+    'GetConnectSettingsRequest',
     'AclEntry',
     'ApiWarning',
     'BackupConfiguration',
@@ -241,6 +260,7 @@ __all__ = ('SqlBackupRunsServiceClient',
     'FlagsListResponse',
     'ImportContext',
     'InsightsConfig',
+    'InstanceReference',
     'InstancesCloneRequest',
     'InstancesDemoteMasterRequest',
     'InstancesExportRequest',
@@ -256,11 +276,13 @@ __all__ = ('SqlBackupRunsServiceClient',
     'LocationPreference',
     'MaintenanceWindow',
     'MySqlReplicaConfiguration',
+    'MySqlSyncConfig',
     'OnPremisesConfiguration',
     'Operation',
     'OperationError',
     'OperationErrors',
     'OperationsListResponse',
+    'PasswordValidationPolicy',
     'ReplicaConfiguration',
     'RestoreBackupContext',
     'RotateServerCaContext',
@@ -269,6 +291,7 @@ __all__ = ('SqlBackupRunsServiceClient',
     'SqlExternalSyncSettingError',
     'SqlInstancesRescheduleMaintenanceRequestBody',
     'SqlInstancesVerifyExternalSyncSettingsResponse',
+    'SqlServerAuditConfig',
     'SqlServerDatabaseDetails',
     'SslCert',
     'SslCertDetail',
@@ -276,6 +299,7 @@ __all__ = ('SqlBackupRunsServiceClient',
     'SslCertsInsertRequest',
     'SslCertsInsertResponse',
     'SslCertsListResponse',
+    'SyncFlags',
     'TruncateLogContext',
     'SqlAvailabilityType',
     'SqlBackendType',
@@ -295,11 +319,13 @@ __all__ = ('SqlBackupRunsServiceClient',
     'SqlTiersListRequest',
     'Tier',
     'TiersListResponse',
+    'PasswordStatus',
     'SqlServerUserDetails',
     'SqlUsersDeleteRequest',
     'SqlUsersInsertRequest',
     'SqlUsersListRequest',
     'SqlUsersUpdateRequest',
     'User',
+    'UserPasswordValidationPolicy',
     'UsersListResponse',
 )

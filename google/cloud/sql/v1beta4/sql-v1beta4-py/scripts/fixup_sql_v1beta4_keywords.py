@@ -46,7 +46,9 @@ class sqlCallTransformer(cst.CSTTransformer):
         'demote_master': ('instance', 'project', 'body', ),
         'export': ('instance', 'project', 'body', ),
         'failover': ('instance', 'project', 'body', ),
+        'generate_ephemeral_cert': ('instance', 'project', 'public_key', 'access_token', 'read_time', 'valid_duration', ),
         'get': ('id', 'instance', 'project', ),
+        'get_connect_settings': ('instance', 'project', 'read_time', ),
         'import': ('instance', 'project', 'body', ),
         'insert': ('instance', 'project', 'body', ),
         'list': ('instance', 'project', ),
@@ -58,12 +60,12 @@ class sqlCallTransformer(cst.CSTTransformer):
         'restart': ('instance', 'project', ),
         'restore_backup': ('instance', 'project', 'body', ),
         'rotate_server_ca': ('instance', 'project', 'body', ),
-        'start_external_sync': ('instance', 'project', 'sync_mode', 'skip_verification', ),
+        'start_external_sync': ('instance', 'project', 'sync_mode', 'skip_verification', 'mysql_sync_config', ),
         'start_replica': ('instance', 'project', ),
         'stop_replica': ('instance', 'project', ),
         'truncate_log': ('instance', 'project', 'body', ),
         'update': ('host', 'instance', 'name', 'project', 'body', ),
-        'verify_external_sync_settings': ('instance', 'project', 'verify_connection_only', 'sync_mode', ),
+        'verify_external_sync_settings': ('instance', 'project', 'verify_connection_only', 'sync_mode', 'verify_replication_only', 'mysql_sync_config', ),
     }
 
     def leave_Call(self, original: cst.Call, updated: cst.Call) -> cst.CSTNode:

@@ -604,8 +604,14 @@ module Google
             end
 
             ##
-            # Failover the instance to its failover replica instance. Using this
-            # operation might cause your instance to restart.
+            # Initiates a manual failover of a high availability (HA) primary instance
+            # to a standby instance, which becomes the primary instance. Users are
+            # then rerouted to the new primary. For more information, see the
+            # [Overview of high
+            # availability](https://cloud.google.com/sql/docs/mysql/high-availability)
+            # page in the Cloud SQL documentation.
+            # If using Legacy HA (MySQL only), this causes the instance to failover to
+            # its failover replica instance.
             #
             # @overload failover(request, options = nil)
             #   Pass arguments to `failover` via a request object, either of type
@@ -2268,7 +2274,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload verify_external_sync_settings(instance: nil, project: nil, verify_connection_only: nil, sync_mode: nil)
+            # @overload verify_external_sync_settings(instance: nil, project: nil, verify_connection_only: nil, sync_mode: nil, verify_replication_only: nil, mysql_sync_config: nil)
             #   Pass arguments to `verify_external_sync_settings` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -2281,6 +2287,10 @@ module Google
             #     Flag to enable verifying connection only
             #   @param sync_mode [::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsRequest::ExternalSyncMode]
             #     External sync mode
+            #   @param verify_replication_only [::Boolean]
+            #     Optional. Flag to verify settings required by replication setup only
+            #   @param mysql_sync_config [::Google::Cloud::Sql::V1beta4::MySqlSyncConfig, ::Hash]
+            #     Optional. MySQL-specific settings for start external sync.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsResponse]
@@ -2362,7 +2372,7 @@ module Google
             #   @param options [::Gapic::CallOptions, ::Hash]
             #     Overrides the default settings for this call, e.g, timeout, retries, etc. Optional.
             #
-            # @overload start_external_sync(instance: nil, project: nil, sync_mode: nil, skip_verification: nil)
+            # @overload start_external_sync(instance: nil, project: nil, sync_mode: nil, skip_verification: nil, mysql_sync_config: nil)
             #   Pass arguments to `start_external_sync` via keyword arguments. Note that at
             #   least one keyword argument is required. To specify no parameters, or to keep all
             #   the default parameter values, pass an empty Hash as a request object (see above).
@@ -2375,6 +2385,8 @@ module Google
             #     External sync mode.
             #   @param skip_verification [::Boolean]
             #     Whether to skip the verification step (VESS).
+            #   @param mysql_sync_config [::Google::Cloud::Sql::V1beta4::MySqlSyncConfig, ::Hash]
+            #     MySQL-specific settings for start external sync.
             #
             # @yield [response, operation] Access the result along with the RPC operation
             # @yieldparam response [::Google::Cloud::Sql::V1beta4::Operation]

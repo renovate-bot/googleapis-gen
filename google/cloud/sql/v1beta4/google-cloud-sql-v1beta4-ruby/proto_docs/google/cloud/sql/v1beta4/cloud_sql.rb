@@ -23,8 +23,8 @@ module Google
       module V1beta4
         # @!attribute [rw] id
         #   @return [::Integer]
-        #     The ID of the Backup Run to delete. To find a Backup Run ID, use the <a
-        #     href="/sql/docs/db_path/admin-api/rest/v1beta4/backupRuns/list">list</a>
+        #     The ID of the backup run to delete. To find a backup run ID, use the
+        #     [list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1beta4/backupRuns/list)
         #     method.
         # @!attribute [rw] instance
         #   @return [::String]
@@ -39,7 +39,7 @@ module Google
 
         # @!attribute [rw] id
         #   @return [::Integer]
-        #     The ID of this Backup Run.
+        #     The ID of this backup run.
         # @!attribute [rw] instance
         #   @return [::String]
         #     Cloud SQL instance ID. This does not include the project ID.
@@ -66,7 +66,8 @@ module Google
 
         # @!attribute [rw] instance
         #   @return [::String]
-        #     Cloud SQL instance ID. This does not include the project ID.
+        #     Cloud SQL instance ID, or "-" for all instances. This does not include
+        #     the project ID.
         # @!attribute [rw] max_results
         #   @return [::Integer]
         #     Maximum number of backup runs per response.
@@ -451,6 +452,12 @@ module Google
         # @!attribute [rw] sync_mode
         #   @return [::Google::Cloud::Sql::V1beta4::SqlInstancesVerifyExternalSyncSettingsRequest::ExternalSyncMode]
         #     External sync mode
+        # @!attribute [rw] verify_replication_only
+        #   @return [::Boolean]
+        #     Optional. Flag to verify settings required by replication setup only
+        # @!attribute [rw] mysql_sync_config
+        #   @return [::Google::Cloud::Sql::V1beta4::MySqlSyncConfig]
+        #     Optional. MySQL-specific settings for start external sync.
         class SqlInstancesVerifyExternalSyncSettingsRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -481,6 +488,9 @@ module Google
         # @!attribute [rw] skip_verification
         #   @return [::Boolean]
         #     Whether to skip the verification step (VESS).
+        # @!attribute [rw] mysql_sync_config
+        #   @return [::Google::Cloud::Sql::V1beta4::MySqlSyncConfig]
+        #     MySQL-specific settings for start external sync.
         class SqlInstancesStartExternalSyncRequest
           include ::Google::Protobuf::MessageExts
           extend ::Google::Protobuf::MessageExts::ClassMethods

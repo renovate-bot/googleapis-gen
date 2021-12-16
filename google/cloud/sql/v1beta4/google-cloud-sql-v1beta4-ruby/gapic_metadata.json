@@ -269,6 +269,25 @@
         }
       }
     },
+    "SqlConnectService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "::Google::Cloud::Sql::V1beta4::SqlConnectService::Client",
+          "rpcs": {
+            "GetConnectSettings": {
+              "methods": [
+                "get_connect_settings"
+              ]
+            },
+            "GenerateEphemeralCert": {
+              "methods": [
+                "generate_ephemeral_cert"
+              ]
+            }
+          }
+        }
+      }
+    },
     "SqlTiersService": {
       "clients": {
         "grpc": {

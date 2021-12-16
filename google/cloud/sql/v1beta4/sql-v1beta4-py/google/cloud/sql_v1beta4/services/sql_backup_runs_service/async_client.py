@@ -41,7 +41,7 @@ from .client import SqlBackupRunsServiceClient
 
 
 class SqlBackupRunsServiceAsyncClient:
-    """LINT.IfChange"""
+    """"""
 
     _client: SqlBackupRunsServiceClient
 
@@ -250,8 +250,7 @@ class SqlBackupRunsServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> cloud_sql_resources.Operation:
-        r"""Creates a new backup run on demand. This method is
-        applicable only to Second Generation instances.
+        r"""Creates a new backup run on demand.
 
         Args:
             request (Union[google.cloud.sql_v1beta4.types.SqlBackupRunsInsertRequest, dict]):
@@ -300,9 +299,9 @@ class SqlBackupRunsServiceAsyncClient:
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListAsyncPager:
-        r"""Lists all backup runs associated with a given
-        instance and configuration in the reverse chronological
-        order of the backup initiation time.
+        r"""Lists all backup runs associated with the project or
+        a given instance and configuration in the reverse
+        chronological order of the backup initiation time.
 
         Args:
             request (Union[google.cloud.sql_v1beta4.types.SqlBackupRunsListRequest, dict]):

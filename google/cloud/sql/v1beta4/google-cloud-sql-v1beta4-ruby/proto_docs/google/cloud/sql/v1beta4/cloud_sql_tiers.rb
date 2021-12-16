@@ -45,7 +45,7 @@ module Google
         # @!attribute [rw] tier
         #   @return [::String]
         #     An identifier for the machine type, for example, db-custom-1-3840. For
-        #     related information, see <a href="/sql/pricing">Pricing</a>.
+        #     related information, see [Pricing](/sql/pricing).
         # @!attribute [rw] RAM
         #   @return [::Integer]
         #     The maximum RAM usage of this tier in bytes.

@@ -2,6 +2,7 @@
 # source: google/cloud/sql/v1beta4/cloud_sql.proto
 
 require 'google/api/annotations_pb'
+require 'google/api/field_behavior_pb'
 require 'google/cloud/sql/v1beta4/cloud_sql_resources_pb'
 require 'google/api/client_pb'
 require 'google/protobuf'
@@ -163,6 +164,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :project, :string, 2
       optional :verify_connection_only, :bool, 3
       optional :sync_mode, :enum, 4, "google.cloud.sql.v1beta4.SqlInstancesVerifyExternalSyncSettingsRequest.ExternalSyncMode"
+      optional :verify_replication_only, :bool, 5
+      oneof :sync_config do
+        optional :mysql_sync_config, :message, 6, "google.cloud.sql.v1beta4.MySqlSyncConfig"
+      end
     end
     add_enum "google.cloud.sql.v1beta4.SqlInstancesVerifyExternalSyncSettingsRequest.ExternalSyncMode" do
       value :EXTERNAL_SYNC_MODE_UNSPECIFIED, 0
@@ -174,6 +179,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :project, :string, 2
       optional :sync_mode, :enum, 3, "google.cloud.sql.v1beta4.SqlInstancesVerifyExternalSyncSettingsRequest.ExternalSyncMode"
       optional :skip_verification, :bool, 4
+      oneof :sync_config do
+        optional :mysql_sync_config, :message, 6, "google.cloud.sql.v1beta4.MySqlSyncConfig"
+      end
     end
     add_message "google.cloud.sql.v1beta4.SqlOperationsGetRequest" do
       optional :operation, :string, 1
