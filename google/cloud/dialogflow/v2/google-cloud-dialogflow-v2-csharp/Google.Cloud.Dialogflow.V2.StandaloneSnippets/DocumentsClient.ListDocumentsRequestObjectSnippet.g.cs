@@ -35,6 +35,7 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             ListDocumentsRequest request = new ListDocumentsRequest
             {
                 ParentAsKnowledgeBaseName = KnowledgeBaseName.FromProjectKnowledgeBase("[PROJECT]", "[KNOWLEDGE_BASE]"),
+                Filter = "",
             };
             // Make the request
             PagedEnumerable<ListDocumentsResponse, Document> response = documentsClient.ListDocuments(request);

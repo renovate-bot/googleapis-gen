@@ -65,6 +65,16 @@ private static final long serialVersionUID = 0L;
             source_ = s;
             break;
           }
+          case 32: {
+
+            importGcsCustomMetadata_ = input.readBool();
+            break;
+          }
+          case 40: {
+
+            smartMessagingPartialUpdate_ = input.readBool();
+            break;
+          }
           default: {
             if (!parseUnknownField(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -259,6 +269,38 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER = 4;
+  private boolean importGcsCustomMetadata_;
+  /**
+   * <pre>
+   * Optional. Whether to import custom metadata from Google Cloud Storage.
+   * Only valid when the document source is Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The importGcsCustomMetadata.
+   */
+  @java.lang.Override
+  public boolean getImportGcsCustomMetadata() {
+    return importGcsCustomMetadata_;
+  }
+
+  public static final int SMART_MESSAGING_PARTIAL_UPDATE_FIELD_NUMBER = 5;
+  private boolean smartMessagingPartialUpdate_;
+  /**
+   * <pre>
+   * Optional. When enabled, the reload request is to apply partial update to the smart
+   * messaging allowlist.
+   * </pre>
+   *
+   * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * @return The smartMessagingPartialUpdate.
+   */
+  @java.lang.Override
+  public boolean getSmartMessagingPartialUpdate() {
+    return smartMessagingPartialUpdate_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -279,6 +321,12 @@ private static final long serialVersionUID = 0L;
     if (sourceCase_ == 3) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, source_);
     }
+    if (importGcsCustomMetadata_ != false) {
+      output.writeBool(4, importGcsCustomMetadata_);
+    }
+    if (smartMessagingPartialUpdate_ != false) {
+      output.writeBool(5, smartMessagingPartialUpdate_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -293,6 +341,14 @@ private static final long serialVersionUID = 0L;
     }
     if (sourceCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, source_);
+    }
+    if (importGcsCustomMetadata_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(4, importGcsCustomMetadata_);
+    }
+    if (smartMessagingPartialUpdate_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(5, smartMessagingPartialUpdate_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -311,6 +367,10 @@ private static final long serialVersionUID = 0L;
 
     if (!getName()
         .equals(other.getName())) return false;
+    if (getImportGcsCustomMetadata()
+        != other.getImportGcsCustomMetadata()) return false;
+    if (getSmartMessagingPartialUpdate()
+        != other.getSmartMessagingPartialUpdate()) return false;
     if (!getSourceCase().equals(other.getSourceCase())) return false;
     switch (sourceCase_) {
       case 3:
@@ -333,6 +393,12 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + IMPORT_GCS_CUSTOM_METADATA_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getImportGcsCustomMetadata());
+    hash = (37 * hash) + SMART_MESSAGING_PARTIAL_UPDATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getSmartMessagingPartialUpdate());
     switch (sourceCase_) {
       case 3:
         hash = (37 * hash) + CONTENT_URI_FIELD_NUMBER;
@@ -480,6 +546,10 @@ private static final long serialVersionUID = 0L;
       super.clear();
       name_ = "";
 
+      importGcsCustomMetadata_ = false;
+
+      smartMessagingPartialUpdate_ = false;
+
       sourceCase_ = 0;
       source_ = null;
       return this;
@@ -512,6 +582,8 @@ private static final long serialVersionUID = 0L;
       if (sourceCase_ == 3) {
         result.source_ = source_;
       }
+      result.importGcsCustomMetadata_ = importGcsCustomMetadata_;
+      result.smartMessagingPartialUpdate_ = smartMessagingPartialUpdate_;
       result.sourceCase_ = sourceCase_;
       onBuilt();
       return result;
@@ -564,6 +636,12 @@ private static final long serialVersionUID = 0L;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
+      }
+      if (other.getImportGcsCustomMetadata() != false) {
+        setImportGcsCustomMetadata(other.getImportGcsCustomMetadata());
+      }
+      if (other.getSmartMessagingPartialUpdate() != false) {
+        setSmartMessagingPartialUpdate(other.getSmartMessagingPartialUpdate());
       }
       switch (other.getSourceCase()) {
         case CONTENT_URI: {
@@ -861,6 +939,98 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       sourceCase_ = 3;
       source_ = value;
+      onChanged();
+      return this;
+    }
+
+    private boolean importGcsCustomMetadata_ ;
+    /**
+     * <pre>
+     * Optional. Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The importGcsCustomMetadata.
+     */
+    @java.lang.Override
+    public boolean getImportGcsCustomMetadata() {
+      return importGcsCustomMetadata_;
+    }
+    /**
+     * <pre>
+     * Optional. Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The importGcsCustomMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setImportGcsCustomMetadata(boolean value) {
+      
+      importGcsCustomMetadata_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. Whether to import custom metadata from Google Cloud Storage.
+     * Only valid when the document source is Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>bool import_gcs_custom_metadata = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearImportGcsCustomMetadata() {
+      
+      importGcsCustomMetadata_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean smartMessagingPartialUpdate_ ;
+    /**
+     * <pre>
+     * Optional. When enabled, the reload request is to apply partial update to the smart
+     * messaging allowlist.
+     * </pre>
+     *
+     * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return The smartMessagingPartialUpdate.
+     */
+    @java.lang.Override
+    public boolean getSmartMessagingPartialUpdate() {
+      return smartMessagingPartialUpdate_;
+    }
+    /**
+     * <pre>
+     * Optional. When enabled, the reload request is to apply partial update to the smart
+     * messaging allowlist.
+     * </pre>
+     *
+     * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @param value The smartMessagingPartialUpdate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSmartMessagingPartialUpdate(boolean value) {
+      
+      smartMessagingPartialUpdate_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Optional. When enabled, the reload request is to apply partial update to the smart
+     * messaging allowlist.
+     * </pre>
+     *
+     * <code>bool smart_messaging_partial_update = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSmartMessagingPartialUpdate() {
+      
+      smartMessagingPartialUpdate_ = false;
       onChanged();
       return this;
     }

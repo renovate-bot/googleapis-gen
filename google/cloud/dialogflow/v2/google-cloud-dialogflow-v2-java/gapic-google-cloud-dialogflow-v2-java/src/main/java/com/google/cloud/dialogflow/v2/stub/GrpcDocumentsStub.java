@@ -28,6 +28,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.v2.CreateDocumentRequest;
 import com.google.cloud.dialogflow.v2.DeleteDocumentRequest;
 import com.google.cloud.dialogflow.v2.Document;
+import com.google.cloud.dialogflow.v2.ExportDocumentRequest;
 import com.google.cloud.dialogflow.v2.GetDocumentRequest;
 import com.google.cloud.dialogflow.v2.KnowledgeOperationMetadata;
 import com.google.cloud.dialogflow.v2.ListDocumentsRequest;
@@ -112,6 +113,16 @@ public class GrpcDocumentsStub extends DocumentsStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<ExportDocumentRequest, Operation>
+      exportDocumentMethodDescriptor =
+          MethodDescriptor.<ExportDocumentRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.v2.Documents/ExportDocument")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
   private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
       listDocumentsPagedCallable;
@@ -128,6 +139,9 @@ public class GrpcDocumentsStub extends DocumentsStub {
   private final UnaryCallable<ReloadDocumentRequest, Operation> reloadDocumentCallable;
   private final OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationCallable;
+  private final UnaryCallable<ExportDocumentRequest, Operation> exportDocumentCallable;
+  private final OperationCallable<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -230,6 +244,16 @@ public class GrpcDocumentsStub extends DocumentsStub {
                   return params.build();
                 })
             .build();
+    GrpcCallSettings<ExportDocumentRequest, Operation> exportDocumentTransportSettings =
+        GrpcCallSettings.<ExportDocumentRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportDocumentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  ImmutableMap.Builder<String, String> params = ImmutableMap.builder();
+                  params.put("name", String.valueOf(request.getName()));
+                  return params.build();
+                })
+            .build();
 
     this.listDocumentsCallable =
         callableFactory.createUnaryCallable(
@@ -274,6 +298,15 @@ public class GrpcDocumentsStub extends DocumentsStub {
         callableFactory.createOperationCallable(
             reloadDocumentTransportSettings,
             settings.reloadDocumentOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportDocumentCallable =
+        callableFactory.createUnaryCallable(
+            exportDocumentTransportSettings, settings.exportDocumentSettings(), clientContext);
+    this.exportDocumentOperationCallable =
+        callableFactory.createOperationCallable(
+            exportDocumentTransportSettings,
+            settings.exportDocumentOperationSettings(),
             clientContext,
             operationsStub);
 
@@ -343,6 +376,17 @@ public class GrpcDocumentsStub extends DocumentsStub {
   public OperationCallable<ReloadDocumentRequest, Document, KnowledgeOperationMetadata>
       reloadDocumentOperationCallable() {
     return reloadDocumentOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportDocumentRequest, Operation> exportDocumentCallable() {
+    return exportDocumentCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportDocumentRequest, Document, KnowledgeOperationMetadata>
+      exportDocumentOperationCallable() {
+    return exportDocumentOperationCallable;
   }
 
   @Override

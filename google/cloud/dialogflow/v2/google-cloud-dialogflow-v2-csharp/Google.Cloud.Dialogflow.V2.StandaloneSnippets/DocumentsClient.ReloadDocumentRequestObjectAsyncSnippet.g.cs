@@ -36,6 +36,8 @@ namespace Google.Cloud.Dialogflow.V2.Snippets
             {
                 DocumentName = DocumentName.FromProjectKnowledgeBaseDocument("[PROJECT]", "[KNOWLEDGE_BASE]", "[DOCUMENT]"),
                 ContentUri = "",
+                ImportGcsCustomMetadata = false,
+                SmartMessagingPartialUpdate = false,
             };
             // Make the request
             Operation<Document, KnowledgeOperationMetadata> response = await documentsClient.ReloadDocumentAsync(request);

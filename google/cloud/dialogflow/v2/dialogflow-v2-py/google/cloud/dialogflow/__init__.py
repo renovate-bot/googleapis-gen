@@ -109,6 +109,7 @@ from google.cloud.dialogflow_v2.types.conversation_profile import UpdateConversa
 from google.cloud.dialogflow_v2.types.document import CreateDocumentRequest
 from google.cloud.dialogflow_v2.types.document import DeleteDocumentRequest
 from google.cloud.dialogflow_v2.types.document import Document
+from google.cloud.dialogflow_v2.types.document import ExportDocumentRequest
 from google.cloud.dialogflow_v2.types.document import GetDocumentRequest
 from google.cloud.dialogflow_v2.types.document import KnowledgeOperationMetadata
 from google.cloud.dialogflow_v2.types.document import ListDocumentsRequest
@@ -142,6 +143,7 @@ from google.cloud.dialogflow_v2.types.environment import UpdateEnvironmentReques
 from google.cloud.dialogflow_v2.types.fulfillment import Fulfillment
 from google.cloud.dialogflow_v2.types.fulfillment import GetFulfillmentRequest
 from google.cloud.dialogflow_v2.types.fulfillment import UpdateFulfillmentRequest
+from google.cloud.dialogflow_v2.types.gcs import GcsDestination
 from google.cloud.dialogflow_v2.types.human_agent_assistant_event import HumanAgentAssistantEvent
 from google.cloud.dialogflow_v2.types.intent import BatchDeleteIntentsRequest
 from google.cloud.dialogflow_v2.types.intent import BatchUpdateIntentsRequest
@@ -311,6 +313,7 @@ __all__ = ('AgentsClient',
     'CreateDocumentRequest',
     'DeleteDocumentRequest',
     'Document',
+    'ExportDocumentRequest',
     'GetDocumentRequest',
     'KnowledgeOperationMetadata',
     'ListDocumentsRequest',
@@ -344,6 +347,7 @@ __all__ = ('AgentsClient',
     'Fulfillment',
     'GetFulfillmentRequest',
     'UpdateFulfillmentRequest',
+    'GcsDestination',
     'HumanAgentAssistantEvent',
     'BatchDeleteIntentsRequest',
     'BatchUpdateIntentsRequest',
