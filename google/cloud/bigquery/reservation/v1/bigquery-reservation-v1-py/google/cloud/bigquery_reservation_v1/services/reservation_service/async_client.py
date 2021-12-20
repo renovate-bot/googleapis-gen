@@ -335,9 +335,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -427,9 +427,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -506,9 +506,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -769,9 +769,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -873,9 +873,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -952,9 +952,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -1492,9 +1492,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -1594,9 +1594,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -1721,9 +1721,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
@@ -2034,9 +2034,9 @@ initial=0.1,maximum=60.0,multiplier=1.3,                predicate=retries.if_exc
                     core_exceptions.DeadlineExceeded,
                     core_exceptions.ServiceUnavailable,
                 ),
-                deadline=60.0,
+                deadline=300.0,
             ),
-            default_timeout=60.0,
+            default_timeout=300.0,
             client_info=DEFAULT_CLIENT_INFO,
         )
 
