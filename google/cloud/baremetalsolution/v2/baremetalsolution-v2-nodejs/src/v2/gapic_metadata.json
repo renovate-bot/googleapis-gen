@@ -1,0 +1,247 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "typescript",
+  "protoPackage": "google.cloud.baremetalsolution.v2",
+  "libraryPackage": "@google-cloud/baremetalsolution",
+  "services": {
+    "BareMetalSolution": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BareMetalSolutionClient",
+          "rpcs": {
+            "GetInstance": {
+              "methods": [
+                "getInstance"
+              ]
+            },
+            "GetVolume": {
+              "methods": [
+                "getVolume"
+              ]
+            },
+            "GetNetwork": {
+              "methods": [
+                "getNetwork"
+              ]
+            },
+            "GetSnapshotSchedulePolicy": {
+              "methods": [
+                "getSnapshotSchedulePolicy"
+              ]
+            },
+            "CreateSnapshotSchedulePolicy": {
+              "methods": [
+                "createSnapshotSchedulePolicy"
+              ]
+            },
+            "UpdateSnapshotSchedulePolicy": {
+              "methods": [
+                "updateSnapshotSchedulePolicy"
+              ]
+            },
+            "DeleteSnapshotSchedulePolicy": {
+              "methods": [
+                "deleteSnapshotSchedulePolicy"
+              ]
+            },
+            "CreateVolumeSnapshot": {
+              "methods": [
+                "createVolumeSnapshot"
+              ]
+            },
+            "DeleteVolumeSnapshot": {
+              "methods": [
+                "deleteVolumeSnapshot"
+              ]
+            },
+            "GetVolumeSnapshot": {
+              "methods": [
+                "getVolumeSnapshot"
+              ]
+            },
+            "GetLun": {
+              "methods": [
+                "getLun"
+              ]
+            },
+            "ResetInstance": {
+              "methods": [
+                "resetInstance"
+              ]
+            },
+            "UpdateVolume": {
+              "methods": [
+                "updateVolume"
+              ]
+            },
+            "RestoreVolumeSnapshot": {
+              "methods": [
+                "restoreVolumeSnapshot"
+              ]
+            },
+            "ListInstances": {
+              "methods": [
+                "listInstances",
+                "listInstancesStream",
+                "listInstancesAsync"
+              ]
+            },
+            "ListVolumes": {
+              "methods": [
+                "listVolumes",
+                "listVolumesStream",
+                "listVolumesAsync"
+              ]
+            },
+            "ListNetworks": {
+              "methods": [
+                "listNetworks",
+                "listNetworksStream",
+                "listNetworksAsync"
+              ]
+            },
+            "ListSnapshotSchedulePolicies": {
+              "methods": [
+                "listSnapshotSchedulePolicies",
+                "listSnapshotSchedulePoliciesStream",
+                "listSnapshotSchedulePoliciesAsync"
+              ]
+            },
+            "ListVolumeSnapshots": {
+              "methods": [
+                "listVolumeSnapshots",
+                "listVolumeSnapshotsStream",
+                "listVolumeSnapshotsAsync"
+              ]
+            },
+            "ListLuns": {
+              "methods": [
+                "listLuns",
+                "listLunsStream",
+                "listLunsAsync"
+              ]
+            }
+          }
+        },
+        "grpc-fallback": {
+          "libraryClient": "BareMetalSolutionClient",
+          "rpcs": {
+            "GetInstance": {
+              "methods": [
+                "getInstance"
+              ]
+            },
+            "GetVolume": {
+              "methods": [
+                "getVolume"
+              ]
+            },
+            "GetNetwork": {
+              "methods": [
+                "getNetwork"
+              ]
+            },
+            "GetSnapshotSchedulePolicy": {
+              "methods": [
+                "getSnapshotSchedulePolicy"
+              ]
+            },
+            "CreateSnapshotSchedulePolicy": {
+              "methods": [
+                "createSnapshotSchedulePolicy"
+              ]
+            },
+            "UpdateSnapshotSchedulePolicy": {
+              "methods": [
+                "updateSnapshotSchedulePolicy"
+              ]
+            },
+            "DeleteSnapshotSchedulePolicy": {
+              "methods": [
+                "deleteSnapshotSchedulePolicy"
+              ]
+            },
+            "CreateVolumeSnapshot": {
+              "methods": [
+                "createVolumeSnapshot"
+              ]
+            },
+            "DeleteVolumeSnapshot": {
+              "methods": [
+                "deleteVolumeSnapshot"
+              ]
+            },
+            "GetVolumeSnapshot": {
+              "methods": [
+                "getVolumeSnapshot"
+              ]
+            },
+            "GetLun": {
+              "methods": [
+                "getLun"
+              ]
+            },
+            "ResetInstance": {
+              "methods": [
+                "resetInstance"
+              ]
+            },
+            "UpdateVolume": {
+              "methods": [
+                "updateVolume"
+              ]
+            },
+            "RestoreVolumeSnapshot": {
+              "methods": [
+                "restoreVolumeSnapshot"
+              ]
+            },
+            "ListInstances": {
+              "methods": [
+                "listInstances",
+                "listInstancesStream",
+                "listInstancesAsync"
+              ]
+            },
+            "ListVolumes": {
+              "methods": [
+                "listVolumes",
+                "listVolumesStream",
+                "listVolumesAsync"
+              ]
+            },
+            "ListNetworks": {
+              "methods": [
+                "listNetworks",
+                "listNetworksStream",
+                "listNetworksAsync"
+              ]
+            },
+            "ListSnapshotSchedulePolicies": {
+              "methods": [
+                "listSnapshotSchedulePolicies",
+                "listSnapshotSchedulePoliciesStream",
+                "listSnapshotSchedulePoliciesAsync"
+              ]
+            },
+            "ListVolumeSnapshots": {
+              "methods": [
+                "listVolumeSnapshots",
+                "listVolumeSnapshotsStream",
+                "listVolumeSnapshotsAsync"
+              ]
+            },
+            "ListLuns": {
+              "methods": [
+                "listLuns",
+                "listLunsStream",
+                "listLunsAsync"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

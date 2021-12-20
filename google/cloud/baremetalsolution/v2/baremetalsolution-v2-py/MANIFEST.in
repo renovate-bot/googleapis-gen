@@ -1,0 +1,2 @@
+recursive-include google/cloud/baremetalsolution *.py
+recursive-include google/cloud/baremetalsolution_v2 *.py
