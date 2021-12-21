@@ -78,6 +78,8 @@ namespace Maps.Fleetengine.V1.Snippets
                 CurrentRouteSegmentVersion = new Timestamp(),
                 RemainingWaypointsVersion = new Timestamp(),
                 RouteFormatType = PolylineFormatType.UnknownFormatType,
+                CurrentRouteSegmentTrafficVersion = new Timestamp(),
+                RemainingWaypointsRouteVersion = new Timestamp(),
                 View = TripView.Unspecified,
             };
             // Make the request
@@ -100,6 +102,8 @@ namespace Maps.Fleetengine.V1.Snippets
                 CurrentRouteSegmentVersion = new Timestamp(),
                 RemainingWaypointsVersion = new Timestamp(),
                 RouteFormatType = PolylineFormatType.UnknownFormatType,
+                CurrentRouteSegmentTrafficVersion = new Timestamp(),
+                RemainingWaypointsRouteVersion = new Timestamp(),
                 View = TripView.Unspecified,
             };
             // Make the request

@@ -7,7 +7,7 @@ namespace Maps\Fleetengine\V1;
 use UnexpectedValueException;
 
 /**
- * The state of a Vehicle.
+ * The state of a `Vehicle`.
  *
  * Protobuf type <code>maps.fleetengine.v1.VehicleState</code>
  */
@@ -20,7 +20,8 @@ class VehicleState
      */
     const UNKNOWN_VEHICLE_STATE = 0;
     /**
-     * The vehicle is not accepting new trips.
+     * The vehicle is not accepting new trips. Note: the vehicle may continue to
+     * operate in this state while completing a trip assigned to it.
      *
      * Generated from protobuf enum <code>OFFLINE = 1;</code>
      */

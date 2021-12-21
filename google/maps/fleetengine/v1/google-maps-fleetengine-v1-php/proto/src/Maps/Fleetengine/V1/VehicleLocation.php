@@ -17,23 +17,23 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
 {
     /**
      * The location of the vehicle.
-     * When it is sent to FleetEngine, the vehicle's location is a GPS location.
+     * When it is sent to Fleet Engine, the vehicle's location is a GPS location.
      * When you receive it in a response, the vehicle's location can be either a
-     * GPS location or a supplemental location. The source is specified in the
-     * field 'location_sensor'.
+     * GPS location, a supplemental location, or some other estimated location.
+     * The source is specified in `location_sensor`.
      *
      * Generated from protobuf field <code>.google.type.LatLng location = 1;</code>
      */
     protected $location = null;
     /**
-     * Deprecated. Use latlng_accuracy instead.
+     * Deprecated: Use `latlng_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @deprecated
      */
     protected $horizontal_accuracy = null;
     /**
-     * Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+     * Accuracy of `location` in meters as a radius.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
      */
@@ -46,14 +46,14 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     protected $heading = null;
     /**
-     * Deprecated. Use heading_accuracy instead.
+     * Deprecated: Use `heading_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @deprecated
      */
     protected $bearing_accuracy = null;
     /**
-     * Accuracy of heading (bearing) in degrees.
+     * Accuracy of `heading` in degrees.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
      */
@@ -65,21 +65,21 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     protected $altitude = null;
     /**
-     * Deprecated. Use altitude_accurarcy instead.
+     * Deprecated: Use `altitude_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @deprecated
      */
     protected $vertical_accuracy = null;
     /**
-     * Accuracy of altitude measurement in meters.
+     * Accuracy of `altitude` in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
      */
     protected $altitude_accuracy = null;
     /**
      * Speed of the vehicle in kilometers per hour.
-     * Deprecated. Use speed instead.
+     * Deprecated: Use `speed` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @deprecated
@@ -92,47 +92,43 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     protected $speed = null;
     /**
-     * Accuracy of speed in meters/second.
+     * Accuracy of `speed` in meters/second.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
      */
     protected $speed_accuracy = null;
     /**
-     * The time when the location was recorded.
+     * The time when `location` was reported by the sensor.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     protected $update_time = null;
     /**
-     * Output only. The time when the server receives the location information, filled by
-     * FleetEngine.
+     * Output only. The time when the server received the location information.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp server_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $server_time = null;
     /**
-     * Provider of location data (for example, "gps").
+     * Provider of location data (for example, `GPS`).
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
      */
     protected $location_sensor = 0;
     /**
-     * Whether the vehicle location given by "location" field is snapped to a road
-     * closest to the location given by "raw_location".
-     * Driver SDK 1.15.1/2.1.1 and up will always set this field.
-     * Unset value will be treated as true.
+     * Whether `location` is snapped to a road.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
      */
     protected $is_road_snapped = null;
     /**
-     * Input only. Indicates whether the GPS sensor is enabled.
+     * Input only. Indicates whether the GPS sensor is enabled on the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $is_gps_sensor_enabled = null;
     /**
-     * Input only. Time (in seconds) since this location sample was first sent to the server.
+     * Input only. Time (in seconds) since this location was first sent to the server.
      * This will be zero for the first update. If the time is unknown
      * (for example, when the app restarts), this value resets to zero.
      *
@@ -140,7 +136,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     protected $time_since_update = null;
     /**
-     * Input only. Number of additional attempts to send the current location to the server.
+     * Input only. Number of additional attempts to send this location to the server.
      * If this value is zero, then it is not stale.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -165,7 +161,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     protected $raw_location_sensor = 0;
     /**
-     * Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+     * Input only. Accuracy of `raw_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
@@ -190,14 +186,13 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      */
     protected $supplemental_location_sensor = 0;
     /**
-     * Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-     * meters.
+     * Input only. Accuracy of `supplemental_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $supplemental_location_accuracy = null;
     /**
-     * Deprecated, use is_road_snapped instead.
+     * Deprecated: Use `is_road_snapped` instead.
      *
      * Generated from protobuf field <code>bool road_snapped = 26 [deprecated = true];</code>
      * @deprecated
@@ -212,54 +207,50 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      *
      *     @type \Google\Type\LatLng $location
      *           The location of the vehicle.
-     *           When it is sent to FleetEngine, the vehicle's location is a GPS location.
+     *           When it is sent to Fleet Engine, the vehicle's location is a GPS location.
      *           When you receive it in a response, the vehicle's location can be either a
-     *           GPS location or a supplemental location. The source is specified in the
-     *           field 'location_sensor'.
+     *           GPS location, a supplemental location, or some other estimated location.
+     *           The source is specified in `location_sensor`.
      *     @type \Google\Protobuf\DoubleValue $horizontal_accuracy
-     *           Deprecated. Use latlng_accuracy instead.
+     *           Deprecated: Use `latlng_accuracy` instead.
      *     @type \Google\Protobuf\DoubleValue $latlng_accuracy
-     *           Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+     *           Accuracy of `location` in meters as a radius.
      *     @type \Google\Protobuf\Int32Value $heading
      *           Direction the vehicle is moving in degrees.  0 represents North.
      *           The valid range is [0,360).
      *     @type \Google\Protobuf\DoubleValue $bearing_accuracy
-     *           Deprecated. Use heading_accuracy instead.
+     *           Deprecated: Use `heading_accuracy` instead.
      *     @type \Google\Protobuf\DoubleValue $heading_accuracy
-     *           Accuracy of heading (bearing) in degrees.
+     *           Accuracy of `heading` in degrees.
      *     @type \Google\Protobuf\DoubleValue $altitude
      *           Altitude in meters above WGS84.
      *     @type \Google\Protobuf\DoubleValue $vertical_accuracy
-     *           Deprecated. Use altitude_accurarcy instead.
+     *           Deprecated: Use `altitude_accuracy` instead.
      *     @type \Google\Protobuf\DoubleValue $altitude_accuracy
-     *           Accuracy of altitude measurement in meters.
+     *           Accuracy of `altitude` in meters.
      *     @type \Google\Protobuf\Int32Value $speed_kmph
      *           Speed of the vehicle in kilometers per hour.
-     *           Deprecated. Use speed instead.
+     *           Deprecated: Use `speed` instead.
      *     @type \Google\Protobuf\DoubleValue $speed
      *           Speed of the vehicle in meters/second
      *     @type \Google\Protobuf\DoubleValue $speed_accuracy
-     *           Accuracy of speed in meters/second.
+     *           Accuracy of `speed` in meters/second.
      *     @type \Google\Protobuf\Timestamp $update_time
-     *           The time when the location was recorded.
+     *           The time when `location` was reported by the sensor.
      *     @type \Google\Protobuf\Timestamp $server_time
-     *           Output only. The time when the server receives the location information, filled by
-     *           FleetEngine.
+     *           Output only. The time when the server received the location information.
      *     @type int $location_sensor
-     *           Provider of location data (for example, "gps").
+     *           Provider of location data (for example, `GPS`).
      *     @type \Google\Protobuf\BoolValue $is_road_snapped
-     *           Whether the vehicle location given by "location" field is snapped to a road
-     *           closest to the location given by "raw_location".
-     *           Driver SDK 1.15.1/2.1.1 and up will always set this field.
-     *           Unset value will be treated as true.
+     *           Whether `location` is snapped to a road.
      *     @type \Google\Protobuf\BoolValue $is_gps_sensor_enabled
-     *           Input only. Indicates whether the GPS sensor is enabled.
+     *           Input only. Indicates whether the GPS sensor is enabled on the mobile device.
      *     @type \Google\Protobuf\Int32Value $time_since_update
-     *           Input only. Time (in seconds) since this location sample was first sent to the server.
+     *           Input only. Time (in seconds) since this location was first sent to the server.
      *           This will be zero for the first update. If the time is unknown
      *           (for example, when the app restarts), this value resets to zero.
      *     @type \Google\Protobuf\Int32Value $num_stale_updates
-     *           Input only. Number of additional attempts to send the current location to the server.
+     *           Input only. Number of additional attempts to send this location to the server.
      *           If this value is zero, then it is not stale.
      *     @type \Google\Type\LatLng $raw_location
      *           Raw vehicle location (unprocessed by road-snapper).
@@ -268,7 +259,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      *     @type int $raw_location_sensor
      *           Input only. Source of the raw location.
      *     @type \Google\Protobuf\DoubleValue $raw_location_accuracy
-     *           Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+     *           Input only. Accuracy of `raw_location` as a radius, in meters.
      *     @type \Google\Type\LatLng $supplemental_location
      *           Input only. Supplemental location provided by the integrating app, such as the location
      *           provided by Fused Location Provider.
@@ -277,10 +268,9 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      *     @type int $supplemental_location_sensor
      *           Input only. Source of the supplemental location.
      *     @type \Google\Protobuf\DoubleValue $supplemental_location_accuracy
-     *           Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-     *           meters.
+     *           Input only. Accuracy of `supplemental_location` as a radius, in meters.
      *     @type bool $road_snapped
-     *           Deprecated, use is_road_snapped instead.
+     *           Deprecated: Use `is_road_snapped` instead.
      * }
      */
     public function __construct($data = NULL) {
@@ -290,10 +280,10 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * The location of the vehicle.
-     * When it is sent to FleetEngine, the vehicle's location is a GPS location.
+     * When it is sent to Fleet Engine, the vehicle's location is a GPS location.
      * When you receive it in a response, the vehicle's location can be either a
-     * GPS location or a supplemental location. The source is specified in the
-     * field 'location_sensor'.
+     * GPS location, a supplemental location, or some other estimated location.
+     * The source is specified in `location_sensor`.
      *
      * Generated from protobuf field <code>.google.type.LatLng location = 1;</code>
      * @return \Google\Type\LatLng|null
@@ -315,10 +305,10 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * The location of the vehicle.
-     * When it is sent to FleetEngine, the vehicle's location is a GPS location.
+     * When it is sent to Fleet Engine, the vehicle's location is a GPS location.
      * When you receive it in a response, the vehicle's location can be either a
-     * GPS location or a supplemental location. The source is specified in the
-     * field 'location_sensor'.
+     * GPS location, a supplemental location, or some other estimated location.
+     * The source is specified in `location_sensor`.
      *
      * Generated from protobuf field <code>.google.type.LatLng location = 1;</code>
      * @param \Google\Type\LatLng $var
@@ -333,7 +323,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use latlng_accuracy instead.
+     * Deprecated: Use `latlng_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -360,7 +350,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHorizontalAccuracy()</code>
 
-     * Deprecated. Use latlng_accuracy instead.
+     * Deprecated: Use `latlng_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @return float|null
@@ -372,7 +362,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use latlng_accuracy instead.
+     * Deprecated: Use `latlng_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -391,7 +381,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Deprecated. Use latlng_accuracy instead.
+     * Deprecated: Use `latlng_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue horizontal_accuracy = 8 [deprecated = true];</code>
      * @param float|null $var
@@ -403,7 +393,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+     * Accuracy of `location` in meters as a radius.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -426,7 +416,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getLatlngAccuracy()</code>
 
-     * Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+     * Accuracy of `location` in meters as a radius.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
      * @return float|null
@@ -437,7 +427,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+     * Accuracy of `location` in meters as a radius.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -454,7 +444,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+     * Accuracy of `location` in meters as a radius.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue latlng_accuracy = 22;</code>
      * @param float|null $var
@@ -533,7 +523,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Deprecated. Use heading_accuracy instead.
+     * Deprecated: Use `heading_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -560,7 +550,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getBearingAccuracy()</code>
 
-     * Deprecated. Use heading_accuracy instead.
+     * Deprecated: Use `heading_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @return float|null
@@ -572,7 +562,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use heading_accuracy instead.
+     * Deprecated: Use `heading_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -591,7 +581,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Deprecated. Use heading_accuracy instead.
+     * Deprecated: Use `heading_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue bearing_accuracy = 10 [deprecated = true];</code>
      * @param float|null $var
@@ -603,7 +593,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Accuracy of heading (bearing) in degrees.
+     * Accuracy of `heading` in degrees.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -626,7 +616,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getHeadingAccuracy()</code>
 
-     * Accuracy of heading (bearing) in degrees.
+     * Accuracy of `heading` in degrees.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
      * @return float|null
@@ -637,7 +627,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Accuracy of heading (bearing) in degrees.
+     * Accuracy of `heading` in degrees.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -654,7 +644,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Accuracy of heading (bearing) in degrees.
+     * Accuracy of `heading` in degrees.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue heading_accuracy = 23;</code>
      * @param float|null $var
@@ -729,7 +719,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Deprecated. Use altitude_accurarcy instead.
+     * Deprecated: Use `altitude_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -756,7 +746,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getVerticalAccuracy()</code>
 
-     * Deprecated. Use altitude_accurarcy instead.
+     * Deprecated: Use `altitude_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @return float|null
@@ -768,7 +758,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use altitude_accurarcy instead.
+     * Deprecated: Use `altitude_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -787,7 +777,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Deprecated. Use altitude_accurarcy instead.
+     * Deprecated: Use `altitude_accuracy` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue vertical_accuracy = 9 [deprecated = true];</code>
      * @param float|null $var
@@ -799,7 +789,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Accuracy of altitude measurement in meters.
+     * Accuracy of `altitude` in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -822,7 +812,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getAltitudeAccuracy()</code>
 
-     * Accuracy of altitude measurement in meters.
+     * Accuracy of `altitude` in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
      * @return float|null
@@ -833,7 +823,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Accuracy of altitude measurement in meters.
+     * Accuracy of `altitude` in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -850,7 +840,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Accuracy of altitude measurement in meters.
+     * Accuracy of `altitude` in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue altitude_accuracy = 24;</code>
      * @param float|null $var
@@ -863,7 +853,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * Speed of the vehicle in kilometers per hour.
-     * Deprecated. Use speed instead.
+     * Deprecated: Use `speed` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -891,7 +881,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getSpeedKmph()</code>
 
      * Speed of the vehicle in kilometers per hour.
-     * Deprecated. Use speed instead.
+     * Deprecated: Use `speed` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @return int|null
@@ -904,7 +894,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
 
     /**
      * Speed of the vehicle in kilometers per hour.
-     * Deprecated. Use speed instead.
+     * Deprecated: Use `speed` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -924,7 +914,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
      * Speed of the vehicle in kilometers per hour.
-     * Deprecated. Use speed instead.
+     * Deprecated: Use `speed` instead.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value speed_kmph = 3 [deprecated = true];</code>
      * @param int|null $var
@@ -999,7 +989,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Accuracy of speed in meters/second.
+     * Accuracy of `speed` in meters/second.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -1022,7 +1012,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSpeedAccuracy()</code>
 
-     * Accuracy of speed in meters/second.
+     * Accuracy of `speed` in meters/second.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
      * @return float|null
@@ -1033,7 +1023,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Accuracy of speed in meters/second.
+     * Accuracy of `speed` in meters/second.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1050,7 +1040,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Accuracy of speed in meters/second.
+     * Accuracy of `speed` in meters/second.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue speed_accuracy = 7;</code>
      * @param float|null $var
@@ -1062,7 +1052,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The time when the location was recorded.
+     * The time when `location` was reported by the sensor.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -1083,7 +1073,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The time when the location was recorded.
+     * The time when `location` was reported by the sensor.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp update_time = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -1098,8 +1088,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The time when the server receives the location information, filled by
-     * FleetEngine.
+     * Output only. The time when the server received the location information.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp server_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -1120,8 +1109,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Output only. The time when the server receives the location information, filled by
-     * FleetEngine.
+     * Output only. The time when the server received the location information.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp server_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -1136,7 +1124,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Provider of location data (for example, "gps").
+     * Provider of location data (for example, `GPS`).
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
      * @return int
@@ -1147,7 +1135,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Provider of location data (for example, "gps").
+     * Provider of location data (for example, `GPS`).
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.LocationSensor location_sensor = 11;</code>
      * @param int $var
@@ -1162,10 +1150,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the vehicle location given by "location" field is snapped to a road
-     * closest to the location given by "raw_location".
-     * Driver SDK 1.15.1/2.1.1 and up will always set this field.
-     * Unset value will be treated as true.
+     * Whether `location` is snapped to a road.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
      * @return \Google\Protobuf\BoolValue|null
@@ -1188,10 +1173,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getIsRoadSnapped()</code>
 
-     * Whether the vehicle location given by "location" field is snapped to a road
-     * closest to the location given by "raw_location".
-     * Driver SDK 1.15.1/2.1.1 and up will always set this field.
-     * Unset value will be treated as true.
+     * Whether `location` is snapped to a road.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
      * @return bool|null
@@ -1202,10 +1184,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Whether the vehicle location given by "location" field is snapped to a road
-     * closest to the location given by "raw_location".
-     * Driver SDK 1.15.1/2.1.1 and up will always set this field.
-     * Unset value will be treated as true.
+     * Whether `location` is snapped to a road.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
      * @param \Google\Protobuf\BoolValue $var
@@ -1222,10 +1201,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Whether the vehicle location given by "location" field is snapped to a road
-     * closest to the location given by "raw_location".
-     * Driver SDK 1.15.1/2.1.1 and up will always set this field.
-     * Unset value will be treated as true.
+     * Whether `location` is snapped to a road.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_road_snapped = 27;</code>
      * @param bool|null $var
@@ -1237,7 +1213,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Input only. Indicates whether the GPS sensor is enabled.
+     * Input only. Indicates whether the GPS sensor is enabled on the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Google\Protobuf\BoolValue|null
@@ -1260,7 +1236,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getIsGpsSensorEnabled()</code>
 
-     * Input only. Indicates whether the GPS sensor is enabled.
+     * Input only. Indicates whether the GPS sensor is enabled on the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return bool|null
@@ -1271,7 +1247,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Indicates whether the GPS sensor is enabled.
+     * Input only. Indicates whether the GPS sensor is enabled on the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Google\Protobuf\BoolValue $var
@@ -1288,7 +1264,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
 
-     * Input only. Indicates whether the GPS sensor is enabled.
+     * Input only. Indicates whether the GPS sensor is enabled on the mobile device.
      *
      * Generated from protobuf field <code>.google.protobuf.BoolValue is_gps_sensor_enabled = 12 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param bool|null $var
@@ -1300,7 +1276,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Input only. Time (in seconds) since this location sample was first sent to the server.
+     * Input only. Time (in seconds) since this location was first sent to the server.
      * This will be zero for the first update. If the time is unknown
      * (for example, when the app restarts), this value resets to zero.
      *
@@ -1325,7 +1301,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getTimeSinceUpdate()</code>
 
-     * Input only. Time (in seconds) since this location sample was first sent to the server.
+     * Input only. Time (in seconds) since this location was first sent to the server.
      * This will be zero for the first update. If the time is unknown
      * (for example, when the app restarts), this value resets to zero.
      *
@@ -1338,7 +1314,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Time (in seconds) since this location sample was first sent to the server.
+     * Input only. Time (in seconds) since this location was first sent to the server.
      * This will be zero for the first update. If the time is unknown
      * (for example, when the app restarts), this value resets to zero.
      *
@@ -1357,7 +1333,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * Input only. Time (in seconds) since this location sample was first sent to the server.
+     * Input only. Time (in seconds) since this location was first sent to the server.
      * This will be zero for the first update. If the time is unknown
      * (for example, when the app restarts), this value resets to zero.
      *
@@ -1371,7 +1347,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Input only. Number of additional attempts to send the current location to the server.
+     * Input only. Number of additional attempts to send this location to the server.
      * If this value is zero, then it is not stale.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1395,7 +1371,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getNumStaleUpdates()</code>
 
-     * Input only. Number of additional attempts to send the current location to the server.
+     * Input only. Number of additional attempts to send this location to the server.
      * If this value is zero, then it is not stale.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1407,7 +1383,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Number of additional attempts to send the current location to the server.
+     * Input only. Number of additional attempts to send this location to the server.
      * If this value is zero, then it is not stale.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1425,7 +1401,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * Input only. Number of additional attempts to send the current location to the server.
+     * Input only. Number of additional attempts to send this location to the server.
      * If this value is zero, then it is not stale.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value num_stale_updates = 15 [(.google.api.field_behavior) = INPUT_ONLY];</code>
@@ -1536,7 +1512,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+     * Input only. Accuracy of `raw_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -1559,7 +1535,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRawLocationAccuracy()</code>
 
-     * Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+     * Input only. Accuracy of `raw_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return float|null
@@ -1570,7 +1546,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+     * Input only. Accuracy of `raw_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1587,7 +1563,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+     * Input only. Accuracy of `raw_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue raw_location_accuracy = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param float|null $var
@@ -1699,8 +1675,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-     * meters.
+     * Input only. Accuracy of `supplemental_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Google\Protobuf\DoubleValue|null
@@ -1723,8 +1698,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getSupplementalLocationAccuracy()</code>
 
-     * Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-     * meters.
+     * Input only. Accuracy of `supplemental_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return float|null
@@ -1735,8 +1709,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-     * meters.
+     * Input only. Accuracy of `supplemental_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Google\Protobuf\DoubleValue $var
@@ -1753,8 +1726,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\DoubleValue object.
 
-     * Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-     * meters.
+     * Input only. Accuracy of `supplemental_location` as a radius, in meters.
      *
      * Generated from protobuf field <code>.google.protobuf.DoubleValue supplemental_location_accuracy = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param float|null $var
@@ -1766,7 +1738,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Deprecated, use is_road_snapped instead.
+     * Deprecated: Use `is_road_snapped` instead.
      *
      * Generated from protobuf field <code>bool road_snapped = 26 [deprecated = true];</code>
      * @return bool
@@ -1779,7 +1751,7 @@ class VehicleLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated, use is_road_snapped instead.
+     * Deprecated: Use `is_road_snapped` instead.
      *
      * Generated from protobuf field <code>bool road_snapped = 26 [deprecated = true];</code>
      * @param bool $var

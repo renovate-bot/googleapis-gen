@@ -29,6 +29,8 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :current_route_segment_version, :message, 6, "google.protobuf.Timestamp"
       optional :remaining_waypoints_version, :message, 7, "google.protobuf.Timestamp"
       optional :route_format_type, :enum, 8, "maps.fleetengine.v1.PolylineFormatType"
+      optional :current_route_segment_traffic_version, :message, 9, "google.protobuf.Timestamp"
+      optional :remaining_waypoints_route_version, :message, 10, "google.protobuf.Timestamp"
     end
     add_message "maps.fleetengine.v1.ReportBillableTripRequest" do
       optional :name, :string, 2

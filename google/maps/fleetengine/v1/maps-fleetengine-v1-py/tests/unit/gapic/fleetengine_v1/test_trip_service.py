@@ -43,6 +43,7 @@ from maps.fleetengine_v1.services.trip_service import pagers
 from maps.fleetengine_v1.services.trip_service import transports
 from maps.fleetengine_v1.types import fleetengine
 from maps.fleetengine_v1.types import header
+from maps.fleetengine_v1.types import traffic
 from maps.fleetengine_v1.types import trip_api
 from maps.fleetengine_v1.types import trips
 import google.auth
@@ -402,6 +403,7 @@ def test_create_trip(transport: str = 'grpc', request_type=trip_api.CreateTripRe
             trip_status=trips.TripStatus.NEW,
             trip_type=fleetengine.TripType.SHARED,
             intermediate_destination_index=3187,
+            current_route_segment='current_route_segment_value',
             number_of_passengers=2135,
             last_location_snappable=True,
             view=trips.TripView.SDK,
@@ -420,6 +422,7 @@ def test_create_trip(transport: str = 'grpc', request_type=trip_api.CreateTripRe
     assert response.trip_status == trips.TripStatus.NEW
     assert response.trip_type == fleetengine.TripType.SHARED
     assert response.intermediate_destination_index == 3187
+    assert response.current_route_segment == 'current_route_segment_value'
     assert response.number_of_passengers == 2135
     assert response.last_location_snappable is True
     assert response.view == trips.TripView.SDK
@@ -469,6 +472,7 @@ async def test_create_trip_async(transport: str = 'grpc_asyncio', request_type=t
             trip_status=trips.TripStatus.NEW,
             trip_type=fleetengine.TripType.SHARED,
             intermediate_destination_index=3187,
+            current_route_segment='current_route_segment_value',
             number_of_passengers=2135,
             last_location_snappable=True,
             view=trips.TripView.SDK,
@@ -487,6 +491,7 @@ async def test_create_trip_async(transport: str = 'grpc_asyncio', request_type=t
     assert response.trip_status == trips.TripStatus.NEW
     assert response.trip_type == fleetengine.TripType.SHARED
     assert response.intermediate_destination_index == 3187
+    assert response.current_route_segment == 'current_route_segment_value'
     assert response.number_of_passengers == 2135
     assert response.last_location_snappable is True
     assert response.view == trips.TripView.SDK
@@ -581,6 +586,7 @@ def test_get_trip(transport: str = 'grpc', request_type=trip_api.GetTripRequest)
             trip_status=trips.TripStatus.NEW,
             trip_type=fleetengine.TripType.SHARED,
             intermediate_destination_index=3187,
+            current_route_segment='current_route_segment_value',
             number_of_passengers=2135,
             last_location_snappable=True,
             view=trips.TripView.SDK,
@@ -599,6 +605,7 @@ def test_get_trip(transport: str = 'grpc', request_type=trip_api.GetTripRequest)
     assert response.trip_status == trips.TripStatus.NEW
     assert response.trip_type == fleetengine.TripType.SHARED
     assert response.intermediate_destination_index == 3187
+    assert response.current_route_segment == 'current_route_segment_value'
     assert response.number_of_passengers == 2135
     assert response.last_location_snappable is True
     assert response.view == trips.TripView.SDK
@@ -648,6 +655,7 @@ async def test_get_trip_async(transport: str = 'grpc_asyncio', request_type=trip
             trip_status=trips.TripStatus.NEW,
             trip_type=fleetengine.TripType.SHARED,
             intermediate_destination_index=3187,
+            current_route_segment='current_route_segment_value',
             number_of_passengers=2135,
             last_location_snappable=True,
             view=trips.TripView.SDK,
@@ -666,6 +674,7 @@ async def test_get_trip_async(transport: str = 'grpc_asyncio', request_type=trip
     assert response.trip_status == trips.TripStatus.NEW
     assert response.trip_type == fleetengine.TripType.SHARED
     assert response.intermediate_destination_index == 3187
+    assert response.current_route_segment == 'current_route_segment_value'
     assert response.number_of_passengers == 2135
     assert response.last_location_snappable is True
     assert response.view == trips.TripView.SDK
@@ -1242,6 +1251,7 @@ def test_update_trip(transport: str = 'grpc', request_type=trip_api.UpdateTripRe
             trip_status=trips.TripStatus.NEW,
             trip_type=fleetengine.TripType.SHARED,
             intermediate_destination_index=3187,
+            current_route_segment='current_route_segment_value',
             number_of_passengers=2135,
             last_location_snappable=True,
             view=trips.TripView.SDK,
@@ -1260,6 +1270,7 @@ def test_update_trip(transport: str = 'grpc', request_type=trip_api.UpdateTripRe
     assert response.trip_status == trips.TripStatus.NEW
     assert response.trip_type == fleetengine.TripType.SHARED
     assert response.intermediate_destination_index == 3187
+    assert response.current_route_segment == 'current_route_segment_value'
     assert response.number_of_passengers == 2135
     assert response.last_location_snappable is True
     assert response.view == trips.TripView.SDK
@@ -1309,6 +1320,7 @@ async def test_update_trip_async(transport: str = 'grpc_asyncio', request_type=t
             trip_status=trips.TripStatus.NEW,
             trip_type=fleetengine.TripType.SHARED,
             intermediate_destination_index=3187,
+            current_route_segment='current_route_segment_value',
             number_of_passengers=2135,
             last_location_snappable=True,
             view=trips.TripView.SDK,
@@ -1327,6 +1339,7 @@ async def test_update_trip_async(transport: str = 'grpc_asyncio', request_type=t
     assert response.trip_status == trips.TripStatus.NEW
     assert response.trip_type == fleetengine.TripType.SHARED
     assert response.intermediate_destination_index == 3187
+    assert response.current_route_segment == 'current_route_segment_value'
     assert response.number_of_passengers == 2135
     assert response.last_location_snappable is True
     assert response.view == trips.TripView.SDK

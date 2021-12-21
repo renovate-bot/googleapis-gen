@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * This messages allows a list-of-list datatype for VehicleAttribute.
+ * A list-of-lists datatype for vehicle attributes.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.VehicleAttributeList</code>
  */

@@ -163,28 +163,32 @@ namespace Maps.Fleetengine.V1 {
     public abstract partial class VehicleServiceBase
     {
       /// <summary>
-      /// CreateVehicle instantiates a new vehicle associated with a rideshare
-      /// provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+      /// Instantiates a new vehicle associated with an on-demand rideshare or
+      /// deliveries provider. Each `Vehicle` must have a unique vehicle ID.
       ///
-      /// The following Vehicle fields are required when creating a Vehicle:
+      /// The following `Vehicle` fields are required when creating a `Vehicle`:
       ///
-      /// * vehicleState
-      /// * supportedTripTypes
-      /// * maximumCapacity
-      /// * vehicleType
+      /// * `vehicleState`
+      /// * `supportedTripTypes`
+      /// * `maximumCapacity`
+      /// * `vehicleType`
       ///
-      /// The following Vehicle fields are ignored when creating a Vehicle:
+      /// The following `Vehicle` fields are ignored when creating a `Vehicle`:
       ///
-      /// * name
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment
-      /// * current_route_segment_version
-      /// * waypoint
-      /// * waypoints_version
-      /// * remaining_distance_meters
-      /// * eta_to_next_waypoint
-      /// * navigation_status
+      /// * `name`
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment`
+      /// * `current_route_segment_end_point`
+      /// * `current_route_segment_version`
+      /// * `current_route_segment_traffic`
+      /// * `route`
+      /// * `waypoints`
+      /// * `waypoints_version`
+      /// * `remaining_distance_meters`
+      /// * `remaining_time_seconds`
+      /// * `eta_to_next_waypoint`
+      /// * `navigation_status`
       ///
       /// All other fields are optional and used if provided.
       /// </summary>
@@ -198,7 +202,7 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// GetVehicle returns a vehicle from the Fleet Engine.
+      /// Returns a vehicle from the Fleet Engine.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -210,19 +214,22 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// UpdateVehicle writes updated vehicle data to the Fleet Engine.
+      /// Writes updated vehicle data to the Fleet Engine.
       ///
-      /// When updating a Vehicle, the following fields cannot be updated since they
-      /// are managed by the Fleet Engine:
+      /// When updating a `Vehicle`, the following fields cannot be updated since
+      /// they are managed by the server:
       ///
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment_version
-      /// * waypoints_version
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment_version`
+      /// * `waypoints_version`
       ///
-      /// The vehicle name also cannot be updated.
+      /// The vehicle `name` also cannot be updated.
       ///
-      /// The waypoints field can be updated, but must contain all the waypoints
+      /// If the `attributes` field is updated, **all** the vehicle's attributes are
+      /// replaced with the attributes provided in the request. If you want to update
+      /// only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+      /// the `waypoints` field can be updated, but must contain all the waypoints
       /// currently on the vehicle, and no other waypoints.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
@@ -235,8 +242,8 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
+      /// Deprecated: Use the `UpdateVehicle` method instead.
       /// UpdateVehicleLocation updates the location of the vehicle.
-      /// This method is deprecated. Use UpdateVehicle method instead.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -248,11 +255,11 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// UpdateVehicleAttributes partially updates a vehicle's attributes.
+      /// Partially updates a vehicle's attributes.
       /// Only the attributes mentioned in the request will be updated, other
-      /// attributes will NOT be altered. Note: this is different in UpdateVehicle,
+      /// attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
       /// where the whole `attributes` field will be replaced by the one in
-      /// UpdateVehicleRequest, attributes not in the request would be removed.
+      /// `UpdateVehicleRequest`, attributes not in the request would be removed.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -264,7 +271,7 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// ListVehicles returns a paginated list of vehicles associated with
+      /// Returns a paginated list of vehicles associated with
       /// a provider that match the request options.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
@@ -277,7 +284,7 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// SearchVehicles returns a list of vehicles that match the request options.
+      /// Returns a list of vehicles that match the request options.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -289,12 +296,11 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// SearchFuzzedVehicles returns a list of vehicles that match the request
-      /// options with their locations fuzzed.
-      /// Request does not support 'order_by' field.
-      /// Vehicle matches in response will be in order of distance from pickup point.
-      /// Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-      /// set.
+      /// Returns a list of vehicles that match the request
+      /// options, but the vehicle locations will be somewhat altered for privacy.
+      /// This method does not support the `SearchVehicleRequest.order_by` field.
+      /// Vehicle matches in the response will be in order of distance from the
+      /// pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
@@ -335,28 +341,32 @@ namespace Maps.Fleetengine.V1 {
       }
 
       /// <summary>
-      /// CreateVehicle instantiates a new vehicle associated with a rideshare
-      /// provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+      /// Instantiates a new vehicle associated with an on-demand rideshare or
+      /// deliveries provider. Each `Vehicle` must have a unique vehicle ID.
       ///
-      /// The following Vehicle fields are required when creating a Vehicle:
+      /// The following `Vehicle` fields are required when creating a `Vehicle`:
       ///
-      /// * vehicleState
-      /// * supportedTripTypes
-      /// * maximumCapacity
-      /// * vehicleType
+      /// * `vehicleState`
+      /// * `supportedTripTypes`
+      /// * `maximumCapacity`
+      /// * `vehicleType`
       ///
-      /// The following Vehicle fields are ignored when creating a Vehicle:
+      /// The following `Vehicle` fields are ignored when creating a `Vehicle`:
       ///
-      /// * name
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment
-      /// * current_route_segment_version
-      /// * waypoint
-      /// * waypoints_version
-      /// * remaining_distance_meters
-      /// * eta_to_next_waypoint
-      /// * navigation_status
+      /// * `name`
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment`
+      /// * `current_route_segment_end_point`
+      /// * `current_route_segment_version`
+      /// * `current_route_segment_traffic`
+      /// * `route`
+      /// * `waypoints`
+      /// * `waypoints_version`
+      /// * `remaining_distance_meters`
+      /// * `remaining_time_seconds`
+      /// * `eta_to_next_waypoint`
+      /// * `navigation_status`
       ///
       /// All other fields are optional and used if provided.
       /// </summary>
@@ -371,28 +381,32 @@ namespace Maps.Fleetengine.V1 {
         return CreateVehicle(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// CreateVehicle instantiates a new vehicle associated with a rideshare
-      /// provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+      /// Instantiates a new vehicle associated with an on-demand rideshare or
+      /// deliveries provider. Each `Vehicle` must have a unique vehicle ID.
       ///
-      /// The following Vehicle fields are required when creating a Vehicle:
+      /// The following `Vehicle` fields are required when creating a `Vehicle`:
       ///
-      /// * vehicleState
-      /// * supportedTripTypes
-      /// * maximumCapacity
-      /// * vehicleType
+      /// * `vehicleState`
+      /// * `supportedTripTypes`
+      /// * `maximumCapacity`
+      /// * `vehicleType`
       ///
-      /// The following Vehicle fields are ignored when creating a Vehicle:
+      /// The following `Vehicle` fields are ignored when creating a `Vehicle`:
       ///
-      /// * name
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment
-      /// * current_route_segment_version
-      /// * waypoint
-      /// * waypoints_version
-      /// * remaining_distance_meters
-      /// * eta_to_next_waypoint
-      /// * navigation_status
+      /// * `name`
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment`
+      /// * `current_route_segment_end_point`
+      /// * `current_route_segment_version`
+      /// * `current_route_segment_traffic`
+      /// * `route`
+      /// * `waypoints`
+      /// * `waypoints_version`
+      /// * `remaining_distance_meters`
+      /// * `remaining_time_seconds`
+      /// * `eta_to_next_waypoint`
+      /// * `navigation_status`
       ///
       /// All other fields are optional and used if provided.
       /// </summary>
@@ -405,28 +419,32 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_CreateVehicle, null, options, request);
       }
       /// <summary>
-      /// CreateVehicle instantiates a new vehicle associated with a rideshare
-      /// provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+      /// Instantiates a new vehicle associated with an on-demand rideshare or
+      /// deliveries provider. Each `Vehicle` must have a unique vehicle ID.
       ///
-      /// The following Vehicle fields are required when creating a Vehicle:
+      /// The following `Vehicle` fields are required when creating a `Vehicle`:
       ///
-      /// * vehicleState
-      /// * supportedTripTypes
-      /// * maximumCapacity
-      /// * vehicleType
+      /// * `vehicleState`
+      /// * `supportedTripTypes`
+      /// * `maximumCapacity`
+      /// * `vehicleType`
       ///
-      /// The following Vehicle fields are ignored when creating a Vehicle:
+      /// The following `Vehicle` fields are ignored when creating a `Vehicle`:
       ///
-      /// * name
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment
-      /// * current_route_segment_version
-      /// * waypoint
-      /// * waypoints_version
-      /// * remaining_distance_meters
-      /// * eta_to_next_waypoint
-      /// * navigation_status
+      /// * `name`
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment`
+      /// * `current_route_segment_end_point`
+      /// * `current_route_segment_version`
+      /// * `current_route_segment_traffic`
+      /// * `route`
+      /// * `waypoints`
+      /// * `waypoints_version`
+      /// * `remaining_distance_meters`
+      /// * `remaining_time_seconds`
+      /// * `eta_to_next_waypoint`
+      /// * `navigation_status`
       ///
       /// All other fields are optional and used if provided.
       /// </summary>
@@ -441,28 +459,32 @@ namespace Maps.Fleetengine.V1 {
         return CreateVehicleAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// CreateVehicle instantiates a new vehicle associated with a rideshare
-      /// provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+      /// Instantiates a new vehicle associated with an on-demand rideshare or
+      /// deliveries provider. Each `Vehicle` must have a unique vehicle ID.
       ///
-      /// The following Vehicle fields are required when creating a Vehicle:
+      /// The following `Vehicle` fields are required when creating a `Vehicle`:
       ///
-      /// * vehicleState
-      /// * supportedTripTypes
-      /// * maximumCapacity
-      /// * vehicleType
+      /// * `vehicleState`
+      /// * `supportedTripTypes`
+      /// * `maximumCapacity`
+      /// * `vehicleType`
       ///
-      /// The following Vehicle fields are ignored when creating a Vehicle:
+      /// The following `Vehicle` fields are ignored when creating a `Vehicle`:
       ///
-      /// * name
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment
-      /// * current_route_segment_version
-      /// * waypoint
-      /// * waypoints_version
-      /// * remaining_distance_meters
-      /// * eta_to_next_waypoint
-      /// * navigation_status
+      /// * `name`
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment`
+      /// * `current_route_segment_end_point`
+      /// * `current_route_segment_version`
+      /// * `current_route_segment_traffic`
+      /// * `route`
+      /// * `waypoints`
+      /// * `waypoints_version`
+      /// * `remaining_distance_meters`
+      /// * `remaining_time_seconds`
+      /// * `eta_to_next_waypoint`
+      /// * `navigation_status`
       ///
       /// All other fields are optional and used if provided.
       /// </summary>
@@ -475,7 +497,7 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_CreateVehicle, null, options, request);
       }
       /// <summary>
-      /// GetVehicle returns a vehicle from the Fleet Engine.
+      /// Returns a vehicle from the Fleet Engine.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -488,7 +510,7 @@ namespace Maps.Fleetengine.V1 {
         return GetVehicle(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// GetVehicle returns a vehicle from the Fleet Engine.
+      /// Returns a vehicle from the Fleet Engine.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -499,7 +521,7 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_GetVehicle, null, options, request);
       }
       /// <summary>
-      /// GetVehicle returns a vehicle from the Fleet Engine.
+      /// Returns a vehicle from the Fleet Engine.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -512,7 +534,7 @@ namespace Maps.Fleetengine.V1 {
         return GetVehicleAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// GetVehicle returns a vehicle from the Fleet Engine.
+      /// Returns a vehicle from the Fleet Engine.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -523,19 +545,22 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_GetVehicle, null, options, request);
       }
       /// <summary>
-      /// UpdateVehicle writes updated vehicle data to the Fleet Engine.
+      /// Writes updated vehicle data to the Fleet Engine.
       ///
-      /// When updating a Vehicle, the following fields cannot be updated since they
-      /// are managed by the Fleet Engine:
+      /// When updating a `Vehicle`, the following fields cannot be updated since
+      /// they are managed by the server:
       ///
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment_version
-      /// * waypoints_version
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment_version`
+      /// * `waypoints_version`
       ///
-      /// The vehicle name also cannot be updated.
+      /// The vehicle `name` also cannot be updated.
       ///
-      /// The waypoints field can be updated, but must contain all the waypoints
+      /// If the `attributes` field is updated, **all** the vehicle's attributes are
+      /// replaced with the attributes provided in the request. If you want to update
+      /// only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+      /// the `waypoints` field can be updated, but must contain all the waypoints
       /// currently on the vehicle, and no other waypoints.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -549,19 +574,22 @@ namespace Maps.Fleetengine.V1 {
         return UpdateVehicle(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// UpdateVehicle writes updated vehicle data to the Fleet Engine.
+      /// Writes updated vehicle data to the Fleet Engine.
       ///
-      /// When updating a Vehicle, the following fields cannot be updated since they
-      /// are managed by the Fleet Engine:
+      /// When updating a `Vehicle`, the following fields cannot be updated since
+      /// they are managed by the server:
       ///
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment_version
-      /// * waypoints_version
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment_version`
+      /// * `waypoints_version`
       ///
-      /// The vehicle name also cannot be updated.
+      /// The vehicle `name` also cannot be updated.
       ///
-      /// The waypoints field can be updated, but must contain all the waypoints
+      /// If the `attributes` field is updated, **all** the vehicle's attributes are
+      /// replaced with the attributes provided in the request. If you want to update
+      /// only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+      /// the `waypoints` field can be updated, but must contain all the waypoints
       /// currently on the vehicle, and no other waypoints.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -573,19 +601,22 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateVehicle, null, options, request);
       }
       /// <summary>
-      /// UpdateVehicle writes updated vehicle data to the Fleet Engine.
+      /// Writes updated vehicle data to the Fleet Engine.
       ///
-      /// When updating a Vehicle, the following fields cannot be updated since they
-      /// are managed by the Fleet Engine:
+      /// When updating a `Vehicle`, the following fields cannot be updated since
+      /// they are managed by the server:
       ///
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment_version
-      /// * waypoints_version
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment_version`
+      /// * `waypoints_version`
       ///
-      /// The vehicle name also cannot be updated.
+      /// The vehicle `name` also cannot be updated.
       ///
-      /// The waypoints field can be updated, but must contain all the waypoints
+      /// If the `attributes` field is updated, **all** the vehicle's attributes are
+      /// replaced with the attributes provided in the request. If you want to update
+      /// only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+      /// the `waypoints` field can be updated, but must contain all the waypoints
       /// currently on the vehicle, and no other waypoints.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -599,19 +630,22 @@ namespace Maps.Fleetengine.V1 {
         return UpdateVehicleAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// UpdateVehicle writes updated vehicle data to the Fleet Engine.
+      /// Writes updated vehicle data to the Fleet Engine.
       ///
-      /// When updating a Vehicle, the following fields cannot be updated since they
-      /// are managed by the Fleet Engine:
+      /// When updating a `Vehicle`, the following fields cannot be updated since
+      /// they are managed by the server:
       ///
-      /// * currentTrips
-      /// * availableCapacity
-      /// * current_route_segment_version
-      /// * waypoints_version
+      /// * `currentTrips`
+      /// * `availableCapacity`
+      /// * `current_route_segment_version`
+      /// * `waypoints_version`
       ///
-      /// The vehicle name also cannot be updated.
+      /// The vehicle `name` also cannot be updated.
       ///
-      /// The waypoints field can be updated, but must contain all the waypoints
+      /// If the `attributes` field is updated, **all** the vehicle's attributes are
+      /// replaced with the attributes provided in the request. If you want to update
+      /// only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+      /// the `waypoints` field can be updated, but must contain all the waypoints
       /// currently on the vehicle, and no other waypoints.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -623,8 +657,8 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateVehicle, null, options, request);
       }
       /// <summary>
+      /// Deprecated: Use the `UpdateVehicle` method instead.
       /// UpdateVehicleLocation updates the location of the vehicle.
-      /// This method is deprecated. Use UpdateVehicle method instead.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -637,8 +671,8 @@ namespace Maps.Fleetengine.V1 {
         return UpdateVehicleLocation(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Deprecated: Use the `UpdateVehicle` method instead.
       /// UpdateVehicleLocation updates the location of the vehicle.
-      /// This method is deprecated. Use UpdateVehicle method instead.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -649,8 +683,8 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateVehicleLocation, null, options, request);
       }
       /// <summary>
+      /// Deprecated: Use the `UpdateVehicle` method instead.
       /// UpdateVehicleLocation updates the location of the vehicle.
-      /// This method is deprecated. Use UpdateVehicle method instead.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -663,8 +697,8 @@ namespace Maps.Fleetengine.V1 {
         return UpdateVehicleLocationAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
+      /// Deprecated: Use the `UpdateVehicle` method instead.
       /// UpdateVehicleLocation updates the location of the vehicle.
-      /// This method is deprecated. Use UpdateVehicle method instead.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -675,11 +709,11 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateVehicleLocation, null, options, request);
       }
       /// <summary>
-      /// UpdateVehicleAttributes partially updates a vehicle's attributes.
+      /// Partially updates a vehicle's attributes.
       /// Only the attributes mentioned in the request will be updated, other
-      /// attributes will NOT be altered. Note: this is different in UpdateVehicle,
+      /// attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
       /// where the whole `attributes` field will be replaced by the one in
-      /// UpdateVehicleRequest, attributes not in the request would be removed.
+      /// `UpdateVehicleRequest`, attributes not in the request would be removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -692,11 +726,11 @@ namespace Maps.Fleetengine.V1 {
         return UpdateVehicleAttributes(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// UpdateVehicleAttributes partially updates a vehicle's attributes.
+      /// Partially updates a vehicle's attributes.
       /// Only the attributes mentioned in the request will be updated, other
-      /// attributes will NOT be altered. Note: this is different in UpdateVehicle,
+      /// attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
       /// where the whole `attributes` field will be replaced by the one in
-      /// UpdateVehicleRequest, attributes not in the request would be removed.
+      /// `UpdateVehicleRequest`, attributes not in the request would be removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -707,11 +741,11 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_UpdateVehicleAttributes, null, options, request);
       }
       /// <summary>
-      /// UpdateVehicleAttributes partially updates a vehicle's attributes.
+      /// Partially updates a vehicle's attributes.
       /// Only the attributes mentioned in the request will be updated, other
-      /// attributes will NOT be altered. Note: this is different in UpdateVehicle,
+      /// attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
       /// where the whole `attributes` field will be replaced by the one in
-      /// UpdateVehicleRequest, attributes not in the request would be removed.
+      /// `UpdateVehicleRequest`, attributes not in the request would be removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -724,11 +758,11 @@ namespace Maps.Fleetengine.V1 {
         return UpdateVehicleAttributesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// UpdateVehicleAttributes partially updates a vehicle's attributes.
+      /// Partially updates a vehicle's attributes.
       /// Only the attributes mentioned in the request will be updated, other
-      /// attributes will NOT be altered. Note: this is different in UpdateVehicle,
+      /// attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
       /// where the whole `attributes` field will be replaced by the one in
-      /// UpdateVehicleRequest, attributes not in the request would be removed.
+      /// `UpdateVehicleRequest`, attributes not in the request would be removed.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -739,7 +773,7 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_UpdateVehicleAttributes, null, options, request);
       }
       /// <summary>
-      /// ListVehicles returns a paginated list of vehicles associated with
+      /// Returns a paginated list of vehicles associated with
       /// a provider that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -753,7 +787,7 @@ namespace Maps.Fleetengine.V1 {
         return ListVehicles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// ListVehicles returns a paginated list of vehicles associated with
+      /// Returns a paginated list of vehicles associated with
       /// a provider that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -765,7 +799,7 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_ListVehicles, null, options, request);
       }
       /// <summary>
-      /// ListVehicles returns a paginated list of vehicles associated with
+      /// Returns a paginated list of vehicles associated with
       /// a provider that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -779,7 +813,7 @@ namespace Maps.Fleetengine.V1 {
         return ListVehiclesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// ListVehicles returns a paginated list of vehicles associated with
+      /// Returns a paginated list of vehicles associated with
       /// a provider that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
@@ -791,7 +825,7 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_ListVehicles, null, options, request);
       }
       /// <summary>
-      /// SearchVehicles returns a list of vehicles that match the request options.
+      /// Returns a list of vehicles that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -804,7 +838,7 @@ namespace Maps.Fleetengine.V1 {
         return SearchVehicles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// SearchVehicles returns a list of vehicles that match the request options.
+      /// Returns a list of vehicles that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -815,7 +849,7 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SearchVehicles, null, options, request);
       }
       /// <summary>
-      /// SearchVehicles returns a list of vehicles that match the request options.
+      /// Returns a list of vehicles that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -828,7 +862,7 @@ namespace Maps.Fleetengine.V1 {
         return SearchVehiclesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// SearchVehicles returns a list of vehicles that match the request options.
+      /// Returns a list of vehicles that match the request options.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -839,12 +873,11 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.AsyncUnaryCall(__Method_SearchVehicles, null, options, request);
       }
       /// <summary>
-      /// SearchFuzzedVehicles returns a list of vehicles that match the request
-      /// options with their locations fuzzed.
-      /// Request does not support 'order_by' field.
-      /// Vehicle matches in response will be in order of distance from pickup point.
-      /// Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-      /// set.
+      /// Returns a list of vehicles that match the request
+      /// options, but the vehicle locations will be somewhat altered for privacy.
+      /// This method does not support the `SearchVehicleRequest.order_by` field.
+      /// Vehicle matches in the response will be in order of distance from the
+      /// pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -857,12 +890,11 @@ namespace Maps.Fleetengine.V1 {
         return SearchFuzzedVehicles(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// SearchFuzzedVehicles returns a list of vehicles that match the request
-      /// options with their locations fuzzed.
-      /// Request does not support 'order_by' field.
-      /// Vehicle matches in response will be in order of distance from pickup point.
-      /// Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-      /// set.
+      /// Returns a list of vehicles that match the request
+      /// options, but the vehicle locations will be somewhat altered for privacy.
+      /// This method does not support the `SearchVehicleRequest.order_by` field.
+      /// Vehicle matches in the response will be in order of distance from the
+      /// pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>
@@ -873,12 +905,11 @@ namespace Maps.Fleetengine.V1 {
         return CallInvoker.BlockingUnaryCall(__Method_SearchFuzzedVehicles, null, options, request);
       }
       /// <summary>
-      /// SearchFuzzedVehicles returns a list of vehicles that match the request
-      /// options with their locations fuzzed.
-      /// Request does not support 'order_by' field.
-      /// Vehicle matches in response will be in order of distance from pickup point.
-      /// Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-      /// set.
+      /// Returns a list of vehicles that match the request
+      /// options, but the vehicle locations will be somewhat altered for privacy.
+      /// This method does not support the `SearchVehicleRequest.order_by` field.
+      /// Vehicle matches in the response will be in order of distance from the
+      /// pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
@@ -891,12 +922,11 @@ namespace Maps.Fleetengine.V1 {
         return SearchFuzzedVehiclesAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       /// <summary>
-      /// SearchFuzzedVehicles returns a list of vehicles that match the request
-      /// options with their locations fuzzed.
-      /// Request does not support 'order_by' field.
-      /// Vehicle matches in response will be in order of distance from pickup point.
-      /// Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-      /// set.
+      /// Returns a list of vehicles that match the request
+      /// options, but the vehicle locations will be somewhat altered for privacy.
+      /// This method does not support the `SearchVehicleRequest.order_by` field.
+      /// Vehicle matches in the response will be in order of distance from the
+      /// pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
       /// </summary>
       /// <param name="request">The request to send to the server.</param>
       /// <param name="options">The options for the call.</param>

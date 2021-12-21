@@ -173,8 +173,8 @@ func (c *VehicleClient) Connection() *grpc.ClientConn {
 	return c.internalClient.Connection()
 }
 
-// CreateVehicle createVehicle instantiates a new vehicle associated with a rideshare
-// provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+// CreateVehicle instantiates a new vehicle associated with an on-demand rideshare or
+// deliveries provider. Each Vehicle must have a unique vehicle ID.
 //
 // The following Vehicle fields are required when creating a Vehicle:
 //
@@ -196,13 +196,21 @@ func (c *VehicleClient) Connection() *grpc.ClientConn {
 //
 //   current_route_segment
 //
+//   current_route_segment_end_point
+//
 //   current_route_segment_version
 //
-//   waypoint
+//   current_route_segment_traffic
+//
+//   route
+//
+//   waypoints
 //
 //   waypoints_version
 //
 //   remaining_distance_meters
+//
+//   remaining_time_seconds
 //
 //   eta_to_next_waypoint
 //
@@ -213,15 +221,15 @@ func (c *VehicleClient) CreateVehicle(ctx context.Context, req *fleetenginepb.Cr
 	return c.internalClient.CreateVehicle(ctx, req, opts...)
 }
 
-// GetVehicle getVehicle returns a vehicle from the Fleet Engine.
+// GetVehicle returns a vehicle from the Fleet Engine.
 func (c *VehicleClient) GetVehicle(ctx context.Context, req *fleetenginepb.GetVehicleRequest, opts ...gax.CallOption) (*fleetenginepb.Vehicle, error) {
 	return c.internalClient.GetVehicle(ctx, req, opts...)
 }
 
-// UpdateVehicle updateVehicle writes updated vehicle data to the Fleet Engine.
+// UpdateVehicle writes updated vehicle data to the Fleet Engine.
 //
-// When updating a Vehicle, the following fields cannot be updated since they
-// are managed by the Fleet Engine:
+// When updating a Vehicle, the following fields cannot be updated since
+// they are managed by the server:
 //
 //   currentTrips
 //
@@ -233,21 +241,24 @@ func (c *VehicleClient) GetVehicle(ctx context.Context, req *fleetenginepb.GetVe
 //
 // The vehicle name also cannot be updated.
 //
-// The waypoints field can be updated, but must contain all the waypoints
+// If the attributes field is updated, all the vehicle’s attributes are
+// replaced with the attributes provided in the request. If you want to update
+// only some attributes, see the UpdateVehicleAttributes method. Likewise,
+// the waypoints field can be updated, but must contain all the waypoints
 // currently on the vehicle, and no other waypoints.
 func (c *VehicleClient) UpdateVehicle(ctx context.Context, req *fleetenginepb.UpdateVehicleRequest, opts ...gax.CallOption) (*fleetenginepb.Vehicle, error) {
 	return c.internalClient.UpdateVehicle(ctx, req, opts...)
 }
 
-// UpdateVehicleLocation updateVehicleLocation updates the location of the vehicle.
-// This method is deprecated. Use UpdateVehicle method instead.
+// UpdateVehicleLocation deprecated: Use the UpdateVehicle method instead.
+// UpdateVehicleLocation updates the location of the vehicle.
 //
 // Deprecated: UpdateVehicleLocation may be removed in a future version.
 func (c *VehicleClient) UpdateVehicleLocation(ctx context.Context, req *fleetenginepb.UpdateVehicleLocationRequest, opts ...gax.CallOption) (*fleetenginepb.VehicleLocation, error) {
 	return c.internalClient.UpdateVehicleLocation(ctx, req, opts...)
 }
 
-// UpdateVehicleAttributes updateVehicleAttributes partially updates a vehicle’s attributes.
+// UpdateVehicleAttributes partially updates a vehicle’s attributes.
 // Only the attributes mentioned in the request will be updated, other
 // attributes will NOT be altered. Note: this is different in UpdateVehicle,
 // where the whole attributes field will be replaced by the one in
@@ -256,23 +267,22 @@ func (c *VehicleClient) UpdateVehicleAttributes(ctx context.Context, req *fleete
 	return c.internalClient.UpdateVehicleAttributes(ctx, req, opts...)
 }
 
-// ListVehicles listVehicles returns a paginated list of vehicles associated with
+// ListVehicles returns a paginated list of vehicles associated with
 // a provider that match the request options.
 func (c *VehicleClient) ListVehicles(ctx context.Context, req *fleetenginepb.ListVehiclesRequest, opts ...gax.CallOption) *VehicleIterator {
 	return c.internalClient.ListVehicles(ctx, req, opts...)
 }
 
-// SearchVehicles searchVehicles returns a list of vehicles that match the request options.
+// SearchVehicles returns a list of vehicles that match the request options.
 func (c *VehicleClient) SearchVehicles(ctx context.Context, req *fleetenginepb.SearchVehiclesRequest, opts ...gax.CallOption) (*fleetenginepb.SearchVehiclesResponse, error) {
 	return c.internalClient.SearchVehicles(ctx, req, opts...)
 }
 
-// SearchFuzzedVehicles searchFuzzedVehicles returns a list of vehicles that match the request
-// options with their locations fuzzed.
-// Request does not support ‘order_by’ field.
-// Vehicle matches in response will be in order of distance from pickup point.
-// Vehicle matches in response will only have ‘vehicle’ and ‘trip_type’ field
-// set.
+// SearchFuzzedVehicles returns a list of vehicles that match the request
+// options, but the vehicle locations will be somewhat altered for privacy.
+// This method does not support the SearchVehicleRequest.order_by field.
+// Vehicle matches in the response will be in order of distance from the
+// pickup point.  Only the vehicle and trip_type fields will be populated.
 func (c *VehicleClient) SearchFuzzedVehicles(ctx context.Context, req *fleetenginepb.SearchVehiclesRequest, opts ...gax.CallOption) (*fleetenginepb.SearchVehiclesResponse, error) {
 	return c.internalClient.SearchFuzzedVehicles(ctx, req, opts...)
 }

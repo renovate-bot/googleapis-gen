@@ -26,20 +26,20 @@ function main(name, currentLocation) {
   // const header = {}
   /**
    *  Required. Must be in the format
-   *  "providers/{provider}/vehicles/{vehicle}.
-   *  The {provider} must be the Project ID (for example, sample-cloud-project)
+   *  `providers/{provider}/vehicles/{vehicle}`.
+   *  The {provider} must be the Project ID (for example, `sample-cloud-project`)
    *  of the Google Cloud Project of which the service account making
    *  this call is a member.
    */
   // const name = 'abc123'
   /**
-   *  Required. The location to update to.  The last_location and update_time
+   *  Required. The vehicle's most recent location.  The `location` and `update_time`
    *  subfields are required.
    */
   // const currentLocation = {}
   /**
-   *  Set current vehicle state to either ONLINE or OFFLINE;
-   *  if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+   *  Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+   *  If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
    */
   // const currentState = {}
 

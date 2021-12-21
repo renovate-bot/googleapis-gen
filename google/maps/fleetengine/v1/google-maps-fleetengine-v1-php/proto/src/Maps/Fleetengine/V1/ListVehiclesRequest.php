@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ListVehicles request message.
+ * `ListVehicles` request message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.ListVehiclesRequest</code>
  */
@@ -22,8 +22,8 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $header = null;
     /**
-     * Required. Must be in the format "providers/{provider}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -38,29 +38,31 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $page_size = 0;
     /**
-     * The next_page_token value returned from a previous response, if any.
+     * The `next_page_token` value returned from a previous call to
+     * `ListVehicles`. Functionality is undefined if the filter criteria of this
+     * request don't match the criteria in the request that produced this
+     * `page_token`.
      *
      * Generated from protobuf field <code>string page_token = 4;</code>
      */
     protected $page_token = '';
     /**
-     * Specifies the required minimum capacity of the vehicle.
-     * The driver is not considered in the capacity search.
-     * This is just the number of passengers being considered for a trip.
-     * If set, must be greater or equal to 0.
+     * Specifies the required minimum capacity of the vehicle. All vehicles
+     * returned will have a `maximum_capacity` greater than or equal to this
+     * value. If set, must be greater or equal to 0.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value minimum_capacity = 6;</code>
      */
     protected $minimum_capacity = null;
     /**
-     * Restrict the search to only those vehicles that support at least
+     * Restrict the response to vehicles that support at least
      * one of the specified trip types.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TripType trip_types = 7;</code>
      */
     private $trip_types;
     /**
-     * Restrict the search to only those vehicles that have updated
+     * Restrict the response to vehicles that have updated
      * their locations within the specified duration back from now.
      * If present, must be a valid positive duration.
      *
@@ -68,57 +70,74 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $maximum_staleness = null;
     /**
-     * Required. Restrict the search to those vehicles with the specified type categories.
+     * Required. Restrict the response to vehicles with one of the specified type
+     * categories.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType.Category vehicle_type_categories = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     private $vehicle_type_categories;
     /**
-     * Callers can form complex logical operations using the
-     * requiredAttributes and requiredOneOfAttributes fields.
-     * requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     * allows a list of lists. In combination, the two fields allow the
-     * composition of this expression:
+     * Callers can form complex logical operations using any combination of the
+     * `required_attributes`, `required_one_of_attributes`, and
+     * `required_one_of_attribute_sets` fields.
+     * `required_attributes` is a list; `required_one_of_attributes` uses a
+     * message which allows a list of lists. In combination, the two fields allow
+     * the composition of this expression:
      * ```
-     * (required_attribute[0] AND required_attribute[1] AND ...)
+     * (required_attributes[0] AND required_attributes[1] AND ...)
      * AND
-     * (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     * (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     * ...)
      * AND
-     * (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     * (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     * ...)
      * ```
-     * Restrict the search to only those vehicles
-     * with the specified attributes. This field is a conjunction/AND operation.
-     * Your app can specify up to 100 attributes; however, the combined
-     * key:value string length cannot exceed 1024 characters.
+     * Restrict the response to vehicles with the specified attributes. This field
+     * is a conjunction/AND operation. Your app can specify up to 100 attributes;
+     * however, the combined key:value string length cannot exceed 1024
+     * characters.
      *
      * Generated from protobuf field <code>repeated string required_attributes = 10;</code>
      */
     private $required_attributes;
     /**
-     * Restrict the search to only those vehicles with at least one
-     * of the specified attributes applied to each VehicleAttributeList.
+     * Restrict the response to vehicles with at least one
+     * of the specified attributes in each `VehicleAttributeList`.
      * Within each list, a vehicle must match at least one of the attributes.
      * This field is an inclusive disjunction/OR operation in each
-     * VehicleAttributeList and a conjunction/AND operation across the collection
-     * of VehicleAttributeList.
-     * Format: key1:value1|key2:value2|key3:value3...
+     * `VehicleAttributeList` and a conjunction/AND operation across the
+     * collection of `VehicleAttributeList`. Format:
+     * key1:value1|key2:value2|key3:value3...
      *
      * Generated from protobuf field <code>repeated string required_one_of_attributes = 13;</code>
      */
     private $required_one_of_attributes;
     /**
-     * Restrict the search to only those vehicles with at least one set of the
-     * specified attributes in the VehicleAttributeList. Within each list, a
-     * vehicle must match all of the attributes. This field is a conjunction/AND
-     * operation in each VehicleAttributeList and inclusive disjunction/OR
-     * operation across the collection of VehicleAttributeList.
-     * Format: key1:value1|key2:value2|key3:value3...
+     * `required_one_of_attribute_sets` provides additional functionality.
+     * Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     * uses a message which allows a list of lists, allowing expressions such as
+     * this one:
+     * ```
+     * (required_attributes[0] AND required_attributes[1] AND ...)
+     * AND
+     * (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     * ...)
+     * OR
+     * (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     * ...)
+     * ```
+     * Restrict the response to vehicles that match all the attributes in a
+     * `VehicleAttributeList`. Within each list, a vehicle must match all of the
+     * attributes. This field is a conjunction/AND operation in each
+     * `VehicleAttributeList` and inclusive disjunction/OR operation across the
+     * collection of `VehicleAttributeList`. Format:
+     * key1:value1|key2:value2|key3:value3...
      *
      * Generated from protobuf field <code>repeated string required_one_of_attribute_sets = 15;</code>
      */
     private $required_one_of_attribute_sets;
     /**
-     * Restrict the search to only those vehicles that have this vehicle state.
+     * Restrict the response to vehicles that have this vehicle state.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleState vehicle_state = 11;</code>
      */
@@ -139,63 +158,82 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
      *     @type \Maps\Fleetengine\V1\RequestHeader $header
      *           The standard Fleet Engine request header.
      *     @type string $parent
-     *           Required. Must be in the format "providers/{provider}".
-     *           The provider must be the Project ID (for example, sample-cloud-project)
+     *           Required. Must be in the format `providers/{provider}`.
+     *           The provider must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type int $page_size
      *           The maximum number of vehicles to return.
      *           Default value: 100.
      *     @type string $page_token
-     *           The next_page_token value returned from a previous response, if any.
+     *           The `next_page_token` value returned from a previous call to
+     *           `ListVehicles`. Functionality is undefined if the filter criteria of this
+     *           request don't match the criteria in the request that produced this
+     *           `page_token`.
      *     @type \Google\Protobuf\Int32Value $minimum_capacity
-     *           Specifies the required minimum capacity of the vehicle.
-     *           The driver is not considered in the capacity search.
-     *           This is just the number of passengers being considered for a trip.
-     *           If set, must be greater or equal to 0.
+     *           Specifies the required minimum capacity of the vehicle. All vehicles
+     *           returned will have a `maximum_capacity` greater than or equal to this
+     *           value. If set, must be greater or equal to 0.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $trip_types
-     *           Restrict the search to only those vehicles that support at least
+     *           Restrict the response to vehicles that support at least
      *           one of the specified trip types.
      *     @type \Google\Protobuf\Duration $maximum_staleness
-     *           Restrict the search to only those vehicles that have updated
+     *           Restrict the response to vehicles that have updated
      *           their locations within the specified duration back from now.
      *           If present, must be a valid positive duration.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $vehicle_type_categories
-     *           Required. Restrict the search to those vehicles with the specified type categories.
+     *           Required. Restrict the response to vehicles with one of the specified type
+     *           categories.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $required_attributes
-     *           Callers can form complex logical operations using the
-     *           requiredAttributes and requiredOneOfAttributes fields.
-     *           requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     *           allows a list of lists. In combination, the two fields allow the
-     *           composition of this expression:
+     *           Callers can form complex logical operations using any combination of the
+     *           `required_attributes`, `required_one_of_attributes`, and
+     *           `required_one_of_attribute_sets` fields.
+     *           `required_attributes` is a list; `required_one_of_attributes` uses a
+     *           message which allows a list of lists. In combination, the two fields allow
+     *           the composition of this expression:
      *           ```
-     *           (required_attribute[0] AND required_attribute[1] AND ...)
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
      *           AND
-     *           (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     *           (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     *           ...)
      *           AND
-     *           (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     *           (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     *           ...)
      *           ```
-     *           Restrict the search to only those vehicles
-     *           with the specified attributes. This field is a conjunction/AND operation.
-     *           Your app can specify up to 100 attributes; however, the combined
-     *           key:value string length cannot exceed 1024 characters.
+     *           Restrict the response to vehicles with the specified attributes. This field
+     *           is a conjunction/AND operation. Your app can specify up to 100 attributes;
+     *           however, the combined key:value string length cannot exceed 1024
+     *           characters.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $required_one_of_attributes
-     *           Restrict the search to only those vehicles with at least one
-     *           of the specified attributes applied to each VehicleAttributeList.
+     *           Restrict the response to vehicles with at least one
+     *           of the specified attributes in each `VehicleAttributeList`.
      *           Within each list, a vehicle must match at least one of the attributes.
      *           This field is an inclusive disjunction/OR operation in each
-     *           VehicleAttributeList and a conjunction/AND operation across the collection
-     *           of VehicleAttributeList.
-     *           Format: key1:value1|key2:value2|key3:value3...
+     *           `VehicleAttributeList` and a conjunction/AND operation across the
+     *           collection of `VehicleAttributeList`. Format:
+     *           key1:value1|key2:value2|key3:value3...
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $required_one_of_attribute_sets
-     *           Restrict the search to only those vehicles with at least one set of the
-     *           specified attributes in the VehicleAttributeList. Within each list, a
-     *           vehicle must match all of the attributes. This field is a conjunction/AND
-     *           operation in each VehicleAttributeList and inclusive disjunction/OR
-     *           operation across the collection of VehicleAttributeList.
-     *           Format: key1:value1|key2:value2|key3:value3...
+     *           `required_one_of_attribute_sets` provides additional functionality.
+     *           Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     *           uses a message which allows a list of lists, allowing expressions such as
+     *           this one:
+     *           ```
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
+     *           AND
+     *           (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     *           ...)
+     *           OR
+     *           (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     *           ...)
+     *           ```
+     *           Restrict the response to vehicles that match all the attributes in a
+     *           `VehicleAttributeList`. Within each list, a vehicle must match all of the
+     *           attributes. This field is a conjunction/AND operation in each
+     *           `VehicleAttributeList` and inclusive disjunction/OR operation across the
+     *           collection of `VehicleAttributeList`. Format:
+     *           key1:value1|key2:value2|key3:value3...
      *     @type int $vehicle_state
-     *           Restrict the search to only those vehicles that have this vehicle state.
+     *           Restrict the response to vehicles that have this vehicle state.
      *     @type bool $on_trip_only
      *           Only return the vehicles with current trip(s).
      * }
@@ -242,8 +280,8 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/{provider}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -256,8 +294,8 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/{provider}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -302,7 +340,10 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next_page_token value returned from a previous response, if any.
+     * The `next_page_token` value returned from a previous call to
+     * `ListVehicles`. Functionality is undefined if the filter criteria of this
+     * request don't match the criteria in the request that produced this
+     * `page_token`.
      *
      * Generated from protobuf field <code>string page_token = 4;</code>
      * @return string
@@ -313,7 +354,10 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The next_page_token value returned from a previous response, if any.
+     * The `next_page_token` value returned from a previous call to
+     * `ListVehicles`. Functionality is undefined if the filter criteria of this
+     * request don't match the criteria in the request that produced this
+     * `page_token`.
      *
      * Generated from protobuf field <code>string page_token = 4;</code>
      * @param string $var
@@ -328,10 +372,9 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the required minimum capacity of the vehicle.
-     * The driver is not considered in the capacity search.
-     * This is just the number of passengers being considered for a trip.
-     * If set, must be greater or equal to 0.
+     * Specifies the required minimum capacity of the vehicle. All vehicles
+     * returned will have a `maximum_capacity` greater than or equal to this
+     * value. If set, must be greater or equal to 0.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value minimum_capacity = 6;</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -354,10 +397,9 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getMinimumCapacity()</code>
 
-     * Specifies the required minimum capacity of the vehicle.
-     * The driver is not considered in the capacity search.
-     * This is just the number of passengers being considered for a trip.
-     * If set, must be greater or equal to 0.
+     * Specifies the required minimum capacity of the vehicle. All vehicles
+     * returned will have a `maximum_capacity` greater than or equal to this
+     * value. If set, must be greater or equal to 0.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value minimum_capacity = 6;</code>
      * @return int|null
@@ -368,10 +410,9 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Specifies the required minimum capacity of the vehicle.
-     * The driver is not considered in the capacity search.
-     * This is just the number of passengers being considered for a trip.
-     * If set, must be greater or equal to 0.
+     * Specifies the required minimum capacity of the vehicle. All vehicles
+     * returned will have a `maximum_capacity` greater than or equal to this
+     * value. If set, must be greater or equal to 0.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value minimum_capacity = 6;</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -388,10 +429,9 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * Specifies the required minimum capacity of the vehicle.
-     * The driver is not considered in the capacity search.
-     * This is just the number of passengers being considered for a trip.
-     * If set, must be greater or equal to 0.
+     * Specifies the required minimum capacity of the vehicle. All vehicles
+     * returned will have a `maximum_capacity` greater than or equal to this
+     * value. If set, must be greater or equal to 0.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value minimum_capacity = 6;</code>
      * @param int|null $var
@@ -403,7 +443,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Restrict the search to only those vehicles that support at least
+     * Restrict the response to vehicles that support at least
      * one of the specified trip types.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TripType trip_types = 7;</code>
@@ -415,7 +455,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles that support at least
+     * Restrict the response to vehicles that support at least
      * one of the specified trip types.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TripType trip_types = 7;</code>
@@ -431,7 +471,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles that have updated
+     * Restrict the response to vehicles that have updated
      * their locations within the specified duration back from now.
      * If present, must be a valid positive duration.
      *
@@ -454,7 +494,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles that have updated
+     * Restrict the response to vehicles that have updated
      * their locations within the specified duration back from now.
      * If present, must be a valid positive duration.
      *
@@ -471,7 +511,8 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Restrict the search to those vehicles with the specified type categories.
+     * Required. Restrict the response to vehicles with one of the specified type
+     * categories.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType.Category vehicle_type_categories = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -482,7 +523,8 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Restrict the search to those vehicles with the specified type categories.
+     * Required. Restrict the response to vehicles with one of the specified type
+     * categories.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.Vehicle.VehicleType.Category vehicle_type_categories = 9 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -497,22 +539,25 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Callers can form complex logical operations using the
-     * requiredAttributes and requiredOneOfAttributes fields.
-     * requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     * allows a list of lists. In combination, the two fields allow the
-     * composition of this expression:
+     * Callers can form complex logical operations using any combination of the
+     * `required_attributes`, `required_one_of_attributes`, and
+     * `required_one_of_attribute_sets` fields.
+     * `required_attributes` is a list; `required_one_of_attributes` uses a
+     * message which allows a list of lists. In combination, the two fields allow
+     * the composition of this expression:
      * ```
-     * (required_attribute[0] AND required_attribute[1] AND ...)
+     * (required_attributes[0] AND required_attributes[1] AND ...)
      * AND
-     * (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     * (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     * ...)
      * AND
-     * (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     * (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     * ...)
      * ```
-     * Restrict the search to only those vehicles
-     * with the specified attributes. This field is a conjunction/AND operation.
-     * Your app can specify up to 100 attributes; however, the combined
-     * key:value string length cannot exceed 1024 characters.
+     * Restrict the response to vehicles with the specified attributes. This field
+     * is a conjunction/AND operation. Your app can specify up to 100 attributes;
+     * however, the combined key:value string length cannot exceed 1024
+     * characters.
      *
      * Generated from protobuf field <code>repeated string required_attributes = 10;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -523,22 +568,25 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Callers can form complex logical operations using the
-     * requiredAttributes and requiredOneOfAttributes fields.
-     * requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     * allows a list of lists. In combination, the two fields allow the
-     * composition of this expression:
+     * Callers can form complex logical operations using any combination of the
+     * `required_attributes`, `required_one_of_attributes`, and
+     * `required_one_of_attribute_sets` fields.
+     * `required_attributes` is a list; `required_one_of_attributes` uses a
+     * message which allows a list of lists. In combination, the two fields allow
+     * the composition of this expression:
      * ```
-     * (required_attribute[0] AND required_attribute[1] AND ...)
+     * (required_attributes[0] AND required_attributes[1] AND ...)
      * AND
-     * (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     * (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     * ...)
      * AND
-     * (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     * (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     * ...)
      * ```
-     * Restrict the search to only those vehicles
-     * with the specified attributes. This field is a conjunction/AND operation.
-     * Your app can specify up to 100 attributes; however, the combined
-     * key:value string length cannot exceed 1024 characters.
+     * Restrict the response to vehicles with the specified attributes. This field
+     * is a conjunction/AND operation. Your app can specify up to 100 attributes;
+     * however, the combined key:value string length cannot exceed 1024
+     * characters.
      *
      * Generated from protobuf field <code>repeated string required_attributes = 10;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -553,13 +601,13 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles with at least one
-     * of the specified attributes applied to each VehicleAttributeList.
+     * Restrict the response to vehicles with at least one
+     * of the specified attributes in each `VehicleAttributeList`.
      * Within each list, a vehicle must match at least one of the attributes.
      * This field is an inclusive disjunction/OR operation in each
-     * VehicleAttributeList and a conjunction/AND operation across the collection
-     * of VehicleAttributeList.
-     * Format: key1:value1|key2:value2|key3:value3...
+     * `VehicleAttributeList` and a conjunction/AND operation across the
+     * collection of `VehicleAttributeList`. Format:
+     * key1:value1|key2:value2|key3:value3...
      *
      * Generated from protobuf field <code>repeated string required_one_of_attributes = 13;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -570,13 +618,13 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles with at least one
-     * of the specified attributes applied to each VehicleAttributeList.
+     * Restrict the response to vehicles with at least one
+     * of the specified attributes in each `VehicleAttributeList`.
      * Within each list, a vehicle must match at least one of the attributes.
      * This field is an inclusive disjunction/OR operation in each
-     * VehicleAttributeList and a conjunction/AND operation across the collection
-     * of VehicleAttributeList.
-     * Format: key1:value1|key2:value2|key3:value3...
+     * `VehicleAttributeList` and a conjunction/AND operation across the
+     * collection of `VehicleAttributeList`. Format:
+     * key1:value1|key2:value2|key3:value3...
      *
      * Generated from protobuf field <code>repeated string required_one_of_attributes = 13;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -591,12 +639,25 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles with at least one set of the
-     * specified attributes in the VehicleAttributeList. Within each list, a
-     * vehicle must match all of the attributes. This field is a conjunction/AND
-     * operation in each VehicleAttributeList and inclusive disjunction/OR
-     * operation across the collection of VehicleAttributeList.
-     * Format: key1:value1|key2:value2|key3:value3...
+     * `required_one_of_attribute_sets` provides additional functionality.
+     * Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     * uses a message which allows a list of lists, allowing expressions such as
+     * this one:
+     * ```
+     * (required_attributes[0] AND required_attributes[1] AND ...)
+     * AND
+     * (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     * ...)
+     * OR
+     * (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     * ...)
+     * ```
+     * Restrict the response to vehicles that match all the attributes in a
+     * `VehicleAttributeList`. Within each list, a vehicle must match all of the
+     * attributes. This field is a conjunction/AND operation in each
+     * `VehicleAttributeList` and inclusive disjunction/OR operation across the
+     * collection of `VehicleAttributeList`. Format:
+     * key1:value1|key2:value2|key3:value3...
      *
      * Generated from protobuf field <code>repeated string required_one_of_attribute_sets = 15;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -607,12 +668,25 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles with at least one set of the
-     * specified attributes in the VehicleAttributeList. Within each list, a
-     * vehicle must match all of the attributes. This field is a conjunction/AND
-     * operation in each VehicleAttributeList and inclusive disjunction/OR
-     * operation across the collection of VehicleAttributeList.
-     * Format: key1:value1|key2:value2|key3:value3...
+     * `required_one_of_attribute_sets` provides additional functionality.
+     * Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     * uses a message which allows a list of lists, allowing expressions such as
+     * this one:
+     * ```
+     * (required_attributes[0] AND required_attributes[1] AND ...)
+     * AND
+     * (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     * ...)
+     * OR
+     * (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     * ...)
+     * ```
+     * Restrict the response to vehicles that match all the attributes in a
+     * `VehicleAttributeList`. Within each list, a vehicle must match all of the
+     * attributes. This field is a conjunction/AND operation in each
+     * `VehicleAttributeList` and inclusive disjunction/OR operation across the
+     * collection of `VehicleAttributeList`. Format:
+     * key1:value1|key2:value2|key3:value3...
      *
      * Generated from protobuf field <code>repeated string required_one_of_attribute_sets = 15;</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -627,7 +701,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles that have this vehicle state.
+     * Restrict the response to vehicles that have this vehicle state.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleState vehicle_state = 11;</code>
      * @return int
@@ -638,7 +712,7 @@ class ListVehiclesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Restrict the search to only those vehicles that have this vehicle state.
+     * Restrict the response to vehicles that have this vehicle state.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleState vehicle_state = 11;</code>
      * @param int $var

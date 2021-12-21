@@ -9,8 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * VehicleMatch contains the vehicle, ETA, and distance calculations for a
- * vehicle that matches the SearchVehiclesRequest.
+ * Contains the vehicle and related estimates for a vehicle that match the
+ * points of active trips for the vehicle `SearchVehiclesRequest`.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.VehicleMatch</code>
  */
@@ -25,36 +25,38 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * The vehicle's driving ETA to the pickup point specified in the
      * request. An empty value indicates a failure in calculating ETA for the
-     * vehicle.
+     * vehicle.  If `SearchVehiclesRequest.include_back_to_back` was `true` and
+     * this vehicle has an active trip, `vehicle_pickup_eta` includes the time
+     * required to complete the current active trip.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp vehicle_pickup_eta = 2;</code>
      */
     protected $vehicle_pickup_eta = null;
     /**
-     * The vehicle's driving distance to the pickup point specified in
-     * the request, including any intermediate pickup or dropoff points for
-     * an existing ride.  An empty value indicates a failure in calculating
-     * distance for the vehicle.
+     * The distance from the Vehicle's current location to the pickup point
+     * specified in the request, including any intermediate pickup or dropoff
+     * points for existing trips. This distance comprises the calculated driving
+     * (route) distance, plus the straight line distance between the navigation
+     * end point and the requested pickup point. (The distance between the
+     * navigation end point and the requested pickup point is typically small.) An
+     * empty value indicates an error in calculating the distance.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
      */
     protected $vehicle_pickup_distance_meters = null;
     /**
-     * Required. The straight-line distance between the vehicle and the pickup
-     * point specified in the request, including intermediate waypoints for
-     * existing trips.
+     * Required. The straight-line distance between the vehicle and the pickup point
+     * specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $vehicle_pickup_straight_line_distance_meters = null;
     /**
-     * The complete vehicle's driving ETA to the drop off point
-     * specified in the request. The ETA includes any required visits for active
-     * trips that must be completed before the vehicle visits the dropoff_point
-     * specified in the request. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
-     * a failure in calculating the ETA for the vehicle to reach
-     * the dropoff_point.
+     * The complete vehicle's driving ETA to the drop off point specified in the
+     * request. The ETA includes stopping at any waypoints before the
+     * `dropoff_point` specified in the request. The value will only be populated
+     * when a drop off point is specified in the request. An empty value indicates
+     * an error calculating the ETA.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp vehicle_dropoff_eta = 4;</code>
      */
@@ -65,9 +67,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      * between the two points and does not include the vehicle location or any
      * other points that must be visited before the vehicle visits either the
      * pickup point or dropoff point. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
+     * `dropoff_point` is specified in the request. An empty value indicates
      * a failure in calculating the distance from the pickup to
-     * dropoff points specified in the request.
+     * drop off point specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
      */
@@ -81,8 +83,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     protected $trip_type = 0;
     /**
      * The ordered list of waypoints used to calculate the ETA. The list
-     * will include the vehicle location, the pickup/drop off points of active
-     * trips for the vehicle and the pickup/dropoff points provided in the
+     * includes vehicle location, the pickup/drop off points of active
+     * trips for the vehicle, and the pickup/drop off points provided in the
      * request. An empty list indicates a failure in calculating ETA for the
      * vehicle.
      *
@@ -96,16 +98,16 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      */
     protected $vehicle_match_type = 0;
     /**
-     * The method the caller requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
      */
     protected $requested_ordered_by = 0;
     /**
-     * The actual method that is used to order this vehicle. In normal cases this
-     * will match the 'order_by' field from the request, however in certain
-     * circumstances such as a failure of google maps backends, a different method
-     * may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
+     * The actual order that was used for this vehicle. Normally this
+     * will match the 'order_by' field from the request; however, in certain
+     * circumstances such as an internal server error, a different method
+     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
      */
@@ -122,51 +124,53 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      *     @type \Google\Protobuf\Timestamp $vehicle_pickup_eta
      *           The vehicle's driving ETA to the pickup point specified in the
      *           request. An empty value indicates a failure in calculating ETA for the
-     *           vehicle.
+     *           vehicle.  If `SearchVehiclesRequest.include_back_to_back` was `true` and
+     *           this vehicle has an active trip, `vehicle_pickup_eta` includes the time
+     *           required to complete the current active trip.
      *     @type \Google\Protobuf\Int32Value $vehicle_pickup_distance_meters
-     *           The vehicle's driving distance to the pickup point specified in
-     *           the request, including any intermediate pickup or dropoff points for
-     *           an existing ride.  An empty value indicates a failure in calculating
-     *           distance for the vehicle.
+     *           The distance from the Vehicle's current location to the pickup point
+     *           specified in the request, including any intermediate pickup or dropoff
+     *           points for existing trips. This distance comprises the calculated driving
+     *           (route) distance, plus the straight line distance between the navigation
+     *           end point and the requested pickup point. (The distance between the
+     *           navigation end point and the requested pickup point is typically small.) An
+     *           empty value indicates an error in calculating the distance.
      *     @type \Google\Protobuf\Int32Value $vehicle_pickup_straight_line_distance_meters
-     *           Required. The straight-line distance between the vehicle and the pickup
-     *           point specified in the request, including intermediate waypoints for
-     *           existing trips.
+     *           Required. The straight-line distance between the vehicle and the pickup point
+     *           specified in the request.
      *     @type \Google\Protobuf\Timestamp $vehicle_dropoff_eta
-     *           The complete vehicle's driving ETA to the drop off point
-     *           specified in the request. The ETA includes any required visits for active
-     *           trips that must be completed before the vehicle visits the dropoff_point
-     *           specified in the request. The value will only be populated when a
-     *           dropoff_point is specified in the request. An empty value indicates
-     *           a failure in calculating the ETA for the vehicle to reach
-     *           the dropoff_point.
+     *           The complete vehicle's driving ETA to the drop off point specified in the
+     *           request. The ETA includes stopping at any waypoints before the
+     *           `dropoff_point` specified in the request. The value will only be populated
+     *           when a drop off point is specified in the request. An empty value indicates
+     *           an error calculating the ETA.
      *     @type \Google\Protobuf\Int32Value $vehicle_pickup_to_dropoff_distance_meters
      *           The vehicle's driving distance (in meters) from the pickup point
      *           to the drop off point specified in the request. The distance is only
      *           between the two points and does not include the vehicle location or any
      *           other points that must be visited before the vehicle visits either the
      *           pickup point or dropoff point. The value will only be populated when a
-     *           dropoff_point is specified in the request. An empty value indicates
+     *           `dropoff_point` is specified in the request. An empty value indicates
      *           a failure in calculating the distance from the pickup to
-     *           dropoff points specified in the request.
+     *           drop off point specified in the request.
      *     @type int $trip_type
      *           Required. The trip type of the request that was used to calculate the ETA
      *           to the pickup point.
      *     @type \Maps\Fleetengine\V1\Waypoint[]|\Google\Protobuf\Internal\RepeatedField $vehicle_trips_waypoints
      *           The ordered list of waypoints used to calculate the ETA. The list
-     *           will include the vehicle location, the pickup/drop off points of active
-     *           trips for the vehicle and the pickup/dropoff points provided in the
+     *           includes vehicle location, the pickup/drop off points of active
+     *           trips for the vehicle, and the pickup/drop off points provided in the
      *           request. An empty list indicates a failure in calculating ETA for the
      *           vehicle.
      *     @type int $vehicle_match_type
      *           Type of the vehicle match.
      *     @type int $requested_ordered_by
-     *           The method the caller requested for sorting vehicle matches.
+     *           The order requested for sorting vehicle matches.
      *     @type int $ordered_by
-     *           The actual method that is used to order this vehicle. In normal cases this
-     *           will match the 'order_by' field from the request, however in certain
-     *           circumstances such as a failure of google maps backends, a different method
-     *           may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
+     *           The actual order that was used for this vehicle. Normally this
+     *           will match the 'order_by' field from the request; however, in certain
+     *           circumstances such as an internal server error, a different method
+     *           may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
      * }
      */
     public function __construct($data = NULL) {
@@ -213,7 +217,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * The vehicle's driving ETA to the pickup point specified in the
      * request. An empty value indicates a failure in calculating ETA for the
-     * vehicle.
+     * vehicle.  If `SearchVehiclesRequest.include_back_to_back` was `true` and
+     * this vehicle has an active trip, `vehicle_pickup_eta` includes the time
+     * required to complete the current active trip.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp vehicle_pickup_eta = 2;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -236,7 +242,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * The vehicle's driving ETA to the pickup point specified in the
      * request. An empty value indicates a failure in calculating ETA for the
-     * vehicle.
+     * vehicle.  If `SearchVehiclesRequest.include_back_to_back` was `true` and
+     * this vehicle has an active trip, `vehicle_pickup_eta` includes the time
+     * required to complete the current active trip.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp vehicle_pickup_eta = 2;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -251,10 +259,13 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The vehicle's driving distance to the pickup point specified in
-     * the request, including any intermediate pickup or dropoff points for
-     * an existing ride.  An empty value indicates a failure in calculating
-     * distance for the vehicle.
+     * The distance from the Vehicle's current location to the pickup point
+     * specified in the request, including any intermediate pickup or dropoff
+     * points for existing trips. This distance comprises the calculated driving
+     * (route) distance, plus the straight line distance between the navigation
+     * end point and the requested pickup point. (The distance between the
+     * navigation end point and the requested pickup point is typically small.) An
+     * empty value indicates an error in calculating the distance.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -277,10 +288,13 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getVehiclePickupDistanceMeters()</code>
 
-     * The vehicle's driving distance to the pickup point specified in
-     * the request, including any intermediate pickup or dropoff points for
-     * an existing ride.  An empty value indicates a failure in calculating
-     * distance for the vehicle.
+     * The distance from the Vehicle's current location to the pickup point
+     * specified in the request, including any intermediate pickup or dropoff
+     * points for existing trips. This distance comprises the calculated driving
+     * (route) distance, plus the straight line distance between the navigation
+     * end point and the requested pickup point. (The distance between the
+     * navigation end point and the requested pickup point is typically small.) An
+     * empty value indicates an error in calculating the distance.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
      * @return int|null
@@ -291,10 +305,13 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The vehicle's driving distance to the pickup point specified in
-     * the request, including any intermediate pickup or dropoff points for
-     * an existing ride.  An empty value indicates a failure in calculating
-     * distance for the vehicle.
+     * The distance from the Vehicle's current location to the pickup point
+     * specified in the request, including any intermediate pickup or dropoff
+     * points for existing trips. This distance comprises the calculated driving
+     * (route) distance, plus the straight line distance between the navigation
+     * end point and the requested pickup point. (The distance between the
+     * navigation end point and the requested pickup point is typically small.) An
+     * empty value indicates an error in calculating the distance.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -311,10 +328,13 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The vehicle's driving distance to the pickup point specified in
-     * the request, including any intermediate pickup or dropoff points for
-     * an existing ride.  An empty value indicates a failure in calculating
-     * distance for the vehicle.
+     * The distance from the Vehicle's current location to the pickup point
+     * specified in the request, including any intermediate pickup or dropoff
+     * points for existing trips. This distance comprises the calculated driving
+     * (route) distance, plus the straight line distance between the navigation
+     * end point and the requested pickup point. (The distance between the
+     * navigation end point and the requested pickup point is typically small.) An
+     * empty value indicates an error in calculating the distance.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_distance_meters = 3;</code>
      * @param int|null $var
@@ -326,9 +346,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * Required. The straight-line distance between the vehicle and the pickup
-     * point specified in the request, including intermediate waypoints for
-     * existing trips.
+     * Required. The straight-line distance between the vehicle and the pickup point
+     * specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -351,9 +370,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getVehiclePickupStraightLineDistanceMeters()</code>
 
-     * Required. The straight-line distance between the vehicle and the pickup
-     * point specified in the request, including intermediate waypoints for
-     * existing trips.
+     * Required. The straight-line distance between the vehicle and the pickup point
+     * specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int|null
@@ -364,9 +382,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The straight-line distance between the vehicle and the pickup
-     * point specified in the request, including intermediate waypoints for
-     * existing trips.
+     * Required. The straight-line distance between the vehicle and the pickup point
+     * specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -383,9 +400,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * Required. The straight-line distance between the vehicle and the pickup
-     * point specified in the request, including intermediate waypoints for
-     * existing trips.
+     * Required. The straight-line distance between the vehicle and the pickup point
+     * specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_straight_line_distance_meters = 11 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int|null $var
@@ -397,13 +413,11 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The complete vehicle's driving ETA to the drop off point
-     * specified in the request. The ETA includes any required visits for active
-     * trips that must be completed before the vehicle visits the dropoff_point
-     * specified in the request. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
-     * a failure in calculating the ETA for the vehicle to reach
-     * the dropoff_point.
+     * The complete vehicle's driving ETA to the drop off point specified in the
+     * request. The ETA includes stopping at any waypoints before the
+     * `dropoff_point` specified in the request. The value will only be populated
+     * when a drop off point is specified in the request. An empty value indicates
+     * an error calculating the ETA.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp vehicle_dropoff_eta = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -424,13 +438,11 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The complete vehicle's driving ETA to the drop off point
-     * specified in the request. The ETA includes any required visits for active
-     * trips that must be completed before the vehicle visits the dropoff_point
-     * specified in the request. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
-     * a failure in calculating the ETA for the vehicle to reach
-     * the dropoff_point.
+     * The complete vehicle's driving ETA to the drop off point specified in the
+     * request. The ETA includes stopping at any waypoints before the
+     * `dropoff_point` specified in the request. The value will only be populated
+     * when a drop off point is specified in the request. An empty value indicates
+     * an error calculating the ETA.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp vehicle_dropoff_eta = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -450,9 +462,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      * between the two points and does not include the vehicle location or any
      * other points that must be visited before the vehicle visits either the
      * pickup point or dropoff point. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
+     * `dropoff_point` is specified in the request. An empty value indicates
      * a failure in calculating the distance from the pickup to
-     * dropoff points specified in the request.
+     * drop off point specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -480,9 +492,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      * between the two points and does not include the vehicle location or any
      * other points that must be visited before the vehicle visits either the
      * pickup point or dropoff point. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
+     * `dropoff_point` is specified in the request. An empty value indicates
      * a failure in calculating the distance from the pickup to
-     * dropoff points specified in the request.
+     * drop off point specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
      * @return int|null
@@ -498,9 +510,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      * between the two points and does not include the vehicle location or any
      * other points that must be visited before the vehicle visits either the
      * pickup point or dropoff point. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
+     * `dropoff_point` is specified in the request. An empty value indicates
      * a failure in calculating the distance from the pickup to
-     * dropoff points specified in the request.
+     * drop off point specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -522,9 +534,9 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
      * between the two points and does not include the vehicle location or any
      * other points that must be visited before the vehicle visits either the
      * pickup point or dropoff point. The value will only be populated when a
-     * dropoff_point is specified in the request. An empty value indicates
+     * `dropoff_point` is specified in the request. An empty value indicates
      * a failure in calculating the distance from the pickup to
-     * dropoff points specified in the request.
+     * drop off point specified in the request.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value vehicle_pickup_to_dropoff_distance_meters = 5;</code>
      * @param int|null $var
@@ -565,8 +577,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
 
     /**
      * The ordered list of waypoints used to calculate the ETA. The list
-     * will include the vehicle location, the pickup/drop off points of active
-     * trips for the vehicle and the pickup/dropoff points provided in the
+     * includes vehicle location, the pickup/drop off points of active
+     * trips for the vehicle, and the pickup/drop off points provided in the
      * request. An empty list indicates a failure in calculating ETA for the
      * vehicle.
      *
@@ -580,8 +592,8 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
 
     /**
      * The ordered list of waypoints used to calculate the ETA. The list
-     * will include the vehicle location, the pickup/drop off points of active
-     * trips for the vehicle and the pickup/dropoff points provided in the
+     * includes vehicle location, the pickup/drop off points of active
+     * trips for the vehicle, and the pickup/drop off points provided in the
      * request. An empty list indicates a failure in calculating ETA for the
      * vehicle.
      *
@@ -624,7 +636,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The method the caller requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
      * @return int
@@ -635,7 +647,7 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The method the caller requested for sorting vehicle matches.
+     * The order requested for sorting vehicle matches.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder requested_ordered_by = 9;</code>
      * @param int $var
@@ -650,10 +662,10 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The actual method that is used to order this vehicle. In normal cases this
-     * will match the 'order_by' field from the request, however in certain
-     * circumstances such as a failure of google maps backends, a different method
-     * may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
+     * The actual order that was used for this vehicle. Normally this
+     * will match the 'order_by' field from the request; however, in certain
+     * circumstances such as an internal server error, a different method
+     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
      * @return int
@@ -664,10 +676,10 @@ class VehicleMatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The actual method that is used to order this vehicle. In normal cases this
-     * will match the 'order_by' field from the request, however in certain
-     * circumstances such as a failure of google maps backends, a different method
-     * may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
+     * The actual order that was used for this vehicle. Normally this
+     * will match the 'order_by' field from the request; however, in certain
+     * circumstances such as an internal server error, a different method
+     * may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder ordered_by = 10;</code>
      * @param int $var

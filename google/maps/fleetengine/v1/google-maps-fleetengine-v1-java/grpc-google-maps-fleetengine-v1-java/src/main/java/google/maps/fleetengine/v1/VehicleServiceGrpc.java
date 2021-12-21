@@ -319,24 +319,28 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * CreateVehicle instantiates a new vehicle associated with a rideshare
-     * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
-     * The following Vehicle fields are required when creating a Vehicle:
-     * * vehicleState
-     * * supportedTripTypes
-     * * maximumCapacity
-     * * vehicleType
-     * The following Vehicle fields are ignored when creating a Vehicle:
-     * * name
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment
-     * * current_route_segment_version
-     * * waypoint
-     * * waypoints_version
-     * * remaining_distance_meters
-     * * eta_to_next_waypoint
-     * * navigation_status
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
      * All other fields are optional and used if provided.
      * </pre>
      */
@@ -347,7 +351,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * GetVehicle returns a vehicle from the Fleet Engine.
+     * Returns a vehicle from the Fleet Engine.
      * </pre>
      */
     public void getVehicle(google.maps.fleetengine.v1.GetVehicleRequest request,
@@ -357,15 +361,18 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicle writes updated vehicle data to the Fleet Engine.
-     * When updating a Vehicle, the following fields cannot be updated since they
-     * are managed by the Fleet Engine:
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment_version
-     * * waypoints_version
-     * The vehicle name also cannot be updated.
-     * The waypoints field can be updated, but must contain all the waypoints
+     * Writes updated vehicle data to the Fleet Engine.
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * The vehicle `name` also cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
      * currently on the vehicle, and no other waypoints.
      * </pre>
      */
@@ -376,8 +383,8 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
+     * Deprecated: Use the `UpdateVehicle` method instead.
      * UpdateVehicleLocation updates the location of the vehicle.
-     * This method is deprecated. Use UpdateVehicle method instead.
      * </pre>
      */
     @java.lang.Deprecated
@@ -388,11 +395,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicleAttributes partially updates a vehicle's attributes.
+     * Partially updates a vehicle's attributes.
      * Only the attributes mentioned in the request will be updated, other
-     * attributes will NOT be altered. Note: this is different in UpdateVehicle,
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
      * where the whole `attributes` field will be replaced by the one in
-     * UpdateVehicleRequest, attributes not in the request would be removed.
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
      * </pre>
      */
     public void updateVehicleAttributes(google.maps.fleetengine.v1.UpdateVehicleAttributesRequest request,
@@ -402,7 +409,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * ListVehicles returns a paginated list of vehicles associated with
+     * Returns a paginated list of vehicles associated with
      * a provider that match the request options.
      * </pre>
      */
@@ -413,7 +420,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchVehicles returns a list of vehicles that match the request options.
+     * Returns a list of vehicles that match the request options.
      * </pre>
      */
     public void searchVehicles(google.maps.fleetengine.v1.SearchVehiclesRequest request,
@@ -423,12 +430,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchFuzzedVehicles returns a list of vehicles that match the request
-     * options with their locations fuzzed.
-     * Request does not support 'order_by' field.
-     * Vehicle matches in response will be in order of distance from pickup point.
-     * Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-     * set.
+     * Returns a list of vehicles that match the request
+     * options, but the vehicle locations will be somewhat altered for privacy.
+     * This method does not support the `SearchVehicleRequest.order_by` field.
+     * Vehicle matches in the response will be in order of distance from the
+     * pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
      * </pre>
      */
     public void searchFuzzedVehicles(google.maps.fleetengine.v1.SearchVehiclesRequest request,
@@ -517,24 +523,28 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * CreateVehicle instantiates a new vehicle associated with a rideshare
-     * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
-     * The following Vehicle fields are required when creating a Vehicle:
-     * * vehicleState
-     * * supportedTripTypes
-     * * maximumCapacity
-     * * vehicleType
-     * The following Vehicle fields are ignored when creating a Vehicle:
-     * * name
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment
-     * * current_route_segment_version
-     * * waypoint
-     * * waypoints_version
-     * * remaining_distance_meters
-     * * eta_to_next_waypoint
-     * * navigation_status
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
      * All other fields are optional and used if provided.
      * </pre>
      */
@@ -546,7 +556,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * GetVehicle returns a vehicle from the Fleet Engine.
+     * Returns a vehicle from the Fleet Engine.
      * </pre>
      */
     public void getVehicle(google.maps.fleetengine.v1.GetVehicleRequest request,
@@ -557,15 +567,18 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicle writes updated vehicle data to the Fleet Engine.
-     * When updating a Vehicle, the following fields cannot be updated since they
-     * are managed by the Fleet Engine:
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment_version
-     * * waypoints_version
-     * The vehicle name also cannot be updated.
-     * The waypoints field can be updated, but must contain all the waypoints
+     * Writes updated vehicle data to the Fleet Engine.
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * The vehicle `name` also cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
      * currently on the vehicle, and no other waypoints.
      * </pre>
      */
@@ -577,8 +590,8 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
+     * Deprecated: Use the `UpdateVehicle` method instead.
      * UpdateVehicleLocation updates the location of the vehicle.
-     * This method is deprecated. Use UpdateVehicle method instead.
      * </pre>
      */
     @java.lang.Deprecated
@@ -590,11 +603,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicleAttributes partially updates a vehicle's attributes.
+     * Partially updates a vehicle's attributes.
      * Only the attributes mentioned in the request will be updated, other
-     * attributes will NOT be altered. Note: this is different in UpdateVehicle,
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
      * where the whole `attributes` field will be replaced by the one in
-     * UpdateVehicleRequest, attributes not in the request would be removed.
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
      * </pre>
      */
     public void updateVehicleAttributes(google.maps.fleetengine.v1.UpdateVehicleAttributesRequest request,
@@ -605,7 +618,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * ListVehicles returns a paginated list of vehicles associated with
+     * Returns a paginated list of vehicles associated with
      * a provider that match the request options.
      * </pre>
      */
@@ -617,7 +630,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchVehicles returns a list of vehicles that match the request options.
+     * Returns a list of vehicles that match the request options.
      * </pre>
      */
     public void searchVehicles(google.maps.fleetengine.v1.SearchVehiclesRequest request,
@@ -628,12 +641,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchFuzzedVehicles returns a list of vehicles that match the request
-     * options with their locations fuzzed.
-     * Request does not support 'order_by' field.
-     * Vehicle matches in response will be in order of distance from pickup point.
-     * Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-     * set.
+     * Returns a list of vehicles that match the request
+     * options, but the vehicle locations will be somewhat altered for privacy.
+     * This method does not support the `SearchVehicleRequest.order_by` field.
+     * Vehicle matches in the response will be in order of distance from the
+     * pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
      * </pre>
      */
     public void searchFuzzedVehicles(google.maps.fleetengine.v1.SearchVehiclesRequest request,
@@ -662,24 +674,28 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * CreateVehicle instantiates a new vehicle associated with a rideshare
-     * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
-     * The following Vehicle fields are required when creating a Vehicle:
-     * * vehicleState
-     * * supportedTripTypes
-     * * maximumCapacity
-     * * vehicleType
-     * The following Vehicle fields are ignored when creating a Vehicle:
-     * * name
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment
-     * * current_route_segment_version
-     * * waypoint
-     * * waypoints_version
-     * * remaining_distance_meters
-     * * eta_to_next_waypoint
-     * * navigation_status
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
      * All other fields are optional and used if provided.
      * </pre>
      */
@@ -690,7 +706,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * GetVehicle returns a vehicle from the Fleet Engine.
+     * Returns a vehicle from the Fleet Engine.
      * </pre>
      */
     public google.maps.fleetengine.v1.Vehicle getVehicle(google.maps.fleetengine.v1.GetVehicleRequest request) {
@@ -700,15 +716,18 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicle writes updated vehicle data to the Fleet Engine.
-     * When updating a Vehicle, the following fields cannot be updated since they
-     * are managed by the Fleet Engine:
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment_version
-     * * waypoints_version
-     * The vehicle name also cannot be updated.
-     * The waypoints field can be updated, but must contain all the waypoints
+     * Writes updated vehicle data to the Fleet Engine.
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * The vehicle `name` also cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
      * currently on the vehicle, and no other waypoints.
      * </pre>
      */
@@ -719,8 +738,8 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
+     * Deprecated: Use the `UpdateVehicle` method instead.
      * UpdateVehicleLocation updates the location of the vehicle.
-     * This method is deprecated. Use UpdateVehicle method instead.
      * </pre>
      */
     @java.lang.Deprecated
@@ -731,11 +750,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicleAttributes partially updates a vehicle's attributes.
+     * Partially updates a vehicle's attributes.
      * Only the attributes mentioned in the request will be updated, other
-     * attributes will NOT be altered. Note: this is different in UpdateVehicle,
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
      * where the whole `attributes` field will be replaced by the one in
-     * UpdateVehicleRequest, attributes not in the request would be removed.
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
      * </pre>
      */
     public google.maps.fleetengine.v1.UpdateVehicleAttributesResponse updateVehicleAttributes(google.maps.fleetengine.v1.UpdateVehicleAttributesRequest request) {
@@ -745,7 +764,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * ListVehicles returns a paginated list of vehicles associated with
+     * Returns a paginated list of vehicles associated with
      * a provider that match the request options.
      * </pre>
      */
@@ -756,7 +775,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchVehicles returns a list of vehicles that match the request options.
+     * Returns a list of vehicles that match the request options.
      * </pre>
      */
     public google.maps.fleetengine.v1.SearchVehiclesResponse searchVehicles(google.maps.fleetengine.v1.SearchVehiclesRequest request) {
@@ -766,12 +785,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchFuzzedVehicles returns a list of vehicles that match the request
-     * options with their locations fuzzed.
-     * Request does not support 'order_by' field.
-     * Vehicle matches in response will be in order of distance from pickup point.
-     * Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-     * set.
+     * Returns a list of vehicles that match the request
+     * options, but the vehicle locations will be somewhat altered for privacy.
+     * This method does not support the `SearchVehicleRequest.order_by` field.
+     * Vehicle matches in the response will be in order of distance from the
+     * pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
      * </pre>
      */
     public google.maps.fleetengine.v1.SearchVehiclesResponse searchFuzzedVehicles(google.maps.fleetengine.v1.SearchVehiclesRequest request) {
@@ -799,24 +817,28 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * CreateVehicle instantiates a new vehicle associated with a rideshare
-     * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
-     * The following Vehicle fields are required when creating a Vehicle:
-     * * vehicleState
-     * * supportedTripTypes
-     * * maximumCapacity
-     * * vehicleType
-     * The following Vehicle fields are ignored when creating a Vehicle:
-     * * name
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment
-     * * current_route_segment_version
-     * * waypoint
-     * * waypoints_version
-     * * remaining_distance_meters
-     * * eta_to_next_waypoint
-     * * navigation_status
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
      * All other fields are optional and used if provided.
      * </pre>
      */
@@ -828,7 +850,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * GetVehicle returns a vehicle from the Fleet Engine.
+     * Returns a vehicle from the Fleet Engine.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.Vehicle> getVehicle(
@@ -839,15 +861,18 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicle writes updated vehicle data to the Fleet Engine.
-     * When updating a Vehicle, the following fields cannot be updated since they
-     * are managed by the Fleet Engine:
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment_version
-     * * waypoints_version
-     * The vehicle name also cannot be updated.
-     * The waypoints field can be updated, but must contain all the waypoints
+     * Writes updated vehicle data to the Fleet Engine.
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * The vehicle `name` also cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
      * currently on the vehicle, and no other waypoints.
      * </pre>
      */
@@ -859,8 +884,8 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
+     * Deprecated: Use the `UpdateVehicle` method instead.
      * UpdateVehicleLocation updates the location of the vehicle.
-     * This method is deprecated. Use UpdateVehicle method instead.
      * </pre>
      */
     @java.lang.Deprecated
@@ -872,11 +897,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * UpdateVehicleAttributes partially updates a vehicle's attributes.
+     * Partially updates a vehicle's attributes.
      * Only the attributes mentioned in the request will be updated, other
-     * attributes will NOT be altered. Note: this is different in UpdateVehicle,
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
      * where the whole `attributes` field will be replaced by the one in
-     * UpdateVehicleRequest, attributes not in the request would be removed.
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.UpdateVehicleAttributesResponse> updateVehicleAttributes(
@@ -887,7 +912,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * ListVehicles returns a paginated list of vehicles associated with
+     * Returns a paginated list of vehicles associated with
      * a provider that match the request options.
      * </pre>
      */
@@ -899,7 +924,7 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchVehicles returns a list of vehicles that match the request options.
+     * Returns a list of vehicles that match the request options.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.SearchVehiclesResponse> searchVehicles(
@@ -910,12 +935,11 @@ public final class VehicleServiceGrpc {
 
     /**
      * <pre>
-     * SearchFuzzedVehicles returns a list of vehicles that match the request
-     * options with their locations fuzzed.
-     * Request does not support 'order_by' field.
-     * Vehicle matches in response will be in order of distance from pickup point.
-     * Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-     * set.
+     * Returns a list of vehicles that match the request
+     * options, but the vehicle locations will be somewhat altered for privacy.
+     * This method does not support the `SearchVehicleRequest.order_by` field.
+     * Vehicle matches in the response will be in order of distance from the
+     * pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<google.maps.fleetengine.v1.SearchVehiclesResponse> searchFuzzedVehicles(

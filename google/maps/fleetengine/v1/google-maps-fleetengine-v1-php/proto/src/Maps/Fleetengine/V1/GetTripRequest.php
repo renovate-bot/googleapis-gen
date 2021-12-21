@@ -22,8 +22,8 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
      */
     protected $header = null;
     /**
-     * Required. Must be in the format "providers/{provider}/trips/{trip}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}/trips/{trip}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -37,31 +37,53 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
      */
     protected $view = 0;
     /**
-     * Indicates the minimum timestamp (exclusive) for which Trip.route or
-     * Trip.current_route_segment data is retrieved. If route data is unchanged
-     * since this timestamp, the route field is not set in the response. If a
-     * minimum is unspecified, the route data is always retrieved.
+     * Indicates the minimum timestamp (exclusive) for which `Trip.route` or
+     * `Trip.current_route_segment` data are retrieved. If route data are
+     * unchanged since this timestamp, the route field is not set in the response.
+     * If a minimum is unspecified, the route data are always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 6;</code>
      */
     protected $current_route_segment_version = null;
     /**
      * Indicates the minimum timestamp (exclusive) for which
-     * Trip.remaining_waypoints are retrieved. If they are unchanged since this
-     * timestamp, the remaining_waypoints are not set in the response. If this
-     * field is unspecified, remaining_waypoints is always retrieved.
+     * `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
+     * timestamp, the `remaining_waypoints` are not set in the response. If this
+     * field is unspecified, `remaining_waypoints` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 7;</code>
      */
     protected $remaining_waypoints_version = null;
     /**
-     * The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
-     * ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
-     * The default is LAT_LNG_LIST_TYPE.
+     * The returned current route format, `LAT_LNG_LIST_TYPE` (in `Trip.route`),
+     * or `ENCODED_POLYLINE_TYPE` (in `Trip.current_route_segment`). The default
+     * is `LAT_LNG_LIST_TYPE`.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.PolylineFormatType route_format_type = 8;</code>
      */
     protected $route_format_type = 0;
+    /**
+     * Indicates the minimum timestamp (exclusive) for which
+     * `Trip.current_route_segment_traffic` is retrieved. If traffic data are
+     * unchanged since this timestamp, the `current_route_segment_traffic` field
+     * is not set in the response. If a minimum is unspecified, the traffic data
+     * are always retrieved. Note that traffic is only available for On-Demand
+     * Rides and Deliveries Solution customers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_traffic_version = 9;</code>
+     */
+    protected $current_route_segment_traffic_version = null;
+    /**
+     * Indicates the minimum timestamp (exclusive) for which
+     * `Trip.remaining_waypoints.traffic_to_waypoint` and
+     * `Trip.remaining_waypoints.path_to_waypoint` data are retrieved. If data are
+     * unchanged since this timestamp, the fields above are
+     * not set in the response. If `remaining_waypoints_route_version` is
+     * unspecified, traffic and path are always retrieved.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 10;</code>
+     */
+    protected $remaining_waypoints_route_version = null;
 
     /**
      * Constructor.
@@ -72,26 +94,40 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
      *     @type \Maps\Fleetengine\V1\RequestHeader $header
      *           The standard Fleet Engine request header.
      *     @type string $name
-     *           Required. Must be in the format "providers/{provider}/trips/{trip}".
-     *           The provider must be the Project ID (for example, sample-cloud-project)
+     *           Required. Must be in the format `providers/{provider}/trips/{trip}`.
+     *           The provider must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type int $view
      *           The subset of Trip fields that should be returned and their interpretation.
      *     @type \Google\Protobuf\Timestamp $current_route_segment_version
-     *           Indicates the minimum timestamp (exclusive) for which Trip.route or
-     *           Trip.current_route_segment data is retrieved. If route data is unchanged
-     *           since this timestamp, the route field is not set in the response. If a
-     *           minimum is unspecified, the route data is always retrieved.
+     *           Indicates the minimum timestamp (exclusive) for which `Trip.route` or
+     *           `Trip.current_route_segment` data are retrieved. If route data are
+     *           unchanged since this timestamp, the route field is not set in the response.
+     *           If a minimum is unspecified, the route data are always retrieved.
      *     @type \Google\Protobuf\Timestamp $remaining_waypoints_version
      *           Indicates the minimum timestamp (exclusive) for which
-     *           Trip.remaining_waypoints are retrieved. If they are unchanged since this
-     *           timestamp, the remaining_waypoints are not set in the response. If this
-     *           field is unspecified, remaining_waypoints is always retrieved.
+     *           `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
+     *           timestamp, the `remaining_waypoints` are not set in the response. If this
+     *           field is unspecified, `remaining_waypoints` is always retrieved.
      *     @type int $route_format_type
-     *           The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
-     *           ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
-     *           The default is LAT_LNG_LIST_TYPE.
+     *           The returned current route format, `LAT_LNG_LIST_TYPE` (in `Trip.route`),
+     *           or `ENCODED_POLYLINE_TYPE` (in `Trip.current_route_segment`). The default
+     *           is `LAT_LNG_LIST_TYPE`.
+     *     @type \Google\Protobuf\Timestamp $current_route_segment_traffic_version
+     *           Indicates the minimum timestamp (exclusive) for which
+     *           `Trip.current_route_segment_traffic` is retrieved. If traffic data are
+     *           unchanged since this timestamp, the `current_route_segment_traffic` field
+     *           is not set in the response. If a minimum is unspecified, the traffic data
+     *           are always retrieved. Note that traffic is only available for On-Demand
+     *           Rides and Deliveries Solution customers.
+     *     @type \Google\Protobuf\Timestamp $remaining_waypoints_route_version
+     *           Indicates the minimum timestamp (exclusive) for which
+     *           `Trip.remaining_waypoints.traffic_to_waypoint` and
+     *           `Trip.remaining_waypoints.path_to_waypoint` data are retrieved. If data are
+     *           unchanged since this timestamp, the fields above are
+     *           not set in the response. If `remaining_waypoints_route_version` is
+     *           unspecified, traffic and path are always retrieved.
      * }
      */
     public function __construct($data = NULL) {
@@ -136,8 +172,8 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/{provider}/trips/{trip}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}/trips/{trip}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -150,8 +186,8 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/{provider}/trips/{trip}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}/trips/{trip}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -194,10 +230,10 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the minimum timestamp (exclusive) for which Trip.route or
-     * Trip.current_route_segment data is retrieved. If route data is unchanged
-     * since this timestamp, the route field is not set in the response. If a
-     * minimum is unspecified, the route data is always retrieved.
+     * Indicates the minimum timestamp (exclusive) for which `Trip.route` or
+     * `Trip.current_route_segment` data are retrieved. If route data are
+     * unchanged since this timestamp, the route field is not set in the response.
+     * If a minimum is unspecified, the route data are always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 6;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -218,10 +254,10 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the minimum timestamp (exclusive) for which Trip.route or
-     * Trip.current_route_segment data is retrieved. If route data is unchanged
-     * since this timestamp, the route field is not set in the response. If a
-     * minimum is unspecified, the route data is always retrieved.
+     * Indicates the minimum timestamp (exclusive) for which `Trip.route` or
+     * `Trip.current_route_segment` data are retrieved. If route data are
+     * unchanged since this timestamp, the route field is not set in the response.
+     * If a minimum is unspecified, the route data are always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 6;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -237,9 +273,9 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates the minimum timestamp (exclusive) for which
-     * Trip.remaining_waypoints are retrieved. If they are unchanged since this
-     * timestamp, the remaining_waypoints are not set in the response. If this
-     * field is unspecified, remaining_waypoints is always retrieved.
+     * `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
+     * timestamp, the `remaining_waypoints` are not set in the response. If this
+     * field is unspecified, `remaining_waypoints` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 7;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -261,9 +297,9 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates the minimum timestamp (exclusive) for which
-     * Trip.remaining_waypoints are retrieved. If they are unchanged since this
-     * timestamp, the remaining_waypoints are not set in the response. If this
-     * field is unspecified, remaining_waypoints is always retrieved.
+     * `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
+     * timestamp, the `remaining_waypoints` are not set in the response. If this
+     * field is unspecified, `remaining_waypoints` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 7;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -278,9 +314,9 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
-     * ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
-     * The default is LAT_LNG_LIST_TYPE.
+     * The returned current route format, `LAT_LNG_LIST_TYPE` (in `Trip.route`),
+     * or `ENCODED_POLYLINE_TYPE` (in `Trip.current_route_segment`). The default
+     * is `LAT_LNG_LIST_TYPE`.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.PolylineFormatType route_format_type = 8;</code>
      * @return int
@@ -291,9 +327,9 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
-     * ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
-     * The default is LAT_LNG_LIST_TYPE.
+     * The returned current route format, `LAT_LNG_LIST_TYPE` (in `Trip.route`),
+     * or `ENCODED_POLYLINE_TYPE` (in `Trip.current_route_segment`). The default
+     * is `LAT_LNG_LIST_TYPE`.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.PolylineFormatType route_format_type = 8;</code>
      * @param int $var
@@ -303,6 +339,98 @@ class GetTripRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkEnum($var, \Maps\Fleetengine\V1\PolylineFormatType::class);
         $this->route_format_type = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates the minimum timestamp (exclusive) for which
+     * `Trip.current_route_segment_traffic` is retrieved. If traffic data are
+     * unchanged since this timestamp, the `current_route_segment_traffic` field
+     * is not set in the response. If a minimum is unspecified, the traffic data
+     * are always retrieved. Note that traffic is only available for On-Demand
+     * Rides and Deliveries Solution customers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_traffic_version = 9;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCurrentRouteSegmentTrafficVersion()
+    {
+        return $this->current_route_segment_traffic_version;
+    }
+
+    public function hasCurrentRouteSegmentTrafficVersion()
+    {
+        return isset($this->current_route_segment_traffic_version);
+    }
+
+    public function clearCurrentRouteSegmentTrafficVersion()
+    {
+        unset($this->current_route_segment_traffic_version);
+    }
+
+    /**
+     * Indicates the minimum timestamp (exclusive) for which
+     * `Trip.current_route_segment_traffic` is retrieved. If traffic data are
+     * unchanged since this timestamp, the `current_route_segment_traffic` field
+     * is not set in the response. If a minimum is unspecified, the traffic data
+     * are always retrieved. Note that traffic is only available for On-Demand
+     * Rides and Deliveries Solution customers.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_traffic_version = 9;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCurrentRouteSegmentTrafficVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->current_route_segment_traffic_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Indicates the minimum timestamp (exclusive) for which
+     * `Trip.remaining_waypoints.traffic_to_waypoint` and
+     * `Trip.remaining_waypoints.path_to_waypoint` data are retrieved. If data are
+     * unchanged since this timestamp, the fields above are
+     * not set in the response. If `remaining_waypoints_route_version` is
+     * unspecified, traffic and path are always retrieved.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 10;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getRemainingWaypointsRouteVersion()
+    {
+        return $this->remaining_waypoints_route_version;
+    }
+
+    public function hasRemainingWaypointsRouteVersion()
+    {
+        return isset($this->remaining_waypoints_route_version);
+    }
+
+    public function clearRemainingWaypointsRouteVersion()
+    {
+        unset($this->remaining_waypoints_route_version);
+    }
+
+    /**
+     * Indicates the minimum timestamp (exclusive) for which
+     * `Trip.remaining_waypoints.traffic_to_waypoint` and
+     * `Trip.remaining_waypoints.path_to_waypoint` data are retrieved. If data are
+     * unchanged since this timestamp, the fields above are
+     * not set in the response. If `remaining_waypoints_route_version` is
+     * unspecified, traffic and path are always retrieved.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setRemainingWaypointsRouteVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->remaining_waypoints_route_version = $var;
 
         return $this;
     }

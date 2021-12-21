@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Waypoint describes intermediate points along a route.
+ * Describes intermediate points along a route.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.Waypoint</code>
  */

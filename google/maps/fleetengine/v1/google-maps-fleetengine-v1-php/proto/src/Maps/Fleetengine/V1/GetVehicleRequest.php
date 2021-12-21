@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * GetVehicle request message.
+ * `GetVehicle` request message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.GetVehicleRequest</code>
  */
@@ -23,8 +23,8 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
     protected $header = null;
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -33,19 +33,19 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
     protected $name = '';
     /**
      * Indicates the minimum timestamp (exclusive) for which
-     * vehicle.current_route_segment is retrieved.
-     * If route is unchanged since this timestamp, the current_route_segment
+     * `Vehicle.current_route_segment` is retrieved.
+     * If the route is unchanged since this timestamp, the `current_route_segment`
      * field is not set in the response. If a minimum is unspecified, the
-     * current_route_segment is always retrieved.
+     * `current_route_segment` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 4;</code>
      */
     protected $current_route_segment_version = null;
     /**
-     * Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-     * data is retrieved. If data is unchanged since this timestamp, the
-     * vehicle.waypoints data is not set in the response. If this field is
-     * unspecified, vehicle.waypoints is always retrieved.
+     * Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+     * data is retrieved. If the waypoints are unchanged since this timestamp, the
+     * `vehicle.waypoints` data is not set in the response. If this field is
+     * unspecified, `vehicle.waypoints` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 5;</code>
      */
@@ -61,21 +61,21 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
      *           The standard Fleet Engine request header.
      *     @type string $name
      *           Required. Must be in the format
-     *           "providers/{provider}/vehicles/{vehicle}".
-     *           The provider must be the Project ID (for example, sample-cloud-project)
+     *           `providers/{provider}/vehicles/{vehicle}`.
+     *           The provider must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type \Google\Protobuf\Timestamp $current_route_segment_version
      *           Indicates the minimum timestamp (exclusive) for which
-     *           vehicle.current_route_segment is retrieved.
-     *           If route is unchanged since this timestamp, the current_route_segment
+     *           `Vehicle.current_route_segment` is retrieved.
+     *           If the route is unchanged since this timestamp, the `current_route_segment`
      *           field is not set in the response. If a minimum is unspecified, the
-     *           current_route_segment is always retrieved.
+     *           `current_route_segment` is always retrieved.
      *     @type \Google\Protobuf\Timestamp $waypoints_version
-     *           Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-     *           data is retrieved. If data is unchanged since this timestamp, the
-     *           vehicle.waypoints data is not set in the response. If this field is
-     *           unspecified, vehicle.waypoints is always retrieved.
+     *           Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+     *           data is retrieved. If the waypoints are unchanged since this timestamp, the
+     *           `vehicle.waypoints` data is not set in the response. If this field is
+     *           unspecified, `vehicle.waypoints` is always retrieved.
      * }
      */
     public function __construct($data = NULL) {
@@ -121,8 +121,8 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -136,8 +136,8 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -155,10 +155,10 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates the minimum timestamp (exclusive) for which
-     * vehicle.current_route_segment is retrieved.
-     * If route is unchanged since this timestamp, the current_route_segment
+     * `Vehicle.current_route_segment` is retrieved.
+     * If the route is unchanged since this timestamp, the `current_route_segment`
      * field is not set in the response. If a minimum is unspecified, the
-     * current_route_segment is always retrieved.
+     * `current_route_segment` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 4;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -180,10 +180,10 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Indicates the minimum timestamp (exclusive) for which
-     * vehicle.current_route_segment is retrieved.
-     * If route is unchanged since this timestamp, the current_route_segment
+     * `Vehicle.current_route_segment` is retrieved.
+     * If the route is unchanged since this timestamp, the `current_route_segment`
      * field is not set in the response. If a minimum is unspecified, the
-     * current_route_segment is always retrieved.
+     * `current_route_segment` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 4;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -198,10 +198,10 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-     * data is retrieved. If data is unchanged since this timestamp, the
-     * vehicle.waypoints data is not set in the response. If this field is
-     * unspecified, vehicle.waypoints is always retrieved.
+     * Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+     * data is retrieved. If the waypoints are unchanged since this timestamp, the
+     * `vehicle.waypoints` data is not set in the response. If this field is
+     * unspecified, `vehicle.waypoints` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 5;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -222,10 +222,10 @@ class GetVehicleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-     * data is retrieved. If data is unchanged since this timestamp, the
-     * vehicle.waypoints data is not set in the response. If this field is
-     * unspecified, vehicle.waypoints is always retrieved.
+     * Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+     * data is retrieved. If the waypoints are unchanged since this timestamp, the
+     * `vehicle.waypoints` data is not set in the response. If this field is
+     * unspecified, `vehicle.waypoints` is always retrieved.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 5;</code>
      * @param \Google\Protobuf\Timestamp $var

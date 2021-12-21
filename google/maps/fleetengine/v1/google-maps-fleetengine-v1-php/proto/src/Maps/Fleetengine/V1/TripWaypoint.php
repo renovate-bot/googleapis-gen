@@ -43,11 +43,25 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      */
     private $path_to_waypoint;
     /**
+     * The path calculated by the server from the previous waypoint to the current
+     * waypoint. Decoding is not yet supported.
+     *
+     * Generated from protobuf field <code>string encoded_path_to_waypoint = 5;</code>
+     */
+    protected $encoded_path_to_waypoint = '';
+    /**
+     * The traffic conditions along the path to this waypoint.
+     * Note that traffic is only available for Geo Enterprise Rides and Deliveries
+     * Solution customers.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.ConsumableTrafficPolyline traffic_to_waypoint = 10;</code>
+     */
+    protected $traffic_to_waypoint = null;
+    /**
      * The path distance calculated by Fleet Engine from the previous waypoint to
-     * the current waypoint.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time this TripWaypoint was added to the list.
+     * the current waypoint. If the waypoint is the first waypoint in the list
+     * (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+     * value of this field is undefined.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value distance_meters = 6;</code>
      */
@@ -59,11 +73,10 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      */
     protected $eta = null;
     /**
-     * The travel time from previous waypoint to this point.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time that this waypoint was added to the list.
-     * This field is filled only when returning Trip/Vehicle data.
+     * The travel time from previous waypoint to this point. If the waypoint is
+     * the first waypoint in the list (e.g., `Vehicle.waypoints[0]` or
+     * `Trip.remaining_waypoints[0]`), then this value indicates the remaining
+     * time to the waypoint.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 8;</code>
      */
@@ -85,20 +98,25 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      *     @type \Google\Type\LatLng[]|\Google\Protobuf\Internal\RepeatedField $path_to_waypoint
      *           The path calculated by Fleet Engine from the previous waypoint to the
      *           current waypoint.
+     *     @type string $encoded_path_to_waypoint
+     *           The path calculated by the server from the previous waypoint to the current
+     *           waypoint. Decoding is not yet supported.
+     *     @type \Maps\Fleetengine\V1\ConsumableTrafficPolyline $traffic_to_waypoint
+     *           The traffic conditions along the path to this waypoint.
+     *           Note that traffic is only available for Geo Enterprise Rides and Deliveries
+     *           Solution customers.
      *     @type \Google\Protobuf\Int32Value $distance_meters
      *           The path distance calculated by Fleet Engine from the previous waypoint to
-     *           the current waypoint.
-     *           If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     *           or Trip.remaining_waypoints), then the starting point is the vehicle's
-     *           location recorded at the time this TripWaypoint was added to the list.
+     *           the current waypoint. If the waypoint is the first waypoint in the list
+     *           (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+     *           value of this field is undefined.
      *     @type \Google\Protobuf\Timestamp $eta
      *           The arrival time to this waypoint calculated by Fleet Engine.
      *     @type \Google\Protobuf\Duration $duration
-     *           The travel time from previous waypoint to this point.
-     *           If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     *           or Trip.remaining_waypoints), then the starting point is the vehicle's
-     *           location recorded at the time that this waypoint was added to the list.
-     *           This field is filled only when returning Trip/Vehicle data.
+     *           The travel time from previous waypoint to this point. If the waypoint is
+     *           the first waypoint in the list (e.g., `Vehicle.waypoints[0]` or
+     *           `Trip.remaining_waypoints[0]`), then this value indicates the remaining
+     *           time to the waypoint.
      * }
      */
     public function __construct($data = NULL) {
@@ -225,11 +243,78 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * The path calculated by the server from the previous waypoint to the current
+     * waypoint. Decoding is not yet supported.
+     *
+     * Generated from protobuf field <code>string encoded_path_to_waypoint = 5;</code>
+     * @return string
+     */
+    public function getEncodedPathToWaypoint()
+    {
+        return $this->encoded_path_to_waypoint;
+    }
+
+    /**
+     * The path calculated by the server from the previous waypoint to the current
+     * waypoint. Decoding is not yet supported.
+     *
+     * Generated from protobuf field <code>string encoded_path_to_waypoint = 5;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setEncodedPathToWaypoint($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->encoded_path_to_waypoint = $var;
+
+        return $this;
+    }
+
+    /**
+     * The traffic conditions along the path to this waypoint.
+     * Note that traffic is only available for Geo Enterprise Rides and Deliveries
+     * Solution customers.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.ConsumableTrafficPolyline traffic_to_waypoint = 10;</code>
+     * @return \Maps\Fleetengine\V1\ConsumableTrafficPolyline|null
+     */
+    public function getTrafficToWaypoint()
+    {
+        return $this->traffic_to_waypoint;
+    }
+
+    public function hasTrafficToWaypoint()
+    {
+        return isset($this->traffic_to_waypoint);
+    }
+
+    public function clearTrafficToWaypoint()
+    {
+        unset($this->traffic_to_waypoint);
+    }
+
+    /**
+     * The traffic conditions along the path to this waypoint.
+     * Note that traffic is only available for Geo Enterprise Rides and Deliveries
+     * Solution customers.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.ConsumableTrafficPolyline traffic_to_waypoint = 10;</code>
+     * @param \Maps\Fleetengine\V1\ConsumableTrafficPolyline $var
+     * @return $this
+     */
+    public function setTrafficToWaypoint($var)
+    {
+        GPBUtil::checkMessage($var, \Maps\Fleetengine\V1\ConsumableTrafficPolyline::class);
+        $this->traffic_to_waypoint = $var;
+
+        return $this;
+    }
+
+    /**
      * The path distance calculated by Fleet Engine from the previous waypoint to
-     * the current waypoint.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time this TripWaypoint was added to the list.
+     * the current waypoint. If the waypoint is the first waypoint in the list
+     * (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+     * value of this field is undefined.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value distance_meters = 6;</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -253,10 +338,9 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      * Returns the unboxed value from <code>getDistanceMeters()</code>
 
      * The path distance calculated by Fleet Engine from the previous waypoint to
-     * the current waypoint.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time this TripWaypoint was added to the list.
+     * the current waypoint. If the waypoint is the first waypoint in the list
+     * (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+     * value of this field is undefined.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value distance_meters = 6;</code>
      * @return int|null
@@ -268,10 +352,9 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
 
     /**
      * The path distance calculated by Fleet Engine from the previous waypoint to
-     * the current waypoint.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time this TripWaypoint was added to the list.
+     * the current waypoint. If the waypoint is the first waypoint in the list
+     * (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+     * value of this field is undefined.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value distance_meters = 6;</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -289,10 +372,9 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
      * The path distance calculated by Fleet Engine from the previous waypoint to
-     * the current waypoint.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time this TripWaypoint was added to the list.
+     * the current waypoint. If the waypoint is the first waypoint in the list
+     * (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+     * value of this field is undefined.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value distance_meters = 6;</code>
      * @param int|null $var
@@ -340,11 +422,10 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The travel time from previous waypoint to this point.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time that this waypoint was added to the list.
-     * This field is filled only when returning Trip/Vehicle data.
+     * The travel time from previous waypoint to this point. If the waypoint is
+     * the first waypoint in the list (e.g., `Vehicle.waypoints[0]` or
+     * `Trip.remaining_waypoints[0]`), then this value indicates the remaining
+     * time to the waypoint.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 8;</code>
      * @return \Google\Protobuf\Duration|null
@@ -365,11 +446,10 @@ class TripWaypoint extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The travel time from previous waypoint to this point.
-     * If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-     * or Trip.remaining_waypoints), then the starting point is the vehicle's
-     * location recorded at the time that this waypoint was added to the list.
-     * This field is filled only when returning Trip/Vehicle data.
+     * The travel time from previous waypoint to this point. If the waypoint is
+     * the first waypoint in the list (e.g., `Vehicle.waypoints[0]` or
+     * `Trip.remaining_waypoints[0]`), then this value indicates the remaining
+     * time to the waypoint.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration duration = 8;</code>
      * @param \Google\Protobuf\Duration $var

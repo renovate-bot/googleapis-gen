@@ -14,13 +14,13 @@ use UnexpectedValueException;
 class PolylineFormatType
 {
     /**
-     * Unspecified format type.
+     * The format is unspecified or unknown.
      *
      * Generated from protobuf enum <code>UNKNOWN_FORMAT_TYPE = 0;</code>
      */
     const UNKNOWN_FORMAT_TYPE = 0;
     /**
-     * Repeated LatLng.
+     * A list of `google.type.LatLng`.
      *
      * Generated from protobuf enum <code>LAT_LNG_LIST_TYPE = 1;</code>
      */

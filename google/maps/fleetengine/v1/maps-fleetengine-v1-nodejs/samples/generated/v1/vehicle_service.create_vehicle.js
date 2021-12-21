@@ -25,37 +25,46 @@ function main(parent, vehicleId, vehicle) {
    */
   // const header = {}
   /**
-   *  Required. Must be in the format "providers/{provider}".
-   *  The provider must be the Project ID (for example, sample-cloud-project)
+   *  Required. Must be in the format `providers/{provider}`.
+   *  The provider must be the Project ID (for example, `sample-cloud-project`)
    *  of the Google Cloud Project of which the service account making
    *  this call is a member.
    */
   // const parent = 'abc123'
   /**
-   *  Required. Unique Vehicle ID; must be unique per provider.  The actual
-   *  format and value is opaque to the Fleet Engine and is determined
-   *  by the provider.
+   *  Required. Unique Vehicle ID; must be unique per provider.
+   *  Subject to the following normalization and restrictions:
+   *  1. IDs must be valid Unicode strings.
+   *  2. IDs are limited to a maximum length of 64 characters.
+   *  3. IDs will be normalized according to Unicode Normalization Form C
+   *  (http://www.unicode.org/reports/tr15/).
+   *  4. IDs may not contain any of the following ASCII characters: '/', ':',
+   *  '\\', '?', or '#'.
    */
   // const vehicleId = 'abc123'
   /**
    *  Required. The Vehicle entity to create. When creating a Vehicle, the following
    *  fields are required:
-   *  * vehicle_state
-   *  * supported_trip_types
-   *  * maximum_capacity
-   *  * vehicle_type
+   *  * `vehicleState`
+   *  * `supportedTripTypes`
+   *  * `maximumCapacity`
+   *  * `vehicleType`
    *  When creating a Vehicle, the following fields are ignored:
-   *  * name
-   *  * current_trips
-   *  * available_capacity
-   *  * current_route_segment
-   *  * current_route_segment_version
-   *  * waypoints
-   *  * waypoints_version
-   *  * remaining_distance_meters
-   *  * eta_to_next_waypoint
-   *  * navigation_status
-   *  All other fields will be used if provided.
+   *  * `name`
+   *  * `currentTrips`
+   *  * `availableCapacity`
+   *  * `current_route_segment`
+   *  * `current_route_segment_end_point`
+   *  * `current_route_segment_version`
+   *  * `current_route_segment_traffic`
+   *  * `route`
+   *  * `waypoints`
+   *  * `waypoints_version`
+   *  * `remaining_distance_meters`
+   *  * `remaining_time_seconds`
+   *  * `eta_to_next_waypoint`
+   *  * `navigation_status`
+   *  All other fields are optional and used if provided.
    */
   // const vehicle = {}
 

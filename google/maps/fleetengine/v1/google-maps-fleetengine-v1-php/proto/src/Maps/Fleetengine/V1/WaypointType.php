@@ -14,19 +14,19 @@ use UnexpectedValueException;
 class WaypointType
 {
     /**
-     * Default, unknown waypoint type
+     * Unknown or unspecified waypoint type.
      *
      * Generated from protobuf enum <code>UNKNOWN_WAYPOINT_TYPE = 0;</code>
      */
     const UNKNOWN_WAYPOINT_TYPE = 0;
     /**
-     * Waypoints for picking up customers or merchandise.
+     * Waypoints for picking up riders or items.
      *
      * Generated from protobuf enum <code>PICKUP_WAYPOINT_TYPE = 1;</code>
      */
     const PICKUP_WAYPOINT_TYPE = 1;
     /**
-     * Waypoints for dropping off customers or merchandise.
+     * Waypoints for dropping off riders or items.
      *
      * Generated from protobuf enum <code>DROP_OFF_WAYPOINT_TYPE = 2;</code>
      */

@@ -9,7 +9,8 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Describes a vehicle attribute as a key-value pair.
+ * Describes a vehicle attribute as a key-value pair. The "key:value" string
+ * length cannot exceed 256 characters.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.VehicleAttribute</code>
  */

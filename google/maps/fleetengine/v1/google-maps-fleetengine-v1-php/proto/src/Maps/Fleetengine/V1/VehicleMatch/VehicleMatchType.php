@@ -20,25 +20,30 @@ class VehicleMatchType
      */
     const UNKNOWN = 0;
     /**
-     * Exclusive vehicle trip match
+     * The vehicle currently has no trip assigned to it and can proceed to the
+     * pickup point.
      *
      * Generated from protobuf enum <code>EXCLUSIVE = 1;</code>
      */
     const EXCLUSIVE = 1;
     /**
-     * Back to back ride match.
+     * The vehicle is currently assigned to a trip, but can proceed to the
+     * pickup point after completing the in-progress trip.  ETA and distance
+     * calculations take the existing trip into account.
      *
      * Generated from protobuf enum <code>BACK_TO_BACK = 2;</code>
      */
     const BACK_TO_BACK = 2;
     /**
-     * Carpool ride match.
+     * The vehicle has sufficient capacity for a shared ride.
      *
      * Generated from protobuf enum <code>CARPOOL = 3;</code>
      */
     const CARPOOL = 3;
     /**
-     * Carpool ride match. The car has an active exclusive trip.
+     * The vehicle will finish its current, active trip before proceeding to the
+     * pickup point.  ETA and distance calculations take the existing trip into
+     * account.
      *
      * Generated from protobuf enum <code>CARPOOL_BACK_TO_BACK = 4;</code>
      */

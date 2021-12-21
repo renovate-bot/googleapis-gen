@@ -38,7 +38,7 @@ namespace Maps.Fleetengine.V1 {
             "UmVxdWVzdEhlYWRlchI3CgZwYXJlbnQYAyABKAlCJ+BBAvpBIQofZmxlZXRl",
             "bmdpbmUuZ29vZ2xlYXBpcy5jb20vVHJpcBIUCgd0cmlwX2lkGAUgASgJQgPg",
             "QQISLAoEdHJpcBgEIAEoCzIZLm1hcHMuZmxlZXRlbmdpbmUudjEuVHJpcEID",
-            "4EECIvACCg5HZXRUcmlwUmVxdWVzdBIyCgZoZWFkZXIYASABKAsyIi5tYXBz",
+            "4EECIoIECg5HZXRUcmlwUmVxdWVzdBIyCgZoZWFkZXIYASABKAsyIi5tYXBz",
             "LmZsZWV0ZW5naW5lLnYxLlJlcXVlc3RIZWFkZXISNQoEbmFtZRgDIAEoCUIn",
             "4EEC+kEhCh9mbGVldGVuZ2luZS5nb29nbGVhcGlzLmNvbS9UcmlwEisKBHZp",
             "ZXcYCyABKA4yHS5tYXBzLmZsZWV0ZW5naW5lLnYxLlRyaXBWaWV3EkEKHWN1",
@@ -46,50 +46,53 @@ namespace Maps.Fleetengine.V1 {
             "b3RvYnVmLlRpbWVzdGFtcBI/ChtyZW1haW5pbmdfd2F5cG9pbnRzX3ZlcnNp",
             "b24YByABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEkIKEXJvdXRl",
             "X2Zvcm1hdF90eXBlGAggASgOMicubWFwcy5mbGVldGVuZ2luZS52MS5Qb2x5",
-            "bGluZUZvcm1hdFR5cGUizQIKGVJlcG9ydEJpbGxhYmxlVHJpcFJlcXVlc3QS",
-            "EQoEbmFtZRgCIAEoCUID4EECEhkKDGNvdW50cnlfY29kZRgDIAEoCUID4EEC",
-            "EkAKCHBsYXRmb3JtGAUgASgOMi4ubWFwcy5mbGVldGVuZ2luZS52MS5CaWxs",
-            "aW5nUGxhdGZvcm1JZGVudGlmaWVyEhMKC3JlbGF0ZWRfaWRzGAYgAygJElIK",
-            "DXNvbHV0aW9uX3R5cGUYByABKA4yOy5tYXBzLmZsZWV0ZW5naW5lLnYxLlJl",
-            "cG9ydEJpbGxhYmxlVHJpcFJlcXVlc3QuU29sdXRpb25UeXBlIlcKDFNvbHV0",
-            "aW9uVHlwZRIdChlTT0xVVElPTl9UWVBFX1VOU1BFQ0lGSUVEEAASKAokT05f",
-            "REVNQU5EX1JJREVTSEFSSU5HX0FORF9ERUxJVkVSSUVTEAEivgEKEVVwZGF0",
-            "ZVRyaXBSZXF1ZXN0EjIKBmhlYWRlchgBIAEoCzIiLm1hcHMuZmxlZXRlbmdp",
-            "bmUudjEuUmVxdWVzdEhlYWRlchIRCgRuYW1lGAMgASgJQgPgQQISLAoEdHJp",
-            "cBgEIAEoCzIZLm1hcHMuZmxlZXRlbmdpbmUudjEuVHJpcEID4EECEjQKC3Vw",
-            "ZGF0ZV9tYXNrGAUgASgLMhouZ29vZ2xlLnByb3RvYnVmLkZpZWxkTWFza0ID",
-            "4EECIukBChJTZWFyY2hUcmlwc1JlcXVlc3QSMgoGaGVhZGVyGAEgASgLMiIu",
-            "bWFwcy5mbGVldGVuZ2luZS52MS5SZXF1ZXN0SGVhZGVyEhMKBnBhcmVudBgD",
-            "IAEoCUID4EECEhIKCnZlaGljbGVfaWQYBCABKAkSGQoRYWN0aXZlX3RyaXBz",
-            "X29ubHkYBSABKAgSEQoJcGFnZV9zaXplGAYgASgFEhIKCnBhZ2VfdG9rZW4Y",
-            "ByABKAkSNAoRbWluaW11bV9zdGFsZW5lc3MYCCABKAsyGS5nb29nbGUucHJv",
-            "dG9idWYuRHVyYXRpb24iWAoTU2VhcmNoVHJpcHNSZXNwb25zZRIoCgV0cmlw",
-            "cxgBIAMoCzIZLm1hcHMuZmxlZXRlbmdpbmUudjEuVHJpcBIXCg9uZXh0X3Bh",
-            "Z2VfdG9rZW4YAiABKAkyywUKC1RyaXBTZXJ2aWNlEn0KCkNyZWF0ZVRyaXAS",
-            "Ji5tYXBzLmZsZWV0ZW5naW5lLnYxLkNyZWF0ZVRyaXBSZXF1ZXN0GhkubWFw",
-            "cy5mbGVldGVuZ2luZS52MS5UcmlwIiyC0+STAiYiHi92MS97cGFyZW50PXBy",
-            "b3ZpZGVycy8qfS90cmlwczoEdHJpcBJxCgdHZXRUcmlwEiMubWFwcy5mbGVl",
-            "dGVuZ2luZS52MS5HZXRUcmlwUmVxdWVzdBoZLm1hcHMuZmxlZXRlbmdpbmUu",
-            "djEuVHJpcCImgtPkkwIgEh4vdjEve25hbWU9cHJvdmlkZXJzLyovdHJpcHMv",
-            "Kn0SlgEKElJlcG9ydEJpbGxhYmxlVHJpcBIuLm1hcHMuZmxlZXRlbmdpbmUu",
-            "djEuUmVwb3J0QmlsbGFibGVUcmlwUmVxdWVzdBoWLmdvb2dsZS5wcm90b2J1",
-            "Zi5FbXB0eSI4gtPkkwIyIi0vdjEve25hbWU9cHJvdmlkZXJzLyovYmlsbGFi",
-            "bGVUcmlwcy8qfTpyZXBvcnQ6ASoSkgEKC1NlYXJjaFRyaXBzEicubWFwcy5m",
-            "bGVldGVuZ2luZS52MS5TZWFyY2hUcmlwc1JlcXVlc3QaKC5tYXBzLmZsZWV0",
-            "ZW5naW5lLnYxLlNlYXJjaFRyaXBzUmVzcG9uc2UiMILT5JMCKiIlL3YxL3tw",
-            "YXJlbnQ9cHJvdmlkZXJzLyp9L3RyaXBzOnNlYXJjaDoBKhJ9CgpVcGRhdGVU",
-            "cmlwEiYubWFwcy5mbGVldGVuZ2luZS52MS5VcGRhdGVUcmlwUmVxdWVzdBoZ",
-            "Lm1hcHMuZmxlZXRlbmdpbmUudjEuVHJpcCIsgtPkkwImGh4vdjEve25hbWU9",
-            "cHJvdmlkZXJzLyovdHJpcHMvKn06BHRyaXAaHcpBGmZsZWV0ZW5naW5lLmdv",
-            "b2dsZWFwaXMuY29tQnQKGmdvb2dsZS5tYXBzLmZsZWV0ZW5naW5lLnYxQgdU",
-            "cmlwQXBpUAFaRWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
-            "aXMvbWFwcy9mbGVldGVuZ2luZS92MTtmbGVldGVuZ2luZaICA0NGRWIGcHJv",
-            "dG8z"));
+            "bGluZUZvcm1hdFR5cGUSSQolY3VycmVudF9yb3V0ZV9zZWdtZW50X3RyYWZm",
+            "aWNfdmVyc2lvbhgJIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXAS",
+            "RQohcmVtYWluaW5nX3dheXBvaW50c19yb3V0ZV92ZXJzaW9uGAogASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcCLNAgoZUmVwb3J0QmlsbGFibGVU",
+            "cmlwUmVxdWVzdBIRCgRuYW1lGAIgASgJQgPgQQISGQoMY291bnRyeV9jb2Rl",
+            "GAMgASgJQgPgQQISQAoIcGxhdGZvcm0YBSABKA4yLi5tYXBzLmZsZWV0ZW5n",
+            "aW5lLnYxLkJpbGxpbmdQbGF0Zm9ybUlkZW50aWZpZXISEwoLcmVsYXRlZF9p",
+            "ZHMYBiADKAkSUgoNc29sdXRpb25fdHlwZRgHIAEoDjI7Lm1hcHMuZmxlZXRl",
+            "bmdpbmUudjEuUmVwb3J0QmlsbGFibGVUcmlwUmVxdWVzdC5Tb2x1dGlvblR5",
+            "cGUiVwoMU29sdXRpb25UeXBlEh0KGVNPTFVUSU9OX1RZUEVfVU5TUEVDSUZJ",
+            "RUQQABIoCiRPTl9ERU1BTkRfUklERVNIQVJJTkdfQU5EX0RFTElWRVJJRVMQ",
+            "ASK+AQoRVXBkYXRlVHJpcFJlcXVlc3QSMgoGaGVhZGVyGAEgASgLMiIubWFw",
+            "cy5mbGVldGVuZ2luZS52MS5SZXF1ZXN0SGVhZGVyEhEKBG5hbWUYAyABKAlC",
+            "A+BBAhIsCgR0cmlwGAQgASgLMhkubWFwcy5mbGVldGVuZ2luZS52MS5Ucmlw",
+            "QgPgQQISNAoLdXBkYXRlX21hc2sYBSABKAsyGi5nb29nbGUucHJvdG9idWYu",
+            "RmllbGRNYXNrQgPgQQIi6QEKElNlYXJjaFRyaXBzUmVxdWVzdBIyCgZoZWFk",
+            "ZXIYASABKAsyIi5tYXBzLmZsZWV0ZW5naW5lLnYxLlJlcXVlc3RIZWFkZXIS",
+            "EwoGcGFyZW50GAMgASgJQgPgQQISEgoKdmVoaWNsZV9pZBgEIAEoCRIZChFh",
+            "Y3RpdmVfdHJpcHNfb25seRgFIAEoCBIRCglwYWdlX3NpemUYBiABKAUSEgoK",
+            "cGFnZV90b2tlbhgHIAEoCRI0ChFtaW5pbXVtX3N0YWxlbmVzcxgIIAEoCzIZ",
+            "Lmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbiJYChNTZWFyY2hUcmlwc1Jlc3Bv",
+            "bnNlEigKBXRyaXBzGAEgAygLMhkubWFwcy5mbGVldGVuZ2luZS52MS5Ucmlw",
+            "EhcKD25leHRfcGFnZV90b2tlbhgCIAEoCTLLBQoLVHJpcFNlcnZpY2USfQoK",
+            "Q3JlYXRlVHJpcBImLm1hcHMuZmxlZXRlbmdpbmUudjEuQ3JlYXRlVHJpcFJl",
+            "cXVlc3QaGS5tYXBzLmZsZWV0ZW5naW5lLnYxLlRyaXAiLILT5JMCJiIeL3Yx",
+            "L3twYXJlbnQ9cHJvdmlkZXJzLyp9L3RyaXBzOgR0cmlwEnEKB0dldFRyaXAS",
+            "Iy5tYXBzLmZsZWV0ZW5naW5lLnYxLkdldFRyaXBSZXF1ZXN0GhkubWFwcy5m",
+            "bGVldGVuZ2luZS52MS5UcmlwIiaC0+STAiASHi92MS97bmFtZT1wcm92aWRl",
+            "cnMvKi90cmlwcy8qfRKWAQoSUmVwb3J0QmlsbGFibGVUcmlwEi4ubWFwcy5m",
+            "bGVldGVuZ2luZS52MS5SZXBvcnRCaWxsYWJsZVRyaXBSZXF1ZXN0GhYuZ29v",
+            "Z2xlLnByb3RvYnVmLkVtcHR5IjiC0+STAjIiLS92MS97bmFtZT1wcm92aWRl",
+            "cnMvKi9iaWxsYWJsZVRyaXBzLyp9OnJlcG9ydDoBKhKSAQoLU2VhcmNoVHJp",
+            "cHMSJy5tYXBzLmZsZWV0ZW5naW5lLnYxLlNlYXJjaFRyaXBzUmVxdWVzdBoo",
+            "Lm1hcHMuZmxlZXRlbmdpbmUudjEuU2VhcmNoVHJpcHNSZXNwb25zZSIwgtPk",
+            "kwIqIiUvdjEve3BhcmVudD1wcm92aWRlcnMvKn0vdHJpcHM6c2VhcmNoOgEq",
+            "En0KClVwZGF0ZVRyaXASJi5tYXBzLmZsZWV0ZW5naW5lLnYxLlVwZGF0ZVRy",
+            "aXBSZXF1ZXN0GhkubWFwcy5mbGVldGVuZ2luZS52MS5UcmlwIiyC0+STAiYa",
+            "Hi92MS97bmFtZT1wcm92aWRlcnMvKi90cmlwcy8qfToEdHJpcBodykEaZmxl",
+            "ZXRlbmdpbmUuZ29vZ2xlYXBpcy5jb21CdAoaZ29vZ2xlLm1hcHMuZmxlZXRl",
+            "bmdpbmUudjFCB1RyaXBBcGlQAVpFZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJv",
+            "dG8vZ29vZ2xlYXBpcy9tYXBzL2ZsZWV0ZW5naW5lL3YxO2ZsZWV0ZW5naW5l",
+            "ogIDQ0ZFYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.AnnotationsReflection.Descriptor, global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor, global::Maps.Fleetengine.V1.HeaderReflection.Descriptor, global::Maps.Fleetengine.V1.TripsReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.FieldMaskReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Api.ClientReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.CreateTripRequest), global::Maps.Fleetengine.V1.CreateTripRequest.Parser, new[]{ "Header", "Parent", "TripId", "Trip" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.GetTripRequest), global::Maps.Fleetengine.V1.GetTripRequest.Parser, new[]{ "Header", "Name", "View", "CurrentRouteSegmentVersion", "RemainingWaypointsVersion", "RouteFormatType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.GetTripRequest), global::Maps.Fleetengine.V1.GetTripRequest.Parser, new[]{ "Header", "Name", "View", "CurrentRouteSegmentVersion", "RemainingWaypointsVersion", "RouteFormatType", "CurrentRouteSegmentTrafficVersion", "RemainingWaypointsRouteVersion" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.ReportBillableTripRequest), global::Maps.Fleetengine.V1.ReportBillableTripRequest.Parser, new[]{ "Name", "CountryCode", "Platform", "RelatedIds", "SolutionType" }, null, new[]{ typeof(global::Maps.Fleetengine.V1.ReportBillableTripRequest.Types.SolutionType) }, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.UpdateTripRequest), global::Maps.Fleetengine.V1.UpdateTripRequest.Parser, new[]{ "Header", "Name", "Trip", "UpdateMask" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.SearchTripsRequest), global::Maps.Fleetengine.V1.SearchTripsRequest.Parser, new[]{ "Header", "Parent", "VehicleId", "ActiveTripsOnly", "PageSize", "PageToken", "MinimumStaleness" }, null, null, null, null),
@@ -169,8 +172,8 @@ namespace Maps.Fleetengine.V1 {
     public const int ParentFieldNumber = 3;
     private string parent_ = "";
     /// <summary>
-    /// Required. Must be in the format "providers/{provider}".
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -187,9 +190,15 @@ namespace Maps.Fleetengine.V1 {
     public const int TripIdFieldNumber = 5;
     private string tripId_ = "";
     /// <summary>
-    /// Required. Unique Trip ID; must be unique per provider.  The actual
-    /// format and value is opaque to the Fleet Engine and is determined
-    /// by the provider.
+    /// Required. Unique Trip ID; must be unique per provider.
+    /// Subject to the following normalization and restrictions:
+    ///
+    /// 1. IDs must be valid Unicode strings.
+    /// 2. IDs are limited to a maximum length of 64 characters.
+    /// 3. IDs will be normalized according to Unicode Normalization Form C
+    /// (http://www.unicode.org/reports/tr15/).
+    /// 4. IDs may not contain any of the following ASCII characters: '/', ':',
+    /// '\\', '?', or '#'.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -208,19 +217,19 @@ namespace Maps.Fleetengine.V1 {
     ///
     /// When creating a Trip, the following fields are required:
     ///
-    /// * trip_type
-    /// * pickup_point
+    /// * `trip_type`
+    /// * `pickup_point`
     ///
     /// The following fields are used if you provide them:
     ///
-    /// * number_of_passengers
-    /// * vehicle_id
-    /// * dropoff_point
-    /// * intermediate_destinations
+    /// * `number_of_passengers`
+    /// * `vehicle_id`
+    /// * `dropoff_point`
+    /// * `intermediate_destinations`
     ///
-    /// Only EXCLUSIVE trips support multiple destinations.
+    /// Only `EXCLUSIVE` trips support multiple destinations.
     ///
-    /// When vehicle_id is set for a shared trip, you must supply
+    /// When `vehicle_id` is set for a shared trip, you must supply
     /// the list of `Trip.vehicle_waypoints` to specify the order of the remaining
     /// waypoints for the vehicle, otherwise the waypoint order will be
     /// undetermined.
@@ -233,7 +242,7 @@ namespace Maps.Fleetengine.V1 {
     /// waypoints must not interleave with any other trips.
     ///
     /// The `trip_id`, `waypoint_type` and `location` fields are used, and all
-    /// other TripWaypoint fields in vehicle_waypoints are ignored.
+    /// other TripWaypoint fields in `vehicle_waypoints` are ignored.
     ///
     /// All other Trip fields are ignored.
     /// </summary>
@@ -512,6 +521,8 @@ namespace Maps.Fleetengine.V1 {
       currentRouteSegmentVersion_ = other.currentRouteSegmentVersion_ != null ? other.currentRouteSegmentVersion_.Clone() : null;
       remainingWaypointsVersion_ = other.remainingWaypointsVersion_ != null ? other.remainingWaypointsVersion_.Clone() : null;
       routeFormatType_ = other.routeFormatType_;
+      currentRouteSegmentTrafficVersion_ = other.currentRouteSegmentTrafficVersion_ != null ? other.currentRouteSegmentTrafficVersion_.Clone() : null;
+      remainingWaypointsRouteVersion_ = other.remainingWaypointsRouteVersion_ != null ? other.remainingWaypointsRouteVersion_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
@@ -540,8 +551,8 @@ namespace Maps.Fleetengine.V1 {
     public const int NameFieldNumber = 3;
     private string name_ = "";
     /// <summary>
-    /// Required. Must be in the format "providers/{provider}/trips/{trip}".
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}/trips/{trip}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -573,10 +584,10 @@ namespace Maps.Fleetengine.V1 {
     public const int CurrentRouteSegmentVersionFieldNumber = 6;
     private global::Google.Protobuf.WellKnownTypes.Timestamp currentRouteSegmentVersion_;
     /// <summary>
-    /// Indicates the minimum timestamp (exclusive) for which Trip.route or
-    /// Trip.current_route_segment data is retrieved. If route data is unchanged
-    /// since this timestamp, the route field is not set in the response. If a
-    /// minimum is unspecified, the route data is always retrieved.
+    /// Indicates the minimum timestamp (exclusive) for which `Trip.route` or
+    /// `Trip.current_route_segment` data are retrieved. If route data are
+    /// unchanged since this timestamp, the route field is not set in the response.
+    /// If a minimum is unspecified, the route data are always retrieved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -592,9 +603,9 @@ namespace Maps.Fleetengine.V1 {
     private global::Google.Protobuf.WellKnownTypes.Timestamp remainingWaypointsVersion_;
     /// <summary>
     /// Indicates the minimum timestamp (exclusive) for which
-    /// Trip.remaining_waypoints are retrieved. If they are unchanged since this
-    /// timestamp, the remaining_waypoints are not set in the response. If this
-    /// field is unspecified, remaining_waypoints is always retrieved.
+    /// `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
+    /// timestamp, the `remaining_waypoints` are not set in the response. If this
+    /// field is unspecified, `remaining_waypoints` is always retrieved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -609,9 +620,9 @@ namespace Maps.Fleetengine.V1 {
     public const int RouteFormatTypeFieldNumber = 8;
     private global::Maps.Fleetengine.V1.PolylineFormatType routeFormatType_ = global::Maps.Fleetengine.V1.PolylineFormatType.UnknownFormatType;
     /// <summary>
-    /// The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
-    /// ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
-    /// The default is LAT_LNG_LIST_TYPE.
+    /// The returned current route format, `LAT_LNG_LIST_TYPE` (in `Trip.route`),
+    /// or `ENCODED_POLYLINE_TYPE` (in `Trip.current_route_segment`). The default
+    /// is `LAT_LNG_LIST_TYPE`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -619,6 +630,46 @@ namespace Maps.Fleetengine.V1 {
       get { return routeFormatType_; }
       set {
         routeFormatType_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "current_route_segment_traffic_version" field.</summary>
+    public const int CurrentRouteSegmentTrafficVersionFieldNumber = 9;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp currentRouteSegmentTrafficVersion_;
+    /// <summary>
+    /// Indicates the minimum timestamp (exclusive) for which
+    /// `Trip.current_route_segment_traffic` is retrieved. If traffic data are
+    /// unchanged since this timestamp, the `current_route_segment_traffic` field
+    /// is not set in the response. If a minimum is unspecified, the traffic data
+    /// are always retrieved. Note that traffic is only available for On-Demand
+    /// Rides and Deliveries Solution customers.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CurrentRouteSegmentTrafficVersion {
+      get { return currentRouteSegmentTrafficVersion_; }
+      set {
+        currentRouteSegmentTrafficVersion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "remaining_waypoints_route_version" field.</summary>
+    public const int RemainingWaypointsRouteVersionFieldNumber = 10;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp remainingWaypointsRouteVersion_;
+    /// <summary>
+    /// Indicates the minimum timestamp (exclusive) for which
+    /// `Trip.remaining_waypoints.traffic_to_waypoint` and
+    /// `Trip.remaining_waypoints.path_to_waypoint` data are retrieved. If data are
+    /// unchanged since this timestamp, the fields above are
+    /// not set in the response. If `remaining_waypoints_route_version` is
+    /// unspecified, traffic and path are always retrieved.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp RemainingWaypointsRouteVersion {
+      get { return remainingWaypointsRouteVersion_; }
+      set {
+        remainingWaypointsRouteVersion_ = value;
       }
     }
 
@@ -643,6 +694,8 @@ namespace Maps.Fleetengine.V1 {
       if (!object.Equals(CurrentRouteSegmentVersion, other.CurrentRouteSegmentVersion)) return false;
       if (!object.Equals(RemainingWaypointsVersion, other.RemainingWaypointsVersion)) return false;
       if (RouteFormatType != other.RouteFormatType) return false;
+      if (!object.Equals(CurrentRouteSegmentTrafficVersion, other.CurrentRouteSegmentTrafficVersion)) return false;
+      if (!object.Equals(RemainingWaypointsRouteVersion, other.RemainingWaypointsRouteVersion)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -656,6 +709,8 @@ namespace Maps.Fleetengine.V1 {
       if (currentRouteSegmentVersion_ != null) hash ^= CurrentRouteSegmentVersion.GetHashCode();
       if (remainingWaypointsVersion_ != null) hash ^= RemainingWaypointsVersion.GetHashCode();
       if (RouteFormatType != global::Maps.Fleetengine.V1.PolylineFormatType.UnknownFormatType) hash ^= RouteFormatType.GetHashCode();
+      if (currentRouteSegmentTrafficVersion_ != null) hash ^= CurrentRouteSegmentTrafficVersion.GetHashCode();
+      if (remainingWaypointsRouteVersion_ != null) hash ^= RemainingWaypointsRouteVersion.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -694,6 +749,14 @@ namespace Maps.Fleetengine.V1 {
         output.WriteRawTag(64);
         output.WriteEnum((int) RouteFormatType);
       }
+      if (currentRouteSegmentTrafficVersion_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(CurrentRouteSegmentTrafficVersion);
+      }
+      if (remainingWaypointsRouteVersion_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RemainingWaypointsRouteVersion);
+      }
       if (View != global::Maps.Fleetengine.V1.TripView.Unspecified) {
         output.WriteRawTag(88);
         output.WriteEnum((int) View);
@@ -728,6 +791,14 @@ namespace Maps.Fleetengine.V1 {
         output.WriteRawTag(64);
         output.WriteEnum((int) RouteFormatType);
       }
+      if (currentRouteSegmentTrafficVersion_ != null) {
+        output.WriteRawTag(74);
+        output.WriteMessage(CurrentRouteSegmentTrafficVersion);
+      }
+      if (remainingWaypointsRouteVersion_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(RemainingWaypointsRouteVersion);
+      }
       if (View != global::Maps.Fleetengine.V1.TripView.Unspecified) {
         output.WriteRawTag(88);
         output.WriteEnum((int) View);
@@ -759,6 +830,12 @@ namespace Maps.Fleetengine.V1 {
       }
       if (RouteFormatType != global::Maps.Fleetengine.V1.PolylineFormatType.UnknownFormatType) {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) RouteFormatType);
+      }
+      if (currentRouteSegmentTrafficVersion_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentTrafficVersion);
+      }
+      if (remainingWaypointsRouteVersion_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(RemainingWaypointsRouteVersion);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -798,6 +875,18 @@ namespace Maps.Fleetengine.V1 {
       }
       if (other.RouteFormatType != global::Maps.Fleetengine.V1.PolylineFormatType.UnknownFormatType) {
         RouteFormatType = other.RouteFormatType;
+      }
+      if (other.currentRouteSegmentTrafficVersion_ != null) {
+        if (currentRouteSegmentTrafficVersion_ == null) {
+          CurrentRouteSegmentTrafficVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CurrentRouteSegmentTrafficVersion.MergeFrom(other.CurrentRouteSegmentTrafficVersion);
+      }
+      if (other.remainingWaypointsRouteVersion_ != null) {
+        if (remainingWaypointsRouteVersion_ == null) {
+          RemainingWaypointsRouteVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        RemainingWaypointsRouteVersion.MergeFrom(other.RemainingWaypointsRouteVersion);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -841,6 +930,20 @@ namespace Maps.Fleetengine.V1 {
           }
           case 64: {
             RouteFormatType = (global::Maps.Fleetengine.V1.PolylineFormatType) input.ReadEnum();
+            break;
+          }
+          case 74: {
+            if (currentRouteSegmentTrafficVersion_ == null) {
+              CurrentRouteSegmentTrafficVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CurrentRouteSegmentTrafficVersion);
+            break;
+          }
+          case 82: {
+            if (remainingWaypointsRouteVersion_ == null) {
+              RemainingWaypointsRouteVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RemainingWaypointsRouteVersion);
             break;
           }
           case 88: {
@@ -889,6 +992,20 @@ namespace Maps.Fleetengine.V1 {
           }
           case 64: {
             RouteFormatType = (global::Maps.Fleetengine.V1.PolylineFormatType) input.ReadEnum();
+            break;
+          }
+          case 74: {
+            if (currentRouteSegmentTrafficVersion_ == null) {
+              CurrentRouteSegmentTrafficVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CurrentRouteSegmentTrafficVersion);
+            break;
+          }
+          case 82: {
+            if (remainingWaypointsRouteVersion_ == null) {
+              RemainingWaypointsRouteVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(RemainingWaypointsRouteVersion);
             break;
           }
           case 88: {
@@ -958,9 +1075,9 @@ namespace Maps.Fleetengine.V1 {
     private string name_ = "";
     /// <summary>
     /// Required. Must be in the format
-    /// "providers/{provider}/billableTrips/{billable_trip}". The
-    /// provider must be the Project ID (for example, sample-cloud-project) of the
-    /// Google Cloud Project of which the service account making this call is a
+    /// `providers/{provider}/billableTrips/{billable_trip}`. The
+    /// provider must be the Project ID (for example, `sample-cloud-project`) of
+    /// the Google Cloud Project of which the service account making this call is a
     /// member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1011,7 +1128,7 @@ namespace Maps.Fleetengine.V1 {
     /// <summary>
     /// The identifiers that are directly related to the trip being reported. These
     /// are usually IDs (for example, session IDs) of pre-booking operations done
-    /// before the trip ID is available. The number of related_ids is
+    /// before the trip ID is available. The number of `related_ids` is
     /// limited to 50.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1025,7 +1142,7 @@ namespace Maps.Fleetengine.V1 {
     private global::Maps.Fleetengine.V1.ReportBillableTripRequest.Types.SolutionType solutionType_ = global::Maps.Fleetengine.V1.ReportBillableTripRequest.Types.SolutionType.Unspecified;
     /// <summary>
     /// The type of GMP product solution (for example,
-    /// ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+    /// `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1264,7 +1381,7 @@ namespace Maps.Fleetengine.V1 {
       public enum SolutionType {
         /// <summary>
         /// The default value. For backwards-compatibility, the API will use
-        /// ON_DEMAND_RIDESHARING_AND_DELIVERIES by default which is the first
+        /// `ON_DEMAND_RIDESHARING_AND_DELIVERIES` by default which is the first
         /// supported solution type.
         /// </summary>
         [pbr::OriginalName("SOLUTION_TYPE_UNSPECIFIED")] Unspecified = 0,
@@ -1350,7 +1467,7 @@ namespace Maps.Fleetengine.V1 {
     /// <summary>
     /// Required. Must be in the format
     /// `providers/{provider}/trips/{trip}`. The provider must
-    /// be the Project ID (for example, sample-consumer-project) of the Google
+    /// be the Project ID (for example, `sample-consumer-project`) of the Google
     /// Cloud Project of which the service account making this call is a member.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1371,17 +1488,23 @@ namespace Maps.Fleetengine.V1 {
     /// The following fields are maintained by the Fleet Engine. Do not update
     /// them using Trip.update.
     ///
-    /// * current_route_segment
-    /// * current_route_segment_version
-    /// * eta_to_next_waypoint
-    /// * intermediate_destinations_version
-    /// * last_location
-    /// * name
-    /// * number_of_passengers
-    /// * remaining_distance_meters
-    /// * remaining_time_to_first_waypoint
-    /// * remaining_waypoints
-    /// * remaining_waypoints_version
+    /// * `current_route_segment`
+    /// * `current_route_segment_end_point`
+    /// * `current_route_segment_traffic`
+    /// * `current_route_segment_traffic_version`
+    /// * `current_route_segment_version`
+    /// * `dropoff_time`
+    /// * `eta_to_next_waypoint`
+    /// * `intermediate_destinations_version`
+    /// * `last_location`
+    /// * `name`
+    /// * `number_of_passengers`
+    /// * `pickup_time`
+    /// * `remaining_distance_meters`
+    /// * `remaining_time_to_first_waypoint`
+    /// * `remaining_waypoints`
+    /// * `remaining_waypoints_version`
+    /// * `route`
     ///
     /// When you update the `Trip.vehicle_id` for a shared trip, you must supply
     /// the list of `Trip.vehicle_waypoints` to specify the order of the remaining
@@ -1394,7 +1517,7 @@ namespace Maps.Fleetengine.V1 {
     /// destinations come before the drop-off point. An `EXCLUSIVE` trip's
     /// waypoints must not interleave with any other trips.
     /// The `trip_id`, `waypoint_type` and `location` fields are used, and all
-    /// other TripWaypoint fields in vehicle_waypoints are ignored.
+    /// other TripWaypoint fields in `vehicle_waypoints` are ignored.
     ///
     /// To avoid a race condition for trips with multiple destinations, you
     /// should provide `Trip.intermediate_destinations_version` when updating
@@ -1416,7 +1539,7 @@ namespace Maps.Fleetengine.V1 {
     private global::Google.Protobuf.WellKnownTypes.FieldMask updateMask_;
     /// <summary>
     /// Required. The field mask indicating which fields in Trip to update.
-    /// The update_mask must contain at least one field.
+    /// The `update_mask` must contain at least one field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1731,8 +1854,8 @@ namespace Maps.Fleetengine.V1 {
     public const int ParentFieldNumber = 3;
     private string parent_ = "";
     /// <summary>
-    /// Required. Must be in the format "providers/*"
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -1752,10 +1875,10 @@ namespace Maps.Fleetengine.V1 {
     /// The vehicle associated with the trips in the request. If unspecified, the
     /// returned trips do not contain:
     ///
-    /// * current_route_segment
-    /// * remaining_waypoints
-    /// * remaining_distance_meters
-    /// * eta_to_first_waypoint
+    /// * `current_route_segment`
+    /// * `remaining_waypoints`
+    /// * `remaining_distance_meters`
+    /// * `eta_to_first_waypoint`
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1819,7 +1942,7 @@ namespace Maps.Fleetengine.V1 {
     private global::Google.Protobuf.WellKnownTypes.Duration minimumStaleness_;
     /// <summary>
     /// If specified, returns the trips that have not been updated after
-    /// the time (current - minimum_staleness).
+    /// the time `(current - minimum_staleness)`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]

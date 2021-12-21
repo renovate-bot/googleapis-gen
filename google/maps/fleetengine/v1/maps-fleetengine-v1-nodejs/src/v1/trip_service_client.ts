@@ -303,32 +303,38 @@ export class TripServiceClient {
  * @param {maps.fleetengine.v1.RequestHeader} request.header
  *   The standard Fleet Engine request header.
  * @param {string} request.parent
- *   Required. Must be in the format "providers/{provider}".
- *   The provider must be the Project ID (for example, sample-cloud-project)
+ *   Required. Must be in the format `providers/{provider}`.
+ *   The provider must be the Project ID (for example, `sample-cloud-project`)
  *   of the Google Cloud Project of which the service account making
  *   this call is a member.
  * @param {string} request.tripId
- *   Required. Unique Trip ID; must be unique per provider.  The actual
- *   format and value is opaque to the Fleet Engine and is determined
- *   by the provider.
+ *   Required. Unique Trip ID; must be unique per provider.
+ *   Subject to the following normalization and restrictions:
+ *
+ *   1. IDs must be valid Unicode strings.
+ *   2. IDs are limited to a maximum length of 64 characters.
+ *   3. IDs will be normalized according to Unicode Normalization Form C
+ *   (http://www.unicode.org/reports/tr15/).
+ *   4. IDs may not contain any of the following ASCII characters: '/', ':',
+ *   '\\', '?', or '#'.
  * @param {maps.fleetengine.v1.Trip} request.trip
  *   Required. Trip entity to create.
  *
  *   When creating a Trip, the following fields are required:
  *
- *   * trip_type
- *   * pickup_point
+ *   * `trip_type`
+ *   * `pickup_point`
  *
  *   The following fields are used if you provide them:
  *
- *   * number_of_passengers
- *   * vehicle_id
- *   * dropoff_point
- *   * intermediate_destinations
+ *   * `number_of_passengers`
+ *   * `vehicle_id`
+ *   * `dropoff_point`
+ *   * `intermediate_destinations`
  *
- *   Only EXCLUSIVE trips support multiple destinations.
+ *   Only `EXCLUSIVE` trips support multiple destinations.
  *
- *   When vehicle_id is set for a shared trip, you must supply
+ *   When `vehicle_id` is set for a shared trip, you must supply
  *   the list of `Trip.vehicle_waypoints` to specify the order of the remaining
  *   waypoints for the vehicle, otherwise the waypoint order will be
  *   undetermined.
@@ -341,7 +347,7 @@ export class TripServiceClient {
  *   waypoints must not interleave with any other trips.
  *
  *   The `trip_id`, `waypoint_type` and `location` fields are used, and all
- *   other TripWaypoint fields in vehicle_waypoints are ignored.
+ *   other TripWaypoint fields in `vehicle_waypoints` are ignored.
  *
  *   All other Trip fields are ignored.
  * @param {object} [options]
@@ -416,26 +422,40 @@ export class TripServiceClient {
  * @param {maps.fleetengine.v1.RequestHeader} request.header
  *   The standard Fleet Engine request header.
  * @param {string} request.name
- *   Required. Must be in the format "providers/{provider}/trips/{trip}".
- *   The provider must be the Project ID (for example, sample-cloud-project)
+ *   Required. Must be in the format `providers/{provider}/trips/{trip}`.
+ *   The provider must be the Project ID (for example, `sample-cloud-project`)
  *   of the Google Cloud Project of which the service account making
  *   this call is a member.
  * @param {maps.fleetengine.v1.TripView} request.view
  *   The subset of Trip fields that should be returned and their interpretation.
  * @param {google.protobuf.Timestamp} request.currentRouteSegmentVersion
- *   Indicates the minimum timestamp (exclusive) for which Trip.route or
- *   Trip.current_route_segment data is retrieved. If route data is unchanged
- *   since this timestamp, the route field is not set in the response. If a
- *   minimum is unspecified, the route data is always retrieved.
+ *   Indicates the minimum timestamp (exclusive) for which `Trip.route` or
+ *   `Trip.current_route_segment` data are retrieved. If route data are
+ *   unchanged since this timestamp, the route field is not set in the response.
+ *   If a minimum is unspecified, the route data are always retrieved.
  * @param {google.protobuf.Timestamp} request.remainingWaypointsVersion
  *   Indicates the minimum timestamp (exclusive) for which
- *   Trip.remaining_waypoints are retrieved. If they are unchanged since this
- *   timestamp, the remaining_waypoints are not set in the response. If this
- *   field is unspecified, remaining_waypoints is always retrieved.
+ *   `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
+ *   timestamp, the `remaining_waypoints` are not set in the response. If this
+ *   field is unspecified, `remaining_waypoints` is always retrieved.
  * @param {maps.fleetengine.v1.PolylineFormatType} request.routeFormatType
- *   The returned current route format, LAT_LNG_LIST_TYPE (in Trip.route), or
- *   ENCODED_POLYLINE_TYPE (in Trip.current_route_segment).
- *   The default is LAT_LNG_LIST_TYPE.
+ *   The returned current route format, `LAT_LNG_LIST_TYPE` (in `Trip.route`),
+ *   or `ENCODED_POLYLINE_TYPE` (in `Trip.current_route_segment`). The default
+ *   is `LAT_LNG_LIST_TYPE`.
+ * @param {google.protobuf.Timestamp} request.currentRouteSegmentTrafficVersion
+ *   Indicates the minimum timestamp (exclusive) for which
+ *   `Trip.current_route_segment_traffic` is retrieved. If traffic data are
+ *   unchanged since this timestamp, the `current_route_segment_traffic` field
+ *   is not set in the response. If a minimum is unspecified, the traffic data
+ *   are always retrieved. Note that traffic is only available for On-Demand
+ *   Rides and Deliveries Solution customers.
+ * @param {google.protobuf.Timestamp} request.remainingWaypointsRouteVersion
+ *   Indicates the minimum timestamp (exclusive) for which
+ *   `Trip.remaining_waypoints.traffic_to_waypoint` and
+ *   `Trip.remaining_waypoints.path_to_waypoint` data are retrieved. If data are
+ *   unchanged since this timestamp, the fields above are
+ *   not set in the response. If `remaining_waypoints_route_version` is
+ *   unspecified, traffic and path are always retrieved.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -507,9 +527,9 @@ export class TripServiceClient {
  *   The request object that will be sent.
  * @param {string} request.name
  *   Required. Must be in the format
- *   "providers/{provider}/billableTrips/{billable_trip}". The
- *   provider must be the Project ID (for example, sample-cloud-project) of the
- *   Google Cloud Project of which the service account making this call is a
+ *   `providers/{provider}/billableTrips/{billable_trip}`. The
+ *   provider must be the Project ID (for example, `sample-cloud-project`) of
+ *   the Google Cloud Project of which the service account making this call is a
  *   member.
  * @param {string} request.countryCode
  *   Required. Two letter country code of the country where the trip takes place. Price is
@@ -519,11 +539,11 @@ export class TripServiceClient {
  * @param {string[]} request.relatedIds
  *   The identifiers that are directly related to the trip being reported. These
  *   are usually IDs (for example, session IDs) of pre-booking operations done
- *   before the trip ID is available. The number of related_ids is
+ *   before the trip ID is available. The number of `related_ids` is
  *   limited to 50.
  * @param {maps.fleetengine.v1.ReportBillableTripRequest.SolutionType} request.solutionType
  *   The type of GMP product solution (for example,
- *   ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+ *   `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -598,7 +618,7 @@ export class TripServiceClient {
  * @param {string} request.name
  *   Required. Must be in the format
  *   `providers/{provider}/trips/{trip}`. The provider must
- *   be the Project ID (for example, sample-consumer-project) of the Google
+ *   be the Project ID (for example, `sample-consumer-project`) of the Google
  *   Cloud Project of which the service account making this call is a member.
  * @param {maps.fleetengine.v1.Trip} request.trip
  *   Required. The Trip associated with the update.
@@ -606,17 +626,23 @@ export class TripServiceClient {
  *   The following fields are maintained by the Fleet Engine. Do not update
  *   them using Trip.update.
  *
- *   * current_route_segment
- *   * current_route_segment_version
- *   * eta_to_next_waypoint
- *   * intermediate_destinations_version
- *   * last_location
- *   * name
- *   * number_of_passengers
- *   * remaining_distance_meters
- *   * remaining_time_to_first_waypoint
- *   * remaining_waypoints
- *   * remaining_waypoints_version
+ *   * `current_route_segment`
+ *   * `current_route_segment_end_point`
+ *   * `current_route_segment_traffic`
+ *   * `current_route_segment_traffic_version`
+ *   * `current_route_segment_version`
+ *   * `dropoff_time`
+ *   * `eta_to_next_waypoint`
+ *   * `intermediate_destinations_version`
+ *   * `last_location`
+ *   * `name`
+ *   * `number_of_passengers`
+ *   * `pickup_time`
+ *   * `remaining_distance_meters`
+ *   * `remaining_time_to_first_waypoint`
+ *   * `remaining_waypoints`
+ *   * `remaining_waypoints_version`
+ *   * `route`
  *
  *   When you update the `Trip.vehicle_id` for a shared trip, you must supply
  *   the list of `Trip.vehicle_waypoints` to specify the order of the remaining
@@ -629,7 +655,7 @@ export class TripServiceClient {
  *   destinations come before the drop-off point. An `EXCLUSIVE` trip's
  *   waypoints must not interleave with any other trips.
  *   The `trip_id`, `waypoint_type` and `location` fields are used, and all
- *   other TripWaypoint fields in vehicle_waypoints are ignored.
+ *   other TripWaypoint fields in `vehicle_waypoints` are ignored.
  *
  *   To avoid a race condition for trips with multiple destinations, you
  *   should provide `Trip.intermediate_destinations_version` when updating
@@ -638,7 +664,7 @@ export class TripServiceClient {
  *   Fleet Engine's version. If it isn't, the request fails.
  * @param {google.protobuf.FieldMask} request.updateMask
  *   Required. The field mask indicating which fields in Trip to update.
- *   The update_mask must contain at least one field.
+ *   The `update_mask` must contain at least one field.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -712,18 +738,18 @@ export class TripServiceClient {
  * @param {maps.fleetengine.v1.RequestHeader} request.header
  *   The standard Fleet Engine request header.
  * @param {string} request.parent
- *   Required. Must be in the format "providers/*"
- *   The provider must be the Project ID (for example, sample-cloud-project)
+ *   Required. Must be in the format `providers/{provider}`.
+ *   The provider must be the Project ID (for example, `sample-cloud-project`)
  *   of the Google Cloud Project of which the service account making
  *   this call is a member.
  * @param {string} request.vehicleId
  *   The vehicle associated with the trips in the request. If unspecified, the
  *   returned trips do not contain:
  *
- *   * current_route_segment
- *   * remaining_waypoints
- *   * remaining_distance_meters
- *   * eta_to_first_waypoint
+ *   * `current_route_segment`
+ *   * `remaining_waypoints`
+ *   * `remaining_distance_meters`
+ *   * `eta_to_first_waypoint`
  * @param {boolean} request.activeTripsOnly
  *   If set to true, only Trips that influence the drivers route
  *   are included in the response.
@@ -735,7 +761,7 @@ export class TripServiceClient {
  *   SearchTripsResponse to continue from previous results.
  * @param {google.protobuf.Duration} request.minimumStaleness
  *   If specified, returns the trips that have not been updated after
- *   the time (current - minimum_staleness).
+ *   the time `(current - minimum_staleness)`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Promise} - The promise which resolves to an array.
@@ -813,18 +839,18 @@ export class TripServiceClient {
  * @param {maps.fleetengine.v1.RequestHeader} request.header
  *   The standard Fleet Engine request header.
  * @param {string} request.parent
- *   Required. Must be in the format "providers/*"
- *   The provider must be the Project ID (for example, sample-cloud-project)
+ *   Required. Must be in the format `providers/{provider}`.
+ *   The provider must be the Project ID (for example, `sample-cloud-project`)
  *   of the Google Cloud Project of which the service account making
  *   this call is a member.
  * @param {string} request.vehicleId
  *   The vehicle associated with the trips in the request. If unspecified, the
  *   returned trips do not contain:
  *
- *   * current_route_segment
- *   * remaining_waypoints
- *   * remaining_distance_meters
- *   * eta_to_first_waypoint
+ *   * `current_route_segment`
+ *   * `remaining_waypoints`
+ *   * `remaining_distance_meters`
+ *   * `eta_to_first_waypoint`
  * @param {boolean} request.activeTripsOnly
  *   If set to true, only Trips that influence the drivers route
  *   are included in the response.
@@ -836,7 +862,7 @@ export class TripServiceClient {
  *   SearchTripsResponse to continue from previous results.
  * @param {google.protobuf.Duration} request.minimumStaleness
  *   If specified, returns the trips that have not been updated after
- *   the time (current - minimum_staleness).
+ *   the time `(current - minimum_staleness)`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Stream}
@@ -881,18 +907,18 @@ export class TripServiceClient {
  * @param {maps.fleetengine.v1.RequestHeader} request.header
  *   The standard Fleet Engine request header.
  * @param {string} request.parent
- *   Required. Must be in the format "providers/*"
- *   The provider must be the Project ID (for example, sample-cloud-project)
+ *   Required. Must be in the format `providers/{provider}`.
+ *   The provider must be the Project ID (for example, `sample-cloud-project`)
  *   of the Google Cloud Project of which the service account making
  *   this call is a member.
  * @param {string} request.vehicleId
  *   The vehicle associated with the trips in the request. If unspecified, the
  *   returned trips do not contain:
  *
- *   * current_route_segment
- *   * remaining_waypoints
- *   * remaining_distance_meters
- *   * eta_to_first_waypoint
+ *   * `current_route_segment`
+ *   * `remaining_waypoints`
+ *   * `remaining_distance_meters`
+ *   * `eta_to_first_waypoint`
  * @param {boolean} request.activeTripsOnly
  *   If set to true, only Trips that influence the drivers route
  *   are included in the response.
@@ -904,7 +930,7 @@ export class TripServiceClient {
  *   SearchTripsResponse to continue from previous results.
  * @param {google.protobuf.Duration} request.minimumStaleness
  *   If specified, returns the trips that have not been updated after
- *   the time (current - minimum_staleness).
+ *   the time `(current - minimum_staleness)`.
  * @param {object} [options]
  *   Call options. See {@link https://googleapis.dev/nodejs/google-gax/latest/interfaces/CallOptions.html|CallOptions} for more details.
  * @returns {Object}

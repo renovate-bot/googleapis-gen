@@ -43,6 +43,7 @@ from maps.fleetengine_v1.services.vehicle_service import pagers
 from maps.fleetengine_v1.services.vehicle_service import transports
 from maps.fleetengine_v1.types import fleetengine
 from maps.fleetengine_v1.types import header
+from maps.fleetengine_v1.types import traffic
 from maps.fleetengine_v1.types import vehicle_api
 from maps.fleetengine_v1.types import vehicles
 import google.auth
@@ -402,7 +403,6 @@ def test_create_vehicle(transport: str = 'grpc', request_type=vehicle_api.Create
             supported_trip_types=[fleetengine.TripType.SHARED],
             current_trips=['current_trips_value'],
             maximum_capacity=1707,
-            available_capacity=1870,
             current_route_segment='current_route_segment_value',
             back_to_back_enabled=True,
             navigation_status=fleetengine.NavigationStatus.NO_GUIDANCE,
@@ -421,7 +421,6 @@ def test_create_vehicle(transport: str = 'grpc', request_type=vehicle_api.Create
     assert response.supported_trip_types == [fleetengine.TripType.SHARED]
     assert response.current_trips == ['current_trips_value']
     assert response.maximum_capacity == 1707
-    assert response.available_capacity == 1870
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
@@ -471,7 +470,6 @@ async def test_create_vehicle_async(transport: str = 'grpc_asyncio', request_typ
             supported_trip_types=[fleetengine.TripType.SHARED],
             current_trips=['current_trips_value'],
             maximum_capacity=1707,
-            available_capacity=1870,
             current_route_segment='current_route_segment_value',
             back_to_back_enabled=True,
             navigation_status=fleetengine.NavigationStatus.NO_GUIDANCE,
@@ -490,7 +488,6 @@ async def test_create_vehicle_async(transport: str = 'grpc_asyncio', request_typ
     assert response.supported_trip_types == [fleetengine.TripType.SHARED]
     assert response.current_trips == ['current_trips_value']
     assert response.maximum_capacity == 1707
-    assert response.available_capacity == 1870
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
@@ -585,7 +582,6 @@ def test_get_vehicle(transport: str = 'grpc', request_type=vehicle_api.GetVehicl
             supported_trip_types=[fleetengine.TripType.SHARED],
             current_trips=['current_trips_value'],
             maximum_capacity=1707,
-            available_capacity=1870,
             current_route_segment='current_route_segment_value',
             back_to_back_enabled=True,
             navigation_status=fleetengine.NavigationStatus.NO_GUIDANCE,
@@ -604,7 +600,6 @@ def test_get_vehicle(transport: str = 'grpc', request_type=vehicle_api.GetVehicl
     assert response.supported_trip_types == [fleetengine.TripType.SHARED]
     assert response.current_trips == ['current_trips_value']
     assert response.maximum_capacity == 1707
-    assert response.available_capacity == 1870
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
@@ -654,7 +649,6 @@ async def test_get_vehicle_async(transport: str = 'grpc_asyncio', request_type=v
             supported_trip_types=[fleetengine.TripType.SHARED],
             current_trips=['current_trips_value'],
             maximum_capacity=1707,
-            available_capacity=1870,
             current_route_segment='current_route_segment_value',
             back_to_back_enabled=True,
             navigation_status=fleetengine.NavigationStatus.NO_GUIDANCE,
@@ -673,7 +667,6 @@ async def test_get_vehicle_async(transport: str = 'grpc_asyncio', request_type=v
     assert response.supported_trip_types == [fleetengine.TripType.SHARED]
     assert response.current_trips == ['current_trips_value']
     assert response.maximum_capacity == 1707
-    assert response.available_capacity == 1870
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
@@ -768,7 +761,6 @@ def test_update_vehicle(transport: str = 'grpc', request_type=vehicle_api.Update
             supported_trip_types=[fleetengine.TripType.SHARED],
             current_trips=['current_trips_value'],
             maximum_capacity=1707,
-            available_capacity=1870,
             current_route_segment='current_route_segment_value',
             back_to_back_enabled=True,
             navigation_status=fleetengine.NavigationStatus.NO_GUIDANCE,
@@ -787,7 +779,6 @@ def test_update_vehicle(transport: str = 'grpc', request_type=vehicle_api.Update
     assert response.supported_trip_types == [fleetengine.TripType.SHARED]
     assert response.current_trips == ['current_trips_value']
     assert response.maximum_capacity == 1707
-    assert response.available_capacity == 1870
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
@@ -837,7 +828,6 @@ async def test_update_vehicle_async(transport: str = 'grpc_asyncio', request_typ
             supported_trip_types=[fleetengine.TripType.SHARED],
             current_trips=['current_trips_value'],
             maximum_capacity=1707,
-            available_capacity=1870,
             current_route_segment='current_route_segment_value',
             back_to_back_enabled=True,
             navigation_status=fleetengine.NavigationStatus.NO_GUIDANCE,
@@ -856,7 +846,6 @@ async def test_update_vehicle_async(transport: str = 'grpc_asyncio', request_typ
     assert response.supported_trip_types == [fleetengine.TripType.SHARED]
     assert response.current_trips == ['current_trips_value']
     assert response.maximum_capacity == 1707
-    assert response.available_capacity == 1870
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE

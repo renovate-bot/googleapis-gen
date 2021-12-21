@@ -14,9 +14,6 @@
 # limitations under the License.
 #
 from .fleetengine import (
-    Address,
-    FormattedAddress,
-    Status,
     TerminalLocation,
     TerminalPointId,
     TripWaypoint,
@@ -30,6 +27,10 @@ from .fleetengine import (
 )
 from .header import (
     RequestHeader,
+)
+from .traffic import (
+    ConsumableTrafficPolyline,
+    SpeedReadingInterval,
 )
 from .trip_api import (
     CreateTripRequest,
@@ -65,7 +66,9 @@ from .vehicles import (
     BatteryInfo,
     DeviceSettings,
     LicensePlate,
+    TrafficPolylineData,
     Vehicle,
+    VisualTrafficReportPolylineRendering,
     BatteryStatus,
     LocationPowerSaveMode,
     PowerSource,
@@ -73,9 +76,6 @@ from .vehicles import (
 )
 
 __all__ = (
-    'Address',
-    'FormattedAddress',
-    'Status',
     'TerminalLocation',
     'TerminalPointId',
     'TripWaypoint',
@@ -87,6 +87,8 @@ __all__ = (
     'TripType',
     'WaypointType',
     'RequestHeader',
+    'ConsumableTrafficPolyline',
+    'SpeedReadingInterval',
     'CreateTripRequest',
     'GetTripRequest',
     'ReportBillableTripRequest',
@@ -114,7 +116,9 @@ __all__ = (
     'BatteryInfo',
     'DeviceSettings',
     'LicensePlate',
+    'TrafficPolylineData',
     'Vehicle',
+    'VisualTrafficReportPolylineRendering',
     'BatteryStatus',
     'LocationPowerSaveMode',
     'PowerSource',

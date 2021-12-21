@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Information about various settings on the device.
+ * Information about various settings on the mobile device.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.DeviceSettings</code>
  */

@@ -16,10 +16,10 @@ use Google\Protobuf\Internal\GPBUtil;
 class Vehicle extends \Google\Protobuf\Internal\Message
 {
     /**
-     * The unique name for this vehicle.
-     * The format is providers/{provider}/vehicles/{vehicle}
+     * Output only. The unique name for this vehicle.
+     * The format is `providers/{provider}/vehicles/{vehicle}`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = '';
     /**
@@ -35,9 +35,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     private $supported_trip_types;
     /**
-     * List of IDs for trips in progress.
+     * Output only. List of `trip_id`'s for trips currently assigned to this vehicle.
      *
-     * Generated from protobuf field <code>repeated string current_trips = 4;</code>
+     * Generated from protobuf field <code>repeated string current_trips = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $current_trips;
     /**
@@ -47,29 +47,22 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     protected $last_location = null;
     /**
-     * Maximum capacity of the vehicle.  This is the total numbers of riders
-     * on trips this vehicle can contain.  The driver is not considered in
-     * this value.  This value must be greater than or equal to one.
+     * The total numbers of riders this vehicle can carry.  The driver is not
+     * considered in this value. This value must be greater than or equal to one.
      *
      * Generated from protobuf field <code>int32 maximum_capacity = 6;</code>
      */
     protected $maximum_capacity = 0;
     /**
-     * The current available capacity of the vehicle.  This is the
-     * maximum_capacity minus the current number of riders.
-     *
-     * Generated from protobuf field <code>int32 available_capacity = 7;</code>
-     */
-    protected $available_capacity = 0;
-    /**
-     * List of vehicle service attributes.
+     * List of vehicle attributes. A vehicle can have at most 50
+     * attributes.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
      */
     private $attributes;
     /**
-     * The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
-     * influences ETA and route calculations.
+     * The type of this vehicle.  Can be used to filter vehicles in
+     * `SearchVehicles` results.  Also influences ETA and route calculations.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Vehicle.VehicleType vehicle_type = 9;</code>
      */
@@ -81,7 +74,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      */
     protected $license_plate = null;
     /**
-     * Deprecated. Use vehicle.waypoint instead.
+     * Deprecated: Use `Vehicle.waypoints` instead.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
      * @deprecated
@@ -91,106 +84,108 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      * The polyline specifying the route the driver app intends to take to
      * the next waypoint. Your driver app updates this every time a waypoint is
      * passed or the driver reroutes. This list is also returned in
-     * Trip.current_route_segment for all active trips assigned to the vehicle.
+     * `Trip.current_route_segment` for all active trips assigned to the vehicle.
      * Note: This field is intended only for use by the Driver SDK.
      *
      * Generated from protobuf field <code>string current_route_segment = 20;</code>
      */
     protected $current_route_segment = '';
     /**
-     * Time when current_route_segment was set. This field is ignored in
-     * UpdateVehicleRequests as it is calculated by the server. It should be
-     * stored by client and passed in to future requests to prevent returning
-     * routes to first way point that haven't changed.
+     * Input only. Fleet Engine uses this information to improve its
+     * understanding of a Trip, but does not populate the field in its responses.
+     * Note: This field is intended only for use by the Driver SDK.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 15;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.TrafficPolylineData current_route_segment_traffic = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     */
+    protected $current_route_segment_traffic = null;
+    /**
+     * Output only. Time when `current_route_segment` was set. It should be
+     * stored by the client and passed in future `GetVehicle` requests to
+     * prevent returning routes that haven't changed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $current_route_segment_version = null;
     /**
-     * The waypoint where current_route_segment ends. This can be supplied by
-     * drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     * latlnt, or as a the last latlng of the current_route_segment. FleetEngine
-     * will then do its best to interpolate to an actual waypoint if it is not
-     * fully specified. This field is ignored in UpdateVehicle calls unless
-     * current_route_segment is also specified.
+     * The waypoint where `current_route_segment` ends. This can be supplied by
+     * drivers on `UpdateVehicle` calls either as a full trip waypoint, a waypoint
+     * `LatLng`, or as the last `LatLng` of the `current_route_segment`. Fleet
+     * Engine will then do its best to interpolate to an actual waypoint if it is
+     * not fully specified. This field is ignored in `UpdateVehicle` calls unless
+     * `current_route_segment` is also specified.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      */
     protected $current_route_segment_end_point = null;
     /**
-     * The remaining driving distance for the 'current_route_segment'. This field
+     * The remaining driving distance for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
-     * This value is updated by the Driver SDK. Fleet Engine does not update it.
-     * This field is also returned in Trip.remaining_distance_meters for all
-     * active trips assigned to the vehicle. The value is unspecified if the
-     * `Vehicle.current_route_segment` field is empty, or if the Driver app has
-     * not updated its value.
+     * This value is provided by the Driver SDK. This field is also returned in
+     * `Trip.remaining_distance_meters` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `current_route_segment` field is
+     * empty, or if the Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      */
     protected $remaining_distance_meters = null;
     /**
-     * The ETA to the next waypoint that is the first entry in Vehicle.waypoint
+     * The ETA to the first entry in the `waypoints`
      * field. This field facilitates journey sharing between a Driver app and a
-     * Consumer app and is updated by the Driver SDK, and Fleet Engine does not
-     * update it. This field is also returned in Trip.eta_to_first_waypoint for
-     * all active trips assigned to the vehicle. The value is unspecified if the
-     * Vehicle.waypoint field is empty, or the Driver app has not updated its
-     * value.
+     * Consumer app. Is is provided by the Driver SDK. This field is also returned
+     * in `Trip.eta_to_first_waypoint` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `waypoints` field is empty, or the
+     * Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp eta_to_first_waypoint = 19;</code>
      */
     protected $eta_to_first_waypoint = null;
     /**
-     * The remaining driving time for the 'current_route_segment'. This field
+     * Input only. The remaining driving time for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
      * This value is updated by the Driver SDK. Fleet Engine does not update it.
      * The value is unspecified if the `Vehicle.current_route_segment` field is
      * empty, or if the Driver app has not updated its value. This value should
-     * match eta_to_first_waypoint - current_time if all parties are using the
-     * same clock. This field is currently write-only and will not yet be
-     * populated in Vehicle's get/update/search operations. When updating a
-     * vehicle, if you update both eta_to_first_waypoint and
-     * remaining_time_seconds in the same request, then only
-     * remaining_time_seconds is considered.
+     * match `eta_to_first_waypoint` - `current_time` if all parties are using the
+     * same clock. When updating a
+     * vehicle, if you update both `eta_to_first_waypoint` and
+     * `remaining_time_seconds` in the same request, `remaining_time_seconds`
+     * takes precedence.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $remaining_time_seconds = null;
     /**
-     * The remaining set of waypoints assigned to this Vehicle.
+     * The remaining waypoints assigned to this Vehicle.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
      */
     private $waypoints;
     /**
-     * Last time the waypoints was updated. Client should cache
-     * this value and pass it in GetVehicleRequest to ensure the
-     * waypoints.path_to_waypoint is only returned if it is updated
+     * Output only. Last time the `waypoints` field was updated. Clients should cache
+     * this value and pass it in `GetVehicleRequest` to ensure the
+     * `waypoints` field is only returned if it is updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $waypoints_version = null;
     /**
-     * Indicates if the driver accepts back-to-back rides. If
-     * `true`, services include the vehicle for back-to-back matches.
-     * If `false`, services exclude the vehicle from back-to-back matches.
-     * Default value is `false`.
+     * Indicates if the driver accepts back-to-back trips. If `true`,
+     * `SearchVehicles` may include the vehicle even if it is currently assigned
+     * to a trip. The default value is `false`.
      *
      * Generated from protobuf field <code>bool back_to_back_enabled = 23;</code>
      */
     protected $back_to_back_enabled = false;
     /**
-     * Vehicle's navigation status.
+     * The vehicle's navigation status.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.NavigationStatus navigation_status = 26;</code>
      */
     protected $navigation_status = 0;
     /**
-     * Information about various device settings. This is internal debug only
-     * field, not included in the response.
+     * Input only. Information about settings in the mobile device being used by the driver.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      */
     protected $device_settings = null;
 
@@ -201,94 +196,89 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           The unique name for this vehicle.
-     *           The format is providers/{provider}/vehicles/{vehicle}
+     *           Output only. The unique name for this vehicle.
+     *           The format is `providers/{provider}/vehicles/{vehicle}`.
      *     @type int $vehicle_state
      *           The vehicle state.
      *     @type int[]|\Google\Protobuf\Internal\RepeatedField $supported_trip_types
      *           Supported trip types.
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $current_trips
-     *           List of IDs for trips in progress.
+     *           Output only. List of `trip_id`'s for trips currently assigned to this vehicle.
      *     @type \Maps\Fleetengine\V1\VehicleLocation $last_location
      *           Last reported location of the vehicle.
      *     @type int $maximum_capacity
-     *           Maximum capacity of the vehicle.  This is the total numbers of riders
-     *           on trips this vehicle can contain.  The driver is not considered in
-     *           this value.  This value must be greater than or equal to one.
-     *     @type int $available_capacity
-     *           The current available capacity of the vehicle.  This is the
-     *           maximum_capacity minus the current number of riders.
+     *           The total numbers of riders this vehicle can carry.  The driver is not
+     *           considered in this value. This value must be greater than or equal to one.
      *     @type \Maps\Fleetengine\V1\VehicleAttribute[]|\Google\Protobuf\Internal\RepeatedField $attributes
-     *           List of vehicle service attributes.
+     *           List of vehicle attributes. A vehicle can have at most 50
+     *           attributes.
      *     @type \Maps\Fleetengine\V1\Vehicle\VehicleType $vehicle_type
-     *           The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
-     *           influences ETA and route calculations.
+     *           The type of this vehicle.  Can be used to filter vehicles in
+     *           `SearchVehicles` results.  Also influences ETA and route calculations.
      *     @type \Maps\Fleetengine\V1\LicensePlate $license_plate
      *           License plate information for the vehicle.
      *     @type \Maps\Fleetengine\V1\TerminalLocation[]|\Google\Protobuf\Internal\RepeatedField $route
-     *           Deprecated. Use vehicle.waypoint instead.
+     *           Deprecated: Use `Vehicle.waypoints` instead.
      *     @type string $current_route_segment
      *           The polyline specifying the route the driver app intends to take to
      *           the next waypoint. Your driver app updates this every time a waypoint is
      *           passed or the driver reroutes. This list is also returned in
-     *           Trip.current_route_segment for all active trips assigned to the vehicle.
+     *           `Trip.current_route_segment` for all active trips assigned to the vehicle.
+     *           Note: This field is intended only for use by the Driver SDK.
+     *     @type \Maps\Fleetengine\V1\TrafficPolylineData $current_route_segment_traffic
+     *           Input only. Fleet Engine uses this information to improve its
+     *           understanding of a Trip, but does not populate the field in its responses.
      *           Note: This field is intended only for use by the Driver SDK.
      *     @type \Google\Protobuf\Timestamp $current_route_segment_version
-     *           Time when current_route_segment was set. This field is ignored in
-     *           UpdateVehicleRequests as it is calculated by the server. It should be
-     *           stored by client and passed in to future requests to prevent returning
-     *           routes to first way point that haven't changed.
+     *           Output only. Time when `current_route_segment` was set. It should be
+     *           stored by the client and passed in future `GetVehicle` requests to
+     *           prevent returning routes that haven't changed.
      *     @type \Maps\Fleetengine\V1\TripWaypoint $current_route_segment_end_point
-     *           The waypoint where current_route_segment ends. This can be supplied by
-     *           drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     *           latlnt, or as a the last latlng of the current_route_segment. FleetEngine
-     *           will then do its best to interpolate to an actual waypoint if it is not
-     *           fully specified. This field is ignored in UpdateVehicle calls unless
-     *           current_route_segment is also specified.
+     *           The waypoint where `current_route_segment` ends. This can be supplied by
+     *           drivers on `UpdateVehicle` calls either as a full trip waypoint, a waypoint
+     *           `LatLng`, or as the last `LatLng` of the `current_route_segment`. Fleet
+     *           Engine will then do its best to interpolate to an actual waypoint if it is
+     *           not fully specified. This field is ignored in `UpdateVehicle` calls unless
+     *           `current_route_segment` is also specified.
      *     @type \Google\Protobuf\Int32Value $remaining_distance_meters
-     *           The remaining driving distance for the 'current_route_segment'. This field
+     *           The remaining driving distance for the `current_route_segment`. This field
      *           facilitates journey sharing between the Driver app and the Consumer app.
-     *           This value is updated by the Driver SDK. Fleet Engine does not update it.
-     *           This field is also returned in Trip.remaining_distance_meters for all
-     *           active trips assigned to the vehicle. The value is unspecified if the
-     *           `Vehicle.current_route_segment` field is empty, or if the Driver app has
-     *           not updated its value.
+     *           This value is provided by the Driver SDK. This field is also returned in
+     *           `Trip.remaining_distance_meters` for all active trips assigned to the
+     *           vehicle. The value is unspecified if the `current_route_segment` field is
+     *           empty, or if the Driver app has not updated its value.
      *     @type \Google\Protobuf\Timestamp $eta_to_first_waypoint
-     *           The ETA to the next waypoint that is the first entry in Vehicle.waypoint
+     *           The ETA to the first entry in the `waypoints`
      *           field. This field facilitates journey sharing between a Driver app and a
-     *           Consumer app and is updated by the Driver SDK, and Fleet Engine does not
-     *           update it. This field is also returned in Trip.eta_to_first_waypoint for
-     *           all active trips assigned to the vehicle. The value is unspecified if the
-     *           Vehicle.waypoint field is empty, or the Driver app has not updated its
-     *           value.
+     *           Consumer app. Is is provided by the Driver SDK. This field is also returned
+     *           in `Trip.eta_to_first_waypoint` for all active trips assigned to the
+     *           vehicle. The value is unspecified if the `waypoints` field is empty, or the
+     *           Driver app has not updated its value.
      *     @type \Google\Protobuf\Int32Value $remaining_time_seconds
-     *           The remaining driving time for the 'current_route_segment'. This field
+     *           Input only. The remaining driving time for the `current_route_segment`. This field
      *           facilitates journey sharing between the Driver app and the Consumer app.
      *           This value is updated by the Driver SDK. Fleet Engine does not update it.
      *           The value is unspecified if the `Vehicle.current_route_segment` field is
      *           empty, or if the Driver app has not updated its value. This value should
-     *           match eta_to_first_waypoint - current_time if all parties are using the
-     *           same clock. This field is currently write-only and will not yet be
-     *           populated in Vehicle's get/update/search operations. When updating a
-     *           vehicle, if you update both eta_to_first_waypoint and
-     *           remaining_time_seconds in the same request, then only
-     *           remaining_time_seconds is considered.
+     *           match `eta_to_first_waypoint` - `current_time` if all parties are using the
+     *           same clock. When updating a
+     *           vehicle, if you update both `eta_to_first_waypoint` and
+     *           `remaining_time_seconds` in the same request, `remaining_time_seconds`
+     *           takes precedence.
      *     @type \Maps\Fleetengine\V1\TripWaypoint[]|\Google\Protobuf\Internal\RepeatedField $waypoints
-     *           The remaining set of waypoints assigned to this Vehicle.
+     *           The remaining waypoints assigned to this Vehicle.
      *     @type \Google\Protobuf\Timestamp $waypoints_version
-     *           Last time the waypoints was updated. Client should cache
-     *           this value and pass it in GetVehicleRequest to ensure the
-     *           waypoints.path_to_waypoint is only returned if it is updated
+     *           Output only. Last time the `waypoints` field was updated. Clients should cache
+     *           this value and pass it in `GetVehicleRequest` to ensure the
+     *           `waypoints` field is only returned if it is updated.
      *     @type bool $back_to_back_enabled
-     *           Indicates if the driver accepts back-to-back rides. If
-     *           `true`, services include the vehicle for back-to-back matches.
-     *           If `false`, services exclude the vehicle from back-to-back matches.
-     *           Default value is `false`.
+     *           Indicates if the driver accepts back-to-back trips. If `true`,
+     *           `SearchVehicles` may include the vehicle even if it is currently assigned
+     *           to a trip. The default value is `false`.
      *     @type int $navigation_status
-     *           Vehicle's navigation status.
+     *           The vehicle's navigation status.
      *     @type \Maps\Fleetengine\V1\DeviceSettings $device_settings
-     *           Information about various device settings. This is internal debug only
-     *           field, not included in the response.
+     *           Input only. Information about settings in the mobile device being used by the driver.
      * }
      */
     public function __construct($data = NULL) {
@@ -297,10 +287,10 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique name for this vehicle.
-     * The format is providers/{provider}/vehicles/{vehicle}
+     * Output only. The unique name for this vehicle.
+     * The format is `providers/{provider}/vehicles/{vehicle}`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -309,10 +299,10 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The unique name for this vehicle.
-     * The format is providers/{provider}/vehicles/{vehicle}
+     * Output only. The unique name for this vehicle.
+     * The format is `providers/{provider}/vehicles/{vehicle}`.
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -377,9 +367,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of IDs for trips in progress.
+     * Output only. List of `trip_id`'s for trips currently assigned to this vehicle.
      *
-     * Generated from protobuf field <code>repeated string current_trips = 4;</code>
+     * Generated from protobuf field <code>repeated string current_trips = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getCurrentTrips()
@@ -388,9 +378,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of IDs for trips in progress.
+     * Output only. List of `trip_id`'s for trips currently assigned to this vehicle.
      *
-     * Generated from protobuf field <code>repeated string current_trips = 4;</code>
+     * Generated from protobuf field <code>repeated string current_trips = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -439,9 +429,8 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum capacity of the vehicle.  This is the total numbers of riders
-     * on trips this vehicle can contain.  The driver is not considered in
-     * this value.  This value must be greater than or equal to one.
+     * The total numbers of riders this vehicle can carry.  The driver is not
+     * considered in this value. This value must be greater than or equal to one.
      *
      * Generated from protobuf field <code>int32 maximum_capacity = 6;</code>
      * @return int
@@ -452,9 +441,8 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Maximum capacity of the vehicle.  This is the total numbers of riders
-     * on trips this vehicle can contain.  The driver is not considered in
-     * this value.  This value must be greater than or equal to one.
+     * The total numbers of riders this vehicle can carry.  The driver is not
+     * considered in this value. This value must be greater than or equal to one.
      *
      * Generated from protobuf field <code>int32 maximum_capacity = 6;</code>
      * @param int $var
@@ -469,35 +457,8 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The current available capacity of the vehicle.  This is the
-     * maximum_capacity minus the current number of riders.
-     *
-     * Generated from protobuf field <code>int32 available_capacity = 7;</code>
-     * @return int
-     */
-    public function getAvailableCapacity()
-    {
-        return $this->available_capacity;
-    }
-
-    /**
-     * The current available capacity of the vehicle.  This is the
-     * maximum_capacity minus the current number of riders.
-     *
-     * Generated from protobuf field <code>int32 available_capacity = 7;</code>
-     * @param int $var
-     * @return $this
-     */
-    public function setAvailableCapacity($var)
-    {
-        GPBUtil::checkInt32($var);
-        $this->available_capacity = $var;
-
-        return $this;
-    }
-
-    /**
-     * List of vehicle service attributes.
+     * List of vehicle attributes. A vehicle can have at most 50
+     * attributes.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -508,7 +469,8 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of vehicle service attributes.
+     * List of vehicle attributes. A vehicle can have at most 50
+     * attributes.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 8;</code>
      * @param \Maps\Fleetengine\V1\VehicleAttribute[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -523,8 +485,8 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
-     * influences ETA and route calculations.
+     * The type of this vehicle.  Can be used to filter vehicles in
+     * `SearchVehicles` results.  Also influences ETA and route calculations.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Vehicle.VehicleType vehicle_type = 9;</code>
      * @return \Maps\Fleetengine\V1\Vehicle\VehicleType|null
@@ -545,8 +507,8 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
-     * influences ETA and route calculations.
+     * The type of this vehicle.  Can be used to filter vehicles in
+     * `SearchVehicles` results.  Also influences ETA and route calculations.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Vehicle.VehicleType vehicle_type = 9;</code>
      * @param \Maps\Fleetengine\V1\Vehicle\VehicleType $var
@@ -597,7 +559,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use vehicle.waypoint instead.
+     * Deprecated: Use `Vehicle.waypoints` instead.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -610,7 +572,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use vehicle.waypoint instead.
+     * Deprecated: Use `Vehicle.waypoints` instead.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TerminalLocation route = 12 [deprecated = true];</code>
      * @param \Maps\Fleetengine\V1\TerminalLocation[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -630,7 +592,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      * The polyline specifying the route the driver app intends to take to
      * the next waypoint. Your driver app updates this every time a waypoint is
      * passed or the driver reroutes. This list is also returned in
-     * Trip.current_route_segment for all active trips assigned to the vehicle.
+     * `Trip.current_route_segment` for all active trips assigned to the vehicle.
      * Note: This field is intended only for use by the Driver SDK.
      *
      * Generated from protobuf field <code>string current_route_segment = 20;</code>
@@ -645,7 +607,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
      * The polyline specifying the route the driver app intends to take to
      * the next waypoint. Your driver app updates this every time a waypoint is
      * passed or the driver reroutes. This list is also returned in
-     * Trip.current_route_segment for all active trips assigned to the vehicle.
+     * `Trip.current_route_segment` for all active trips assigned to the vehicle.
      * Note: This field is intended only for use by the Driver SDK.
      *
      * Generated from protobuf field <code>string current_route_segment = 20;</code>
@@ -661,12 +623,51 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time when current_route_segment was set. This field is ignored in
-     * UpdateVehicleRequests as it is calculated by the server. It should be
-     * stored by client and passed in to future requests to prevent returning
-     * routes to first way point that haven't changed.
+     * Input only. Fleet Engine uses this information to improve its
+     * understanding of a Trip, but does not populate the field in its responses.
+     * Note: This field is intended only for use by the Driver SDK.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 15;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.TrafficPolylineData current_route_segment_traffic = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * @return \Maps\Fleetengine\V1\TrafficPolylineData|null
+     */
+    public function getCurrentRouteSegmentTraffic()
+    {
+        return $this->current_route_segment_traffic;
+    }
+
+    public function hasCurrentRouteSegmentTraffic()
+    {
+        return isset($this->current_route_segment_traffic);
+    }
+
+    public function clearCurrentRouteSegmentTraffic()
+    {
+        unset($this->current_route_segment_traffic);
+    }
+
+    /**
+     * Input only. Fleet Engine uses this information to improve its
+     * understanding of a Trip, but does not populate the field in its responses.
+     * Note: This field is intended only for use by the Driver SDK.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.TrafficPolylineData current_route_segment_traffic = 28 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     * @param \Maps\Fleetengine\V1\TrafficPolylineData $var
+     * @return $this
+     */
+    public function setCurrentRouteSegmentTraffic($var)
+    {
+        GPBUtil::checkMessage($var, \Maps\Fleetengine\V1\TrafficPolylineData::class);
+        $this->current_route_segment_traffic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Time when `current_route_segment` was set. It should be
+     * stored by the client and passed in future `GetVehicle` requests to
+     * prevent returning routes that haven't changed.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getCurrentRouteSegmentVersion()
@@ -685,12 +686,11 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Time when current_route_segment was set. This field is ignored in
-     * UpdateVehicleRequests as it is calculated by the server. It should be
-     * stored by client and passed in to future requests to prevent returning
-     * routes to first way point that haven't changed.
+     * Output only. Time when `current_route_segment` was set. It should be
+     * stored by the client and passed in future `GetVehicle` requests to
+     * prevent returning routes that haven't changed.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 15;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -703,12 +703,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The waypoint where current_route_segment ends. This can be supplied by
-     * drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     * latlnt, or as a the last latlng of the current_route_segment. FleetEngine
-     * will then do its best to interpolate to an actual waypoint if it is not
-     * fully specified. This field is ignored in UpdateVehicle calls unless
-     * current_route_segment is also specified.
+     * The waypoint where `current_route_segment` ends. This can be supplied by
+     * drivers on `UpdateVehicle` calls either as a full trip waypoint, a waypoint
+     * `LatLng`, or as the last `LatLng` of the `current_route_segment`. Fleet
+     * Engine will then do its best to interpolate to an actual waypoint if it is
+     * not fully specified. This field is ignored in `UpdateVehicle` calls unless
+     * `current_route_segment` is also specified.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      * @return \Maps\Fleetengine\V1\TripWaypoint|null
@@ -729,12 +729,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The waypoint where current_route_segment ends. This can be supplied by
-     * drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     * latlnt, or as a the last latlng of the current_route_segment. FleetEngine
-     * will then do its best to interpolate to an actual waypoint if it is not
-     * fully specified. This field is ignored in UpdateVehicle calls unless
-     * current_route_segment is also specified.
+     * The waypoint where `current_route_segment` ends. This can be supplied by
+     * drivers on `UpdateVehicle` calls either as a full trip waypoint, a waypoint
+     * `LatLng`, or as the last `LatLng` of the `current_route_segment`. Fleet
+     * Engine will then do its best to interpolate to an actual waypoint if it is
+     * not fully specified. This field is ignored in `UpdateVehicle` calls unless
+     * `current_route_segment` is also specified.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
      * @param \Maps\Fleetengine\V1\TripWaypoint $var
@@ -749,13 +749,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining driving distance for the 'current_route_segment'. This field
+     * The remaining driving distance for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
-     * This value is updated by the Driver SDK. Fleet Engine does not update it.
-     * This field is also returned in Trip.remaining_distance_meters for all
-     * active trips assigned to the vehicle. The value is unspecified if the
-     * `Vehicle.current_route_segment` field is empty, or if the Driver app has
-     * not updated its value.
+     * This value is provided by the Driver SDK. This field is also returned in
+     * `Trip.remaining_distance_meters` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `current_route_segment` field is
+     * empty, or if the Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      * @return \Google\Protobuf\Int32Value|null
@@ -778,13 +777,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRemainingDistanceMeters()</code>
 
-     * The remaining driving distance for the 'current_route_segment'. This field
+     * The remaining driving distance for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
-     * This value is updated by the Driver SDK. Fleet Engine does not update it.
-     * This field is also returned in Trip.remaining_distance_meters for all
-     * active trips assigned to the vehicle. The value is unspecified if the
-     * `Vehicle.current_route_segment` field is empty, or if the Driver app has
-     * not updated its value.
+     * This value is provided by the Driver SDK. This field is also returned in
+     * `Trip.remaining_distance_meters` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `current_route_segment` field is
+     * empty, or if the Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      * @return int|null
@@ -795,13 +793,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining driving distance for the 'current_route_segment'. This field
+     * The remaining driving distance for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
-     * This value is updated by the Driver SDK. Fleet Engine does not update it.
-     * This field is also returned in Trip.remaining_distance_meters for all
-     * active trips assigned to the vehicle. The value is unspecified if the
-     * `Vehicle.current_route_segment` field is empty, or if the Driver app has
-     * not updated its value.
+     * This value is provided by the Driver SDK. This field is also returned in
+     * `Trip.remaining_distance_meters` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `current_route_segment` field is
+     * empty, or if the Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      * @param \Google\Protobuf\Int32Value $var
@@ -818,13 +815,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The remaining driving distance for the 'current_route_segment'. This field
+     * The remaining driving distance for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
-     * This value is updated by the Driver SDK. Fleet Engine does not update it.
-     * This field is also returned in Trip.remaining_distance_meters for all
-     * active trips assigned to the vehicle. The value is unspecified if the
-     * `Vehicle.current_route_segment` field is empty, or if the Driver app has
-     * not updated its value.
+     * This value is provided by the Driver SDK. This field is also returned in
+     * `Trip.remaining_distance_meters` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `current_route_segment` field is
+     * empty, or if the Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 18;</code>
      * @param int|null $var
@@ -836,13 +832,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The ETA to the next waypoint that is the first entry in Vehicle.waypoint
+     * The ETA to the first entry in the `waypoints`
      * field. This field facilitates journey sharing between a Driver app and a
-     * Consumer app and is updated by the Driver SDK, and Fleet Engine does not
-     * update it. This field is also returned in Trip.eta_to_first_waypoint for
-     * all active trips assigned to the vehicle. The value is unspecified if the
-     * Vehicle.waypoint field is empty, or the Driver app has not updated its
-     * value.
+     * Consumer app. Is is provided by the Driver SDK. This field is also returned
+     * in `Trip.eta_to_first_waypoint` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `waypoints` field is empty, or the
+     * Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp eta_to_first_waypoint = 19;</code>
      * @return \Google\Protobuf\Timestamp|null
@@ -863,13 +858,12 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The ETA to the next waypoint that is the first entry in Vehicle.waypoint
+     * The ETA to the first entry in the `waypoints`
      * field. This field facilitates journey sharing between a Driver app and a
-     * Consumer app and is updated by the Driver SDK, and Fleet Engine does not
-     * update it. This field is also returned in Trip.eta_to_first_waypoint for
-     * all active trips assigned to the vehicle. The value is unspecified if the
-     * Vehicle.waypoint field is empty, or the Driver app has not updated its
-     * value.
+     * Consumer app. Is is provided by the Driver SDK. This field is also returned
+     * in `Trip.eta_to_first_waypoint` for all active trips assigned to the
+     * vehicle. The value is unspecified if the `waypoints` field is empty, or the
+     * Driver app has not updated its value.
      *
      * Generated from protobuf field <code>.google.protobuf.Timestamp eta_to_first_waypoint = 19;</code>
      * @param \Google\Protobuf\Timestamp $var
@@ -884,19 +878,18 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining driving time for the 'current_route_segment'. This field
+     * Input only. The remaining driving time for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
      * This value is updated by the Driver SDK. Fleet Engine does not update it.
      * The value is unspecified if the `Vehicle.current_route_segment` field is
      * empty, or if the Driver app has not updated its value. This value should
-     * match eta_to_first_waypoint - current_time if all parties are using the
-     * same clock. This field is currently write-only and will not yet be
-     * populated in Vehicle's get/update/search operations. When updating a
-     * vehicle, if you update both eta_to_first_waypoint and
-     * remaining_time_seconds in the same request, then only
-     * remaining_time_seconds is considered.
+     * match `eta_to_first_waypoint` - `current_time` if all parties are using the
+     * same clock. When updating a
+     * vehicle, if you update both `eta_to_first_waypoint` and
+     * `remaining_time_seconds` in the same request, `remaining_time_seconds`
+     * takes precedence.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Google\Protobuf\Int32Value|null
      */
     public function getRemainingTimeSeconds()
@@ -917,19 +910,18 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRemainingTimeSeconds()</code>
 
-     * The remaining driving time for the 'current_route_segment'. This field
+     * Input only. The remaining driving time for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
      * This value is updated by the Driver SDK. Fleet Engine does not update it.
      * The value is unspecified if the `Vehicle.current_route_segment` field is
      * empty, or if the Driver app has not updated its value. This value should
-     * match eta_to_first_waypoint - current_time if all parties are using the
-     * same clock. This field is currently write-only and will not yet be
-     * populated in Vehicle's get/update/search operations. When updating a
-     * vehicle, if you update both eta_to_first_waypoint and
-     * remaining_time_seconds in the same request, then only
-     * remaining_time_seconds is considered.
+     * match `eta_to_first_waypoint` - `current_time` if all parties are using the
+     * same clock. When updating a
+     * vehicle, if you update both `eta_to_first_waypoint` and
+     * `remaining_time_seconds` in the same request, `remaining_time_seconds`
+     * takes precedence.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return int|null
      */
     public function getRemainingTimeSecondsUnwrapped()
@@ -938,19 +930,18 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining driving time for the 'current_route_segment'. This field
+     * Input only. The remaining driving time for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
      * This value is updated by the Driver SDK. Fleet Engine does not update it.
      * The value is unspecified if the `Vehicle.current_route_segment` field is
      * empty, or if the Driver app has not updated its value. This value should
-     * match eta_to_first_waypoint - current_time if all parties are using the
-     * same clock. This field is currently write-only and will not yet be
-     * populated in Vehicle's get/update/search operations. When updating a
-     * vehicle, if you update both eta_to_first_waypoint and
-     * remaining_time_seconds in the same request, then only
-     * remaining_time_seconds is considered.
+     * match `eta_to_first_waypoint` - `current_time` if all parties are using the
+     * same clock. When updating a
+     * vehicle, if you update both `eta_to_first_waypoint` and
+     * `remaining_time_seconds` in the same request, `remaining_time_seconds`
+     * takes precedence.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
@@ -965,19 +956,18 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The remaining driving time for the 'current_route_segment'. This field
+     * Input only. The remaining driving time for the `current_route_segment`. This field
      * facilitates journey sharing between the Driver app and the Consumer app.
      * This value is updated by the Driver SDK. Fleet Engine does not update it.
      * The value is unspecified if the `Vehicle.current_route_segment` field is
      * empty, or if the Driver app has not updated its value. This value should
-     * match eta_to_first_waypoint - current_time if all parties are using the
-     * same clock. This field is currently write-only and will not yet be
-     * populated in Vehicle's get/update/search operations. When updating a
-     * vehicle, if you update both eta_to_first_waypoint and
-     * remaining_time_seconds in the same request, then only
-     * remaining_time_seconds is considered.
+     * match `eta_to_first_waypoint` - `current_time` if all parties are using the
+     * same clock. When updating a
+     * vehicle, if you update both `eta_to_first_waypoint` and
+     * `remaining_time_seconds` in the same request, `remaining_time_seconds`
+     * takes precedence.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_time_seconds = 25 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param int|null $var
      * @return $this
      */
@@ -987,7 +977,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
         return $this;}
 
     /**
-     * The remaining set of waypoints assigned to this Vehicle.
+     * The remaining waypoints assigned to this Vehicle.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -998,7 +988,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining set of waypoints assigned to this Vehicle.
+     * The remaining waypoints assigned to this Vehicle.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.TripWaypoint waypoints = 22;</code>
      * @param \Maps\Fleetengine\V1\TripWaypoint[]|\Google\Protobuf\Internal\RepeatedField $var
@@ -1013,11 +1003,11 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last time the waypoints was updated. Client should cache
-     * this value and pass it in GetVehicleRequest to ensure the
-     * waypoints.path_to_waypoint is only returned if it is updated
+     * Output only. Last time the `waypoints` field was updated. Clients should cache
+     * this value and pass it in `GetVehicleRequest` to ensure the
+     * `waypoints` field is only returned if it is updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getWaypointsVersion()
@@ -1036,11 +1026,11 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Last time the waypoints was updated. Client should cache
-     * this value and pass it in GetVehicleRequest to ensure the
-     * waypoints.path_to_waypoint is only returned if it is updated
+     * Output only. Last time the `waypoints` field was updated. Clients should cache
+     * this value and pass it in `GetVehicleRequest` to ensure the
+     * `waypoints` field is only returned if it is updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 16;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp waypoints_version = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -1053,10 +1043,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates if the driver accepts back-to-back rides. If
-     * `true`, services include the vehicle for back-to-back matches.
-     * If `false`, services exclude the vehicle from back-to-back matches.
-     * Default value is `false`.
+     * Indicates if the driver accepts back-to-back trips. If `true`,
+     * `SearchVehicles` may include the vehicle even if it is currently assigned
+     * to a trip. The default value is `false`.
      *
      * Generated from protobuf field <code>bool back_to_back_enabled = 23;</code>
      * @return bool
@@ -1067,10 +1056,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates if the driver accepts back-to-back rides. If
-     * `true`, services include the vehicle for back-to-back matches.
-     * If `false`, services exclude the vehicle from back-to-back matches.
-     * Default value is `false`.
+     * Indicates if the driver accepts back-to-back trips. If `true`,
+     * `SearchVehicles` may include the vehicle even if it is currently assigned
+     * to a trip. The default value is `false`.
      *
      * Generated from protobuf field <code>bool back_to_back_enabled = 23;</code>
      * @param bool $var
@@ -1085,7 +1073,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Vehicle's navigation status.
+     * The vehicle's navigation status.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.NavigationStatus navigation_status = 26;</code>
      * @return int
@@ -1096,7 +1084,7 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Vehicle's navigation status.
+     * The vehicle's navigation status.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.NavigationStatus navigation_status = 26;</code>
      * @param int $var
@@ -1111,10 +1099,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Information about various device settings. This is internal debug only
-     * field, not included in the response.
+     * Input only. Information about settings in the mobile device being used by the driver.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @return \Maps\Fleetengine\V1\DeviceSettings|null
      */
     public function getDeviceSettings()
@@ -1133,10 +1120,9 @@ class Vehicle extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Information about various device settings. This is internal debug only
-     * field, not included in the response.
+     * Input only. Information about settings in the mobile device being used by the driver.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.DeviceSettings device_settings = 27 [(.google.api.field_behavior) = INPUT_ONLY];</code>
      * @param \Maps\Fleetengine\V1\DeviceSettings $var
      * @return $this
      */

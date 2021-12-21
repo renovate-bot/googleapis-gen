@@ -9,23 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * SearchVehicles response message.
+ * `SearchVehicles` response message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.SearchVehiclesResponse</code>
  */
 class SearchVehiclesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * List of vehicles that match the request options.
-     * Ordered by ascending vehicle_pickup_eta, with ties broken by ascending
-     * trip_type enum value, followed by matches that don't have
-     * vehicle_pickup_eta set.
-     * Example response: (Logically represented, not actual response fields):
-     * * (VehicleId: Vehicle1, ETA: 10 AM, TripType: SHARED),
-     * * (VehicleId: Vehicle2, ETA: 10 AM, TripType: EXCLUSIVE),
-     * * (VehicleId: Vehicle3, ETA: 11 AM, TripType: EXCLUSIVE),
-     * * (VehicleId: Vehicle4, ETA: Not set, TripType: SHARED),
-     * * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
+     * List of vehicles that match the `SearchVehiclesRequest` criteria, ordered
+     * according to `SearchVehiclesRequest.order_by` field.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
      */
@@ -38,16 +30,8 @@ class SearchVehiclesResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Maps\Fleetengine\V1\VehicleMatch[]|\Google\Protobuf\Internal\RepeatedField $matches
-     *           List of vehicles that match the request options.
-     *           Ordered by ascending vehicle_pickup_eta, with ties broken by ascending
-     *           trip_type enum value, followed by matches that don't have
-     *           vehicle_pickup_eta set.
-     *           Example response: (Logically represented, not actual response fields):
-     *           * (VehicleId: Vehicle1, ETA: 10 AM, TripType: SHARED),
-     *           * (VehicleId: Vehicle2, ETA: 10 AM, TripType: EXCLUSIVE),
-     *           * (VehicleId: Vehicle3, ETA: 11 AM, TripType: EXCLUSIVE),
-     *           * (VehicleId: Vehicle4, ETA: Not set, TripType: SHARED),
-     *           * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
+     *           List of vehicles that match the `SearchVehiclesRequest` criteria, ordered
+     *           according to `SearchVehiclesRequest.order_by` field.
      * }
      */
     public function __construct($data = NULL) {
@@ -56,16 +40,8 @@ class SearchVehiclesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of vehicles that match the request options.
-     * Ordered by ascending vehicle_pickup_eta, with ties broken by ascending
-     * trip_type enum value, followed by matches that don't have
-     * vehicle_pickup_eta set.
-     * Example response: (Logically represented, not actual response fields):
-     * * (VehicleId: Vehicle1, ETA: 10 AM, TripType: SHARED),
-     * * (VehicleId: Vehicle2, ETA: 10 AM, TripType: EXCLUSIVE),
-     * * (VehicleId: Vehicle3, ETA: 11 AM, TripType: EXCLUSIVE),
-     * * (VehicleId: Vehicle4, ETA: Not set, TripType: SHARED),
-     * * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
+     * List of vehicles that match the `SearchVehiclesRequest` criteria, ordered
+     * according to `SearchVehiclesRequest.order_by` field.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -76,16 +52,8 @@ class SearchVehiclesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * List of vehicles that match the request options.
-     * Ordered by ascending vehicle_pickup_eta, with ties broken by ascending
-     * trip_type enum value, followed by matches that don't have
-     * vehicle_pickup_eta set.
-     * Example response: (Logically represented, not actual response fields):
-     * * (VehicleId: Vehicle1, ETA: 10 AM, TripType: SHARED),
-     * * (VehicleId: Vehicle2, ETA: 10 AM, TripType: EXCLUSIVE),
-     * * (VehicleId: Vehicle3, ETA: 11 AM, TripType: EXCLUSIVE),
-     * * (VehicleId: Vehicle4, ETA: Not set, TripType: SHARED),
-     * * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
+     * List of vehicles that match the `SearchVehiclesRequest` criteria, ordered
+     * according to `SearchVehiclesRequest.order_by` field.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleMatch matches = 1;</code>
      * @param \Maps\Fleetengine\V1\VehicleMatch[]|\Google\Protobuf\Internal\RepeatedField $var

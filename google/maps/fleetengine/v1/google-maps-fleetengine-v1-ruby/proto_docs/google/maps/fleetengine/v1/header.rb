@@ -23,25 +23,82 @@ module Maps
       # A RequestHeader contains fields common to all Fleet Engine RPC requests.
       # @!attribute [rw] language_code
       #   @return [::String]
-      #     The language requested. The external form of Google International
-      #     Identifiers Initiative (III) LanguageCode objects. If none is specified,
-      #     return a name in any language, with a preference for English if such a
-      #     name exists.
+      #     The BCP-47 language code, such as en-US or sr-Latn. For more information,
+      #     see http://www.unicode.org/reports/tr35/#Unicode_locale_identifier. If none
+      #     is specified, the response may be in any language, with a preference for
+      #     English if such a name exists. Field value example: `en-US`.
       # @!attribute [rw] region_code
       #   @return [::String]
       #     Required. CLDR region code of the region where the request originates.
+      #     Field value example: `US`.
       # @!attribute [rw] sdk_version
       #   @return [::String]
       #     Version of the calling SDK, if applicable.
+      #     The version format is "major.minor.patch", example: `1.1.2`.
       # @!attribute [rw] os_version
       #   @return [::String]
       #     Version of the operating system on which the calling SDK is running.
+      #     Field value examples: `4.4.1`, `12.1`.
       # @!attribute [rw] device_model
       #   @return [::String]
       #     Model of the device on which the calling SDK is running.
+      #     Field value examples: `iPhone12,1`, `SM-G920F`.
+      # @!attribute [rw] sdk_type
+      #   @return [::Maps::Fleetengine::V1::RequestHeader::SdkType]
+      #     The type of SDK sending the request.
+      # @!attribute [rw] maps_sdk_version
+      #   @return [::String]
+      #     Version of the MapSDK which the calling SDK depends on, if applicable.
+      #     The version format is "major.minor.patch", example: `5.2.1`.
+      # @!attribute [rw] nav_sdk_version
+      #   @return [::String]
+      #     Version of the NavSDK which the calling SDK depends on, if applicable.
+      #     The version format is "major.minor.patch", example: `2.1.0`.
+      # @!attribute [rw] platform
+      #   @return [::Maps::Fleetengine::V1::RequestHeader::Platform]
+      #     Platform of the calling SDK.
+      # @!attribute [rw] manufacturer
+      #   @return [::String]
+      #     Manufacturer of the Android device from the calling SDK, only applicable
+      #     for the Android SDKs.
+      #     Field value example: `Samsung`.
+      # @!attribute [rw] android_api_level
+      #   @return [::Integer]
+      #     Android API level of the calling SDK, only applicable for the Android SDKs.
+      #     Field value example: `23`.
       class RequestHeader
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
+
+        # Possible types of SDK.
+        module SdkType
+          # The default value. This value is used if the `sdk_type` is omitted.
+          SDK_TYPE_UNSPECIFIED = 0
+
+          # The calling SDK is Consumer.
+          CONSUMER = 1
+
+          # The calling SDK is Driver.
+          DRIVER = 2
+
+          # The calling SDK is JavaScript.
+          JAVASCRIPT = 3
+        end
+
+        # The platform of the calling SDK.
+        module Platform
+          # The default value. This value is used if the platform is omitted.
+          PLATFORM_UNSPECIFIED = 0
+
+          # The request is coming from Android.
+          ANDROID = 1
+
+          # The request is coming from iOS.
+          IOS = 2
+
+          # The request is coming from the web.
+          WEB = 3
+        end
       end
     end
   end

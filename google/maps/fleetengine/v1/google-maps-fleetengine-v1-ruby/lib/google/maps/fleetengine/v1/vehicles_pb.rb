@@ -17,12 +17,12 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :current_trips, :string, 4
       optional :last_location, :message, 5, "maps.fleetengine.v1.VehicleLocation"
       optional :maximum_capacity, :int32, 6
-      optional :available_capacity, :int32, 7
       repeated :attributes, :message, 8, "maps.fleetengine.v1.VehicleAttribute"
       optional :vehicle_type, :message, 9, "maps.fleetengine.v1.Vehicle.VehicleType"
       optional :license_plate, :message, 10, "maps.fleetengine.v1.LicensePlate"
       repeated :route, :message, 12, "maps.fleetengine.v1.TerminalLocation"
       optional :current_route_segment, :string, 20
+      optional :current_route_segment_traffic, :message, 28, "maps.fleetengine.v1.TrafficPolylineData"
       optional :current_route_segment_version, :message, 15, "google.protobuf.Timestamp"
       optional :current_route_segment_end_point, :message, 24, "maps.fleetengine.v1.TripWaypoint"
       optional :remaining_distance_meters, :message, 18, "google.protobuf.Int32Value"
@@ -58,6 +58,22 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     add_message "maps.fleetengine.v1.LicensePlate" do
       optional :country_code, :string, 1
       optional :last_character, :string, 2
+    end
+    add_message "maps.fleetengine.v1.VisualTrafficReportPolylineRendering" do
+      repeated :road_stretch, :message, 1, "maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch"
+    end
+    add_message "maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch" do
+      optional :style, :enum, 1, "maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch.Style"
+      optional :offset_meters, :int32, 2
+      optional :length_meters, :int32, 3
+    end
+    add_enum "maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch.Style" do
+      value :STYLE_UNSPECIFIED, 0
+      value :SLOWER_TRAFFIC, 1
+      value :TRAFFIC_JAM, 2
+    end
+    add_message "maps.fleetengine.v1.TrafficPolylineData" do
+      optional :traffic_rendering, :message, 1, "maps.fleetengine.v1.VisualTrafficReportPolylineRendering"
     end
     add_enum "maps.fleetengine.v1.VehicleState" do
       value :UNKNOWN_VEHICLE_STATE, 0
@@ -99,6 +115,10 @@ module Maps
       BatteryInfo = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.BatteryInfo").msgclass
       DeviceSettings = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.DeviceSettings").msgclass
       LicensePlate = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.LicensePlate").msgclass
+      VisualTrafficReportPolylineRendering = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.VisualTrafficReportPolylineRendering").msgclass
+      VisualTrafficReportPolylineRendering::RoadStretch = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch").msgclass
+      VisualTrafficReportPolylineRendering::RoadStretch::Style = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.VisualTrafficReportPolylineRendering.RoadStretch.Style").enummodule
+      TrafficPolylineData = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.TrafficPolylineData").msgclass
       VehicleState = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.VehicleState").enummodule
       LocationPowerSaveMode = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.LocationPowerSaveMode").enummodule
       BatteryStatus = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.BatteryStatus").enummodule

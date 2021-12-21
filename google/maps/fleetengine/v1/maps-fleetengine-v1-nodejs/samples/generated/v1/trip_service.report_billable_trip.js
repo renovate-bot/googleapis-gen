@@ -22,9 +22,9 @@ function main(name, countryCode) {
    */
   /**
    *  Required. Must be in the format
-   *  "providers/{provider}/billableTrips/{billable_trip}". The
-   *  provider must be the Project ID (for example, sample-cloud-project) of the
-   *  Google Cloud Project of which the service account making this call is a
+   *  `providers/{provider}/billableTrips/{billable_trip}`. The
+   *  provider must be the Project ID (for example, `sample-cloud-project`) of
+   *  the Google Cloud Project of which the service account making this call is a
    *  member.
    */
   // const name = 'abc123'
@@ -40,13 +40,13 @@ function main(name, countryCode) {
   /**
    *  The identifiers that are directly related to the trip being reported. These
    *  are usually IDs (for example, session IDs) of pre-booking operations done
-   *  before the trip ID is available. The number of related_ids is
+   *  before the trip ID is available. The number of `related_ids` is
    *  limited to 50.
    */
   // const relatedIds = 'abc123'
   /**
    *  The type of GMP product solution (for example,
-   *  ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+   *  `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
    */
   // const solutionType = {}
 

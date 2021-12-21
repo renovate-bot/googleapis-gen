@@ -16,9 +16,9 @@ use Google\Protobuf\Internal\GPBUtil;
 class Trip extends \Google\Protobuf\Internal\Message
 {
     /**
-     * In the format "providers/{provider}/trips/{trip}"
+     * Output only. In the format "providers/{provider}/trips/{trip}"
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $name = '';
     /**
@@ -63,10 +63,10 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     protected $actual_pickup_arrival_point = null;
     /**
-     * Either the estimated future time when the rider(s) will be picked up, or
+     * Output only. Either the estimated future time when the rider(s) will be picked up, or
      * the actual time when they were picked up.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp pickup_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp pickup_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $pickup_time = null;
     /**
@@ -131,10 +131,10 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     protected $actual_dropoff_point = null;
     /**
-     * Either the estimated future time when the rider(s) will be dropped off at
+     * Output only. Either the estimated future time when the rider(s) will be dropped off at
      * the final destination, or the actual time when they were dropped off.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp dropoff_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp dropoff_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $dropoff_time = null;
     /**
@@ -157,26 +157,59 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     private $vehicle_waypoints;
     /**
-     * Anticipated route for this trip to the first entry in remaining_waypoints.
-     * If back_to_back or shared trips are enabled, the waypoint may belong to a
+     * Output only. Anticipated route for this trip to the first entry in remaining_waypoints.
+     * If back_to_back or shared trips are enabled, the waypoints may belong to a
      * different trip.
      *
-     * Generated from protobuf field <code>repeated .google.type.LatLng route = 9;</code>
+     * Generated from protobuf field <code>repeated .google.type.LatLng route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private $route;
     /**
-     * The waypoint where current_route_segment ends. This can be supplied by
+     * Output only. An encoded path to the next waypoint. This field facilitates journey
+     * sharing between a Driver app and a Rider app. Your driver app is
+     * responsible for setting this field on all of its current trips by passing
+     * Vehicle.current_route_segment to UpdateVehicle. Note: This field is
+     * intended only for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>string current_route_segment = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $current_route_segment = '';
+    /**
+     * Output only. Indicates the last time the route was modified.  Note: This field is
+     * intended only for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $current_route_segment_version = null;
+    /**
+     * Output only. When available, the traffic conditions along the
+     * current_route_segment. Note: This field is intended only
+     * for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.ConsumableTrafficPolyline current_route_segment_traffic = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $current_route_segment_traffic = null;
+    /**
+     * Output only. Indicates the last time the current_route_segment_traffic was modified.
+     * Note: This field is intended only for use by the Driver SDK and Consumer
+     * SDK.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_traffic_version = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     */
+    protected $current_route_segment_traffic_version = null;
+    /**
+     * Output only. The waypoint where current_route_segment ends. This can be supplied by
      * drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     * latlng, or as a the last latlng of the current_route_segment. FleetEngine
+     * latlng, or as a the last latlng of the current_route_segment. Fleet Engine
      * will then do its best to interpolate to an actual waypoint if it is not
      * fully specified. It will be returned in GetTrip calls. It is not respected
      * in Create/Update Trip calls.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $current_route_segment_end_point = null;
     /**
-     * The remaining driving distance in Trip.current_route_segment field.
+     * Output only. The remaining driving distance in Trip.current_route_segment field.
      * This field facilitates journey sharing between a driver and rider and
      * Fleet Engine does not update it. Your driver app is responsible for setting
      * field on all of its current trips by passing
@@ -185,7 +218,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      * trip is inactive (completed or cancelled), or driver hasn't updated this
      * value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $remaining_distance_meters = null;
     /**
@@ -210,42 +243,42 @@ class Trip extends \Google\Protobuf\Internal\Message
      */
     protected $remaining_time_to_first_waypoint = null;
     /**
-     * Indicates the last time that `remaining_waypoints` was changed (a
+     * Output only. Indicates the last time that `remaining_waypoints` was changed (a
      * waypoint was added, removed, or changed).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $remaining_waypoints_version = null;
     /**
-     * Indicates the last time the remaining_waypoints.path_to_waypoint and
-     * remaining_waypoints.traffic_to_waypoint were modified. Your client app
-     * should cache this value and pass it in GetTripRequest to ensure the
-     * paths and traffic for remaining_waypoints are only returned if updated.
+     * Output only. Indicates the last time the `remaining_waypoints.path_to_waypoint` and
+     * `remaining_waypoints.traffic_to_waypoint` were modified. Your client app
+     * should cache this value and pass it in `GetTripRequest` to ensure the
+     * paths and traffic for `remaining_waypoints` are only returned if updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $remaining_waypoints_route_version = null;
     /**
-     * Indicates the number of passengers on this trip and does not include the
-     * driver. A vehicle must have available_capacity to be returned
-     * in SearchTrips.
+     * Immutable. Indicates the number of passengers on this trip and does not include the
+     * driver. A vehicle must have available capacity to be returned
+     * in SearchVehicles.
      *
-     * Generated from protobuf field <code>int32 number_of_passengers = 10;</code>
+     * Generated from protobuf field <code>int32 number_of_passengers = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      */
     protected $number_of_passengers = 0;
     /**
-     * Indicates the last reported location of the vehicle along the route.
+     * Output only. Indicates the last reported location of the vehicle along the route.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation last_location = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $last_location = null;
     /**
-     * Indicates whether the vehicle's last_location can be snapped to
+     * Output only. Indicates whether the vehicle's last_location can be snapped to
      * the current_route_segment. False if last_location or current_route_segment
      * doesn't exist.
      * It is computed by Fleet Engine. Any update from clients will be ignored.
      *
-     * Generated from protobuf field <code>bool last_location_snappable = 26;</code>
+     * Generated from protobuf field <code>bool last_location_snappable = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     protected $last_location_snappable = false;
     /**
@@ -263,7 +296,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $name
-     *           In the format "providers/{provider}/trips/{trip}"
+     *           Output only. In the format "providers/{provider}/trips/{trip}"
      *     @type string $vehicle_id
      *           ID of the vehicle making this trip.
      *     @type int $trip_status
@@ -282,7 +315,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      *           This field is for provider to provide feedback on actual arrival
      *           information at the pickup point.
      *     @type \Google\Protobuf\Timestamp $pickup_time
-     *           Either the estimated future time when the rider(s) will be picked up, or
+     *           Output only. Either the estimated future time when the rider(s) will be picked up, or
      *           the actual time when they were picked up.
      *     @type \Maps\Fleetengine\V1\TerminalLocation[]|\Google\Protobuf\Internal\RepeatedField $intermediate_destinations
      *           Intermediate stops in order that the trip requests (in addition
@@ -318,7 +351,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      *           This field is for provider to provide feedback on actual dropoff
      *           information.
      *     @type \Google\Protobuf\Timestamp $dropoff_time
-     *           Either the estimated future time when the rider(s) will be dropped off at
+     *           Output only. Either the estimated future time when the rider(s) will be dropped off at
      *           the final destination, or the actual time when they were dropped off.
      *     @type \Maps\Fleetengine\V1\TripWaypoint[]|\Google\Protobuf\Internal\RepeatedField $remaining_waypoints
      *           Output only. The full path from the current location to the dropoff point, inclusive.
@@ -332,18 +365,35 @@ class Trip extends \Google\Protobuf\Internal\Message
      *           For privacy reasons, this field is only populated by the server on
      *           UpdateTrip and CreateTrip calls, and NOT on GetTrip calls.
      *     @type \Google\Type\LatLng[]|\Google\Protobuf\Internal\RepeatedField $route
-     *           Anticipated route for this trip to the first entry in remaining_waypoints.
-     *           If back_to_back or shared trips are enabled, the waypoint may belong to a
+     *           Output only. Anticipated route for this trip to the first entry in remaining_waypoints.
+     *           If back_to_back or shared trips are enabled, the waypoints may belong to a
      *           different trip.
+     *     @type string $current_route_segment
+     *           Output only. An encoded path to the next waypoint. This field facilitates journey
+     *           sharing between a Driver app and a Rider app. Your driver app is
+     *           responsible for setting this field on all of its current trips by passing
+     *           Vehicle.current_route_segment to UpdateVehicle. Note: This field is
+     *           intended only for use by the Driver SDK and Consumer SDK.
+     *     @type \Google\Protobuf\Timestamp $current_route_segment_version
+     *           Output only. Indicates the last time the route was modified.  Note: This field is
+     *           intended only for use by the Driver SDK and Consumer SDK.
+     *     @type \Maps\Fleetengine\V1\ConsumableTrafficPolyline $current_route_segment_traffic
+     *           Output only. When available, the traffic conditions along the
+     *           current_route_segment. Note: This field is intended only
+     *           for use by the Driver SDK and Consumer SDK.
+     *     @type \Google\Protobuf\Timestamp $current_route_segment_traffic_version
+     *           Output only. Indicates the last time the current_route_segment_traffic was modified.
+     *           Note: This field is intended only for use by the Driver SDK and Consumer
+     *           SDK.
      *     @type \Maps\Fleetengine\V1\TripWaypoint $current_route_segment_end_point
-     *           The waypoint where current_route_segment ends. This can be supplied by
+     *           Output only. The waypoint where current_route_segment ends. This can be supplied by
      *           drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     *           latlng, or as a the last latlng of the current_route_segment. FleetEngine
+     *           latlng, or as a the last latlng of the current_route_segment. Fleet Engine
      *           will then do its best to interpolate to an actual waypoint if it is not
      *           fully specified. It will be returned in GetTrip calls. It is not respected
      *           in Create/Update Trip calls.
      *     @type \Google\Protobuf\Int32Value $remaining_distance_meters
-     *           The remaining driving distance in Trip.current_route_segment field.
+     *           Output only. The remaining driving distance in Trip.current_route_segment field.
      *           This field facilitates journey sharing between a driver and rider and
      *           Fleet Engine does not update it. Your driver app is responsible for setting
      *           field on all of its current trips by passing
@@ -365,21 +415,21 @@ class Trip extends \Google\Protobuf\Internal\Message
      *           Output only. The duration from when the Trip data is returned to the time in
      *           Trip.eta_to_first_waypoint.
      *     @type \Google\Protobuf\Timestamp $remaining_waypoints_version
-     *           Indicates the last time that `remaining_waypoints` was changed (a
+     *           Output only. Indicates the last time that `remaining_waypoints` was changed (a
      *           waypoint was added, removed, or changed).
      *     @type \Google\Protobuf\Timestamp $remaining_waypoints_route_version
-     *           Indicates the last time the remaining_waypoints.path_to_waypoint and
-     *           remaining_waypoints.traffic_to_waypoint were modified. Your client app
-     *           should cache this value and pass it in GetTripRequest to ensure the
-     *           paths and traffic for remaining_waypoints are only returned if updated.
+     *           Output only. Indicates the last time the `remaining_waypoints.path_to_waypoint` and
+     *           `remaining_waypoints.traffic_to_waypoint` were modified. Your client app
+     *           should cache this value and pass it in `GetTripRequest` to ensure the
+     *           paths and traffic for `remaining_waypoints` are only returned if updated.
      *     @type int $number_of_passengers
-     *           Indicates the number of passengers on this trip and does not include the
-     *           driver. A vehicle must have available_capacity to be returned
-     *           in SearchTrips.
+     *           Immutable. Indicates the number of passengers on this trip and does not include the
+     *           driver. A vehicle must have available capacity to be returned
+     *           in SearchVehicles.
      *     @type \Maps\Fleetengine\V1\VehicleLocation $last_location
-     *           Indicates the last reported location of the vehicle along the route.
+     *           Output only. Indicates the last reported location of the vehicle along the route.
      *     @type bool $last_location_snappable
-     *           Indicates whether the vehicle's last_location can be snapped to
+     *           Output only. Indicates whether the vehicle's last_location can be snapped to
      *           the current_route_segment. False if last_location or current_route_segment
      *           doesn't exist.
      *           It is computed by Fleet Engine. Any update from clients will be ignored.
@@ -394,9 +444,9 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * In the format "providers/{provider}/trips/{trip}"
+     * Output only. In the format "providers/{provider}/trips/{trip}"
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return string
      */
     public function getName()
@@ -405,9 +455,9 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * In the format "providers/{provider}/trips/{trip}"
+     * Output only. In the format "providers/{provider}/trips/{trip}"
      *
-     * Generated from protobuf field <code>string name = 1;</code>
+     * Generated from protobuf field <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param string $var
      * @return $this
      */
@@ -616,10 +666,10 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Either the estimated future time when the rider(s) will be picked up, or
+     * Output only. Either the estimated future time when the rider(s) will be picked up, or
      * the actual time when they were picked up.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp pickup_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp pickup_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getPickupTime()
@@ -638,10 +688,10 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Either the estimated future time when the rider(s) will be picked up, or
+     * Output only. Either the estimated future time when the rider(s) will be picked up, or
      * the actual time when they were picked up.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp pickup_time = 6;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp pickup_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -904,10 +954,10 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Either the estimated future time when the rider(s) will be dropped off at
+     * Output only. Either the estimated future time when the rider(s) will be dropped off at
      * the final destination, or the actual time when they were dropped off.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp dropoff_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp dropoff_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getDropoffTime()
@@ -926,10 +976,10 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Either the estimated future time when the rider(s) will be dropped off at
+     * Output only. Either the estimated future time when the rider(s) will be dropped off at
      * the final destination, or the actual time when they were dropped off.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp dropoff_time = 8;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp dropoff_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -1008,11 +1058,11 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Anticipated route for this trip to the first entry in remaining_waypoints.
-     * If back_to_back or shared trips are enabled, the waypoint may belong to a
+     * Output only. Anticipated route for this trip to the first entry in remaining_waypoints.
+     * If back_to_back or shared trips are enabled, the waypoints may belong to a
      * different trip.
      *
-     * Generated from protobuf field <code>repeated .google.type.LatLng route = 9;</code>
+     * Generated from protobuf field <code>repeated .google.type.LatLng route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getRoute()
@@ -1021,11 +1071,11 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Anticipated route for this trip to the first entry in remaining_waypoints.
-     * If back_to_back or shared trips are enabled, the waypoint may belong to a
+     * Output only. Anticipated route for this trip to the first entry in remaining_waypoints.
+     * If back_to_back or shared trips are enabled, the waypoints may belong to a
      * different trip.
      *
-     * Generated from protobuf field <code>repeated .google.type.LatLng route = 9;</code>
+     * Generated from protobuf field <code>repeated .google.type.LatLng route = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Type\LatLng[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */
@@ -1038,14 +1088,166 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The waypoint where current_route_segment ends. This can be supplied by
+     * Output only. An encoded path to the next waypoint. This field facilitates journey
+     * sharing between a Driver app and a Rider app. Your driver app is
+     * responsible for setting this field on all of its current trips by passing
+     * Vehicle.current_route_segment to UpdateVehicle. Note: This field is
+     * intended only for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>string current_route_segment = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return string
+     */
+    public function getCurrentRouteSegment()
+    {
+        return $this->current_route_segment;
+    }
+
+    /**
+     * Output only. An encoded path to the next waypoint. This field facilitates journey
+     * sharing between a Driver app and a Rider app. Your driver app is
+     * responsible for setting this field on all of its current trips by passing
+     * Vehicle.current_route_segment to UpdateVehicle. Note: This field is
+     * intended only for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>string current_route_segment = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCurrentRouteSegment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->current_route_segment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Indicates the last time the route was modified.  Note: This field is
+     * intended only for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCurrentRouteSegmentVersion()
+    {
+        return $this->current_route_segment_version;
+    }
+
+    public function hasCurrentRouteSegmentVersion()
+    {
+        return isset($this->current_route_segment_version);
+    }
+
+    public function clearCurrentRouteSegmentVersion()
+    {
+        unset($this->current_route_segment_version);
+    }
+
+    /**
+     * Output only. Indicates the last time the route was modified.  Note: This field is
+     * intended only for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_version = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCurrentRouteSegmentVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->current_route_segment_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. When available, the traffic conditions along the
+     * current_route_segment. Note: This field is intended only
+     * for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.ConsumableTrafficPolyline current_route_segment_traffic = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Maps\Fleetengine\V1\ConsumableTrafficPolyline|null
+     */
+    public function getCurrentRouteSegmentTraffic()
+    {
+        return $this->current_route_segment_traffic;
+    }
+
+    public function hasCurrentRouteSegmentTraffic()
+    {
+        return isset($this->current_route_segment_traffic);
+    }
+
+    public function clearCurrentRouteSegmentTraffic()
+    {
+        unset($this->current_route_segment_traffic);
+    }
+
+    /**
+     * Output only. When available, the traffic conditions along the
+     * current_route_segment. Note: This field is intended only
+     * for use by the Driver SDK and Consumer SDK.
+     *
+     * Generated from protobuf field <code>.maps.fleetengine.v1.ConsumableTrafficPolyline current_route_segment_traffic = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Maps\Fleetengine\V1\ConsumableTrafficPolyline $var
+     * @return $this
+     */
+    public function setCurrentRouteSegmentTraffic($var)
+    {
+        GPBUtil::checkMessage($var, \Maps\Fleetengine\V1\ConsumableTrafficPolyline::class);
+        $this->current_route_segment_traffic = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. Indicates the last time the current_route_segment_traffic was modified.
+     * Note: This field is intended only for use by the Driver SDK and Consumer
+     * SDK.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_traffic_version = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getCurrentRouteSegmentTrafficVersion()
+    {
+        return $this->current_route_segment_traffic_version;
+    }
+
+    public function hasCurrentRouteSegmentTrafficVersion()
+    {
+        return isset($this->current_route_segment_traffic_version);
+    }
+
+    public function clearCurrentRouteSegmentTrafficVersion()
+    {
+        unset($this->current_route_segment_traffic_version);
+    }
+
+    /**
+     * Output only. Indicates the last time the current_route_segment_traffic was modified.
+     * Note: This field is intended only for use by the Driver SDK and Consumer
+     * SDK.
+     *
+     * Generated from protobuf field <code>.google.protobuf.Timestamp current_route_segment_traffic_version = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setCurrentRouteSegmentTrafficVersion($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->current_route_segment_traffic_version = $var;
+
+        return $this;
+    }
+
+    /**
+     * Output only. The waypoint where current_route_segment ends. This can be supplied by
      * drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     * latlng, or as a the last latlng of the current_route_segment. FleetEngine
+     * latlng, or as a the last latlng of the current_route_segment. Fleet Engine
      * will then do its best to interpolate to an actual waypoint if it is not
      * fully specified. It will be returned in GetTrip calls. It is not respected
      * in Create/Update Trip calls.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Maps\Fleetengine\V1\TripWaypoint|null
      */
     public function getCurrentRouteSegmentEndPoint()
@@ -1064,14 +1266,14 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The waypoint where current_route_segment ends. This can be supplied by
+     * Output only. The waypoint where current_route_segment ends. This can be supplied by
      * drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-     * latlng, or as a the last latlng of the current_route_segment. FleetEngine
+     * latlng, or as a the last latlng of the current_route_segment. Fleet Engine
      * will then do its best to interpolate to an actual waypoint if it is not
      * fully specified. It will be returned in GetTrip calls. It is not respected
      * in Create/Update Trip calls.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.TripWaypoint current_route_segment_end_point = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Maps\Fleetengine\V1\TripWaypoint $var
      * @return $this
      */
@@ -1084,7 +1286,7 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining driving distance in Trip.current_route_segment field.
+     * Output only. The remaining driving distance in Trip.current_route_segment field.
      * This field facilitates journey sharing between a driver and rider and
      * Fleet Engine does not update it. Your driver app is responsible for setting
      * field on all of its current trips by passing
@@ -1093,7 +1295,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      * trip is inactive (completed or cancelled), or driver hasn't updated this
      * value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Int32Value|null
      */
     public function getRemainingDistanceMeters()
@@ -1114,7 +1316,7 @@ class Trip extends \Google\Protobuf\Internal\Message
     /**
      * Returns the unboxed value from <code>getRemainingDistanceMeters()</code>
 
-     * The remaining driving distance in Trip.current_route_segment field.
+     * Output only. The remaining driving distance in Trip.current_route_segment field.
      * This field facilitates journey sharing between a driver and rider and
      * Fleet Engine does not update it. Your driver app is responsible for setting
      * field on all of its current trips by passing
@@ -1123,7 +1325,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      * trip is inactive (completed or cancelled), or driver hasn't updated this
      * value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return int|null
      */
     public function getRemainingDistanceMetersUnwrapped()
@@ -1132,7 +1334,7 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * The remaining driving distance in Trip.current_route_segment field.
+     * Output only. The remaining driving distance in Trip.current_route_segment field.
      * This field facilitates journey sharing between a driver and rider and
      * Fleet Engine does not update it. Your driver app is responsible for setting
      * field on all of its current trips by passing
@@ -1141,7 +1343,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      * trip is inactive (completed or cancelled), or driver hasn't updated this
      * value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Int32Value $var
      * @return $this
      */
@@ -1156,7 +1358,7 @@ class Trip extends \Google\Protobuf\Internal\Message
     /**
      * Sets the field by wrapping a primitive type in a Google\Protobuf\Int32Value object.
 
-     * The remaining driving distance in Trip.current_route_segment field.
+     * Output only. The remaining driving distance in Trip.current_route_segment field.
      * This field facilitates journey sharing between a driver and rider and
      * Fleet Engine does not update it. Your driver app is responsible for setting
      * field on all of its current trips by passing
@@ -1165,7 +1367,7 @@ class Trip extends \Google\Protobuf\Internal\Message
      * trip is inactive (completed or cancelled), or driver hasn't updated this
      * value.
      *
-     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12;</code>
+     * Generated from protobuf field <code>.google.protobuf.Int32Value remaining_distance_meters = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param int|null $var
      * @return $this
      */
@@ -1265,10 +1467,10 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the last time that `remaining_waypoints` was changed (a
+     * Output only. Indicates the last time that `remaining_waypoints` was changed (a
      * waypoint was added, removed, or changed).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getRemainingWaypointsVersion()
@@ -1287,10 +1489,10 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the last time that `remaining_waypoints` was changed (a
+     * Output only. Indicates the last time that `remaining_waypoints` was changed (a
      * waypoint was added, removed, or changed).
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 19;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_version = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -1303,12 +1505,12 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the last time the remaining_waypoints.path_to_waypoint and
-     * remaining_waypoints.traffic_to_waypoint were modified. Your client app
-     * should cache this value and pass it in GetTripRequest to ensure the
-     * paths and traffic for remaining_waypoints are only returned if updated.
+     * Output only. Indicates the last time the `remaining_waypoints.path_to_waypoint` and
+     * `remaining_waypoints.traffic_to_waypoint` were modified. Your client app
+     * should cache this value and pass it in `GetTripRequest` to ensure the
+     * paths and traffic for `remaining_waypoints` are only returned if updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Google\Protobuf\Timestamp|null
      */
     public function getRemainingWaypointsRouteVersion()
@@ -1327,12 +1529,12 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the last time the remaining_waypoints.path_to_waypoint and
-     * remaining_waypoints.traffic_to_waypoint were modified. Your client app
-     * should cache this value and pass it in GetTripRequest to ensure the
-     * paths and traffic for remaining_waypoints are only returned if updated.
+     * Output only. Indicates the last time the `remaining_waypoints.path_to_waypoint` and
+     * `remaining_waypoints.traffic_to_waypoint` were modified. Your client app
+     * should cache this value and pass it in `GetTripRequest` to ensure the
+     * paths and traffic for `remaining_waypoints` are only returned if updated.
      *
-     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29;</code>
+     * Generated from protobuf field <code>.google.protobuf.Timestamp remaining_waypoints_route_version = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Google\Protobuf\Timestamp $var
      * @return $this
      */
@@ -1345,11 +1547,11 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the number of passengers on this trip and does not include the
-     * driver. A vehicle must have available_capacity to be returned
-     * in SearchTrips.
+     * Immutable. Indicates the number of passengers on this trip and does not include the
+     * driver. A vehicle must have available capacity to be returned
+     * in SearchVehicles.
      *
-     * Generated from protobuf field <code>int32 number_of_passengers = 10;</code>
+     * Generated from protobuf field <code>int32 number_of_passengers = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @return int
      */
     public function getNumberOfPassengers()
@@ -1358,11 +1560,11 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the number of passengers on this trip and does not include the
-     * driver. A vehicle must have available_capacity to be returned
-     * in SearchTrips.
+     * Immutable. Indicates the number of passengers on this trip and does not include the
+     * driver. A vehicle must have available capacity to be returned
+     * in SearchVehicles.
      *
-     * Generated from protobuf field <code>int32 number_of_passengers = 10;</code>
+     * Generated from protobuf field <code>int32 number_of_passengers = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
      * @param int $var
      * @return $this
      */
@@ -1375,9 +1577,9 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the last reported location of the vehicle along the route.
+     * Output only. Indicates the last reported location of the vehicle along the route.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation last_location = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return \Maps\Fleetengine\V1\VehicleLocation|null
      */
     public function getLastLocation()
@@ -1396,9 +1598,9 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates the last reported location of the vehicle along the route.
+     * Output only. Indicates the last reported location of the vehicle along the route.
      *
-     * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation last_location = 11;</code>
+     * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation last_location = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param \Maps\Fleetengine\V1\VehicleLocation $var
      * @return $this
      */
@@ -1411,12 +1613,12 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether the vehicle's last_location can be snapped to
+     * Output only. Indicates whether the vehicle's last_location can be snapped to
      * the current_route_segment. False if last_location or current_route_segment
      * doesn't exist.
      * It is computed by Fleet Engine. Any update from clients will be ignored.
      *
-     * Generated from protobuf field <code>bool last_location_snappable = 26;</code>
+     * Generated from protobuf field <code>bool last_location_snappable = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @return bool
      */
     public function getLastLocationSnappable()
@@ -1425,12 +1627,12 @@ class Trip extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Indicates whether the vehicle's last_location can be snapped to
+     * Output only. Indicates whether the vehicle's last_location can be snapped to
      * the current_route_segment. False if last_location or current_route_segment
      * doesn't exist.
      * It is computed by Fleet Engine. Any update from clients will be ignored.
      *
-     * Generated from protobuf field <code>bool last_location_snappable = 26;</code>
+     * Generated from protobuf field <code>bool last_location_snappable = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      * @param bool $var
      * @return $this
      */

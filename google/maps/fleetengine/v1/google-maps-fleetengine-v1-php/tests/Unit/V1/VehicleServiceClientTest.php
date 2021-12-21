@@ -88,13 +88,11 @@ class VehicleServiceClientTest extends GeneratedTest
         // Mock response
         $name = 'name3373707';
         $maximumCapacity = 582710265;
-        $availableCapacity = 891433616;
         $currentRouteSegment = 'currentRouteSegment-289364233';
         $backToBackEnabled = false;
         $expectedResponse = new Vehicle();
         $expectedResponse->setName($name);
         $expectedResponse->setMaximumCapacity($maximumCapacity);
-        $expectedResponse->setAvailableCapacity($availableCapacity);
         $expectedResponse->setCurrentRouteSegment($currentRouteSegment);
         $expectedResponse->setBackToBackEnabled($backToBackEnabled);
         $transport->addResponse($expectedResponse);
@@ -168,13 +166,11 @@ class VehicleServiceClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $maximumCapacity = 582710265;
-        $availableCapacity = 891433616;
         $currentRouteSegment = 'currentRouteSegment-289364233';
         $backToBackEnabled = false;
         $expectedResponse = new Vehicle();
         $expectedResponse->setName($name2);
         $expectedResponse->setMaximumCapacity($maximumCapacity);
-        $expectedResponse->setAvailableCapacity($availableCapacity);
         $expectedResponse->setCurrentRouteSegment($currentRouteSegment);
         $expectedResponse->setBackToBackEnabled($backToBackEnabled);
         $transport->addResponse($expectedResponse);
@@ -514,13 +510,11 @@ class VehicleServiceClientTest extends GeneratedTest
         // Mock response
         $name2 = 'name2-1052831874';
         $maximumCapacity = 582710265;
-        $availableCapacity = 891433616;
         $currentRouteSegment = 'currentRouteSegment-289364233';
         $backToBackEnabled = false;
         $expectedResponse = new Vehicle();
         $expectedResponse->setName($name2);
         $expectedResponse->setMaximumCapacity($maximumCapacity);
-        $expectedResponse->setAvailableCapacity($availableCapacity);
         $expectedResponse->setCurrentRouteSegment($currentRouteSegment);
         $expectedResponse->setBackToBackEnabled($backToBackEnabled);
         $transport->addResponse($expectedResponse);

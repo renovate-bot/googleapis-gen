@@ -21,9 +21,9 @@ module Maps
   module Fleetengine
     module V1
       # Trip metadata.
-      # @!attribute [rw] name
+      # @!attribute [r] name
       #   @return [::String]
-      #     In the format "providers/\\{provider}/trips/\\{trip}"
+      #     Output only. In the format "providers/\\{provider}/trips/\\{trip}"
       # @!attribute [rw] vehicle_id
       #   @return [::String]
       #     ID of the vehicle making this trip.
@@ -47,9 +47,9 @@ module Maps
       #     the pickup point.
       #     This field is for provider to provide feedback on actual arrival
       #     information at the pickup point.
-      # @!attribute [rw] pickup_time
+      # @!attribute [r] pickup_time
       #   @return [::Google::Protobuf::Timestamp]
-      #     Either the estimated future time when the rider(s) will be picked up, or
+      #     Output only. Either the estimated future time when the rider(s) will be picked up, or
       #     the actual time when they were picked up.
       # @!attribute [rw] intermediate_destinations
       #   @return [::Array<::Maps::Fleetengine::V1::TerminalLocation>]
@@ -91,9 +91,9 @@ module Maps
       #     Input only. The actual time and location when and where customer was dropped off.
       #     This field is for provider to provide feedback on actual dropoff
       #     information.
-      # @!attribute [rw] dropoff_time
+      # @!attribute [r] dropoff_time
       #   @return [::Google::Protobuf::Timestamp]
-      #     Either the estimated future time when the rider(s) will be dropped off at
+      #     Output only. Either the estimated future time when the rider(s) will be dropped off at
       #     the final destination, or the actual time when they were dropped off.
       # @!attribute [r] remaining_waypoints
       #   @return [::Array<::Maps::Fleetengine::V1::TripWaypoint>]
@@ -108,22 +108,43 @@ module Maps
       #     If the trip hasn't been assigned to a vehicle, then this field is ignored.
       #     For privacy reasons, this field is only populated by the server on
       #     UpdateTrip and CreateTrip calls, and NOT on GetTrip calls.
-      # @!attribute [rw] route
+      # @!attribute [r] route
       #   @return [::Array<::Google::Type::LatLng>]
-      #     Anticipated route for this trip to the first entry in remaining_waypoints.
-      #     If back_to_back or shared trips are enabled, the waypoint may belong to a
+      #     Output only. Anticipated route for this trip to the first entry in remaining_waypoints.
+      #     If back_to_back or shared trips are enabled, the waypoints may belong to a
       #     different trip.
-      # @!attribute [rw] current_route_segment_end_point
+      # @!attribute [r] current_route_segment
+      #   @return [::String]
+      #     Output only. An encoded path to the next waypoint. This field facilitates journey
+      #     sharing between a Driver app and a Rider app. Your driver app is
+      #     responsible for setting this field on all of its current trips by passing
+      #     Vehicle.current_route_segment to UpdateVehicle. Note: This field is
+      #     intended only for use by the Driver SDK and Consumer SDK.
+      # @!attribute [r] current_route_segment_version
+      #   @return [::Google::Protobuf::Timestamp]
+      #     Output only. Indicates the last time the route was modified.  Note: This field is
+      #     intended only for use by the Driver SDK and Consumer SDK.
+      # @!attribute [r] current_route_segment_traffic
+      #   @return [::Maps::Fleetengine::V1::ConsumableTrafficPolyline]
+      #     Output only. When available, the traffic conditions along the
+      #     current_route_segment. Note: This field is intended only
+      #     for use by the Driver SDK and Consumer SDK.
+      # @!attribute [r] current_route_segment_traffic_version
+      #   @return [::Google::Protobuf::Timestamp]
+      #     Output only. Indicates the last time the current_route_segment_traffic was modified.
+      #     Note: This field is intended only for use by the Driver SDK and Consumer
+      #     SDK.
+      # @!attribute [r] current_route_segment_end_point
       #   @return [::Maps::Fleetengine::V1::TripWaypoint]
-      #     The waypoint where current_route_segment ends. This can be supplied by
+      #     Output only. The waypoint where current_route_segment ends. This can be supplied by
       #     drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-      #     latlng, or as a the last latlng of the current_route_segment. FleetEngine
+      #     latlng, or as a the last latlng of the current_route_segment. Fleet Engine
       #     will then do its best to interpolate to an actual waypoint if it is not
       #     fully specified. It will be returned in GetTrip calls. It is not respected
       #     in Create/Update Trip calls.
-      # @!attribute [rw] remaining_distance_meters
+      # @!attribute [r] remaining_distance_meters
       #   @return [::Google::Protobuf::Int32Value]
-      #     The remaining driving distance in Trip.current_route_segment field.
+      #     Output only. The remaining driving distance in Trip.current_route_segment field.
       #     This field facilitates journey sharing between a driver and rider and
       #     Fleet Engine does not update it. Your driver app is responsible for setting
       #     field on all of its current trips by passing
@@ -146,27 +167,27 @@ module Maps
       #   @return [::Google::Protobuf::Duration]
       #     Output only. The duration from when the Trip data is returned to the time in
       #     Trip.eta_to_first_waypoint.
-      # @!attribute [rw] remaining_waypoints_version
+      # @!attribute [r] remaining_waypoints_version
       #   @return [::Google::Protobuf::Timestamp]
-      #     Indicates the last time that `remaining_waypoints` was changed (a
+      #     Output only. Indicates the last time that `remaining_waypoints` was changed (a
       #     waypoint was added, removed, or changed).
-      # @!attribute [rw] remaining_waypoints_route_version
+      # @!attribute [r] remaining_waypoints_route_version
       #   @return [::Google::Protobuf::Timestamp]
-      #     Indicates the last time the remaining_waypoints.path_to_waypoint and
-      #     remaining_waypoints.traffic_to_waypoint were modified. Your client app
-      #     should cache this value and pass it in GetTripRequest to ensure the
-      #     paths and traffic for remaining_waypoints are only returned if updated.
+      #     Output only. Indicates the last time the `remaining_waypoints.path_to_waypoint` and
+      #     `remaining_waypoints.traffic_to_waypoint` were modified. Your client app
+      #     should cache this value and pass it in `GetTripRequest` to ensure the
+      #     paths and traffic for `remaining_waypoints` are only returned if updated.
       # @!attribute [rw] number_of_passengers
       #   @return [::Integer]
-      #     Indicates the number of passengers on this trip and does not include the
-      #     driver. A vehicle must have available_capacity to be returned
-      #     in SearchTrips.
-      # @!attribute [rw] last_location
+      #     Immutable. Indicates the number of passengers on this trip and does not include the
+      #     driver. A vehicle must have available capacity to be returned
+      #     in SearchVehicles.
+      # @!attribute [r] last_location
       #   @return [::Maps::Fleetengine::V1::VehicleLocation]
-      #     Indicates the last reported location of the vehicle along the route.
-      # @!attribute [rw] last_location_snappable
+      #     Output only. Indicates the last reported location of the vehicle along the route.
+      # @!attribute [r] last_location_snappable
       #   @return [::Boolean]
-      #     Indicates whether the vehicle's last_location can be snapped to
+      #     Output only. Indicates whether the vehicle's last_location can be snapped to
       #     the current_route_segment. False if last_location or current_route_segment
       #     doesn't exist.
       #     It is computed by Fleet Engine. Any update from clients will be ignored.
@@ -185,10 +206,10 @@ module Maps
       #     Required. Denotes the actual location.
       # @!attribute [rw] timestamp
       #   @return [::Google::Protobuf::Timestamp]
-      #     The timestamp when the location was measured.
+      #     Indicates when the stop happened.
       # @!attribute [rw] stop_time
       #   @return [::Google::Protobuf::Timestamp]
-      #     Indicates when the stop actually happened.
+      #     Input only. Deprecated.  Use the timestamp field.
       class StopLocation
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods

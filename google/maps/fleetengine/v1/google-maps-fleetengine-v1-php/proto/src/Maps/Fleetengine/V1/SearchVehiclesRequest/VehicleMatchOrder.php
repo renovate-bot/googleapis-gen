@@ -7,7 +7,7 @@ namespace Maps\Fleetengine\V1\SearchVehiclesRequest;
 use UnexpectedValueException;
 
 /**
- * Specifies the sort order of the vehicle matches in the response.
+ * Specifies the order of the vehicle matches in the response.
  *
  * Protobuf type <code>maps.fleetengine.v1.SearchVehiclesRequest.VehicleMatchOrder</code>
  */
@@ -26,28 +26,27 @@ class VehicleMatchOrder
      */
     const PICKUP_POINT_ETA = 1;
     /**
-     * Ascending order by the vehicle driving distance to the pickup point.
+     * Ascending order by vehicle driving distance to the pickup point.
      *
      * Generated from protobuf enum <code>PICKUP_POINT_DISTANCE = 2;</code>
      */
     const PICKUP_POINT_DISTANCE = 2;
     /**
      * Ascending order by vehicle driving time to the dropoff point. This order
-     * can only be used if the dropoff_point is specified in the request.
+     * can only be used if the dropoff point is specified in the request.
      *
      * Generated from protobuf enum <code>DROPOFF_POINT_ETA = 3;</code>
      */
     const DROPOFF_POINT_ETA = 3;
     /**
-     * Ascending order by straightline distance from vehicle location to pickup
-     * location. This is used primarily as a backup if the maps backend is not
-     * reachable.
+     * Ascending order by straight-line distance from the vehicle's last
+     * reported location to the pickup point.
      *
      * Generated from protobuf enum <code>PICKUP_POINT_STRAIGHT_DISTANCE = 4;</code>
      */
     const PICKUP_POINT_STRAIGHT_DISTANCE = 4;
     /**
-     * Ascending order by the match cost.
+     * Ascending order by the configured match cost.
      *
      * Generated from protobuf enum <code>COST = 5;</code>
      */

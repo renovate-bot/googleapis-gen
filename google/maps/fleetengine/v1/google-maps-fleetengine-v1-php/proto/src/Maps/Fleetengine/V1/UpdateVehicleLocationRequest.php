@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * UpdateVehicleLocation request message.
+ * `UpdateVehicleLocation` request message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.UpdateVehicleLocationRequest</code>
  */
@@ -23,8 +23,8 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
     protected $header = null;
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}.
-     * The {provider} must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The {provider} must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -32,15 +32,15 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Required. The location to update to.  The last_location and update_time
+     * Required. The vehicle's most recent location.  The `location` and `update_time`
      * subfields are required.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation current_location = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $current_location = null;
     /**
-     * Set current vehicle state to either ONLINE or OFFLINE;
-     * if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+     * Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+     * If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleState current_state = 5;</code>
      */
@@ -56,16 +56,16 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
      *           The standard Fleet Engine request header.
      *     @type string $name
      *           Required. Must be in the format
-     *           "providers/{provider}/vehicles/{vehicle}.
-     *           The {provider} must be the Project ID (for example, sample-cloud-project)
+     *           `providers/{provider}/vehicles/{vehicle}`.
+     *           The {provider} must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type \Maps\Fleetengine\V1\VehicleLocation $current_location
-     *           Required. The location to update to.  The last_location and update_time
+     *           Required. The vehicle's most recent location.  The `location` and `update_time`
      *           subfields are required.
      *     @type int $current_state
-     *           Set current vehicle state to either ONLINE or OFFLINE;
-     *           if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+     *           Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+     *           If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
      * }
      */
     public function __construct($data = NULL) {
@@ -111,8 +111,8 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}.
-     * The {provider} must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The {provider} must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -126,8 +126,8 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}.
-     * The {provider} must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The {provider} must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -144,7 +144,7 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The location to update to.  The last_location and update_time
+     * Required. The vehicle's most recent location.  The `location` and `update_time`
      * subfields are required.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation current_location = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -166,7 +166,7 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The location to update to.  The last_location and update_time
+     * Required. The vehicle's most recent location.  The `location` and `update_time`
      * subfields are required.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleLocation current_location = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -182,8 +182,8 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Set current vehicle state to either ONLINE or OFFLINE;
-     * if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+     * Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+     * If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleState current_state = 5;</code>
      * @return int
@@ -194,8 +194,8 @@ class UpdateVehicleLocationRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Set current vehicle state to either ONLINE or OFFLINE;
-     * if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+     * Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+     * If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.VehicleState current_state = 5;</code>
      * @param int $var

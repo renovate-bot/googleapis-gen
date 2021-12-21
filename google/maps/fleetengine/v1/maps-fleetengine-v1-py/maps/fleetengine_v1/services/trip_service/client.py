@@ -40,6 +40,7 @@ from google.protobuf import wrappers_pb2  # type: ignore
 from google.type import latlng_pb2  # type: ignore
 from maps.fleetengine_v1.services.trip_service import pagers
 from maps.fleetengine_v1.types import fleetengine
+from maps.fleetengine_v1.types import traffic
 from maps.fleetengine_v1.types import trip_api
 from maps.fleetengine_v1.types import trips
 from .transports.base import TripServiceTransport, DEFAULT_CLIENT_INFO

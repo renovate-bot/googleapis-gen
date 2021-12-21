@@ -19,9 +19,6 @@ from maps.fleetengine_v1.services.trip_service.async_client import TripServiceAs
 from maps.fleetengine_v1.services.vehicle_service.client import VehicleServiceClient
 from maps.fleetengine_v1.services.vehicle_service.async_client import VehicleServiceAsyncClient
 
-from maps.fleetengine_v1.types.fleetengine import Address
-from maps.fleetengine_v1.types.fleetengine import FormattedAddress
-from maps.fleetengine_v1.types.fleetengine import Status
 from maps.fleetengine_v1.types.fleetengine import TerminalLocation
 from maps.fleetengine_v1.types.fleetengine import TerminalPointId
 from maps.fleetengine_v1.types.fleetengine import TripWaypoint
@@ -33,6 +30,8 @@ from maps.fleetengine_v1.types.fleetengine import PolylineFormatType
 from maps.fleetengine_v1.types.fleetengine import TripType
 from maps.fleetengine_v1.types.fleetengine import WaypointType
 from maps.fleetengine_v1.types.header import RequestHeader
+from maps.fleetengine_v1.types.traffic import ConsumableTrafficPolyline
+from maps.fleetengine_v1.types.traffic import SpeedReadingInterval
 from maps.fleetengine_v1.types.trip_api import CreateTripRequest
 from maps.fleetengine_v1.types.trip_api import GetTripRequest
 from maps.fleetengine_v1.types.trip_api import ReportBillableTripRequest
@@ -60,7 +59,9 @@ from maps.fleetengine_v1.types.vehicle_api import Waypoint
 from maps.fleetengine_v1.types.vehicles import BatteryInfo
 from maps.fleetengine_v1.types.vehicles import DeviceSettings
 from maps.fleetengine_v1.types.vehicles import LicensePlate
+from maps.fleetengine_v1.types.vehicles import TrafficPolylineData
 from maps.fleetengine_v1.types.vehicles import Vehicle
+from maps.fleetengine_v1.types.vehicles import VisualTrafficReportPolylineRendering
 from maps.fleetengine_v1.types.vehicles import BatteryStatus
 from maps.fleetengine_v1.types.vehicles import LocationPowerSaveMode
 from maps.fleetengine_v1.types.vehicles import PowerSource
@@ -70,9 +71,6 @@ __all__ = ('TripServiceClient',
     'TripServiceAsyncClient',
     'VehicleServiceClient',
     'VehicleServiceAsyncClient',
-    'Address',
-    'FormattedAddress',
-    'Status',
     'TerminalLocation',
     'TerminalPointId',
     'TripWaypoint',
@@ -84,6 +82,8 @@ __all__ = ('TripServiceClient',
     'TripType',
     'WaypointType',
     'RequestHeader',
+    'ConsumableTrafficPolyline',
+    'SpeedReadingInterval',
     'CreateTripRequest',
     'GetTripRequest',
     'ReportBillableTripRequest',
@@ -111,7 +111,9 @@ __all__ = ('TripServiceClient',
     'BatteryInfo',
     'DeviceSettings',
     'LicensePlate',
+    'TrafficPolylineData',
     'Vehicle',
+    'VisualTrafficReportPolylineRendering',
     'BatteryStatus',
     'LocationPowerSaveMode',
     'PowerSource',

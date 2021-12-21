@@ -125,6 +125,8 @@ class ::Maps::Fleetengine::V1::TripService::ClientTest < Minitest::Test
     current_route_segment_version = {}
     remaining_waypoints_version = {}
     route_format_type = :UNKNOWN_FORMAT_TYPE
+    current_route_segment_traffic_version = {}
+    remaining_waypoints_route_version = {}
 
     get_trip_client_stub = ClientStub.new grpc_response, grpc_operation do |name, request, options:|
       assert_equal :get_trip, name
@@ -135,6 +137,8 @@ class ::Maps::Fleetengine::V1::TripService::ClientTest < Minitest::Test
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::Timestamp), request["current_route_segment_version"]
       assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::Timestamp), request["remaining_waypoints_version"]
       assert_equal :UNKNOWN_FORMAT_TYPE, request["route_format_type"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::Timestamp), request["current_route_segment_traffic_version"]
+      assert_equal Gapic::Protobuf.coerce({}, to: ::Google::Protobuf::Timestamp), request["remaining_waypoints_route_version"]
       refute_nil options
     end
 
@@ -145,31 +149,31 @@ class ::Maps::Fleetengine::V1::TripService::ClientTest < Minitest::Test
       end
 
       # Use hash object
-      client.get_trip({ header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type }) do |response, operation|
+      client.get_trip({ header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type, current_route_segment_traffic_version: current_route_segment_traffic_version, remaining_waypoints_route_version: remaining_waypoints_route_version }) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use named arguments
-      client.get_trip header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type do |response, operation|
+      client.get_trip header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type, current_route_segment_traffic_version: current_route_segment_traffic_version, remaining_waypoints_route_version: remaining_waypoints_route_version do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object
-      client.get_trip ::Maps::Fleetengine::V1::GetTripRequest.new(header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type) do |response, operation|
+      client.get_trip ::Maps::Fleetengine::V1::GetTripRequest.new(header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type, current_route_segment_traffic_version: current_route_segment_traffic_version, remaining_waypoints_route_version: remaining_waypoints_route_version) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use hash object with options
-      client.get_trip({ header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type }, grpc_options) do |response, operation|
+      client.get_trip({ header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type, current_route_segment_traffic_version: current_route_segment_traffic_version, remaining_waypoints_route_version: remaining_waypoints_route_version }, grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end
 
       # Use protobuf object with options
-      client.get_trip(::Maps::Fleetengine::V1::GetTripRequest.new(header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type), grpc_options) do |response, operation|
+      client.get_trip(::Maps::Fleetengine::V1::GetTripRequest.new(header: header, name: name, view: view, current_route_segment_version: current_route_segment_version, remaining_waypoints_version: remaining_waypoints_version, route_format_type: route_format_type, current_route_segment_traffic_version: current_route_segment_traffic_version, remaining_waypoints_route_version: remaining_waypoints_route_version), grpc_options) do |response, operation|
         assert_equal grpc_response, response
         assert_equal grpc_operation, operation
       end

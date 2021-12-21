@@ -4,6 +4,7 @@
 require 'google/api/field_behavior_pb'
 require 'google/api/resource_pb'
 require 'google/maps/fleetengine/v1/fleetengine_pb'
+require 'google/maps/fleetengine/v1/traffic_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/protobuf/wrappers_pb'
@@ -32,6 +33,10 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       repeated :remaining_waypoints, :message, 16, "maps.fleetengine.v1.TripWaypoint"
       repeated :vehicle_waypoints, :message, 20, "maps.fleetengine.v1.TripWaypoint"
       repeated :route, :message, 9, "google.type.LatLng"
+      optional :current_route_segment, :string, 21
+      optional :current_route_segment_version, :message, 17, "google.protobuf.Timestamp"
+      optional :current_route_segment_traffic, :message, 28, "maps.fleetengine.v1.ConsumableTrafficPolyline"
+      optional :current_route_segment_traffic_version, :message, 30, "google.protobuf.Timestamp"
       optional :current_route_segment_end_point, :message, 24, "maps.fleetengine.v1.TripWaypoint"
       optional :remaining_distance_meters, :message, 12, "google.protobuf.Int32Value"
       optional :eta_to_first_waypoint, :message, 13, "google.protobuf.Timestamp"

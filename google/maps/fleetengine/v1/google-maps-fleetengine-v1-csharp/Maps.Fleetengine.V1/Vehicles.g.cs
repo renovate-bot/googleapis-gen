@@ -29,72 +29,87 @@ namespace Maps.Fleetengine.V1 {
             "ci5wcm90bxoZZ29vZ2xlL2FwaS9yZXNvdXJjZS5wcm90bxosZ29vZ2xlL21h",
             "cHMvZmxlZXRlbmdpbmUvdjEvZmxlZXRlbmdpbmUucHJvdG8aH2dvb2dsZS9w",
             "cm90b2J1Zi90aW1lc3RhbXAucHJvdG8aHmdvb2dsZS9wcm90b2J1Zi93cmFw",
-            "cGVycy5wcm90byLoCgoHVmVoaWNsZRIMCgRuYW1lGAEgASgJEjgKDXZlaGlj",
-            "bGVfc3RhdGUYAiABKA4yIS5tYXBzLmZsZWV0ZW5naW5lLnYxLlZlaGljbGVT",
-            "dGF0ZRI7ChRzdXBwb3J0ZWRfdHJpcF90eXBlcxgDIAMoDjIdLm1hcHMuZmxl",
-            "ZXRlbmdpbmUudjEuVHJpcFR5cGUSFQoNY3VycmVudF90cmlwcxgEIAMoCRI7",
-            "Cg1sYXN0X2xvY2F0aW9uGAUgASgLMiQubWFwcy5mbGVldGVuZ2luZS52MS5W",
-            "ZWhpY2xlTG9jYXRpb24SGAoQbWF4aW11bV9jYXBhY2l0eRgGIAEoBRIaChJh",
-            "dmFpbGFibGVfY2FwYWNpdHkYByABKAUSOQoKYXR0cmlidXRlcxgIIAMoCzIl",
-            "Lm1hcHMuZmxlZXRlbmdpbmUudjEuVmVoaWNsZUF0dHJpYnV0ZRI+Cgx2ZWhp",
-            "Y2xlX3R5cGUYCSABKAsyKC5tYXBzLmZsZWV0ZW5naW5lLnYxLlZlaGljbGUu",
-            "VmVoaWNsZVR5cGUSOAoNbGljZW5zZV9wbGF0ZRgKIAEoCzIhLm1hcHMuZmxl",
-            "ZXRlbmdpbmUudjEuTGljZW5zZVBsYXRlEjgKBXJvdXRlGAwgAygLMiUubWFw",
-            "cy5mbGVldGVuZ2luZS52MS5UZXJtaW5hbExvY2F0aW9uQgIYARIdChVjdXJy",
-            "ZW50X3JvdXRlX3NlZ21lbnQYFCABKAkSQQodY3VycmVudF9yb3V0ZV9zZWdt",
-            "ZW50X3ZlcnNpb24YDyABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1w",
-            "EkoKH2N1cnJlbnRfcm91dGVfc2VnbWVudF9lbmRfcG9pbnQYGCABKAsyIS5t",
-            "YXBzLmZsZWV0ZW5naW5lLnYxLlRyaXBXYXlwb2ludBI+ChlyZW1haW5pbmdf",
-            "ZGlzdGFuY2VfbWV0ZXJzGBIgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMy",
-            "VmFsdWUSOQoVZXRhX3RvX2ZpcnN0X3dheXBvaW50GBMgASgLMhouZ29vZ2xl",
-            "LnByb3RvYnVmLlRpbWVzdGFtcBI7ChZyZW1haW5pbmdfdGltZV9zZWNvbmRz",
-            "GBkgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUSNAoJd2F5cG9p",
-            "bnRzGBYgAygLMiEubWFwcy5mbGVldGVuZ2luZS52MS5UcmlwV2F5cG9pbnQS",
-            "NQoRd2F5cG9pbnRzX3ZlcnNpb24YECABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wEhwKFGJhY2tfdG9fYmFja19lbmFibGVkGBcgASgIEkAKEW5h",
-            "dmlnYXRpb25fc3RhdHVzGBogASgOMiUubWFwcy5mbGVldGVuZ2luZS52MS5O",
-            "YXZpZ2F0aW9uU3RhdHVzEjwKD2RldmljZV9zZXR0aW5ncxgbIAEoCzIjLm1h",
-            "cHMuZmxlZXRlbmdpbmUudjEuRGV2aWNlU2V0dGluZ3MamwEKC1ZlaGljbGVU",
-            "eXBlEkMKCGNhdGVnb3J5GAEgASgOMjEubWFwcy5mbGVldGVuZ2luZS52MS5W",
-            "ZWhpY2xlLlZlaGljbGVUeXBlLkNhdGVnb3J5IkcKCENhdGVnb3J5EgsKB1VO",
-            "S05PV04QABIICgRBVVRPEAESCAoEVEFYSRACEgkKBVRSVUNLEAMSDwoLVFdP",
-            "X1dIRUVMRVIQBDpQ6kFNCiJmbGVldGVuZ2luZS5nb29nbGVhcGlzLmNvbS9W",
-            "ZWhpY2xlEidwcm92aWRlcnMve3Byb3ZpZGVyfS92ZWhpY2xlcy97dmVoaWNs",
-            "ZX0inQEKC0JhdHRlcnlJbmZvEjoKDmJhdHRlcnlfc3RhdHVzGAEgASgOMiIu",
-            "bWFwcy5mbGVldGVuZ2luZS52MS5CYXR0ZXJ5U3RhdHVzEjYKDHBvd2VyX3Nv",
-            "dXJjZRgCIAEoDjIgLm1hcHMuZmxlZXRlbmdpbmUudjEuUG93ZXJTb3VyY2US",
-            "GgoSYmF0dGVyeV9wZXJjZW50YWdlGAMgASgCIsoBCg5EZXZpY2VTZXR0aW5n",
-            "cxJMChhsb2NhdGlvbl9wb3dlcl9zYXZlX21vZGUYASABKA4yKi5tYXBzLmZs",
-            "ZWV0ZW5naW5lLnYxLkxvY2F0aW9uUG93ZXJTYXZlTW9kZRIaChJpc19wb3dl",
-            "cl9zYXZlX21vZGUYAiABKAgSFgoOaXNfaW50ZXJhY3RpdmUYAyABKAgSNgoM",
-            "YmF0dGVyeV9pbmZvGAQgASgLMiAubWFwcy5mbGVldGVuZ2luZS52MS5CYXR0",
-            "ZXJ5SW5mbyJBCgxMaWNlbnNlUGxhdGUSGQoMY291bnRyeV9jb2RlGAEgASgJ",
-            "QgPgQQISFgoObGFzdF9jaGFyYWN0ZXIYAiABKAkqQgoMVmVoaWNsZVN0YXRl",
-            "EhkKFVVOS05PV05fVkVISUNMRV9TVEFURRAAEgsKB09GRkxJTkUQARIKCgZP",
-            "TkxJTkUQAiqSAgoVTG9jYXRpb25Qb3dlclNhdmVNb2RlEiQKIFVOS05PV05f",
-            "TE9DQVRJT05fUE9XRVJfU0FWRV9NT0RFEAASGwoXTE9DQVRJT05fTU9ERV9O",
-            "T19DSEFOR0UQARIuCipMT0NBVElPTl9NT0RFX0dQU19ESVNBQkxFRF9XSEVO",
-            "X1NDUkVFTl9PRkYQAhIuCipMT0NBVElPTl9NT0RFX0FMTF9ESVNBQkxFRF9X",
-            "SEVOX1NDUkVFTl9PRkYQAxIhCh1MT0NBVElPTl9NT0RFX0ZPUkVHUk9VTkRf",
-            "T05MWRAEEjMKL0xPQ0FUSU9OX01PREVfVEhST1RUTEVfUkVRVUVTVFNfV0hF",
-            "Tl9TQ1JFRU5fT0ZGEAUqwAEKDUJhdHRlcnlTdGF0dXMSGgoWVU5LTk9XTl9C",
-            "QVRURVJZX1NUQVRVUxAAEhsKF0JBVFRFUllfU1RBVFVTX0NIQVJHSU5HEAES",
-            "HgoaQkFUVEVSWV9TVEFUVVNfRElTQ0hBUkdJTkcQAhIXChNCQVRURVJZX1NU",
-            "QVRVU19GVUxMEAMSHwobQkFUVEVSWV9TVEFUVVNfTk9UX0NIQVJHSU5HEAQS",
-            "HAoYQkFUVEVSWV9TVEFUVVNfUE9XRVJfTE9XEAUqiQEKC1Bvd2VyU291cmNl",
-            "EhgKFFVOS05PV05fUE9XRVJfU09VUkNFEAASEwoPUE9XRVJfU09VUkNFX0FD",
-            "EAESFAoQUE9XRVJfU09VUkNFX1VTQhACEhkKFVBPV0VSX1NPVVJDRV9XSVJF",
-            "TEVTUxADEhoKFlBPV0VSX1NPVVJDRV9VTlBMVUdHRUQQBEJ1Chpnb29nbGUu",
-            "bWFwcy5mbGVldGVuZ2luZS52MUIIVmVoaWNsZXNQAVpFZ29vZ2xlLmdvbGFu",
-            "Zy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9tYXBzL2ZsZWV0ZW5naW5lL3Yx",
-            "O2ZsZWV0ZW5naW5logIDQ0ZFYgZwcm90bzM="));
+            "cGVycy5wcm90byLACwoHVmVoaWNsZRIRCgRuYW1lGAEgASgJQgPgQQMSOAoN",
+            "dmVoaWNsZV9zdGF0ZRgCIAEoDjIhLm1hcHMuZmxlZXRlbmdpbmUudjEuVmVo",
+            "aWNsZVN0YXRlEjsKFHN1cHBvcnRlZF90cmlwX3R5cGVzGAMgAygOMh0ubWFw",
+            "cy5mbGVldGVuZ2luZS52MS5UcmlwVHlwZRIaCg1jdXJyZW50X3RyaXBzGAQg",
+            "AygJQgPgQQMSOwoNbGFzdF9sb2NhdGlvbhgFIAEoCzIkLm1hcHMuZmxlZXRl",
+            "bmdpbmUudjEuVmVoaWNsZUxvY2F0aW9uEhgKEG1heGltdW1fY2FwYWNpdHkY",
+            "BiABKAUSOQoKYXR0cmlidXRlcxgIIAMoCzIlLm1hcHMuZmxlZXRlbmdpbmUu",
+            "djEuVmVoaWNsZUF0dHJpYnV0ZRI+Cgx2ZWhpY2xlX3R5cGUYCSABKAsyKC5t",
+            "YXBzLmZsZWV0ZW5naW5lLnYxLlZlaGljbGUuVmVoaWNsZVR5cGUSOAoNbGlj",
+            "ZW5zZV9wbGF0ZRgKIAEoCzIhLm1hcHMuZmxlZXRlbmdpbmUudjEuTGljZW5z",
+            "ZVBsYXRlEjgKBXJvdXRlGAwgAygLMiUubWFwcy5mbGVldGVuZ2luZS52MS5U",
+            "ZXJtaW5hbExvY2F0aW9uQgIYARIdChVjdXJyZW50X3JvdXRlX3NlZ21lbnQY",
+            "FCABKAkSVAodY3VycmVudF9yb3V0ZV9zZWdtZW50X3RyYWZmaWMYHCABKAsy",
+            "KC5tYXBzLmZsZWV0ZW5naW5lLnYxLlRyYWZmaWNQb2x5bGluZURhdGFCA+BB",
+            "BBJGCh1jdXJyZW50X3JvdXRlX3NlZ21lbnRfdmVyc2lvbhgPIAEoCzIaLmdv",
+            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BBAxJKCh9jdXJyZW50X3JvdXRl",
+            "X3NlZ21lbnRfZW5kX3BvaW50GBggASgLMiEubWFwcy5mbGVldGVuZ2luZS52",
+            "MS5UcmlwV2F5cG9pbnQSPgoZcmVtYWluaW5nX2Rpc3RhbmNlX21ldGVycxgS",
+            "IAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlEjkKFWV0YV90b19m",
+            "aXJzdF93YXlwb2ludBgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3Rh",
+            "bXASQAoWcmVtYWluaW5nX3RpbWVfc2Vjb25kcxgZIAEoCzIbLmdvb2dsZS5w",
+            "cm90b2J1Zi5JbnQzMlZhbHVlQgPgQQQSNAoJd2F5cG9pbnRzGBYgAygLMiEu",
+            "bWFwcy5mbGVldGVuZ2luZS52MS5UcmlwV2F5cG9pbnQSOgoRd2F5cG9pbnRz",
+            "X3ZlcnNpb24YECABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgPg",
+            "QQMSHAoUYmFja190b19iYWNrX2VuYWJsZWQYFyABKAgSQAoRbmF2aWdhdGlv",
+            "bl9zdGF0dXMYGiABKA4yJS5tYXBzLmZsZWV0ZW5naW5lLnYxLk5hdmlnYXRp",
+            "b25TdGF0dXMSQQoPZGV2aWNlX3NldHRpbmdzGBsgASgLMiMubWFwcy5mbGVl",
+            "dGVuZ2luZS52MS5EZXZpY2VTZXR0aW5nc0ID4EEEGpsBCgtWZWhpY2xlVHlw",
+            "ZRJDCghjYXRlZ29yeRgBIAEoDjIxLm1hcHMuZmxlZXRlbmdpbmUudjEuVmVo",
+            "aWNsZS5WZWhpY2xlVHlwZS5DYXRlZ29yeSJHCghDYXRlZ29yeRILCgdVTktO",
+            "T1dOEAASCAoEQVVUTxABEggKBFRBWEkQAhIJCgVUUlVDSxADEg8KC1RXT19X",
+            "SEVFTEVSEAQ6UOpBTQoiZmxlZXRlbmdpbmUuZ29vZ2xlYXBpcy5jb20vVmVo",
+            "aWNsZRIncHJvdmlkZXJzL3twcm92aWRlcn0vdmVoaWNsZXMve3ZlaGljbGV9",
+            "Ip0BCgtCYXR0ZXJ5SW5mbxI6Cg5iYXR0ZXJ5X3N0YXR1cxgBIAEoDjIiLm1h",
+            "cHMuZmxlZXRlbmdpbmUudjEuQmF0dGVyeVN0YXR1cxI2Cgxwb3dlcl9zb3Vy",
+            "Y2UYAiABKA4yIC5tYXBzLmZsZWV0ZW5naW5lLnYxLlBvd2VyU291cmNlEhoK",
+            "EmJhdHRlcnlfcGVyY2VudGFnZRgDIAEoAiLKAQoORGV2aWNlU2V0dGluZ3MS",
+            "TAoYbG9jYXRpb25fcG93ZXJfc2F2ZV9tb2RlGAEgASgOMioubWFwcy5mbGVl",
+            "dGVuZ2luZS52MS5Mb2NhdGlvblBvd2VyU2F2ZU1vZGUSGgoSaXNfcG93ZXJf",
+            "c2F2ZV9tb2RlGAIgASgIEhYKDmlzX2ludGVyYWN0aXZlGAMgASgIEjYKDGJh",
+            "dHRlcnlfaW5mbxgEIAEoCzIgLm1hcHMuZmxlZXRlbmdpbmUudjEuQmF0dGVy",
+            "eUluZm8iQQoMTGljZW5zZVBsYXRlEhkKDGNvdW50cnlfY29kZRgBIAEoCUID",
+            "4EECEhYKDmxhc3RfY2hhcmFjdGVyGAIgASgJIvYCCiRWaXN1YWxUcmFmZmlj",
+            "UmVwb3J0UG9seWxpbmVSZW5kZXJpbmcSYAoMcm9hZF9zdHJldGNoGAEgAygL",
+            "MkUubWFwcy5mbGVldGVuZ2luZS52MS5WaXN1YWxUcmFmZmljUmVwb3J0UG9s",
+            "eWxpbmVSZW5kZXJpbmcuUm9hZFN0cmV0Y2hCA+BBARrrAQoLUm9hZFN0cmV0",
+            "Y2gSXwoFc3R5bGUYASABKA4ySy5tYXBzLmZsZWV0ZW5naW5lLnYxLlZpc3Vh",
+            "bFRyYWZmaWNSZXBvcnRQb2x5bGluZVJlbmRlcmluZy5Sb2FkU3RyZXRjaC5T",
+            "dHlsZUID4EECEhoKDW9mZnNldF9tZXRlcnMYAiABKAVCA+BBAhIaCg1sZW5n",
+            "dGhfbWV0ZXJzGAMgASgFQgPgQQIiQwoFU3R5bGUSFQoRU1RZTEVfVU5TUEVD",
+            "SUZJRUQQABISCg5TTE9XRVJfVFJBRkZJQxABEg8KC1RSQUZGSUNfSkFNEAIi",
+            "awoTVHJhZmZpY1BvbHlsaW5lRGF0YRJUChF0cmFmZmljX3JlbmRlcmluZxgB",
+            "IAEoCzI5Lm1hcHMuZmxlZXRlbmdpbmUudjEuVmlzdWFsVHJhZmZpY1JlcG9y",
+            "dFBvbHlsaW5lUmVuZGVyaW5nKkIKDFZlaGljbGVTdGF0ZRIZChVVTktOT1dO",
+            "X1ZFSElDTEVfU1RBVEUQABILCgdPRkZMSU5FEAESCgoGT05MSU5FEAIqkgIK",
+            "FUxvY2F0aW9uUG93ZXJTYXZlTW9kZRIkCiBVTktOT1dOX0xPQ0FUSU9OX1BP",
+            "V0VSX1NBVkVfTU9ERRAAEhsKF0xPQ0FUSU9OX01PREVfTk9fQ0hBTkdFEAES",
+            "LgoqTE9DQVRJT05fTU9ERV9HUFNfRElTQUJMRURfV0hFTl9TQ1JFRU5fT0ZG",
+            "EAISLgoqTE9DQVRJT05fTU9ERV9BTExfRElTQUJMRURfV0hFTl9TQ1JFRU5f",
+            "T0ZGEAMSIQodTE9DQVRJT05fTU9ERV9GT1JFR1JPVU5EX09OTFkQBBIzCi9M",
+            "T0NBVElPTl9NT0RFX1RIUk9UVExFX1JFUVVFU1RTX1dIRU5fU0NSRUVOX09G",
+            "RhAFKsABCg1CYXR0ZXJ5U3RhdHVzEhoKFlVOS05PV05fQkFUVEVSWV9TVEFU",
+            "VVMQABIbChdCQVRURVJZX1NUQVRVU19DSEFSR0lORxABEh4KGkJBVFRFUllf",
+            "U1RBVFVTX0RJU0NIQVJHSU5HEAISFwoTQkFUVEVSWV9TVEFUVVNfRlVMTBAD",
+            "Eh8KG0JBVFRFUllfU1RBVFVTX05PVF9DSEFSR0lORxAEEhwKGEJBVFRFUllf",
+            "U1RBVFVTX1BPV0VSX0xPVxAFKokBCgtQb3dlclNvdXJjZRIYChRVTktOT1dO",
+            "X1BPV0VSX1NPVVJDRRAAEhMKD1BPV0VSX1NPVVJDRV9BQxABEhQKEFBPV0VS",
+            "X1NPVVJDRV9VU0IQAhIZChVQT1dFUl9TT1VSQ0VfV0lSRUxFU1MQAxIaChZQ",
+            "T1dFUl9TT1VSQ0VfVU5QTFVHR0VEEARCdQoaZ29vZ2xlLm1hcHMuZmxlZXRl",
+            "bmdpbmUudjFCCFZlaGljbGVzUAFaRWdvb2dsZS5nb2xhbmcub3JnL2dlbnBy",
+            "b3RvL2dvb2dsZWFwaXMvbWFwcy9mbGVldGVuZ2luZS92MTtmbGVldGVuZ2lu",
+            "ZaICA0NGRWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Maps.Fleetengine.V1.VehicleState), typeof(global::Maps.Fleetengine.V1.LocationPowerSaveMode), typeof(global::Maps.Fleetengine.V1.BatteryStatus), typeof(global::Maps.Fleetengine.V1.PowerSource), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Vehicle), global::Maps.Fleetengine.V1.Vehicle.Parser, new[]{ "Name", "VehicleState", "SupportedTripTypes", "CurrentTrips", "LastLocation", "MaximumCapacity", "AvailableCapacity", "Attributes", "VehicleType", "LicensePlate", "Route", "CurrentRouteSegment", "CurrentRouteSegmentVersion", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeSeconds", "Waypoints", "WaypointsVersion", "BackToBackEnabled", "NavigationStatus", "DeviceSettings" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType), global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Parser, new[]{ "Category" }, null, new[]{ typeof(global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Types.Category) }, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Vehicle), global::Maps.Fleetengine.V1.Vehicle.Parser, new[]{ "Name", "VehicleState", "SupportedTripTypes", "CurrentTrips", "LastLocation", "MaximumCapacity", "Attributes", "VehicleType", "LicensePlate", "Route", "CurrentRouteSegment", "CurrentRouteSegmentTraffic", "CurrentRouteSegmentVersion", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeSeconds", "Waypoints", "WaypointsVersion", "BackToBackEnabled", "NavigationStatus", "DeviceSettings" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType), global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Parser, new[]{ "Category" }, null, new[]{ typeof(global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Types.Category) }, null, null)}),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.BatteryInfo), global::Maps.Fleetengine.V1.BatteryInfo.Parser, new[]{ "BatteryStatus", "PowerSource", "BatteryPercentage" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.DeviceSettings), global::Maps.Fleetengine.V1.DeviceSettings.Parser, new[]{ "LocationPowerSaveMode", "IsPowerSaveMode", "IsInteractive", "BatteryInfo" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.LicensePlate), global::Maps.Fleetengine.V1.LicensePlate.Parser, new[]{ "CountryCode", "LastCharacter" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.LicensePlate), global::Maps.Fleetengine.V1.LicensePlate.Parser, new[]{ "CountryCode", "LastCharacter" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering), global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Parser, new[]{ "RoadStretch" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch), global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Parser, new[]{ "Style", "OffsetMeters", "LengthMeters" }, null, new[]{ typeof(global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style) }, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.TrafficPolylineData), global::Maps.Fleetengine.V1.TrafficPolylineData.Parser, new[]{ "TrafficRendering" }, null, null, null, null)
           }));
     }
     #endregion
@@ -102,7 +117,7 @@ namespace Maps.Fleetengine.V1 {
   }
   #region Enums
   /// <summary>
-  /// The state of a Vehicle.
+  /// The state of a `Vehicle`.
   /// </summary>
   public enum VehicleState {
     /// <summary>
@@ -110,7 +125,8 @@ namespace Maps.Fleetengine.V1 {
     /// </summary>
     [pbr::OriginalName("UNKNOWN_VEHICLE_STATE")] UnknownVehicleState = 0,
     /// <summary>
-    /// The vehicle is not accepting new trips.
+    /// The vehicle is not accepting new trips. Note: the vehicle may continue to
+    /// operate in this state while completing a trip assigned to it.
     /// </summary>
     [pbr::OriginalName("OFFLINE")] Offline = 1,
     /// <summary>
@@ -120,8 +136,8 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// How location features are set to behave on the device when battery saver is
-  /// on.
+  /// How location features are configured to behave on the mobile device when the
+  /// devices "battery saver" feature is on.
   /// (https://developer.android.com/reference/android/os/PowerManager#getLocationPowerSaveMode())
   /// </summary>
   public enum LocationPowerSaveMode {
@@ -258,12 +274,12 @@ namespace Maps.Fleetengine.V1 {
       currentTrips_ = other.currentTrips_.Clone();
       lastLocation_ = other.lastLocation_ != null ? other.lastLocation_.Clone() : null;
       maximumCapacity_ = other.maximumCapacity_;
-      availableCapacity_ = other.availableCapacity_;
       attributes_ = other.attributes_.Clone();
       vehicleType_ = other.vehicleType_ != null ? other.vehicleType_.Clone() : null;
       licensePlate_ = other.licensePlate_ != null ? other.licensePlate_.Clone() : null;
       route_ = other.route_.Clone();
       currentRouteSegment_ = other.currentRouteSegment_;
+      currentRouteSegmentTraffic_ = other.currentRouteSegmentTraffic_ != null ? other.currentRouteSegmentTraffic_.Clone() : null;
       currentRouteSegmentVersion_ = other.currentRouteSegmentVersion_ != null ? other.currentRouteSegmentVersion_.Clone() : null;
       currentRouteSegmentEndPoint_ = other.currentRouteSegmentEndPoint_ != null ? other.currentRouteSegmentEndPoint_.Clone() : null;
       RemainingDistanceMeters = other.RemainingDistanceMeters;
@@ -287,8 +303,8 @@ namespace Maps.Fleetengine.V1 {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    /// The unique name for this vehicle.
-    /// The format is providers/{provider}/vehicles/{vehicle}
+    /// Output only. The unique name for this vehicle.
+    /// The format is `providers/{provider}/vehicles/{vehicle}`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -334,7 +350,7 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForString(34);
     private readonly pbc::RepeatedField<string> currentTrips_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// List of IDs for trips in progress.
+    /// Output only. List of `trip_id`'s for trips currently assigned to this vehicle.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -361,9 +377,8 @@ namespace Maps.Fleetengine.V1 {
     public const int MaximumCapacityFieldNumber = 6;
     private int maximumCapacity_;
     /// <summary>
-    /// Maximum capacity of the vehicle.  This is the total numbers of riders
-    /// on trips this vehicle can contain.  The driver is not considered in
-    /// this value.  This value must be greater than or equal to one.
+    /// The total numbers of riders this vehicle can carry.  The driver is not
+    /// considered in this value. This value must be greater than or equal to one.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -374,29 +389,14 @@ namespace Maps.Fleetengine.V1 {
       }
     }
 
-    /// <summary>Field number for the "available_capacity" field.</summary>
-    public const int AvailableCapacityFieldNumber = 7;
-    private int availableCapacity_;
-    /// <summary>
-    /// The current available capacity of the vehicle.  This is the
-    /// maximum_capacity minus the current number of riders.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int AvailableCapacity {
-      get { return availableCapacity_; }
-      set {
-        availableCapacity_ = value;
-      }
-    }
-
     /// <summary>Field number for the "attributes" field.</summary>
     public const int AttributesFieldNumber = 8;
     private static readonly pb::FieldCodec<global::Maps.Fleetengine.V1.VehicleAttribute> _repeated_attributes_codec
         = pb::FieldCodec.ForMessage(66, global::Maps.Fleetengine.V1.VehicleAttribute.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> attributes_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute>();
     /// <summary>
-    /// List of vehicle service attributes.
+    /// List of vehicle attributes. A vehicle can have at most 50
+    /// attributes.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -408,8 +408,8 @@ namespace Maps.Fleetengine.V1 {
     public const int VehicleTypeFieldNumber = 9;
     private global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType vehicleType_;
     /// <summary>
-    /// The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
-    /// influences ETA and route calculations.
+    /// The type of this vehicle.  Can be used to filter vehicles in
+    /// `SearchVehicles` results.  Also influences ETA and route calculations.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -441,7 +441,7 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(98, global::Maps.Fleetengine.V1.TerminalLocation.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.TerminalLocation> route_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.TerminalLocation>();
     /// <summary>
-    /// Deprecated. Use vehicle.waypoint instead.
+    /// Deprecated: Use `Vehicle.waypoints` instead.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -457,7 +457,7 @@ namespace Maps.Fleetengine.V1 {
     /// The polyline specifying the route the driver app intends to take to
     /// the next waypoint. Your driver app updates this every time a waypoint is
     /// passed or the driver reroutes. This list is also returned in
-    /// Trip.current_route_segment for all active trips assigned to the vehicle.
+    /// `Trip.current_route_segment` for all active trips assigned to the vehicle.
     /// Note: This field is intended only for use by the Driver SDK.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -469,14 +469,30 @@ namespace Maps.Fleetengine.V1 {
       }
     }
 
+    /// <summary>Field number for the "current_route_segment_traffic" field.</summary>
+    public const int CurrentRouteSegmentTrafficFieldNumber = 28;
+    private global::Maps.Fleetengine.V1.TrafficPolylineData currentRouteSegmentTraffic_;
+    /// <summary>
+    /// Input only. Fleet Engine uses this information to improve its
+    /// understanding of a Trip, but does not populate the field in its responses.
+    /// Note: This field is intended only for use by the Driver SDK.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Maps.Fleetengine.V1.TrafficPolylineData CurrentRouteSegmentTraffic {
+      get { return currentRouteSegmentTraffic_; }
+      set {
+        currentRouteSegmentTraffic_ = value;
+      }
+    }
+
     /// <summary>Field number for the "current_route_segment_version" field.</summary>
     public const int CurrentRouteSegmentVersionFieldNumber = 15;
     private global::Google.Protobuf.WellKnownTypes.Timestamp currentRouteSegmentVersion_;
     /// <summary>
-    /// Time when current_route_segment was set. This field is ignored in
-    /// UpdateVehicleRequests as it is calculated by the server. It should be
-    /// stored by client and passed in to future requests to prevent returning
-    /// routes to first way point that haven't changed.
+    /// Output only. Time when `current_route_segment` was set. It should be
+    /// stored by the client and passed in future `GetVehicle` requests to
+    /// prevent returning routes that haven't changed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -491,12 +507,12 @@ namespace Maps.Fleetengine.V1 {
     public const int CurrentRouteSegmentEndPointFieldNumber = 24;
     private global::Maps.Fleetengine.V1.TripWaypoint currentRouteSegmentEndPoint_;
     /// <summary>
-    /// The waypoint where current_route_segment ends. This can be supplied by
-    /// drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-    /// latlnt, or as a the last latlng of the current_route_segment. FleetEngine
-    /// will then do its best to interpolate to an actual waypoint if it is not
-    /// fully specified. This field is ignored in UpdateVehicle calls unless
-    /// current_route_segment is also specified.
+    /// The waypoint where `current_route_segment` ends. This can be supplied by
+    /// drivers on `UpdateVehicle` calls either as a full trip waypoint, a waypoint
+    /// `LatLng`, or as the last `LatLng` of the `current_route_segment`. Fleet
+    /// Engine will then do its best to interpolate to an actual waypoint if it is
+    /// not fully specified. This field is ignored in `UpdateVehicle` calls unless
+    /// `current_route_segment` is also specified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -512,13 +528,12 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_remainingDistanceMeters_codec = pb::FieldCodec.ForStructWrapper<int>(146);
     private int? remainingDistanceMeters_;
     /// <summary>
-    /// The remaining driving distance for the 'current_route_segment'. This field
+    /// The remaining driving distance for the `current_route_segment`. This field
     /// facilitates journey sharing between the Driver app and the Consumer app.
-    /// This value is updated by the Driver SDK. Fleet Engine does not update it.
-    /// This field is also returned in Trip.remaining_distance_meters for all
-    /// active trips assigned to the vehicle. The value is unspecified if the
-    /// `Vehicle.current_route_segment` field is empty, or if the Driver app has
-    /// not updated its value.
+    /// This value is provided by the Driver SDK. This field is also returned in
+    /// `Trip.remaining_distance_meters` for all active trips assigned to the
+    /// vehicle. The value is unspecified if the `current_route_segment` field is
+    /// empty, or if the Driver app has not updated its value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -534,13 +549,12 @@ namespace Maps.Fleetengine.V1 {
     public const int EtaToFirstWaypointFieldNumber = 19;
     private global::Google.Protobuf.WellKnownTypes.Timestamp etaToFirstWaypoint_;
     /// <summary>
-    /// The ETA to the next waypoint that is the first entry in Vehicle.waypoint
+    /// The ETA to the first entry in the `waypoints`
     /// field. This field facilitates journey sharing between a Driver app and a
-    /// Consumer app and is updated by the Driver SDK, and Fleet Engine does not
-    /// update it. This field is also returned in Trip.eta_to_first_waypoint for
-    /// all active trips assigned to the vehicle. The value is unspecified if the
-    /// Vehicle.waypoint field is empty, or the Driver app has not updated its
-    /// value.
+    /// Consumer app. Is is provided by the Driver SDK. This field is also returned
+    /// in `Trip.eta_to_first_waypoint` for all active trips assigned to the
+    /// vehicle. The value is unspecified if the `waypoints` field is empty, or the
+    /// Driver app has not updated its value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -556,17 +570,16 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_remainingTimeSeconds_codec = pb::FieldCodec.ForStructWrapper<int>(202);
     private int? remainingTimeSeconds_;
     /// <summary>
-    /// The remaining driving time for the 'current_route_segment'. This field
+    /// Input only. The remaining driving time for the `current_route_segment`. This field
     /// facilitates journey sharing between the Driver app and the Consumer app.
     /// This value is updated by the Driver SDK. Fleet Engine does not update it.
     /// The value is unspecified if the `Vehicle.current_route_segment` field is
     /// empty, or if the Driver app has not updated its value. This value should
-    /// match eta_to_first_waypoint - current_time if all parties are using the
-    /// same clock. This field is currently write-only and will not yet be
-    /// populated in Vehicle's get/update/search operations. When updating a
-    /// vehicle, if you update both eta_to_first_waypoint and
-    /// remaining_time_seconds in the same request, then only
-    /// remaining_time_seconds is considered.
+    /// match `eta_to_first_waypoint` - `current_time` if all parties are using the
+    /// same clock. When updating a
+    /// vehicle, if you update both `eta_to_first_waypoint` and
+    /// `remaining_time_seconds` in the same request, `remaining_time_seconds`
+    /// takes precedence.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -584,7 +597,7 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(178, global::Maps.Fleetengine.V1.TripWaypoint.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.TripWaypoint> waypoints_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.TripWaypoint>();
     /// <summary>
-    /// The remaining set of waypoints assigned to this Vehicle.
+    /// The remaining waypoints assigned to this Vehicle.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -596,9 +609,9 @@ namespace Maps.Fleetengine.V1 {
     public const int WaypointsVersionFieldNumber = 16;
     private global::Google.Protobuf.WellKnownTypes.Timestamp waypointsVersion_;
     /// <summary>
-    /// Last time the waypoints was updated. Client should cache
-    /// this value and pass it in GetVehicleRequest to ensure the
-    /// waypoints.path_to_waypoint is only returned if it is updated
+    /// Output only. Last time the `waypoints` field was updated. Clients should cache
+    /// this value and pass it in `GetVehicleRequest` to ensure the
+    /// `waypoints` field is only returned if it is updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -613,10 +626,9 @@ namespace Maps.Fleetengine.V1 {
     public const int BackToBackEnabledFieldNumber = 23;
     private bool backToBackEnabled_;
     /// <summary>
-    /// Indicates if the driver accepts back-to-back rides. If
-    /// `true`, services include the vehicle for back-to-back matches.
-    /// If `false`, services exclude the vehicle from back-to-back matches.
-    /// Default value is `false`.
+    /// Indicates if the driver accepts back-to-back trips. If `true`,
+    /// `SearchVehicles` may include the vehicle even if it is currently assigned
+    /// to a trip. The default value is `false`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -631,7 +643,7 @@ namespace Maps.Fleetengine.V1 {
     public const int NavigationStatusFieldNumber = 26;
     private global::Maps.Fleetengine.V1.NavigationStatus navigationStatus_ = global::Maps.Fleetengine.V1.NavigationStatus.UnknownNavigationStatus;
     /// <summary>
-    /// Vehicle's navigation status.
+    /// The vehicle's navigation status.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -646,8 +658,7 @@ namespace Maps.Fleetengine.V1 {
     public const int DeviceSettingsFieldNumber = 27;
     private global::Maps.Fleetengine.V1.DeviceSettings deviceSettings_;
     /// <summary>
-    /// Information about various device settings. This is internal debug only
-    /// field, not included in the response.
+    /// Input only. Information about settings in the mobile device being used by the driver.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -679,12 +690,12 @@ namespace Maps.Fleetengine.V1 {
       if(!currentTrips_.Equals(other.currentTrips_)) return false;
       if (!object.Equals(LastLocation, other.LastLocation)) return false;
       if (MaximumCapacity != other.MaximumCapacity) return false;
-      if (AvailableCapacity != other.AvailableCapacity) return false;
       if(!attributes_.Equals(other.attributes_)) return false;
       if (!object.Equals(VehicleType, other.VehicleType)) return false;
       if (!object.Equals(LicensePlate, other.LicensePlate)) return false;
       if(!route_.Equals(other.route_)) return false;
       if (CurrentRouteSegment != other.CurrentRouteSegment) return false;
+      if (!object.Equals(CurrentRouteSegmentTraffic, other.CurrentRouteSegmentTraffic)) return false;
       if (!object.Equals(CurrentRouteSegmentVersion, other.CurrentRouteSegmentVersion)) return false;
       if (!object.Equals(CurrentRouteSegmentEndPoint, other.CurrentRouteSegmentEndPoint)) return false;
       if (RemainingDistanceMeters != other.RemainingDistanceMeters) return false;
@@ -708,12 +719,12 @@ namespace Maps.Fleetengine.V1 {
       hash ^= currentTrips_.GetHashCode();
       if (lastLocation_ != null) hash ^= LastLocation.GetHashCode();
       if (MaximumCapacity != 0) hash ^= MaximumCapacity.GetHashCode();
-      if (AvailableCapacity != 0) hash ^= AvailableCapacity.GetHashCode();
       hash ^= attributes_.GetHashCode();
       if (vehicleType_ != null) hash ^= VehicleType.GetHashCode();
       if (licensePlate_ != null) hash ^= LicensePlate.GetHashCode();
       hash ^= route_.GetHashCode();
       if (CurrentRouteSegment.Length != 0) hash ^= CurrentRouteSegment.GetHashCode();
+      if (currentRouteSegmentTraffic_ != null) hash ^= CurrentRouteSegmentTraffic.GetHashCode();
       if (currentRouteSegmentVersion_ != null) hash ^= CurrentRouteSegmentVersion.GetHashCode();
       if (currentRouteSegmentEndPoint_ != null) hash ^= CurrentRouteSegmentEndPoint.GetHashCode();
       if (remainingDistanceMeters_ != null) hash ^= RemainingDistanceMeters.GetHashCode();
@@ -759,10 +770,6 @@ namespace Maps.Fleetengine.V1 {
       if (MaximumCapacity != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(MaximumCapacity);
-      }
-      if (AvailableCapacity != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(AvailableCapacity);
       }
       attributes_.WriteTo(output, _repeated_attributes_codec);
       if (vehicleType_ != null) {
@@ -813,6 +820,10 @@ namespace Maps.Fleetengine.V1 {
         output.WriteRawTag(218, 1);
         output.WriteMessage(DeviceSettings);
       }
+      if (currentRouteSegmentTraffic_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(CurrentRouteSegmentTraffic);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -840,10 +851,6 @@ namespace Maps.Fleetengine.V1 {
       if (MaximumCapacity != 0) {
         output.WriteRawTag(48);
         output.WriteInt32(MaximumCapacity);
-      }
-      if (AvailableCapacity != 0) {
-        output.WriteRawTag(56);
-        output.WriteInt32(AvailableCapacity);
       }
       attributes_.WriteTo(ref output, _repeated_attributes_codec);
       if (vehicleType_ != null) {
@@ -894,6 +901,10 @@ namespace Maps.Fleetengine.V1 {
         output.WriteRawTag(218, 1);
         output.WriteMessage(DeviceSettings);
       }
+      if (currentRouteSegmentTraffic_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(CurrentRouteSegmentTraffic);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -918,9 +929,6 @@ namespace Maps.Fleetengine.V1 {
       if (MaximumCapacity != 0) {
         size += 1 + pb::CodedOutputStream.ComputeInt32Size(MaximumCapacity);
       }
-      if (AvailableCapacity != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(AvailableCapacity);
-      }
       size += attributes_.CalculateSize(_repeated_attributes_codec);
       if (vehicleType_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(VehicleType);
@@ -931,6 +939,9 @@ namespace Maps.Fleetengine.V1 {
       size += route_.CalculateSize(_repeated_route_codec);
       if (CurrentRouteSegment.Length != 0) {
         size += 2 + pb::CodedOutputStream.ComputeStringSize(CurrentRouteSegment);
+      }
+      if (currentRouteSegmentTraffic_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentTraffic);
       }
       if (currentRouteSegmentVersion_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentVersion);
@@ -989,9 +1000,6 @@ namespace Maps.Fleetengine.V1 {
       if (other.MaximumCapacity != 0) {
         MaximumCapacity = other.MaximumCapacity;
       }
-      if (other.AvailableCapacity != 0) {
-        AvailableCapacity = other.AvailableCapacity;
-      }
       attributes_.Add(other.attributes_);
       if (other.vehicleType_ != null) {
         if (vehicleType_ == null) {
@@ -1008,6 +1016,12 @@ namespace Maps.Fleetengine.V1 {
       route_.Add(other.route_);
       if (other.CurrentRouteSegment.Length != 0) {
         CurrentRouteSegment = other.CurrentRouteSegment;
+      }
+      if (other.currentRouteSegmentTraffic_ != null) {
+        if (currentRouteSegmentTraffic_ == null) {
+          CurrentRouteSegmentTraffic = new global::Maps.Fleetengine.V1.TrafficPolylineData();
+        }
+        CurrentRouteSegmentTraffic.MergeFrom(other.CurrentRouteSegmentTraffic);
       }
       if (other.currentRouteSegmentVersion_ != null) {
         if (currentRouteSegmentVersion_ == null) {
@@ -1099,10 +1113,6 @@ namespace Maps.Fleetengine.V1 {
             MaximumCapacity = input.ReadInt32();
             break;
           }
-          case 56: {
-            AvailableCapacity = input.ReadInt32();
-            break;
-          }
           case 66: {
             attributes_.AddEntriesFrom(input, _repeated_attributes_codec);
             break;
@@ -1190,6 +1200,13 @@ namespace Maps.Fleetengine.V1 {
             input.ReadMessage(DeviceSettings);
             break;
           }
+          case 226: {
+            if (currentRouteSegmentTraffic_ == null) {
+              CurrentRouteSegmentTraffic = new global::Maps.Fleetengine.V1.TrafficPolylineData();
+            }
+            input.ReadMessage(CurrentRouteSegmentTraffic);
+            break;
+          }
         }
       }
     #endif
@@ -1231,10 +1248,6 @@ namespace Maps.Fleetengine.V1 {
           }
           case 48: {
             MaximumCapacity = input.ReadInt32();
-            break;
-          }
-          case 56: {
-            AvailableCapacity = input.ReadInt32();
             break;
           }
           case 66: {
@@ -1324,6 +1337,13 @@ namespace Maps.Fleetengine.V1 {
             input.ReadMessage(DeviceSettings);
             break;
           }
+          case 226: {
+            if (currentRouteSegmentTraffic_ == null) {
+              CurrentRouteSegmentTraffic = new global::Maps.Fleetengine.V1.TrafficPolylineData();
+            }
+            input.ReadMessage(CurrentRouteSegmentTraffic);
+            break;
+          }
         }
       }
     }
@@ -1335,7 +1355,7 @@ namespace Maps.Fleetengine.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
-      /// Types of vehicles that may be filtered for in SearchVehicles.
+      /// The type of vehicle.
       /// </summary>
       public sealed partial class VehicleType : pb::IMessage<VehicleType>
       #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1537,7 +1557,7 @@ namespace Maps.Fleetengine.V1 {
           /// </summary>
           public enum Category {
             /// <summary>
-            /// Default, used for unspecified or unrecognized vehicle types.
+            /// Default, used for unspecified or unrecognized vehicle categories.
             /// </summary>
             [pbr::OriginalName("UNKNOWN")] Unknown = 0,
             /// <summary>
@@ -1545,7 +1565,7 @@ namespace Maps.Fleetengine.V1 {
             /// </summary>
             [pbr::OriginalName("AUTO")] Auto = 1,
             /// <summary>
-            /// Any vehicle that acts as a taxi.
+            /// Any vehicle that acts as a taxi (typically licensed or regulated).
             /// </summary>
             [pbr::OriginalName("TAXI")] Taxi = 2,
             /// <summary>
@@ -1844,7 +1864,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// Information about various settings on the device.
+  /// Information about various settings on the mobile device.
   /// </summary>
   public sealed partial class DeviceSettings : pb::IMessage<DeviceSettings>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2169,8 +2189,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// The license plate information of the Vehicle.  This is used to support
-  /// congestion pricing restrictions in certain areas.  To avoid storing
+  /// The license plate information of the Vehicle.  To avoid storing
   /// personally-identifiable information, only the minimum information
   /// about the license plate is stored as part of the entity.
   /// </summary>
@@ -2223,8 +2242,8 @@ namespace Maps.Fleetengine.V1 {
     public const int CountryCodeFieldNumber = 1;
     private string countryCode_ = "";
     /// <summary>
-    /// Required. CLDR Country/Region Code.  For example, "US" for United States,
-    /// or "IN" for India.
+    /// Required. CLDR Country/Region Code.  For example, `US` for United States,
+    /// or `IN` for India.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2240,7 +2259,7 @@ namespace Maps.Fleetengine.V1 {
     private string lastCharacter_ = "";
     /// <summary>
     /// The last digit of the license plate or "-1" to denote no numeric value
-    /// present in the license plate.
+    /// is present in the license plate.
     ///
     /// * "ABC 1234" -> "4"
     /// * "AB 123 CD" -> "3"
@@ -2403,6 +2422,709 @@ namespace Maps.Fleetengine.V1 {
           }
           case 18: {
             LastCharacter = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Describes how clients should color one portion of the polyline along the
+  /// route.
+  /// </summary>
+  public sealed partial class VisualTrafficReportPolylineRendering : pb::IMessage<VisualTrafficReportPolylineRendering>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<VisualTrafficReportPolylineRendering> _parser = new pb::MessageParser<VisualTrafficReportPolylineRendering>(() => new VisualTrafficReportPolylineRendering());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<VisualTrafficReportPolylineRendering> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Maps.Fleetengine.V1.VehiclesReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VisualTrafficReportPolylineRendering() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VisualTrafficReportPolylineRendering(VisualTrafficReportPolylineRendering other) : this() {
+      roadStretch_ = other.roadStretch_.Clone();
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public VisualTrafficReportPolylineRendering Clone() {
+      return new VisualTrafficReportPolylineRendering(this);
+    }
+
+    /// <summary>Field number for the "road_stretch" field.</summary>
+    public const int RoadStretchFieldNumber = 1;
+    private static readonly pb::FieldCodec<global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch> _repeated_roadStretch_codec
+        = pb::FieldCodec.ForMessage(10, global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Parser);
+    private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch> roadStretch_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch>();
+    /// <summary>
+    /// Optional. Road stretches that should be rendered along the polyline. Note that
+    /// the stretches are guaranteed to not overlap, and that they do not
+    /// necessarily span the full route. In the absence of a road stretch to style,
+    /// the client should apply the default for the route.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public pbc::RepeatedField<global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch> RoadStretch {
+      get { return roadStretch_; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as VisualTrafficReportPolylineRendering);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(VisualTrafficReportPolylineRendering other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if(!roadStretch_.Equals(other.roadStretch_)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      hash ^= roadStretch_.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      roadStretch_.WriteTo(output, _repeated_roadStretch_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      roadStretch_.WriteTo(ref output, _repeated_roadStretch_codec);
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      size += roadStretch_.CalculateSize(_repeated_roadStretch_codec);
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(VisualTrafficReportPolylineRendering other) {
+      if (other == null) {
+        return;
+      }
+      roadStretch_.Add(other.roadStretch_);
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            roadStretch_.AddEntriesFrom(input, _repeated_roadStretch_codec);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            roadStretch_.AddEntriesFrom(ref input, _repeated_roadStretch_codec);
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+    #region Nested types
+    /// <summary>Container for nested types declared in the VisualTrafficReportPolylineRendering message type.</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static partial class Types {
+      /// <summary>
+      /// One road stretch that should be rendered.
+      /// </summary>
+      public sealed partial class RoadStretch : pb::IMessage<RoadStretch>
+      #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          , pb::IBufferMessage
+      #endif
+      {
+        private static readonly pb::MessageParser<RoadStretch> _parser = new pb::MessageParser<RoadStretch>(() => new RoadStretch());
+        private pb::UnknownFieldSet _unknownFields;
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pb::MessageParser<RoadStretch> Parser { get { return _parser; } }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static pbr::MessageDescriptor Descriptor {
+          get { return global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Descriptor.NestedTypes[0]; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        pbr::MessageDescriptor pb::IMessage.Descriptor {
+          get { return Descriptor; }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public RoadStretch() {
+          OnConstruction();
+        }
+
+        partial void OnConstruction();
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public RoadStretch(RoadStretch other) : this() {
+          style_ = other.style_;
+          offsetMeters_ = other.offsetMeters_;
+          lengthMeters_ = other.lengthMeters_;
+          _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public RoadStretch Clone() {
+          return new RoadStretch(this);
+        }
+
+        /// <summary>Field number for the "style" field.</summary>
+        public const int StyleFieldNumber = 1;
+        private global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style style_ = global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style.Unspecified;
+        /// <summary>
+        /// Required. The style to apply.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style Style {
+          get { return style_; }
+          set {
+            style_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "offset_meters" field.</summary>
+        public const int OffsetMetersFieldNumber = 2;
+        private int offsetMeters_;
+        /// <summary>
+        /// Required. The style should be applied between `[offset_meters, offset_meters +
+        /// length_meters)`.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int OffsetMeters {
+          get { return offsetMeters_; }
+          set {
+            offsetMeters_ = value;
+          }
+        }
+
+        /// <summary>Field number for the "length_meters" field.</summary>
+        public const int LengthMetersFieldNumber = 3;
+        private int lengthMeters_;
+        /// <summary>
+        /// Required. The length of the path where to apply the style.
+        /// </summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int LengthMeters {
+          get { return lengthMeters_; }
+          set {
+            lengthMeters_ = value;
+          }
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override bool Equals(object other) {
+          return Equals(other as RoadStretch);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool Equals(RoadStretch other) {
+          if (ReferenceEquals(other, null)) {
+            return false;
+          }
+          if (ReferenceEquals(other, this)) {
+            return true;
+          }
+          if (Style != other.Style) return false;
+          if (OffsetMeters != other.OffsetMeters) return false;
+          if (LengthMeters != other.LengthMeters) return false;
+          return Equals(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override int GetHashCode() {
+          int hash = 1;
+          if (Style != global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style.Unspecified) hash ^= Style.GetHashCode();
+          if (OffsetMeters != 0) hash ^= OffsetMeters.GetHashCode();
+          if (LengthMeters != 0) hash ^= LengthMeters.GetHashCode();
+          if (_unknownFields != null) {
+            hash ^= _unknownFields.GetHashCode();
+          }
+          return hash;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public override string ToString() {
+          return pb::JsonFormatter.ToDiagnosticString(this);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void WriteTo(pb::CodedOutputStream output) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          output.WriteRawMessage(this);
+        #else
+          if (Style != global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style.Unspecified) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Style);
+          }
+          if (OffsetMeters != 0) {
+            output.WriteRawTag(16);
+            output.WriteInt32(OffsetMeters);
+          }
+          if (LengthMeters != 0) {
+            output.WriteRawTag(24);
+            output.WriteInt32(LengthMeters);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(output);
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+          if (Style != global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style.Unspecified) {
+            output.WriteRawTag(8);
+            output.WriteEnum((int) Style);
+          }
+          if (OffsetMeters != 0) {
+            output.WriteRawTag(16);
+            output.WriteInt32(OffsetMeters);
+          }
+          if (LengthMeters != 0) {
+            output.WriteRawTag(24);
+            output.WriteInt32(LengthMeters);
+          }
+          if (_unknownFields != null) {
+            _unknownFields.WriteTo(ref output);
+          }
+        }
+        #endif
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public int CalculateSize() {
+          int size = 0;
+          if (Style != global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style.Unspecified) {
+            size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Style);
+          }
+          if (OffsetMeters != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(OffsetMeters);
+          }
+          if (LengthMeters != 0) {
+            size += 1 + pb::CodedOutputStream.ComputeInt32Size(LengthMeters);
+          }
+          if (_unknownFields != null) {
+            size += _unknownFields.CalculateSize();
+          }
+          return size;
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(RoadStretch other) {
+          if (other == null) {
+            return;
+          }
+          if (other.Style != global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style.Unspecified) {
+            Style = other.Style;
+          }
+          if (other.OffsetMeters != 0) {
+            OffsetMeters = other.OffsetMeters;
+          }
+          if (other.LengthMeters != 0) {
+            LengthMeters = other.LengthMeters;
+          }
+          _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+        }
+
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void MergeFrom(pb::CodedInputStream input) {
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+          input.ReadRawMessage(this);
+        #else
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+                break;
+              case 8: {
+                Style = (global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style) input.ReadEnum();
+                break;
+              }
+              case 16: {
+                OffsetMeters = input.ReadInt32();
+                break;
+              }
+              case 24: {
+                LengthMeters = input.ReadInt32();
+                break;
+              }
+            }
+          }
+        #endif
+        }
+
+        #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+          uint tag;
+          while ((tag = input.ReadTag()) != 0) {
+            switch(tag) {
+              default:
+                _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+                break;
+              case 8: {
+                Style = (global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering.Types.RoadStretch.Types.Style) input.ReadEnum();
+                break;
+              }
+              case 16: {
+                OffsetMeters = input.ReadInt32();
+                break;
+              }
+              case 24: {
+                LengthMeters = input.ReadInt32();
+                break;
+              }
+            }
+          }
+        }
+        #endif
+
+        #region Nested types
+        /// <summary>Container for nested types declared in the RoadStretch message type.</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public static partial class Types {
+          /// <summary>
+          /// The traffic style, indicating traffic speed.
+          /// </summary>
+          public enum Style {
+            /// <summary>
+            /// No style selected.
+            /// </summary>
+            [pbr::OriginalName("STYLE_UNSPECIFIED")] Unspecified = 0,
+            /// <summary>
+            /// Traffic is slowing down.
+            /// </summary>
+            [pbr::OriginalName("SLOWER_TRAFFIC")] SlowerTraffic = 1,
+            /// <summary>
+            /// There is a traffic jam.
+            /// </summary>
+            [pbr::OriginalName("TRAFFIC_JAM")] TrafficJam = 2,
+          }
+
+        }
+        #endregion
+
+      }
+
+    }
+    #endregion
+
+  }
+
+  /// <summary>
+  /// Traffic conditions along the expected vehicle route.
+  /// </summary>
+  public sealed partial class TrafficPolylineData : pb::IMessage<TrafficPolylineData>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<TrafficPolylineData> _parser = new pb::MessageParser<TrafficPolylineData>(() => new TrafficPolylineData());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<TrafficPolylineData> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::Maps.Fleetengine.V1.VehiclesReflection.Descriptor.MessageTypes[5]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TrafficPolylineData() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TrafficPolylineData(TrafficPolylineData other) : this() {
+      trafficRendering_ = other.trafficRendering_ != null ? other.trafficRendering_.Clone() : null;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public TrafficPolylineData Clone() {
+      return new TrafficPolylineData(this);
+    }
+
+    /// <summary>Field number for the "traffic_rendering" field.</summary>
+    public const int TrafficRenderingFieldNumber = 1;
+    private global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering trafficRendering_;
+    /// <summary>
+    /// A polyline rendering of how fast traffic is for all regions along
+    /// one stretch of a customer ride.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering TrafficRendering {
+      get { return trafficRendering_; }
+      set {
+        trafficRendering_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as TrafficPolylineData);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(TrafficPolylineData other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (!object.Equals(TrafficRendering, other.TrafficRendering)) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (trafficRendering_ != null) hash ^= TrafficRendering.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (trafficRendering_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(TrafficRendering);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (trafficRendering_ != null) {
+        output.WriteRawTag(10);
+        output.WriteMessage(TrafficRendering);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (trafficRendering_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrafficRendering);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(TrafficPolylineData other) {
+      if (other == null) {
+        return;
+      }
+      if (other.trafficRendering_ != null) {
+        if (trafficRendering_ == null) {
+          TrafficRendering = new global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering();
+        }
+        TrafficRendering.MergeFrom(other.TrafficRendering);
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            if (trafficRendering_ == null) {
+              TrafficRendering = new global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering();
+            }
+            input.ReadMessage(TrafficRendering);
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            if (trafficRendering_ == null) {
+              TrafficRendering = new global::Maps.Fleetengine.V1.VisualTrafficReportPolylineRendering();
+            }
+            input.ReadMessage(TrafficRendering);
             break;
           }
         }

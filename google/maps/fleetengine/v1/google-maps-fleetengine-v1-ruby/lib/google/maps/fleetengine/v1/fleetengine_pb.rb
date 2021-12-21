@@ -2,7 +2,7 @@
 # source: google/maps/fleetengine/v1/fleetengine.proto
 
 require 'google/api/field_behavior_pb'
-require 'google/protobuf/any_pb'
+require 'google/maps/fleetengine/v1/traffic_pb'
 require 'google/protobuf/duration_pb'
 require 'google/protobuf/timestamp_pb'
 require 'google/protobuf/wrappers_pb'
@@ -30,25 +30,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :trip_id, :string, 2
       optional :waypoint_type, :enum, 3, "maps.fleetengine.v1.WaypointType"
       repeated :path_to_waypoint, :message, 4, "google.type.LatLng"
+      optional :encoded_path_to_waypoint, :string, 5
+      optional :traffic_to_waypoint, :message, 10, "maps.fleetengine.v1.ConsumableTrafficPolyline"
       optional :distance_meters, :message, 6, "google.protobuf.Int32Value"
       optional :eta, :message, 7, "google.protobuf.Timestamp"
       optional :duration, :message, 8, "google.protobuf.Duration"
-    end
-    add_message "maps.fleetengine.v1.Status" do
-      optional :code, :enum, 1, "maps.fleetengine.v1.Status.Code"
-      optional :message, :string, 2
-      repeated :details, :message, 3, "google.protobuf.Any"
-    end
-    add_enum "maps.fleetengine.v1.Status.Code" do
-      value :UNSPECIFIED, 0
-      value :FAILURE, 1
-      value :ROUTE_NOT_POSSIBLE, 2
-    end
-    add_message "maps.fleetengine.v1.FormattedAddress" do
-      repeated :lines, :string, 1
-    end
-    add_message "maps.fleetengine.v1.Address" do
-      optional :formatted_address, :message, 1, "maps.fleetengine.v1.FormattedAddress"
     end
     add_message "maps.fleetengine.v1.VehicleAttribute" do
       optional :key, :string, 1
@@ -124,10 +110,6 @@ module Maps
       TerminalPointId = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.TerminalPointId").msgclass
       TerminalLocation = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.TerminalLocation").msgclass
       TripWaypoint = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.TripWaypoint").msgclass
-      Status = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.Status").msgclass
-      Status::Code = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.Status.Code").enummodule
-      FormattedAddress = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.FormattedAddress").msgclass
-      Address = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.Address").msgclass
       VehicleAttribute = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.VehicleAttribute").msgclass
       VehicleLocation = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.VehicleLocation").msgclass
       TripType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.TripType").enummodule

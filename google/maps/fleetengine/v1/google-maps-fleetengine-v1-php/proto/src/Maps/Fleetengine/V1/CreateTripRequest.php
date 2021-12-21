@@ -22,8 +22,8 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      */
     protected $header = null;
     /**
-     * Required. Must be in the format "providers/{provider}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -31,9 +31,14 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      */
     protected $parent = '';
     /**
-     * Required. Unique Trip ID; must be unique per provider.  The actual
-     * format and value is opaque to the Fleet Engine and is determined
-     * by the provider.
+     * Required. Unique Trip ID; must be unique per provider.
+     * Subject to the following normalization and restrictions:
+     * 1. IDs must be valid Unicode strings.
+     * 2. IDs are limited to a maximum length of 64 characters.
+     * 3. IDs will be normalized according to Unicode Normalization Form C
+     * (http://www.unicode.org/reports/tr15/).
+     * 4. IDs may not contain any of the following ASCII characters: '/', ':',
+     * '\\', '?', or '#'.
      *
      * Generated from protobuf field <code>string trip_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -41,15 +46,15 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Trip entity to create.
      * When creating a Trip, the following fields are required:
-     * * trip_type
-     * * pickup_point
+     * * `trip_type`
+     * * `pickup_point`
      * The following fields are used if you provide them:
-     * * number_of_passengers
-     * * vehicle_id
-     * * dropoff_point
-     * * intermediate_destinations
-     * Only EXCLUSIVE trips support multiple destinations.
-     * When vehicle_id is set for a shared trip, you must supply
+     * * `number_of_passengers`
+     * * `vehicle_id`
+     * * `dropoff_point`
+     * * `intermediate_destinations`
+     * Only `EXCLUSIVE` trips support multiple destinations.
+     * When `vehicle_id` is set for a shared trip, you must supply
      * the list of `Trip.vehicle_waypoints` to specify the order of the remaining
      * waypoints for the vehicle, otherwise the waypoint order will be
      * undetermined.
@@ -60,7 +65,7 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      * destinations come before the drop-off point. An `EXCLUSIVE` trip's
      * waypoints must not interleave with any other trips.
      * The `trip_id`, `waypoint_type` and `location` fields are used, and all
-     * other TripWaypoint fields in vehicle_waypoints are ignored.
+     * other TripWaypoint fields in `vehicle_waypoints` are ignored.
      * All other Trip fields are ignored.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -76,26 +81,31 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      *     @type \Maps\Fleetengine\V1\RequestHeader $header
      *           The standard Fleet Engine request header.
      *     @type string $parent
-     *           Required. Must be in the format "providers/{provider}".
-     *           The provider must be the Project ID (for example, sample-cloud-project)
+     *           Required. Must be in the format `providers/{provider}`.
+     *           The provider must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type string $trip_id
-     *           Required. Unique Trip ID; must be unique per provider.  The actual
-     *           format and value is opaque to the Fleet Engine and is determined
-     *           by the provider.
+     *           Required. Unique Trip ID; must be unique per provider.
+     *           Subject to the following normalization and restrictions:
+     *           1. IDs must be valid Unicode strings.
+     *           2. IDs are limited to a maximum length of 64 characters.
+     *           3. IDs will be normalized according to Unicode Normalization Form C
+     *           (http://www.unicode.org/reports/tr15/).
+     *           4. IDs may not contain any of the following ASCII characters: '/', ':',
+     *           '\\', '?', or '#'.
      *     @type \Maps\Fleetengine\V1\Trip $trip
      *           Required. Trip entity to create.
      *           When creating a Trip, the following fields are required:
-     *           * trip_type
-     *           * pickup_point
+     *           * `trip_type`
+     *           * `pickup_point`
      *           The following fields are used if you provide them:
-     *           * number_of_passengers
-     *           * vehicle_id
-     *           * dropoff_point
-     *           * intermediate_destinations
-     *           Only EXCLUSIVE trips support multiple destinations.
-     *           When vehicle_id is set for a shared trip, you must supply
+     *           * `number_of_passengers`
+     *           * `vehicle_id`
+     *           * `dropoff_point`
+     *           * `intermediate_destinations`
+     *           Only `EXCLUSIVE` trips support multiple destinations.
+     *           When `vehicle_id` is set for a shared trip, you must supply
      *           the list of `Trip.vehicle_waypoints` to specify the order of the remaining
      *           waypoints for the vehicle, otherwise the waypoint order will be
      *           undetermined.
@@ -106,7 +116,7 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      *           destinations come before the drop-off point. An `EXCLUSIVE` trip's
      *           waypoints must not interleave with any other trips.
      *           The `trip_id`, `waypoint_type` and `location` fields are used, and all
-     *           other TripWaypoint fields in vehicle_waypoints are ignored.
+     *           other TripWaypoint fields in `vehicle_waypoints` are ignored.
      *           All other Trip fields are ignored.
      * }
      */
@@ -152,8 +162,8 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/{provider}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -166,8 +176,8 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/{provider}".
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -184,9 +194,14 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Unique Trip ID; must be unique per provider.  The actual
-     * format and value is opaque to the Fleet Engine and is determined
-     * by the provider.
+     * Required. Unique Trip ID; must be unique per provider.
+     * Subject to the following normalization and restrictions:
+     * 1. IDs must be valid Unicode strings.
+     * 2. IDs are limited to a maximum length of 64 characters.
+     * 3. IDs will be normalized according to Unicode Normalization Form C
+     * (http://www.unicode.org/reports/tr15/).
+     * 4. IDs may not contain any of the following ASCII characters: '/', ':',
+     * '\\', '?', or '#'.
      *
      * Generated from protobuf field <code>string trip_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -197,9 +212,14 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Unique Trip ID; must be unique per provider.  The actual
-     * format and value is opaque to the Fleet Engine and is determined
-     * by the provider.
+     * Required. Unique Trip ID; must be unique per provider.
+     * Subject to the following normalization and restrictions:
+     * 1. IDs must be valid Unicode strings.
+     * 2. IDs are limited to a maximum length of 64 characters.
+     * 3. IDs will be normalized according to Unicode Normalization Form C
+     * (http://www.unicode.org/reports/tr15/).
+     * 4. IDs may not contain any of the following ASCII characters: '/', ':',
+     * '\\', '?', or '#'.
      *
      * Generated from protobuf field <code>string trip_id = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -216,15 +236,15 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Trip entity to create.
      * When creating a Trip, the following fields are required:
-     * * trip_type
-     * * pickup_point
+     * * `trip_type`
+     * * `pickup_point`
      * The following fields are used if you provide them:
-     * * number_of_passengers
-     * * vehicle_id
-     * * dropoff_point
-     * * intermediate_destinations
-     * Only EXCLUSIVE trips support multiple destinations.
-     * When vehicle_id is set for a shared trip, you must supply
+     * * `number_of_passengers`
+     * * `vehicle_id`
+     * * `dropoff_point`
+     * * `intermediate_destinations`
+     * Only `EXCLUSIVE` trips support multiple destinations.
+     * When `vehicle_id` is set for a shared trip, you must supply
      * the list of `Trip.vehicle_waypoints` to specify the order of the remaining
      * waypoints for the vehicle, otherwise the waypoint order will be
      * undetermined.
@@ -235,7 +255,7 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      * destinations come before the drop-off point. An `EXCLUSIVE` trip's
      * waypoints must not interleave with any other trips.
      * The `trip_id`, `waypoint_type` and `location` fields are used, and all
-     * other TripWaypoint fields in vehicle_waypoints are ignored.
+     * other TripWaypoint fields in `vehicle_waypoints` are ignored.
      * All other Trip fields are ignored.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -259,15 +279,15 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
     /**
      * Required. Trip entity to create.
      * When creating a Trip, the following fields are required:
-     * * trip_type
-     * * pickup_point
+     * * `trip_type`
+     * * `pickup_point`
      * The following fields are used if you provide them:
-     * * number_of_passengers
-     * * vehicle_id
-     * * dropoff_point
-     * * intermediate_destinations
-     * Only EXCLUSIVE trips support multiple destinations.
-     * When vehicle_id is set for a shared trip, you must supply
+     * * `number_of_passengers`
+     * * `vehicle_id`
+     * * `dropoff_point`
+     * * `intermediate_destinations`
+     * Only `EXCLUSIVE` trips support multiple destinations.
+     * When `vehicle_id` is set for a shared trip, you must supply
      * the list of `Trip.vehicle_waypoints` to specify the order of the remaining
      * waypoints for the vehicle, otherwise the waypoint order will be
      * undetermined.
@@ -278,7 +298,7 @@ class CreateTripRequest extends \Google\Protobuf\Internal\Message
      * destinations come before the drop-off point. An `EXCLUSIVE` trip's
      * waypoints must not interleave with any other trips.
      * The `trip_id`, `waypoint_type` and `location` fields are used, and all
-     * other TripWaypoint fields in vehicle_waypoints are ignored.
+     * other TripWaypoint fields in `vehicle_waypoints` are ignored.
      * All other Trip fields are ignored.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Trip trip = 4 [(.google.api.field_behavior) = REQUIRED];</code>

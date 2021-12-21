@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * Types of vehicles that may be filtered for in SearchVehicles.
+ * The type of vehicle.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.Vehicle.VehicleType</code>
  */

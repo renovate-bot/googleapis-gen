@@ -20,160 +20,171 @@
 module Maps
   module Fleetengine
     module V1
-      # CreateVehicle request message.
+      # `CreateVehicle` request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] parent
       #   @return [::String]
-      #     Required. Must be in the format "providers/\\{provider}".
-      #     The provider must be the Project ID (for example, sample-cloud-project)
+      #     Required. Must be in the format `providers/{provider}`.
+      #     The provider must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
       # @!attribute [rw] vehicle_id
       #   @return [::String]
-      #     Required. Unique Vehicle ID; must be unique per provider.  The actual
-      #     format and value is opaque to the Fleet Engine and is determined
-      #     by the provider.
+      #     Required. Unique Vehicle ID; must be unique per provider.
+      #     Subject to the following normalization and restrictions:
+      #
+      #     1. IDs must be valid Unicode strings.
+      #     2. IDs are limited to a maximum length of 64 characters.
+      #     3. IDs will be normalized according to Unicode Normalization Form C
+      #     (http://www.unicode.org/reports/tr15/).
+      #     4. IDs may not contain any of the following ASCII characters: '/', ':',
+      #     '\\', '?', or '#'.
       # @!attribute [rw] vehicle
       #   @return [::Maps::Fleetengine::V1::Vehicle]
       #     Required. The Vehicle entity to create. When creating a Vehicle, the following
       #     fields are required:
       #
-      #     * vehicle_state
-      #     * supported_trip_types
-      #     * maximum_capacity
-      #     * vehicle_type
+      #     * `vehicleState`
+      #     * `supportedTripTypes`
+      #     * `maximumCapacity`
+      #     * `vehicleType`
       #
       #     When creating a Vehicle, the following fields are ignored:
       #
-      #     * name
-      #     * current_trips
-      #     * available_capacity
-      #     * current_route_segment
-      #     * current_route_segment_version
-      #     * waypoints
-      #     * waypoints_version
-      #     * remaining_distance_meters
-      #     * eta_to_next_waypoint
-      #     * navigation_status
+      #     * `name`
+      #     * `currentTrips`
+      #     * `availableCapacity`
+      #     * `current_route_segment`
+      #     * `current_route_segment_end_point`
+      #     * `current_route_segment_version`
+      #     * `current_route_segment_traffic`
+      #     * `route`
+      #     * `waypoints`
+      #     * `waypoints_version`
+      #     * `remaining_distance_meters`
+      #     * `remaining_time_seconds`
+      #     * `eta_to_next_waypoint`
+      #     * `navigation_status`
       #
-      #     All other fields will be used if provided.
+      #     All other fields are optional and used if provided.
       class CreateVehicleRequest
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # GetVehicle request message.
+      # `GetVehicle` request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] name
       #   @return [::String]
       #     Required. Must be in the format
-      #     "providers/\\{provider}/vehicles/\\{vehicle}".
-      #     The provider must be the Project ID (for example, sample-cloud-project)
+      #     `providers/{provider}/vehicles/{vehicle}`.
+      #     The provider must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
       # @!attribute [rw] current_route_segment_version
       #   @return [::Google::Protobuf::Timestamp]
       #     Indicates the minimum timestamp (exclusive) for which
-      #     vehicle.current_route_segment is retrieved.
-      #     If route is unchanged since this timestamp, the current_route_segment
+      #     `Vehicle.current_route_segment` is retrieved.
+      #     If the route is unchanged since this timestamp, the `current_route_segment`
       #     field is not set in the response. If a minimum is unspecified, the
-      #     current_route_segment is always retrieved.
+      #     `current_route_segment` is always retrieved.
       # @!attribute [rw] waypoints_version
       #   @return [::Google::Protobuf::Timestamp]
-      #     Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-      #     data is retrieved. If data is unchanged since this timestamp, the
-      #     vehicle.waypoints data is not set in the response. If this field is
-      #     unspecified, vehicle.waypoints is always retrieved.
+      #     Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+      #     data is retrieved. If the waypoints are unchanged since this timestamp, the
+      #     `vehicle.waypoints` data is not set in the response. If this field is
+      #     unspecified, `vehicle.waypoints` is always retrieved.
       class GetVehicleRequest
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # UpdateVehicle request message.
+      # `UpdateVehicle request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] name
       #   @return [::String]
       #     Required. Must be in the format
-      #     "providers/\\{provider}/vehicles/\\{vehicle}".
-      #     The \\{provider} must be the Project ID (for example, sample-cloud-project)
+      #     `providers/{provider}/vehicles/{vehicle}`.
+      #     The \\{provider} must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
-      #
-      #     Note that if the name is also specified in the name field of the
-      #     vehicle and name is set in the update_mask, both names must be the
-      #     same.  Otherwise it is an Error.
       # @!attribute [rw] vehicle
       #   @return [::Maps::Fleetengine::V1::Vehicle]
-      #     Required. The Vehicle entity update to apply.  When updating a Vehicle,
+      #     Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
       #     the following fields may not be updated as they are managed by the
-      #     Fleet Engine.
-      #       current_trips
-      #       available_capacity
-      #       current_route_segment_version
-      #       waypoints_version
-      #     Furthermore, the name of the vehicle cannot be updated.
+      #     server.
+      #
+      #     * `current_trips`
+      #     * `available_capacity`
+      #     * `current_route_segment_version`
+      #     * `waypoints_version`
+      #
+      #     Furthermore, the vehicle `name` cannot be updated.
+      #
+      #     If the `attributes` field is updated, **all** the vehicle's attributes are
+      #     replaced with the attributes provided in the request. If you want to update
+      #     only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+      #     the `waypoints` field can be updated, but must contain all the waypoints.
+      #     currently on the vehicle, and no other waypoints.
       # @!attribute [rw] update_mask
       #   @return [::Google::Protobuf::FieldMask]
-      #     Required. A field mask indicating which fields of the Vehicle to update.
-      #     The update_mask must contain at least one field.
+      #     Required. A field mask indicating which fields of the `Vehicle` to update.
+      #     At least one field name must be provided.
       class UpdateVehicleRequest
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # UpdateVehicleLocation request message.
+      # `UpdateVehicleLocation` request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] name
       #   @return [::String]
       #     Required. Must be in the format
-      #     "providers/\\{provider}/vehicles/\\{vehicle}.
-      #     The \\{provider} must be the Project ID (for example, sample-cloud-project)
+      #     `providers/{provider}/vehicles/{vehicle}`.
+      #     The \\{provider} must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
       # @!attribute [rw] current_location
       #   @return [::Maps::Fleetengine::V1::VehicleLocation]
-      #     Required. The location to update to.  The last_location and update_time
+      #     Required. The vehicle's most recent location.  The `location` and `update_time`
       #     subfields are required.
       # @!attribute [rw] current_state
       #   @return [::Maps::Fleetengine::V1::VehicleState]
-      #     Set current vehicle state to either ONLINE or OFFLINE;
-      #     if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+      #     Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+      #     If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
       class UpdateVehicleLocationRequest
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # UpdateVehicleAttributes request message.
+      # `UpdateVehicleAttributes` request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] name
       #   @return [::String]
-      #     Required. Must be in the format
-      #     "providers/\\{provider}/vehicles/\\{vehicle}.
-      #     The provider must be the Project ID (for example, sample-cloud-project)
+      #     Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+      #     The provider must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
       # @!attribute [rw] attributes
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttribute>]
-      #     Required. The attributes to update;
-      #     unmentioned attributes will not be altered or removed.
-      #     At most 20 attributes; the combined "key:value" string length cannot
-      #     exceed 256.
+      #     Required. The vehicle attributes to update. Unmentioned attributes will not be
+      #     altered or removed.
       class UpdateVehicleAttributesRequest
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # UpdateVehicleAttributes response message.
+      # `UpdateVehicleAttributes` response message.
       # @!attribute [rw] attributes
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttribute>]
       #     Required. The updated full list of vehicle attributes, including new,
@@ -183,14 +194,14 @@ module Maps
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # SearchVehicles request message.
+      # `SearchVehicles` request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] parent
       #   @return [::String]
-      #     Required. Must be in the format "providers/\\{provider}".
-      #     The provider must be the Project ID (for example, sample-cloud-project)
+      #     Required. Must be in the format `providers/{provider}`.
+      #     The provider must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
       # @!attribute [rw] pickup_point
@@ -199,50 +210,54 @@ module Maps
       # @!attribute [rw] dropoff_point
       #   @return [::Maps::Fleetengine::V1::TerminalLocation]
       #     The customer's intended dropoff location. The field is required if
-      #     trip_types contains TripType.SHARED.
+      #     `trip_types` contains `TripType.SHARED`.
       # @!attribute [rw] pickup_radius_meters
       #   @return [::Integer]
       #     Required. Defines the vehicle search radius around the pickup point. Only
       #     vehicles within the search radius will be returned. Value must be between
-      #     400 and 10000 meters.
+      #     400 and 10000 meters (inclusive).
       # @!attribute [rw] count
       #   @return [::Integer]
-      #     Required. Specifies the maximum number of available vehicles to return. By
-      #     default, the Fleet Engine limits the number to  50.
+      #     Required. Specifies the maximum number of vehicles to return. The value
+      #     must be between 1 and 50 (inclusive).
       # @!attribute [rw] minimum_capacity
       #   @return [::Integer]
-      #     Required. Specifies the minimum number of passengers allowed in the
-      #     vehicle. Must number must be greater than or equal to one. The driver is
-      #     not considered in the capacity search. This number indicates the number of
-      #     passengers being considered for a trip.
+      #     Required. Specifies the number of passengers being considered for a trip. The
+      #     value must be greater than or equal to one. The driver is not considered in
+      #     the capacity value.
       # @!attribute [rw] trip_types
       #   @return [::Array<::Maps::Fleetengine::V1::TripType>]
       #     Required. Restricts the search to only those vehicles that support at least
       #     one of the specified trip types.
+      #
+      #     At the present time, only `EXCLUSIVE` is supported.
       # @!attribute [rw] maximum_staleness
       #   @return [::Google::Protobuf::Duration]
       #     Restricts the search to only those vehicles that have updated their
-      #     locations within the specified duration back from now. If this field is not
+      #     locations within the specified duration. If this field is not
       #     set, the server uses five minutes as the default value.
       # @!attribute [rw] vehicle_types
       #   @return [::Array<::Maps::Fleetengine::V1::Vehicle::VehicleType>]
-      #     Required. Restricts the search to those vehicles with the specified types.
+      #     Required. Restricts the search to vehicles with one of the specified types.
       #     At least one vehicle type must be specified.
       # @!attribute [rw] required_attributes
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttribute>]
-      #     Callers can form complex logical operations using the
-      #     requiredAttributes and requiredOneOfAttributes fields.
+      #     Callers can form complex logical operations using any combination of the
+      #     `required_attributes`, `required_one_of_attributes`, and
+      #     `required_one_of_attribute_sets` fields.
       #
-      #     requiredAttributes is a list; requiredOneOfAttributes uses a message which
-      #     allows a list of lists. In combination, the two fields allow the
-      #     composition of this expression:
+      #     `required_attributes` is a list; `required_one_of_attributes` uses a
+      #     message which allows a list of lists. In combination, the two fields allow
+      #     the composition of this expression:
       #
       #     ```
-      #     (required_attribute[0] AND required_attribute[1] AND ...)
+      #     (required_attributes[0] AND required_attributes[1] AND ...)
       #     AND
-      #     (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+      #     (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+      #     ...)
       #     AND
-      #     (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+      #     (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+      #     ...)
       #     ```
       #
       #     Restricts the search to only those vehicles with the specified attributes.
@@ -252,37 +267,64 @@ module Maps
       # @!attribute [rw] required_one_of_attributes
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttributeList>]
       #     Restricts the search to only those vehicles with at least one of
-      #     the specified attributes applied to each VehicleAttributeList. Within each
+      #     the specified attributes in each `VehicleAttributeList`. Within each
       #     list, a vehicle must match at least one of the attributes. This field is an
-      #     inclusive disjunction/OR operation in each VehicleAttributeList and a
-      #     conjunction/AND operation across the collection of VehicleAttributeList.
+      #     inclusive disjunction/OR operation in each `VehicleAttributeList` and a
+      #     conjunction/AND operation across the collection of `VehicleAttributeList`.
       # @!attribute [rw] required_one_of_attribute_sets
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttributeList>]
-      #     Restricts the search to only those vehicles with at least one set of the
-      #     specified attributes in the VehicleAttributeList. Within each list, a
+      #     `required_one_of_attribute_sets` provides additional functionality.
+      #
+      #     Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+      #     uses a message which allows a list of lists, allowing expressions such as
+      #     this one:
+      #
+      #     ```
+      #     (required_attributes[0] AND required_attributes[1] AND ...)
+      #     AND
+      #     (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+      #     ...)
+      #     OR
+      #     (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+      #     ...)
+      #     ```
+      #
+      #     Restricts the search to only those vehicles with all the attributes in a
+      #     `VehicleAttributeList`. Within each list, a
       #     vehicle must match all of the attributes. This field is a conjunction/AND
-      #     operation in each VehicleAttributeList and inclusive disjunction/OR
-      #     operation across the collection of VehicleAttributeList.
+      #     operation in each `VehicleAttributeList` and inclusive disjunction/OR
+      #     operation across the collection of `VehicleAttributeList`.
       # @!attribute [rw] order_by
       #   @return [::Maps::Fleetengine::V1::SearchVehiclesRequest::VehicleMatchOrder]
-      #     Required. Specifies ordering criterion for results.
+      #     Required. Specifies the desired ordering criterion for results.
       # @!attribute [rw] include_back_to_back
       #   @return [::Boolean]
-      #     Indicates if a vehicle with an active trip is eligible for
-      #     another match. If `false`, a vehicle is excluded from search results.
-      #     If `true`, search results include vehicles with `TripStatus` of
-      #     `ENROUTE_TO_DROPOFF`. The services only use this field if
-      #     the `SearchVehicles` request has `TripType` set to EXCLUSIVE.
-      #     Default value is `false`.
+      #     Indicates if a vehicle with a single active trip is eligible for another
+      #     match. If `false`, vehicles with assigned trips are excluded from the
+      #     search results. If `true`, search results include vehicles with
+      #     `TripStatus` of `ENROUTE_TO_DROPOFF`.
+      #
+      #     This field is only considered if a single `trip_type` of `EXCLUSIVE` is
+      #     specified.
+      #
+      #     The default value is `false`.
       # @!attribute [rw] trip_id
       #   @return [::String]
-      #     Indicates the ID of the trip the searchVehicleRequest is
-      #     associated with.
+      #     Indicates the trip associated with this `SearchVehicleRequest`.
+      #     Unique Trip ID; must be unique per provider.
+      #     Subject to the following normalization and restrictions:
+      #
+      #     1. IDs must be valid Unicode strings.
+      #     2. IDs are limited to a maximum length of 64 characters.
+      #     3. IDs will be normalized according to Unicode Normalization Form C
+      #     (http://www.unicode.org/reports/tr15/).
+      #     4. IDs may not contain any of the following ASCII characters: '/', ':',
+      #     '\\', '?', or '#'.
       class SearchVehiclesRequest
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
 
-        # Specifies the sort order of the vehicle matches in the response.
+        # Specifies the order of the vehicle matches in the response.
         module VehicleMatchOrder
           # Default, used for unspecified or unrecognized vehicle matches order.
           UNKNOWN_VEHICLE_MATCH_ORDER = 0
@@ -290,52 +332,40 @@ module Maps
           # Ascending order by vehicle driving time to the pickup point.
           PICKUP_POINT_ETA = 1
 
-          # Ascending order by the vehicle driving distance to the pickup point.
+          # Ascending order by vehicle driving distance to the pickup point.
           PICKUP_POINT_DISTANCE = 2
 
           # Ascending order by vehicle driving time to the dropoff point. This order
-          # can only be used if the dropoff_point is specified in the request.
+          # can only be used if the dropoff point is specified in the request.
           DROPOFF_POINT_ETA = 3
 
-          # Ascending order by straightline distance from vehicle location to pickup
-          # location. This is used primarily as a backup if the maps backend is not
-          # reachable.
+          # Ascending order by straight-line distance from the vehicle's last
+          # reported location to the pickup point.
           PICKUP_POINT_STRAIGHT_DISTANCE = 4
 
-          # Ascending order by the match cost.
+          # Ascending order by the configured match cost.
           COST = 5
         end
       end
 
-      # SearchVehicles response message.
+      # `SearchVehicles` response message.
       # @!attribute [rw] matches
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleMatch>]
-      #     List of vehicles that match the request options.
-      #
-      #     Ordered by ascending vehicle_pickup_eta, with ties broken by ascending
-      #     trip_type enum value, followed by matches that don't have
-      #     vehicle_pickup_eta set.
-      #
-      #     Example response: (Logically represented, not actual response fields):
-      #
-      #     * (VehicleId: Vehicle1, ETA: 10 AM, TripType: SHARED),
-      #     * (VehicleId: Vehicle2, ETA: 10 AM, TripType: EXCLUSIVE),
-      #     * (VehicleId: Vehicle3, ETA: 11 AM, TripType: EXCLUSIVE),
-      #     * (VehicleId: Vehicle4, ETA: Not set, TripType: SHARED),
-      #     * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
+      #     List of vehicles that match the `SearchVehiclesRequest` criteria, ordered
+      #     according to `SearchVehiclesRequest.order_by` field.
       class SearchVehiclesResponse
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # ListVehicles request message.
+      # `ListVehicles` request message.
       # @!attribute [rw] header
       #   @return [::Maps::Fleetengine::V1::RequestHeader]
       #     The standard Fleet Engine request header.
       # @!attribute [rw] parent
       #   @return [::String]
-      #     Required. Must be in the format "providers/\\{provider}".
-      #     The provider must be the Project ID (for example, sample-cloud-project)
+      #     Required. Must be in the format `providers/{provider}`.
+      #     The provider must be the Project ID (for example, `sample-cloud-project`)
       #     of the Google Cloud Project of which the service account making
       #     this call is a member.
       # @!attribute [rw] page_size
@@ -344,66 +374,88 @@ module Maps
       #     Default value: 100.
       # @!attribute [rw] page_token
       #   @return [::String]
-      #     The next_page_token value returned from a previous response, if any.
+      #     The `next_page_token` value returned from a previous call to
+      #     `ListVehicles`. Functionality is undefined if the filter criteria of this
+      #     request don't match the criteria in the request that produced this
+      #     `page_token`.
       # @!attribute [rw] minimum_capacity
       #   @return [::Google::Protobuf::Int32Value]
-      #     Specifies the required minimum capacity of the vehicle.
-      #     The driver is not considered in the capacity search.
-      #     This is just the number of passengers being considered for a trip.
-      #     If set, must be greater or equal to 0.
+      #     Specifies the required minimum capacity of the vehicle. All vehicles
+      #     returned will have a `maximum_capacity` greater than or equal to this
+      #     value. If set, must be greater or equal to 0.
       # @!attribute [rw] trip_types
       #   @return [::Array<::Maps::Fleetengine::V1::TripType>]
-      #     Restrict the search to only those vehicles that support at least
+      #     Restrict the response to vehicles that support at least
       #     one of the specified trip types.
       # @!attribute [rw] maximum_staleness
       #   @return [::Google::Protobuf::Duration]
-      #     Restrict the search to only those vehicles that have updated
+      #     Restrict the response to vehicles that have updated
       #     their locations within the specified duration back from now.
       #     If present, must be a valid positive duration.
       # @!attribute [rw] vehicle_type_categories
       #   @return [::Array<::Maps::Fleetengine::V1::Vehicle::VehicleType::Category>]
-      #     Required. Restrict the search to those vehicles with the specified type categories.
+      #     Required. Restrict the response to vehicles with one of the specified type
+      #     categories.
       # @!attribute [rw] required_attributes
       #   @return [::Array<::String>]
-      #     Callers can form complex logical operations using the
-      #     requiredAttributes and requiredOneOfAttributes fields.
+      #     Callers can form complex logical operations using any combination of the
+      #     `required_attributes`, `required_one_of_attributes`, and
+      #     `required_one_of_attribute_sets` fields.
       #
-      #     requiredAttributes is a list; requiredOneOfAttributes uses a message which
-      #     allows a list of lists. In combination, the two fields allow the
-      #     composition of this expression:
+      #     `required_attributes` is a list; `required_one_of_attributes` uses a
+      #     message which allows a list of lists. In combination, the two fields allow
+      #     the composition of this expression:
       #
       #     ```
-      #     (required_attribute[0] AND required_attribute[1] AND ...)
+      #     (required_attributes[0] AND required_attributes[1] AND ...)
       #     AND
-      #     (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+      #     (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+      #     ...)
       #     AND
-      #     (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+      #     (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+      #     ...)
       #     ```
       #
-      #     Restrict the search to only those vehicles
-      #     with the specified attributes. This field is a conjunction/AND operation.
-      #     Your app can specify up to 100 attributes; however, the combined
-      #     key:value string length cannot exceed 1024 characters.
+      #     Restrict the response to vehicles with the specified attributes. This field
+      #     is a conjunction/AND operation. Your app can specify up to 100 attributes;
+      #     however, the combined key:value string length cannot exceed 1024
+      #     characters.
       # @!attribute [rw] required_one_of_attributes
       #   @return [::Array<::String>]
-      #     Restrict the search to only those vehicles with at least one
-      #     of the specified attributes applied to each VehicleAttributeList.
+      #     Restrict the response to vehicles with at least one
+      #     of the specified attributes in each `VehicleAttributeList`.
       #     Within each list, a vehicle must match at least one of the attributes.
       #     This field is an inclusive disjunction/OR operation in each
-      #     VehicleAttributeList and a conjunction/AND operation across the collection
-      #     of VehicleAttributeList.
-      #     Format: key1:value1|key2:value2|key3:value3...
+      #     `VehicleAttributeList` and a conjunction/AND operation across the
+      #     collection of `VehicleAttributeList`. Format:
+      #     key1:value1|key2:value2|key3:value3...
       # @!attribute [rw] required_one_of_attribute_sets
       #   @return [::Array<::String>]
-      #     Restrict the search to only those vehicles with at least one set of the
-      #     specified attributes in the VehicleAttributeList. Within each list, a
-      #     vehicle must match all of the attributes. This field is a conjunction/AND
-      #     operation in each VehicleAttributeList and inclusive disjunction/OR
-      #     operation across the collection of VehicleAttributeList.
-      #     Format: key1:value1|key2:value2|key3:value3...
+      #     `required_one_of_attribute_sets` provides additional functionality.
+      #
+      #     Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+      #     uses a message which allows a list of lists, allowing expressions such as
+      #     this one:
+      #
+      #     ```
+      #     (required_attributes[0] AND required_attributes[1] AND ...)
+      #     AND
+      #     (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+      #     ...)
+      #     OR
+      #     (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+      #     ...)
+      #     ```
+      #
+      #     Restrict the response to vehicles that match all the attributes in a
+      #     `VehicleAttributeList`. Within each list, a vehicle must match all of the
+      #     attributes. This field is a conjunction/AND operation in each
+      #     `VehicleAttributeList` and inclusive disjunction/OR operation across the
+      #     collection of `VehicleAttributeList`. Format:
+      #     key1:value1|key2:value2|key3:value3...
       # @!attribute [rw] vehicle_state
       #   @return [::Maps::Fleetengine::V1::VehicleState]
-      #     Restrict the search to only those vehicles that have this vehicle state.
+      #     Restrict the response to vehicles that have this vehicle state.
       # @!attribute [rw] on_trip_only
       #   @return [::Boolean]
       #     Only return the vehicles with current trip(s).
@@ -412,25 +464,25 @@ module Maps
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # ListVehicles response message.
+      # `ListVehicles` response message.
       # @!attribute [rw] vehicles
       #   @return [::Array<::Maps::Fleetengine::V1::Vehicle>]
-      #     Depends on vehicles matching request criteria.
-      #     There will be a maximum number of vehicles returned based on the page_size
+      #     Vehicles matching the criteria in the request.
+      #     The maximum number of vehicles returned is determined by the `page_size`
       #     field in the request.
       # @!attribute [rw] next_page_token
       #   @return [::String]
       #     Token to retrieve the next page of vehicles, or empty if there are no
-      #     more vehicles in the list.
+      #     more vehicles that meet the request criteria.
       # @!attribute [rw] total_size
       #   @return [::Integer]
-      #     Required. Total number of vehicles matching request criteria across all pages.
+      #     Required. Total number of vehicles matching the request criteria across all pages.
       class ListVehiclesResponse
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # Waypoint describes intermediate points along a route.
+      # Describes intermediate points along a route.
       # @!attribute [rw] lat_lng
       #   @return [::Google::Type::LatLng]
       #     The location of this waypoint.
@@ -442,8 +494,8 @@ module Maps
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # VehicleMatch contains the vehicle, ETA, and distance calculations for a
-      # vehicle that matches the SearchVehiclesRequest.
+      # Contains the vehicle and related estimates for a vehicle that match the
+      # points of active trips for the vehicle `SearchVehiclesRequest`.
       # @!attribute [rw] vehicle
       #   @return [::Maps::Fleetengine::V1::Vehicle]
       #     Required. A vehicle that matches the request.
@@ -451,27 +503,29 @@ module Maps
       #   @return [::Google::Protobuf::Timestamp]
       #     The vehicle's driving ETA to the pickup point specified in the
       #     request. An empty value indicates a failure in calculating ETA for the
-      #     vehicle.
+      #     vehicle.  If `SearchVehiclesRequest.include_back_to_back` was `true` and
+      #     this vehicle has an active trip, `vehicle_pickup_eta` includes the time
+      #     required to complete the current active trip.
       # @!attribute [rw] vehicle_pickup_distance_meters
       #   @return [::Google::Protobuf::Int32Value]
-      #     The vehicle's driving distance to the pickup point specified in
-      #     the request, including any intermediate pickup or dropoff points for
-      #     an existing ride.  An empty value indicates a failure in calculating
-      #     distance for the vehicle.
+      #     The distance from the Vehicle's current location to the pickup point
+      #     specified in the request, including any intermediate pickup or dropoff
+      #     points for existing trips. This distance comprises the calculated driving
+      #     (route) distance, plus the straight line distance between the navigation
+      #     end point and the requested pickup point. (The distance between the
+      #     navigation end point and the requested pickup point is typically small.) An
+      #     empty value indicates an error in calculating the distance.
       # @!attribute [rw] vehicle_pickup_straight_line_distance_meters
       #   @return [::Google::Protobuf::Int32Value]
-      #     Required. The straight-line distance between the vehicle and the pickup
-      #     point specified in the request, including intermediate waypoints for
-      #     existing trips.
+      #     Required. The straight-line distance between the vehicle and the pickup point
+      #     specified in the request.
       # @!attribute [rw] vehicle_dropoff_eta
       #   @return [::Google::Protobuf::Timestamp]
-      #     The complete vehicle's driving ETA to the drop off point
-      #     specified in the request. The ETA includes any required visits for active
-      #     trips that must be completed before the vehicle visits the dropoff_point
-      #     specified in the request. The value will only be populated when a
-      #     dropoff_point is specified in the request. An empty value indicates
-      #     a failure in calculating the ETA for the vehicle to reach
-      #     the dropoff_point.
+      #     The complete vehicle's driving ETA to the drop off point specified in the
+      #     request. The ETA includes stopping at any waypoints before the
+      #     `dropoff_point` specified in the request. The value will only be populated
+      #     when a drop off point is specified in the request. An empty value indicates
+      #     an error calculating the ETA.
       # @!attribute [rw] vehicle_pickup_to_dropoff_distance_meters
       #   @return [::Google::Protobuf::Int32Value]
       #     The vehicle's driving distance (in meters) from the pickup point
@@ -479,9 +533,9 @@ module Maps
       #     between the two points and does not include the vehicle location or any
       #     other points that must be visited before the vehicle visits either the
       #     pickup point or dropoff point. The value will only be populated when a
-      #     dropoff_point is specified in the request. An empty value indicates
+      #     `dropoff_point` is specified in the request. An empty value indicates
       #     a failure in calculating the distance from the pickup to
-      #     dropoff points specified in the request.
+      #     drop off point specified in the request.
       # @!attribute [rw] trip_type
       #   @return [::Maps::Fleetengine::V1::TripType]
       #     Required. The trip type of the request that was used to calculate the ETA
@@ -489,8 +543,8 @@ module Maps
       # @!attribute [rw] vehicle_trips_waypoints
       #   @return [::Array<::Maps::Fleetengine::V1::Waypoint>]
       #     The ordered list of waypoints used to calculate the ETA. The list
-      #     will include the vehicle location, the pickup/drop off points of active
-      #     trips for the vehicle and the pickup/dropoff points provided in the
+      #     includes vehicle location, the pickup/drop off points of active
+      #     trips for the vehicle, and the pickup/drop off points provided in the
       #     request. An empty list indicates a failure in calculating ETA for the
       #     vehicle.
       # @!attribute [rw] vehicle_match_type
@@ -498,13 +552,13 @@ module Maps
       #     Type of the vehicle match.
       # @!attribute [rw] requested_ordered_by
       #   @return [::Maps::Fleetengine::V1::SearchVehiclesRequest::VehicleMatchOrder]
-      #     The method the caller requested for sorting vehicle matches.
+      #     The order requested for sorting vehicle matches.
       # @!attribute [rw] ordered_by
       #   @return [::Maps::Fleetengine::V1::SearchVehiclesRequest::VehicleMatchOrder]
-      #     The actual method that is used to order this vehicle. In normal cases this
-      #     will match the 'order_by' field from the request, however in certain
-      #     circumstances such as a failure of google maps backends, a different method
-      #     may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
+      #     The actual order that was used for this vehicle. Normally this
+      #     will match the 'order_by' field from the request; however, in certain
+      #     circumstances such as an internal server error, a different method
+      #     may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
       class VehicleMatch
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -514,21 +568,26 @@ module Maps
           # Unknown vehicle match type
           UNKNOWN = 0
 
-          # Exclusive vehicle trip match
+          # The vehicle currently has no trip assigned to it and can proceed to the
+          # pickup point.
           EXCLUSIVE = 1
 
-          # Back to back ride match.
+          # The vehicle is currently assigned to a trip, but can proceed to the
+          # pickup point after completing the in-progress trip.  ETA and distance
+          # calculations take the existing trip into account.
           BACK_TO_BACK = 2
 
-          # Carpool ride match.
+          # The vehicle has sufficient capacity for a shared ride.
           CARPOOL = 3
 
-          # Carpool ride match. The car has an active exclusive trip.
+          # The vehicle will finish its current, active trip before proceeding to the
+          # pickup point.  ETA and distance calculations take the existing trip into
+          # account.
           CARPOOL_BACK_TO_BACK = 4
         end
       end
 
-      # This messages allows a list-of-list datatype for VehicleAttribute.
+      # A list-of-lists datatype for vehicle attributes.
       # @!attribute [rw] attributes
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttribute>]
       #     A list of attributes in this collection.

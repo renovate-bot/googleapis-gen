@@ -33,28 +33,32 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * CreateVehicle instantiates a new vehicle associated with a rideshare
-     * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
      *
-     * The following Vehicle fields are required when creating a Vehicle:
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
      *
-     * * vehicleState
-     * * supportedTripTypes
-     * * maximumCapacity
-     * * vehicleType
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
      *
-     * The following Vehicle fields are ignored when creating a Vehicle:
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
      *
-     * * name
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment
-     * * current_route_segment_version
-     * * waypoint
-     * * waypoints_version
-     * * remaining_distance_meters
-     * * eta_to_next_waypoint
-     * * navigation_status
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
      *
      * All other fields are optional and used if provided.
      * @param \Maps\Fleetengine\V1\CreateVehicleRequest $argument input argument
@@ -71,7 +75,7 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * GetVehicle returns a vehicle from the Fleet Engine.
+     * Returns a vehicle from the Fleet Engine.
      * @param \Maps\Fleetengine\V1\GetVehicleRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -86,19 +90,22 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * UpdateVehicle writes updated vehicle data to the Fleet Engine.
+     * Writes updated vehicle data to the Fleet Engine.
      *
-     * When updating a Vehicle, the following fields cannot be updated since they
-     * are managed by the Fleet Engine:
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
      *
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment_version
-     * * waypoints_version
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
      *
-     * The vehicle name also cannot be updated.
+     * The vehicle `name` also cannot be updated.
      *
-     * The waypoints field can be updated, but must contain all the waypoints
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
      * currently on the vehicle, and no other waypoints.
      * @param \Maps\Fleetengine\V1\UpdateVehicleRequest $argument input argument
      * @param array $metadata metadata
@@ -114,8 +121,8 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
+     * Deprecated: Use the `UpdateVehicle` method instead.
      * UpdateVehicleLocation updates the location of the vehicle.
-     * This method is deprecated. Use UpdateVehicle method instead.
      * @param \Maps\Fleetengine\V1\UpdateVehicleLocationRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -130,11 +137,11 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * UpdateVehicleAttributes partially updates a vehicle's attributes.
+     * Partially updates a vehicle's attributes.
      * Only the attributes mentioned in the request will be updated, other
-     * attributes will NOT be altered. Note: this is different in UpdateVehicle,
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
      * where the whole `attributes` field will be replaced by the one in
-     * UpdateVehicleRequest, attributes not in the request would be removed.
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
      * @param \Maps\Fleetengine\V1\UpdateVehicleAttributesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -149,7 +156,7 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * ListVehicles returns a paginated list of vehicles associated with
+     * Returns a paginated list of vehicles associated with
      * a provider that match the request options.
      * @param \Maps\Fleetengine\V1\ListVehiclesRequest $argument input argument
      * @param array $metadata metadata
@@ -165,7 +172,7 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * SearchVehicles returns a list of vehicles that match the request options.
+     * Returns a list of vehicles that match the request options.
      * @param \Maps\Fleetengine\V1\SearchVehiclesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options
@@ -180,12 +187,11 @@ class VehicleServiceGrpcClient extends \Grpc\BaseStub {
     }
 
     /**
-     * SearchFuzzedVehicles returns a list of vehicles that match the request
-     * options with their locations fuzzed.
-     * Request does not support 'order_by' field.
-     * Vehicle matches in response will be in order of distance from pickup point.
-     * Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-     * set.
+     * Returns a list of vehicles that match the request
+     * options, but the vehicle locations will be somewhat altered for privacy.
+     * This method does not support the `SearchVehicleRequest.order_by` field.
+     * Vehicle matches in the response will be in order of distance from the
+     * pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
      * @param \Maps\Fleetengine\V1\SearchVehiclesRequest $argument input argument
      * @param array $metadata metadata
      * @param array $options call options

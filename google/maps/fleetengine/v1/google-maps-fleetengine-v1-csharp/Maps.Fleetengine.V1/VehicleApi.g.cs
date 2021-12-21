@@ -179,7 +179,7 @@ namespace Maps.Fleetengine.V1 {
   }
   #region Messages
   /// <summary>
-  /// CreateVehicle request message.
+  /// `CreateVehicle` request message.
   /// </summary>
   public sealed partial class CreateVehicleRequest : pb::IMessage<CreateVehicleRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -247,8 +247,8 @@ namespace Maps.Fleetengine.V1 {
     public const int ParentFieldNumber = 3;
     private string parent_ = "";
     /// <summary>
-    /// Required. Must be in the format "providers/{provider}".
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -265,9 +265,15 @@ namespace Maps.Fleetengine.V1 {
     public const int VehicleIdFieldNumber = 4;
     private string vehicleId_ = "";
     /// <summary>
-    /// Required. Unique Vehicle ID; must be unique per provider.  The actual
-    /// format and value is opaque to the Fleet Engine and is determined
-    /// by the provider.
+    /// Required. Unique Vehicle ID; must be unique per provider.
+    /// Subject to the following normalization and restrictions:
+    ///
+    /// 1. IDs must be valid Unicode strings.
+    /// 2. IDs are limited to a maximum length of 64 characters.
+    /// 3. IDs will be normalized according to Unicode Normalization Form C
+    /// (http://www.unicode.org/reports/tr15/).
+    /// 4. IDs may not contain any of the following ASCII characters: '/', ':',
+    /// '\\', '?', or '#'.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -285,25 +291,29 @@ namespace Maps.Fleetengine.V1 {
     /// Required. The Vehicle entity to create. When creating a Vehicle, the following
     /// fields are required:
     ///
-    /// * vehicle_state
-    /// * supported_trip_types
-    /// * maximum_capacity
-    /// * vehicle_type
+    /// * `vehicleState`
+    /// * `supportedTripTypes`
+    /// * `maximumCapacity`
+    /// * `vehicleType`
     ///
     /// When creating a Vehicle, the following fields are ignored:
     ///
-    /// * name
-    /// * current_trips
-    /// * available_capacity
-    /// * current_route_segment
-    /// * current_route_segment_version
-    /// * waypoints
-    /// * waypoints_version
-    /// * remaining_distance_meters
-    /// * eta_to_next_waypoint
-    /// * navigation_status
+    /// * `name`
+    /// * `currentTrips`
+    /// * `availableCapacity`
+    /// * `current_route_segment`
+    /// * `current_route_segment_end_point`
+    /// * `current_route_segment_version`
+    /// * `current_route_segment_traffic`
+    /// * `route`
+    /// * `waypoints`
+    /// * `waypoints_version`
+    /// * `remaining_distance_meters`
+    /// * `remaining_time_seconds`
+    /// * `eta_to_next_waypoint`
+    /// * `navigation_status`
     ///
-    /// All other fields will be used if provided.
+    /// All other fields are optional and used if provided.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -538,7 +548,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// GetVehicle request message.
+  /// `GetVehicle` request message.
   /// </summary>
   public sealed partial class GetVehicleRequest : pb::IMessage<GetVehicleRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -607,8 +617,8 @@ namespace Maps.Fleetengine.V1 {
     private string name_ = "";
     /// <summary>
     /// Required. Must be in the format
-    /// "providers/{provider}/vehicles/{vehicle}".
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// `providers/{provider}/vehicles/{vehicle}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -626,10 +636,10 @@ namespace Maps.Fleetengine.V1 {
     private global::Google.Protobuf.WellKnownTypes.Timestamp currentRouteSegmentVersion_;
     /// <summary>
     /// Indicates the minimum timestamp (exclusive) for which
-    /// vehicle.current_route_segment is retrieved.
-    /// If route is unchanged since this timestamp, the current_route_segment
+    /// `Vehicle.current_route_segment` is retrieved.
+    /// If the route is unchanged since this timestamp, the `current_route_segment`
     /// field is not set in the response. If a minimum is unspecified, the
-    /// current_route_segment is always retrieved.
+    /// `current_route_segment` is always retrieved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -644,10 +654,10 @@ namespace Maps.Fleetengine.V1 {
     public const int WaypointsVersionFieldNumber = 5;
     private global::Google.Protobuf.WellKnownTypes.Timestamp waypointsVersion_;
     /// <summary>
-    /// Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-    /// data is retrieved. If data is unchanged since this timestamp, the
-    /// vehicle.waypoints data is not set in the response. If this field is
-    /// unspecified, vehicle.waypoints is always retrieved.
+    /// Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+    /// data is retrieved. If the waypoints are unchanged since this timestamp, the
+    /// `vehicle.waypoints` data is not set in the response. If this field is
+    /// unspecified, `vehicle.waypoints` is always retrieved.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -891,7 +901,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// UpdateVehicle request message.
+  /// `UpdateVehicle request message.
   /// </summary>
   public sealed partial class UpdateVehicleRequest : pb::IMessage<UpdateVehicleRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -960,14 +970,10 @@ namespace Maps.Fleetengine.V1 {
     private string name_ = "";
     /// <summary>
     /// Required. Must be in the format
-    /// "providers/{provider}/vehicles/{vehicle}".
-    /// The {provider} must be the Project ID (for example, sample-cloud-project)
+    /// `providers/{provider}/vehicles/{vehicle}`.
+    /// The {provider} must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
-    ///
-    /// Note that if the name is also specified in the name field of the
-    /// vehicle and name is set in the update_mask, both names must be the
-    /// same.  Otherwise it is an Error.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -982,14 +988,22 @@ namespace Maps.Fleetengine.V1 {
     public const int VehicleFieldNumber = 4;
     private global::Maps.Fleetengine.V1.Vehicle vehicle_;
     /// <summary>
-    /// Required. The Vehicle entity update to apply.  When updating a Vehicle,
+    /// Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
     /// the following fields may not be updated as they are managed by the
-    /// Fleet Engine.
-    ///   current_trips
-    ///   available_capacity
-    ///   current_route_segment_version
-    ///   waypoints_version
-    /// Furthermore, the name of the vehicle cannot be updated.
+    /// server.
+    ///
+    /// * `current_trips`
+    /// * `available_capacity`
+    /// * `current_route_segment_version`
+    /// * `waypoints_version`
+    ///
+    /// Furthermore, the vehicle `name` cannot be updated.
+    ///
+    /// If the `attributes` field is updated, **all** the vehicle's attributes are
+    /// replaced with the attributes provided in the request. If you want to update
+    /// only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+    /// the `waypoints` field can be updated, but must contain all the waypoints.
+    /// currently on the vehicle, and no other waypoints.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1004,8 +1018,8 @@ namespace Maps.Fleetengine.V1 {
     public const int UpdateMaskFieldNumber = 5;
     private global::Google.Protobuf.WellKnownTypes.FieldMask updateMask_;
     /// <summary>
-    /// Required. A field mask indicating which fields of the Vehicle to update.
-    /// The update_mask must contain at least one field.
+    /// Required. A field mask indicating which fields of the `Vehicle` to update.
+    /// At least one field name must be provided.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1249,7 +1263,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// UpdateVehicleLocation request message.
+  /// `UpdateVehicleLocation` request message.
   /// </summary>
   [global::System.ObsoleteAttribute]
   public sealed partial class UpdateVehicleLocationRequest : pb::IMessage<UpdateVehicleLocationRequest>
@@ -1319,8 +1333,8 @@ namespace Maps.Fleetengine.V1 {
     private string name_ = "";
     /// <summary>
     /// Required. Must be in the format
-    /// "providers/{provider}/vehicles/{vehicle}.
-    /// The {provider} must be the Project ID (for example, sample-cloud-project)
+    /// `providers/{provider}/vehicles/{vehicle}`.
+    /// The {provider} must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -1337,7 +1351,7 @@ namespace Maps.Fleetengine.V1 {
     public const int CurrentLocationFieldNumber = 4;
     private global::Maps.Fleetengine.V1.VehicleLocation currentLocation_;
     /// <summary>
-    /// Required. The location to update to.  The last_location and update_time
+    /// Required. The vehicle's most recent location.  The `location` and `update_time`
     /// subfields are required.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1353,8 +1367,8 @@ namespace Maps.Fleetengine.V1 {
     public const int CurrentStateFieldNumber = 5;
     private global::Maps.Fleetengine.V1.VehicleState currentState_ = global::Maps.Fleetengine.V1.VehicleState.UnknownVehicleState;
     /// <summary>
-    /// Set current vehicle state to either ONLINE or OFFLINE;
-    /// if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+    /// Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+    /// If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1589,7 +1603,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// UpdateVehicleAttributes request message.
+  /// `UpdateVehicleAttributes` request message.
   /// </summary>
   public sealed partial class UpdateVehicleAttributesRequest : pb::IMessage<UpdateVehicleAttributesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -1656,9 +1670,8 @@ namespace Maps.Fleetengine.V1 {
     public const int NameFieldNumber = 3;
     private string name_ = "";
     /// <summary>
-    /// Required. Must be in the format
-    /// "providers/{provider}/vehicles/{vehicle}.
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -1677,10 +1690,8 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(34, global::Maps.Fleetengine.V1.VehicleAttribute.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> attributes_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute>();
     /// <summary>
-    /// Required. The attributes to update;
-    /// unmentioned attributes will not be altered or removed.
-    /// At most 20 attributes; the combined "key:value" string length cannot
-    /// exceed 256.
+    /// Required. The vehicle attributes to update. Unmentioned attributes will not be
+    /// altered or removed.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1869,7 +1880,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// UpdateVehicleAttributes response message.
+  /// `UpdateVehicleAttributes` response message.
   /// </summary>
   public sealed partial class UpdateVehicleAttributesResponse : pb::IMessage<UpdateVehicleAttributesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2054,7 +2065,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// SearchVehicles request message.
+  /// `SearchVehicles` request message.
   /// </summary>
   public sealed partial class SearchVehiclesRequest : pb::IMessage<SearchVehiclesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2134,8 +2145,8 @@ namespace Maps.Fleetengine.V1 {
     public const int ParentFieldNumber = 3;
     private string parent_ = "";
     /// <summary>
-    /// Required. Must be in the format "providers/{provider}".
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -2168,7 +2179,7 @@ namespace Maps.Fleetengine.V1 {
     private global::Maps.Fleetengine.V1.TerminalLocation dropoffPoint_;
     /// <summary>
     /// The customer's intended dropoff location. The field is required if
-    /// trip_types contains TripType.SHARED.
+    /// `trip_types` contains `TripType.SHARED`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2185,7 +2196,7 @@ namespace Maps.Fleetengine.V1 {
     /// <summary>
     /// Required. Defines the vehicle search radius around the pickup point. Only
     /// vehicles within the search radius will be returned. Value must be between
-    /// 400 and 10000 meters.
+    /// 400 and 10000 meters (inclusive).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2200,8 +2211,8 @@ namespace Maps.Fleetengine.V1 {
     public const int CountFieldNumber = 7;
     private int count_;
     /// <summary>
-    /// Required. Specifies the maximum number of available vehicles to return. By
-    /// default, the Fleet Engine limits the number to  50.
+    /// Required. Specifies the maximum number of vehicles to return. The value
+    /// must be between 1 and 50 (inclusive).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2216,10 +2227,9 @@ namespace Maps.Fleetengine.V1 {
     public const int MinimumCapacityFieldNumber = 8;
     private int minimumCapacity_;
     /// <summary>
-    /// Required. Specifies the minimum number of passengers allowed in the
-    /// vehicle. Must number must be greater than or equal to one. The driver is
-    /// not considered in the capacity search. This number indicates the number of
-    /// passengers being considered for a trip.
+    /// Required. Specifies the number of passengers being considered for a trip. The
+    /// value must be greater than or equal to one. The driver is not considered in
+    /// the capacity value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2238,6 +2248,8 @@ namespace Maps.Fleetengine.V1 {
     /// <summary>
     /// Required. Restricts the search to only those vehicles that support at least
     /// one of the specified trip types.
+    ///
+    /// At the present time, only `EXCLUSIVE` is supported.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2250,7 +2262,7 @@ namespace Maps.Fleetengine.V1 {
     private global::Google.Protobuf.WellKnownTypes.Duration maximumStaleness_;
     /// <summary>
     /// Restricts the search to only those vehicles that have updated their
-    /// locations within the specified duration back from now. If this field is not
+    /// locations within the specified duration. If this field is not
     /// set, the server uses five minutes as the default value.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2268,7 +2280,7 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(114, global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType> vehicleTypes_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType>();
     /// <summary>
-    /// Required. Restricts the search to those vehicles with the specified types.
+    /// Required. Restricts the search to vehicles with one of the specified types.
     /// At least one vehicle type must be specified.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2283,19 +2295,22 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(98, global::Maps.Fleetengine.V1.VehicleAttribute.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute> requiredAttributes_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttribute>();
     /// <summary>
-    /// Callers can form complex logical operations using the
-    /// requiredAttributes and requiredOneOfAttributes fields.
+    /// Callers can form complex logical operations using any combination of the
+    /// `required_attributes`, `required_one_of_attributes`, and
+    /// `required_one_of_attribute_sets` fields.
     ///
-    /// requiredAttributes is a list; requiredOneOfAttributes uses a message which
-    /// allows a list of lists. In combination, the two fields allow the
-    /// composition of this expression:
+    /// `required_attributes` is a list; `required_one_of_attributes` uses a
+    /// message which allows a list of lists. In combination, the two fields allow
+    /// the composition of this expression:
     ///
     /// ```
-    /// (required_attribute[0] AND required_attribute[1] AND ...)
+    /// (required_attributes[0] AND required_attributes[1] AND ...)
     /// AND
-    /// (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+    /// (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+    /// ...)
     /// AND
-    /// (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+    /// (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+    /// ...)
     /// ```
     ///
     /// Restricts the search to only those vehicles with the specified attributes.
@@ -2316,10 +2331,10 @@ namespace Maps.Fleetengine.V1 {
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttributeList> requiredOneOfAttributes_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttributeList>();
     /// <summary>
     /// Restricts the search to only those vehicles with at least one of
-    /// the specified attributes applied to each VehicleAttributeList. Within each
+    /// the specified attributes in each `VehicleAttributeList`. Within each
     /// list, a vehicle must match at least one of the attributes. This field is an
-    /// inclusive disjunction/OR operation in each VehicleAttributeList and a
-    /// conjunction/AND operation across the collection of VehicleAttributeList.
+    /// inclusive disjunction/OR operation in each `VehicleAttributeList` and a
+    /// conjunction/AND operation across the collection of `VehicleAttributeList`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2333,11 +2348,27 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(162, global::Maps.Fleetengine.V1.VehicleAttributeList.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttributeList> requiredOneOfAttributeSets_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleAttributeList>();
     /// <summary>
-    /// Restricts the search to only those vehicles with at least one set of the
-    /// specified attributes in the VehicleAttributeList. Within each list, a
+    /// `required_one_of_attribute_sets` provides additional functionality.
+    ///
+    /// Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+    /// uses a message which allows a list of lists, allowing expressions such as
+    /// this one:
+    ///
+    /// ```
+    /// (required_attributes[0] AND required_attributes[1] AND ...)
+    /// AND
+    /// (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+    /// ...)
+    /// OR
+    /// (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+    /// ...)
+    /// ```
+    ///
+    /// Restricts the search to only those vehicles with all the attributes in a
+    /// `VehicleAttributeList`. Within each list, a
     /// vehicle must match all of the attributes. This field is a conjunction/AND
-    /// operation in each VehicleAttributeList and inclusive disjunction/OR
-    /// operation across the collection of VehicleAttributeList.
+    /// operation in each `VehicleAttributeList` and inclusive disjunction/OR
+    /// operation across the collection of `VehicleAttributeList`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2349,7 +2380,7 @@ namespace Maps.Fleetengine.V1 {
     public const int OrderByFieldNumber = 13;
     private global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder orderBy_ = global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder.UnknownVehicleMatchOrder;
     /// <summary>
-    /// Required. Specifies ordering criterion for results.
+    /// Required. Specifies the desired ordering criterion for results.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2364,12 +2395,15 @@ namespace Maps.Fleetengine.V1 {
     public const int IncludeBackToBackFieldNumber = 18;
     private bool includeBackToBack_;
     /// <summary>
-    /// Indicates if a vehicle with an active trip is eligible for
-    /// another match. If `false`, a vehicle is excluded from search results.
-    /// If `true`, search results include vehicles with `TripStatus` of
-    /// `ENROUTE_TO_DROPOFF`. The services only use this field if
-    /// the `SearchVehicles` request has `TripType` set to EXCLUSIVE.
-    /// Default value is `false`.
+    /// Indicates if a vehicle with a single active trip is eligible for another
+    /// match. If `false`, vehicles with assigned trips are excluded from the
+    /// search results. If `true`, search results include vehicles with
+    /// `TripStatus` of `ENROUTE_TO_DROPOFF`.
+    ///
+    /// This field is only considered if a single `trip_type` of `EXCLUSIVE` is
+    /// specified.
+    ///
+    /// The default value is `false`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2384,8 +2418,16 @@ namespace Maps.Fleetengine.V1 {
     public const int TripIdFieldNumber = 19;
     private string tripId_ = "";
     /// <summary>
-    /// Indicates the ID of the trip the searchVehicleRequest is
-    /// associated with.
+    /// Indicates the trip associated with this `SearchVehicleRequest`.
+    /// Unique Trip ID; must be unique per provider.
+    /// Subject to the following normalization and restrictions:
+    ///
+    /// 1. IDs must be valid Unicode strings.
+    /// 2. IDs are limited to a maximum length of 64 characters.
+    /// 3. IDs will be normalized according to Unicode Normalization Form C
+    /// (http://www.unicode.org/reports/tr15/).
+    /// 4. IDs may not contain any of the following ASCII characters: '/', ':',
+    /// '\\', '?', or '#'.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2881,7 +2923,7 @@ namespace Maps.Fleetengine.V1 {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
-      /// Specifies the sort order of the vehicle matches in the response.
+      /// Specifies the order of the vehicle matches in the response.
       /// </summary>
       public enum VehicleMatchOrder {
         /// <summary>
@@ -2893,22 +2935,21 @@ namespace Maps.Fleetengine.V1 {
         /// </summary>
         [pbr::OriginalName("PICKUP_POINT_ETA")] PickupPointEta = 1,
         /// <summary>
-        /// Ascending order by the vehicle driving distance to the pickup point.
+        /// Ascending order by vehicle driving distance to the pickup point.
         /// </summary>
         [pbr::OriginalName("PICKUP_POINT_DISTANCE")] PickupPointDistance = 2,
         /// <summary>
         /// Ascending order by vehicle driving time to the dropoff point. This order
-        /// can only be used if the dropoff_point is specified in the request.
+        /// can only be used if the dropoff point is specified in the request.
         /// </summary>
         [pbr::OriginalName("DROPOFF_POINT_ETA")] DropoffPointEta = 3,
         /// <summary>
-        /// Ascending order by straightline distance from vehicle location to pickup
-        /// location. This is used primarily as a backup if the maps backend is not
-        /// reachable.
+        /// Ascending order by straight-line distance from the vehicle's last
+        /// reported location to the pickup point.
         /// </summary>
         [pbr::OriginalName("PICKUP_POINT_STRAIGHT_DISTANCE")] PickupPointStraightDistance = 4,
         /// <summary>
-        /// Ascending order by the match cost.
+        /// Ascending order by the configured match cost.
         /// </summary>
         [pbr::OriginalName("COST")] Cost = 5,
       }
@@ -2919,7 +2960,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// SearchVehicles response message.
+  /// `SearchVehicles` response message.
   /// </summary>
   public sealed partial class SearchVehiclesResponse : pb::IMessage<SearchVehiclesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2971,19 +3012,8 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(10, global::Maps.Fleetengine.V1.VehicleMatch.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleMatch> matches_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.VehicleMatch>();
     /// <summary>
-    /// List of vehicles that match the request options.
-    ///
-    /// Ordered by ascending vehicle_pickup_eta, with ties broken by ascending
-    /// trip_type enum value, followed by matches that don't have
-    /// vehicle_pickup_eta set.
-    ///
-    /// Example response: (Logically represented, not actual response fields):
-    ///
-    /// * (VehicleId: Vehicle1, ETA: 10 AM, TripType: SHARED),
-    /// * (VehicleId: Vehicle2, ETA: 10 AM, TripType: EXCLUSIVE),
-    /// * (VehicleId: Vehicle3, ETA: 11 AM, TripType: EXCLUSIVE),
-    /// * (VehicleId: Vehicle4, ETA: Not set, TripType: SHARED),
-    /// * (VehicleId: Vehicle5, ETA: Not set, TripType: EXCLUSIVE)
+    /// List of vehicles that match the `SearchVehiclesRequest` criteria, ordered
+    /// according to `SearchVehiclesRequest.order_by` field.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3115,7 +3145,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// ListVehicles request message.
+  /// `ListVehicles` request message.
   /// </summary>
   public sealed partial class ListVehiclesRequest : pb::IMessage<ListVehiclesRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3192,8 +3222,8 @@ namespace Maps.Fleetengine.V1 {
     public const int ParentFieldNumber = 1;
     private string parent_ = "";
     /// <summary>
-    /// Required. Must be in the format "providers/{provider}".
-    /// The provider must be the Project ID (for example, sample-cloud-project)
+    /// Required. Must be in the format `providers/{provider}`.
+    /// The provider must be the Project ID (for example, `sample-cloud-project`)
     /// of the Google Cloud Project of which the service account making
     /// this call is a member.
     /// </summary>
@@ -3226,7 +3256,10 @@ namespace Maps.Fleetengine.V1 {
     public const int PageTokenFieldNumber = 4;
     private string pageToken_ = "";
     /// <summary>
-    /// The next_page_token value returned from a previous response, if any.
+    /// The `next_page_token` value returned from a previous call to
+    /// `ListVehicles`. Functionality is undefined if the filter criteria of this
+    /// request don't match the criteria in the request that produced this
+    /// `page_token`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3242,10 +3275,9 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_minimumCapacity_codec = pb::FieldCodec.ForStructWrapper<int>(50);
     private int? minimumCapacity_;
     /// <summary>
-    /// Specifies the required minimum capacity of the vehicle.
-    /// The driver is not considered in the capacity search.
-    /// This is just the number of passengers being considered for a trip.
-    /// If set, must be greater or equal to 0.
+    /// Specifies the required minimum capacity of the vehicle. All vehicles
+    /// returned will have a `maximum_capacity` greater than or equal to this
+    /// value. If set, must be greater or equal to 0.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3263,7 +3295,7 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForEnum(58, x => (int) x, x => (global::Maps.Fleetengine.V1.TripType) x);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.TripType> tripTypes_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.TripType>();
     /// <summary>
-    /// Restrict the search to only those vehicles that support at least
+    /// Restrict the response to vehicles that support at least
     /// one of the specified trip types.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3276,7 +3308,7 @@ namespace Maps.Fleetengine.V1 {
     public const int MaximumStalenessFieldNumber = 8;
     private global::Google.Protobuf.WellKnownTypes.Duration maximumStaleness_;
     /// <summary>
-    /// Restrict the search to only those vehicles that have updated
+    /// Restrict the response to vehicles that have updated
     /// their locations within the specified duration back from now.
     /// If present, must be a valid positive duration.
     /// </summary>
@@ -3295,7 +3327,8 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForEnum(74, x => (int) x, x => (global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Types.Category) x);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Types.Category> vehicleTypeCategories_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle.Types.VehicleType.Types.Category>();
     /// <summary>
-    /// Required. Restrict the search to those vehicles with the specified type categories.
+    /// Required. Restrict the response to vehicles with one of the specified type
+    /// categories.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3309,25 +3342,28 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForString(82);
     private readonly pbc::RepeatedField<string> requiredAttributes_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Callers can form complex logical operations using the
-    /// requiredAttributes and requiredOneOfAttributes fields.
+    /// Callers can form complex logical operations using any combination of the
+    /// `required_attributes`, `required_one_of_attributes`, and
+    /// `required_one_of_attribute_sets` fields.
     ///
-    /// requiredAttributes is a list; requiredOneOfAttributes uses a message which
-    /// allows a list of lists. In combination, the two fields allow the
-    /// composition of this expression:
+    /// `required_attributes` is a list; `required_one_of_attributes` uses a
+    /// message which allows a list of lists. In combination, the two fields allow
+    /// the composition of this expression:
     ///
     /// ```
-    /// (required_attribute[0] AND required_attribute[1] AND ...)
+    /// (required_attributes[0] AND required_attributes[1] AND ...)
     /// AND
-    /// (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+    /// (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+    /// ...)
     /// AND
-    /// (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+    /// (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+    /// ...)
     /// ```
     ///
-    /// Restrict the search to only those vehicles
-    /// with the specified attributes. This field is a conjunction/AND operation.
-    /// Your app can specify up to 100 attributes; however, the combined
-    /// key:value string length cannot exceed 1024 characters.
+    /// Restrict the response to vehicles with the specified attributes. This field
+    /// is a conjunction/AND operation. Your app can specify up to 100 attributes;
+    /// however, the combined key:value string length cannot exceed 1024
+    /// characters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3341,13 +3377,13 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForString(106);
     private readonly pbc::RepeatedField<string> requiredOneOfAttributes_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Restrict the search to only those vehicles with at least one
-    /// of the specified attributes applied to each VehicleAttributeList.
+    /// Restrict the response to vehicles with at least one
+    /// of the specified attributes in each `VehicleAttributeList`.
     /// Within each list, a vehicle must match at least one of the attributes.
     /// This field is an inclusive disjunction/OR operation in each
-    /// VehicleAttributeList and a conjunction/AND operation across the collection
-    /// of VehicleAttributeList.
-    /// Format: key1:value1|key2:value2|key3:value3...
+    /// `VehicleAttributeList` and a conjunction/AND operation across the
+    /// collection of `VehicleAttributeList`. Format:
+    /// key1:value1|key2:value2|key3:value3...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3361,12 +3397,28 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForString(122);
     private readonly pbc::RepeatedField<string> requiredOneOfAttributeSets_ = new pbc::RepeatedField<string>();
     /// <summary>
-    /// Restrict the search to only those vehicles with at least one set of the
-    /// specified attributes in the VehicleAttributeList. Within each list, a
-    /// vehicle must match all of the attributes. This field is a conjunction/AND
-    /// operation in each VehicleAttributeList and inclusive disjunction/OR
-    /// operation across the collection of VehicleAttributeList.
-    /// Format: key1:value1|key2:value2|key3:value3...
+    /// `required_one_of_attribute_sets` provides additional functionality.
+    ///
+    /// Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+    /// uses a message which allows a list of lists, allowing expressions such as
+    /// this one:
+    ///
+    /// ```
+    /// (required_attributes[0] AND required_attributes[1] AND ...)
+    /// AND
+    /// (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+    /// ...)
+    /// OR
+    /// (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+    /// ...)
+    /// ```
+    ///
+    /// Restrict the response to vehicles that match all the attributes in a
+    /// `VehicleAttributeList`. Within each list, a vehicle must match all of the
+    /// attributes. This field is a conjunction/AND operation in each
+    /// `VehicleAttributeList` and inclusive disjunction/OR operation across the
+    /// collection of `VehicleAttributeList`. Format:
+    /// key1:value1|key2:value2|key3:value3...
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3378,7 +3430,7 @@ namespace Maps.Fleetengine.V1 {
     public const int VehicleStateFieldNumber = 11;
     private global::Maps.Fleetengine.V1.VehicleState vehicleState_ = global::Maps.Fleetengine.V1.VehicleState.UnknownVehicleState;
     /// <summary>
-    /// Restrict the search to only those vehicles that have this vehicle state.
+    /// Restrict the response to vehicles that have this vehicle state.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3804,7 +3856,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// ListVehicles response message.
+  /// `ListVehicles` response message.
   /// </summary>
   public sealed partial class ListVehiclesResponse : pb::IMessage<ListVehiclesResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -3858,8 +3910,8 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(10, global::Maps.Fleetengine.V1.Vehicle.Parser);
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle> vehicles_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.Vehicle>();
     /// <summary>
-    /// Depends on vehicles matching request criteria.
-    /// There will be a maximum number of vehicles returned based on the page_size
+    /// Vehicles matching the criteria in the request.
+    /// The maximum number of vehicles returned is determined by the `page_size`
     /// field in the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3873,7 +3925,7 @@ namespace Maps.Fleetengine.V1 {
     private string nextPageToken_ = "";
     /// <summary>
     /// Token to retrieve the next page of vehicles, or empty if there are no
-    /// more vehicles in the list.
+    /// more vehicles that meet the request criteria.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3888,7 +3940,7 @@ namespace Maps.Fleetengine.V1 {
     public const int TotalSizeFieldNumber = 3;
     private long totalSize_;
     /// <summary>
-    /// Required. Total number of vehicles matching request criteria across all pages.
+    /// Required. Total number of vehicles matching the request criteria across all pages.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4071,7 +4123,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// Waypoint describes intermediate points along a route.
+  /// Describes intermediate points along a route.
   /// </summary>
   public sealed partial class Waypoint : pb::IMessage<Waypoint>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4324,8 +4376,8 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// VehicleMatch contains the vehicle, ETA, and distance calculations for a
-  /// vehicle that matches the SearchVehiclesRequest.
+  /// Contains the vehicle and related estimates for a vehicle that match the
+  /// points of active trips for the vehicle `SearchVehiclesRequest`.
   /// </summary>
   public sealed partial class VehicleMatch : pb::IMessage<VehicleMatch>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -4402,7 +4454,9 @@ namespace Maps.Fleetengine.V1 {
     /// <summary>
     /// The vehicle's driving ETA to the pickup point specified in the
     /// request. An empty value indicates a failure in calculating ETA for the
-    /// vehicle.
+    /// vehicle.  If `SearchVehiclesRequest.include_back_to_back` was `true` and
+    /// this vehicle has an active trip, `vehicle_pickup_eta` includes the time
+    /// required to complete the current active trip.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4418,10 +4472,13 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_vehiclePickupDistanceMeters_codec = pb::FieldCodec.ForStructWrapper<int>(26);
     private int? vehiclePickupDistanceMeters_;
     /// <summary>
-    /// The vehicle's driving distance to the pickup point specified in
-    /// the request, including any intermediate pickup or dropoff points for
-    /// an existing ride.  An empty value indicates a failure in calculating
-    /// distance for the vehicle.
+    /// The distance from the Vehicle's current location to the pickup point
+    /// specified in the request, including any intermediate pickup or dropoff
+    /// points for existing trips. This distance comprises the calculated driving
+    /// (route) distance, plus the straight line distance between the navigation
+    /// end point and the requested pickup point. (The distance between the
+    /// navigation end point and the requested pickup point is typically small.) An
+    /// empty value indicates an error in calculating the distance.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4438,9 +4495,8 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_vehiclePickupStraightLineDistanceMeters_codec = pb::FieldCodec.ForStructWrapper<int>(90);
     private int? vehiclePickupStraightLineDistanceMeters_;
     /// <summary>
-    /// Required. The straight-line distance between the vehicle and the pickup
-    /// point specified in the request, including intermediate waypoints for
-    /// existing trips.
+    /// Required. The straight-line distance between the vehicle and the pickup point
+    /// specified in the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4456,13 +4512,11 @@ namespace Maps.Fleetengine.V1 {
     public const int VehicleDropoffEtaFieldNumber = 4;
     private global::Google.Protobuf.WellKnownTypes.Timestamp vehicleDropoffEta_;
     /// <summary>
-    /// The complete vehicle's driving ETA to the drop off point
-    /// specified in the request. The ETA includes any required visits for active
-    /// trips that must be completed before the vehicle visits the dropoff_point
-    /// specified in the request. The value will only be populated when a
-    /// dropoff_point is specified in the request. An empty value indicates
-    /// a failure in calculating the ETA for the vehicle to reach
-    /// the dropoff_point.
+    /// The complete vehicle's driving ETA to the drop off point specified in the
+    /// request. The ETA includes stopping at any waypoints before the
+    /// `dropoff_point` specified in the request. The value will only be populated
+    /// when a drop off point is specified in the request. An empty value indicates
+    /// an error calculating the ETA.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4483,9 +4537,9 @@ namespace Maps.Fleetengine.V1 {
     /// between the two points and does not include the vehicle location or any
     /// other points that must be visited before the vehicle visits either the
     /// pickup point or dropoff point. The value will only be populated when a
-    /// dropoff_point is specified in the request. An empty value indicates
+    /// `dropoff_point` is specified in the request. An empty value indicates
     /// a failure in calculating the distance from the pickup to
-    /// dropoff points specified in the request.
+    /// drop off point specified in the request.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4520,8 +4574,8 @@ namespace Maps.Fleetengine.V1 {
     private readonly pbc::RepeatedField<global::Maps.Fleetengine.V1.Waypoint> vehicleTripsWaypoints_ = new pbc::RepeatedField<global::Maps.Fleetengine.V1.Waypoint>();
     /// <summary>
     /// The ordered list of waypoints used to calculate the ETA. The list
-    /// will include the vehicle location, the pickup/drop off points of active
-    /// trips for the vehicle and the pickup/dropoff points provided in the
+    /// includes vehicle location, the pickup/drop off points of active
+    /// trips for the vehicle, and the pickup/drop off points provided in the
     /// request. An empty list indicates a failure in calculating ETA for the
     /// vehicle.
     /// </summary>
@@ -4550,7 +4604,7 @@ namespace Maps.Fleetengine.V1 {
     public const int RequestedOrderedByFieldNumber = 9;
     private global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder requestedOrderedBy_ = global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder.UnknownVehicleMatchOrder;
     /// <summary>
-    /// The method the caller requested for sorting vehicle matches.
+    /// The order requested for sorting vehicle matches.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4565,10 +4619,10 @@ namespace Maps.Fleetengine.V1 {
     public const int OrderedByFieldNumber = 10;
     private global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder orderedBy_ = global::Maps.Fleetengine.V1.SearchVehiclesRequest.Types.VehicleMatchOrder.UnknownVehicleMatchOrder;
     /// <summary>
-    /// The actual method that is used to order this vehicle. In normal cases this
-    /// will match the 'order_by' field from the request, however in certain
-    /// circumstances such as a failure of google maps backends, a different method
-    /// may be used (such as PICKUP_POINT_STRAIGHT_DISTANCE).
+    /// The actual order that was used for this vehicle. Normally this
+    /// will match the 'order_by' field from the request; however, in certain
+    /// circumstances such as an internal server error, a different method
+    /// may be used (such as `PICKUP_POINT_STRAIGHT_DISTANCE`).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -4999,19 +5053,24 @@ namespace Maps.Fleetengine.V1 {
         /// </summary>
         [pbr::OriginalName("UNKNOWN")] Unknown = 0,
         /// <summary>
-        /// Exclusive vehicle trip match
+        /// The vehicle currently has no trip assigned to it and can proceed to the
+        /// pickup point.
         /// </summary>
         [pbr::OriginalName("EXCLUSIVE")] Exclusive = 1,
         /// <summary>
-        /// Back to back ride match.
+        /// The vehicle is currently assigned to a trip, but can proceed to the
+        /// pickup point after completing the in-progress trip.  ETA and distance
+        /// calculations take the existing trip into account.
         /// </summary>
         [pbr::OriginalName("BACK_TO_BACK")] BackToBack = 2,
         /// <summary>
-        /// Carpool ride match.
+        /// The vehicle has sufficient capacity for a shared ride.
         /// </summary>
         [pbr::OriginalName("CARPOOL")] Carpool = 3,
         /// <summary>
-        /// Carpool ride match. The car has an active exclusive trip.
+        /// The vehicle will finish its current, active trip before proceeding to the
+        /// pickup point.  ETA and distance calculations take the existing trip into
+        /// account.
         /// </summary>
         [pbr::OriginalName("CARPOOL_BACK_TO_BACK")] CarpoolBackToBack = 4,
       }
@@ -5022,7 +5081,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// This messages allows a list-of-list datatype for VehicleAttribute.
+  /// A list-of-lists datatype for vehicle attributes.
   /// </summary>
   public sealed partial class VehicleAttributeList : pb::IMessage<VehicleAttributeList>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE

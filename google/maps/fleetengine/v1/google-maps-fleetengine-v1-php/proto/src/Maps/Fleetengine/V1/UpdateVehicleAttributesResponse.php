@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * UpdateVehicleAttributes response message.
+ * `UpdateVehicleAttributes` response message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.UpdateVehicleAttributesResponse</code>
  */

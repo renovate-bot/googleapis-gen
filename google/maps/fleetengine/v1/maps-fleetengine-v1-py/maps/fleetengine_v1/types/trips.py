@@ -20,6 +20,7 @@ from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
 from google.type import latlng_pb2  # type: ignore
 from maps.fleetengine_v1.types import fleetengine
+from maps.fleetengine_v1.types import traffic
 
 
 __protobuf__ = proto.module(
@@ -74,7 +75,7 @@ class Trip(proto.Message):
 
     Attributes:
         name (str):
-            In the format
+            Output only. In the format
             "providers/{provider}/trips/{trip}".
         vehicle_id (str):
             ID of the vehicle making this trip.
@@ -97,9 +98,9 @@ class Trip(proto.Message):
             on actual arrival information at the pickup
             point.
         pickup_time (google.protobuf.timestamp_pb2.Timestamp):
-            Either the estimated future time when the
-            rider(s) will be picked up, or the actual time
-            when they were picked up.
+            Output only. Either the estimated future time
+            when the rider(s) will be picked up, or the
+            actual time when they were picked up.
         intermediate_destinations (Sequence[maps.fleetengine_v1.types.TerminalLocation]):
             Intermediate stops in order that the trip
             requests (in addition to pickup and dropoff).
@@ -140,10 +141,10 @@ class Trip(proto.Message):
             is for provider to provide feedback on actual
             dropoff information.
         dropoff_time (google.protobuf.timestamp_pb2.Timestamp):
-            Either the estimated future time when the
-            rider(s) will be dropped off at the final
-            destination, or the actual time when they were
-            dropped off.
+            Output only. Either the estimated future time
+            when the rider(s) will be dropped off at the
+            final destination, or the actual time when they
+            were dropped off.
         remaining_waypoints (Sequence[maps.fleetengine_v1.types.TripWaypoint]):
             Output only. The full path from the current
             location to the dropoff point, inclusive. If
@@ -160,27 +161,49 @@ class Trip(proto.Message):
             server on UpdateTrip and CreateTrip calls, and
             NOT on GetTrip calls.
         route (Sequence[google.type.latlng_pb2.LatLng]):
-            Anticipated route for this trip to the first entry in
-            remaining_waypoints. If back_to_back or shared trips are
-            enabled, the waypoint may belong to a different trip.
+            Output only. Anticipated route for this trip to the first
+            entry in remaining_waypoints. If back_to_back or shared
+            trips are enabled, the waypoints may belong to a different
+            trip.
+        current_route_segment (str):
+            Output only. An encoded path to the next waypoint. This
+            field facilitates journey sharing between a Driver app and a
+            Rider app. Your driver app is responsible for setting this
+            field on all of its current trips by passing
+            Vehicle.current_route_segment to UpdateVehicle. Note: This
+            field is intended only for use by the Driver SDK and
+            Consumer SDK.
+        current_route_segment_version (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. Indicates the last time the
+            route was modified.  Note: This field is
+            intended only for use by the Driver SDK and
+            Consumer SDK.
+        current_route_segment_traffic (maps.fleetengine_v1.types.ConsumableTrafficPolyline):
+            Output only. When available, the traffic conditions along
+            the current_route_segment. Note: This field is intended only
+            for use by the Driver SDK and Consumer SDK.
+        current_route_segment_traffic_version (google.protobuf.timestamp_pb2.Timestamp):
+            Output only. Indicates the last time the
+            current_route_segment_traffic was modified. Note: This field
+            is intended only for use by the Driver SDK and Consumer SDK.
         current_route_segment_end_point (maps.fleetengine_v1.types.TripWaypoint):
-            The waypoint where current_route_segment ends. This can be
-            supplied by drivers on UpdateVehicle calls either as a full
-            trip waypoint, a waypoint latlng, or as a the last latlng of
-            the current_route_segment. FleetEngine will then do its best
-            to interpolate to an actual waypoint if it is not fully
-            specified. It will be returned in GetTrip calls. It is not
-            respected in Create/Update Trip calls.
+            Output only. The waypoint where current_route_segment ends.
+            This can be supplied by drivers on UpdateVehicle calls
+            either as a full trip waypoint, a waypoint latlng, or as a
+            the last latlng of the current_route_segment. Fleet Engine
+            will then do its best to interpolate to an actual waypoint
+            if it is not fully specified. It will be returned in GetTrip
+            calls. It is not respected in Create/Update Trip calls.
         remaining_distance_meters (google.protobuf.wrappers_pb2.Int32Value):
-            The remaining driving distance in Trip.current_route_segment
-            field. This field facilitates journey sharing between a
-            driver and rider and Fleet Engine does not update it. Your
-            driver app is responsible for setting field on all of its
-            current trips by passing Vehicle.remaining_distance_meters
-            to an Vehicle.update call. The value is unspecified if the
-            trip is not assigned to a vehicle, or the trip is inactive
-            (completed or cancelled), or driver hasn't updated this
-            value.
+            Output only. The remaining driving distance in
+            Trip.current_route_segment field. This field facilitates
+            journey sharing between a driver and rider and Fleet Engine
+            does not update it. Your driver app is responsible for
+            setting field on all of its current trips by passing
+            Vehicle.remaining_distance_meters to an Vehicle.update call.
+            The value is unspecified if the trip is not assigned to a
+            vehicle, or the trip is inactive (completed or cancelled),
+            or driver hasn't updated this value.
         eta_to_first_waypoint (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The ETA to the next waypoint (the first entry
             in the Trip.remaining_waypoints field). This field
@@ -197,27 +220,30 @@ class Trip(proto.Message):
             Output only. The duration from when the Trip data is
             returned to the time in Trip.eta_to_first_waypoint.
         remaining_waypoints_version (google.protobuf.timestamp_pb2.Timestamp):
-            Indicates the last time that ``remaining_waypoints`` was
-            changed (a waypoint was added, removed, or changed).
+            Output only. Indicates the last time that
+            ``remaining_waypoints`` was changed (a waypoint was added,
+            removed, or changed).
         remaining_waypoints_route_version (google.protobuf.timestamp_pb2.Timestamp):
-            Indicates the last time the
-            remaining_waypoints.path_to_waypoint and
-            remaining_waypoints.traffic_to_waypoint were modified. Your
-            client app should cache this value and pass it in
-            GetTripRequest to ensure the paths and traffic for
-            remaining_waypoints are only returned if updated.
+            Output only. Indicates the last time the
+            ``remaining_waypoints.path_to_waypoint`` and
+            ``remaining_waypoints.traffic_to_waypoint`` were modified.
+            Your client app should cache this value and pass it in
+            ``GetTripRequest`` to ensure the paths and traffic for
+            ``remaining_waypoints`` are only returned if updated.
         number_of_passengers (int):
-            Indicates the number of passengers on this trip and does not
-            include the driver. A vehicle must have available_capacity
-            to be returned in SearchTrips.
+            Immutable. Indicates the number of passengers
+            on this trip and does not include the driver. A
+            vehicle must have available capacity to be
+            returned in SearchVehicles.
         last_location (maps.fleetengine_v1.types.VehicleLocation):
-            Indicates the last reported location of the
-            vehicle along the route.
+            Output only. Indicates the last reported
+            location of the vehicle along the route.
         last_location_snappable (bool):
-            Indicates whether the vehicle's last_location can be snapped
-            to the current_route_segment. False if last_location or
-            current_route_segment doesn't exist. It is computed by Fleet
-            Engine. Any update from clients will be ignored.
+            Output only. Indicates whether the vehicle's last_location
+            can be snapped to the current_route_segment. False if
+            last_location or current_route_segment doesn't exist. It is
+            computed by Fleet Engine. Any update from clients will be
+            ignored.
         view (maps.fleetengine_v1.types.TripView):
             The subset of Trip fields that are populated
             and how they should be interpreted.
@@ -315,6 +341,25 @@ class Trip(proto.Message):
         number=9,
         message=latlng_pb2.LatLng,
     )
+    current_route_segment = proto.Field(
+        proto.STRING,
+        number=21,
+    )
+    current_route_segment_version = proto.Field(
+        proto.MESSAGE,
+        number=17,
+        message=timestamp_pb2.Timestamp,
+    )
+    current_route_segment_traffic = proto.Field(
+        proto.MESSAGE,
+        number=28,
+        message=traffic.ConsumableTrafficPolyline,
+    )
+    current_route_segment_traffic_version = proto.Field(
+        proto.MESSAGE,
+        number=30,
+        message=timestamp_pb2.Timestamp,
+    )
     current_route_segment_end_point = proto.Field(
         proto.MESSAGE,
         number=24,
@@ -372,9 +417,10 @@ class StopLocation(proto.Message):
         point (google.type.latlng_pb2.LatLng):
             Required. Denotes the actual location.
         timestamp (google.protobuf.timestamp_pb2.Timestamp):
-            The timestamp when the location was measured.
+            Indicates when the stop happened.
         stop_time (google.protobuf.timestamp_pb2.Timestamp):
-            Indicates when the stop actually happened.
+            Input only. Deprecated.  Use the timestamp
+            field.
     """
 
     point = proto.Field(

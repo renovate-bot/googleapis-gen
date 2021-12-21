@@ -31,20 +31,22 @@ __protobuf__ = proto.module(
         'BatteryInfo',
         'DeviceSettings',
         'LicensePlate',
+        'VisualTrafficReportPolylineRendering',
+        'TrafficPolylineData',
     },
 )
 
 
 class VehicleState(proto.Enum):
-    r"""The state of a Vehicle."""
+    r"""The state of a ``Vehicle``."""
     UNKNOWN_VEHICLE_STATE = 0
     OFFLINE = 1
     ONLINE = 2
 
 
 class LocationPowerSaveMode(proto.Enum):
-    r"""How location features are set to behave on the device when
-    battery saver is on.
+    r"""How location features are configured to behave on the mobile
+    device when the devices "battery saver" feature is on.
     (https://developer.android.com/reference/android/os/PowerManager#getLocationPowerSaveMode())
     """
     UNKNOWN_LOCATION_POWER_SAVE_MODE = 0
@@ -79,113 +81,112 @@ class Vehicle(proto.Message):
 
     Attributes:
         name (str):
-            The unique name for this vehicle.
-            The format is
-            providers/{provider}/vehicles/{vehicle}
+            Output only. The unique name for this vehicle. The format is
+            ``providers/{provider}/vehicles/{vehicle}``.
         vehicle_state (maps.fleetengine_v1.types.VehicleState):
             The vehicle state.
         supported_trip_types (Sequence[maps.fleetengine_v1.types.TripType]):
             Supported trip types.
         current_trips (Sequence[str]):
-            List of IDs for trips in progress.
+            Output only. List of ``trip_id``'s for trips currently
+            assigned to this vehicle.
         last_location (maps.fleetengine_v1.types.VehicleLocation):
             Last reported location of the vehicle.
         maximum_capacity (int):
-            Maximum capacity of the vehicle.  This is the
-            total numbers of riders on trips this vehicle
-            can contain.  The driver is not considered in
-            this value.  This value must be greater than or
-            equal to one.
-        available_capacity (int):
-            The current available capacity of the vehicle. This is the
-            maximum_capacity minus the current number of riders.
+            The total numbers of riders this vehicle can
+            carry.  The driver is not considered in this
+            value. This value must be greater than or equal
+            to one.
         attributes (Sequence[maps.fleetengine_v1.types.VehicleAttribute]):
-            List of vehicle service attributes.
+            List of vehicle attributes. A vehicle can
+            have at most 50 attributes.
         vehicle_type (maps.fleetengine_v1.types.Vehicle.VehicleType):
-            The type of this Vehicle.  Can be filtered
-            during SearchVehicles.  Also influences ETA and
-            route calculations.
+            The type of this vehicle. Can be used to filter vehicles in
+            ``SearchVehicles`` results. Also influences ETA and route
+            calculations.
         license_plate (maps.fleetengine_v1.types.LicensePlate):
             License plate information for the vehicle.
         route (Sequence[maps.fleetengine_v1.types.TerminalLocation]):
-            Deprecated. Use vehicle.waypoint instead.
+            Deprecated: Use ``Vehicle.waypoints`` instead.
         current_route_segment (str):
             The polyline specifying the route the driver app intends to
             take to the next waypoint. Your driver app updates this
             every time a waypoint is passed or the driver reroutes. This
-            list is also returned in Trip.current_route_segment for all
-            active trips assigned to the vehicle. Note: This field is
-            intended only for use by the Driver SDK.
+            list is also returned in ``Trip.current_route_segment`` for
+            all active trips assigned to the vehicle. Note: This field
+            is intended only for use by the Driver SDK.
+        current_route_segment_traffic (maps.fleetengine_v1.types.TrafficPolylineData):
+            Input only. Fleet Engine uses this
+            information to improve its understanding of a
+            Trip, but does not populate the field in its
+            responses. Note: This field is intended only for
+            use by the Driver SDK.
         current_route_segment_version (google.protobuf.timestamp_pb2.Timestamp):
-            Time when current_route_segment was set. This field is
-            ignored in UpdateVehicleRequests as it is calculated by the
-            server. It should be stored by client and passed in to
-            future requests to prevent returning routes to first way
-            point that haven't changed.
+            Output only. Time when ``current_route_segment`` was set. It
+            should be stored by the client and passed in future
+            ``GetVehicle`` requests to prevent returning routes that
+            haven't changed.
         current_route_segment_end_point (maps.fleetengine_v1.types.TripWaypoint):
-            The waypoint where current_route_segment ends. This can be
-            supplied by drivers on UpdateVehicle calls either as a full
-            trip waypoint, a waypoint latlnt, or as a the last latlng of
-            the current_route_segment. FleetEngine will then do its best
-            to interpolate to an actual waypoint if it is not fully
-            specified. This field is ignored in UpdateVehicle calls
-            unless current_route_segment is also specified.
+            The waypoint where ``current_route_segment`` ends. This can
+            be supplied by drivers on ``UpdateVehicle`` calls either as
+            a full trip waypoint, a waypoint ``LatLng``, or as the last
+            ``LatLng`` of the ``current_route_segment``. Fleet Engine
+            will then do its best to interpolate to an actual waypoint
+            if it is not fully specified. This field is ignored in
+            ``UpdateVehicle`` calls unless ``current_route_segment`` is
+            also specified.
         remaining_distance_meters (google.protobuf.wrappers_pb2.Int32Value):
             The remaining driving distance for the
-            'current_route_segment'. This field facilitates journey
+            ``current_route_segment``. This field facilitates journey
+            sharing between the Driver app and the Consumer app. This
+            value is provided by the Driver SDK. This field is also
+            returned in ``Trip.remaining_distance_meters`` for all
+            active trips assigned to the vehicle. The value is
+            unspecified if the ``current_route_segment`` field is empty,
+            or if the Driver app has not updated its value.
+        eta_to_first_waypoint (google.protobuf.timestamp_pb2.Timestamp):
+            The ETA to the first entry in the ``waypoints`` field. This
+            field facilitates journey sharing between a Driver app and a
+            Consumer app. Is is provided by the Driver SDK. This field
+            is also returned in ``Trip.eta_to_first_waypoint`` for all
+            active trips assigned to the vehicle. The value is
+            unspecified if the ``waypoints`` field is empty, or the
+            Driver app has not updated its value.
+        remaining_time_seconds (google.protobuf.wrappers_pb2.Int32Value):
+            Input only. The remaining driving time for the
+            ``current_route_segment``. This field facilitates journey
             sharing between the Driver app and the Consumer app. This
             value is updated by the Driver SDK. Fleet Engine does not
-            update it. This field is also returned in
-            Trip.remaining_distance_meters for all active trips assigned
-            to the vehicle. The value is unspecified if the
+            update it. The value is unspecified if the
             ``Vehicle.current_route_segment`` field is empty, or if the
-            Driver app has not updated its value.
-        eta_to_first_waypoint (google.protobuf.timestamp_pb2.Timestamp):
-            The ETA to the next waypoint that is the first entry in
-            Vehicle.waypoint field. This field facilitates journey
-            sharing between a Driver app and a Consumer app and is
-            updated by the Driver SDK, and Fleet Engine does not update
-            it. This field is also returned in
-            Trip.eta_to_first_waypoint for all active trips assigned to
-            the vehicle. The value is unspecified if the
-            Vehicle.waypoint field is empty, or the Driver app has not
-            updated its value.
-        remaining_time_seconds (google.protobuf.wrappers_pb2.Int32Value):
-            The remaining driving time for the 'current_route_segment'.
-            This field facilitates journey sharing between the Driver
-            app and the Consumer app. This value is updated by the
-            Driver SDK. Fleet Engine does not update it. The value is
-            unspecified if the ``Vehicle.current_route_segment`` field
-            is empty, or if the Driver app has not updated its value.
-            This value should match eta_to_first_waypoint - current_time
-            if all parties are using the same clock. This field is
-            currently write-only and will not yet be populated in
-            Vehicle's get/update/search operations. When updating a
-            vehicle, if you update both eta_to_first_waypoint and
-            remaining_time_seconds in the same request, then only
-            remaining_time_seconds is considered.
+            Driver app has not updated its value. This value should
+            match ``eta_to_first_waypoint`` - ``current_time`` if all
+            parties are using the same clock. When updating a vehicle,
+            if you update both ``eta_to_first_waypoint`` and
+            ``remaining_time_seconds`` in the same request,
+            ``remaining_time_seconds`` takes precedence.
         waypoints (Sequence[maps.fleetengine_v1.types.TripWaypoint]):
-            The remaining set of waypoints assigned to
-            this Vehicle.
+            The remaining waypoints assigned to this
+            Vehicle.
         waypoints_version (google.protobuf.timestamp_pb2.Timestamp):
-            Last time the waypoints was updated. Client should cache
-            this value and pass it in GetVehicleRequest to ensure the
-            waypoints.path_to_waypoint is only returned if it is updated
+            Output only. Last time the ``waypoints`` field was updated.
+            Clients should cache this value and pass it in
+            ``GetVehicleRequest`` to ensure the ``waypoints`` field is
+            only returned if it is updated.
         back_to_back_enabled (bool):
-            Indicates if the driver accepts back-to-back rides. If
-            ``true``, services include the vehicle for back-to-back
-            matches. If ``false``, services exclude the vehicle from
-            back-to-back matches. Default value is ``false``.
+            Indicates if the driver accepts back-to-back trips. If
+            ``true``, ``SearchVehicles`` may include the vehicle even if
+            it is currently assigned to a trip. The default value is
+            ``false``.
         navigation_status (maps.fleetengine_v1.types.NavigationStatus):
-            Vehicle's navigation status.
+            The vehicle's navigation status.
         device_settings (maps.fleetengine_v1.types.DeviceSettings):
-            Information about various device settings.
-            This is internal debug only field, not included
-            in the response.
+            Input only. Information about settings in the
+            mobile device being used by the driver.
     """
 
     class VehicleType(proto.Message):
-        r"""Types of vehicles that may be filtered for in SearchVehicles.
+        r"""The type of vehicle.
 
         Attributes:
             category (maps.fleetengine_v1.types.Vehicle.VehicleType.Category):
@@ -232,10 +233,6 @@ class Vehicle(proto.Message):
         proto.INT32,
         number=6,
     )
-    available_capacity = proto.Field(
-        proto.INT32,
-        number=7,
-    )
     attributes = proto.RepeatedField(
         proto.MESSAGE,
         number=8,
@@ -259,6 +256,11 @@ class Vehicle(proto.Message):
     current_route_segment = proto.Field(
         proto.STRING,
         number=20,
+    )
+    current_route_segment_traffic = proto.Field(
+        proto.MESSAGE,
+        number=28,
+        message='TrafficPolylineData',
     )
     current_route_segment_version = proto.Field(
         proto.MESSAGE,
@@ -341,7 +343,7 @@ class BatteryInfo(proto.Message):
 
 
 class DeviceSettings(proto.Message):
-    r"""Information about various settings on the device.
+    r"""Information about various settings on the mobile device.
 
     Attributes:
         location_power_save_mode (maps.fleetengine_v1.types.LocationPowerSaveMode):
@@ -378,20 +380,18 @@ class DeviceSettings(proto.Message):
 
 
 class LicensePlate(proto.Message):
-    r"""The license plate information of the Vehicle.  This is used
-    to support congestion pricing restrictions in certain areas.  To
-    avoid storing personally-identifiable information, only the
-    minimum information about the license plate is stored as part of
-    the entity.
+    r"""The license plate information of the Vehicle.  To avoid
+    storing personally-identifiable information, only the minimum
+    information about the license plate is stored as part of the
+    entity.
 
     Attributes:
         country_code (str):
-            Required. CLDR Country/Region Code.  For
-            example, "US" for United States, or "IN" for
-            India.
+            Required. CLDR Country/Region Code. For example, ``US`` for
+            United States, or ``IN`` for India.
         last_character (str):
             The last digit of the license plate or "-1" to denote no
-            numeric value present in the license plate.
+            numeric value is present in the license plate.
 
             -  "ABC 1234" -> "4"
             -  "AB 123 CD" -> "3"
@@ -405,6 +405,78 @@ class LicensePlate(proto.Message):
     last_character = proto.Field(
         proto.STRING,
         number=2,
+    )
+
+
+class VisualTrafficReportPolylineRendering(proto.Message):
+    r"""Describes how clients should color one portion of the
+    polyline along the route.
+
+    Attributes:
+        road_stretch (Sequence[maps.fleetengine_v1.types.VisualTrafficReportPolylineRendering.RoadStretch]):
+            Optional. Road stretches that should be
+            rendered along the polyline. Note that the
+            stretches are guaranteed to not overlap, and
+            that they do not necessarily span the full
+            route. In the absence of a road stretch to
+            style, the client should apply the default for
+            the route.
+    """
+
+    class RoadStretch(proto.Message):
+        r"""One road stretch that should be rendered.
+
+        Attributes:
+            style (maps.fleetengine_v1.types.VisualTrafficReportPolylineRendering.RoadStretch.Style):
+                Required. The style to apply.
+            offset_meters (int):
+                Required. The style should be applied between
+                ``[offset_meters, offset_meters + length_meters)``.
+            length_meters (int):
+                Required. The length of the path where to
+                apply the style.
+        """
+        class Style(proto.Enum):
+            r"""The traffic style, indicating traffic speed."""
+            STYLE_UNSPECIFIED = 0
+            SLOWER_TRAFFIC = 1
+            TRAFFIC_JAM = 2
+
+        style = proto.Field(
+            proto.ENUM,
+            number=1,
+            enum='VisualTrafficReportPolylineRendering.RoadStretch.Style',
+        )
+        offset_meters = proto.Field(
+            proto.INT32,
+            number=2,
+        )
+        length_meters = proto.Field(
+            proto.INT32,
+            number=3,
+        )
+
+    road_stretch = proto.RepeatedField(
+        proto.MESSAGE,
+        number=1,
+        message=RoadStretch,
+    )
+
+
+class TrafficPolylineData(proto.Message):
+    r"""Traffic conditions along the expected vehicle route.
+
+    Attributes:
+        traffic_rendering (maps.fleetengine_v1.types.VisualTrafficReportPolylineRendering):
+            A polyline rendering of how fast traffic is
+            for all regions along one stretch of a customer
+            ride.
+    """
+
+    traffic_rendering = proto.Field(
+        proto.MESSAGE,
+        number=1,
+        message='VisualTrafficReportPolylineRendering',
     )
 
 

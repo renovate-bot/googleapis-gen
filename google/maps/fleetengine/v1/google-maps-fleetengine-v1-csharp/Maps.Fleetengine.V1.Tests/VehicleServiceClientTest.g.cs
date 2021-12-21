@@ -50,7 +50,6 @@ namespace Maps.Fleetengine.V1.Tests
                 },
                 LastLocation = new VehicleLocation(),
                 MaximumCapacity = 2118626276,
-                AvailableCapacity = -1208690354,
                 Attributes =
                 {
                     new VehicleAttribute(),
@@ -74,6 +73,7 @@ namespace Maps.Fleetengine.V1.Tests
                 RemainingTimeSeconds = 1021251096,
                 NavigationStatus = NavigationStatus.OffRoute,
                 DeviceSettings = new DeviceSettings(),
+                CurrentRouteSegmentTraffic = new TrafficPolylineData(),
             };
             mockGrpcClient.Setup(x => x.CreateVehicle(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
@@ -104,7 +104,6 @@ namespace Maps.Fleetengine.V1.Tests
                 },
                 LastLocation = new VehicleLocation(),
                 MaximumCapacity = 2118626276,
-                AvailableCapacity = -1208690354,
                 Attributes =
                 {
                     new VehicleAttribute(),
@@ -128,6 +127,7 @@ namespace Maps.Fleetengine.V1.Tests
                 RemainingTimeSeconds = 1021251096,
                 NavigationStatus = NavigationStatus.OffRoute,
                 DeviceSettings = new DeviceSettings(),
+                CurrentRouteSegmentTraffic = new TrafficPolylineData(),
             };
             mockGrpcClient.Setup(x => x.CreateVehicleAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Vehicle>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
@@ -160,7 +160,6 @@ namespace Maps.Fleetengine.V1.Tests
                 },
                 LastLocation = new VehicleLocation(),
                 MaximumCapacity = 2118626276,
-                AvailableCapacity = -1208690354,
                 Attributes =
                 {
                     new VehicleAttribute(),
@@ -184,6 +183,7 @@ namespace Maps.Fleetengine.V1.Tests
                 RemainingTimeSeconds = 1021251096,
                 NavigationStatus = NavigationStatus.OffRoute,
                 DeviceSettings = new DeviceSettings(),
+                CurrentRouteSegmentTraffic = new TrafficPolylineData(),
             };
             mockGrpcClient.Setup(x => x.GetVehicle(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
@@ -214,7 +214,6 @@ namespace Maps.Fleetengine.V1.Tests
                 },
                 LastLocation = new VehicleLocation(),
                 MaximumCapacity = 2118626276,
-                AvailableCapacity = -1208690354,
                 Attributes =
                 {
                     new VehicleAttribute(),
@@ -238,6 +237,7 @@ namespace Maps.Fleetengine.V1.Tests
                 RemainingTimeSeconds = 1021251096,
                 NavigationStatus = NavigationStatus.OffRoute,
                 DeviceSettings = new DeviceSettings(),
+                CurrentRouteSegmentTraffic = new TrafficPolylineData(),
             };
             mockGrpcClient.Setup(x => x.GetVehicleAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Vehicle>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
@@ -270,7 +270,6 @@ namespace Maps.Fleetengine.V1.Tests
                 },
                 LastLocation = new VehicleLocation(),
                 MaximumCapacity = 2118626276,
-                AvailableCapacity = -1208690354,
                 Attributes =
                 {
                     new VehicleAttribute(),
@@ -294,6 +293,7 @@ namespace Maps.Fleetengine.V1.Tests
                 RemainingTimeSeconds = 1021251096,
                 NavigationStatus = NavigationStatus.OffRoute,
                 DeviceSettings = new DeviceSettings(),
+                CurrentRouteSegmentTraffic = new TrafficPolylineData(),
             };
             mockGrpcClient.Setup(x => x.UpdateVehicle(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(expectedResponse);
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);
@@ -324,7 +324,6 @@ namespace Maps.Fleetengine.V1.Tests
                 },
                 LastLocation = new VehicleLocation(),
                 MaximumCapacity = 2118626276,
-                AvailableCapacity = -1208690354,
                 Attributes =
                 {
                     new VehicleAttribute(),
@@ -348,6 +347,7 @@ namespace Maps.Fleetengine.V1.Tests
                 RemainingTimeSeconds = 1021251096,
                 NavigationStatus = NavigationStatus.OffRoute,
                 DeviceSettings = new DeviceSettings(),
+                CurrentRouteSegmentTraffic = new TrafficPolylineData(),
             };
             mockGrpcClient.Setup(x => x.UpdateVehicleAsync(request, moq::It.IsAny<grpccore::CallOptions>())).Returns(new grpccore::AsyncUnaryCall<Vehicle>(stt::Task.FromResult(expectedResponse), null, null, null, null));
             VehicleServiceClient client = new VehicleServiceClientImpl(mockGrpcClient.Object, null);

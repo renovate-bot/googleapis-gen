@@ -9,15 +9,15 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * ListVehicles response message.
+ * `ListVehicles` response message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.ListVehiclesResponse</code>
  */
 class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Depends on vehicles matching request criteria.
-     * There will be a maximum number of vehicles returned based on the page_size
+     * Vehicles matching the criteria in the request.
+     * The maximum number of vehicles returned is determined by the `page_size`
      * field in the request.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
@@ -25,13 +25,13 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
     private $vehicles;
     /**
      * Token to retrieve the next page of vehicles, or empty if there are no
-     * more vehicles in the list.
+     * more vehicles that meet the request criteria.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      */
     protected $next_page_token = '';
     /**
-     * Required. Total number of vehicles matching request criteria across all pages.
+     * Required. Total number of vehicles matching the request criteria across all pages.
      *
      * Generated from protobuf field <code>int64 total_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -44,14 +44,14 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type \Maps\Fleetengine\V1\Vehicle[]|\Google\Protobuf\Internal\RepeatedField $vehicles
-     *           Depends on vehicles matching request criteria.
-     *           There will be a maximum number of vehicles returned based on the page_size
+     *           Vehicles matching the criteria in the request.
+     *           The maximum number of vehicles returned is determined by the `page_size`
      *           field in the request.
      *     @type string $next_page_token
      *           Token to retrieve the next page of vehicles, or empty if there are no
-     *           more vehicles in the list.
+     *           more vehicles that meet the request criteria.
      *     @type int|string $total_size
-     *           Required. Total number of vehicles matching request criteria across all pages.
+     *           Required. Total number of vehicles matching the request criteria across all pages.
      * }
      */
     public function __construct($data = NULL) {
@@ -60,8 +60,8 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Depends on vehicles matching request criteria.
-     * There will be a maximum number of vehicles returned based on the page_size
+     * Vehicles matching the criteria in the request.
+     * The maximum number of vehicles returned is determined by the `page_size`
      * field in the request.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
@@ -73,8 +73,8 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Depends on vehicles matching request criteria.
-     * There will be a maximum number of vehicles returned based on the page_size
+     * Vehicles matching the criteria in the request.
+     * The maximum number of vehicles returned is determined by the `page_size`
      * field in the request.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.Vehicle vehicles = 1;</code>
@@ -91,7 +91,7 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Token to retrieve the next page of vehicles, or empty if there are no
-     * more vehicles in the list.
+     * more vehicles that meet the request criteria.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      * @return string
@@ -103,7 +103,7 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
 
     /**
      * Token to retrieve the next page of vehicles, or empty if there are no
-     * more vehicles in the list.
+     * more vehicles that meet the request criteria.
      *
      * Generated from protobuf field <code>string next_page_token = 2;</code>
      * @param string $var
@@ -118,7 +118,7 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Total number of vehicles matching request criteria across all pages.
+     * Required. Total number of vehicles matching the request criteria across all pages.
      *
      * Generated from protobuf field <code>int64 total_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return int|string
@@ -129,7 +129,7 @@ class ListVehiclesResponse extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Total number of vehicles matching request criteria across all pages.
+     * Required. Total number of vehicles matching the request criteria across all pages.
      *
      * Generated from protobuf field <code>int64 total_size = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param int|string $var

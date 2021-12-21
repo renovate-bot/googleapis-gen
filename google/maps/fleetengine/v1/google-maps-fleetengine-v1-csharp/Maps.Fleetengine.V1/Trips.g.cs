@@ -27,69 +27,78 @@ namespace Maps.Fleetengine.V1 {
             "CiZnb29nbGUvbWFwcy9mbGVldGVuZ2luZS92MS90cmlwcy5wcm90bxITbWFw",
             "cy5mbGVldGVuZ2luZS52MRofZ29vZ2xlL2FwaS9maWVsZF9iZWhhdmlvci5w",
             "cm90bxoZZ29vZ2xlL2FwaS9yZXNvdXJjZS5wcm90bxosZ29vZ2xlL21hcHMv",
-            "ZmxlZXRlbmdpbmUvdjEvZmxlZXRlbmdpbmUucHJvdG8aHmdvb2dsZS9wcm90",
-            "b2J1Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFt",
-            "cC5wcm90bxoeZ29vZ2xlL3Byb3RvYnVmL3dyYXBwZXJzLnByb3RvGhhnb29n",
-            "bGUvdHlwZS9sYXRsbmcucHJvdG8i6A0KBFRyaXASDAoEbmFtZRgBIAEoCRIS",
-            "Cgp2ZWhpY2xlX2lkGAIgASgJEjQKC3RyaXBfc3RhdHVzGAMgASgOMh8ubWFw",
-            "cy5mbGVldGVuZ2luZS52MS5UcmlwU3RhdHVzEjAKCXRyaXBfdHlwZRgEIAEo",
-            "DjIdLm1hcHMuZmxlZXRlbmdpbmUudjEuVHJpcFR5cGUSOwoMcGlja3VwX3Bv",
-            "aW50GAUgASgLMiUubWFwcy5mbGVldGVuZ2luZS52MS5UZXJtaW5hbExvY2F0",
-            "aW9uEkMKE2FjdHVhbF9waWNrdXBfcG9pbnQYFiABKAsyIS5tYXBzLmZsZWV0",
-            "ZW5naW5lLnYxLlN0b3BMb2NhdGlvbkID4EEEEksKG2FjdHVhbF9waWNrdXBf",
-            "YXJyaXZhbF9wb2ludBggIAEoCzIhLm1hcHMuZmxlZXRlbmdpbmUudjEuU3Rv",
-            "cExvY2F0aW9uQgPgQQQSLwoLcGlja3VwX3RpbWUYBiABKAsyGi5nb29nbGUu",
-            "cHJvdG9idWYuVGltZXN0YW1wEkgKGWludGVybWVkaWF0ZV9kZXN0aW5hdGlv",
-            "bnMYDiADKAsyJS5tYXBzLmZsZWV0ZW5naW5lLnYxLlRlcm1pbmFsTG9jYXRp",
-            "b24SRQohaW50ZXJtZWRpYXRlX2Rlc3RpbmF0aW9uc192ZXJzaW9uGBkgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBImCh5pbnRlcm1lZGlhdGVf",
-            "ZGVzdGluYXRpb25faW5kZXgYDyABKAUSXgouYWN0dWFsX2ludGVybWVkaWF0",
-            "ZV9kZXN0aW5hdGlvbl9hcnJpdmFsX3BvaW50cxghIAMoCzIhLm1hcHMuZmxl",
-            "ZXRlbmdpbmUudjEuU3RvcExvY2F0aW9uQgPgQQQSUAogYWN0dWFsX2ludGVy",
-            "bWVkaWF0ZV9kZXN0aW5hdGlvbnMYIiADKAsyIS5tYXBzLmZsZWV0ZW5naW5l",
-            "LnYxLlN0b3BMb2NhdGlvbkID4EEEEjwKDWRyb3BvZmZfcG9pbnQYByABKAsy",
-            "JS5tYXBzLmZsZWV0ZW5naW5lLnYxLlRlcm1pbmFsTG9jYXRpb24SRAoUYWN0",
-            "dWFsX2Ryb3BvZmZfcG9pbnQYFyABKAsyIS5tYXBzLmZsZWV0ZW5naW5lLnYx",
-            "LlN0b3BMb2NhdGlvbkID4EEEEjAKDGRyb3BvZmZfdGltZRgIIAEoCzIaLmdv",
-            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASQwoTcmVtYWluaW5nX3dheXBvaW50",
-            "cxgQIAMoCzIhLm1hcHMuZmxlZXRlbmdpbmUudjEuVHJpcFdheXBvaW50QgPg",
-            "QQMSPAoRdmVoaWNsZV93YXlwb2ludHMYFCADKAsyIS5tYXBzLmZsZWV0ZW5n",
-            "aW5lLnYxLlRyaXBXYXlwb2ludBIiCgVyb3V0ZRgJIAMoCzITLmdvb2dsZS50",
-            "eXBlLkxhdExuZxJKCh9jdXJyZW50X3JvdXRlX3NlZ21lbnRfZW5kX3BvaW50",
-            "GBggASgLMiEubWFwcy5mbGVldGVuZ2luZS52MS5UcmlwV2F5cG9pbnQSPgoZ",
-            "cmVtYWluaW5nX2Rpc3RhbmNlX21ldGVycxgMIAEoCzIbLmdvb2dsZS5wcm90",
-            "b2J1Zi5JbnQzMlZhbHVlEj4KFWV0YV90b19maXJzdF93YXlwb2ludBgNIAEo",
-            "CzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BBAxJICiByZW1haW5p",
-            "bmdfdGltZV90b19maXJzdF93YXlwb2ludBgbIAEoCzIZLmdvb2dsZS5wcm90",
-            "b2J1Zi5EdXJhdGlvbkID4EEDEj8KG3JlbWFpbmluZ193YXlwb2ludHNfdmVy",
-            "c2lvbhgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASRQohcmVt",
-            "YWluaW5nX3dheXBvaW50c19yb3V0ZV92ZXJzaW9uGB0gASgLMhouZ29vZ2xl",
-            "LnByb3RvYnVmLlRpbWVzdGFtcBIcChRudW1iZXJfb2ZfcGFzc2VuZ2VycxgK",
-            "IAEoBRI7Cg1sYXN0X2xvY2F0aW9uGAsgASgLMiQubWFwcy5mbGVldGVuZ2lu",
-            "ZS52MS5WZWhpY2xlTG9jYXRpb24SHwoXbGFzdF9sb2NhdGlvbl9zbmFwcGFi",
-            "bGUYGiABKAgSKwoEdmlldxgfIAEoDjIdLm1hcHMuZmxlZXRlbmdpbmUudjEu",
-            "VHJpcFZpZXc6R+pBRAofZmxlZXRlbmdpbmUuZ29vZ2xlYXBpcy5jb20vVHJp",
-            "cBIhcHJvdmlkZXJzL3twcm92aWRlcn0vdHJpcHMve3RyaXB9IpUBCgxTdG9w",
-            "TG9jYXRpb24SJwoFcG9pbnQYASABKAsyEy5nb29nbGUudHlwZS5MYXRMbmdC",
-            "A+BBAhItCgl0aW1lc3RhbXAYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGlt",
-            "ZXN0YW1wEi0KCXN0b3BfdGltZRgDIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5U",
-            "aW1lc3RhbXAq4gEKClRyaXBTdGF0dXMSFwoTVU5LTk9XTl9UUklQX1NUQVRV",
-            "UxAAEgcKA05FVxABEhUKEUVOUk9VVEVfVE9fUElDS1VQEAISFQoRQVJSSVZF",
-            "RF9BVF9QSUNLVVAQAxInCiNBUlJJVkVEX0FUX0lOVEVSTUVESUFURV9ERVNU",
-            "SU5BVElPThAHEicKI0VOUk9VVEVfVE9fSU5URVJNRURJQVRFX0RFU1RJTkFU",
-            "SU9OEAgSFgoSRU5ST1VURV9UT19EUk9QT0ZGEAQSDAoIQ09NUExFVEUQBRIM",
-            "CghDQU5DRUxFRBAGKn8KGUJpbGxpbmdQbGF0Zm9ybUlkZW50aWZpZXISKwon",
-            "QklMTElOR19QTEFURk9STV9JREVOVElGSUVSX1VOU1BFQ0lGSUVEEAASCgoG",
-            "U0VSVkVSEAESBwoDV0VCEAISCwoHQU5EUk9JRBADEgcKA0lPUxAEEgoKBk9U",
-            "SEVSUxAFKkcKCFRyaXBWaWV3EhkKFVRSSVBfVklFV19VTlNQRUNJRklFRBAA",
-            "EgcKA1NESxABEhcKE0pPVVJORVlfU0hBUklOR19WMVMQAkJyChpnb29nbGUu",
-            "bWFwcy5mbGVldGVuZ2luZS52MUIFVHJpcHNQAVpFZ29vZ2xlLmdvbGFuZy5v",
-            "cmcvZ2VucHJvdG8vZ29vZ2xlYXBpcy9tYXBzL2ZsZWV0ZW5naW5lL3YxO2Zs",
-            "ZWV0ZW5naW5logIDQ0ZFYgZwcm90bzM="));
+            "ZmxlZXRlbmdpbmUvdjEvZmxlZXRlbmdpbmUucHJvdG8aKGdvb2dsZS9tYXBz",
+            "L2ZsZWV0ZW5naW5lL3YxL3RyYWZmaWMucHJvdG8aHmdvb2dsZS9wcm90b2J1",
+            "Zi9kdXJhdGlvbi5wcm90bxofZ29vZ2xlL3Byb3RvYnVmL3RpbWVzdGFtcC5w",
+            "cm90bxoeZ29vZ2xlL3Byb3RvYnVmL3dyYXBwZXJzLnByb3RvGhhnb29nbGUv",
+            "dHlwZS9sYXRsbmcucHJvdG8itxAKBFRyaXASEQoEbmFtZRgBIAEoCUID4EED",
+            "EhIKCnZlaGljbGVfaWQYAiABKAkSNAoLdHJpcF9zdGF0dXMYAyABKA4yHy5t",
+            "YXBzLmZsZWV0ZW5naW5lLnYxLlRyaXBTdGF0dXMSMAoJdHJpcF90eXBlGAQg",
+            "ASgOMh0ubWFwcy5mbGVldGVuZ2luZS52MS5UcmlwVHlwZRI7CgxwaWNrdXBf",
+            "cG9pbnQYBSABKAsyJS5tYXBzLmZsZWV0ZW5naW5lLnYxLlRlcm1pbmFsTG9j",
+            "YXRpb24SQwoTYWN0dWFsX3BpY2t1cF9wb2ludBgWIAEoCzIhLm1hcHMuZmxl",
+            "ZXRlbmdpbmUudjEuU3RvcExvY2F0aW9uQgPgQQQSSwobYWN0dWFsX3BpY2t1",
+            "cF9hcnJpdmFsX3BvaW50GCAgASgLMiEubWFwcy5mbGVldGVuZ2luZS52MS5T",
+            "dG9wTG9jYXRpb25CA+BBBBI0CgtwaWNrdXBfdGltZRgGIAEoCzIaLmdvb2ds",
+            "ZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BBAxJIChlpbnRlcm1lZGlhdGVfZGVz",
+            "dGluYXRpb25zGA4gAygLMiUubWFwcy5mbGVldGVuZ2luZS52MS5UZXJtaW5h",
+            "bExvY2F0aW9uEkUKIWludGVybWVkaWF0ZV9kZXN0aW5hdGlvbnNfdmVyc2lv",
+            "bhgZIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASJgoeaW50ZXJt",
+            "ZWRpYXRlX2Rlc3RpbmF0aW9uX2luZGV4GA8gASgFEl4KLmFjdHVhbF9pbnRl",
+            "cm1lZGlhdGVfZGVzdGluYXRpb25fYXJyaXZhbF9wb2ludHMYISADKAsyIS5t",
+            "YXBzLmZsZWV0ZW5naW5lLnYxLlN0b3BMb2NhdGlvbkID4EEEElAKIGFjdHVh",
+            "bF9pbnRlcm1lZGlhdGVfZGVzdGluYXRpb25zGCIgAygLMiEubWFwcy5mbGVl",
+            "dGVuZ2luZS52MS5TdG9wTG9jYXRpb25CA+BBBBI8Cg1kcm9wb2ZmX3BvaW50",
+            "GAcgASgLMiUubWFwcy5mbGVldGVuZ2luZS52MS5UZXJtaW5hbExvY2F0aW9u",
+            "EkQKFGFjdHVhbF9kcm9wb2ZmX3BvaW50GBcgASgLMiEubWFwcy5mbGVldGVu",
+            "Z2luZS52MS5TdG9wTG9jYXRpb25CA+BBBBI1Cgxkcm9wb2ZmX3RpbWUYCCAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgPgQQMSQwoTcmVtYWlu",
+            "aW5nX3dheXBvaW50cxgQIAMoCzIhLm1hcHMuZmxlZXRlbmdpbmUudjEuVHJp",
+            "cFdheXBvaW50QgPgQQMSPAoRdmVoaWNsZV93YXlwb2ludHMYFCADKAsyIS5t",
+            "YXBzLmZsZWV0ZW5naW5lLnYxLlRyaXBXYXlwb2ludBInCgVyb3V0ZRgJIAMo",
+            "CzITLmdvb2dsZS50eXBlLkxhdExuZ0ID4EEDEiIKFWN1cnJlbnRfcm91dGVf",
+            "c2VnbWVudBgVIAEoCUID4EEDEkYKHWN1cnJlbnRfcm91dGVfc2VnbWVudF92",
+            "ZXJzaW9uGBEgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEID4EED",
+            "EloKHWN1cnJlbnRfcm91dGVfc2VnbWVudF90cmFmZmljGBwgASgLMi4ubWFw",
+            "cy5mbGVldGVuZ2luZS52MS5Db25zdW1hYmxlVHJhZmZpY1BvbHlsaW5lQgPg",
+            "QQMSTgolY3VycmVudF9yb3V0ZV9zZWdtZW50X3RyYWZmaWNfdmVyc2lvbhge",
+            "IAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BBAxJPCh9jdXJy",
+            "ZW50X3JvdXRlX3NlZ21lbnRfZW5kX3BvaW50GBggASgLMiEubWFwcy5mbGVl",
+            "dGVuZ2luZS52MS5UcmlwV2F5cG9pbnRCA+BBAxJDChlyZW1haW5pbmdfZGlz",
+            "dGFuY2VfbWV0ZXJzGAwgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFs",
+            "dWVCA+BBAxI+ChVldGFfdG9fZmlyc3Rfd2F5cG9pbnQYDSABKAsyGi5nb29n",
+            "bGUucHJvdG9idWYuVGltZXN0YW1wQgPgQQMSSAogcmVtYWluaW5nX3RpbWVf",
+            "dG9fZmlyc3Rfd2F5cG9pbnQYGyABKAsyGS5nb29nbGUucHJvdG9idWYuRHVy",
+            "YXRpb25CA+BBAxJEChtyZW1haW5pbmdfd2F5cG9pbnRzX3ZlcnNpb24YEyAB",
+            "KAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgPgQQMSSgohcmVtYWlu",
+            "aW5nX3dheXBvaW50c19yb3V0ZV92ZXJzaW9uGB0gASgLMhouZ29vZ2xlLnBy",
+            "b3RvYnVmLlRpbWVzdGFtcEID4EEDEiEKFG51bWJlcl9vZl9wYXNzZW5nZXJz",
+            "GAogASgFQgPgQQUSQAoNbGFzdF9sb2NhdGlvbhgLIAEoCzIkLm1hcHMuZmxl",
+            "ZXRlbmdpbmUudjEuVmVoaWNsZUxvY2F0aW9uQgPgQQMSJAoXbGFzdF9sb2Nh",
+            "dGlvbl9zbmFwcGFibGUYGiABKAhCA+BBAxIrCgR2aWV3GB8gASgOMh0ubWFw",
+            "cy5mbGVldGVuZ2luZS52MS5UcmlwVmlldzpH6kFECh9mbGVldGVuZ2luZS5n",
+            "b29nbGVhcGlzLmNvbS9UcmlwEiFwcm92aWRlcnMve3Byb3ZpZGVyfS90cmlw",
+            "cy97dHJpcH0inAEKDFN0b3BMb2NhdGlvbhInCgVwb2ludBgBIAEoCzITLmdv",
+            "b2dsZS50eXBlLkxhdExuZ0ID4EECEi0KCXRpbWVzdGFtcBgCIAEoCzIaLmdv",
+            "b2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASNAoJc3RvcF90aW1lGAMgASgLMhou",
+            "Z29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEIFGAHgQQQq4gEKClRyaXBTdGF0",
+            "dXMSFwoTVU5LTk9XTl9UUklQX1NUQVRVUxAAEgcKA05FVxABEhUKEUVOUk9V",
+            "VEVfVE9fUElDS1VQEAISFQoRQVJSSVZFRF9BVF9QSUNLVVAQAxInCiNBUlJJ",
+            "VkVEX0FUX0lOVEVSTUVESUFURV9ERVNUSU5BVElPThAHEicKI0VOUk9VVEVf",
+            "VE9fSU5URVJNRURJQVRFX0RFU1RJTkFUSU9OEAgSFgoSRU5ST1VURV9UT19E",
+            "Uk9QT0ZGEAQSDAoIQ09NUExFVEUQBRIMCghDQU5DRUxFRBAGKn8KGUJpbGxp",
+            "bmdQbGF0Zm9ybUlkZW50aWZpZXISKwonQklMTElOR19QTEFURk9STV9JREVO",
+            "VElGSUVSX1VOU1BFQ0lGSUVEEAASCgoGU0VSVkVSEAESBwoDV0VCEAISCwoH",
+            "QU5EUk9JRBADEgcKA0lPUxAEEgoKBk9USEVSUxAFKkcKCFRyaXBWaWV3EhkK",
+            "FVRSSVBfVklFV19VTlNQRUNJRklFRBAAEgcKA1NESxABEhcKE0pPVVJORVlf",
+            "U0hBUklOR19WMVMQAkJyChpnb29nbGUubWFwcy5mbGVldGVuZ2luZS52MUIF",
+            "VHJpcHNQAVpFZ29vZ2xlLmdvbGFuZy5vcmcvZ2VucHJvdG8vZ29vZ2xlYXBp",
+            "cy9tYXBzL2ZsZWV0ZW5naW5lL3YxO2ZsZWV0ZW5naW5logIDQ0ZFYgZwcm90",
+            "bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Api.ResourceReflection.Descriptor, global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor, global::Maps.Fleetengine.V1.TrafficReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Maps.Fleetengine.V1.TripStatus), typeof(global::Maps.Fleetengine.V1.BillingPlatformIdentifier), typeof(global::Maps.Fleetengine.V1.TripView), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Trip), global::Maps.Fleetengine.V1.Trip.Parser, new[]{ "Name", "VehicleId", "TripStatus", "TripType", "PickupPoint", "ActualPickupPoint", "ActualPickupArrivalPoint", "PickupTime", "IntermediateDestinations", "IntermediateDestinationsVersion", "IntermediateDestinationIndex", "ActualIntermediateDestinationArrivalPoints", "ActualIntermediateDestinations", "DropoffPoint", "ActualDropoffPoint", "DropoffTime", "RemainingWaypoints", "VehicleWaypoints", "Route", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeToFirstWaypoint", "RemainingWaypointsVersion", "RemainingWaypointsRouteVersion", "NumberOfPassengers", "LastLocation", "LastLocationSnappable", "View" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Trip), global::Maps.Fleetengine.V1.Trip.Parser, new[]{ "Name", "VehicleId", "TripStatus", "TripType", "PickupPoint", "ActualPickupPoint", "ActualPickupArrivalPoint", "PickupTime", "IntermediateDestinations", "IntermediateDestinationsVersion", "IntermediateDestinationIndex", "ActualIntermediateDestinationArrivalPoints", "ActualIntermediateDestinations", "DropoffPoint", "ActualDropoffPoint", "DropoffTime", "RemainingWaypoints", "VehicleWaypoints", "Route", "CurrentRouteSegment", "CurrentRouteSegmentVersion", "CurrentRouteSegmentTraffic", "CurrentRouteSegmentTrafficVersion", "CurrentRouteSegmentEndPoint", "RemainingDistanceMeters", "EtaToFirstWaypoint", "RemainingTimeToFirstWaypoint", "RemainingWaypointsVersion", "RemainingWaypointsRouteVersion", "NumberOfPassengers", "LastLocation", "LastLocationSnappable", "View" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.StopLocation), global::Maps.Fleetengine.V1.StopLocation.Parser, new[]{ "Point", "Timestamp", "StopTime" }, null, null, null, null)
           }));
     }
@@ -256,6 +265,10 @@ namespace Maps.Fleetengine.V1 {
       remainingWaypoints_ = other.remainingWaypoints_.Clone();
       vehicleWaypoints_ = other.vehicleWaypoints_.Clone();
       route_ = other.route_.Clone();
+      currentRouteSegment_ = other.currentRouteSegment_;
+      currentRouteSegmentVersion_ = other.currentRouteSegmentVersion_ != null ? other.currentRouteSegmentVersion_.Clone() : null;
+      currentRouteSegmentTraffic_ = other.currentRouteSegmentTraffic_ != null ? other.currentRouteSegmentTraffic_.Clone() : null;
+      currentRouteSegmentTrafficVersion_ = other.currentRouteSegmentTrafficVersion_ != null ? other.currentRouteSegmentTrafficVersion_.Clone() : null;
       currentRouteSegmentEndPoint_ = other.currentRouteSegmentEndPoint_ != null ? other.currentRouteSegmentEndPoint_.Clone() : null;
       RemainingDistanceMeters = other.RemainingDistanceMeters;
       etaToFirstWaypoint_ = other.etaToFirstWaypoint_ != null ? other.etaToFirstWaypoint_.Clone() : null;
@@ -279,7 +292,7 @@ namespace Maps.Fleetengine.V1 {
     public const int NameFieldNumber = 1;
     private string name_ = "";
     /// <summary>
-    /// In the format "providers/{provider}/trips/{trip}"
+    /// Output only. In the format "providers/{provider}/trips/{trip}"
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -389,7 +402,7 @@ namespace Maps.Fleetengine.V1 {
     public const int PickupTimeFieldNumber = 6;
     private global::Google.Protobuf.WellKnownTypes.Timestamp pickupTime_;
     /// <summary>
-    /// Either the estimated future time when the rider(s) will be picked up, or
+    /// Output only. Either the estimated future time when the rider(s) will be picked up, or
     /// the actual time when they were picked up.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -526,7 +539,7 @@ namespace Maps.Fleetengine.V1 {
     public const int DropoffTimeFieldNumber = 8;
     private global::Google.Protobuf.WellKnownTypes.Timestamp dropoffTime_;
     /// <summary>
-    /// Either the estimated future time when the rider(s) will be dropped off at
+    /// Output only. Either the estimated future time when the rider(s) will be dropped off at
     /// the final destination, or the actual time when they were dropped off.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -579,8 +592,8 @@ namespace Maps.Fleetengine.V1 {
         = pb::FieldCodec.ForMessage(74, global::Google.Type.LatLng.Parser);
     private readonly pbc::RepeatedField<global::Google.Type.LatLng> route_ = new pbc::RepeatedField<global::Google.Type.LatLng>();
     /// <summary>
-    /// Anticipated route for this trip to the first entry in remaining_waypoints.
-    /// If back_to_back or shared trips are enabled, the waypoint may belong to a
+    /// Output only. Anticipated route for this trip to the first entry in remaining_waypoints.
+    /// If back_to_back or shared trips are enabled, the waypoints may belong to a
     /// different trip.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -589,13 +602,82 @@ namespace Maps.Fleetengine.V1 {
       get { return route_; }
     }
 
+    /// <summary>Field number for the "current_route_segment" field.</summary>
+    public const int CurrentRouteSegmentFieldNumber = 21;
+    private string currentRouteSegment_ = "";
+    /// <summary>
+    /// Output only. An encoded path to the next waypoint. This field facilitates journey
+    /// sharing between a Driver app and a Rider app. Your driver app is
+    /// responsible for setting this field on all of its current trips by passing
+    /// Vehicle.current_route_segment to UpdateVehicle. Note: This field is
+    /// intended only for use by the Driver SDK and Consumer SDK.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string CurrentRouteSegment {
+      get { return currentRouteSegment_; }
+      set {
+        currentRouteSegment_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "current_route_segment_version" field.</summary>
+    public const int CurrentRouteSegmentVersionFieldNumber = 17;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp currentRouteSegmentVersion_;
+    /// <summary>
+    /// Output only. Indicates the last time the route was modified.  Note: This field is
+    /// intended only for use by the Driver SDK and Consumer SDK.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CurrentRouteSegmentVersion {
+      get { return currentRouteSegmentVersion_; }
+      set {
+        currentRouteSegmentVersion_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "current_route_segment_traffic" field.</summary>
+    public const int CurrentRouteSegmentTrafficFieldNumber = 28;
+    private global::Maps.Fleetengine.V1.ConsumableTrafficPolyline currentRouteSegmentTraffic_;
+    /// <summary>
+    /// Output only. When available, the traffic conditions along the
+    /// current_route_segment. Note: This field is intended only
+    /// for use by the Driver SDK and Consumer SDK.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Maps.Fleetengine.V1.ConsumableTrafficPolyline CurrentRouteSegmentTraffic {
+      get { return currentRouteSegmentTraffic_; }
+      set {
+        currentRouteSegmentTraffic_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "current_route_segment_traffic_version" field.</summary>
+    public const int CurrentRouteSegmentTrafficVersionFieldNumber = 30;
+    private global::Google.Protobuf.WellKnownTypes.Timestamp currentRouteSegmentTrafficVersion_;
+    /// <summary>
+    /// Output only. Indicates the last time the current_route_segment_traffic was modified.
+    /// Note: This field is intended only for use by the Driver SDK and Consumer
+    /// SDK.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Google.Protobuf.WellKnownTypes.Timestamp CurrentRouteSegmentTrafficVersion {
+      get { return currentRouteSegmentTrafficVersion_; }
+      set {
+        currentRouteSegmentTrafficVersion_ = value;
+      }
+    }
+
     /// <summary>Field number for the "current_route_segment_end_point" field.</summary>
     public const int CurrentRouteSegmentEndPointFieldNumber = 24;
     private global::Maps.Fleetengine.V1.TripWaypoint currentRouteSegmentEndPoint_;
     /// <summary>
-    /// The waypoint where current_route_segment ends. This can be supplied by
+    /// Output only. The waypoint where current_route_segment ends. This can be supplied by
     /// drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-    /// latlng, or as a the last latlng of the current_route_segment. FleetEngine
+    /// latlng, or as a the last latlng of the current_route_segment. Fleet Engine
     /// will then do its best to interpolate to an actual waypoint if it is not
     /// fully specified. It will be returned in GetTrip calls. It is not respected
     /// in Create/Update Trip calls.
@@ -614,7 +696,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_remainingDistanceMeters_codec = pb::FieldCodec.ForStructWrapper<int>(98);
     private int? remainingDistanceMeters_;
     /// <summary>
-    /// The remaining driving distance in Trip.current_route_segment field.
+    /// Output only. The remaining driving distance in Trip.current_route_segment field.
     /// This field facilitates journey sharing between a driver and rider and
     /// Fleet Engine does not update it. Your driver app is responsible for setting
     /// field on all of its current trips by passing
@@ -676,7 +758,7 @@ namespace Maps.Fleetengine.V1 {
     public const int RemainingWaypointsVersionFieldNumber = 19;
     private global::Google.Protobuf.WellKnownTypes.Timestamp remainingWaypointsVersion_;
     /// <summary>
-    /// Indicates the last time that `remaining_waypoints` was changed (a
+    /// Output only. Indicates the last time that `remaining_waypoints` was changed (a
     /// waypoint was added, removed, or changed).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -692,10 +774,10 @@ namespace Maps.Fleetengine.V1 {
     public const int RemainingWaypointsRouteVersionFieldNumber = 29;
     private global::Google.Protobuf.WellKnownTypes.Timestamp remainingWaypointsRouteVersion_;
     /// <summary>
-    /// Indicates the last time the remaining_waypoints.path_to_waypoint and
-    /// remaining_waypoints.traffic_to_waypoint were modified. Your client app
-    /// should cache this value and pass it in GetTripRequest to ensure the
-    /// paths and traffic for remaining_waypoints are only returned if updated.
+    /// Output only. Indicates the last time the `remaining_waypoints.path_to_waypoint` and
+    /// `remaining_waypoints.traffic_to_waypoint` were modified. Your client app
+    /// should cache this value and pass it in `GetTripRequest` to ensure the
+    /// paths and traffic for `remaining_waypoints` are only returned if updated.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -710,9 +792,9 @@ namespace Maps.Fleetengine.V1 {
     public const int NumberOfPassengersFieldNumber = 10;
     private int numberOfPassengers_;
     /// <summary>
-    /// Indicates the number of passengers on this trip and does not include the
-    /// driver. A vehicle must have available_capacity to be returned
-    /// in SearchTrips.
+    /// Immutable. Indicates the number of passengers on this trip and does not include the
+    /// driver. A vehicle must have available capacity to be returned
+    /// in SearchVehicles.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -727,7 +809,7 @@ namespace Maps.Fleetengine.V1 {
     public const int LastLocationFieldNumber = 11;
     private global::Maps.Fleetengine.V1.VehicleLocation lastLocation_;
     /// <summary>
-    /// Indicates the last reported location of the vehicle along the route.
+    /// Output only. Indicates the last reported location of the vehicle along the route.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -742,7 +824,7 @@ namespace Maps.Fleetengine.V1 {
     public const int LastLocationSnappableFieldNumber = 26;
     private bool lastLocationSnappable_;
     /// <summary>
-    /// Indicates whether the vehicle's last_location can be snapped to
+    /// Output only. Indicates whether the vehicle's last_location can be snapped to
     /// the current_route_segment. False if last_location or current_route_segment
     /// doesn't exist.
     /// It is computed by Fleet Engine. Any update from clients will be ignored.
@@ -806,6 +888,10 @@ namespace Maps.Fleetengine.V1 {
       if(!remainingWaypoints_.Equals(other.remainingWaypoints_)) return false;
       if(!vehicleWaypoints_.Equals(other.vehicleWaypoints_)) return false;
       if(!route_.Equals(other.route_)) return false;
+      if (CurrentRouteSegment != other.CurrentRouteSegment) return false;
+      if (!object.Equals(CurrentRouteSegmentVersion, other.CurrentRouteSegmentVersion)) return false;
+      if (!object.Equals(CurrentRouteSegmentTraffic, other.CurrentRouteSegmentTraffic)) return false;
+      if (!object.Equals(CurrentRouteSegmentTrafficVersion, other.CurrentRouteSegmentTrafficVersion)) return false;
       if (!object.Equals(CurrentRouteSegmentEndPoint, other.CurrentRouteSegmentEndPoint)) return false;
       if (RemainingDistanceMeters != other.RemainingDistanceMeters) return false;
       if (!object.Equals(EtaToFirstWaypoint, other.EtaToFirstWaypoint)) return false;
@@ -842,6 +928,10 @@ namespace Maps.Fleetengine.V1 {
       hash ^= remainingWaypoints_.GetHashCode();
       hash ^= vehicleWaypoints_.GetHashCode();
       hash ^= route_.GetHashCode();
+      if (CurrentRouteSegment.Length != 0) hash ^= CurrentRouteSegment.GetHashCode();
+      if (currentRouteSegmentVersion_ != null) hash ^= CurrentRouteSegmentVersion.GetHashCode();
+      if (currentRouteSegmentTraffic_ != null) hash ^= CurrentRouteSegmentTraffic.GetHashCode();
+      if (currentRouteSegmentTrafficVersion_ != null) hash ^= CurrentRouteSegmentTrafficVersion.GetHashCode();
       if (currentRouteSegmentEndPoint_ != null) hash ^= CurrentRouteSegmentEndPoint.GetHashCode();
       if (remainingDistanceMeters_ != null) hash ^= RemainingDistanceMeters.GetHashCode();
       if (etaToFirstWaypoint_ != null) hash ^= EtaToFirstWaypoint.GetHashCode();
@@ -924,11 +1014,19 @@ namespace Maps.Fleetengine.V1 {
         output.WriteInt32(IntermediateDestinationIndex);
       }
       remainingWaypoints_.WriteTo(output, _repeated_remainingWaypoints_codec);
+      if (currentRouteSegmentVersion_ != null) {
+        output.WriteRawTag(138, 1);
+        output.WriteMessage(CurrentRouteSegmentVersion);
+      }
       if (remainingWaypointsVersion_ != null) {
         output.WriteRawTag(154, 1);
         output.WriteMessage(RemainingWaypointsVersion);
       }
       vehicleWaypoints_.WriteTo(output, _repeated_vehicleWaypoints_codec);
+      if (CurrentRouteSegment.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(CurrentRouteSegment);
+      }
       if (actualPickupPoint_ != null) {
         output.WriteRawTag(178, 1);
         output.WriteMessage(ActualPickupPoint);
@@ -953,9 +1051,17 @@ namespace Maps.Fleetengine.V1 {
         output.WriteRawTag(218, 1);
         output.WriteMessage(RemainingTimeToFirstWaypoint);
       }
+      if (currentRouteSegmentTraffic_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(CurrentRouteSegmentTraffic);
+      }
       if (remainingWaypointsRouteVersion_ != null) {
         output.WriteRawTag(234, 1);
         output.WriteMessage(RemainingWaypointsRouteVersion);
+      }
+      if (currentRouteSegmentTrafficVersion_ != null) {
+        output.WriteRawTag(242, 1);
+        output.WriteMessage(CurrentRouteSegmentTrafficVersion);
       }
       if (View != global::Maps.Fleetengine.V1.TripView.Unspecified) {
         output.WriteRawTag(248, 1);
@@ -1031,11 +1137,19 @@ namespace Maps.Fleetengine.V1 {
         output.WriteInt32(IntermediateDestinationIndex);
       }
       remainingWaypoints_.WriteTo(ref output, _repeated_remainingWaypoints_codec);
+      if (currentRouteSegmentVersion_ != null) {
+        output.WriteRawTag(138, 1);
+        output.WriteMessage(CurrentRouteSegmentVersion);
+      }
       if (remainingWaypointsVersion_ != null) {
         output.WriteRawTag(154, 1);
         output.WriteMessage(RemainingWaypointsVersion);
       }
       vehicleWaypoints_.WriteTo(ref output, _repeated_vehicleWaypoints_codec);
+      if (CurrentRouteSegment.Length != 0) {
+        output.WriteRawTag(170, 1);
+        output.WriteString(CurrentRouteSegment);
+      }
       if (actualPickupPoint_ != null) {
         output.WriteRawTag(178, 1);
         output.WriteMessage(ActualPickupPoint);
@@ -1060,9 +1174,17 @@ namespace Maps.Fleetengine.V1 {
         output.WriteRawTag(218, 1);
         output.WriteMessage(RemainingTimeToFirstWaypoint);
       }
+      if (currentRouteSegmentTraffic_ != null) {
+        output.WriteRawTag(226, 1);
+        output.WriteMessage(CurrentRouteSegmentTraffic);
+      }
       if (remainingWaypointsRouteVersion_ != null) {
         output.WriteRawTag(234, 1);
         output.WriteMessage(RemainingWaypointsRouteVersion);
+      }
+      if (currentRouteSegmentTrafficVersion_ != null) {
+        output.WriteRawTag(242, 1);
+        output.WriteMessage(CurrentRouteSegmentTrafficVersion);
       }
       if (View != global::Maps.Fleetengine.V1.TripView.Unspecified) {
         output.WriteRawTag(248, 1);
@@ -1129,6 +1251,18 @@ namespace Maps.Fleetengine.V1 {
       size += remainingWaypoints_.CalculateSize(_repeated_remainingWaypoints_codec);
       size += vehicleWaypoints_.CalculateSize(_repeated_vehicleWaypoints_codec);
       size += route_.CalculateSize(_repeated_route_codec);
+      if (CurrentRouteSegment.Length != 0) {
+        size += 2 + pb::CodedOutputStream.ComputeStringSize(CurrentRouteSegment);
+      }
+      if (currentRouteSegmentVersion_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentVersion);
+      }
+      if (currentRouteSegmentTraffic_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentTraffic);
+      }
+      if (currentRouteSegmentTrafficVersion_ != null) {
+        size += 2 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentTrafficVersion);
+      }
       if (currentRouteSegmentEndPoint_ != null) {
         size += 2 + pb::CodedOutputStream.ComputeMessageSize(CurrentRouteSegmentEndPoint);
       }
@@ -1240,6 +1374,27 @@ namespace Maps.Fleetengine.V1 {
       remainingWaypoints_.Add(other.remainingWaypoints_);
       vehicleWaypoints_.Add(other.vehicleWaypoints_);
       route_.Add(other.route_);
+      if (other.CurrentRouteSegment.Length != 0) {
+        CurrentRouteSegment = other.CurrentRouteSegment;
+      }
+      if (other.currentRouteSegmentVersion_ != null) {
+        if (currentRouteSegmentVersion_ == null) {
+          CurrentRouteSegmentVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CurrentRouteSegmentVersion.MergeFrom(other.CurrentRouteSegmentVersion);
+      }
+      if (other.currentRouteSegmentTraffic_ != null) {
+        if (currentRouteSegmentTraffic_ == null) {
+          CurrentRouteSegmentTraffic = new global::Maps.Fleetengine.V1.ConsumableTrafficPolyline();
+        }
+        CurrentRouteSegmentTraffic.MergeFrom(other.CurrentRouteSegmentTraffic);
+      }
+      if (other.currentRouteSegmentTrafficVersion_ != null) {
+        if (currentRouteSegmentTrafficVersion_ == null) {
+          CurrentRouteSegmentTrafficVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+        }
+        CurrentRouteSegmentTrafficVersion.MergeFrom(other.CurrentRouteSegmentTrafficVersion);
+      }
       if (other.currentRouteSegmentEndPoint_ != null) {
         if (currentRouteSegmentEndPoint_ == null) {
           CurrentRouteSegmentEndPoint = new global::Maps.Fleetengine.V1.TripWaypoint();
@@ -1390,6 +1545,13 @@ namespace Maps.Fleetengine.V1 {
             remainingWaypoints_.AddEntriesFrom(input, _repeated_remainingWaypoints_codec);
             break;
           }
+          case 138: {
+            if (currentRouteSegmentVersion_ == null) {
+              CurrentRouteSegmentVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CurrentRouteSegmentVersion);
+            break;
+          }
           case 154: {
             if (remainingWaypointsVersion_ == null) {
               RemainingWaypointsVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -1399,6 +1561,10 @@ namespace Maps.Fleetengine.V1 {
           }
           case 162: {
             vehicleWaypoints_.AddEntriesFrom(input, _repeated_vehicleWaypoints_codec);
+            break;
+          }
+          case 170: {
+            CurrentRouteSegment = input.ReadString();
             break;
           }
           case 178: {
@@ -1440,11 +1606,25 @@ namespace Maps.Fleetengine.V1 {
             input.ReadMessage(RemainingTimeToFirstWaypoint);
             break;
           }
+          case 226: {
+            if (currentRouteSegmentTraffic_ == null) {
+              CurrentRouteSegmentTraffic = new global::Maps.Fleetengine.V1.ConsumableTrafficPolyline();
+            }
+            input.ReadMessage(CurrentRouteSegmentTraffic);
+            break;
+          }
           case 234: {
             if (remainingWaypointsRouteVersion_ == null) {
               RemainingWaypointsRouteVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(RemainingWaypointsRouteVersion);
+            break;
+          }
+          case 242: {
+            if (currentRouteSegmentTrafficVersion_ == null) {
+              CurrentRouteSegmentTrafficVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CurrentRouteSegmentTrafficVersion);
             break;
           }
           case 248: {
@@ -1566,6 +1746,13 @@ namespace Maps.Fleetengine.V1 {
             remainingWaypoints_.AddEntriesFrom(ref input, _repeated_remainingWaypoints_codec);
             break;
           }
+          case 138: {
+            if (currentRouteSegmentVersion_ == null) {
+              CurrentRouteSegmentVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CurrentRouteSegmentVersion);
+            break;
+          }
           case 154: {
             if (remainingWaypointsVersion_ == null) {
               RemainingWaypointsVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
@@ -1575,6 +1762,10 @@ namespace Maps.Fleetengine.V1 {
           }
           case 162: {
             vehicleWaypoints_.AddEntriesFrom(ref input, _repeated_vehicleWaypoints_codec);
+            break;
+          }
+          case 170: {
+            CurrentRouteSegment = input.ReadString();
             break;
           }
           case 178: {
@@ -1616,11 +1807,25 @@ namespace Maps.Fleetengine.V1 {
             input.ReadMessage(RemainingTimeToFirstWaypoint);
             break;
           }
+          case 226: {
+            if (currentRouteSegmentTraffic_ == null) {
+              CurrentRouteSegmentTraffic = new global::Maps.Fleetengine.V1.ConsumableTrafficPolyline();
+            }
+            input.ReadMessage(CurrentRouteSegmentTraffic);
+            break;
+          }
           case 234: {
             if (remainingWaypointsRouteVersion_ == null) {
               RemainingWaypointsRouteVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
             }
             input.ReadMessage(RemainingWaypointsRouteVersion);
+            break;
+          }
+          case 242: {
+            if (currentRouteSegmentTrafficVersion_ == null) {
+              CurrentRouteSegmentTrafficVersion = new global::Google.Protobuf.WellKnownTypes.Timestamp();
+            }
+            input.ReadMessage(CurrentRouteSegmentTrafficVersion);
             break;
           }
           case 248: {
@@ -1717,7 +1922,7 @@ namespace Maps.Fleetengine.V1 {
     public const int TimestampFieldNumber = 2;
     private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
     /// <summary>
-    /// The timestamp when the location was measured.
+    /// Indicates when the stop happened.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1732,8 +1937,9 @@ namespace Maps.Fleetengine.V1 {
     public const int StopTimeFieldNumber = 3;
     private global::Google.Protobuf.WellKnownTypes.Timestamp stopTime_;
     /// <summary>
-    /// Indicates when the stop actually happened.
+    /// Input only. Deprecated.  Use the timestamp field.
     /// </summary>
+    [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::Google.Protobuf.WellKnownTypes.Timestamp StopTime {

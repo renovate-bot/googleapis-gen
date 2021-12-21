@@ -5,7 +5,8 @@ package google.maps.fleetengine.v1;
 
 /**
  * <pre>
- * Describes a vehicle attribute as a key-value pair.
+ * Describes a vehicle attribute as a key-value pair. The "key:value" string
+ * length cannot exceed 256 characters.
  * </pre>
  *
  * Protobuf type {@code maps.fleetengine.v1.VehicleAttribute}
@@ -356,7 +357,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Describes a vehicle attribute as a key-value pair.
+   * Describes a vehicle attribute as a key-value pair. The "key:value" string
+   * length cannot exceed 256 characters.
    * </pre>
    *
    * Protobuf type {@code maps.fleetengine.v1.VehicleAttribute}

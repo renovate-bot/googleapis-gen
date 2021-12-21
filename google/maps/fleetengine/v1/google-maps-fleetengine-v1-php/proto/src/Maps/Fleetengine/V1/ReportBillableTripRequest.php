@@ -17,9 +17,9 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
 {
     /**
      * Required. Must be in the format
-     * "providers/{provider}/billableTrips/{billable_trip}". The
-     * provider must be the Project ID (for example, sample-cloud-project) of the
-     * Google Cloud Project of which the service account making this call is a
+     * `providers/{provider}/billableTrips/{billable_trip}`. The
+     * provider must be the Project ID (for example, `sample-cloud-project`) of
+     * the Google Cloud Project of which the service account making this call is a
      * member.
      *
      * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
     /**
      * The identifiers that are directly related to the trip being reported. These
      * are usually IDs (for example, session IDs) of pre-booking operations done
-     * before the trip ID is available. The number of related_ids is
+     * before the trip ID is available. The number of `related_ids` is
      * limited to 50.
      *
      * Generated from protobuf field <code>repeated string related_ids = 6;</code>
@@ -49,7 +49,7 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
     private $related_ids;
     /**
      * The type of GMP product solution (for example,
-     * ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+     * `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
      */
@@ -63,9 +63,9 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
      *
      *     @type string $name
      *           Required. Must be in the format
-     *           "providers/{provider}/billableTrips/{billable_trip}". The
-     *           provider must be the Project ID (for example, sample-cloud-project) of the
-     *           Google Cloud Project of which the service account making this call is a
+     *           `providers/{provider}/billableTrips/{billable_trip}`. The
+     *           provider must be the Project ID (for example, `sample-cloud-project`) of
+     *           the Google Cloud Project of which the service account making this call is a
      *           member.
      *     @type string $country_code
      *           Required. Two letter country code of the country where the trip takes place. Price is
@@ -75,11 +75,11 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
      *     @type string[]|\Google\Protobuf\Internal\RepeatedField $related_ids
      *           The identifiers that are directly related to the trip being reported. These
      *           are usually IDs (for example, session IDs) of pre-booking operations done
-     *           before the trip ID is available. The number of related_ids is
+     *           before the trip ID is available. The number of `related_ids` is
      *           limited to 50.
      *     @type int $solution_type
      *           The type of GMP product solution (for example,
-     *           ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+     *           `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
      * }
      */
     public function __construct($data = NULL) {
@@ -89,9 +89,9 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/billableTrips/{billable_trip}". The
-     * provider must be the Project ID (for example, sample-cloud-project) of the
-     * Google Cloud Project of which the service account making this call is a
+     * `providers/{provider}/billableTrips/{billable_trip}`. The
+     * provider must be the Project ID (for example, `sample-cloud-project`) of
+     * the Google Cloud Project of which the service account making this call is a
      * member.
      *
      * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -104,9 +104,9 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/billableTrips/{billable_trip}". The
-     * provider must be the Project ID (for example, sample-cloud-project) of the
-     * Google Cloud Project of which the service account making this call is a
+     * `providers/{provider}/billableTrips/{billable_trip}`. The
+     * provider must be the Project ID (for example, `sample-cloud-project`) of
+     * the Google Cloud Project of which the service account making this call is a
      * member.
      *
      * Generated from protobuf field <code>string name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -178,7 +178,7 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
     /**
      * The identifiers that are directly related to the trip being reported. These
      * are usually IDs (for example, session IDs) of pre-booking operations done
-     * before the trip ID is available. The number of related_ids is
+     * before the trip ID is available. The number of `related_ids` is
      * limited to 50.
      *
      * Generated from protobuf field <code>repeated string related_ids = 6;</code>
@@ -192,7 +192,7 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
     /**
      * The identifiers that are directly related to the trip being reported. These
      * are usually IDs (for example, session IDs) of pre-booking operations done
-     * before the trip ID is available. The number of related_ids is
+     * before the trip ID is available. The number of `related_ids` is
      * limited to 50.
      *
      * Generated from protobuf field <code>repeated string related_ids = 6;</code>
@@ -209,7 +209,7 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of GMP product solution (for example,
-     * ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+     * `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
      * @return int
@@ -221,7 +221,7 @@ class ReportBillableTripRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * The type of GMP product solution (for example,
-     * ON_DEMAND_RIDESHARING_AND_DELIVERIES) used for the reported trip.
+     * `ON_DEMAND_RIDESHARING_AND_DELIVERIES`) used for the reported trip.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.ReportBillableTripRequest.SolutionType solution_type = 7;</code>
      * @param int $var

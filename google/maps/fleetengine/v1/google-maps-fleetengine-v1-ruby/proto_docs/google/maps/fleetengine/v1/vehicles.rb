@@ -21,122 +21,117 @@ module Maps
   module Fleetengine
     module V1
       # Vehicle metadata.
-      # @!attribute [rw] name
+      # @!attribute [r] name
       #   @return [::String]
-      #     The unique name for this vehicle.
-      #     The format is providers/\\{provider}/vehicles/\\{vehicle}
+      #     Output only. The unique name for this vehicle.
+      #     The format is `providers/{provider}/vehicles/{vehicle}`.
       # @!attribute [rw] vehicle_state
       #   @return [::Maps::Fleetengine::V1::VehicleState]
       #     The vehicle state.
       # @!attribute [rw] supported_trip_types
       #   @return [::Array<::Maps::Fleetengine::V1::TripType>]
       #     Supported trip types.
-      # @!attribute [rw] current_trips
+      # @!attribute [r] current_trips
       #   @return [::Array<::String>]
-      #     List of IDs for trips in progress.
+      #     Output only. List of `trip_id`'s for trips currently assigned to this vehicle.
       # @!attribute [rw] last_location
       #   @return [::Maps::Fleetengine::V1::VehicleLocation]
       #     Last reported location of the vehicle.
       # @!attribute [rw] maximum_capacity
       #   @return [::Integer]
-      #     Maximum capacity of the vehicle.  This is the total numbers of riders
-      #     on trips this vehicle can contain.  The driver is not considered in
-      #     this value.  This value must be greater than or equal to one.
-      # @!attribute [rw] available_capacity
-      #   @return [::Integer]
-      #     The current available capacity of the vehicle.  This is the
-      #     maximum_capacity minus the current number of riders.
+      #     The total numbers of riders this vehicle can carry.  The driver is not
+      #     considered in this value. This value must be greater than or equal to one.
       # @!attribute [rw] attributes
       #   @return [::Array<::Maps::Fleetengine::V1::VehicleAttribute>]
-      #     List of vehicle service attributes.
+      #     List of vehicle attributes. A vehicle can have at most 50
+      #     attributes.
       # @!attribute [rw] vehicle_type
       #   @return [::Maps::Fleetengine::V1::Vehicle::VehicleType]
-      #     The type of this Vehicle.  Can be filtered during SearchVehicles.  Also
-      #     influences ETA and route calculations.
+      #     The type of this vehicle.  Can be used to filter vehicles in
+      #     `SearchVehicles` results.  Also influences ETA and route calculations.
       # @!attribute [rw] license_plate
       #   @return [::Maps::Fleetengine::V1::LicensePlate]
       #     License plate information for the vehicle.
       # @!attribute [rw] route
       #   @return [::Array<::Maps::Fleetengine::V1::TerminalLocation>]
-      #     Deprecated. Use vehicle.waypoint instead.
+      #     Deprecated: Use `Vehicle.waypoints` instead.
       # @!attribute [rw] current_route_segment
       #   @return [::String]
       #     The polyline specifying the route the driver app intends to take to
       #     the next waypoint. Your driver app updates this every time a waypoint is
       #     passed or the driver reroutes. This list is also returned in
-      #     Trip.current_route_segment for all active trips assigned to the vehicle.
+      #     `Trip.current_route_segment` for all active trips assigned to the vehicle.
       #     Note: This field is intended only for use by the Driver SDK.
-      # @!attribute [rw] current_route_segment_version
+      # @!attribute [rw] current_route_segment_traffic
+      #   @return [::Maps::Fleetengine::V1::TrafficPolylineData]
+      #     Input only. Fleet Engine uses this information to improve its
+      #     understanding of a Trip, but does not populate the field in its responses.
+      #     Note: This field is intended only for use by the Driver SDK.
+      # @!attribute [r] current_route_segment_version
       #   @return [::Google::Protobuf::Timestamp]
-      #     Time when current_route_segment was set. This field is ignored in
-      #     UpdateVehicleRequests as it is calculated by the server. It should be
-      #     stored by client and passed in to future requests to prevent returning
-      #     routes to first way point that haven't changed.
+      #     Output only. Time when `current_route_segment` was set. It should be
+      #     stored by the client and passed in future `GetVehicle` requests to
+      #     prevent returning routes that haven't changed.
       # @!attribute [rw] current_route_segment_end_point
       #   @return [::Maps::Fleetengine::V1::TripWaypoint]
-      #     The waypoint where current_route_segment ends. This can be supplied by
-      #     drivers on UpdateVehicle calls either as a full trip waypoint, a waypoint
-      #     latlnt, or as a the last latlng of the current_route_segment. FleetEngine
-      #     will then do its best to interpolate to an actual waypoint if it is not
-      #     fully specified. This field is ignored in UpdateVehicle calls unless
-      #     current_route_segment is also specified.
+      #     The waypoint where `current_route_segment` ends. This can be supplied by
+      #     drivers on `UpdateVehicle` calls either as a full trip waypoint, a waypoint
+      #     `LatLng`, or as the last `LatLng` of the `current_route_segment`. Fleet
+      #     Engine will then do its best to interpolate to an actual waypoint if it is
+      #     not fully specified. This field is ignored in `UpdateVehicle` calls unless
+      #     `current_route_segment` is also specified.
       # @!attribute [rw] remaining_distance_meters
       #   @return [::Google::Protobuf::Int32Value]
-      #     The remaining driving distance for the 'current_route_segment'. This field
+      #     The remaining driving distance for the `current_route_segment`. This field
       #     facilitates journey sharing between the Driver app and the Consumer app.
-      #     This value is updated by the Driver SDK. Fleet Engine does not update it.
-      #     This field is also returned in Trip.remaining_distance_meters for all
-      #     active trips assigned to the vehicle. The value is unspecified if the
-      #     `Vehicle.current_route_segment` field is empty, or if the Driver app has
-      #     not updated its value.
+      #     This value is provided by the Driver SDK. This field is also returned in
+      #     `Trip.remaining_distance_meters` for all active trips assigned to the
+      #     vehicle. The value is unspecified if the `current_route_segment` field is
+      #     empty, or if the Driver app has not updated its value.
       # @!attribute [rw] eta_to_first_waypoint
       #   @return [::Google::Protobuf::Timestamp]
-      #     The ETA to the next waypoint that is the first entry in Vehicle.waypoint
+      #     The ETA to the first entry in the `waypoints`
       #     field. This field facilitates journey sharing between a Driver app and a
-      #     Consumer app and is updated by the Driver SDK, and Fleet Engine does not
-      #     update it. This field is also returned in Trip.eta_to_first_waypoint for
-      #     all active trips assigned to the vehicle. The value is unspecified if the
-      #     Vehicle.waypoint field is empty, or the Driver app has not updated its
-      #     value.
+      #     Consumer app. Is is provided by the Driver SDK. This field is also returned
+      #     in `Trip.eta_to_first_waypoint` for all active trips assigned to the
+      #     vehicle. The value is unspecified if the `waypoints` field is empty, or the
+      #     Driver app has not updated its value.
       # @!attribute [rw] remaining_time_seconds
       #   @return [::Google::Protobuf::Int32Value]
-      #     The remaining driving time for the 'current_route_segment'. This field
+      #     Input only. The remaining driving time for the `current_route_segment`. This field
       #     facilitates journey sharing between the Driver app and the Consumer app.
       #     This value is updated by the Driver SDK. Fleet Engine does not update it.
       #     The value is unspecified if the `Vehicle.current_route_segment` field is
       #     empty, or if the Driver app has not updated its value. This value should
-      #     match eta_to_first_waypoint - current_time if all parties are using the
-      #     same clock. This field is currently write-only and will not yet be
-      #     populated in Vehicle's get/update/search operations. When updating a
-      #     vehicle, if you update both eta_to_first_waypoint and
-      #     remaining_time_seconds in the same request, then only
-      #     remaining_time_seconds is considered.
+      #     match `eta_to_first_waypoint` - `current_time` if all parties are using the
+      #     same clock. When updating a
+      #     vehicle, if you update both `eta_to_first_waypoint` and
+      #     `remaining_time_seconds` in the same request, `remaining_time_seconds`
+      #     takes precedence.
       # @!attribute [rw] waypoints
       #   @return [::Array<::Maps::Fleetengine::V1::TripWaypoint>]
-      #     The remaining set of waypoints assigned to this Vehicle.
-      # @!attribute [rw] waypoints_version
+      #     The remaining waypoints assigned to this Vehicle.
+      # @!attribute [r] waypoints_version
       #   @return [::Google::Protobuf::Timestamp]
-      #     Last time the waypoints was updated. Client should cache
-      #     this value and pass it in GetVehicleRequest to ensure the
-      #     waypoints.path_to_waypoint is only returned if it is updated
+      #     Output only. Last time the `waypoints` field was updated. Clients should cache
+      #     this value and pass it in `GetVehicleRequest` to ensure the
+      #     `waypoints` field is only returned if it is updated.
       # @!attribute [rw] back_to_back_enabled
       #   @return [::Boolean]
-      #     Indicates if the driver accepts back-to-back rides. If
-      #     `true`, services include the vehicle for back-to-back matches.
-      #     If `false`, services exclude the vehicle from back-to-back matches.
-      #     Default value is `false`.
+      #     Indicates if the driver accepts back-to-back trips. If `true`,
+      #     `SearchVehicles` may include the vehicle even if it is currently assigned
+      #     to a trip. The default value is `false`.
       # @!attribute [rw] navigation_status
       #   @return [::Maps::Fleetengine::V1::NavigationStatus]
-      #     Vehicle's navigation status.
+      #     The vehicle's navigation status.
       # @!attribute [rw] device_settings
       #   @return [::Maps::Fleetengine::V1::DeviceSettings]
-      #     Information about various device settings. This is internal debug only
-      #     field, not included in the response.
+      #     Input only. Information about settings in the mobile device being used by the driver.
       class Vehicle
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
 
-        # Types of vehicles that may be filtered for in SearchVehicles.
+        # The type of vehicle.
         # @!attribute [rw] category
         #   @return [::Maps::Fleetengine::V1::Vehicle::VehicleType::Category]
         #     Vehicle type category
@@ -146,13 +141,13 @@ module Maps
 
           # Vehicle type categories
           module Category
-            # Default, used for unspecified or unrecognized vehicle types.
+            # Default, used for unspecified or unrecognized vehicle categories.
             UNKNOWN = 0
 
             # An automobile.
             AUTO = 1
 
-            # Any vehicle that acts as a taxi.
+            # Any vehicle that acts as a taxi (typically licensed or regulated).
             TAXI = 2
 
             # Generally, a vehicle with a large storage capacity.
@@ -179,7 +174,7 @@ module Maps
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # Information about various settings on the device.
+      # Information about various settings on the mobile device.
       # @!attribute [rw] location_power_save_mode
       #   @return [::Maps::Fleetengine::V1::LocationPowerSaveMode]
       #     How location features are set to behave on the device when battery saver is
@@ -198,18 +193,17 @@ module Maps
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # The license plate information of the Vehicle.  This is used to support
-      # congestion pricing restrictions in certain areas.  To avoid storing
+      # The license plate information of the Vehicle.  To avoid storing
       # personally-identifiable information, only the minimum information
       # about the license plate is stored as part of the entity.
       # @!attribute [rw] country_code
       #   @return [::String]
-      #     Required. CLDR Country/Region Code.  For example, "US" for United States,
-      #     or "IN" for India.
+      #     Required. CLDR Country/Region Code.  For example, `US` for United States,
+      #     or `IN` for India.
       # @!attribute [rw] last_character
       #   @return [::String]
       #     The last digit of the license plate or "-1" to denote no numeric value
-      #     present in the license plate.
+      #     is present in the license plate.
       #
       #     * "ABC 1234" -> "4"
       #     * "AB 123 CD" -> "3"
@@ -219,20 +213,72 @@ module Maps
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # The state of a Vehicle.
+      # Describes how clients should color one portion of the polyline along the
+      # route.
+      # @!attribute [rw] road_stretch
+      #   @return [::Array<::Maps::Fleetengine::V1::VisualTrafficReportPolylineRendering::RoadStretch>]
+      #     Optional. Road stretches that should be rendered along the polyline. Note that
+      #     the stretches are guaranteed to not overlap, and that they do not
+      #     necessarily span the full route. In the absence of a road stretch to style,
+      #     the client should apply the default for the route.
+      class VisualTrafficReportPolylineRendering
+        include ::Google::Protobuf::MessageExts
+        extend ::Google::Protobuf::MessageExts::ClassMethods
+
+        # One road stretch that should be rendered.
+        # @!attribute [rw] style
+        #   @return [::Maps::Fleetengine::V1::VisualTrafficReportPolylineRendering::RoadStretch::Style]
+        #     Required. The style to apply.
+        # @!attribute [rw] offset_meters
+        #   @return [::Integer]
+        #     Required. The style should be applied between `[offset_meters, offset_meters +
+        #     length_meters)`.
+        # @!attribute [rw] length_meters
+        #   @return [::Integer]
+        #     Required. The length of the path where to apply the style.
+        class RoadStretch
+          include ::Google::Protobuf::MessageExts
+          extend ::Google::Protobuf::MessageExts::ClassMethods
+
+          # The traffic style, indicating traffic speed.
+          module Style
+            # No style selected.
+            STYLE_UNSPECIFIED = 0
+
+            # Traffic is slowing down.
+            SLOWER_TRAFFIC = 1
+
+            # There is a traffic jam.
+            TRAFFIC_JAM = 2
+          end
+        end
+      end
+
+      # Traffic conditions along the expected vehicle route.
+      # @!attribute [rw] traffic_rendering
+      #   @return [::Maps::Fleetengine::V1::VisualTrafficReportPolylineRendering]
+      #     A polyline rendering of how fast traffic is for all regions along
+      #     one stretch of a customer ride.
+      class TrafficPolylineData
+        include ::Google::Protobuf::MessageExts
+        extend ::Google::Protobuf::MessageExts::ClassMethods
+      end
+
+      # The state of a `Vehicle`.
       module VehicleState
         # Default, used for unspecified or unrecognized vehicle states.
         UNKNOWN_VEHICLE_STATE = 0
 
-        # The vehicle is not accepting new trips.
+        # The vehicle is not accepting new trips. Note: the vehicle may continue to
+        # operate in this state while completing a trip assigned to it.
         OFFLINE = 1
 
         # The vehicle is accepting new trips.
         ONLINE = 2
       end
 
-      # How location features are set to behave on the device when battery saver is
-      # on.
+      # How location features are configured to behave on the mobile device when the
+      # devices "battery saver" feature is on.
       # (https://developer.android.com/reference/android/os/PowerManager#getLocationPowerSaveMode())
       module LocationPowerSaveMode
         # Undefined LocationPowerSaveMode

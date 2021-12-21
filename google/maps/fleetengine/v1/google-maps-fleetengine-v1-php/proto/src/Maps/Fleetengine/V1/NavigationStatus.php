@@ -7,7 +7,7 @@ namespace Maps\Fleetengine\V1;
 use UnexpectedValueException;
 
 /**
- * A set of values that specify the vehicle's navigation status.
+ * The vehicle's navigation status.
  *
  * Protobuf type <code>maps.fleetengine.v1.NavigationStatus</code>
  */
@@ -20,27 +20,26 @@ class NavigationStatus
      */
     const UNKNOWN_NAVIGATION_STATUS = 0;
     /**
-     * The Driver app's navigation is in FREE_NAV mode.
+     * The Driver app's navigation is in `FREE_NAV` mode.
      *
      * Generated from protobuf enum <code>NO_GUIDANCE = 1;</code>
      */
     const NO_GUIDANCE = 1;
     /**
-     * Turn-by-turn navigation starts and the Driver app navigation enters
-     * GUIDED_NAV mode showing the green header, route, and destination marker.
+     * Turn-by-turn navigation is available and the Driver app navigation has
+     * entered `GUIDED_NAV` mode.
      *
      * Generated from protobuf enum <code>ENROUTE_TO_DESTINATION = 2;</code>
      */
     const ENROUTE_TO_DESTINATION = 2;
     /**
-     * Vehicle has gone off the suggested route.
+     * The vehicle has gone off the suggested route.
      *
      * Generated from protobuf enum <code>OFF_ROUTE = 3;</code>
      */
     const OFF_ROUTE = 3;
     /**
-     * The vehicle is within 50m of the destination and onArrival was
-     * automatically triggered.
+     * The vehicle is within approximately 50m of the destination.
      *
      * Generated from protobuf enum <code>ARRIVED_AT_DESTINATION = 4;</code>
      */

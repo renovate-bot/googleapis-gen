@@ -274,28 +274,32 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * CreateVehicle instantiates a new vehicle associated with a rideshare
-     * provider in the Fleet Engine. Vehicles must have a unique vehicle ID.
+     * Instantiates a new vehicle associated with an on-demand rideshare or
+     * deliveries provider. Each `Vehicle` must have a unique vehicle ID.
      *
-     * The following Vehicle fields are required when creating a Vehicle:
+     * The following `Vehicle` fields are required when creating a `Vehicle`:
      *
-     * * vehicleState
-     * * supportedTripTypes
-     * * maximumCapacity
-     * * vehicleType
+     * * `vehicleState`
+     * * `supportedTripTypes`
+     * * `maximumCapacity`
+     * * `vehicleType`
      *
-     * The following Vehicle fields are ignored when creating a Vehicle:
+     * The following `Vehicle` fields are ignored when creating a `Vehicle`:
      *
-     * * name
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment
-     * * current_route_segment_version
-     * * waypoint
-     * * waypoints_version
-     * * remaining_distance_meters
-     * * eta_to_next_waypoint
-     * * navigation_status
+     * * `name`
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment`
+     * * `current_route_segment_end_point`
+     * * `current_route_segment_version`
+     * * `current_route_segment_traffic`
+     * * `route`
+     * * `waypoints`
+     * * `waypoints_version`
+     * * `remaining_distance_meters`
+     * * `remaining_time_seconds`
+     * * `eta_to_next_waypoint`
+     * * `navigation_status`
      *
      * All other fields are optional and used if provided.
      *
@@ -312,35 +316,45 @@ class VehicleServiceGapicClient
      * }
      * ```
      *
-     * @param string  $parent       Required. Must be in the format "providers/{provider}".
-     *                              The provider must be the Project ID (for example, sample-cloud-project)
+     * @param string  $parent       Required. Must be in the format `providers/{provider}`.
+     *                              The provider must be the Project ID (for example, `sample-cloud-project`)
      *                              of the Google Cloud Project of which the service account making
      *                              this call is a member.
-     * @param string  $vehicleId    Required. Unique Vehicle ID; must be unique per provider.  The actual
-     *                              format and value is opaque to the Fleet Engine and is determined
-     *                              by the provider.
+     * @param string  $vehicleId    Required. Unique Vehicle ID; must be unique per provider.
+     *                              Subject to the following normalization and restrictions:
+     *
+     *                              1. IDs must be valid Unicode strings.
+     *                              2. IDs are limited to a maximum length of 64 characters.
+     *                              3. IDs will be normalized according to Unicode Normalization Form C
+     *                              (http://www.unicode.org/reports/tr15/).
+     *                              4. IDs may not contain any of the following ASCII characters: '/', ':',
+     *                              '\\', '?', or '#'.
      * @param Vehicle $vehicle      Required. The Vehicle entity to create. When creating a Vehicle, the following
      *                              fields are required:
      *
-     *                              * vehicle_state
-     *                              * supported_trip_types
-     *                              * maximum_capacity
-     *                              * vehicle_type
+     *                              * `vehicleState`
+     *                              * `supportedTripTypes`
+     *                              * `maximumCapacity`
+     *                              * `vehicleType`
      *
      *                              When creating a Vehicle, the following fields are ignored:
      *
-     *                              * name
-     *                              * current_trips
-     *                              * available_capacity
-     *                              * current_route_segment
-     *                              * current_route_segment_version
-     *                              * waypoints
-     *                              * waypoints_version
-     *                              * remaining_distance_meters
-     *                              * eta_to_next_waypoint
-     *                              * navigation_status
+     *                              * `name`
+     *                              * `currentTrips`
+     *                              * `availableCapacity`
+     *                              * `current_route_segment`
+     *                              * `current_route_segment_end_point`
+     *                              * `current_route_segment_version`
+     *                              * `current_route_segment_traffic`
+     *                              * `route`
+     *                              * `waypoints`
+     *                              * `waypoints_version`
+     *                              * `remaining_distance_meters`
+     *                              * `remaining_time_seconds`
+     *                              * `eta_to_next_waypoint`
+     *                              * `navigation_status`
      *
-     *                              All other fields will be used if provided.
+     *                              All other fields are optional and used if provided.
      * @param array   $optionalArgs {
      *     Optional.
      *
@@ -375,7 +389,7 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * GetVehicle returns a vehicle from the Fleet Engine.
+     * Returns a vehicle from the Fleet Engine.
      *
      * Sample code:
      * ```
@@ -389,8 +403,8 @@ class VehicleServiceGapicClient
      * ```
      *
      * @param string $name         Required. Must be in the format
-     *                             "providers/{provider}/vehicles/{vehicle}".
-     *                             The provider must be the Project ID (for example, sample-cloud-project)
+     *                             `providers/{provider}/vehicles/{vehicle}`.
+     *                             The provider must be the Project ID (for example, `sample-cloud-project`)
      *                             of the Google Cloud Project of which the service account making
      *                             this call is a member.
      * @param array  $optionalArgs {
@@ -400,15 +414,15 @@ class VehicleServiceGapicClient
      *           The standard Fleet Engine request header.
      *     @type Timestamp $currentRouteSegmentVersion
      *           Indicates the minimum timestamp (exclusive) for which
-     *           vehicle.current_route_segment is retrieved.
-     *           If route is unchanged since this timestamp, the current_route_segment
+     *           `Vehicle.current_route_segment` is retrieved.
+     *           If the route is unchanged since this timestamp, the `current_route_segment`
      *           field is not set in the response. If a minimum is unspecified, the
-     *           current_route_segment is always retrieved.
+     *           `current_route_segment` is always retrieved.
      *     @type Timestamp $waypointsVersion
-     *           Indicates the minimum timestamp (exclusive) for which vehicle.waypoints
-     *           data is retrieved. If data is unchanged since this timestamp, the
-     *           vehicle.waypoints data is not set in the response. If this field is
-     *           unspecified, vehicle.waypoints is always retrieved.
+     *           Indicates the minimum timestamp (exclusive) for which `Vehicle.waypoints`
+     *           data is retrieved. If the waypoints are unchanged since this timestamp, the
+     *           `vehicle.waypoints` data is not set in the response. If this field is
+     *           unspecified, `vehicle.waypoints` is always retrieved.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -444,7 +458,7 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * ListVehicles returns a paginated list of vehicles associated with
+     * Returns a paginated list of vehicles associated with
      * a provider that match the request options.
      *
      * Sample code:
@@ -471,11 +485,12 @@ class VehicleServiceGapicClient
      * }
      * ```
      *
-     * @param string $parent                Required. Must be in the format "providers/{provider}".
-     *                                      The provider must be the Project ID (for example, sample-cloud-project)
+     * @param string $parent                Required. Must be in the format `providers/{provider}`.
+     *                                      The provider must be the Project ID (for example, `sample-cloud-project`)
      *                                      of the Google Cloud Project of which the service account making
      *                                      this call is a member.
-     * @param int[]  $vehicleTypeCategories Required. Restrict the search to those vehicles with the specified type categories.
+     * @param int[]  $vehicleTypeCategories Required. Restrict the response to vehicles with one of the specified type
+     *                                      categories.
      *                                      For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\Vehicle\VehicleType\Category}
      * @param array  $optionalArgs          {
      *     Optional.
@@ -492,55 +507,73 @@ class VehicleServiceGapicClient
      *           of values will be returned. Any page token used here must have
      *           been generated by a previous call to the API.
      *     @type Int32Value $minimumCapacity
-     *           Specifies the required minimum capacity of the vehicle.
-     *           The driver is not considered in the capacity search.
-     *           This is just the number of passengers being considered for a trip.
-     *           If set, must be greater or equal to 0.
+     *           Specifies the required minimum capacity of the vehicle. All vehicles
+     *           returned will have a `maximum_capacity` greater than or equal to this
+     *           value. If set, must be greater or equal to 0.
      *     @type int[] $tripTypes
-     *           Restrict the search to only those vehicles that support at least
+     *           Restrict the response to vehicles that support at least
      *           one of the specified trip types.
      *           For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\TripType}
      *     @type Duration $maximumStaleness
-     *           Restrict the search to only those vehicles that have updated
+     *           Restrict the response to vehicles that have updated
      *           their locations within the specified duration back from now.
      *           If present, must be a valid positive duration.
      *     @type string[] $requiredAttributes
-     *           Callers can form complex logical operations using the
-     *           requiredAttributes and requiredOneOfAttributes fields.
+     *           Callers can form complex logical operations using any combination of the
+     *           `required_attributes`, `required_one_of_attributes`, and
+     *           `required_one_of_attribute_sets` fields.
      *
-     *           requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     *           allows a list of lists. In combination, the two fields allow the
-     *           composition of this expression:
+     *           `required_attributes` is a list; `required_one_of_attributes` uses a
+     *           message which allows a list of lists. In combination, the two fields allow
+     *           the composition of this expression:
      *
      *           ```
-     *           (required_attribute[0] AND required_attribute[1] AND ...)
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
      *           AND
-     *           (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     *           (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     *           ...)
      *           AND
-     *           (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     *           (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     *           ...)
      *           ```
      *
-     *           Restrict the search to only those vehicles
-     *           with the specified attributes. This field is a conjunction/AND operation.
-     *           Your app can specify up to 100 attributes; however, the combined
-     *           key:value string length cannot exceed 1024 characters.
+     *           Restrict the response to vehicles with the specified attributes. This field
+     *           is a conjunction/AND operation. Your app can specify up to 100 attributes;
+     *           however, the combined key:value string length cannot exceed 1024
+     *           characters.
      *     @type string[] $requiredOneOfAttributes
-     *           Restrict the search to only those vehicles with at least one
-     *           of the specified attributes applied to each VehicleAttributeList.
+     *           Restrict the response to vehicles with at least one
+     *           of the specified attributes in each `VehicleAttributeList`.
      *           Within each list, a vehicle must match at least one of the attributes.
      *           This field is an inclusive disjunction/OR operation in each
-     *           VehicleAttributeList and a conjunction/AND operation across the collection
-     *           of VehicleAttributeList.
-     *           Format: key1:value1|key2:value2|key3:value3...
+     *           `VehicleAttributeList` and a conjunction/AND operation across the
+     *           collection of `VehicleAttributeList`. Format:
+     *           key1:value1|key2:value2|key3:value3...
      *     @type string[] $requiredOneOfAttributeSets
-     *           Restrict the search to only those vehicles with at least one set of the
-     *           specified attributes in the VehicleAttributeList. Within each list, a
-     *           vehicle must match all of the attributes. This field is a conjunction/AND
-     *           operation in each VehicleAttributeList and inclusive disjunction/OR
-     *           operation across the collection of VehicleAttributeList.
-     *           Format: key1:value1|key2:value2|key3:value3...
+     *           `required_one_of_attribute_sets` provides additional functionality.
+     *
+     *           Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     *           uses a message which allows a list of lists, allowing expressions such as
+     *           this one:
+     *
+     *           ```
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
+     *           AND
+     *           (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     *           ...)
+     *           OR
+     *           (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     *           ...)
+     *           ```
+     *
+     *           Restrict the response to vehicles that match all the attributes in a
+     *           `VehicleAttributeList`. Within each list, a vehicle must match all of the
+     *           attributes. This field is a conjunction/AND operation in each
+     *           `VehicleAttributeList` and inclusive disjunction/OR operation across the
+     *           collection of `VehicleAttributeList`. Format:
+     *           key1:value1|key2:value2|key3:value3...
      *     @type int $vehicleState
-     *           Restrict the search to only those vehicles that have this vehicle state.
+     *           Restrict the response to vehicles that have this vehicle state.
      *           For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\VehicleState}
      *     @type bool $onTripOnly
      *           Only return the vehicles with current trip(s).
@@ -612,12 +645,11 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * SearchFuzzedVehicles returns a list of vehicles that match the request
-     * options with their locations fuzzed.
-     * Request does not support 'order_by' field.
-     * Vehicle matches in response will be in order of distance from pickup point.
-     * Vehicle matches in response will only have 'vehicle' and 'trip_type' field
-     * set.
+     * Returns a list of vehicles that match the request
+     * options, but the vehicle locations will be somewhat altered for privacy.
+     * This method does not support the `SearchVehicleRequest.order_by` field.
+     * Vehicle matches in the response will be in order of distance from the
+     * pickup point.  Only the `vehicle` and `trip_type` fields will be populated.
      *
      * Sample code:
      * ```
@@ -637,26 +669,27 @@ class VehicleServiceGapicClient
      * }
      * ```
      *
-     * @param string           $parent             Required. Must be in the format "providers/{provider}".
-     *                                             The provider must be the Project ID (for example, sample-cloud-project)
+     * @param string           $parent             Required. Must be in the format `providers/{provider}`.
+     *                                             The provider must be the Project ID (for example, `sample-cloud-project`)
      *                                             of the Google Cloud Project of which the service account making
      *                                             this call is a member.
      * @param TerminalLocation $pickupPoint        Required. The pickup point to search near.
      * @param int              $pickupRadiusMeters Required. Defines the vehicle search radius around the pickup point. Only
      *                                             vehicles within the search radius will be returned. Value must be between
-     *                                             400 and 10000 meters.
-     * @param int              $count              Required. Specifies the maximum number of available vehicles to return. By
-     *                                             default, the Fleet Engine limits the number to  50.
-     * @param int              $minimumCapacity    Required. Specifies the minimum number of passengers allowed in the
-     *                                             vehicle. Must number must be greater than or equal to one. The driver is
-     *                                             not considered in the capacity search. This number indicates the number of
-     *                                             passengers being considered for a trip.
+     *                                             400 and 10000 meters (inclusive).
+     * @param int              $count              Required. Specifies the maximum number of vehicles to return. The value
+     *                                             must be between 1 and 50 (inclusive).
+     * @param int              $minimumCapacity    Required. Specifies the number of passengers being considered for a trip. The
+     *                                             value must be greater than or equal to one. The driver is not considered in
+     *                                             the capacity value.
      * @param int[]            $tripTypes          Required. Restricts the search to only those vehicles that support at least
      *                                             one of the specified trip types.
+     *
+     *                                             At the present time, only `EXCLUSIVE` is supported.
      *                                             For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\TripType}
-     * @param VehicleType[]    $vehicleTypes       Required. Restricts the search to those vehicles with the specified types.
+     * @param VehicleType[]    $vehicleTypes       Required. Restricts the search to vehicles with one of the specified types.
      *                                             At least one vehicle type must be specified.
-     * @param int              $orderBy            Required. Specifies ordering criterion for results.
+     * @param int              $orderBy            Required. Specifies the desired ordering criterion for results.
      *                                             For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\SearchVehiclesRequest\VehicleMatchOrder}
      * @param array            $optionalArgs       {
      *     Optional.
@@ -665,25 +698,28 @@ class VehicleServiceGapicClient
      *           The standard Fleet Engine request header.
      *     @type TerminalLocation $dropoffPoint
      *           The customer's intended dropoff location. The field is required if
-     *           trip_types contains TripType.SHARED.
+     *           `trip_types` contains `TripType.SHARED`.
      *     @type Duration $maximumStaleness
      *           Restricts the search to only those vehicles that have updated their
-     *           locations within the specified duration back from now. If this field is not
+     *           locations within the specified duration. If this field is not
      *           set, the server uses five minutes as the default value.
      *     @type VehicleAttribute[] $requiredAttributes
-     *           Callers can form complex logical operations using the
-     *           requiredAttributes and requiredOneOfAttributes fields.
+     *           Callers can form complex logical operations using any combination of the
+     *           `required_attributes`, `required_one_of_attributes`, and
+     *           `required_one_of_attribute_sets` fields.
      *
-     *           requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     *           allows a list of lists. In combination, the two fields allow the
-     *           composition of this expression:
+     *           `required_attributes` is a list; `required_one_of_attributes` uses a
+     *           message which allows a list of lists. In combination, the two fields allow
+     *           the composition of this expression:
      *
      *           ```
-     *           (required_attribute[0] AND required_attribute[1] AND ...)
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
      *           AND
-     *           (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     *           (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     *           ...)
      *           AND
-     *           (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     *           (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     *           ...)
      *           ```
      *
      *           Restricts the search to only those vehicles with the specified attributes.
@@ -692,26 +728,53 @@ class VehicleServiceGapicClient
      *           1024 characters.
      *     @type VehicleAttributeList[] $requiredOneOfAttributes
      *           Restricts the search to only those vehicles with at least one of
-     *           the specified attributes applied to each VehicleAttributeList. Within each
+     *           the specified attributes in each `VehicleAttributeList`. Within each
      *           list, a vehicle must match at least one of the attributes. This field is an
-     *           inclusive disjunction/OR operation in each VehicleAttributeList and a
-     *           conjunction/AND operation across the collection of VehicleAttributeList.
+     *           inclusive disjunction/OR operation in each `VehicleAttributeList` and a
+     *           conjunction/AND operation across the collection of `VehicleAttributeList`.
      *     @type VehicleAttributeList[] $requiredOneOfAttributeSets
-     *           Restricts the search to only those vehicles with at least one set of the
-     *           specified attributes in the VehicleAttributeList. Within each list, a
+     *           `required_one_of_attribute_sets` provides additional functionality.
+     *
+     *           Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     *           uses a message which allows a list of lists, allowing expressions such as
+     *           this one:
+     *
+     *           ```
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
+     *           AND
+     *           (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     *           ...)
+     *           OR
+     *           (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     *           ...)
+     *           ```
+     *
+     *           Restricts the search to only those vehicles with all the attributes in a
+     *           `VehicleAttributeList`. Within each list, a
      *           vehicle must match all of the attributes. This field is a conjunction/AND
-     *           operation in each VehicleAttributeList and inclusive disjunction/OR
-     *           operation across the collection of VehicleAttributeList.
+     *           operation in each `VehicleAttributeList` and inclusive disjunction/OR
+     *           operation across the collection of `VehicleAttributeList`.
      *     @type bool $includeBackToBack
-     *           Indicates if a vehicle with an active trip is eligible for
-     *           another match. If `false`, a vehicle is excluded from search results.
-     *           If `true`, search results include vehicles with `TripStatus` of
-     *           `ENROUTE_TO_DROPOFF`. The services only use this field if
-     *           the `SearchVehicles` request has `TripType` set to EXCLUSIVE.
-     *           Default value is `false`.
+     *           Indicates if a vehicle with a single active trip is eligible for another
+     *           match. If `false`, vehicles with assigned trips are excluded from the
+     *           search results. If `true`, search results include vehicles with
+     *           `TripStatus` of `ENROUTE_TO_DROPOFF`.
+     *
+     *           This field is only considered if a single `trip_type` of `EXCLUSIVE` is
+     *           specified.
+     *
+     *           The default value is `false`.
      *     @type string $tripId
-     *           Indicates the ID of the trip the searchVehicleRequest is
-     *           associated with.
+     *           Indicates the trip associated with this `SearchVehicleRequest`.
+     *           Unique Trip ID; must be unique per provider.
+     *           Subject to the following normalization and restrictions:
+     *
+     *           1. IDs must be valid Unicode strings.
+     *           2. IDs are limited to a maximum length of 64 characters.
+     *           3. IDs will be normalized according to Unicode Normalization Form C
+     *           (http://www.unicode.org/reports/tr15/).
+     *           4. IDs may not contain any of the following ASCII characters: '/', ':',
+     *           '\\', '?', or '#'.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -774,7 +837,7 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * SearchVehicles returns a list of vehicles that match the request options.
+     * Returns a list of vehicles that match the request options.
      *
      * Sample code:
      * ```
@@ -794,26 +857,27 @@ class VehicleServiceGapicClient
      * }
      * ```
      *
-     * @param string           $parent             Required. Must be in the format "providers/{provider}".
-     *                                             The provider must be the Project ID (for example, sample-cloud-project)
+     * @param string           $parent             Required. Must be in the format `providers/{provider}`.
+     *                                             The provider must be the Project ID (for example, `sample-cloud-project`)
      *                                             of the Google Cloud Project of which the service account making
      *                                             this call is a member.
      * @param TerminalLocation $pickupPoint        Required. The pickup point to search near.
      * @param int              $pickupRadiusMeters Required. Defines the vehicle search radius around the pickup point. Only
      *                                             vehicles within the search radius will be returned. Value must be between
-     *                                             400 and 10000 meters.
-     * @param int              $count              Required. Specifies the maximum number of available vehicles to return. By
-     *                                             default, the Fleet Engine limits the number to  50.
-     * @param int              $minimumCapacity    Required. Specifies the minimum number of passengers allowed in the
-     *                                             vehicle. Must number must be greater than or equal to one. The driver is
-     *                                             not considered in the capacity search. This number indicates the number of
-     *                                             passengers being considered for a trip.
+     *                                             400 and 10000 meters (inclusive).
+     * @param int              $count              Required. Specifies the maximum number of vehicles to return. The value
+     *                                             must be between 1 and 50 (inclusive).
+     * @param int              $minimumCapacity    Required. Specifies the number of passengers being considered for a trip. The
+     *                                             value must be greater than or equal to one. The driver is not considered in
+     *                                             the capacity value.
      * @param int[]            $tripTypes          Required. Restricts the search to only those vehicles that support at least
      *                                             one of the specified trip types.
+     *
+     *                                             At the present time, only `EXCLUSIVE` is supported.
      *                                             For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\TripType}
-     * @param VehicleType[]    $vehicleTypes       Required. Restricts the search to those vehicles with the specified types.
+     * @param VehicleType[]    $vehicleTypes       Required. Restricts the search to vehicles with one of the specified types.
      *                                             At least one vehicle type must be specified.
-     * @param int              $orderBy            Required. Specifies ordering criterion for results.
+     * @param int              $orderBy            Required. Specifies the desired ordering criterion for results.
      *                                             For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\SearchVehiclesRequest\VehicleMatchOrder}
      * @param array            $optionalArgs       {
      *     Optional.
@@ -822,25 +886,28 @@ class VehicleServiceGapicClient
      *           The standard Fleet Engine request header.
      *     @type TerminalLocation $dropoffPoint
      *           The customer's intended dropoff location. The field is required if
-     *           trip_types contains TripType.SHARED.
+     *           `trip_types` contains `TripType.SHARED`.
      *     @type Duration $maximumStaleness
      *           Restricts the search to only those vehicles that have updated their
-     *           locations within the specified duration back from now. If this field is not
+     *           locations within the specified duration. If this field is not
      *           set, the server uses five minutes as the default value.
      *     @type VehicleAttribute[] $requiredAttributes
-     *           Callers can form complex logical operations using the
-     *           requiredAttributes and requiredOneOfAttributes fields.
+     *           Callers can form complex logical operations using any combination of the
+     *           `required_attributes`, `required_one_of_attributes`, and
+     *           `required_one_of_attribute_sets` fields.
      *
-     *           requiredAttributes is a list; requiredOneOfAttributes uses a message which
-     *           allows a list of lists. In combination, the two fields allow the
-     *           composition of this expression:
+     *           `required_attributes` is a list; `required_one_of_attributes` uses a
+     *           message which allows a list of lists. In combination, the two fields allow
+     *           the composition of this expression:
      *
      *           ```
-     *           (required_attribute[0] AND required_attribute[1] AND ...)
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
      *           AND
-     *           (required_one_of_attribute[0][0] OR required_one_of_attribute[0][1] OR ...)
+     *           (required_one_of_attributes[0][0] OR required_one_of_attributes[0][1] OR
+     *           ...)
      *           AND
-     *           (required_one_of_attribute[1][0] OR required_one_of_attribute[1][1] OR ...)
+     *           (required_one_of_attributes[1][0] OR required_one_of_attributes[1][1] OR
+     *           ...)
      *           ```
      *
      *           Restricts the search to only those vehicles with the specified attributes.
@@ -849,26 +916,53 @@ class VehicleServiceGapicClient
      *           1024 characters.
      *     @type VehicleAttributeList[] $requiredOneOfAttributes
      *           Restricts the search to only those vehicles with at least one of
-     *           the specified attributes applied to each VehicleAttributeList. Within each
+     *           the specified attributes in each `VehicleAttributeList`. Within each
      *           list, a vehicle must match at least one of the attributes. This field is an
-     *           inclusive disjunction/OR operation in each VehicleAttributeList and a
-     *           conjunction/AND operation across the collection of VehicleAttributeList.
+     *           inclusive disjunction/OR operation in each `VehicleAttributeList` and a
+     *           conjunction/AND operation across the collection of `VehicleAttributeList`.
      *     @type VehicleAttributeList[] $requiredOneOfAttributeSets
-     *           Restricts the search to only those vehicles with at least one set of the
-     *           specified attributes in the VehicleAttributeList. Within each list, a
+     *           `required_one_of_attribute_sets` provides additional functionality.
+     *
+     *           Similar to `required_one_of_attributes`, `required_one_of_attribute_sets`
+     *           uses a message which allows a list of lists, allowing expressions such as
+     *           this one:
+     *
+     *           ```
+     *           (required_attributes[0] AND required_attributes[1] AND ...)
+     *           AND
+     *           (required_one_of_attributes[0][0] AND required_one_of_attributes[0][1] AND
+     *           ...)
+     *           OR
+     *           (required_one_of_attributes[1][0] AND required_one_of_attributes[1][1] AND
+     *           ...)
+     *           ```
+     *
+     *           Restricts the search to only those vehicles with all the attributes in a
+     *           `VehicleAttributeList`. Within each list, a
      *           vehicle must match all of the attributes. This field is a conjunction/AND
-     *           operation in each VehicleAttributeList and inclusive disjunction/OR
-     *           operation across the collection of VehicleAttributeList.
+     *           operation in each `VehicleAttributeList` and inclusive disjunction/OR
+     *           operation across the collection of `VehicleAttributeList`.
      *     @type bool $includeBackToBack
-     *           Indicates if a vehicle with an active trip is eligible for
-     *           another match. If `false`, a vehicle is excluded from search results.
-     *           If `true`, search results include vehicles with `TripStatus` of
-     *           `ENROUTE_TO_DROPOFF`. The services only use this field if
-     *           the `SearchVehicles` request has `TripType` set to EXCLUSIVE.
-     *           Default value is `false`.
+     *           Indicates if a vehicle with a single active trip is eligible for another
+     *           match. If `false`, vehicles with assigned trips are excluded from the
+     *           search results. If `true`, search results include vehicles with
+     *           `TripStatus` of `ENROUTE_TO_DROPOFF`.
+     *
+     *           This field is only considered if a single `trip_type` of `EXCLUSIVE` is
+     *           specified.
+     *
+     *           The default value is `false`.
      *     @type string $tripId
-     *           Indicates the ID of the trip the searchVehicleRequest is
-     *           associated with.
+     *           Indicates the trip associated with this `SearchVehicleRequest`.
+     *           Unique Trip ID; must be unique per provider.
+     *           Subject to the following normalization and restrictions:
+     *
+     *           1. IDs must be valid Unicode strings.
+     *           2. IDs are limited to a maximum length of 64 characters.
+     *           3. IDs will be normalized according to Unicode Normalization Form C
+     *           (http://www.unicode.org/reports/tr15/).
+     *           4. IDs may not contain any of the following ASCII characters: '/', ':',
+     *           '\\', '?', or '#'.
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a
      *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
@@ -931,19 +1025,22 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * UpdateVehicle writes updated vehicle data to the Fleet Engine.
+     * Writes updated vehicle data to the Fleet Engine.
      *
-     * When updating a Vehicle, the following fields cannot be updated since they
-     * are managed by the Fleet Engine:
+     * When updating a `Vehicle`, the following fields cannot be updated since
+     * they are managed by the server:
      *
-     * * currentTrips
-     * * availableCapacity
-     * * current_route_segment_version
-     * * waypoints_version
+     * * `currentTrips`
+     * * `availableCapacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
      *
-     * The vehicle name also cannot be updated.
+     * The vehicle `name` also cannot be updated.
      *
-     * The waypoints field can be updated, but must contain all the waypoints
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints
      * currently on the vehicle, and no other waypoints.
      *
      * Sample code:
@@ -960,24 +1057,28 @@ class VehicleServiceGapicClient
      * ```
      *
      * @param string    $name         Required. Must be in the format
-     *                                "providers/{provider}/vehicles/{vehicle}".
-     *                                The {provider} must be the Project ID (for example, sample-cloud-project)
+     *                                `providers/{provider}/vehicles/{vehicle}`.
+     *                                The {provider} must be the Project ID (for example, `sample-cloud-project`)
      *                                of the Google Cloud Project of which the service account making
      *                                this call is a member.
-     *
-     *                                Note that if the name is also specified in the name field of the
-     *                                vehicle and name is set in the update_mask, both names must be the
-     *                                same.  Otherwise it is an Error.
-     * @param Vehicle   $vehicle      Required. The Vehicle entity update to apply.  When updating a Vehicle,
+     * @param Vehicle   $vehicle      Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
      *                                the following fields may not be updated as they are managed by the
-     *                                Fleet Engine.
-     *                                current_trips
-     *                                available_capacity
-     *                                current_route_segment_version
-     *                                waypoints_version
-     *                                Furthermore, the name of the vehicle cannot be updated.
-     * @param FieldMask $updateMask   Required. A field mask indicating which fields of the Vehicle to update.
-     *                                The update_mask must contain at least one field.
+     *                                server.
+     *
+     *                                * `current_trips`
+     *                                * `available_capacity`
+     *                                * `current_route_segment_version`
+     *                                * `waypoints_version`
+     *
+     *                                Furthermore, the vehicle `name` cannot be updated.
+     *
+     *                                If the `attributes` field is updated, **all** the vehicle's attributes are
+     *                                replaced with the attributes provided in the request. If you want to update
+     *                                only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     *                                the `waypoints` field can be updated, but must contain all the waypoints.
+     *                                currently on the vehicle, and no other waypoints.
+     * @param FieldMask $updateMask   Required. A field mask indicating which fields of the `Vehicle` to update.
+     *                                At least one field name must be provided.
      * @param array     $optionalArgs {
      *     Optional.
      *
@@ -1012,11 +1113,11 @@ class VehicleServiceGapicClient
     }
 
     /**
-     * UpdateVehicleAttributes partially updates a vehicle's attributes.
+     * Partially updates a vehicle's attributes.
      * Only the attributes mentioned in the request will be updated, other
-     * attributes will NOT be altered. Note: this is different in UpdateVehicle,
+     * attributes will NOT be altered. Note: this is different in `UpdateVehicle`,
      * where the whole `attributes` field will be replaced by the one in
-     * UpdateVehicleRequest, attributes not in the request would be removed.
+     * `UpdateVehicleRequest`, attributes not in the request would be removed.
      *
      * Sample code:
      * ```
@@ -1030,15 +1131,12 @@ class VehicleServiceGapicClient
      * }
      * ```
      *
-     * @param string             $name         Required. Must be in the format
-     *                                         "providers/{provider}/vehicles/{vehicle}.
-     *                                         The provider must be the Project ID (for example, sample-cloud-project)
+     * @param string             $name         Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+     *                                         The provider must be the Project ID (for example, `sample-cloud-project`)
      *                                         of the Google Cloud Project of which the service account making
      *                                         this call is a member.
-     * @param VehicleAttribute[] $attributes   Required. The attributes to update;
-     *                                         unmentioned attributes will not be altered or removed.
-     *                                         At most 20 attributes; the combined "key:value" string length cannot
-     *                                         exceed 256.
+     * @param VehicleAttribute[] $attributes   Required. The vehicle attributes to update. Unmentioned attributes will not be
+     *                                         altered or removed.
      * @param array              $optionalArgs {
      *     Optional.
      *
@@ -1072,8 +1170,8 @@ class VehicleServiceGapicClient
     }
 
     /**
+     * Deprecated: Use the `UpdateVehicle` method instead.
      * UpdateVehicleLocation updates the location of the vehicle.
-     * This method is deprecated. Use UpdateVehicle method instead.
      *
      * Sample code:
      * ```
@@ -1088,11 +1186,11 @@ class VehicleServiceGapicClient
      * ```
      *
      * @param string          $name            Required. Must be in the format
-     *                                         "providers/{provider}/vehicles/{vehicle}.
-     *                                         The {provider} must be the Project ID (for example, sample-cloud-project)
+     *                                         `providers/{provider}/vehicles/{vehicle}`.
+     *                                         The {provider} must be the Project ID (for example, `sample-cloud-project`)
      *                                         of the Google Cloud Project of which the service account making
      *                                         this call is a member.
-     * @param VehicleLocation $currentLocation Required. The location to update to.  The last_location and update_time
+     * @param VehicleLocation $currentLocation Required. The vehicle's most recent location.  The `location` and `update_time`
      *                                         subfields are required.
      * @param array           $optionalArgs    {
      *     Optional.
@@ -1100,8 +1198,8 @@ class VehicleServiceGapicClient
      *     @type RequestHeader $header
      *           The standard Fleet Engine request header.
      *     @type int $currentState
-     *           Set current vehicle state to either ONLINE or OFFLINE;
-     *           if set to UNKNOWN_VEHICLE_STATE, vehicle state will not be altered.
+     *           Set the vehicle's state to either `ONLINE` or `OFFLINE`.
+     *           If set to `UNKNOWN_VEHICLE_STATE`, the vehicle's state will not be altered.
      *           For allowed values, use constants defined on {@see \Maps\Fleetengine\V1\VehicleState}
      *     @type RetrySettings|array $retrySettings
      *           Retry settings to use for this call. Can be a

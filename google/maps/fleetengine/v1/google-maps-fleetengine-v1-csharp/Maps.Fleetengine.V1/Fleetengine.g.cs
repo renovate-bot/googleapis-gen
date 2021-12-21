@@ -26,93 +26,87 @@ namespace Maps.Fleetengine.V1 {
           string.Concat(
             "Cixnb29nbGUvbWFwcy9mbGVldGVuZ2luZS92MS9mbGVldGVuZ2luZS5wcm90",
             "bxITbWFwcy5mbGVldGVuZ2luZS52MRofZ29vZ2xlL2FwaS9maWVsZF9iZWhh",
-            "dmlvci5wcm90bxoZZ29vZ2xlL3Byb3RvYnVmL2FueS5wcm90bxoeZ29vZ2xl",
-            "L3Byb3RvYnVmL2R1cmF0aW9uLnByb3RvGh9nb29nbGUvcHJvdG9idWYvdGlt",
-            "ZXN0YW1wLnByb3RvGh5nb29nbGUvcHJvdG9idWYvd3JhcHBlcnMucHJvdG8a",
-            "GGdvb2dsZS90eXBlL2xhdGxuZy5wcm90byJaCg9UZXJtaW5hbFBvaW50SWQS",
-            "FgoIcGxhY2VfaWQYAiABKAlCAhgBSAASGgoMZ2VuZXJhdGVkX2lkGAMgASgJ",
-            "QgIYAUgAEg0KBXZhbHVlGAQgASgJQgQKAklkIvoBChBUZXJtaW5hbExvY2F0",
-            "aW9uEicKBXBvaW50GAEgASgLMhMuZ29vZ2xlLnR5cGUuTGF0TG5nQgPgQQIS",
-            "RAoRdGVybWluYWxfcG9pbnRfaWQYAiABKAsyJC5tYXBzLmZsZWV0ZW5naW5l",
-            "LnYxLlRlcm1pbmFsUG9pbnRJZEID4EECEhsKD2FjY2Vzc19wb2ludF9pZBgD",
-            "IAEoCUICGAESEwoHdHJpcF9pZBgEIAEoCUICGAESRQoWdGVybWluYWxfbG9j",
-            "YXRpb25fdHlwZRgFIAEoDjIhLm1hcHMuZmxlZXRlbmdpbmUudjEuV2F5cG9p",
-            "bnRUeXBlQgIYASLNAgoMVHJpcFdheXBvaW50EjcKCGxvY2F0aW9uGAEgASgL",
-            "MiUubWFwcy5mbGVldGVuZ2luZS52MS5UZXJtaW5hbExvY2F0aW9uEg8KB3Ry",
-            "aXBfaWQYAiABKAkSOAoNd2F5cG9pbnRfdHlwZRgDIAEoDjIhLm1hcHMuZmxl",
-            "ZXRlbmdpbmUudjEuV2F5cG9pbnRUeXBlEi0KEHBhdGhfdG9fd2F5cG9pbnQY",
-            "BCADKAsyEy5nb29nbGUudHlwZS5MYXRMbmcSNAoPZGlzdGFuY2VfbWV0ZXJz",
-            "GAYgASgLMhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUSJwoDZXRhGAcg",
-            "ASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcBIrCghkdXJhdGlvbhgI",
-            "IAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbiKuAQoGU3RhdHVzEi4K",
-            "BGNvZGUYASABKA4yIC5tYXBzLmZsZWV0ZW5naW5lLnYxLlN0YXR1cy5Db2Rl",
-            "Eg8KB21lc3NhZ2UYAiABKAkSJQoHZGV0YWlscxgDIAMoCzIULmdvb2dsZS5w",
-            "cm90b2J1Zi5BbnkiPAoEQ29kZRIPCgtVTlNQRUNJRklFRBAAEgsKB0ZBSUxV",
-            "UkUQARIWChJST1VURV9OT1RfUE9TU0lCTEUQAiIhChBGb3JtYXR0ZWRBZGRy",
-            "ZXNzEg0KBWxpbmVzGAEgAygJIksKB0FkZHJlc3MSQAoRZm9ybWF0dGVkX2Fk",
-            "ZHJlc3MYASABKAsyJS5tYXBzLmZsZWV0ZW5naW5lLnYxLkZvcm1hdHRlZEFk",
-            "ZHJlc3MiLgoQVmVoaWNsZUF0dHJpYnV0ZRILCgNrZXkYASABKAkSDQoFdmFs",
-            "dWUYAiABKAkixQwKD1ZlaGljbGVMb2NhdGlvbhIlCghsb2NhdGlvbhgBIAEo",
-            "CzITLmdvb2dsZS50eXBlLkxhdExuZxI9ChNob3Jpem9udGFsX2FjY3VyYWN5",
-            "GAggASgLMhwuZ29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlQgIYARI1Cg9s",
-            "YXRsbmdfYWNjdXJhY3kYFiABKAsyHC5nb29nbGUucHJvdG9idWYuRG91Ymxl",
-            "VmFsdWUSLAoHaGVhZGluZxgCIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQz",
-            "MlZhbHVlEjoKEGJlYXJpbmdfYWNjdXJhY3kYCiABKAsyHC5nb29nbGUucHJv",
-            "dG9idWYuRG91YmxlVmFsdWVCAhgBEjYKEGhlYWRpbmdfYWNjdXJhY3kYFyAB",
-            "KAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSLgoIYWx0aXR1ZGUY",
-            "BSABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSOwoRdmVydGlj",
-            "YWxfYWNjdXJhY3kYCSABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFs",
-            "dWVCAhgBEjcKEWFsdGl0dWRlX2FjY3VyYWN5GBggASgLMhwuZ29vZ2xlLnBy",
-            "b3RvYnVmLkRvdWJsZVZhbHVlEjMKCnNwZWVkX2ttcGgYAyABKAsyGy5nb29n",
-            "bGUucHJvdG9idWYuSW50MzJWYWx1ZUICGAESKwoFc3BlZWQYBiABKAsyHC5n",
-            "b29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSNAoOc3BlZWRfYWNjdXJhY3kY",
-            "ByABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSLwoLdXBkYXRl",
-            "X3RpbWUYBCABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEjQKC3Nl",
-            "cnZlcl90aW1lGA0gASgLMhouZ29vZ2xlLnByb3RvYnVmLlRpbWVzdGFtcEID",
-            "4EEDEjwKD2xvY2F0aW9uX3NlbnNvchgLIAEoDjIjLm1hcHMuZmxlZXRlbmdp",
-            "bmUudjEuTG9jYXRpb25TZW5zb3ISMwoPaXNfcm9hZF9zbmFwcGVkGBsgASgL",
-            "MhouZ29vZ2xlLnByb3RvYnVmLkJvb2xWYWx1ZRI+ChVpc19ncHNfc2Vuc29y",
-            "X2VuYWJsZWQYDCABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVlQgPg",
-            "QQQSOwoRdGltZV9zaW5jZV91cGRhdGUYDiABKAsyGy5nb29nbGUucHJvdG9i",
-            "dWYuSW50MzJWYWx1ZUID4EEEEjsKEW51bV9zdGFsZV91cGRhdGVzGA8gASgL",
-            "MhsuZ29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWVCA+BBBBIpCgxyYXdfbG9j",
-            "YXRpb24YECABKAsyEy5nb29nbGUudHlwZS5MYXRMbmcSOgoRcmF3X2xvY2F0",
-            "aW9uX3RpbWUYESABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQgPg",
-            "QQQSRQoTcmF3X2xvY2F0aW9uX3NlbnNvchgcIAEoDjIjLm1hcHMuZmxlZXRl",
-            "bmdpbmUudjEuTG9jYXRpb25TZW5zb3JCA+BBBBJAChVyYXdfbG9jYXRpb25f",
-            "YWNjdXJhY3kYGSABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWVC",
-            "A+BBBBI3ChVzdXBwbGVtZW50YWxfbG9jYXRpb24YEiABKAsyEy5nb29nbGUu",
-            "dHlwZS5MYXRMbmdCA+BBBBJDChpzdXBwbGVtZW50YWxfbG9jYXRpb25fdGlt",
-            "ZRgTIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCA+BBBBJOChxz",
-            "dXBwbGVtZW50YWxfbG9jYXRpb25fc2Vuc29yGBQgASgOMiMubWFwcy5mbGVl",
-            "dGVuZ2luZS52MS5Mb2NhdGlvblNlbnNvckID4EEEEkkKHnN1cHBsZW1lbnRh",
-            "bF9sb2NhdGlvbl9hY2N1cmFjeRgVIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5E",
-            "b3VibGVWYWx1ZUID4EEEEhgKDHJvYWRfc25hcHBlZBgaIAEoCEICGAEqPAoI",
-            "VHJpcFR5cGUSFQoRVU5LTk9XTl9UUklQX1RZUEUQABIKCgZTSEFSRUQQARIN",
-            "CglFWENMVVNJVkUQAiqLAQoMV2F5cG9pbnRUeXBlEhkKFVVOS05PV05fV0FZ",
-            "UE9JTlRfVFlQRRAAEhgKFFBJQ0tVUF9XQVlQT0lOVF9UWVBFEAESGgoWRFJP",
-            "UF9PRkZfV0FZUE9JTlRfVFlQRRACEioKJklOVEVSTUVESUFURV9ERVNUSU5B",
-            "VElPTl9XQVlQT0lOVF9UWVBFEAMqXwoSUG9seWxpbmVGb3JtYXRUeXBlEhcK",
-            "E1VOS05PV05fRk9STUFUX1RZUEUQABIVChFMQVRfTE5HX0xJU1RfVFlQRRAB",
-            "EhkKFUVOQ09ERURfUE9MWUxJTkVfVFlQRRACKokBChBOYXZpZ2F0aW9uU3Rh",
-            "dHVzEh0KGVVOS05PV05fTkFWSUdBVElPTl9TVEFUVVMQABIPCgtOT19HVUlE",
-            "QU5DRRABEhoKFkVOUk9VVEVfVE9fREVTVElOQVRJT04QAhINCglPRkZfUk9V",
-            "VEUQAxIaChZBUlJJVkVEX0FUX0RFU1RJTkFUSU9OEAQqiAEKDkxvY2F0aW9u",
-            "U2Vuc29yEhIKDlVOS05PV05fU0VOU09SEAASBwoDR1BTEAESCwoHTkVUV09S",
-            "SxACEgsKB1BBU1NJVkUQAxIiCh5ST0FEX1NOQVBQRURfTE9DQVRJT05fUFJP",
-            "VklERVIQBBIbChdGVVNFRF9MT0NBVElPTl9QUk9WSURFUhBkQngKGmdvb2ds",
-            "ZS5tYXBzLmZsZWV0ZW5naW5lLnYxQgtGbGVldEVuZ2luZVABWkVnb29nbGUu",
-            "Z29sYW5nLm9yZy9nZW5wcm90by9nb29nbGVhcGlzL21hcHMvZmxlZXRlbmdp",
-            "bmUvdjE7ZmxlZXRlbmdpbmWiAgNDRkViBnByb3RvMw=="));
+            "dmlvci5wcm90bxooZ29vZ2xlL21hcHMvZmxlZXRlbmdpbmUvdjEvdHJhZmZp",
+            "Yy5wcm90bxoeZ29vZ2xlL3Byb3RvYnVmL2R1cmF0aW9uLnByb3RvGh9nb29n",
+            "bGUvcHJvdG9idWYvdGltZXN0YW1wLnByb3RvGh5nb29nbGUvcHJvdG9idWYv",
+            "d3JhcHBlcnMucHJvdG8aGGdvb2dsZS90eXBlL2xhdGxuZy5wcm90byJaCg9U",
+            "ZXJtaW5hbFBvaW50SWQSFgoIcGxhY2VfaWQYAiABKAlCAhgBSAASGgoMZ2Vu",
+            "ZXJhdGVkX2lkGAMgASgJQgIYAUgAEg0KBXZhbHVlGAQgASgJQgQKAklkIvoB",
+            "ChBUZXJtaW5hbExvY2F0aW9uEicKBXBvaW50GAEgASgLMhMuZ29vZ2xlLnR5",
+            "cGUuTGF0TG5nQgPgQQISRAoRdGVybWluYWxfcG9pbnRfaWQYAiABKAsyJC5t",
+            "YXBzLmZsZWV0ZW5naW5lLnYxLlRlcm1pbmFsUG9pbnRJZEID4EECEhsKD2Fj",
+            "Y2Vzc19wb2ludF9pZBgDIAEoCUICGAESEwoHdHJpcF9pZBgEIAEoCUICGAES",
+            "RQoWdGVybWluYWxfbG9jYXRpb25fdHlwZRgFIAEoDjIhLm1hcHMuZmxlZXRl",
+            "bmdpbmUudjEuV2F5cG9pbnRUeXBlQgIYASK8AwoMVHJpcFdheXBvaW50EjcK",
+            "CGxvY2F0aW9uGAEgASgLMiUubWFwcy5mbGVldGVuZ2luZS52MS5UZXJtaW5h",
+            "bExvY2F0aW9uEg8KB3RyaXBfaWQYAiABKAkSOAoNd2F5cG9pbnRfdHlwZRgD",
+            "IAEoDjIhLm1hcHMuZmxlZXRlbmdpbmUudjEuV2F5cG9pbnRUeXBlEi0KEHBh",
+            "dGhfdG9fd2F5cG9pbnQYBCADKAsyEy5nb29nbGUudHlwZS5MYXRMbmcSIAoY",
+            "ZW5jb2RlZF9wYXRoX3RvX3dheXBvaW50GAUgASgJEksKE3RyYWZmaWNfdG9f",
+            "d2F5cG9pbnQYCiABKAsyLi5tYXBzLmZsZWV0ZW5naW5lLnYxLkNvbnN1bWFi",
+            "bGVUcmFmZmljUG9seWxpbmUSNAoPZGlzdGFuY2VfbWV0ZXJzGAYgASgLMhsu",
+            "Z29vZ2xlLnByb3RvYnVmLkludDMyVmFsdWUSJwoDZXRhGAcgASgLMhouZ29v",
+            "Z2xlLnByb3RvYnVmLlRpbWVzdGFtcBIrCghkdXJhdGlvbhgIIAEoCzIZLmdv",
+            "b2dsZS5wcm90b2J1Zi5EdXJhdGlvbiIuChBWZWhpY2xlQXR0cmlidXRlEgsK",
+            "A2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCSLFDAoPVmVoaWNsZUxvY2F0aW9u",
+            "EiUKCGxvY2F0aW9uGAEgASgLMhMuZ29vZ2xlLnR5cGUuTGF0TG5nEj0KE2hv",
+            "cml6b250YWxfYWNjdXJhY3kYCCABKAsyHC5nb29nbGUucHJvdG9idWYuRG91",
+            "YmxlVmFsdWVCAhgBEjUKD2xhdGxuZ19hY2N1cmFjeRgWIAEoCzIcLmdvb2ds",
+            "ZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRIsCgdoZWFkaW5nGAIgASgLMhsuZ29v",
+            "Z2xlLnByb3RvYnVmLkludDMyVmFsdWUSOgoQYmVhcmluZ19hY2N1cmFjeRgK",
+            "IAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZUICGAESNgoQaGVh",
+            "ZGluZ19hY2N1cmFjeRgXIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVW",
+            "YWx1ZRIuCghhbHRpdHVkZRgFIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3Vi",
+            "bGVWYWx1ZRI7ChF2ZXJ0aWNhbF9hY2N1cmFjeRgJIAEoCzIcLmdvb2dsZS5w",
+            "cm90b2J1Zi5Eb3VibGVWYWx1ZUICGAESNwoRYWx0aXR1ZGVfYWNjdXJhY3kY",
+            "GCABKAsyHC5nb29nbGUucHJvdG9idWYuRG91YmxlVmFsdWUSMwoKc3BlZWRf",
+            "a21waBgDIAEoCzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlQgIYARIr",
+            "CgVzcGVlZBgGIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3VibGVWYWx1ZRI0",
+            "Cg5zcGVlZF9hY2N1cmFjeRgHIAEoCzIcLmdvb2dsZS5wcm90b2J1Zi5Eb3Vi",
+            "bGVWYWx1ZRIvCgt1cGRhdGVfdGltZRgEIAEoCzIaLmdvb2dsZS5wcm90b2J1",
+            "Zi5UaW1lc3RhbXASNAoLc2VydmVyX3RpbWUYDSABKAsyGi5nb29nbGUucHJv",
+            "dG9idWYuVGltZXN0YW1wQgPgQQMSPAoPbG9jYXRpb25fc2Vuc29yGAsgASgO",
+            "MiMubWFwcy5mbGVldGVuZ2luZS52MS5Mb2NhdGlvblNlbnNvchIzCg9pc19y",
+            "b2FkX3NuYXBwZWQYGyABKAsyGi5nb29nbGUucHJvdG9idWYuQm9vbFZhbHVl",
+            "Ej4KFWlzX2dwc19zZW5zb3JfZW5hYmxlZBgMIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5Cb29sVmFsdWVCA+BBBBI7ChF0aW1lX3NpbmNlX3VwZGF0ZRgOIAEo",
+            "CzIbLmdvb2dsZS5wcm90b2J1Zi5JbnQzMlZhbHVlQgPgQQQSOwoRbnVtX3N0",
+            "YWxlX3VwZGF0ZXMYDyABKAsyGy5nb29nbGUucHJvdG9idWYuSW50MzJWYWx1",
+            "ZUID4EEEEikKDHJhd19sb2NhdGlvbhgQIAEoCzITLmdvb2dsZS50eXBlLkxh",
+            "dExuZxI6ChFyYXdfbG9jYXRpb25fdGltZRgRIAEoCzIaLmdvb2dsZS5wcm90",
+            "b2J1Zi5UaW1lc3RhbXBCA+BBBBJFChNyYXdfbG9jYXRpb25fc2Vuc29yGBwg",
+            "ASgOMiMubWFwcy5mbGVldGVuZ2luZS52MS5Mb2NhdGlvblNlbnNvckID4EEE",
+            "EkAKFXJhd19sb2NhdGlvbl9hY2N1cmFjeRgZIAEoCzIcLmdvb2dsZS5wcm90",
+            "b2J1Zi5Eb3VibGVWYWx1ZUID4EEEEjcKFXN1cHBsZW1lbnRhbF9sb2NhdGlv",
+            "bhgSIAEoCzITLmdvb2dsZS50eXBlLkxhdExuZ0ID4EEEEkMKGnN1cHBsZW1l",
+            "bnRhbF9sb2NhdGlvbl90aW1lGBMgASgLMhouZ29vZ2xlLnByb3RvYnVmLlRp",
+            "bWVzdGFtcEID4EEEEk4KHHN1cHBsZW1lbnRhbF9sb2NhdGlvbl9zZW5zb3IY",
+            "FCABKA4yIy5tYXBzLmZsZWV0ZW5naW5lLnYxLkxvY2F0aW9uU2Vuc29yQgPg",
+            "QQQSSQoec3VwcGxlbWVudGFsX2xvY2F0aW9uX2FjY3VyYWN5GBUgASgLMhwu",
+            "Z29vZ2xlLnByb3RvYnVmLkRvdWJsZVZhbHVlQgPgQQQSGAoMcm9hZF9zbmFw",
+            "cGVkGBogASgIQgIYASo8CghUcmlwVHlwZRIVChFVTktOT1dOX1RSSVBfVFlQ",
+            "RRAAEgoKBlNIQVJFRBABEg0KCUVYQ0xVU0lWRRACKosBCgxXYXlwb2ludFR5",
+            "cGUSGQoVVU5LTk9XTl9XQVlQT0lOVF9UWVBFEAASGAoUUElDS1VQX1dBWVBP",
+            "SU5UX1RZUEUQARIaChZEUk9QX09GRl9XQVlQT0lOVF9UWVBFEAISKgomSU5U",
+            "RVJNRURJQVRFX0RFU1RJTkFUSU9OX1dBWVBPSU5UX1RZUEUQAypfChJQb2x5",
+            "bGluZUZvcm1hdFR5cGUSFwoTVU5LTk9XTl9GT1JNQVRfVFlQRRAAEhUKEUxB",
+            "VF9MTkdfTElTVF9UWVBFEAESGQoVRU5DT0RFRF9QT0xZTElORV9UWVBFEAIq",
+            "iQEKEE5hdmlnYXRpb25TdGF0dXMSHQoZVU5LTk9XTl9OQVZJR0FUSU9OX1NU",
+            "QVRVUxAAEg8KC05PX0dVSURBTkNFEAESGgoWRU5ST1VURV9UT19ERVNUSU5B",
+            "VElPThACEg0KCU9GRl9ST1VURRADEhoKFkFSUklWRURfQVRfREVTVElOQVRJ",
+            "T04QBCqIAQoOTG9jYXRpb25TZW5zb3ISEgoOVU5LTk9XTl9TRU5TT1IQABIH",
+            "CgNHUFMQARILCgdORVRXT1JLEAISCwoHUEFTU0lWRRADEiIKHlJPQURfU05B",
+            "UFBFRF9MT0NBVElPTl9QUk9WSURFUhAEEhsKF0ZVU0VEX0xPQ0FUSU9OX1BS",
+            "T1ZJREVSEGRCeAoaZ29vZ2xlLm1hcHMuZmxlZXRlbmdpbmUudjFCC0ZsZWV0",
+            "RW5naW5lUAFaRWdvb2dsZS5nb2xhbmcub3JnL2dlbnByb3RvL2dvb2dsZWFw",
+            "aXMvbWFwcy9mbGVldGVuZ2luZS92MTtmbGVldGVuZ2luZaICA0NGRWIGcHJv",
+            "dG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.AnyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
+          new pbr::FileDescriptor[] { global::Google.Api.FieldBehaviorReflection.Descriptor, global::Maps.Fleetengine.V1.TrafficReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.DurationReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.WrappersReflection.Descriptor, global::Google.Type.LatlngReflection.Descriptor, },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Maps.Fleetengine.V1.TripType), typeof(global::Maps.Fleetengine.V1.WaypointType), typeof(global::Maps.Fleetengine.V1.PolylineFormatType), typeof(global::Maps.Fleetengine.V1.NavigationStatus), typeof(global::Maps.Fleetengine.V1.LocationSensor), }, null, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.TerminalPointId), global::Maps.Fleetengine.V1.TerminalPointId.Parser, new[]{ "PlaceId", "GeneratedId", "Value" }, new[]{ "Id" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.TerminalLocation), global::Maps.Fleetengine.V1.TerminalLocation.Parser, new[]{ "Point", "TerminalPointId", "AccessPointId", "TripId", "TerminalLocationType" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.TripWaypoint), global::Maps.Fleetengine.V1.TripWaypoint.Parser, new[]{ "Location", "TripId", "WaypointType", "PathToWaypoint", "DistanceMeters", "Eta", "Duration" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Status), global::Maps.Fleetengine.V1.Status.Parser, new[]{ "Code", "Message", "Details" }, null, new[]{ typeof(global::Maps.Fleetengine.V1.Status.Types.Code) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.FormattedAddress), global::Maps.Fleetengine.V1.FormattedAddress.Parser, new[]{ "Lines" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.Address), global::Maps.Fleetengine.V1.Address.Parser, new[]{ "FormattedAddress" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.TripWaypoint), global::Maps.Fleetengine.V1.TripWaypoint.Parser, new[]{ "Location", "TripId", "WaypointType", "PathToWaypoint", "EncodedPathToWaypoint", "TrafficToWaypoint", "DistanceMeters", "Eta", "Duration" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.VehicleAttribute), global::Maps.Fleetengine.V1.VehicleAttribute.Parser, new[]{ "Key", "Value" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::Maps.Fleetengine.V1.VehicleLocation), global::Maps.Fleetengine.V1.VehicleLocation.Parser, new[]{ "Location", "HorizontalAccuracy", "LatlngAccuracy", "Heading", "BearingAccuracy", "HeadingAccuracy", "Altitude", "VerticalAccuracy", "AltitudeAccuracy", "SpeedKmph", "Speed", "SpeedAccuracy", "UpdateTime", "ServerTime", "LocationSensor", "IsRoadSnapped", "IsGpsSensorEnabled", "TimeSinceUpdate", "NumStaleUpdates", "RawLocation", "RawLocationTime", "RawLocationSensor", "RawLocationAccuracy", "SupplementalLocation", "SupplementalLocationTime", "SupplementalLocationSensor", "SupplementalLocationAccuracy", "RoadSnapped" }, null, null, null, null)
           }));
@@ -144,15 +138,15 @@ namespace Maps.Fleetengine.V1 {
   /// </summary>
   public enum WaypointType {
     /// <summary>
-    /// Default, unknown waypoint type
+    /// Unknown or unspecified waypoint type.
     /// </summary>
     [pbr::OriginalName("UNKNOWN_WAYPOINT_TYPE")] UnknownWaypointType = 0,
     /// <summary>
-    /// Waypoints for picking up customers or merchandise.
+    /// Waypoints for picking up riders or items.
     /// </summary>
     [pbr::OriginalName("PICKUP_WAYPOINT_TYPE")] PickupWaypointType = 1,
     /// <summary>
-    /// Waypoints for dropping off customers or merchandise.
+    /// Waypoints for dropping off riders or items.
     /// </summary>
     [pbr::OriginalName("DROP_OFF_WAYPOINT_TYPE")] DropOffWaypointType = 2,
     /// <summary>
@@ -166,11 +160,11 @@ namespace Maps.Fleetengine.V1 {
   /// </summary>
   public enum PolylineFormatType {
     /// <summary>
-    /// Unspecified format type.
+    /// The format is unspecified or unknown.
     /// </summary>
     [pbr::OriginalName("UNKNOWN_FORMAT_TYPE")] UnknownFormatType = 0,
     /// <summary>
-    /// Repeated LatLng.
+    /// A list of `google.type.LatLng`.
     /// </summary>
     [pbr::OriginalName("LAT_LNG_LIST_TYPE")] LatLngListType = 1,
     /// <summary>
@@ -181,7 +175,7 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// A set of values that specify the vehicle's navigation status.
+  /// The vehicle's navigation status.
   /// </summary>
   public enum NavigationStatus {
     /// <summary>
@@ -189,51 +183,50 @@ namespace Maps.Fleetengine.V1 {
     /// </summary>
     [pbr::OriginalName("UNKNOWN_NAVIGATION_STATUS")] UnknownNavigationStatus = 0,
     /// <summary>
-    /// The Driver app's navigation is in FREE_NAV mode.
+    /// The Driver app's navigation is in `FREE_NAV` mode.
     /// </summary>
     [pbr::OriginalName("NO_GUIDANCE")] NoGuidance = 1,
     /// <summary>
-    /// Turn-by-turn navigation starts and the Driver app navigation enters
-    /// GUIDED_NAV mode showing the green header, route, and destination marker.
+    /// Turn-by-turn navigation is available and the Driver app navigation has
+    /// entered `GUIDED_NAV` mode.
     /// </summary>
     [pbr::OriginalName("ENROUTE_TO_DESTINATION")] EnrouteToDestination = 2,
     /// <summary>
-    /// Vehicle has gone off the suggested route.
+    /// The vehicle has gone off the suggested route.
     /// </summary>
     [pbr::OriginalName("OFF_ROUTE")] OffRoute = 3,
     /// <summary>
-    /// The vehicle is within 50m of the destination and onArrival was
-    /// automatically triggered.
+    /// The vehicle is within approximately 50m of the destination.
     /// </summary>
     [pbr::OriginalName("ARRIVED_AT_DESTINATION")] ArrivedAtDestination = 4,
   }
 
   /// <summary>
-  /// Possible location providers.
+  /// The sensor or methodology used to determine the location.
   /// </summary>
   public enum LocationSensor {
     /// <summary>
-    /// Undefined sensor.
+    /// The sensor is unspecified or unknown.
     /// </summary>
     [pbr::OriginalName("UNKNOWN_SENSOR")] UnknownSensor = 0,
     /// <summary>
-    /// Sensors: (GPS, AGPS).
+    /// GPS or Assisted GPS.
     /// </summary>
     [pbr::OriginalName("GPS")] Gps = 1,
     /// <summary>
-    /// Sensors: (AGPS, CellID, WiFi MACID).
+    /// Assisted GPS, cell tower ID, or WiFi access point.
     /// </summary>
     [pbr::OriginalName("NETWORK")] Network = 2,
     /// <summary>
-    /// Sensors: (CellID, WiFi MACID).
+    /// Cell tower ID or WiFi access point.
     /// </summary>
     [pbr::OriginalName("PASSIVE")] Passive = 3,
     /// <summary>
-    /// GMM's road snapped (gmfc) location.
+    /// A location signal snapped to the best road position.
     /// </summary>
     [pbr::OriginalName("ROAD_SNAPPED_LOCATION_PROVIDER")] RoadSnappedLocationProvider = 4,
     /// <summary>
-    /// Unspecified, but generated by the Fused Location Provider.
+    /// The fused location provider in Google Play services.
     /// </summary>
     [pbr::OriginalName("FUSED_LOCATION_PROVIDER")] FusedLocationProvider = 100,
   }
@@ -652,7 +645,7 @@ namespace Maps.Fleetengine.V1 {
     public const int TripIdFieldNumber = 4;
     private string tripId_ = "";
     /// <summary>
-    /// Deprecated. Use vehicle.waypoint instead.
+    /// Deprecated.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -668,7 +661,7 @@ namespace Maps.Fleetengine.V1 {
     public const int TerminalLocationTypeFieldNumber = 5;
     private global::Maps.Fleetengine.V1.WaypointType terminalLocationType_ = global::Maps.Fleetengine.V1.WaypointType.UnknownWaypointType;
     /// <summary>
-    /// Deprecated. Vehicle.waypoint will have this data.
+    /// Deprecated: `Vehicle.waypoint` will have this data.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -969,6 +962,8 @@ namespace Maps.Fleetengine.V1 {
       tripId_ = other.tripId_;
       waypointType_ = other.waypointType_;
       pathToWaypoint_ = other.pathToWaypoint_.Clone();
+      encodedPathToWaypoint_ = other.encodedPathToWaypoint_;
+      trafficToWaypoint_ = other.trafficToWaypoint_ != null ? other.trafficToWaypoint_.Clone() : null;
       DistanceMeters = other.DistanceMeters;
       eta_ = other.eta_ != null ? other.eta_.Clone() : null;
       duration_ = other.duration_ != null ? other.duration_.Clone() : null;
@@ -1042,16 +1037,48 @@ namespace Maps.Fleetengine.V1 {
       get { return pathToWaypoint_; }
     }
 
+    /// <summary>Field number for the "encoded_path_to_waypoint" field.</summary>
+    public const int EncodedPathToWaypointFieldNumber = 5;
+    private string encodedPathToWaypoint_ = "";
+    /// <summary>
+    /// The path calculated by the server from the previous waypoint to the current
+    /// waypoint. Decoding is not yet supported.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string EncodedPathToWaypoint {
+      get { return encodedPathToWaypoint_; }
+      set {
+        encodedPathToWaypoint_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "traffic_to_waypoint" field.</summary>
+    public const int TrafficToWaypointFieldNumber = 10;
+    private global::Maps.Fleetengine.V1.ConsumableTrafficPolyline trafficToWaypoint_;
+    /// <summary>
+    /// The traffic conditions along the path to this waypoint.
+    /// Note that traffic is only available for Geo Enterprise Rides and Deliveries
+    /// Solution customers.
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public global::Maps.Fleetengine.V1.ConsumableTrafficPolyline TrafficToWaypoint {
+      get { return trafficToWaypoint_; }
+      set {
+        trafficToWaypoint_ = value;
+      }
+    }
+
     /// <summary>Field number for the "distance_meters" field.</summary>
     public const int DistanceMetersFieldNumber = 6;
     private static readonly pb::FieldCodec<int?> _single_distanceMeters_codec = pb::FieldCodec.ForStructWrapper<int>(50);
     private int? distanceMeters_;
     /// <summary>
     /// The path distance calculated by Fleet Engine from the previous waypoint to
-    /// the current waypoint.
-    /// If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-    /// or Trip.remaining_waypoints), then the starting point is the vehicle's
-    /// location recorded at the time this TripWaypoint was added to the list.
+    /// the current waypoint. If the waypoint is the first waypoint in the list
+    /// (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+    /// value of this field is undefined.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1082,11 +1109,10 @@ namespace Maps.Fleetengine.V1 {
     public const int DurationFieldNumber = 8;
     private global::Google.Protobuf.WellKnownTypes.Duration duration_;
     /// <summary>
-    /// The travel time from previous waypoint to this point.
-    /// If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-    /// or Trip.remaining_waypoints), then the starting point is the vehicle's
-    /// location recorded at the time that this waypoint was added to the list.
-    /// This field is filled only when returning Trip/Vehicle data.
+    /// The travel time from previous waypoint to this point. If the waypoint is
+    /// the first waypoint in the list (e.g., `Vehicle.waypoints[0]` or
+    /// `Trip.remaining_waypoints[0]`), then this value indicates the remaining
+    /// time to the waypoint.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -1116,6 +1142,8 @@ namespace Maps.Fleetengine.V1 {
       if (TripId != other.TripId) return false;
       if (WaypointType != other.WaypointType) return false;
       if(!pathToWaypoint_.Equals(other.pathToWaypoint_)) return false;
+      if (EncodedPathToWaypoint != other.EncodedPathToWaypoint) return false;
+      if (!object.Equals(TrafficToWaypoint, other.TrafficToWaypoint)) return false;
       if (DistanceMeters != other.DistanceMeters) return false;
       if (!object.Equals(Eta, other.Eta)) return false;
       if (!object.Equals(Duration, other.Duration)) return false;
@@ -1130,6 +1158,8 @@ namespace Maps.Fleetengine.V1 {
       if (TripId.Length != 0) hash ^= TripId.GetHashCode();
       if (WaypointType != global::Maps.Fleetengine.V1.WaypointType.UnknownWaypointType) hash ^= WaypointType.GetHashCode();
       hash ^= pathToWaypoint_.GetHashCode();
+      if (EncodedPathToWaypoint.Length != 0) hash ^= EncodedPathToWaypoint.GetHashCode();
+      if (trafficToWaypoint_ != null) hash ^= TrafficToWaypoint.GetHashCode();
       if (distanceMeters_ != null) hash ^= DistanceMeters.GetHashCode();
       if (eta_ != null) hash ^= Eta.GetHashCode();
       if (duration_ != null) hash ^= Duration.GetHashCode();
@@ -1164,6 +1194,10 @@ namespace Maps.Fleetengine.V1 {
         output.WriteEnum((int) WaypointType);
       }
       pathToWaypoint_.WriteTo(output, _repeated_pathToWaypoint_codec);
+      if (EncodedPathToWaypoint.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(EncodedPathToWaypoint);
+      }
       if (distanceMeters_ != null) {
         _single_distanceMeters_codec.WriteTagAndValue(output, DistanceMeters);
       }
@@ -1174,6 +1208,10 @@ namespace Maps.Fleetengine.V1 {
       if (duration_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(Duration);
+      }
+      if (trafficToWaypoint_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(TrafficToWaypoint);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -1198,6 +1236,10 @@ namespace Maps.Fleetengine.V1 {
         output.WriteEnum((int) WaypointType);
       }
       pathToWaypoint_.WriteTo(ref output, _repeated_pathToWaypoint_codec);
+      if (EncodedPathToWaypoint.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(EncodedPathToWaypoint);
+      }
       if (distanceMeters_ != null) {
         _single_distanceMeters_codec.WriteTagAndValue(ref output, DistanceMeters);
       }
@@ -1208,6 +1250,10 @@ namespace Maps.Fleetengine.V1 {
       if (duration_ != null) {
         output.WriteRawTag(66);
         output.WriteMessage(Duration);
+      }
+      if (trafficToWaypoint_ != null) {
+        output.WriteRawTag(82);
+        output.WriteMessage(TrafficToWaypoint);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -1229,6 +1275,12 @@ namespace Maps.Fleetengine.V1 {
         size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) WaypointType);
       }
       size += pathToWaypoint_.CalculateSize(_repeated_pathToWaypoint_codec);
+      if (EncodedPathToWaypoint.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(EncodedPathToWaypoint);
+      }
+      if (trafficToWaypoint_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(TrafficToWaypoint);
+      }
       if (distanceMeters_ != null) {
         size += _single_distanceMeters_codec.CalculateSizeWithTag(DistanceMeters);
       }
@@ -1263,6 +1315,15 @@ namespace Maps.Fleetengine.V1 {
         WaypointType = other.WaypointType;
       }
       pathToWaypoint_.Add(other.pathToWaypoint_);
+      if (other.EncodedPathToWaypoint.Length != 0) {
+        EncodedPathToWaypoint = other.EncodedPathToWaypoint;
+      }
+      if (other.trafficToWaypoint_ != null) {
+        if (trafficToWaypoint_ == null) {
+          TrafficToWaypoint = new global::Maps.Fleetengine.V1.ConsumableTrafficPolyline();
+        }
+        TrafficToWaypoint.MergeFrom(other.TrafficToWaypoint);
+      }
       if (other.distanceMeters_ != null) {
         if (distanceMeters_ == null || other.DistanceMeters != 0) {
           DistanceMeters = other.DistanceMeters;
@@ -1314,6 +1375,10 @@ namespace Maps.Fleetengine.V1 {
             pathToWaypoint_.AddEntriesFrom(input, _repeated_pathToWaypoint_codec);
             break;
           }
+          case 42: {
+            EncodedPathToWaypoint = input.ReadString();
+            break;
+          }
           case 50: {
             int? value = _single_distanceMeters_codec.Read(input);
             if (distanceMeters_ == null || value != 0) {
@@ -1333,6 +1398,13 @@ namespace Maps.Fleetengine.V1 {
               Duration = new global::Google.Protobuf.WellKnownTypes.Duration();
             }
             input.ReadMessage(Duration);
+            break;
+          }
+          case 82: {
+            if (trafficToWaypoint_ == null) {
+              TrafficToWaypoint = new global::Maps.Fleetengine.V1.ConsumableTrafficPolyline();
+            }
+            input.ReadMessage(TrafficToWaypoint);
             break;
           }
         }
@@ -1369,6 +1441,10 @@ namespace Maps.Fleetengine.V1 {
             pathToWaypoint_.AddEntriesFrom(ref input, _repeated_pathToWaypoint_codec);
             break;
           }
+          case 42: {
+            EncodedPathToWaypoint = input.ReadString();
+            break;
+          }
           case 50: {
             int? value = _single_distanceMeters_codec.Read(ref input);
             if (distanceMeters_ == null || value != 0) {
@@ -1390,685 +1466,11 @@ namespace Maps.Fleetengine.V1 {
             input.ReadMessage(Duration);
             break;
           }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  /// <summary>
-  /// The 'Status' defines a FleetEngine custom logical error mode.
-  /// </summary>
-  public sealed partial class Status : pb::IMessage<Status>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<Status> _parser = new pb::MessageParser<Status>(() => new Status());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Status> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[3]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Status() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Status(Status other) : this() {
-      code_ = other.code_;
-      message_ = other.message_;
-      details_ = other.details_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Status Clone() {
-      return new Status(this);
-    }
-
-    /// <summary>Field number for the "code" field.</summary>
-    public const int CodeFieldNumber = 1;
-    private global::Maps.Fleetengine.V1.Status.Types.Code code_ = global::Maps.Fleetengine.V1.Status.Types.Code.Unspecified;
-    /// <summary>
-    /// The error code. It is not possible to have a value as 0 if it is explicitly
-    /// set by the server.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Maps.Fleetengine.V1.Status.Types.Code Code {
-      get { return code_; }
-      set {
-        code_ = value;
-      }
-    }
-
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 2;
-    private string message_ = "";
-    /// <summary>
-    /// Detailed error message.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string Message {
-      get { return message_; }
-      set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
-      }
-    }
-
-    /// <summary>Field number for the "details" field.</summary>
-    public const int DetailsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::Google.Protobuf.WellKnownTypes.Any> _repeated_details_codec
-        = pb::FieldCodec.ForMessage(26, global::Google.Protobuf.WellKnownTypes.Any.Parser);
-    private readonly pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> details_ = new pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any>();
-    /// <summary>
-    /// A list of messages that carry the error details.  There is a common set of
-    /// message types for APIs to use.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::Google.Protobuf.WellKnownTypes.Any> Details {
-      get { return details_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as Status);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Status other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (Code != other.Code) return false;
-      if (Message != other.Message) return false;
-      if(!details_.Equals(other.details_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (Code != global::Maps.Fleetengine.V1.Status.Types.Code.Unspecified) hash ^= Code.GetHashCode();
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
-      hash ^= details_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (Code != global::Maps.Fleetengine.V1.Status.Types.Code.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Code);
-      }
-      if (Message.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Message);
-      }
-      details_.WriteTo(output, _repeated_details_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Code != global::Maps.Fleetengine.V1.Status.Types.Code.Unspecified) {
-        output.WriteRawTag(8);
-        output.WriteEnum((int) Code);
-      }
-      if (Message.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(Message);
-      }
-      details_.WriteTo(ref output, _repeated_details_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (Code != global::Maps.Fleetengine.V1.Status.Types.Code.Unspecified) {
-        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Code);
-      }
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
-      }
-      size += details_.CalculateSize(_repeated_details_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Status other) {
-      if (other == null) {
-        return;
-      }
-      if (other.Code != global::Maps.Fleetengine.V1.Status.Types.Code.Unspecified) {
-        Code = other.Code;
-      }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
-      }
-      details_.Add(other.details_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 8: {
-            Code = (global::Maps.Fleetengine.V1.Status.Types.Code) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            Message = input.ReadString();
-            break;
-          }
-          case 26: {
-            details_.AddEntriesFrom(input, _repeated_details_codec);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 8: {
-            Code = (global::Maps.Fleetengine.V1.Status.Types.Code) input.ReadEnum();
-            break;
-          }
-          case 18: {
-            Message = input.ReadString();
-            break;
-          }
-          case 26: {
-            details_.AddEntriesFrom(ref input, _repeated_details_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-    #region Nested types
-    /// <summary>Container for nested types declared in the Status message type.</summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static partial class Types {
-      /// <summary>
-      /// The canonical error code.
-      /// </summary>
-      public enum Code {
-        /// <summary>
-        /// Unspecified status, not a valid value to set.
-        /// </summary>
-        [pbr::OriginalName("UNSPECIFIED")] Unspecified = 0,
-        /// <summary>
-        /// Internal server error. Usually expect the client to retry in this case.
-        /// </summary>
-        [pbr::OriginalName("FAILURE")] Failure = 1,
-        /// <summary>
-        /// There is no possible route. Client should not retry.
-        /// </summary>
-        [pbr::OriginalName("ROUTE_NOT_POSSIBLE")] RouteNotPossible = 2,
-      }
-
-    }
-    #endregion
-
-  }
-
-  /// <summary>
-  /// A full, human-readable address for the entity containing this message.
-  /// </summary>
-  public sealed partial class FormattedAddress : pb::IMessage<FormattedAddress>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<FormattedAddress> _parser = new pb::MessageParser<FormattedAddress>(() => new FormattedAddress());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<FormattedAddress> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[4]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FormattedAddress() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FormattedAddress(FormattedAddress other) : this() {
-      lines_ = other.lines_.Clone();
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public FormattedAddress Clone() {
-      return new FormattedAddress(this);
-    }
-
-    /// <summary>Field number for the "lines" field.</summary>
-    public const int LinesFieldNumber = 1;
-    private static readonly pb::FieldCodec<string> _repeated_lines_codec
-        = pb::FieldCodec.ForString(10);
-    private readonly pbc::RepeatedField<string> lines_ = new pbc::RepeatedField<string>();
-    /// <summary>
-    /// The lines of text that describe the address.
-    /// At least one line must be present.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<string> Lines {
-      get { return lines_; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as FormattedAddress);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(FormattedAddress other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if(!lines_.Equals(other.lines_)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      hash ^= lines_.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      lines_.WriteTo(output, _repeated_lines_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      lines_.WriteTo(ref output, _repeated_lines_codec);
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      size += lines_.CalculateSize(_repeated_lines_codec);
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(FormattedAddress other) {
-      if (other == null) {
-        return;
-      }
-      lines_.Add(other.lines_);
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            lines_.AddEntriesFrom(input, _repeated_lines_codec);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            lines_.AddEntriesFrom(ref input, _repeated_lines_codec);
-            break;
-          }
-        }
-      }
-    }
-    #endif
-
-  }
-
-  /// <summary>
-  /// Address of a place.
-  /// </summary>
-  public sealed partial class Address : pb::IMessage<Address>
-  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      , pb::IBufferMessage
-  #endif
-  {
-    private static readonly pb::MessageParser<Address> _parser = new pb::MessageParser<Address>(() => new Address());
-    private pb::UnknownFieldSet _unknownFields;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<Address> Parser { get { return _parser; } }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pbr::MessageDescriptor Descriptor {
-      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[5]; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    pbr::MessageDescriptor pb::IMessage.Descriptor {
-      get { return Descriptor; }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Address() {
-      OnConstruction();
-    }
-
-    partial void OnConstruction();
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Address(Address other) : this() {
-      formattedAddress_ = other.formattedAddress_ != null ? other.formattedAddress_.Clone() : null;
-      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public Address Clone() {
-      return new Address(this);
-    }
-
-    /// <summary>Field number for the "formatted_address" field.</summary>
-    public const int FormattedAddressFieldNumber = 1;
-    private global::Maps.Fleetengine.V1.FormattedAddress formattedAddress_;
-    /// <summary>
-    /// A full, human-readable address for this place.
-    /// </summary>
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::Maps.Fleetengine.V1.FormattedAddress FormattedAddress {
-      get { return formattedAddress_; }
-      set {
-        formattedAddress_ = value;
-      }
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as Address);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(Address other) {
-      if (ReferenceEquals(other, null)) {
-        return false;
-      }
-      if (ReferenceEquals(other, this)) {
-        return true;
-      }
-      if (!object.Equals(FormattedAddress, other.FormattedAddress)) return false;
-      return Equals(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override int GetHashCode() {
-      int hash = 1;
-      if (formattedAddress_ != null) hash ^= FormattedAddress.GetHashCode();
-      if (_unknownFields != null) {
-        hash ^= _unknownFields.GetHashCode();
-      }
-      return hash;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override string ToString() {
-      return pb::JsonFormatter.ToDiagnosticString(this);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void WriteTo(pb::CodedOutputStream output) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      output.WriteRawMessage(this);
-    #else
-      if (formattedAddress_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(FormattedAddress);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(output);
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (formattedAddress_ != null) {
-        output.WriteRawTag(10);
-        output.WriteMessage(FormattedAddress);
-      }
-      if (_unknownFields != null) {
-        _unknownFields.WriteTo(ref output);
-      }
-    }
-    #endif
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public int CalculateSize() {
-      int size = 0;
-      if (formattedAddress_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(FormattedAddress);
-      }
-      if (_unknownFields != null) {
-        size += _unknownFields.CalculateSize();
-      }
-      return size;
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(Address other) {
-      if (other == null) {
-        return;
-      }
-      if (other.formattedAddress_ != null) {
-        if (formattedAddress_ == null) {
-          FormattedAddress = new global::Maps.Fleetengine.V1.FormattedAddress();
-        }
-        FormattedAddress.MergeFrom(other.FormattedAddress);
-      }
-      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
-    }
-
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(pb::CodedInputStream input) {
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-      input.ReadRawMessage(this);
-    #else
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
-            break;
-          case 10: {
-            if (formattedAddress_ == null) {
-              FormattedAddress = new global::Maps.Fleetengine.V1.FormattedAddress();
+          case 82: {
+            if (trafficToWaypoint_ == null) {
+              TrafficToWaypoint = new global::Maps.Fleetengine.V1.ConsumableTrafficPolyline();
             }
-            input.ReadMessage(FormattedAddress);
-            break;
-          }
-        }
-      }
-    #endif
-    }
-
-    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
-      uint tag;
-      while ((tag = input.ReadTag()) != 0) {
-        switch(tag) {
-          default:
-            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
-            break;
-          case 10: {
-            if (formattedAddress_ == null) {
-              FormattedAddress = new global::Maps.Fleetengine.V1.FormattedAddress();
-            }
-            input.ReadMessage(FormattedAddress);
+            input.ReadMessage(TrafficToWaypoint);
             break;
           }
         }
@@ -2079,7 +1481,8 @@ namespace Maps.Fleetengine.V1 {
   }
 
   /// <summary>
-  /// Describes a vehicle attribute as a key-value pair.
+  /// Describes a vehicle attribute as a key-value pair. The "key:value" string
+  /// length cannot exceed 256 characters.
   /// </summary>
   public sealed partial class VehicleAttribute : pb::IMessage<VehicleAttribute>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
@@ -2095,7 +1498,7 @@ namespace Maps.Fleetengine.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[6]; }
+      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[3]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2330,7 +1733,7 @@ namespace Maps.Fleetengine.V1 {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[7]; }
+      get { return global::Maps.Fleetengine.V1.FleetengineReflection.Descriptor.MessageTypes[4]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2392,10 +1795,10 @@ namespace Maps.Fleetengine.V1 {
     private global::Google.Type.LatLng location_;
     /// <summary>
     /// The location of the vehicle.
-    /// When it is sent to FleetEngine, the vehicle's location is a GPS location.
+    /// When it is sent to Fleet Engine, the vehicle's location is a GPS location.
     /// When you receive it in a response, the vehicle's location can be either a
-    /// GPS location or a supplemental location. The source is specified in the
-    /// field 'location_sensor'.
+    /// GPS location, a supplemental location, or some other estimated location.
+    /// The source is specified in `location_sensor`.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2411,7 +1814,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_horizontalAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(66);
     private double? horizontalAccuracy_;
     /// <summary>
-    /// Deprecated. Use latlng_accuracy instead.
+    /// Deprecated: Use `latlng_accuracy` instead.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2429,7 +1832,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_latlngAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(178);
     private double? latlngAccuracy_;
     /// <summary>
-    /// Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+    /// Accuracy of `location` in meters as a radius.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2464,7 +1867,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_bearingAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(82);
     private double? bearingAccuracy_;
     /// <summary>
-    /// Deprecated. Use heading_accuracy instead.
+    /// Deprecated: Use `heading_accuracy` instead.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2482,7 +1885,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_headingAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(186);
     private double? headingAccuracy_;
     /// <summary>
-    /// Accuracy of heading (bearing) in degrees.
+    /// Accuracy of `heading` in degrees.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2516,7 +1919,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_verticalAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(74);
     private double? verticalAccuracy_;
     /// <summary>
-    /// Deprecated. Use altitude_accurarcy instead.
+    /// Deprecated: Use `altitude_accuracy` instead.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2534,7 +1937,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_altitudeAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(194);
     private double? altitudeAccuracy_;
     /// <summary>
-    /// Accuracy of altitude measurement in meters.
+    /// Accuracy of `altitude` in meters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2552,7 +1955,7 @@ namespace Maps.Fleetengine.V1 {
     private int? speedKmph_;
     /// <summary>
     /// Speed of the vehicle in kilometers per hour.
-    /// Deprecated. Use speed instead.
+    /// Deprecated: Use `speed` instead.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2587,7 +1990,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_speedAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(58);
     private double? speedAccuracy_;
     /// <summary>
-    /// Accuracy of speed in meters/second.
+    /// Accuracy of `speed` in meters/second.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2603,7 +2006,7 @@ namespace Maps.Fleetengine.V1 {
     public const int UpdateTimeFieldNumber = 4;
     private global::Google.Protobuf.WellKnownTypes.Timestamp updateTime_;
     /// <summary>
-    /// The time when the location was recorded.
+    /// The time when `location` was reported by the sensor.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2618,8 +2021,7 @@ namespace Maps.Fleetengine.V1 {
     public const int ServerTimeFieldNumber = 13;
     private global::Google.Protobuf.WellKnownTypes.Timestamp serverTime_;
     /// <summary>
-    /// Output only. The time when the server receives the location information, filled by
-    /// FleetEngine.
+    /// Output only. The time when the server received the location information.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2634,7 +2036,7 @@ namespace Maps.Fleetengine.V1 {
     public const int LocationSensorFieldNumber = 11;
     private global::Maps.Fleetengine.V1.LocationSensor locationSensor_ = global::Maps.Fleetengine.V1.LocationSensor.UnknownSensor;
     /// <summary>
-    /// Provider of location data (for example, "gps").
+    /// Provider of location data (for example, `GPS`).
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2650,10 +2052,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<bool?> _single_isRoadSnapped_codec = pb::FieldCodec.ForStructWrapper<bool>(218);
     private bool? isRoadSnapped_;
     /// <summary>
-    /// Whether the vehicle location given by "location" field is snapped to a road
-    /// closest to the location given by "raw_location".
-    /// Driver SDK 1.15.1/2.1.1 and up will always set this field.
-    /// Unset value will be treated as true.
+    /// Whether `location` is snapped to a road.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2670,7 +2069,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<bool?> _single_isGpsSensorEnabled_codec = pb::FieldCodec.ForStructWrapper<bool>(98);
     private bool? isGpsSensorEnabled_;
     /// <summary>
-    /// Input only. Indicates whether the GPS sensor is enabled.
+    /// Input only. Indicates whether the GPS sensor is enabled on the mobile device.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2687,7 +2086,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_timeSinceUpdate_codec = pb::FieldCodec.ForStructWrapper<int>(114);
     private int? timeSinceUpdate_;
     /// <summary>
-    /// Input only. Time (in seconds) since this location sample was first sent to the server.
+    /// Input only. Time (in seconds) since this location was first sent to the server.
     /// This will be zero for the first update. If the time is unknown
     /// (for example, when the app restarts), this value resets to zero.
     /// </summary>
@@ -2706,7 +2105,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<int?> _single_numStaleUpdates_codec = pb::FieldCodec.ForStructWrapper<int>(122);
     private int? numStaleUpdates_;
     /// <summary>
-    /// Input only. Number of additional attempts to send the current location to the server.
+    /// Input only. Number of additional attempts to send this location to the server.
     /// If this value is zero, then it is not stale.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2769,7 +2168,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_rawLocationAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(202);
     private double? rawLocationAccuracy_;
     /// <summary>
-    /// Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+    /// Input only. Accuracy of `raw_location` as a radius, in meters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2832,8 +2231,7 @@ namespace Maps.Fleetengine.V1 {
     private static readonly pb::FieldCodec<double?> _single_supplementalLocationAccuracy_codec = pb::FieldCodec.ForStructWrapper<double>(170);
     private double? supplementalLocationAccuracy_;
     /// <summary>
-    /// Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-    /// meters.
+    /// Input only. Accuracy of `supplemental_location` as a radius, in meters.
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -2849,7 +2247,7 @@ namespace Maps.Fleetengine.V1 {
     public const int RoadSnappedFieldNumber = 26;
     private bool roadSnapped_;
     /// <summary>
-    /// Deprecated, use is_road_snapped instead.
+    /// Deprecated: Use `is_road_snapped` instead.
     /// </summary>
     [global::System.ObsoleteAttribute]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

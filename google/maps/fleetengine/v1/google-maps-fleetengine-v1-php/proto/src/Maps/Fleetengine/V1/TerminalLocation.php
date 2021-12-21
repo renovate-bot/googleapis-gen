@@ -35,14 +35,14 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
      */
     protected $access_point_id = '';
     /**
-     * Deprecated. Use vehicle.waypoint instead.
+     * Deprecated.
      *
      * Generated from protobuf field <code>string trip_id = 4 [deprecated = true];</code>
      * @deprecated
      */
     protected $trip_id = '';
     /**
-     * Deprecated. Vehicle.waypoint will have this data.
+     * Deprecated: `Vehicle.waypoint` will have this data.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
      * @deprecated
@@ -62,9 +62,9 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
      *     @type string $access_point_id
      *           Deprecated.
      *     @type string $trip_id
-     *           Deprecated. Use vehicle.waypoint instead.
+     *           Deprecated.
      *     @type int $terminal_location_type
-     *           Deprecated. Vehicle.waypoint will have this data.
+     *           Deprecated: `Vehicle.waypoint` will have this data.
      * }
      */
     public function __construct($data = NULL) {
@@ -175,7 +175,7 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use vehicle.waypoint instead.
+     * Deprecated.
      *
      * Generated from protobuf field <code>string trip_id = 4 [deprecated = true];</code>
      * @return string
@@ -188,7 +188,7 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Use vehicle.waypoint instead.
+     * Deprecated.
      *
      * Generated from protobuf field <code>string trip_id = 4 [deprecated = true];</code>
      * @param string $var
@@ -205,7 +205,7 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Vehicle.waypoint will have this data.
+     * Deprecated: `Vehicle.waypoint` will have this data.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
      * @return int
@@ -218,7 +218,7 @@ class TerminalLocation extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Deprecated. Vehicle.waypoint will have this data.
+     * Deprecated: `Vehicle.waypoint` will have this data.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.WaypointType terminal_location_type = 5 [deprecated = true];</code>
      * @param int $var

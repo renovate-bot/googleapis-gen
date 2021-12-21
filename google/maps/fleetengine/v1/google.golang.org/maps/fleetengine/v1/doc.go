@@ -17,7 +17,8 @@
 // Package fleetengine is an auto-generated package for the
 // Local Rides and Deliveries API.
 //
-// Services for ridesharing providers.
+// Enables Fleet Engine for access to the On Demand Rides and Deliveries and
+// Last Mile Fleet Solution APIs.
 //
 // Example usage
 //

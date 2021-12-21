@@ -9,8 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * The license plate information of the Vehicle.  This is used to support
- * congestion pricing restrictions in certain areas.  To avoid storing
+ * The license plate information of the Vehicle.  To avoid storing
  * personally-identifiable information, only the minimum information
  * about the license plate is stored as part of the entity.
  *
@@ -19,15 +18,15 @@ use Google\Protobuf\Internal\GPBUtil;
 class LicensePlate extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Required. CLDR Country/Region Code.  For example, "US" for United States,
-     * or "IN" for India.
+     * Required. CLDR Country/Region Code.  For example, `US` for United States,
+     * or `IN` for India.
      *
      * Generated from protobuf field <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $country_code = '';
     /**
      * The last digit of the license plate or "-1" to denote no numeric value
-     * present in the license plate.
+     * is present in the license plate.
      * * "ABC 1234" -> "4"
      * * "AB 123 CD" -> "3"
      * * "ABCDEF" -> "-1"
@@ -43,11 +42,11 @@ class LicensePlate extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $country_code
-     *           Required. CLDR Country/Region Code.  For example, "US" for United States,
-     *           or "IN" for India.
+     *           Required. CLDR Country/Region Code.  For example, `US` for United States,
+     *           or `IN` for India.
      *     @type string $last_character
      *           The last digit of the license plate or "-1" to denote no numeric value
-     *           present in the license plate.
+     *           is present in the license plate.
      *           * "ABC 1234" -> "4"
      *           * "AB 123 CD" -> "3"
      *           * "ABCDEF" -> "-1"
@@ -59,8 +58,8 @@ class LicensePlate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. CLDR Country/Region Code.  For example, "US" for United States,
-     * or "IN" for India.
+     * Required. CLDR Country/Region Code.  For example, `US` for United States,
+     * or `IN` for India.
      *
      * Generated from protobuf field <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -71,8 +70,8 @@ class LicensePlate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. CLDR Country/Region Code.  For example, "US" for United States,
-     * or "IN" for India.
+     * Required. CLDR Country/Region Code.  For example, `US` for United States,
+     * or `IN` for India.
      *
      * Generated from protobuf field <code>string country_code = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -88,7 +87,7 @@ class LicensePlate extends \Google\Protobuf\Internal\Message
 
     /**
      * The last digit of the license plate or "-1" to denote no numeric value
-     * present in the license plate.
+     * is present in the license plate.
      * * "ABC 1234" -> "4"
      * * "AB 123 CD" -> "3"
      * * "ABCDEF" -> "-1"
@@ -103,7 +102,7 @@ class LicensePlate extends \Google\Protobuf\Internal\Message
 
     /**
      * The last digit of the license plate or "-1" to denote no numeric value
-     * present in the license plate.
+     * is present in the license plate.
      * * "ABC 1234" -> "4"
      * * "AB 123 CD" -> "3"
      * * "ABCDEF" -> "-1"

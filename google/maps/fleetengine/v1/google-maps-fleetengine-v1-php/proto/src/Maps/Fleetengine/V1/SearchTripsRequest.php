@@ -22,8 +22,8 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
      */
     protected $header = null;
     /**
-     * Required. Must be in the format "providers/&#42;"
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -33,10 +33,10 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The vehicle associated with the trips in the request. If unspecified, the
      * returned trips do not contain:
-     * * current_route_segment
-     * * remaining_waypoints
-     * * remaining_distance_meters
-     * * eta_to_first_waypoint
+     * * `current_route_segment`
+     * * `remaining_waypoints`
+     * * `remaining_distance_meters`
+     * * `eta_to_first_waypoint`
      *
      * Generated from protobuf field <code>string vehicle_id = 4;</code>
      */
@@ -64,7 +64,7 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
     protected $page_token = '';
     /**
      * If specified, returns the trips that have not been updated after
-     * the time (current - minimum_staleness).
+     * the time `(current - minimum_staleness)`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration minimum_staleness = 8;</code>
      */
@@ -79,17 +79,17 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
      *     @type \Maps\Fleetengine\V1\RequestHeader $header
      *           The standard Fleet Engine request header.
      *     @type string $parent
-     *           Required. Must be in the format "providers/&#42;"
-     *           The provider must be the Project ID (for example, sample-cloud-project)
+     *           Required. Must be in the format `providers/{provider}`.
+     *           The provider must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type string $vehicle_id
      *           The vehicle associated with the trips in the request. If unspecified, the
      *           returned trips do not contain:
-     *           * current_route_segment
-     *           * remaining_waypoints
-     *           * remaining_distance_meters
-     *           * eta_to_first_waypoint
+     *           * `current_route_segment`
+     *           * `remaining_waypoints`
+     *           * `remaining_distance_meters`
+     *           * `eta_to_first_waypoint`
      *     @type bool $active_trips_only
      *           If set to true, only Trips that influence the drivers route
      *           are included in the response.
@@ -101,7 +101,7 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
      *           SearchTripsResponse to continue from previous results.
      *     @type \Google\Protobuf\Duration $minimum_staleness
      *           If specified, returns the trips that have not been updated after
-     *           the time (current - minimum_staleness).
+     *           the time `(current - minimum_staleness)`.
      * }
      */
     public function __construct($data = NULL) {
@@ -146,8 +146,8 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/&#42;"
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -160,8 +160,8 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format "providers/&#42;"
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -180,10 +180,10 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The vehicle associated with the trips in the request. If unspecified, the
      * returned trips do not contain:
-     * * current_route_segment
-     * * remaining_waypoints
-     * * remaining_distance_meters
-     * * eta_to_first_waypoint
+     * * `current_route_segment`
+     * * `remaining_waypoints`
+     * * `remaining_distance_meters`
+     * * `eta_to_first_waypoint`
      *
      * Generated from protobuf field <code>string vehicle_id = 4;</code>
      * @return string
@@ -196,10 +196,10 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
     /**
      * The vehicle associated with the trips in the request. If unspecified, the
      * returned trips do not contain:
-     * * current_route_segment
-     * * remaining_waypoints
-     * * remaining_distance_meters
-     * * eta_to_first_waypoint
+     * * `current_route_segment`
+     * * `remaining_waypoints`
+     * * `remaining_distance_meters`
+     * * `eta_to_first_waypoint`
      *
      * Generated from protobuf field <code>string vehicle_id = 4;</code>
      * @param string $var
@@ -299,7 +299,7 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * If specified, returns the trips that have not been updated after
-     * the time (current - minimum_staleness).
+     * the time `(current - minimum_staleness)`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration minimum_staleness = 8;</code>
      * @return \Google\Protobuf\Duration|null
@@ -321,7 +321,7 @@ class SearchTripsRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * If specified, returns the trips that have not been updated after
-     * the time (current - minimum_staleness).
+     * the time `(current - minimum_staleness)`.
      *
      * Generated from protobuf field <code>.google.protobuf.Duration minimum_staleness = 8;</code>
      * @param \Google\Protobuf\Duration $var

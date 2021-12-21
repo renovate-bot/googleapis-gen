@@ -47,10 +47,10 @@ module Maps
       #     Deprecated.
       # @!attribute [rw] trip_id
       #   @return [::String]
-      #     Deprecated. Use vehicle.waypoint instead.
+      #     Deprecated.
       # @!attribute [rw] terminal_location_type
       #   @return [::Maps::Fleetengine::V1::WaypointType]
-      #     Deprecated. Vehicle.waypoint will have this data.
+      #     Deprecated: `Vehicle.waypoint` will have this data.
       class TerminalLocation
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -72,77 +72,37 @@ module Maps
       #   @return [::Array<::Google::Type::LatLng>]
       #     The path calculated by Fleet Engine from the previous waypoint to the
       #     current waypoint.
+      # @!attribute [rw] encoded_path_to_waypoint
+      #   @return [::String]
+      #     The path calculated by the server from the previous waypoint to the current
+      #     waypoint. Decoding is not yet supported.
+      # @!attribute [rw] traffic_to_waypoint
+      #   @return [::Maps::Fleetengine::V1::ConsumableTrafficPolyline]
+      #     The traffic conditions along the path to this waypoint.
+      #     Note that traffic is only available for Geo Enterprise Rides and Deliveries
+      #     Solution customers.
       # @!attribute [rw] distance_meters
       #   @return [::Google::Protobuf::Int32Value]
       #     The path distance calculated by Fleet Engine from the previous waypoint to
-      #     the current waypoint.
-      #     If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-      #     or Trip.remaining_waypoints), then the starting point is the vehicle's
-      #     location recorded at the time this TripWaypoint was added to the list.
+      #     the current waypoint. If the waypoint is the first waypoint in the list
+      #     (e.g., `Vehicle.waypoints[0]` or `Trip.remaining_waypoints[0]`), then the
+      #     value of this field is undefined.
       # @!attribute [rw] eta
       #   @return [::Google::Protobuf::Timestamp]
       #     The arrival time to this waypoint calculated by Fleet Engine.
       # @!attribute [rw] duration
       #   @return [::Google::Protobuf::Duration]
-      #     The travel time from previous waypoint to this point.
-      #     If the current waypoint is the first waypoint in the list (Vehicle.waypoint
-      #     or Trip.remaining_waypoints), then the starting point is the vehicle's
-      #     location recorded at the time that this waypoint was added to the list.
-      #     This field is filled only when returning Trip/Vehicle data.
+      #     The travel time from previous waypoint to this point. If the waypoint is
+      #     the first waypoint in the list (e.g., `Vehicle.waypoints[0]` or
+      #     `Trip.remaining_waypoints[0]`), then this value indicates the remaining
+      #     time to the waypoint.
       class TripWaypoint
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
       end
 
-      # The 'Status' defines a FleetEngine custom logical error mode.
-      # @!attribute [rw] code
-      #   @return [::Maps::Fleetengine::V1::Status::Code]
-      #     The error code. It is not possible to have a value as 0 if it is explicitly
-      #     set by the server.
-      # @!attribute [rw] message
-      #   @return [::String]
-      #     Detailed error message.
-      # @!attribute [rw] details
-      #   @return [::Array<::Google::Protobuf::Any>]
-      #     A list of messages that carry the error details.  There is a common set of
-      #     message types for APIs to use.
-      class Status
-        include ::Google::Protobuf::MessageExts
-        extend ::Google::Protobuf::MessageExts::ClassMethods
-
-        # The canonical error code.
-        module Code
-          # Unspecified status, not a valid value to set.
-          UNSPECIFIED = 0
-
-          # Internal server error. Usually expect the client to retry in this case.
-          FAILURE = 1
-
-          # There is no possible route. Client should not retry.
-          ROUTE_NOT_POSSIBLE = 2
-        end
-      end
-
-      # A full, human-readable address for the entity containing this message.
-      # @!attribute [rw] lines
-      #   @return [::Array<::String>]
-      #     The lines of text that describe the address.
-      #     At least one line must be present.
-      class FormattedAddress
-        include ::Google::Protobuf::MessageExts
-        extend ::Google::Protobuf::MessageExts::ClassMethods
-      end
-
-      # Address of a place.
-      # @!attribute [rw] formatted_address
-      #   @return [::Maps::Fleetengine::V1::FormattedAddress]
-      #     A full, human-readable address for this place.
-      class Address
-        include ::Google::Protobuf::MessageExts
-        extend ::Google::Protobuf::MessageExts::ClassMethods
-      end
-
-      # Describes a vehicle attribute as a key-value pair.
+      # Describes a vehicle attribute as a key-value pair. The "key:value" string
+      # length cannot exceed 256 characters.
       # @!attribute [rw] key
       #   @return [::String]
       #     The attribute's key. Keys may not contain the colon character (:).
@@ -158,72 +118,68 @@ module Maps
       # @!attribute [rw] location
       #   @return [::Google::Type::LatLng]
       #     The location of the vehicle.
-      #     When it is sent to FleetEngine, the vehicle's location is a GPS location.
+      #     When it is sent to Fleet Engine, the vehicle's location is a GPS location.
       #     When you receive it in a response, the vehicle's location can be either a
-      #     GPS location or a supplemental location. The source is specified in the
-      #     field 'location_sensor'.
+      #     GPS location, a supplemental location, or some other estimated location.
+      #     The source is specified in `location_sensor`.
       # @!attribute [rw] horizontal_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Deprecated. Use latlng_accuracy instead.
+      #     Deprecated: Use `latlng_accuracy` instead.
       # @!attribute [rw] latlng_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Accuracy of horizontal measurements (lat/lng) in meters as a radius.
+      #     Accuracy of `location` in meters as a radius.
       # @!attribute [rw] heading
       #   @return [::Google::Protobuf::Int32Value]
       #     Direction the vehicle is moving in degrees.  0 represents North.
       #     The valid range is [0,360).
       # @!attribute [rw] bearing_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Deprecated. Use heading_accuracy instead.
+      #     Deprecated: Use `heading_accuracy` instead.
       # @!attribute [rw] heading_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Accuracy of heading (bearing) in degrees.
+      #     Accuracy of `heading` in degrees.
       # @!attribute [rw] altitude
       #   @return [::Google::Protobuf::DoubleValue]
       #     Altitude in meters above WGS84.
       # @!attribute [rw] vertical_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Deprecated. Use altitude_accurarcy instead.
+      #     Deprecated: Use `altitude_accuracy` instead.
       # @!attribute [rw] altitude_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Accuracy of altitude measurement in meters.
+      #     Accuracy of `altitude` in meters.
       # @!attribute [rw] speed_kmph
       #   @return [::Google::Protobuf::Int32Value]
       #     Speed of the vehicle in kilometers per hour.
-      #     Deprecated. Use speed instead.
+      #     Deprecated: Use `speed` instead.
       # @!attribute [rw] speed
       #   @return [::Google::Protobuf::DoubleValue]
       #     Speed of the vehicle in meters/second
       # @!attribute [rw] speed_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Accuracy of speed in meters/second.
+      #     Accuracy of `speed` in meters/second.
       # @!attribute [rw] update_time
       #   @return [::Google::Protobuf::Timestamp]
-      #     The time when the location was recorded.
+      #     The time when `location` was reported by the sensor.
       # @!attribute [r] server_time
       #   @return [::Google::Protobuf::Timestamp]
-      #     Output only. The time when the server receives the location information, filled by
-      #     FleetEngine.
+      #     Output only. The time when the server received the location information.
       # @!attribute [rw] location_sensor
       #   @return [::Maps::Fleetengine::V1::LocationSensor]
-      #     Provider of location data (for example, "gps").
+      #     Provider of location data (for example, `GPS`).
       # @!attribute [rw] is_road_snapped
       #   @return [::Google::Protobuf::BoolValue]
-      #     Whether the vehicle location given by "location" field is snapped to a road
-      #     closest to the location given by "raw_location".
-      #     Driver SDK 1.15.1/2.1.1 and up will always set this field.
-      #     Unset value will be treated as true.
+      #     Whether `location` is snapped to a road.
       # @!attribute [rw] is_gps_sensor_enabled
       #   @return [::Google::Protobuf::BoolValue]
-      #     Input only. Indicates whether the GPS sensor is enabled.
+      #     Input only. Indicates whether the GPS sensor is enabled on the mobile device.
       # @!attribute [rw] time_since_update
       #   @return [::Google::Protobuf::Int32Value]
-      #     Input only. Time (in seconds) since this location sample was first sent to the server.
+      #     Input only. Time (in seconds) since this location was first sent to the server.
       #     This will be zero for the first update. If the time is unknown
       #     (for example, when the app restarts), this value resets to zero.
       # @!attribute [rw] num_stale_updates
       #   @return [::Google::Protobuf::Int32Value]
-      #     Input only. Number of additional attempts to send the current location to the server.
+      #     Input only. Number of additional attempts to send this location to the server.
       #     If this value is zero, then it is not stale.
       # @!attribute [rw] raw_location
       #   @return [::Google::Type::LatLng]
@@ -236,7 +192,7 @@ module Maps
       #     Input only. Source of the raw location.
       # @!attribute [rw] raw_location_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Input only. Accuracy of the raw location (lat/lng) as a radius, measured in meters.
+      #     Input only. Accuracy of `raw_location` as a radius, in meters.
       # @!attribute [rw] supplemental_location
       #   @return [::Google::Type::LatLng]
       #     Input only. Supplemental location provided by the integrating app, such as the location
@@ -249,11 +205,10 @@ module Maps
       #     Input only. Source of the supplemental location.
       # @!attribute [rw] supplemental_location_accuracy
       #   @return [::Google::Protobuf::DoubleValue]
-      #     Input only. Accuracy of supplemental location (lat/lng) as a radius, measured in
-      #     meters.
+      #     Input only. Accuracy of `supplemental_location` as a radius, in meters.
       # @!attribute [rw] road_snapped
       #   @return [::Boolean]
-      #     Deprecated, use is_road_snapped instead.
+      #     Deprecated: Use `is_road_snapped` instead.
       class VehicleLocation
         include ::Google::Protobuf::MessageExts
         extend ::Google::Protobuf::MessageExts::ClassMethods
@@ -273,13 +228,13 @@ module Maps
 
       # The type of waypoint.
       module WaypointType
-        # Default, unknown waypoint type
+        # Unknown or unspecified waypoint type.
         UNKNOWN_WAYPOINT_TYPE = 0
 
-        # Waypoints for picking up customers or merchandise.
+        # Waypoints for picking up riders or items.
         PICKUP_WAYPOINT_TYPE = 1
 
-        # Waypoints for dropping off customers or merchandise.
+        # Waypoints for dropping off riders or items.
         DROP_OFF_WAYPOINT_TYPE = 2
 
         # Waypoints for intermediate destinations in a multi-destination trip.
@@ -288,10 +243,10 @@ module Maps
 
       # The type of polyline format.
       module PolylineFormatType
-        # Unspecified format type.
+        # The format is unspecified or unknown.
         UNKNOWN_FORMAT_TYPE = 0
 
-        # Repeated LatLng.
+        # A list of `google.type.LatLng`.
         LAT_LNG_LIST_TYPE = 1
 
         # A polyline encoded with a polyline compression algorithm. Decoding is not
@@ -299,44 +254,43 @@ module Maps
         ENCODED_POLYLINE_TYPE = 2
       end
 
-      # A set of values that specify the vehicle's navigation status.
+      # The vehicle's navigation status.
       module NavigationStatus
         # Unspecified navigation status.
         UNKNOWN_NAVIGATION_STATUS = 0
 
-        # The Driver app's navigation is in FREE_NAV mode.
+        # The Driver app's navigation is in `FREE_NAV` mode.
         NO_GUIDANCE = 1
 
-        # Turn-by-turn navigation starts and the Driver app navigation enters
-        # GUIDED_NAV mode showing the green header, route, and destination marker.
+        # Turn-by-turn navigation is available and the Driver app navigation has
+        # entered `GUIDED_NAV` mode.
         ENROUTE_TO_DESTINATION = 2
 
-        # Vehicle has gone off the suggested route.
+        # The vehicle has gone off the suggested route.
         OFF_ROUTE = 3
 
-        # The vehicle is within 50m of the destination and onArrival was
-        # automatically triggered.
+        # The vehicle is within approximately 50m of the destination.
         ARRIVED_AT_DESTINATION = 4
       end
 
-      # Possible location providers.
+      # The sensor or methodology used to determine the location.
       module LocationSensor
-        # Undefined sensor.
+        # The sensor is unspecified or unknown.
         UNKNOWN_SENSOR = 0
 
-        # Sensors: (GPS, AGPS).
+        # GPS or Assisted GPS.
         GPS = 1
 
-        # Sensors: (AGPS, CellID, WiFi MACID).
+        # Assisted GPS, cell tower ID, or WiFi access point.
         NETWORK = 2
 
-        # Sensors: (CellID, WiFi MACID).
+        # Cell tower ID or WiFi access point.
         PASSIVE = 3
 
-        # GMM's road snapped (gmfc) location.
+        # A location signal snapped to the best road position.
         ROAD_SNAPPED_LOCATION_PROVIDER = 4
 
-        # Unspecified, but generated by the Fused Location Provider.
+        # The fused location provider in Google Play services.
         FUSED_LOCATION_PROVIDER = 100
       end
     end

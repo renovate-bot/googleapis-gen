@@ -15,11 +15,11 @@
 #
 import proto  # type: ignore
 
-from google.protobuf import any_pb2  # type: ignore
 from google.protobuf import duration_pb2  # type: ignore
 from google.protobuf import timestamp_pb2  # type: ignore
 from google.protobuf import wrappers_pb2  # type: ignore
 from google.type import latlng_pb2  # type: ignore
+from maps.fleetengine_v1.types import traffic
 
 
 __protobuf__ = proto.module(
@@ -33,9 +33,6 @@ __protobuf__ = proto.module(
         'TerminalPointId',
         'TerminalLocation',
         'TripWaypoint',
-        'Status',
-        'FormattedAddress',
-        'Address',
         'VehicleAttribute',
         'VehicleLocation',
     },
@@ -65,7 +62,7 @@ class PolylineFormatType(proto.Enum):
 
 
 class NavigationStatus(proto.Enum):
-    r"""A set of values that specify the vehicle's navigation status."""
+    r"""The vehicle's navigation status."""
     UNKNOWN_NAVIGATION_STATUS = 0
     NO_GUIDANCE = 1
     ENROUTE_TO_DESTINATION = 2
@@ -74,7 +71,7 @@ class NavigationStatus(proto.Enum):
 
 
 class LocationSensor(proto.Enum):
-    r"""Possible location providers."""
+    r"""The sensor or methodology used to determine the location."""
     UNKNOWN_SENSOR = 0
     GPS = 1
     NETWORK = 2
@@ -134,10 +131,9 @@ class TerminalLocation(proto.Message):
         access_point_id (str):
             Deprecated.
         trip_id (str):
-            Deprecated. Use vehicle.waypoint instead.
+            Deprecated.
         terminal_location_type (maps.fleetengine_v1.types.WaypointType):
-            Deprecated. Vehicle.waypoint will have this
-            data.
+            Deprecated: ``Vehicle.waypoint`` will have this data.
     """
 
     point = proto.Field(
@@ -180,23 +176,31 @@ class TripWaypoint(proto.Message):
         path_to_waypoint (Sequence[google.type.latlng_pb2.LatLng]):
             The path calculated by Fleet Engine from the
             previous waypoint to the current waypoint.
+        encoded_path_to_waypoint (str):
+            The path calculated by the server from the
+            previous waypoint to the current waypoint.
+            Decoding is not yet supported.
+        traffic_to_waypoint (maps.fleetengine_v1.types.ConsumableTrafficPolyline):
+            The traffic conditions along the path to this
+            waypoint. Note that traffic is only available
+            for Geo Enterprise Rides and Deliveries Solution
+            customers.
         distance_meters (google.protobuf.wrappers_pb2.Int32Value):
             The path distance calculated by Fleet Engine from the
-            previous waypoint to the current waypoint. If the current
-            waypoint is the first waypoint in the list (Vehicle.waypoint
-            or Trip.remaining_waypoints), then the starting point is the
-            vehicle's location recorded at the time this TripWaypoint
-            was added to the list.
+            previous waypoint to the current waypoint. If the waypoint
+            is the first waypoint in the list (e.g.,
+            ``Vehicle.waypoints[0]`` or
+            ``Trip.remaining_waypoints[0]``), then the value of this
+            field is undefined.
         eta (google.protobuf.timestamp_pb2.Timestamp):
             The arrival time to this waypoint calculated
             by Fleet Engine.
         duration (google.protobuf.duration_pb2.Duration):
             The travel time from previous waypoint to this point. If the
-            current waypoint is the first waypoint in the list
-            (Vehicle.waypoint or Trip.remaining_waypoints), then the
-            starting point is the vehicle's location recorded at the
-            time that this waypoint was added to the list. This field is
-            filled only when returning Trip/Vehicle data.
+            waypoint is the first waypoint in the list (e.g.,
+            ``Vehicle.waypoints[0]`` or
+            ``Trip.remaining_waypoints[0]``), then this value indicates
+            the remaining time to the waypoint.
     """
 
     location = proto.Field(
@@ -218,6 +222,15 @@ class TripWaypoint(proto.Message):
         number=4,
         message=latlng_pb2.LatLng,
     )
+    encoded_path_to_waypoint = proto.Field(
+        proto.STRING,
+        number=5,
+    )
+    traffic_to_waypoint = proto.Field(
+        proto.MESSAGE,
+        number=10,
+        message=traffic.ConsumableTrafficPolyline,
+    )
     distance_meters = proto.Field(
         proto.MESSAGE,
         number=6,
@@ -235,77 +248,9 @@ class TripWaypoint(proto.Message):
     )
 
 
-class Status(proto.Message):
-    r"""The 'Status' defines a FleetEngine custom logical error mode.
-
-    Attributes:
-        code (maps.fleetengine_v1.types.Status.Code):
-            The error code. It is not possible to have a
-            value as 0 if it is explicitly set by the
-            server.
-        message (str):
-            Detailed error message.
-        details (Sequence[google.protobuf.any_pb2.Any]):
-            A list of messages that carry the error
-            details.  There is a common set of message types
-            for APIs to use.
-    """
-    class Code(proto.Enum):
-        r"""The canonical error code."""
-        UNSPECIFIED = 0
-        FAILURE = 1
-        ROUTE_NOT_POSSIBLE = 2
-
-    code = proto.Field(
-        proto.ENUM,
-        number=1,
-        enum=Code,
-    )
-    message = proto.Field(
-        proto.STRING,
-        number=2,
-    )
-    details = proto.RepeatedField(
-        proto.MESSAGE,
-        number=3,
-        message=any_pb2.Any,
-    )
-
-
-class FormattedAddress(proto.Message):
-    r"""A full, human-readable address for the entity containing this
-    message.
-
-    Attributes:
-        lines (Sequence[str]):
-            The lines of text that describe the address.
-            At least one line must be present.
-    """
-
-    lines = proto.RepeatedField(
-        proto.STRING,
-        number=1,
-    )
-
-
-class Address(proto.Message):
-    r"""Address of a place.
-
-    Attributes:
-        formatted_address (maps.fleetengine_v1.types.FormattedAddress):
-            A full, human-readable address for this
-            place.
-    """
-
-    formatted_address = proto.Field(
-        proto.MESSAGE,
-        number=1,
-        message='FormattedAddress',
-    )
-
-
 class VehicleAttribute(proto.Message):
-    r"""Describes a vehicle attribute as a key-value pair.
+    r"""Describes a vehicle attribute as a key-value pair. The
+    "key:value" string length cannot exceed 256 characters.
 
     Attributes:
         key (str):
@@ -331,63 +276,58 @@ class VehicleLocation(proto.Message):
 
     Attributes:
         location (google.type.latlng_pb2.LatLng):
-            The location of the vehicle. When it is sent to FleetEngine,
-            the vehicle's location is a GPS location. When you receive
-            it in a response, the vehicle's location can be either a GPS
-            location or a supplemental location. The source is specified
-            in the field 'location_sensor'.
+            The location of the vehicle. When it is sent to Fleet
+            Engine, the vehicle's location is a GPS location. When you
+            receive it in a response, the vehicle's location can be
+            either a GPS location, a supplemental location, or some
+            other estimated location. The source is specified in
+            ``location_sensor``.
         horizontal_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Deprecated. Use latlng_accuracy instead.
+            Deprecated: Use ``latlng_accuracy`` instead.
         latlng_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Accuracy of horizontal measurements (lat/lng)
-            in meters as a radius.
+            Accuracy of ``location`` in meters as a radius.
         heading (google.protobuf.wrappers_pb2.Int32Value):
             Direction the vehicle is moving in degrees. 0 represents
             North. The valid range is [0,360).
         bearing_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Deprecated. Use heading_accuracy instead.
+            Deprecated: Use ``heading_accuracy`` instead.
         heading_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Accuracy of heading (bearing) in degrees.
+            Accuracy of ``heading`` in degrees.
         altitude (google.protobuf.wrappers_pb2.DoubleValue):
             Altitude in meters above WGS84.
         vertical_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Deprecated. Use altitude_accurarcy instead.
+            Deprecated: Use ``altitude_accuracy`` instead.
         altitude_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Accuracy of altitude measurement in meters.
+            Accuracy of ``altitude`` in meters.
         speed_kmph (google.protobuf.wrappers_pb2.Int32Value):
-            Speed of the vehicle in kilometers per hour.
-            Deprecated. Use speed instead.
+            Speed of the vehicle in kilometers per hour. Deprecated: Use
+            ``speed`` instead.
         speed (google.protobuf.wrappers_pb2.DoubleValue):
             Speed of the vehicle in meters/second
         speed_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Accuracy of speed in meters/second.
+            Accuracy of ``speed`` in meters/second.
         update_time (google.protobuf.timestamp_pb2.Timestamp):
-            The time when the location was recorded.
+            The time when ``location`` was reported by the sensor.
         server_time (google.protobuf.timestamp_pb2.Timestamp):
             Output only. The time when the server
-            receives the location information, filled by
-            FleetEngine.
+            received the location information.
         location_sensor (maps.fleetengine_v1.types.LocationSensor):
-            Provider of location data (for example,
-            "gps").
+            Provider of location data (for example, ``GPS``).
         is_road_snapped (google.protobuf.wrappers_pb2.BoolValue):
-            Whether the vehicle location given by "location" field is
-            snapped to a road closest to the location given by
-            "raw_location". Driver SDK 1.15.1/2.1.1 and up will always
-            set this field. Unset value will be treated as true.
+            Whether ``location`` is snapped to a road.
         is_gps_sensor_enabled (google.protobuf.wrappers_pb2.BoolValue):
             Input only. Indicates whether the GPS sensor
-            is enabled.
+            is enabled on the mobile device.
         time_since_update (google.protobuf.wrappers_pb2.Int32Value):
             Input only. Time (in seconds) since this
-            location sample was first sent to the server.
-            This will be zero for the first update. If the
-            time is unknown (for example, when the app
-            restarts), this value resets to zero.
+            location was first sent to the server. This will
+            be zero for the first update. If the time is
+            unknown (for example, when the app restarts),
+            this value resets to zero.
         num_stale_updates (google.protobuf.wrappers_pb2.Int32Value):
             Input only. Number of additional attempts to
-            send the current location to the server. If this
-            value is zero, then it is not stale.
+            send this location to the server. If this value
+            is zero, then it is not stale.
         raw_location (google.type.latlng_pb2.LatLng):
             Raw vehicle location (unprocessed by road-
             napper).
@@ -397,8 +337,8 @@ class VehicleLocation(proto.Message):
         raw_location_sensor (maps.fleetengine_v1.types.LocationSensor):
             Input only. Source of the raw location.
         raw_location_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Input only. Accuracy of the raw location
-            (lat/lng) as a radius, measured in meters.
+            Input only. Accuracy of ``raw_location`` as a radius, in
+            meters.
         supplemental_location (google.type.latlng_pb2.LatLng):
             Input only. Supplemental location provided by
             the integrating app, such as the location
@@ -410,10 +350,10 @@ class VehicleLocation(proto.Message):
             Input only. Source of the supplemental
             location.
         supplemental_location_accuracy (google.protobuf.wrappers_pb2.DoubleValue):
-            Input only. Accuracy of supplemental location
-            (lat/lng) as a radius, measured in meters.
+            Input only. Accuracy of ``supplemental_location`` as a
+            radius, in meters.
         road_snapped (bool):
-            Deprecated, use is_road_snapped instead.
+            Deprecated: Use ``is_road_snapped`` instead.
     """
 
     location = proto.Field(

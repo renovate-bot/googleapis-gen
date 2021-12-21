@@ -15,7 +15,7 @@ class SolutionType
 {
     /**
      * The default value. For backwards-compatibility, the API will use
-     * ON_DEMAND_RIDESHARING_AND_DELIVERIES by default which is the first
+     * `ON_DEMAND_RIDESHARING_AND_DELIVERIES` by default which is the first
      * supported solution type.
      *
      * Generated from protobuf enum <code>SOLUTION_TYPE_UNSPECIFIED = 0;</code>

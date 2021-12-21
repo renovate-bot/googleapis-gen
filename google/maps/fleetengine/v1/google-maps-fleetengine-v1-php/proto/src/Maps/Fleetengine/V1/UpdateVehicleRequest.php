@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * UpdateVehicle request message.
+ * `UpdateVehicle request message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.UpdateVehicleRequest</code>
  */
@@ -23,33 +23,35 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
     protected $header = null;
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}".
-     * The {provider} must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The {provider} must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
-     * Note that if the name is also specified in the name field of the
-     * vehicle and name is set in the update_mask, both names must be the
-     * same.  Otherwise it is an Error.
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $name = '';
     /**
-     * Required. The Vehicle entity update to apply.  When updating a Vehicle,
+     * Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
      * the following fields may not be updated as they are managed by the
-     * Fleet Engine.
-     *   current_trips
-     *   available_capacity
-     *   current_route_segment_version
-     *   waypoints_version
-     * Furthermore, the name of the vehicle cannot be updated.
+     * server.
+     * * `current_trips`
+     * * `available_capacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * Furthermore, the vehicle `name` cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints.
+     * currently on the vehicle, and no other waypoints.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Vehicle vehicle = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
     protected $vehicle = null;
     /**
-     * Required. A field mask indicating which fields of the Vehicle to update.
-     * The update_mask must contain at least one field.
+     * Required. A field mask indicating which fields of the `Vehicle` to update.
+     * At least one field name must be provided.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -65,25 +67,27 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
      *           The standard Fleet Engine request header.
      *     @type string $name
      *           Required. Must be in the format
-     *           "providers/{provider}/vehicles/{vehicle}".
-     *           The {provider} must be the Project ID (for example, sample-cloud-project)
+     *           `providers/{provider}/vehicles/{vehicle}`.
+     *           The {provider} must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
-     *           Note that if the name is also specified in the name field of the
-     *           vehicle and name is set in the update_mask, both names must be the
-     *           same.  Otherwise it is an Error.
      *     @type \Maps\Fleetengine\V1\Vehicle $vehicle
-     *           Required. The Vehicle entity update to apply.  When updating a Vehicle,
+     *           Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
      *           the following fields may not be updated as they are managed by the
-     *           Fleet Engine.
-     *             current_trips
-     *             available_capacity
-     *             current_route_segment_version
-     *             waypoints_version
-     *           Furthermore, the name of the vehicle cannot be updated.
+     *           server.
+     *           * `current_trips`
+     *           * `available_capacity`
+     *           * `current_route_segment_version`
+     *           * `waypoints_version`
+     *           Furthermore, the vehicle `name` cannot be updated.
+     *           If the `attributes` field is updated, **all** the vehicle's attributes are
+     *           replaced with the attributes provided in the request. If you want to update
+     *           only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     *           the `waypoints` field can be updated, but must contain all the waypoints.
+     *           currently on the vehicle, and no other waypoints.
      *     @type \Google\Protobuf\FieldMask $update_mask
-     *           Required. A field mask indicating which fields of the Vehicle to update.
-     *           The update_mask must contain at least one field.
+     *           Required. A field mask indicating which fields of the `Vehicle` to update.
+     *           At least one field name must be provided.
      * }
      */
     public function __construct($data = NULL) {
@@ -129,13 +133,10 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}".
-     * The {provider} must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The {provider} must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
-     * Note that if the name is also specified in the name field of the
-     * vehicle and name is set in the update_mask, both names must be the
-     * same.  Otherwise it is an Error.
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return string
@@ -147,13 +148,10 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
 
     /**
      * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}".
-     * The {provider} must be the Project ID (for example, sample-cloud-project)
+     * `providers/{provider}/vehicles/{vehicle}`.
+     * The {provider} must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
-     * Note that if the name is also specified in the name field of the
-     * vehicle and name is set in the update_mask, both names must be the
-     * same.  Otherwise it is an Error.
      *
      * Generated from protobuf field <code>string name = 3 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param string $var
@@ -168,14 +166,19 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The Vehicle entity update to apply.  When updating a Vehicle,
+     * Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
      * the following fields may not be updated as they are managed by the
-     * Fleet Engine.
-     *   current_trips
-     *   available_capacity
-     *   current_route_segment_version
-     *   waypoints_version
-     * Furthermore, the name of the vehicle cannot be updated.
+     * server.
+     * * `current_trips`
+     * * `available_capacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * Furthermore, the vehicle `name` cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints.
+     * currently on the vehicle, and no other waypoints.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Vehicle vehicle = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Maps\Fleetengine\V1\Vehicle|null
@@ -196,14 +199,19 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The Vehicle entity update to apply.  When updating a Vehicle,
+     * Required. The `Vehicle` entity values to apply.  When updating a `Vehicle`,
      * the following fields may not be updated as they are managed by the
-     * Fleet Engine.
-     *   current_trips
-     *   available_capacity
-     *   current_route_segment_version
-     *   waypoints_version
-     * Furthermore, the name of the vehicle cannot be updated.
+     * server.
+     * * `current_trips`
+     * * `available_capacity`
+     * * `current_route_segment_version`
+     * * `waypoints_version`
+     * Furthermore, the vehicle `name` cannot be updated.
+     * If the `attributes` field is updated, **all** the vehicle's attributes are
+     * replaced with the attributes provided in the request. If you want to update
+     * only some attributes, see the `UpdateVehicleAttributes` method. Likewise,
+     * the `waypoints` field can be updated, but must contain all the waypoints.
+     * currently on the vehicle, and no other waypoints.
      *
      * Generated from protobuf field <code>.maps.fleetengine.v1.Vehicle vehicle = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Maps\Fleetengine\V1\Vehicle $var
@@ -218,8 +226,8 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A field mask indicating which fields of the Vehicle to update.
-     * The update_mask must contain at least one field.
+     * Required. A field mask indicating which fields of the `Vehicle` to update.
+     * At least one field name must be provided.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\FieldMask|null
@@ -240,8 +248,8 @@ class UpdateVehicleRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. A field mask indicating which fields of the Vehicle to update.
-     * The update_mask must contain at least one field.
+     * Required. A field mask indicating which fields of the `Vehicle` to update.
+     * At least one field name must be provided.
      *
      * Generated from protobuf field <code>.google.protobuf.FieldMask update_mask = 5 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Google\Protobuf\FieldMask $var

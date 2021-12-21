@@ -12,6 +12,24 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
       optional :sdk_version, :string, 3
       optional :os_version, :string, 4
       optional :device_model, :string, 5
+      optional :sdk_type, :enum, 6, "maps.fleetengine.v1.RequestHeader.SdkType"
+      optional :maps_sdk_version, :string, 7
+      optional :nav_sdk_version, :string, 8
+      optional :platform, :enum, 9, "maps.fleetengine.v1.RequestHeader.Platform"
+      optional :manufacturer, :string, 10
+      optional :android_api_level, :int32, 11
+    end
+    add_enum "maps.fleetengine.v1.RequestHeader.SdkType" do
+      value :SDK_TYPE_UNSPECIFIED, 0
+      value :CONSUMER, 1
+      value :DRIVER, 2
+      value :JAVASCRIPT, 3
+    end
+    add_enum "maps.fleetengine.v1.RequestHeader.Platform" do
+      value :PLATFORM_UNSPECIFIED, 0
+      value :ANDROID, 1
+      value :IOS, 2
+      value :WEB, 3
     end
   end
 end
@@ -20,6 +38,8 @@ module Maps
   module Fleetengine
     module V1
       RequestHeader = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.RequestHeader").msgclass
+      RequestHeader::SdkType = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.RequestHeader.SdkType").enummodule
+      RequestHeader::Platform = ::Google::Protobuf::DescriptorPool.generated_pool.lookup("maps.fleetengine.v1.RequestHeader.Platform").enummodule
     end
   end
 end

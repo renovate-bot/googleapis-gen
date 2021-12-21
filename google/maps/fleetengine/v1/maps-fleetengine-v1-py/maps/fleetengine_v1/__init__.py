@@ -19,9 +19,6 @@ from .services.trip_service import TripServiceAsyncClient
 from .services.vehicle_service import VehicleServiceClient
 from .services.vehicle_service import VehicleServiceAsyncClient
 
-from .types.fleetengine import Address
-from .types.fleetengine import FormattedAddress
-from .types.fleetengine import Status
 from .types.fleetengine import TerminalLocation
 from .types.fleetengine import TerminalPointId
 from .types.fleetengine import TripWaypoint
@@ -33,6 +30,8 @@ from .types.fleetengine import PolylineFormatType
 from .types.fleetengine import TripType
 from .types.fleetengine import WaypointType
 from .types.header import RequestHeader
+from .types.traffic import ConsumableTrafficPolyline
+from .types.traffic import SpeedReadingInterval
 from .types.trip_api import CreateTripRequest
 from .types.trip_api import GetTripRequest
 from .types.trip_api import ReportBillableTripRequest
@@ -60,7 +59,9 @@ from .types.vehicle_api import Waypoint
 from .types.vehicles import BatteryInfo
 from .types.vehicles import DeviceSettings
 from .types.vehicles import LicensePlate
+from .types.vehicles import TrafficPolylineData
 from .types.vehicles import Vehicle
+from .types.vehicles import VisualTrafficReportPolylineRendering
 from .types.vehicles import BatteryStatus
 from .types.vehicles import LocationPowerSaveMode
 from .types.vehicles import PowerSource
@@ -69,14 +70,13 @@ from .types.vehicles import VehicleState
 __all__ = (
     'TripServiceAsyncClient',
     'VehicleServiceAsyncClient',
-'Address',
 'BatteryInfo',
 'BatteryStatus',
 'BillingPlatformIdentifier',
+'ConsumableTrafficPolyline',
 'CreateTripRequest',
 'CreateVehicleRequest',
 'DeviceSettings',
-'FormattedAddress',
 'GetTripRequest',
 'GetVehicleRequest',
 'LicensePlate',
@@ -93,10 +93,11 @@ __all__ = (
 'SearchTripsResponse',
 'SearchVehiclesRequest',
 'SearchVehiclesResponse',
-'Status',
+'SpeedReadingInterval',
 'StopLocation',
 'TerminalLocation',
 'TerminalPointId',
+'TrafficPolylineData',
 'Trip',
 'TripServiceClient',
 'TripStatus',
@@ -115,6 +116,7 @@ __all__ = (
 'VehicleMatch',
 'VehicleServiceClient',
 'VehicleState',
+'VisualTrafficReportPolylineRendering',
 'Waypoint',
 'WaypointType',
 )

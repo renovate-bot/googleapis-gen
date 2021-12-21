@@ -351,37 +351,41 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicles.Vehicle:
-        r"""CreateVehicle instantiates a new vehicle associated with a
-        rideshare provider in the Fleet Engine. Vehicles must have a
+        r"""Instantiates a new vehicle associated with an on-demand
+        rideshare or deliveries provider. Each ``Vehicle`` must have a
         unique vehicle ID.
 
-        The following Vehicle fields are required when creating a
-        Vehicle:
+        The following ``Vehicle`` fields are required when creating a
+        ``Vehicle``:
 
-        -  vehicleState
-        -  supportedTripTypes
-        -  maximumCapacity
-        -  vehicleType
+        -  ``vehicleState``
+        -  ``supportedTripTypes``
+        -  ``maximumCapacity``
+        -  ``vehicleType``
 
-        The following Vehicle fields are ignored when creating a
-        Vehicle:
+        The following ``Vehicle`` fields are ignored when creating a
+        ``Vehicle``:
 
-        -  name
-        -  currentTrips
-        -  availableCapacity
-        -  current_route_segment
-        -  current_route_segment_version
-        -  waypoint
-        -  waypoints_version
-        -  remaining_distance_meters
-        -  eta_to_next_waypoint
-        -  navigation_status
+        -  ``name``
+        -  ``currentTrips``
+        -  ``availableCapacity``
+        -  ``current_route_segment``
+        -  ``current_route_segment_end_point``
+        -  ``current_route_segment_version``
+        -  ``current_route_segment_traffic``
+        -  ``route``
+        -  ``waypoints``
+        -  ``waypoints_version``
+        -  ``remaining_distance_meters``
+        -  ``remaining_time_seconds``
+        -  ``eta_to_next_waypoint``
+        -  ``navigation_status``
 
         All other fields are optional and used if provided.
 
         Args:
             request (Union[maps.fleetengine_v1.types.CreateVehicleRequest, dict]):
-                The request object. CreateVehicle request message.
+                The request object. `CreateVehicle` request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -430,11 +434,11 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicles.Vehicle:
-        r"""GetVehicle returns a vehicle from the Fleet Engine.
+        r"""Returns a vehicle from the Fleet Engine.
 
         Args:
             request (Union[maps.fleetengine_v1.types.GetVehicleRequest, dict]):
-                The request object. GetVehicle request message.
+                The request object. `GetVehicle` request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -483,24 +487,28 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicles.Vehicle:
-        r"""UpdateVehicle writes updated vehicle data to the Fleet Engine.
+        r"""Writes updated vehicle data to the Fleet Engine.
 
-        When updating a Vehicle, the following fields cannot be updated
-        since they are managed by the Fleet Engine:
+        When updating a ``Vehicle``, the following fields cannot be
+        updated since they are managed by the server:
 
-        -  currentTrips
-        -  availableCapacity
-        -  current_route_segment_version
-        -  waypoints_version
+        -  ``currentTrips``
+        -  ``availableCapacity``
+        -  ``current_route_segment_version``
+        -  ``waypoints_version``
 
-        The vehicle name also cannot be updated.
+        The vehicle ``name`` also cannot be updated.
 
-        The waypoints field can be updated, but must contain all the
-        waypoints currently on the vehicle, and no other waypoints.
+        If the ``attributes`` field is updated, **all** the vehicle's
+        attributes are replaced with the attributes provided in the
+        request. If you want to update only some attributes, see the
+        ``UpdateVehicleAttributes`` method. Likewise, the ``waypoints``
+        field can be updated, but must contain all the waypoints
+        currently on the vehicle, and no other waypoints.
 
         Args:
             request (Union[maps.fleetengine_v1.types.UpdateVehicleRequest, dict]):
-                The request object. UpdateVehicle request message.
+                The request object. `UpdateVehicle request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -549,13 +557,12 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> fleetengine.VehicleLocation:
-        r"""UpdateVehicleLocation updates the location of the
-        vehicle. This method is deprecated. Use UpdateVehicle
-        method instead.
+        r"""Deprecated: Use the ``UpdateVehicle`` method instead.
+        UpdateVehicleLocation updates the location of the vehicle.
 
         Args:
             request (Union[maps.fleetengine_v1.types.UpdateVehicleLocationRequest, dict]):
-                The request object. UpdateVehicleLocation request
+                The request object. `UpdateVehicleLocation` request
                 message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -610,16 +617,16 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicle_api.UpdateVehicleAttributesResponse:
-        r"""UpdateVehicleAttributes partially updates a vehicle's
-        attributes. Only the attributes mentioned in the request will be
-        updated, other attributes will NOT be altered. Note: this is
-        different in UpdateVehicle, where the whole ``attributes`` field
-        will be replaced by the one in UpdateVehicleRequest, attributes
-        not in the request would be removed.
+        r"""Partially updates a vehicle's attributes. Only the attributes
+        mentioned in the request will be updated, other attributes will
+        NOT be altered. Note: this is different in ``UpdateVehicle``,
+        where the whole ``attributes`` field will be replaced by the one
+        in ``UpdateVehicleRequest``, attributes not in the request would
+        be removed.
 
         Args:
             request (Union[maps.fleetengine_v1.types.UpdateVehicleAttributesRequest, dict]):
-                The request object. UpdateVehicleAttributes request
+                The request object. `UpdateVehicleAttributes` request
                 message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
@@ -629,9 +636,7 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
 
         Returns:
             maps.fleetengine_v1.types.UpdateVehicleAttributesResponse:
-                UpdateVehicleAttributes response
-                message.
-
+                UpdateVehicleAttributes response message.
         """
         # Create or coerce a protobuf request object.
         # Minor optimization to avoid making a copy if the user passes
@@ -671,13 +676,12 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> pagers.ListVehiclesPager:
-        r"""ListVehicles returns a paginated list of vehicles
-        associated with a provider that match the request
-        options.
+        r"""Returns a paginated list of vehicles associated with
+        a provider that match the request options.
 
         Args:
             request (Union[maps.fleetengine_v1.types.ListVehiclesRequest, dict]):
-                The request object. ListVehicles request message.
+                The request object. `ListVehicles` request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -687,9 +691,9 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
         Returns:
             maps.fleetengine_v1.services.vehicle_service.pagers.ListVehiclesPager:
                 ListVehicles response message.
-                Iterating over this object will yield
-                results and resolve additional pages
-                automatically.
+
+                Iterating over this object will yield results and
+                resolve additional pages automatically.
 
         """
         # Create or coerce a protobuf request object.
@@ -739,12 +743,12 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicle_api.SearchVehiclesResponse:
-        r"""SearchVehicles returns a list of vehicles that match
-        the request options.
+        r"""Returns a list of vehicles that match the request
+        options.
 
         Args:
             request (Union[maps.fleetengine_v1.types.SearchVehiclesRequest, dict]):
-                The request object. SearchVehicles request message.
+                The request object. `SearchVehicles` request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.
@@ -793,15 +797,16 @@ class VehicleServiceClient(metaclass=VehicleServiceClientMeta):
             timeout: float = None,
             metadata: Sequence[Tuple[str, str]] = (),
             ) -> vehicle_api.SearchVehiclesResponse:
-        r"""SearchFuzzedVehicles returns a list of vehicles that match the
-        request options with their locations fuzzed. Request does not
-        support 'order_by' field. Vehicle matches in response will be in
-        order of distance from pickup point. Vehicle matches in response
-        will only have 'vehicle' and 'trip_type' field set.
+        r"""Returns a list of vehicles that match the request options, but
+        the vehicle locations will be somewhat altered for privacy. This
+        method does not support the ``SearchVehicleRequest.order_by``
+        field. Vehicle matches in the response will be in order of
+        distance from the pickup point. Only the ``vehicle`` and
+        ``trip_type`` fields will be populated.
 
         Args:
             request (Union[maps.fleetengine_v1.types.SearchVehiclesRequest, dict]):
-                The request object. SearchVehicles request message.
+                The request object. `SearchVehicles` request message.
             retry (google.api_core.retry.Retry): Designation of what errors, if any,
                 should be retried.
             timeout (float): The timeout for this request.

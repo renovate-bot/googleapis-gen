@@ -14,7 +14,7 @@ use UnexpectedValueException;
 class Category
 {
     /**
-     * Default, used for unspecified or unrecognized vehicle types.
+     * Default, used for unspecified or unrecognized vehicle categories.
      *
      * Generated from protobuf enum <code>UNKNOWN = 0;</code>
      */
@@ -26,7 +26,7 @@ class Category
      */
     const AUTO = 1;
     /**
-     * Any vehicle that acts as a taxi.
+     * Any vehicle that acts as a taxi (typically licensed or regulated).
      *
      * Generated from protobuf enum <code>TAXI = 2;</code>
      */

@@ -9,7 +9,7 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * UpdateVehicleAttributes request message.
+ * `UpdateVehicleAttributes` request message.
  *
  * Generated from protobuf message <code>maps.fleetengine.v1.UpdateVehicleAttributesRequest</code>
  */
@@ -22,9 +22,8 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $header = null;
     /**
-     * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}.
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -32,10 +31,8 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
      */
     protected $name = '';
     /**
-     * Required. The attributes to update;
-     * unmentioned attributes will not be altered or removed.
-     * At most 20 attributes; the combined "key:value" string length cannot
-     * exceed 256.
+     * Required. The vehicle attributes to update. Unmentioned attributes will not be
+     * altered or removed.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      */
@@ -50,16 +47,13 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
      *     @type \Maps\Fleetengine\V1\RequestHeader $header
      *           The standard Fleet Engine request header.
      *     @type string $name
-     *           Required. Must be in the format
-     *           "providers/{provider}/vehicles/{vehicle}.
-     *           The provider must be the Project ID (for example, sample-cloud-project)
+     *           Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+     *           The provider must be the Project ID (for example, `sample-cloud-project`)
      *           of the Google Cloud Project of which the service account making
      *           this call is a member.
      *     @type \Maps\Fleetengine\V1\VehicleAttribute[]|\Google\Protobuf\Internal\RepeatedField $attributes
-     *           Required. The attributes to update;
-     *           unmentioned attributes will not be altered or removed.
-     *           At most 20 attributes; the combined "key:value" string length cannot
-     *           exceed 256.
+     *           Required. The vehicle attributes to update. Unmentioned attributes will not be
+     *           altered or removed.
      * }
      */
     public function __construct($data = NULL) {
@@ -104,9 +98,8 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}.
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -119,9 +112,8 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. Must be in the format
-     * "providers/{provider}/vehicles/{vehicle}.
-     * The provider must be the Project ID (for example, sample-cloud-project)
+     * Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+     * The provider must be the Project ID (for example, `sample-cloud-project`)
      * of the Google Cloud Project of which the service account making
      * this call is a member.
      *
@@ -138,10 +130,8 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The attributes to update;
-     * unmentioned attributes will not be altered or removed.
-     * At most 20 attributes; the combined "key:value" string length cannot
-     * exceed 256.
+     * Required. The vehicle attributes to update. Unmentioned attributes will not be
+     * altered or removed.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return \Google\Protobuf\Internal\RepeatedField
@@ -152,10 +142,8 @@ class UpdateVehicleAttributesRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Required. The attributes to update;
-     * unmentioned attributes will not be altered or removed.
-     * At most 20 attributes; the combined "key:value" string length cannot
-     * exceed 256.
+     * Required. The vehicle attributes to update. Unmentioned attributes will not be
+     * altered or removed.
      *
      * Generated from protobuf field <code>repeated .maps.fleetengine.v1.VehicleAttribute attributes = 4 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param \Maps\Fleetengine\V1\VehicleAttribute[]|\Google\Protobuf\Internal\RepeatedField $var

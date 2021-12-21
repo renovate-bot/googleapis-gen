@@ -25,18 +25,15 @@ function main(name, attributes) {
    */
   // const header = {}
   /**
-   *  Required. Must be in the format
-   *  "providers/{provider}/vehicles/{vehicle}.
-   *  The provider must be the Project ID (for example, sample-cloud-project)
+   *  Required. Must be in the format `providers/{provider}/vehicles/{vehicle}`.
+   *  The provider must be the Project ID (for example, `sample-cloud-project`)
    *  of the Google Cloud Project of which the service account making
    *  this call is a member.
    */
   // const name = 'abc123'
   /**
-   *  Required. The attributes to update;
-   *  unmentioned attributes will not be altered or removed.
-   *  At most 20 attributes; the combined "key:value" string length cannot
-   *  exceed 256.
+   *  Required. The vehicle attributes to update. Unmentioned attributes will not be
+   *  altered or removed.
    */
   // const attributes = 1234
 
