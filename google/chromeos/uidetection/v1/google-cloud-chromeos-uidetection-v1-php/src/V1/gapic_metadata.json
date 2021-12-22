@@ -1,0 +1,23 @@
+{
+    "schema": "1.0",
+    "comment": "This file maps proto services\/RPCs to the corresponding library clients\/methods",
+    "language": "php",
+    "protoPackage": "google.chromeos.uidetection.v1",
+    "libraryPackage": "Google\\Chromeos\\Uidetection\\V1",
+    "services": {
+        "UiDetectionService": {
+            "clients": {
+                "grpc": {
+                    "libraryClient": "UiDetectionServiceGapicClient",
+                    "rpcs": {
+                        "ExecuteDetection": {
+                            "methods": [
+                                "executeDetection"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

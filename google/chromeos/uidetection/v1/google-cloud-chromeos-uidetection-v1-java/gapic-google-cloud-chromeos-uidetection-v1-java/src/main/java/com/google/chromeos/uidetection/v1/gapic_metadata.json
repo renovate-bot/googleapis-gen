@@ -1,0 +1,21 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.chromeos.uidetection.v1",
+  "libraryPackage": "com.google.chromeos.uidetection.v1",
+  "services": {
+    "UiDetectionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UiDetectionServiceClient",
+          "rpcs": {
+            "ExecuteDetection": {
+              "methods": ["executeDetection", "executeDetectionCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}

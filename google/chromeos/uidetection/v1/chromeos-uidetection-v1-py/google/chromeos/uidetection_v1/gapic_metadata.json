@@ -1,0 +1,33 @@
+ {
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "python",
+  "libraryPackage": "google.chromeos.uidetection_v1",
+  "protoPackage": "google.chromeos.uidetection.v1",
+  "schema": "1.0",
+  "services": {
+    "UiDetectionService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "UiDetectionServiceClient",
+          "rpcs": {
+            "ExecuteDetection": {
+              "methods": [
+                "execute_detection"
+              ]
+            }
+          }
+        },
+        "grpc-async": {
+          "libraryClient": "UiDetectionServiceAsyncClient",
+          "rpcs": {
+            "ExecuteDetection": {
+              "methods": [
+                "execute_detection"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

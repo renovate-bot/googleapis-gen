@@ -1,0 +1,2 @@
+recursive-include google/chromeos/uidetection *.py
+recursive-include google/chromeos/uidetection_v1 *.py
