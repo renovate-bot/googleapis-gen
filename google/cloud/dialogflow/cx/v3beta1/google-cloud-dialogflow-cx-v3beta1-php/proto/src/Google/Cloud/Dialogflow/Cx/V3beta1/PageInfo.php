@@ -25,6 +25,13 @@ class PageInfo extends \Google\Protobuf\Internal\Message
      */
     protected $current_page = '';
     /**
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
+     * The display name of the current page.
+     *
+     * Generated from protobuf field <code>string display_name = 4;</code>
+     */
+    protected $display_name = '';
+    /**
      * Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
      * Information about the form.
      *
@@ -43,6 +50,9 @@ class PageInfo extends \Google\Protobuf\Internal\Message
      *           The unique identifier of the current page.
      *           Format: `projects/<Project ID>/locations/<Location ID>/agents/<Agent
      *           ID>/flows/<Flow ID>/pages/<Page ID>`.
+     *     @type string $display_name
+     *           Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
+     *           The display name of the current page.
      *     @type \Google\Cloud\Dialogflow\Cx\V3beta1\PageInfo\FormInfo $form_info
      *           Optional for both [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest] and [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
      *           Information about the form.
@@ -81,6 +91,34 @@ class PageInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->current_page = $var;
+
+        return $this;
+    }
+
+    /**
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
+     * The display name of the current page.
+     *
+     * Generated from protobuf field <code>string display_name = 4;</code>
+     * @return string
+     */
+    public function getDisplayName()
+    {
+        return $this->display_name;
+    }
+
+    /**
+     * Always present for [WebhookRequest][google.cloud.dialogflow.cx.v3beta1.WebhookRequest]. Ignored for [WebhookResponse][google.cloud.dialogflow.cx.v3beta1.WebhookResponse].
+     * The display name of the current page.
+     *
+     * Generated from protobuf field <code>string display_name = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDisplayName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->display_name = $var;
 
         return $this;
     }
