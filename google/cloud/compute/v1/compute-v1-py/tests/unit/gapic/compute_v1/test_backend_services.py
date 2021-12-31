@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_backend_services_client_client_options(client_class, transport_class, t
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_backend_services_client_mtls_env_auto(client_class, transport_class, tr
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_backend_services_client_client_options_scopes(client_class, transport_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_backend_services_client_client_options_credentials_file(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,19 +348,71 @@ def test_backend_services_client_client_options_credentials_file(client_class, t
         )
 
 
-def test_add_signed_url_key_unary_rest(transport: str = 'rest', request_type=compute.AddSignedUrlKeyBackendServiceRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AddSignedUrlKeyBackendServiceRequest,
+  dict,
+])
+def test_add_signed_url_key_unary_rest(request_type, transport: str = 'rest'):
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AddSignedUrlKeyBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.add_signed_url_key_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AddSignedUrlKeyBackendServiceRequest,
+    dict,
+])
+def test_add_signed_url_key_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["signed_url_key_resource"] = compute.SignedUrlKey(key_name='key_name_value')
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["signed_url_key_resource"] = {'key_name': 'key_name_value', 'key_value': 'key_value_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -438,7 +490,7 @@ def test_add_signed_url_key_unary_rest_required_fields(request_type=compute.AddS
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._add_signed_url_key_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).add_signed_url_key._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -450,7 +502,7 @@ def test_add_signed_url_key_unary_rest_required_fields(request_type=compute.AddS
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._add_signed_url_key_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).add_signed_url_key._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -493,13 +545,13 @@ def test_add_signed_url_key_unary_rest_required_fields(request_type=compute.AddS
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -512,8 +564,8 @@ def test_add_signed_url_key_unary_rest_bad_request(transport: str = 'rest', requ
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["signed_url_key_resource"] = compute.SignedUrlKey(key_name='key_name_value')
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["signed_url_key_resource"] = {'key_name': 'key_name_value', 'key_value': 'key_value_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -526,18 +578,14 @@ def test_add_signed_url_key_unary_rest_bad_request(transport: str = 'rest', requ
         client.add_signed_url_key_unary(request)
 
 
-def test_add_signed_url_key_unary_rest_from_dict():
-    test_add_signed_url_key_unary_rest(request_type=dict)
-
-
-def test_add_signed_url_key_unary_rest_flattened(transport: str = 'rest'):
+def test_add_signed_url_key_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -550,7 +598,7 @@ def test_add_signed_url_key_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -585,18 +633,59 @@ def test_add_signed_url_key_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListBackendServicesRequest):
+def test_add_signed_url_key_unary_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListBackendServicesRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListBackendServicesRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.BackendServiceAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.BackendServiceAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListBackendServicesRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendServiceAggregatedList(
               id='id_value',
@@ -638,7 +727,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -647,7 +736,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -688,8 +777,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -702,7 +791,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -715,18 +804,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendServiceAggregatedList()
 
@@ -739,7 +824,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -780,80 +865,131 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.BackendServiceAggregatedList(
-                    items={
-                        'a':compute.BackendServicesScopedList(),
-                        'b':compute.BackendServicesScopedList(),
-                        'c':compute.BackendServicesScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.BackendServiceAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.BackendServiceAggregatedList(
-                    items={
-                        'g':compute.BackendServicesScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.BackendServiceAggregatedList(
-                    items={
-                        'h':compute.BackendServicesScopedList(),
-                        'i':compute.BackendServicesScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.BackendServiceAggregatedList(
+                items={
+                    'a':compute.BackendServicesScopedList(),
+                    'b':compute.BackendServicesScopedList(),
+                    'c':compute.BackendServicesScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.BackendServiceAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.BackendServiceAggregatedList(
+                items={
+                    'g':compute.BackendServicesScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.BackendServiceAggregatedList(
+                items={
+                    'h':compute.BackendServicesScopedList(),
+                    'i':compute.BackendServicesScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.BackendServiceAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.BackendServiceAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.BackendServicesScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.BackendServicesScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.BackendServicesScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.BackendServicesScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.BackendServicesScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.BackendServicesScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteBackendServiceRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteBackendServiceRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteBackendServiceRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -931,7 +1067,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteBackendSer
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -943,7 +1079,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteBackendSer
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -985,13 +1121,13 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteBackendSer
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1004,7 +1140,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1017,18 +1153,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1041,7 +1173,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1074,18 +1206,76 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_delete_signed_url_key_unary_rest(transport: str = 'rest', request_type=compute.DeleteSignedUrlKeyBackendServiceRequest):
+def test_delete_unary_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteSignedUrlKeyBackendServiceRequest,
+  dict,
+])
+def test_delete_signed_url_key_unary_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteSignedUrlKeyBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_signed_url_key_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteSignedUrlKeyBackendServiceRequest,
+    dict,
+])
+def test_delete_signed_url_key_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1165,7 +1355,7 @@ def test_delete_signed_url_key_unary_rest_required_fields(request_type=compute.D
     assert "keyName" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._delete_signed_url_key_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete_signed_url_key._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1180,7 +1370,7 @@ def test_delete_signed_url_key_unary_rest_required_fields(request_type=compute.D
     jsonified_request["keyName"] = 'key_name_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._delete_signed_url_key_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete_signed_url_key._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1224,17 +1414,17 @@ def test_delete_signed_url_key_unary_rest_required_fields(request_type=compute.D
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
-                    "key_name",
-                    ""
-                )
+                    "keyName",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1247,7 +1437,7 @@ def test_delete_signed_url_key_unary_rest_bad_request(transport: str = 'rest', r
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1260,18 +1450,14 @@ def test_delete_signed_url_key_unary_rest_bad_request(transport: str = 'rest', r
         client.delete_signed_url_key_unary(request)
 
 
-def test_delete_signed_url_key_unary_rest_from_dict():
-    test_delete_signed_url_key_unary_rest(request_type=dict)
-
-
-def test_delete_signed_url_key_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_signed_url_key_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1284,7 +1470,7 @@ def test_delete_signed_url_key_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1319,18 +1505,76 @@ def test_delete_signed_url_key_unary_rest_flattened_error(transport: str = 'rest
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetBackendServiceRequest):
+def test_delete_signed_url_key_unary_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetBackendServiceRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.BackendService(
+              affinity_cookie_ttl_sec=2432,
+              creation_timestamp='creation_timestamp_value',
+              custom_request_headers=['custom_request_headers_value'],
+              custom_response_headers=['custom_response_headers_value'],
+              description='description_value',
+              enable_c_d_n=True,
+              fingerprint='fingerprint_value',
+              health_checks=['health_checks_value'],
+              id=205,
+              kind='kind_value',
+              load_balancing_scheme='load_balancing_scheme_value',
+              locality_lb_policy='locality_lb_policy_value',
+              name='name_value',
+              network='network_value',
+              port=453,
+              port_name='port_name_value',
+              protocol='protocol_value',
+              region='region_value',
+              security_policy='security_policy_value',
+              self_link='self_link_value',
+              session_affinity='session_affinity_value',
+              timeout_sec=1185,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.BackendService.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetBackendServiceRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendService(
               affinity_cookie_ttl_sec=2432,
@@ -1408,7 +1652,7 @@ def test_get_rest_required_fields(request_type=compute.GetBackendServiceRequest)
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1420,7 +1664,7 @@ def test_get_rest_required_fields(request_type=compute.GetBackendServiceRequest)
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1462,13 +1706,13 @@ def test_get_rest_required_fields(request_type=compute.GetBackendServiceRequest)
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1481,7 +1725,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetB
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1494,18 +1738,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetB
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendService()
 
@@ -1518,7 +1758,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1551,19 +1791,56 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_health_rest(transport: str = 'rest', request_type=compute.GetHealthBackendServiceRequest):
+def test_get_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetHealthBackendServiceRequest,
+  dict,
+])
+def test_get_health_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetHealthBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.BackendServiceGroupHealth(
+              kind='kind_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.BackendServiceGroupHealth.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_health(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetHealthBackendServiceRequest,
+    dict,
+])
+def test_get_health_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["resource_group_reference_resource"] = compute.ResourceGroupReference(group='group_value')
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["resource_group_reference_resource"] = {'group': 'group_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendServiceGroupHealth(
               kind='kind_value',
@@ -1599,7 +1876,7 @@ def test_get_health_rest_required_fields(request_type=compute.GetHealthBackendSe
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_health_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_health._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1611,7 +1888,7 @@ def test_get_health_rest_required_fields(request_type=compute.GetHealthBackendSe
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_health_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_health._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1654,13 +1931,13 @@ def test_get_health_rest_required_fields(request_type=compute.GetHealthBackendSe
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1673,8 +1950,8 @@ def test_get_health_rest_bad_request(transport: str = 'rest', request_type=compu
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["resource_group_reference_resource"] = compute.ResourceGroupReference(group='group_value')
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["resource_group_reference_resource"] = {'group': 'group_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1687,18 +1964,14 @@ def test_get_health_rest_bad_request(transport: str = 'rest', request_type=compu
         client.get_health(request)
 
 
-def test_get_health_rest_from_dict():
-    test_get_health_rest(request_type=dict)
-
-
-def test_get_health_rest_flattened(transport: str = 'rest'):
+def test_get_health_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendServiceGroupHealth()
 
@@ -1711,7 +1984,7 @@ def test_get_health_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1746,19 +2019,77 @@ def test_get_health_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertBackendServiceRequest):
+def test_get_health_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertBackendServiceRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertBackendServiceRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertBackendServiceRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["backend_service_resource"] = compute.BackendService(affinity_cookie_ttl_sec=2432)
+    request_init = {'project': 'sample1'}
+    request_init["backend_service_resource"] = {'affinity_cookie_ttl_sec': 2432, 'backends': [{'balancing_mode': 'balancing_mode_value', 'capacity_scaler': 0.1575, 'description': 'description_value', 'failover': True, 'group': 'group_value', 'max_connections': 1608, 'max_connections_per_endpoint': 2990, 'max_connections_per_instance': 2978, 'max_rate': 849, 'max_rate_per_endpoint': 0.22310000000000002, 'max_rate_per_instance': 0.22190000000000001, 'max_utilization': 0.1633}], 'cdn_policy': {'bypass_cache_on_request_headers': [{'header_name': 'header_name_value'}], 'cache_key_policy': {'include_host': True, 'include_protocol': True, 'include_query_string': True, 'query_string_blacklist': ['query_string_blacklist_value_1', 'query_string_blacklist_value_2'], 'query_string_whitelist': ['query_string_whitelist_value_1', 'query_string_whitelist_value_2']}, 'cache_mode': 'cache_mode_value', 'client_ttl': 1074, 'default_ttl': 1176, 'max_ttl': 761, 'negative_caching': True, 'negative_caching_policy': [{'code': 411, 'ttl': 340}], 'request_coalescing': True, 'serve_while_stale': 1813, 'signed_url_cache_max_age_sec': 2890, 'signed_url_key_names': ['signed_url_key_names_value_1', 'signed_url_key_names_value_2']}, 'circuit_breakers': {'max_connections': 1608, 'max_pending_requests': 2149, 'max_requests': 1313, 'max_requests_per_connection': 2902, 'max_retries': 1187}, 'connection_draining': {'draining_timeout_sec': 2124}, 'consistent_hash': {'http_cookie': {'name': 'name_value', 'path': 'path_value', 'ttl': {'nanos': 543, 'seconds': 751}}, 'http_header_name': 'http_header_name_value', 'minimum_ring_size': 1829}, 'creation_timestamp': 'creation_timestamp_value', 'custom_request_headers': ['custom_request_headers_value_1', 'custom_request_headers_value_2'], 'custom_response_headers': ['custom_response_headers_value_1', 'custom_response_headers_value_2'], 'description': 'description_value', 'enable_c_d_n': True, 'failover_policy': {'disable_connection_drain_on_failover': True, 'drop_traffic_if_unhealthy': True, 'failover_ratio': 0.1494}, 'fingerprint': 'fingerprint_value', 'health_checks': ['health_checks_value_1', 'health_checks_value_2'], 'iap': {'enabled': True, 'oauth2_client_id': 'oauth2_client_id_value', 'oauth2_client_secret': 'oauth2_client_secret_value', 'oauth2_client_secret_sha256': 'oauth2_client_secret_sha256_value'}, 'id': 205, 'kind': 'kind_value', 'load_balancing_scheme': 'load_balancing_scheme_value', 'locality_lb_policy': 'locality_lb_policy_value', 'log_config': {'enable': True, 'sample_rate': 0.1165}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'name': 'name_value', 'network': 'network_value', 'outlier_detection': {'base_ejection_time': {'nanos': 543, 'seconds': 751}, 'consecutive_errors': 1956, 'consecutive_gateway_failure': 2880, 'enforcing_consecutive_errors': 3006, 'enforcing_consecutive_gateway_failure': 3930, 'enforcing_success_rate': 2334, 'interval': {'nanos': 543, 'seconds': 751}, 'max_ejection_percent': 2118, 'success_rate_minimum_hosts': 2799, 'success_rate_request_volume': 2915, 'success_rate_stdev_factor': 2663}, 'port': 453, 'port_name': 'port_name_value', 'protocol': 'protocol_value', 'region': 'region_value', 'security_policy': 'security_policy_value', 'security_settings': {'client_tls_policy': 'client_tls_policy_value', 'subject_alt_names': ['subject_alt_names_value_1', 'subject_alt_names_value_2']}, 'self_link': 'self_link_value', 'session_affinity': 'session_affinity_value', 'subsetting': {'policy': 'policy_value'}, 'timeout_sec': 1185}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1834,7 +2165,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertBackendSer
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1843,7 +2174,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertBackendSer
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1885,8 +2216,8 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertBackendSer
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1899,8 +2230,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["backend_service_resource"] = compute.BackendService(affinity_cookie_ttl_sec=2432)
+    request_init = {'project': 'sample1'}
+    request_init["backend_service_resource"] = {'affinity_cookie_ttl_sec': 2432, 'backends': [{'balancing_mode': 'balancing_mode_value', 'capacity_scaler': 0.1575, 'description': 'description_value', 'failover': True, 'group': 'group_value', 'max_connections': 1608, 'max_connections_per_endpoint': 2990, 'max_connections_per_instance': 2978, 'max_rate': 849, 'max_rate_per_endpoint': 0.22310000000000002, 'max_rate_per_instance': 0.22190000000000001, 'max_utilization': 0.1633}], 'cdn_policy': {'bypass_cache_on_request_headers': [{'header_name': 'header_name_value'}], 'cache_key_policy': {'include_host': True, 'include_protocol': True, 'include_query_string': True, 'query_string_blacklist': ['query_string_blacklist_value_1', 'query_string_blacklist_value_2'], 'query_string_whitelist': ['query_string_whitelist_value_1', 'query_string_whitelist_value_2']}, 'cache_mode': 'cache_mode_value', 'client_ttl': 1074, 'default_ttl': 1176, 'max_ttl': 761, 'negative_caching': True, 'negative_caching_policy': [{'code': 411, 'ttl': 340}], 'request_coalescing': True, 'serve_while_stale': 1813, 'signed_url_cache_max_age_sec': 2890, 'signed_url_key_names': ['signed_url_key_names_value_1', 'signed_url_key_names_value_2']}, 'circuit_breakers': {'max_connections': 1608, 'max_pending_requests': 2149, 'max_requests': 1313, 'max_requests_per_connection': 2902, 'max_retries': 1187}, 'connection_draining': {'draining_timeout_sec': 2124}, 'consistent_hash': {'http_cookie': {'name': 'name_value', 'path': 'path_value', 'ttl': {'nanos': 543, 'seconds': 751}}, 'http_header_name': 'http_header_name_value', 'minimum_ring_size': 1829}, 'creation_timestamp': 'creation_timestamp_value', 'custom_request_headers': ['custom_request_headers_value_1', 'custom_request_headers_value_2'], 'custom_response_headers': ['custom_response_headers_value_1', 'custom_response_headers_value_2'], 'description': 'description_value', 'enable_c_d_n': True, 'failover_policy': {'disable_connection_drain_on_failover': True, 'drop_traffic_if_unhealthy': True, 'failover_ratio': 0.1494}, 'fingerprint': 'fingerprint_value', 'health_checks': ['health_checks_value_1', 'health_checks_value_2'], 'iap': {'enabled': True, 'oauth2_client_id': 'oauth2_client_id_value', 'oauth2_client_secret': 'oauth2_client_secret_value', 'oauth2_client_secret_sha256': 'oauth2_client_secret_sha256_value'}, 'id': 205, 'kind': 'kind_value', 'load_balancing_scheme': 'load_balancing_scheme_value', 'locality_lb_policy': 'locality_lb_policy_value', 'log_config': {'enable': True, 'sample_rate': 0.1165}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'name': 'name_value', 'network': 'network_value', 'outlier_detection': {'base_ejection_time': {'nanos': 543, 'seconds': 751}, 'consecutive_errors': 1956, 'consecutive_gateway_failure': 2880, 'enforcing_consecutive_errors': 3006, 'enforcing_consecutive_gateway_failure': 3930, 'enforcing_success_rate': 2334, 'interval': {'nanos': 543, 'seconds': 751}, 'max_ejection_percent': 2118, 'success_rate_minimum_hosts': 2799, 'success_rate_request_volume': 2915, 'success_rate_stdev_factor': 2663}, 'port': 453, 'port_name': 'port_name_value', 'protocol': 'protocol_value', 'region': 'region_value', 'security_policy': 'security_policy_value', 'security_settings': {'client_tls_policy': 'client_tls_policy_value', 'subject_alt_names': ['subject_alt_names_value_1', 'subject_alt_names_value_2']}, 'self_link': 'self_link_value', 'session_affinity': 'session_affinity_value', 'subsetting': {'policy': 'policy_value'}, 'timeout_sec': 1185}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1913,18 +2244,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1937,7 +2264,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1970,18 +2297,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListBackendServicesRequest):
+def test_insert_unary_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListBackendServicesRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListBackendServicesRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.BackendServiceList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.BackendServiceList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListBackendServicesRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendServiceList(
               id='id_value',
@@ -2021,7 +2388,7 @@ def test_list_rest_required_fields(request_type=compute.ListBackendServicesReque
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2030,7 +2397,7 @@ def test_list_rest_required_fields(request_type=compute.ListBackendServicesReque
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2071,8 +2438,8 @@ def test_list_rest_required_fields(request_type=compute.ListBackendServicesReque
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2085,7 +2452,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2098,18 +2465,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.BackendServiceList()
 
@@ -2122,7 +2485,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2163,71 +2526,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.BackendServiceList(
-                    items=[
-                        compute.BackendService(),
-                        compute.BackendService(),
-                        compute.BackendService(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.BackendServiceList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.BackendServiceList(
-                    items=[
-                        compute.BackendService(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.BackendServiceList(
-                    items=[
-                        compute.BackendService(),
-                        compute.BackendService(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.BackendServiceList(
+                items=[
+                    compute.BackendService(),
+                    compute.BackendService(),
+                    compute.BackendService(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.BackendServiceList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.BackendServiceList(
+                items=[
+                    compute.BackendService(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.BackendServiceList(
+                items=[
+                    compute.BackendService(),
+                    compute.BackendService(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.BackendServiceList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.BackendServiceList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.BackendService)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.BackendService)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchBackendServiceRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchBackendServiceRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchBackendServiceRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["backend_service_resource"] = compute.BackendService(affinity_cookie_ttl_sec=2432)
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["backend_service_resource"] = {'affinity_cookie_ttl_sec': 2432, 'backends': [{'balancing_mode': 'balancing_mode_value', 'capacity_scaler': 0.1575, 'description': 'description_value', 'failover': True, 'group': 'group_value', 'max_connections': 1608, 'max_connections_per_endpoint': 2990, 'max_connections_per_instance': 2978, 'max_rate': 849, 'max_rate_per_endpoint': 0.22310000000000002, 'max_rate_per_instance': 0.22190000000000001, 'max_utilization': 0.1633}], 'cdn_policy': {'bypass_cache_on_request_headers': [{'header_name': 'header_name_value'}], 'cache_key_policy': {'include_host': True, 'include_protocol': True, 'include_query_string': True, 'query_string_blacklist': ['query_string_blacklist_value_1', 'query_string_blacklist_value_2'], 'query_string_whitelist': ['query_string_whitelist_value_1', 'query_string_whitelist_value_2']}, 'cache_mode': 'cache_mode_value', 'client_ttl': 1074, 'default_ttl': 1176, 'max_ttl': 761, 'negative_caching': True, 'negative_caching_policy': [{'code': 411, 'ttl': 340}], 'request_coalescing': True, 'serve_while_stale': 1813, 'signed_url_cache_max_age_sec': 2890, 'signed_url_key_names': ['signed_url_key_names_value_1', 'signed_url_key_names_value_2']}, 'circuit_breakers': {'max_connections': 1608, 'max_pending_requests': 2149, 'max_requests': 1313, 'max_requests_per_connection': 2902, 'max_retries': 1187}, 'connection_draining': {'draining_timeout_sec': 2124}, 'consistent_hash': {'http_cookie': {'name': 'name_value', 'path': 'path_value', 'ttl': {'nanos': 543, 'seconds': 751}}, 'http_header_name': 'http_header_name_value', 'minimum_ring_size': 1829}, 'creation_timestamp': 'creation_timestamp_value', 'custom_request_headers': ['custom_request_headers_value_1', 'custom_request_headers_value_2'], 'custom_response_headers': ['custom_response_headers_value_1', 'custom_response_headers_value_2'], 'description': 'description_value', 'enable_c_d_n': True, 'failover_policy': {'disable_connection_drain_on_failover': True, 'drop_traffic_if_unhealthy': True, 'failover_ratio': 0.1494}, 'fingerprint': 'fingerprint_value', 'health_checks': ['health_checks_value_1', 'health_checks_value_2'], 'iap': {'enabled': True, 'oauth2_client_id': 'oauth2_client_id_value', 'oauth2_client_secret': 'oauth2_client_secret_value', 'oauth2_client_secret_sha256': 'oauth2_client_secret_sha256_value'}, 'id': 205, 'kind': 'kind_value', 'load_balancing_scheme': 'load_balancing_scheme_value', 'locality_lb_policy': 'locality_lb_policy_value', 'log_config': {'enable': True, 'sample_rate': 0.1165}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'name': 'name_value', 'network': 'network_value', 'outlier_detection': {'base_ejection_time': {'nanos': 543, 'seconds': 751}, 'consecutive_errors': 1956, 'consecutive_gateway_failure': 2880, 'enforcing_consecutive_errors': 3006, 'enforcing_consecutive_gateway_failure': 3930, 'enforcing_success_rate': 2334, 'interval': {'nanos': 543, 'seconds': 751}, 'max_ejection_percent': 2118, 'success_rate_minimum_hosts': 2799, 'success_rate_request_volume': 2915, 'success_rate_stdev_factor': 2663}, 'port': 453, 'port_name': 'port_name_value', 'protocol': 'protocol_value', 'region': 'region_value', 'security_policy': 'security_policy_value', 'security_settings': {'client_tls_policy': 'client_tls_policy_value', 'subject_alt_names': ['subject_alt_names_value_1', 'subject_alt_names_value_2']}, 'self_link': 'self_link_value', 'session_affinity': 'session_affinity_value', 'subsetting': {'policy': 'policy_value'}, 'timeout_sec': 1185}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2305,7 +2719,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchBackendServi
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2317,7 +2731,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchBackendServi
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2360,13 +2774,13 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchBackendServi
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2379,8 +2793,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["backend_service_resource"] = compute.BackendService(affinity_cookie_ttl_sec=2432)
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["backend_service_resource"] = {'affinity_cookie_ttl_sec': 2432, 'backends': [{'balancing_mode': 'balancing_mode_value', 'capacity_scaler': 0.1575, 'description': 'description_value', 'failover': True, 'group': 'group_value', 'max_connections': 1608, 'max_connections_per_endpoint': 2990, 'max_connections_per_instance': 2978, 'max_rate': 849, 'max_rate_per_endpoint': 0.22310000000000002, 'max_rate_per_instance': 0.22190000000000001, 'max_utilization': 0.1633}], 'cdn_policy': {'bypass_cache_on_request_headers': [{'header_name': 'header_name_value'}], 'cache_key_policy': {'include_host': True, 'include_protocol': True, 'include_query_string': True, 'query_string_blacklist': ['query_string_blacklist_value_1', 'query_string_blacklist_value_2'], 'query_string_whitelist': ['query_string_whitelist_value_1', 'query_string_whitelist_value_2']}, 'cache_mode': 'cache_mode_value', 'client_ttl': 1074, 'default_ttl': 1176, 'max_ttl': 761, 'negative_caching': True, 'negative_caching_policy': [{'code': 411, 'ttl': 340}], 'request_coalescing': True, 'serve_while_stale': 1813, 'signed_url_cache_max_age_sec': 2890, 'signed_url_key_names': ['signed_url_key_names_value_1', 'signed_url_key_names_value_2']}, 'circuit_breakers': {'max_connections': 1608, 'max_pending_requests': 2149, 'max_requests': 1313, 'max_requests_per_connection': 2902, 'max_retries': 1187}, 'connection_draining': {'draining_timeout_sec': 2124}, 'consistent_hash': {'http_cookie': {'name': 'name_value', 'path': 'path_value', 'ttl': {'nanos': 543, 'seconds': 751}}, 'http_header_name': 'http_header_name_value', 'minimum_ring_size': 1829}, 'creation_timestamp': 'creation_timestamp_value', 'custom_request_headers': ['custom_request_headers_value_1', 'custom_request_headers_value_2'], 'custom_response_headers': ['custom_response_headers_value_1', 'custom_response_headers_value_2'], 'description': 'description_value', 'enable_c_d_n': True, 'failover_policy': {'disable_connection_drain_on_failover': True, 'drop_traffic_if_unhealthy': True, 'failover_ratio': 0.1494}, 'fingerprint': 'fingerprint_value', 'health_checks': ['health_checks_value_1', 'health_checks_value_2'], 'iap': {'enabled': True, 'oauth2_client_id': 'oauth2_client_id_value', 'oauth2_client_secret': 'oauth2_client_secret_value', 'oauth2_client_secret_sha256': 'oauth2_client_secret_sha256_value'}, 'id': 205, 'kind': 'kind_value', 'load_balancing_scheme': 'load_balancing_scheme_value', 'locality_lb_policy': 'locality_lb_policy_value', 'log_config': {'enable': True, 'sample_rate': 0.1165}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'name': 'name_value', 'network': 'network_value', 'outlier_detection': {'base_ejection_time': {'nanos': 543, 'seconds': 751}, 'consecutive_errors': 1956, 'consecutive_gateway_failure': 2880, 'enforcing_consecutive_errors': 3006, 'enforcing_consecutive_gateway_failure': 3930, 'enforcing_success_rate': 2334, 'interval': {'nanos': 543, 'seconds': 751}, 'max_ejection_percent': 2118, 'success_rate_minimum_hosts': 2799, 'success_rate_request_volume': 2915, 'success_rate_stdev_factor': 2663}, 'port': 453, 'port_name': 'port_name_value', 'protocol': 'protocol_value', 'region': 'region_value', 'security_policy': 'security_policy_value', 'security_settings': {'client_tls_policy': 'client_tls_policy_value', 'subject_alt_names': ['subject_alt_names_value_1', 'subject_alt_names_value_2']}, 'self_link': 'self_link_value', 'session_affinity': 'session_affinity_value', 'subsetting': {'policy': 'policy_value'}, 'timeout_sec': 1185}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2393,18 +2807,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2417,7 +2827,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2452,19 +2862,77 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_security_policy_unary_rest(transport: str = 'rest', request_type=compute.SetSecurityPolicyBackendServiceRequest):
+def test_patch_unary_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetSecurityPolicyBackendServiceRequest,
+  dict,
+])
+def test_set_security_policy_unary_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetSecurityPolicyBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_security_policy_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetSecurityPolicyBackendServiceRequest,
+    dict,
+])
+def test_set_security_policy_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["security_policy_reference_resource"] = compute.SecurityPolicyReference(security_policy='security_policy_value')
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["security_policy_reference_resource"] = {'security_policy': 'security_policy_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2542,7 +3010,7 @@ def test_set_security_policy_unary_rest_required_fields(request_type=compute.Set
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._set_security_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_security_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2554,7 +3022,7 @@ def test_set_security_policy_unary_rest_required_fields(request_type=compute.Set
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._set_security_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_security_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2597,13 +3065,13 @@ def test_set_security_policy_unary_rest_required_fields(request_type=compute.Set
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2616,8 +3084,8 @@ def test_set_security_policy_unary_rest_bad_request(transport: str = 'rest', req
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["security_policy_reference_resource"] = compute.SecurityPolicyReference(security_policy='security_policy_value')
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["security_policy_reference_resource"] = {'security_policy': 'security_policy_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2630,18 +3098,14 @@ def test_set_security_policy_unary_rest_bad_request(transport: str = 'rest', req
         client.set_security_policy_unary(request)
 
 
-def test_set_security_policy_unary_rest_from_dict():
-    test_set_security_policy_unary_rest(request_type=dict)
-
-
-def test_set_security_policy_unary_rest_flattened(transport: str = 'rest'):
+def test_set_security_policy_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2654,7 +3118,7 @@ def test_set_security_policy_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2689,19 +3153,77 @@ def test_set_security_policy_unary_rest_flattened_error(transport: str = 'rest')
         )
 
 
-def test_update_unary_rest(transport: str = 'rest', request_type=compute.UpdateBackendServiceRequest):
+def test_set_security_policy_unary_rest_error():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.UpdateBackendServiceRequest,
+  dict,
+])
+def test_update_unary_rest(request_type, transport: str = 'rest'):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.UpdateBackendServiceRequest({'project': 'sample1', 'backend_service': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.update_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.UpdateBackendServiceRequest,
+    dict,
+])
+def test_update_unary_rest(request_type):
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["backend_service_resource"] = compute.BackendService(affinity_cookie_ttl_sec=2432)
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["backend_service_resource"] = {'affinity_cookie_ttl_sec': 2432, 'backends': [{'balancing_mode': 'balancing_mode_value', 'capacity_scaler': 0.1575, 'description': 'description_value', 'failover': True, 'group': 'group_value', 'max_connections': 1608, 'max_connections_per_endpoint': 2990, 'max_connections_per_instance': 2978, 'max_rate': 849, 'max_rate_per_endpoint': 0.22310000000000002, 'max_rate_per_instance': 0.22190000000000001, 'max_utilization': 0.1633}], 'cdn_policy': {'bypass_cache_on_request_headers': [{'header_name': 'header_name_value'}], 'cache_key_policy': {'include_host': True, 'include_protocol': True, 'include_query_string': True, 'query_string_blacklist': ['query_string_blacklist_value_1', 'query_string_blacklist_value_2'], 'query_string_whitelist': ['query_string_whitelist_value_1', 'query_string_whitelist_value_2']}, 'cache_mode': 'cache_mode_value', 'client_ttl': 1074, 'default_ttl': 1176, 'max_ttl': 761, 'negative_caching': True, 'negative_caching_policy': [{'code': 411, 'ttl': 340}], 'request_coalescing': True, 'serve_while_stale': 1813, 'signed_url_cache_max_age_sec': 2890, 'signed_url_key_names': ['signed_url_key_names_value_1', 'signed_url_key_names_value_2']}, 'circuit_breakers': {'max_connections': 1608, 'max_pending_requests': 2149, 'max_requests': 1313, 'max_requests_per_connection': 2902, 'max_retries': 1187}, 'connection_draining': {'draining_timeout_sec': 2124}, 'consistent_hash': {'http_cookie': {'name': 'name_value', 'path': 'path_value', 'ttl': {'nanos': 543, 'seconds': 751}}, 'http_header_name': 'http_header_name_value', 'minimum_ring_size': 1829}, 'creation_timestamp': 'creation_timestamp_value', 'custom_request_headers': ['custom_request_headers_value_1', 'custom_request_headers_value_2'], 'custom_response_headers': ['custom_response_headers_value_1', 'custom_response_headers_value_2'], 'description': 'description_value', 'enable_c_d_n': True, 'failover_policy': {'disable_connection_drain_on_failover': True, 'drop_traffic_if_unhealthy': True, 'failover_ratio': 0.1494}, 'fingerprint': 'fingerprint_value', 'health_checks': ['health_checks_value_1', 'health_checks_value_2'], 'iap': {'enabled': True, 'oauth2_client_id': 'oauth2_client_id_value', 'oauth2_client_secret': 'oauth2_client_secret_value', 'oauth2_client_secret_sha256': 'oauth2_client_secret_sha256_value'}, 'id': 205, 'kind': 'kind_value', 'load_balancing_scheme': 'load_balancing_scheme_value', 'locality_lb_policy': 'locality_lb_policy_value', 'log_config': {'enable': True, 'sample_rate': 0.1165}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'name': 'name_value', 'network': 'network_value', 'outlier_detection': {'base_ejection_time': {'nanos': 543, 'seconds': 751}, 'consecutive_errors': 1956, 'consecutive_gateway_failure': 2880, 'enforcing_consecutive_errors': 3006, 'enforcing_consecutive_gateway_failure': 3930, 'enforcing_success_rate': 2334, 'interval': {'nanos': 543, 'seconds': 751}, 'max_ejection_percent': 2118, 'success_rate_minimum_hosts': 2799, 'success_rate_request_volume': 2915, 'success_rate_stdev_factor': 2663}, 'port': 453, 'port_name': 'port_name_value', 'protocol': 'protocol_value', 'region': 'region_value', 'security_policy': 'security_policy_value', 'security_settings': {'client_tls_policy': 'client_tls_policy_value', 'subject_alt_names': ['subject_alt_names_value_1', 'subject_alt_names_value_2']}, 'self_link': 'self_link_value', 'session_affinity': 'session_affinity_value', 'subsetting': {'policy': 'policy_value'}, 'timeout_sec': 1185}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2779,7 +3301,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateBackendSer
     assert "backendService" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2791,7 +3313,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateBackendSer
     jsonified_request["backendService"] = 'backend_service_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2834,13 +3356,13 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateBackendSer
 
             expected_params = [
                 (
-                    "backend_service",
-                    ""
-                )
+                    "backendService",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2853,8 +3375,8 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "backend_service": "sample2"}
-    request_init["backend_service_resource"] = compute.BackendService(affinity_cookie_ttl_sec=2432)
+    request_init = {'project': 'sample1', 'backend_service': 'sample2'}
+    request_init["backend_service_resource"] = {'affinity_cookie_ttl_sec': 2432, 'backends': [{'balancing_mode': 'balancing_mode_value', 'capacity_scaler': 0.1575, 'description': 'description_value', 'failover': True, 'group': 'group_value', 'max_connections': 1608, 'max_connections_per_endpoint': 2990, 'max_connections_per_instance': 2978, 'max_rate': 849, 'max_rate_per_endpoint': 0.22310000000000002, 'max_rate_per_instance': 0.22190000000000001, 'max_utilization': 0.1633}], 'cdn_policy': {'bypass_cache_on_request_headers': [{'header_name': 'header_name_value'}], 'cache_key_policy': {'include_host': True, 'include_protocol': True, 'include_query_string': True, 'query_string_blacklist': ['query_string_blacklist_value_1', 'query_string_blacklist_value_2'], 'query_string_whitelist': ['query_string_whitelist_value_1', 'query_string_whitelist_value_2']}, 'cache_mode': 'cache_mode_value', 'client_ttl': 1074, 'default_ttl': 1176, 'max_ttl': 761, 'negative_caching': True, 'negative_caching_policy': [{'code': 411, 'ttl': 340}], 'request_coalescing': True, 'serve_while_stale': 1813, 'signed_url_cache_max_age_sec': 2890, 'signed_url_key_names': ['signed_url_key_names_value_1', 'signed_url_key_names_value_2']}, 'circuit_breakers': {'max_connections': 1608, 'max_pending_requests': 2149, 'max_requests': 1313, 'max_requests_per_connection': 2902, 'max_retries': 1187}, 'connection_draining': {'draining_timeout_sec': 2124}, 'consistent_hash': {'http_cookie': {'name': 'name_value', 'path': 'path_value', 'ttl': {'nanos': 543, 'seconds': 751}}, 'http_header_name': 'http_header_name_value', 'minimum_ring_size': 1829}, 'creation_timestamp': 'creation_timestamp_value', 'custom_request_headers': ['custom_request_headers_value_1', 'custom_request_headers_value_2'], 'custom_response_headers': ['custom_response_headers_value_1', 'custom_response_headers_value_2'], 'description': 'description_value', 'enable_c_d_n': True, 'failover_policy': {'disable_connection_drain_on_failover': True, 'drop_traffic_if_unhealthy': True, 'failover_ratio': 0.1494}, 'fingerprint': 'fingerprint_value', 'health_checks': ['health_checks_value_1', 'health_checks_value_2'], 'iap': {'enabled': True, 'oauth2_client_id': 'oauth2_client_id_value', 'oauth2_client_secret': 'oauth2_client_secret_value', 'oauth2_client_secret_sha256': 'oauth2_client_secret_sha256_value'}, 'id': 205, 'kind': 'kind_value', 'load_balancing_scheme': 'load_balancing_scheme_value', 'locality_lb_policy': 'locality_lb_policy_value', 'log_config': {'enable': True, 'sample_rate': 0.1165}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'name': 'name_value', 'network': 'network_value', 'outlier_detection': {'base_ejection_time': {'nanos': 543, 'seconds': 751}, 'consecutive_errors': 1956, 'consecutive_gateway_failure': 2880, 'enforcing_consecutive_errors': 3006, 'enforcing_consecutive_gateway_failure': 3930, 'enforcing_success_rate': 2334, 'interval': {'nanos': 543, 'seconds': 751}, 'max_ejection_percent': 2118, 'success_rate_minimum_hosts': 2799, 'success_rate_request_volume': 2915, 'success_rate_stdev_factor': 2663}, 'port': 453, 'port_name': 'port_name_value', 'protocol': 'protocol_value', 'region': 'region_value', 'security_policy': 'security_policy_value', 'security_settings': {'client_tls_policy': 'client_tls_policy_value', 'subject_alt_names': ['subject_alt_names_value_1', 'subject_alt_names_value_2']}, 'self_link': 'self_link_value', 'session_affinity': 'session_affinity_value', 'subsetting': {'policy': 'policy_value'}, 'timeout_sec': 1185}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2867,18 +3389,14 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.update_unary(request)
 
 
-def test_update_unary_rest_from_dict():
-    test_update_unary_rest(request_type=dict)
-
-
-def test_update_unary_rest_flattened(transport: str = 'rest'):
+def test_update_unary_rest_flattened():
     client = BackendServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2891,7 +3409,7 @@ def test_update_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "backend_service": "sample2"}
+        sample_request = {'project': 'sample1', 'backend_service': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2924,6 +3442,13 @@ def test_update_unary_rest_flattened_error(transport: str = 'rest'):
             backend_service='backend_service_value',
             backend_service_resource=compute.BackendService(affinity_cookie_ttl_sec=2432),
         )
+
+
+def test_update_unary_rest_error():
+    client = BackendServicesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -3175,7 +3700,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.BackendServicesTransport, '_prep_wrapped_messages') as prep:

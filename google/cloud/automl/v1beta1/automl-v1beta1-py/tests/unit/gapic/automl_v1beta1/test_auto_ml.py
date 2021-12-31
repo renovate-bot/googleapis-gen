@@ -232,18 +232,18 @@ def test_auto_ml_client_client_options(client_class, transport_class, transport_
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -274,7 +274,7 @@ def test_auto_ml_client_mtls_env_auto(client_class, transport_class, transport_n
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -349,7 +349,7 @@ def test_auto_ml_client_client_options_scopes(client_class, transport_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -372,7 +372,7 @@ def test_auto_ml_client_client_options_credentials_file(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -383,7 +383,6 @@ def test_auto_ml_client_client_options_credentials_file(client_class, transport_
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_auto_ml_client_client_options_from_dict():
     with mock.patch('google.cloud.automl_v1beta1.services.auto_ml.transports.AutoMlGrpcTransport.__init__') as grpc_transport:
@@ -403,7 +402,11 @@ def test_auto_ml_client_client_options_from_dict():
         )
 
 
-def test_create_dataset(transport: str = 'grpc', request_type=service.CreateDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateDatasetRequest,
+  dict,
+])
+def test_create_dataset(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -440,10 +443,6 @@ def test_create_dataset(transport: str = 'grpc', request_type=service.CreateData
     assert response.description == 'description_value'
     assert response.example_count == 1396
     assert response.etag == 'etag_value'
-
-
-def test_create_dataset_from_dict():
-    test_create_dataset(request_type=dict)
 
 
 def test_create_dataset_empty_call():
@@ -665,7 +664,11 @@ async def test_create_dataset_flattened_error_async():
         )
 
 
-def test_get_dataset(transport: str = 'grpc', request_type=service.GetDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetDatasetRequest,
+  dict,
+])
+def test_get_dataset(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -702,10 +705,6 @@ def test_get_dataset(transport: str = 'grpc', request_type=service.GetDatasetReq
     assert response.description == 'description_value'
     assert response.example_count == 1396
     assert response.etag == 'etag_value'
-
-
-def test_get_dataset_from_dict():
-    test_get_dataset(request_type=dict)
 
 
 def test_get_dataset_empty_call():
@@ -917,7 +916,11 @@ async def test_get_dataset_flattened_error_async():
         )
 
 
-def test_list_datasets(transport: str = 'grpc', request_type=service.ListDatasetsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListDatasetsRequest,
+  dict,
+])
+def test_list_datasets(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -945,10 +948,6 @@ def test_list_datasets(transport: str = 'grpc', request_type=service.ListDataset
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDatasetsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_datasets_from_dict():
-    test_list_datasets(request_type=dict)
 
 
 def test_list_datasets_empty_call():
@@ -1152,9 +1151,10 @@ async def test_list_datasets_flattened_error_async():
         )
 
 
-def test_list_datasets_pager():
+def test_list_datasets_pager(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1204,10 +1204,10 @@ def test_list_datasets_pager():
         assert len(results) == 6
         assert all(isinstance(i, dataset.Dataset)
                    for i in results)
-
-def test_list_datasets_pages():
+def test_list_datasets_pages(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1292,7 +1292,8 @@ async def test_list_datasets_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, dataset.Dataset)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_datasets_async_pages():
@@ -1338,7 +1339,11 @@ async def test_list_datasets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_dataset(transport: str = 'grpc', request_type=service.UpdateDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateDatasetRequest,
+  dict,
+])
+def test_update_dataset(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1375,10 +1380,6 @@ def test_update_dataset(transport: str = 'grpc', request_type=service.UpdateData
     assert response.description == 'description_value'
     assert response.example_count == 1396
     assert response.etag == 'etag_value'
-
-
-def test_update_dataset_from_dict():
-    test_update_dataset(request_type=dict)
 
 
 def test_update_dataset_empty_call():
@@ -1590,7 +1591,11 @@ async def test_update_dataset_flattened_error_async():
         )
 
 
-def test_delete_dataset(transport: str = 'grpc', request_type=service.DeleteDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteDatasetRequest,
+  dict,
+])
+def test_delete_dataset(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1615,10 +1620,6 @@ def test_delete_dataset(transport: str = 'grpc', request_type=service.DeleteData
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_dataset_from_dict():
-    test_delete_dataset(request_type=dict)
 
 
 def test_delete_dataset_empty_call():
@@ -1823,7 +1824,11 @@ async def test_delete_dataset_flattened_error_async():
         )
 
 
-def test_import_data(transport: str = 'grpc', request_type=service.ImportDataRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ImportDataRequest,
+  dict,
+])
+def test_import_data(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1848,10 +1853,6 @@ def test_import_data(transport: str = 'grpc', request_type=service.ImportDataReq
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_import_data_from_dict():
-    test_import_data(request_type=dict)
 
 
 def test_import_data_empty_call():
@@ -2066,7 +2067,11 @@ async def test_import_data_flattened_error_async():
         )
 
 
-def test_export_data(transport: str = 'grpc', request_type=service.ExportDataRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ExportDataRequest,
+  dict,
+])
+def test_export_data(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2091,10 +2096,6 @@ def test_export_data(transport: str = 'grpc', request_type=service.ExportDataReq
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_export_data_from_dict():
-    test_export_data(request_type=dict)
 
 
 def test_export_data_empty_call():
@@ -2309,7 +2310,11 @@ async def test_export_data_flattened_error_async():
         )
 
 
-def test_get_annotation_spec(transport: str = 'grpc', request_type=service.GetAnnotationSpecRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetAnnotationSpecRequest,
+  dict,
+])
+def test_get_annotation_spec(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2341,10 +2346,6 @@ def test_get_annotation_spec(transport: str = 'grpc', request_type=service.GetAn
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.example_count == 1396
-
-
-def test_get_annotation_spec_from_dict():
-    test_get_annotation_spec(request_type=dict)
 
 
 def test_get_annotation_spec_empty_call():
@@ -2552,7 +2553,11 @@ async def test_get_annotation_spec_flattened_error_async():
         )
 
 
-def test_get_table_spec(transport: str = 'grpc', request_type=service.GetTableSpecRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetTableSpecRequest,
+  dict,
+])
+def test_get_table_spec(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2590,10 +2595,6 @@ def test_get_table_spec(transport: str = 'grpc', request_type=service.GetTableSp
     assert response.valid_row_count == 1615
     assert response.column_count == 1302
     assert response.etag == 'etag_value'
-
-
-def test_get_table_spec_from_dict():
-    test_get_table_spec(request_type=dict)
 
 
 def test_get_table_spec_empty_call():
@@ -2807,7 +2808,11 @@ async def test_get_table_spec_flattened_error_async():
         )
 
 
-def test_list_table_specs(transport: str = 'grpc', request_type=service.ListTableSpecsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListTableSpecsRequest,
+  dict,
+])
+def test_list_table_specs(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2835,10 +2840,6 @@ def test_list_table_specs(transport: str = 'grpc', request_type=service.ListTabl
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTableSpecsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_table_specs_from_dict():
-    test_list_table_specs(request_type=dict)
 
 
 def test_list_table_specs_empty_call():
@@ -3042,9 +3043,10 @@ async def test_list_table_specs_flattened_error_async():
         )
 
 
-def test_list_table_specs_pager():
+def test_list_table_specs_pager(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3094,10 +3096,10 @@ def test_list_table_specs_pager():
         assert len(results) == 6
         assert all(isinstance(i, table_spec.TableSpec)
                    for i in results)
-
-def test_list_table_specs_pages():
+def test_list_table_specs_pages(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3182,7 +3184,8 @@ async def test_list_table_specs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, table_spec.TableSpec)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_table_specs_async_pages():
@@ -3228,7 +3231,11 @@ async def test_list_table_specs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_table_spec(transport: str = 'grpc', request_type=service.UpdateTableSpecRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateTableSpecRequest,
+  dict,
+])
+def test_update_table_spec(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3266,10 +3273,6 @@ def test_update_table_spec(transport: str = 'grpc', request_type=service.UpdateT
     assert response.valid_row_count == 1615
     assert response.column_count == 1302
     assert response.etag == 'etag_value'
-
-
-def test_update_table_spec_from_dict():
-    test_update_table_spec(request_type=dict)
 
 
 def test_update_table_spec_empty_call():
@@ -3483,7 +3486,11 @@ async def test_update_table_spec_flattened_error_async():
         )
 
 
-def test_get_column_spec(transport: str = 'grpc', request_type=service.GetColumnSpecRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetColumnSpecRequest,
+  dict,
+])
+def test_get_column_spec(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3515,10 +3522,6 @@ def test_get_column_spec(transport: str = 'grpc', request_type=service.GetColumn
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_column_spec_from_dict():
-    test_get_column_spec(request_type=dict)
 
 
 def test_get_column_spec_empty_call():
@@ -3726,7 +3729,11 @@ async def test_get_column_spec_flattened_error_async():
         )
 
 
-def test_list_column_specs(transport: str = 'grpc', request_type=service.ListColumnSpecsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListColumnSpecsRequest,
+  dict,
+])
+def test_list_column_specs(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3754,10 +3761,6 @@ def test_list_column_specs(transport: str = 'grpc', request_type=service.ListCol
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListColumnSpecsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_column_specs_from_dict():
-    test_list_column_specs(request_type=dict)
 
 
 def test_list_column_specs_empty_call():
@@ -3961,9 +3964,10 @@ async def test_list_column_specs_flattened_error_async():
         )
 
 
-def test_list_column_specs_pager():
+def test_list_column_specs_pager(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4013,10 +4017,10 @@ def test_list_column_specs_pager():
         assert len(results) == 6
         assert all(isinstance(i, column_spec.ColumnSpec)
                    for i in results)
-
-def test_list_column_specs_pages():
+def test_list_column_specs_pages(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4101,7 +4105,8 @@ async def test_list_column_specs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, column_spec.ColumnSpec)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_column_specs_async_pages():
@@ -4147,7 +4152,11 @@ async def test_list_column_specs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_column_spec(transport: str = 'grpc', request_type=service.UpdateColumnSpecRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateColumnSpecRequest,
+  dict,
+])
+def test_update_column_spec(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4179,10 +4188,6 @@ def test_update_column_spec(transport: str = 'grpc', request_type=service.Update
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.etag == 'etag_value'
-
-
-def test_update_column_spec_from_dict():
-    test_update_column_spec(request_type=dict)
 
 
 def test_update_column_spec_empty_call():
@@ -4390,7 +4395,11 @@ async def test_update_column_spec_flattened_error_async():
         )
 
 
-def test_create_model(transport: str = 'grpc', request_type=service.CreateModelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateModelRequest,
+  dict,
+])
+def test_create_model(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4415,10 +4424,6 @@ def test_create_model(transport: str = 'grpc', request_type=service.CreateModelR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_model_from_dict():
-    test_create_model(request_type=dict)
 
 
 def test_create_model_empty_call():
@@ -4633,7 +4638,11 @@ async def test_create_model_flattened_error_async():
         )
 
 
-def test_get_model(transport: str = 'grpc', request_type=service.GetModelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetModelRequest,
+  dict,
+])
+def test_get_model(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4668,10 +4677,6 @@ def test_get_model(transport: str = 'grpc', request_type=service.GetModelRequest
     assert response.display_name == 'display_name_value'
     assert response.dataset_id == 'dataset_id_value'
     assert response.deployment_state == model.Model.DeploymentState.DEPLOYED
-
-
-def test_get_model_from_dict():
-    test_get_model(request_type=dict)
 
 
 def test_get_model_empty_call():
@@ -4881,7 +4886,11 @@ async def test_get_model_flattened_error_async():
         )
 
 
-def test_list_models(transport: str = 'grpc', request_type=service.ListModelsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListModelsRequest,
+  dict,
+])
+def test_list_models(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4909,10 +4918,6 @@ def test_list_models(transport: str = 'grpc', request_type=service.ListModelsReq
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListModelsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_models_from_dict():
-    test_list_models(request_type=dict)
 
 
 def test_list_models_empty_call():
@@ -5116,9 +5121,10 @@ async def test_list_models_flattened_error_async():
         )
 
 
-def test_list_models_pager():
+def test_list_models_pager(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5168,10 +5174,10 @@ def test_list_models_pager():
         assert len(results) == 6
         assert all(isinstance(i, model.Model)
                    for i in results)
-
-def test_list_models_pages():
+def test_list_models_pages(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5256,7 +5262,8 @@ async def test_list_models_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, model.Model)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_models_async_pages():
@@ -5302,7 +5309,11 @@ async def test_list_models_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_model(transport: str = 'grpc', request_type=service.DeleteModelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteModelRequest,
+  dict,
+])
+def test_delete_model(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5327,10 +5338,6 @@ def test_delete_model(transport: str = 'grpc', request_type=service.DeleteModelR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_model_from_dict():
-    test_delete_model(request_type=dict)
 
 
 def test_delete_model_empty_call():
@@ -5535,7 +5542,11 @@ async def test_delete_model_flattened_error_async():
         )
 
 
-def test_deploy_model(transport: str = 'grpc', request_type=service.DeployModelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeployModelRequest,
+  dict,
+])
+def test_deploy_model(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5560,10 +5571,6 @@ def test_deploy_model(transport: str = 'grpc', request_type=service.DeployModelR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_deploy_model_from_dict():
-    test_deploy_model(request_type=dict)
 
 
 def test_deploy_model_empty_call():
@@ -5768,7 +5775,11 @@ async def test_deploy_model_flattened_error_async():
         )
 
 
-def test_undeploy_model(transport: str = 'grpc', request_type=service.UndeployModelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UndeployModelRequest,
+  dict,
+])
+def test_undeploy_model(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5793,10 +5804,6 @@ def test_undeploy_model(transport: str = 'grpc', request_type=service.UndeployMo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_undeploy_model_from_dict():
-    test_undeploy_model(request_type=dict)
 
 
 def test_undeploy_model_empty_call():
@@ -6001,7 +6008,11 @@ async def test_undeploy_model_flattened_error_async():
         )
 
 
-def test_export_model(transport: str = 'grpc', request_type=service.ExportModelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ExportModelRequest,
+  dict,
+])
+def test_export_model(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6026,10 +6037,6 @@ def test_export_model(transport: str = 'grpc', request_type=service.ExportModelR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_export_model_from_dict():
-    test_export_model(request_type=dict)
 
 
 def test_export_model_empty_call():
@@ -6244,7 +6251,11 @@ async def test_export_model_flattened_error_async():
         )
 
 
-def test_export_evaluated_examples(transport: str = 'grpc', request_type=service.ExportEvaluatedExamplesRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ExportEvaluatedExamplesRequest,
+  dict,
+])
+def test_export_evaluated_examples(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6269,10 +6280,6 @@ def test_export_evaluated_examples(transport: str = 'grpc', request_type=service
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_export_evaluated_examples_from_dict():
-    test_export_evaluated_examples(request_type=dict)
 
 
 def test_export_evaluated_examples_empty_call():
@@ -6487,7 +6494,11 @@ async def test_export_evaluated_examples_flattened_error_async():
         )
 
 
-def test_get_model_evaluation(transport: str = 'grpc', request_type=service.GetModelEvaluationRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetModelEvaluationRequest,
+  dict,
+])
+def test_get_model_evaluation(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6522,10 +6533,6 @@ def test_get_model_evaluation(transport: str = 'grpc', request_type=service.GetM
     assert response.annotation_spec_id == 'annotation_spec_id_value'
     assert response.display_name == 'display_name_value'
     assert response.evaluated_example_count == 2446
-
-
-def test_get_model_evaluation_from_dict():
-    test_get_model_evaluation(request_type=dict)
 
 
 def test_get_model_evaluation_empty_call():
@@ -6735,7 +6742,11 @@ async def test_get_model_evaluation_flattened_error_async():
         )
 
 
-def test_list_model_evaluations(transport: str = 'grpc', request_type=service.ListModelEvaluationsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListModelEvaluationsRequest,
+  dict,
+])
+def test_list_model_evaluations(request_type, transport: str = 'grpc'):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6763,10 +6774,6 @@ def test_list_model_evaluations(transport: str = 'grpc', request_type=service.Li
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListModelEvaluationsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_model_evaluations_from_dict():
-    test_list_model_evaluations(request_type=dict)
 
 
 def test_list_model_evaluations_empty_call():
@@ -6970,9 +6977,10 @@ async def test_list_model_evaluations_flattened_error_async():
         )
 
 
-def test_list_model_evaluations_pager():
+def test_list_model_evaluations_pager(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7022,10 +7030,10 @@ def test_list_model_evaluations_pager():
         assert len(results) == 6
         assert all(isinstance(i, model_evaluation.ModelEvaluation)
                    for i in results)
-
-def test_list_model_evaluations_pages():
+def test_list_model_evaluations_pages(transport_name: str = "grpc"):
     client = AutoMlClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7110,7 +7118,8 @@ async def test_list_model_evaluations_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, model_evaluation.ModelEvaluation)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_model_evaluations_async_pages():
@@ -7814,7 +7823,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AutoMlTransport, '_prep_wrapped_messages') as prep:

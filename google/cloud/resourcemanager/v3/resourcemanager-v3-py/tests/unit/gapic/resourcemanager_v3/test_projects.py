@@ -212,18 +212,18 @@ def test_projects_client_client_options(client_class, transport_class, transport
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -254,7 +254,7 @@ def test_projects_client_mtls_env_auto(client_class, transport_class, transport_
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -329,7 +329,7 @@ def test_projects_client_client_options_scopes(client_class, transport_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -352,7 +352,7 @@ def test_projects_client_client_options_credentials_file(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -363,7 +363,6 @@ def test_projects_client_client_options_credentials_file(client_class, transport
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_projects_client_client_options_from_dict():
     with mock.patch('google.cloud.resourcemanager_v3.services.projects.transports.ProjectsGrpcTransport.__init__') as grpc_transport:
@@ -383,7 +382,11 @@ def test_projects_client_client_options_from_dict():
         )
 
 
-def test_get_project(transport: str = 'grpc', request_type=projects.GetProjectRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.GetProjectRequest,
+  dict,
+])
+def test_get_project(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -421,10 +424,6 @@ def test_get_project(transport: str = 'grpc', request_type=projects.GetProjectRe
     assert response.state == projects.Project.State.ACTIVE
     assert response.display_name == 'display_name_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_project_from_dict():
-    test_get_project(request_type=dict)
 
 
 def test_get_project_empty_call():
@@ -638,7 +637,11 @@ async def test_get_project_flattened_error_async():
         )
 
 
-def test_list_projects(transport: str = 'grpc', request_type=projects.ListProjectsRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.ListProjectsRequest,
+  dict,
+])
+def test_list_projects(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -666,10 +669,6 @@ def test_list_projects(transport: str = 'grpc', request_type=projects.ListProjec
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProjectsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_projects_from_dict():
-    test_list_projects(request_type=dict)
 
 
 def test_list_projects_empty_call():
@@ -810,9 +809,10 @@ async def test_list_projects_flattened_error_async():
         )
 
 
-def test_list_projects_pager():
+def test_list_projects_pager(transport_name: str = "grpc"):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -857,10 +857,10 @@ def test_list_projects_pager():
         assert len(results) == 6
         assert all(isinstance(i, projects.Project)
                    for i in results)
-
-def test_list_projects_pages():
+def test_list_projects_pages(transport_name: str = "grpc"):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -945,7 +945,8 @@ async def test_list_projects_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, projects.Project)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_projects_async_pages():
@@ -991,7 +992,11 @@ async def test_list_projects_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_search_projects(transport: str = 'grpc', request_type=projects.SearchProjectsRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.SearchProjectsRequest,
+  dict,
+])
+def test_search_projects(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1019,10 +1024,6 @@ def test_search_projects(transport: str = 'grpc', request_type=projects.SearchPr
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchProjectsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_search_projects_from_dict():
-    test_search_projects(request_type=dict)
 
 
 def test_search_projects_empty_call():
@@ -1163,9 +1164,10 @@ async def test_search_projects_flattened_error_async():
         )
 
 
-def test_search_projects_pager():
+def test_search_projects_pager(transport_name: str = "grpc"):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1210,10 +1212,10 @@ def test_search_projects_pager():
         assert len(results) == 6
         assert all(isinstance(i, projects.Project)
                    for i in results)
-
-def test_search_projects_pages():
+def test_search_projects_pages(transport_name: str = "grpc"):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1298,7 +1300,8 @@ async def test_search_projects_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, projects.Project)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_search_projects_async_pages():
@@ -1344,7 +1347,11 @@ async def test_search_projects_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_project(transport: str = 'grpc', request_type=projects.CreateProjectRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.CreateProjectRequest,
+  dict,
+])
+def test_create_project(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1369,10 +1376,6 @@ def test_create_project(transport: str = 'grpc', request_type=projects.CreatePro
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_project_from_dict():
-    test_create_project(request_type=dict)
 
 
 def test_create_project_empty_call():
@@ -1514,7 +1517,11 @@ async def test_create_project_flattened_error_async():
         )
 
 
-def test_update_project(transport: str = 'grpc', request_type=projects.UpdateProjectRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.UpdateProjectRequest,
+  dict,
+])
+def test_update_project(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1539,10 +1546,6 @@ def test_update_project(transport: str = 'grpc', request_type=projects.UpdatePro
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_project_from_dict():
-    test_update_project(request_type=dict)
 
 
 def test_update_project_empty_call():
@@ -1757,7 +1760,11 @@ async def test_update_project_flattened_error_async():
         )
 
 
-def test_move_project(transport: str = 'grpc', request_type=projects.MoveProjectRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.MoveProjectRequest,
+  dict,
+])
+def test_move_project(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1782,10 +1789,6 @@ def test_move_project(transport: str = 'grpc', request_type=projects.MoveProject
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_move_project_from_dict():
-    test_move_project(request_type=dict)
 
 
 def test_move_project_empty_call():
@@ -2000,7 +2003,11 @@ async def test_move_project_flattened_error_async():
         )
 
 
-def test_delete_project(transport: str = 'grpc', request_type=projects.DeleteProjectRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.DeleteProjectRequest,
+  dict,
+])
+def test_delete_project(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2025,10 +2032,6 @@ def test_delete_project(transport: str = 'grpc', request_type=projects.DeletePro
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_project_from_dict():
-    test_delete_project(request_type=dict)
 
 
 def test_delete_project_empty_call():
@@ -2233,7 +2236,11 @@ async def test_delete_project_flattened_error_async():
         )
 
 
-def test_undelete_project(transport: str = 'grpc', request_type=projects.UndeleteProjectRequest):
+@pytest.mark.parametrize("request_type", [
+  projects.UndeleteProjectRequest,
+  dict,
+])
+def test_undelete_project(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2258,10 +2265,6 @@ def test_undelete_project(transport: str = 'grpc', request_type=projects.Undelet
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_undelete_project_from_dict():
-    test_undelete_project(request_type=dict)
 
 
 def test_undelete_project_empty_call():
@@ -2466,7 +2469,11 @@ async def test_undelete_project_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2496,10 +2503,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -2722,7 +2725,11 @@ async def test_get_iam_policy_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2752,10 +2759,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -2978,7 +2981,11 @@ async def test_set_iam_policy_flattened_error_async():
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = ProjectsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3006,10 +3013,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -3768,7 +3771,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ProjectsTransport, '_prep_wrapped_messages') as prep:

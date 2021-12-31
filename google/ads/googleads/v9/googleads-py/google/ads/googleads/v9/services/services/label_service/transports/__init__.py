@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import LabelServiceTransport
 from .grpc import LabelServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[LabelServiceTransport]]
 _transport_registry['grpc'] = LabelServiceGrpcTransport
-
 
 __all__ = (
     'LabelServiceTransport',

@@ -216,18 +216,18 @@ def test_notebook_service_client_client_options(client_class, transport_class, t
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -258,7 +258,7 @@ def test_notebook_service_client_mtls_env_auto(client_class, transport_class, tr
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -333,7 +333,7 @@ def test_notebook_service_client_client_options_scopes(client_class, transport_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -356,7 +356,7 @@ def test_notebook_service_client_client_options_credentials_file(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -367,7 +367,6 @@ def test_notebook_service_client_client_options_credentials_file(client_class, t
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_notebook_service_client_client_options_from_dict():
     with mock.patch('google.cloud.notebooks_v1.services.notebook_service.transports.NotebookServiceGrpcTransport.__init__') as grpc_transport:
@@ -387,7 +386,11 @@ def test_notebook_service_client_client_options_from_dict():
         )
 
 
-def test_list_instances(transport: str = 'grpc', request_type=service.ListInstancesRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListInstancesRequest,
+  dict,
+])
+def test_list_instances(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -417,10 +420,6 @@ def test_list_instances(transport: str = 'grpc', request_type=service.ListInstan
     assert isinstance(response, pagers.ListInstancesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_instances_from_dict():
-    test_list_instances(request_type=dict)
 
 
 def test_list_instances_empty_call():
@@ -626,9 +625,10 @@ async def test_list_instances_flattened_error_async():
         )
 
 
-def test_list_instances_pager():
+def test_list_instances_pager(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -678,10 +678,10 @@ def test_list_instances_pager():
         assert len(results) == 6
         assert all(isinstance(i, instance.Instance)
                    for i in results)
-
-def test_list_instances_pages():
+def test_list_instances_pages(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -766,7 +766,8 @@ async def test_list_instances_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, instance.Instance)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_instances_async_pages():
@@ -812,7 +813,11 @@ async def test_list_instances_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_instance(transport: str = 'grpc', request_type=service.GetInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetInstanceRequest,
+  dict,
+])
+def test_get_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -885,10 +890,6 @@ def test_get_instance(transport: str = 'grpc', request_type=service.GetInstanceR
     assert response.subnet == 'subnet_value'
     assert response.tags == ['tags_value']
     assert response.nic_type == instance.Instance.NicType.VIRTIO_NET
-
-
-def test_get_instance_from_dict():
-    test_get_instance(request_type=dict)
 
 
 def test_get_instance_empty_call():
@@ -1136,7 +1137,11 @@ async def test_get_instance_flattened_error_async():
         )
 
 
-def test_create_instance(transport: str = 'grpc', request_type=service.CreateInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateInstanceRequest,
+  dict,
+])
+def test_create_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1161,10 +1166,6 @@ def test_create_instance(transport: str = 'grpc', request_type=service.CreateIns
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_instance_from_dict():
-    test_create_instance(request_type=dict)
 
 
 def test_create_instance_empty_call():
@@ -1389,7 +1390,11 @@ async def test_create_instance_flattened_error_async():
         )
 
 
-def test_register_instance(transport: str = 'grpc', request_type=service.RegisterInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.RegisterInstanceRequest,
+  dict,
+])
+def test_register_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1414,10 +1419,6 @@ def test_register_instance(transport: str = 'grpc', request_type=service.Registe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_register_instance_from_dict():
-    test_register_instance(request_type=dict)
 
 
 def test_register_instance_empty_call():
@@ -1536,7 +1537,11 @@ async def test_register_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_set_instance_accelerator(transport: str = 'grpc', request_type=service.SetInstanceAcceleratorRequest):
+@pytest.mark.parametrize("request_type", [
+  service.SetInstanceAcceleratorRequest,
+  dict,
+])
+def test_set_instance_accelerator(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1561,10 +1566,6 @@ def test_set_instance_accelerator(transport: str = 'grpc', request_type=service.
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_set_instance_accelerator_from_dict():
-    test_set_instance_accelerator(request_type=dict)
 
 
 def test_set_instance_accelerator_empty_call():
@@ -1683,7 +1684,11 @@ async def test_set_instance_accelerator_field_headers_async():
     ) in kw['metadata']
 
 
-def test_set_instance_machine_type(transport: str = 'grpc', request_type=service.SetInstanceMachineTypeRequest):
+@pytest.mark.parametrize("request_type", [
+  service.SetInstanceMachineTypeRequest,
+  dict,
+])
+def test_set_instance_machine_type(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1708,10 +1713,6 @@ def test_set_instance_machine_type(transport: str = 'grpc', request_type=service
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_set_instance_machine_type_from_dict():
-    test_set_instance_machine_type(request_type=dict)
 
 
 def test_set_instance_machine_type_empty_call():
@@ -1830,7 +1831,11 @@ async def test_set_instance_machine_type_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_instance_config(transport: str = 'grpc', request_type=service.UpdateInstanceConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateInstanceConfigRequest,
+  dict,
+])
+def test_update_instance_config(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1855,10 +1860,6 @@ def test_update_instance_config(transport: str = 'grpc', request_type=service.Up
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_instance_config_from_dict():
-    test_update_instance_config(request_type=dict)
 
 
 def test_update_instance_config_empty_call():
@@ -1977,7 +1978,11 @@ async def test_update_instance_config_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_shielded_instance_config(transport: str = 'grpc', request_type=service.UpdateShieldedInstanceConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateShieldedInstanceConfigRequest,
+  dict,
+])
+def test_update_shielded_instance_config(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2002,10 +2007,6 @@ def test_update_shielded_instance_config(transport: str = 'grpc', request_type=s
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_shielded_instance_config_from_dict():
-    test_update_shielded_instance_config(request_type=dict)
 
 
 def test_update_shielded_instance_config_empty_call():
@@ -2124,7 +2125,11 @@ async def test_update_shielded_instance_config_field_headers_async():
     ) in kw['metadata']
 
 
-def test_set_instance_labels(transport: str = 'grpc', request_type=service.SetInstanceLabelsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.SetInstanceLabelsRequest,
+  dict,
+])
+def test_set_instance_labels(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2149,10 +2154,6 @@ def test_set_instance_labels(transport: str = 'grpc', request_type=service.SetIn
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_set_instance_labels_from_dict():
-    test_set_instance_labels(request_type=dict)
 
 
 def test_set_instance_labels_empty_call():
@@ -2271,7 +2272,11 @@ async def test_set_instance_labels_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_instance(transport: str = 'grpc', request_type=service.DeleteInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteInstanceRequest,
+  dict,
+])
+def test_delete_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2296,10 +2301,6 @@ def test_delete_instance(transport: str = 'grpc', request_type=service.DeleteIns
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_instance_from_dict():
-    test_delete_instance(request_type=dict)
 
 
 def test_delete_instance_empty_call():
@@ -2504,7 +2505,11 @@ async def test_delete_instance_flattened_error_async():
         )
 
 
-def test_start_instance(transport: str = 'grpc', request_type=service.StartInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.StartInstanceRequest,
+  dict,
+])
+def test_start_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2529,10 +2534,6 @@ def test_start_instance(transport: str = 'grpc', request_type=service.StartInsta
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_start_instance_from_dict():
-    test_start_instance(request_type=dict)
 
 
 def test_start_instance_empty_call():
@@ -2651,7 +2652,11 @@ async def test_start_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_stop_instance(transport: str = 'grpc', request_type=service.StopInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.StopInstanceRequest,
+  dict,
+])
+def test_stop_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2676,10 +2681,6 @@ def test_stop_instance(transport: str = 'grpc', request_type=service.StopInstanc
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_stop_instance_from_dict():
-    test_stop_instance(request_type=dict)
 
 
 def test_stop_instance_empty_call():
@@ -2798,7 +2799,11 @@ async def test_stop_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_reset_instance(transport: str = 'grpc', request_type=service.ResetInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ResetInstanceRequest,
+  dict,
+])
+def test_reset_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2823,10 +2828,6 @@ def test_reset_instance(transport: str = 'grpc', request_type=service.ResetInsta
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_reset_instance_from_dict():
-    test_reset_instance(request_type=dict)
 
 
 def test_reset_instance_empty_call():
@@ -2945,7 +2946,11 @@ async def test_reset_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_report_instance_info(transport: str = 'grpc', request_type=service.ReportInstanceInfoRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ReportInstanceInfoRequest,
+  dict,
+])
+def test_report_instance_info(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2970,10 +2975,6 @@ def test_report_instance_info(transport: str = 'grpc', request_type=service.Repo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_report_instance_info_from_dict():
-    test_report_instance_info(request_type=dict)
 
 
 def test_report_instance_info_empty_call():
@@ -3092,7 +3093,11 @@ async def test_report_instance_info_field_headers_async():
     ) in kw['metadata']
 
 
-def test_is_instance_upgradeable(transport: str = 'grpc', request_type=service.IsInstanceUpgradeableRequest):
+@pytest.mark.parametrize("request_type", [
+  service.IsInstanceUpgradeableRequest,
+  dict,
+])
+def test_is_instance_upgradeable(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3126,10 +3131,6 @@ def test_is_instance_upgradeable(transport: str = 'grpc', request_type=service.I
     assert response.upgrade_version == 'upgrade_version_value'
     assert response.upgrade_info == 'upgrade_info_value'
     assert response.upgrade_image == 'upgrade_image_value'
-
-
-def test_is_instance_upgradeable_from_dict():
-    test_is_instance_upgradeable(request_type=dict)
 
 
 def test_is_instance_upgradeable_empty_call():
@@ -3255,7 +3256,11 @@ async def test_is_instance_upgradeable_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_instance_health(transport: str = 'grpc', request_type=service.GetInstanceHealthRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetInstanceHealthRequest,
+  dict,
+])
+def test_get_instance_health(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3283,10 +3288,6 @@ def test_get_instance_health(transport: str = 'grpc', request_type=service.GetIn
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.GetInstanceHealthResponse)
     assert response.health_state == service.GetInstanceHealthResponse.HealthState.HEALTHY
-
-
-def test_get_instance_health_from_dict():
-    test_get_instance_health(request_type=dict)
 
 
 def test_get_instance_health_empty_call():
@@ -3490,7 +3491,11 @@ async def test_get_instance_health_flattened_error_async():
         )
 
 
-def test_upgrade_instance(transport: str = 'grpc', request_type=service.UpgradeInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpgradeInstanceRequest,
+  dict,
+])
+def test_upgrade_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3515,10 +3520,6 @@ def test_upgrade_instance(transport: str = 'grpc', request_type=service.UpgradeI
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_upgrade_instance_from_dict():
-    test_upgrade_instance(request_type=dict)
 
 
 def test_upgrade_instance_empty_call():
@@ -3637,7 +3638,11 @@ async def test_upgrade_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_rollback_instance(transport: str = 'grpc', request_type=service.RollbackInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  service.RollbackInstanceRequest,
+  dict,
+])
+def test_rollback_instance(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3662,10 +3667,6 @@ def test_rollback_instance(transport: str = 'grpc', request_type=service.Rollbac
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_rollback_instance_from_dict():
-    test_rollback_instance(request_type=dict)
 
 
 def test_rollback_instance_empty_call():
@@ -3784,7 +3785,11 @@ async def test_rollback_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_upgrade_instance_internal(transport: str = 'grpc', request_type=service.UpgradeInstanceInternalRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpgradeInstanceInternalRequest,
+  dict,
+])
+def test_upgrade_instance_internal(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3809,10 +3814,6 @@ def test_upgrade_instance_internal(transport: str = 'grpc', request_type=service
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_upgrade_instance_internal_from_dict():
-    test_upgrade_instance_internal(request_type=dict)
 
 
 def test_upgrade_instance_internal_empty_call():
@@ -3931,7 +3932,11 @@ async def test_upgrade_instance_internal_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_environments(transport: str = 'grpc', request_type=service.ListEnvironmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListEnvironmentsRequest,
+  dict,
+])
+def test_list_environments(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3961,10 +3966,6 @@ def test_list_environments(transport: str = 'grpc', request_type=service.ListEnv
     assert isinstance(response, pagers.ListEnvironmentsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_environments_from_dict():
-    test_list_environments(request_type=dict)
 
 
 def test_list_environments_empty_call():
@@ -4170,9 +4171,10 @@ async def test_list_environments_flattened_error_async():
         )
 
 
-def test_list_environments_pager():
+def test_list_environments_pager(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4222,10 +4224,10 @@ def test_list_environments_pager():
         assert len(results) == 6
         assert all(isinstance(i, environment.Environment)
                    for i in results)
-
-def test_list_environments_pages():
+def test_list_environments_pages(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4310,7 +4312,8 @@ async def test_list_environments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, environment.Environment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_environments_async_pages():
@@ -4356,7 +4359,11 @@ async def test_list_environments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_environment(transport: str = 'grpc', request_type=service.GetEnvironmentRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetEnvironmentRequest,
+  dict,
+])
+def test_get_environment(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4391,10 +4398,6 @@ def test_get_environment(transport: str = 'grpc', request_type=service.GetEnviro
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.post_startup_script == 'post_startup_script_value'
-
-
-def test_get_environment_from_dict():
-    test_get_environment(request_type=dict)
 
 
 def test_get_environment_empty_call():
@@ -4604,7 +4607,11 @@ async def test_get_environment_flattened_error_async():
         )
 
 
-def test_create_environment(transport: str = 'grpc', request_type=service.CreateEnvironmentRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateEnvironmentRequest,
+  dict,
+])
+def test_create_environment(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4629,10 +4636,6 @@ def test_create_environment(transport: str = 'grpc', request_type=service.Create
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_environment_from_dict():
-    test_create_environment(request_type=dict)
 
 
 def test_create_environment_empty_call():
@@ -4857,7 +4860,11 @@ async def test_create_environment_flattened_error_async():
         )
 
 
-def test_delete_environment(transport: str = 'grpc', request_type=service.DeleteEnvironmentRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteEnvironmentRequest,
+  dict,
+])
+def test_delete_environment(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4882,10 +4889,6 @@ def test_delete_environment(transport: str = 'grpc', request_type=service.Delete
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_environment_from_dict():
-    test_delete_environment(request_type=dict)
 
 
 def test_delete_environment_empty_call():
@@ -5090,7 +5093,11 @@ async def test_delete_environment_flattened_error_async():
         )
 
 
-def test_list_schedules(transport: str = 'grpc', request_type=service.ListSchedulesRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListSchedulesRequest,
+  dict,
+])
+def test_list_schedules(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5120,10 +5127,6 @@ def test_list_schedules(transport: str = 'grpc', request_type=service.ListSchedu
     assert isinstance(response, pagers.ListSchedulesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_schedules_from_dict():
-    test_list_schedules(request_type=dict)
 
 
 def test_list_schedules_empty_call():
@@ -5329,9 +5332,10 @@ async def test_list_schedules_flattened_error_async():
         )
 
 
-def test_list_schedules_pager():
+def test_list_schedules_pager(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5381,10 +5385,10 @@ def test_list_schedules_pager():
         assert len(results) == 6
         assert all(isinstance(i, schedule.Schedule)
                    for i in results)
-
-def test_list_schedules_pages():
+def test_list_schedules_pages(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5469,7 +5473,8 @@ async def test_list_schedules_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, schedule.Schedule)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_schedules_async_pages():
@@ -5515,7 +5520,11 @@ async def test_list_schedules_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_schedule(transport: str = 'grpc', request_type=service.GetScheduleRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetScheduleRequest,
+  dict,
+])
+def test_get_schedule(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5553,10 +5562,6 @@ def test_get_schedule(transport: str = 'grpc', request_type=service.GetScheduleR
     assert response.state == schedule.Schedule.State.ENABLED
     assert response.cron_schedule == 'cron_schedule_value'
     assert response.time_zone == 'time_zone_value'
-
-
-def test_get_schedule_from_dict():
-    test_get_schedule(request_type=dict)
 
 
 def test_get_schedule_empty_call():
@@ -5770,7 +5775,11 @@ async def test_get_schedule_flattened_error_async():
         )
 
 
-def test_delete_schedule(transport: str = 'grpc', request_type=service.DeleteScheduleRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteScheduleRequest,
+  dict,
+])
+def test_delete_schedule(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5795,10 +5804,6 @@ def test_delete_schedule(transport: str = 'grpc', request_type=service.DeleteSch
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_schedule_from_dict():
-    test_delete_schedule(request_type=dict)
 
 
 def test_delete_schedule_empty_call():
@@ -6003,7 +6008,11 @@ async def test_delete_schedule_flattened_error_async():
         )
 
 
-def test_create_schedule(transport: str = 'grpc', request_type=service.CreateScheduleRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateScheduleRequest,
+  dict,
+])
+def test_create_schedule(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6028,10 +6037,6 @@ def test_create_schedule(transport: str = 'grpc', request_type=service.CreateSch
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_schedule_from_dict():
-    test_create_schedule(request_type=dict)
 
 
 def test_create_schedule_empty_call():
@@ -6256,7 +6261,11 @@ async def test_create_schedule_flattened_error_async():
         )
 
 
-def test_trigger_schedule(transport: str = 'grpc', request_type=service.TriggerScheduleRequest):
+@pytest.mark.parametrize("request_type", [
+  service.TriggerScheduleRequest,
+  dict,
+])
+def test_trigger_schedule(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6281,10 +6290,6 @@ def test_trigger_schedule(transport: str = 'grpc', request_type=service.TriggerS
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_trigger_schedule_from_dict():
-    test_trigger_schedule(request_type=dict)
 
 
 def test_trigger_schedule_empty_call():
@@ -6403,7 +6408,11 @@ async def test_trigger_schedule_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_executions(transport: str = 'grpc', request_type=service.ListExecutionsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListExecutionsRequest,
+  dict,
+])
+def test_list_executions(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6433,10 +6442,6 @@ def test_list_executions(transport: str = 'grpc', request_type=service.ListExecu
     assert isinstance(response, pagers.ListExecutionsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_executions_from_dict():
-    test_list_executions(request_type=dict)
 
 
 def test_list_executions_empty_call():
@@ -6642,9 +6647,10 @@ async def test_list_executions_flattened_error_async():
         )
 
 
-def test_list_executions_pager():
+def test_list_executions_pager(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6694,10 +6700,10 @@ def test_list_executions_pager():
         assert len(results) == 6
         assert all(isinstance(i, execution.Execution)
                    for i in results)
-
-def test_list_executions_pages():
+def test_list_executions_pages(transport_name: str = "grpc"):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6782,7 +6788,8 @@ async def test_list_executions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, execution.Execution)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_executions_async_pages():
@@ -6828,7 +6835,11 @@ async def test_list_executions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_execution(transport: str = 'grpc', request_type=service.GetExecutionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetExecutionRequest,
+  dict,
+])
+def test_get_execution(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6866,10 +6877,6 @@ def test_get_execution(transport: str = 'grpc', request_type=service.GetExecutio
     assert response.state == execution.Execution.State.QUEUED
     assert response.output_notebook_file == 'output_notebook_file_value'
     assert response.job_uri == 'job_uri_value'
-
-
-def test_get_execution_from_dict():
-    test_get_execution(request_type=dict)
 
 
 def test_get_execution_empty_call():
@@ -7083,7 +7090,11 @@ async def test_get_execution_flattened_error_async():
         )
 
 
-def test_delete_execution(transport: str = 'grpc', request_type=service.DeleteExecutionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteExecutionRequest,
+  dict,
+])
+def test_delete_execution(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7108,10 +7119,6 @@ def test_delete_execution(transport: str = 'grpc', request_type=service.DeleteEx
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_execution_from_dict():
-    test_delete_execution(request_type=dict)
 
 
 def test_delete_execution_empty_call():
@@ -7316,7 +7323,11 @@ async def test_delete_execution_flattened_error_async():
         )
 
 
-def test_create_execution(transport: str = 'grpc', request_type=service.CreateExecutionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateExecutionRequest,
+  dict,
+])
+def test_create_execution(request_type, transport: str = 'grpc'):
     client = NotebookServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7341,10 +7352,6 @@ def test_create_execution(transport: str = 'grpc', request_type=service.CreateEx
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_execution_from_dict():
-    test_create_execution(request_type=dict)
 
 
 def test_create_execution_empty_call():
@@ -8178,7 +8185,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.NotebookServiceTransport, '_prep_wrapped_messages') as prep:

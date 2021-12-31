@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_service_attachments_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_service_attachments_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_service_attachments_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_service_attachments_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,53 @@ def test_service_attachments_client_client_options_credentials_file(client_class
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListServiceAttachmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListServiceAttachmentsRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListServiceAttachmentsRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.ServiceAttachmentAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.ServiceAttachmentAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListServiceAttachmentsRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ServiceAttachmentAggregatedList(
               id='id_value',
@@ -401,7 +436,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -410,7 +445,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -451,8 +486,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -465,7 +500,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -478,18 +513,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ServiceAttachmentAggregatedList()
 
@@ -502,7 +533,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -543,80 +574,131 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.ServiceAttachmentAggregatedList(
-                    items={
-                        'a':compute.ServiceAttachmentsScopedList(),
-                        'b':compute.ServiceAttachmentsScopedList(),
-                        'c':compute.ServiceAttachmentsScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.ServiceAttachmentAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.ServiceAttachmentAggregatedList(
-                    items={
-                        'g':compute.ServiceAttachmentsScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.ServiceAttachmentAggregatedList(
-                    items={
-                        'h':compute.ServiceAttachmentsScopedList(),
-                        'i':compute.ServiceAttachmentsScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.ServiceAttachmentAggregatedList(
+                items={
+                    'a':compute.ServiceAttachmentsScopedList(),
+                    'b':compute.ServiceAttachmentsScopedList(),
+                    'c':compute.ServiceAttachmentsScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.ServiceAttachmentAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.ServiceAttachmentAggregatedList(
+                items={
+                    'g':compute.ServiceAttachmentsScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.ServiceAttachmentAggregatedList(
+                items={
+                    'h':compute.ServiceAttachmentsScopedList(),
+                    'i':compute.ServiceAttachmentsScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.ServiceAttachmentAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.ServiceAttachmentAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.ServiceAttachmentsScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.ServiceAttachmentsScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.ServiceAttachmentsScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.ServiceAttachmentsScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.ServiceAttachmentsScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.ServiceAttachmentsScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteServiceAttachmentRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteServiceAttachmentRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteServiceAttachmentRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -696,7 +778,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteServiceAtt
     assert "region" not in jsonified_request
     assert "serviceAttachment" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -711,7 +793,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteServiceAtt
     jsonified_request["region"] = 'region_value'
     jsonified_request["serviceAttachment"] = 'service_attachment_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -756,16 +838,16 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteServiceAtt
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "service_attachment",
-                    ""
-                )
+                    "serviceAttachment",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -778,7 +860,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -791,18 +873,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -815,7 +893,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -850,18 +928,68 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetServiceAttachmentRequest):
+def test_delete_unary_rest_error():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetServiceAttachmentRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.ServiceAttachment(
+              connection_preference='connection_preference_value',
+              consumer_reject_lists=['consumer_reject_lists_value'],
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              enable_proxy_protocol=True,
+              fingerprint='fingerprint_value',
+              id=205,
+              kind='kind_value',
+              name='name_value',
+              nat_subnets=['nat_subnets_value'],
+              producer_forwarding_rule='producer_forwarding_rule_value',
+              region='region_value',
+              self_link='self_link_value',
+              target_service='target_service_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.ServiceAttachment.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetServiceAttachmentRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ServiceAttachment(
               connection_preference='connection_preference_value',
@@ -925,7 +1053,7 @@ def test_get_rest_required_fields(request_type=compute.GetServiceAttachmentReque
     assert "region" not in jsonified_request
     assert "serviceAttachment" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -940,7 +1068,7 @@ def test_get_rest_required_fields(request_type=compute.GetServiceAttachmentReque
     jsonified_request["region"] = 'region_value'
     jsonified_request["serviceAttachment"] = 'service_attachment_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -985,16 +1113,16 @@ def test_get_rest_required_fields(request_type=compute.GetServiceAttachmentReque
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "service_attachment",
-                    ""
-                )
+                    "serviceAttachment",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1007,7 +1135,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetS
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1020,18 +1148,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetS
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ServiceAttachment()
 
@@ -1044,7 +1168,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1079,18 +1203,57 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_iam_policy_rest(transport: str = 'rest', request_type=compute.GetIamPolicyServiceAttachmentRequest):
+def test_get_rest_error():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetIamPolicyServiceAttachmentRequest,
+  dict,
+])
+def test_get_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetIamPolicyServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetIamPolicyServiceAttachmentRequest,
+    dict,
+])
+def test_get_iam_policy_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -1132,7 +1295,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicySe
     assert "region" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1147,7 +1310,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicySe
     jsonified_request["region"] = 'region_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1192,16 +1355,16 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicySe
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1214,7 +1377,7 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1227,18 +1390,14 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.get_iam_policy(request)
 
 
-def test_get_iam_policy_rest_from_dict():
-    test_get_iam_policy_rest(request_type=dict)
-
-
-def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_get_iam_policy_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -1251,7 +1410,7 @@ def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1286,19 +1445,77 @@ def test_get_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertServiceAttachmentRequest):
+def test_get_iam_policy_rest_error():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertServiceAttachmentRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertServiceAttachmentRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
-    request_init["service_attachment_resource"] = compute.ServiceAttachment(connected_endpoints=[compute.ServiceAttachmentConnectedEndpoint(endpoint='endpoint_value')])
+    request_init = {'project': 'sample1', 'region': 'sample2'}
+    request_init["service_attachment_resource"] = {'connected_endpoints': [{'endpoint': 'endpoint_value', 'psc_connection_id': 1793, 'status': 'status_value'}], 'connection_preference': 'connection_preference_value', 'consumer_accept_lists': [{'connection_limit': 1710, 'project_id_or_num': 'project_id_or_num_value'}], 'consumer_reject_lists': ['consumer_reject_lists_value_1', 'consumer_reject_lists_value_2'], 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'enable_proxy_protocol': True, 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'nat_subnets': ['nat_subnets_value_1', 'nat_subnets_value_2'], 'producer_forwarding_rule': 'producer_forwarding_rule_value', 'psc_service_attachment_id': {'high': 416, 'low': 338}, 'region': 'region_value', 'self_link': 'self_link_value', 'target_service': 'target_service_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1376,7 +1593,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertServiceAtt
     assert "project" not in jsonified_request
     assert "region" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1388,7 +1605,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertServiceAtt
     jsonified_request["project"] = 'project_value'
     jsonified_request["region"] = 'region_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1432,12 +1649,12 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertServiceAtt
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1450,8 +1667,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
-    request_init["service_attachment_resource"] = compute.ServiceAttachment(connected_endpoints=[compute.ServiceAttachmentConnectedEndpoint(endpoint='endpoint_value')])
+    request_init = {'project': 'sample1', 'region': 'sample2'}
+    request_init["service_attachment_resource"] = {'connected_endpoints': [{'endpoint': 'endpoint_value', 'psc_connection_id': 1793, 'status': 'status_value'}], 'connection_preference': 'connection_preference_value', 'consumer_accept_lists': [{'connection_limit': 1710, 'project_id_or_num': 'project_id_or_num_value'}], 'consumer_reject_lists': ['consumer_reject_lists_value_1', 'consumer_reject_lists_value_2'], 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'enable_proxy_protocol': True, 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'nat_subnets': ['nat_subnets_value_1', 'nat_subnets_value_2'], 'producer_forwarding_rule': 'producer_forwarding_rule_value', 'psc_service_attachment_id': {'high': 416, 'low': 338}, 'region': 'region_value', 'self_link': 'self_link_value', 'target_service': 'target_service_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1464,18 +1681,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1488,7 +1701,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2"}
+        sample_request = {'project': 'sample1', 'region': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1523,18 +1736,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListServiceAttachmentsRequest):
+def test_insert_unary_rest_error():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListServiceAttachmentsRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListServiceAttachmentsRequest({'project': 'sample1', 'region': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.ServiceAttachmentList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.ServiceAttachmentList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListServiceAttachmentsRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
+    request_init = {'project': 'sample1', 'region': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ServiceAttachmentList(
               id='id_value',
@@ -1576,7 +1829,7 @@ def test_list_rest_required_fields(request_type=compute.ListServiceAttachmentsRe
     assert "project" not in jsonified_request
     assert "region" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1588,7 +1841,7 @@ def test_list_rest_required_fields(request_type=compute.ListServiceAttachmentsRe
     jsonified_request["project"] = 'project_value'
     jsonified_request["region"] = 'region_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1631,12 +1884,12 @@ def test_list_rest_required_fields(request_type=compute.ListServiceAttachmentsRe
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1649,7 +1902,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
+    request_init = {'project': 'sample1', 'region': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1662,18 +1915,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ServiceAttachmentList()
 
@@ -1686,7 +1935,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2"}
+        sample_request = {'project': 'sample1', 'region': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1729,71 +1978,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.ServiceAttachmentList(
-                    items=[
-                        compute.ServiceAttachment(),
-                        compute.ServiceAttachment(),
-                        compute.ServiceAttachment(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.ServiceAttachmentList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.ServiceAttachmentList(
-                    items=[
-                        compute.ServiceAttachment(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.ServiceAttachmentList(
-                    items=[
-                        compute.ServiceAttachment(),
-                        compute.ServiceAttachment(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.ServiceAttachmentList(
+                items=[
+                    compute.ServiceAttachment(),
+                    compute.ServiceAttachment(),
+                    compute.ServiceAttachment(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.ServiceAttachmentList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.ServiceAttachmentList(
+                items=[
+                    compute.ServiceAttachment(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.ServiceAttachmentList(
+                items=[
+                    compute.ServiceAttachment(),
+                    compute.ServiceAttachment(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.ServiceAttachmentList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.ServiceAttachmentList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1", "region": "sample2"}
+        sample_request = {'project': 'sample1', 'region': 'sample2'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.ServiceAttachment)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.ServiceAttachment)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchServiceAttachmentRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchServiceAttachmentRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchServiceAttachmentRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
-    request_init["service_attachment_resource"] = compute.ServiceAttachment(connected_endpoints=[compute.ServiceAttachmentConnectedEndpoint(endpoint='endpoint_value')])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
+    request_init["service_attachment_resource"] = {'connected_endpoints': [{'endpoint': 'endpoint_value', 'psc_connection_id': 1793, 'status': 'status_value'}], 'connection_preference': 'connection_preference_value', 'consumer_accept_lists': [{'connection_limit': 1710, 'project_id_or_num': 'project_id_or_num_value'}], 'consumer_reject_lists': ['consumer_reject_lists_value_1', 'consumer_reject_lists_value_2'], 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'enable_proxy_protocol': True, 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'nat_subnets': ['nat_subnets_value_1', 'nat_subnets_value_2'], 'producer_forwarding_rule': 'producer_forwarding_rule_value', 'psc_service_attachment_id': {'high': 416, 'low': 338}, 'region': 'region_value', 'self_link': 'self_link_value', 'target_service': 'target_service_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1873,7 +2173,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchServiceAttac
     assert "region" not in jsonified_request
     assert "serviceAttachment" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1888,7 +2188,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchServiceAttac
     jsonified_request["region"] = 'region_value'
     jsonified_request["serviceAttachment"] = 'service_attachment_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1934,16 +2234,16 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchServiceAttac
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "service_attachment",
-                    ""
-                )
+                    "serviceAttachment",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1956,8 +2256,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
-    request_init["service_attachment_resource"] = compute.ServiceAttachment(connected_endpoints=[compute.ServiceAttachmentConnectedEndpoint(endpoint='endpoint_value')])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
+    request_init["service_attachment_resource"] = {'connected_endpoints': [{'endpoint': 'endpoint_value', 'psc_connection_id': 1793, 'status': 'status_value'}], 'connection_preference': 'connection_preference_value', 'consumer_accept_lists': [{'connection_limit': 1710, 'project_id_or_num': 'project_id_or_num_value'}], 'consumer_reject_lists': ['consumer_reject_lists_value_1', 'consumer_reject_lists_value_2'], 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'enable_proxy_protocol': True, 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'nat_subnets': ['nat_subnets_value_1', 'nat_subnets_value_2'], 'producer_forwarding_rule': 'producer_forwarding_rule_value', 'psc_service_attachment_id': {'high': 416, 'low': 338}, 'region': 'region_value', 'self_link': 'self_link_value', 'target_service': 'target_service_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1970,18 +2270,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1994,7 +2290,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "service_attachment": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'service_attachment': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2031,19 +2327,58 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_iam_policy_rest(transport: str = 'rest', request_type=compute.SetIamPolicyServiceAttachmentRequest):
+def test_patch_unary_rest_error():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetIamPolicyServiceAttachmentRequest,
+  dict,
+])
+def test_set_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetIamPolicyServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetIamPolicyServiceAttachmentRequest,
+    dict,
+])
+def test_set_iam_policy_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["region_set_policy_request_resource"] = compute.RegionSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["region_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -2085,7 +2420,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicySe
     assert "region" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2100,7 +2435,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicySe
     jsonified_request["region"] = 'region_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2146,16 +2481,16 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicySe
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2168,8 +2503,8 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["region_set_policy_request_resource"] = compute.RegionSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["region_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2182,18 +2517,14 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.set_iam_policy(request)
 
 
-def test_set_iam_policy_rest_from_dict():
-    test_set_iam_policy_rest(request_type=dict)
-
-
-def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_set_iam_policy_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -2206,7 +2537,7 @@ def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2243,19 +2574,56 @@ def test_set_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute.TestIamPermissionsServiceAttachmentRequest):
+def test_set_iam_policy_rest_error():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.TestIamPermissionsServiceAttachmentRequest,
+  dict,
+])
+def test_test_iam_permissions_rest(request_type, transport: str = 'rest'):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.TestIamPermissionsServiceAttachmentRequest({'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.TestPermissionsResponse(
+              permissions=['permissions_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.test_iam_permissions(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.TestIamPermissionsServiceAttachmentRequest,
+    dict,
+])
+def test_test_iam_permissions_rest(request_type):
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse(
               permissions=['permissions_value'],
@@ -2293,7 +2661,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     assert "region" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2308,7 +2676,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     jsonified_request["region"] = 'region_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2354,16 +2722,16 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2376,8 +2744,8 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2390,18 +2758,14 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
         client.test_iam_permissions(request)
 
 
-def test_test_iam_permissions_rest_from_dict():
-    test_test_iam_permissions_rest(request_type=dict)
-
-
-def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
+def test_test_iam_permissions_rest_flattened():
     client = ServiceAttachmentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse()
 
@@ -2414,7 +2778,7 @@ def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2449,6 +2813,13 @@ def test_test_iam_permissions_rest_flattened_error(transport: str = 'rest'):
             resource='resource_value',
             test_permissions_request_resource=compute.TestPermissionsRequest(permissions=['permissions_value']),
         )
+
+
+def test_test_iam_permissions_rest_error():
+    client = ServiceAttachmentsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -2698,7 +3069,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ServiceAttachmentsTransport, '_prep_wrapped_messages') as prep:

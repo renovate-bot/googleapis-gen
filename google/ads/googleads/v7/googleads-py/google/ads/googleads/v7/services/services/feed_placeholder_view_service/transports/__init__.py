@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import FeedPlaceholderViewServiceTransport
 from .grpc import FeedPlaceholderViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[FeedPlaceholderViewServiceTransport]]
 _transport_registry['grpc'] = FeedPlaceholderViewServiceGrpcTransport
-
 
 __all__ = (
     'FeedPlaceholderViewServiceTransport',

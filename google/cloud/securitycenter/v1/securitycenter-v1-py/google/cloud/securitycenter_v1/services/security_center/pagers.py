@@ -130,7 +130,6 @@ class GroupAssetsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[securitycenter_service.GroupResult]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class GroupFindingsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[securitycenter_service.GroupResult]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListAssetsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[securitycenter_service.ListAssetsResponse.ListAssetsResult]:
         async def async_generator():
             async for page in self.pages:
@@ -496,7 +493,6 @@ class ListFindingsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[securitycenter_service.ListFindingsResponse.ListFindingsResult]:
         async def async_generator():
             async for page in self.pages:
@@ -618,7 +614,6 @@ class ListMuteConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[mute_config.MuteConfig]:
         async def async_generator():
             async for page in self.pages:
@@ -740,7 +735,6 @@ class ListNotificationConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[notification_config.NotificationConfig]:
         async def async_generator():
             async for page in self.pages:
@@ -862,7 +856,6 @@ class ListSourcesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[source.Source]:
         async def async_generator():
             async for page in self.pages:

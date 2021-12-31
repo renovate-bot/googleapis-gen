@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_firewalls_client_client_options(client_class, transport_class, transpor
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_firewalls_client_mtls_env_auto(client_class, transport_class, transport
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_firewalls_client_client_options_scopes(client_class, transport_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_firewalls_client_client_options_credentials_file(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,70 @@ def test_firewalls_client_client_options_credentials_file(client_class, transpor
         )
 
 
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteFirewallRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteFirewallRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteFirewallRequest({'project': 'sample1', 'firewall': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteFirewallRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -437,7 +489,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteFirewallRe
     assert "firewall" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -449,7 +501,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteFirewallRe
     jsonified_request["firewall"] = 'firewall_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -492,12 +544,12 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteFirewallRe
             expected_params = [
                 (
                     "firewall",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -510,7 +562,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -523,18 +575,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -547,7 +595,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "firewall": "sample2"}
+        sample_request = {'project': 'sample1', 'firewall': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -580,18 +628,70 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetFirewallRequest):
+def test_delete_unary_rest_error():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetFirewallRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetFirewallRequest({'project': 'sample1', 'firewall': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Firewall(
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              destination_ranges=['destination_ranges_value'],
+              direction='direction_value',
+              disabled=True,
+              id=205,
+              kind='kind_value',
+              name='name_value',
+              network='network_value',
+              priority=898,
+              self_link='self_link_value',
+              source_ranges=['source_ranges_value'],
+              source_service_accounts=['source_service_accounts_value'],
+              source_tags=['source_tags_value'],
+              target_service_accounts=['target_service_accounts_value'],
+              target_tags=['target_tags_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Firewall.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetFirewallRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Firewall(
               creation_timestamp='creation_timestamp_value',
@@ -657,7 +757,7 @@ def test_get_rest_required_fields(request_type=compute.GetFirewallRequest):
     assert "firewall" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -669,7 +769,7 @@ def test_get_rest_required_fields(request_type=compute.GetFirewallRequest):
     jsonified_request["firewall"] = 'firewall_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -712,12 +812,12 @@ def test_get_rest_required_fields(request_type=compute.GetFirewallRequest):
             expected_params = [
                 (
                     "firewall",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -730,7 +830,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetF
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -743,18 +843,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetF
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Firewall()
 
@@ -767,7 +863,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "firewall": "sample2"}
+        sample_request = {'project': 'sample1', 'firewall': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -800,19 +896,77 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertFirewallRequest):
+def test_get_rest_error():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertFirewallRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertFirewallRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertFirewallRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["firewall_resource"] = compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')])
+    request_init = {'project': 'sample1'}
+    request_init["firewall_resource"] = {'allowed': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'creation_timestamp': 'creation_timestamp_value', 'denied': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'description': 'description_value', 'destination_ranges': ['destination_ranges_value_1', 'destination_ranges_value_2'], 'direction': 'direction_value', 'disabled': True, 'id': 205, 'kind': 'kind_value', 'log_config': {'enable': True, 'metadata': 'metadata_value'}, 'name': 'name_value', 'network': 'network_value', 'priority': 898, 'self_link': 'self_link_value', 'source_ranges': ['source_ranges_value_1', 'source_ranges_value_2'], 'source_service_accounts': ['source_service_accounts_value_1', 'source_service_accounts_value_2'], 'source_tags': ['source_tags_value_1', 'source_tags_value_2'], 'target_service_accounts': ['target_service_accounts_value_1', 'target_service_accounts_value_2'], 'target_tags': ['target_tags_value_1', 'target_tags_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -888,7 +1042,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertFirewallRe
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -897,7 +1051,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertFirewallRe
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -939,8 +1093,8 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertFirewallRe
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -953,8 +1107,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["firewall_resource"] = compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')])
+    request_init = {'project': 'sample1'}
+    request_init["firewall_resource"] = {'allowed': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'creation_timestamp': 'creation_timestamp_value', 'denied': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'description': 'description_value', 'destination_ranges': ['destination_ranges_value_1', 'destination_ranges_value_2'], 'direction': 'direction_value', 'disabled': True, 'id': 205, 'kind': 'kind_value', 'log_config': {'enable': True, 'metadata': 'metadata_value'}, 'name': 'name_value', 'network': 'network_value', 'priority': 898, 'self_link': 'self_link_value', 'source_ranges': ['source_ranges_value_1', 'source_ranges_value_2'], 'source_service_accounts': ['source_service_accounts_value_1', 'source_service_accounts_value_2'], 'source_tags': ['source_tags_value_1', 'source_tags_value_2'], 'target_service_accounts': ['target_service_accounts_value_1', 'target_service_accounts_value_2'], 'target_tags': ['target_tags_value_1', 'target_tags_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -967,18 +1121,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -991,7 +1141,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1024,18 +1174,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListFirewallsRequest):
+def test_insert_unary_rest_error():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListFirewallsRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListFirewallsRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.FirewallList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.FirewallList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListFirewallsRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.FirewallList(
               id='id_value',
@@ -1075,7 +1265,7 @@ def test_list_rest_required_fields(request_type=compute.ListFirewallsRequest):
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1084,7 +1274,7 @@ def test_list_rest_required_fields(request_type=compute.ListFirewallsRequest):
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1125,8 +1315,8 @@ def test_list_rest_required_fields(request_type=compute.ListFirewallsRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1139,7 +1329,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1152,18 +1342,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.FirewallList()
 
@@ -1176,7 +1362,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1217,71 +1403,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.FirewallList(
-                    items=[
-                        compute.Firewall(),
-                        compute.Firewall(),
-                        compute.Firewall(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.FirewallList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.FirewallList(
-                    items=[
-                        compute.Firewall(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.FirewallList(
-                    items=[
-                        compute.Firewall(),
-                        compute.Firewall(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.FirewallList(
+                items=[
+                    compute.Firewall(),
+                    compute.Firewall(),
+                    compute.Firewall(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.FirewallList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.FirewallList(
+                items=[
+                    compute.Firewall(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.FirewallList(
+                items=[
+                    compute.Firewall(),
+                    compute.Firewall(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.FirewallList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.FirewallList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.Firewall)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.Firewall)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchFirewallRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchFirewallRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchFirewallRequest({'project': 'sample1', 'firewall': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchFirewallRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
-    request_init["firewall_resource"] = compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')])
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
+    request_init["firewall_resource"] = {'allowed': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'creation_timestamp': 'creation_timestamp_value', 'denied': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'description': 'description_value', 'destination_ranges': ['destination_ranges_value_1', 'destination_ranges_value_2'], 'direction': 'direction_value', 'disabled': True, 'id': 205, 'kind': 'kind_value', 'log_config': {'enable': True, 'metadata': 'metadata_value'}, 'name': 'name_value', 'network': 'network_value', 'priority': 898, 'self_link': 'self_link_value', 'source_ranges': ['source_ranges_value_1', 'source_ranges_value_2'], 'source_service_accounts': ['source_service_accounts_value_1', 'source_service_accounts_value_2'], 'source_tags': ['source_tags_value_1', 'source_tags_value_2'], 'target_service_accounts': ['target_service_accounts_value_1', 'target_service_accounts_value_2'], 'target_tags': ['target_tags_value_1', 'target_tags_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1359,7 +1596,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchFirewallRequ
     assert "firewall" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1371,7 +1608,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchFirewallRequ
     jsonified_request["firewall"] = 'firewall_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1415,12 +1652,12 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchFirewallRequ
             expected_params = [
                 (
                     "firewall",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1433,8 +1670,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
-    request_init["firewall_resource"] = compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')])
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
+    request_init["firewall_resource"] = {'allowed': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'creation_timestamp': 'creation_timestamp_value', 'denied': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'description': 'description_value', 'destination_ranges': ['destination_ranges_value_1', 'destination_ranges_value_2'], 'direction': 'direction_value', 'disabled': True, 'id': 205, 'kind': 'kind_value', 'log_config': {'enable': True, 'metadata': 'metadata_value'}, 'name': 'name_value', 'network': 'network_value', 'priority': 898, 'self_link': 'self_link_value', 'source_ranges': ['source_ranges_value_1', 'source_ranges_value_2'], 'source_service_accounts': ['source_service_accounts_value_1', 'source_service_accounts_value_2'], 'source_tags': ['source_tags_value_1', 'source_tags_value_2'], 'target_service_accounts': ['target_service_accounts_value_1', 'target_service_accounts_value_2'], 'target_tags': ['target_tags_value_1', 'target_tags_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1447,18 +1684,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1471,7 +1704,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "firewall": "sample2"}
+        sample_request = {'project': 'sample1', 'firewall': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1506,19 +1739,77 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_update_unary_rest(transport: str = 'rest', request_type=compute.UpdateFirewallRequest):
+def test_patch_unary_rest_error():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.UpdateFirewallRequest,
+  dict,
+])
+def test_update_unary_rest(request_type, transport: str = 'rest'):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.UpdateFirewallRequest({'project': 'sample1', 'firewall': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.update_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.UpdateFirewallRequest,
+    dict,
+])
+def test_update_unary_rest(request_type):
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
-    request_init["firewall_resource"] = compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')])
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
+    request_init["firewall_resource"] = {'allowed': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'creation_timestamp': 'creation_timestamp_value', 'denied': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'description': 'description_value', 'destination_ranges': ['destination_ranges_value_1', 'destination_ranges_value_2'], 'direction': 'direction_value', 'disabled': True, 'id': 205, 'kind': 'kind_value', 'log_config': {'enable': True, 'metadata': 'metadata_value'}, 'name': 'name_value', 'network': 'network_value', 'priority': 898, 'self_link': 'self_link_value', 'source_ranges': ['source_ranges_value_1', 'source_ranges_value_2'], 'source_service_accounts': ['source_service_accounts_value_1', 'source_service_accounts_value_2'], 'source_tags': ['source_tags_value_1', 'source_tags_value_2'], 'target_service_accounts': ['target_service_accounts_value_1', 'target_service_accounts_value_2'], 'target_tags': ['target_tags_value_1', 'target_tags_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1596,7 +1887,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateFirewallRe
     assert "firewall" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1608,7 +1899,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateFirewallRe
     jsonified_request["firewall"] = 'firewall_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1652,12 +1943,12 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateFirewallRe
             expected_params = [
                 (
                     "firewall",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1670,8 +1961,8 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "firewall": "sample2"}
-    request_init["firewall_resource"] = compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')])
+    request_init = {'project': 'sample1', 'firewall': 'sample2'}
+    request_init["firewall_resource"] = {'allowed': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'creation_timestamp': 'creation_timestamp_value', 'denied': [{'I_p_protocol': 'I_p_protocol_value', 'ports': ['ports_value_1', 'ports_value_2']}], 'description': 'description_value', 'destination_ranges': ['destination_ranges_value_1', 'destination_ranges_value_2'], 'direction': 'direction_value', 'disabled': True, 'id': 205, 'kind': 'kind_value', 'log_config': {'enable': True, 'metadata': 'metadata_value'}, 'name': 'name_value', 'network': 'network_value', 'priority': 898, 'self_link': 'self_link_value', 'source_ranges': ['source_ranges_value_1', 'source_ranges_value_2'], 'source_service_accounts': ['source_service_accounts_value_1', 'source_service_accounts_value_2'], 'source_tags': ['source_tags_value_1', 'source_tags_value_2'], 'target_service_accounts': ['target_service_accounts_value_1', 'target_service_accounts_value_2'], 'target_tags': ['target_tags_value_1', 'target_tags_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1684,18 +1975,14 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.update_unary(request)
 
 
-def test_update_unary_rest_from_dict():
-    test_update_unary_rest(request_type=dict)
-
-
-def test_update_unary_rest_flattened(transport: str = 'rest'):
+def test_update_unary_rest_flattened():
     client = FirewallsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1708,7 +1995,7 @@ def test_update_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "firewall": "sample2"}
+        sample_request = {'project': 'sample1', 'firewall': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1741,6 +2028,13 @@ def test_update_unary_rest_flattened_error(transport: str = 'rest'):
             firewall='firewall_value',
             firewall_resource=compute.Firewall(allowed=[compute.Allowed(I_p_protocol='I_p_protocol_value')]),
         )
+
+
+def test_update_unary_rest_error():
+    client = FirewallsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -1987,7 +2281,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.FirewallsTransport, '_prep_wrapped_messages') as prep:

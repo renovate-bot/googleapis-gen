@@ -203,18 +203,18 @@ def test_autoscaling_policy_service_client_client_options(client_class, transpor
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -245,7 +245,7 @@ def test_autoscaling_policy_service_client_mtls_env_auto(client_class, transport
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -320,7 +320,7 @@ def test_autoscaling_policy_service_client_client_options_scopes(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -343,7 +343,7 @@ def test_autoscaling_policy_service_client_client_options_credentials_file(clien
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -354,7 +354,6 @@ def test_autoscaling_policy_service_client_client_options_credentials_file(clien
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_autoscaling_policy_service_client_client_options_from_dict():
     with mock.patch('google.cloud.dataproc_v1.services.autoscaling_policy_service.transports.AutoscalingPolicyServiceGrpcTransport.__init__') as grpc_transport:
@@ -374,7 +373,11 @@ def test_autoscaling_policy_service_client_client_options_from_dict():
         )
 
 
-def test_create_autoscaling_policy(transport: str = 'grpc', request_type=autoscaling_policies.CreateAutoscalingPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  autoscaling_policies.CreateAutoscalingPolicyRequest,
+  dict,
+])
+def test_create_autoscaling_policy(request_type, transport: str = 'grpc'):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -405,10 +408,6 @@ def test_create_autoscaling_policy(transport: str = 'grpc', request_type=autosca
     assert isinstance(response, autoscaling_policies.AutoscalingPolicy)
     assert response.id == 'id_value'
     assert response.name == 'name_value'
-
-
-def test_create_autoscaling_policy_from_dict():
-    test_create_autoscaling_policy(request_type=dict)
 
 
 def test_create_autoscaling_policy_empty_call():
@@ -624,7 +623,11 @@ async def test_create_autoscaling_policy_flattened_error_async():
         )
 
 
-def test_update_autoscaling_policy(transport: str = 'grpc', request_type=autoscaling_policies.UpdateAutoscalingPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  autoscaling_policies.UpdateAutoscalingPolicyRequest,
+  dict,
+])
+def test_update_autoscaling_policy(request_type, transport: str = 'grpc'):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -655,10 +658,6 @@ def test_update_autoscaling_policy(transport: str = 'grpc', request_type=autosca
     assert isinstance(response, autoscaling_policies.AutoscalingPolicy)
     assert response.id == 'id_value'
     assert response.name == 'name_value'
-
-
-def test_update_autoscaling_policy_from_dict():
-    test_update_autoscaling_policy(request_type=dict)
 
 
 def test_update_autoscaling_policy_empty_call():
@@ -864,7 +863,11 @@ async def test_update_autoscaling_policy_flattened_error_async():
         )
 
 
-def test_get_autoscaling_policy(transport: str = 'grpc', request_type=autoscaling_policies.GetAutoscalingPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  autoscaling_policies.GetAutoscalingPolicyRequest,
+  dict,
+])
+def test_get_autoscaling_policy(request_type, transport: str = 'grpc'):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -895,10 +898,6 @@ def test_get_autoscaling_policy(transport: str = 'grpc', request_type=autoscalin
     assert isinstance(response, autoscaling_policies.AutoscalingPolicy)
     assert response.id == 'id_value'
     assert response.name == 'name_value'
-
-
-def test_get_autoscaling_policy_from_dict():
-    test_get_autoscaling_policy(request_type=dict)
 
 
 def test_get_autoscaling_policy_empty_call():
@@ -1104,7 +1103,11 @@ async def test_get_autoscaling_policy_flattened_error_async():
         )
 
 
-def test_list_autoscaling_policies(transport: str = 'grpc', request_type=autoscaling_policies.ListAutoscalingPoliciesRequest):
+@pytest.mark.parametrize("request_type", [
+  autoscaling_policies.ListAutoscalingPoliciesRequest,
+  dict,
+])
+def test_list_autoscaling_policies(request_type, transport: str = 'grpc'):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1132,10 +1135,6 @@ def test_list_autoscaling_policies(transport: str = 'grpc', request_type=autosca
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAutoscalingPoliciesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_autoscaling_policies_from_dict():
-    test_list_autoscaling_policies(request_type=dict)
 
 
 def test_list_autoscaling_policies_empty_call():
@@ -1339,9 +1338,10 @@ async def test_list_autoscaling_policies_flattened_error_async():
         )
 
 
-def test_list_autoscaling_policies_pager():
+def test_list_autoscaling_policies_pager(transport_name: str = "grpc"):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1391,10 +1391,10 @@ def test_list_autoscaling_policies_pager():
         assert len(results) == 6
         assert all(isinstance(i, autoscaling_policies.AutoscalingPolicy)
                    for i in results)
-
-def test_list_autoscaling_policies_pages():
+def test_list_autoscaling_policies_pages(transport_name: str = "grpc"):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1479,7 +1479,8 @@ async def test_list_autoscaling_policies_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, autoscaling_policies.AutoscalingPolicy)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_autoscaling_policies_async_pages():
@@ -1525,7 +1526,11 @@ async def test_list_autoscaling_policies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_autoscaling_policy(transport: str = 'grpc', request_type=autoscaling_policies.DeleteAutoscalingPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  autoscaling_policies.DeleteAutoscalingPolicyRequest,
+  dict,
+])
+def test_delete_autoscaling_policy(request_type, transport: str = 'grpc'):
     client = AutoscalingPolicyServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1550,10 +1555,6 @@ def test_delete_autoscaling_policy(transport: str = 'grpc', request_type=autosca
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_autoscaling_policy_from_dict():
-    test_delete_autoscaling_policy(request_type=dict)
 
 
 def test_delete_autoscaling_policy_empty_call():
@@ -2238,7 +2239,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AutoscalingPolicyServiceTransport, '_prep_wrapped_messages') as prep:

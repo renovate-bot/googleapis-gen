@@ -127,7 +127,6 @@ class ListProjectsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[projects.Project]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class SearchProjectsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[projects.Project]:
         async def async_generator():
             async for page in self.pages:

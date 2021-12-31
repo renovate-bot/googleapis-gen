@@ -209,18 +209,18 @@ def test_secret_manager_service_client_client_options(client_class, transport_cl
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -251,7 +251,7 @@ def test_secret_manager_service_client_mtls_env_auto(client_class, transport_cla
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -326,7 +326,7 @@ def test_secret_manager_service_client_client_options_scopes(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -349,7 +349,7 @@ def test_secret_manager_service_client_client_options_credentials_file(client_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -360,7 +360,6 @@ def test_secret_manager_service_client_client_options_credentials_file(client_cl
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_secret_manager_service_client_client_options_from_dict():
     with mock.patch('google.cloud.secretmanager_v1beta1.services.secret_manager_service.transports.SecretManagerServiceGrpcTransport.__init__') as grpc_transport:
@@ -380,7 +379,11 @@ def test_secret_manager_service_client_client_options_from_dict():
         )
 
 
-def test_list_secrets(transport: str = 'grpc', request_type=service.ListSecretsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListSecretsRequest,
+  dict,
+])
+def test_list_secrets(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_list_secrets(transport: str = 'grpc', request_type=service.ListSecretsR
     assert isinstance(response, pagers.ListSecretsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.total_size == 1086
-
-
-def test_list_secrets_from_dict():
-    test_list_secrets(request_type=dict)
 
 
 def test_list_secrets_empty_call():
@@ -619,9 +618,10 @@ async def test_list_secrets_flattened_error_async():
         )
 
 
-def test_list_secrets_pager():
+def test_list_secrets_pager(transport_name: str = "grpc"):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -671,10 +671,10 @@ def test_list_secrets_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Secret)
                    for i in results)
-
-def test_list_secrets_pages():
+def test_list_secrets_pages(transport_name: str = "grpc"):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -759,7 +759,8 @@ async def test_list_secrets_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Secret)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_secrets_async_pages():
@@ -805,7 +806,11 @@ async def test_list_secrets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_secret(transport: str = 'grpc', request_type=service.CreateSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateSecretRequest,
+  dict,
+])
+def test_create_secret(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -833,10 +838,6 @@ def test_create_secret(transport: str = 'grpc', request_type=service.CreateSecre
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
-
-
-def test_create_secret_from_dict():
-    test_create_secret(request_type=dict)
 
 
 def test_create_secret_empty_call():
@@ -1060,7 +1061,11 @@ async def test_create_secret_flattened_error_async():
         )
 
 
-def test_add_secret_version(transport: str = 'grpc', request_type=service.AddSecretVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.AddSecretVersionRequest,
+  dict,
+])
+def test_add_secret_version(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1090,10 +1095,6 @@ def test_add_secret_version(transport: str = 'grpc', request_type=service.AddSec
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
-
-
-def test_add_secret_version_from_dict():
-    test_add_secret_version(request_type=dict)
 
 
 def test_add_secret_version_empty_call():
@@ -1309,7 +1310,11 @@ async def test_add_secret_version_flattened_error_async():
         )
 
 
-def test_get_secret(transport: str = 'grpc', request_type=service.GetSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetSecretRequest,
+  dict,
+])
+def test_get_secret(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1337,10 +1342,6 @@ def test_get_secret(transport: str = 'grpc', request_type=service.GetSecretReque
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
-
-
-def test_get_secret_from_dict():
-    test_get_secret(request_type=dict)
 
 
 def test_get_secret_empty_call():
@@ -1544,7 +1545,11 @@ async def test_get_secret_flattened_error_async():
         )
 
 
-def test_update_secret(transport: str = 'grpc', request_type=service.UpdateSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateSecretRequest,
+  dict,
+])
+def test_update_secret(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1572,10 +1577,6 @@ def test_update_secret(transport: str = 'grpc', request_type=service.UpdateSecre
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Secret)
     assert response.name == 'name_value'
-
-
-def test_update_secret_from_dict():
-    test_update_secret(request_type=dict)
 
 
 def test_update_secret_empty_call():
@@ -1789,7 +1790,11 @@ async def test_update_secret_flattened_error_async():
         )
 
 
-def test_delete_secret(transport: str = 'grpc', request_type=service.DeleteSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteSecretRequest,
+  dict,
+])
+def test_delete_secret(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1814,10 +1819,6 @@ def test_delete_secret(transport: str = 'grpc', request_type=service.DeleteSecre
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_secret_from_dict():
-    test_delete_secret(request_type=dict)
 
 
 def test_delete_secret_empty_call():
@@ -2018,7 +2019,11 @@ async def test_delete_secret_flattened_error_async():
         )
 
 
-def test_list_secret_versions(transport: str = 'grpc', request_type=service.ListSecretVersionsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListSecretVersionsRequest,
+  dict,
+])
+def test_list_secret_versions(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2048,10 +2053,6 @@ def test_list_secret_versions(transport: str = 'grpc', request_type=service.List
     assert isinstance(response, pagers.ListSecretVersionsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.total_size == 1086
-
-
-def test_list_secret_versions_from_dict():
-    test_list_secret_versions(request_type=dict)
 
 
 def test_list_secret_versions_empty_call():
@@ -2257,9 +2258,10 @@ async def test_list_secret_versions_flattened_error_async():
         )
 
 
-def test_list_secret_versions_pager():
+def test_list_secret_versions_pager(transport_name: str = "grpc"):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2309,10 +2311,10 @@ def test_list_secret_versions_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.SecretVersion)
                    for i in results)
-
-def test_list_secret_versions_pages():
+def test_list_secret_versions_pages(transport_name: str = "grpc"):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2397,7 +2399,8 @@ async def test_list_secret_versions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.SecretVersion)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_secret_versions_async_pages():
@@ -2443,7 +2446,11 @@ async def test_list_secret_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_secret_version(transport: str = 'grpc', request_type=service.GetSecretVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetSecretVersionRequest,
+  dict,
+])
+def test_get_secret_version(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2473,10 +2480,6 @@ def test_get_secret_version(transport: str = 'grpc', request_type=service.GetSec
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
-
-
-def test_get_secret_version_from_dict():
-    test_get_secret_version(request_type=dict)
 
 
 def test_get_secret_version_empty_call():
@@ -2682,7 +2685,11 @@ async def test_get_secret_version_flattened_error_async():
         )
 
 
-def test_access_secret_version(transport: str = 'grpc', request_type=service.AccessSecretVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.AccessSecretVersionRequest,
+  dict,
+])
+def test_access_secret_version(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2710,10 +2717,6 @@ def test_access_secret_version(transport: str = 'grpc', request_type=service.Acc
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.AccessSecretVersionResponse)
     assert response.name == 'name_value'
-
-
-def test_access_secret_version_from_dict():
-    test_access_secret_version(request_type=dict)
 
 
 def test_access_secret_version_empty_call():
@@ -2917,7 +2920,11 @@ async def test_access_secret_version_flattened_error_async():
         )
 
 
-def test_disable_secret_version(transport: str = 'grpc', request_type=service.DisableSecretVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DisableSecretVersionRequest,
+  dict,
+])
+def test_disable_secret_version(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2947,10 +2954,6 @@ def test_disable_secret_version(transport: str = 'grpc', request_type=service.Di
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
-
-
-def test_disable_secret_version_from_dict():
-    test_disable_secret_version(request_type=dict)
 
 
 def test_disable_secret_version_empty_call():
@@ -3156,7 +3159,11 @@ async def test_disable_secret_version_flattened_error_async():
         )
 
 
-def test_enable_secret_version(transport: str = 'grpc', request_type=service.EnableSecretVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.EnableSecretVersionRequest,
+  dict,
+])
+def test_enable_secret_version(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3186,10 +3193,6 @@ def test_enable_secret_version(transport: str = 'grpc', request_type=service.Ena
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
-
-
-def test_enable_secret_version_from_dict():
-    test_enable_secret_version(request_type=dict)
 
 
 def test_enable_secret_version_empty_call():
@@ -3395,7 +3398,11 @@ async def test_enable_secret_version_flattened_error_async():
         )
 
 
-def test_destroy_secret_version(transport: str = 'grpc', request_type=service.DestroySecretVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DestroySecretVersionRequest,
+  dict,
+])
+def test_destroy_secret_version(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3425,10 +3432,6 @@ def test_destroy_secret_version(transport: str = 'grpc', request_type=service.De
     assert isinstance(response, resources.SecretVersion)
     assert response.name == 'name_value'
     assert response.state == resources.SecretVersion.State.ENABLED
-
-
-def test_destroy_secret_version_from_dict():
-    test_destroy_secret_version(request_type=dict)
 
 
 def test_destroy_secret_version_empty_call():
@@ -3634,7 +3637,11 @@ async def test_destroy_secret_version_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3664,10 +3671,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -3806,7 +3809,11 @@ def test_set_iam_policy_from_dict_foreign():
         call.assert_called()
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3836,10 +3843,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -3978,7 +3981,11 @@ def test_get_iam_policy_from_dict_foreign():
         call.assert_called()
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = SecretManagerServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4006,10 +4013,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -4659,7 +4662,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SecretManagerServiceTransport, '_prep_wrapped_messages') as prep:

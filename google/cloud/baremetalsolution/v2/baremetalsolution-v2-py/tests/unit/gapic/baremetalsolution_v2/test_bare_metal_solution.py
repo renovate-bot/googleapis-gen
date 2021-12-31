@@ -208,18 +208,18 @@ def test_bare_metal_solution_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_bare_metal_solution_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_bare_metal_solution_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_bare_metal_solution_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_bare_metal_solution_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_bare_metal_solution_client_client_options_from_dict():
     with mock.patch('google.cloud.baremetalsolution_v2.services.bare_metal_solution.transports.BareMetalSolutionGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_bare_metal_solution_client_client_options_from_dict():
         )
 
 
-def test_list_instances(transport: str = 'grpc', request_type=baremetalsolution.ListInstancesRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ListInstancesRequest,
+  dict,
+])
+def test_list_instances(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_list_instances(transport: str = 'grpc', request_type=baremetalsolution.
     assert isinstance(response, pagers.ListInstancesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_instances_from_dict():
-    test_list_instances(request_type=dict)
 
 
 def test_list_instances_empty_call():
@@ -618,9 +617,10 @@ async def test_list_instances_flattened_error_async():
         )
 
 
-def test_list_instances_pager():
+def test_list_instances_pager(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -670,10 +670,10 @@ def test_list_instances_pager():
         assert len(results) == 6
         assert all(isinstance(i, baremetalsolution.Instance)
                    for i in results)
-
-def test_list_instances_pages():
+def test_list_instances_pages(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -758,7 +758,8 @@ async def test_list_instances_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, baremetalsolution.Instance)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_instances_async_pages():
@@ -804,7 +805,11 @@ async def test_list_instances_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_instance(transport: str = 'grpc', request_type=baremetalsolution.GetInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.GetInstanceRequest,
+  dict,
+])
+def test_get_instance(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -840,10 +845,6 @@ def test_get_instance(transport: str = 'grpc', request_type=baremetalsolution.Ge
     assert response.state == baremetalsolution.Instance.State.PROVISIONING
     assert response.hyperthreading_enabled is True
     assert response.interactive_serial_console_enabled is True
-
-
-def test_get_instance_from_dict():
-    test_get_instance(request_type=dict)
 
 
 def test_get_instance_empty_call():
@@ -1055,7 +1056,11 @@ async def test_get_instance_flattened_error_async():
         )
 
 
-def test_reset_instance(transport: str = 'grpc', request_type=baremetalsolution.ResetInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ResetInstanceRequest,
+  dict,
+])
+def test_reset_instance(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1080,10 +1085,6 @@ def test_reset_instance(transport: str = 'grpc', request_type=baremetalsolution.
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_reset_instance_from_dict():
-    test_reset_instance(request_type=dict)
 
 
 def test_reset_instance_empty_call():
@@ -1288,7 +1289,11 @@ async def test_reset_instance_flattened_error_async():
         )
 
 
-def test_list_volumes(transport: str = 'grpc', request_type=baremetalsolution.ListVolumesRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ListVolumesRequest,
+  dict,
+])
+def test_list_volumes(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1318,10 +1323,6 @@ def test_list_volumes(transport: str = 'grpc', request_type=baremetalsolution.Li
     assert isinstance(response, pagers.ListVolumesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_volumes_from_dict():
-    test_list_volumes(request_type=dict)
 
 
 def test_list_volumes_empty_call():
@@ -1527,9 +1528,10 @@ async def test_list_volumes_flattened_error_async():
         )
 
 
-def test_list_volumes_pager():
+def test_list_volumes_pager(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1579,10 +1581,10 @@ def test_list_volumes_pager():
         assert len(results) == 6
         assert all(isinstance(i, baremetalsolution.Volume)
                    for i in results)
-
-def test_list_volumes_pages():
+def test_list_volumes_pages(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1667,7 +1669,8 @@ async def test_list_volumes_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, baremetalsolution.Volume)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_volumes_async_pages():
@@ -1713,7 +1716,11 @@ async def test_list_volumes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_volume(transport: str = 'grpc', request_type=baremetalsolution.GetVolumeRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.GetVolumeRequest,
+  dict,
+])
+def test_get_volume(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1757,10 +1764,6 @@ def test_get_volume(transport: str = 'grpc', request_type=baremetalsolution.GetV
     assert response.remaining_space_gib == 1974
     assert response.snapshot_auto_delete_behavior == baremetalsolution.Volume.SnapshotAutoDeleteBehavior.DISABLED
     assert response.snapshot_schedule_policy == 'snapshot_schedule_policy_value'
-
-
-def test_get_volume_from_dict():
-    test_get_volume(request_type=dict)
 
 
 def test_get_volume_empty_call():
@@ -1980,7 +1983,11 @@ async def test_get_volume_flattened_error_async():
         )
 
 
-def test_update_volume(transport: str = 'grpc', request_type=baremetalsolution.UpdateVolumeRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.UpdateVolumeRequest,
+  dict,
+])
+def test_update_volume(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2005,10 +2012,6 @@ def test_update_volume(transport: str = 'grpc', request_type=baremetalsolution.U
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_volume_from_dict():
-    test_update_volume(request_type=dict)
 
 
 def test_update_volume_empty_call():
@@ -2223,7 +2226,11 @@ async def test_update_volume_flattened_error_async():
         )
 
 
-def test_list_networks(transport: str = 'grpc', request_type=baremetalsolution.ListNetworksRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ListNetworksRequest,
+  dict,
+])
+def test_list_networks(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2253,10 +2260,6 @@ def test_list_networks(transport: str = 'grpc', request_type=baremetalsolution.L
     assert isinstance(response, pagers.ListNetworksPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_networks_from_dict():
-    test_list_networks(request_type=dict)
 
 
 def test_list_networks_empty_call():
@@ -2462,9 +2465,10 @@ async def test_list_networks_flattened_error_async():
         )
 
 
-def test_list_networks_pager():
+def test_list_networks_pager(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2514,10 +2518,10 @@ def test_list_networks_pager():
         assert len(results) == 6
         assert all(isinstance(i, baremetalsolution.Network)
                    for i in results)
-
-def test_list_networks_pages():
+def test_list_networks_pages(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2602,7 +2606,8 @@ async def test_list_networks_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, baremetalsolution.Network)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_networks_async_pages():
@@ -2648,7 +2653,11 @@ async def test_list_networks_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_network(transport: str = 'grpc', request_type=baremetalsolution.GetNetworkRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.GetNetworkRequest,
+  dict,
+])
+def test_get_network(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2690,10 +2699,6 @@ def test_get_network(transport: str = 'grpc', request_type=baremetalsolution.Get
     assert response.state == baremetalsolution.Network.State.PROVISIONING
     assert response.vlan_id == 'vlan_id_value'
     assert response.cidr == 'cidr_value'
-
-
-def test_get_network_from_dict():
-    test_get_network(request_type=dict)
 
 
 def test_get_network_empty_call():
@@ -2911,7 +2916,11 @@ async def test_get_network_flattened_error_async():
         )
 
 
-def test_list_snapshot_schedule_policies(transport: str = 'grpc', request_type=baremetalsolution.ListSnapshotSchedulePoliciesRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ListSnapshotSchedulePoliciesRequest,
+  dict,
+])
+def test_list_snapshot_schedule_policies(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2939,10 +2948,6 @@ def test_list_snapshot_schedule_policies(transport: str = 'grpc', request_type=b
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSnapshotSchedulePoliciesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_snapshot_schedule_policies_from_dict():
-    test_list_snapshot_schedule_policies(request_type=dict)
 
 
 def test_list_snapshot_schedule_policies_empty_call():
@@ -3146,9 +3151,10 @@ async def test_list_snapshot_schedule_policies_flattened_error_async():
         )
 
 
-def test_list_snapshot_schedule_policies_pager():
+def test_list_snapshot_schedule_policies_pager(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3198,10 +3204,10 @@ def test_list_snapshot_schedule_policies_pager():
         assert len(results) == 6
         assert all(isinstance(i, baremetalsolution.SnapshotSchedulePolicy)
                    for i in results)
-
-def test_list_snapshot_schedule_policies_pages():
+def test_list_snapshot_schedule_policies_pages(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3286,7 +3292,8 @@ async def test_list_snapshot_schedule_policies_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, baremetalsolution.SnapshotSchedulePolicy)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_snapshot_schedule_policies_async_pages():
@@ -3332,7 +3339,11 @@ async def test_list_snapshot_schedule_policies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_snapshot_schedule_policy(transport: str = 'grpc', request_type=baremetalsolution.GetSnapshotSchedulePolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.GetSnapshotSchedulePolicyRequest,
+  dict,
+])
+def test_get_snapshot_schedule_policy(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3362,10 +3373,6 @@ def test_get_snapshot_schedule_policy(transport: str = 'grpc', request_type=bare
     assert isinstance(response, baremetalsolution.SnapshotSchedulePolicy)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_get_snapshot_schedule_policy_from_dict():
-    test_get_snapshot_schedule_policy(request_type=dict)
 
 
 def test_get_snapshot_schedule_policy_empty_call():
@@ -3571,7 +3578,11 @@ async def test_get_snapshot_schedule_policy_flattened_error_async():
         )
 
 
-def test_create_snapshot_schedule_policy(transport: str = 'grpc', request_type=baremetalsolution.CreateSnapshotSchedulePolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.CreateSnapshotSchedulePolicyRequest,
+  dict,
+])
+def test_create_snapshot_schedule_policy(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3601,10 +3612,6 @@ def test_create_snapshot_schedule_policy(transport: str = 'grpc', request_type=b
     assert isinstance(response, baremetalsolution.SnapshotSchedulePolicy)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_create_snapshot_schedule_policy_from_dict():
-    test_create_snapshot_schedule_policy(request_type=dict)
 
 
 def test_create_snapshot_schedule_policy_empty_call():
@@ -3830,7 +3837,11 @@ async def test_create_snapshot_schedule_policy_flattened_error_async():
         )
 
 
-def test_update_snapshot_schedule_policy(transport: str = 'grpc', request_type=baremetalsolution.UpdateSnapshotSchedulePolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.UpdateSnapshotSchedulePolicyRequest,
+  dict,
+])
+def test_update_snapshot_schedule_policy(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3860,10 +3871,6 @@ def test_update_snapshot_schedule_policy(transport: str = 'grpc', request_type=b
     assert isinstance(response, baremetalsolution.SnapshotSchedulePolicy)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_update_snapshot_schedule_policy_from_dict():
-    test_update_snapshot_schedule_policy(request_type=dict)
 
 
 def test_update_snapshot_schedule_policy_empty_call():
@@ -4079,7 +4086,11 @@ async def test_update_snapshot_schedule_policy_flattened_error_async():
         )
 
 
-def test_delete_snapshot_schedule_policy(transport: str = 'grpc', request_type=baremetalsolution.DeleteSnapshotSchedulePolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.DeleteSnapshotSchedulePolicyRequest,
+  dict,
+])
+def test_delete_snapshot_schedule_policy(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4104,10 +4115,6 @@ def test_delete_snapshot_schedule_policy(transport: str = 'grpc', request_type=b
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_snapshot_schedule_policy_from_dict():
-    test_delete_snapshot_schedule_policy(request_type=dict)
 
 
 def test_delete_snapshot_schedule_policy_empty_call():
@@ -4308,7 +4315,11 @@ async def test_delete_snapshot_schedule_policy_flattened_error_async():
         )
 
 
-def test_create_volume_snapshot(transport: str = 'grpc', request_type=baremetalsolution.CreateVolumeSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.CreateVolumeSnapshotRequest,
+  dict,
+])
+def test_create_volume_snapshot(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4342,10 +4353,6 @@ def test_create_volume_snapshot(transport: str = 'grpc', request_type=baremetals
     assert response.description == 'description_value'
     assert response.size_bytes == 1089
     assert response.storage_volume == 'storage_volume_value'
-
-
-def test_create_volume_snapshot_from_dict():
-    test_create_volume_snapshot(request_type=dict)
 
 
 def test_create_volume_snapshot_empty_call():
@@ -4565,7 +4572,11 @@ async def test_create_volume_snapshot_flattened_error_async():
         )
 
 
-def test_restore_volume_snapshot(transport: str = 'grpc', request_type=baremetalsolution.RestoreVolumeSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.RestoreVolumeSnapshotRequest,
+  dict,
+])
+def test_restore_volume_snapshot(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4590,10 +4601,6 @@ def test_restore_volume_snapshot(transport: str = 'grpc', request_type=baremetal
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_restore_volume_snapshot_from_dict():
-    test_restore_volume_snapshot(request_type=dict)
 
 
 def test_restore_volume_snapshot_empty_call():
@@ -4798,7 +4805,11 @@ async def test_restore_volume_snapshot_flattened_error_async():
         )
 
 
-def test_delete_volume_snapshot(transport: str = 'grpc', request_type=baremetalsolution.DeleteVolumeSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.DeleteVolumeSnapshotRequest,
+  dict,
+])
+def test_delete_volume_snapshot(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4823,10 +4834,6 @@ def test_delete_volume_snapshot(transport: str = 'grpc', request_type=baremetals
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_volume_snapshot_from_dict():
-    test_delete_volume_snapshot(request_type=dict)
 
 
 def test_delete_volume_snapshot_empty_call():
@@ -5027,7 +5034,11 @@ async def test_delete_volume_snapshot_flattened_error_async():
         )
 
 
-def test_get_volume_snapshot(transport: str = 'grpc', request_type=baremetalsolution.GetVolumeSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.GetVolumeSnapshotRequest,
+  dict,
+])
+def test_get_volume_snapshot(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5061,10 +5072,6 @@ def test_get_volume_snapshot(transport: str = 'grpc', request_type=baremetalsolu
     assert response.description == 'description_value'
     assert response.size_bytes == 1089
     assert response.storage_volume == 'storage_volume_value'
-
-
-def test_get_volume_snapshot_from_dict():
-    test_get_volume_snapshot(request_type=dict)
 
 
 def test_get_volume_snapshot_empty_call():
@@ -5274,7 +5281,11 @@ async def test_get_volume_snapshot_flattened_error_async():
         )
 
 
-def test_list_volume_snapshots(transport: str = 'grpc', request_type=baremetalsolution.ListVolumeSnapshotsRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ListVolumeSnapshotsRequest,
+  dict,
+])
+def test_list_volume_snapshots(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5304,10 +5315,6 @@ def test_list_volume_snapshots(transport: str = 'grpc', request_type=baremetalso
     assert isinstance(response, pagers.ListVolumeSnapshotsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_volume_snapshots_from_dict():
-    test_list_volume_snapshots(request_type=dict)
 
 
 def test_list_volume_snapshots_empty_call():
@@ -5513,9 +5520,10 @@ async def test_list_volume_snapshots_flattened_error_async():
         )
 
 
-def test_list_volume_snapshots_pager():
+def test_list_volume_snapshots_pager(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5565,10 +5573,10 @@ def test_list_volume_snapshots_pager():
         assert len(results) == 6
         assert all(isinstance(i, baremetalsolution.VolumeSnapshot)
                    for i in results)
-
-def test_list_volume_snapshots_pages():
+def test_list_volume_snapshots_pages(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5653,7 +5661,8 @@ async def test_list_volume_snapshots_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, baremetalsolution.VolumeSnapshot)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_volume_snapshots_async_pages():
@@ -5699,7 +5708,11 @@ async def test_list_volume_snapshots_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_lun(transport: str = 'grpc', request_type=baremetalsolution.GetLunRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.GetLunRequest,
+  dict,
+])
+def test_get_lun(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5743,10 +5756,6 @@ def test_get_lun(transport: str = 'grpc', request_type=baremetalsolution.GetLunR
     assert response.boot_lun is True
     assert response.storage_type == baremetalsolution.Lun.StorageType.SSD
     assert response.wwid == 'wwid_value'
-
-
-def test_get_lun_from_dict():
-    test_get_lun(request_type=dict)
 
 
 def test_get_lun_empty_call():
@@ -5966,7 +5975,11 @@ async def test_get_lun_flattened_error_async():
         )
 
 
-def test_list_luns(transport: str = 'grpc', request_type=baremetalsolution.ListLunsRequest):
+@pytest.mark.parametrize("request_type", [
+  baremetalsolution.ListLunsRequest,
+  dict,
+])
+def test_list_luns(request_type, transport: str = 'grpc'):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5996,10 +6009,6 @@ def test_list_luns(transport: str = 'grpc', request_type=baremetalsolution.ListL
     assert isinstance(response, pagers.ListLunsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_luns_from_dict():
-    test_list_luns(request_type=dict)
 
 
 def test_list_luns_empty_call():
@@ -6205,9 +6214,10 @@ async def test_list_luns_flattened_error_async():
         )
 
 
-def test_list_luns_pager():
+def test_list_luns_pager(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6257,10 +6267,10 @@ def test_list_luns_pager():
         assert len(results) == 6
         assert all(isinstance(i, baremetalsolution.Lun)
                    for i in results)
-
-def test_list_luns_pages():
+def test_list_luns_pages(transport_name: str = "grpc"):
     client = BareMetalSolutionClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6345,7 +6355,8 @@ async def test_list_luns_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, baremetalsolution.Lun)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_luns_async_pages():
@@ -7039,7 +7050,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.BareMetalSolutionTransport, '_prep_wrapped_messages') as prep:

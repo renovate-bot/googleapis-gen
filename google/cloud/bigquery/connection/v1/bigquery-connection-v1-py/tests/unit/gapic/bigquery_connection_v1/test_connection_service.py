@@ -208,18 +208,18 @@ def test_connection_service_client_client_options(client_class, transport_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_connection_service_client_mtls_env_auto(client_class, transport_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_connection_service_client_client_options_scopes(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_connection_service_client_client_options_credentials_file(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_connection_service_client_client_options_credentials_file(client_class,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_connection_service_client_client_options_from_dict():
     with mock.patch('google.cloud.bigquery_connection_v1.services.connection_service.transports.ConnectionServiceGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_connection_service_client_client_options_from_dict():
         )
 
 
-def test_create_connection(transport: str = 'grpc', request_type=gcbc_connection.CreateConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  gcbc_connection.CreateConnectionRequest,
+  dict,
+])
+def test_create_connection(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -418,10 +421,6 @@ def test_create_connection(transport: str = 'grpc', request_type=gcbc_connection
     assert response.creation_time == 1379
     assert response.last_modified_time == 1890
     assert response.has_credential is True
-
-
-def test_create_connection_from_dict():
-    test_create_connection(request_type=dict)
 
 
 def test_create_connection_empty_call():
@@ -655,7 +654,11 @@ async def test_create_connection_flattened_error_async():
         )
 
 
-def test_get_connection(transport: str = 'grpc', request_type=connection.GetConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  connection.GetConnectionRequest,
+  dict,
+])
+def test_get_connection(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -694,10 +697,6 @@ def test_get_connection(transport: str = 'grpc', request_type=connection.GetConn
     assert response.creation_time == 1379
     assert response.last_modified_time == 1890
     assert response.has_credential is True
-
-
-def test_get_connection_from_dict():
-    test_get_connection(request_type=dict)
 
 
 def test_get_connection_empty_call():
@@ -911,7 +910,11 @@ async def test_get_connection_flattened_error_async():
         )
 
 
-def test_list_connections(transport: str = 'grpc', request_type=connection.ListConnectionsRequest):
+@pytest.mark.parametrize("request_type", [
+  connection.ListConnectionsRequest,
+  dict,
+])
+def test_list_connections(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -939,10 +942,6 @@ def test_list_connections(transport: str = 'grpc', request_type=connection.ListC
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConnectionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_connections_from_dict():
-    test_list_connections(request_type=dict)
 
 
 def test_list_connections_empty_call():
@@ -1146,9 +1145,10 @@ async def test_list_connections_flattened_error_async():
         )
 
 
-def test_list_connections_pager():
+def test_list_connections_pager(transport_name: str = "grpc"):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1198,10 +1198,10 @@ def test_list_connections_pager():
         assert len(results) == 6
         assert all(isinstance(i, connection.Connection)
                    for i in results)
-
-def test_list_connections_pages():
+def test_list_connections_pages(transport_name: str = "grpc"):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1286,7 +1286,8 @@ async def test_list_connections_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, connection.Connection)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_connections_async_pages():
@@ -1332,7 +1333,11 @@ async def test_list_connections_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_connection(transport: str = 'grpc', request_type=gcbc_connection.UpdateConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  gcbc_connection.UpdateConnectionRequest,
+  dict,
+])
+def test_update_connection(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1371,10 +1376,6 @@ def test_update_connection(transport: str = 'grpc', request_type=gcbc_connection
     assert response.creation_time == 1379
     assert response.last_modified_time == 1890
     assert response.has_credential is True
-
-
-def test_update_connection_from_dict():
-    test_update_connection(request_type=dict)
 
 
 def test_update_connection_empty_call():
@@ -1608,7 +1609,11 @@ async def test_update_connection_flattened_error_async():
         )
 
 
-def test_delete_connection(transport: str = 'grpc', request_type=connection.DeleteConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  connection.DeleteConnectionRequest,
+  dict,
+])
+def test_delete_connection(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1633,10 +1638,6 @@ def test_delete_connection(transport: str = 'grpc', request_type=connection.Dele
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_connection_from_dict():
-    test_delete_connection(request_type=dict)
 
 
 def test_delete_connection_empty_call():
@@ -1837,7 +1838,11 @@ async def test_delete_connection_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1867,10 +1872,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -2093,7 +2094,11 @@ async def test_get_iam_policy_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2123,10 +2128,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -2349,7 +2350,11 @@ async def test_set_iam_policy_flattened_error_async():
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = ConnectionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2377,10 +2382,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -3101,7 +3102,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ConnectionServiceTransport, '_prep_wrapped_messages') as prep:

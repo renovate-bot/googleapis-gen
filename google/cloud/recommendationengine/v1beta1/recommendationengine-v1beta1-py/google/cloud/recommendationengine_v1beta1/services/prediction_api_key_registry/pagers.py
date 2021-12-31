@@ -127,7 +127,6 @@ class ListPredictionApiKeyRegistrationsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[prediction_apikey_registry_service.PredictionApiKeyRegistration]:
         async def async_generator():
             async for page in self.pages:

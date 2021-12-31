@@ -14,14 +14,17 @@
 # limitations under the License.
 #
 import abc
-import typing
+from typing import Awaitable, Callable, Dict, Optional, Sequence, Union
 import pkg_resources
 
 import google.auth  # type: ignore
-from google.api_core import gapic_v1
-from google.api_core import retry as retries
+import google.api_core  # type: ignore
+from google.api_core import exceptions as core_exceptions  # type: ignore
+from google.api_core import gapic_v1    # type: ignore
+from google.api_core import retry as retries  # type: ignore
 from google.api_core import operations_v1
 from google.auth import credentials as ga_credentials  # type: ignore
+from google.oauth2 import service_account # type: ignore
 
 from google.ads.googleads.v8.resources.types import offline_user_data_job
 from google.ads.googleads.v8.services.types import offline_user_data_job_service
@@ -37,18 +40,24 @@ except pkg_resources.DistributionNotFound:
     DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
 
 
-class OfflineUserDataJobServiceTransport(metaclass=abc.ABCMeta):
+class OfflineUserDataJobServiceTransport(abc.ABC):
     """Abstract transport class for OfflineUserDataJobService."""
 
     AUTH_SCOPES = (
         'https://www.googleapis.com/auth/adwords',
     )
 
+    DEFAULT_HOST: str = 'googleads.googleapis.com'
     def __init__(
             self, *,
-            host: str = 'googleads.googleapis.com',
+            host: str = DEFAULT_HOST,
             credentials: ga_credentials.Credentials = None,
+            credentials_file: Optional[str] = None,
+            scopes: Optional[Sequence[str]] = None,
+            quota_project_id: Optional[str] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
+            always_use_jwt_access: Optional[bool] = False,
+            **kwargs,
             ) -> None:
         """Instantiate the transport.
 
@@ -60,30 +69,53 @@ class OfflineUserDataJobServiceTransport(metaclass=abc.ABCMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
+            credentials_file (Optional[str]): A file with credentials that can
+                be loaded with :func:`google.auth.load_credentials_from_file`.
+                This argument is mutually exclusive with credentials.
+            scopes (Optional[Sequence[str]]): A list of scopes.
+            quota_project_id (Optional[str]): An optional project to use for billing
+                and quota.
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
                 Generally, you only need to set this if you're developing
                 your own client library.
+            always_use_jwt_access (Optional[bool]): Whether self signed JWT should
+                be used for service account credentials.
         """
         # Save the hostname. Default to port 443 (HTTPS) if none is specified.
         if ':' not in host:
             host += ':443'
         self._host = host
 
+        scopes_kwargs = {"scopes": scopes, "default_scopes": self.AUTH_SCOPES}
+
+        # Save the scopes.
+        self._scopes = scopes
+
         # If no credentials are provided, then determine the appropriate
         # defaults.
-        if credentials is None:
-            credentials, _ = google.auth.default(scopes=self.AUTH_SCOPES)
+        if credentials and credentials_file:
+            raise core_exceptions.DuplicateCredentialArgs("'credentials_file' and 'credentials' are mutually exclusive")
+
+        if credentials_file is not None:
+            credentials, _ = google.auth.load_credentials_from_file(
+                                credentials_file,
+                                **scopes_kwargs,
+                                quota_project_id=quota_project_id
+                            )
+        elif credentials is None:
+            credentials, _ = google.auth.default(**scopes_kwargs, quota_project_id=quota_project_id)
+
+        # If the credentials are service account credentials, then always try to use self signed JWT.
+        if always_use_jwt_access and isinstance(credentials, service_account.Credentials) and hasattr(service_account.Credentials, "with_always_use_jwt_access"):
+            credentials = credentials.with_always_use_jwt_access(True)
 
         # Save the credentials.
         self._credentials = credentials
 
-        # Lifted into its own function so it can be stubbed out during tests.
-        self._prep_wrapped_messages(client_info)
-
     def _prep_wrapped_messages(self, client_info):
-        # Precomputed wrapped methods
+        # Precompute the wrapped methods.
         self._wrapped_methods = {
             self.create_offline_user_data_job: gapic_v1.method.wrap_method(
                 self.create_offline_user_data_job,
@@ -110,7 +142,7 @@ class OfflineUserDataJobServiceTransport(metaclass=abc.ABCMeta):
     def close(self):
         """Closes resources associated with the transport.
 
-        .. warning::
+       .. warning::
             Only call this method if the transport is NOT shared
             with other clients - this may cause errors in other clients!
         """
@@ -119,31 +151,43 @@ class OfflineUserDataJobServiceTransport(metaclass=abc.ABCMeta):
     @property
     def operations_client(self):
         """Return the client designed to process long-running operations."""
-        raise NotImplementedError
+        raise NotImplementedError()
 
     @property
-    def create_offline_user_data_job(self) -> typing.Callable[
+    def create_offline_user_data_job(self) -> Callable[
             [offline_user_data_job_service.CreateOfflineUserDataJobRequest],
-            offline_user_data_job_service.CreateOfflineUserDataJobResponse]:
-        raise NotImplementedError
+            Union[
+                offline_user_data_job_service.CreateOfflineUserDataJobResponse,
+                Awaitable[offline_user_data_job_service.CreateOfflineUserDataJobResponse]
+            ]]:
+        raise NotImplementedError()
 
     @property
-    def get_offline_user_data_job(self) -> typing.Callable[
+    def get_offline_user_data_job(self) -> Callable[
             [offline_user_data_job_service.GetOfflineUserDataJobRequest],
-            offline_user_data_job.OfflineUserDataJob]:
-        raise NotImplementedError
+            Union[
+                offline_user_data_job.OfflineUserDataJob,
+                Awaitable[offline_user_data_job.OfflineUserDataJob]
+            ]]:
+        raise NotImplementedError()
 
     @property
-    def add_offline_user_data_job_operations(self) -> typing.Callable[
+    def add_offline_user_data_job_operations(self) -> Callable[
             [offline_user_data_job_service.AddOfflineUserDataJobOperationsRequest],
-            offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse]:
-        raise NotImplementedError
+            Union[
+                offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse,
+                Awaitable[offline_user_data_job_service.AddOfflineUserDataJobOperationsResponse]
+            ]]:
+        raise NotImplementedError()
 
     @property
-    def run_offline_user_data_job(self) -> typing.Callable[
+    def run_offline_user_data_job(self) -> Callable[
             [offline_user_data_job_service.RunOfflineUserDataJobRequest],
-            operations_pb2.Operation]:
-        raise NotImplementedError
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
 
 
 __all__ = (

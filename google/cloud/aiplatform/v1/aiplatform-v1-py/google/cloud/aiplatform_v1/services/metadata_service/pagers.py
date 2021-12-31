@@ -132,7 +132,6 @@ class ListMetadataStoresAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[metadata_store.MetadataStore]:
         async def async_generator():
             async for page in self.pages:
@@ -254,7 +253,6 @@ class ListArtifactsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[artifact.Artifact]:
         async def async_generator():
             async for page in self.pages:
@@ -376,7 +374,6 @@ class ListContextsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[context.Context]:
         async def async_generator():
             async for page in self.pages:
@@ -498,7 +495,6 @@ class ListExecutionsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[execution.Execution]:
         async def async_generator():
             async for page in self.pages:
@@ -620,7 +616,6 @@ class ListMetadataSchemasAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[metadata_schema.MetadataSchema]:
         async def async_generator():
             async for page in self.pages:

@@ -222,18 +222,18 @@ def test_document_processor_service_client_client_options(client_class, transpor
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -264,7 +264,7 @@ def test_document_processor_service_client_mtls_env_auto(client_class, transport
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -339,7 +339,7 @@ def test_document_processor_service_client_client_options_scopes(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -362,7 +362,7 @@ def test_document_processor_service_client_client_options_credentials_file(clien
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -373,7 +373,6 @@ def test_document_processor_service_client_client_options_credentials_file(clien
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_document_processor_service_client_client_options_from_dict():
     with mock.patch('google.cloud.documentai_v1beta3.services.document_processor_service.transports.DocumentProcessorServiceGrpcTransport.__init__') as grpc_transport:
@@ -393,7 +392,11 @@ def test_document_processor_service_client_client_options_from_dict():
         )
 
 
-def test_process_document(transport: str = 'grpc', request_type=document_processor_service.ProcessRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.ProcessRequest,
+  dict,
+])
+def test_process_document(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -421,10 +424,6 @@ def test_process_document(transport: str = 'grpc', request_type=document_process
     # Establish that the response is the type that we expect.
     assert isinstance(response, document_processor_service.ProcessResponse)
     assert response.human_review_operation == 'human_review_operation_value'
-
-
-def test_process_document_from_dict():
-    test_process_document(request_type=dict)
 
 
 def test_process_document_empty_call():
@@ -628,7 +627,11 @@ async def test_process_document_flattened_error_async():
         )
 
 
-def test_batch_process_documents(transport: str = 'grpc', request_type=document_processor_service.BatchProcessRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.BatchProcessRequest,
+  dict,
+])
+def test_batch_process_documents(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -653,10 +656,6 @@ def test_batch_process_documents(transport: str = 'grpc', request_type=document_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_batch_process_documents_from_dict():
-    test_batch_process_documents(request_type=dict)
 
 
 def test_batch_process_documents_empty_call():
@@ -861,7 +860,11 @@ async def test_batch_process_documents_flattened_error_async():
         )
 
 
-def test_fetch_processor_types(transport: str = 'grpc', request_type=document_processor_service.FetchProcessorTypesRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.FetchProcessorTypesRequest,
+  dict,
+])
+def test_fetch_processor_types(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -887,10 +890,6 @@ def test_fetch_processor_types(transport: str = 'grpc', request_type=document_pr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, document_processor_service.FetchProcessorTypesResponse)
-
-
-def test_fetch_processor_types_from_dict():
-    test_fetch_processor_types(request_type=dict)
 
 
 def test_fetch_processor_types_empty_call():
@@ -1092,7 +1091,11 @@ async def test_fetch_processor_types_flattened_error_async():
         )
 
 
-def test_list_processors(transport: str = 'grpc', request_type=document_processor_service.ListProcessorsRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.ListProcessorsRequest,
+  dict,
+])
+def test_list_processors(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1120,10 +1123,6 @@ def test_list_processors(transport: str = 'grpc', request_type=document_processo
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProcessorsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_processors_from_dict():
-    test_list_processors(request_type=dict)
 
 
 def test_list_processors_empty_call():
@@ -1327,9 +1326,10 @@ async def test_list_processors_flattened_error_async():
         )
 
 
-def test_list_processors_pager():
+def test_list_processors_pager(transport_name: str = "grpc"):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1379,10 +1379,10 @@ def test_list_processors_pager():
         assert len(results) == 6
         assert all(isinstance(i, processor.Processor)
                    for i in results)
-
-def test_list_processors_pages():
+def test_list_processors_pages(transport_name: str = "grpc"):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1467,7 +1467,8 @@ async def test_list_processors_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, processor.Processor)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_processors_async_pages():
@@ -1513,7 +1514,11 @@ async def test_list_processors_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_processor(transport: str = 'grpc', request_type=document_processor_service.CreateProcessorRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.CreateProcessorRequest,
+  dict,
+])
+def test_create_processor(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1553,10 +1558,6 @@ def test_create_processor(transport: str = 'grpc', request_type=document_process
     assert response.default_processor_version == 'default_processor_version_value'
     assert response.process_endpoint == 'process_endpoint_value'
     assert response.kms_key_name == 'kms_key_name_value'
-
-
-def test_create_processor_from_dict():
-    test_create_processor(request_type=dict)
 
 
 def test_create_processor_empty_call():
@@ -1782,7 +1783,11 @@ async def test_create_processor_flattened_error_async():
         )
 
 
-def test_delete_processor(transport: str = 'grpc', request_type=document_processor_service.DeleteProcessorRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.DeleteProcessorRequest,
+  dict,
+])
+def test_delete_processor(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1807,10 +1812,6 @@ def test_delete_processor(transport: str = 'grpc', request_type=document_process
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_processor_from_dict():
-    test_delete_processor(request_type=dict)
 
 
 def test_delete_processor_empty_call():
@@ -2015,7 +2016,11 @@ async def test_delete_processor_flattened_error_async():
         )
 
 
-def test_enable_processor(transport: str = 'grpc', request_type=document_processor_service.EnableProcessorRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.EnableProcessorRequest,
+  dict,
+])
+def test_enable_processor(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2040,10 +2045,6 @@ def test_enable_processor(transport: str = 'grpc', request_type=document_process
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_enable_processor_from_dict():
-    test_enable_processor(request_type=dict)
 
 
 def test_enable_processor_empty_call():
@@ -2162,7 +2163,11 @@ async def test_enable_processor_field_headers_async():
     ) in kw['metadata']
 
 
-def test_disable_processor(transport: str = 'grpc', request_type=document_processor_service.DisableProcessorRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.DisableProcessorRequest,
+  dict,
+])
+def test_disable_processor(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2187,10 +2192,6 @@ def test_disable_processor(transport: str = 'grpc', request_type=document_proces
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_disable_processor_from_dict():
-    test_disable_processor(request_type=dict)
 
 
 def test_disable_processor_empty_call():
@@ -2309,7 +2310,11 @@ async def test_disable_processor_field_headers_async():
     ) in kw['metadata']
 
 
-def test_review_document(transport: str = 'grpc', request_type=document_processor_service.ReviewDocumentRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.ReviewDocumentRequest,
+  dict,
+])
+def test_review_document(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2334,10 +2339,6 @@ def test_review_document(transport: str = 'grpc', request_type=document_processo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_review_document_from_dict():
-    test_review_document(request_type=dict)
 
 
 def test_review_document_empty_call():
@@ -3111,7 +3112,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DocumentProcessorServiceTransport, '_prep_wrapped_messages') as prep:

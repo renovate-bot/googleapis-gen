@@ -131,7 +131,6 @@ class ListAccessPoliciesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[access_policy.AccessPolicy]:
         async def async_generator():
             async for page in self.pages:
@@ -253,7 +252,6 @@ class ListAccessLevelsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[access_level.AccessLevel]:
         async def async_generator():
             async for page in self.pages:
@@ -375,7 +373,6 @@ class ListServicePerimetersAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[service_perimeter.ServicePerimeter]:
         async def async_generator():
             async for page in self.pages:
@@ -497,7 +494,6 @@ class ListGcpUserAccessBindingsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[gcp_user_access_binding.GcpUserAccessBinding]:
         async def async_generator():
             async for page in self.pages:

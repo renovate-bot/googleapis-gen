@@ -208,18 +208,18 @@ def test_workload_identity_pools_client_client_options(client_class, transport_c
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_workload_identity_pools_client_mtls_env_auto(client_class, transport_cl
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_workload_identity_pools_client_client_options_scopes(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_workload_identity_pools_client_client_options_credentials_file(client_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_workload_identity_pools_client_client_options_credentials_file(client_c
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_workload_identity_pools_client_client_options_from_dict():
     with mock.patch('google.iam_v1beta.services.workload_identity_pools.transports.WorkloadIdentityPoolsGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_workload_identity_pools_client_client_options_from_dict():
         )
 
 
-def test_list_workload_identity_pools(transport: str = 'grpc', request_type=workload_identity_pool.ListWorkloadIdentityPoolsRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.ListWorkloadIdentityPoolsRequest,
+  dict,
+])
+def test_list_workload_identity_pools(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -407,10 +410,6 @@ def test_list_workload_identity_pools(transport: str = 'grpc', request_type=work
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListWorkloadIdentityPoolsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_workload_identity_pools_from_dict():
-    test_list_workload_identity_pools(request_type=dict)
 
 
 def test_list_workload_identity_pools_empty_call():
@@ -614,9 +613,10 @@ async def test_list_workload_identity_pools_flattened_error_async():
         )
 
 
-def test_list_workload_identity_pools_pager():
+def test_list_workload_identity_pools_pager(transport_name: str = "grpc"):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -666,10 +666,10 @@ def test_list_workload_identity_pools_pager():
         assert len(results) == 6
         assert all(isinstance(i, workload_identity_pool.WorkloadIdentityPool)
                    for i in results)
-
-def test_list_workload_identity_pools_pages():
+def test_list_workload_identity_pools_pages(transport_name: str = "grpc"):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -754,7 +754,8 @@ async def test_list_workload_identity_pools_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, workload_identity_pool.WorkloadIdentityPool)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_workload_identity_pools_async_pages():
@@ -800,7 +801,11 @@ async def test_list_workload_identity_pools_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_workload_identity_pool(transport: str = 'grpc', request_type=workload_identity_pool.GetWorkloadIdentityPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.GetWorkloadIdentityPoolRequest,
+  dict,
+])
+def test_get_workload_identity_pool(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -836,10 +841,6 @@ def test_get_workload_identity_pool(transport: str = 'grpc', request_type=worklo
     assert response.description == 'description_value'
     assert response.state == workload_identity_pool.WorkloadIdentityPool.State.ACTIVE
     assert response.disabled is True
-
-
-def test_get_workload_identity_pool_from_dict():
-    test_get_workload_identity_pool(request_type=dict)
 
 
 def test_get_workload_identity_pool_empty_call():
@@ -1051,7 +1052,11 @@ async def test_get_workload_identity_pool_flattened_error_async():
         )
 
 
-def test_create_workload_identity_pool(transport: str = 'grpc', request_type=gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  gi_workload_identity_pool.CreateWorkloadIdentityPoolRequest,
+  dict,
+])
+def test_create_workload_identity_pool(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1076,10 +1081,6 @@ def test_create_workload_identity_pool(transport: str = 'grpc', request_type=gi_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_workload_identity_pool_from_dict():
-    test_create_workload_identity_pool(request_type=dict)
 
 
 def test_create_workload_identity_pool_empty_call():
@@ -1304,7 +1305,11 @@ async def test_create_workload_identity_pool_flattened_error_async():
         )
 
 
-def test_update_workload_identity_pool(transport: str = 'grpc', request_type=gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  gi_workload_identity_pool.UpdateWorkloadIdentityPoolRequest,
+  dict,
+])
+def test_update_workload_identity_pool(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1329,10 +1334,6 @@ def test_update_workload_identity_pool(transport: str = 'grpc', request_type=gi_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_workload_identity_pool_from_dict():
-    test_update_workload_identity_pool(request_type=dict)
 
 
 def test_update_workload_identity_pool_empty_call():
@@ -1547,7 +1548,11 @@ async def test_update_workload_identity_pool_flattened_error_async():
         )
 
 
-def test_delete_workload_identity_pool(transport: str = 'grpc', request_type=workload_identity_pool.DeleteWorkloadIdentityPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.DeleteWorkloadIdentityPoolRequest,
+  dict,
+])
+def test_delete_workload_identity_pool(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1572,10 +1577,6 @@ def test_delete_workload_identity_pool(transport: str = 'grpc', request_type=wor
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_workload_identity_pool_from_dict():
-    test_delete_workload_identity_pool(request_type=dict)
 
 
 def test_delete_workload_identity_pool_empty_call():
@@ -1780,7 +1781,11 @@ async def test_delete_workload_identity_pool_flattened_error_async():
         )
 
 
-def test_undelete_workload_identity_pool(transport: str = 'grpc', request_type=workload_identity_pool.UndeleteWorkloadIdentityPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.UndeleteWorkloadIdentityPoolRequest,
+  dict,
+])
+def test_undelete_workload_identity_pool(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1805,10 +1810,6 @@ def test_undelete_workload_identity_pool(transport: str = 'grpc', request_type=w
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_undelete_workload_identity_pool_from_dict():
-    test_undelete_workload_identity_pool(request_type=dict)
 
 
 def test_undelete_workload_identity_pool_empty_call():
@@ -2013,7 +2014,11 @@ async def test_undelete_workload_identity_pool_flattened_error_async():
         )
 
 
-def test_list_workload_identity_pool_providers(transport: str = 'grpc', request_type=workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.ListWorkloadIdentityPoolProvidersRequest,
+  dict,
+])
+def test_list_workload_identity_pool_providers(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2041,10 +2046,6 @@ def test_list_workload_identity_pool_providers(transport: str = 'grpc', request_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListWorkloadIdentityPoolProvidersPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_workload_identity_pool_providers_from_dict():
-    test_list_workload_identity_pool_providers(request_type=dict)
 
 
 def test_list_workload_identity_pool_providers_empty_call():
@@ -2248,9 +2249,10 @@ async def test_list_workload_identity_pool_providers_flattened_error_async():
         )
 
 
-def test_list_workload_identity_pool_providers_pager():
+def test_list_workload_identity_pool_providers_pager(transport_name: str = "grpc"):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2300,10 +2302,10 @@ def test_list_workload_identity_pool_providers_pager():
         assert len(results) == 6
         assert all(isinstance(i, workload_identity_pool.WorkloadIdentityPoolProvider)
                    for i in results)
-
-def test_list_workload_identity_pool_providers_pages():
+def test_list_workload_identity_pool_providers_pages(transport_name: str = "grpc"):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2388,7 +2390,8 @@ async def test_list_workload_identity_pool_providers_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, workload_identity_pool.WorkloadIdentityPoolProvider)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_workload_identity_pool_providers_async_pages():
@@ -2434,7 +2437,11 @@ async def test_list_workload_identity_pool_providers_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_workload_identity_pool_provider(transport: str = 'grpc', request_type=workload_identity_pool.GetWorkloadIdentityPoolProviderRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.GetWorkloadIdentityPoolProviderRequest,
+  dict,
+])
+def test_get_workload_identity_pool_provider(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2473,10 +2480,6 @@ def test_get_workload_identity_pool_provider(transport: str = 'grpc', request_ty
     assert response.state == workload_identity_pool.WorkloadIdentityPoolProvider.State.ACTIVE
     assert response.disabled is True
     assert response.attribute_condition == 'attribute_condition_value'
-
-
-def test_get_workload_identity_pool_provider_from_dict():
-    test_get_workload_identity_pool_provider(request_type=dict)
 
 
 def test_get_workload_identity_pool_provider_empty_call():
@@ -2690,7 +2693,11 @@ async def test_get_workload_identity_pool_provider_flattened_error_async():
         )
 
 
-def test_create_workload_identity_pool_provider(transport: str = 'grpc', request_type=workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.CreateWorkloadIdentityPoolProviderRequest,
+  dict,
+])
+def test_create_workload_identity_pool_provider(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2715,10 +2722,6 @@ def test_create_workload_identity_pool_provider(transport: str = 'grpc', request
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_workload_identity_pool_provider_from_dict():
-    test_create_workload_identity_pool_provider(request_type=dict)
 
 
 def test_create_workload_identity_pool_provider_empty_call():
@@ -2943,7 +2946,11 @@ async def test_create_workload_identity_pool_provider_flattened_error_async():
         )
 
 
-def test_update_workload_identity_pool_provider(transport: str = 'grpc', request_type=workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.UpdateWorkloadIdentityPoolProviderRequest,
+  dict,
+])
+def test_update_workload_identity_pool_provider(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2968,10 +2975,6 @@ def test_update_workload_identity_pool_provider(transport: str = 'grpc', request
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_workload_identity_pool_provider_from_dict():
-    test_update_workload_identity_pool_provider(request_type=dict)
 
 
 def test_update_workload_identity_pool_provider_empty_call():
@@ -3186,7 +3189,11 @@ async def test_update_workload_identity_pool_provider_flattened_error_async():
         )
 
 
-def test_delete_workload_identity_pool_provider(transport: str = 'grpc', request_type=workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.DeleteWorkloadIdentityPoolProviderRequest,
+  dict,
+])
+def test_delete_workload_identity_pool_provider(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3211,10 +3218,6 @@ def test_delete_workload_identity_pool_provider(transport: str = 'grpc', request
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_workload_identity_pool_provider_from_dict():
-    test_delete_workload_identity_pool_provider(request_type=dict)
 
 
 def test_delete_workload_identity_pool_provider_empty_call():
@@ -3419,7 +3422,11 @@ async def test_delete_workload_identity_pool_provider_flattened_error_async():
         )
 
 
-def test_undelete_workload_identity_pool_provider(transport: str = 'grpc', request_type=workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest):
+@pytest.mark.parametrize("request_type", [
+  workload_identity_pool.UndeleteWorkloadIdentityPoolProviderRequest,
+  dict,
+])
+def test_undelete_workload_identity_pool_provider(request_type, transport: str = 'grpc'):
     client = WorkloadIdentityPoolsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3444,10 +3451,6 @@ def test_undelete_workload_identity_pool_provider(transport: str = 'grpc', reque
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_undelete_workload_identity_pool_provider_from_dict():
-    test_undelete_workload_identity_pool_provider(request_type=dict)
 
 
 def test_undelete_workload_identity_pool_provider_empty_call():
@@ -4205,7 +4208,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.WorkloadIdentityPoolsTransport, '_prep_wrapped_messages') as prep:

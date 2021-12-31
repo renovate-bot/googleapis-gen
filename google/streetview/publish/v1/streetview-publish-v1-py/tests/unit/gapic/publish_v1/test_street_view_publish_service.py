@@ -207,18 +207,18 @@ def test_street_view_publish_service_client_client_options(client_class, transpo
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -249,7 +249,7 @@ def test_street_view_publish_service_client_mtls_env_auto(client_class, transpor
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -324,7 +324,7 @@ def test_street_view_publish_service_client_client_options_scopes(client_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -347,7 +347,7 @@ def test_street_view_publish_service_client_client_options_credentials_file(clie
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -358,7 +358,6 @@ def test_street_view_publish_service_client_client_options_credentials_file(clie
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_street_view_publish_service_client_client_options_from_dict():
     with mock.patch('google.streetview.publish_v1.services.street_view_publish_service.transports.StreetViewPublishServiceGrpcTransport.__init__') as grpc_transport:
@@ -378,7 +377,11 @@ def test_street_view_publish_service_client_client_options_from_dict():
         )
 
 
-def test_start_upload(transport: str = 'grpc', request_type=empty_pb2.Empty):
+@pytest.mark.parametrize("request_type", [
+  empty_pb2.Empty,
+  dict,
+])
+def test_start_upload(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -405,10 +408,6 @@ def test_start_upload(transport: str = 'grpc', request_type=empty_pb2.Empty):
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.UploadRef)
-
-
-def test_start_upload_from_dict():
-    test_start_upload(request_type=dict)
 
 
 def test_start_upload_empty_call():
@@ -479,7 +478,11 @@ def test_start_upload_from_dict_foreign():
         call.assert_called()
 
 
-def test_create_photo(transport: str = 'grpc', request_type=rpcmessages.CreatePhotoRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.CreatePhotoRequest,
+  dict,
+])
+def test_create_photo(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -517,10 +520,6 @@ def test_create_photo(transport: str = 'grpc', request_type=rpcmessages.CreatePh
     assert response.view_count == 1091
     assert response.transfer_status == resources.Photo.TransferStatus.NEVER_TRANSFERRED
     assert response.maps_publish_status == resources.Photo.MapsPublishStatus.PUBLISHED
-
-
-def test_create_photo_from_dict():
-    test_create_photo(request_type=dict)
 
 
 def test_create_photo_empty_call():
@@ -671,7 +670,11 @@ async def test_create_photo_flattened_error_async():
         )
 
 
-def test_get_photo(transport: str = 'grpc', request_type=rpcmessages.GetPhotoRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.GetPhotoRequest,
+  dict,
+])
+def test_get_photo(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -709,10 +712,6 @@ def test_get_photo(transport: str = 'grpc', request_type=rpcmessages.GetPhotoReq
     assert response.view_count == 1091
     assert response.transfer_status == resources.Photo.TransferStatus.NEVER_TRANSFERRED
     assert response.maps_publish_status == resources.Photo.MapsPublishStatus.PUBLISHED
-
-
-def test_get_photo_from_dict():
-    test_get_photo(request_type=dict)
 
 
 def test_get_photo_empty_call():
@@ -873,7 +872,11 @@ async def test_get_photo_flattened_error_async():
         )
 
 
-def test_batch_get_photos(transport: str = 'grpc', request_type=rpcmessages.BatchGetPhotosRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.BatchGetPhotosRequest,
+  dict,
+])
+def test_batch_get_photos(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -899,10 +902,6 @@ def test_batch_get_photos(transport: str = 'grpc', request_type=rpcmessages.Batc
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, rpcmessages.BatchGetPhotosResponse)
-
-
-def test_batch_get_photos_from_dict():
-    test_batch_get_photos(request_type=dict)
 
 
 def test_batch_get_photos_empty_call():
@@ -1051,7 +1050,11 @@ async def test_batch_get_photos_flattened_error_async():
         )
 
 
-def test_list_photos(transport: str = 'grpc', request_type=rpcmessages.ListPhotosRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.ListPhotosRequest,
+  dict,
+])
+def test_list_photos(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1079,10 +1082,6 @@ def test_list_photos(transport: str = 'grpc', request_type=rpcmessages.ListPhoto
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPhotosPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_photos_from_dict():
-    test_list_photos(request_type=dict)
 
 
 def test_list_photos_empty_call():
@@ -1233,9 +1232,10 @@ async def test_list_photos_flattened_error_async():
         )
 
 
-def test_list_photos_pager():
+def test_list_photos_pager(transport_name: str = "grpc"):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1280,10 +1280,10 @@ def test_list_photos_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Photo)
                    for i in results)
-
-def test_list_photos_pages():
+def test_list_photos_pages(transport_name: str = "grpc"):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1368,7 +1368,8 @@ async def test_list_photos_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Photo)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_photos_async_pages():
@@ -1414,7 +1415,11 @@ async def test_list_photos_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_photo(transport: str = 'grpc', request_type=rpcmessages.UpdatePhotoRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.UpdatePhotoRequest,
+  dict,
+])
+def test_update_photo(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1452,10 +1457,6 @@ def test_update_photo(transport: str = 'grpc', request_type=rpcmessages.UpdatePh
     assert response.view_count == 1091
     assert response.transfer_status == resources.Photo.TransferStatus.NEVER_TRANSFERRED
     assert response.maps_publish_status == resources.Photo.MapsPublishStatus.PUBLISHED
-
-
-def test_update_photo_from_dict():
-    test_update_photo(request_type=dict)
 
 
 def test_update_photo_empty_call():
@@ -1616,7 +1617,11 @@ async def test_update_photo_flattened_error_async():
         )
 
 
-def test_batch_update_photos(transport: str = 'grpc', request_type=rpcmessages.BatchUpdatePhotosRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.BatchUpdatePhotosRequest,
+  dict,
+])
+def test_batch_update_photos(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1642,10 +1647,6 @@ def test_batch_update_photos(transport: str = 'grpc', request_type=rpcmessages.B
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, rpcmessages.BatchUpdatePhotosResponse)
-
-
-def test_batch_update_photos_from_dict():
-    test_batch_update_photos(request_type=dict)
 
 
 def test_batch_update_photos_empty_call():
@@ -1784,7 +1785,11 @@ async def test_batch_update_photos_flattened_error_async():
         )
 
 
-def test_delete_photo(transport: str = 'grpc', request_type=rpcmessages.DeletePhotoRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.DeletePhotoRequest,
+  dict,
+])
+def test_delete_photo(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1809,10 +1814,6 @@ def test_delete_photo(transport: str = 'grpc', request_type=rpcmessages.DeletePh
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_photo_from_dict():
-    test_delete_photo(request_type=dict)
 
 
 def test_delete_photo_empty_call():
@@ -1950,7 +1951,11 @@ async def test_delete_photo_flattened_error_async():
         )
 
 
-def test_batch_delete_photos(transport: str = 'grpc', request_type=rpcmessages.BatchDeletePhotosRequest):
+@pytest.mark.parametrize("request_type", [
+  rpcmessages.BatchDeletePhotosRequest,
+  dict,
+])
+def test_batch_delete_photos(request_type, transport: str = 'grpc'):
     client = StreetViewPublishServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1976,10 +1981,6 @@ def test_batch_delete_photos(transport: str = 'grpc', request_type=rpcmessages.B
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, rpcmessages.BatchDeletePhotosResponse)
-
-
-def test_batch_delete_photos_from_dict():
-    test_batch_delete_photos(request_type=dict)
 
 
 def test_batch_delete_photos_empty_call():
@@ -2585,7 +2586,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.StreetViewPublishServiceTransport, '_prep_wrapped_messages') as prep:

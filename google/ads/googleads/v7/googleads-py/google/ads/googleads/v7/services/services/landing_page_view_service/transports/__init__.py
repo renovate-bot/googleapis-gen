@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import LandingPageViewServiceTransport
 from .grpc import LandingPageViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[LandingPageViewServiceTransport]]
 _transport_registry['grpc'] = LandingPageViewServiceGrpcTransport
-
 
 __all__ = (
     'LandingPageViewServiceTransport',

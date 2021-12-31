@@ -213,18 +213,18 @@ def test_participants_client_client_options(client_class, transport_class, trans
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -255,7 +255,7 @@ def test_participants_client_mtls_env_auto(client_class, transport_class, transp
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -330,7 +330,7 @@ def test_participants_client_client_options_scopes(client_class, transport_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -353,7 +353,7 @@ def test_participants_client_client_options_credentials_file(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -364,7 +364,6 @@ def test_participants_client_client_options_credentials_file(client_class, trans
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_participants_client_client_options_from_dict():
     with mock.patch('google.cloud.dialogflow_v2beta1.services.participants.transports.ParticipantsGrpcTransport.__init__') as grpc_transport:
@@ -384,7 +383,11 @@ def test_participants_client_client_options_from_dict():
         )
 
 
-def test_create_participant(transport: str = 'grpc', request_type=gcd_participant.CreateParticipantRequest):
+@pytest.mark.parametrize("request_type", [
+  gcd_participant.CreateParticipantRequest,
+  dict,
+])
+def test_create_participant(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -416,10 +419,6 @@ def test_create_participant(transport: str = 'grpc', request_type=gcd_participan
     assert response.name == 'name_value'
     assert response.role == gcd_participant.Participant.Role.HUMAN_AGENT
     assert response.obfuscated_external_user_id == 'obfuscated_external_user_id_value'
-
-
-def test_create_participant_from_dict():
-    test_create_participant(request_type=dict)
 
 
 def test_create_participant_empty_call():
@@ -637,7 +636,11 @@ async def test_create_participant_flattened_error_async():
         )
 
 
-def test_get_participant(transport: str = 'grpc', request_type=participant.GetParticipantRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.GetParticipantRequest,
+  dict,
+])
+def test_get_participant(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -669,10 +672,6 @@ def test_get_participant(transport: str = 'grpc', request_type=participant.GetPa
     assert response.name == 'name_value'
     assert response.role == participant.Participant.Role.HUMAN_AGENT
     assert response.obfuscated_external_user_id == 'obfuscated_external_user_id_value'
-
-
-def test_get_participant_from_dict():
-    test_get_participant(request_type=dict)
 
 
 def test_get_participant_empty_call():
@@ -880,7 +879,11 @@ async def test_get_participant_flattened_error_async():
         )
 
 
-def test_list_participants(transport: str = 'grpc', request_type=participant.ListParticipantsRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.ListParticipantsRequest,
+  dict,
+])
+def test_list_participants(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -908,10 +911,6 @@ def test_list_participants(transport: str = 'grpc', request_type=participant.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListParticipantsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_participants_from_dict():
-    test_list_participants(request_type=dict)
 
 
 def test_list_participants_empty_call():
@@ -1115,9 +1114,10 @@ async def test_list_participants_flattened_error_async():
         )
 
 
-def test_list_participants_pager():
+def test_list_participants_pager(transport_name: str = "grpc"):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1167,10 +1167,10 @@ def test_list_participants_pager():
         assert len(results) == 6
         assert all(isinstance(i, participant.Participant)
                    for i in results)
-
-def test_list_participants_pages():
+def test_list_participants_pages(transport_name: str = "grpc"):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1255,7 +1255,8 @@ async def test_list_participants_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, participant.Participant)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_participants_async_pages():
@@ -1301,7 +1302,11 @@ async def test_list_participants_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_participant(transport: str = 'grpc', request_type=gcd_participant.UpdateParticipantRequest):
+@pytest.mark.parametrize("request_type", [
+  gcd_participant.UpdateParticipantRequest,
+  dict,
+])
+def test_update_participant(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1333,10 +1338,6 @@ def test_update_participant(transport: str = 'grpc', request_type=gcd_participan
     assert response.name == 'name_value'
     assert response.role == gcd_participant.Participant.Role.HUMAN_AGENT
     assert response.obfuscated_external_user_id == 'obfuscated_external_user_id_value'
-
-
-def test_update_participant_from_dict():
-    test_update_participant(request_type=dict)
 
 
 def test_update_participant_empty_call():
@@ -1554,7 +1555,11 @@ async def test_update_participant_flattened_error_async():
         )
 
 
-def test_analyze_content(transport: str = 'grpc', request_type=gcd_participant.AnalyzeContentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcd_participant.AnalyzeContentRequest,
+  dict,
+])
+def test_analyze_content(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1582,10 +1587,6 @@ def test_analyze_content(transport: str = 'grpc', request_type=gcd_participant.A
     # Establish that the response is the type that we expect.
     assert isinstance(response, gcd_participant.AnalyzeContentResponse)
     assert response.reply_text == 'reply_text_value'
-
-
-def test_analyze_content_from_dict():
-    test_analyze_content(request_type=dict)
 
 
 def test_analyze_content_empty_call():
@@ -1799,7 +1800,11 @@ async def test_analyze_content_flattened_error_async():
         )
 
 
-def test_suggest_articles(transport: str = 'grpc', request_type=participant.SuggestArticlesRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.SuggestArticlesRequest,
+  dict,
+])
+def test_suggest_articles(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1829,10 +1834,6 @@ def test_suggest_articles(transport: str = 'grpc', request_type=participant.Sugg
     assert isinstance(response, participant.SuggestArticlesResponse)
     assert response.latest_message == 'latest_message_value'
     assert response.context_size == 1311
-
-
-def test_suggest_articles_from_dict():
-    test_suggest_articles(request_type=dict)
 
 
 def test_suggest_articles_empty_call():
@@ -2038,7 +2039,11 @@ async def test_suggest_articles_flattened_error_async():
         )
 
 
-def test_suggest_faq_answers(transport: str = 'grpc', request_type=participant.SuggestFaqAnswersRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.SuggestFaqAnswersRequest,
+  dict,
+])
+def test_suggest_faq_answers(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2068,10 +2073,6 @@ def test_suggest_faq_answers(transport: str = 'grpc', request_type=participant.S
     assert isinstance(response, participant.SuggestFaqAnswersResponse)
     assert response.latest_message == 'latest_message_value'
     assert response.context_size == 1311
-
-
-def test_suggest_faq_answers_from_dict():
-    test_suggest_faq_answers(request_type=dict)
 
 
 def test_suggest_faq_answers_empty_call():
@@ -2277,7 +2278,11 @@ async def test_suggest_faq_answers_flattened_error_async():
         )
 
 
-def test_suggest_smart_replies(transport: str = 'grpc', request_type=participant.SuggestSmartRepliesRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.SuggestSmartRepliesRequest,
+  dict,
+])
+def test_suggest_smart_replies(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2307,10 +2312,6 @@ def test_suggest_smart_replies(transport: str = 'grpc', request_type=participant
     assert isinstance(response, participant.SuggestSmartRepliesResponse)
     assert response.latest_message == 'latest_message_value'
     assert response.context_size == 1311
-
-
-def test_suggest_smart_replies_from_dict():
-    test_suggest_smart_replies(request_type=dict)
 
 
 def test_suggest_smart_replies_empty_call():
@@ -2516,7 +2517,11 @@ async def test_suggest_smart_replies_flattened_error_async():
         )
 
 
-def test_list_suggestions(transport: str = 'grpc', request_type=participant.ListSuggestionsRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.ListSuggestionsRequest,
+  dict,
+])
+def test_list_suggestions(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2544,10 +2549,6 @@ def test_list_suggestions(transport: str = 'grpc', request_type=participant.List
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSuggestionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_suggestions_from_dict():
-    test_list_suggestions(request_type=dict)
 
 
 def test_list_suggestions_empty_call():
@@ -2667,9 +2668,10 @@ async def test_list_suggestions_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_suggestions_pager():
+def test_list_suggestions_pager(transport_name: str = "grpc"):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2719,10 +2721,10 @@ def test_list_suggestions_pager():
         assert len(results) == 6
         assert all(isinstance(i, participant.Suggestion)
                    for i in results)
-
-def test_list_suggestions_pages():
+def test_list_suggestions_pages(transport_name: str = "grpc"):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2807,7 +2809,8 @@ async def test_list_suggestions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, participant.Suggestion)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_suggestions_async_pages():
@@ -2853,7 +2856,11 @@ async def test_list_suggestions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_compile_suggestion(transport: str = 'grpc', request_type=participant.CompileSuggestionRequest):
+@pytest.mark.parametrize("request_type", [
+  participant.CompileSuggestionRequest,
+  dict,
+])
+def test_compile_suggestion(request_type, transport: str = 'grpc'):
     client = ParticipantsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2883,10 +2890,6 @@ def test_compile_suggestion(transport: str = 'grpc', request_type=participant.Co
     assert isinstance(response, participant.CompileSuggestionResponse)
     assert response.latest_message == 'latest_message_value'
     assert response.context_size == 1311
-
-
-def test_compile_suggestion_from_dict():
-    test_compile_suggestion(request_type=dict)
 
 
 def test_compile_suggestion_empty_call():
@@ -3603,7 +3606,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ParticipantsTransport, '_prep_wrapped_messages') as prep:

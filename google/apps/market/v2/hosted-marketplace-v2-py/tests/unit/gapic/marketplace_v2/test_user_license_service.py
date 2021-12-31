@@ -202,18 +202,18 @@ def test_user_license_service_client_client_options(client_class, transport_clas
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -244,7 +244,7 @@ def test_user_license_service_client_mtls_env_auto(client_class, transport_class
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -319,7 +319,7 @@ def test_user_license_service_client_client_options_scopes(client_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -342,7 +342,7 @@ def test_user_license_service_client_client_options_credentials_file(client_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -353,7 +353,6 @@ def test_user_license_service_client_client_options_credentials_file(client_clas
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_user_license_service_client_client_options_from_dict():
     with mock.patch('ccc.hosted.marketplace_v2.services.user_license_service.transports.UserLicenseServiceGrpcTransport.__init__') as grpc_transport:
@@ -373,7 +372,11 @@ def test_user_license_service_client_client_options_from_dict():
         )
 
 
-def test_get(transport: str = 'grpc', request_type=services.UserLicenseGetRequest):
+@pytest.mark.parametrize("request_type", [
+  services.UserLicenseGetRequest,
+  dict,
+])
+def test_get(request_type, transport: str = 'grpc'):
     client = UserLicenseServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -415,10 +418,6 @@ def test_get(transport: str = 'grpc', request_type=services.UserLicenseGetReques
     assert response.application_id == 'application_id_value'
     assert response.id == 'id_value'
     assert response.user_id == 'user_id_value'
-
-
-def test_get_from_dict():
-    test_get(request_type=dict)
 
 
 def test_get_empty_call():
@@ -948,7 +947,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.UserLicenseServiceTransport, '_prep_wrapped_messages') as prep:

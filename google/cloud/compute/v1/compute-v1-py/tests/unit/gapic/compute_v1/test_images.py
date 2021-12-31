@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_images_client_client_options(client_class, transport_class, transport_n
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_images_client_mtls_env_auto(client_class, transport_class, transport_na
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_images_client_client_options_scopes(client_class, transport_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_images_client_client_options_credentials_file(client_class, transport_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,70 @@ def test_images_client_client_options_credentials_file(client_class, transport_c
         )
 
 
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteImageRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteImageRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteImageRequest({'project': 'sample1', 'image': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteImageRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
+    request_init = {'project': 'sample1', 'image': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -437,7 +489,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteImageReque
     assert "image" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -449,7 +501,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteImageReque
     jsonified_request["image"] = 'image_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -492,12 +544,12 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteImageReque
             expected_params = [
                 (
                     "image",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -510,7 +562,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
+    request_init = {'project': 'sample1', 'image': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -523,18 +575,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -547,7 +595,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "image": "sample2"}
+        sample_request = {'project': 'sample1', 'image': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -580,19 +628,77 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_deprecate_unary_rest(transport: str = 'rest', request_type=compute.DeprecateImageRequest):
+def test_delete_unary_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.DeprecateImageRequest,
+  dict,
+])
+def test_deprecate_unary_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeprecateImageRequest({'project': 'sample1', 'image': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.deprecate_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeprecateImageRequest,
+    dict,
+])
+def test_deprecate_unary_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
-    request_init["deprecation_status_resource"] = compute.DeprecationStatus(deleted='deleted_value')
+    request_init = {'project': 'sample1', 'image': 'sample2'}
+    request_init["deprecation_status_resource"] = {'deleted': 'deleted_value', 'deprecated': 'deprecated_value', 'obsolete': 'obsolete_value', 'replacement': 'replacement_value', 'state': 'state_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -670,7 +776,7 @@ def test_deprecate_unary_rest_required_fields(request_type=compute.DeprecateImag
     assert "image" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._deprecate_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).deprecate._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -682,7 +788,7 @@ def test_deprecate_unary_rest_required_fields(request_type=compute.DeprecateImag
     jsonified_request["image"] = 'image_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._deprecate_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).deprecate._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -726,12 +832,12 @@ def test_deprecate_unary_rest_required_fields(request_type=compute.DeprecateImag
             expected_params = [
                 (
                     "image",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -744,8 +850,8 @@ def test_deprecate_unary_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
-    request_init["deprecation_status_resource"] = compute.DeprecationStatus(deleted='deleted_value')
+    request_init = {'project': 'sample1', 'image': 'sample2'}
+    request_init["deprecation_status_resource"] = {'deleted': 'deleted_value', 'deprecated': 'deprecated_value', 'obsolete': 'obsolete_value', 'replacement': 'replacement_value', 'state': 'state_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -758,18 +864,14 @@ def test_deprecate_unary_rest_bad_request(transport: str = 'rest', request_type=
         client.deprecate_unary(request)
 
 
-def test_deprecate_unary_rest_from_dict():
-    test_deprecate_unary_rest(request_type=dict)
-
-
-def test_deprecate_unary_rest_flattened(transport: str = 'rest'):
+def test_deprecate_unary_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -782,7 +884,7 @@ def test_deprecate_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "image": "sample2"}
+        sample_request = {'project': 'sample1', 'image': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -817,18 +919,76 @@ def test_deprecate_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetImageRequest):
+def test_deprecate_unary_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetImageRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetImageRequest({'project': 'sample1', 'image': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Image(
+              archive_size_bytes=1922,
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              disk_size_gb=1261,
+              family='family_value',
+              id=205,
+              kind='kind_value',
+              label_fingerprint='label_fingerprint_value',
+              license_codes=[1360],
+              licenses=['licenses_value'],
+              name='name_value',
+              satisfies_pzs=True,
+              self_link='self_link_value',
+              source_disk='source_disk_value',
+              source_disk_id='source_disk_id_value',
+              source_image='source_image_value',
+              source_image_id='source_image_id_value',
+              source_snapshot='source_snapshot_value',
+              source_snapshot_id='source_snapshot_id_value',
+              source_type='source_type_value',
+              status='status_value',
+              storage_locations=['storage_locations_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Image.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetImageRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
+    request_init = {'project': 'sample1', 'image': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Image(
               archive_size_bytes=1922,
@@ -906,7 +1066,7 @@ def test_get_rest_required_fields(request_type=compute.GetImageRequest):
     assert "image" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -918,7 +1078,7 @@ def test_get_rest_required_fields(request_type=compute.GetImageRequest):
     jsonified_request["image"] = 'image_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -961,12 +1121,12 @@ def test_get_rest_required_fields(request_type=compute.GetImageRequest):
             expected_params = [
                 (
                     "image",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -979,7 +1139,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetI
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
+    request_init = {'project': 'sample1', 'image': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -992,18 +1152,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetI
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Image()
 
@@ -1016,7 +1172,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "image": "sample2"}
+        sample_request = {'project': 'sample1', 'image': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1049,18 +1205,76 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_from_family_rest(transport: str = 'rest', request_type=compute.GetFromFamilyImageRequest):
+def test_get_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetFromFamilyImageRequest,
+  dict,
+])
+def test_get_from_family_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetFromFamilyImageRequest({'project': 'sample1', 'family': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Image(
+              archive_size_bytes=1922,
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              disk_size_gb=1261,
+              family='family_value',
+              id=205,
+              kind='kind_value',
+              label_fingerprint='label_fingerprint_value',
+              license_codes=[1360],
+              licenses=['licenses_value'],
+              name='name_value',
+              satisfies_pzs=True,
+              self_link='self_link_value',
+              source_disk='source_disk_value',
+              source_disk_id='source_disk_id_value',
+              source_image='source_image_value',
+              source_image_id='source_image_id_value',
+              source_snapshot='source_snapshot_value',
+              source_snapshot_id='source_snapshot_id_value',
+              source_type='source_type_value',
+              status='status_value',
+              storage_locations=['storage_locations_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Image.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_from_family(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetFromFamilyImageRequest,
+    dict,
+])
+def test_get_from_family_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "family": "sample2"}
+    request_init = {'project': 'sample1', 'family': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Image(
               archive_size_bytes=1922,
@@ -1138,7 +1352,7 @@ def test_get_from_family_rest_required_fields(request_type=compute.GetFromFamily
     assert "family" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_from_family_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_from_family._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1150,7 +1364,7 @@ def test_get_from_family_rest_required_fields(request_type=compute.GetFromFamily
     jsonified_request["family"] = 'family_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_from_family_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_from_family._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1193,12 +1407,12 @@ def test_get_from_family_rest_required_fields(request_type=compute.GetFromFamily
             expected_params = [
                 (
                     "family",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1211,7 +1425,7 @@ def test_get_from_family_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "family": "sample2"}
+    request_init = {'project': 'sample1', 'family': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1224,18 +1438,14 @@ def test_get_from_family_rest_bad_request(transport: str = 'rest', request_type=
         client.get_from_family(request)
 
 
-def test_get_from_family_rest_from_dict():
-    test_get_from_family_rest(request_type=dict)
-
-
-def test_get_from_family_rest_flattened(transport: str = 'rest'):
+def test_get_from_family_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Image()
 
@@ -1248,7 +1458,7 @@ def test_get_from_family_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "family": "sample2"}
+        sample_request = {'project': 'sample1', 'family': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1281,18 +1491,57 @@ def test_get_from_family_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_iam_policy_rest(transport: str = 'rest', request_type=compute.GetIamPolicyImageRequest):
+def test_get_from_family_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetIamPolicyImageRequest,
+  dict,
+])
+def test_get_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetIamPolicyImageRequest({'project': 'sample1', 'resource': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetIamPolicyImageRequest,
+    dict,
+])
+def test_get_iam_policy_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -1332,7 +1581,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyIm
     assert "project" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1344,7 +1593,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyIm
     jsonified_request["project"] = 'project_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1387,12 +1636,12 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyIm
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1405,7 +1654,7 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1418,18 +1667,14 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.get_iam_policy(request)
 
 
-def test_get_iam_policy_rest_from_dict():
-    test_get_iam_policy_rest(request_type=dict)
-
-
-def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_get_iam_policy_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -1442,7 +1687,7 @@ def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "resource": "sample2"}
+        sample_request = {'project': 'sample1', 'resource': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1475,19 +1720,77 @@ def test_get_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertImageRequest):
+def test_get_iam_policy_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertImageRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertImageRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertImageRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["image_resource"] = compute.Image(archive_size_bytes=1922)
+    request_init = {'project': 'sample1'}
+    request_init["image_resource"] = {'archive_size_bytes': 1922, 'creation_timestamp': 'creation_timestamp_value', 'deprecated': {'deleted': 'deleted_value', 'deprecated': 'deprecated_value', 'obsolete': 'obsolete_value', 'replacement': 'replacement_value', 'state': 'state_value'}, 'description': 'description_value', 'disk_size_gb': 1261, 'family': 'family_value', 'guest_os_features': [{'type_': 'type__value'}], 'id': 205, 'image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'name': 'name_value', 'raw_disk': {'container_type': 'container_type_value', 'sha1_checksum': 'sha1_checksum_value', 'source': 'source_value'}, 'satisfies_pzs': True, 'self_link': 'self_link_value', 'shielded_instance_initial_state': {'dbs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'dbxs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'keks': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'pk': {'content': 'content_value', 'file_type': 'file_type_value'}}, 'source_disk': 'source_disk_value', 'source_disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk_id': 'source_disk_id_value', 'source_image': 'source_image_value', 'source_image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_image_id': 'source_image_id_value', 'source_snapshot': 'source_snapshot_value', 'source_snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_snapshot_id': 'source_snapshot_id_value', 'source_type': 'source_type_value', 'status': 'status_value', 'storage_locations': ['storage_locations_value_1', 'storage_locations_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1563,7 +1866,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertImageReque
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1572,7 +1875,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertImageReque
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1614,8 +1917,8 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertImageReque
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1628,8 +1931,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["image_resource"] = compute.Image(archive_size_bytes=1922)
+    request_init = {'project': 'sample1'}
+    request_init["image_resource"] = {'archive_size_bytes': 1922, 'creation_timestamp': 'creation_timestamp_value', 'deprecated': {'deleted': 'deleted_value', 'deprecated': 'deprecated_value', 'obsolete': 'obsolete_value', 'replacement': 'replacement_value', 'state': 'state_value'}, 'description': 'description_value', 'disk_size_gb': 1261, 'family': 'family_value', 'guest_os_features': [{'type_': 'type__value'}], 'id': 205, 'image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'name': 'name_value', 'raw_disk': {'container_type': 'container_type_value', 'sha1_checksum': 'sha1_checksum_value', 'source': 'source_value'}, 'satisfies_pzs': True, 'self_link': 'self_link_value', 'shielded_instance_initial_state': {'dbs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'dbxs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'keks': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'pk': {'content': 'content_value', 'file_type': 'file_type_value'}}, 'source_disk': 'source_disk_value', 'source_disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk_id': 'source_disk_id_value', 'source_image': 'source_image_value', 'source_image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_image_id': 'source_image_id_value', 'source_snapshot': 'source_snapshot_value', 'source_snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_snapshot_id': 'source_snapshot_id_value', 'source_type': 'source_type_value', 'status': 'status_value', 'storage_locations': ['storage_locations_value_1', 'storage_locations_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1642,18 +1945,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1666,7 +1965,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1699,18 +1998,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListImagesRequest):
+def test_insert_unary_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListImagesRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListImagesRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.ImageList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.ImageList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListImagesRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ImageList(
               id='id_value',
@@ -1750,7 +2089,7 @@ def test_list_rest_required_fields(request_type=compute.ListImagesRequest):
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1759,7 +2098,7 @@ def test_list_rest_required_fields(request_type=compute.ListImagesRequest):
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1800,8 +2139,8 @@ def test_list_rest_required_fields(request_type=compute.ListImagesRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1814,7 +2153,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1827,18 +2166,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.ImageList()
 
@@ -1851,7 +2186,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1892,71 +2227,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.ImageList(
-                    items=[
-                        compute.Image(),
-                        compute.Image(),
-                        compute.Image(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.ImageList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.ImageList(
-                    items=[
-                        compute.Image(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.ImageList(
-                    items=[
-                        compute.Image(),
-                        compute.Image(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.ImageList(
+                items=[
+                    compute.Image(),
+                    compute.Image(),
+                    compute.Image(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.ImageList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.ImageList(
+                items=[
+                    compute.Image(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.ImageList(
+                items=[
+                    compute.Image(),
+                    compute.Image(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.ImageList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.ImageList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.Image)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.Image)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchImageRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchImageRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchImageRequest({'project': 'sample1', 'image': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchImageRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
-    request_init["image_resource"] = compute.Image(archive_size_bytes=1922)
+    request_init = {'project': 'sample1', 'image': 'sample2'}
+    request_init["image_resource"] = {'archive_size_bytes': 1922, 'creation_timestamp': 'creation_timestamp_value', 'deprecated': {'deleted': 'deleted_value', 'deprecated': 'deprecated_value', 'obsolete': 'obsolete_value', 'replacement': 'replacement_value', 'state': 'state_value'}, 'description': 'description_value', 'disk_size_gb': 1261, 'family': 'family_value', 'guest_os_features': [{'type_': 'type__value'}], 'id': 205, 'image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'name': 'name_value', 'raw_disk': {'container_type': 'container_type_value', 'sha1_checksum': 'sha1_checksum_value', 'source': 'source_value'}, 'satisfies_pzs': True, 'self_link': 'self_link_value', 'shielded_instance_initial_state': {'dbs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'dbxs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'keks': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'pk': {'content': 'content_value', 'file_type': 'file_type_value'}}, 'source_disk': 'source_disk_value', 'source_disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk_id': 'source_disk_id_value', 'source_image': 'source_image_value', 'source_image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_image_id': 'source_image_id_value', 'source_snapshot': 'source_snapshot_value', 'source_snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_snapshot_id': 'source_snapshot_id_value', 'source_type': 'source_type_value', 'status': 'status_value', 'storage_locations': ['storage_locations_value_1', 'storage_locations_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2034,7 +2420,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchImageRequest
     assert "image" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2046,7 +2432,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchImageRequest
     jsonified_request["image"] = 'image_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2090,12 +2476,12 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchImageRequest
             expected_params = [
                 (
                     "image",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2108,8 +2494,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "image": "sample2"}
-    request_init["image_resource"] = compute.Image(archive_size_bytes=1922)
+    request_init = {'project': 'sample1', 'image': 'sample2'}
+    request_init["image_resource"] = {'archive_size_bytes': 1922, 'creation_timestamp': 'creation_timestamp_value', 'deprecated': {'deleted': 'deleted_value', 'deprecated': 'deprecated_value', 'obsolete': 'obsolete_value', 'replacement': 'replacement_value', 'state': 'state_value'}, 'description': 'description_value', 'disk_size_gb': 1261, 'family': 'family_value', 'guest_os_features': [{'type_': 'type__value'}], 'id': 205, 'image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'name': 'name_value', 'raw_disk': {'container_type': 'container_type_value', 'sha1_checksum': 'sha1_checksum_value', 'source': 'source_value'}, 'satisfies_pzs': True, 'self_link': 'self_link_value', 'shielded_instance_initial_state': {'dbs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'dbxs': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'keks': [{'content': 'content_value', 'file_type': 'file_type_value'}], 'pk': {'content': 'content_value', 'file_type': 'file_type_value'}}, 'source_disk': 'source_disk_value', 'source_disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk_id': 'source_disk_id_value', 'source_image': 'source_image_value', 'source_image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_image_id': 'source_image_id_value', 'source_snapshot': 'source_snapshot_value', 'source_snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_snapshot_id': 'source_snapshot_id_value', 'source_type': 'source_type_value', 'status': 'status_value', 'storage_locations': ['storage_locations_value_1', 'storage_locations_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2122,18 +2508,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2146,7 +2528,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "image": "sample2"}
+        sample_request = {'project': 'sample1', 'image': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2181,19 +2563,58 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_iam_policy_rest(transport: str = 'rest', request_type=compute.SetIamPolicyImageRequest):
+def test_patch_unary_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetIamPolicyImageRequest,
+  dict,
+])
+def test_set_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetIamPolicyImageRequest({'project': 'sample1', 'resource': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetIamPolicyImageRequest,
+    dict,
+])
+def test_set_iam_policy_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["global_set_policy_request_resource"] = compute.GlobalSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["global_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -2233,7 +2654,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyIm
     assert "project" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2245,7 +2666,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyIm
     jsonified_request["project"] = 'project_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2289,12 +2710,12 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyIm
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2307,8 +2728,8 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["global_set_policy_request_resource"] = compute.GlobalSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["global_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2321,18 +2742,14 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.set_iam_policy(request)
 
 
-def test_set_iam_policy_rest_from_dict():
-    test_set_iam_policy_rest(request_type=dict)
-
-
-def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_set_iam_policy_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -2345,7 +2762,7 @@ def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "resource": "sample2"}
+        sample_request = {'project': 'sample1', 'resource': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2380,19 +2797,77 @@ def test_set_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_labels_unary_rest(transport: str = 'rest', request_type=compute.SetLabelsImageRequest):
+def test_set_iam_policy_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetLabelsImageRequest,
+  dict,
+])
+def test_set_labels_unary_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetLabelsImageRequest({'project': 'sample1', 'resource': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_labels_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetLabelsImageRequest,
+    dict,
+])
+def test_set_labels_unary_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["global_set_labels_request_resource"] = compute.GlobalSetLabelsRequest(label_fingerprint='label_fingerprint_value')
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["global_set_labels_request_resource"] = {'label_fingerprint': 'label_fingerprint_value', 'labels': {}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2470,7 +2945,7 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsIma
     assert "project" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_labels._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2482,7 +2957,7 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsIma
     jsonified_request["project"] = 'project_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_labels._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2526,12 +3001,12 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsIma
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2544,8 +3019,8 @@ def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["global_set_labels_request_resource"] = compute.GlobalSetLabelsRequest(label_fingerprint='label_fingerprint_value')
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["global_set_labels_request_resource"] = {'label_fingerprint': 'label_fingerprint_value', 'labels': {}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2558,18 +3033,14 @@ def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type
         client.set_labels_unary(request)
 
 
-def test_set_labels_unary_rest_from_dict():
-    test_set_labels_unary_rest(request_type=dict)
-
-
-def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
+def test_set_labels_unary_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2582,7 +3053,7 @@ def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "resource": "sample2"}
+        sample_request = {'project': 'sample1', 'resource': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2617,19 +3088,56 @@ def test_set_labels_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute.TestIamPermissionsImageRequest):
+def test_set_labels_unary_rest_error():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.TestIamPermissionsImageRequest,
+  dict,
+])
+def test_test_iam_permissions_rest(request_type, transport: str = 'rest'):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.TestIamPermissionsImageRequest({'project': 'sample1', 'resource': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.TestPermissionsResponse(
+              permissions=['permissions_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.test_iam_permissions(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.TestIamPermissionsImageRequest,
+    dict,
+])
+def test_test_iam_permissions_rest(request_type):
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse(
               permissions=['permissions_value'],
@@ -2665,7 +3173,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     assert "project" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2677,7 +3185,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     jsonified_request["project"] = 'project_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2721,12 +3229,12 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2739,8 +3247,8 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2753,18 +3261,14 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
         client.test_iam_permissions(request)
 
 
-def test_test_iam_permissions_rest_from_dict():
-    test_test_iam_permissions_rest(request_type=dict)
-
-
-def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
+def test_test_iam_permissions_rest_flattened():
     client = ImagesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse()
 
@@ -2777,7 +3281,7 @@ def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "resource": "sample2"}
+        sample_request = {'project': 'sample1', 'resource': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2810,6 +3314,13 @@ def test_test_iam_permissions_rest_flattened_error(transport: str = 'rest'):
             resource='resource_value',
             test_permissions_request_resource=compute.TestPermissionsRequest(permissions=['permissions_value']),
         )
+
+
+def test_test_iam_permissions_rest_error():
+    client = ImagesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -3061,7 +3572,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ImagesTransport, '_prep_wrapped_messages') as prep:

@@ -207,18 +207,18 @@ def test_big_query_storage_client_client_options(client_class, transport_class, 
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -249,7 +249,7 @@ def test_big_query_storage_client_mtls_env_auto(client_class, transport_class, t
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -324,7 +324,7 @@ def test_big_query_storage_client_client_options_scopes(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -347,7 +347,7 @@ def test_big_query_storage_client_client_options_credentials_file(client_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -358,7 +358,6 @@ def test_big_query_storage_client_client_options_credentials_file(client_class, 
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_big_query_storage_client_client_options_from_dict():
     with mock.patch('google.cloud.bigquery.storage_v1beta1.services.big_query_storage.transports.BigQueryStorageGrpcTransport.__init__') as grpc_transport:
@@ -378,7 +377,11 @@ def test_big_query_storage_client_client_options_from_dict():
         )
 
 
-def test_create_read_session(transport: str = 'grpc', request_type=storage.CreateReadSessionRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.CreateReadSessionRequest,
+  dict,
+])
+def test_create_read_session(request_type, transport: str = 'grpc'):
     client = BigQueryStorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_create_read_session(transport: str = 'grpc', request_type=storage.Creat
     assert isinstance(response, storage.ReadSession)
     assert response.name == 'name_value'
     assert response.sharding_strategy == storage.ShardingStrategy.LIQUID
-
-
-def test_create_read_session_from_dict():
-    test_create_read_session(request_type=dict)
 
 
 def test_create_read_session_empty_call():
@@ -638,7 +637,11 @@ async def test_create_read_session_flattened_error_async():
         )
 
 
-def test_read_rows(transport: str = 'grpc', request_type=storage.ReadRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ReadRowsRequest,
+  dict,
+])
+def test_read_rows(request_type, transport: str = 'grpc'):
     client = BigQueryStorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -664,10 +667,6 @@ def test_read_rows(transport: str = 'grpc', request_type=storage.ReadRowsRequest
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, storage.ReadRowsResponse)
-
-
-def test_read_rows_from_dict():
-    test_read_rows(request_type=dict)
 
 
 def test_read_rows_empty_call():
@@ -871,7 +870,11 @@ async def test_read_rows_flattened_error_async():
         )
 
 
-def test_batch_create_read_session_streams(transport: str = 'grpc', request_type=storage.BatchCreateReadSessionStreamsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.BatchCreateReadSessionStreamsRequest,
+  dict,
+])
+def test_batch_create_read_session_streams(request_type, transport: str = 'grpc'):
     client = BigQueryStorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -897,10 +900,6 @@ def test_batch_create_read_session_streams(transport: str = 'grpc', request_type
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.BatchCreateReadSessionStreamsResponse)
-
-
-def test_batch_create_read_session_streams_from_dict():
-    test_batch_create_read_session_streams(request_type=dict)
 
 
 def test_batch_create_read_session_streams_empty_call():
@@ -1112,7 +1111,11 @@ async def test_batch_create_read_session_streams_flattened_error_async():
         )
 
 
-def test_finalize_stream(transport: str = 'grpc', request_type=storage.FinalizeStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.FinalizeStreamRequest,
+  dict,
+])
+def test_finalize_stream(request_type, transport: str = 'grpc'):
     client = BigQueryStorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1137,10 +1140,6 @@ def test_finalize_stream(transport: str = 'grpc', request_type=storage.FinalizeS
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_finalize_stream_from_dict():
-    test_finalize_stream(request_type=dict)
 
 
 def test_finalize_stream_empty_call():
@@ -1341,7 +1340,11 @@ async def test_finalize_stream_flattened_error_async():
         )
 
 
-def test_split_read_stream(transport: str = 'grpc', request_type=storage.SplitReadStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.SplitReadStreamRequest,
+  dict,
+])
+def test_split_read_stream(request_type, transport: str = 'grpc'):
     client = BigQueryStorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1367,10 +1370,6 @@ def test_split_read_stream(transport: str = 'grpc', request_type=storage.SplitRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.SplitReadStreamResponse)
-
-
-def test_split_read_stream_from_dict():
-    test_split_read_stream(request_type=dict)
 
 
 def test_split_read_stream_empty_call():
@@ -2083,7 +2082,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.BigQueryStorageTransport, '_prep_wrapped_messages') as prep:

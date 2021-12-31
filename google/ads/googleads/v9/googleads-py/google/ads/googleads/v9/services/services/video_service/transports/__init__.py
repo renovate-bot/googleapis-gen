@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import VideoServiceTransport
 from .grpc import VideoServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[VideoServiceTransport]]
 _transport_registry['grpc'] = VideoServiceGrpcTransport
-
 
 __all__ = (
     'VideoServiceTransport',

@@ -130,7 +130,6 @@ class ListDatasetsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[dataset.Dataset]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class ListDataItemsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[data_item.DataItem]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListAnnotationsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[annotation.Annotation]:
         async def async_generator():
             async for page in self.pages:

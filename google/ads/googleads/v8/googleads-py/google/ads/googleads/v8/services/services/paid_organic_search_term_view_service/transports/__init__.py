@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import PaidOrganicSearchTermViewServiceTransport
 from .grpc import PaidOrganicSearchTermViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[PaidOrganicSearchTermViewServiceTransport]]
 _transport_registry['grpc'] = PaidOrganicSearchTermViewServiceGrpcTransport
-
 
 __all__ = (
     'PaidOrganicSearchTermViewServiceTransport',

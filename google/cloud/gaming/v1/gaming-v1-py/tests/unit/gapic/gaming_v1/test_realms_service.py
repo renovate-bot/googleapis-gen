@@ -209,18 +209,18 @@ def test_realms_service_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -251,7 +251,7 @@ def test_realms_service_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -326,7 +326,7 @@ def test_realms_service_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -349,7 +349,7 @@ def test_realms_service_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -360,7 +360,6 @@ def test_realms_service_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_realms_service_client_client_options_from_dict():
     with mock.patch('google.cloud.gaming_v1.services.realms_service.transports.RealmsServiceGrpcTransport.__init__') as grpc_transport:
@@ -380,7 +379,11 @@ def test_realms_service_client_client_options_from_dict():
         )
 
 
-def test_list_realms(transport: str = 'grpc', request_type=realms.ListRealmsRequest):
+@pytest.mark.parametrize("request_type", [
+  realms.ListRealmsRequest,
+  dict,
+])
+def test_list_realms(request_type, transport: str = 'grpc'):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_list_realms(transport: str = 'grpc', request_type=realms.ListRealmsRequ
     assert isinstance(response, pagers.ListRealmsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_realms_from_dict():
-    test_list_realms(request_type=dict)
 
 
 def test_list_realms_empty_call():
@@ -619,9 +618,10 @@ async def test_list_realms_flattened_error_async():
         )
 
 
-def test_list_realms_pager():
+def test_list_realms_pager(transport_name: str = "grpc"):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -671,10 +671,10 @@ def test_list_realms_pager():
         assert len(results) == 6
         assert all(isinstance(i, realms.Realm)
                    for i in results)
-
-def test_list_realms_pages():
+def test_list_realms_pages(transport_name: str = "grpc"):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -759,7 +759,8 @@ async def test_list_realms_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, realms.Realm)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_realms_async_pages():
@@ -805,7 +806,11 @@ async def test_list_realms_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_realm(transport: str = 'grpc', request_type=realms.GetRealmRequest):
+@pytest.mark.parametrize("request_type", [
+  realms.GetRealmRequest,
+  dict,
+])
+def test_get_realm(request_type, transport: str = 'grpc'):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -839,10 +844,6 @@ def test_get_realm(transport: str = 'grpc', request_type=realms.GetRealmRequest)
     assert response.time_zone == 'time_zone_value'
     assert response.etag == 'etag_value'
     assert response.description == 'description_value'
-
-
-def test_get_realm_from_dict():
-    test_get_realm(request_type=dict)
 
 
 def test_get_realm_empty_call():
@@ -1052,7 +1053,11 @@ async def test_get_realm_flattened_error_async():
         )
 
 
-def test_create_realm(transport: str = 'grpc', request_type=realms.CreateRealmRequest):
+@pytest.mark.parametrize("request_type", [
+  realms.CreateRealmRequest,
+  dict,
+])
+def test_create_realm(request_type, transport: str = 'grpc'):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1077,10 +1082,6 @@ def test_create_realm(transport: str = 'grpc', request_type=realms.CreateRealmRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_realm_from_dict():
-    test_create_realm(request_type=dict)
 
 
 def test_create_realm_empty_call():
@@ -1305,7 +1306,11 @@ async def test_create_realm_flattened_error_async():
         )
 
 
-def test_delete_realm(transport: str = 'grpc', request_type=realms.DeleteRealmRequest):
+@pytest.mark.parametrize("request_type", [
+  realms.DeleteRealmRequest,
+  dict,
+])
+def test_delete_realm(request_type, transport: str = 'grpc'):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1330,10 +1335,6 @@ def test_delete_realm(transport: str = 'grpc', request_type=realms.DeleteRealmRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_realm_from_dict():
-    test_delete_realm(request_type=dict)
 
 
 def test_delete_realm_empty_call():
@@ -1538,7 +1539,11 @@ async def test_delete_realm_flattened_error_async():
         )
 
 
-def test_update_realm(transport: str = 'grpc', request_type=realms.UpdateRealmRequest):
+@pytest.mark.parametrize("request_type", [
+  realms.UpdateRealmRequest,
+  dict,
+])
+def test_update_realm(request_type, transport: str = 'grpc'):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1563,10 +1568,6 @@ def test_update_realm(transport: str = 'grpc', request_type=realms.UpdateRealmRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_realm_from_dict():
-    test_update_realm(request_type=dict)
 
 
 def test_update_realm_empty_call():
@@ -1781,7 +1782,11 @@ async def test_update_realm_flattened_error_async():
         )
 
 
-def test_preview_realm_update(transport: str = 'grpc', request_type=realms.PreviewRealmUpdateRequest):
+@pytest.mark.parametrize("request_type", [
+  realms.PreviewRealmUpdateRequest,
+  dict,
+])
+def test_preview_realm_update(request_type, transport: str = 'grpc'):
     client = RealmsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1809,10 +1814,6 @@ def test_preview_realm_update(transport: str = 'grpc', request_type=realms.Previ
     # Establish that the response is the type that we expect.
     assert isinstance(response, realms.PreviewRealmUpdateResponse)
     assert response.etag == 'etag_value'
-
-
-def test_preview_realm_update_from_dict():
-    test_preview_realm_update(request_type=dict)
 
 
 def test_preview_realm_update_empty_call():
@@ -2456,7 +2457,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.RealmsServiceTransport, '_prep_wrapped_messages') as prep:

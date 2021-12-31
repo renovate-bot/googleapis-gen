@@ -127,7 +127,6 @@ class ListInspectTemplatesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[dlp.InspectTemplate]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListDeidentifyTemplatesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[dlp.DeidentifyTemplate]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListJobTriggersAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[dlp.JobTrigger]:
         async def async_generator():
             async for page in self.pages:
@@ -493,7 +490,6 @@ class ListDlpJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[dlp.DlpJob]:
         async def async_generator():
             async for page in self.pages:
@@ -615,7 +611,6 @@ class ListStoredInfoTypesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[dlp.StoredInfoType]:
         async def async_generator():
             async for page in self.pages:

@@ -22,7 +22,7 @@ import nox  # type: ignore
 def unit(session):
     """Run the unit test suite."""
 
-    session.install('coverage', 'pytest', 'pytest-cov')
+    session.install('coverage', 'mock', 'pytest', 'pytest-cov')
     session.install('-e', '.')
 
     session.run(

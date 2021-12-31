@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_url_maps_client_client_options(client_class, transport_class, transport
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_url_maps_client_mtls_env_auto(client_class, transport_class, transport_
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_url_maps_client_client_options_scopes(client_class, transport_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_url_maps_client_client_options_credentials_file(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,53 @@ def test_url_maps_client_client_options_credentials_file(client_class, transport
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListUrlMapsRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListUrlMapsRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListUrlMapsRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.UrlMapsAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.UrlMapsAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListUrlMapsRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMapsAggregatedList(
               id='id_value',
@@ -401,7 +436,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -410,7 +445,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -451,8 +486,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -465,7 +500,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -478,18 +513,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMapsAggregatedList()
 
@@ -502,7 +533,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -543,80 +574,131 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.UrlMapsAggregatedList(
-                    items={
-                        'a':compute.UrlMapsScopedList(),
-                        'b':compute.UrlMapsScopedList(),
-                        'c':compute.UrlMapsScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.UrlMapsAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.UrlMapsAggregatedList(
-                    items={
-                        'g':compute.UrlMapsScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.UrlMapsAggregatedList(
-                    items={
-                        'h':compute.UrlMapsScopedList(),
-                        'i':compute.UrlMapsScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.UrlMapsAggregatedList(
+                items={
+                    'a':compute.UrlMapsScopedList(),
+                    'b':compute.UrlMapsScopedList(),
+                    'c':compute.UrlMapsScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.UrlMapsAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.UrlMapsAggregatedList(
+                items={
+                    'g':compute.UrlMapsScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.UrlMapsAggregatedList(
+                items={
+                    'h':compute.UrlMapsScopedList(),
+                    'i':compute.UrlMapsScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.UrlMapsAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.UrlMapsAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.UrlMapsScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.UrlMapsScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.UrlMapsScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.UrlMapsScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.UrlMapsScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.UrlMapsScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteUrlMapRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteUrlMapRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteUrlMapRequest({'project': 'sample1', 'url_map': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteUrlMapRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -694,7 +776,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteUrlMapRequ
     assert "project" not in jsonified_request
     assert "urlMap" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -706,7 +788,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteUrlMapRequ
     jsonified_request["project"] = 'project_value'
     jsonified_request["urlMap"] = 'url_map_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -749,12 +831,12 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteUrlMapRequ
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "url_map",
-                    ""
-                )
+                    "urlMap",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -767,7 +849,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -780,18 +862,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -804,7 +882,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "url_map": "sample2"}
+        sample_request = {'project': 'sample1', 'url_map': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -837,18 +915,63 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetUrlMapRequest):
+def test_delete_unary_rest_error():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetUrlMapRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetUrlMapRequest({'project': 'sample1', 'url_map': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.UrlMap(
+              creation_timestamp='creation_timestamp_value',
+              default_service='default_service_value',
+              description='description_value',
+              fingerprint='fingerprint_value',
+              id=205,
+              kind='kind_value',
+              name='name_value',
+              region='region_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.UrlMap.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetUrlMapRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMap(
               creation_timestamp='creation_timestamp_value',
@@ -900,7 +1023,7 @@ def test_get_rest_required_fields(request_type=compute.GetUrlMapRequest):
     assert "project" not in jsonified_request
     assert "urlMap" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -912,7 +1035,7 @@ def test_get_rest_required_fields(request_type=compute.GetUrlMapRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["urlMap"] = 'url_map_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -955,12 +1078,12 @@ def test_get_rest_required_fields(request_type=compute.GetUrlMapRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "url_map",
-                    ""
-                )
+                    "urlMap",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -973,7 +1096,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetU
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -986,18 +1109,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetU
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMap()
 
@@ -1010,7 +1129,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "url_map": "sample2"}
+        sample_request = {'project': 'sample1', 'url_map': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1043,19 +1162,77 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertUrlMapRequest):
+def test_get_rest_error():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertUrlMapRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertUrlMapRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertUrlMapRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["url_map_resource"] = compute.UrlMap(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1'}
+    request_init["url_map_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1131,7 +1308,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertUrlMapRequ
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1140,7 +1317,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertUrlMapRequ
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1182,8 +1359,8 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertUrlMapRequ
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1196,8 +1373,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
-    request_init["url_map_resource"] = compute.UrlMap(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1'}
+    request_init["url_map_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1210,18 +1387,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1234,7 +1407,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1267,19 +1440,77 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_invalidate_cache_unary_rest(transport: str = 'rest', request_type=compute.InvalidateCacheUrlMapRequest):
+def test_insert_unary_rest_error():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InvalidateCacheUrlMapRequest,
+  dict,
+])
+def test_invalidate_cache_unary_rest(request_type, transport: str = 'rest'):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InvalidateCacheUrlMapRequest({'project': 'sample1', 'url_map': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.invalidate_cache_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InvalidateCacheUrlMapRequest,
+    dict,
+])
+def test_invalidate_cache_unary_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["cache_invalidation_rule_resource"] = compute.CacheInvalidationRule(host='host_value')
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["cache_invalidation_rule_resource"] = {'host': 'host_value', 'path': 'path_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1357,7 +1588,7 @@ def test_invalidate_cache_unary_rest_required_fields(request_type=compute.Invali
     assert "project" not in jsonified_request
     assert "urlMap" not in jsonified_request
 
-    unset_fields = transport_class._invalidate_cache_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).invalidate_cache._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1369,7 +1600,7 @@ def test_invalidate_cache_unary_rest_required_fields(request_type=compute.Invali
     jsonified_request["project"] = 'project_value'
     jsonified_request["urlMap"] = 'url_map_value'
 
-    unset_fields = transport_class._invalidate_cache_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).invalidate_cache._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1413,12 +1644,12 @@ def test_invalidate_cache_unary_rest_required_fields(request_type=compute.Invali
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "url_map",
-                    ""
-                )
+                    "urlMap",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1431,8 +1662,8 @@ def test_invalidate_cache_unary_rest_bad_request(transport: str = 'rest', reques
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["cache_invalidation_rule_resource"] = compute.CacheInvalidationRule(host='host_value')
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["cache_invalidation_rule_resource"] = {'host': 'host_value', 'path': 'path_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1445,18 +1676,14 @@ def test_invalidate_cache_unary_rest_bad_request(transport: str = 'rest', reques
         client.invalidate_cache_unary(request)
 
 
-def test_invalidate_cache_unary_rest_from_dict():
-    test_invalidate_cache_unary_rest(request_type=dict)
-
-
-def test_invalidate_cache_unary_rest_flattened(transport: str = 'rest'):
+def test_invalidate_cache_unary_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1469,7 +1696,7 @@ def test_invalidate_cache_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "url_map": "sample2"}
+        sample_request = {'project': 'sample1', 'url_map': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1504,18 +1731,58 @@ def test_invalidate_cache_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListUrlMapsRequest):
+def test_invalidate_cache_unary_rest_error():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListUrlMapsRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListUrlMapsRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.UrlMapList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.UrlMapList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListUrlMapsRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMapList(
               id='id_value',
@@ -1555,7 +1822,7 @@ def test_list_rest_required_fields(request_type=compute.ListUrlMapsRequest):
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1564,7 +1831,7 @@ def test_list_rest_required_fields(request_type=compute.ListUrlMapsRequest):
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1605,8 +1872,8 @@ def test_list_rest_required_fields(request_type=compute.ListUrlMapsRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1619,7 +1886,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1632,18 +1899,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMapList()
 
@@ -1656,7 +1919,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1697,71 +1960,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.UrlMapList(
-                    items=[
-                        compute.UrlMap(),
-                        compute.UrlMap(),
-                        compute.UrlMap(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.UrlMapList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.UrlMapList(
-                    items=[
-                        compute.UrlMap(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.UrlMapList(
-                    items=[
-                        compute.UrlMap(),
-                        compute.UrlMap(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.UrlMapList(
+                items=[
+                    compute.UrlMap(),
+                    compute.UrlMap(),
+                    compute.UrlMap(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.UrlMapList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.UrlMapList(
+                items=[
+                    compute.UrlMap(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.UrlMapList(
+                items=[
+                    compute.UrlMap(),
+                    compute.UrlMap(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.UrlMapList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.UrlMapList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.UrlMap)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.UrlMap)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchUrlMapRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchUrlMapRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchUrlMapRequest({'project': 'sample1', 'url_map': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchUrlMapRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["url_map_resource"] = compute.UrlMap(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["url_map_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1839,7 +2153,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchUrlMapReques
     assert "project" not in jsonified_request
     assert "urlMap" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1851,7 +2165,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchUrlMapReques
     jsonified_request["project"] = 'project_value'
     jsonified_request["urlMap"] = 'url_map_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1895,12 +2209,12 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchUrlMapReques
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "url_map",
-                    ""
-                )
+                    "urlMap",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1913,8 +2227,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["url_map_resource"] = compute.UrlMap(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["url_map_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1927,18 +2241,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1951,7 +2261,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "url_map": "sample2"}
+        sample_request = {'project': 'sample1', 'url_map': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1986,19 +2296,77 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_update_unary_rest(transport: str = 'rest', request_type=compute.UpdateUrlMapRequest):
+def test_patch_unary_rest_error():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.UpdateUrlMapRequest,
+  dict,
+])
+def test_update_unary_rest(request_type, transport: str = 'rest'):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.UpdateUrlMapRequest({'project': 'sample1', 'url_map': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.update_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.UpdateUrlMapRequest,
+    dict,
+])
+def test_update_unary_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["url_map_resource"] = compute.UrlMap(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["url_map_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2076,7 +2444,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateUrlMapRequ
     assert "project" not in jsonified_request
     assert "urlMap" not in jsonified_request
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2088,7 +2456,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateUrlMapRequ
     jsonified_request["project"] = 'project_value'
     jsonified_request["urlMap"] = 'url_map_value'
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2132,12 +2500,12 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateUrlMapRequ
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "url_map",
-                    ""
-                )
+                    "urlMap",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2150,8 +2518,8 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["url_map_resource"] = compute.UrlMap(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["url_map_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2164,18 +2532,14 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.update_unary(request)
 
 
-def test_update_unary_rest_from_dict():
-    test_update_unary_rest(request_type=dict)
-
-
-def test_update_unary_rest_flattened(transport: str = 'rest'):
+def test_update_unary_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2188,7 +2552,7 @@ def test_update_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "url_map": "sample2"}
+        sample_request = {'project': 'sample1', 'url_map': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2223,19 +2587,55 @@ def test_update_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_validate_rest(transport: str = 'rest', request_type=compute.ValidateUrlMapRequest):
+def test_update_unary_rest_error():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ValidateUrlMapRequest,
+  dict,
+])
+def test_validate_rest(request_type, transport: str = 'rest'):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ValidateUrlMapRequest({'project': 'sample1', 'url_map': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.UrlMapsValidateResponse(
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.UrlMapsValidateResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.validate(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ValidateUrlMapRequest,
+    dict,
+])
+def test_validate_rest(request_type):
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["url_maps_validate_request_resource"] = compute.UrlMapsValidateRequest(resource=compute.UrlMap(creation_timestamp='creation_timestamp_value'))
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["url_maps_validate_request_resource"] = {'resource': {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMapsValidateResponse(
         )
@@ -2269,7 +2669,7 @@ def test_validate_rest_required_fields(request_type=compute.ValidateUrlMapReques
     assert "project" not in jsonified_request
     assert "urlMap" not in jsonified_request
 
-    unset_fields = transport_class._validate_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).validate._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2281,7 +2681,7 @@ def test_validate_rest_required_fields(request_type=compute.ValidateUrlMapReques
     jsonified_request["project"] = 'project_value'
     jsonified_request["urlMap"] = 'url_map_value'
 
-    unset_fields = transport_class._validate_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).validate._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2325,12 +2725,12 @@ def test_validate_rest_required_fields(request_type=compute.ValidateUrlMapReques
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "url_map",
-                    ""
-                )
+                    "urlMap",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2343,8 +2743,8 @@ def test_validate_rest_bad_request(transport: str = 'rest', request_type=compute
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "url_map": "sample2"}
-    request_init["url_maps_validate_request_resource"] = compute.UrlMapsValidateRequest(resource=compute.UrlMap(creation_timestamp='creation_timestamp_value'))
+    request_init = {'project': 'sample1', 'url_map': 'sample2'}
+    request_init["url_maps_validate_request_resource"] = {'resource': {'creation_timestamp': 'creation_timestamp_value', 'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'host_rules': [{'description': 'description_value', 'hosts': ['hosts_value_1', 'hosts_value_2'], 'path_matcher': 'path_matcher_value'}], 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'path_matchers': [{'default_route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'default_service': 'default_service_value', 'default_url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}, 'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'name': 'name_value', 'path_rules': [{'paths': ['paths_value_1', 'paths_value_2'], 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}], 'route_rules': [{'description': 'description_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'match_rules': [{'full_path_match': 'full_path_match_value', 'header_matches': [{'exact_match': 'exact_match_value', 'header_name': 'header_name_value', 'invert_match': True, 'prefix_match': 'prefix_match_value', 'present_match': True, 'range_match': {'range_end': 931, 'range_start': 1178}, 'regex_match': 'regex_match_value', 'suffix_match': 'suffix_match_value'}], 'ignore_case': True, 'metadata_filters': [{'filter_labels': [{'name': 'name_value', 'value': 'value_value'}], 'filter_match_criteria': 'filter_match_criteria_value'}], 'prefix_match': 'prefix_match_value', 'query_parameter_matches': [{'exact_match': 'exact_match_value', 'name': 'name_value', 'present_match': True, 'regex_match': 'regex_match_value'}], 'regex_match': 'regex_match_value'}], 'priority': 898, 'route_action': {'cors_policy': {'allow_credentials': True, 'allow_headers': ['allow_headers_value_1', 'allow_headers_value_2'], 'allow_methods': ['allow_methods_value_1', 'allow_methods_value_2'], 'allow_origin_regexes': ['allow_origin_regexes_value_1', 'allow_origin_regexes_value_2'], 'allow_origins': ['allow_origins_value_1', 'allow_origins_value_2'], 'disabled': True, 'expose_headers': ['expose_headers_value_1', 'expose_headers_value_2'], 'max_age': 722}, 'fault_injection_policy': {'abort': {'http_status': 1219, 'percentage': 0.10540000000000001}, 'delay': {'fixed_delay': {'nanos': 543, 'seconds': 751}, 'percentage': 0.10540000000000001}}, 'max_stream_duration': {'nanos': 543, 'seconds': 751}, 'request_mirror_policy': {'backend_service': 'backend_service_value'}, 'retry_policy': {'num_retries': 1197, 'per_try_timeout': {'nanos': 543, 'seconds': 751}, 'retry_conditions': ['retry_conditions_value_1', 'retry_conditions_value_2']}, 'timeout': {'nanos': 543, 'seconds': 751}, 'url_rewrite': {'host_rewrite': 'host_rewrite_value', 'path_prefix_rewrite': 'path_prefix_rewrite_value'}, 'weighted_backend_services': [{'backend_service': 'backend_service_value', 'header_action': {'request_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'request_headers_to_remove': ['request_headers_to_remove_value_1', 'request_headers_to_remove_value_2'], 'response_headers_to_add': [{'header_name': 'header_name_value', 'header_value': 'header_value_value', 'replace': True}], 'response_headers_to_remove': ['response_headers_to_remove_value_1', 'response_headers_to_remove_value_2']}, 'weight': 648}]}, 'service': 'service_value', 'url_redirect': {'host_redirect': 'host_redirect_value', 'https_redirect': True, 'path_redirect': 'path_redirect_value', 'prefix_redirect': 'prefix_redirect_value', 'redirect_response_code': 'redirect_response_code_value', 'strip_query': True}}]}], 'region': 'region_value', 'self_link': 'self_link_value', 'tests': [{'description': 'description_value', 'expected_output_url': 'expected_output_url_value', 'expected_redirect_response_code': 3275, 'headers': [{'name': 'name_value', 'value': 'value_value'}], 'host': 'host_value', 'path': 'path_value', 'service': 'service_value'}]}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2357,18 +2757,14 @@ def test_validate_rest_bad_request(transport: str = 'rest', request_type=compute
         client.validate(request)
 
 
-def test_validate_rest_from_dict():
-    test_validate_rest(request_type=dict)
-
-
-def test_validate_rest_flattened(transport: str = 'rest'):
+def test_validate_rest_flattened():
     client = UrlMapsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.UrlMapsValidateResponse()
 
@@ -2381,7 +2777,7 @@ def test_validate_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "url_map": "sample2"}
+        sample_request = {'project': 'sample1', 'url_map': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2414,6 +2810,13 @@ def test_validate_rest_flattened_error(transport: str = 'rest'):
             url_map='url_map_value',
             url_maps_validate_request_resource=compute.UrlMapsValidateRequest(resource=compute.UrlMap(creation_timestamp='creation_timestamp_value')),
         )
+
+
+def test_validate_rest_error():
+    client = UrlMapsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -2663,7 +3066,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.UrlMapsTransport, '_prep_wrapped_messages') as prep:

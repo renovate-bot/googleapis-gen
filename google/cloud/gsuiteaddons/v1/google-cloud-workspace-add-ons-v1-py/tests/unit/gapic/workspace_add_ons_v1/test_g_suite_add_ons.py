@@ -213,18 +213,18 @@ def test_g_suite_add_ons_client_client_options(client_class, transport_class, tr
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -255,7 +255,7 @@ def test_g_suite_add_ons_client_mtls_env_auto(client_class, transport_class, tra
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -330,7 +330,7 @@ def test_g_suite_add_ons_client_client_options_scopes(client_class, transport_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -353,7 +353,7 @@ def test_g_suite_add_ons_client_client_options_credentials_file(client_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -364,7 +364,6 @@ def test_g_suite_add_ons_client_client_options_credentials_file(client_class, tr
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_g_suite_add_ons_client_client_options_from_dict():
     with mock.patch('google.cloud.workspace_add_ons_v1.services.g_suite_add_ons.transports.GSuiteAddOnsGrpcTransport.__init__') as grpc_transport:
@@ -384,7 +383,11 @@ def test_g_suite_add_ons_client_client_options_from_dict():
         )
 
 
-def test_get_authorization(transport: str = 'grpc', request_type=gsuiteaddons.GetAuthorizationRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.GetAuthorizationRequest,
+  dict,
+])
+def test_get_authorization(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -416,10 +419,6 @@ def test_get_authorization(transport: str = 'grpc', request_type=gsuiteaddons.Ge
     assert response.name == 'name_value'
     assert response.service_account_email == 'service_account_email_value'
     assert response.oauth_client_id == 'oauth_client_id_value'
-
-
-def test_get_authorization_from_dict():
-    test_get_authorization(request_type=dict)
 
 
 def test_get_authorization_empty_call():
@@ -627,7 +626,11 @@ async def test_get_authorization_flattened_error_async():
         )
 
 
-def test_create_deployment(transport: str = 'grpc', request_type=gsuiteaddons.CreateDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.CreateDeploymentRequest,
+  dict,
+])
+def test_create_deployment(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -659,10 +662,6 @@ def test_create_deployment(transport: str = 'grpc', request_type=gsuiteaddons.Cr
     assert response.name == 'name_value'
     assert response.oauth_scopes == ['oauth_scopes_value']
     assert response.etag == 'etag_value'
-
-
-def test_create_deployment_from_dict():
-    test_create_deployment(request_type=dict)
 
 
 def test_create_deployment_empty_call():
@@ -890,7 +889,11 @@ async def test_create_deployment_flattened_error_async():
         )
 
 
-def test_replace_deployment(transport: str = 'grpc', request_type=gsuiteaddons.ReplaceDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.ReplaceDeploymentRequest,
+  dict,
+])
+def test_replace_deployment(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -922,10 +925,6 @@ def test_replace_deployment(transport: str = 'grpc', request_type=gsuiteaddons.R
     assert response.name == 'name_value'
     assert response.oauth_scopes == ['oauth_scopes_value']
     assert response.etag == 'etag_value'
-
-
-def test_replace_deployment_from_dict():
-    test_replace_deployment(request_type=dict)
 
 
 def test_replace_deployment_empty_call():
@@ -1133,7 +1132,11 @@ async def test_replace_deployment_flattened_error_async():
         )
 
 
-def test_get_deployment(transport: str = 'grpc', request_type=gsuiteaddons.GetDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.GetDeploymentRequest,
+  dict,
+])
+def test_get_deployment(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1165,10 +1168,6 @@ def test_get_deployment(transport: str = 'grpc', request_type=gsuiteaddons.GetDe
     assert response.name == 'name_value'
     assert response.oauth_scopes == ['oauth_scopes_value']
     assert response.etag == 'etag_value'
-
-
-def test_get_deployment_from_dict():
-    test_get_deployment(request_type=dict)
 
 
 def test_get_deployment_empty_call():
@@ -1376,7 +1375,11 @@ async def test_get_deployment_flattened_error_async():
         )
 
 
-def test_list_deployments(transport: str = 'grpc', request_type=gsuiteaddons.ListDeploymentsRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.ListDeploymentsRequest,
+  dict,
+])
+def test_list_deployments(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1404,10 +1407,6 @@ def test_list_deployments(transport: str = 'grpc', request_type=gsuiteaddons.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDeploymentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_deployments_from_dict():
-    test_list_deployments(request_type=dict)
 
 
 def test_list_deployments_empty_call():
@@ -1611,9 +1610,10 @@ async def test_list_deployments_flattened_error_async():
         )
 
 
-def test_list_deployments_pager():
+def test_list_deployments_pager(transport_name: str = "grpc"):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1663,10 +1663,10 @@ def test_list_deployments_pager():
         assert len(results) == 6
         assert all(isinstance(i, gsuiteaddons.Deployment)
                    for i in results)
-
-def test_list_deployments_pages():
+def test_list_deployments_pages(transport_name: str = "grpc"):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1751,7 +1751,8 @@ async def test_list_deployments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, gsuiteaddons.Deployment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_deployments_async_pages():
@@ -1797,7 +1798,11 @@ async def test_list_deployments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_deployment(transport: str = 'grpc', request_type=gsuiteaddons.DeleteDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.DeleteDeploymentRequest,
+  dict,
+])
+def test_delete_deployment(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1822,10 +1827,6 @@ def test_delete_deployment(transport: str = 'grpc', request_type=gsuiteaddons.De
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_deployment_from_dict():
-    test_delete_deployment(request_type=dict)
 
 
 def test_delete_deployment_empty_call():
@@ -2026,7 +2027,11 @@ async def test_delete_deployment_flattened_error_async():
         )
 
 
-def test_install_deployment(transport: str = 'grpc', request_type=gsuiteaddons.InstallDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.InstallDeploymentRequest,
+  dict,
+])
+def test_install_deployment(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2051,10 +2056,6 @@ def test_install_deployment(transport: str = 'grpc', request_type=gsuiteaddons.I
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_install_deployment_from_dict():
-    test_install_deployment(request_type=dict)
 
 
 def test_install_deployment_empty_call():
@@ -2255,7 +2256,11 @@ async def test_install_deployment_flattened_error_async():
         )
 
 
-def test_uninstall_deployment(transport: str = 'grpc', request_type=gsuiteaddons.UninstallDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.UninstallDeploymentRequest,
+  dict,
+])
+def test_uninstall_deployment(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2280,10 +2285,6 @@ def test_uninstall_deployment(transport: str = 'grpc', request_type=gsuiteaddons
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_uninstall_deployment_from_dict():
-    test_uninstall_deployment(request_type=dict)
 
 
 def test_uninstall_deployment_empty_call():
@@ -2484,7 +2485,11 @@ async def test_uninstall_deployment_flattened_error_async():
         )
 
 
-def test_get_install_status(transport: str = 'grpc', request_type=gsuiteaddons.GetInstallStatusRequest):
+@pytest.mark.parametrize("request_type", [
+  gsuiteaddons.GetInstallStatusRequest,
+  dict,
+])
+def test_get_install_status(request_type, transport: str = 'grpc'):
     client = GSuiteAddOnsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2512,10 +2517,6 @@ def test_get_install_status(transport: str = 'grpc', request_type=gsuiteaddons.G
     # Establish that the response is the type that we expect.
     assert isinstance(response, gsuiteaddons.InstallStatus)
     assert response.name == 'name_value'
-
-
-def test_get_install_status_from_dict():
-    test_get_install_status(request_type=dict)
 
 
 def test_get_install_status_empty_call():
@@ -3241,7 +3242,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.GSuiteAddOnsTransport, '_prep_wrapped_messages') as prep:

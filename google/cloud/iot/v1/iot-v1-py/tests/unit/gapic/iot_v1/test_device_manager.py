@@ -211,18 +211,18 @@ def test_device_manager_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_device_manager_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_device_manager_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_device_manager_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_device_manager_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_device_manager_client_client_options_from_dict():
     with mock.patch('google.cloud.iot_v1.services.device_manager.transports.DeviceManagerGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_device_manager_client_client_options_from_dict():
         )
 
 
-def test_create_device_registry(transport: str = 'grpc', request_type=device_manager.CreateDeviceRegistryRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.CreateDeviceRegistryRequest,
+  dict,
+])
+def test_create_device_registry(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -414,10 +417,6 @@ def test_create_device_registry(transport: str = 'grpc', request_type=device_man
     assert response.id == 'id_value'
     assert response.name == 'name_value'
     assert response.log_level == resources.LogLevel.NONE
-
-
-def test_create_device_registry_from_dict():
-    test_create_device_registry(request_type=dict)
 
 
 def test_create_device_registry_empty_call():
@@ -635,7 +634,11 @@ async def test_create_device_registry_flattened_error_async():
         )
 
 
-def test_get_device_registry(transport: str = 'grpc', request_type=device_manager.GetDeviceRegistryRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.GetDeviceRegistryRequest,
+  dict,
+])
+def test_get_device_registry(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -667,10 +670,6 @@ def test_get_device_registry(transport: str = 'grpc', request_type=device_manage
     assert response.id == 'id_value'
     assert response.name == 'name_value'
     assert response.log_level == resources.LogLevel.NONE
-
-
-def test_get_device_registry_from_dict():
-    test_get_device_registry(request_type=dict)
 
 
 def test_get_device_registry_empty_call():
@@ -878,7 +877,11 @@ async def test_get_device_registry_flattened_error_async():
         )
 
 
-def test_update_device_registry(transport: str = 'grpc', request_type=device_manager.UpdateDeviceRegistryRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.UpdateDeviceRegistryRequest,
+  dict,
+])
+def test_update_device_registry(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -910,10 +913,6 @@ def test_update_device_registry(transport: str = 'grpc', request_type=device_man
     assert response.id == 'id_value'
     assert response.name == 'name_value'
     assert response.log_level == resources.LogLevel.NONE
-
-
-def test_update_device_registry_from_dict():
-    test_update_device_registry(request_type=dict)
 
 
 def test_update_device_registry_empty_call():
@@ -1131,7 +1130,11 @@ async def test_update_device_registry_flattened_error_async():
         )
 
 
-def test_delete_device_registry(transport: str = 'grpc', request_type=device_manager.DeleteDeviceRegistryRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.DeleteDeviceRegistryRequest,
+  dict,
+])
+def test_delete_device_registry(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1156,10 +1159,6 @@ def test_delete_device_registry(transport: str = 'grpc', request_type=device_man
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_device_registry_from_dict():
-    test_delete_device_registry(request_type=dict)
 
 
 def test_delete_device_registry_empty_call():
@@ -1360,7 +1359,11 @@ async def test_delete_device_registry_flattened_error_async():
         )
 
 
-def test_list_device_registries(transport: str = 'grpc', request_type=device_manager.ListDeviceRegistriesRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.ListDeviceRegistriesRequest,
+  dict,
+])
+def test_list_device_registries(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1388,10 +1391,6 @@ def test_list_device_registries(transport: str = 'grpc', request_type=device_man
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDeviceRegistriesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_device_registries_from_dict():
-    test_list_device_registries(request_type=dict)
 
 
 def test_list_device_registries_empty_call():
@@ -1595,9 +1594,10 @@ async def test_list_device_registries_flattened_error_async():
         )
 
 
-def test_list_device_registries_pager():
+def test_list_device_registries_pager(transport_name: str = "grpc"):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1647,10 +1647,10 @@ def test_list_device_registries_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.DeviceRegistry)
                    for i in results)
-
-def test_list_device_registries_pages():
+def test_list_device_registries_pages(transport_name: str = "grpc"):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1735,7 +1735,8 @@ async def test_list_device_registries_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.DeviceRegistry)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_device_registries_async_pages():
@@ -1781,7 +1782,11 @@ async def test_list_device_registries_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_device(transport: str = 'grpc', request_type=device_manager.CreateDeviceRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.CreateDeviceRequest,
+  dict,
+])
+def test_create_device(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1817,10 +1822,6 @@ def test_create_device(transport: str = 'grpc', request_type=device_manager.Crea
     assert response.num_id == 636
     assert response.blocked is True
     assert response.log_level == resources.LogLevel.NONE
-
-
-def test_create_device_from_dict():
-    test_create_device(request_type=dict)
 
 
 def test_create_device_empty_call():
@@ -2042,7 +2043,11 @@ async def test_create_device_flattened_error_async():
         )
 
 
-def test_get_device(transport: str = 'grpc', request_type=device_manager.GetDeviceRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.GetDeviceRequest,
+  dict,
+])
+def test_get_device(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2078,10 +2083,6 @@ def test_get_device(transport: str = 'grpc', request_type=device_manager.GetDevi
     assert response.num_id == 636
     assert response.blocked is True
     assert response.log_level == resources.LogLevel.NONE
-
-
-def test_get_device_from_dict():
-    test_get_device(request_type=dict)
 
 
 def test_get_device_empty_call():
@@ -2293,7 +2294,11 @@ async def test_get_device_flattened_error_async():
         )
 
 
-def test_update_device(transport: str = 'grpc', request_type=device_manager.UpdateDeviceRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.UpdateDeviceRequest,
+  dict,
+])
+def test_update_device(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2329,10 +2334,6 @@ def test_update_device(transport: str = 'grpc', request_type=device_manager.Upda
     assert response.num_id == 636
     assert response.blocked is True
     assert response.log_level == resources.LogLevel.NONE
-
-
-def test_update_device_from_dict():
-    test_update_device(request_type=dict)
 
 
 def test_update_device_empty_call():
@@ -2554,7 +2555,11 @@ async def test_update_device_flattened_error_async():
         )
 
 
-def test_delete_device(transport: str = 'grpc', request_type=device_manager.DeleteDeviceRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.DeleteDeviceRequest,
+  dict,
+])
+def test_delete_device(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2579,10 +2584,6 @@ def test_delete_device(transport: str = 'grpc', request_type=device_manager.Dele
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_device_from_dict():
-    test_delete_device(request_type=dict)
 
 
 def test_delete_device_empty_call():
@@ -2783,7 +2784,11 @@ async def test_delete_device_flattened_error_async():
         )
 
 
-def test_list_devices(transport: str = 'grpc', request_type=device_manager.ListDevicesRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.ListDevicesRequest,
+  dict,
+])
+def test_list_devices(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2811,10 +2816,6 @@ def test_list_devices(transport: str = 'grpc', request_type=device_manager.ListD
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDevicesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_devices_from_dict():
-    test_list_devices(request_type=dict)
 
 
 def test_list_devices_empty_call():
@@ -3018,9 +3019,10 @@ async def test_list_devices_flattened_error_async():
         )
 
 
-def test_list_devices_pager():
+def test_list_devices_pager(transport_name: str = "grpc"):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3070,10 +3072,10 @@ def test_list_devices_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Device)
                    for i in results)
-
-def test_list_devices_pages():
+def test_list_devices_pages(transport_name: str = "grpc"):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3158,7 +3160,8 @@ async def test_list_devices_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Device)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_devices_async_pages():
@@ -3204,7 +3207,11 @@ async def test_list_devices_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_modify_cloud_to_device_config(transport: str = 'grpc', request_type=device_manager.ModifyCloudToDeviceConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.ModifyCloudToDeviceConfigRequest,
+  dict,
+])
+def test_modify_cloud_to_device_config(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3234,10 +3241,6 @@ def test_modify_cloud_to_device_config(transport: str = 'grpc', request_type=dev
     assert isinstance(response, resources.DeviceConfig)
     assert response.version == 774
     assert response.binary_data == b'binary_data_blob'
-
-
-def test_modify_cloud_to_device_config_from_dict():
-    test_modify_cloud_to_device_config(request_type=dict)
 
 
 def test_modify_cloud_to_device_config_empty_call():
@@ -3453,7 +3456,11 @@ async def test_modify_cloud_to_device_config_flattened_error_async():
         )
 
 
-def test_list_device_config_versions(transport: str = 'grpc', request_type=device_manager.ListDeviceConfigVersionsRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.ListDeviceConfigVersionsRequest,
+  dict,
+])
+def test_list_device_config_versions(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3479,10 +3486,6 @@ def test_list_device_config_versions(transport: str = 'grpc', request_type=devic
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, device_manager.ListDeviceConfigVersionsResponse)
-
-
-def test_list_device_config_versions_from_dict():
-    test_list_device_config_versions(request_type=dict)
 
 
 def test_list_device_config_versions_empty_call():
@@ -3684,7 +3687,11 @@ async def test_list_device_config_versions_flattened_error_async():
         )
 
 
-def test_list_device_states(transport: str = 'grpc', request_type=device_manager.ListDeviceStatesRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.ListDeviceStatesRequest,
+  dict,
+])
+def test_list_device_states(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3710,10 +3717,6 @@ def test_list_device_states(transport: str = 'grpc', request_type=device_manager
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, device_manager.ListDeviceStatesResponse)
-
-
-def test_list_device_states_from_dict():
-    test_list_device_states(request_type=dict)
 
 
 def test_list_device_states_empty_call():
@@ -3915,7 +3918,11 @@ async def test_list_device_states_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3945,10 +3952,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -4171,7 +4174,11 @@ async def test_set_iam_policy_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4201,10 +4208,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -4427,7 +4430,11 @@ async def test_get_iam_policy_flattened_error_async():
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4455,10 +4462,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -4689,7 +4692,11 @@ async def test_test_iam_permissions_flattened_error_async():
         )
 
 
-def test_send_command_to_device(transport: str = 'grpc', request_type=device_manager.SendCommandToDeviceRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.SendCommandToDeviceRequest,
+  dict,
+])
+def test_send_command_to_device(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4715,10 +4722,6 @@ def test_send_command_to_device(transport: str = 'grpc', request_type=device_man
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, device_manager.SendCommandToDeviceResponse)
-
-
-def test_send_command_to_device_from_dict():
-    test_send_command_to_device(request_type=dict)
 
 
 def test_send_command_to_device_empty_call():
@@ -4940,7 +4943,11 @@ async def test_send_command_to_device_flattened_error_async():
         )
 
 
-def test_bind_device_to_gateway(transport: str = 'grpc', request_type=device_manager.BindDeviceToGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.BindDeviceToGatewayRequest,
+  dict,
+])
+def test_bind_device_to_gateway(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4966,10 +4973,6 @@ def test_bind_device_to_gateway(transport: str = 'grpc', request_type=device_man
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, device_manager.BindDeviceToGatewayResponse)
-
-
-def test_bind_device_to_gateway_from_dict():
-    test_bind_device_to_gateway(request_type=dict)
 
 
 def test_bind_device_to_gateway_empty_call():
@@ -5191,7 +5194,11 @@ async def test_bind_device_to_gateway_flattened_error_async():
         )
 
 
-def test_unbind_device_from_gateway(transport: str = 'grpc', request_type=device_manager.UnbindDeviceFromGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  device_manager.UnbindDeviceFromGatewayRequest,
+  dict,
+])
+def test_unbind_device_from_gateway(request_type, transport: str = 'grpc'):
     client = DeviceManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5217,10 +5224,6 @@ def test_unbind_device_from_gateway(transport: str = 'grpc', request_type=device
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, device_manager.UnbindDeviceFromGatewayResponse)
-
-
-def test_unbind_device_from_gateway_from_dict():
-    test_unbind_device_from_gateway(request_type=dict)
 
 
 def test_unbind_device_from_gateway_empty_call():
@@ -5966,7 +5969,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DeviceManagerTransport, '_prep_wrapped_messages') as prep:

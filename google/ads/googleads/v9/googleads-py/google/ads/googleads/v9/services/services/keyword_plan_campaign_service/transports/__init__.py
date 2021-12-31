@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import KeywordPlanCampaignServiceTransport
 from .grpc import KeywordPlanCampaignServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[KeywordPlanCampaignServiceTransport]]
 _transport_registry['grpc'] = KeywordPlanCampaignServiceGrpcTransport
-
 
 __all__ = (
     'KeywordPlanCampaignServiceTransport',

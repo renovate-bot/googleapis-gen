@@ -206,18 +206,18 @@ def test_sql_instances_service_client_client_options(client_class, transport_cla
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -248,7 +248,7 @@ def test_sql_instances_service_client_mtls_env_auto(client_class, transport_clas
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -323,7 +323,7 @@ def test_sql_instances_service_client_client_options_scopes(client_class, transp
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -346,7 +346,7 @@ def test_sql_instances_service_client_client_options_credentials_file(client_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -357,7 +357,6 @@ def test_sql_instances_service_client_client_options_credentials_file(client_cla
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_sql_instances_service_client_client_options_from_dict():
     with mock.patch('google.cloud.sql_v1beta4.services.sql_instances_service.transports.SqlInstancesServiceGrpcTransport.__init__') as grpc_transport:
@@ -377,7 +376,11 @@ def test_sql_instances_service_client_client_options_from_dict():
         )
 
 
-def test_add_server_ca(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesAddServerCaRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesAddServerCaRequest,
+  dict,
+])
+def test_add_server_ca(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -421,10 +424,6 @@ def test_add_server_ca(transport: str = 'grpc', request_type=cloud_sql.SqlInstan
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_add_server_ca_from_dict():
-    test_add_server_ca(request_type=dict)
 
 
 def test_add_server_ca_empty_call():
@@ -497,7 +496,11 @@ async def test_add_server_ca_async_from_dict():
     await test_add_server_ca_async(request_type=dict)
 
 
-def test_clone(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesCloneRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesCloneRequest,
+  dict,
+])
+def test_clone(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -541,10 +544,6 @@ def test_clone(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesClone
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_clone_from_dict():
-    test_clone(request_type=dict)
 
 
 def test_clone_empty_call():
@@ -617,7 +616,11 @@ async def test_clone_async_from_dict():
     await test_clone_async(request_type=dict)
 
 
-def test_delete(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesDeleteRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesDeleteRequest,
+  dict,
+])
+def test_delete(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -661,10 +664,6 @@ def test_delete(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesDele
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_delete_from_dict():
-    test_delete(request_type=dict)
 
 
 def test_delete_empty_call():
@@ -737,7 +736,11 @@ async def test_delete_async_from_dict():
     await test_delete_async(request_type=dict)
 
 
-def test_demote_master(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesDemoteMasterRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesDemoteMasterRequest,
+  dict,
+])
+def test_demote_master(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -781,10 +784,6 @@ def test_demote_master(transport: str = 'grpc', request_type=cloud_sql.SqlInstan
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_demote_master_from_dict():
-    test_demote_master(request_type=dict)
 
 
 def test_demote_master_empty_call():
@@ -857,7 +856,11 @@ async def test_demote_master_async_from_dict():
     await test_demote_master_async(request_type=dict)
 
 
-def test_export(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesExportRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesExportRequest,
+  dict,
+])
+def test_export(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -901,10 +904,6 @@ def test_export(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesExpo
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_export_from_dict():
-    test_export(request_type=dict)
 
 
 def test_export_empty_call():
@@ -977,7 +976,11 @@ async def test_export_async_from_dict():
     await test_export_async(request_type=dict)
 
 
-def test_failover(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesFailoverRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesFailoverRequest,
+  dict,
+])
+def test_failover(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1021,10 +1024,6 @@ def test_failover(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesFa
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_failover_from_dict():
-    test_failover(request_type=dict)
 
 
 def test_failover_empty_call():
@@ -1097,7 +1096,11 @@ async def test_failover_async_from_dict():
     await test_failover_async(request_type=dict)
 
 
-def test_get(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesGetRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesGetRequest,
+  dict,
+])
+def test_get(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1163,10 +1166,6 @@ def test_get(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesGetRequ
     assert response.secondary_gce_zone == 'secondary_gce_zone_value'
     assert response.root_password == 'root_password_value'
     assert response.database_installed_version == 'database_installed_version_value'
-
-
-def test_get_from_dict():
-    test_get(request_type=dict)
 
 
 def test_get_empty_call():
@@ -1261,7 +1260,11 @@ async def test_get_async_from_dict():
     await test_get_async(request_type=dict)
 
 
-def test_import(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesImportRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesImportRequest,
+  dict,
+])
+def test_import(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1305,10 +1308,6 @@ def test_import(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesImpo
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_import_from_dict():
-    test_import(request_type=dict)
 
 
 def test_import_empty_call():
@@ -1381,7 +1380,11 @@ async def test_import_async_from_dict():
     await test_import_async(request_type=dict)
 
 
-def test_insert(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesInsertRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesInsertRequest,
+  dict,
+])
+def test_insert(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1425,10 +1428,6 @@ def test_insert(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesInse
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_insert_from_dict():
-    test_insert(request_type=dict)
 
 
 def test_insert_empty_call():
@@ -1501,7 +1500,11 @@ async def test_insert_async_from_dict():
     await test_insert_async(request_type=dict)
 
 
-def test_list(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesListRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesListRequest,
+  dict,
+])
+def test_list(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1531,10 +1534,6 @@ def test_list(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesListRe
     assert isinstance(response, pagers.ListPager)
     assert response.kind == 'kind_value'
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_from_dict():
-    test_list(request_type=dict)
 
 
 def test_list_empty_call():
@@ -1593,9 +1592,10 @@ async def test_list_async_from_dict():
     await test_list_async(request_type=dict)
 
 
-def test_list_pager():
+def test_list_pager(transport_name: str = "grpc"):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1640,10 +1640,10 @@ def test_list_pager():
         assert len(results) == 6
         assert all(isinstance(i, cloud_sql_resources.ApiWarning)
                    for i in results)
-
-def test_list_pages():
+def test_list_pages(transport_name: str = "grpc"):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1728,7 +1728,8 @@ async def test_list_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, cloud_sql_resources.ApiWarning)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_async_pages():
@@ -1774,7 +1775,11 @@ async def test_list_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_list_server_cas(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesListServerCasRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesListServerCasRequest,
+  dict,
+])
+def test_list_server_cas(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1804,10 +1809,6 @@ def test_list_server_cas(transport: str = 'grpc', request_type=cloud_sql.SqlInst
     assert isinstance(response, cloud_sql_resources.InstancesListServerCasResponse)
     assert response.active_version == 'active_version_value'
     assert response.kind == 'kind_value'
-
-
-def test_list_server_cas_from_dict():
-    test_list_server_cas(request_type=dict)
 
 
 def test_list_server_cas_empty_call():
@@ -1866,7 +1867,11 @@ async def test_list_server_cas_async_from_dict():
     await test_list_server_cas_async(request_type=dict)
 
 
-def test_patch(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesPatchRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesPatchRequest,
+  dict,
+])
+def test_patch(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1910,10 +1915,6 @@ def test_patch(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesPatch
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_patch_from_dict():
-    test_patch(request_type=dict)
 
 
 def test_patch_empty_call():
@@ -1986,7 +1987,11 @@ async def test_patch_async_from_dict():
     await test_patch_async(request_type=dict)
 
 
-def test_promote_replica(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesPromoteReplicaRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesPromoteReplicaRequest,
+  dict,
+])
+def test_promote_replica(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2030,10 +2035,6 @@ def test_promote_replica(transport: str = 'grpc', request_type=cloud_sql.SqlInst
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_promote_replica_from_dict():
-    test_promote_replica(request_type=dict)
 
 
 def test_promote_replica_empty_call():
@@ -2106,7 +2107,11 @@ async def test_promote_replica_async_from_dict():
     await test_promote_replica_async(request_type=dict)
 
 
-def test_reset_ssl_config(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesResetSslConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesResetSslConfigRequest,
+  dict,
+])
+def test_reset_ssl_config(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2150,10 +2155,6 @@ def test_reset_ssl_config(transport: str = 'grpc', request_type=cloud_sql.SqlIns
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_reset_ssl_config_from_dict():
-    test_reset_ssl_config(request_type=dict)
 
 
 def test_reset_ssl_config_empty_call():
@@ -2226,7 +2227,11 @@ async def test_reset_ssl_config_async_from_dict():
     await test_reset_ssl_config_async(request_type=dict)
 
 
-def test_restart(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesRestartRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesRestartRequest,
+  dict,
+])
+def test_restart(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2270,10 +2275,6 @@ def test_restart(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesRes
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_restart_from_dict():
-    test_restart(request_type=dict)
 
 
 def test_restart_empty_call():
@@ -2346,7 +2347,11 @@ async def test_restart_async_from_dict():
     await test_restart_async(request_type=dict)
 
 
-def test_restore_backup(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesRestoreBackupRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesRestoreBackupRequest,
+  dict,
+])
+def test_restore_backup(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2390,10 +2395,6 @@ def test_restore_backup(transport: str = 'grpc', request_type=cloud_sql.SqlInsta
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_restore_backup_from_dict():
-    test_restore_backup(request_type=dict)
 
 
 def test_restore_backup_empty_call():
@@ -2466,7 +2467,11 @@ async def test_restore_backup_async_from_dict():
     await test_restore_backup_async(request_type=dict)
 
 
-def test_rotate_server_ca(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesRotateServerCaRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesRotateServerCaRequest,
+  dict,
+])
+def test_rotate_server_ca(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2510,10 +2515,6 @@ def test_rotate_server_ca(transport: str = 'grpc', request_type=cloud_sql.SqlIns
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_rotate_server_ca_from_dict():
-    test_rotate_server_ca(request_type=dict)
 
 
 def test_rotate_server_ca_empty_call():
@@ -2586,7 +2587,11 @@ async def test_rotate_server_ca_async_from_dict():
     await test_rotate_server_ca_async(request_type=dict)
 
 
-def test_start_replica(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesStartReplicaRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesStartReplicaRequest,
+  dict,
+])
+def test_start_replica(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2630,10 +2635,6 @@ def test_start_replica(transport: str = 'grpc', request_type=cloud_sql.SqlInstan
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_start_replica_from_dict():
-    test_start_replica(request_type=dict)
 
 
 def test_start_replica_empty_call():
@@ -2706,7 +2707,11 @@ async def test_start_replica_async_from_dict():
     await test_start_replica_async(request_type=dict)
 
 
-def test_stop_replica(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesStopReplicaRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesStopReplicaRequest,
+  dict,
+])
+def test_stop_replica(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2750,10 +2755,6 @@ def test_stop_replica(transport: str = 'grpc', request_type=cloud_sql.SqlInstanc
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_stop_replica_from_dict():
-    test_stop_replica(request_type=dict)
 
 
 def test_stop_replica_empty_call():
@@ -2826,7 +2827,11 @@ async def test_stop_replica_async_from_dict():
     await test_stop_replica_async(request_type=dict)
 
 
-def test_truncate_log(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesTruncateLogRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesTruncateLogRequest,
+  dict,
+])
+def test_truncate_log(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2870,10 +2875,6 @@ def test_truncate_log(transport: str = 'grpc', request_type=cloud_sql.SqlInstanc
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_truncate_log_from_dict():
-    test_truncate_log(request_type=dict)
 
 
 def test_truncate_log_empty_call():
@@ -2946,7 +2947,11 @@ async def test_truncate_log_async_from_dict():
     await test_truncate_log_async(request_type=dict)
 
 
-def test_update(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesUpdateRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesUpdateRequest,
+  dict,
+])
+def test_update(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2990,10 +2995,6 @@ def test_update(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesUpda
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_update_from_dict():
-    test_update(request_type=dict)
 
 
 def test_update_empty_call():
@@ -3066,7 +3067,11 @@ async def test_update_async_from_dict():
     await test_update_async(request_type=dict)
 
 
-def test_create_ephemeral(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesCreateEphemeralCertRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesCreateEphemeralCertRequest,
+  dict,
+])
+def test_create_ephemeral(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3106,10 +3111,6 @@ def test_create_ephemeral(transport: str = 'grpc', request_type=cloud_sql.SqlIns
     assert response.sha1_fingerprint == 'sha1_fingerprint_value'
     assert response.instance == 'instance_value'
     assert response.self_link == 'self_link_value'
-
-
-def test_create_ephemeral_from_dict():
-    test_create_ephemeral(request_type=dict)
 
 
 def test_create_ephemeral_empty_call():
@@ -3178,7 +3179,11 @@ async def test_create_ephemeral_async_from_dict():
     await test_create_ephemeral_async(request_type=dict)
 
 
-def test_reschedule_maintenance(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesRescheduleMaintenanceRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesRescheduleMaintenanceRequest,
+  dict,
+])
+def test_reschedule_maintenance(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3222,10 +3227,6 @@ def test_reschedule_maintenance(transport: str = 'grpc', request_type=cloud_sql.
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_reschedule_maintenance_from_dict():
-    test_reschedule_maintenance(request_type=dict)
 
 
 def test_reschedule_maintenance_empty_call():
@@ -3298,7 +3299,11 @@ async def test_reschedule_maintenance_async_from_dict():
     await test_reschedule_maintenance_async(request_type=dict)
 
 
-def test_verify_external_sync_settings(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesVerifyExternalSyncSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesVerifyExternalSyncSettingsRequest,
+  dict,
+])
+def test_verify_external_sync_settings(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3326,10 +3331,6 @@ def test_verify_external_sync_settings(transport: str = 'grpc', request_type=clo
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_sql_resources.SqlInstancesVerifyExternalSyncSettingsResponse)
     assert response.kind == 'kind_value'
-
-
-def test_verify_external_sync_settings_from_dict():
-    test_verify_external_sync_settings(request_type=dict)
 
 
 def test_verify_external_sync_settings_empty_call():
@@ -3386,7 +3387,11 @@ async def test_verify_external_sync_settings_async_from_dict():
     await test_verify_external_sync_settings_async(request_type=dict)
 
 
-def test_start_external_sync(transport: str = 'grpc', request_type=cloud_sql.SqlInstancesStartExternalSyncRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql.SqlInstancesStartExternalSyncRequest,
+  dict,
+])
+def test_start_external_sync(request_type, transport: str = 'grpc'):
     client = SqlInstancesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3430,10 +3435,6 @@ def test_start_external_sync(transport: str = 'grpc', request_type=cloud_sql.Sql
     assert response.target_id == 'target_id_value'
     assert response.self_link == 'self_link_value'
     assert response.target_project == 'target_project_value'
-
-
-def test_start_external_sync_from_dict():
-    test_start_external_sync(request_type=dict)
 
 
 def test_start_external_sync_empty_call():
@@ -3992,7 +3993,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SqlInstancesServiceTransport, '_prep_wrapped_messages') as prep:

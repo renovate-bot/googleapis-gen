@@ -203,18 +203,18 @@ def test_drive_activity_service_client_client_options(client_class, transport_cl
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -245,7 +245,7 @@ def test_drive_activity_service_client_mtls_env_auto(client_class, transport_cla
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -320,7 +320,7 @@ def test_drive_activity_service_client_client_options_scopes(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -343,7 +343,7 @@ def test_drive_activity_service_client_client_options_credentials_file(client_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -354,7 +354,6 @@ def test_drive_activity_service_client_client_options_credentials_file(client_cl
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_drive_activity_service_client_client_options_from_dict():
     with mock.patch('google.apps.drive.activity_v2.services.drive_activity_service.transports.DriveActivityServiceGrpcTransport.__init__') as grpc_transport:
@@ -374,7 +373,11 @@ def test_drive_activity_service_client_client_options_from_dict():
         )
 
 
-def test_query_drive_activity(transport: str = 'grpc', request_type=query_drive_activity_request.QueryDriveActivityRequest):
+@pytest.mark.parametrize("request_type", [
+  query_drive_activity_request.QueryDriveActivityRequest,
+  dict,
+])
+def test_query_drive_activity(request_type, transport: str = 'grpc'):
     client = DriveActivityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -402,10 +405,6 @@ def test_query_drive_activity(transport: str = 'grpc', request_type=query_drive_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.QueryDriveActivityPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_query_drive_activity_from_dict():
-    test_query_drive_activity(request_type=dict)
 
 
 def test_query_drive_activity_empty_call():
@@ -462,9 +461,10 @@ async def test_query_drive_activity_async_from_dict():
     await test_query_drive_activity_async(request_type=dict)
 
 
-def test_query_drive_activity_pager():
+def test_query_drive_activity_pager(transport_name: str = "grpc"):
     client = DriveActivityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -509,10 +509,10 @@ def test_query_drive_activity_pager():
         assert len(results) == 6
         assert all(isinstance(i, query_drive_activity_response.DriveActivity)
                    for i in results)
-
-def test_query_drive_activity_pages():
+def test_query_drive_activity_pages(transport_name: str = "grpc"):
     client = DriveActivityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -597,7 +597,8 @@ async def test_query_drive_activity_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, query_drive_activity_response.DriveActivity)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_query_drive_activity_async_pages():
@@ -1106,7 +1107,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DriveActivityServiceTransport, '_prep_wrapped_messages') as prep:

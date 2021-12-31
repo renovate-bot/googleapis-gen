@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -199,18 +199,18 @@ def test_region_operations_client_client_options(client_class, transport_class, 
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -238,7 +238,7 @@ def test_region_operations_client_mtls_env_auto(client_class, transport_class, t
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -312,7 +312,7 @@ def test_region_operations_client_client_options_scopes(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -334,7 +334,7 @@ def test_region_operations_client_client_options_credentials_file(client_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -347,18 +347,69 @@ def test_region_operations_client_client_options_credentials_file(client_class, 
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute_small.GetRegionOperationRequest):
+@pytest.mark.parametrize("request_type", [
+  compute_small.GetRegionOperationRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
     client = RegionOperationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute_small.GetRegionOperationRequest({'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute_small.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute_small.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute_small.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute_small.GetRegionOperationRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = RegionOperationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "operation": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute_small.Operation(
               client_operation_id='client_operation_id_value',
@@ -436,7 +487,7 @@ def test_get_rest_required_fields(request_type=compute_small.GetRegionOperationR
     assert "project" not in jsonified_request
     assert "region" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -451,7 +502,7 @@ def test_get_rest_required_fields(request_type=compute_small.GetRegionOperationR
     jsonified_request["project"] = 'project_value'
     jsonified_request["region"] = 'region_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -496,16 +547,16 @@ def test_get_rest_required_fields(request_type=compute_small.GetRegionOperationR
             expected_params = [
                 (
                     "operation",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -518,7 +569,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute_smal
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "operation": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -531,18 +582,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute_smal
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = RegionOperationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute_small.Operation()
 
@@ -555,7 +602,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "operation": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -590,18 +637,75 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_wait_rest(transport: str = 'rest', request_type=compute_small.WaitRegionOperationRequest):
+def test_get_rest_error():
     client = RegionOperationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute_small.WaitRegionOperationRequest,
+  dict,
+])
+def test_wait_rest(request_type, transport: str = 'rest'):
+    client = RegionOperationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute_small.WaitRegionOperationRequest({'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute_small.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute_small.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute_small.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.wait(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute_small.WaitRegionOperationRequest,
+    dict,
+])
+def test_wait_rest(request_type):
+    client = RegionOperationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "operation": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute_small.Operation(
               client_operation_id='client_operation_id_value',
@@ -679,7 +783,7 @@ def test_wait_rest_required_fields(request_type=compute_small.WaitRegionOperatio
     assert "project" not in jsonified_request
     assert "region" not in jsonified_request
 
-    unset_fields = transport_class._wait_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).wait._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -694,7 +798,7 @@ def test_wait_rest_required_fields(request_type=compute_small.WaitRegionOperatio
     jsonified_request["project"] = 'project_value'
     jsonified_request["region"] = 'region_value'
 
-    unset_fields = transport_class._wait_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).wait._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -739,16 +843,16 @@ def test_wait_rest_required_fields(request_type=compute_small.WaitRegionOperatio
             expected_params = [
                 (
                     "operation",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -761,7 +865,7 @@ def test_wait_rest_bad_request(transport: str = 'rest', request_type=compute_sma
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "operation": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -774,18 +878,14 @@ def test_wait_rest_bad_request(transport: str = 'rest', request_type=compute_sma
         client.wait(request)
 
 
-def test_wait_rest_from_dict():
-    test_wait_rest(request_type=dict)
-
-
-def test_wait_rest_flattened(transport: str = 'rest'):
+def test_wait_rest_flattened():
     client = RegionOperationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute_small.Operation()
 
@@ -798,7 +898,7 @@ def test_wait_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "operation": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'operation': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -831,6 +931,13 @@ def test_wait_rest_flattened_error(transport: str = 'rest'):
             region='region_value',
             operation='operation_value',
         )
+
+
+def test_wait_rest_error():
+    client = RegionOperationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -1075,7 +1182,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.RegionOperationsTransport, '_prep_wrapped_messages') as prep:

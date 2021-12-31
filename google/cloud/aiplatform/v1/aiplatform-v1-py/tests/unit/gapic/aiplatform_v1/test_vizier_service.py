@@ -211,18 +211,18 @@ def test_vizier_service_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_vizier_service_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_vizier_service_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_vizier_service_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_vizier_service_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_vizier_service_client_client_options_from_dict():
     with mock.patch('google.cloud.aiplatform_v1.services.vizier_service.transports.VizierServiceGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_vizier_service_client_client_options_from_dict():
         )
 
 
-def test_create_study(transport: str = 'grpc', request_type=vizier_service.CreateStudyRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.CreateStudyRequest,
+  dict,
+])
+def test_create_study(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -416,10 +419,6 @@ def test_create_study(transport: str = 'grpc', request_type=vizier_service.Creat
     assert response.display_name == 'display_name_value'
     assert response.state == gca_study.Study.State.ACTIVE
     assert response.inactive_reason == 'inactive_reason_value'
-
-
-def test_create_study_from_dict():
-    test_create_study(request_type=dict)
 
 
 def test_create_study_empty_call():
@@ -639,7 +638,11 @@ async def test_create_study_flattened_error_async():
         )
 
 
-def test_get_study(transport: str = 'grpc', request_type=vizier_service.GetStudyRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.GetStudyRequest,
+  dict,
+])
+def test_get_study(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -673,10 +676,6 @@ def test_get_study(transport: str = 'grpc', request_type=vizier_service.GetStudy
     assert response.display_name == 'display_name_value'
     assert response.state == study.Study.State.ACTIVE
     assert response.inactive_reason == 'inactive_reason_value'
-
-
-def test_get_study_from_dict():
-    test_get_study(request_type=dict)
 
 
 def test_get_study_empty_call():
@@ -886,7 +885,11 @@ async def test_get_study_flattened_error_async():
         )
 
 
-def test_list_studies(transport: str = 'grpc', request_type=vizier_service.ListStudiesRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.ListStudiesRequest,
+  dict,
+])
+def test_list_studies(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -914,10 +917,6 @@ def test_list_studies(transport: str = 'grpc', request_type=vizier_service.ListS
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListStudiesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_studies_from_dict():
-    test_list_studies(request_type=dict)
 
 
 def test_list_studies_empty_call():
@@ -1121,9 +1120,10 @@ async def test_list_studies_flattened_error_async():
         )
 
 
-def test_list_studies_pager():
+def test_list_studies_pager(transport_name: str = "grpc"):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1173,10 +1173,10 @@ def test_list_studies_pager():
         assert len(results) == 6
         assert all(isinstance(i, study.Study)
                    for i in results)
-
-def test_list_studies_pages():
+def test_list_studies_pages(transport_name: str = "grpc"):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1261,7 +1261,8 @@ async def test_list_studies_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, study.Study)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_studies_async_pages():
@@ -1307,7 +1308,11 @@ async def test_list_studies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_study(transport: str = 'grpc', request_type=vizier_service.DeleteStudyRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.DeleteStudyRequest,
+  dict,
+])
+def test_delete_study(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1332,10 +1337,6 @@ def test_delete_study(transport: str = 'grpc', request_type=vizier_service.Delet
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_study_from_dict():
-    test_delete_study(request_type=dict)
 
 
 def test_delete_study_empty_call():
@@ -1536,7 +1537,11 @@ async def test_delete_study_flattened_error_async():
         )
 
 
-def test_lookup_study(transport: str = 'grpc', request_type=vizier_service.LookupStudyRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.LookupStudyRequest,
+  dict,
+])
+def test_lookup_study(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1570,10 +1575,6 @@ def test_lookup_study(transport: str = 'grpc', request_type=vizier_service.Looku
     assert response.display_name == 'display_name_value'
     assert response.state == study.Study.State.ACTIVE
     assert response.inactive_reason == 'inactive_reason_value'
-
-
-def test_lookup_study_from_dict():
-    test_lookup_study(request_type=dict)
 
 
 def test_lookup_study_empty_call():
@@ -1783,7 +1784,11 @@ async def test_lookup_study_flattened_error_async():
         )
 
 
-def test_suggest_trials(transport: str = 'grpc', request_type=vizier_service.SuggestTrialsRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.SuggestTrialsRequest,
+  dict,
+])
+def test_suggest_trials(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1808,10 +1813,6 @@ def test_suggest_trials(transport: str = 'grpc', request_type=vizier_service.Sug
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_suggest_trials_from_dict():
-    test_suggest_trials(request_type=dict)
 
 
 def test_suggest_trials_empty_call():
@@ -1930,7 +1931,11 @@ async def test_suggest_trials_field_headers_async():
     ) in kw['metadata']
 
 
-def test_create_trial(transport: str = 'grpc', request_type=vizier_service.CreateTrialRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.CreateTrialRequest,
+  dict,
+])
+def test_create_trial(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1968,10 +1973,6 @@ def test_create_trial(transport: str = 'grpc', request_type=vizier_service.Creat
     assert response.client_id == 'client_id_value'
     assert response.infeasible_reason == 'infeasible_reason_value'
     assert response.custom_job == 'custom_job_value'
-
-
-def test_create_trial_from_dict():
-    test_create_trial(request_type=dict)
 
 
 def test_create_trial_empty_call():
@@ -2195,7 +2196,11 @@ async def test_create_trial_flattened_error_async():
         )
 
 
-def test_get_trial(transport: str = 'grpc', request_type=vizier_service.GetTrialRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.GetTrialRequest,
+  dict,
+])
+def test_get_trial(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2233,10 +2238,6 @@ def test_get_trial(transport: str = 'grpc', request_type=vizier_service.GetTrial
     assert response.client_id == 'client_id_value'
     assert response.infeasible_reason == 'infeasible_reason_value'
     assert response.custom_job == 'custom_job_value'
-
-
-def test_get_trial_from_dict():
-    test_get_trial(request_type=dict)
 
 
 def test_get_trial_empty_call():
@@ -2450,7 +2451,11 @@ async def test_get_trial_flattened_error_async():
         )
 
 
-def test_list_trials(transport: str = 'grpc', request_type=vizier_service.ListTrialsRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.ListTrialsRequest,
+  dict,
+])
+def test_list_trials(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2478,10 +2483,6 @@ def test_list_trials(transport: str = 'grpc', request_type=vizier_service.ListTr
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTrialsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_trials_from_dict():
-    test_list_trials(request_type=dict)
 
 
 def test_list_trials_empty_call():
@@ -2685,9 +2686,10 @@ async def test_list_trials_flattened_error_async():
         )
 
 
-def test_list_trials_pager():
+def test_list_trials_pager(transport_name: str = "grpc"):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2737,10 +2739,10 @@ def test_list_trials_pager():
         assert len(results) == 6
         assert all(isinstance(i, study.Trial)
                    for i in results)
-
-def test_list_trials_pages():
+def test_list_trials_pages(transport_name: str = "grpc"):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2825,7 +2827,8 @@ async def test_list_trials_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, study.Trial)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_trials_async_pages():
@@ -2871,7 +2874,11 @@ async def test_list_trials_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_add_trial_measurement(transport: str = 'grpc', request_type=vizier_service.AddTrialMeasurementRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.AddTrialMeasurementRequest,
+  dict,
+])
+def test_add_trial_measurement(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2909,10 +2916,6 @@ def test_add_trial_measurement(transport: str = 'grpc', request_type=vizier_serv
     assert response.client_id == 'client_id_value'
     assert response.infeasible_reason == 'infeasible_reason_value'
     assert response.custom_job == 'custom_job_value'
-
-
-def test_add_trial_measurement_from_dict():
-    test_add_trial_measurement(request_type=dict)
 
 
 def test_add_trial_measurement_empty_call():
@@ -3042,7 +3045,11 @@ async def test_add_trial_measurement_field_headers_async():
     ) in kw['metadata']
 
 
-def test_complete_trial(transport: str = 'grpc', request_type=vizier_service.CompleteTrialRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.CompleteTrialRequest,
+  dict,
+])
+def test_complete_trial(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3080,10 +3087,6 @@ def test_complete_trial(transport: str = 'grpc', request_type=vizier_service.Com
     assert response.client_id == 'client_id_value'
     assert response.infeasible_reason == 'infeasible_reason_value'
     assert response.custom_job == 'custom_job_value'
-
-
-def test_complete_trial_from_dict():
-    test_complete_trial(request_type=dict)
 
 
 def test_complete_trial_empty_call():
@@ -3213,7 +3216,11 @@ async def test_complete_trial_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_trial(transport: str = 'grpc', request_type=vizier_service.DeleteTrialRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.DeleteTrialRequest,
+  dict,
+])
+def test_delete_trial(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3238,10 +3245,6 @@ def test_delete_trial(transport: str = 'grpc', request_type=vizier_service.Delet
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_trial_from_dict():
-    test_delete_trial(request_type=dict)
 
 
 def test_delete_trial_empty_call():
@@ -3442,7 +3445,11 @@ async def test_delete_trial_flattened_error_async():
         )
 
 
-def test_check_trial_early_stopping_state(transport: str = 'grpc', request_type=vizier_service.CheckTrialEarlyStoppingStateRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.CheckTrialEarlyStoppingStateRequest,
+  dict,
+])
+def test_check_trial_early_stopping_state(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3467,10 +3474,6 @@ def test_check_trial_early_stopping_state(transport: str = 'grpc', request_type=
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_check_trial_early_stopping_state_from_dict():
-    test_check_trial_early_stopping_state(request_type=dict)
 
 
 def test_check_trial_early_stopping_state_empty_call():
@@ -3589,7 +3592,11 @@ async def test_check_trial_early_stopping_state_field_headers_async():
     ) in kw['metadata']
 
 
-def test_stop_trial(transport: str = 'grpc', request_type=vizier_service.StopTrialRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.StopTrialRequest,
+  dict,
+])
+def test_stop_trial(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3627,10 +3634,6 @@ def test_stop_trial(transport: str = 'grpc', request_type=vizier_service.StopTri
     assert response.client_id == 'client_id_value'
     assert response.infeasible_reason == 'infeasible_reason_value'
     assert response.custom_job == 'custom_job_value'
-
-
-def test_stop_trial_from_dict():
-    test_stop_trial(request_type=dict)
 
 
 def test_stop_trial_empty_call():
@@ -3760,7 +3763,11 @@ async def test_stop_trial_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_optimal_trials(transport: str = 'grpc', request_type=vizier_service.ListOptimalTrialsRequest):
+@pytest.mark.parametrize("request_type", [
+  vizier_service.ListOptimalTrialsRequest,
+  dict,
+])
+def test_list_optimal_trials(request_type, transport: str = 'grpc'):
     client = VizierServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3786,10 +3793,6 @@ def test_list_optimal_trials(transport: str = 'grpc', request_type=vizier_servic
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, vizier_service.ListOptimalTrialsResponse)
-
-
-def test_list_optimal_trials_from_dict():
-    test_list_optimal_trials(request_type=dict)
 
 
 def test_list_optimal_trials_empty_call():
@@ -4568,7 +4571,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.VizierServiceTransport, '_prep_wrapped_messages') as prep:

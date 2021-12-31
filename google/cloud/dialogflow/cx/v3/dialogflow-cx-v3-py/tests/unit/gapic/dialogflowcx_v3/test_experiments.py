@@ -206,18 +206,18 @@ def test_experiments_client_client_options(client_class, transport_class, transp
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -248,7 +248,7 @@ def test_experiments_client_mtls_env_auto(client_class, transport_class, transpo
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -323,7 +323,7 @@ def test_experiments_client_client_options_scopes(client_class, transport_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -346,7 +346,7 @@ def test_experiments_client_client_options_credentials_file(client_class, transp
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -357,7 +357,6 @@ def test_experiments_client_client_options_credentials_file(client_class, transp
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_experiments_client_client_options_from_dict():
     with mock.patch('google.cloud.dialogflowcx_v3.services.experiments.transports.ExperimentsGrpcTransport.__init__') as grpc_transport:
@@ -377,7 +376,11 @@ def test_experiments_client_client_options_from_dict():
         )
 
 
-def test_list_experiments(transport: str = 'grpc', request_type=experiment.ListExperimentsRequest):
+@pytest.mark.parametrize("request_type", [
+  experiment.ListExperimentsRequest,
+  dict,
+])
+def test_list_experiments(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -405,10 +408,6 @@ def test_list_experiments(transport: str = 'grpc', request_type=experiment.ListE
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListExperimentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_experiments_from_dict():
-    test_list_experiments(request_type=dict)
 
 
 def test_list_experiments_empty_call():
@@ -612,9 +611,10 @@ async def test_list_experiments_flattened_error_async():
         )
 
 
-def test_list_experiments_pager():
+def test_list_experiments_pager(transport_name: str = "grpc"):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -664,10 +664,10 @@ def test_list_experiments_pager():
         assert len(results) == 6
         assert all(isinstance(i, experiment.Experiment)
                    for i in results)
-
-def test_list_experiments_pages():
+def test_list_experiments_pages(transport_name: str = "grpc"):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -752,7 +752,8 @@ async def test_list_experiments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, experiment.Experiment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_experiments_async_pages():
@@ -798,7 +799,11 @@ async def test_list_experiments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_experiment(transport: str = 'grpc', request_type=experiment.GetExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  experiment.GetExperimentRequest,
+  dict,
+])
+def test_get_experiment(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -834,10 +839,6 @@ def test_get_experiment(transport: str = 'grpc', request_type=experiment.GetExpe
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
     assert response.rollout_failure_reason == 'rollout_failure_reason_value'
-
-
-def test_get_experiment_from_dict():
-    test_get_experiment(request_type=dict)
 
 
 def test_get_experiment_empty_call():
@@ -1049,7 +1050,11 @@ async def test_get_experiment_flattened_error_async():
         )
 
 
-def test_create_experiment(transport: str = 'grpc', request_type=gcdc_experiment.CreateExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcdc_experiment.CreateExperimentRequest,
+  dict,
+])
+def test_create_experiment(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1085,10 +1090,6 @@ def test_create_experiment(transport: str = 'grpc', request_type=gcdc_experiment
     assert response.description == 'description_value'
     assert response.state == gcdc_experiment.Experiment.State.DRAFT
     assert response.rollout_failure_reason == 'rollout_failure_reason_value'
-
-
-def test_create_experiment_from_dict():
-    test_create_experiment(request_type=dict)
 
 
 def test_create_experiment_empty_call():
@@ -1310,7 +1311,11 @@ async def test_create_experiment_flattened_error_async():
         )
 
 
-def test_update_experiment(transport: str = 'grpc', request_type=gcdc_experiment.UpdateExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcdc_experiment.UpdateExperimentRequest,
+  dict,
+])
+def test_update_experiment(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1346,10 +1351,6 @@ def test_update_experiment(transport: str = 'grpc', request_type=gcdc_experiment
     assert response.description == 'description_value'
     assert response.state == gcdc_experiment.Experiment.State.DRAFT
     assert response.rollout_failure_reason == 'rollout_failure_reason_value'
-
-
-def test_update_experiment_from_dict():
-    test_update_experiment(request_type=dict)
 
 
 def test_update_experiment_empty_call():
@@ -1571,7 +1572,11 @@ async def test_update_experiment_flattened_error_async():
         )
 
 
-def test_delete_experiment(transport: str = 'grpc', request_type=experiment.DeleteExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  experiment.DeleteExperimentRequest,
+  dict,
+])
+def test_delete_experiment(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1596,10 +1601,6 @@ def test_delete_experiment(transport: str = 'grpc', request_type=experiment.Dele
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_experiment_from_dict():
-    test_delete_experiment(request_type=dict)
 
 
 def test_delete_experiment_empty_call():
@@ -1800,7 +1801,11 @@ async def test_delete_experiment_flattened_error_async():
         )
 
 
-def test_start_experiment(transport: str = 'grpc', request_type=experiment.StartExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  experiment.StartExperimentRequest,
+  dict,
+])
+def test_start_experiment(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1836,10 +1841,6 @@ def test_start_experiment(transport: str = 'grpc', request_type=experiment.Start
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
     assert response.rollout_failure_reason == 'rollout_failure_reason_value'
-
-
-def test_start_experiment_from_dict():
-    test_start_experiment(request_type=dict)
 
 
 def test_start_experiment_empty_call():
@@ -2051,7 +2052,11 @@ async def test_start_experiment_flattened_error_async():
         )
 
 
-def test_stop_experiment(transport: str = 'grpc', request_type=experiment.StopExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  experiment.StopExperimentRequest,
+  dict,
+])
+def test_stop_experiment(request_type, transport: str = 'grpc'):
     client = ExperimentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2087,10 +2092,6 @@ def test_stop_experiment(transport: str = 'grpc', request_type=experiment.StopEx
     assert response.description == 'description_value'
     assert response.state == experiment.Experiment.State.DRAFT
     assert response.rollout_failure_reason == 'rollout_failure_reason_value'
-
-
-def test_stop_experiment_from_dict():
-    test_stop_experiment(request_type=dict)
 
 
 def test_stop_experiment_empty_call():
@@ -2820,7 +2821,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ExperimentsTransport, '_prep_wrapped_messages') as prep:

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, Callable, Iterable, Sequence, Tuple
+from typing import Any, Callable, Iterable, Sequence, Tuple, Optional, Iterator
 
 from google.ads.googleads.v7.services.types import google_ads_service
 
@@ -67,7 +67,7 @@ class SearchPager:
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[google_ads_service.GoogleAdsRow]:
+    def __iter__(self) -> Iterator[google_ads_service.GoogleAdsRow]:
         for page in self.pages:
             yield from page.results
 

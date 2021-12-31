@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_vpn_gateways_client_client_options(client_class, transport_class, trans
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_vpn_gateways_client_mtls_env_auto(client_class, transport_class, transp
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_vpn_gateways_client_client_options_scopes(client_class, transport_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_vpn_gateways_client_client_options_credentials_file(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,53 @@ def test_vpn_gateways_client_client_options_credentials_file(client_class, trans
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListVpnGatewaysRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListVpnGatewaysRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListVpnGatewaysRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.VpnGatewayAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.VpnGatewayAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListVpnGatewaysRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGatewayAggregatedList(
               id='id_value',
@@ -401,7 +436,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -410,7 +445,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -451,8 +486,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -465,7 +500,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -478,18 +513,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGatewayAggregatedList()
 
@@ -502,7 +533,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -543,80 +574,131 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.VpnGatewayAggregatedList(
-                    items={
-                        'a':compute.VpnGatewaysScopedList(),
-                        'b':compute.VpnGatewaysScopedList(),
-                        'c':compute.VpnGatewaysScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.VpnGatewayAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.VpnGatewayAggregatedList(
-                    items={
-                        'g':compute.VpnGatewaysScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.VpnGatewayAggregatedList(
-                    items={
-                        'h':compute.VpnGatewaysScopedList(),
-                        'i':compute.VpnGatewaysScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.VpnGatewayAggregatedList(
+                items={
+                    'a':compute.VpnGatewaysScopedList(),
+                    'b':compute.VpnGatewaysScopedList(),
+                    'c':compute.VpnGatewaysScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.VpnGatewayAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.VpnGatewayAggregatedList(
+                items={
+                    'g':compute.VpnGatewaysScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.VpnGatewayAggregatedList(
+                items={
+                    'h':compute.VpnGatewaysScopedList(),
+                    'i':compute.VpnGatewaysScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.VpnGatewayAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.VpnGatewayAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.VpnGatewaysScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.VpnGatewaysScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.VpnGatewaysScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.VpnGatewaysScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.VpnGatewaysScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.VpnGatewaysScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteVpnGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteVpnGatewayRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteVpnGatewayRequest({'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteVpnGatewayRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -696,7 +778,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteVpnGateway
     assert "region" not in jsonified_request
     assert "vpnGateway" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -711,7 +793,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteVpnGateway
     jsonified_request["region"] = 'region_value'
     jsonified_request["vpnGateway"] = 'vpn_gateway_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -756,16 +838,16 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteVpnGateway
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "vpn_gateway",
-                    ""
-                )
+                    "vpnGateway",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -778,7 +860,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -791,18 +873,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -815,7 +893,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -850,18 +928,63 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetVpnGatewayRequest):
+def test_delete_unary_rest_error():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetVpnGatewayRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetVpnGatewayRequest({'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.VpnGateway(
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              id=205,
+              kind='kind_value',
+              label_fingerprint='label_fingerprint_value',
+              name='name_value',
+              network='network_value',
+              region='region_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.VpnGateway.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetVpnGatewayRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGateway(
               creation_timestamp='creation_timestamp_value',
@@ -915,7 +1038,7 @@ def test_get_rest_required_fields(request_type=compute.GetVpnGatewayRequest):
     assert "region" not in jsonified_request
     assert "vpnGateway" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -930,7 +1053,7 @@ def test_get_rest_required_fields(request_type=compute.GetVpnGatewayRequest):
     jsonified_request["region"] = 'region_value'
     jsonified_request["vpnGateway"] = 'vpn_gateway_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -975,16 +1098,16 @@ def test_get_rest_required_fields(request_type=compute.GetVpnGatewayRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "vpn_gateway",
-                    ""
-                )
+                    "vpnGateway",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -997,7 +1120,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetV
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1010,18 +1133,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetV
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGateway()
 
@@ -1034,7 +1153,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1069,18 +1188,54 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_status_rest(transport: str = 'rest', request_type=compute.GetStatusVpnGatewayRequest):
+def test_get_rest_error():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetStatusVpnGatewayRequest,
+  dict,
+])
+def test_get_status_rest(request_type, transport: str = 'rest'):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetStatusVpnGatewayRequest({'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.VpnGatewaysGetStatusResponse(
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.VpnGatewaysGetStatusResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_status(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetStatusVpnGatewayRequest,
+    dict,
+])
+def test_get_status_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGatewaysGetStatusResponse(
         )
@@ -1116,7 +1271,7 @@ def test_get_status_rest_required_fields(request_type=compute.GetStatusVpnGatewa
     assert "region" not in jsonified_request
     assert "vpnGateway" not in jsonified_request
 
-    unset_fields = transport_class._get_status_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_status._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1131,7 +1286,7 @@ def test_get_status_rest_required_fields(request_type=compute.GetStatusVpnGatewa
     jsonified_request["region"] = 'region_value'
     jsonified_request["vpnGateway"] = 'vpn_gateway_value'
 
-    unset_fields = transport_class._get_status_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_status._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1176,16 +1331,16 @@ def test_get_status_rest_required_fields(request_type=compute.GetStatusVpnGatewa
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
-                    "vpn_gateway",
-                    ""
-                )
+                    "vpnGateway",
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1198,7 +1353,7 @@ def test_get_status_rest_bad_request(transport: str = 'rest', request_type=compu
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+    request_init = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1211,18 +1366,14 @@ def test_get_status_rest_bad_request(transport: str = 'rest', request_type=compu
         client.get_status(request)
 
 
-def test_get_status_rest_from_dict():
-    test_get_status_rest(request_type=dict)
-
-
-def test_get_status_rest_flattened(transport: str = 'rest'):
+def test_get_status_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGatewaysGetStatusResponse()
 
@@ -1235,7 +1386,7 @@ def test_get_status_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "vpn_gateway": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'vpn_gateway': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1270,19 +1421,77 @@ def test_get_status_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertVpnGatewayRequest):
+def test_get_status_rest_error():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertVpnGatewayRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertVpnGatewayRequest({'project': 'sample1', 'region': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertVpnGatewayRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
-    request_init["vpn_gateway_resource"] = compute.VpnGateway(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'region': 'sample2'}
+    request_init["vpn_gateway_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'name': 'name_value', 'network': 'network_value', 'region': 'region_value', 'self_link': 'self_link_value', 'vpn_interfaces': [{'id': 205, 'interconnect_attachment': 'interconnect_attachment_value', 'ip_address': 'ip_address_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1360,7 +1569,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertVpnGateway
     assert "project" not in jsonified_request
     assert "region" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1372,7 +1581,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertVpnGateway
     jsonified_request["project"] = 'project_value'
     jsonified_request["region"] = 'region_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1416,12 +1625,12 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertVpnGateway
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1434,8 +1643,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
-    request_init["vpn_gateway_resource"] = compute.VpnGateway(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'region': 'sample2'}
+    request_init["vpn_gateway_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'name': 'name_value', 'network': 'network_value', 'region': 'region_value', 'self_link': 'self_link_value', 'vpn_interfaces': [{'id': 205, 'interconnect_attachment': 'interconnect_attachment_value', 'ip_address': 'ip_address_value'}]}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1448,18 +1657,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1472,7 +1677,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2"}
+        sample_request = {'project': 'sample1', 'region': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1507,18 +1712,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListVpnGatewaysRequest):
+def test_insert_unary_rest_error():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListVpnGatewaysRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListVpnGatewaysRequest({'project': 'sample1', 'region': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.VpnGatewayList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.VpnGatewayList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListVpnGatewaysRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
+    request_init = {'project': 'sample1', 'region': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGatewayList(
               id='id_value',
@@ -1560,7 +1805,7 @@ def test_list_rest_required_fields(request_type=compute.ListVpnGatewaysRequest):
     assert "project" not in jsonified_request
     assert "region" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1572,7 +1817,7 @@ def test_list_rest_required_fields(request_type=compute.ListVpnGatewaysRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["region"] = 'region_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1615,12 +1860,12 @@ def test_list_rest_required_fields(request_type=compute.ListVpnGatewaysRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1633,7 +1878,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2"}
+    request_init = {'project': 'sample1', 'region': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1646,18 +1891,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.VpnGatewayList()
 
@@ -1670,7 +1911,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2"}
+        sample_request = {'project': 'sample1', 'region': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1713,71 +1954,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.VpnGatewayList(
-                    items=[
-                        compute.VpnGateway(),
-                        compute.VpnGateway(),
-                        compute.VpnGateway(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.VpnGatewayList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.VpnGatewayList(
-                    items=[
-                        compute.VpnGateway(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.VpnGatewayList(
-                    items=[
-                        compute.VpnGateway(),
-                        compute.VpnGateway(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.VpnGatewayList(
+                items=[
+                    compute.VpnGateway(),
+                    compute.VpnGateway(),
+                    compute.VpnGateway(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.VpnGatewayList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.VpnGatewayList(
+                items=[
+                    compute.VpnGateway(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.VpnGatewayList(
+                items=[
+                    compute.VpnGateway(),
+                    compute.VpnGateway(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.VpnGatewayList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.VpnGatewayList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1", "region": "sample2"}
+        sample_request = {'project': 'sample1', 'region': 'sample2'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.VpnGateway)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.VpnGateway)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_set_labels_unary_rest(transport: str = 'rest', request_type=compute.SetLabelsVpnGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.SetLabelsVpnGatewayRequest,
+  dict,
+])
+def test_set_labels_unary_rest(request_type, transport: str = 'rest'):
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetLabelsVpnGatewayRequest({'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_labels_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetLabelsVpnGatewayRequest,
+    dict,
+])
+def test_set_labels_unary_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["region_set_labels_request_resource"] = compute.RegionSetLabelsRequest(label_fingerprint='label_fingerprint_value')
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["region_set_labels_request_resource"] = {'label_fingerprint': 'label_fingerprint_value', 'labels': {}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1857,7 +2149,7 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsVpn
     assert "region" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_labels._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1872,7 +2164,7 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsVpn
     jsonified_request["region"] = 'region_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_labels._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1918,16 +2210,16 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsVpn
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1940,8 +2232,8 @@ def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["region_set_labels_request_resource"] = compute.RegionSetLabelsRequest(label_fingerprint='label_fingerprint_value')
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["region_set_labels_request_resource"] = {'label_fingerprint': 'label_fingerprint_value', 'labels': {}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1954,18 +2246,14 @@ def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type
         client.set_labels_unary(request)
 
 
-def test_set_labels_unary_rest_from_dict():
-    test_set_labels_unary_rest(request_type=dict)
-
-
-def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
+def test_set_labels_unary_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1978,7 +2266,7 @@ def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2015,19 +2303,56 @@ def test_set_labels_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute.TestIamPermissionsVpnGatewayRequest):
+def test_set_labels_unary_rest_error():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.TestIamPermissionsVpnGatewayRequest,
+  dict,
+])
+def test_test_iam_permissions_rest(request_type, transport: str = 'rest'):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.TestIamPermissionsVpnGatewayRequest({'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.TestPermissionsResponse(
+              permissions=['permissions_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.test_iam_permissions(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.TestIamPermissionsVpnGatewayRequest,
+    dict,
+])
+def test_test_iam_permissions_rest(request_type):
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse(
               permissions=['permissions_value'],
@@ -2065,7 +2390,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     assert "region" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2080,7 +2405,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     jsonified_request["region"] = 'region_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2126,16 +2451,16 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "region",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2148,8 +2473,8 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "region": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2162,18 +2487,14 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
         client.test_iam_permissions(request)
 
 
-def test_test_iam_permissions_rest_from_dict():
-    test_test_iam_permissions_rest(request_type=dict)
-
-
-def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
+def test_test_iam_permissions_rest_flattened():
     client = VpnGatewaysClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse()
 
@@ -2186,7 +2507,7 @@ def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "region": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'region': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2221,6 +2542,13 @@ def test_test_iam_permissions_rest_flattened_error(transport: str = 'rest'):
             resource='resource_value',
             test_permissions_request_resource=compute.TestPermissionsRequest(permissions=['permissions_value']),
         )
+
+
+def test_test_iam_permissions_rest_error():
+    client = VpnGatewaysClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -2469,7 +2797,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.VpnGatewaysTransport, '_prep_wrapped_messages') as prep:

@@ -127,7 +127,6 @@ class ListServiceAccountsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[iam.ServiceAccount]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class QueryGrantableRolesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[iam.Role]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListRolesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[iam.Role]:
         async def async_generator():
             async for page in self.pages:
@@ -493,7 +490,6 @@ class QueryTestablePermissionsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[iam.Permission]:
         async def async_generator():
             async for page in self.pages:

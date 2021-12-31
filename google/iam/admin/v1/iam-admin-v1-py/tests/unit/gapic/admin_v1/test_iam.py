@@ -208,18 +208,18 @@ def test_iam_client_client_options(client_class, transport_class, transport_name
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_iam_client_mtls_env_auto(client_class, transport_class, transport_name,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_iam_client_client_options_scopes(client_class, transport_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_iam_client_client_options_credentials_file(client_class, transport_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_iam_client_client_options_credentials_file(client_class, transport_clas
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_iam_client_client_options_from_dict():
     with mock.patch('google.iam.admin_v1.services.iam.transports.IAMGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_iam_client_client_options_from_dict():
         )
 
 
-def test_list_service_accounts(transport: str = 'grpc', request_type=iam.ListServiceAccountsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.ListServiceAccountsRequest,
+  dict,
+])
+def test_list_service_accounts(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -407,10 +410,6 @@ def test_list_service_accounts(transport: str = 'grpc', request_type=iam.ListSer
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServiceAccountsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_service_accounts_from_dict():
-    test_list_service_accounts(request_type=dict)
 
 
 def test_list_service_accounts_empty_call():
@@ -614,9 +613,10 @@ async def test_list_service_accounts_flattened_error_async():
         )
 
 
-def test_list_service_accounts_pager():
+def test_list_service_accounts_pager(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -666,10 +666,10 @@ def test_list_service_accounts_pager():
         assert len(results) == 6
         assert all(isinstance(i, iam.ServiceAccount)
                    for i in results)
-
-def test_list_service_accounts_pages():
+def test_list_service_accounts_pages(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -754,7 +754,8 @@ async def test_list_service_accounts_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, iam.ServiceAccount)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_service_accounts_async_pages():
@@ -800,7 +801,11 @@ async def test_list_service_accounts_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_service_account(transport: str = 'grpc', request_type=iam.GetServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.GetServiceAccountRequest,
+  dict,
+])
+def test_get_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -844,10 +849,6 @@ def test_get_service_account(transport: str = 'grpc', request_type=iam.GetServic
     assert response.description == 'description_value'
     assert response.oauth2_client_id == 'oauth2_client_id_value'
     assert response.disabled is True
-
-
-def test_get_service_account_from_dict():
-    test_get_service_account(request_type=dict)
 
 
 def test_get_service_account_empty_call():
@@ -1067,7 +1068,11 @@ async def test_get_service_account_flattened_error_async():
         )
 
 
-def test_create_service_account(transport: str = 'grpc', request_type=iam.CreateServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.CreateServiceAccountRequest,
+  dict,
+])
+def test_create_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1111,10 +1116,6 @@ def test_create_service_account(transport: str = 'grpc', request_type=iam.Create
     assert response.description == 'description_value'
     assert response.oauth2_client_id == 'oauth2_client_id_value'
     assert response.disabled is True
-
-
-def test_create_service_account_from_dict():
-    test_create_service_account(request_type=dict)
 
 
 def test_create_service_account_empty_call():
@@ -1354,7 +1355,11 @@ async def test_create_service_account_flattened_error_async():
         )
 
 
-def test_update_service_account(transport: str = 'grpc', request_type=iam.ServiceAccount):
+@pytest.mark.parametrize("request_type", [
+  iam.ServiceAccount,
+  dict,
+])
+def test_update_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1398,10 +1403,6 @@ def test_update_service_account(transport: str = 'grpc', request_type=iam.Servic
     assert response.description == 'description_value'
     assert response.oauth2_client_id == 'oauth2_client_id_value'
     assert response.disabled is True
-
-
-def test_update_service_account_from_dict():
-    test_update_service_account(request_type=dict)
 
 
 def test_update_service_account_empty_call():
@@ -1537,7 +1538,11 @@ async def test_update_service_account_field_headers_async():
     ) in kw['metadata']
 
 
-def test_patch_service_account(transport: str = 'grpc', request_type=iam.PatchServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.PatchServiceAccountRequest,
+  dict,
+])
+def test_patch_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1581,10 +1586,6 @@ def test_patch_service_account(transport: str = 'grpc', request_type=iam.PatchSe
     assert response.description == 'description_value'
     assert response.oauth2_client_id == 'oauth2_client_id_value'
     assert response.disabled is True
-
-
-def test_patch_service_account_from_dict():
-    test_patch_service_account(request_type=dict)
 
 
 def test_patch_service_account_empty_call():
@@ -1720,7 +1721,11 @@ async def test_patch_service_account_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_service_account(transport: str = 'grpc', request_type=iam.DeleteServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.DeleteServiceAccountRequest,
+  dict,
+])
+def test_delete_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1745,10 +1750,6 @@ def test_delete_service_account(transport: str = 'grpc', request_type=iam.Delete
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_service_account_from_dict():
-    test_delete_service_account(request_type=dict)
 
 
 def test_delete_service_account_empty_call():
@@ -1949,7 +1950,11 @@ async def test_delete_service_account_flattened_error_async():
         )
 
 
-def test_undelete_service_account(transport: str = 'grpc', request_type=iam.UndeleteServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.UndeleteServiceAccountRequest,
+  dict,
+])
+def test_undelete_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1975,10 +1980,6 @@ def test_undelete_service_account(transport: str = 'grpc', request_type=iam.Unde
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam.UndeleteServiceAccountResponse)
-
-
-def test_undelete_service_account_from_dict():
-    test_undelete_service_account(request_type=dict)
 
 
 def test_undelete_service_account_empty_call():
@@ -2096,7 +2097,11 @@ async def test_undelete_service_account_field_headers_async():
     ) in kw['metadata']
 
 
-def test_enable_service_account(transport: str = 'grpc', request_type=iam.EnableServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.EnableServiceAccountRequest,
+  dict,
+])
+def test_enable_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2121,10 +2126,6 @@ def test_enable_service_account(transport: str = 'grpc', request_type=iam.Enable
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_enable_service_account_from_dict():
-    test_enable_service_account(request_type=dict)
 
 
 def test_enable_service_account_empty_call():
@@ -2241,7 +2242,11 @@ async def test_enable_service_account_field_headers_async():
     ) in kw['metadata']
 
 
-def test_disable_service_account(transport: str = 'grpc', request_type=iam.DisableServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.DisableServiceAccountRequest,
+  dict,
+])
+def test_disable_service_account(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2266,10 +2271,6 @@ def test_disable_service_account(transport: str = 'grpc', request_type=iam.Disab
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_disable_service_account_from_dict():
-    test_disable_service_account(request_type=dict)
 
 
 def test_disable_service_account_empty_call():
@@ -2386,7 +2387,11 @@ async def test_disable_service_account_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_service_account_keys(transport: str = 'grpc', request_type=iam.ListServiceAccountKeysRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.ListServiceAccountKeysRequest,
+  dict,
+])
+def test_list_service_account_keys(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2412,10 +2417,6 @@ def test_list_service_account_keys(transport: str = 'grpc', request_type=iam.Lis
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam.ListServiceAccountKeysResponse)
-
-
-def test_list_service_account_keys_from_dict():
-    test_list_service_account_keys(request_type=dict)
 
 
 def test_list_service_account_keys_empty_call():
@@ -2627,7 +2628,11 @@ async def test_list_service_account_keys_flattened_error_async():
         )
 
 
-def test_get_service_account_key(transport: str = 'grpc', request_type=iam.GetServiceAccountKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.GetServiceAccountKeyRequest,
+  dict,
+])
+def test_get_service_account_key(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2667,10 +2672,6 @@ def test_get_service_account_key(transport: str = 'grpc', request_type=iam.GetSe
     assert response.public_key_data == b'public_key_data_blob'
     assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
     assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
-
-
-def test_get_service_account_key_from_dict():
-    test_get_service_account_key(request_type=dict)
 
 
 def test_get_service_account_key_empty_call():
@@ -2896,7 +2897,11 @@ async def test_get_service_account_key_flattened_error_async():
         )
 
 
-def test_create_service_account_key(transport: str = 'grpc', request_type=iam.CreateServiceAccountKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.CreateServiceAccountKeyRequest,
+  dict,
+])
+def test_create_service_account_key(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2936,10 +2941,6 @@ def test_create_service_account_key(transport: str = 'grpc', request_type=iam.Cr
     assert response.public_key_data == b'public_key_data_blob'
     assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
     assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
-
-
-def test_create_service_account_key_from_dict():
-    test_create_service_account_key(request_type=dict)
 
 
 def test_create_service_account_key_empty_call():
@@ -3175,7 +3176,11 @@ async def test_create_service_account_key_flattened_error_async():
         )
 
 
-def test_upload_service_account_key(transport: str = 'grpc', request_type=iam.UploadServiceAccountKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.UploadServiceAccountKeyRequest,
+  dict,
+])
+def test_upload_service_account_key(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3215,10 +3220,6 @@ def test_upload_service_account_key(transport: str = 'grpc', request_type=iam.Up
     assert response.public_key_data == b'public_key_data_blob'
     assert response.key_origin == iam.ServiceAccountKeyOrigin.USER_PROVIDED
     assert response.key_type == iam.ListServiceAccountKeysRequest.KeyType.USER_MANAGED
-
-
-def test_upload_service_account_key_from_dict():
-    test_upload_service_account_key(request_type=dict)
 
 
 def test_upload_service_account_key_empty_call():
@@ -3350,7 +3351,11 @@ async def test_upload_service_account_key_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_service_account_key(transport: str = 'grpc', request_type=iam.DeleteServiceAccountKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.DeleteServiceAccountKeyRequest,
+  dict,
+])
+def test_delete_service_account_key(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3375,10 +3380,6 @@ def test_delete_service_account_key(transport: str = 'grpc', request_type=iam.De
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_service_account_key_from_dict():
-    test_delete_service_account_key(request_type=dict)
 
 
 def test_delete_service_account_key_empty_call():
@@ -3579,7 +3580,11 @@ async def test_delete_service_account_key_flattened_error_async():
         )
 
 
-def test_sign_blob(transport: str = 'grpc', request_type=iam.SignBlobRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.SignBlobRequest,
+  dict,
+])
+def test_sign_blob(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3609,10 +3614,6 @@ def test_sign_blob(transport: str = 'grpc', request_type=iam.SignBlobRequest):
     assert isinstance(response, iam.SignBlobResponse)
     assert response.key_id == 'key_id_value'
     assert response.signature == b'signature_blob'
-
-
-def test_sign_blob_from_dict():
-    test_sign_blob(request_type=dict)
 
 
 def test_sign_blob_empty_call():
@@ -3828,7 +3829,11 @@ async def test_sign_blob_flattened_error_async():
         )
 
 
-def test_sign_jwt(transport: str = 'grpc', request_type=iam.SignJwtRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.SignJwtRequest,
+  dict,
+])
+def test_sign_jwt(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3858,10 +3863,6 @@ def test_sign_jwt(transport: str = 'grpc', request_type=iam.SignJwtRequest):
     assert isinstance(response, iam.SignJwtResponse)
     assert response.key_id == 'key_id_value'
     assert response.signed_jwt == 'signed_jwt_value'
-
-
-def test_sign_jwt_from_dict():
-    test_sign_jwt(request_type=dict)
 
 
 def test_sign_jwt_empty_call():
@@ -4077,7 +4078,11 @@ async def test_sign_jwt_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4107,10 +4112,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -4333,7 +4334,11 @@ async def test_get_iam_policy_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4363,10 +4368,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -4589,7 +4590,11 @@ async def test_set_iam_policy_flattened_error_async():
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4617,10 +4622,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -4851,7 +4852,11 @@ async def test_test_iam_permissions_flattened_error_async():
         )
 
 
-def test_query_grantable_roles(transport: str = 'grpc', request_type=iam.QueryGrantableRolesRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.QueryGrantableRolesRequest,
+  dict,
+])
+def test_query_grantable_roles(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4879,10 +4884,6 @@ def test_query_grantable_roles(transport: str = 'grpc', request_type=iam.QueryGr
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.QueryGrantableRolesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_query_grantable_roles_from_dict():
-    test_query_grantable_roles(request_type=dict)
 
 
 def test_query_grantable_roles_empty_call():
@@ -5023,9 +5024,10 @@ async def test_query_grantable_roles_flattened_error_async():
         )
 
 
-def test_query_grantable_roles_pager():
+def test_query_grantable_roles_pager(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5070,10 +5072,10 @@ def test_query_grantable_roles_pager():
         assert len(results) == 6
         assert all(isinstance(i, iam.Role)
                    for i in results)
-
-def test_query_grantable_roles_pages():
+def test_query_grantable_roles_pages(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5158,7 +5160,8 @@ async def test_query_grantable_roles_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, iam.Role)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_query_grantable_roles_async_pages():
@@ -5204,7 +5207,11 @@ async def test_query_grantable_roles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_list_roles(transport: str = 'grpc', request_type=iam.ListRolesRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.ListRolesRequest,
+  dict,
+])
+def test_list_roles(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5232,10 +5239,6 @@ def test_list_roles(transport: str = 'grpc', request_type=iam.ListRolesRequest):
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListRolesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_roles_from_dict():
-    test_list_roles(request_type=dict)
 
 
 def test_list_roles_empty_call():
@@ -5292,9 +5295,10 @@ async def test_list_roles_async_from_dict():
     await test_list_roles_async(request_type=dict)
 
 
-def test_list_roles_pager():
+def test_list_roles_pager(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5339,10 +5343,10 @@ def test_list_roles_pager():
         assert len(results) == 6
         assert all(isinstance(i, iam.Role)
                    for i in results)
-
-def test_list_roles_pages():
+def test_list_roles_pages(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5427,7 +5431,8 @@ async def test_list_roles_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, iam.Role)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_roles_async_pages():
@@ -5473,7 +5478,11 @@ async def test_list_roles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_role(transport: str = 'grpc', request_type=iam.GetRoleRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.GetRoleRequest,
+  dict,
+])
+def test_get_role(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5513,10 +5522,6 @@ def test_get_role(transport: str = 'grpc', request_type=iam.GetRoleRequest):
     assert response.stage == iam.Role.RoleLaunchStage.BETA
     assert response.etag == b'etag_blob'
     assert response.deleted is True
-
-
-def test_get_role_from_dict():
-    test_get_role(request_type=dict)
 
 
 def test_get_role_empty_call():
@@ -5648,7 +5653,11 @@ async def test_get_role_field_headers_async():
     ) in kw['metadata']
 
 
-def test_create_role(transport: str = 'grpc', request_type=iam.CreateRoleRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.CreateRoleRequest,
+  dict,
+])
+def test_create_role(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5688,10 +5697,6 @@ def test_create_role(transport: str = 'grpc', request_type=iam.CreateRoleRequest
     assert response.stage == iam.Role.RoleLaunchStage.BETA
     assert response.etag == b'etag_blob'
     assert response.deleted is True
-
-
-def test_create_role_from_dict():
-    test_create_role(request_type=dict)
 
 
 def test_create_role_empty_call():
@@ -5823,7 +5828,11 @@ async def test_create_role_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_role(transport: str = 'grpc', request_type=iam.UpdateRoleRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.UpdateRoleRequest,
+  dict,
+])
+def test_update_role(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5863,10 +5872,6 @@ def test_update_role(transport: str = 'grpc', request_type=iam.UpdateRoleRequest
     assert response.stage == iam.Role.RoleLaunchStage.BETA
     assert response.etag == b'etag_blob'
     assert response.deleted is True
-
-
-def test_update_role_from_dict():
-    test_update_role(request_type=dict)
 
 
 def test_update_role_empty_call():
@@ -5998,7 +6003,11 @@ async def test_update_role_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_role(transport: str = 'grpc', request_type=iam.DeleteRoleRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.DeleteRoleRequest,
+  dict,
+])
+def test_delete_role(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6038,10 +6047,6 @@ def test_delete_role(transport: str = 'grpc', request_type=iam.DeleteRoleRequest
     assert response.stage == iam.Role.RoleLaunchStage.BETA
     assert response.etag == b'etag_blob'
     assert response.deleted is True
-
-
-def test_delete_role_from_dict():
-    test_delete_role(request_type=dict)
 
 
 def test_delete_role_empty_call():
@@ -6173,7 +6178,11 @@ async def test_delete_role_field_headers_async():
     ) in kw['metadata']
 
 
-def test_undelete_role(transport: str = 'grpc', request_type=iam.UndeleteRoleRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.UndeleteRoleRequest,
+  dict,
+])
+def test_undelete_role(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6213,10 +6222,6 @@ def test_undelete_role(transport: str = 'grpc', request_type=iam.UndeleteRoleReq
     assert response.stage == iam.Role.RoleLaunchStage.BETA
     assert response.etag == b'etag_blob'
     assert response.deleted is True
-
-
-def test_undelete_role_from_dict():
-    test_undelete_role(request_type=dict)
 
 
 def test_undelete_role_empty_call():
@@ -6348,7 +6353,11 @@ async def test_undelete_role_field_headers_async():
     ) in kw['metadata']
 
 
-def test_query_testable_permissions(transport: str = 'grpc', request_type=iam.QueryTestablePermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.QueryTestablePermissionsRequest,
+  dict,
+])
+def test_query_testable_permissions(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6376,10 +6385,6 @@ def test_query_testable_permissions(transport: str = 'grpc', request_type=iam.Qu
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.QueryTestablePermissionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_query_testable_permissions_from_dict():
-    test_query_testable_permissions(request_type=dict)
 
 
 def test_query_testable_permissions_empty_call():
@@ -6436,9 +6441,10 @@ async def test_query_testable_permissions_async_from_dict():
     await test_query_testable_permissions_async(request_type=dict)
 
 
-def test_query_testable_permissions_pager():
+def test_query_testable_permissions_pager(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6483,10 +6489,10 @@ def test_query_testable_permissions_pager():
         assert len(results) == 6
         assert all(isinstance(i, iam.Permission)
                    for i in results)
-
-def test_query_testable_permissions_pages():
+def test_query_testable_permissions_pages(transport_name: str = "grpc"):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6571,7 +6577,8 @@ async def test_query_testable_permissions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, iam.Permission)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_query_testable_permissions_async_pages():
@@ -6617,7 +6624,11 @@ async def test_query_testable_permissions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_query_auditable_services(transport: str = 'grpc', request_type=iam.QueryAuditableServicesRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.QueryAuditableServicesRequest,
+  dict,
+])
+def test_query_auditable_services(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6643,10 +6654,6 @@ def test_query_auditable_services(transport: str = 'grpc', request_type=iam.Quer
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam.QueryAuditableServicesResponse)
-
-
-def test_query_auditable_services_from_dict():
-    test_query_auditable_services(request_type=dict)
 
 
 def test_query_auditable_services_empty_call():
@@ -6701,7 +6708,11 @@ async def test_query_auditable_services_async_from_dict():
     await test_query_auditable_services_async(request_type=dict)
 
 
-def test_lint_policy(transport: str = 'grpc', request_type=iam.LintPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam.LintPolicyRequest,
+  dict,
+])
+def test_lint_policy(request_type, transport: str = 'grpc'):
     client = IAMClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6727,10 +6738,6 @@ def test_lint_policy(transport: str = 'grpc', request_type=iam.LintPolicyRequest
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam.LintPolicyResponse)
-
-
-def test_lint_policy_from_dict():
-    test_lint_policy(request_type=dict)
 
 
 def test_lint_policy_empty_call():
@@ -7312,7 +7319,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.IAMTransport, '_prep_wrapped_messages') as prep:

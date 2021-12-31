@@ -206,18 +206,18 @@ def test_prediction_service_client_client_options(client_class, transport_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -248,7 +248,7 @@ def test_prediction_service_client_mtls_env_auto(client_class, transport_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -323,7 +323,7 @@ def test_prediction_service_client_client_options_scopes(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -346,7 +346,7 @@ def test_prediction_service_client_client_options_credentials_file(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -357,7 +357,6 @@ def test_prediction_service_client_client_options_credentials_file(client_class,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_prediction_service_client_client_options_from_dict():
     with mock.patch('google.cloud.aiplatform_v1beta1.services.prediction_service.transports.PredictionServiceGrpcTransport.__init__') as grpc_transport:
@@ -377,7 +376,11 @@ def test_prediction_service_client_client_options_from_dict():
         )
 
 
-def test_predict(transport: str = 'grpc', request_type=prediction_service.PredictRequest):
+@pytest.mark.parametrize("request_type", [
+  prediction_service.PredictRequest,
+  dict,
+])
+def test_predict(request_type, transport: str = 'grpc'):
     client = PredictionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_predict(transport: str = 'grpc', request_type=prediction_service.Predic
     assert response.deployed_model_id == 'deployed_model_id_value'
     assert response.model == 'model_value'
     assert response.model_display_name == 'model_display_name_value'
-
-
-def test_predict_from_dict():
-    test_predict(request_type=dict)
 
 
 def test_predict_empty_call():
@@ -648,7 +647,11 @@ async def test_predict_flattened_error_async():
         )
 
 
-def test_raw_predict(transport: str = 'grpc', request_type=prediction_service.RawPredictRequest):
+@pytest.mark.parametrize("request_type", [
+  prediction_service.RawPredictRequest,
+  dict,
+])
+def test_raw_predict(request_type, transport: str = 'grpc'):
     client = PredictionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -678,10 +681,6 @@ def test_raw_predict(transport: str = 'grpc', request_type=prediction_service.Ra
     assert isinstance(response, httpbody_pb2.HttpBody)
     assert response.content_type == 'content_type_value'
     assert response.data == b'data_blob'
-
-
-def test_raw_predict_from_dict():
-    test_raw_predict(request_type=dict)
 
 
 def test_raw_predict_empty_call():
@@ -897,7 +896,11 @@ async def test_raw_predict_flattened_error_async():
         )
 
 
-def test_explain(transport: str = 'grpc', request_type=prediction_service.ExplainRequest):
+@pytest.mark.parametrize("request_type", [
+  prediction_service.ExplainRequest,
+  dict,
+])
+def test_explain(request_type, transport: str = 'grpc'):
     client = PredictionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -925,10 +928,6 @@ def test_explain(transport: str = 'grpc', request_type=prediction_service.Explai
     # Establish that the response is the type that we expect.
     assert isinstance(response, prediction_service.ExplainResponse)
     assert response.deployed_model_id == 'deployed_model_id_value'
-
-
-def test_explain_from_dict():
-    test_explain(request_type=dict)
 
 
 def test_explain_empty_call():
@@ -1673,7 +1672,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.PredictionServiceTransport, '_prep_wrapped_messages') as prep:

@@ -132,7 +132,6 @@ class ListTensorboardsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tensorboard.Tensorboard]:
         async def async_generator():
             async for page in self.pages:
@@ -254,7 +253,6 @@ class ListTensorboardExperimentsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tensorboard_experiment.TensorboardExperiment]:
         async def async_generator():
             async for page in self.pages:
@@ -376,7 +374,6 @@ class ListTensorboardRunsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tensorboard_run.TensorboardRun]:
         async def async_generator():
             async for page in self.pages:
@@ -498,7 +495,6 @@ class ListTensorboardTimeSeriesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tensorboard_time_series.TensorboardTimeSeries]:
         async def async_generator():
             async for page in self.pages:
@@ -620,7 +616,6 @@ class ExportTensorboardTimeSeriesDataAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tensorboard_data.TimeSeriesDataPoint]:
         async def async_generator():
             async for page in self.pages:

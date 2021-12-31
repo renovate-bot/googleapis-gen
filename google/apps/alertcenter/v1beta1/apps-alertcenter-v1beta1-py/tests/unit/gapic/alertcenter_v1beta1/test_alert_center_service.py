@@ -204,18 +204,18 @@ def test_alert_center_service_client_client_options(client_class, transport_clas
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -246,7 +246,7 @@ def test_alert_center_service_client_mtls_env_auto(client_class, transport_class
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -321,7 +321,7 @@ def test_alert_center_service_client_client_options_scopes(client_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -344,7 +344,7 @@ def test_alert_center_service_client_client_options_credentials_file(client_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -355,7 +355,6 @@ def test_alert_center_service_client_client_options_credentials_file(client_clas
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_alert_center_service_client_client_options_from_dict():
     with mock.patch('google.apps.alertcenter_v1beta1.services.alert_center_service.transports.AlertCenterServiceGrpcTransport.__init__') as grpc_transport:
@@ -375,7 +374,11 @@ def test_alert_center_service_client_client_options_from_dict():
         )
 
 
-def test_list_alerts(transport: str = 'grpc', request_type=alertcenter.ListAlertsRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.ListAlertsRequest,
+  dict,
+])
+def test_list_alerts(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -403,10 +406,6 @@ def test_list_alerts(transport: str = 'grpc', request_type=alertcenter.ListAlert
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAlertsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_alerts_from_dict():
-    test_list_alerts(request_type=dict)
 
 
 def test_list_alerts_empty_call():
@@ -463,9 +462,10 @@ async def test_list_alerts_async_from_dict():
     await test_list_alerts_async(request_type=dict)
 
 
-def test_list_alerts_pager():
+def test_list_alerts_pager(transport_name: str = "grpc"):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -510,10 +510,10 @@ def test_list_alerts_pager():
         assert len(results) == 6
         assert all(isinstance(i, alertcenter.Alert)
                    for i in results)
-
-def test_list_alerts_pages():
+def test_list_alerts_pages(transport_name: str = "grpc"):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -598,7 +598,8 @@ async def test_list_alerts_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, alertcenter.Alert)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_alerts_async_pages():
@@ -644,7 +645,11 @@ async def test_list_alerts_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_alert(transport: str = 'grpc', request_type=alertcenter.GetAlertRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.GetAlertRequest,
+  dict,
+])
+def test_get_alert(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -684,10 +689,6 @@ def test_get_alert(transport: str = 'grpc', request_type=alertcenter.GetAlertReq
     assert response.security_investigation_tool_link == 'security_investigation_tool_link_value'
     assert response.deleted is True
     assert response.etag == 'etag_value'
-
-
-def test_get_alert_from_dict():
-    test_get_alert(request_type=dict)
 
 
 def test_get_alert_empty_call():
@@ -756,7 +757,11 @@ async def test_get_alert_async_from_dict():
     await test_get_alert_async(request_type=dict)
 
 
-def test_delete_alert(transport: str = 'grpc', request_type=alertcenter.DeleteAlertRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.DeleteAlertRequest,
+  dict,
+])
+def test_delete_alert(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -781,10 +786,6 @@ def test_delete_alert(transport: str = 'grpc', request_type=alertcenter.DeleteAl
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_alert_from_dict():
-    test_delete_alert(request_type=dict)
 
 
 def test_delete_alert_empty_call():
@@ -838,7 +839,11 @@ async def test_delete_alert_async_from_dict():
     await test_delete_alert_async(request_type=dict)
 
 
-def test_undelete_alert(transport: str = 'grpc', request_type=alertcenter.UndeleteAlertRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.UndeleteAlertRequest,
+  dict,
+])
+def test_undelete_alert(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -878,10 +883,6 @@ def test_undelete_alert(transport: str = 'grpc', request_type=alertcenter.Undele
     assert response.security_investigation_tool_link == 'security_investigation_tool_link_value'
     assert response.deleted is True
     assert response.etag == 'etag_value'
-
-
-def test_undelete_alert_from_dict():
-    test_undelete_alert(request_type=dict)
 
 
 def test_undelete_alert_empty_call():
@@ -950,7 +951,11 @@ async def test_undelete_alert_async_from_dict():
     await test_undelete_alert_async(request_type=dict)
 
 
-def test_create_alert_feedback(transport: str = 'grpc', request_type=alertcenter.CreateAlertFeedbackRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.CreateAlertFeedbackRequest,
+  dict,
+])
+def test_create_alert_feedback(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -986,10 +991,6 @@ def test_create_alert_feedback(transport: str = 'grpc', request_type=alertcenter
     assert response.feedback_id == 'feedback_id_value'
     assert response.type_ == alertcenter.AlertFeedbackType.NOT_USEFUL
     assert response.email == 'email_value'
-
-
-def test_create_alert_feedback_from_dict():
-    test_create_alert_feedback(request_type=dict)
 
 
 def test_create_alert_feedback_empty_call():
@@ -1054,7 +1055,11 @@ async def test_create_alert_feedback_async_from_dict():
     await test_create_alert_feedback_async(request_type=dict)
 
 
-def test_list_alert_feedback(transport: str = 'grpc', request_type=alertcenter.ListAlertFeedbackRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.ListAlertFeedbackRequest,
+  dict,
+])
+def test_list_alert_feedback(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1080,10 +1085,6 @@ def test_list_alert_feedback(transport: str = 'grpc', request_type=alertcenter.L
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, alertcenter.ListAlertFeedbackResponse)
-
-
-def test_list_alert_feedback_from_dict():
-    test_list_alert_feedback(request_type=dict)
 
 
 def test_list_alert_feedback_empty_call():
@@ -1138,7 +1139,11 @@ async def test_list_alert_feedback_async_from_dict():
     await test_list_alert_feedback_async(request_type=dict)
 
 
-def test_get_alert_metadata(transport: str = 'grpc', request_type=alertcenter.GetAlertMetadataRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.GetAlertMetadataRequest,
+  dict,
+])
+def test_get_alert_metadata(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1176,10 +1181,6 @@ def test_get_alert_metadata(transport: str = 'grpc', request_type=alertcenter.Ge
     assert response.assignee == 'assignee_value'
     assert response.severity == 'severity_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_alert_metadata_from_dict():
-    test_get_alert_metadata(request_type=dict)
 
 
 def test_get_alert_metadata_empty_call():
@@ -1246,7 +1247,11 @@ async def test_get_alert_metadata_async_from_dict():
     await test_get_alert_metadata_async(request_type=dict)
 
 
-def test_get_settings(transport: str = 'grpc', request_type=alertcenter.GetSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.GetSettingsRequest,
+  dict,
+])
+def test_get_settings(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1272,10 +1277,6 @@ def test_get_settings(transport: str = 'grpc', request_type=alertcenter.GetSetti
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, alertcenter.Settings)
-
-
-def test_get_settings_from_dict():
-    test_get_settings(request_type=dict)
 
 
 def test_get_settings_empty_call():
@@ -1330,7 +1331,11 @@ async def test_get_settings_async_from_dict():
     await test_get_settings_async(request_type=dict)
 
 
-def test_update_settings(transport: str = 'grpc', request_type=alertcenter.UpdateSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.UpdateSettingsRequest,
+  dict,
+])
+def test_update_settings(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1356,10 +1361,6 @@ def test_update_settings(transport: str = 'grpc', request_type=alertcenter.Updat
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, alertcenter.Settings)
-
-
-def test_update_settings_from_dict():
-    test_update_settings(request_type=dict)
 
 
 def test_update_settings_empty_call():
@@ -1414,7 +1415,11 @@ async def test_update_settings_async_from_dict():
     await test_update_settings_async(request_type=dict)
 
 
-def test_batch_delete_alerts(transport: str = 'grpc', request_type=alertcenter.BatchDeleteAlertsRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.BatchDeleteAlertsRequest,
+  dict,
+])
+def test_batch_delete_alerts(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1442,10 +1447,6 @@ def test_batch_delete_alerts(transport: str = 'grpc', request_type=alertcenter.B
     # Establish that the response is the type that we expect.
     assert isinstance(response, alertcenter.BatchDeleteAlertsResponse)
     assert response.success_alert_ids == ['success_alert_ids_value']
-
-
-def test_batch_delete_alerts_from_dict():
-    test_batch_delete_alerts(request_type=dict)
 
 
 def test_batch_delete_alerts_empty_call():
@@ -1502,7 +1503,11 @@ async def test_batch_delete_alerts_async_from_dict():
     await test_batch_delete_alerts_async(request_type=dict)
 
 
-def test_batch_undelete_alerts(transport: str = 'grpc', request_type=alertcenter.BatchUndeleteAlertsRequest):
+@pytest.mark.parametrize("request_type", [
+  alertcenter.BatchUndeleteAlertsRequest,
+  dict,
+])
+def test_batch_undelete_alerts(request_type, transport: str = 'grpc'):
     client = AlertCenterServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1530,10 +1535,6 @@ def test_batch_undelete_alerts(transport: str = 'grpc', request_type=alertcenter
     # Establish that the response is the type that we expect.
     assert isinstance(response, alertcenter.BatchUndeleteAlertsResponse)
     assert response.success_alert_ids == ['success_alert_ids_value']
-
-
-def test_batch_undelete_alerts_from_dict():
-    test_batch_undelete_alerts(request_type=dict)
 
 
 def test_batch_undelete_alerts_empty_call():
@@ -2059,7 +2060,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AlertCenterServiceTransport, '_prep_wrapped_messages') as prep:

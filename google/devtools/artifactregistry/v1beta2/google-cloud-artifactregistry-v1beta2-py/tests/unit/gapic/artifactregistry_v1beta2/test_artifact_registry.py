@@ -219,18 +219,18 @@ def test_artifact_registry_client_client_options(client_class, transport_class, 
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -261,7 +261,7 @@ def test_artifact_registry_client_mtls_env_auto(client_class, transport_class, t
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -336,7 +336,7 @@ def test_artifact_registry_client_client_options_scopes(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -359,7 +359,7 @@ def test_artifact_registry_client_client_options_credentials_file(client_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -370,7 +370,6 @@ def test_artifact_registry_client_client_options_credentials_file(client_class, 
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_artifact_registry_client_client_options_from_dict():
     with mock.patch('google.cloud.artifactregistry_v1beta2.services.artifact_registry.transports.ArtifactRegistryGrpcTransport.__init__') as grpc_transport:
@@ -390,7 +389,11 @@ def test_artifact_registry_client_client_options_from_dict():
         )
 
 
-def test_list_repositories(transport: str = 'grpc', request_type=repository.ListRepositoriesRequest):
+@pytest.mark.parametrize("request_type", [
+  repository.ListRepositoriesRequest,
+  dict,
+])
+def test_list_repositories(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -418,10 +421,6 @@ def test_list_repositories(transport: str = 'grpc', request_type=repository.List
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListRepositoriesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_repositories_from_dict():
-    test_list_repositories(request_type=dict)
 
 
 def test_list_repositories_empty_call():
@@ -625,9 +624,10 @@ async def test_list_repositories_flattened_error_async():
         )
 
 
-def test_list_repositories_pager():
+def test_list_repositories_pager(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -677,10 +677,10 @@ def test_list_repositories_pager():
         assert len(results) == 6
         assert all(isinstance(i, repository.Repository)
                    for i in results)
-
-def test_list_repositories_pages():
+def test_list_repositories_pages(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -765,7 +765,8 @@ async def test_list_repositories_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, repository.Repository)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_repositories_async_pages():
@@ -811,7 +812,11 @@ async def test_list_repositories_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_repository(transport: str = 'grpc', request_type=repository.GetRepositoryRequest):
+@pytest.mark.parametrize("request_type", [
+  repository.GetRepositoryRequest,
+  dict,
+])
+def test_get_repository(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -845,10 +850,6 @@ def test_get_repository(transport: str = 'grpc', request_type=repository.GetRepo
     assert response.format_ == repository.Repository.Format.DOCKER
     assert response.description == 'description_value'
     assert response.kms_key_name == 'kms_key_name_value'
-
-
-def test_get_repository_from_dict():
-    test_get_repository(request_type=dict)
 
 
 def test_get_repository_empty_call():
@@ -1058,7 +1059,11 @@ async def test_get_repository_flattened_error_async():
         )
 
 
-def test_create_repository(transport: str = 'grpc', request_type=gda_repository.CreateRepositoryRequest):
+@pytest.mark.parametrize("request_type", [
+  gda_repository.CreateRepositoryRequest,
+  dict,
+])
+def test_create_repository(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1083,10 +1088,6 @@ def test_create_repository(transport: str = 'grpc', request_type=gda_repository.
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_repository_from_dict():
-    test_create_repository(request_type=dict)
 
 
 def test_create_repository_empty_call():
@@ -1311,7 +1312,11 @@ async def test_create_repository_flattened_error_async():
         )
 
 
-def test_update_repository(transport: str = 'grpc', request_type=gda_repository.UpdateRepositoryRequest):
+@pytest.mark.parametrize("request_type", [
+  gda_repository.UpdateRepositoryRequest,
+  dict,
+])
+def test_update_repository(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1345,10 +1350,6 @@ def test_update_repository(transport: str = 'grpc', request_type=gda_repository.
     assert response.format_ == gda_repository.Repository.Format.DOCKER
     assert response.description == 'description_value'
     assert response.kms_key_name == 'kms_key_name_value'
-
-
-def test_update_repository_from_dict():
-    test_update_repository(request_type=dict)
 
 
 def test_update_repository_empty_call():
@@ -1568,7 +1569,11 @@ async def test_update_repository_flattened_error_async():
         )
 
 
-def test_delete_repository(transport: str = 'grpc', request_type=repository.DeleteRepositoryRequest):
+@pytest.mark.parametrize("request_type", [
+  repository.DeleteRepositoryRequest,
+  dict,
+])
+def test_delete_repository(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1593,10 +1598,6 @@ def test_delete_repository(transport: str = 'grpc', request_type=repository.Dele
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_repository_from_dict():
-    test_delete_repository(request_type=dict)
 
 
 def test_delete_repository_empty_call():
@@ -1801,7 +1802,11 @@ async def test_delete_repository_flattened_error_async():
         )
 
 
-def test_list_packages(transport: str = 'grpc', request_type=package.ListPackagesRequest):
+@pytest.mark.parametrize("request_type", [
+  package.ListPackagesRequest,
+  dict,
+])
+def test_list_packages(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1829,10 +1834,6 @@ def test_list_packages(transport: str = 'grpc', request_type=package.ListPackage
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPackagesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_packages_from_dict():
-    test_list_packages(request_type=dict)
 
 
 def test_list_packages_empty_call():
@@ -2036,9 +2037,10 @@ async def test_list_packages_flattened_error_async():
         )
 
 
-def test_list_packages_pager():
+def test_list_packages_pager(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2088,10 +2090,10 @@ def test_list_packages_pager():
         assert len(results) == 6
         assert all(isinstance(i, package.Package)
                    for i in results)
-
-def test_list_packages_pages():
+def test_list_packages_pages(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2176,7 +2178,8 @@ async def test_list_packages_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, package.Package)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_packages_async_pages():
@@ -2222,7 +2225,11 @@ async def test_list_packages_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_package(transport: str = 'grpc', request_type=package.GetPackageRequest):
+@pytest.mark.parametrize("request_type", [
+  package.GetPackageRequest,
+  dict,
+])
+def test_get_package(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2252,10 +2259,6 @@ def test_get_package(transport: str = 'grpc', request_type=package.GetPackageReq
     assert isinstance(response, package.Package)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_package_from_dict():
-    test_get_package(request_type=dict)
 
 
 def test_get_package_empty_call():
@@ -2461,7 +2464,11 @@ async def test_get_package_flattened_error_async():
         )
 
 
-def test_delete_package(transport: str = 'grpc', request_type=package.DeletePackageRequest):
+@pytest.mark.parametrize("request_type", [
+  package.DeletePackageRequest,
+  dict,
+])
+def test_delete_package(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2486,10 +2493,6 @@ def test_delete_package(transport: str = 'grpc', request_type=package.DeletePack
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_package_from_dict():
-    test_delete_package(request_type=dict)
 
 
 def test_delete_package_empty_call():
@@ -2694,7 +2697,11 @@ async def test_delete_package_flattened_error_async():
         )
 
 
-def test_list_versions(transport: str = 'grpc', request_type=version.ListVersionsRequest):
+@pytest.mark.parametrize("request_type", [
+  version.ListVersionsRequest,
+  dict,
+])
+def test_list_versions(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2722,10 +2729,6 @@ def test_list_versions(transport: str = 'grpc', request_type=version.ListVersion
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListVersionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_versions_from_dict():
-    test_list_versions(request_type=dict)
 
 
 def test_list_versions_empty_call():
@@ -2929,9 +2932,10 @@ async def test_list_versions_flattened_error_async():
         )
 
 
-def test_list_versions_pager():
+def test_list_versions_pager(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2981,10 +2985,10 @@ def test_list_versions_pager():
         assert len(results) == 6
         assert all(isinstance(i, version.Version)
                    for i in results)
-
-def test_list_versions_pages():
+def test_list_versions_pages(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3069,7 +3073,8 @@ async def test_list_versions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, version.Version)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_versions_async_pages():
@@ -3115,7 +3120,11 @@ async def test_list_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_version(transport: str = 'grpc', request_type=version.GetVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  version.GetVersionRequest,
+  dict,
+])
+def test_get_version(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3145,10 +3154,6 @@ def test_get_version(transport: str = 'grpc', request_type=version.GetVersionReq
     assert isinstance(response, version.Version)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_get_version_from_dict():
-    test_get_version(request_type=dict)
 
 
 def test_get_version_empty_call():
@@ -3354,7 +3359,11 @@ async def test_get_version_flattened_error_async():
         )
 
 
-def test_delete_version(transport: str = 'grpc', request_type=version.DeleteVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  version.DeleteVersionRequest,
+  dict,
+])
+def test_delete_version(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3379,10 +3388,6 @@ def test_delete_version(transport: str = 'grpc', request_type=version.DeleteVers
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_version_from_dict():
-    test_delete_version(request_type=dict)
 
 
 def test_delete_version_empty_call():
@@ -3587,7 +3592,11 @@ async def test_delete_version_flattened_error_async():
         )
 
 
-def test_list_files(transport: str = 'grpc', request_type=file.ListFilesRequest):
+@pytest.mark.parametrize("request_type", [
+  file.ListFilesRequest,
+  dict,
+])
+def test_list_files(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3615,10 +3624,6 @@ def test_list_files(transport: str = 'grpc', request_type=file.ListFilesRequest)
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFilesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_files_from_dict():
-    test_list_files(request_type=dict)
 
 
 def test_list_files_empty_call():
@@ -3822,9 +3827,10 @@ async def test_list_files_flattened_error_async():
         )
 
 
-def test_list_files_pager():
+def test_list_files_pager(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3874,10 +3880,10 @@ def test_list_files_pager():
         assert len(results) == 6
         assert all(isinstance(i, file.File)
                    for i in results)
-
-def test_list_files_pages():
+def test_list_files_pages(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3962,7 +3968,8 @@ async def test_list_files_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, file.File)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_files_async_pages():
@@ -4008,7 +4015,11 @@ async def test_list_files_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_file(transport: str = 'grpc', request_type=file.GetFileRequest):
+@pytest.mark.parametrize("request_type", [
+  file.GetFileRequest,
+  dict,
+])
+def test_get_file(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4040,10 +4051,6 @@ def test_get_file(transport: str = 'grpc', request_type=file.GetFileRequest):
     assert response.name == 'name_value'
     assert response.size_bytes == 1089
     assert response.owner == 'owner_value'
-
-
-def test_get_file_from_dict():
-    test_get_file(request_type=dict)
 
 
 def test_get_file_empty_call():
@@ -4251,7 +4258,11 @@ async def test_get_file_flattened_error_async():
         )
 
 
-def test_list_tags(transport: str = 'grpc', request_type=tag.ListTagsRequest):
+@pytest.mark.parametrize("request_type", [
+  tag.ListTagsRequest,
+  dict,
+])
+def test_list_tags(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4279,10 +4290,6 @@ def test_list_tags(transport: str = 'grpc', request_type=tag.ListTagsRequest):
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTagsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tags_from_dict():
-    test_list_tags(request_type=dict)
 
 
 def test_list_tags_empty_call():
@@ -4486,9 +4493,10 @@ async def test_list_tags_flattened_error_async():
         )
 
 
-def test_list_tags_pager():
+def test_list_tags_pager(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4538,10 +4546,10 @@ def test_list_tags_pager():
         assert len(results) == 6
         assert all(isinstance(i, tag.Tag)
                    for i in results)
-
-def test_list_tags_pages():
+def test_list_tags_pages(transport_name: str = "grpc"):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4626,7 +4634,8 @@ async def test_list_tags_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tag.Tag)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tags_async_pages():
@@ -4672,7 +4681,11 @@ async def test_list_tags_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_tag(transport: str = 'grpc', request_type=tag.GetTagRequest):
+@pytest.mark.parametrize("request_type", [
+  tag.GetTagRequest,
+  dict,
+])
+def test_get_tag(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4702,10 +4715,6 @@ def test_get_tag(transport: str = 'grpc', request_type=tag.GetTagRequest):
     assert isinstance(response, tag.Tag)
     assert response.name == 'name_value'
     assert response.version == 'version_value'
-
-
-def test_get_tag_from_dict():
-    test_get_tag(request_type=dict)
 
 
 def test_get_tag_empty_call():
@@ -4911,7 +4920,11 @@ async def test_get_tag_flattened_error_async():
         )
 
 
-def test_create_tag(transport: str = 'grpc', request_type=gda_tag.CreateTagRequest):
+@pytest.mark.parametrize("request_type", [
+  gda_tag.CreateTagRequest,
+  dict,
+])
+def test_create_tag(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4941,10 +4954,6 @@ def test_create_tag(transport: str = 'grpc', request_type=gda_tag.CreateTagReque
     assert isinstance(response, gda_tag.Tag)
     assert response.name == 'name_value'
     assert response.version == 'version_value'
-
-
-def test_create_tag_from_dict():
-    test_create_tag(request_type=dict)
 
 
 def test_create_tag_empty_call():
@@ -5170,7 +5179,11 @@ async def test_create_tag_flattened_error_async():
         )
 
 
-def test_update_tag(transport: str = 'grpc', request_type=gda_tag.UpdateTagRequest):
+@pytest.mark.parametrize("request_type", [
+  gda_tag.UpdateTagRequest,
+  dict,
+])
+def test_update_tag(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5200,10 +5213,6 @@ def test_update_tag(transport: str = 'grpc', request_type=gda_tag.UpdateTagReque
     assert isinstance(response, gda_tag.Tag)
     assert response.name == 'name_value'
     assert response.version == 'version_value'
-
-
-def test_update_tag_from_dict():
-    test_update_tag(request_type=dict)
 
 
 def test_update_tag_empty_call():
@@ -5419,7 +5428,11 @@ async def test_update_tag_flattened_error_async():
         )
 
 
-def test_delete_tag(transport: str = 'grpc', request_type=tag.DeleteTagRequest):
+@pytest.mark.parametrize("request_type", [
+  tag.DeleteTagRequest,
+  dict,
+])
+def test_delete_tag(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5444,10 +5457,6 @@ def test_delete_tag(transport: str = 'grpc', request_type=tag.DeleteTagRequest):
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_tag_from_dict():
-    test_delete_tag(request_type=dict)
 
 
 def test_delete_tag_empty_call():
@@ -5648,7 +5657,11 @@ async def test_delete_tag_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5678,10 +5691,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -5820,7 +5829,11 @@ def test_set_iam_policy_from_dict_foreign():
         call.assert_called()
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5850,10 +5863,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -5992,7 +6001,11 @@ def test_get_iam_policy_from_dict_foreign():
         call.assert_called()
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = ArtifactRegistryClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6020,10 +6033,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -6725,7 +6734,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ArtifactRegistryTransport, '_prep_wrapped_messages') as prep:

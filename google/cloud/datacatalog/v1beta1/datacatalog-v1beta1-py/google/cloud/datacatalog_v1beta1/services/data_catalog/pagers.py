@@ -129,7 +129,6 @@ class SearchCatalogAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[search.SearchCatalogResult]:
         async def async_generator():
             async for page in self.pages:
@@ -251,7 +250,6 @@ class ListEntryGroupsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[datacatalog.EntryGroup]:
         async def async_generator():
             async for page in self.pages:
@@ -373,7 +371,6 @@ class ListEntriesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[datacatalog.Entry]:
         async def async_generator():
             async for page in self.pages:
@@ -495,7 +492,6 @@ class ListTagsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tags.Tag]:
         async def async_generator():
             async for page in self.pages:

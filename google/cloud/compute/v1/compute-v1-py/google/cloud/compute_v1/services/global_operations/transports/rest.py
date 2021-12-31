@@ -1,22 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import path_template
-from google.api_core import gapic_v1
-from requests import __version__ as requests_version
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
-import warnings
-
-try:
-    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
-except AttributeError:  # pragma: NO COVER
-    OptionalRetry = Union[retries.Retry, object]  # type: ignore
-
 # -*- coding: utf-8 -*-
 # Copyright 2020 Google LLC
 #
@@ -33,6 +14,27 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+import json  # type: ignore
+import grpc  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.api_core import rest_helpers
+from google.api_core import path_template
+from google.api_core import gapic_v1
+from requests import __version__ as requests_version
+import dataclasses
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+import warnings
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
+
+
 from google.cloud.compute_v1.types import compute
 
 from .base import GlobalOperationsTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -43,6 +45,11 @@ DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     grpc_version=None,
     rest_version=requests_version,
 )
+
+@dataclasses.dataclass
+class GlobalOperationsRestStub:
+    _session: AuthorizedSession
+    _host: str
 
 class GlobalOperationsRestTransport(GlobalOperationsTransport):
     """REST backend transport for GlobalOperations.
@@ -55,6 +62,8 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
 
     It sends JSON representations of protocol buffers over HTTP/1.1
     """
+    _STUBS: Dict[str, GlobalOperationsRestStub] = {}
+
     def __init__(self, *,
             host: str = 'compute.googleapis.com',
             credentials: ga_credentials.Credentials=None,
@@ -91,7 +100,7 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
+                Generally, you only need to set this if you are developing
                 your own client library.
             always_use_jwt_access (Optional[bool]): Whether self signed JWT should
                 be used for service account credentials.
@@ -115,193 +124,201 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
-    __aggregated_list_required_fields_default_values =  {
-        "project" : "",    }
+    class _AggregatedList(GlobalOperationsRestStub):
+        def __hash__(self):
+            return hash("AggregatedList")
 
-    @staticmethod
-    def _aggregated_list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in GlobalOperationsRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    def _aggregated_list(self,
-            request: compute.AggregatedListGlobalOperationsRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.OperationAggregatedList:
-        r"""Call the aggregated list method over HTTP.
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-        Args:
-            request (~.compute.AggregatedListGlobalOperationsRequest):
-                The request object. A request message for
+        def __call__(self,
+                request: compute.AggregatedListGlobalOperationsRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.OperationAggregatedList:
+            r"""Call the aggregated list method over HTTP.
+
+            Args:
+                request (~.compute.AggregatedListGlobalOperationsRequest):
+                    The request object. A request message for
                 GlobalOperations.AggregatedList. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.OperationAggregatedList:
+            Returns:
+                ~.compute.OperationAggregatedList:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/aggregated/operations',
             },
-        ]
+            ]
 
-        request_kwargs = compute.AggregatedListGlobalOperationsRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.AggregatedListGlobalOperationsRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.AggregatedListGlobalOperationsRequest.to_json(
-            compute.AggregatedListGlobalOperationsRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.AggregatedListGlobalOperationsRequest.to_json(
+                compute.AggregatedListGlobalOperationsRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.OperationAggregatedList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.OperationAggregatedList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Delete(GlobalOperationsRestStub):
+        def __hash__(self):
+            return hash("Delete")
 
-    __delete_required_fields_default_values =  {
-        "operation" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "operation" : "",            "project" : "",        }
 
-    @staticmethod
-    def _delete_get_unset_required_fields(message_dict):
-        return {k: v for k, v in GlobalOperationsRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _delete(self,
-            request: compute.DeleteGlobalOperationRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.DeleteGlobalOperationResponse:
-        r"""Call the delete method over HTTP.
+        def __call__(self,
+                request: compute.DeleteGlobalOperationRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.DeleteGlobalOperationResponse:
+            r"""Call the delete method over HTTP.
 
-        Args:
-            request (~.compute.DeleteGlobalOperationRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.DeleteGlobalOperationRequest):
+                    The request object. A request message for
                 GlobalOperations.Delete. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.DeleteGlobalOperationResponse:
-                A response message for
+            Returns:
+                ~.compute.DeleteGlobalOperationResponse:
+                    A response message for
                 GlobalOperations.Delete. See the method
                 description for details.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'delete',
                 'uri': '/compute/v1/projects/{project}/global/operations/{operation}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.DeleteGlobalOperationRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.DeleteGlobalOperationRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.DeleteGlobalOperationRequest.to_json(
-            compute.DeleteGlobalOperationRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.DeleteGlobalOperationRequest.to_json(
+                compute.DeleteGlobalOperationRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._delete_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.DeleteGlobalOperationResponse.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.DeleteGlobalOperationResponse.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Get(GlobalOperationsRestStub):
+        def __hash__(self):
+            return hash("Get")
 
-    __get_required_fields_default_values =  {
-        "operation" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "operation" : "",            "project" : "",        }
 
-    @staticmethod
-    def _get_get_unset_required_fields(message_dict):
-        return {k: v for k, v in GlobalOperationsRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get(self,
-            request: compute.GetGlobalOperationRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the get method over HTTP.
+        def __call__(self,
+                request: compute.GetGlobalOperationRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the get method over HTTP.
 
-        Args:
-            request (~.compute.GetGlobalOperationRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetGlobalOperationRequest):
+                    The request object. A request message for
                 GlobalOperations.Get. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -317,162 +334,166 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/operations/{operation}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetGlobalOperationRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetGlobalOperationRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetGlobalOperationRequest.to_json(
-            compute.GetGlobalOperationRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetGlobalOperationRequest.to_json(
+                compute.GetGlobalOperationRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _List(GlobalOperationsRestStub):
+        def __hash__(self):
+            return hash("List")
 
-    __list_required_fields_default_values =  {
-        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    @staticmethod
-    def _list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in GlobalOperationsRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _list(self,
-            request: compute.ListGlobalOperationsRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.OperationList:
-        r"""Call the list method over HTTP.
+        def __call__(self,
+                request: compute.ListGlobalOperationsRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.OperationList:
+            r"""Call the list method over HTTP.
 
-        Args:
-            request (~.compute.ListGlobalOperationsRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.ListGlobalOperationsRequest):
+                    The request object. A request message for
                 GlobalOperations.List. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.OperationList:
-                Contains a list of Operation
+            Returns:
+                ~.compute.OperationList:
+                    Contains a list of Operation
                 resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/operations',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListGlobalOperationsRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListGlobalOperationsRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListGlobalOperationsRequest.to_json(
-            compute.ListGlobalOperationsRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListGlobalOperationsRequest.to_json(
+                compute.ListGlobalOperationsRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.OperationList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.OperationList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Wait(GlobalOperationsRestStub):
+        def __hash__(self):
+            return hash("Wait")
 
-    __wait_required_fields_default_values =  {
-        "operation" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "operation" : "",            "project" : "",        }
 
-    @staticmethod
-    def _wait_get_unset_required_fields(message_dict):
-        return {k: v for k, v in GlobalOperationsRestTransport.__wait_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _wait(self,
-            request: compute.WaitGlobalOperationRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the wait method over HTTP.
+        def __call__(self,
+                request: compute.WaitGlobalOperationRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the wait method over HTTP.
 
-        Args:
-            request (~.compute.WaitGlobalOperationRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.WaitGlobalOperationRequest):
+                    The request object. A request message for
                 GlobalOperations.Wait. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -488,78 +509,101 @@ class GlobalOperationsRestTransport(GlobalOperationsTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/operations/{operation}/wait',
             },
-        ]
+            ]
 
-        request_kwargs = compute.WaitGlobalOperationRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.WaitGlobalOperationRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.WaitGlobalOperationRequest.to_json(
-            compute.WaitGlobalOperationRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.WaitGlobalOperationRequest.to_json(
+                compute.WaitGlobalOperationRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._wait_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
-
-    @ property
+    @property
     def aggregated_list(self) -> Callable[
             [compute.AggregatedListGlobalOperationsRequest],
             compute.OperationAggregatedList]:
-        return self._aggregated_list
-    @ property
+        stub = self._STUBS.get("aggregated_list")
+        if not stub:
+            stub = self._STUBS["aggregated_list"] = self._AggregatedList(self._session, self._host)
+
+        return stub
+
+    @property
     def delete(self) -> Callable[
             [compute.DeleteGlobalOperationRequest],
             compute.DeleteGlobalOperationResponse]:
-        return self._delete
-    @ property
+        stub = self._STUBS.get("delete")
+        if not stub:
+            stub = self._STUBS["delete"] = self._Delete(self._session, self._host)
+
+        return stub
+
+    @property
     def get(self) -> Callable[
             [compute.GetGlobalOperationRequest],
             compute.Operation]:
-        return self._get
-    @ property
+        stub = self._STUBS.get("get")
+        if not stub:
+            stub = self._STUBS["get"] = self._Get(self._session, self._host)
+
+        return stub
+
+    @property
     def list(self) -> Callable[
             [compute.ListGlobalOperationsRequest],
             compute.OperationList]:
-        return self._list
-    @ property
+        stub = self._STUBS.get("list")
+        if not stub:
+            stub = self._STUBS["list"] = self._List(self._session, self._host)
+
+        return stub
+
+    @property
     def wait(self) -> Callable[
             [compute.WaitGlobalOperationRequest],
             compute.Operation]:
-        return self._wait
+        stub = self._STUBS.get("wait")
+        if not stub:
+            stub = self._STUBS["wait"] = self._Wait(self._session, self._host)
+
+        return stub
+
     def close(self):
         self._session.close()
 

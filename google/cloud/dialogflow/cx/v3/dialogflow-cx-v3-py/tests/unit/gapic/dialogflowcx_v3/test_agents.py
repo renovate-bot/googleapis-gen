@@ -211,18 +211,18 @@ def test_agents_client_client_options(client_class, transport_class, transport_n
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_agents_client_mtls_env_auto(client_class, transport_class, transport_na
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_agents_client_client_options_scopes(client_class, transport_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_agents_client_client_options_credentials_file(client_class, transport_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_agents_client_client_options_credentials_file(client_class, transport_c
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_agents_client_client_options_from_dict():
     with mock.patch('google.cloud.dialogflowcx_v3.services.agents.transports.AgentsGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_agents_client_client_options_from_dict():
         )
 
 
-def test_list_agents(transport: str = 'grpc', request_type=agent.ListAgentsRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.ListAgentsRequest,
+  dict,
+])
+def test_list_agents(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_list_agents(transport: str = 'grpc', request_type=agent.ListAgentsReque
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAgentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_agents_from_dict():
-    test_list_agents(request_type=dict)
 
 
 def test_list_agents_empty_call():
@@ -617,9 +616,10 @@ async def test_list_agents_flattened_error_async():
         )
 
 
-def test_list_agents_pager():
+def test_list_agents_pager(transport_name: str = "grpc"):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -669,10 +669,10 @@ def test_list_agents_pager():
         assert len(results) == 6
         assert all(isinstance(i, agent.Agent)
                    for i in results)
-
-def test_list_agents_pages():
+def test_list_agents_pages(transport_name: str = "grpc"):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -757,7 +757,8 @@ async def test_list_agents_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, agent.Agent)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_agents_async_pages():
@@ -803,7 +804,11 @@ async def test_list_agents_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_agent(transport: str = 'grpc', request_type=agent.GetAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.GetAgentRequest,
+  dict,
+])
+def test_get_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -851,10 +856,6 @@ def test_get_agent(transport: str = 'grpc', request_type=agent.GetAgentRequest):
     assert response.security_settings == 'security_settings_value'
     assert response.enable_stackdriver_logging is True
     assert response.enable_spell_correction is True
-
-
-def test_get_agent_from_dict():
-    test_get_agent(request_type=dict)
 
 
 def test_get_agent_empty_call():
@@ -1078,7 +1079,11 @@ async def test_get_agent_flattened_error_async():
         )
 
 
-def test_create_agent(transport: str = 'grpc', request_type=gcdc_agent.CreateAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcdc_agent.CreateAgentRequest,
+  dict,
+])
+def test_create_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1126,10 +1131,6 @@ def test_create_agent(transport: str = 'grpc', request_type=gcdc_agent.CreateAge
     assert response.security_settings == 'security_settings_value'
     assert response.enable_stackdriver_logging is True
     assert response.enable_spell_correction is True
-
-
-def test_create_agent_from_dict():
-    test_create_agent(request_type=dict)
 
 
 def test_create_agent_empty_call():
@@ -1363,7 +1364,11 @@ async def test_create_agent_flattened_error_async():
         )
 
 
-def test_update_agent(transport: str = 'grpc', request_type=gcdc_agent.UpdateAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcdc_agent.UpdateAgentRequest,
+  dict,
+])
+def test_update_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1411,10 +1416,6 @@ def test_update_agent(transport: str = 'grpc', request_type=gcdc_agent.UpdateAge
     assert response.security_settings == 'security_settings_value'
     assert response.enable_stackdriver_logging is True
     assert response.enable_spell_correction is True
-
-
-def test_update_agent_from_dict():
-    test_update_agent(request_type=dict)
 
 
 def test_update_agent_empty_call():
@@ -1648,7 +1649,11 @@ async def test_update_agent_flattened_error_async():
         )
 
 
-def test_delete_agent(transport: str = 'grpc', request_type=agent.DeleteAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.DeleteAgentRequest,
+  dict,
+])
+def test_delete_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1673,10 +1678,6 @@ def test_delete_agent(transport: str = 'grpc', request_type=agent.DeleteAgentReq
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_agent_from_dict():
-    test_delete_agent(request_type=dict)
 
 
 def test_delete_agent_empty_call():
@@ -1877,7 +1878,11 @@ async def test_delete_agent_flattened_error_async():
         )
 
 
-def test_export_agent(transport: str = 'grpc', request_type=agent.ExportAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.ExportAgentRequest,
+  dict,
+])
+def test_export_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1902,10 +1907,6 @@ def test_export_agent(transport: str = 'grpc', request_type=agent.ExportAgentReq
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_export_agent_from_dict():
-    test_export_agent(request_type=dict)
 
 
 def test_export_agent_empty_call():
@@ -2024,7 +2025,11 @@ async def test_export_agent_field_headers_async():
     ) in kw['metadata']
 
 
-def test_restore_agent(transport: str = 'grpc', request_type=agent.RestoreAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.RestoreAgentRequest,
+  dict,
+])
+def test_restore_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2049,10 +2054,6 @@ def test_restore_agent(transport: str = 'grpc', request_type=agent.RestoreAgentR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_restore_agent_from_dict():
-    test_restore_agent(request_type=dict)
 
 
 def test_restore_agent_empty_call():
@@ -2171,7 +2172,11 @@ async def test_restore_agent_field_headers_async():
     ) in kw['metadata']
 
 
-def test_validate_agent(transport: str = 'grpc', request_type=agent.ValidateAgentRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.ValidateAgentRequest,
+  dict,
+])
+def test_validate_agent(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2199,10 +2204,6 @@ def test_validate_agent(transport: str = 'grpc', request_type=agent.ValidateAgen
     # Establish that the response is the type that we expect.
     assert isinstance(response, agent.AgentValidationResult)
     assert response.name == 'name_value'
-
-
-def test_validate_agent_from_dict():
-    test_validate_agent(request_type=dict)
 
 
 def test_validate_agent_empty_call():
@@ -2322,7 +2323,11 @@ async def test_validate_agent_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_agent_validation_result(transport: str = 'grpc', request_type=agent.GetAgentValidationResultRequest):
+@pytest.mark.parametrize("request_type", [
+  agent.GetAgentValidationResultRequest,
+  dict,
+])
+def test_get_agent_validation_result(request_type, transport: str = 'grpc'):
     client = AgentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2350,10 +2355,6 @@ def test_get_agent_validation_result(transport: str = 'grpc', request_type=agent
     # Establish that the response is the type that we expect.
     assert isinstance(response, agent.AgentValidationResult)
     assert response.name == 'name_value'
-
-
-def test_get_agent_validation_result_from_dict():
-    test_get_agent_validation_result(request_type=dict)
 
 
 def test_get_agent_validation_result_empty_call():
@@ -3198,7 +3199,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AgentsTransport, '_prep_wrapped_messages') as prep:

@@ -211,18 +211,18 @@ def test_web_security_scanner_client_client_options(client_class, transport_clas
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_web_security_scanner_client_mtls_env_auto(client_class, transport_class
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_web_security_scanner_client_client_options_scopes(client_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_web_security_scanner_client_client_options_credentials_file(client_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_web_security_scanner_client_client_options_credentials_file(client_clas
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_web_security_scanner_client_client_options_from_dict():
     with mock.patch('google.cloud.websecurityscanner_v1alpha.services.web_security_scanner.transports.WebSecurityScannerGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_web_security_scanner_client_client_options_from_dict():
         )
 
 
-def test_create_scan_config(transport: str = 'grpc', request_type=web_security_scanner.CreateScanConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.CreateScanConfigRequest,
+  dict,
+])
+def test_create_scan_config(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -422,10 +425,6 @@ def test_create_scan_config(transport: str = 'grpc', request_type=web_security_s
     assert response.user_agent == gcw_scan_config.ScanConfig.UserAgent.CHROME_LINUX
     assert response.blacklist_patterns == ['blacklist_patterns_value']
     assert response.target_platforms == [gcw_scan_config.ScanConfig.TargetPlatform.APP_ENGINE]
-
-
-def test_create_scan_config_from_dict():
-    test_create_scan_config(request_type=dict)
 
 
 def test_create_scan_config_empty_call():
@@ -651,7 +650,11 @@ async def test_create_scan_config_flattened_error_async():
         )
 
 
-def test_delete_scan_config(transport: str = 'grpc', request_type=web_security_scanner.DeleteScanConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.DeleteScanConfigRequest,
+  dict,
+])
+def test_delete_scan_config(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -676,10 +679,6 @@ def test_delete_scan_config(transport: str = 'grpc', request_type=web_security_s
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_scan_config_from_dict():
-    test_delete_scan_config(request_type=dict)
 
 
 def test_delete_scan_config_empty_call():
@@ -880,7 +879,11 @@ async def test_delete_scan_config_flattened_error_async():
         )
 
 
-def test_get_scan_config(transport: str = 'grpc', request_type=web_security_scanner.GetScanConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.GetScanConfigRequest,
+  dict,
+])
+def test_get_scan_config(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -920,10 +923,6 @@ def test_get_scan_config(transport: str = 'grpc', request_type=web_security_scan
     assert response.user_agent == scan_config.ScanConfig.UserAgent.CHROME_LINUX
     assert response.blacklist_patterns == ['blacklist_patterns_value']
     assert response.target_platforms == [scan_config.ScanConfig.TargetPlatform.APP_ENGINE]
-
-
-def test_get_scan_config_from_dict():
-    test_get_scan_config(request_type=dict)
 
 
 def test_get_scan_config_empty_call():
@@ -1139,7 +1138,11 @@ async def test_get_scan_config_flattened_error_async():
         )
 
 
-def test_list_scan_configs(transport: str = 'grpc', request_type=web_security_scanner.ListScanConfigsRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.ListScanConfigsRequest,
+  dict,
+])
+def test_list_scan_configs(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1167,10 +1170,6 @@ def test_list_scan_configs(transport: str = 'grpc', request_type=web_security_sc
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListScanConfigsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_scan_configs_from_dict():
-    test_list_scan_configs(request_type=dict)
 
 
 def test_list_scan_configs_empty_call():
@@ -1374,9 +1373,10 @@ async def test_list_scan_configs_flattened_error_async():
         )
 
 
-def test_list_scan_configs_pager():
+def test_list_scan_configs_pager(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1426,10 +1426,10 @@ def test_list_scan_configs_pager():
         assert len(results) == 6
         assert all(isinstance(i, scan_config.ScanConfig)
                    for i in results)
-
-def test_list_scan_configs_pages():
+def test_list_scan_configs_pages(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1514,7 +1514,8 @@ async def test_list_scan_configs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, scan_config.ScanConfig)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_scan_configs_async_pages():
@@ -1560,7 +1561,11 @@ async def test_list_scan_configs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_scan_config(transport: str = 'grpc', request_type=web_security_scanner.UpdateScanConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.UpdateScanConfigRequest,
+  dict,
+])
+def test_update_scan_config(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1600,10 +1605,6 @@ def test_update_scan_config(transport: str = 'grpc', request_type=web_security_s
     assert response.user_agent == gcw_scan_config.ScanConfig.UserAgent.CHROME_LINUX
     assert response.blacklist_patterns == ['blacklist_patterns_value']
     assert response.target_platforms == [gcw_scan_config.ScanConfig.TargetPlatform.APP_ENGINE]
-
-
-def test_update_scan_config_from_dict():
-    test_update_scan_config(request_type=dict)
 
 
 def test_update_scan_config_empty_call():
@@ -1829,7 +1830,11 @@ async def test_update_scan_config_flattened_error_async():
         )
 
 
-def test_start_scan_run(transport: str = 'grpc', request_type=web_security_scanner.StartScanRunRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.StartScanRunRequest,
+  dict,
+])
+def test_start_scan_run(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1869,10 +1874,6 @@ def test_start_scan_run(transport: str = 'grpc', request_type=web_security_scann
     assert response.urls_tested_count == 1846
     assert response.has_vulnerabilities is True
     assert response.progress_percent == 1733
-
-
-def test_start_scan_run_from_dict():
-    test_start_scan_run(request_type=dict)
 
 
 def test_start_scan_run_empty_call():
@@ -2088,7 +2089,11 @@ async def test_start_scan_run_flattened_error_async():
         )
 
 
-def test_get_scan_run(transport: str = 'grpc', request_type=web_security_scanner.GetScanRunRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.GetScanRunRequest,
+  dict,
+])
+def test_get_scan_run(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2128,10 +2133,6 @@ def test_get_scan_run(transport: str = 'grpc', request_type=web_security_scanner
     assert response.urls_tested_count == 1846
     assert response.has_vulnerabilities is True
     assert response.progress_percent == 1733
-
-
-def test_get_scan_run_from_dict():
-    test_get_scan_run(request_type=dict)
 
 
 def test_get_scan_run_empty_call():
@@ -2347,7 +2348,11 @@ async def test_get_scan_run_flattened_error_async():
         )
 
 
-def test_list_scan_runs(transport: str = 'grpc', request_type=web_security_scanner.ListScanRunsRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.ListScanRunsRequest,
+  dict,
+])
+def test_list_scan_runs(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2375,10 +2380,6 @@ def test_list_scan_runs(transport: str = 'grpc', request_type=web_security_scann
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListScanRunsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_scan_runs_from_dict():
-    test_list_scan_runs(request_type=dict)
 
 
 def test_list_scan_runs_empty_call():
@@ -2582,9 +2583,10 @@ async def test_list_scan_runs_flattened_error_async():
         )
 
 
-def test_list_scan_runs_pager():
+def test_list_scan_runs_pager(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2634,10 +2636,10 @@ def test_list_scan_runs_pager():
         assert len(results) == 6
         assert all(isinstance(i, scan_run.ScanRun)
                    for i in results)
-
-def test_list_scan_runs_pages():
+def test_list_scan_runs_pages(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2722,7 +2724,8 @@ async def test_list_scan_runs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, scan_run.ScanRun)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_scan_runs_async_pages():
@@ -2768,7 +2771,11 @@ async def test_list_scan_runs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_stop_scan_run(transport: str = 'grpc', request_type=web_security_scanner.StopScanRunRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.StopScanRunRequest,
+  dict,
+])
+def test_stop_scan_run(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2808,10 +2815,6 @@ def test_stop_scan_run(transport: str = 'grpc', request_type=web_security_scanne
     assert response.urls_tested_count == 1846
     assert response.has_vulnerabilities is True
     assert response.progress_percent == 1733
-
-
-def test_stop_scan_run_from_dict():
-    test_stop_scan_run(request_type=dict)
 
 
 def test_stop_scan_run_empty_call():
@@ -3027,7 +3030,11 @@ async def test_stop_scan_run_flattened_error_async():
         )
 
 
-def test_list_crawled_urls(transport: str = 'grpc', request_type=web_security_scanner.ListCrawledUrlsRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.ListCrawledUrlsRequest,
+  dict,
+])
+def test_list_crawled_urls(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3055,10 +3062,6 @@ def test_list_crawled_urls(transport: str = 'grpc', request_type=web_security_sc
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCrawledUrlsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_crawled_urls_from_dict():
-    test_list_crawled_urls(request_type=dict)
 
 
 def test_list_crawled_urls_empty_call():
@@ -3262,9 +3265,10 @@ async def test_list_crawled_urls_flattened_error_async():
         )
 
 
-def test_list_crawled_urls_pager():
+def test_list_crawled_urls_pager(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3314,10 +3318,10 @@ def test_list_crawled_urls_pager():
         assert len(results) == 6
         assert all(isinstance(i, crawled_url.CrawledUrl)
                    for i in results)
-
-def test_list_crawled_urls_pages():
+def test_list_crawled_urls_pages(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3402,7 +3406,8 @@ async def test_list_crawled_urls_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, crawled_url.CrawledUrl)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_crawled_urls_async_pages():
@@ -3448,7 +3453,11 @@ async def test_list_crawled_urls_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_finding(transport: str = 'grpc', request_type=web_security_scanner.GetFindingRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.GetFindingRequest,
+  dict,
+])
+def test_get_finding(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3494,10 +3503,6 @@ def test_get_finding(transport: str = 'grpc', request_type=web_security_scanner.
     assert response.frame_url == 'frame_url_value'
     assert response.final_url == 'final_url_value'
     assert response.tracking_id == 'tracking_id_value'
-
-
-def test_get_finding_from_dict():
-    test_get_finding(request_type=dict)
 
 
 def test_get_finding_empty_call():
@@ -3719,7 +3724,11 @@ async def test_get_finding_flattened_error_async():
         )
 
 
-def test_list_findings(transport: str = 'grpc', request_type=web_security_scanner.ListFindingsRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.ListFindingsRequest,
+  dict,
+])
+def test_list_findings(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3747,10 +3756,6 @@ def test_list_findings(transport: str = 'grpc', request_type=web_security_scanne
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFindingsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_findings_from_dict():
-    test_list_findings(request_type=dict)
 
 
 def test_list_findings_empty_call():
@@ -3964,9 +3969,10 @@ async def test_list_findings_flattened_error_async():
         )
 
 
-def test_list_findings_pager():
+def test_list_findings_pager(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4016,10 +4022,10 @@ def test_list_findings_pager():
         assert len(results) == 6
         assert all(isinstance(i, finding.Finding)
                    for i in results)
-
-def test_list_findings_pages():
+def test_list_findings_pages(transport_name: str = "grpc"):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4104,7 +4110,8 @@ async def test_list_findings_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, finding.Finding)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_findings_async_pages():
@@ -4150,7 +4157,11 @@ async def test_list_findings_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_list_finding_type_stats(transport: str = 'grpc', request_type=web_security_scanner.ListFindingTypeStatsRequest):
+@pytest.mark.parametrize("request_type", [
+  web_security_scanner.ListFindingTypeStatsRequest,
+  dict,
+])
+def test_list_finding_type_stats(request_type, transport: str = 'grpc'):
     client = WebSecurityScannerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4176,10 +4187,6 @@ def test_list_finding_type_stats(transport: str = 'grpc', request_type=web_secur
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, web_security_scanner.ListFindingTypeStatsResponse)
-
-
-def test_list_finding_type_stats_from_dict():
-    test_list_finding_type_stats(request_type=dict)
 
 
 def test_list_finding_type_stats_empty_call():
@@ -4915,7 +4922,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.WebSecurityScannerTransport, '_prep_wrapped_messages') as prep:

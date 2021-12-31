@@ -209,18 +209,18 @@ def test_game_server_configs_service_client_client_options(client_class, transpo
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -251,7 +251,7 @@ def test_game_server_configs_service_client_mtls_env_auto(client_class, transpor
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -326,7 +326,7 @@ def test_game_server_configs_service_client_client_options_scopes(client_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -349,7 +349,7 @@ def test_game_server_configs_service_client_client_options_credentials_file(clie
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -360,7 +360,6 @@ def test_game_server_configs_service_client_client_options_credentials_file(clie
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_game_server_configs_service_client_client_options_from_dict():
     with mock.patch('google.cloud.gaming_v1beta.services.game_server_configs_service.transports.GameServerConfigsServiceGrpcTransport.__init__') as grpc_transport:
@@ -380,7 +379,11 @@ def test_game_server_configs_service_client_client_options_from_dict():
         )
 
 
-def test_list_game_server_configs(transport: str = 'grpc', request_type=game_server_configs.ListGameServerConfigsRequest):
+@pytest.mark.parametrize("request_type", [
+  game_server_configs.ListGameServerConfigsRequest,
+  dict,
+])
+def test_list_game_server_configs(request_type, transport: str = 'grpc'):
     client = GameServerConfigsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_list_game_server_configs(transport: str = 'grpc', request_type=game_ser
     assert isinstance(response, pagers.ListGameServerConfigsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_game_server_configs_from_dict():
-    test_list_game_server_configs(request_type=dict)
 
 
 def test_list_game_server_configs_empty_call():
@@ -619,9 +618,10 @@ async def test_list_game_server_configs_flattened_error_async():
         )
 
 
-def test_list_game_server_configs_pager():
+def test_list_game_server_configs_pager(transport_name: str = "grpc"):
     client = GameServerConfigsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -671,10 +671,10 @@ def test_list_game_server_configs_pager():
         assert len(results) == 6
         assert all(isinstance(i, game_server_configs.GameServerConfig)
                    for i in results)
-
-def test_list_game_server_configs_pages():
+def test_list_game_server_configs_pages(transport_name: str = "grpc"):
     client = GameServerConfigsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -759,7 +759,8 @@ async def test_list_game_server_configs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, game_server_configs.GameServerConfig)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_game_server_configs_async_pages():
@@ -805,7 +806,11 @@ async def test_list_game_server_configs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_game_server_config(transport: str = 'grpc', request_type=game_server_configs.GetGameServerConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  game_server_configs.GetGameServerConfigRequest,
+  dict,
+])
+def test_get_game_server_config(request_type, transport: str = 'grpc'):
     client = GameServerConfigsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -835,10 +840,6 @@ def test_get_game_server_config(transport: str = 'grpc', request_type=game_serve
     assert isinstance(response, game_server_configs.GameServerConfig)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_get_game_server_config_from_dict():
-    test_get_game_server_config(request_type=dict)
 
 
 def test_get_game_server_config_empty_call():
@@ -1044,7 +1045,11 @@ async def test_get_game_server_config_flattened_error_async():
         )
 
 
-def test_create_game_server_config(transport: str = 'grpc', request_type=game_server_configs.CreateGameServerConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  game_server_configs.CreateGameServerConfigRequest,
+  dict,
+])
+def test_create_game_server_config(request_type, transport: str = 'grpc'):
     client = GameServerConfigsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1069,10 +1074,6 @@ def test_create_game_server_config(transport: str = 'grpc', request_type=game_se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_game_server_config_from_dict():
-    test_create_game_server_config(request_type=dict)
 
 
 def test_create_game_server_config_empty_call():
@@ -1287,7 +1288,11 @@ async def test_create_game_server_config_flattened_error_async():
         )
 
 
-def test_delete_game_server_config(transport: str = 'grpc', request_type=game_server_configs.DeleteGameServerConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  game_server_configs.DeleteGameServerConfigRequest,
+  dict,
+])
+def test_delete_game_server_config(request_type, transport: str = 'grpc'):
     client = GameServerConfigsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1312,10 +1317,6 @@ def test_delete_game_server_config(transport: str = 'grpc', request_type=game_se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_game_server_config_from_dict():
-    test_delete_game_server_config(request_type=dict)
 
 
 def test_delete_game_server_config_empty_call():
@@ -2044,7 +2045,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.GameServerConfigsServiceTransport, '_prep_wrapped_messages') as prep:

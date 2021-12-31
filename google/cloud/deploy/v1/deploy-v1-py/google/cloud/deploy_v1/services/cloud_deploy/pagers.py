@@ -127,7 +127,6 @@ class ListDeliveryPipelinesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[cloud_deploy.DeliveryPipeline]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListTargetsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[cloud_deploy.Target]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListReleasesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[cloud_deploy.Release]:
         async def async_generator():
             async for page in self.pages:
@@ -493,7 +490,6 @@ class ListRolloutsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[cloud_deploy.Rollout]:
         async def async_generator():
             async for page in self.pages:

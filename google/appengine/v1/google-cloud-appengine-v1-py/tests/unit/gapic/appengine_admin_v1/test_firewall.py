@@ -204,18 +204,18 @@ def test_firewall_client_client_options(client_class, transport_class, transport
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -246,7 +246,7 @@ def test_firewall_client_mtls_env_auto(client_class, transport_class, transport_
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -321,7 +321,7 @@ def test_firewall_client_client_options_scopes(client_class, transport_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -344,7 +344,7 @@ def test_firewall_client_client_options_credentials_file(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -355,7 +355,6 @@ def test_firewall_client_client_options_credentials_file(client_class, transport
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_firewall_client_client_options_from_dict():
     with mock.patch('google.cloud.appengine_admin_v1.services.firewall.transports.FirewallGrpcTransport.__init__') as grpc_transport:
@@ -375,7 +374,11 @@ def test_firewall_client_client_options_from_dict():
         )
 
 
-def test_list_ingress_rules(transport: str = 'grpc', request_type=appengine.ListIngressRulesRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.ListIngressRulesRequest,
+  dict,
+])
+def test_list_ingress_rules(request_type, transport: str = 'grpc'):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -403,10 +406,6 @@ def test_list_ingress_rules(transport: str = 'grpc', request_type=appengine.List
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListIngressRulesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_ingress_rules_from_dict():
-    test_list_ingress_rules(request_type=dict)
 
 
 def test_list_ingress_rules_empty_call():
@@ -526,9 +525,10 @@ async def test_list_ingress_rules_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_ingress_rules_pager():
+def test_list_ingress_rules_pager(transport_name: str = "grpc"):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -578,10 +578,10 @@ def test_list_ingress_rules_pager():
         assert len(results) == 6
         assert all(isinstance(i, firewall.FirewallRule)
                    for i in results)
-
-def test_list_ingress_rules_pages():
+def test_list_ingress_rules_pages(transport_name: str = "grpc"):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -666,7 +666,8 @@ async def test_list_ingress_rules_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, firewall.FirewallRule)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_ingress_rules_async_pages():
@@ -712,7 +713,11 @@ async def test_list_ingress_rules_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_batch_update_ingress_rules(transport: str = 'grpc', request_type=appengine.BatchUpdateIngressRulesRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.BatchUpdateIngressRulesRequest,
+  dict,
+])
+def test_batch_update_ingress_rules(request_type, transport: str = 'grpc'):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -738,10 +743,6 @@ def test_batch_update_ingress_rules(transport: str = 'grpc', request_type=appeng
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, appengine.BatchUpdateIngressRulesResponse)
-
-
-def test_batch_update_ingress_rules_from_dict():
-    test_batch_update_ingress_rules(request_type=dict)
 
 
 def test_batch_update_ingress_rules_empty_call():
@@ -859,7 +860,11 @@ async def test_batch_update_ingress_rules_field_headers_async():
     ) in kw['metadata']
 
 
-def test_create_ingress_rule(transport: str = 'grpc', request_type=appengine.CreateIngressRuleRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.CreateIngressRuleRequest,
+  dict,
+])
+def test_create_ingress_rule(request_type, transport: str = 'grpc'):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -893,10 +898,6 @@ def test_create_ingress_rule(transport: str = 'grpc', request_type=appengine.Cre
     assert response.action == firewall.FirewallRule.Action.ALLOW
     assert response.source_range == 'source_range_value'
     assert response.description == 'description_value'
-
-
-def test_create_ingress_rule_from_dict():
-    test_create_ingress_rule(request_type=dict)
 
 
 def test_create_ingress_rule_empty_call():
@@ -1022,7 +1023,11 @@ async def test_create_ingress_rule_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_ingress_rule(transport: str = 'grpc', request_type=appengine.GetIngressRuleRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.GetIngressRuleRequest,
+  dict,
+])
+def test_get_ingress_rule(request_type, transport: str = 'grpc'):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1056,10 +1061,6 @@ def test_get_ingress_rule(transport: str = 'grpc', request_type=appengine.GetIng
     assert response.action == firewall.FirewallRule.Action.ALLOW
     assert response.source_range == 'source_range_value'
     assert response.description == 'description_value'
-
-
-def test_get_ingress_rule_from_dict():
-    test_get_ingress_rule(request_type=dict)
 
 
 def test_get_ingress_rule_empty_call():
@@ -1185,7 +1186,11 @@ async def test_get_ingress_rule_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_ingress_rule(transport: str = 'grpc', request_type=appengine.UpdateIngressRuleRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.UpdateIngressRuleRequest,
+  dict,
+])
+def test_update_ingress_rule(request_type, transport: str = 'grpc'):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1219,10 +1224,6 @@ def test_update_ingress_rule(transport: str = 'grpc', request_type=appengine.Upd
     assert response.action == firewall.FirewallRule.Action.ALLOW
     assert response.source_range == 'source_range_value'
     assert response.description == 'description_value'
-
-
-def test_update_ingress_rule_from_dict():
-    test_update_ingress_rule(request_type=dict)
 
 
 def test_update_ingress_rule_empty_call():
@@ -1348,7 +1349,11 @@ async def test_update_ingress_rule_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_ingress_rule(transport: str = 'grpc', request_type=appengine.DeleteIngressRuleRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.DeleteIngressRuleRequest,
+  dict,
+])
+def test_delete_ingress_rule(request_type, transport: str = 'grpc'):
     client = FirewallClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1373,10 +1378,6 @@ def test_delete_ingress_rule(transport: str = 'grpc', request_type=appengine.Del
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_ingress_rule_from_dict():
-    test_delete_ingress_rule(request_type=dict)
 
 
 def test_delete_ingress_rule_empty_call():
@@ -1963,7 +1964,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.FirewallTransport, '_prep_wrapped_messages') as prep:

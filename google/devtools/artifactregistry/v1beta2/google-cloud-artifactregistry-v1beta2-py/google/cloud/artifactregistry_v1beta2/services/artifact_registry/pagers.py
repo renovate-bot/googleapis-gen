@@ -131,7 +131,6 @@ class ListRepositoriesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[repository.Repository]:
         async def async_generator():
             async for page in self.pages:
@@ -253,7 +252,6 @@ class ListPackagesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[package.Package]:
         async def async_generator():
             async for page in self.pages:
@@ -375,7 +373,6 @@ class ListVersionsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[version.Version]:
         async def async_generator():
             async for page in self.pages:
@@ -497,7 +494,6 @@ class ListFilesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[file.File]:
         async def async_generator():
             async for page in self.pages:
@@ -619,7 +615,6 @@ class ListTagsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tag.Tag]:
         async def async_generator():
             async for page in self.pages:

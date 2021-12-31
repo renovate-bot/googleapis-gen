@@ -127,7 +127,6 @@ class ListInstanceConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[spanner_instance_admin.InstanceConfig]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListInstancesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[spanner_instance_admin.Instance]:
         async def async_generator():
             async for page in self.pages:

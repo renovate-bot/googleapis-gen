@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import AgeRangeViewServiceTransport
 from .grpc import AgeRangeViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[AgeRangeViewServiceTransport]]
 _transport_registry['grpc'] = AgeRangeViewServiceGrpcTransport
-
 
 __all__ = (
     'AgeRangeViewServiceTransport',

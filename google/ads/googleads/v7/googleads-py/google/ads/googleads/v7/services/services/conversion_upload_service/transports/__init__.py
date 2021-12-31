@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import ConversionUploadServiceTransport
 from .grpc import ConversionUploadServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[ConversionUploadServiceTransport]]
 _transport_registry['grpc'] = ConversionUploadServiceGrpcTransport
-
 
 __all__ = (
     'ConversionUploadServiceTransport',

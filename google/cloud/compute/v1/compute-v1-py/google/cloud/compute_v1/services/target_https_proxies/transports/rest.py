@@ -1,22 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import path_template
-from google.api_core import gapic_v1
-from requests import __version__ as requests_version
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
-import warnings
-
-try:
-    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
-except AttributeError:  # pragma: NO COVER
-    OptionalRetry = Union[retries.Retry, object]  # type: ignore
-
 # -*- coding: utf-8 -*-
 # Copyright 2020 Google LLC
 #
@@ -33,6 +14,27 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+import json  # type: ignore
+import grpc  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.api_core import rest_helpers
+from google.api_core import path_template
+from google.api_core import gapic_v1
+from requests import __version__ as requests_version
+import dataclasses
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+import warnings
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
+
+
 from google.cloud.compute_v1.types import compute
 
 from .base import TargetHttpsProxiesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -43,6 +45,11 @@ DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     grpc_version=None,
     rest_version=requests_version,
 )
+
+@dataclasses.dataclass
+class TargetHttpsProxiesRestStub:
+    _session: AuthorizedSession
+    _host: str
 
 class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
     """REST backend transport for TargetHttpsProxies.
@@ -55,6 +62,8 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
 
     It sends JSON representations of protocol buffers over HTTP/1.1
     """
+    _STUBS: Dict[str, TargetHttpsProxiesRestStub] = {}
+
     def __init__(self, *,
             host: str = 'compute.googleapis.com',
             credentials: ga_credentials.Credentials=None,
@@ -91,7 +100,7 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
+                Generally, you only need to set this if you are developing
                 your own client library.
             always_use_jwt_access (Optional[bool]): Whether self signed JWT should
                 be used for service account credentials.
@@ -115,113 +124,119 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
-    __aggregated_list_required_fields_default_values =  {
-        "project" : "",    }
+    class _AggregatedList(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("AggregatedList")
 
-    @staticmethod
-    def _aggregated_list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    def _aggregated_list(self,
-            request: compute.AggregatedListTargetHttpsProxiesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.TargetHttpsProxyAggregatedList:
-        r"""Call the aggregated list method over HTTP.
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-        Args:
-            request (~.compute.AggregatedListTargetHttpsProxiesRequest):
-                The request object. A request message for
+        def __call__(self,
+                request: compute.AggregatedListTargetHttpsProxiesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.TargetHttpsProxyAggregatedList:
+            r"""Call the aggregated list method over HTTP.
+
+            Args:
+                request (~.compute.AggregatedListTargetHttpsProxiesRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.AggregatedList. See
                 the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.TargetHttpsProxyAggregatedList:
+            Returns:
+                ~.compute.TargetHttpsProxyAggregatedList:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/aggregated/targetHttpsProxies',
             },
-        ]
+            ]
 
-        request_kwargs = compute.AggregatedListTargetHttpsProxiesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.AggregatedListTargetHttpsProxiesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.AggregatedListTargetHttpsProxiesRequest.to_json(
-            compute.AggregatedListTargetHttpsProxiesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.AggregatedListTargetHttpsProxiesRequest.to_json(
+                compute.AggregatedListTargetHttpsProxiesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.TargetHttpsProxyAggregatedList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.TargetHttpsProxyAggregatedList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Delete(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("Delete")
 
-    __delete_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _delete_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _delete(self,
-            request: compute.DeleteTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the delete method over HTTP.
+        def __call__(self,
+                request: compute.DeleteTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the delete method over HTTP.
 
-        Args:
-            request (~.compute.DeleteTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.DeleteTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.Delete. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -237,83 +252,85 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'delete',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies/{target_https_proxy}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.DeleteTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.DeleteTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.DeleteTargetHttpsProxyRequest.to_json(
-            compute.DeleteTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.DeleteTargetHttpsProxyRequest.to_json(
+                compute.DeleteTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._delete_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Get(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("Get")
 
-    __get_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _get_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get(self,
-            request: compute.GetTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.TargetHttpsProxy:
-        r"""Call the get method over HTTP.
+        def __call__(self,
+                request: compute.GetTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.TargetHttpsProxy:
+            r"""Call the get method over HTTP.
 
-        Args:
-            request (~.compute.GetTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.Get. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.TargetHttpsProxy:
-                Represents a Target HTTPS Proxy resource. Google Compute
+            Returns:
+                ~.compute.TargetHttpsProxy:
+                    Represents a Target HTTPS Proxy resource. Google Compute
                 Engine has two Target HTTPS Proxy resources: \*
                 `Global </compute/docs/reference/rest/v1/targetHttpsProxies>`__
                 \*
@@ -326,83 +343,85 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 then references a URL map. For more information, read
                 Using Target Proxies and Forwarding rule concepts.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies/{target_https_proxy}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetTargetHttpsProxyRequest.to_json(
-            compute.GetTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetTargetHttpsProxyRequest.to_json(
+                compute.GetTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.TargetHttpsProxy.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.TargetHttpsProxy.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Insert(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("Insert")
 
-    __insert_required_fields_default_values =  {
-        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    @staticmethod
-    def _insert_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _insert(self,
-            request: compute.InsertTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the insert method over HTTP.
+        def __call__(self,
+                request: compute.InsertTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the insert method over HTTP.
 
-        Args:
-            request (~.compute.InsertTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.InsertTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.Insert. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -418,171 +437,173 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies',
                 'body': 'target_https_proxy_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.InsertTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.InsertTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TargetHttpsProxy.to_json(
-            compute.TargetHttpsProxy(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TargetHttpsProxy.to_json(
+                compute.TargetHttpsProxy(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.InsertTargetHttpsProxyRequest.to_json(
-            compute.InsertTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.InsertTargetHttpsProxyRequest.to_json(
+                compute.InsertTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._insert_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _List(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("List")
 
-    __list_required_fields_default_values =  {
-        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    @staticmethod
-    def _list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _list(self,
-            request: compute.ListTargetHttpsProxiesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.TargetHttpsProxyList:
-        r"""Call the list method over HTTP.
+        def __call__(self,
+                request: compute.ListTargetHttpsProxiesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.TargetHttpsProxyList:
+            r"""Call the list method over HTTP.
 
-        Args:
-            request (~.compute.ListTargetHttpsProxiesRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.ListTargetHttpsProxiesRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.List. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.TargetHttpsProxyList:
-                Contains a list of TargetHttpsProxy
+            Returns:
+                ~.compute.TargetHttpsProxyList:
+                    Contains a list of TargetHttpsProxy
                 resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListTargetHttpsProxiesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListTargetHttpsProxiesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListTargetHttpsProxiesRequest.to_json(
-            compute.ListTargetHttpsProxiesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListTargetHttpsProxiesRequest.to_json(
+                compute.ListTargetHttpsProxiesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.TargetHttpsProxyList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.TargetHttpsProxyList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Patch(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("Patch")
 
-    __patch_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _patch_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _patch(self,
-            request: compute.PatchTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the patch method over HTTP.
+        def __call__(self,
+                request: compute.PatchTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the patch method over HTTP.
 
-        Args:
-            request (~.compute.PatchTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.PatchTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.Patch. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -598,92 +619,92 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'patch',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies/{target_https_proxy}',
                 'body': 'target_https_proxy_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.PatchTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.PatchTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TargetHttpsProxy.to_json(
-            compute.TargetHttpsProxy(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TargetHttpsProxy.to_json(
+                compute.TargetHttpsProxy(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.PatchTargetHttpsProxyRequest.to_json(
-            compute.PatchTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.PatchTargetHttpsProxyRequest.to_json(
+                compute.PatchTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._patch_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetQuicOverride(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("SetQuicOverride")
 
-    __set_quic_override_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _set_quic_override_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__set_quic_override_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_quic_override(self,
-            request: compute.SetQuicOverrideTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set quic override method over HTTP.
+        def __call__(self,
+                request: compute.SetQuicOverrideTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set quic override method over HTTP.
 
-        Args:
-            request (~.compute.SetQuicOverrideTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetQuicOverrideTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.SetQuicOverride. See
                 the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -699,92 +720,92 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies/{target_https_proxy}/setQuicOverride',
                 'body': 'target_https_proxies_set_quic_override_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetQuicOverrideTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetQuicOverrideTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TargetHttpsProxiesSetQuicOverrideRequest.to_json(
-            compute.TargetHttpsProxiesSetQuicOverrideRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TargetHttpsProxiesSetQuicOverrideRequest.to_json(
+                compute.TargetHttpsProxiesSetQuicOverrideRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetQuicOverrideTargetHttpsProxyRequest.to_json(
-            compute.SetQuicOverrideTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetQuicOverrideTargetHttpsProxyRequest.to_json(
+                compute.SetQuicOverrideTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_quic_override_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetSslCertificates(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("SetSslCertificates")
 
-    __set_ssl_certificates_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _set_ssl_certificates_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__set_ssl_certificates_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_ssl_certificates(self,
-            request: compute.SetSslCertificatesTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set ssl certificates method over HTTP.
+        def __call__(self,
+                request: compute.SetSslCertificatesTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set ssl certificates method over HTTP.
 
-        Args:
-            request (~.compute.SetSslCertificatesTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetSslCertificatesTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.SetSslCertificates.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -800,92 +821,92 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/targetHttpsProxies/{target_https_proxy}/setSslCertificates',
                 'body': 'target_https_proxies_set_ssl_certificates_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetSslCertificatesTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetSslCertificatesTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TargetHttpsProxiesSetSslCertificatesRequest.to_json(
-            compute.TargetHttpsProxiesSetSslCertificatesRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TargetHttpsProxiesSetSslCertificatesRequest.to_json(
+                compute.TargetHttpsProxiesSetSslCertificatesRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetSslCertificatesTargetHttpsProxyRequest.to_json(
-            compute.SetSslCertificatesTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetSslCertificatesTargetHttpsProxyRequest.to_json(
+                compute.SetSslCertificatesTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_ssl_certificates_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetSslPolicy(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("SetSslPolicy")
 
-    __set_ssl_policy_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _set_ssl_policy_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__set_ssl_policy_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_ssl_policy(self,
-            request: compute.SetSslPolicyTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set ssl policy method over HTTP.
+        def __call__(self,
+                request: compute.SetSslPolicyTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set ssl policy method over HTTP.
 
-        Args:
-            request (~.compute.SetSslPolicyTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetSslPolicyTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.SetSslPolicy. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -901,92 +922,92 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/targetHttpsProxies/{target_https_proxy}/setSslPolicy',
                 'body': 'ssl_policy_reference_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetSslPolicyTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetSslPolicyTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.SslPolicyReference.to_json(
-            compute.SslPolicyReference(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.SslPolicyReference.to_json(
+                compute.SslPolicyReference(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetSslPolicyTargetHttpsProxyRequest.to_json(
-            compute.SetSslPolicyTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetSslPolicyTargetHttpsProxyRequest.to_json(
+                compute.SetSslPolicyTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_ssl_policy_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetUrlMap(TargetHttpsProxiesRestStub):
+        def __hash__(self):
+            return hash("SetUrlMap")
 
-    __set_url_map_required_fields_default_values =  {
-        "project" : "",        "targetHttpsProxy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "targetHttpsProxy" : "",        }
 
-    @staticmethod
-    def _set_url_map_get_unset_required_fields(message_dict):
-        return {k: v for k, v in TargetHttpsProxiesRestTransport.__set_url_map_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_url_map(self,
-            request: compute.SetUrlMapTargetHttpsProxyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set url map method over HTTP.
+        def __call__(self,
+                request: compute.SetUrlMapTargetHttpsProxyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set url map method over HTTP.
 
-        Args:
-            request (~.compute.SetUrlMapTargetHttpsProxyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetUrlMapTargetHttpsProxyRequest):
+                    The request object. A request message for
                 TargetHttpsProxies.SetUrlMap. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1002,112 +1023,158 @@ class TargetHttpsProxiesRestTransport(TargetHttpsProxiesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/targetHttpsProxies/{target_https_proxy}/setUrlMap',
                 'body': 'url_map_reference_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetUrlMapTargetHttpsProxyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetUrlMapTargetHttpsProxyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.UrlMapReference.to_json(
-            compute.UrlMapReference(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.UrlMapReference.to_json(
+                compute.UrlMapReference(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetUrlMapTargetHttpsProxyRequest.to_json(
-            compute.SetUrlMapTargetHttpsProxyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetUrlMapTargetHttpsProxyRequest.to_json(
+                compute.SetUrlMapTargetHttpsProxyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_url_map_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
-
-    @ property
+    @property
     def aggregated_list(self) -> Callable[
             [compute.AggregatedListTargetHttpsProxiesRequest],
             compute.TargetHttpsProxyAggregatedList]:
-        return self._aggregated_list
-    @ property
+        stub = self._STUBS.get("aggregated_list")
+        if not stub:
+            stub = self._STUBS["aggregated_list"] = self._AggregatedList(self._session, self._host)
+
+        return stub
+
+    @property
     def delete(self) -> Callable[
             [compute.DeleteTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._delete
-    @ property
+        stub = self._STUBS.get("delete")
+        if not stub:
+            stub = self._STUBS["delete"] = self._Delete(self._session, self._host)
+
+        return stub
+
+    @property
     def get(self) -> Callable[
             [compute.GetTargetHttpsProxyRequest],
             compute.TargetHttpsProxy]:
-        return self._get
-    @ property
+        stub = self._STUBS.get("get")
+        if not stub:
+            stub = self._STUBS["get"] = self._Get(self._session, self._host)
+
+        return stub
+
+    @property
     def insert(self) -> Callable[
             [compute.InsertTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._insert
-    @ property
+        stub = self._STUBS.get("insert")
+        if not stub:
+            stub = self._STUBS["insert"] = self._Insert(self._session, self._host)
+
+        return stub
+
+    @property
     def list(self) -> Callable[
             [compute.ListTargetHttpsProxiesRequest],
             compute.TargetHttpsProxyList]:
-        return self._list
-    @ property
+        stub = self._STUBS.get("list")
+        if not stub:
+            stub = self._STUBS["list"] = self._List(self._session, self._host)
+
+        return stub
+
+    @property
     def patch(self) -> Callable[
             [compute.PatchTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._patch
-    @ property
+        stub = self._STUBS.get("patch")
+        if not stub:
+            stub = self._STUBS["patch"] = self._Patch(self._session, self._host)
+
+        return stub
+
+    @property
     def set_quic_override(self) -> Callable[
             [compute.SetQuicOverrideTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._set_quic_override
-    @ property
+        stub = self._STUBS.get("set_quic_override")
+        if not stub:
+            stub = self._STUBS["set_quic_override"] = self._SetQuicOverride(self._session, self._host)
+
+        return stub
+
+    @property
     def set_ssl_certificates(self) -> Callable[
             [compute.SetSslCertificatesTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._set_ssl_certificates
-    @ property
+        stub = self._STUBS.get("set_ssl_certificates")
+        if not stub:
+            stub = self._STUBS["set_ssl_certificates"] = self._SetSslCertificates(self._session, self._host)
+
+        return stub
+
+    @property
     def set_ssl_policy(self) -> Callable[
             [compute.SetSslPolicyTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._set_ssl_policy
-    @ property
+        stub = self._STUBS.get("set_ssl_policy")
+        if not stub:
+            stub = self._STUBS["set_ssl_policy"] = self._SetSslPolicy(self._session, self._host)
+
+        return stub
+
+    @property
     def set_url_map(self) -> Callable[
             [compute.SetUrlMapTargetHttpsProxyRequest],
             compute.Operation]:
-        return self._set_url_map
+        stub = self._STUBS.get("set_url_map")
+        if not stub:
+            stub = self._STUBS["set_url_map"] = self._SetUrlMap(self._session, self._host)
+
+        return stub
+
     def close(self):
         self._session.close()
 

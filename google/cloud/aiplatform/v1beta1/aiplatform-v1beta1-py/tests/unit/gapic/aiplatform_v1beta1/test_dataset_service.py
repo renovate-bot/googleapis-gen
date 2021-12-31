@@ -217,18 +217,18 @@ def test_dataset_service_client_client_options(client_class, transport_class, tr
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -259,7 +259,7 @@ def test_dataset_service_client_mtls_env_auto(client_class, transport_class, tra
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -334,7 +334,7 @@ def test_dataset_service_client_client_options_scopes(client_class, transport_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -357,7 +357,7 @@ def test_dataset_service_client_client_options_credentials_file(client_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -368,7 +368,6 @@ def test_dataset_service_client_client_options_credentials_file(client_class, tr
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_dataset_service_client_client_options_from_dict():
     with mock.patch('google.cloud.aiplatform_v1beta1.services.dataset_service.transports.DatasetServiceGrpcTransport.__init__') as grpc_transport:
@@ -388,7 +387,11 @@ def test_dataset_service_client_client_options_from_dict():
         )
 
 
-def test_create_dataset(transport: str = 'grpc', request_type=dataset_service.CreateDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.CreateDatasetRequest,
+  dict,
+])
+def test_create_dataset(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -413,10 +416,6 @@ def test_create_dataset(transport: str = 'grpc', request_type=dataset_service.Cr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_dataset_from_dict():
-    test_create_dataset(request_type=dict)
 
 
 def test_create_dataset_empty_call():
@@ -631,7 +630,11 @@ async def test_create_dataset_flattened_error_async():
         )
 
 
-def test_get_dataset(transport: str = 'grpc', request_type=dataset_service.GetDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.GetDatasetRequest,
+  dict,
+])
+def test_get_dataset(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -667,10 +670,6 @@ def test_get_dataset(transport: str = 'grpc', request_type=dataset_service.GetDa
     assert response.description == 'description_value'
     assert response.metadata_schema_uri == 'metadata_schema_uri_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_dataset_from_dict():
-    test_get_dataset(request_type=dict)
 
 
 def test_get_dataset_empty_call():
@@ -882,7 +881,11 @@ async def test_get_dataset_flattened_error_async():
         )
 
 
-def test_update_dataset(transport: str = 'grpc', request_type=dataset_service.UpdateDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.UpdateDatasetRequest,
+  dict,
+])
+def test_update_dataset(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -918,10 +921,6 @@ def test_update_dataset(transport: str = 'grpc', request_type=dataset_service.Up
     assert response.description == 'description_value'
     assert response.metadata_schema_uri == 'metadata_schema_uri_value'
     assert response.etag == 'etag_value'
-
-
-def test_update_dataset_from_dict():
-    test_update_dataset(request_type=dict)
 
 
 def test_update_dataset_empty_call():
@@ -1143,7 +1142,11 @@ async def test_update_dataset_flattened_error_async():
         )
 
 
-def test_list_datasets(transport: str = 'grpc', request_type=dataset_service.ListDatasetsRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.ListDatasetsRequest,
+  dict,
+])
+def test_list_datasets(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1171,10 +1174,6 @@ def test_list_datasets(transport: str = 'grpc', request_type=dataset_service.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDatasetsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_datasets_from_dict():
-    test_list_datasets(request_type=dict)
 
 
 def test_list_datasets_empty_call():
@@ -1378,9 +1377,10 @@ async def test_list_datasets_flattened_error_async():
         )
 
 
-def test_list_datasets_pager():
+def test_list_datasets_pager(transport_name: str = "grpc"):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1430,10 +1430,10 @@ def test_list_datasets_pager():
         assert len(results) == 6
         assert all(isinstance(i, dataset.Dataset)
                    for i in results)
-
-def test_list_datasets_pages():
+def test_list_datasets_pages(transport_name: str = "grpc"):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1518,7 +1518,8 @@ async def test_list_datasets_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, dataset.Dataset)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_datasets_async_pages():
@@ -1564,7 +1565,11 @@ async def test_list_datasets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_dataset(transport: str = 'grpc', request_type=dataset_service.DeleteDatasetRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.DeleteDatasetRequest,
+  dict,
+])
+def test_delete_dataset(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1589,10 +1594,6 @@ def test_delete_dataset(transport: str = 'grpc', request_type=dataset_service.De
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_dataset_from_dict():
-    test_delete_dataset(request_type=dict)
 
 
 def test_delete_dataset_empty_call():
@@ -1797,7 +1798,11 @@ async def test_delete_dataset_flattened_error_async():
         )
 
 
-def test_import_data(transport: str = 'grpc', request_type=dataset_service.ImportDataRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.ImportDataRequest,
+  dict,
+])
+def test_import_data(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1822,10 +1827,6 @@ def test_import_data(transport: str = 'grpc', request_type=dataset_service.Impor
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_import_data_from_dict():
-    test_import_data(request_type=dict)
 
 
 def test_import_data_empty_call():
@@ -2040,7 +2041,11 @@ async def test_import_data_flattened_error_async():
         )
 
 
-def test_export_data(transport: str = 'grpc', request_type=dataset_service.ExportDataRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.ExportDataRequest,
+  dict,
+])
+def test_export_data(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2065,10 +2070,6 @@ def test_export_data(transport: str = 'grpc', request_type=dataset_service.Expor
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_export_data_from_dict():
-    test_export_data(request_type=dict)
 
 
 def test_export_data_empty_call():
@@ -2283,7 +2284,11 @@ async def test_export_data_flattened_error_async():
         )
 
 
-def test_list_data_items(transport: str = 'grpc', request_type=dataset_service.ListDataItemsRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.ListDataItemsRequest,
+  dict,
+])
+def test_list_data_items(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2311,10 +2316,6 @@ def test_list_data_items(transport: str = 'grpc', request_type=dataset_service.L
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDataItemsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_data_items_from_dict():
-    test_list_data_items(request_type=dict)
 
 
 def test_list_data_items_empty_call():
@@ -2518,9 +2519,10 @@ async def test_list_data_items_flattened_error_async():
         )
 
 
-def test_list_data_items_pager():
+def test_list_data_items_pager(transport_name: str = "grpc"):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2570,10 +2572,10 @@ def test_list_data_items_pager():
         assert len(results) == 6
         assert all(isinstance(i, data_item.DataItem)
                    for i in results)
-
-def test_list_data_items_pages():
+def test_list_data_items_pages(transport_name: str = "grpc"):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2658,7 +2660,8 @@ async def test_list_data_items_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, data_item.DataItem)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_data_items_async_pages():
@@ -2704,7 +2707,11 @@ async def test_list_data_items_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_annotation_spec(transport: str = 'grpc', request_type=dataset_service.GetAnnotationSpecRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.GetAnnotationSpecRequest,
+  dict,
+])
+def test_get_annotation_spec(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2736,10 +2743,6 @@ def test_get_annotation_spec(transport: str = 'grpc', request_type=dataset_servi
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_annotation_spec_from_dict():
-    test_get_annotation_spec(request_type=dict)
 
 
 def test_get_annotation_spec_empty_call():
@@ -2947,7 +2950,11 @@ async def test_get_annotation_spec_flattened_error_async():
         )
 
 
-def test_list_annotations(transport: str = 'grpc', request_type=dataset_service.ListAnnotationsRequest):
+@pytest.mark.parametrize("request_type", [
+  dataset_service.ListAnnotationsRequest,
+  dict,
+])
+def test_list_annotations(request_type, transport: str = 'grpc'):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2975,10 +2982,6 @@ def test_list_annotations(transport: str = 'grpc', request_type=dataset_service.
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAnnotationsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_annotations_from_dict():
-    test_list_annotations(request_type=dict)
 
 
 def test_list_annotations_empty_call():
@@ -3182,9 +3185,10 @@ async def test_list_annotations_flattened_error_async():
         )
 
 
-def test_list_annotations_pager():
+def test_list_annotations_pager(transport_name: str = "grpc"):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3234,10 +3238,10 @@ def test_list_annotations_pager():
         assert len(results) == 6
         assert all(isinstance(i, annotation.Annotation)
                    for i in results)
-
-def test_list_annotations_pages():
+def test_list_annotations_pages(transport_name: str = "grpc"):
     client = DatasetServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3322,7 +3326,8 @@ async def test_list_annotations_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, annotation.Annotation)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_annotations_async_pages():
@@ -3968,7 +3973,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DatasetServiceTransport, '_prep_wrapped_messages') as prep:

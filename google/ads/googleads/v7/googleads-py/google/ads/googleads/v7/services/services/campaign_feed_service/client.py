@@ -57,7 +57,7 @@ class CampaignFeedServiceClientMeta(type):
     def get_transport_class(cls,
             label: str = None,
             ) -> Type[CampaignFeedServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -80,7 +80,8 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -107,14 +108,15 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'googleads.googleapis.com'
+    DEFAULT_ENDPOINT = "googleads.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -144,17 +146,18 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> CampaignFeedServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            CampaignFeedServiceTransport: The transport used by the client instance.
+            CampaignFeedServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
@@ -173,37 +176,40 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
     @staticmethod
     def campaign_path(customer_id: str,campaign_id: str,) -> str:
-        """Return a fully-qualified campaign string."""
+        """Returns a fully-qualified campaign string."""
         return "customers/{customer_id}/campaigns/{campaign_id}".format(customer_id=customer_id, campaign_id=campaign_id, )
 
     @staticmethod
     def parse_campaign_path(path: str) -> Dict[str,str]:
-        """Parse a campaign path into its component segments."""
+        """Parses a campaign path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/campaigns/(?P<campaign_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def campaign_feed_path(customer_id: str,campaign_id: str,feed_id: str,) -> str:
-        """Return a fully-qualified campaign_feed string."""
+        """Returns a fully-qualified campaign_feed string."""
         return "customers/{customer_id}/campaignFeeds/{campaign_id}~{feed_id}".format(customer_id=customer_id, campaign_id=campaign_id, feed_id=feed_id, )
 
     @staticmethod
     def parse_campaign_feed_path(path: str) -> Dict[str,str]:
-        """Parse a campaign_feed path into its component segments."""
+        """Parses a campaign_feed path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/campaignFeeds/(?P<campaign_id>.+?)~(?P<feed_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def feed_path(customer_id: str,feed_id: str,) -> str:
-        """Return a fully-qualified feed string."""
+        """Returns a fully-qualified feed string."""
         return "customers/{customer_id}/feeds/{feed_id}".format(customer_id=customer_id, feed_id=feed_id, )
 
     @staticmethod
     def parse_feed_path(path: str) -> Dict[str,str]:
-        """Parse a feed path into its component segments."""
+        """Parses a feed path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/feeds/(?P<feed_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -214,7 +220,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -225,7 +231,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -236,7 +242,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -247,7 +253,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -262,7 +268,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the campaign feed service client.
+        """Instantiates the campaign feed service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -270,7 +276,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.CampaignFeedServiceTransport]): The
+            transport (Union[str, CampaignFeedServiceTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
             client_options (google.api_core.client_options.ClientOptions): Custom options for the
@@ -309,21 +315,18 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
             raise ValueError("Environment variable `GOOGLE_API_USE_CLIENT_CERTIFICATE` must be either `true` or `false`")
         use_client_cert = os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false") == "true"
 
-        ssl_credentials = None
+        client_cert_source_func = None
         is_mtls = False
         if use_client_cert:
             if client_options.client_cert_source:
-                import grpc  # type: ignore
-
-                cert, key = client_options.client_cert_source()
-                ssl_credentials = grpc.ssl_channel_credentials(
-                    certificate_chain=cert, private_key=key
-                )
                 is_mtls = True
+                client_cert_source_func = client_options.client_cert_source
             else:
-                creds = SslCredentials()
-                is_mtls = creds.is_mtls
-                ssl_credentials = creds.ssl_credentials if is_mtls else None
+                is_mtls = mtls.has_default_client_cert_source()
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -338,7 +341,8 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -346,21 +350,26 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         # instance provides an extensibility point for unusual situations.
         if isinstance(transport, CampaignFeedServiceTransport):
             # transport is a CampaignFeedServiceTransport instance.
-            if credentials:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+            if credentials or client_options.credentials_file:
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
+            if client_options.scopes:
+                raise ValueError(
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
+                )
             self._transport = transport
-        elif isinstance(transport, str):
+        else:
             Transport = type(self).get_transport_class(transport)
             self._transport = Transport(
-                credentials=credentials, host=self.DEFAULT_ENDPOINT
-            )
-        else:
-            self._transport = CampaignFeedServiceGrpcTransport(
                 credentials=credentials,
+                credentials_file=client_options.credentials_file,
                 host=api_endpoint,
-                ssl_channel_credentials=ssl_credentials,
+                scopes=client_options.scopes,
+                client_cert_source_for_mtls=client_cert_source_func,
+                quota_project_id=client_options.quota_project_id,
                 client_info=client_info,
+                always_use_jwt_access=True,
               )
 
     def get_campaign_feed(self,
@@ -381,7 +390,7 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
             request (Union[google.ads.googleads.v7.services.types.GetCampaignFeedRequest, dict]):
                 The request object. Request message for
                 [CampaignFeedService.GetCampaignFeed][google.ads.googleads.v7.services.CampaignFeedService.GetCampaignFeed].
-            resource_name (:class:`str`):
+            resource_name (str):
                 Required. The resource name of the
                 campaign feed to fetch.
 
@@ -401,11 +410,12 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        if request is not None and any([resource_name]):
+        has_flattened_params = any([resource_name])
+        if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a campaign_feed_service.GetCampaignFeedRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
@@ -424,14 +434,14 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource_name', request.resource_name),
+                ("resource_name", request.resource_name),
             )),
         )
 
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -466,14 +476,14 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
             request (Union[google.ads.googleads.v7.services.types.MutateCampaignFeedsRequest, dict]):
                 The request object. Request message for
                 [CampaignFeedService.MutateCampaignFeeds][google.ads.googleads.v7.services.CampaignFeedService.MutateCampaignFeeds].
-            customer_id (:class:`str`):
+            customer_id (str):
                 Required. The ID of the customer
                 whose campaign feeds are being modified.
 
                 This corresponds to the ``customer_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            operations (:class:`Sequence[google.ads.googleads.v7.services.types.CampaignFeedOperation]`):
+            operations (Sequence[google.ads.googleads.v7.services.types.CampaignFeedOperation]):
                 Required. The list of operations to
                 perform on individual campaign feeds.
 
@@ -495,11 +505,12 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        if request is not None and any([customer_id, operations]):
+        has_flattened_params = any([customer_id, operations])
+        if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a campaign_feed_service.MutateCampaignFeedsRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
@@ -520,14 +531,14 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('customer_id', request.customer_id),
+                ("customer_id", request.customer_id),
             )),
         )
 
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -536,6 +547,19 @@ class CampaignFeedServiceClient(metaclass=CampaignFeedServiceClientMeta):
         return response
 
 
+
+
+
+try:
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
+        gapic_version=pkg_resources.get_distribution(
+            "google-ads",
+        ).version,
+    )
+except pkg_resources.DistributionNotFound:
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
+
+
 __all__ = (
-    'CampaignFeedServiceClient',
+    "CampaignFeedServiceClient",
 )

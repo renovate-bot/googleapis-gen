@@ -208,18 +208,18 @@ def test_jobs_v1_beta3_client_client_options(client_class, transport_class, tran
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_jobs_v1_beta3_client_mtls_env_auto(client_class, transport_class, trans
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_jobs_v1_beta3_client_client_options_scopes(client_class, transport_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_jobs_v1_beta3_client_client_options_credentials_file(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_jobs_v1_beta3_client_client_options_credentials_file(client_class, tran
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_jobs_v1_beta3_client_client_options_from_dict():
     with mock.patch('google.cloud.dataflow_v1beta3.services.jobs_v1_beta3.transports.JobsV1Beta3GrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_jobs_v1_beta3_client_client_options_from_dict():
         )
 
 
-def test_create_job(transport: str = 'grpc', request_type=jobs.CreateJobRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.CreateJobRequest,
+  dict,
+])
+def test_create_job(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -433,10 +436,6 @@ def test_create_job(transport: str = 'grpc', request_type=jobs.CreateJobRequest)
     assert response.location == 'location_value'
     assert response.created_from_snapshot_id == 'created_from_snapshot_id_value'
     assert response.satisfies_pzs is True
-
-
-def test_create_job_from_dict():
-    test_create_job(request_type=dict)
 
 
 def test_create_job_empty_call():
@@ -519,7 +518,11 @@ async def test_create_job_async_from_dict():
     await test_create_job_async(request_type=dict)
 
 
-def test_get_job(transport: str = 'grpc', request_type=jobs.GetJobRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.GetJobRequest,
+  dict,
+])
+def test_get_job(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -573,10 +576,6 @@ def test_get_job(transport: str = 'grpc', request_type=jobs.GetJobRequest):
     assert response.location == 'location_value'
     assert response.created_from_snapshot_id == 'created_from_snapshot_id_value'
     assert response.satisfies_pzs is True
-
-
-def test_get_job_from_dict():
-    test_get_job(request_type=dict)
 
 
 def test_get_job_empty_call():
@@ -659,7 +658,11 @@ async def test_get_job_async_from_dict():
     await test_get_job_async(request_type=dict)
 
 
-def test_update_job(transport: str = 'grpc', request_type=jobs.UpdateJobRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.UpdateJobRequest,
+  dict,
+])
+def test_update_job(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -713,10 +716,6 @@ def test_update_job(transport: str = 'grpc', request_type=jobs.UpdateJobRequest)
     assert response.location == 'location_value'
     assert response.created_from_snapshot_id == 'created_from_snapshot_id_value'
     assert response.satisfies_pzs is True
-
-
-def test_update_job_from_dict():
-    test_update_job(request_type=dict)
 
 
 def test_update_job_empty_call():
@@ -799,7 +798,11 @@ async def test_update_job_async_from_dict():
     await test_update_job_async(request_type=dict)
 
 
-def test_list_jobs(transport: str = 'grpc', request_type=jobs.ListJobsRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.ListJobsRequest,
+  dict,
+])
+def test_list_jobs(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -827,10 +830,6 @@ def test_list_jobs(transport: str = 'grpc', request_type=jobs.ListJobsRequest):
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListJobsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_jobs_from_dict():
-    test_list_jobs(request_type=dict)
 
 
 def test_list_jobs_empty_call():
@@ -887,9 +886,10 @@ async def test_list_jobs_async_from_dict():
     await test_list_jobs_async(request_type=dict)
 
 
-def test_list_jobs_pager():
+def test_list_jobs_pager(transport_name: str = "grpc"):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -934,10 +934,10 @@ def test_list_jobs_pager():
         assert len(results) == 6
         assert all(isinstance(i, jobs.Job)
                    for i in results)
-
-def test_list_jobs_pages():
+def test_list_jobs_pages(transport_name: str = "grpc"):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1022,7 +1022,8 @@ async def test_list_jobs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, jobs.Job)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_jobs_async_pages():
@@ -1068,7 +1069,11 @@ async def test_list_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_aggregated_list_jobs(transport: str = 'grpc', request_type=jobs.ListJobsRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.ListJobsRequest,
+  dict,
+])
+def test_aggregated_list_jobs(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1096,10 +1101,6 @@ def test_aggregated_list_jobs(transport: str = 'grpc', request_type=jobs.ListJob
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.AggregatedListJobsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_aggregated_list_jobs_from_dict():
-    test_aggregated_list_jobs(request_type=dict)
 
 
 def test_aggregated_list_jobs_empty_call():
@@ -1156,9 +1157,10 @@ async def test_aggregated_list_jobs_async_from_dict():
     await test_aggregated_list_jobs_async(request_type=dict)
 
 
-def test_aggregated_list_jobs_pager():
+def test_aggregated_list_jobs_pager(transport_name: str = "grpc"):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1203,10 +1205,10 @@ def test_aggregated_list_jobs_pager():
         assert len(results) == 6
         assert all(isinstance(i, jobs.Job)
                    for i in results)
-
-def test_aggregated_list_jobs_pages():
+def test_aggregated_list_jobs_pages(transport_name: str = "grpc"):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1291,7 +1293,8 @@ async def test_aggregated_list_jobs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, jobs.Job)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_aggregated_list_jobs_async_pages():
@@ -1337,7 +1340,11 @@ async def test_aggregated_list_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_check_active_jobs(transport: str = 'grpc', request_type=jobs.CheckActiveJobsRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.CheckActiveJobsRequest,
+  dict,
+])
+def test_check_active_jobs(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1365,10 +1372,6 @@ def test_check_active_jobs(transport: str = 'grpc', request_type=jobs.CheckActiv
     # Establish that the response is the type that we expect.
     assert isinstance(response, jobs.CheckActiveJobsResponse)
     assert response.active_jobs_exist is True
-
-
-def test_check_active_jobs_from_dict():
-    test_check_active_jobs(request_type=dict)
 
 
 def test_check_active_jobs_empty_call():
@@ -1425,7 +1428,11 @@ async def test_check_active_jobs_async_from_dict():
     await test_check_active_jobs_async(request_type=dict)
 
 
-def test_snapshot_job(transport: str = 'grpc', request_type=jobs.SnapshotJobRequest):
+@pytest.mark.parametrize("request_type", [
+  jobs.SnapshotJobRequest,
+  dict,
+])
+def test_snapshot_job(request_type, transport: str = 'grpc'):
     client = JobsV1Beta3Client(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1465,10 +1472,6 @@ def test_snapshot_job(transport: str = 'grpc', request_type=jobs.SnapshotJobRequ
     assert response.description == 'description_value'
     assert response.disk_size_bytes == 1611
     assert response.region == 'region_value'
-
-
-def test_snapshot_job_from_dict():
-    test_snapshot_job(request_type=dict)
 
 
 def test_snapshot_job_empty_call():
@@ -2011,7 +2014,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.JobsV1Beta3Transport, '_prep_wrapped_messages') as prep:

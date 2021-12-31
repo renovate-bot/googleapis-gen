@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -199,18 +199,18 @@ def test_license_codes_client_client_options(client_class, transport_class, tran
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -238,7 +238,7 @@ def test_license_codes_client_mtls_env_auto(client_class, transport_class, trans
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -312,7 +312,7 @@ def test_license_codes_client_client_options_scopes(client_class, transport_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -334,7 +334,7 @@ def test_license_codes_client_client_options_credentials_file(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -347,18 +347,56 @@ def test_license_codes_client_client_options_credentials_file(client_class, tran
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetLicenseCodeRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.GetLicenseCodeRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
     client = LicenseCodesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetLicenseCodeRequest({'project': 'sample1', 'license_code': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.LicenseCode(
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              id=205,
+              kind='kind_value',
+              name='name_value',
+              self_link='self_link_value',
+              state='state_value',
+              transferable=True,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.LicenseCode.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetLicenseCodeRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = LicenseCodesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "license_code": "sample2"}
+    request_init = {'project': 'sample1', 'license_code': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.LicenseCode(
               creation_timestamp='creation_timestamp_value',
@@ -408,7 +446,7 @@ def test_get_rest_required_fields(request_type=compute.GetLicenseCodeRequest):
     assert "licenseCode" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -420,7 +458,7 @@ def test_get_rest_required_fields(request_type=compute.GetLicenseCodeRequest):
     jsonified_request["licenseCode"] = 'license_code_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -462,13 +500,13 @@ def test_get_rest_required_fields(request_type=compute.GetLicenseCodeRequest):
 
             expected_params = [
                 (
-                    "license_code",
-                    ""
-                )
+                    "licenseCode",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -481,7 +519,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetL
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "license_code": "sample2"}
+    request_init = {'project': 'sample1', 'license_code': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -494,18 +532,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetL
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = LicenseCodesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.LicenseCode()
 
@@ -518,7 +552,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "license_code": "sample2"}
+        sample_request = {'project': 'sample1', 'license_code': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -551,19 +585,56 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute.TestIamPermissionsLicenseCodeRequest):
+def test_get_rest_error():
     client = LicenseCodesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.TestIamPermissionsLicenseCodeRequest,
+  dict,
+])
+def test_test_iam_permissions_rest(request_type, transport: str = 'rest'):
+    client = LicenseCodesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.TestIamPermissionsLicenseCodeRequest({'project': 'sample1', 'resource': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.TestPermissionsResponse(
+              permissions=['permissions_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.test_iam_permissions(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.TestIamPermissionsLicenseCodeRequest,
+    dict,
+])
+def test_test_iam_permissions_rest(request_type):
+    client = LicenseCodesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse(
               permissions=['permissions_value'],
@@ -599,7 +670,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     assert "project" not in jsonified_request
     assert "resource" not in jsonified_request
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -611,7 +682,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     jsonified_request["project"] = 'project_value'
     jsonified_request["resource"] = 'resource_value'
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -655,12 +726,12 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -673,8 +744,8 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "resource": "sample2"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'resource': 'sample2'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -687,18 +758,14 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
         client.test_iam_permissions(request)
 
 
-def test_test_iam_permissions_rest_from_dict():
-    test_test_iam_permissions_rest(request_type=dict)
-
-
-def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
+def test_test_iam_permissions_rest_flattened():
     client = LicenseCodesClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse()
 
@@ -711,7 +778,7 @@ def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "resource": "sample2"}
+        sample_request = {'project': 'sample1', 'resource': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -744,6 +811,13 @@ def test_test_iam_permissions_rest_flattened_error(transport: str = 'rest'):
             resource='resource_value',
             test_permissions_request_resource=compute.TestPermissionsRequest(permissions=['permissions_value']),
         )
+
+
+def test_test_iam_permissions_rest_error():
+    client = LicenseCodesClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -988,7 +1062,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.LicenseCodesTransport, '_prep_wrapped_messages') as prep:

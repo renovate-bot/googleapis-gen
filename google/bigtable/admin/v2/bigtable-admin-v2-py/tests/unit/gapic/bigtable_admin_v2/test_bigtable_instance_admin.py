@@ -215,18 +215,18 @@ def test_bigtable_instance_admin_client_client_options(client_class, transport_c
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -257,7 +257,7 @@ def test_bigtable_instance_admin_client_mtls_env_auto(client_class, transport_cl
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -332,7 +332,7 @@ def test_bigtable_instance_admin_client_client_options_scopes(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -355,7 +355,7 @@ def test_bigtable_instance_admin_client_client_options_credentials_file(client_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -366,7 +366,6 @@ def test_bigtable_instance_admin_client_client_options_credentials_file(client_c
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_bigtable_instance_admin_client_client_options_from_dict():
     with mock.patch('google.cloud.bigtable_admin_v2.services.bigtable_instance_admin.transports.BigtableInstanceAdminGrpcTransport.__init__') as grpc_transport:
@@ -386,7 +385,11 @@ def test_bigtable_instance_admin_client_client_options_from_dict():
         )
 
 
-def test_create_instance(transport: str = 'grpc', request_type=bigtable_instance_admin.CreateInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.CreateInstanceRequest,
+  dict,
+])
+def test_create_instance(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -411,10 +414,6 @@ def test_create_instance(transport: str = 'grpc', request_type=bigtable_instance
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_instance_from_dict():
-    test_create_instance(request_type=dict)
 
 
 def test_create_instance_empty_call():
@@ -649,7 +648,11 @@ async def test_create_instance_flattened_error_async():
         )
 
 
-def test_get_instance(transport: str = 'grpc', request_type=bigtable_instance_admin.GetInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.GetInstanceRequest,
+  dict,
+])
+def test_get_instance(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -683,10 +686,6 @@ def test_get_instance(transport: str = 'grpc', request_type=bigtable_instance_ad
     assert response.display_name == 'display_name_value'
     assert response.state == instance.Instance.State.READY
     assert response.type_ == instance.Instance.Type.PRODUCTION
-
-
-def test_get_instance_from_dict():
-    test_get_instance(request_type=dict)
 
 
 def test_get_instance_empty_call():
@@ -896,7 +895,11 @@ async def test_get_instance_flattened_error_async():
         )
 
 
-def test_list_instances(transport: str = 'grpc', request_type=bigtable_instance_admin.ListInstancesRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.ListInstancesRequest,
+  dict,
+])
+def test_list_instances(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -927,10 +930,6 @@ def test_list_instances(transport: str = 'grpc', request_type=bigtable_instance_
     assert isinstance(response, bigtable_instance_admin.ListInstancesResponse)
     assert response.failed_locations == ['failed_locations_value']
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_instances_from_dict():
-    test_list_instances(request_type=dict)
 
 
 def test_list_instances_empty_call():
@@ -1136,7 +1135,11 @@ async def test_list_instances_flattened_error_async():
         )
 
 
-def test_update_instance(transport: str = 'grpc', request_type=instance.Instance):
+@pytest.mark.parametrize("request_type", [
+  instance.Instance,
+  dict,
+])
+def test_update_instance(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1170,10 +1173,6 @@ def test_update_instance(transport: str = 'grpc', request_type=instance.Instance
     assert response.display_name == 'display_name_value'
     assert response.state == instance.Instance.State.READY
     assert response.type_ == instance.Instance.Type.PRODUCTION
-
-
-def test_update_instance_from_dict():
-    test_update_instance(request_type=dict)
 
 
 def test_update_instance_empty_call():
@@ -1299,7 +1298,11 @@ async def test_update_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_partial_update_instance(transport: str = 'grpc', request_type=bigtable_instance_admin.PartialUpdateInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.PartialUpdateInstanceRequest,
+  dict,
+])
+def test_partial_update_instance(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1324,10 +1327,6 @@ def test_partial_update_instance(transport: str = 'grpc', request_type=bigtable_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_partial_update_instance_from_dict():
-    test_partial_update_instance(request_type=dict)
 
 
 def test_partial_update_instance_empty_call():
@@ -1542,7 +1541,11 @@ async def test_partial_update_instance_flattened_error_async():
         )
 
 
-def test_delete_instance(transport: str = 'grpc', request_type=bigtable_instance_admin.DeleteInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.DeleteInstanceRequest,
+  dict,
+])
+def test_delete_instance(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1567,10 +1570,6 @@ def test_delete_instance(transport: str = 'grpc', request_type=bigtable_instance
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_instance_from_dict():
-    test_delete_instance(request_type=dict)
 
 
 def test_delete_instance_empty_call():
@@ -1771,7 +1770,11 @@ async def test_delete_instance_flattened_error_async():
         )
 
 
-def test_create_cluster(transport: str = 'grpc', request_type=bigtable_instance_admin.CreateClusterRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.CreateClusterRequest,
+  dict,
+])
+def test_create_cluster(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1796,10 +1799,6 @@ def test_create_cluster(transport: str = 'grpc', request_type=bigtable_instance_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_cluster_from_dict():
-    test_create_cluster(request_type=dict)
 
 
 def test_create_cluster_empty_call():
@@ -2024,7 +2023,11 @@ async def test_create_cluster_flattened_error_async():
         )
 
 
-def test_get_cluster(transport: str = 'grpc', request_type=bigtable_instance_admin.GetClusterRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.GetClusterRequest,
+  dict,
+])
+def test_get_cluster(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2061,10 +2064,6 @@ def test_get_cluster(transport: str = 'grpc', request_type=bigtable_instance_adm
     assert response.state == instance.Cluster.State.READY
     assert response.serve_nodes == 1181
     assert response.default_storage_type == common.StorageType.SSD
-
-
-def test_get_cluster_from_dict():
-    test_get_cluster(request_type=dict)
 
 
 def test_get_cluster_empty_call():
@@ -2276,7 +2275,11 @@ async def test_get_cluster_flattened_error_async():
         )
 
 
-def test_list_clusters(transport: str = 'grpc', request_type=bigtable_instance_admin.ListClustersRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.ListClustersRequest,
+  dict,
+])
+def test_list_clusters(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2307,10 +2310,6 @@ def test_list_clusters(transport: str = 'grpc', request_type=bigtable_instance_a
     assert isinstance(response, bigtable_instance_admin.ListClustersResponse)
     assert response.failed_locations == ['failed_locations_value']
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_clusters_from_dict():
-    test_list_clusters(request_type=dict)
 
 
 def test_list_clusters_empty_call():
@@ -2516,7 +2515,11 @@ async def test_list_clusters_flattened_error_async():
         )
 
 
-def test_update_cluster(transport: str = 'grpc', request_type=instance.Cluster):
+@pytest.mark.parametrize("request_type", [
+  instance.Cluster,
+  dict,
+])
+def test_update_cluster(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2541,10 +2544,6 @@ def test_update_cluster(transport: str = 'grpc', request_type=instance.Cluster):
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_cluster_from_dict():
-    test_update_cluster(request_type=dict)
 
 
 def test_update_cluster_empty_call():
@@ -2663,7 +2662,11 @@ async def test_update_cluster_field_headers_async():
     ) in kw['metadata']
 
 
-def test_partial_update_cluster(transport: str = 'grpc', request_type=bigtable_instance_admin.PartialUpdateClusterRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.PartialUpdateClusterRequest,
+  dict,
+])
+def test_partial_update_cluster(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2688,10 +2691,6 @@ def test_partial_update_cluster(transport: str = 'grpc', request_type=bigtable_i
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_partial_update_cluster_from_dict():
-    test_partial_update_cluster(request_type=dict)
 
 
 def test_partial_update_cluster_empty_call():
@@ -2906,7 +2905,11 @@ async def test_partial_update_cluster_flattened_error_async():
         )
 
 
-def test_delete_cluster(transport: str = 'grpc', request_type=bigtable_instance_admin.DeleteClusterRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.DeleteClusterRequest,
+  dict,
+])
+def test_delete_cluster(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2931,10 +2934,6 @@ def test_delete_cluster(transport: str = 'grpc', request_type=bigtable_instance_
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_cluster_from_dict():
-    test_delete_cluster(request_type=dict)
 
 
 def test_delete_cluster_empty_call():
@@ -3135,7 +3134,11 @@ async def test_delete_cluster_flattened_error_async():
         )
 
 
-def test_create_app_profile(transport: str = 'grpc', request_type=bigtable_instance_admin.CreateAppProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.CreateAppProfileRequest,
+  dict,
+])
+def test_create_app_profile(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3168,10 +3171,6 @@ def test_create_app_profile(transport: str = 'grpc', request_type=bigtable_insta
     assert response.name == 'name_value'
     assert response.etag == 'etag_value'
     assert response.description == 'description_value'
-
-
-def test_create_app_profile_from_dict():
-    test_create_app_profile(request_type=dict)
 
 
 def test_create_app_profile_empty_call():
@@ -3399,7 +3398,11 @@ async def test_create_app_profile_flattened_error_async():
         )
 
 
-def test_get_app_profile(transport: str = 'grpc', request_type=bigtable_instance_admin.GetAppProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.GetAppProfileRequest,
+  dict,
+])
+def test_get_app_profile(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3432,10 +3435,6 @@ def test_get_app_profile(transport: str = 'grpc', request_type=bigtable_instance
     assert response.name == 'name_value'
     assert response.etag == 'etag_value'
     assert response.description == 'description_value'
-
-
-def test_get_app_profile_from_dict():
-    test_get_app_profile(request_type=dict)
 
 
 def test_get_app_profile_empty_call():
@@ -3643,7 +3642,11 @@ async def test_get_app_profile_flattened_error_async():
         )
 
 
-def test_list_app_profiles(transport: str = 'grpc', request_type=bigtable_instance_admin.ListAppProfilesRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.ListAppProfilesRequest,
+  dict,
+])
+def test_list_app_profiles(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3673,10 +3676,6 @@ def test_list_app_profiles(transport: str = 'grpc', request_type=bigtable_instan
     assert isinstance(response, pagers.ListAppProfilesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.failed_locations == ['failed_locations_value']
-
-
-def test_list_app_profiles_from_dict():
-    test_list_app_profiles(request_type=dict)
 
 
 def test_list_app_profiles_empty_call():
@@ -3882,9 +3881,10 @@ async def test_list_app_profiles_flattened_error_async():
         )
 
 
-def test_list_app_profiles_pager():
+def test_list_app_profiles_pager(transport_name: str = "grpc"):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3934,10 +3934,10 @@ def test_list_app_profiles_pager():
         assert len(results) == 6
         assert all(isinstance(i, instance.AppProfile)
                    for i in results)
-
-def test_list_app_profiles_pages():
+def test_list_app_profiles_pages(transport_name: str = "grpc"):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4022,7 +4022,8 @@ async def test_list_app_profiles_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, instance.AppProfile)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_app_profiles_async_pages():
@@ -4068,7 +4069,11 @@ async def test_list_app_profiles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_app_profile(transport: str = 'grpc', request_type=bigtable_instance_admin.UpdateAppProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.UpdateAppProfileRequest,
+  dict,
+])
+def test_update_app_profile(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4093,10 +4098,6 @@ def test_update_app_profile(transport: str = 'grpc', request_type=bigtable_insta
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_app_profile_from_dict():
-    test_update_app_profile(request_type=dict)
 
 
 def test_update_app_profile_empty_call():
@@ -4311,7 +4312,11 @@ async def test_update_app_profile_flattened_error_async():
         )
 
 
-def test_delete_app_profile(transport: str = 'grpc', request_type=bigtable_instance_admin.DeleteAppProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable_instance_admin.DeleteAppProfileRequest,
+  dict,
+])
+def test_delete_app_profile(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4336,10 +4341,6 @@ def test_delete_app_profile(transport: str = 'grpc', request_type=bigtable_insta
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_app_profile_from_dict():
-    test_delete_app_profile(request_type=dict)
 
 
 def test_delete_app_profile_empty_call():
@@ -4540,7 +4541,11 @@ async def test_delete_app_profile_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4570,10 +4575,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -4796,7 +4797,11 @@ async def test_get_iam_policy_flattened_error_async():
         )
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4826,10 +4831,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -5052,7 +5053,11 @@ async def test_set_iam_policy_flattened_error_async():
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = BigtableInstanceAdminClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5080,10 +5085,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -5933,7 +5934,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.BigtableInstanceAdminTransport, '_prep_wrapped_messages') as prep:

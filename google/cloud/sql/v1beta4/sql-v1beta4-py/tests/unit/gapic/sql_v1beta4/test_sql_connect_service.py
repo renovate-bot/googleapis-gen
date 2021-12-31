@@ -204,18 +204,18 @@ def test_sql_connect_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -246,7 +246,7 @@ def test_sql_connect_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -321,7 +321,7 @@ def test_sql_connect_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -344,7 +344,7 @@ def test_sql_connect_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -355,7 +355,6 @@ def test_sql_connect_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_sql_connect_service_client_client_options_from_dict():
     with mock.patch('google.cloud.sql_v1beta4.services.sql_connect_service.transports.SqlConnectServiceGrpcTransport.__init__') as grpc_transport:
@@ -375,7 +374,11 @@ def test_sql_connect_service_client_client_options_from_dict():
         )
 
 
-def test_get_connect_settings(transport: str = 'grpc', request_type=cloud_sql_connect.GetConnectSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql_connect.GetConnectSettingsRequest,
+  dict,
+])
+def test_get_connect_settings(request_type, transport: str = 'grpc'):
     client = SqlConnectServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_get_connect_settings(transport: str = 'grpc', request_type=cloud_sql_co
     assert response.region == 'region_value'
     assert response.database_version == cloud_sql_resources.SqlDatabaseVersion.MYSQL_5_1
     assert response.backend_type == cloud_sql_resources.SqlBackendType.FIRST_GEN
-
-
-def test_get_connect_settings_from_dict():
-    test_get_connect_settings(request_type=dict)
 
 
 def test_get_connect_settings_empty_call():
@@ -475,7 +474,11 @@ async def test_get_connect_settings_async_from_dict():
     await test_get_connect_settings_async(request_type=dict)
 
 
-def test_generate_ephemeral_cert(transport: str = 'grpc', request_type=cloud_sql_connect.GenerateEphemeralCertRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_sql_connect.GenerateEphemeralCertRequest,
+  dict,
+])
+def test_generate_ephemeral_cert(request_type, transport: str = 'grpc'):
     client = SqlConnectServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -501,10 +504,6 @@ def test_generate_ephemeral_cert(transport: str = 'grpc', request_type=cloud_sql
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_sql_connect.GenerateEphemeralCertResponse)
-
-
-def test_generate_ephemeral_cert_from_dict():
-    test_generate_ephemeral_cert(request_type=dict)
 
 
 def test_generate_ephemeral_cert_empty_call():
@@ -1022,7 +1021,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SqlConnectServiceTransport, '_prep_wrapped_messages') as prep:

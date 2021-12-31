@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import BatchJobServiceTransport
 from .grpc import BatchJobServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[BatchJobServiceTransport]]
 _transport_registry['grpc'] = BatchJobServiceGrpcTransport
-
 
 __all__ = (
     'BatchJobServiceTransport',

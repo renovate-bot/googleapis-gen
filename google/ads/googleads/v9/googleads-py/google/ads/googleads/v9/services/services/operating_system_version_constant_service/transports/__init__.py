@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import OperatingSystemVersionConstantServiceTransport
 from .grpc import OperatingSystemVersionConstantServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[OperatingSystemVersionConstantServiceTransport]]
 _transport_registry['grpc'] = OperatingSystemVersionConstantServiceGrpcTransport
-
 
 __all__ = (
     'OperatingSystemVersionConstantServiceTransport',

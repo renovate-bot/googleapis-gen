@@ -218,18 +218,18 @@ def test_document_processor_service_client_client_options(client_class, transpor
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -260,7 +260,7 @@ def test_document_processor_service_client_mtls_env_auto(client_class, transport
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -335,7 +335,7 @@ def test_document_processor_service_client_client_options_scopes(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -358,7 +358,7 @@ def test_document_processor_service_client_client_options_credentials_file(clien
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -369,7 +369,6 @@ def test_document_processor_service_client_client_options_credentials_file(clien
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_document_processor_service_client_client_options_from_dict():
     with mock.patch('google.cloud.documentai_v1.services.document_processor_service.transports.DocumentProcessorServiceGrpcTransport.__init__') as grpc_transport:
@@ -389,7 +388,11 @@ def test_document_processor_service_client_client_options_from_dict():
         )
 
 
-def test_process_document(transport: str = 'grpc', request_type=document_processor_service.ProcessRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.ProcessRequest,
+  dict,
+])
+def test_process_document(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -415,10 +418,6 @@ def test_process_document(transport: str = 'grpc', request_type=document_process
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, document_processor_service.ProcessResponse)
-
-
-def test_process_document_from_dict():
-    test_process_document(request_type=dict)
 
 
 def test_process_document_empty_call():
@@ -620,7 +619,11 @@ async def test_process_document_flattened_error_async():
         )
 
 
-def test_batch_process_documents(transport: str = 'grpc', request_type=document_processor_service.BatchProcessRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.BatchProcessRequest,
+  dict,
+])
+def test_batch_process_documents(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -645,10 +648,6 @@ def test_batch_process_documents(transport: str = 'grpc', request_type=document_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_batch_process_documents_from_dict():
-    test_batch_process_documents(request_type=dict)
 
 
 def test_batch_process_documents_empty_call():
@@ -853,7 +852,11 @@ async def test_batch_process_documents_flattened_error_async():
         )
 
 
-def test_review_document(transport: str = 'grpc', request_type=document_processor_service.ReviewDocumentRequest):
+@pytest.mark.parametrize("request_type", [
+  document_processor_service.ReviewDocumentRequest,
+  dict,
+])
+def test_review_document(request_type, transport: str = 'grpc'):
     client = DocumentProcessorServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -878,10 +881,6 @@ def test_review_document(transport: str = 'grpc', request_type=document_processo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_review_document_from_dict():
-    test_review_document(request_type=dict)
 
 
 def test_review_document_empty_call():
@@ -1628,7 +1627,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DocumentProcessorServiceTransport, '_prep_wrapped_messages') as prep:

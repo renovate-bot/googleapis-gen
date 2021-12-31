@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import ThirdPartyAppAnalyticsLinkServiceTransport
 from .grpc import ThirdPartyAppAnalyticsLinkServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[ThirdPartyAppAnalyticsLinkServiceTransport]]
 _transport_registry['grpc'] = ThirdPartyAppAnalyticsLinkServiceGrpcTransport
-
 
 __all__ = (
     'ThirdPartyAppAnalyticsLinkServiceTransport',

@@ -130,7 +130,6 @@ class ListModelsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[model.Model]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class ListModelEvaluationsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[model_evaluation.ModelEvaluation]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListModelEvaluationSlicesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[model_evaluation_slice.ModelEvaluationSlice]:
         async def async_generator():
             async for page in self.pages:

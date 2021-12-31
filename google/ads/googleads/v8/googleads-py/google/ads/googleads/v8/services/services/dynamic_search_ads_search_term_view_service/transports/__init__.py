@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import DynamicSearchAdsSearchTermViewServiceTransport
 from .grpc import DynamicSearchAdsSearchTermViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[DynamicSearchAdsSearchTermViewServiceTransport]]
 _transport_registry['grpc'] = DynamicSearchAdsSearchTermViewServiceGrpcTransport
-
 
 __all__ = (
     'DynamicSearchAdsSearchTermViewServiceTransport',

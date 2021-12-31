@@ -130,7 +130,6 @@ class ListOSPolicyAssignmentsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[os_policy_assignments.OSPolicyAssignment]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class ListOSPolicyAssignmentRevisionsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[os_policy_assignments.OSPolicyAssignment]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListInstanceOSPoliciesCompliancesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[instance_os_policies_compliance.InstanceOSPoliciesCompliance]:
         async def async_generator():
             async for page in self.pages:
@@ -496,7 +493,6 @@ class ListInventoriesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[inventory.Inventory]:
         async def async_generator():
             async for page in self.pages:
@@ -618,7 +614,6 @@ class ListVulnerabilityReportsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vulnerability.VulnerabilityReport]:
         async def async_generator():
             async for page in self.pages:

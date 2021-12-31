@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_disks_client_client_options(client_class, transport_class, transport_na
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_disks_client_mtls_env_auto(client_class, transport_class, transport_nam
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_disks_client_client_options_scopes(client_class, transport_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_disks_client_client_options_credentials_file(client_class, transport_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,19 +348,71 @@ def test_disks_client_client_options_credentials_file(client_class, transport_cl
         )
 
 
-def test_add_resource_policies_unary_rest(transport: str = 'rest', request_type=compute.AddResourcePoliciesDiskRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AddResourcePoliciesDiskRequest,
+  dict,
+])
+def test_add_resource_policies_unary_rest(request_type, transport: str = 'rest'):
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AddResourcePoliciesDiskRequest({'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.add_resource_policies_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AddResourcePoliciesDiskRequest,
+    dict,
+])
+def test_add_resource_policies_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["disks_add_resource_policies_request_resource"] = compute.DisksAddResourcePoliciesRequest(resource_policies=['resource_policies_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["disks_add_resource_policies_request_resource"] = {'resource_policies': ['resource_policies_value_1', 'resource_policies_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -440,7 +492,7 @@ def test_add_resource_policies_unary_rest_required_fields(request_type=compute.A
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._add_resource_policies_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).add_resource_policies._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -455,7 +507,7 @@ def test_add_resource_policies_unary_rest_required_fields(request_type=compute.A
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._add_resource_policies_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).add_resource_policies._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -501,16 +553,16 @@ def test_add_resource_policies_unary_rest_required_fields(request_type=compute.A
             expected_params = [
                 (
                     "disk",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -523,8 +575,8 @@ def test_add_resource_policies_unary_rest_bad_request(transport: str = 'rest', r
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["disks_add_resource_policies_request_resource"] = compute.DisksAddResourcePoliciesRequest(resource_policies=['resource_policies_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["disks_add_resource_policies_request_resource"] = {'resource_policies': ['resource_policies_value_1', 'resource_policies_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -537,18 +589,14 @@ def test_add_resource_policies_unary_rest_bad_request(transport: str = 'rest', r
         client.add_resource_policies_unary(request)
 
 
-def test_add_resource_policies_unary_rest_from_dict():
-    test_add_resource_policies_unary_rest(request_type=dict)
-
-
-def test_add_resource_policies_unary_rest_flattened(transport: str = 'rest'):
+def test_add_resource_policies_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -561,7 +609,7 @@ def test_add_resource_policies_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -598,18 +646,59 @@ def test_add_resource_policies_unary_rest_flattened_error(transport: str = 'rest
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListDisksRequest):
+def test_add_resource_policies_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListDisksRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListDisksRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.DiskAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.DiskAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListDisksRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.DiskAggregatedList(
               id='id_value',
@@ -651,7 +740,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -660,7 +749,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -701,8 +790,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -715,7 +804,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -728,18 +817,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.DiskAggregatedList()
 
@@ -752,7 +837,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -793,81 +878,132 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.DiskAggregatedList(
-                    items={
-                        'a':compute.DisksScopedList(),
-                        'b':compute.DisksScopedList(),
-                        'c':compute.DisksScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.DiskAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.DiskAggregatedList(
-                    items={
-                        'g':compute.DisksScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.DiskAggregatedList(
-                    items={
-                        'h':compute.DisksScopedList(),
-                        'i':compute.DisksScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.DiskAggregatedList(
+                items={
+                    'a':compute.DisksScopedList(),
+                    'b':compute.DisksScopedList(),
+                    'c':compute.DisksScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.DiskAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.DiskAggregatedList(
+                items={
+                    'g':compute.DisksScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.DiskAggregatedList(
+                items={
+                    'h':compute.DisksScopedList(),
+                    'i':compute.DisksScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.DiskAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.DiskAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.DisksScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.DisksScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.DisksScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.DisksScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.DisksScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.DisksScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_create_snapshot_unary_rest(transport: str = 'rest', request_type=compute.CreateSnapshotDiskRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.CreateSnapshotDiskRequest,
+  dict,
+])
+def test_create_snapshot_unary_rest(request_type, transport: str = 'rest'):
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.CreateSnapshotDiskRequest({'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.create_snapshot_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.CreateSnapshotDiskRequest,
+    dict,
+])
+def test_create_snapshot_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["snapshot_resource"] = compute.Snapshot(auto_created=True)
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["snapshot_resource"] = {'auto_created': True, 'chain_name': 'chain_name_value', 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'disk_size_gb': 1261, 'download_bytes': 1502, 'id': 205, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'location_hint': 'location_hint_value', 'name': 'name_value', 'satisfies_pzs': True, 'self_link': 'self_link_value', 'snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk': 'source_disk_value', 'source_disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk_id': 'source_disk_id_value', 'status': 'status_value', 'storage_bytes': 1403, 'storage_bytes_status': 'storage_bytes_status_value', 'storage_locations': ['storage_locations_value_1', 'storage_locations_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -947,7 +1083,7 @@ def test_create_snapshot_unary_rest_required_fields(request_type=compute.CreateS
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._create_snapshot_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).create_snapshot._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -962,7 +1098,7 @@ def test_create_snapshot_unary_rest_required_fields(request_type=compute.CreateS
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._create_snapshot_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).create_snapshot._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1008,16 +1144,16 @@ def test_create_snapshot_unary_rest_required_fields(request_type=compute.CreateS
             expected_params = [
                 (
                     "disk",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1030,8 +1166,8 @@ def test_create_snapshot_unary_rest_bad_request(transport: str = 'rest', request
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["snapshot_resource"] = compute.Snapshot(auto_created=True)
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["snapshot_resource"] = {'auto_created': True, 'chain_name': 'chain_name_value', 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'disk_size_gb': 1261, 'download_bytes': 1502, 'id': 205, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'location_hint': 'location_hint_value', 'name': 'name_value', 'satisfies_pzs': True, 'self_link': 'self_link_value', 'snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk': 'source_disk_value', 'source_disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_disk_id': 'source_disk_id_value', 'status': 'status_value', 'storage_bytes': 1403, 'storage_bytes_status': 'storage_bytes_status_value', 'storage_locations': ['storage_locations_value_1', 'storage_locations_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1044,18 +1180,14 @@ def test_create_snapshot_unary_rest_bad_request(transport: str = 'rest', request
         client.create_snapshot_unary(request)
 
 
-def test_create_snapshot_unary_rest_from_dict():
-    test_create_snapshot_unary_rest(request_type=dict)
-
-
-def test_create_snapshot_unary_rest_flattened(transport: str = 'rest'):
+def test_create_snapshot_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1068,7 +1200,7 @@ def test_create_snapshot_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1105,18 +1237,76 @@ def test_create_snapshot_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteDiskRequest):
+def test_create_snapshot_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteDiskRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteDiskRequest({'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteDiskRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1196,7 +1386,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteDiskReques
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1211,7 +1401,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteDiskReques
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1256,16 +1446,16 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteDiskReques
             expected_params = [
                 (
                     "disk",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1278,7 +1468,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1291,18 +1481,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1315,7 +1501,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1350,18 +1536,85 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetDiskRequest):
+def test_delete_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetDiskRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetDiskRequest({'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Disk(
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              id=205,
+              kind='kind_value',
+              label_fingerprint='label_fingerprint_value',
+              last_attach_timestamp='last_attach_timestamp_value',
+              last_detach_timestamp='last_detach_timestamp_value',
+              license_codes=[1360],
+              licenses=['licenses_value'],
+              location_hint='location_hint_value',
+              name='name_value',
+              options='options_value',
+              physical_block_size_bytes=2663,
+              provisioned_iops=1740,
+              region='region_value',
+              replica_zones=['replica_zones_value'],
+              resource_policies=['resource_policies_value'],
+              satisfies_pzs=True,
+              self_link='self_link_value',
+              size_gb=739,
+              source_disk='source_disk_value',
+              source_disk_id='source_disk_id_value',
+              source_image='source_image_value',
+              source_image_id='source_image_id_value',
+              source_snapshot='source_snapshot_value',
+              source_snapshot_id='source_snapshot_id_value',
+              source_storage_object='source_storage_object_value',
+              status='status_value',
+              type_='type__value',
+              users=['users_value'],
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Disk.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetDiskRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Disk(
               creation_timestamp='creation_timestamp_value',
@@ -1459,7 +1712,7 @@ def test_get_rest_required_fields(request_type=compute.GetDiskRequest):
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1474,7 +1727,7 @@ def test_get_rest_required_fields(request_type=compute.GetDiskRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1519,16 +1772,16 @@ def test_get_rest_required_fields(request_type=compute.GetDiskRequest):
             expected_params = [
                 (
                     "disk",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1541,7 +1794,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetD
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1554,18 +1807,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetD
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Disk()
 
@@ -1578,7 +1827,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1613,18 +1862,57 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_iam_policy_rest(transport: str = 'rest', request_type=compute.GetIamPolicyDiskRequest):
+def test_get_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetIamPolicyDiskRequest,
+  dict,
+])
+def test_get_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetIamPolicyDiskRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetIamPolicyDiskRequest,
+    dict,
+])
+def test_get_iam_policy_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -1666,7 +1954,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyDi
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1681,7 +1969,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyDi
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1726,16 +2014,16 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyDi
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1748,7 +2036,7 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1761,18 +2049,14 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.get_iam_policy(request)
 
 
-def test_get_iam_policy_rest_from_dict():
-    test_get_iam_policy_rest(request_type=dict)
-
-
-def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_get_iam_policy_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -1785,7 +2069,7 @@ def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1820,19 +2104,77 @@ def test_get_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertDiskRequest):
+def test_get_iam_policy_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertDiskRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertDiskRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertDiskRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["disk_resource"] = compute.Disk(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["disk_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'guest_os_features': [{'type_': 'type__value'}], 'id': 205, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'last_attach_timestamp': 'last_attach_timestamp_value', 'last_detach_timestamp': 'last_detach_timestamp_value', 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'location_hint': 'location_hint_value', 'name': 'name_value', 'options': 'options_value', 'physical_block_size_bytes': 2663, 'provisioned_iops': 1740, 'region': 'region_value', 'replica_zones': ['replica_zones_value_1', 'replica_zones_value_2'], 'resource_policies': ['resource_policies_value_1', 'resource_policies_value_2'], 'satisfies_pzs': True, 'self_link': 'self_link_value', 'size_gb': 739, 'source_disk': 'source_disk_value', 'source_disk_id': 'source_disk_id_value', 'source_image': 'source_image_value', 'source_image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_image_id': 'source_image_id_value', 'source_snapshot': 'source_snapshot_value', 'source_snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_snapshot_id': 'source_snapshot_id_value', 'source_storage_object': 'source_storage_object_value', 'status': 'status_value', 'type_': 'type__value', 'users': ['users_value_1', 'users_value_2'], 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1910,7 +2252,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertDiskReques
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1922,7 +2264,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertDiskReques
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1966,12 +2308,12 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertDiskReques
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1984,8 +2326,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["disk_resource"] = compute.Disk(creation_timestamp='creation_timestamp_value')
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["disk_resource"] = {'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'disk_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'guest_os_features': [{'type_': 'type__value'}], 'id': 205, 'kind': 'kind_value', 'label_fingerprint': 'label_fingerprint_value', 'labels': {}, 'last_attach_timestamp': 'last_attach_timestamp_value', 'last_detach_timestamp': 'last_detach_timestamp_value', 'license_codes': [1361, 1362], 'licenses': ['licenses_value_1', 'licenses_value_2'], 'location_hint': 'location_hint_value', 'name': 'name_value', 'options': 'options_value', 'physical_block_size_bytes': 2663, 'provisioned_iops': 1740, 'region': 'region_value', 'replica_zones': ['replica_zones_value_1', 'replica_zones_value_2'], 'resource_policies': ['resource_policies_value_1', 'resource_policies_value_2'], 'satisfies_pzs': True, 'self_link': 'self_link_value', 'size_gb': 739, 'source_disk': 'source_disk_value', 'source_disk_id': 'source_disk_id_value', 'source_image': 'source_image_value', 'source_image_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_image_id': 'source_image_id_value', 'source_snapshot': 'source_snapshot_value', 'source_snapshot_encryption_key': {'kms_key_name': 'kms_key_name_value', 'kms_key_service_account': 'kms_key_service_account_value', 'raw_key': 'raw_key_value', 'rsa_encrypted_key': 'rsa_encrypted_key_value', 'sha256': 'sha256_value'}, 'source_snapshot_id': 'source_snapshot_id_value', 'source_storage_object': 'source_storage_object_value', 'status': 'status_value', 'type_': 'type__value', 'users': ['users_value_1', 'users_value_2'], 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1998,18 +2340,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2022,7 +2360,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2057,18 +2395,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListDisksRequest):
+def test_insert_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListDisksRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListDisksRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.DiskList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.DiskList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListDisksRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.DiskList(
               id='id_value',
@@ -2110,7 +2488,7 @@ def test_list_rest_required_fields(request_type=compute.ListDisksRequest):
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2122,7 +2500,7 @@ def test_list_rest_required_fields(request_type=compute.ListDisksRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2165,12 +2543,12 @@ def test_list_rest_required_fields(request_type=compute.ListDisksRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2183,7 +2561,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2196,18 +2574,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.DiskList()
 
@@ -2220,7 +2594,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2263,71 +2637,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.DiskList(
-                    items=[
-                        compute.Disk(),
-                        compute.Disk(),
-                        compute.Disk(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.DiskList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.DiskList(
-                    items=[
-                        compute.Disk(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.DiskList(
-                    items=[
-                        compute.Disk(),
-                        compute.Disk(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.DiskList(
+                items=[
+                    compute.Disk(),
+                    compute.Disk(),
+                    compute.Disk(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.DiskList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.DiskList(
+                items=[
+                    compute.Disk(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.DiskList(
+                items=[
+                    compute.Disk(),
+                    compute.Disk(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.DiskList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.DiskList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.Disk)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.Disk)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_remove_resource_policies_unary_rest(transport: str = 'rest', request_type=compute.RemoveResourcePoliciesDiskRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.RemoveResourcePoliciesDiskRequest,
+  dict,
+])
+def test_remove_resource_policies_unary_rest(request_type, transport: str = 'rest'):
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.RemoveResourcePoliciesDiskRequest({'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.remove_resource_policies_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.RemoveResourcePoliciesDiskRequest,
+    dict,
+])
+def test_remove_resource_policies_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["disks_remove_resource_policies_request_resource"] = compute.DisksRemoveResourcePoliciesRequest(resource_policies=['resource_policies_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["disks_remove_resource_policies_request_resource"] = {'resource_policies': ['resource_policies_value_1', 'resource_policies_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2407,7 +2832,7 @@ def test_remove_resource_policies_unary_rest_required_fields(request_type=comput
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._remove_resource_policies_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).remove_resource_policies._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2422,7 +2847,7 @@ def test_remove_resource_policies_unary_rest_required_fields(request_type=comput
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._remove_resource_policies_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).remove_resource_policies._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2468,16 +2893,16 @@ def test_remove_resource_policies_unary_rest_required_fields(request_type=comput
             expected_params = [
                 (
                     "disk",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2490,8 +2915,8 @@ def test_remove_resource_policies_unary_rest_bad_request(transport: str = 'rest'
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["disks_remove_resource_policies_request_resource"] = compute.DisksRemoveResourcePoliciesRequest(resource_policies=['resource_policies_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["disks_remove_resource_policies_request_resource"] = {'resource_policies': ['resource_policies_value_1', 'resource_policies_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2504,18 +2929,14 @@ def test_remove_resource_policies_unary_rest_bad_request(transport: str = 'rest'
         client.remove_resource_policies_unary(request)
 
 
-def test_remove_resource_policies_unary_rest_from_dict():
-    test_remove_resource_policies_unary_rest(request_type=dict)
-
-
-def test_remove_resource_policies_unary_rest_flattened(transport: str = 'rest'):
+def test_remove_resource_policies_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2528,7 +2949,7 @@ def test_remove_resource_policies_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2565,19 +2986,77 @@ def test_remove_resource_policies_unary_rest_flattened_error(transport: str = 'r
         )
 
 
-def test_resize_unary_rest(transport: str = 'rest', request_type=compute.ResizeDiskRequest):
+def test_remove_resource_policies_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ResizeDiskRequest,
+  dict,
+])
+def test_resize_unary_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ResizeDiskRequest({'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.resize_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ResizeDiskRequest,
+    dict,
+])
+def test_resize_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["disks_resize_request_resource"] = compute.DisksResizeRequest(size_gb=739)
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["disks_resize_request_resource"] = {'size_gb': 739}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2657,7 +3136,7 @@ def test_resize_unary_rest_required_fields(request_type=compute.ResizeDiskReques
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._resize_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).resize._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2672,7 +3151,7 @@ def test_resize_unary_rest_required_fields(request_type=compute.ResizeDiskReques
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._resize_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).resize._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2718,16 +3197,16 @@ def test_resize_unary_rest_required_fields(request_type=compute.ResizeDiskReques
             expected_params = [
                 (
                     "disk",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2740,8 +3219,8 @@ def test_resize_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
-    request_init["disks_resize_request_resource"] = compute.DisksResizeRequest(size_gb=739)
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
+    request_init["disks_resize_request_resource"] = {'size_gb': 739}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2754,18 +3233,14 @@ def test_resize_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.resize_unary(request)
 
 
-def test_resize_unary_rest_from_dict():
-    test_resize_unary_rest(request_type=dict)
-
-
-def test_resize_unary_rest_flattened(transport: str = 'rest'):
+def test_resize_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2778,7 +3253,7 @@ def test_resize_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "disk": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'disk': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2815,19 +3290,58 @@ def test_resize_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_iam_policy_rest(transport: str = 'rest', request_type=compute.SetIamPolicyDiskRequest):
+def test_resize_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetIamPolicyDiskRequest,
+  dict,
+])
+def test_set_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetIamPolicyDiskRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetIamPolicyDiskRequest,
+    dict,
+])
+def test_set_iam_policy_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["zone_set_policy_request_resource"] = compute.ZoneSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["zone_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -2869,7 +3383,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyDi
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2884,7 +3398,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyDi
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2930,16 +3444,16 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyDi
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2952,8 +3466,8 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["zone_set_policy_request_resource"] = compute.ZoneSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["zone_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2966,18 +3480,14 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.set_iam_policy(request)
 
 
-def test_set_iam_policy_rest_from_dict():
-    test_set_iam_policy_rest(request_type=dict)
-
-
-def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_set_iam_policy_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -2990,7 +3500,7 @@ def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -3027,19 +3537,77 @@ def test_set_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_labels_unary_rest(transport: str = 'rest', request_type=compute.SetLabelsDiskRequest):
+def test_set_iam_policy_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetLabelsDiskRequest,
+  dict,
+])
+def test_set_labels_unary_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetLabelsDiskRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_labels_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetLabelsDiskRequest,
+    dict,
+])
+def test_set_labels_unary_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["zone_set_labels_request_resource"] = compute.ZoneSetLabelsRequest(label_fingerprint='label_fingerprint_value')
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["zone_set_labels_request_resource"] = {'label_fingerprint': 'label_fingerprint_value', 'labels': {}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -3119,7 +3687,7 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsDis
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_labels._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -3134,7 +3702,7 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsDis
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._set_labels_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_labels._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -3180,16 +3748,16 @@ def test_set_labels_unary_rest_required_fields(request_type=compute.SetLabelsDis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -3202,8 +3770,8 @@ def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["zone_set_labels_request_resource"] = compute.ZoneSetLabelsRequest(label_fingerprint='label_fingerprint_value')
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["zone_set_labels_request_resource"] = {'label_fingerprint': 'label_fingerprint_value', 'labels': {}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -3216,18 +3784,14 @@ def test_set_labels_unary_rest_bad_request(transport: str = 'rest', request_type
         client.set_labels_unary(request)
 
 
-def test_set_labels_unary_rest_from_dict():
-    test_set_labels_unary_rest(request_type=dict)
-
-
-def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
+def test_set_labels_unary_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -3240,7 +3804,7 @@ def test_set_labels_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -3277,19 +3841,56 @@ def test_set_labels_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute.TestIamPermissionsDiskRequest):
+def test_set_labels_unary_rest_error():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.TestIamPermissionsDiskRequest,
+  dict,
+])
+def test_test_iam_permissions_rest(request_type, transport: str = 'rest'):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.TestIamPermissionsDiskRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.TestPermissionsResponse(
+              permissions=['permissions_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.test_iam_permissions(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.TestIamPermissionsDiskRequest,
+    dict,
+])
+def test_test_iam_permissions_rest(request_type):
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse(
               permissions=['permissions_value'],
@@ -3327,7 +3928,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -3342,7 +3943,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -3388,16 +3989,16 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -3410,8 +4011,8 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -3424,18 +4025,14 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
         client.test_iam_permissions(request)
 
 
-def test_test_iam_permissions_rest_from_dict():
-    test_test_iam_permissions_rest(request_type=dict)
-
-
-def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
+def test_test_iam_permissions_rest_flattened():
     client = DisksClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse()
 
@@ -3448,7 +4045,7 @@ def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -3483,6 +4080,13 @@ def test_test_iam_permissions_rest_flattened_error(transport: str = 'rest'):
             resource='resource_value',
             test_permissions_request_resource=compute.TestPermissionsRequest(permissions=['permissions_value']),
         )
+
+
+def test_test_iam_permissions_rest_error():
+    client = DisksClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -3736,7 +4340,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DisksTransport, '_prep_wrapped_messages') as prep:

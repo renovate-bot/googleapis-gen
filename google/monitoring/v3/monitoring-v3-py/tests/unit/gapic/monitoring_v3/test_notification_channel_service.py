@@ -210,18 +210,18 @@ def test_notification_channel_service_client_client_options(client_class, transp
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -252,7 +252,7 @@ def test_notification_channel_service_client_mtls_env_auto(client_class, transpo
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -327,7 +327,7 @@ def test_notification_channel_service_client_client_options_scopes(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -350,7 +350,7 @@ def test_notification_channel_service_client_client_options_credentials_file(cli
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -361,7 +361,6 @@ def test_notification_channel_service_client_client_options_credentials_file(cli
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_notification_channel_service_client_client_options_from_dict():
     with mock.patch('google.cloud.monitoring_v3.services.notification_channel_service.transports.NotificationChannelServiceGrpcTransport.__init__') as grpc_transport:
@@ -381,7 +380,11 @@ def test_notification_channel_service_client_client_options_from_dict():
         )
 
 
-def test_list_notification_channel_descriptors(transport: str = 'grpc', request_type=notification_service.ListNotificationChannelDescriptorsRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.ListNotificationChannelDescriptorsRequest,
+  dict,
+])
+def test_list_notification_channel_descriptors(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_list_notification_channel_descriptors(transport: str = 'grpc', request_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListNotificationChannelDescriptorsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_notification_channel_descriptors_from_dict():
-    test_list_notification_channel_descriptors(request_type=dict)
 
 
 def test_list_notification_channel_descriptors_empty_call():
@@ -616,9 +615,10 @@ async def test_list_notification_channel_descriptors_flattened_error_async():
         )
 
 
-def test_list_notification_channel_descriptors_pager():
+def test_list_notification_channel_descriptors_pager(transport_name: str = "grpc"):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -668,10 +668,10 @@ def test_list_notification_channel_descriptors_pager():
         assert len(results) == 6
         assert all(isinstance(i, notification.NotificationChannelDescriptor)
                    for i in results)
-
-def test_list_notification_channel_descriptors_pages():
+def test_list_notification_channel_descriptors_pages(transport_name: str = "grpc"):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -756,7 +756,8 @@ async def test_list_notification_channel_descriptors_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, notification.NotificationChannelDescriptor)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_notification_channel_descriptors_async_pages():
@@ -802,7 +803,11 @@ async def test_list_notification_channel_descriptors_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_notification_channel_descriptor(transport: str = 'grpc', request_type=notification_service.GetNotificationChannelDescriptorRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.GetNotificationChannelDescriptorRequest,
+  dict,
+])
+def test_get_notification_channel_descriptor(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -840,10 +845,6 @@ def test_get_notification_channel_descriptor(transport: str = 'grpc', request_ty
     assert response.description == 'description_value'
     assert response.supported_tiers == [common.ServiceTier.SERVICE_TIER_BASIC]
     assert response.launch_stage == launch_stage_pb2.LaunchStage.UNIMPLEMENTED
-
-
-def test_get_notification_channel_descriptor_from_dict():
-    test_get_notification_channel_descriptor(request_type=dict)
 
 
 def test_get_notification_channel_descriptor_empty_call():
@@ -1057,7 +1058,11 @@ async def test_get_notification_channel_descriptor_flattened_error_async():
         )
 
 
-def test_list_notification_channels(transport: str = 'grpc', request_type=notification_service.ListNotificationChannelsRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.ListNotificationChannelsRequest,
+  dict,
+])
+def test_list_notification_channels(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1087,10 +1092,6 @@ def test_list_notification_channels(transport: str = 'grpc', request_type=notifi
     assert isinstance(response, pagers.ListNotificationChannelsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.total_size == 1086
-
-
-def test_list_notification_channels_from_dict():
-    test_list_notification_channels(request_type=dict)
 
 
 def test_list_notification_channels_empty_call():
@@ -1296,9 +1297,10 @@ async def test_list_notification_channels_flattened_error_async():
         )
 
 
-def test_list_notification_channels_pager():
+def test_list_notification_channels_pager(transport_name: str = "grpc"):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1348,10 +1350,10 @@ def test_list_notification_channels_pager():
         assert len(results) == 6
         assert all(isinstance(i, notification.NotificationChannel)
                    for i in results)
-
-def test_list_notification_channels_pages():
+def test_list_notification_channels_pages(transport_name: str = "grpc"):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1436,7 +1438,8 @@ async def test_list_notification_channels_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, notification.NotificationChannel)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_notification_channels_async_pages():
@@ -1482,7 +1485,11 @@ async def test_list_notification_channels_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_notification_channel(transport: str = 'grpc', request_type=notification_service.GetNotificationChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.GetNotificationChannelRequest,
+  dict,
+])
+def test_get_notification_channel(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1518,10 +1525,6 @@ def test_get_notification_channel(transport: str = 'grpc', request_type=notifica
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.verification_status == notification.NotificationChannel.VerificationStatus.UNVERIFIED
-
-
-def test_get_notification_channel_from_dict():
-    test_get_notification_channel(request_type=dict)
 
 
 def test_get_notification_channel_empty_call():
@@ -1733,7 +1736,11 @@ async def test_get_notification_channel_flattened_error_async():
         )
 
 
-def test_create_notification_channel(transport: str = 'grpc', request_type=notification_service.CreateNotificationChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.CreateNotificationChannelRequest,
+  dict,
+])
+def test_create_notification_channel(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1769,10 +1776,6 @@ def test_create_notification_channel(transport: str = 'grpc', request_type=notif
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.verification_status == notification.NotificationChannel.VerificationStatus.UNVERIFIED
-
-
-def test_create_notification_channel_from_dict():
-    test_create_notification_channel(request_type=dict)
 
 
 def test_create_notification_channel_empty_call():
@@ -1994,7 +1997,11 @@ async def test_create_notification_channel_flattened_error_async():
         )
 
 
-def test_update_notification_channel(transport: str = 'grpc', request_type=notification_service.UpdateNotificationChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.UpdateNotificationChannelRequest,
+  dict,
+])
+def test_update_notification_channel(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2030,10 +2037,6 @@ def test_update_notification_channel(transport: str = 'grpc', request_type=notif
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.verification_status == notification.NotificationChannel.VerificationStatus.UNVERIFIED
-
-
-def test_update_notification_channel_from_dict():
-    test_update_notification_channel(request_type=dict)
 
 
 def test_update_notification_channel_empty_call():
@@ -2255,7 +2258,11 @@ async def test_update_notification_channel_flattened_error_async():
         )
 
 
-def test_delete_notification_channel(transport: str = 'grpc', request_type=notification_service.DeleteNotificationChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.DeleteNotificationChannelRequest,
+  dict,
+])
+def test_delete_notification_channel(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2280,10 +2287,6 @@ def test_delete_notification_channel(transport: str = 'grpc', request_type=notif
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_notification_channel_from_dict():
-    test_delete_notification_channel(request_type=dict)
 
 
 def test_delete_notification_channel_empty_call():
@@ -2494,7 +2497,11 @@ async def test_delete_notification_channel_flattened_error_async():
         )
 
 
-def test_send_notification_channel_verification_code(transport: str = 'grpc', request_type=notification_service.SendNotificationChannelVerificationCodeRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.SendNotificationChannelVerificationCodeRequest,
+  dict,
+])
+def test_send_notification_channel_verification_code(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2519,10 +2526,6 @@ def test_send_notification_channel_verification_code(transport: str = 'grpc', re
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_send_notification_channel_verification_code_from_dict():
-    test_send_notification_channel_verification_code(request_type=dict)
 
 
 def test_send_notification_channel_verification_code_empty_call():
@@ -2723,7 +2726,11 @@ async def test_send_notification_channel_verification_code_flattened_error_async
         )
 
 
-def test_get_notification_channel_verification_code(transport: str = 'grpc', request_type=notification_service.GetNotificationChannelVerificationCodeRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.GetNotificationChannelVerificationCodeRequest,
+  dict,
+])
+def test_get_notification_channel_verification_code(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2751,10 +2758,6 @@ def test_get_notification_channel_verification_code(transport: str = 'grpc', req
     # Establish that the response is the type that we expect.
     assert isinstance(response, notification_service.GetNotificationChannelVerificationCodeResponse)
     assert response.code == 'code_value'
-
-
-def test_get_notification_channel_verification_code_from_dict():
-    test_get_notification_channel_verification_code(request_type=dict)
 
 
 def test_get_notification_channel_verification_code_empty_call():
@@ -2958,7 +2961,11 @@ async def test_get_notification_channel_verification_code_flattened_error_async(
         )
 
 
-def test_verify_notification_channel(transport: str = 'grpc', request_type=notification_service.VerifyNotificationChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  notification_service.VerifyNotificationChannelRequest,
+  dict,
+])
+def test_verify_notification_channel(request_type, transport: str = 'grpc'):
     client = NotificationChannelServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2994,10 +3001,6 @@ def test_verify_notification_channel(transport: str = 'grpc', request_type=notif
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.verification_status == notification.NotificationChannel.VerificationStatus.UNVERIFIED
-
-
-def test_verify_notification_channel_from_dict():
-    test_verify_notification_channel(request_type=dict)
 
 
 def test_verify_notification_channel_empty_call():
@@ -3731,7 +3734,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.NotificationChannelServiceTransport, '_prep_wrapped_messages') as prep:

@@ -201,18 +201,18 @@ def test_text_to_speech_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -243,7 +243,7 @@ def test_text_to_speech_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -318,7 +318,7 @@ def test_text_to_speech_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -341,7 +341,7 @@ def test_text_to_speech_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -352,7 +352,6 @@ def test_text_to_speech_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_text_to_speech_client_client_options_from_dict():
     with mock.patch('google.cloud.texttospeech_v1beta1.services.text_to_speech.transports.TextToSpeechGrpcTransport.__init__') as grpc_transport:
@@ -372,7 +371,11 @@ def test_text_to_speech_client_client_options_from_dict():
         )
 
 
-def test_list_voices(transport: str = 'grpc', request_type=cloud_tts.ListVoicesRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tts.ListVoicesRequest,
+  dict,
+])
+def test_list_voices(request_type, transport: str = 'grpc'):
     client = TextToSpeechClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -398,10 +401,6 @@ def test_list_voices(transport: str = 'grpc', request_type=cloud_tts.ListVoicesR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tts.ListVoicesResponse)
-
-
-def test_list_voices_from_dict():
-    test_list_voices(request_type=dict)
 
 
 def test_list_voices_empty_call():
@@ -540,7 +539,11 @@ async def test_list_voices_flattened_error_async():
         )
 
 
-def test_synthesize_speech(transport: str = 'grpc', request_type=cloud_tts.SynthesizeSpeechRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tts.SynthesizeSpeechRequest,
+  dict,
+])
+def test_synthesize_speech(request_type, transport: str = 'grpc'):
     client = TextToSpeechClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -568,10 +571,6 @@ def test_synthesize_speech(transport: str = 'grpc', request_type=cloud_tts.Synth
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tts.SynthesizeSpeechResponse)
     assert response.audio_content == b'audio_content_blob'
-
-
-def test_synthesize_speech_from_dict():
-    test_synthesize_speech(request_type=dict)
 
 
 def test_synthesize_speech_empty_call():
@@ -1213,7 +1212,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.TextToSpeechTransport, '_prep_wrapped_messages') as prep:

@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import IncomeRangeViewServiceTransport
 from .grpc import IncomeRangeViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[IncomeRangeViewServiceTransport]]
 _transport_registry['grpc'] = IncomeRangeViewServiceGrpcTransport
-
 
 __all__ = (
     'IncomeRangeViewServiceTransport',

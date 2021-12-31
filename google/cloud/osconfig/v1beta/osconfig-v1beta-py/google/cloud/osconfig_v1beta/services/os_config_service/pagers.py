@@ -129,7 +129,6 @@ class ListPatchJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[patch_jobs.PatchJob]:
         async def async_generator():
             async for page in self.pages:
@@ -251,7 +250,6 @@ class ListPatchJobInstanceDetailsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[patch_jobs.PatchJobInstanceDetails]:
         async def async_generator():
             async for page in self.pages:
@@ -373,7 +371,6 @@ class ListPatchDeploymentsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[patch_deployments.PatchDeployment]:
         async def async_generator():
             async for page in self.pages:
@@ -495,7 +492,6 @@ class ListGuestPoliciesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[guest_policies.GuestPolicy]:
         async def async_generator():
             async for page in self.pages:

@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_autoscalers_client_client_options(client_class, transport_class, transp
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_autoscalers_client_mtls_env_auto(client_class, transport_class, transpo
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_autoscalers_client_client_options_scopes(client_class, transport_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_autoscalers_client_client_options_credentials_file(client_class, transp
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,53 @@ def test_autoscalers_client_client_options_credentials_file(client_class, transp
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListAutoscalersRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListAutoscalersRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListAutoscalersRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.AutoscalerAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.AutoscalerAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListAutoscalersRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.AutoscalerAggregatedList(
               id='id_value',
@@ -401,7 +436,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -410,7 +445,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -451,8 +486,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -465,7 +500,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -478,18 +513,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.AutoscalerAggregatedList()
 
@@ -502,7 +533,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -543,80 +574,131 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.AutoscalerAggregatedList(
-                    items={
-                        'a':compute.AutoscalersScopedList(),
-                        'b':compute.AutoscalersScopedList(),
-                        'c':compute.AutoscalersScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.AutoscalerAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.AutoscalerAggregatedList(
-                    items={
-                        'g':compute.AutoscalersScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.AutoscalerAggregatedList(
-                    items={
-                        'h':compute.AutoscalersScopedList(),
-                        'i':compute.AutoscalersScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.AutoscalerAggregatedList(
+                items={
+                    'a':compute.AutoscalersScopedList(),
+                    'b':compute.AutoscalersScopedList(),
+                    'c':compute.AutoscalersScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.AutoscalerAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.AutoscalerAggregatedList(
+                items={
+                    'g':compute.AutoscalersScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.AutoscalerAggregatedList(
+                items={
+                    'h':compute.AutoscalersScopedList(),
+                    'i':compute.AutoscalersScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.AutoscalerAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.AutoscalerAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.AutoscalersScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.AutoscalersScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.AutoscalersScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.AutoscalersScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.AutoscalersScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.AutoscalersScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteAutoscalerRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteAutoscalerRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteAutoscalerRequest({'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteAutoscalerRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "autoscaler": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -696,7 +778,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteAutoscaler
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -711,7 +793,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteAutoscaler
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -756,16 +838,16 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteAutoscaler
             expected_params = [
                 (
                     "autoscaler",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -778,7 +860,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "autoscaler": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -791,18 +873,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -815,7 +893,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "autoscaler": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -850,18 +928,65 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetAutoscalerRequest):
+def test_delete_unary_rest_error():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetAutoscalerRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetAutoscalerRequest({'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Autoscaler(
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              id=205,
+              kind='kind_value',
+              name='name_value',
+              recommended_size=1693,
+              region='region_value',
+              self_link='self_link_value',
+              status='status_value',
+              target='target_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Autoscaler.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetAutoscalerRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "autoscaler": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Autoscaler(
               creation_timestamp='creation_timestamp_value',
@@ -919,7 +1044,7 @@ def test_get_rest_required_fields(request_type=compute.GetAutoscalerRequest):
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -934,7 +1059,7 @@ def test_get_rest_required_fields(request_type=compute.GetAutoscalerRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -979,16 +1104,16 @@ def test_get_rest_required_fields(request_type=compute.GetAutoscalerRequest):
             expected_params = [
                 (
                     "autoscaler",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1001,7 +1126,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetA
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "autoscaler": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1014,18 +1139,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetA
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Autoscaler()
 
@@ -1038,7 +1159,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "autoscaler": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'autoscaler': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1073,19 +1194,77 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertAutoscalerRequest):
+def test_get_rest_error():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertAutoscalerRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertAutoscalerRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertAutoscalerRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["autoscaler_resource"] = compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["autoscaler_resource"] = {'autoscaling_policy': {'cool_down_period_sec': 2112, 'cpu_utilization': {'predictive_method': 'predictive_method_value', 'utilization_target': 0.19540000000000002}, 'custom_metric_utilizations': [{'filter': 'filter_value', 'metric': 'metric_value', 'single_instance_assignment': 0.2766, 'utilization_target': 0.19540000000000002, 'utilization_target_type': 'utilization_target_type_value'}], 'load_balancing_utilization': {'utilization_target': 0.19540000000000002}, 'max_num_replicas': 1703, 'min_num_replicas': 1701, 'mode': 'mode_value', 'scale_in_control': {'max_scaled_in_replicas': {'calculated': 1042, 'fixed': 528, 'percent': 753}, 'time_window_sec': 1600}, 'scaling_schedules': {}}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'recommended_size': 1693, 'region': 'region_value', 'scaling_schedule_status': {}, 'self_link': 'self_link_value', 'status': 'status_value', 'status_details': [{'message': 'message_value', 'type_': 'type__value'}], 'target': 'target_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1163,7 +1342,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertAutoscaler
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1175,7 +1354,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertAutoscaler
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1219,12 +1398,12 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertAutoscaler
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1237,8 +1416,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["autoscaler_resource"] = compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["autoscaler_resource"] = {'autoscaling_policy': {'cool_down_period_sec': 2112, 'cpu_utilization': {'predictive_method': 'predictive_method_value', 'utilization_target': 0.19540000000000002}, 'custom_metric_utilizations': [{'filter': 'filter_value', 'metric': 'metric_value', 'single_instance_assignment': 0.2766, 'utilization_target': 0.19540000000000002, 'utilization_target_type': 'utilization_target_type_value'}], 'load_balancing_utilization': {'utilization_target': 0.19540000000000002}, 'max_num_replicas': 1703, 'min_num_replicas': 1701, 'mode': 'mode_value', 'scale_in_control': {'max_scaled_in_replicas': {'calculated': 1042, 'fixed': 528, 'percent': 753}, 'time_window_sec': 1600}, 'scaling_schedules': {}}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'recommended_size': 1693, 'region': 'region_value', 'scaling_schedule_status': {}, 'self_link': 'self_link_value', 'status': 'status_value', 'status_details': [{'message': 'message_value', 'type_': 'type__value'}], 'target': 'target_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1251,18 +1430,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1275,7 +1450,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1310,18 +1485,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListAutoscalersRequest):
+def test_insert_unary_rest_error():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListAutoscalersRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListAutoscalersRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.AutoscalerList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.AutoscalerList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListAutoscalersRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.AutoscalerList(
               id='id_value',
@@ -1363,7 +1578,7 @@ def test_list_rest_required_fields(request_type=compute.ListAutoscalersRequest):
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1375,7 +1590,7 @@ def test_list_rest_required_fields(request_type=compute.ListAutoscalersRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1418,12 +1633,12 @@ def test_list_rest_required_fields(request_type=compute.ListAutoscalersRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1436,7 +1651,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1449,18 +1664,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.AutoscalerList()
 
@@ -1473,7 +1684,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1516,71 +1727,122 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.AutoscalerList(
-                    items=[
-                        compute.Autoscaler(),
-                        compute.Autoscaler(),
-                        compute.Autoscaler(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.AutoscalerList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.AutoscalerList(
-                    items=[
-                        compute.Autoscaler(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.AutoscalerList(
-                    items=[
-                        compute.Autoscaler(),
-                        compute.Autoscaler(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.AutoscalerList(
+                items=[
+                    compute.Autoscaler(),
+                    compute.Autoscaler(),
+                    compute.Autoscaler(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.AutoscalerList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.AutoscalerList(
+                items=[
+                    compute.Autoscaler(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.AutoscalerList(
+                items=[
+                    compute.Autoscaler(),
+                    compute.Autoscaler(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.AutoscalerList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.AutoscalerList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.Autoscaler)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.Autoscaler)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchAutoscalerRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchAutoscalerRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchAutoscalerRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchAutoscalerRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["autoscaler_resource"] = compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["autoscaler_resource"] = {'autoscaling_policy': {'cool_down_period_sec': 2112, 'cpu_utilization': {'predictive_method': 'predictive_method_value', 'utilization_target': 0.19540000000000002}, 'custom_metric_utilizations': [{'filter': 'filter_value', 'metric': 'metric_value', 'single_instance_assignment': 0.2766, 'utilization_target': 0.19540000000000002, 'utilization_target_type': 'utilization_target_type_value'}], 'load_balancing_utilization': {'utilization_target': 0.19540000000000002}, 'max_num_replicas': 1703, 'min_num_replicas': 1701, 'mode': 'mode_value', 'scale_in_control': {'max_scaled_in_replicas': {'calculated': 1042, 'fixed': 528, 'percent': 753}, 'time_window_sec': 1600}, 'scaling_schedules': {}}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'recommended_size': 1693, 'region': 'region_value', 'scaling_schedule_status': {}, 'self_link': 'self_link_value', 'status': 'status_value', 'status_details': [{'message': 'message_value', 'type_': 'type__value'}], 'target': 'target_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1658,7 +1920,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchAutoscalerRe
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1670,7 +1932,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchAutoscalerRe
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1714,12 +1976,12 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchAutoscalerRe
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1732,8 +1994,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["autoscaler_resource"] = compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["autoscaler_resource"] = {'autoscaling_policy': {'cool_down_period_sec': 2112, 'cpu_utilization': {'predictive_method': 'predictive_method_value', 'utilization_target': 0.19540000000000002}, 'custom_metric_utilizations': [{'filter': 'filter_value', 'metric': 'metric_value', 'single_instance_assignment': 0.2766, 'utilization_target': 0.19540000000000002, 'utilization_target_type': 'utilization_target_type_value'}], 'load_balancing_utilization': {'utilization_target': 0.19540000000000002}, 'max_num_replicas': 1703, 'min_num_replicas': 1701, 'mode': 'mode_value', 'scale_in_control': {'max_scaled_in_replicas': {'calculated': 1042, 'fixed': 528, 'percent': 753}, 'time_window_sec': 1600}, 'scaling_schedules': {}}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'recommended_size': 1693, 'region': 'region_value', 'scaling_schedule_status': {}, 'self_link': 'self_link_value', 'status': 'status_value', 'status_details': [{'message': 'message_value', 'type_': 'type__value'}], 'target': 'target_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1746,18 +2008,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1770,7 +2028,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1805,19 +2063,77 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_update_unary_rest(transport: str = 'rest', request_type=compute.UpdateAutoscalerRequest):
+def test_patch_unary_rest_error():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.UpdateAutoscalerRequest,
+  dict,
+])
+def test_update_unary_rest(request_type, transport: str = 'rest'):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.UpdateAutoscalerRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.update_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.UpdateAutoscalerRequest,
+    dict,
+])
+def test_update_unary_rest(request_type):
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["autoscaler_resource"] = compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["autoscaler_resource"] = {'autoscaling_policy': {'cool_down_period_sec': 2112, 'cpu_utilization': {'predictive_method': 'predictive_method_value', 'utilization_target': 0.19540000000000002}, 'custom_metric_utilizations': [{'filter': 'filter_value', 'metric': 'metric_value', 'single_instance_assignment': 0.2766, 'utilization_target': 0.19540000000000002, 'utilization_target_type': 'utilization_target_type_value'}], 'load_balancing_utilization': {'utilization_target': 0.19540000000000002}, 'max_num_replicas': 1703, 'min_num_replicas': 1701, 'mode': 'mode_value', 'scale_in_control': {'max_scaled_in_replicas': {'calculated': 1042, 'fixed': 528, 'percent': 753}, 'time_window_sec': 1600}, 'scaling_schedules': {}}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'recommended_size': 1693, 'region': 'region_value', 'scaling_schedule_status': {}, 'self_link': 'self_link_value', 'status': 'status_value', 'status_details': [{'message': 'message_value', 'type_': 'type__value'}], 'target': 'target_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1895,7 +2211,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateAutoscaler
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1907,7 +2223,7 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateAutoscaler
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._update_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).update._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1951,12 +2267,12 @@ def test_update_unary_rest_required_fields(request_type=compute.UpdateAutoscaler
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1969,8 +2285,8 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["autoscaler_resource"] = compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["autoscaler_resource"] = {'autoscaling_policy': {'cool_down_period_sec': 2112, 'cpu_utilization': {'predictive_method': 'predictive_method_value', 'utilization_target': 0.19540000000000002}, 'custom_metric_utilizations': [{'filter': 'filter_value', 'metric': 'metric_value', 'single_instance_assignment': 0.2766, 'utilization_target': 0.19540000000000002, 'utilization_target_type': 'utilization_target_type_value'}], 'load_balancing_utilization': {'utilization_target': 0.19540000000000002}, 'max_num_replicas': 1703, 'min_num_replicas': 1701, 'mode': 'mode_value', 'scale_in_control': {'max_scaled_in_replicas': {'calculated': 1042, 'fixed': 528, 'percent': 753}, 'time_window_sec': 1600}, 'scaling_schedules': {}}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'id': 205, 'kind': 'kind_value', 'name': 'name_value', 'recommended_size': 1693, 'region': 'region_value', 'scaling_schedule_status': {}, 'self_link': 'self_link_value', 'status': 'status_value', 'status_details': [{'message': 'message_value', 'type_': 'type__value'}], 'target': 'target_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1983,18 +2299,14 @@ def test_update_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.update_unary(request)
 
 
-def test_update_unary_rest_from_dict():
-    test_update_unary_rest(request_type=dict)
-
-
-def test_update_unary_rest_flattened(transport: str = 'rest'):
+def test_update_unary_rest_flattened():
     client = AutoscalersClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2007,7 +2319,7 @@ def test_update_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2040,6 +2352,13 @@ def test_update_unary_rest_flattened_error(transport: str = 'rest'):
             zone='zone_value',
             autoscaler_resource=compute.Autoscaler(autoscaling_policy=compute.AutoscalingPolicy(cool_down_period_sec=2112)),
         )
+
+
+def test_update_unary_rest_error():
+    client = AutoscalersClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -2287,7 +2606,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AutoscalersTransport, '_prep_wrapped_messages') as prep:

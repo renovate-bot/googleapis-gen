@@ -210,18 +210,18 @@ def test_storage_client_client_options(client_class, transport_class, transport_
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -252,7 +252,7 @@ def test_storage_client_mtls_env_auto(client_class, transport_class, transport_n
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -327,7 +327,7 @@ def test_storage_client_client_options_scopes(client_class, transport_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -350,7 +350,7 @@ def test_storage_client_client_options_credentials_file(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -361,7 +361,6 @@ def test_storage_client_client_options_credentials_file(client_class, transport_
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_storage_client_client_options_from_dict():
     with mock.patch('google.storage_v1.services.storage.transports.StorageGrpcTransport.__init__') as grpc_transport:
@@ -381,7 +380,11 @@ def test_storage_client_client_options_from_dict():
         )
 
 
-def test_delete_bucket_access_control(transport: str = 'grpc', request_type=storage.DeleteBucketAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteBucketAccessControlRequest,
+  dict,
+])
+def test_delete_bucket_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -406,10 +409,6 @@ def test_delete_bucket_access_control(transport: str = 'grpc', request_type=stor
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_bucket_access_control_from_dict():
-    test_delete_bucket_access_control(request_type=dict)
 
 
 def test_delete_bucket_access_control_empty_call():
@@ -463,7 +462,11 @@ async def test_delete_bucket_access_control_async_from_dict():
     await test_delete_bucket_access_control_async(request_type=dict)
 
 
-def test_get_bucket_access_control(transport: str = 'grpc', request_type=storage.GetBucketAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetBucketAccessControlRequest,
+  dict,
+])
+def test_get_bucket_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -505,10 +508,6 @@ def test_get_bucket_access_control(transport: str = 'grpc', request_type=storage
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_get_bucket_access_control_from_dict():
-    test_get_bucket_access_control(request_type=dict)
 
 
 def test_get_bucket_access_control_empty_call():
@@ -579,7 +578,11 @@ async def test_get_bucket_access_control_async_from_dict():
     await test_get_bucket_access_control_async(request_type=dict)
 
 
-def test_insert_bucket_access_control(transport: str = 'grpc', request_type=storage.InsertBucketAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.InsertBucketAccessControlRequest,
+  dict,
+])
+def test_insert_bucket_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -621,10 +624,6 @@ def test_insert_bucket_access_control(transport: str = 'grpc', request_type=stor
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_insert_bucket_access_control_from_dict():
-    test_insert_bucket_access_control(request_type=dict)
 
 
 def test_insert_bucket_access_control_empty_call():
@@ -695,7 +694,11 @@ async def test_insert_bucket_access_control_async_from_dict():
     await test_insert_bucket_access_control_async(request_type=dict)
 
 
-def test_list_bucket_access_controls(transport: str = 'grpc', request_type=storage.ListBucketAccessControlsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListBucketAccessControlsRequest,
+  dict,
+])
+def test_list_bucket_access_controls(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -721,10 +724,6 @@ def test_list_bucket_access_controls(transport: str = 'grpc', request_type=stora
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ListBucketAccessControlsResponse)
-
-
-def test_list_bucket_access_controls_from_dict():
-    test_list_bucket_access_controls(request_type=dict)
 
 
 def test_list_bucket_access_controls_empty_call():
@@ -779,7 +778,11 @@ async def test_list_bucket_access_controls_async_from_dict():
     await test_list_bucket_access_controls_async(request_type=dict)
 
 
-def test_update_bucket_access_control(transport: str = 'grpc', request_type=storage.UpdateBucketAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.UpdateBucketAccessControlRequest,
+  dict,
+])
+def test_update_bucket_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -821,10 +824,6 @@ def test_update_bucket_access_control(transport: str = 'grpc', request_type=stor
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_update_bucket_access_control_from_dict():
-    test_update_bucket_access_control(request_type=dict)
 
 
 def test_update_bucket_access_control_empty_call():
@@ -895,7 +894,11 @@ async def test_update_bucket_access_control_async_from_dict():
     await test_update_bucket_access_control_async(request_type=dict)
 
 
-def test_patch_bucket_access_control(transport: str = 'grpc', request_type=storage.PatchBucketAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.PatchBucketAccessControlRequest,
+  dict,
+])
+def test_patch_bucket_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -937,10 +940,6 @@ def test_patch_bucket_access_control(transport: str = 'grpc', request_type=stora
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_patch_bucket_access_control_from_dict():
-    test_patch_bucket_access_control(request_type=dict)
 
 
 def test_patch_bucket_access_control_empty_call():
@@ -1011,7 +1010,11 @@ async def test_patch_bucket_access_control_async_from_dict():
     await test_patch_bucket_access_control_async(request_type=dict)
 
 
-def test_delete_bucket(transport: str = 'grpc', request_type=storage.DeleteBucketRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteBucketRequest,
+  dict,
+])
+def test_delete_bucket(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1036,10 +1039,6 @@ def test_delete_bucket(transport: str = 'grpc', request_type=storage.DeleteBucke
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_bucket_from_dict():
-    test_delete_bucket(request_type=dict)
 
 
 def test_delete_bucket_empty_call():
@@ -1093,7 +1092,11 @@ async def test_delete_bucket_async_from_dict():
     await test_delete_bucket_async(request_type=dict)
 
 
-def test_get_bucket(transport: str = 'grpc', request_type=storage.GetBucketRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetBucketRequest,
+  dict,
+])
+def test_get_bucket(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1139,10 +1142,6 @@ def test_get_bucket(transport: str = 'grpc', request_type=storage.GetBucketReque
     assert response.default_event_based_hold is True
     assert response.location_type == 'location_type_value'
     assert response.zone_affinity == ['zone_affinity_value']
-
-
-def test_get_bucket_from_dict():
-    test_get_bucket(request_type=dict)
 
 
 def test_get_bucket_empty_call():
@@ -1217,7 +1216,11 @@ async def test_get_bucket_async_from_dict():
     await test_get_bucket_async(request_type=dict)
 
 
-def test_insert_bucket(transport: str = 'grpc', request_type=storage.InsertBucketRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.InsertBucketRequest,
+  dict,
+])
+def test_insert_bucket(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1263,10 +1266,6 @@ def test_insert_bucket(transport: str = 'grpc', request_type=storage.InsertBucke
     assert response.default_event_based_hold is True
     assert response.location_type == 'location_type_value'
     assert response.zone_affinity == ['zone_affinity_value']
-
-
-def test_insert_bucket_from_dict():
-    test_insert_bucket(request_type=dict)
 
 
 def test_insert_bucket_empty_call():
@@ -1341,7 +1340,11 @@ async def test_insert_bucket_async_from_dict():
     await test_insert_bucket_async(request_type=dict)
 
 
-def test_list_channels(transport: str = 'grpc', request_type=storage.ListChannelsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListChannelsRequest,
+  dict,
+])
+def test_list_channels(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1367,10 +1370,6 @@ def test_list_channels(transport: str = 'grpc', request_type=storage.ListChannel
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ListChannelsResponse)
-
-
-def test_list_channels_from_dict():
-    test_list_channels(request_type=dict)
 
 
 def test_list_channels_empty_call():
@@ -1425,7 +1424,11 @@ async def test_list_channels_async_from_dict():
     await test_list_channels_async(request_type=dict)
 
 
-def test_list_buckets(transport: str = 'grpc', request_type=storage.ListBucketsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListBucketsRequest,
+  dict,
+])
+def test_list_buckets(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1453,10 +1456,6 @@ def test_list_buckets(transport: str = 'grpc', request_type=storage.ListBucketsR
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListBucketsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_buckets_from_dict():
-    test_list_buckets(request_type=dict)
 
 
 def test_list_buckets_empty_call():
@@ -1513,9 +1512,10 @@ async def test_list_buckets_async_from_dict():
     await test_list_buckets_async(request_type=dict)
 
 
-def test_list_buckets_pager():
+def test_list_buckets_pager(transport_name: str = "grpc"):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1560,10 +1560,10 @@ def test_list_buckets_pager():
         assert len(results) == 6
         assert all(isinstance(i, storage_resources.Bucket)
                    for i in results)
-
-def test_list_buckets_pages():
+def test_list_buckets_pages(transport_name: str = "grpc"):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1648,7 +1648,8 @@ async def test_list_buckets_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, storage_resources.Bucket)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_buckets_async_pages():
@@ -1694,7 +1695,11 @@ async def test_list_buckets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_lock_bucket_retention_policy(transport: str = 'grpc', request_type=storage.LockRetentionPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.LockRetentionPolicyRequest,
+  dict,
+])
+def test_lock_bucket_retention_policy(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1740,10 +1745,6 @@ def test_lock_bucket_retention_policy(transport: str = 'grpc', request_type=stor
     assert response.default_event_based_hold is True
     assert response.location_type == 'location_type_value'
     assert response.zone_affinity == ['zone_affinity_value']
-
-
-def test_lock_bucket_retention_policy_from_dict():
-    test_lock_bucket_retention_policy(request_type=dict)
 
 
 def test_lock_bucket_retention_policy_empty_call():
@@ -1818,7 +1819,11 @@ async def test_lock_bucket_retention_policy_async_from_dict():
     await test_lock_bucket_retention_policy_async(request_type=dict)
 
 
-def test_get_bucket_iam_policy(transport: str = 'grpc', request_type=storage.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetIamPolicyRequest,
+  dict,
+])
+def test_get_bucket_iam_policy(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1848,10 +1853,6 @@ def test_get_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_bucket_iam_policy_from_dict():
-    test_get_bucket_iam_policy(request_type=dict)
 
 
 def test_get_bucket_iam_policy_empty_call():
@@ -1910,7 +1911,11 @@ async def test_get_bucket_iam_policy_async_from_dict():
     await test_get_bucket_iam_policy_async(request_type=dict)
 
 
-def test_set_bucket_iam_policy(transport: str = 'grpc', request_type=storage.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.SetIamPolicyRequest,
+  dict,
+])
+def test_set_bucket_iam_policy(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1940,10 +1945,6 @@ def test_set_bucket_iam_policy(transport: str = 'grpc', request_type=storage.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_bucket_iam_policy_from_dict():
-    test_set_bucket_iam_policy(request_type=dict)
 
 
 def test_set_bucket_iam_policy_empty_call():
@@ -2002,7 +2003,11 @@ async def test_set_bucket_iam_policy_async_from_dict():
     await test_set_bucket_iam_policy_async(request_type=dict)
 
 
-def test_test_bucket_iam_permissions(transport: str = 'grpc', request_type=storage.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_bucket_iam_permissions(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2030,10 +2035,6 @@ def test_test_bucket_iam_permissions(transport: str = 'grpc', request_type=stora
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_bucket_iam_permissions_from_dict():
-    test_test_bucket_iam_permissions(request_type=dict)
 
 
 def test_test_bucket_iam_permissions_empty_call():
@@ -2090,7 +2091,11 @@ async def test_test_bucket_iam_permissions_async_from_dict():
     await test_test_bucket_iam_permissions_async(request_type=dict)
 
 
-def test_patch_bucket(transport: str = 'grpc', request_type=storage.PatchBucketRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.PatchBucketRequest,
+  dict,
+])
+def test_patch_bucket(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2136,10 +2141,6 @@ def test_patch_bucket(transport: str = 'grpc', request_type=storage.PatchBucketR
     assert response.default_event_based_hold is True
     assert response.location_type == 'location_type_value'
     assert response.zone_affinity == ['zone_affinity_value']
-
-
-def test_patch_bucket_from_dict():
-    test_patch_bucket(request_type=dict)
 
 
 def test_patch_bucket_empty_call():
@@ -2214,7 +2215,11 @@ async def test_patch_bucket_async_from_dict():
     await test_patch_bucket_async(request_type=dict)
 
 
-def test_update_bucket(transport: str = 'grpc', request_type=storage.UpdateBucketRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.UpdateBucketRequest,
+  dict,
+])
+def test_update_bucket(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2260,10 +2265,6 @@ def test_update_bucket(transport: str = 'grpc', request_type=storage.UpdateBucke
     assert response.default_event_based_hold is True
     assert response.location_type == 'location_type_value'
     assert response.zone_affinity == ['zone_affinity_value']
-
-
-def test_update_bucket_from_dict():
-    test_update_bucket(request_type=dict)
 
 
 def test_update_bucket_empty_call():
@@ -2338,7 +2339,11 @@ async def test_update_bucket_async_from_dict():
     await test_update_bucket_async(request_type=dict)
 
 
-def test_stop_channel(transport: str = 'grpc', request_type=storage.StopChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.StopChannelRequest,
+  dict,
+])
+def test_stop_channel(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2363,10 +2368,6 @@ def test_stop_channel(transport: str = 'grpc', request_type=storage.StopChannelR
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_stop_channel_from_dict():
-    test_stop_channel(request_type=dict)
 
 
 def test_stop_channel_empty_call():
@@ -2420,7 +2421,11 @@ async def test_stop_channel_async_from_dict():
     await test_stop_channel_async(request_type=dict)
 
 
-def test_delete_default_object_access_control(transport: str = 'grpc', request_type=storage.DeleteDefaultObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteDefaultObjectAccessControlRequest,
+  dict,
+])
+def test_delete_default_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2445,10 +2450,6 @@ def test_delete_default_object_access_control(transport: str = 'grpc', request_t
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_default_object_access_control_from_dict():
-    test_delete_default_object_access_control(request_type=dict)
 
 
 def test_delete_default_object_access_control_empty_call():
@@ -2502,7 +2503,11 @@ async def test_delete_default_object_access_control_async_from_dict():
     await test_delete_default_object_access_control_async(request_type=dict)
 
 
-def test_get_default_object_access_control(transport: str = 'grpc', request_type=storage.GetDefaultObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetDefaultObjectAccessControlRequest,
+  dict,
+])
+def test_get_default_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2548,10 +2553,6 @@ def test_get_default_object_access_control(transport: str = 'grpc', request_type
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_get_default_object_access_control_from_dict():
-    test_get_default_object_access_control(request_type=dict)
 
 
 def test_get_default_object_access_control_empty_call():
@@ -2626,7 +2627,11 @@ async def test_get_default_object_access_control_async_from_dict():
     await test_get_default_object_access_control_async(request_type=dict)
 
 
-def test_insert_default_object_access_control(transport: str = 'grpc', request_type=storage.InsertDefaultObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.InsertDefaultObjectAccessControlRequest,
+  dict,
+])
+def test_insert_default_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2672,10 +2677,6 @@ def test_insert_default_object_access_control(transport: str = 'grpc', request_t
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_insert_default_object_access_control_from_dict():
-    test_insert_default_object_access_control(request_type=dict)
 
 
 def test_insert_default_object_access_control_empty_call():
@@ -2750,7 +2751,11 @@ async def test_insert_default_object_access_control_async_from_dict():
     await test_insert_default_object_access_control_async(request_type=dict)
 
 
-def test_list_default_object_access_controls(transport: str = 'grpc', request_type=storage.ListDefaultObjectAccessControlsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListDefaultObjectAccessControlsRequest,
+  dict,
+])
+def test_list_default_object_access_controls(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2776,10 +2781,6 @@ def test_list_default_object_access_controls(transport: str = 'grpc', request_ty
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ListObjectAccessControlsResponse)
-
-
-def test_list_default_object_access_controls_from_dict():
-    test_list_default_object_access_controls(request_type=dict)
 
 
 def test_list_default_object_access_controls_empty_call():
@@ -2834,7 +2835,11 @@ async def test_list_default_object_access_controls_async_from_dict():
     await test_list_default_object_access_controls_async(request_type=dict)
 
 
-def test_patch_default_object_access_control(transport: str = 'grpc', request_type=storage.PatchDefaultObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.PatchDefaultObjectAccessControlRequest,
+  dict,
+])
+def test_patch_default_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2880,10 +2885,6 @@ def test_patch_default_object_access_control(transport: str = 'grpc', request_ty
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_patch_default_object_access_control_from_dict():
-    test_patch_default_object_access_control(request_type=dict)
 
 
 def test_patch_default_object_access_control_empty_call():
@@ -2958,7 +2959,11 @@ async def test_patch_default_object_access_control_async_from_dict():
     await test_patch_default_object_access_control_async(request_type=dict)
 
 
-def test_update_default_object_access_control(transport: str = 'grpc', request_type=storage.UpdateDefaultObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.UpdateDefaultObjectAccessControlRequest,
+  dict,
+])
+def test_update_default_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3004,10 +3009,6 @@ def test_update_default_object_access_control(transport: str = 'grpc', request_t
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_update_default_object_access_control_from_dict():
-    test_update_default_object_access_control(request_type=dict)
 
 
 def test_update_default_object_access_control_empty_call():
@@ -3082,7 +3083,11 @@ async def test_update_default_object_access_control_async_from_dict():
     await test_update_default_object_access_control_async(request_type=dict)
 
 
-def test_delete_notification(transport: str = 'grpc', request_type=storage.DeleteNotificationRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteNotificationRequest,
+  dict,
+])
+def test_delete_notification(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3107,10 +3112,6 @@ def test_delete_notification(transport: str = 'grpc', request_type=storage.Delet
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_notification_from_dict():
-    test_delete_notification(request_type=dict)
 
 
 def test_delete_notification_empty_call():
@@ -3164,7 +3165,11 @@ async def test_delete_notification_async_from_dict():
     await test_delete_notification_async(request_type=dict)
 
 
-def test_get_notification(transport: str = 'grpc', request_type=storage.GetNotificationRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetNotificationRequest,
+  dict,
+])
+def test_get_notification(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3202,10 +3207,6 @@ def test_get_notification(transport: str = 'grpc', request_type=storage.GetNotif
     assert response.object_name_prefix == 'object_name_prefix_value'
     assert response.payload_format == 'payload_format_value'
     assert response.id == 'id_value'
-
-
-def test_get_notification_from_dict():
-    test_get_notification(request_type=dict)
 
 
 def test_get_notification_empty_call():
@@ -3272,7 +3273,11 @@ async def test_get_notification_async_from_dict():
     await test_get_notification_async(request_type=dict)
 
 
-def test_insert_notification(transport: str = 'grpc', request_type=storage.InsertNotificationRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.InsertNotificationRequest,
+  dict,
+])
+def test_insert_notification(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3310,10 +3315,6 @@ def test_insert_notification(transport: str = 'grpc', request_type=storage.Inser
     assert response.object_name_prefix == 'object_name_prefix_value'
     assert response.payload_format == 'payload_format_value'
     assert response.id == 'id_value'
-
-
-def test_insert_notification_from_dict():
-    test_insert_notification(request_type=dict)
 
 
 def test_insert_notification_empty_call():
@@ -3380,7 +3381,11 @@ async def test_insert_notification_async_from_dict():
     await test_insert_notification_async(request_type=dict)
 
 
-def test_list_notifications(transport: str = 'grpc', request_type=storage.ListNotificationsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListNotificationsRequest,
+  dict,
+])
+def test_list_notifications(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3406,10 +3411,6 @@ def test_list_notifications(transport: str = 'grpc', request_type=storage.ListNo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ListNotificationsResponse)
-
-
-def test_list_notifications_from_dict():
-    test_list_notifications(request_type=dict)
 
 
 def test_list_notifications_empty_call():
@@ -3464,7 +3465,11 @@ async def test_list_notifications_async_from_dict():
     await test_list_notifications_async(request_type=dict)
 
 
-def test_delete_object_access_control(transport: str = 'grpc', request_type=storage.DeleteObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteObjectAccessControlRequest,
+  dict,
+])
+def test_delete_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3489,10 +3494,6 @@ def test_delete_object_access_control(transport: str = 'grpc', request_type=stor
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_object_access_control_from_dict():
-    test_delete_object_access_control(request_type=dict)
 
 
 def test_delete_object_access_control_empty_call():
@@ -3546,7 +3547,11 @@ async def test_delete_object_access_control_async_from_dict():
     await test_delete_object_access_control_async(request_type=dict)
 
 
-def test_get_object_access_control(transport: str = 'grpc', request_type=storage.GetObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetObjectAccessControlRequest,
+  dict,
+])
+def test_get_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3592,10 +3597,6 @@ def test_get_object_access_control(transport: str = 'grpc', request_type=storage
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_get_object_access_control_from_dict():
-    test_get_object_access_control(request_type=dict)
 
 
 def test_get_object_access_control_empty_call():
@@ -3670,7 +3671,11 @@ async def test_get_object_access_control_async_from_dict():
     await test_get_object_access_control_async(request_type=dict)
 
 
-def test_insert_object_access_control(transport: str = 'grpc', request_type=storage.InsertObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.InsertObjectAccessControlRequest,
+  dict,
+])
+def test_insert_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3716,10 +3721,6 @@ def test_insert_object_access_control(transport: str = 'grpc', request_type=stor
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_insert_object_access_control_from_dict():
-    test_insert_object_access_control(request_type=dict)
 
 
 def test_insert_object_access_control_empty_call():
@@ -3794,7 +3795,11 @@ async def test_insert_object_access_control_async_from_dict():
     await test_insert_object_access_control_async(request_type=dict)
 
 
-def test_list_object_access_controls(transport: str = 'grpc', request_type=storage.ListObjectAccessControlsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListObjectAccessControlsRequest,
+  dict,
+])
+def test_list_object_access_controls(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3820,10 +3825,6 @@ def test_list_object_access_controls(transport: str = 'grpc', request_type=stora
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ListObjectAccessControlsResponse)
-
-
-def test_list_object_access_controls_from_dict():
-    test_list_object_access_controls(request_type=dict)
 
 
 def test_list_object_access_controls_empty_call():
@@ -3878,7 +3879,11 @@ async def test_list_object_access_controls_async_from_dict():
     await test_list_object_access_controls_async(request_type=dict)
 
 
-def test_patch_object_access_control(transport: str = 'grpc', request_type=storage.PatchObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.PatchObjectAccessControlRequest,
+  dict,
+])
+def test_patch_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3924,10 +3929,6 @@ def test_patch_object_access_control(transport: str = 'grpc', request_type=stora
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_patch_object_access_control_from_dict():
-    test_patch_object_access_control(request_type=dict)
 
 
 def test_patch_object_access_control_empty_call():
@@ -4002,7 +4003,11 @@ async def test_patch_object_access_control_async_from_dict():
     await test_patch_object_access_control_async(request_type=dict)
 
 
-def test_update_object_access_control(transport: str = 'grpc', request_type=storage.UpdateObjectAccessControlRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.UpdateObjectAccessControlRequest,
+  dict,
+])
+def test_update_object_access_control(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4048,10 +4053,6 @@ def test_update_object_access_control(transport: str = 'grpc', request_type=stor
     assert response.entity_id == 'entity_id_value'
     assert response.email == 'email_value'
     assert response.domain == 'domain_value'
-
-
-def test_update_object_access_control_from_dict():
-    test_update_object_access_control(request_type=dict)
 
 
 def test_update_object_access_control_empty_call():
@@ -4126,7 +4127,11 @@ async def test_update_object_access_control_async_from_dict():
     await test_update_object_access_control_async(request_type=dict)
 
 
-def test_compose_object(transport: str = 'grpc', request_type=storage.ComposeObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ComposeObjectRequest,
+  dict,
+])
+def test_compose_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4186,10 +4191,6 @@ def test_compose_object(transport: str = 'grpc', request_type=storage.ComposeObj
     assert response.id == 'id_value'
     assert response.bucket == 'bucket_value'
     assert response.generation == 1068
-
-
-def test_compose_object_from_dict():
-    test_compose_object(request_type=dict)
 
 
 def test_compose_object_empty_call():
@@ -4278,7 +4279,11 @@ async def test_compose_object_async_from_dict():
     await test_compose_object_async(request_type=dict)
 
 
-def test_copy_object(transport: str = 'grpc', request_type=storage.CopyObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.CopyObjectRequest,
+  dict,
+])
+def test_copy_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4338,10 +4343,6 @@ def test_copy_object(transport: str = 'grpc', request_type=storage.CopyObjectReq
     assert response.id == 'id_value'
     assert response.bucket == 'bucket_value'
     assert response.generation == 1068
-
-
-def test_copy_object_from_dict():
-    test_copy_object(request_type=dict)
 
 
 def test_copy_object_empty_call():
@@ -4430,7 +4431,11 @@ async def test_copy_object_async_from_dict():
     await test_copy_object_async(request_type=dict)
 
 
-def test_delete_object(transport: str = 'grpc', request_type=storage.DeleteObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteObjectRequest,
+  dict,
+])
+def test_delete_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4455,10 +4460,6 @@ def test_delete_object(transport: str = 'grpc', request_type=storage.DeleteObjec
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_object_from_dict():
-    test_delete_object(request_type=dict)
 
 
 def test_delete_object_empty_call():
@@ -4512,7 +4513,11 @@ async def test_delete_object_async_from_dict():
     await test_delete_object_async(request_type=dict)
 
 
-def test_get_object(transport: str = 'grpc', request_type=storage.GetObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetObjectRequest,
+  dict,
+])
+def test_get_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4572,10 +4577,6 @@ def test_get_object(transport: str = 'grpc', request_type=storage.GetObjectReque
     assert response.id == 'id_value'
     assert response.bucket == 'bucket_value'
     assert response.generation == 1068
-
-
-def test_get_object_from_dict():
-    test_get_object(request_type=dict)
 
 
 def test_get_object_empty_call():
@@ -4664,7 +4665,11 @@ async def test_get_object_async_from_dict():
     await test_get_object_async(request_type=dict)
 
 
-def test_get_object_media(transport: str = 'grpc', request_type=storage.GetObjectMediaRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetObjectMediaRequest,
+  dict,
+])
+def test_get_object_media(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4690,10 +4695,6 @@ def test_get_object_media(transport: str = 'grpc', request_type=storage.GetObjec
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, storage.GetObjectMediaResponse)
-
-
-def test_get_object_media_from_dict():
-    test_get_object_media(request_type=dict)
 
 
 def test_get_object_media_empty_call():
@@ -4749,7 +4750,11 @@ async def test_get_object_media_async_from_dict():
     await test_get_object_media_async(request_type=dict)
 
 
-def test_insert_object(transport: str = 'grpc', request_type=storage.InsertObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.InsertObjectRequest,
+  dict,
+])
+def test_insert_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4810,10 +4815,6 @@ def test_insert_object(transport: str = 'grpc', request_type=storage.InsertObjec
     assert response.id == 'id_value'
     assert response.bucket == 'bucket_value'
     assert response.generation == 1068
-
-
-def test_insert_object_from_dict():
-    test_insert_object(request_type=dict)
 
 
 @pytest.mark.asyncio
@@ -4885,7 +4886,11 @@ async def test_insert_object_async_from_dict():
     await test_insert_object_async(request_type=dict)
 
 
-def test_list_objects(transport: str = 'grpc', request_type=storage.ListObjectsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListObjectsRequest,
+  dict,
+])
+def test_list_objects(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4915,10 +4920,6 @@ def test_list_objects(transport: str = 'grpc', request_type=storage.ListObjectsR
     assert isinstance(response, pagers.ListObjectsPager)
     assert response.prefixes == ['prefixes_value']
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_objects_from_dict():
-    test_list_objects(request_type=dict)
 
 
 def test_list_objects_empty_call():
@@ -4977,9 +4978,10 @@ async def test_list_objects_async_from_dict():
     await test_list_objects_async(request_type=dict)
 
 
-def test_list_objects_pager():
+def test_list_objects_pager(transport_name: str = "grpc"):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5024,10 +5026,10 @@ def test_list_objects_pager():
         assert len(results) == 6
         assert all(isinstance(i, str)
                    for i in results)
-
-def test_list_objects_pages():
+def test_list_objects_pages(transport_name: str = "grpc"):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5112,7 +5114,8 @@ async def test_list_objects_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, str)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_objects_async_pages():
@@ -5158,7 +5161,11 @@ async def test_list_objects_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_rewrite_object(transport: str = 'grpc', request_type=storage.RewriteObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.RewriteObjectRequest,
+  dict,
+])
+def test_rewrite_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5192,10 +5199,6 @@ def test_rewrite_object(transport: str = 'grpc', request_type=storage.RewriteObj
     assert response.object_size == 1169
     assert response.done is True
     assert response.rewrite_token == 'rewrite_token_value'
-
-
-def test_rewrite_object_from_dict():
-    test_rewrite_object(request_type=dict)
 
 
 def test_rewrite_object_empty_call():
@@ -5258,7 +5261,11 @@ async def test_rewrite_object_async_from_dict():
     await test_rewrite_object_async(request_type=dict)
 
 
-def test_start_resumable_write(transport: str = 'grpc', request_type=storage.StartResumableWriteRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.StartResumableWriteRequest,
+  dict,
+])
+def test_start_resumable_write(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5286,10 +5293,6 @@ def test_start_resumable_write(transport: str = 'grpc', request_type=storage.Sta
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.StartResumableWriteResponse)
     assert response.upload_id == 'upload_id_value'
-
-
-def test_start_resumable_write_from_dict():
-    test_start_resumable_write(request_type=dict)
 
 
 def test_start_resumable_write_empty_call():
@@ -5346,7 +5349,11 @@ async def test_start_resumable_write_async_from_dict():
     await test_start_resumable_write_async(request_type=dict)
 
 
-def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryWriteStatusRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.QueryWriteStatusRequest,
+  dict,
+])
+def test_query_write_status(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5376,10 +5383,6 @@ def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryW
     assert isinstance(response, storage.QueryWriteStatusResponse)
     assert response.committed_size == 1504
     assert response.complete is True
-
-
-def test_query_write_status_from_dict():
-    test_query_write_status(request_type=dict)
 
 
 def test_query_write_status_empty_call():
@@ -5438,7 +5441,11 @@ async def test_query_write_status_async_from_dict():
     await test_query_write_status_async(request_type=dict)
 
 
-def test_patch_object(transport: str = 'grpc', request_type=storage.PatchObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.PatchObjectRequest,
+  dict,
+])
+def test_patch_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5498,10 +5505,6 @@ def test_patch_object(transport: str = 'grpc', request_type=storage.PatchObjectR
     assert response.id == 'id_value'
     assert response.bucket == 'bucket_value'
     assert response.generation == 1068
-
-
-def test_patch_object_from_dict():
-    test_patch_object(request_type=dict)
 
 
 def test_patch_object_empty_call():
@@ -5590,7 +5593,11 @@ async def test_patch_object_async_from_dict():
     await test_patch_object_async(request_type=dict)
 
 
-def test_update_object(transport: str = 'grpc', request_type=storage.UpdateObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.UpdateObjectRequest,
+  dict,
+])
+def test_update_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5650,10 +5657,6 @@ def test_update_object(transport: str = 'grpc', request_type=storage.UpdateObjec
     assert response.id == 'id_value'
     assert response.bucket == 'bucket_value'
     assert response.generation == 1068
-
-
-def test_update_object_from_dict():
-    test_update_object(request_type=dict)
 
 
 def test_update_object_empty_call():
@@ -5742,7 +5745,11 @@ async def test_update_object_async_from_dict():
     await test_update_object_async(request_type=dict)
 
 
-def test_get_object_iam_policy(transport: str = 'grpc', request_type=storage.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetIamPolicyRequest,
+  dict,
+])
+def test_get_object_iam_policy(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5772,10 +5779,6 @@ def test_get_object_iam_policy(transport: str = 'grpc', request_type=storage.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_object_iam_policy_from_dict():
-    test_get_object_iam_policy(request_type=dict)
 
 
 def test_get_object_iam_policy_empty_call():
@@ -5834,7 +5837,11 @@ async def test_get_object_iam_policy_async_from_dict():
     await test_get_object_iam_policy_async(request_type=dict)
 
 
-def test_set_object_iam_policy(transport: str = 'grpc', request_type=storage.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.SetIamPolicyRequest,
+  dict,
+])
+def test_set_object_iam_policy(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5864,10 +5871,6 @@ def test_set_object_iam_policy(transport: str = 'grpc', request_type=storage.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_object_iam_policy_from_dict():
-    test_set_object_iam_policy(request_type=dict)
 
 
 def test_set_object_iam_policy_empty_call():
@@ -5926,7 +5929,11 @@ async def test_set_object_iam_policy_async_from_dict():
     await test_set_object_iam_policy_async(request_type=dict)
 
 
-def test_test_object_iam_permissions(transport: str = 'grpc', request_type=storage.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_object_iam_permissions(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5954,10 +5961,6 @@ def test_test_object_iam_permissions(transport: str = 'grpc', request_type=stora
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_object_iam_permissions_from_dict():
-    test_test_object_iam_permissions(request_type=dict)
 
 
 def test_test_object_iam_permissions_empty_call():
@@ -6014,7 +6017,11 @@ async def test_test_object_iam_permissions_async_from_dict():
     await test_test_object_iam_permissions_async(request_type=dict)
 
 
-def test_watch_all_objects(transport: str = 'grpc', request_type=storage.WatchAllObjectsRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.WatchAllObjectsRequest,
+  dict,
+])
+def test_watch_all_objects(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6054,10 +6061,6 @@ def test_watch_all_objects(transport: str = 'grpc', request_type=storage.WatchAl
     assert response.type_ == 'type__value'
     assert response.address == 'address_value'
     assert response.payload is True
-
-
-def test_watch_all_objects_from_dict():
-    test_watch_all_objects(request_type=dict)
 
 
 def test_watch_all_objects_empty_call():
@@ -6126,7 +6129,11 @@ async def test_watch_all_objects_async_from_dict():
     await test_watch_all_objects_async(request_type=dict)
 
 
-def test_get_service_account(transport: str = 'grpc', request_type=storage.GetProjectServiceAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetProjectServiceAccountRequest,
+  dict,
+])
+def test_get_service_account(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6154,10 +6161,6 @@ def test_get_service_account(transport: str = 'grpc', request_type=storage.GetPr
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage_resources.ServiceAccount)
     assert response.email_address == 'email_address_value'
-
-
-def test_get_service_account_from_dict():
-    test_get_service_account(request_type=dict)
 
 
 def test_get_service_account_empty_call():
@@ -6214,7 +6217,11 @@ async def test_get_service_account_async_from_dict():
     await test_get_service_account_async(request_type=dict)
 
 
-def test_create_hmac_key(transport: str = 'grpc', request_type=storage.CreateHmacKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.CreateHmacKeyRequest,
+  dict,
+])
+def test_create_hmac_key(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6242,10 +6249,6 @@ def test_create_hmac_key(transport: str = 'grpc', request_type=storage.CreateHma
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.CreateHmacKeyResponse)
     assert response.secret == 'secret_value'
-
-
-def test_create_hmac_key_from_dict():
-    test_create_hmac_key(request_type=dict)
 
 
 def test_create_hmac_key_empty_call():
@@ -6302,7 +6305,11 @@ async def test_create_hmac_key_async_from_dict():
     await test_create_hmac_key_async(request_type=dict)
 
 
-def test_delete_hmac_key(transport: str = 'grpc', request_type=storage.DeleteHmacKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.DeleteHmacKeyRequest,
+  dict,
+])
+def test_delete_hmac_key(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6327,10 +6334,6 @@ def test_delete_hmac_key(transport: str = 'grpc', request_type=storage.DeleteHma
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_hmac_key_from_dict():
-    test_delete_hmac_key(request_type=dict)
 
 
 def test_delete_hmac_key_empty_call():
@@ -6384,7 +6387,11 @@ async def test_delete_hmac_key_async_from_dict():
     await test_delete_hmac_key_async(request_type=dict)
 
 
-def test_get_hmac_key(transport: str = 'grpc', request_type=storage.GetHmacKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.GetHmacKeyRequest,
+  dict,
+])
+def test_get_hmac_key(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6422,10 +6429,6 @@ def test_get_hmac_key(transport: str = 'grpc', request_type=storage.GetHmacKeyRe
     assert response.service_account_email == 'service_account_email_value'
     assert response.state == 'state_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_hmac_key_from_dict():
-    test_get_hmac_key(request_type=dict)
 
 
 def test_get_hmac_key_empty_call():
@@ -6492,7 +6495,11 @@ async def test_get_hmac_key_async_from_dict():
     await test_get_hmac_key_async(request_type=dict)
 
 
-def test_list_hmac_keys(transport: str = 'grpc', request_type=storage.ListHmacKeysRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ListHmacKeysRequest,
+  dict,
+])
+def test_list_hmac_keys(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6520,10 +6527,6 @@ def test_list_hmac_keys(transport: str = 'grpc', request_type=storage.ListHmacKe
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListHmacKeysPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_hmac_keys_from_dict():
-    test_list_hmac_keys(request_type=dict)
 
 
 def test_list_hmac_keys_empty_call():
@@ -6580,9 +6583,10 @@ async def test_list_hmac_keys_async_from_dict():
     await test_list_hmac_keys_async(request_type=dict)
 
 
-def test_list_hmac_keys_pager():
+def test_list_hmac_keys_pager(transport_name: str = "grpc"):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6627,10 +6631,10 @@ def test_list_hmac_keys_pager():
         assert len(results) == 6
         assert all(isinstance(i, storage_resources.HmacKeyMetadata)
                    for i in results)
-
-def test_list_hmac_keys_pages():
+def test_list_hmac_keys_pages(transport_name: str = "grpc"):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6715,7 +6719,8 @@ async def test_list_hmac_keys_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, storage_resources.HmacKeyMetadata)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_hmac_keys_async_pages():
@@ -6761,7 +6766,11 @@ async def test_list_hmac_keys_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_hmac_key(transport: str = 'grpc', request_type=storage.UpdateHmacKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.UpdateHmacKeyRequest,
+  dict,
+])
+def test_update_hmac_key(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6799,10 +6808,6 @@ def test_update_hmac_key(transport: str = 'grpc', request_type=storage.UpdateHma
     assert response.service_account_email == 'service_account_email_value'
     assert response.state == 'state_value'
     assert response.etag == 'etag_value'
-
-
-def test_update_hmac_key_from_dict():
-    test_update_hmac_key(request_type=dict)
 
 
 def test_update_hmac_key_empty_call():
@@ -7395,7 +7400,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.StorageTransport, '_prep_wrapped_messages') as prep:

@@ -222,18 +222,18 @@ def test_grafeas_client_client_options(client_class, transport_class, transport_
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -264,7 +264,7 @@ def test_grafeas_client_mtls_env_auto(client_class, transport_class, transport_n
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -339,7 +339,7 @@ def test_grafeas_client_client_options_scopes(client_class, transport_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -362,7 +362,7 @@ def test_grafeas_client_client_options_credentials_file(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -373,7 +373,6 @@ def test_grafeas_client_client_options_credentials_file(client_class, transport_
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_grafeas_client_client_options_from_dict():
     with mock.patch('grafeas.grafeas_v1.services.grafeas.transports.GrafeasGrpcTransport.__init__') as grpc_transport:
@@ -393,7 +392,11 @@ def test_grafeas_client_client_options_from_dict():
         )
 
 
-def test_get_occurrence(transport: str = 'grpc', request_type=grafeas.GetOccurrenceRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.GetOccurrenceRequest,
+  dict,
+])
+def test_get_occurrence(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -430,10 +433,6 @@ def test_get_occurrence(transport: str = 'grpc', request_type=grafeas.GetOccurre
     assert response.note_name == 'note_name_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.remediation == 'remediation_value'
-
-
-def test_get_occurrence_from_dict():
-    test_get_occurrence(request_type=dict)
 
 
 def test_get_occurrence_empty_call():
@@ -645,7 +644,11 @@ async def test_get_occurrence_flattened_error_async():
         )
 
 
-def test_list_occurrences(transport: str = 'grpc', request_type=grafeas.ListOccurrencesRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.ListOccurrencesRequest,
+  dict,
+])
+def test_list_occurrences(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -673,10 +676,6 @@ def test_list_occurrences(transport: str = 'grpc', request_type=grafeas.ListOccu
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListOccurrencesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_occurrences_from_dict():
-    test_list_occurrences(request_type=dict)
 
 
 def test_list_occurrences_empty_call():
@@ -890,9 +889,10 @@ async def test_list_occurrences_flattened_error_async():
         )
 
 
-def test_list_occurrences_pager():
+def test_list_occurrences_pager(transport_name: str = "grpc"):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -942,10 +942,10 @@ def test_list_occurrences_pager():
         assert len(results) == 6
         assert all(isinstance(i, grafeas.Occurrence)
                    for i in results)
-
-def test_list_occurrences_pages():
+def test_list_occurrences_pages(transport_name: str = "grpc"):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1030,7 +1030,8 @@ async def test_list_occurrences_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, grafeas.Occurrence)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_occurrences_async_pages():
@@ -1076,7 +1077,11 @@ async def test_list_occurrences_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_occurrence(transport: str = 'grpc', request_type=grafeas.DeleteOccurrenceRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.DeleteOccurrenceRequest,
+  dict,
+])
+def test_delete_occurrence(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1101,10 +1106,6 @@ def test_delete_occurrence(transport: str = 'grpc', request_type=grafeas.DeleteO
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_occurrence_from_dict():
-    test_delete_occurrence(request_type=dict)
 
 
 def test_delete_occurrence_empty_call():
@@ -1305,7 +1306,11 @@ async def test_delete_occurrence_flattened_error_async():
         )
 
 
-def test_create_occurrence(transport: str = 'grpc', request_type=grafeas.CreateOccurrenceRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.CreateOccurrenceRequest,
+  dict,
+])
+def test_create_occurrence(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1342,10 +1347,6 @@ def test_create_occurrence(transport: str = 'grpc', request_type=grafeas.CreateO
     assert response.note_name == 'note_name_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.remediation == 'remediation_value'
-
-
-def test_create_occurrence_from_dict():
-    test_create_occurrence(request_type=dict)
 
 
 def test_create_occurrence_empty_call():
@@ -1567,7 +1568,11 @@ async def test_create_occurrence_flattened_error_async():
         )
 
 
-def test_batch_create_occurrences(transport: str = 'grpc', request_type=grafeas.BatchCreateOccurrencesRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.BatchCreateOccurrencesRequest,
+  dict,
+])
+def test_batch_create_occurrences(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1593,10 +1598,6 @@ def test_batch_create_occurrences(transport: str = 'grpc', request_type=grafeas.
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, grafeas.BatchCreateOccurrencesResponse)
-
-
-def test_batch_create_occurrences_from_dict():
-    test_batch_create_occurrences(request_type=dict)
 
 
 def test_batch_create_occurrences_empty_call():
@@ -1808,7 +1809,11 @@ async def test_batch_create_occurrences_flattened_error_async():
         )
 
 
-def test_update_occurrence(transport: str = 'grpc', request_type=grafeas.UpdateOccurrenceRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.UpdateOccurrenceRequest,
+  dict,
+])
+def test_update_occurrence(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1845,10 +1850,6 @@ def test_update_occurrence(transport: str = 'grpc', request_type=grafeas.UpdateO
     assert response.note_name == 'note_name_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.remediation == 'remediation_value'
-
-
-def test_update_occurrence_from_dict():
-    test_update_occurrence(request_type=dict)
 
 
 def test_update_occurrence_empty_call():
@@ -2080,7 +2081,11 @@ async def test_update_occurrence_flattened_error_async():
         )
 
 
-def test_get_occurrence_note(transport: str = 'grpc', request_type=grafeas.GetOccurrenceNoteRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.GetOccurrenceNoteRequest,
+  dict,
+])
+def test_get_occurrence_note(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2117,10 +2122,6 @@ def test_get_occurrence_note(transport: str = 'grpc', request_type=grafeas.GetOc
     assert response.long_description == 'long_description_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.related_note_names == ['related_note_names_value']
-
-
-def test_get_occurrence_note_from_dict():
-    test_get_occurrence_note(request_type=dict)
 
 
 def test_get_occurrence_note_empty_call():
@@ -2332,7 +2333,11 @@ async def test_get_occurrence_note_flattened_error_async():
         )
 
 
-def test_get_note(transport: str = 'grpc', request_type=grafeas.GetNoteRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.GetNoteRequest,
+  dict,
+])
+def test_get_note(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2369,10 +2374,6 @@ def test_get_note(transport: str = 'grpc', request_type=grafeas.GetNoteRequest):
     assert response.long_description == 'long_description_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.related_note_names == ['related_note_names_value']
-
-
-def test_get_note_from_dict():
-    test_get_note(request_type=dict)
 
 
 def test_get_note_empty_call():
@@ -2584,7 +2585,11 @@ async def test_get_note_flattened_error_async():
         )
 
 
-def test_list_notes(transport: str = 'grpc', request_type=grafeas.ListNotesRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.ListNotesRequest,
+  dict,
+])
+def test_list_notes(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2612,10 +2617,6 @@ def test_list_notes(transport: str = 'grpc', request_type=grafeas.ListNotesReque
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListNotesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_notes_from_dict():
-    test_list_notes(request_type=dict)
 
 
 def test_list_notes_empty_call():
@@ -2829,9 +2830,10 @@ async def test_list_notes_flattened_error_async():
         )
 
 
-def test_list_notes_pager():
+def test_list_notes_pager(transport_name: str = "grpc"):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2881,10 +2883,10 @@ def test_list_notes_pager():
         assert len(results) == 6
         assert all(isinstance(i, grafeas.Note)
                    for i in results)
-
-def test_list_notes_pages():
+def test_list_notes_pages(transport_name: str = "grpc"):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2969,7 +2971,8 @@ async def test_list_notes_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, grafeas.Note)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_notes_async_pages():
@@ -3015,7 +3018,11 @@ async def test_list_notes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_note(transport: str = 'grpc', request_type=grafeas.DeleteNoteRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.DeleteNoteRequest,
+  dict,
+])
+def test_delete_note(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3040,10 +3047,6 @@ def test_delete_note(transport: str = 'grpc', request_type=grafeas.DeleteNoteReq
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_note_from_dict():
-    test_delete_note(request_type=dict)
 
 
 def test_delete_note_empty_call():
@@ -3244,7 +3247,11 @@ async def test_delete_note_flattened_error_async():
         )
 
 
-def test_create_note(transport: str = 'grpc', request_type=grafeas.CreateNoteRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.CreateNoteRequest,
+  dict,
+])
+def test_create_note(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3281,10 +3288,6 @@ def test_create_note(transport: str = 'grpc', request_type=grafeas.CreateNoteReq
     assert response.long_description == 'long_description_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.related_note_names == ['related_note_names_value']
-
-
-def test_create_note_from_dict():
-    test_create_note(request_type=dict)
 
 
 def test_create_note_empty_call():
@@ -3516,7 +3519,11 @@ async def test_create_note_flattened_error_async():
         )
 
 
-def test_batch_create_notes(transport: str = 'grpc', request_type=grafeas.BatchCreateNotesRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.BatchCreateNotesRequest,
+  dict,
+])
+def test_batch_create_notes(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3542,10 +3549,6 @@ def test_batch_create_notes(transport: str = 'grpc', request_type=grafeas.BatchC
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, grafeas.BatchCreateNotesResponse)
-
-
-def test_batch_create_notes_from_dict():
-    test_batch_create_notes(request_type=dict)
 
 
 def test_batch_create_notes_empty_call():
@@ -3757,7 +3760,11 @@ async def test_batch_create_notes_flattened_error_async():
         )
 
 
-def test_update_note(transport: str = 'grpc', request_type=grafeas.UpdateNoteRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.UpdateNoteRequest,
+  dict,
+])
+def test_update_note(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3794,10 +3801,6 @@ def test_update_note(transport: str = 'grpc', request_type=grafeas.UpdateNoteReq
     assert response.long_description == 'long_description_value'
     assert response.kind == common.NoteKind.VULNERABILITY
     assert response.related_note_names == ['related_note_names_value']
-
-
-def test_update_note_from_dict():
-    test_update_note(request_type=dict)
 
 
 def test_update_note_empty_call():
@@ -4029,7 +4032,11 @@ async def test_update_note_flattened_error_async():
         )
 
 
-def test_list_note_occurrences(transport: str = 'grpc', request_type=grafeas.ListNoteOccurrencesRequest):
+@pytest.mark.parametrize("request_type", [
+  grafeas.ListNoteOccurrencesRequest,
+  dict,
+])
+def test_list_note_occurrences(request_type, transport: str = 'grpc'):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4057,10 +4064,6 @@ def test_list_note_occurrences(transport: str = 'grpc', request_type=grafeas.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListNoteOccurrencesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_note_occurrences_from_dict():
-    test_list_note_occurrences(request_type=dict)
 
 
 def test_list_note_occurrences_empty_call():
@@ -4274,9 +4277,10 @@ async def test_list_note_occurrences_flattened_error_async():
         )
 
 
-def test_list_note_occurrences_pager():
+def test_list_note_occurrences_pager(transport_name: str = "grpc"):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4326,10 +4330,10 @@ def test_list_note_occurrences_pager():
         assert len(results) == 6
         assert all(isinstance(i, grafeas.Occurrence)
                    for i in results)
-
-def test_list_note_occurrences_pages():
+def test_list_note_occurrences_pages(transport_name: str = "grpc"):
     client = GrafeasClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4414,7 +4418,8 @@ async def test_list_note_occurrences_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, grafeas.Occurrence)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_note_occurrences_async_pages():
@@ -4985,7 +4990,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.GrafeasTransport, '_prep_wrapped_messages') as prep:

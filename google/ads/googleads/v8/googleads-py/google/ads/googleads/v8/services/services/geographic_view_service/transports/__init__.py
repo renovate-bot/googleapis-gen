@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import GeographicViewServiceTransport
 from .grpc import GeographicViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[GeographicViewServiceTransport]]
 _transport_registry['grpc'] = GeographicViewServiceGrpcTransport
-
 
 __all__ = (
     'GeographicViewServiceTransport',

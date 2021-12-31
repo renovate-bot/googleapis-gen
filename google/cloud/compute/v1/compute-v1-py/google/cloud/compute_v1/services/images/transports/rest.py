@@ -1,22 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import path_template
-from google.api_core import gapic_v1
-from requests import __version__ as requests_version
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
-import warnings
-
-try:
-    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
-except AttributeError:  # pragma: NO COVER
-    OptionalRetry = Union[retries.Retry, object]  # type: ignore
-
 # -*- coding: utf-8 -*-
 # Copyright 2020 Google LLC
 #
@@ -33,6 +14,27 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+import json  # type: ignore
+import grpc  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.api_core import rest_helpers
+from google.api_core import path_template
+from google.api_core import gapic_v1
+from requests import __version__ as requests_version
+import dataclasses
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+import warnings
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
+
+
 from google.cloud.compute_v1.types import compute
 
 from .base import ImagesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -43,6 +45,11 @@ DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     grpc_version=None,
     rest_version=requests_version,
 )
+
+@dataclasses.dataclass
+class ImagesRestStub:
+    _session: AuthorizedSession
+    _host: str
 
 class ImagesRestTransport(ImagesTransport):
     """REST backend transport for Images.
@@ -55,6 +62,8 @@ class ImagesRestTransport(ImagesTransport):
 
     It sends JSON representations of protocol buffers over HTTP/1.1
     """
+    _STUBS: Dict[str, ImagesRestStub] = {}
+
     def __init__(self, *,
             host: str = 'compute.googleapis.com',
             credentials: ga_credentials.Credentials=None,
@@ -91,7 +100,7 @@ class ImagesRestTransport(ImagesTransport):
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
+                Generally, you only need to set this if you are developing
                 your own client library.
             always_use_jwt_access (Optional[bool]): Whether self signed JWT should
                 be used for service account credentials.
@@ -115,35 +124,39 @@ class ImagesRestTransport(ImagesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
-    __delete_required_fields_default_values =  {
-        "image" : "",        "project" : "",    }
+    class _Delete(ImagesRestStub):
+        def __hash__(self):
+            return hash("Delete")
 
-    @staticmethod
-    def _delete_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "image" : "",            "project" : "",        }
 
-    def _delete(self,
-            request: compute.DeleteImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the delete method over HTTP.
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-        Args:
-            request (~.compute.DeleteImageRequest):
-                The request object. A request message for Images.Delete.
+        def __call__(self,
+                request: compute.DeleteImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the delete method over HTTP.
+
+            Args:
+                request (~.compute.DeleteImageRequest):
+                    The request object. A request message for Images.Delete.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -159,83 +172,85 @@ class ImagesRestTransport(ImagesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'delete',
                 'uri': '/compute/v1/projects/{project}/global/images/{image}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.DeleteImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.DeleteImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.DeleteImageRequest.to_json(
-            compute.DeleteImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.DeleteImageRequest.to_json(
+                compute.DeleteImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._delete_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Deprecate(ImagesRestStub):
+        def __hash__(self):
+            return hash("Deprecate")
 
-    __deprecate_required_fields_default_values =  {
-        "image" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "image" : "",            "project" : "",        }
 
-    @staticmethod
-    def _deprecate_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__deprecate_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _deprecate(self,
-            request: compute.DeprecateImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the deprecate method over HTTP.
+        def __call__(self,
+                request: compute.DeprecateImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the deprecate method over HTTP.
 
-        Args:
-            request (~.compute.DeprecateImageRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.DeprecateImageRequest):
+                    The request object. A request message for
                 Images.Deprecate. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -251,253 +266,257 @@ class ImagesRestTransport(ImagesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/images/{image}/deprecate',
                 'body': 'deprecation_status_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.DeprecateImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.DeprecateImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.DeprecationStatus.to_json(
-            compute.DeprecationStatus(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.DeprecationStatus.to_json(
+                compute.DeprecationStatus(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.DeprecateImageRequest.to_json(
-            compute.DeprecateImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.DeprecateImageRequest.to_json(
+                compute.DeprecateImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._deprecate_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Get(ImagesRestStub):
+        def __hash__(self):
+            return hash("Get")
 
-    __get_required_fields_default_values =  {
-        "image" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "image" : "",            "project" : "",        }
 
-    @staticmethod
-    def _get_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get(self,
-            request: compute.GetImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Image:
-        r"""Call the get method over HTTP.
+        def __call__(self,
+                request: compute.GetImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Image:
+            r"""Call the get method over HTTP.
 
-        Args:
-            request (~.compute.GetImageRequest):
-                The request object. A request message for Images.Get. See
+            Args:
+                request (~.compute.GetImageRequest):
+                    The request object. A request message for Images.Get. See
                 the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Image:
-                Represents an Image resource. You can
+            Returns:
+                ~.compute.Image:
+                    Represents an Image resource. You can
                 use images to create boot disks for your
                 VM instances. For more information, read
                 Images.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/images/{image}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetImageRequest.to_json(
-            compute.GetImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetImageRequest.to_json(
+                compute.GetImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Image.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Image.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _GetFromFamily(ImagesRestStub):
+        def __hash__(self):
+            return hash("GetFromFamily")
 
-    __get_from_family_required_fields_default_values =  {
-        "family" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "family" : "",            "project" : "",        }
 
-    @staticmethod
-    def _get_from_family_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__get_from_family_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get_from_family(self,
-            request: compute.GetFromFamilyImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Image:
-        r"""Call the get from family method over HTTP.
+        def __call__(self,
+                request: compute.GetFromFamilyImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Image:
+            r"""Call the get from family method over HTTP.
 
-        Args:
-            request (~.compute.GetFromFamilyImageRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetFromFamilyImageRequest):
+                    The request object. A request message for
                 Images.GetFromFamily. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Image:
-                Represents an Image resource. You can
+            Returns:
+                ~.compute.Image:
+                    Represents an Image resource. You can
                 use images to create boot disks for your
                 VM instances. For more information, read
                 Images.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/images/family/{family}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetFromFamilyImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetFromFamilyImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetFromFamilyImageRequest.to_json(
-            compute.GetFromFamilyImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetFromFamilyImageRequest.to_json(
+                compute.GetFromFamilyImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_from_family_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Image.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Image.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _GetIamPolicy(ImagesRestStub):
+        def __hash__(self):
+            return hash("GetIamPolicy")
 
-    __get_iam_policy_required_fields_default_values =  {
-        "project" : "",        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "resource" : "",        }
 
-    @staticmethod
-    def _get_iam_policy_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__get_iam_policy_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get_iam_policy(self,
-            request: compute.GetIamPolicyImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Policy:
-        r"""Call the get iam policy method over HTTP.
+        def __call__(self,
+                request: compute.GetIamPolicyImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Policy:
+            r"""Call the get iam policy method over HTTP.
 
-        Args:
-            request (~.compute.GetIamPolicyImageRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetIamPolicyImageRequest):
+                    The request object. A request message for
                 Images.GetIamPolicy. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Policy:
-                An Identity and Access Management (IAM) policy, which
+            Returns:
+                ~.compute.Policy:
+                    An Identity and Access Management (IAM) policy, which
                 specifies access controls for Google Cloud resources. A
                 ``Policy`` is a collection of ``bindings``. A
                 ``binding`` binds one or more ``members`` to a single
@@ -538,82 +557,84 @@ class ImagesRestTransport(ImagesTransport):
                 see the `IAM
                 documentation <https://cloud.google.com/iam/docs/>`__.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/images/{resource}/getIamPolicy',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetIamPolicyImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetIamPolicyImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetIamPolicyImageRequest.to_json(
-            compute.GetIamPolicyImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetIamPolicyImageRequest.to_json(
+                compute.GetIamPolicyImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_iam_policy_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Policy.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Policy.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Insert(ImagesRestStub):
+        def __hash__(self):
+            return hash("Insert")
 
-    __insert_required_fields_default_values =  {
-        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    @staticmethod
-    def _insert_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _insert(self,
-            request: compute.InsertImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the insert method over HTTP.
+        def __call__(self,
+                request: compute.InsertImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the insert method over HTTP.
 
-        Args:
-            request (~.compute.InsertImageRequest):
-                The request object. A request message for Images.Insert.
+            Args:
+                request (~.compute.InsertImageRequest):
+                    The request object. A request message for Images.Insert.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -629,167 +650,169 @@ class ImagesRestTransport(ImagesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/images',
                 'body': 'image_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.InsertImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.InsertImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.Image.to_json(
-            compute.Image(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.Image.to_json(
+                compute.Image(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.InsertImageRequest.to_json(
-            compute.InsertImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.InsertImageRequest.to_json(
+                compute.InsertImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._insert_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _List(ImagesRestStub):
+        def __hash__(self):
+            return hash("List")
 
-    __list_required_fields_default_values =  {
-        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    @staticmethod
-    def _list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _list(self,
-            request: compute.ListImagesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.ImageList:
-        r"""Call the list method over HTTP.
+        def __call__(self,
+                request: compute.ListImagesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.ImageList:
+            r"""Call the list method over HTTP.
 
-        Args:
-            request (~.compute.ListImagesRequest):
-                The request object. A request message for Images.List.
+            Args:
+                request (~.compute.ListImagesRequest):
+                    The request object. A request message for Images.List.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.ImageList:
-                Contains a list of images.
-        """
+            Returns:
+                ~.compute.ImageList:
+                    Contains a list of images.
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/global/images',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListImagesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListImagesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListImagesRequest.to_json(
-            compute.ListImagesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListImagesRequest.to_json(
+                compute.ListImagesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.ImageList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.ImageList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Patch(ImagesRestStub):
+        def __hash__(self):
+            return hash("Patch")
 
-    __patch_required_fields_default_values =  {
-        "image" : "",        "project" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "image" : "",            "project" : "",        }
 
-    @staticmethod
-    def _patch_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _patch(self,
-            request: compute.PatchImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the patch method over HTTP.
+        def __call__(self,
+                request: compute.PatchImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the patch method over HTTP.
 
-        Args:
-            request (~.compute.PatchImageRequest):
-                The request object. A request message for Images.Patch.
+            Args:
+                request (~.compute.PatchImageRequest):
+                    The request object. A request message for Images.Patch.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -805,92 +828,92 @@ class ImagesRestTransport(ImagesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'patch',
                 'uri': '/compute/v1/projects/{project}/global/images/{image}',
                 'body': 'image_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.PatchImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.PatchImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.Image.to_json(
-            compute.Image(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.Image.to_json(
+                compute.Image(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.PatchImageRequest.to_json(
-            compute.PatchImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.PatchImageRequest.to_json(
+                compute.PatchImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._patch_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetIamPolicy(ImagesRestStub):
+        def __hash__(self):
+            return hash("SetIamPolicy")
 
-    __set_iam_policy_required_fields_default_values =  {
-        "project" : "",        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "resource" : "",        }
 
-    @staticmethod
-    def _set_iam_policy_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__set_iam_policy_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_iam_policy(self,
-            request: compute.SetIamPolicyImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Policy:
-        r"""Call the set iam policy method over HTTP.
+        def __call__(self,
+                request: compute.SetIamPolicyImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Policy:
+            r"""Call the set iam policy method over HTTP.
 
-        Args:
-            request (~.compute.SetIamPolicyImageRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetIamPolicyImageRequest):
+                    The request object. A request message for
                 Images.SetIamPolicy. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Policy:
-                An Identity and Access Management (IAM) policy, which
+            Returns:
+                ~.compute.Policy:
+                    An Identity and Access Management (IAM) policy, which
                 specifies access controls for Google Cloud resources. A
                 ``Policy`` is a collection of ``bindings``. A
                 ``binding`` binds one or more ``members`` to a single
@@ -931,92 +954,92 @@ class ImagesRestTransport(ImagesTransport):
                 see the `IAM
                 documentation <https://cloud.google.com/iam/docs/>`__.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/images/{resource}/setIamPolicy',
                 'body': 'global_set_policy_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetIamPolicyImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetIamPolicyImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.GlobalSetPolicyRequest.to_json(
-            compute.GlobalSetPolicyRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.GlobalSetPolicyRequest.to_json(
+                compute.GlobalSetPolicyRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetIamPolicyImageRequest.to_json(
-            compute.SetIamPolicyImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetIamPolicyImageRequest.to_json(
+                compute.SetIamPolicyImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_iam_policy_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Policy.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Policy.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetLabels(ImagesRestStub):
+        def __hash__(self):
+            return hash("SetLabels")
 
-    __set_labels_required_fields_default_values =  {
-        "project" : "",        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "resource" : "",        }
 
-    @staticmethod
-    def _set_labels_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__set_labels_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_labels(self,
-            request: compute.SetLabelsImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set labels method over HTTP.
+        def __call__(self,
+                request: compute.SetLabelsImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set labels method over HTTP.
 
-        Args:
-            request (~.compute.SetLabelsImageRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetLabelsImageRequest):
+                    The request object. A request message for
                 Images.SetLabels. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1032,203 +1055,254 @@ class ImagesRestTransport(ImagesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/images/{resource}/setLabels',
                 'body': 'global_set_labels_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetLabelsImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetLabelsImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.GlobalSetLabelsRequest.to_json(
-            compute.GlobalSetLabelsRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.GlobalSetLabelsRequest.to_json(
+                compute.GlobalSetLabelsRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetLabelsImageRequest.to_json(
-            compute.SetLabelsImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetLabelsImageRequest.to_json(
+                compute.SetLabelsImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_labels_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _TestIamPermissions(ImagesRestStub):
+        def __hash__(self):
+            return hash("TestIamPermissions")
 
-    __test_iam_permissions_required_fields_default_values =  {
-        "project" : "",        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "resource" : "",        }
 
-    @staticmethod
-    def _test_iam_permissions_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ImagesRestTransport.__test_iam_permissions_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _test_iam_permissions(self,
-            request: compute.TestIamPermissionsImageRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.TestPermissionsResponse:
-        r"""Call the test iam permissions method over HTTP.
+        def __call__(self,
+                request: compute.TestIamPermissionsImageRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.TestPermissionsResponse:
+            r"""Call the test iam permissions method over HTTP.
 
-        Args:
-            request (~.compute.TestIamPermissionsImageRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.TestIamPermissionsImageRequest):
+                    The request object. A request message for
                 Images.TestIamPermissions. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.TestPermissionsResponse:
+            Returns:
+                ~.compute.TestPermissionsResponse:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/global/images/{resource}/testIamPermissions',
                 'body': 'test_permissions_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.TestIamPermissionsImageRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.TestIamPermissionsImageRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TestPermissionsRequest.to_json(
-            compute.TestPermissionsRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TestPermissionsRequest.to_json(
+                compute.TestPermissionsRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.TestIamPermissionsImageRequest.to_json(
-            compute.TestIamPermissionsImageRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.TestIamPermissionsImageRequest.to_json(
+                compute.TestIamPermissionsImageRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._test_iam_permissions_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.TestPermissionsResponse.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.TestPermissionsResponse.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
-
-    @ property
+    @property
     def delete(self) -> Callable[
             [compute.DeleteImageRequest],
             compute.Operation]:
-        return self._delete
-    @ property
+        stub = self._STUBS.get("delete")
+        if not stub:
+            stub = self._STUBS["delete"] = self._Delete(self._session, self._host)
+
+        return stub
+
+    @property
     def deprecate(self) -> Callable[
             [compute.DeprecateImageRequest],
             compute.Operation]:
-        return self._deprecate
-    @ property
+        stub = self._STUBS.get("deprecate")
+        if not stub:
+            stub = self._STUBS["deprecate"] = self._Deprecate(self._session, self._host)
+
+        return stub
+
+    @property
     def get(self) -> Callable[
             [compute.GetImageRequest],
             compute.Image]:
-        return self._get
-    @ property
+        stub = self._STUBS.get("get")
+        if not stub:
+            stub = self._STUBS["get"] = self._Get(self._session, self._host)
+
+        return stub
+
+    @property
     def get_from_family(self) -> Callable[
             [compute.GetFromFamilyImageRequest],
             compute.Image]:
-        return self._get_from_family
-    @ property
+        stub = self._STUBS.get("get_from_family")
+        if not stub:
+            stub = self._STUBS["get_from_family"] = self._GetFromFamily(self._session, self._host)
+
+        return stub
+
+    @property
     def get_iam_policy(self) -> Callable[
             [compute.GetIamPolicyImageRequest],
             compute.Policy]:
-        return self._get_iam_policy
-    @ property
+        stub = self._STUBS.get("get_iam_policy")
+        if not stub:
+            stub = self._STUBS["get_iam_policy"] = self._GetIamPolicy(self._session, self._host)
+
+        return stub
+
+    @property
     def insert(self) -> Callable[
             [compute.InsertImageRequest],
             compute.Operation]:
-        return self._insert
-    @ property
+        stub = self._STUBS.get("insert")
+        if not stub:
+            stub = self._STUBS["insert"] = self._Insert(self._session, self._host)
+
+        return stub
+
+    @property
     def list(self) -> Callable[
             [compute.ListImagesRequest],
             compute.ImageList]:
-        return self._list
-    @ property
+        stub = self._STUBS.get("list")
+        if not stub:
+            stub = self._STUBS["list"] = self._List(self._session, self._host)
+
+        return stub
+
+    @property
     def patch(self) -> Callable[
             [compute.PatchImageRequest],
             compute.Operation]:
-        return self._patch
-    @ property
+        stub = self._STUBS.get("patch")
+        if not stub:
+            stub = self._STUBS["patch"] = self._Patch(self._session, self._host)
+
+        return stub
+
+    @property
     def set_iam_policy(self) -> Callable[
             [compute.SetIamPolicyImageRequest],
             compute.Policy]:
-        return self._set_iam_policy
-    @ property
+        stub = self._STUBS.get("set_iam_policy")
+        if not stub:
+            stub = self._STUBS["set_iam_policy"] = self._SetIamPolicy(self._session, self._host)
+
+        return stub
+
+    @property
     def set_labels(self) -> Callable[
             [compute.SetLabelsImageRequest],
             compute.Operation]:
-        return self._set_labels
-    @ property
+        stub = self._STUBS.get("set_labels")
+        if not stub:
+            stub = self._STUBS["set_labels"] = self._SetLabels(self._session, self._host)
+
+        return stub
+
+    @property
     def test_iam_permissions(self) -> Callable[
             [compute.TestIamPermissionsImageRequest],
             compute.TestPermissionsResponse]:
-        return self._test_iam_permissions
+        stub = self._STUBS.get("test_iam_permissions")
+        if not stub:
+            stub = self._STUBS["test_iam_permissions"] = self._TestIamPermissions(self._session, self._host)
+
+        return stub
+
     def close(self):
         self._session.close()
 

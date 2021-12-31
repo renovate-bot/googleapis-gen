@@ -128,7 +128,6 @@ class ListChannelsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Channel]:
         async def async_generator():
             async for page in self.pages:
@@ -250,7 +249,6 @@ class ListInputsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Input]:
         async def async_generator():
             async for page in self.pages:
@@ -372,7 +370,6 @@ class ListEventsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Event]:
         async def async_generator():
             async for page in self.pages:

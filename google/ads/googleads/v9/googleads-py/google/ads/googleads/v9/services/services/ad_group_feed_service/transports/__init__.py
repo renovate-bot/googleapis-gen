@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import AdGroupFeedServiceTransport
 from .grpc import AdGroupFeedServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[AdGroupFeedServiceTransport]]
 _transport_registry['grpc'] = AdGroupFeedServiceGrpcTransport
-
 
 __all__ = (
     'AdGroupFeedServiceTransport',

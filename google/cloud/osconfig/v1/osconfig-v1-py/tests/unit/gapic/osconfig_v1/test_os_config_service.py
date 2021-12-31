@@ -209,18 +209,18 @@ def test_os_config_service_client_client_options(client_class, transport_class, 
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -251,7 +251,7 @@ def test_os_config_service_client_mtls_env_auto(client_class, transport_class, t
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -326,7 +326,7 @@ def test_os_config_service_client_client_options_scopes(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -349,7 +349,7 @@ def test_os_config_service_client_client_options_credentials_file(client_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -360,7 +360,6 @@ def test_os_config_service_client_client_options_credentials_file(client_class, 
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_os_config_service_client_client_options_from_dict():
     with mock.patch('google.cloud.osconfig_v1.services.os_config_service.transports.OsConfigServiceGrpcTransport.__init__') as grpc_transport:
@@ -380,7 +379,11 @@ def test_os_config_service_client_client_options_from_dict():
         )
 
 
-def test_execute_patch_job(transport: str = 'grpc', request_type=patch_jobs.ExecutePatchJobRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_jobs.ExecutePatchJobRequest,
+  dict,
+])
+def test_execute_patch_job(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -422,10 +425,6 @@ def test_execute_patch_job(transport: str = 'grpc', request_type=patch_jobs.Exec
     assert response.error_message == 'error_message_value'
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
     assert response.patch_deployment == 'patch_deployment_value'
-
-
-def test_execute_patch_job_from_dict():
-    test_execute_patch_job(request_type=dict)
 
 
 def test_execute_patch_job_empty_call():
@@ -559,7 +558,11 @@ async def test_execute_patch_job_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_patch_job(transport: str = 'grpc', request_type=patch_jobs.GetPatchJobRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_jobs.GetPatchJobRequest,
+  dict,
+])
+def test_get_patch_job(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -601,10 +604,6 @@ def test_get_patch_job(transport: str = 'grpc', request_type=patch_jobs.GetPatch
     assert response.error_message == 'error_message_value'
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
     assert response.patch_deployment == 'patch_deployment_value'
-
-
-def test_get_patch_job_from_dict():
-    test_get_patch_job(request_type=dict)
 
 
 def test_get_patch_job_empty_call():
@@ -822,7 +821,11 @@ async def test_get_patch_job_flattened_error_async():
         )
 
 
-def test_cancel_patch_job(transport: str = 'grpc', request_type=patch_jobs.CancelPatchJobRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_jobs.CancelPatchJobRequest,
+  dict,
+])
+def test_cancel_patch_job(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -864,10 +867,6 @@ def test_cancel_patch_job(transport: str = 'grpc', request_type=patch_jobs.Cance
     assert response.error_message == 'error_message_value'
     assert math.isclose(response.percent_complete, 0.1705, rel_tol=1e-6)
     assert response.patch_deployment == 'patch_deployment_value'
-
-
-def test_cancel_patch_job_from_dict():
-    test_cancel_patch_job(request_type=dict)
 
 
 def test_cancel_patch_job_empty_call():
@@ -1001,7 +1000,11 @@ async def test_cancel_patch_job_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_patch_jobs(transport: str = 'grpc', request_type=patch_jobs.ListPatchJobsRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_jobs.ListPatchJobsRequest,
+  dict,
+])
+def test_list_patch_jobs(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1029,10 +1032,6 @@ def test_list_patch_jobs(transport: str = 'grpc', request_type=patch_jobs.ListPa
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPatchJobsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_patch_jobs_from_dict():
-    test_list_patch_jobs(request_type=dict)
 
 
 def test_list_patch_jobs_empty_call():
@@ -1236,9 +1235,10 @@ async def test_list_patch_jobs_flattened_error_async():
         )
 
 
-def test_list_patch_jobs_pager():
+def test_list_patch_jobs_pager(transport_name: str = "grpc"):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1288,10 +1288,10 @@ def test_list_patch_jobs_pager():
         assert len(results) == 6
         assert all(isinstance(i, patch_jobs.PatchJob)
                    for i in results)
-
-def test_list_patch_jobs_pages():
+def test_list_patch_jobs_pages(transport_name: str = "grpc"):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1376,7 +1376,8 @@ async def test_list_patch_jobs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, patch_jobs.PatchJob)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_patch_jobs_async_pages():
@@ -1422,7 +1423,11 @@ async def test_list_patch_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_list_patch_job_instance_details(transport: str = 'grpc', request_type=patch_jobs.ListPatchJobInstanceDetailsRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_jobs.ListPatchJobInstanceDetailsRequest,
+  dict,
+])
+def test_list_patch_job_instance_details(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1450,10 +1455,6 @@ def test_list_patch_job_instance_details(transport: str = 'grpc', request_type=p
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPatchJobInstanceDetailsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_patch_job_instance_details_from_dict():
-    test_list_patch_job_instance_details(request_type=dict)
 
 
 def test_list_patch_job_instance_details_empty_call():
@@ -1657,9 +1658,10 @@ async def test_list_patch_job_instance_details_flattened_error_async():
         )
 
 
-def test_list_patch_job_instance_details_pager():
+def test_list_patch_job_instance_details_pager(transport_name: str = "grpc"):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1709,10 +1711,10 @@ def test_list_patch_job_instance_details_pager():
         assert len(results) == 6
         assert all(isinstance(i, patch_jobs.PatchJobInstanceDetails)
                    for i in results)
-
-def test_list_patch_job_instance_details_pages():
+def test_list_patch_job_instance_details_pages(transport_name: str = "grpc"):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1797,7 +1799,8 @@ async def test_list_patch_job_instance_details_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, patch_jobs.PatchJobInstanceDetails)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_patch_job_instance_details_async_pages():
@@ -1843,7 +1846,11 @@ async def test_list_patch_job_instance_details_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_patch_deployment(transport: str = 'grpc', request_type=patch_deployments.CreatePatchDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_deployments.CreatePatchDeploymentRequest,
+  dict,
+])
+def test_create_patch_deployment(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1874,10 +1881,6 @@ def test_create_patch_deployment(transport: str = 'grpc', request_type=patch_dep
     assert isinstance(response, patch_deployments.PatchDeployment)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_create_patch_deployment_from_dict():
-    test_create_patch_deployment(request_type=dict)
 
 
 def test_create_patch_deployment_empty_call():
@@ -2103,7 +2106,11 @@ async def test_create_patch_deployment_flattened_error_async():
         )
 
 
-def test_get_patch_deployment(transport: str = 'grpc', request_type=patch_deployments.GetPatchDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_deployments.GetPatchDeploymentRequest,
+  dict,
+])
+def test_get_patch_deployment(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2134,10 +2141,6 @@ def test_get_patch_deployment(transport: str = 'grpc', request_type=patch_deploy
     assert isinstance(response, patch_deployments.PatchDeployment)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_get_patch_deployment_from_dict():
-    test_get_patch_deployment(request_type=dict)
 
 
 def test_get_patch_deployment_empty_call():
@@ -2343,7 +2346,11 @@ async def test_get_patch_deployment_flattened_error_async():
         )
 
 
-def test_list_patch_deployments(transport: str = 'grpc', request_type=patch_deployments.ListPatchDeploymentsRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_deployments.ListPatchDeploymentsRequest,
+  dict,
+])
+def test_list_patch_deployments(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2371,10 +2378,6 @@ def test_list_patch_deployments(transport: str = 'grpc', request_type=patch_depl
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPatchDeploymentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_patch_deployments_from_dict():
-    test_list_patch_deployments(request_type=dict)
 
 
 def test_list_patch_deployments_empty_call():
@@ -2578,9 +2581,10 @@ async def test_list_patch_deployments_flattened_error_async():
         )
 
 
-def test_list_patch_deployments_pager():
+def test_list_patch_deployments_pager(transport_name: str = "grpc"):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2630,10 +2634,10 @@ def test_list_patch_deployments_pager():
         assert len(results) == 6
         assert all(isinstance(i, patch_deployments.PatchDeployment)
                    for i in results)
-
-def test_list_patch_deployments_pages():
+def test_list_patch_deployments_pages(transport_name: str = "grpc"):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2718,7 +2722,8 @@ async def test_list_patch_deployments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, patch_deployments.PatchDeployment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_patch_deployments_async_pages():
@@ -2764,7 +2769,11 @@ async def test_list_patch_deployments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_patch_deployment(transport: str = 'grpc', request_type=patch_deployments.DeletePatchDeploymentRequest):
+@pytest.mark.parametrize("request_type", [
+  patch_deployments.DeletePatchDeploymentRequest,
+  dict,
+])
+def test_delete_patch_deployment(request_type, transport: str = 'grpc'):
     client = OsConfigServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2789,10 +2798,6 @@ def test_delete_patch_deployment(transport: str = 'grpc', request_type=patch_dep
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_patch_deployment_from_dict():
-    test_delete_patch_deployment(request_type=dict)
 
 
 def test_delete_patch_deployment_empty_call():
@@ -3519,7 +3524,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.OsConfigServiceTransport, '_prep_wrapped_messages') as prep:

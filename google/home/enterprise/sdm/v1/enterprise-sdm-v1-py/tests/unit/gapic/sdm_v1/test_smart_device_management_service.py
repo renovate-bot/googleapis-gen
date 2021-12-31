@@ -205,18 +205,18 @@ def test_smart_device_management_service_client_client_options(client_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -247,7 +247,7 @@ def test_smart_device_management_service_client_mtls_env_auto(client_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -322,7 +322,7 @@ def test_smart_device_management_service_client_client_options_scopes(client_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -345,7 +345,7 @@ def test_smart_device_management_service_client_client_options_credentials_file(
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -356,7 +356,6 @@ def test_smart_device_management_service_client_client_options_credentials_file(
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_smart_device_management_service_client_client_options_from_dict():
     with mock.patch('google.home.enterprise.sdm_v1.services.smart_device_management_service.transports.SmartDeviceManagementServiceGrpcTransport.__init__') as grpc_transport:
@@ -376,7 +375,11 @@ def test_smart_device_management_service_client_client_options_from_dict():
         )
 
 
-def test_get_device(transport: str = 'grpc', request_type=smart_device_management_service.GetDeviceRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.GetDeviceRequest,
+  dict,
+])
+def test_get_device(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -406,10 +409,6 @@ def test_get_device(transport: str = 'grpc', request_type=smart_device_managemen
     assert isinstance(response, device.Device)
     assert response.name == 'name_value'
     assert response.type_ == 'type__value'
-
-
-def test_get_device_from_dict():
-    test_get_device(request_type=dict)
 
 
 def test_get_device_empty_call():
@@ -531,7 +530,11 @@ async def test_get_device_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_devices(transport: str = 'grpc', request_type=smart_device_management_service.ListDevicesRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.ListDevicesRequest,
+  dict,
+])
+def test_list_devices(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -559,10 +562,6 @@ def test_list_devices(transport: str = 'grpc', request_type=smart_device_managem
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDevicesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_devices_from_dict():
-    test_list_devices(request_type=dict)
 
 
 def test_list_devices_empty_call():
@@ -682,9 +681,10 @@ async def test_list_devices_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_devices_pager():
+def test_list_devices_pager(transport_name: str = "grpc"):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -734,10 +734,10 @@ def test_list_devices_pager():
         assert len(results) == 6
         assert all(isinstance(i, device.Device)
                    for i in results)
-
-def test_list_devices_pages():
+def test_list_devices_pages(transport_name: str = "grpc"):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -822,7 +822,8 @@ async def test_list_devices_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, device.Device)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_devices_async_pages():
@@ -868,7 +869,11 @@ async def test_list_devices_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_execute_device_command(transport: str = 'grpc', request_type=smart_device_management_service.ExecuteDeviceCommandRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.ExecuteDeviceCommandRequest,
+  dict,
+])
+def test_execute_device_command(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -894,10 +899,6 @@ def test_execute_device_command(transport: str = 'grpc', request_type=smart_devi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, smart_device_management_service.ExecuteDeviceCommandResponse)
-
-
-def test_execute_device_command_from_dict():
-    test_execute_device_command(request_type=dict)
 
 
 def test_execute_device_command_empty_call():
@@ -1015,7 +1016,11 @@ async def test_execute_device_command_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_structure(transport: str = 'grpc', request_type=smart_device_management_service.GetStructureRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.GetStructureRequest,
+  dict,
+])
+def test_get_structure(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1043,10 +1048,6 @@ def test_get_structure(transport: str = 'grpc', request_type=smart_device_manage
     # Establish that the response is the type that we expect.
     assert isinstance(response, site.Structure)
     assert response.name == 'name_value'
-
-
-def test_get_structure_from_dict():
-    test_get_structure(request_type=dict)
 
 
 def test_get_structure_empty_call():
@@ -1166,7 +1167,11 @@ async def test_get_structure_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_structures(transport: str = 'grpc', request_type=smart_device_management_service.ListStructuresRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.ListStructuresRequest,
+  dict,
+])
+def test_list_structures(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1194,10 +1199,6 @@ def test_list_structures(transport: str = 'grpc', request_type=smart_device_mana
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListStructuresPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_structures_from_dict():
-    test_list_structures(request_type=dict)
 
 
 def test_list_structures_empty_call():
@@ -1317,9 +1318,10 @@ async def test_list_structures_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_structures_pager():
+def test_list_structures_pager(transport_name: str = "grpc"):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1369,10 +1371,10 @@ def test_list_structures_pager():
         assert len(results) == 6
         assert all(isinstance(i, site.Structure)
                    for i in results)
-
-def test_list_structures_pages():
+def test_list_structures_pages(transport_name: str = "grpc"):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1457,7 +1459,8 @@ async def test_list_structures_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, site.Structure)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_structures_async_pages():
@@ -1503,7 +1506,11 @@ async def test_list_structures_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_room(transport: str = 'grpc', request_type=smart_device_management_service.GetRoomRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.GetRoomRequest,
+  dict,
+])
+def test_get_room(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1531,10 +1538,6 @@ def test_get_room(transport: str = 'grpc', request_type=smart_device_management_
     # Establish that the response is the type that we expect.
     assert isinstance(response, site.Room)
     assert response.name == 'name_value'
-
-
-def test_get_room_from_dict():
-    test_get_room(request_type=dict)
 
 
 def test_get_room_empty_call():
@@ -1654,7 +1657,11 @@ async def test_get_room_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_rooms(transport: str = 'grpc', request_type=smart_device_management_service.ListRoomsRequest):
+@pytest.mark.parametrize("request_type", [
+  smart_device_management_service.ListRoomsRequest,
+  dict,
+])
+def test_list_rooms(request_type, transport: str = 'grpc'):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1682,10 +1689,6 @@ def test_list_rooms(transport: str = 'grpc', request_type=smart_device_managemen
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListRoomsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_rooms_from_dict():
-    test_list_rooms(request_type=dict)
 
 
 def test_list_rooms_empty_call():
@@ -1805,9 +1808,10 @@ async def test_list_rooms_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_rooms_pager():
+def test_list_rooms_pager(transport_name: str = "grpc"):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1857,10 +1861,10 @@ def test_list_rooms_pager():
         assert len(results) == 6
         assert all(isinstance(i, site.Room)
                    for i in results)
-
-def test_list_rooms_pages():
+def test_list_rooms_pages(transport_name: str = "grpc"):
     client = SmartDeviceManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1945,7 +1949,8 @@ async def test_list_rooms_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, site.Room)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_rooms_async_pages():
@@ -2516,7 +2521,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SmartDeviceManagementServiceTransport, '_prep_wrapped_messages') as prep:

@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import CustomizerAttributeServiceTransport
 from .grpc import CustomizerAttributeServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[CustomizerAttributeServiceTransport]]
 _transport_registry['grpc'] = CustomizerAttributeServiceGrpcTransport
-
 
 __all__ = (
     'CustomizerAttributeServiceTransport',

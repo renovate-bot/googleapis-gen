@@ -217,18 +217,18 @@ def test_access_context_manager_client_client_options(client_class, transport_cl
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -259,7 +259,7 @@ def test_access_context_manager_client_mtls_env_auto(client_class, transport_cla
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -334,7 +334,7 @@ def test_access_context_manager_client_client_options_scopes(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -357,7 +357,7 @@ def test_access_context_manager_client_client_options_credentials_file(client_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -368,7 +368,6 @@ def test_access_context_manager_client_client_options_credentials_file(client_cl
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_access_context_manager_client_client_options_from_dict():
     with mock.patch('google.identity.accesscontextmanager_v1.services.access_context_manager.transports.AccessContextManagerGrpcTransport.__init__') as grpc_transport:
@@ -388,7 +387,11 @@ def test_access_context_manager_client_client_options_from_dict():
         )
 
 
-def test_list_access_policies(transport: str = 'grpc', request_type=access_context_manager.ListAccessPoliciesRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.ListAccessPoliciesRequest,
+  dict,
+])
+def test_list_access_policies(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -416,10 +419,6 @@ def test_list_access_policies(transport: str = 'grpc', request_type=access_conte
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAccessPoliciesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_access_policies_from_dict():
-    test_list_access_policies(request_type=dict)
 
 
 def test_list_access_policies_empty_call():
@@ -476,9 +475,10 @@ async def test_list_access_policies_async_from_dict():
     await test_list_access_policies_async(request_type=dict)
 
 
-def test_list_access_policies_pager():
+def test_list_access_policies_pager(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -523,10 +523,10 @@ def test_list_access_policies_pager():
         assert len(results) == 6
         assert all(isinstance(i, access_policy.AccessPolicy)
                    for i in results)
-
-def test_list_access_policies_pages():
+def test_list_access_policies_pages(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -611,7 +611,8 @@ async def test_list_access_policies_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, access_policy.AccessPolicy)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_access_policies_async_pages():
@@ -657,7 +658,11 @@ async def test_list_access_policies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_access_policy(transport: str = 'grpc', request_type=access_context_manager.GetAccessPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.GetAccessPolicyRequest,
+  dict,
+])
+def test_get_access_policy(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -691,10 +696,6 @@ def test_get_access_policy(transport: str = 'grpc', request_type=access_context_
     assert response.parent == 'parent_value'
     assert response.title == 'title_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_access_policy_from_dict():
-    test_get_access_policy(request_type=dict)
 
 
 def test_get_access_policy_empty_call():
@@ -904,7 +905,11 @@ async def test_get_access_policy_flattened_error_async():
         )
 
 
-def test_create_access_policy(transport: str = 'grpc', request_type=access_policy.AccessPolicy):
+@pytest.mark.parametrize("request_type", [
+  access_policy.AccessPolicy,
+  dict,
+])
+def test_create_access_policy(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -929,10 +934,6 @@ def test_create_access_policy(transport: str = 'grpc', request_type=access_polic
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_access_policy_from_dict():
-    test_create_access_policy(request_type=dict)
 
 
 def test_create_access_policy_empty_call():
@@ -988,7 +989,11 @@ async def test_create_access_policy_async_from_dict():
     await test_create_access_policy_async(request_type=dict)
 
 
-def test_update_access_policy(transport: str = 'grpc', request_type=access_context_manager.UpdateAccessPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.UpdateAccessPolicyRequest,
+  dict,
+])
+def test_update_access_policy(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1013,10 +1018,6 @@ def test_update_access_policy(transport: str = 'grpc', request_type=access_conte
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_access_policy_from_dict():
-    test_update_access_policy(request_type=dict)
 
 
 def test_update_access_policy_empty_call():
@@ -1231,7 +1232,11 @@ async def test_update_access_policy_flattened_error_async():
         )
 
 
-def test_delete_access_policy(transport: str = 'grpc', request_type=access_context_manager.DeleteAccessPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.DeleteAccessPolicyRequest,
+  dict,
+])
+def test_delete_access_policy(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1256,10 +1261,6 @@ def test_delete_access_policy(transport: str = 'grpc', request_type=access_conte
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_access_policy_from_dict():
-    test_delete_access_policy(request_type=dict)
 
 
 def test_delete_access_policy_empty_call():
@@ -1464,7 +1465,11 @@ async def test_delete_access_policy_flattened_error_async():
         )
 
 
-def test_list_access_levels(transport: str = 'grpc', request_type=access_context_manager.ListAccessLevelsRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.ListAccessLevelsRequest,
+  dict,
+])
+def test_list_access_levels(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1492,10 +1497,6 @@ def test_list_access_levels(transport: str = 'grpc', request_type=access_context
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAccessLevelsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_access_levels_from_dict():
-    test_list_access_levels(request_type=dict)
 
 
 def test_list_access_levels_empty_call():
@@ -1699,9 +1700,10 @@ async def test_list_access_levels_flattened_error_async():
         )
 
 
-def test_list_access_levels_pager():
+def test_list_access_levels_pager(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1751,10 +1753,10 @@ def test_list_access_levels_pager():
         assert len(results) == 6
         assert all(isinstance(i, access_level.AccessLevel)
                    for i in results)
-
-def test_list_access_levels_pages():
+def test_list_access_levels_pages(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1839,7 +1841,8 @@ async def test_list_access_levels_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, access_level.AccessLevel)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_access_levels_async_pages():
@@ -1885,7 +1888,11 @@ async def test_list_access_levels_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_access_level(transport: str = 'grpc', request_type=access_context_manager.GetAccessLevelRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.GetAccessLevelRequest,
+  dict,
+])
+def test_get_access_level(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1918,10 +1925,6 @@ def test_get_access_level(transport: str = 'grpc', request_type=access_context_m
     assert response.name == 'name_value'
     assert response.title == 'title_value'
     assert response.description == 'description_value'
-
-
-def test_get_access_level_from_dict():
-    test_get_access_level(request_type=dict)
 
 
 def test_get_access_level_empty_call():
@@ -2129,7 +2132,11 @@ async def test_get_access_level_flattened_error_async():
         )
 
 
-def test_create_access_level(transport: str = 'grpc', request_type=access_context_manager.CreateAccessLevelRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.CreateAccessLevelRequest,
+  dict,
+])
+def test_create_access_level(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2154,10 +2161,6 @@ def test_create_access_level(transport: str = 'grpc', request_type=access_contex
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_access_level_from_dict():
-    test_create_access_level(request_type=dict)
 
 
 def test_create_access_level_empty_call():
@@ -2372,7 +2375,11 @@ async def test_create_access_level_flattened_error_async():
         )
 
 
-def test_update_access_level(transport: str = 'grpc', request_type=access_context_manager.UpdateAccessLevelRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.UpdateAccessLevelRequest,
+  dict,
+])
+def test_update_access_level(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2397,10 +2404,6 @@ def test_update_access_level(transport: str = 'grpc', request_type=access_contex
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_access_level_from_dict():
-    test_update_access_level(request_type=dict)
 
 
 def test_update_access_level_empty_call():
@@ -2615,7 +2618,11 @@ async def test_update_access_level_flattened_error_async():
         )
 
 
-def test_delete_access_level(transport: str = 'grpc', request_type=access_context_manager.DeleteAccessLevelRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.DeleteAccessLevelRequest,
+  dict,
+])
+def test_delete_access_level(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2640,10 +2647,6 @@ def test_delete_access_level(transport: str = 'grpc', request_type=access_contex
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_access_level_from_dict():
-    test_delete_access_level(request_type=dict)
 
 
 def test_delete_access_level_empty_call():
@@ -2848,7 +2851,11 @@ async def test_delete_access_level_flattened_error_async():
         )
 
 
-def test_replace_access_levels(transport: str = 'grpc', request_type=access_context_manager.ReplaceAccessLevelsRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.ReplaceAccessLevelsRequest,
+  dict,
+])
+def test_replace_access_levels(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2873,10 +2880,6 @@ def test_replace_access_levels(transport: str = 'grpc', request_type=access_cont
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_replace_access_levels_from_dict():
-    test_replace_access_levels(request_type=dict)
 
 
 def test_replace_access_levels_empty_call():
@@ -2995,7 +2998,11 @@ async def test_replace_access_levels_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_service_perimeters(transport: str = 'grpc', request_type=access_context_manager.ListServicePerimetersRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.ListServicePerimetersRequest,
+  dict,
+])
+def test_list_service_perimeters(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3023,10 +3030,6 @@ def test_list_service_perimeters(transport: str = 'grpc', request_type=access_co
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListServicePerimetersPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_service_perimeters_from_dict():
-    test_list_service_perimeters(request_type=dict)
 
 
 def test_list_service_perimeters_empty_call():
@@ -3230,9 +3233,10 @@ async def test_list_service_perimeters_flattened_error_async():
         )
 
 
-def test_list_service_perimeters_pager():
+def test_list_service_perimeters_pager(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3282,10 +3286,10 @@ def test_list_service_perimeters_pager():
         assert len(results) == 6
         assert all(isinstance(i, service_perimeter.ServicePerimeter)
                    for i in results)
-
-def test_list_service_perimeters_pages():
+def test_list_service_perimeters_pages(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3370,7 +3374,8 @@ async def test_list_service_perimeters_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, service_perimeter.ServicePerimeter)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_service_perimeters_async_pages():
@@ -3416,7 +3421,11 @@ async def test_list_service_perimeters_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_service_perimeter(transport: str = 'grpc', request_type=access_context_manager.GetServicePerimeterRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.GetServicePerimeterRequest,
+  dict,
+])
+def test_get_service_perimeter(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3452,10 +3461,6 @@ def test_get_service_perimeter(transport: str = 'grpc', request_type=access_cont
     assert response.description == 'description_value'
     assert response.perimeter_type == service_perimeter.ServicePerimeter.PerimeterType.PERIMETER_TYPE_BRIDGE
     assert response.use_explicit_dry_run_spec is True
-
-
-def test_get_service_perimeter_from_dict():
-    test_get_service_perimeter(request_type=dict)
 
 
 def test_get_service_perimeter_empty_call():
@@ -3667,7 +3672,11 @@ async def test_get_service_perimeter_flattened_error_async():
         )
 
 
-def test_create_service_perimeter(transport: str = 'grpc', request_type=access_context_manager.CreateServicePerimeterRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.CreateServicePerimeterRequest,
+  dict,
+])
+def test_create_service_perimeter(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3692,10 +3701,6 @@ def test_create_service_perimeter(transport: str = 'grpc', request_type=access_c
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_service_perimeter_from_dict():
-    test_create_service_perimeter(request_type=dict)
 
 
 def test_create_service_perimeter_empty_call():
@@ -3910,7 +3915,11 @@ async def test_create_service_perimeter_flattened_error_async():
         )
 
 
-def test_update_service_perimeter(transport: str = 'grpc', request_type=access_context_manager.UpdateServicePerimeterRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.UpdateServicePerimeterRequest,
+  dict,
+])
+def test_update_service_perimeter(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3935,10 +3944,6 @@ def test_update_service_perimeter(transport: str = 'grpc', request_type=access_c
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_service_perimeter_from_dict():
-    test_update_service_perimeter(request_type=dict)
 
 
 def test_update_service_perimeter_empty_call():
@@ -4153,7 +4158,11 @@ async def test_update_service_perimeter_flattened_error_async():
         )
 
 
-def test_delete_service_perimeter(transport: str = 'grpc', request_type=access_context_manager.DeleteServicePerimeterRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.DeleteServicePerimeterRequest,
+  dict,
+])
+def test_delete_service_perimeter(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4178,10 +4187,6 @@ def test_delete_service_perimeter(transport: str = 'grpc', request_type=access_c
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_service_perimeter_from_dict():
-    test_delete_service_perimeter(request_type=dict)
 
 
 def test_delete_service_perimeter_empty_call():
@@ -4386,7 +4391,11 @@ async def test_delete_service_perimeter_flattened_error_async():
         )
 
 
-def test_replace_service_perimeters(transport: str = 'grpc', request_type=access_context_manager.ReplaceServicePerimetersRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.ReplaceServicePerimetersRequest,
+  dict,
+])
+def test_replace_service_perimeters(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4411,10 +4420,6 @@ def test_replace_service_perimeters(transport: str = 'grpc', request_type=access
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_replace_service_perimeters_from_dict():
-    test_replace_service_perimeters(request_type=dict)
 
 
 def test_replace_service_perimeters_empty_call():
@@ -4533,7 +4538,11 @@ async def test_replace_service_perimeters_field_headers_async():
     ) in kw['metadata']
 
 
-def test_commit_service_perimeters(transport: str = 'grpc', request_type=access_context_manager.CommitServicePerimetersRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.CommitServicePerimetersRequest,
+  dict,
+])
+def test_commit_service_perimeters(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4558,10 +4567,6 @@ def test_commit_service_perimeters(transport: str = 'grpc', request_type=access_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_commit_service_perimeters_from_dict():
-    test_commit_service_perimeters(request_type=dict)
 
 
 def test_commit_service_perimeters_empty_call():
@@ -4680,7 +4685,11 @@ async def test_commit_service_perimeters_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_gcp_user_access_bindings(transport: str = 'grpc', request_type=access_context_manager.ListGcpUserAccessBindingsRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.ListGcpUserAccessBindingsRequest,
+  dict,
+])
+def test_list_gcp_user_access_bindings(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4708,10 +4717,6 @@ def test_list_gcp_user_access_bindings(transport: str = 'grpc', request_type=acc
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGcpUserAccessBindingsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_gcp_user_access_bindings_from_dict():
-    test_list_gcp_user_access_bindings(request_type=dict)
 
 
 def test_list_gcp_user_access_bindings_empty_call():
@@ -4915,9 +4920,10 @@ async def test_list_gcp_user_access_bindings_flattened_error_async():
         )
 
 
-def test_list_gcp_user_access_bindings_pager():
+def test_list_gcp_user_access_bindings_pager(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4967,10 +4973,10 @@ def test_list_gcp_user_access_bindings_pager():
         assert len(results) == 6
         assert all(isinstance(i, gcp_user_access_binding.GcpUserAccessBinding)
                    for i in results)
-
-def test_list_gcp_user_access_bindings_pages():
+def test_list_gcp_user_access_bindings_pages(transport_name: str = "grpc"):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5055,7 +5061,8 @@ async def test_list_gcp_user_access_bindings_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, gcp_user_access_binding.GcpUserAccessBinding)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_gcp_user_access_bindings_async_pages():
@@ -5101,7 +5108,11 @@ async def test_list_gcp_user_access_bindings_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_gcp_user_access_binding(transport: str = 'grpc', request_type=access_context_manager.GetGcpUserAccessBindingRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.GetGcpUserAccessBindingRequest,
+  dict,
+])
+def test_get_gcp_user_access_binding(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5133,10 +5144,6 @@ def test_get_gcp_user_access_binding(transport: str = 'grpc', request_type=acces
     assert response.name == 'name_value'
     assert response.group_key == 'group_key_value'
     assert response.access_levels == ['access_levels_value']
-
-
-def test_get_gcp_user_access_binding_from_dict():
-    test_get_gcp_user_access_binding(request_type=dict)
 
 
 def test_get_gcp_user_access_binding_empty_call():
@@ -5344,7 +5351,11 @@ async def test_get_gcp_user_access_binding_flattened_error_async():
         )
 
 
-def test_create_gcp_user_access_binding(transport: str = 'grpc', request_type=access_context_manager.CreateGcpUserAccessBindingRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.CreateGcpUserAccessBindingRequest,
+  dict,
+])
+def test_create_gcp_user_access_binding(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5369,10 +5380,6 @@ def test_create_gcp_user_access_binding(transport: str = 'grpc', request_type=ac
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_gcp_user_access_binding_from_dict():
-    test_create_gcp_user_access_binding(request_type=dict)
 
 
 def test_create_gcp_user_access_binding_empty_call():
@@ -5587,7 +5594,11 @@ async def test_create_gcp_user_access_binding_flattened_error_async():
         )
 
 
-def test_update_gcp_user_access_binding(transport: str = 'grpc', request_type=access_context_manager.UpdateGcpUserAccessBindingRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.UpdateGcpUserAccessBindingRequest,
+  dict,
+])
+def test_update_gcp_user_access_binding(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5612,10 +5623,6 @@ def test_update_gcp_user_access_binding(transport: str = 'grpc', request_type=ac
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_gcp_user_access_binding_from_dict():
-    test_update_gcp_user_access_binding(request_type=dict)
 
 
 def test_update_gcp_user_access_binding_empty_call():
@@ -5830,7 +5837,11 @@ async def test_update_gcp_user_access_binding_flattened_error_async():
         )
 
 
-def test_delete_gcp_user_access_binding(transport: str = 'grpc', request_type=access_context_manager.DeleteGcpUserAccessBindingRequest):
+@pytest.mark.parametrize("request_type", [
+  access_context_manager.DeleteGcpUserAccessBindingRequest,
+  dict,
+])
+def test_delete_gcp_user_access_binding(request_type, transport: str = 'grpc'):
     client = AccessContextManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5855,10 +5866,6 @@ def test_delete_gcp_user_access_binding(transport: str = 'grpc', request_type=ac
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_gcp_user_access_binding_from_dict():
-    test_delete_gcp_user_access_binding(request_type=dict)
 
 
 def test_delete_gcp_user_access_binding_empty_call():
@@ -6657,7 +6664,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AccessContextManagerTransport, '_prep_wrapped_messages') as prep:

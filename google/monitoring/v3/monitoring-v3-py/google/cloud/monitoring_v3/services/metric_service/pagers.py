@@ -130,7 +130,6 @@ class ListMonitoredResourceDescriptorsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[monitored_resource_pb2.MonitoredResourceDescriptor]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class ListMetricDescriptorsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[metric_pb2.MetricDescriptor]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListTimeSeriesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[gm_metric.TimeSeries]:
         async def async_generator():
             async for page in self.pages:

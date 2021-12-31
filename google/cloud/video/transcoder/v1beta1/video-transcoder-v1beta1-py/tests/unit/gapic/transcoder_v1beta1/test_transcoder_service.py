@@ -205,18 +205,18 @@ def test_transcoder_service_client_client_options(client_class, transport_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -247,7 +247,7 @@ def test_transcoder_service_client_mtls_env_auto(client_class, transport_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -322,7 +322,7 @@ def test_transcoder_service_client_client_options_scopes(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -345,7 +345,7 @@ def test_transcoder_service_client_client_options_credentials_file(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -356,7 +356,6 @@ def test_transcoder_service_client_client_options_credentials_file(client_class,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_transcoder_service_client_client_options_from_dict():
     with mock.patch('google.cloud.video.transcoder_v1beta1.services.transcoder_service.transports.TranscoderServiceGrpcTransport.__init__') as grpc_transport:
@@ -376,7 +375,11 @@ def test_transcoder_service_client_client_options_from_dict():
         )
 
 
-def test_create_job(transport: str = 'grpc', request_type=services.CreateJobRequest):
+@pytest.mark.parametrize("request_type", [
+  services.CreateJobRequest,
+  dict,
+])
+def test_create_job(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -417,10 +420,6 @@ def test_create_job(transport: str = 'grpc', request_type=services.CreateJobRequ
     assert response.state == resources.Job.ProcessingState.PENDING
     assert response.failure_reason == 'failure_reason_value'
     assert response.ttl_after_completion_days == 2670
-
-
-def test_create_job_from_dict():
-    test_create_job(request_type=dict)
 
 
 def test_create_job_empty_call():
@@ -646,7 +645,11 @@ async def test_create_job_flattened_error_async():
         )
 
 
-def test_list_jobs(transport: str = 'grpc', request_type=services.ListJobsRequest):
+@pytest.mark.parametrize("request_type", [
+  services.ListJobsRequest,
+  dict,
+])
+def test_list_jobs(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -674,10 +677,6 @@ def test_list_jobs(transport: str = 'grpc', request_type=services.ListJobsReques
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListJobsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_jobs_from_dict():
-    test_list_jobs(request_type=dict)
 
 
 def test_list_jobs_empty_call():
@@ -881,9 +880,10 @@ async def test_list_jobs_flattened_error_async():
         )
 
 
-def test_list_jobs_pager():
+def test_list_jobs_pager(transport_name: str = "grpc"):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -933,10 +933,10 @@ def test_list_jobs_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Job)
                    for i in results)
-
-def test_list_jobs_pages():
+def test_list_jobs_pages(transport_name: str = "grpc"):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1021,7 +1021,8 @@ async def test_list_jobs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Job)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_jobs_async_pages():
@@ -1067,7 +1068,11 @@ async def test_list_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_job(transport: str = 'grpc', request_type=services.GetJobRequest):
+@pytest.mark.parametrize("request_type", [
+  services.GetJobRequest,
+  dict,
+])
+def test_get_job(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1108,10 +1113,6 @@ def test_get_job(transport: str = 'grpc', request_type=services.GetJobRequest):
     assert response.state == resources.Job.ProcessingState.PENDING
     assert response.failure_reason == 'failure_reason_value'
     assert response.ttl_after_completion_days == 2670
-
-
-def test_get_job_from_dict():
-    test_get_job(request_type=dict)
 
 
 def test_get_job_empty_call():
@@ -1327,7 +1328,11 @@ async def test_get_job_flattened_error_async():
         )
 
 
-def test_delete_job(transport: str = 'grpc', request_type=services.DeleteJobRequest):
+@pytest.mark.parametrize("request_type", [
+  services.DeleteJobRequest,
+  dict,
+])
+def test_delete_job(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1352,10 +1357,6 @@ def test_delete_job(transport: str = 'grpc', request_type=services.DeleteJobRequ
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_job_from_dict():
-    test_delete_job(request_type=dict)
 
 
 def test_delete_job_empty_call():
@@ -1556,7 +1557,11 @@ async def test_delete_job_flattened_error_async():
         )
 
 
-def test_create_job_template(transport: str = 'grpc', request_type=services.CreateJobTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  services.CreateJobTemplateRequest,
+  dict,
+])
+def test_create_job_template(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1584,10 +1589,6 @@ def test_create_job_template(transport: str = 'grpc', request_type=services.Crea
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.JobTemplate)
     assert response.name == 'name_value'
-
-
-def test_create_job_template_from_dict():
-    test_create_job_template(request_type=dict)
 
 
 def test_create_job_template_empty_call():
@@ -1811,7 +1812,11 @@ async def test_create_job_template_flattened_error_async():
         )
 
 
-def test_list_job_templates(transport: str = 'grpc', request_type=services.ListJobTemplatesRequest):
+@pytest.mark.parametrize("request_type", [
+  services.ListJobTemplatesRequest,
+  dict,
+])
+def test_list_job_templates(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1839,10 +1844,6 @@ def test_list_job_templates(transport: str = 'grpc', request_type=services.ListJ
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListJobTemplatesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_job_templates_from_dict():
-    test_list_job_templates(request_type=dict)
 
 
 def test_list_job_templates_empty_call():
@@ -2046,9 +2047,10 @@ async def test_list_job_templates_flattened_error_async():
         )
 
 
-def test_list_job_templates_pager():
+def test_list_job_templates_pager(transport_name: str = "grpc"):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2098,10 +2100,10 @@ def test_list_job_templates_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.JobTemplate)
                    for i in results)
-
-def test_list_job_templates_pages():
+def test_list_job_templates_pages(transport_name: str = "grpc"):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2186,7 +2188,8 @@ async def test_list_job_templates_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.JobTemplate)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_job_templates_async_pages():
@@ -2232,7 +2235,11 @@ async def test_list_job_templates_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_job_template(transport: str = 'grpc', request_type=services.GetJobTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  services.GetJobTemplateRequest,
+  dict,
+])
+def test_get_job_template(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2260,10 +2267,6 @@ def test_get_job_template(transport: str = 'grpc', request_type=services.GetJobT
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.JobTemplate)
     assert response.name == 'name_value'
-
-
-def test_get_job_template_from_dict():
-    test_get_job_template(request_type=dict)
 
 
 def test_get_job_template_empty_call():
@@ -2467,7 +2470,11 @@ async def test_get_job_template_flattened_error_async():
         )
 
 
-def test_delete_job_template(transport: str = 'grpc', request_type=services.DeleteJobTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  services.DeleteJobTemplateRequest,
+  dict,
+])
+def test_delete_job_template(request_type, transport: str = 'grpc'):
     client = TranscoderServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2492,10 +2499,6 @@ def test_delete_job_template(transport: str = 'grpc', request_type=services.Dele
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_job_template_from_dict():
-    test_delete_job_template(request_type=dict)
 
 
 def test_delete_job_template_empty_call():
@@ -3204,7 +3207,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.TranscoderServiceTransport, '_prep_wrapped_messages') as prep:

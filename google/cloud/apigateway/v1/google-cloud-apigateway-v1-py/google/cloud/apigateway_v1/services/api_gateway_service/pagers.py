@@ -127,7 +127,6 @@ class ListGatewaysAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[apigateway.Gateway]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListApisAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[apigateway.Api]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListApiConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[apigateway.ApiConfig]:
         async def async_generator():
             async for page in self.pages:

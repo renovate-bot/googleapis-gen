@@ -589,7 +589,7 @@ class AudioStream(proto.Message):
             -  ``sr`` - Side right channel
             -  ``fc`` - Front center channel
             -  ``lfe`` - Low frequency
-        mapping (Sequence[google.cloud.video.livestream_v1.types.AudioStream.AudioMapping]):
+        mapping_ (Sequence[google.cloud.video.livestream_v1.types.AudioStream.AudioMapping]):
             The mapping for the input streams and audio
             channels.
         sample_rate_hertz (int):
@@ -660,7 +660,7 @@ class AudioStream(proto.Message):
         proto.STRING,
         number=4,
     )
-    mapping = proto.RepeatedField(
+    mapping_ = proto.RepeatedField(
         proto.MESSAGE,
         number=5,
         message=AudioMapping,

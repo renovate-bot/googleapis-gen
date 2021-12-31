@@ -128,7 +128,6 @@ class ListAccountsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Account]:
         async def async_generator():
             async for page in self.pages:
@@ -250,7 +249,6 @@ class ListAccountSummariesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.AccountSummary]:
         async def async_generator():
             async for page in self.pages:
@@ -372,7 +370,6 @@ class ListPropertiesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Property]:
         async def async_generator():
             async for page in self.pages:
@@ -494,7 +491,6 @@ class ListUserLinksAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.UserLink]:
         async def async_generator():
             async for page in self.pages:
@@ -616,7 +612,6 @@ class AuditUserLinksAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.AuditUserLink]:
         async def async_generator():
             async for page in self.pages:
@@ -738,7 +733,6 @@ class ListWebDataStreamsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.WebDataStream]:
         async def async_generator():
             async for page in self.pages:
@@ -860,7 +854,6 @@ class ListIosAppDataStreamsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.IosAppDataStream]:
         async def async_generator():
             async for page in self.pages:
@@ -982,7 +975,6 @@ class ListAndroidAppDataStreamsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.AndroidAppDataStream]:
         async def async_generator():
             async for page in self.pages:
@@ -1104,7 +1096,6 @@ class ListFirebaseLinksAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.FirebaseLink]:
         async def async_generator():
             async for page in self.pages:
@@ -1226,7 +1217,6 @@ class ListGoogleAdsLinksAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.GoogleAdsLink]:
         async def async_generator():
             async for page in self.pages:
@@ -1348,7 +1338,6 @@ class ListMeasurementProtocolSecretsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.MeasurementProtocolSecret]:
         async def async_generator():
             async for page in self.pages:
@@ -1470,7 +1459,6 @@ class SearchChangeHistoryEventsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.ChangeHistoryEvent]:
         async def async_generator():
             async for page in self.pages:
@@ -1592,7 +1580,6 @@ class ListConversionEventsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.ConversionEvent]:
         async def async_generator():
             async for page in self.pages:
@@ -1714,7 +1701,6 @@ class ListDisplayVideo360AdvertiserLinksAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.DisplayVideo360AdvertiserLink]:
         async def async_generator():
             async for page in self.pages:
@@ -1836,7 +1822,6 @@ class ListDisplayVideo360AdvertiserLinkProposalsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.DisplayVideo360AdvertiserLinkProposal]:
         async def async_generator():
             async for page in self.pages:
@@ -1958,7 +1943,6 @@ class ListCustomDimensionsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.CustomDimension]:
         async def async_generator():
             async for page in self.pages:
@@ -2080,7 +2064,6 @@ class ListCustomMetricsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.CustomMetric]:
         async def async_generator():
             async for page in self.pages:
@@ -2202,7 +2185,6 @@ class ListDataStreamsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.DataStream]:
         async def async_generator():
             async for page in self.pages:

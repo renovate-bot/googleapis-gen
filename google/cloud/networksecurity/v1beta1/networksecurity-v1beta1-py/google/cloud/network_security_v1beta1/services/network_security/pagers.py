@@ -129,7 +129,6 @@ class ListAuthorizationPoliciesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[authorization_policy.AuthorizationPolicy]:
         async def async_generator():
             async for page in self.pages:
@@ -251,7 +250,6 @@ class ListServerTlsPoliciesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[server_tls_policy.ServerTlsPolicy]:
         async def async_generator():
             async for page in self.pages:
@@ -373,7 +371,6 @@ class ListClientTlsPoliciesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[client_tls_policy.ClientTlsPolicy]:
         async def async_generator():
             async for page in self.pages:

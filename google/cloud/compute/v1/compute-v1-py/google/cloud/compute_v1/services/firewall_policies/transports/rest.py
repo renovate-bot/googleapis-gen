@@ -1,22 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import path_template
-from google.api_core import gapic_v1
-from requests import __version__ as requests_version
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
-import warnings
-
-try:
-    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
-except AttributeError:  # pragma: NO COVER
-    OptionalRetry = Union[retries.Retry, object]  # type: ignore
-
 # -*- coding: utf-8 -*-
 # Copyright 2020 Google LLC
 #
@@ -33,6 +14,27 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+import json  # type: ignore
+import grpc  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.api_core import rest_helpers
+from google.api_core import path_template
+from google.api_core import gapic_v1
+from requests import __version__ as requests_version
+import dataclasses
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+import warnings
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
+
+
 from google.cloud.compute_v1.types import compute
 
 from .base import FirewallPoliciesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -43,6 +45,11 @@ DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     grpc_version=None,
     rest_version=requests_version,
 )
+
+@dataclasses.dataclass
+class FirewallPoliciesRestStub:
+    _session: AuthorizedSession
+    _host: str
 
 class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
     """REST backend transport for FirewallPolicies.
@@ -55,6 +62,8 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
 
     It sends JSON representations of protocol buffers over HTTP/1.1
     """
+    _STUBS: Dict[str, FirewallPoliciesRestStub] = {}
+
     def __init__(self, *,
             host: str = 'compute.googleapis.com',
             credentials: ga_credentials.Credentials=None,
@@ -91,7 +100,7 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
+                Generally, you only need to set this if you are developing
                 your own client library.
             always_use_jwt_access (Optional[bool]): Whether self signed JWT should
                 be used for service account credentials.
@@ -115,36 +124,40 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
-    __add_association_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+    class _AddAssociation(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("AddAssociation")
 
-    @staticmethod
-    def _add_association_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__add_association_required_fields_default_values.items() if k not in message_dict}
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    def _add_association(self,
-            request: compute.AddAssociationFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the add association method over HTTP.
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-        Args:
-            request (~.compute.AddAssociationFirewallPolicyRequest):
-                The request object. A request message for
+        def __call__(self,
+                request: compute.AddAssociationFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the add association method over HTTP.
+
+            Args:
+                request (~.compute.AddAssociationFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.AddAssociation. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -160,92 +173,92 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/addAssociation',
                 'body': 'firewall_policy_association_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.AddAssociationFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.AddAssociationFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.FirewallPolicyAssociation.to_json(
-            compute.FirewallPolicyAssociation(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.FirewallPolicyAssociation.to_json(
+                compute.FirewallPolicyAssociation(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.AddAssociationFirewallPolicyRequest.to_json(
-            compute.AddAssociationFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.AddAssociationFirewallPolicyRequest.to_json(
+                compute.AddAssociationFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._add_association_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _AddRule(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("AddRule")
 
-    __add_rule_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _add_rule_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__add_rule_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _add_rule(self,
-            request: compute.AddRuleFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the add rule method over HTTP.
+        def __call__(self,
+                request: compute.AddRuleFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the add rule method over HTTP.
 
-        Args:
-            request (~.compute.AddRuleFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.AddRuleFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.AddRule. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -261,92 +274,92 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/addRule',
                 'body': 'firewall_policy_rule_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.AddRuleFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.AddRuleFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.FirewallPolicyRule.to_json(
-            compute.FirewallPolicyRule(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.FirewallPolicyRule.to_json(
+                compute.FirewallPolicyRule(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.AddRuleFirewallPolicyRequest.to_json(
-            compute.AddRuleFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.AddRuleFirewallPolicyRequest.to_json(
+                compute.AddRuleFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._add_rule_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _CloneRules(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("CloneRules")
 
-    __clone_rules_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _clone_rules_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__clone_rules_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _clone_rules(self,
-            request: compute.CloneRulesFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the clone rules method over HTTP.
+        def __call__(self,
+                request: compute.CloneRulesFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the clone rules method over HTTP.
 
-        Args:
-            request (~.compute.CloneRulesFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.CloneRulesFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.CloneRules. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -362,83 +375,85 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/cloneRules',
             },
-        ]
+            ]
 
-        request_kwargs = compute.CloneRulesFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.CloneRulesFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.CloneRulesFirewallPolicyRequest.to_json(
-            compute.CloneRulesFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.CloneRulesFirewallPolicyRequest.to_json(
+                compute.CloneRulesFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._clone_rules_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Delete(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("Delete")
 
-    __delete_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _delete_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _delete(self,
-            request: compute.DeleteFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the delete method over HTTP.
+        def __call__(self,
+                request: compute.DeleteFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the delete method over HTTP.
 
-        Args:
-            request (~.compute.DeleteFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.DeleteFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.Delete. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -454,239 +469,245 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'delete',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.DeleteFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.DeleteFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.DeleteFirewallPolicyRequest.to_json(
-            compute.DeleteFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.DeleteFirewallPolicyRequest.to_json(
+                compute.DeleteFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._delete_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Get(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("Get")
 
-    __get_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _get_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get(self,
-            request: compute.GetFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.FirewallPolicy:
-        r"""Call the get method over HTTP.
+        def __call__(self,
+                request: compute.GetFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.FirewallPolicy:
+            r"""Call the get method over HTTP.
 
-        Args:
-            request (~.compute.GetFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.Get. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.FirewallPolicy:
-                Represents a Firewall Policy
+            Returns:
+                ~.compute.FirewallPolicy:
+                    Represents a Firewall Policy
                 resource.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetFirewallPolicyRequest.to_json(
-            compute.GetFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetFirewallPolicyRequest.to_json(
+                compute.GetFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.FirewallPolicy.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.FirewallPolicy.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _GetAssociation(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("GetAssociation")
 
-    __get_association_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _get_association_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__get_association_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get_association(self,
-            request: compute.GetAssociationFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.FirewallPolicyAssociation:
-        r"""Call the get association method over HTTP.
+        def __call__(self,
+                request: compute.GetAssociationFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.FirewallPolicyAssociation:
+            r"""Call the get association method over HTTP.
 
-        Args:
-            request (~.compute.GetAssociationFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetAssociationFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.GetAssociation. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.FirewallPolicyAssociation:
+            Returns:
+                ~.compute.FirewallPolicyAssociation:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/getAssociation',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetAssociationFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetAssociationFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetAssociationFirewallPolicyRequest.to_json(
-            compute.GetAssociationFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetAssociationFirewallPolicyRequest.to_json(
+                compute.GetAssociationFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_association_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.FirewallPolicyAssociation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.FirewallPolicyAssociation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _GetIamPolicy(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("GetIamPolicy")
 
-    __get_iam_policy_required_fields_default_values =  {
-        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "resource" : "",        }
 
-    @staticmethod
-    def _get_iam_policy_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__get_iam_policy_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get_iam_policy(self,
-            request: compute.GetIamPolicyFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Policy:
-        r"""Call the get iam policy method over HTTP.
+        def __call__(self,
+                request: compute.GetIamPolicyFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Policy:
+            r"""Call the get iam policy method over HTTP.
 
-        Args:
-            request (~.compute.GetIamPolicyFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetIamPolicyFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.GetIamPolicy. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Policy:
-                An Identity and Access Management (IAM) policy, which
+            Returns:
+                ~.compute.Policy:
+                    An Identity and Access Management (IAM) policy, which
                 specifies access controls for Google Cloud resources. A
                 ``Policy`` is a collection of ``bindings``. A
                 ``binding`` binds one or more ``members`` to a single
@@ -727,164 +748,168 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 see the `IAM
                 documentation <https://cloud.google.com/iam/docs/>`__.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{resource}/getIamPolicy',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetIamPolicyFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetIamPolicyFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetIamPolicyFirewallPolicyRequest.to_json(
-            compute.GetIamPolicyFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetIamPolicyFirewallPolicyRequest.to_json(
+                compute.GetIamPolicyFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_iam_policy_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Policy.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Policy.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _GetRule(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("GetRule")
 
-    __get_rule_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _get_rule_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__get_rule_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get_rule(self,
-            request: compute.GetRuleFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.FirewallPolicyRule:
-        r"""Call the get rule method over HTTP.
+        def __call__(self,
+                request: compute.GetRuleFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.FirewallPolicyRule:
+            r"""Call the get rule method over HTTP.
 
-        Args:
-            request (~.compute.GetRuleFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetRuleFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.GetRule. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.FirewallPolicyRule:
-                Represents a rule that describes one
+            Returns:
+                ~.compute.FirewallPolicyRule:
+                    Represents a rule that describes one
                 or more match conditions along with the
                 action to be taken when traffic matches
                 this condition (allow or deny).
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/getRule',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetRuleFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetRuleFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetRuleFirewallPolicyRequest.to_json(
-            compute.GetRuleFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetRuleFirewallPolicyRequest.to_json(
+                compute.GetRuleFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_rule_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.FirewallPolicyRule.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.FirewallPolicyRule.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Insert(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("Insert")
 
-    __insert_required_fields_default_values =  {
-        "parentId" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "parentId" : "",        }
 
-    @staticmethod
-    def _insert_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _insert(self,
-            request: compute.InsertFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the insert method over HTTP.
+        def __call__(self,
+                request: compute.InsertFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the insert method over HTTP.
 
-        Args:
-            request (~.compute.InsertFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.InsertFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.Insert. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -900,228 +925,232 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies',
                 'body': 'firewall_policy_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.InsertFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.InsertFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.FirewallPolicy.to_json(
-            compute.FirewallPolicy(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.FirewallPolicy.to_json(
+                compute.FirewallPolicy(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.InsertFirewallPolicyRequest.to_json(
-            compute.InsertFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.InsertFirewallPolicyRequest.to_json(
+                compute.InsertFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._insert_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _List(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("List")
 
-    def _list(self,
-            request: compute.ListFirewallPoliciesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.FirewallPolicyList:
-        r"""Call the list method over HTTP.
+        def __call__(self,
+                request: compute.ListFirewallPoliciesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.FirewallPolicyList:
+            r"""Call the list method over HTTP.
 
-        Args:
-            request (~.compute.ListFirewallPoliciesRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.ListFirewallPoliciesRequest):
+                    The request object. A request message for
                 FirewallPolicies.List. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.FirewallPolicyList:
+            Returns:
+                ~.compute.FirewallPolicyList:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/locations/global/firewallPolicies',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListFirewallPoliciesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListFirewallPoliciesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListFirewallPoliciesRequest.to_json(
-            compute.ListFirewallPoliciesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListFirewallPoliciesRequest.to_json(
+                compute.ListFirewallPoliciesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.FirewallPolicyList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.FirewallPolicyList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _ListAssociations(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("ListAssociations")
 
-    def _list_associations(self,
-            request: compute.ListAssociationsFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.FirewallPoliciesListAssociationsResponse:
-        r"""Call the list associations method over HTTP.
+        def __call__(self,
+                request: compute.ListAssociationsFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.FirewallPoliciesListAssociationsResponse:
+            r"""Call the list associations method over HTTP.
 
-        Args:
-            request (~.compute.ListAssociationsFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.ListAssociationsFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.ListAssociations. See
                 the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.FirewallPoliciesListAssociationsResponse:
+            Returns:
+                ~.compute.FirewallPoliciesListAssociationsResponse:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/locations/global/firewallPolicies/listAssociations',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListAssociationsFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListAssociationsFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListAssociationsFirewallPolicyRequest.to_json(
-            compute.ListAssociationsFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListAssociationsFirewallPolicyRequest.to_json(
+                compute.ListAssociationsFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.FirewallPoliciesListAssociationsResponse.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.FirewallPoliciesListAssociationsResponse.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Move(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("Move")
 
-    __move_required_fields_default_values =  {
-        "firewallPolicy" : "",        "parentId" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",            "parentId" : "",        }
 
-    @staticmethod
-    def _move_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__move_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _move(self,
-            request: compute.MoveFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the move method over HTTP.
+        def __call__(self,
+                request: compute.MoveFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the move method over HTTP.
 
-        Args:
-            request (~.compute.MoveFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.MoveFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.Move. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1137,83 +1166,85 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/move',
             },
-        ]
+            ]
 
-        request_kwargs = compute.MoveFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.MoveFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.MoveFirewallPolicyRequest.to_json(
-            compute.MoveFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.MoveFirewallPolicyRequest.to_json(
+                compute.MoveFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._move_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Patch(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("Patch")
 
-    __patch_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _patch_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _patch(self,
-            request: compute.PatchFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the patch method over HTTP.
+        def __call__(self,
+                request: compute.PatchFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the patch method over HTTP.
 
-        Args:
-            request (~.compute.PatchFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.PatchFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.Patch. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1229,92 +1260,92 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'patch',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}',
                 'body': 'firewall_policy_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.PatchFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.PatchFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.FirewallPolicy.to_json(
-            compute.FirewallPolicy(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.FirewallPolicy.to_json(
+                compute.FirewallPolicy(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.PatchFirewallPolicyRequest.to_json(
-            compute.PatchFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.PatchFirewallPolicyRequest.to_json(
+                compute.PatchFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._patch_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _PatchRule(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("PatchRule")
 
-    __patch_rule_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _patch_rule_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__patch_rule_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _patch_rule(self,
-            request: compute.PatchRuleFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the patch rule method over HTTP.
+        def __call__(self,
+                request: compute.PatchRuleFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the patch rule method over HTTP.
 
-        Args:
-            request (~.compute.PatchRuleFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.PatchRuleFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.PatchRule. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1330,92 +1361,92 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/patchRule',
                 'body': 'firewall_policy_rule_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.PatchRuleFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.PatchRuleFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.FirewallPolicyRule.to_json(
-            compute.FirewallPolicyRule(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.FirewallPolicyRule.to_json(
+                compute.FirewallPolicyRule(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.PatchRuleFirewallPolicyRequest.to_json(
-            compute.PatchRuleFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.PatchRuleFirewallPolicyRequest.to_json(
+                compute.PatchRuleFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._patch_rule_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _RemoveAssociation(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("RemoveAssociation")
 
-    __remove_association_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _remove_association_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__remove_association_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _remove_association(self,
-            request: compute.RemoveAssociationFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the remove association method over HTTP.
+        def __call__(self,
+                request: compute.RemoveAssociationFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the remove association method over HTTP.
 
-        Args:
-            request (~.compute.RemoveAssociationFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.RemoveAssociationFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.RemoveAssociation. See
                 the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1431,83 +1462,85 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/removeAssociation',
             },
-        ]
+            ]
 
-        request_kwargs = compute.RemoveAssociationFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.RemoveAssociationFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.RemoveAssociationFirewallPolicyRequest.to_json(
-            compute.RemoveAssociationFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.RemoveAssociationFirewallPolicyRequest.to_json(
+                compute.RemoveAssociationFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._remove_association_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _RemoveRule(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("RemoveRule")
 
-    __remove_rule_required_fields_default_values =  {
-        "firewallPolicy" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "firewallPolicy" : "",        }
 
-    @staticmethod
-    def _remove_rule_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__remove_rule_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _remove_rule(self,
-            request: compute.RemoveRuleFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the remove rule method over HTTP.
+        def __call__(self,
+                request: compute.RemoveRuleFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the remove rule method over HTTP.
 
-        Args:
-            request (~.compute.RemoveRuleFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.RemoveRuleFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.RemoveRule. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -1523,83 +1556,85 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{firewall_policy}/removeRule',
             },
-        ]
+            ]
 
-        request_kwargs = compute.RemoveRuleFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.RemoveRuleFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.RemoveRuleFirewallPolicyRequest.to_json(
-            compute.RemoveRuleFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.RemoveRuleFirewallPolicyRequest.to_json(
+                compute.RemoveRuleFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._remove_rule_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetIamPolicy(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("SetIamPolicy")
 
-    __set_iam_policy_required_fields_default_values =  {
-        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "resource" : "",        }
 
-    @staticmethod
-    def _set_iam_policy_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__set_iam_policy_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_iam_policy(self,
-            request: compute.SetIamPolicyFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Policy:
-        r"""Call the set iam policy method over HTTP.
+        def __call__(self,
+                request: compute.SetIamPolicyFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Policy:
+            r"""Call the set iam policy method over HTTP.
 
-        Args:
-            request (~.compute.SetIamPolicyFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetIamPolicyFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.SetIamPolicy. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Policy:
-                An Identity and Access Management (IAM) policy, which
+            Returns:
+                ~.compute.Policy:
+                    An Identity and Access Management (IAM) policy, which
                 specifies access controls for Google Cloud resources. A
                 ``Policy`` is a collection of ``bindings``. A
                 ``binding`` binds one or more ``members`` to a single
@@ -1640,238 +1675,324 @@ class FirewallPoliciesRestTransport(FirewallPoliciesTransport):
                 see the `IAM
                 documentation <https://cloud.google.com/iam/docs/>`__.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{resource}/setIamPolicy',
                 'body': 'global_organization_set_policy_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetIamPolicyFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetIamPolicyFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.GlobalOrganizationSetPolicyRequest.to_json(
-            compute.GlobalOrganizationSetPolicyRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.GlobalOrganizationSetPolicyRequest.to_json(
+                compute.GlobalOrganizationSetPolicyRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetIamPolicyFirewallPolicyRequest.to_json(
-            compute.SetIamPolicyFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetIamPolicyFirewallPolicyRequest.to_json(
+                compute.SetIamPolicyFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_iam_policy_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Policy.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Policy.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _TestIamPermissions(FirewallPoliciesRestStub):
+        def __hash__(self):
+            return hash("TestIamPermissions")
 
-    __test_iam_permissions_required_fields_default_values =  {
-        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "resource" : "",        }
 
-    @staticmethod
-    def _test_iam_permissions_get_unset_required_fields(message_dict):
-        return {k: v for k, v in FirewallPoliciesRestTransport.__test_iam_permissions_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _test_iam_permissions(self,
-            request: compute.TestIamPermissionsFirewallPolicyRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.TestPermissionsResponse:
-        r"""Call the test iam permissions method over HTTP.
+        def __call__(self,
+                request: compute.TestIamPermissionsFirewallPolicyRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.TestPermissionsResponse:
+            r"""Call the test iam permissions method over HTTP.
 
-        Args:
-            request (~.compute.TestIamPermissionsFirewallPolicyRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.TestIamPermissionsFirewallPolicyRequest):
+                    The request object. A request message for
                 FirewallPolicies.TestIamPermissions. See
                 the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.TestPermissionsResponse:
+            Returns:
+                ~.compute.TestPermissionsResponse:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/locations/global/firewallPolicies/{resource}/testIamPermissions',
                 'body': 'test_permissions_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.TestIamPermissionsFirewallPolicyRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.TestIamPermissionsFirewallPolicyRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TestPermissionsRequest.to_json(
-            compute.TestPermissionsRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TestPermissionsRequest.to_json(
+                compute.TestPermissionsRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.TestIamPermissionsFirewallPolicyRequest.to_json(
-            compute.TestIamPermissionsFirewallPolicyRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.TestIamPermissionsFirewallPolicyRequest.to_json(
+                compute.TestIamPermissionsFirewallPolicyRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._test_iam_permissions_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.TestPermissionsResponse.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.TestPermissionsResponse.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
-
-    @ property
+    @property
     def add_association(self) -> Callable[
             [compute.AddAssociationFirewallPolicyRequest],
             compute.Operation]:
-        return self._add_association
-    @ property
+        stub = self._STUBS.get("add_association")
+        if not stub:
+            stub = self._STUBS["add_association"] = self._AddAssociation(self._session, self._host)
+
+        return stub
+
+    @property
     def add_rule(self) -> Callable[
             [compute.AddRuleFirewallPolicyRequest],
             compute.Operation]:
-        return self._add_rule
-    @ property
+        stub = self._STUBS.get("add_rule")
+        if not stub:
+            stub = self._STUBS["add_rule"] = self._AddRule(self._session, self._host)
+
+        return stub
+
+    @property
     def clone_rules(self) -> Callable[
             [compute.CloneRulesFirewallPolicyRequest],
             compute.Operation]:
-        return self._clone_rules
-    @ property
+        stub = self._STUBS.get("clone_rules")
+        if not stub:
+            stub = self._STUBS["clone_rules"] = self._CloneRules(self._session, self._host)
+
+        return stub
+
+    @property
     def delete(self) -> Callable[
             [compute.DeleteFirewallPolicyRequest],
             compute.Operation]:
-        return self._delete
-    @ property
+        stub = self._STUBS.get("delete")
+        if not stub:
+            stub = self._STUBS["delete"] = self._Delete(self._session, self._host)
+
+        return stub
+
+    @property
     def get(self) -> Callable[
             [compute.GetFirewallPolicyRequest],
             compute.FirewallPolicy]:
-        return self._get
-    @ property
+        stub = self._STUBS.get("get")
+        if not stub:
+            stub = self._STUBS["get"] = self._Get(self._session, self._host)
+
+        return stub
+
+    @property
     def get_association(self) -> Callable[
             [compute.GetAssociationFirewallPolicyRequest],
             compute.FirewallPolicyAssociation]:
-        return self._get_association
-    @ property
+        stub = self._STUBS.get("get_association")
+        if not stub:
+            stub = self._STUBS["get_association"] = self._GetAssociation(self._session, self._host)
+
+        return stub
+
+    @property
     def get_iam_policy(self) -> Callable[
             [compute.GetIamPolicyFirewallPolicyRequest],
             compute.Policy]:
-        return self._get_iam_policy
-    @ property
+        stub = self._STUBS.get("get_iam_policy")
+        if not stub:
+            stub = self._STUBS["get_iam_policy"] = self._GetIamPolicy(self._session, self._host)
+
+        return stub
+
+    @property
     def get_rule(self) -> Callable[
             [compute.GetRuleFirewallPolicyRequest],
             compute.FirewallPolicyRule]:
-        return self._get_rule
-    @ property
+        stub = self._STUBS.get("get_rule")
+        if not stub:
+            stub = self._STUBS["get_rule"] = self._GetRule(self._session, self._host)
+
+        return stub
+
+    @property
     def insert(self) -> Callable[
             [compute.InsertFirewallPolicyRequest],
             compute.Operation]:
-        return self._insert
-    @ property
+        stub = self._STUBS.get("insert")
+        if not stub:
+            stub = self._STUBS["insert"] = self._Insert(self._session, self._host)
+
+        return stub
+
+    @property
     def list(self) -> Callable[
             [compute.ListFirewallPoliciesRequest],
             compute.FirewallPolicyList]:
-        return self._list
-    @ property
+        stub = self._STUBS.get("list")
+        if not stub:
+            stub = self._STUBS["list"] = self._List(self._session, self._host)
+
+        return stub
+
+    @property
     def list_associations(self) -> Callable[
             [compute.ListAssociationsFirewallPolicyRequest],
             compute.FirewallPoliciesListAssociationsResponse]:
-        return self._list_associations
-    @ property
+        stub = self._STUBS.get("list_associations")
+        if not stub:
+            stub = self._STUBS["list_associations"] = self._ListAssociations(self._session, self._host)
+
+        return stub
+
+    @property
     def move(self) -> Callable[
             [compute.MoveFirewallPolicyRequest],
             compute.Operation]:
-        return self._move
-    @ property
+        stub = self._STUBS.get("move")
+        if not stub:
+            stub = self._STUBS["move"] = self._Move(self._session, self._host)
+
+        return stub
+
+    @property
     def patch(self) -> Callable[
             [compute.PatchFirewallPolicyRequest],
             compute.Operation]:
-        return self._patch
-    @ property
+        stub = self._STUBS.get("patch")
+        if not stub:
+            stub = self._STUBS["patch"] = self._Patch(self._session, self._host)
+
+        return stub
+
+    @property
     def patch_rule(self) -> Callable[
             [compute.PatchRuleFirewallPolicyRequest],
             compute.Operation]:
-        return self._patch_rule
-    @ property
+        stub = self._STUBS.get("patch_rule")
+        if not stub:
+            stub = self._STUBS["patch_rule"] = self._PatchRule(self._session, self._host)
+
+        return stub
+
+    @property
     def remove_association(self) -> Callable[
             [compute.RemoveAssociationFirewallPolicyRequest],
             compute.Operation]:
-        return self._remove_association
-    @ property
+        stub = self._STUBS.get("remove_association")
+        if not stub:
+            stub = self._STUBS["remove_association"] = self._RemoveAssociation(self._session, self._host)
+
+        return stub
+
+    @property
     def remove_rule(self) -> Callable[
             [compute.RemoveRuleFirewallPolicyRequest],
             compute.Operation]:
-        return self._remove_rule
-    @ property
+        stub = self._STUBS.get("remove_rule")
+        if not stub:
+            stub = self._STUBS["remove_rule"] = self._RemoveRule(self._session, self._host)
+
+        return stub
+
+    @property
     def set_iam_policy(self) -> Callable[
             [compute.SetIamPolicyFirewallPolicyRequest],
             compute.Policy]:
-        return self._set_iam_policy
-    @ property
+        stub = self._STUBS.get("set_iam_policy")
+        if not stub:
+            stub = self._STUBS["set_iam_policy"] = self._SetIamPolicy(self._session, self._host)
+
+        return stub
+
+    @property
     def test_iam_permissions(self) -> Callable[
             [compute.TestIamPermissionsFirewallPolicyRequest],
             compute.TestPermissionsResponse]:
-        return self._test_iam_permissions
+        stub = self._STUBS.get("test_iam_permissions")
+        if not stub:
+            stub = self._STUBS["test_iam_permissions"] = self._TestIamPermissions(self._session, self._host)
+
+        return stub
+
     def close(self):
         self._session.close()
 

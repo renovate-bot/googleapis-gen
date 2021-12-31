@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import CurrencyConstantServiceTransport
 from .grpc import CurrencyConstantServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[CurrencyConstantServiceTransport]]
 _transport_registry['grpc'] = CurrencyConstantServiceGrpcTransport
-
 
 __all__ = (
     'CurrencyConstantServiceTransport',

@@ -202,18 +202,18 @@ def test_bigtable_client_client_options(client_class, transport_class, transport
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -244,7 +244,7 @@ def test_bigtable_client_mtls_env_auto(client_class, transport_class, transport_
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -319,7 +319,7 @@ def test_bigtable_client_client_options_scopes(client_class, transport_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -342,7 +342,7 @@ def test_bigtable_client_client_options_credentials_file(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -353,7 +353,6 @@ def test_bigtable_client_client_options_credentials_file(client_class, transport
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_bigtable_client_client_options_from_dict():
     with mock.patch('google.cloud.bigtable_v2.services.bigtable.transports.BigtableGrpcTransport.__init__') as grpc_transport:
@@ -373,7 +372,11 @@ def test_bigtable_client_client_options_from_dict():
         )
 
 
-def test_read_rows(transport: str = 'grpc', request_type=bigtable.ReadRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable.ReadRowsRequest,
+  dict,
+])
+def test_read_rows(request_type, transport: str = 'grpc'):
     client = BigtableClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -399,10 +402,6 @@ def test_read_rows(transport: str = 'grpc', request_type=bigtable.ReadRowsReques
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, bigtable.ReadRowsResponse)
-
-
-def test_read_rows_from_dict():
-    test_read_rows(request_type=dict)
 
 
 def test_read_rows_empty_call():
@@ -616,7 +615,11 @@ async def test_read_rows_flattened_error_async():
         )
 
 
-def test_sample_row_keys(transport: str = 'grpc', request_type=bigtable.SampleRowKeysRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable.SampleRowKeysRequest,
+  dict,
+])
+def test_sample_row_keys(request_type, transport: str = 'grpc'):
     client = BigtableClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -642,10 +645,6 @@ def test_sample_row_keys(transport: str = 'grpc', request_type=bigtable.SampleRo
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, bigtable.SampleRowKeysResponse)
-
-
-def test_sample_row_keys_from_dict():
-    test_sample_row_keys(request_type=dict)
 
 
 def test_sample_row_keys_empty_call():
@@ -859,7 +858,11 @@ async def test_sample_row_keys_flattened_error_async():
         )
 
 
-def test_mutate_row(transport: str = 'grpc', request_type=bigtable.MutateRowRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable.MutateRowRequest,
+  dict,
+])
+def test_mutate_row(request_type, transport: str = 'grpc'):
     client = BigtableClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -885,10 +888,6 @@ def test_mutate_row(transport: str = 'grpc', request_type=bigtable.MutateRowRequ
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, bigtable.MutateRowResponse)
-
-
-def test_mutate_row_from_dict():
-    test_mutate_row(request_type=dict)
 
 
 def test_mutate_row_empty_call():
@@ -1120,7 +1119,11 @@ async def test_mutate_row_flattened_error_async():
         )
 
 
-def test_mutate_rows(transport: str = 'grpc', request_type=bigtable.MutateRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable.MutateRowsRequest,
+  dict,
+])
+def test_mutate_rows(request_type, transport: str = 'grpc'):
     client = BigtableClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1146,10 +1149,6 @@ def test_mutate_rows(transport: str = 'grpc', request_type=bigtable.MutateRowsRe
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, bigtable.MutateRowsResponse)
-
-
-def test_mutate_rows_from_dict():
-    test_mutate_rows(request_type=dict)
 
 
 def test_mutate_rows_empty_call():
@@ -1373,7 +1372,11 @@ async def test_mutate_rows_flattened_error_async():
         )
 
 
-def test_check_and_mutate_row(transport: str = 'grpc', request_type=bigtable.CheckAndMutateRowRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable.CheckAndMutateRowRequest,
+  dict,
+])
+def test_check_and_mutate_row(request_type, transport: str = 'grpc'):
     client = BigtableClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1401,10 +1404,6 @@ def test_check_and_mutate_row(transport: str = 'grpc', request_type=bigtable.Che
     # Establish that the response is the type that we expect.
     assert isinstance(response, bigtable.CheckAndMutateRowResponse)
     assert response.predicate_matched is True
-
-
-def test_check_and_mutate_row_from_dict():
-    test_check_and_mutate_row(request_type=dict)
 
 
 def test_check_and_mutate_row_empty_call():
@@ -1658,7 +1657,11 @@ async def test_check_and_mutate_row_flattened_error_async():
         )
 
 
-def test_read_modify_write_row(transport: str = 'grpc', request_type=bigtable.ReadModifyWriteRowRequest):
+@pytest.mark.parametrize("request_type", [
+  bigtable.ReadModifyWriteRowRequest,
+  dict,
+])
+def test_read_modify_write_row(request_type, transport: str = 'grpc'):
     client = BigtableClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1684,10 +1687,6 @@ def test_read_modify_write_row(transport: str = 'grpc', request_type=bigtable.Re
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, bigtable.ReadModifyWriteRowResponse)
-
-
-def test_read_modify_write_row_from_dict():
-    test_read_modify_write_row(request_type=dict)
 
 
 def test_read_modify_write_row_empty_call():
@@ -2419,7 +2418,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.BigtableTransport, '_prep_wrapped_messages') as prep:

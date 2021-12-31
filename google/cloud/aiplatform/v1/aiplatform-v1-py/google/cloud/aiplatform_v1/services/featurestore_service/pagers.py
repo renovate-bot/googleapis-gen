@@ -130,7 +130,6 @@ class ListFeaturestoresAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[featurestore.Featurestore]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class ListEntityTypesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[entity_type.EntityType]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListFeaturesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[feature.Feature]:
         async def async_generator():
             async for page in self.pages:
@@ -496,7 +493,6 @@ class SearchFeaturesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[feature.Feature]:
         async def async_generator():
             async for page in self.pages:

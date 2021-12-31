@@ -130,7 +130,6 @@ class ListNamespacesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[namespace.Namespace]:
         async def async_generator():
             async for page in self.pages:
@@ -252,7 +251,6 @@ class ListServicesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[service.Service]:
         async def async_generator():
             async for page in self.pages:
@@ -374,7 +372,6 @@ class ListEndpointsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[endpoint.Endpoint]:
         async def async_generator():
             async for page in self.pages:

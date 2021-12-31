@@ -210,18 +210,18 @@ def test_datastream_client_client_options(client_class, transport_class, transpo
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -252,7 +252,7 @@ def test_datastream_client_mtls_env_auto(client_class, transport_class, transpor
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -327,7 +327,7 @@ def test_datastream_client_client_options_scopes(client_class, transport_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -350,7 +350,7 @@ def test_datastream_client_client_options_credentials_file(client_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -361,7 +361,6 @@ def test_datastream_client_client_options_credentials_file(client_class, transpo
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_datastream_client_client_options_from_dict():
     with mock.patch('google.cloud.datastream_v1alpha1.services.datastream.transports.DatastreamGrpcTransport.__init__') as grpc_transport:
@@ -381,7 +380,11 @@ def test_datastream_client_client_options_from_dict():
         )
 
 
-def test_list_connection_profiles(transport: str = 'grpc', request_type=datastream.ListConnectionProfilesRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.ListConnectionProfilesRequest,
+  dict,
+])
+def test_list_connection_profiles(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -411,10 +414,6 @@ def test_list_connection_profiles(transport: str = 'grpc', request_type=datastre
     assert isinstance(response, pagers.ListConnectionProfilesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_connection_profiles_from_dict():
-    test_list_connection_profiles(request_type=dict)
 
 
 def test_list_connection_profiles_empty_call():
@@ -620,9 +619,10 @@ async def test_list_connection_profiles_flattened_error_async():
         )
 
 
-def test_list_connection_profiles_pager():
+def test_list_connection_profiles_pager(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -672,10 +672,10 @@ def test_list_connection_profiles_pager():
         assert len(results) == 6
         assert all(isinstance(i, datastream_resources.ConnectionProfile)
                    for i in results)
-
-def test_list_connection_profiles_pages():
+def test_list_connection_profiles_pages(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -760,7 +760,8 @@ async def test_list_connection_profiles_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, datastream_resources.ConnectionProfile)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_connection_profiles_async_pages():
@@ -806,7 +807,11 @@ async def test_list_connection_profiles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_connection_profile(transport: str = 'grpc', request_type=datastream.GetConnectionProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.GetConnectionProfileRequest,
+  dict,
+])
+def test_get_connection_profile(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -838,10 +843,6 @@ def test_get_connection_profile(transport: str = 'grpc', request_type=datastream
     assert isinstance(response, datastream_resources.ConnectionProfile)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_connection_profile_from_dict():
-    test_get_connection_profile(request_type=dict)
 
 
 def test_get_connection_profile_empty_call():
@@ -1047,7 +1048,11 @@ async def test_get_connection_profile_flattened_error_async():
         )
 
 
-def test_create_connection_profile(transport: str = 'grpc', request_type=datastream.CreateConnectionProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.CreateConnectionProfileRequest,
+  dict,
+])
+def test_create_connection_profile(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1072,10 +1077,6 @@ def test_create_connection_profile(transport: str = 'grpc', request_type=datastr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_connection_profile_from_dict():
-    test_create_connection_profile(request_type=dict)
 
 
 def test_create_connection_profile_empty_call():
@@ -1300,7 +1301,11 @@ async def test_create_connection_profile_flattened_error_async():
         )
 
 
-def test_update_connection_profile(transport: str = 'grpc', request_type=datastream.UpdateConnectionProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.UpdateConnectionProfileRequest,
+  dict,
+])
+def test_update_connection_profile(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1325,10 +1330,6 @@ def test_update_connection_profile(transport: str = 'grpc', request_type=datastr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_connection_profile_from_dict():
-    test_update_connection_profile(request_type=dict)
 
 
 def test_update_connection_profile_empty_call():
@@ -1543,7 +1544,11 @@ async def test_update_connection_profile_flattened_error_async():
         )
 
 
-def test_delete_connection_profile(transport: str = 'grpc', request_type=datastream.DeleteConnectionProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.DeleteConnectionProfileRequest,
+  dict,
+])
+def test_delete_connection_profile(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1568,10 +1573,6 @@ def test_delete_connection_profile(transport: str = 'grpc', request_type=datastr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_connection_profile_from_dict():
-    test_delete_connection_profile(request_type=dict)
 
 
 def test_delete_connection_profile_empty_call():
@@ -1776,7 +1777,11 @@ async def test_delete_connection_profile_flattened_error_async():
         )
 
 
-def test_discover_connection_profile(transport: str = 'grpc', request_type=datastream.DiscoverConnectionProfileRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.DiscoverConnectionProfileRequest,
+  dict,
+])
+def test_discover_connection_profile(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1803,10 +1808,6 @@ def test_discover_connection_profile(transport: str = 'grpc', request_type=datas
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, datastream.DiscoverConnectionProfileResponse)
-
-
-def test_discover_connection_profile_from_dict():
-    test_discover_connection_profile(request_type=dict)
 
 
 def test_discover_connection_profile_empty_call():
@@ -1924,7 +1925,11 @@ async def test_discover_connection_profile_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_streams(transport: str = 'grpc', request_type=datastream.ListStreamsRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.ListStreamsRequest,
+  dict,
+])
+def test_list_streams(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1954,10 +1959,6 @@ def test_list_streams(transport: str = 'grpc', request_type=datastream.ListStrea
     assert isinstance(response, pagers.ListStreamsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_streams_from_dict():
-    test_list_streams(request_type=dict)
 
 
 def test_list_streams_empty_call():
@@ -2163,9 +2164,10 @@ async def test_list_streams_flattened_error_async():
         )
 
 
-def test_list_streams_pager():
+def test_list_streams_pager(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2215,10 +2217,10 @@ def test_list_streams_pager():
         assert len(results) == 6
         assert all(isinstance(i, datastream_resources.Stream)
                    for i in results)
-
-def test_list_streams_pages():
+def test_list_streams_pages(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2303,7 +2305,8 @@ async def test_list_streams_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, datastream_resources.Stream)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_streams_async_pages():
@@ -2349,7 +2352,11 @@ async def test_list_streams_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_stream(transport: str = 'grpc', request_type=datastream.GetStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.GetStreamRequest,
+  dict,
+])
+def test_get_stream(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2382,10 +2389,6 @@ def test_get_stream(transport: str = 'grpc', request_type=datastream.GetStreamRe
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.state == datastream_resources.Stream.State.CREATED
-
-
-def test_get_stream_from_dict():
-    test_get_stream(request_type=dict)
 
 
 def test_get_stream_empty_call():
@@ -2593,7 +2596,11 @@ async def test_get_stream_flattened_error_async():
         )
 
 
-def test_create_stream(transport: str = 'grpc', request_type=datastream.CreateStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.CreateStreamRequest,
+  dict,
+])
+def test_create_stream(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2618,10 +2625,6 @@ def test_create_stream(transport: str = 'grpc', request_type=datastream.CreateSt
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_stream_from_dict():
-    test_create_stream(request_type=dict)
 
 
 def test_create_stream_empty_call():
@@ -2846,7 +2849,11 @@ async def test_create_stream_flattened_error_async():
         )
 
 
-def test_update_stream(transport: str = 'grpc', request_type=datastream.UpdateStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.UpdateStreamRequest,
+  dict,
+])
+def test_update_stream(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2871,10 +2878,6 @@ def test_update_stream(transport: str = 'grpc', request_type=datastream.UpdateSt
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_stream_from_dict():
-    test_update_stream(request_type=dict)
 
 
 def test_update_stream_empty_call():
@@ -3089,7 +3092,11 @@ async def test_update_stream_flattened_error_async():
         )
 
 
-def test_delete_stream(transport: str = 'grpc', request_type=datastream.DeleteStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.DeleteStreamRequest,
+  dict,
+])
+def test_delete_stream(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3114,10 +3121,6 @@ def test_delete_stream(transport: str = 'grpc', request_type=datastream.DeleteSt
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_stream_from_dict():
-    test_delete_stream(request_type=dict)
 
 
 def test_delete_stream_empty_call():
@@ -3322,7 +3325,11 @@ async def test_delete_stream_flattened_error_async():
         )
 
 
-def test_fetch_errors(transport: str = 'grpc', request_type=datastream.FetchErrorsRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.FetchErrorsRequest,
+  dict,
+])
+def test_fetch_errors(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3347,10 +3354,6 @@ def test_fetch_errors(transport: str = 'grpc', request_type=datastream.FetchErro
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_fetch_errors_from_dict():
-    test_fetch_errors(request_type=dict)
 
 
 def test_fetch_errors_empty_call():
@@ -3469,7 +3472,11 @@ async def test_fetch_errors_field_headers_async():
     ) in kw['metadata']
 
 
-def test_fetch_static_ips(transport: str = 'grpc', request_type=datastream.FetchStaticIpsRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.FetchStaticIpsRequest,
+  dict,
+])
+def test_fetch_static_ips(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3499,10 +3506,6 @@ def test_fetch_static_ips(transport: str = 'grpc', request_type=datastream.Fetch
     assert isinstance(response, pagers.FetchStaticIpsPager)
     assert response.static_ips == ['static_ips_value']
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_fetch_static_ips_from_dict():
-    test_fetch_static_ips(request_type=dict)
 
 
 def test_fetch_static_ips_empty_call():
@@ -3708,9 +3711,10 @@ async def test_fetch_static_ips_flattened_error_async():
         )
 
 
-def test_fetch_static_ips_pager():
+def test_fetch_static_ips_pager(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3760,10 +3764,10 @@ def test_fetch_static_ips_pager():
         assert len(results) == 6
         assert all(isinstance(i, str)
                    for i in results)
-
-def test_fetch_static_ips_pages():
+def test_fetch_static_ips_pages(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3848,7 +3852,8 @@ async def test_fetch_static_ips_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, str)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_fetch_static_ips_async_pages():
@@ -3894,7 +3899,11 @@ async def test_fetch_static_ips_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_private_connection(transport: str = 'grpc', request_type=datastream.CreatePrivateConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.CreatePrivateConnectionRequest,
+  dict,
+])
+def test_create_private_connection(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3919,10 +3928,6 @@ def test_create_private_connection(transport: str = 'grpc', request_type=datastr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_private_connection_from_dict():
-    test_create_private_connection(request_type=dict)
 
 
 def test_create_private_connection_empty_call():
@@ -4147,7 +4152,11 @@ async def test_create_private_connection_flattened_error_async():
         )
 
 
-def test_get_private_connection(transport: str = 'grpc', request_type=datastream.GetPrivateConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.GetPrivateConnectionRequest,
+  dict,
+])
+def test_get_private_connection(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4179,10 +4188,6 @@ def test_get_private_connection(transport: str = 'grpc', request_type=datastream
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.state == datastream_resources.PrivateConnection.State.CREATING
-
-
-def test_get_private_connection_from_dict():
-    test_get_private_connection(request_type=dict)
 
 
 def test_get_private_connection_empty_call():
@@ -4390,7 +4395,11 @@ async def test_get_private_connection_flattened_error_async():
         )
 
 
-def test_list_private_connections(transport: str = 'grpc', request_type=datastream.ListPrivateConnectionsRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.ListPrivateConnectionsRequest,
+  dict,
+])
+def test_list_private_connections(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4420,10 +4429,6 @@ def test_list_private_connections(transport: str = 'grpc', request_type=datastre
     assert isinstance(response, pagers.ListPrivateConnectionsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_private_connections_from_dict():
-    test_list_private_connections(request_type=dict)
 
 
 def test_list_private_connections_empty_call():
@@ -4629,9 +4634,10 @@ async def test_list_private_connections_flattened_error_async():
         )
 
 
-def test_list_private_connections_pager():
+def test_list_private_connections_pager(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4681,10 +4687,10 @@ def test_list_private_connections_pager():
         assert len(results) == 6
         assert all(isinstance(i, datastream_resources.PrivateConnection)
                    for i in results)
-
-def test_list_private_connections_pages():
+def test_list_private_connections_pages(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4769,7 +4775,8 @@ async def test_list_private_connections_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, datastream_resources.PrivateConnection)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_private_connections_async_pages():
@@ -4815,7 +4822,11 @@ async def test_list_private_connections_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_private_connection(transport: str = 'grpc', request_type=datastream.DeletePrivateConnectionRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.DeletePrivateConnectionRequest,
+  dict,
+])
+def test_delete_private_connection(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4840,10 +4851,6 @@ def test_delete_private_connection(transport: str = 'grpc', request_type=datastr
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_private_connection_from_dict():
-    test_delete_private_connection(request_type=dict)
 
 
 def test_delete_private_connection_empty_call():
@@ -5048,7 +5055,11 @@ async def test_delete_private_connection_flattened_error_async():
         )
 
 
-def test_create_route(transport: str = 'grpc', request_type=datastream.CreateRouteRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.CreateRouteRequest,
+  dict,
+])
+def test_create_route(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5073,10 +5084,6 @@ def test_create_route(transport: str = 'grpc', request_type=datastream.CreateRou
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_route_from_dict():
-    test_create_route(request_type=dict)
 
 
 def test_create_route_empty_call():
@@ -5301,7 +5308,11 @@ async def test_create_route_flattened_error_async():
         )
 
 
-def test_get_route(transport: str = 'grpc', request_type=datastream.GetRouteRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.GetRouteRequest,
+  dict,
+])
+def test_get_route(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5335,10 +5346,6 @@ def test_get_route(transport: str = 'grpc', request_type=datastream.GetRouteRequ
     assert response.display_name == 'display_name_value'
     assert response.destination_address == 'destination_address_value'
     assert response.destination_port == 1734
-
-
-def test_get_route_from_dict():
-    test_get_route(request_type=dict)
 
 
 def test_get_route_empty_call():
@@ -5548,7 +5555,11 @@ async def test_get_route_flattened_error_async():
         )
 
 
-def test_list_routes(transport: str = 'grpc', request_type=datastream.ListRoutesRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.ListRoutesRequest,
+  dict,
+])
+def test_list_routes(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5578,10 +5589,6 @@ def test_list_routes(transport: str = 'grpc', request_type=datastream.ListRoutes
     assert isinstance(response, pagers.ListRoutesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_routes_from_dict():
-    test_list_routes(request_type=dict)
 
 
 def test_list_routes_empty_call():
@@ -5787,9 +5794,10 @@ async def test_list_routes_flattened_error_async():
         )
 
 
-def test_list_routes_pager():
+def test_list_routes_pager(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5839,10 +5847,10 @@ def test_list_routes_pager():
         assert len(results) == 6
         assert all(isinstance(i, datastream_resources.Route)
                    for i in results)
-
-def test_list_routes_pages():
+def test_list_routes_pages(transport_name: str = "grpc"):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5927,7 +5935,8 @@ async def test_list_routes_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, datastream_resources.Route)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_routes_async_pages():
@@ -5973,7 +5982,11 @@ async def test_list_routes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_route(transport: str = 'grpc', request_type=datastream.DeleteRouteRequest):
+@pytest.mark.parametrize("request_type", [
+  datastream.DeleteRouteRequest,
+  dict,
+])
+def test_delete_route(request_type, transport: str = 'grpc'):
     client = DatastreamClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5998,10 +6011,6 @@ def test_delete_route(transport: str = 'grpc', request_type=datastream.DeleteRou
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_route_from_dict():
-    test_delete_route(request_type=dict)
 
 
 def test_delete_route_empty_call():
@@ -6810,7 +6819,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DatastreamTransport, '_prep_wrapped_messages') as prep:

@@ -210,18 +210,18 @@ def test_intents_client_client_options(client_class, transport_class, transport_
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -252,7 +252,7 @@ def test_intents_client_mtls_env_auto(client_class, transport_class, transport_n
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -327,7 +327,7 @@ def test_intents_client_client_options_scopes(client_class, transport_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -350,7 +350,7 @@ def test_intents_client_client_options_credentials_file(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -361,7 +361,6 @@ def test_intents_client_client_options_credentials_file(client_class, transport_
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_intents_client_client_options_from_dict():
     with mock.patch('google.cloud.dialogflow_v2beta1.services.intents.transports.IntentsGrpcTransport.__init__') as grpc_transport:
@@ -381,7 +380,11 @@ def test_intents_client_client_options_from_dict():
         )
 
 
-def test_list_intents(transport: str = 'grpc', request_type=intent.ListIntentsRequest):
+@pytest.mark.parametrize("request_type", [
+  intent.ListIntentsRequest,
+  dict,
+])
+def test_list_intents(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_list_intents(transport: str = 'grpc', request_type=intent.ListIntentsRe
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListIntentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_intents_from_dict():
-    test_list_intents(request_type=dict)
 
 
 def test_list_intents_empty_call():
@@ -626,9 +625,10 @@ async def test_list_intents_flattened_error_async():
         )
 
 
-def test_list_intents_pager():
+def test_list_intents_pager(transport_name: str = "grpc"):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -678,10 +678,10 @@ def test_list_intents_pager():
         assert len(results) == 6
         assert all(isinstance(i, intent.Intent)
                    for i in results)
-
-def test_list_intents_pages():
+def test_list_intents_pages(transport_name: str = "grpc"):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -766,7 +766,8 @@ async def test_list_intents_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, intent.Intent)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_intents_async_pages():
@@ -812,7 +813,11 @@ async def test_list_intents_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_intent(transport: str = 'grpc', request_type=intent.GetIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  intent.GetIntentRequest,
+  dict,
+])
+def test_get_intent(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -870,10 +875,6 @@ def test_get_intent(transport: str = 'grpc', request_type=intent.GetIntentReques
     assert response.default_response_platforms == [intent.Intent.Message.Platform.FACEBOOK]
     assert response.root_followup_intent_name == 'root_followup_intent_name_value'
     assert response.parent_followup_intent_name == 'parent_followup_intent_name_value'
-
-
-def test_get_intent_from_dict():
-    test_get_intent(request_type=dict)
 
 
 def test_get_intent_empty_call():
@@ -1117,7 +1118,11 @@ async def test_get_intent_flattened_error_async():
         )
 
 
-def test_create_intent(transport: str = 'grpc', request_type=gcd_intent.CreateIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcd_intent.CreateIntentRequest,
+  dict,
+])
+def test_create_intent(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1175,10 +1180,6 @@ def test_create_intent(transport: str = 'grpc', request_type=gcd_intent.CreateIn
     assert response.default_response_platforms == [gcd_intent.Intent.Message.Platform.FACEBOOK]
     assert response.root_followup_intent_name == 'root_followup_intent_name_value'
     assert response.parent_followup_intent_name == 'parent_followup_intent_name_value'
-
-
-def test_create_intent_from_dict():
-    test_create_intent(request_type=dict)
 
 
 def test_create_intent_empty_call():
@@ -1432,7 +1433,11 @@ async def test_create_intent_flattened_error_async():
         )
 
 
-def test_update_intent(transport: str = 'grpc', request_type=gcd_intent.UpdateIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  gcd_intent.UpdateIntentRequest,
+  dict,
+])
+def test_update_intent(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1490,10 +1495,6 @@ def test_update_intent(transport: str = 'grpc', request_type=gcd_intent.UpdateIn
     assert response.default_response_platforms == [gcd_intent.Intent.Message.Platform.FACEBOOK]
     assert response.root_followup_intent_name == 'root_followup_intent_name_value'
     assert response.parent_followup_intent_name == 'parent_followup_intent_name_value'
-
-
-def test_update_intent_from_dict():
-    test_update_intent(request_type=dict)
 
 
 def test_update_intent_empty_call():
@@ -1747,7 +1748,11 @@ async def test_update_intent_flattened_error_async():
         )
 
 
-def test_delete_intent(transport: str = 'grpc', request_type=intent.DeleteIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  intent.DeleteIntentRequest,
+  dict,
+])
+def test_delete_intent(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1772,10 +1777,6 @@ def test_delete_intent(transport: str = 'grpc', request_type=intent.DeleteIntent
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_intent_from_dict():
-    test_delete_intent(request_type=dict)
 
 
 def test_delete_intent_empty_call():
@@ -1976,7 +1977,11 @@ async def test_delete_intent_flattened_error_async():
         )
 
 
-def test_batch_update_intents(transport: str = 'grpc', request_type=intent.BatchUpdateIntentsRequest):
+@pytest.mark.parametrize("request_type", [
+  intent.BatchUpdateIntentsRequest,
+  dict,
+])
+def test_batch_update_intents(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2001,10 +2006,6 @@ def test_batch_update_intents(transport: str = 'grpc', request_type=intent.Batch
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_batch_update_intents_from_dict():
-    test_batch_update_intents(request_type=dict)
 
 
 def test_batch_update_intents_empty_call():
@@ -2219,7 +2220,11 @@ async def test_batch_update_intents_flattened_error_async():
         )
 
 
-def test_batch_delete_intents(transport: str = 'grpc', request_type=intent.BatchDeleteIntentsRequest):
+@pytest.mark.parametrize("request_type", [
+  intent.BatchDeleteIntentsRequest,
+  dict,
+])
+def test_batch_delete_intents(request_type, transport: str = 'grpc'):
     client = IntentsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2244,10 +2249,6 @@ def test_batch_delete_intents(transport: str = 'grpc', request_type=intent.Batch
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_batch_delete_intents_from_dict():
-    test_batch_delete_intents(request_type=dict)
 
 
 def test_batch_delete_intents_empty_call():
@@ -3009,7 +3010,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.IntentsTransport, '_prep_wrapped_messages') as prep:

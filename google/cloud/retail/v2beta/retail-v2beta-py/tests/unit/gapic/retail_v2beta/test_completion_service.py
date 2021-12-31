@@ -207,18 +207,18 @@ def test_completion_service_client_client_options(client_class, transport_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -249,7 +249,7 @@ def test_completion_service_client_mtls_env_auto(client_class, transport_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -324,7 +324,7 @@ def test_completion_service_client_client_options_scopes(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -347,7 +347,7 @@ def test_completion_service_client_client_options_credentials_file(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -358,7 +358,6 @@ def test_completion_service_client_client_options_credentials_file(client_class,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_completion_service_client_client_options_from_dict():
     with mock.patch('google.cloud.retail_v2beta.services.completion_service.transports.CompletionServiceGrpcTransport.__init__') as grpc_transport:
@@ -378,7 +377,11 @@ def test_completion_service_client_client_options_from_dict():
         )
 
 
-def test_complete_query(transport: str = 'grpc', request_type=completion_service.CompleteQueryRequest):
+@pytest.mark.parametrize("request_type", [
+  completion_service.CompleteQueryRequest,
+  dict,
+])
+def test_complete_query(request_type, transport: str = 'grpc'):
     client = CompletionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -406,10 +409,6 @@ def test_complete_query(transport: str = 'grpc', request_type=completion_service
     # Establish that the response is the type that we expect.
     assert isinstance(response, completion_service.CompleteQueryResponse)
     assert response.attribution_token == 'attribution_token_value'
-
-
-def test_complete_query_from_dict():
-    test_complete_query(request_type=dict)
 
 
 def test_complete_query_empty_call():
@@ -529,7 +528,11 @@ async def test_complete_query_field_headers_async():
     ) in kw['metadata']
 
 
-def test_import_completion_data(transport: str = 'grpc', request_type=import_config.ImportCompletionDataRequest):
+@pytest.mark.parametrize("request_type", [
+  import_config.ImportCompletionDataRequest,
+  dict,
+])
+def test_import_completion_data(request_type, transport: str = 'grpc'):
     client = CompletionServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -554,10 +557,6 @@ def test_import_completion_data(transport: str = 'grpc', request_type=import_con
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_import_completion_data_from_dict():
-    test_import_completion_data(request_type=dict)
 
 
 def test_import_completion_data_empty_call():
@@ -1196,7 +1195,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.CompletionServiceTransport, '_prep_wrapped_messages') as prep:

@@ -14,12 +14,14 @@
 # limitations under the License.
 #
 import os
-from unittest import mock
+import mock
 
 import grpc
+from grpc.experimental import aio
 import math
 import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
+
 
 from google.ads.googleads.v7.enums.types import billing_setup_status
 from google.ads.googleads.v7.enums.types import time_type
@@ -28,8 +30,10 @@ from google.ads.googleads.v7.services.services.billing_setup_service import Bill
 from google.ads.googleads.v7.services.services.billing_setup_service import transports
 from google.ads.googleads.v7.services.types import billing_setup_service
 from google.api_core import client_options
+from google.api_core import exceptions as core_exceptions
 from google.api_core import gapic_v1
 from google.api_core import grpc_helpers
+from google.api_core import path_template
 from google.auth import credentials as ga_credentials
 from google.auth.exceptions import MutualTLSChannelError
 from google.oauth2 import service_account
@@ -62,107 +66,167 @@ def test__get_default_mtls_endpoint():
     assert BillingSetupServiceClient._get_default_mtls_endpoint(non_googleapi) == non_googleapi
 
 
-def test_billing_setup_service_client_from_service_account_info():
+@pytest.mark.parametrize("client_class", [
+    BillingSetupServiceClient,
+])
+def test_billing_setup_service_client_from_service_account_info(client_class):
     creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_info') as factory:
         factory.return_value = creds
         info = {"valid": True}
-        client = BillingSetupServiceClient.from_service_account_info(info)
+        client = client_class.from_service_account_info(info)
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'googleads.googleapis.com:443'
 
 
-def test_billing_setup_service_client_from_service_account_file():
+@pytest.mark.parametrize("transport_class,transport_name", [
+    (transports.BillingSetupServiceGrpcTransport, "grpc"),
+])
+def test_billing_setup_service_client_service_account_always_use_jwt(transport_class, transport_name):
+    with mock.patch.object(service_account.Credentials, 'with_always_use_jwt_access', create=True) as use_jwt:
+        creds = service_account.Credentials(None, None, None)
+        transport = transport_class(credentials=creds, always_use_jwt_access=True)
+        use_jwt.assert_called_once_with(True)
+
+    with mock.patch.object(service_account.Credentials, 'with_always_use_jwt_access', create=True) as use_jwt:
+        creds = service_account.Credentials(None, None, None)
+        transport = transport_class(credentials=creds, always_use_jwt_access=False)
+        use_jwt.assert_not_called()
+
+
+@pytest.mark.parametrize("client_class", [
+    BillingSetupServiceClient,
+])
+def test_billing_setup_service_client_from_service_account_file(client_class):
     creds = ga_credentials.AnonymousCredentials()
     with mock.patch.object(service_account.Credentials, 'from_service_account_file') as factory:
         factory.return_value = creds
-        client = BillingSetupServiceClient.from_service_account_file("dummy/file/path.json")
+        client = client_class.from_service_account_file("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
-        client = BillingSetupServiceClient.from_service_account_json("dummy/file/path.json")
+        client = client_class.from_service_account_json("dummy/file/path.json")
         assert client.transport._credentials == creds
+        assert isinstance(client, client_class)
 
         assert client.transport._host == 'googleads.googleapis.com:443'
 
 
 def test_billing_setup_service_client_get_transport_class():
     transport = BillingSetupServiceClient.get_transport_class()
-    assert transport == transports.BillingSetupServiceGrpcTransport
+    available_transports = [
+        transports.BillingSetupServiceGrpcTransport,
+    ]
+    assert transport in available_transports
 
     transport = BillingSetupServiceClient.get_transport_class("grpc")
     assert transport == transports.BillingSetupServiceGrpcTransport
 
 
+@pytest.mark.parametrize("client_class,transport_class,transport_name", [
+    (BillingSetupServiceClient, transports.BillingSetupServiceGrpcTransport, "grpc"),
+])
 @mock.patch.object(BillingSetupServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BillingSetupServiceClient))
-def test_billing_setup_service_client_client_options():
+def test_billing_setup_service_client_client_options(client_class, transport_class, transport_name):
     # Check that if channel is provided we won't create a new one.
-    with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.BillingSetupServiceClient.get_transport_class') as gtc:
-        transport = transports.BillingSetupServiceGrpcTransport(
+    with mock.patch.object(BillingSetupServiceClient, 'get_transport_class') as gtc:
+        transport = transport_class(
             credentials=ga_credentials.AnonymousCredentials()
         )
-        client = BillingSetupServiceClient(transport=transport)
+        client = client_class(transport=transport)
         gtc.assert_not_called()
 
     # Check that if channel is provided via str we will create a new one.
-    with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.BillingSetupServiceClient.get_transport_class') as gtc:
-        client = BillingSetupServiceClient(transport="grpc")
+    with mock.patch.object(BillingSetupServiceClient, 'get_transport_class') as gtc:
+        client = client_class(transport=transport_name)
         gtc.assert_called()
 
     # Check the case api_endpoint is provided.
     options = client_options.ClientOptions(api_endpoint="squid.clam.whelk")
-    with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
-        grpc_transport.return_value = None
-        client = BillingSetupServiceClient(client_options=options)
-        grpc_transport.assert_called_once_with(
-            ssl_channel_credentials=None,
+    with mock.patch.object(transport_class, '__init__') as patched:
+        patched.return_value = None
+        client = client_class(transport=transport_name, client_options=options)
+        patched.assert_called_once_with(
             credentials=None,
+            credentials_file=None,
             host="squid.clam.whelk",
+            scopes=None,
+            client_cert_source_for_mtls=None,
+            quota_project_id=None,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
-    # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT
-    # is "never".
+    # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT is
+    # "never".
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "never"}):
-        with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
-            grpc_transport.return_value = None
-            client = BillingSetupServiceClient()
-            grpc_transport.assert_called_once_with(
-                ssl_channel_credentials=None,
+        with mock.patch.object(transport_class, '__init__') as patched:
+            patched.return_value = None
+            client = client_class(transport=transport_name)
+            patched.assert_called_once_with(
                 credentials=None,
+                credentials_file=None,
                 host=client.DEFAULT_ENDPOINT,
+                scopes=None,
+                client_cert_source_for_mtls=None,
+                quota_project_id=None,
                 client_info=transports.base.DEFAULT_CLIENT_INFO,
+                always_use_jwt_access=True,
             )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT is
     # "always".
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "always"}):
-        with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
-            grpc_transport.return_value = None
-            client = BillingSetupServiceClient()
-            grpc_transport.assert_called_once_with(
-                ssl_channel_credentials=None,
+        with mock.patch.object(transport_class, '__init__') as patched:
+            patched.return_value = None
+            client = client_class(transport=transport_name)
+            patched.assert_called_once_with(
                 credentials=None,
+                credentials_file=None,
                 host=client.DEFAULT_MTLS_ENDPOINT,
+                scopes=None,
+                client_cert_source_for_mtls=None,
+                quota_project_id=None,
                 client_info=transports.base.DEFAULT_CLIENT_INFO,
+                always_use_jwt_access=True,
             )
 
     # Check the case api_endpoint is not provided and GOOGLE_API_USE_MTLS_ENDPOINT has
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = BillingSetupServiceClient()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = BillingSetupServiceClient()
+            client = client_class(transport=transport_name)
 
+    # Check the case quota_project_id is provided
+    options = client_options.ClientOptions(quota_project_id="octopus")
+    with mock.patch.object(transport_class, '__init__') as patched:
+        patched.return_value = None
+        client = client_class(client_options=options, transport=transport_name)
+        patched.assert_called_once_with(
+            credentials=None,
+            credentials_file=None,
+            host=client.DEFAULT_ENDPOINT,
+            scopes=None,
+            client_cert_source_for_mtls=None,
+            quota_project_id="octopus",
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
+        )
 
+@pytest.mark.parametrize("client_class,transport_class,transport_name,use_client_cert_env", [
+    (BillingSetupServiceClient, transports.BillingSetupServiceGrpcTransport, "grpc", "true"),
+    (BillingSetupServiceClient, transports.BillingSetupServiceGrpcTransport, "grpc", "false"),
+])
 @mock.patch.object(BillingSetupServiceClient, "DEFAULT_ENDPOINT", modify_default_endpoint(BillingSetupServiceClient))
 @mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "auto"})
-@pytest.mark.parametrize("use_client_cert_env", ["true", "false"])
-def test_billing_setup_service_client_mtls_env_auto(use_client_cert_env):
+def test_billing_setup_service_client_mtls_env_auto(client_class, transport_class, transport_name, use_client_cert_env):
     # This tests the endpoint autoswitch behavior. Endpoint is autoswitched to the default
     # mtls endpoint, if GOOGLE_API_USE_CLIENT_CERTIFICATE is "true" and client cert exists.
 
@@ -170,68 +234,115 @@ def test_billing_setup_service_client_mtls_env_auto(use_client_cert_env):
     # GOOGLE_API_USE_CLIENT_CERTIFICATE value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": use_client_cert_env}):
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
-        with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
-            ssl_channel_creds = mock.Mock()
-            with mock.patch('grpc.ssl_channel_credentials', return_value=ssl_channel_creds):
-                grpc_transport.return_value = None
-                client = BillingSetupServiceClient(client_options=options)
+        with mock.patch.object(transport_class, '__init__') as patched:
+            patched.return_value = None
+            client = client_class(client_options=options, transport=transport_name)
 
-                if use_client_cert_env == "false":
-                    expected_ssl_channel_creds = None
-                    expected_host = client.DEFAULT_ENDPOINT
-                else:
-                    expected_ssl_channel_creds = ssl_channel_creds
-                    expected_host = client.DEFAULT_MTLS_ENDPOINT
+            if use_client_cert_env == "false":
+                expected_client_cert_source = None
+                expected_host = client.DEFAULT_ENDPOINT
+            else:
+                expected_client_cert_source = client_cert_source_callback
+                expected_host = client.DEFAULT_MTLS_ENDPOINT
 
-                grpc_transport.assert_called_once_with(
-                    ssl_channel_credentials=expected_ssl_channel_creds,
-                    credentials=None,
-                    host=expected_host,
-                    client_info=transports.base.DEFAULT_CLIENT_INFO,
-                )
+            patched.assert_called_once_with(
+                credentials=None,
+                credentials_file=None,
+                host=expected_host,
+                scopes=None,
+                client_cert_source_for_mtls=expected_client_cert_source,
+                quota_project_id=None,
+                client_info=transports.base.DEFAULT_CLIENT_INFO,
+                always_use_jwt_access=True,
+            )
 
     # Check the case ADC client cert is provided. Whether client cert is used depends on
     # GOOGLE_API_USE_CLIENT_CERTIFICATE value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": use_client_cert_env}):
-        with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
-            with mock.patch('google.auth.transport.grpc.SslCredentials.__init__', return_value=None):
-                with mock.patch('google.auth.transport.grpc.SslCredentials.is_mtls', new_callable=mock.PropertyMock) as is_mtls_mock:
-                    with mock.patch('google.auth.transport.grpc.SslCredentials.ssl_credentials', new_callable=mock.PropertyMock) as ssl_credentials_mock:
-                        if use_client_cert_env == "false":
-                            is_mtls_mock.return_value = False
-                            ssl_credentials_mock.return_value = None
-                            expected_host = client.DEFAULT_ENDPOINT
-                            expected_ssl_channel_creds = None
-                        else:
-                            is_mtls_mock.return_value = True
-                            ssl_credentials_mock.return_value = mock.Mock()
-                            expected_host = client.DEFAULT_MTLS_ENDPOINT
-                            expected_ssl_channel_creds = ssl_credentials_mock.return_value
+        with mock.patch.object(transport_class, '__init__') as patched:
+            with mock.patch('google.auth.transport.mtls.has_default_client_cert_source', return_value=True):
+                with mock.patch('google.auth.transport.mtls.default_client_cert_source', return_value=client_cert_source_callback):
+                    if use_client_cert_env == "false":
+                        expected_host = client.DEFAULT_ENDPOINT
+                        expected_client_cert_source = None
+                    else:
+                        expected_host = client.DEFAULT_MTLS_ENDPOINT
+                        expected_client_cert_source = client_cert_source_callback
 
-                        grpc_transport.return_value = None
-                        client = BillingSetupServiceClient()
-                        grpc_transport.assert_called_once_with(
-                            ssl_channel_credentials=expected_ssl_channel_creds,
-                            credentials=None,
-                            host=expected_host,
-                            client_info=transports.base.DEFAULT_CLIENT_INFO,
-                        )
+                    patched.return_value = None
+                    client = client_class(transport=transport_name)
+                    patched.assert_called_once_with(
+                        credentials=None,
+                        credentials_file=None,
+                        host=expected_host,
+                        scopes=None,
+                        client_cert_source_for_mtls=expected_client_cert_source,
+                        quota_project_id=None,
+                        client_info=transports.base.DEFAULT_CLIENT_INFO,
+                        always_use_jwt_access=True,
+                    )
 
     # Check the case client_cert_source and ADC client cert are not provided.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": use_client_cert_env}):
-        with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
-            with mock.patch('google.auth.transport.grpc.SslCredentials.__init__', return_value=None):
-                with mock.patch('google.auth.transport.grpc.SslCredentials.is_mtls', new_callable=mock.PropertyMock) as is_mtls_mock:
-                    is_mtls_mock.return_value = False
-                    grpc_transport.return_value = None
-                    client = BillingSetupServiceClient()
-                    grpc_transport.assert_called_once_with(
-                        ssl_channel_credentials=None,
-                        credentials=None,
-                        host=client.DEFAULT_ENDPOINT,
-                        client_info=transports.base.DEFAULT_CLIENT_INFO,
-                    )
+        with mock.patch.object(transport_class, '__init__') as patched:
+            with mock.patch("google.auth.transport.mtls.has_default_client_cert_source", return_value=False):
+                patched.return_value = None
+                client = client_class(transport=transport_name)
+                patched.assert_called_once_with(
+                    credentials=None,
+                    credentials_file=None,
+                    host=client.DEFAULT_ENDPOINT,
+                    scopes=None,
+                    client_cert_source_for_mtls=None,
+                    quota_project_id=None,
+                    client_info=transports.base.DEFAULT_CLIENT_INFO,
+                    always_use_jwt_access=True,
+                )
 
+
+@pytest.mark.parametrize("client_class,transport_class,transport_name", [
+    (BillingSetupServiceClient, transports.BillingSetupServiceGrpcTransport, "grpc"),
+])
+def test_billing_setup_service_client_client_options_scopes(client_class, transport_class, transport_name):
+    # Check the case scopes are provided.
+    options = client_options.ClientOptions(
+        scopes=["1", "2"],
+    )
+    with mock.patch.object(transport_class, '__init__') as patched:
+        patched.return_value = None
+        client = client_class(client_options=options, transport=transport_name)
+        patched.assert_called_once_with(
+            credentials=None,
+            credentials_file=None,
+            host=client.DEFAULT_ENDPOINT,
+            scopes=["1", "2"],
+            client_cert_source_for_mtls=None,
+            quota_project_id=None,
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
+        )
+
+@pytest.mark.parametrize("client_class,transport_class,transport_name", [
+    (BillingSetupServiceClient, transports.BillingSetupServiceGrpcTransport, "grpc"),
+])
+def test_billing_setup_service_client_client_options_credentials_file(client_class, transport_class, transport_name):
+    # Check the case credentials file is provided.
+    options = client_options.ClientOptions(
+        credentials_file="credentials.json"
+    )
+    with mock.patch.object(transport_class, '__init__') as patched:
+        patched.return_value = None
+        client = client_class(client_options=options, transport=transport_name)
+        patched.assert_called_once_with(
+            credentials=None,
+            credentials_file="credentials.json",
+            host=client.DEFAULT_ENDPOINT,
+            scopes=None,
+            client_cert_source_for_mtls=None,
+            quota_project_id=None,
+            client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
+        )
 
 def test_billing_setup_service_client_client_options_from_dict():
     with mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceGrpcTransport.__init__') as grpc_transport:
@@ -240,14 +351,22 @@ def test_billing_setup_service_client_client_options_from_dict():
             client_options={'api_endpoint': 'squid.clam.whelk'}
         )
         grpc_transport.assert_called_once_with(
-            ssl_channel_credentials=None,
             credentials=None,
+            credentials_file=None,
             host="squid.clam.whelk",
+            scopes=None,
+            client_cert_source_for_mtls=None,
+            quota_project_id=None,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
+            always_use_jwt_access=True,
         )
 
 
-def test_get_billing_setup(transport: str = 'grpc', request_type=billing_setup_service.GetBillingSetupRequest):
+@pytest.mark.parametrize("request_type", [
+  billing_setup_service.GetBillingSetupRequest,
+  dict,
+])
+def test_get_billing_setup(request_type, transport: str = 'grpc'):
     client = BillingSetupServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -285,8 +404,22 @@ def test_get_billing_setup(transport: str = 'grpc', request_type=billing_setup_s
     assert response.payments_account == 'payments_account_value'
 
 
-def test_get_billing_setup_from_dict():
-    test_get_billing_setup(request_type=dict)
+def test_get_billing_setup_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BillingSetupServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.get_billing_setup),
+            '__call__') as call:
+        client.get_billing_setup()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == billing_setup_service.GetBillingSetupRequest()
 
 
 def test_get_billing_setup_field_headers():
@@ -341,7 +474,9 @@ def test_get_billing_setup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].resource_name == 'resource_name_value'
+        arg = args[0].resource_name
+        mock_val = 'resource_name_value'
+        assert arg == mock_val
 
 
 def test_get_billing_setup_flattened_error():
@@ -358,7 +493,11 @@ def test_get_billing_setup_flattened_error():
         )
 
 
-def test_mutate_billing_setup(transport: str = 'grpc', request_type=billing_setup_service.MutateBillingSetupRequest):
+@pytest.mark.parametrize("request_type", [
+  billing_setup_service.MutateBillingSetupRequest,
+  dict,
+])
+def test_mutate_billing_setup(request_type, transport: str = 'grpc'):
     client = BillingSetupServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -386,8 +525,22 @@ def test_mutate_billing_setup(transport: str = 'grpc', request_type=billing_setu
     assert isinstance(response, billing_setup_service.MutateBillingSetupResponse)
 
 
-def test_mutate_billing_setup_from_dict():
-    test_mutate_billing_setup(request_type=dict)
+def test_mutate_billing_setup_empty_call():
+    # This test is a coverage failsafe to make sure that totally empty calls,
+    # i.e. request == None and no flattened fields passed, work.
+    client = BillingSetupServiceClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='grpc',
+    )
+
+    # Mock the actual call within the gRPC stub, and fake the request.
+    with mock.patch.object(
+            type(client.transport.mutate_billing_setup),
+            '__call__') as call:
+        client.mutate_billing_setup()
+        call.assert_called()
+        _, args, _ = call.mock_calls[0]
+        assert args[0] == billing_setup_service.MutateBillingSetupRequest()
 
 
 def test_mutate_billing_setup_field_headers():
@@ -443,8 +596,12 @@ def test_mutate_billing_setup_flattened():
         # request object values.
         assert len(call.mock_calls) == 1
         _, args, _ = call.mock_calls[0]
-        assert args[0].customer_id == 'customer_id_value'
-        assert args[0].operation == billing_setup_service.BillingSetupOperation(create=billing_setup.BillingSetup(resource_name='resource_name_value'))
+        arg = args[0].customer_id
+        mock_val = 'customer_id_value'
+        assert arg == mock_val
+        arg = args[0].operation
+        mock_val = billing_setup_service.BillingSetupOperation(create=billing_setup.BillingSetup(resource_name='resource_name_value'))
+        assert arg == mock_val
 
 
 def test_mutate_billing_setup_flattened_error():
@@ -473,6 +630,26 @@ def test_credentials_transport_error():
             transport=transport,
         )
 
+    # It is an error to provide a credentials file and a transport instance.
+    transport = transports.BillingSetupServiceGrpcTransport(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+    with pytest.raises(ValueError):
+        client = BillingSetupServiceClient(
+            client_options={"credentials_file": "credentials.json"},
+            transport=transport,
+        )
+
+    # It is an error to provide scopes and a transport instance.
+    transport = transports.BillingSetupServiceGrpcTransport(
+        credentials=ga_credentials.AnonymousCredentials(),
+    )
+    with pytest.raises(ValueError):
+        client = BillingSetupServiceClient(
+            client_options={"scopes": ["1", "2"]},
+            transport=transport,
+        )
+
 
 def test_transport_instance():
     # A client may be instantiated with a custom transport instance.
@@ -482,7 +659,6 @@ def test_transport_instance():
     client = BillingSetupServiceClient(transport=transport)
     assert client.transport is transport
 
-
 def test_transport_get_channel():
     # A client may be instantiated with a custom transport instance.
     transport = transports.BillingSetupServiceGrpcTransport(
@@ -491,6 +667,16 @@ def test_transport_get_channel():
     channel = transport.grpc_channel
     assert channel
 
+
+@pytest.mark.parametrize("transport_class", [
+    transports.BillingSetupServiceGrpcTransport,
+])
+def test_transport_adc(transport_class):
+    # Test default credentials are used if not provided.
+    with mock.patch.object(google.auth, 'default') as adc:
+        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport_class()
+        adc.assert_called_once()
 
 def test_transport_grpc_default():
     # A client should use the gRPC transport by default.
@@ -502,15 +688,13 @@ def test_transport_grpc_default():
         transports.BillingSetupServiceGrpcTransport,
     )
 
-@pytest.mark.parametrize("transport_class", [
-    transports.BillingSetupServiceGrpcTransport,
-])
-def test_transport_adc(transport_class):
-    # Test default credentials are used if not provided.
-    with mock.patch.object(google.auth, 'default') as adc:
-        adc.return_value = (ga_credentials.AnonymousCredentials(), None)
-        transport_class()
-        adc.assert_called_once()
+def test_billing_setup_service_base_transport_error():
+    # Passing both a credentials object and credentials_file should raise an error
+    with pytest.raises(core_exceptions.DuplicateCredentialArgs):
+        transport = transports.BillingSetupServiceTransport(
+            credentials=ga_credentials.AnonymousCredentials(),
+            credentials_file="credentials.json"
+        )
 
 
 def test_billing_setup_service_base_transport():
@@ -535,9 +719,27 @@ def test_billing_setup_service_base_transport():
         transport.close()
 
 
+def test_billing_setup_service_base_transport_with_credentials_file():
+    # Instantiate the base transport with a credentials file
+    with mock.patch.object(google.auth, 'load_credentials_from_file', autospec=True) as load_creds, mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceTransport._prep_wrapped_messages') as Transport:
+        Transport.return_value = None
+        load_creds.return_value = (ga_credentials.AnonymousCredentials(), None)
+        transport = transports.BillingSetupServiceTransport(
+            credentials_file="credentials.json",
+            quota_project_id="octopus",
+        )
+        load_creds.assert_called_once_with("credentials.json",
+            scopes=None,
+            default_scopes=(
+            'https://www.googleapis.com/auth/adwords',
+),
+            quota_project_id="octopus",
+        )
+
+
 def test_billing_setup_service_base_transport_with_adc():
     # Test the default credentials are used if credentials and credentials_file are None.
-    with mock.patch.object(google.auth, 'default') as adc, mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceTransport._prep_wrapped_messages') as Transport:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc, mock.patch('google.ads.googleads.v7.services.services.billing_setup_service.transports.BillingSetupServiceTransport._prep_wrapped_messages') as Transport:
         Transport.return_value = None
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         transport = transports.BillingSetupServiceTransport()
@@ -546,23 +748,117 @@ def test_billing_setup_service_base_transport_with_adc():
 
 def test_billing_setup_service_auth_adc():
     # If no credentials are provided, we should use ADC credentials.
-    with mock.patch.object(google.auth, 'default') as adc:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
         BillingSetupServiceClient()
-        adc.assert_called_once_with(scopes=(
+        adc.assert_called_once_with(
+            scopes=None,
+            default_scopes=(
             'https://www.googleapis.com/auth/adwords',
-        ))
+),
+            quota_project_id=None,
+        )
 
 
-def test_billing_setup_service_transport_auth_adc():
+@pytest.mark.parametrize(
+    "transport_class",
+    [
+        transports.BillingSetupServiceGrpcTransport,
+    ],
+)
+def test_billing_setup_service_transport_auth_adc(transport_class):
     # If credentials and host are not provided, the transport class should use
     # ADC credentials.
-    with mock.patch.object(google.auth, 'default') as adc:
+    with mock.patch.object(google.auth, 'default', autospec=True) as adc:
         adc.return_value = (ga_credentials.AnonymousCredentials(), None)
-        transports.BillingSetupServiceGrpcTransport(host="squid.clam.whelk")
-        adc.assert_called_once_with(scopes=(
-            'https://www.googleapis.com/auth/adwords',
-        ))
+        transport_class(quota_project_id="octopus", scopes=["1", "2"])
+        adc.assert_called_once_with(
+            scopes=["1", "2"],
+            default_scopes=(                'https://www.googleapis.com/auth/adwords',),
+            quota_project_id="octopus",
+        )
+
+
+@pytest.mark.parametrize(
+    "transport_class,grpc_helpers",
+    [
+        (transports.BillingSetupServiceGrpcTransport, grpc_helpers),
+    ],
+)
+def test_billing_setup_service_transport_create_channel(transport_class, grpc_helpers):
+    # If credentials and host are not provided, the transport class should use
+    # ADC credentials.
+    with mock.patch.object(google.auth, "default", autospec=True) as adc, mock.patch.object(
+        grpc_helpers, "create_channel", autospec=True
+    ) as create_channel:
+        creds = ga_credentials.AnonymousCredentials()
+        adc.return_value = (creds, None)
+        transport_class(
+            quota_project_id="octopus",
+            scopes=["1", "2"]
+        )
+
+        create_channel.assert_called_with(
+            "googleads.googleapis.com:443",
+            credentials=creds,
+            credentials_file=None,
+            quota_project_id="octopus",
+            default_scopes=(
+                'https://www.googleapis.com/auth/adwords',
+),
+            scopes=["1", "2"],
+            default_host="googleads.googleapis.com",
+            ssl_credentials=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+
+@pytest.mark.parametrize("transport_class",
+    [
+      transports.BillingSetupServiceGrpcTransport,
+])
+def test_billing_setup_service_grpc_transport_client_cert_source_for_mtls(
+    transport_class
+):
+    cred = ga_credentials.AnonymousCredentials()
+
+    # Check ssl_channel_credentials is used if provided.
+    with mock.patch.object(transport_class, "create_channel") as mock_create_channel:
+        mock_ssl_channel_creds = mock.Mock()
+        transport_class(
+            host="squid.clam.whelk",
+            credentials=cred,
+            ssl_channel_credentials=mock_ssl_channel_creds
+        )
+        mock_create_channel.assert_called_once_with(
+            "squid.clam.whelk:443",
+            credentials=cred,
+            credentials_file=None,
+            scopes=None,
+            ssl_credentials=mock_ssl_channel_creds,
+            quota_project_id=None,
+            options=[
+                ("grpc.max_send_message_length", -1),
+                ("grpc.max_receive_message_length", -1),
+            ],
+        )
+
+    # Check if ssl_channel_credentials is not provided, then client_cert_source_for_mtls
+    # is used.
+    with mock.patch.object(transport_class, "create_channel", return_value=mock.Mock()):
+        with mock.patch("grpc.ssl_channel_credentials") as mock_ssl_cred:
+            transport_class(
+                credentials=cred,
+                client_cert_source_for_mtls=client_cert_source_callback
+            )
+            expected_cert, expected_key = client_cert_source_callback()
+            mock_ssl_cred.assert_called_once_with(
+                certificate_chain=expected_cert,
+                private_key=expected_key
+            )
 
 
 def test_billing_setup_service_host_no_port():
@@ -580,9 +876,8 @@ def test_billing_setup_service_host_with_port():
     )
     assert client.transport._host == 'googleads.googleapis.com:8000'
 
-
 def test_billing_setup_service_grpc_transport_channel():
-    channel = grpc.insecure_channel('http://localhost/')
+    channel = grpc.secure_channel('http://localhost/', grpc.local_channel_credentials())
 
     # Check that channel is used if provided.
     transport = transports.BillingSetupServiceGrpcTransport(
@@ -594,12 +889,17 @@ def test_billing_setup_service_grpc_transport_channel():
     assert transport._ssl_channel_credentials == None
 
 
-@pytest.mark.parametrize("transport_class", [transports.BillingSetupServiceGrpcTransport])
+# Remove this test when deprecated arguments (api_mtls_endpoint, client_cert_source) are
+# removed from grpc/grpc_asyncio transport constructor.
+@pytest.mark.parametrize("transport_class",
+    [
+      transports.BillingSetupServiceGrpcTransport,
+    ])
 def test_billing_setup_service_transport_channel_mtls_with_client_cert_source(
     transport_class
 ):
     with mock.patch("grpc.ssl_channel_credentials", autospec=True) as grpc_ssl_channel_cred:
-        with mock.patch.object(transport_class, "create_channel", autospec=True) as grpc_create_channel:
+        with mock.patch.object(transport_class, "create_channel") as grpc_create_channel:
             mock_ssl_cred = mock.Mock()
             grpc_ssl_channel_cred.return_value = mock_ssl_cred
 
@@ -624,21 +924,24 @@ def test_billing_setup_service_transport_channel_mtls_with_client_cert_source(
                 "mtls.squid.clam.whelk:443",
                 credentials=cred,
                 credentials_file=None,
-                scopes=(
-                    'https://www.googleapis.com/auth/adwords',
-                ),
+                scopes=None,
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
                 options=[
-                        ("grpc.max_send_message_length", -1),
-                        ("grpc.max_receive_message_length", -1),
+                    ("grpc.max_send_message_length", -1),
+                    ("grpc.max_receive_message_length", -1),
                 ],
             )
             assert transport.grpc_channel == mock_grpc_channel
             assert transport._ssl_channel_credentials == mock_ssl_cred
 
 
-@pytest.mark.parametrize("transport_class", [transports.BillingSetupServiceGrpcTransport,])
+# Remove this test when deprecated arguments (api_mtls_endpoint, client_cert_source) are
+# removed from grpc/grpc_asyncio transport constructor.
+@pytest.mark.parametrize("transport_class",
+    [
+      transports.BillingSetupServiceGrpcTransport,
+    ])
 def test_billing_setup_service_transport_channel_mtls_with_adc(
     transport_class
 ):
@@ -648,7 +951,7 @@ def test_billing_setup_service_transport_channel_mtls_with_adc(
         __init__=mock.Mock(return_value=None),
         ssl_credentials=mock.PropertyMock(return_value=mock_ssl_cred),
     ):
-        with mock.patch.object(transport_class, "create_channel", autospec=True) as grpc_create_channel:
+        with mock.patch.object(transport_class, "create_channel") as grpc_create_channel:
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel
             mock_cred = mock.Mock()
@@ -665,9 +968,7 @@ def test_billing_setup_service_transport_channel_mtls_with_adc(
                 "mtls.squid.clam.whelk:443",
                 credentials=mock_cred,
                 credentials_file=None,
-                scopes=(
-                    'https://www.googleapis.com/auth/adwords',
-                ),
+                scopes=None,
                 ssl_credentials=mock_ssl_cred,
                 quota_project_id=None,
                 options=[
@@ -804,7 +1105,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.BillingSetupServiceTransport, '_prep_wrapped_messages') as prep:
@@ -822,24 +1123,34 @@ def test_client_withDEFAULT_CLIENT_INFO():
         )
         prep.assert_called_once_with(client_info)
 
-def test_grpc_transport_close():
-    client = BillingSetupServiceClient(
-        credentials=ga_credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-    with mock.patch.object(type(client.transport._grpc_channel), 'close') as chan_close:
-        with client as _:
-            chan_close.assert_not_called()
-        chan_close.assert_called_once()
 
-def test_grpc_client_ctx():
-    client = BillingSetupServiceClient(
-        credentials=ga_credentials.AnonymousCredentials(),
-        transport='grpc',
-    )
-    # Test client calls underlying transport.
-    with mock.patch.object(type(client.transport), "close") as close:
-        close.assert_not_called()
-        with client as _:
-            pass
-        close.assert_called()
+def test_transport_close():
+    transports = {
+        "grpc": "_grpc_channel",
+    }
+
+    for transport, close_name in transports.items():
+        client = BillingSetupServiceClient(
+            credentials=ga_credentials.AnonymousCredentials(),
+            transport=transport
+        )
+        with mock.patch.object(type(getattr(client.transport, close_name)), "close") as close:
+            with client:
+                close.assert_not_called()
+            close.assert_called_once()
+
+def test_client_ctx():
+    transports = [
+        'grpc',
+    ]
+    for transport in transports:
+        client = BillingSetupServiceClient(
+            credentials=ga_credentials.AnonymousCredentials(),
+            transport=transport
+        )
+        # Test client calls underlying transport.
+        with mock.patch.object(type(client.transport), "close") as close:
+            close.assert_not_called()
+            with client:
+                pass
+            close.assert_called()

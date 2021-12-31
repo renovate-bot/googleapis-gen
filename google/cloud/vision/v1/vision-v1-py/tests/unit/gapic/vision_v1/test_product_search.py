@@ -211,18 +211,18 @@ def test_product_search_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_product_search_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_product_search_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_product_search_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_product_search_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_product_search_client_client_options_from_dict():
     with mock.patch('google.cloud.vision_v1.services.product_search.transports.ProductSearchGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_product_search_client_client_options_from_dict():
         )
 
 
-def test_create_product_set(transport: str = 'grpc', request_type=product_search_service.CreateProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.CreateProductSetRequest,
+  dict,
+])
+def test_create_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -412,10 +415,6 @@ def test_create_product_set(transport: str = 'grpc', request_type=product_search
     assert isinstance(response, product_search_service.ProductSet)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_create_product_set_from_dict():
-    test_create_product_set(request_type=dict)
 
 
 def test_create_product_set_empty_call():
@@ -641,7 +640,11 @@ async def test_create_product_set_flattened_error_async():
         )
 
 
-def test_list_product_sets(transport: str = 'grpc', request_type=product_search_service.ListProductSetsRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.ListProductSetsRequest,
+  dict,
+])
+def test_list_product_sets(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -669,10 +672,6 @@ def test_list_product_sets(transport: str = 'grpc', request_type=product_search_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProductSetsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_product_sets_from_dict():
-    test_list_product_sets(request_type=dict)
 
 
 def test_list_product_sets_empty_call():
@@ -876,9 +875,10 @@ async def test_list_product_sets_flattened_error_async():
         )
 
 
-def test_list_product_sets_pager():
+def test_list_product_sets_pager(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -928,10 +928,10 @@ def test_list_product_sets_pager():
         assert len(results) == 6
         assert all(isinstance(i, product_search_service.ProductSet)
                    for i in results)
-
-def test_list_product_sets_pages():
+def test_list_product_sets_pages(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1016,7 +1016,8 @@ async def test_list_product_sets_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, product_search_service.ProductSet)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_product_sets_async_pages():
@@ -1062,7 +1063,11 @@ async def test_list_product_sets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_product_set(transport: str = 'grpc', request_type=product_search_service.GetProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.GetProductSetRequest,
+  dict,
+])
+def test_get_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1092,10 +1097,6 @@ def test_get_product_set(transport: str = 'grpc', request_type=product_search_se
     assert isinstance(response, product_search_service.ProductSet)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_product_set_from_dict():
-    test_get_product_set(request_type=dict)
 
 
 def test_get_product_set_empty_call():
@@ -1301,7 +1302,11 @@ async def test_get_product_set_flattened_error_async():
         )
 
 
-def test_update_product_set(transport: str = 'grpc', request_type=product_search_service.UpdateProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.UpdateProductSetRequest,
+  dict,
+])
+def test_update_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1331,10 +1336,6 @@ def test_update_product_set(transport: str = 'grpc', request_type=product_search
     assert isinstance(response, product_search_service.ProductSet)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_update_product_set_from_dict():
-    test_update_product_set(request_type=dict)
 
 
 def test_update_product_set_empty_call():
@@ -1550,7 +1551,11 @@ async def test_update_product_set_flattened_error_async():
         )
 
 
-def test_delete_product_set(transport: str = 'grpc', request_type=product_search_service.DeleteProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.DeleteProductSetRequest,
+  dict,
+])
+def test_delete_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1575,10 +1580,6 @@ def test_delete_product_set(transport: str = 'grpc', request_type=product_search
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_product_set_from_dict():
-    test_delete_product_set(request_type=dict)
 
 
 def test_delete_product_set_empty_call():
@@ -1779,7 +1780,11 @@ async def test_delete_product_set_flattened_error_async():
         )
 
 
-def test_create_product(transport: str = 'grpc', request_type=product_search_service.CreateProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.CreateProductRequest,
+  dict,
+])
+def test_create_product(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1813,10 +1818,6 @@ def test_create_product(transport: str = 'grpc', request_type=product_search_ser
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.product_category == 'product_category_value'
-
-
-def test_create_product_from_dict():
-    test_create_product(request_type=dict)
 
 
 def test_create_product_empty_call():
@@ -2046,7 +2047,11 @@ async def test_create_product_flattened_error_async():
         )
 
 
-def test_list_products(transport: str = 'grpc', request_type=product_search_service.ListProductsRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.ListProductsRequest,
+  dict,
+])
+def test_list_products(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2074,10 +2079,6 @@ def test_list_products(transport: str = 'grpc', request_type=product_search_serv
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProductsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_products_from_dict():
-    test_list_products(request_type=dict)
 
 
 def test_list_products_empty_call():
@@ -2281,9 +2282,10 @@ async def test_list_products_flattened_error_async():
         )
 
 
-def test_list_products_pager():
+def test_list_products_pager(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2333,10 +2335,10 @@ def test_list_products_pager():
         assert len(results) == 6
         assert all(isinstance(i, product_search_service.Product)
                    for i in results)
-
-def test_list_products_pages():
+def test_list_products_pages(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2421,7 +2423,8 @@ async def test_list_products_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, product_search_service.Product)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_products_async_pages():
@@ -2467,7 +2470,11 @@ async def test_list_products_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_product(transport: str = 'grpc', request_type=product_search_service.GetProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.GetProductRequest,
+  dict,
+])
+def test_get_product(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2501,10 +2508,6 @@ def test_get_product(transport: str = 'grpc', request_type=product_search_servic
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.product_category == 'product_category_value'
-
-
-def test_get_product_from_dict():
-    test_get_product(request_type=dict)
 
 
 def test_get_product_empty_call():
@@ -2714,7 +2717,11 @@ async def test_get_product_flattened_error_async():
         )
 
 
-def test_update_product(transport: str = 'grpc', request_type=product_search_service.UpdateProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.UpdateProductRequest,
+  dict,
+])
+def test_update_product(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2748,10 +2755,6 @@ def test_update_product(transport: str = 'grpc', request_type=product_search_ser
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.product_category == 'product_category_value'
-
-
-def test_update_product_from_dict():
-    test_update_product(request_type=dict)
 
 
 def test_update_product_empty_call():
@@ -2971,7 +2974,11 @@ async def test_update_product_flattened_error_async():
         )
 
 
-def test_delete_product(transport: str = 'grpc', request_type=product_search_service.DeleteProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.DeleteProductRequest,
+  dict,
+])
+def test_delete_product(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2996,10 +3003,6 @@ def test_delete_product(transport: str = 'grpc', request_type=product_search_ser
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_product_from_dict():
-    test_delete_product(request_type=dict)
 
 
 def test_delete_product_empty_call():
@@ -3200,7 +3203,11 @@ async def test_delete_product_flattened_error_async():
         )
 
 
-def test_create_reference_image(transport: str = 'grpc', request_type=product_search_service.CreateReferenceImageRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.CreateReferenceImageRequest,
+  dict,
+])
+def test_create_reference_image(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3230,10 +3237,6 @@ def test_create_reference_image(transport: str = 'grpc', request_type=product_se
     assert isinstance(response, product_search_service.ReferenceImage)
     assert response.name == 'name_value'
     assert response.uri == 'uri_value'
-
-
-def test_create_reference_image_from_dict():
-    test_create_reference_image(request_type=dict)
 
 
 def test_create_reference_image_empty_call():
@@ -3459,7 +3462,11 @@ async def test_create_reference_image_flattened_error_async():
         )
 
 
-def test_delete_reference_image(transport: str = 'grpc', request_type=product_search_service.DeleteReferenceImageRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.DeleteReferenceImageRequest,
+  dict,
+])
+def test_delete_reference_image(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3484,10 +3491,6 @@ def test_delete_reference_image(transport: str = 'grpc', request_type=product_se
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_reference_image_from_dict():
-    test_delete_reference_image(request_type=dict)
 
 
 def test_delete_reference_image_empty_call():
@@ -3688,7 +3691,11 @@ async def test_delete_reference_image_flattened_error_async():
         )
 
 
-def test_list_reference_images(transport: str = 'grpc', request_type=product_search_service.ListReferenceImagesRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.ListReferenceImagesRequest,
+  dict,
+])
+def test_list_reference_images(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3718,10 +3725,6 @@ def test_list_reference_images(transport: str = 'grpc', request_type=product_sea
     assert isinstance(response, pagers.ListReferenceImagesPager)
     assert response.page_size == 951
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_reference_images_from_dict():
-    test_list_reference_images(request_type=dict)
 
 
 def test_list_reference_images_empty_call():
@@ -3927,9 +3930,10 @@ async def test_list_reference_images_flattened_error_async():
         )
 
 
-def test_list_reference_images_pager():
+def test_list_reference_images_pager(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3979,10 +3983,10 @@ def test_list_reference_images_pager():
         assert len(results) == 6
         assert all(isinstance(i, product_search_service.ReferenceImage)
                    for i in results)
-
-def test_list_reference_images_pages():
+def test_list_reference_images_pages(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4067,7 +4071,8 @@ async def test_list_reference_images_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, product_search_service.ReferenceImage)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_reference_images_async_pages():
@@ -4113,7 +4118,11 @@ async def test_list_reference_images_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_reference_image(transport: str = 'grpc', request_type=product_search_service.GetReferenceImageRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.GetReferenceImageRequest,
+  dict,
+])
+def test_get_reference_image(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4143,10 +4152,6 @@ def test_get_reference_image(transport: str = 'grpc', request_type=product_searc
     assert isinstance(response, product_search_service.ReferenceImage)
     assert response.name == 'name_value'
     assert response.uri == 'uri_value'
-
-
-def test_get_reference_image_from_dict():
-    test_get_reference_image(request_type=dict)
 
 
 def test_get_reference_image_empty_call():
@@ -4352,7 +4357,11 @@ async def test_get_reference_image_flattened_error_async():
         )
 
 
-def test_add_product_to_product_set(transport: str = 'grpc', request_type=product_search_service.AddProductToProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.AddProductToProductSetRequest,
+  dict,
+])
+def test_add_product_to_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4377,10 +4386,6 @@ def test_add_product_to_product_set(transport: str = 'grpc', request_type=produc
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_add_product_to_product_set_from_dict():
-    test_add_product_to_product_set(request_type=dict)
 
 
 def test_add_product_to_product_set_empty_call():
@@ -4591,7 +4596,11 @@ async def test_add_product_to_product_set_flattened_error_async():
         )
 
 
-def test_remove_product_from_product_set(transport: str = 'grpc', request_type=product_search_service.RemoveProductFromProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.RemoveProductFromProductSetRequest,
+  dict,
+])
+def test_remove_product_from_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4616,10 +4625,6 @@ def test_remove_product_from_product_set(transport: str = 'grpc', request_type=p
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_remove_product_from_product_set_from_dict():
-    test_remove_product_from_product_set(request_type=dict)
 
 
 def test_remove_product_from_product_set_empty_call():
@@ -4830,7 +4835,11 @@ async def test_remove_product_from_product_set_flattened_error_async():
         )
 
 
-def test_list_products_in_product_set(transport: str = 'grpc', request_type=product_search_service.ListProductsInProductSetRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.ListProductsInProductSetRequest,
+  dict,
+])
+def test_list_products_in_product_set(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4858,10 +4867,6 @@ def test_list_products_in_product_set(transport: str = 'grpc', request_type=prod
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListProductsInProductSetPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_products_in_product_set_from_dict():
-    test_list_products_in_product_set(request_type=dict)
 
 
 def test_list_products_in_product_set_empty_call():
@@ -5065,9 +5070,10 @@ async def test_list_products_in_product_set_flattened_error_async():
         )
 
 
-def test_list_products_in_product_set_pager():
+def test_list_products_in_product_set_pager(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5117,10 +5123,10 @@ def test_list_products_in_product_set_pager():
         assert len(results) == 6
         assert all(isinstance(i, product_search_service.Product)
                    for i in results)
-
-def test_list_products_in_product_set_pages():
+def test_list_products_in_product_set_pages(transport_name: str = "grpc"):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5205,7 +5211,8 @@ async def test_list_products_in_product_set_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, product_search_service.Product)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_products_in_product_set_async_pages():
@@ -5251,7 +5258,11 @@ async def test_list_products_in_product_set_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_import_product_sets(transport: str = 'grpc', request_type=product_search_service.ImportProductSetsRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.ImportProductSetsRequest,
+  dict,
+])
+def test_import_product_sets(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5276,10 +5287,6 @@ def test_import_product_sets(transport: str = 'grpc', request_type=product_searc
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_import_product_sets_from_dict():
-    test_import_product_sets(request_type=dict)
 
 
 def test_import_product_sets_empty_call():
@@ -5494,7 +5501,11 @@ async def test_import_product_sets_flattened_error_async():
         )
 
 
-def test_purge_products(transport: str = 'grpc', request_type=product_search_service.PurgeProductsRequest):
+@pytest.mark.parametrize("request_type", [
+  product_search_service.PurgeProductsRequest,
+  dict,
+])
+def test_purge_products(request_type, transport: str = 'grpc'):
     client = ProductSearchClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5519,10 +5530,6 @@ def test_purge_products(transport: str = 'grpc', request_type=product_search_ser
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_purge_products_from_dict():
-    test_purge_products(request_type=dict)
 
 
 def test_purge_products_empty_call():
@@ -6311,7 +6318,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ProductSearchTransport, '_prep_wrapped_messages') as prep:

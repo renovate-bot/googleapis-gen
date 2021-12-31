@@ -55,7 +55,7 @@ class ClickViewServiceClientMeta(type):
     def get_transport_class(cls,
             label: str = None,
             ) -> Type[ClickViewServiceTransport]:
-        """Return an appropriate transport class.
+        """Returns an appropriate transport class.
 
         Args:
             label: The name of the desired transport. If none is
@@ -78,7 +78,8 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
     @staticmethod
     def _get_default_mtls_endpoint(api_endpoint):
-        """Convert api endpoint to mTLS endpoint.
+        """Converts api endpoint to mTLS endpoint.
+
         Convert "*.sandbox.googleapis.com" and "*.googleapis.com" to
         "*.mtls.sandbox.googleapis.com" and "*.mtls.googleapis.com" respectively.
         Args:
@@ -105,14 +106,15 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
         return api_endpoint.replace(".googleapis.com", ".mtls.googleapis.com")
 
-    DEFAULT_ENDPOINT = 'googleads.googleapis.com'
+    DEFAULT_ENDPOINT = "googleads.googleapis.com"
     DEFAULT_MTLS_ENDPOINT = _get_default_mtls_endpoint.__func__(  # type: ignore
         DEFAULT_ENDPOINT
     )
 
     @classmethod
     def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
+        """Creates an instance of this client using the provided credentials
+            info.
 
         Args:
             info (dict): The service account private key info.
@@ -142,17 +144,18 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
         """
         credentials = service_account.Credentials.from_service_account_file(
             filename)
-        kwargs['credentials'] = credentials
+        kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
 
     @property
     def transport(self) -> ClickViewServiceTransport:
-        """Return the transport used by the client instance.
+        """Returns the transport used by the client instance.
 
         Returns:
-            ClickViewServiceTransport: The transport used by the client instance.
+            ClickViewServiceTransport: The transport used by the client
+                instance.
         """
         return self._transport
 
@@ -171,57 +174,62 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
     @staticmethod
     def ad_group_ad_path(customer_id: str,ad_group_id: str,ad_id: str,) -> str:
-        """Return a fully-qualified ad_group_ad string."""
+        """Returns a fully-qualified ad_group_ad string."""
         return "customers/{customer_id}/adGroupAds/{ad_group_id}~{ad_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, ad_id=ad_id, )
 
     @staticmethod
     def parse_ad_group_ad_path(path: str) -> Dict[str,str]:
-        """Parse a ad_group_ad path into its component segments."""
+        """Parses a ad_group_ad path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/adGroupAds/(?P<ad_group_id>.+?)~(?P<ad_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def ad_group_criterion_path(customer_id: str,ad_group_id: str,criterion_id: str,) -> str:
-        """Return a fully-qualified ad_group_criterion string."""
+        """Returns a fully-qualified ad_group_criterion string."""
         return "customers/{customer_id}/adGroupCriteria/{ad_group_id}~{criterion_id}".format(customer_id=customer_id, ad_group_id=ad_group_id, criterion_id=criterion_id, )
 
     @staticmethod
     def parse_ad_group_criterion_path(path: str) -> Dict[str,str]:
-        """Parse a ad_group_criterion path into its component segments."""
+        """Parses a ad_group_criterion path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/adGroupCriteria/(?P<ad_group_id>.+?)~(?P<criterion_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def click_view_path(customer_id: str,date: str,gclid: str,) -> str:
-        """Return a fully-qualified click_view string."""
+        """Returns a fully-qualified click_view string."""
         return "customers/{customer_id}/clickViews/{date}~{gclid}".format(customer_id=customer_id, date=date, gclid=gclid, )
 
     @staticmethod
     def parse_click_view_path(path: str) -> Dict[str,str]:
-        """Parse a click_view path into its component segments."""
+        """Parses a click_view path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/clickViews/(?P<date>.+?)~(?P<gclid>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def geo_target_constant_path(criterion_id: str,) -> str:
-        """Return a fully-qualified geo_target_constant string."""
+        """Returns a fully-qualified geo_target_constant string."""
         return "geoTargetConstants/{criterion_id}".format(criterion_id=criterion_id, )
 
     @staticmethod
     def parse_geo_target_constant_path(path: str) -> Dict[str,str]:
-        """Parse a geo_target_constant path into its component segments."""
+        """Parses a geo_target_constant path into its component segments."""
         m = re.match(r"^geoTargetConstants/(?P<criterion_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def user_list_path(customer_id: str,user_list_id: str,) -> str:
-        """Return a fully-qualified user_list string."""
+        """Returns a fully-qualified user_list string."""
         return "customers/{customer_id}/userLists/{user_list_id}".format(customer_id=customer_id, user_list_id=user_list_id, )
 
     @staticmethod
     def parse_user_list_path(path: str) -> Dict[str,str]:
-        """Parse a user_list path into its component segments."""
+        """Parses a user_list path into its component segments."""
         m = re.match(r"^customers/(?P<customer_id>.+?)/userLists/(?P<user_list_id>.+?)$", path)
         return m.groupdict() if m else {}
+
     @staticmethod
     def common_billing_account_path(billing_account: str, ) -> str:
-        """Return a fully-qualified billing_account string."""
+        """Returns a fully-qualified billing_account string."""
         return "billingAccounts/{billing_account}".format(billing_account=billing_account, )
 
     @staticmethod
@@ -232,7 +240,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
     @staticmethod
     def common_folder_path(folder: str, ) -> str:
-        """Return a fully-qualified folder string."""
+        """Returns a fully-qualified folder string."""
         return "folders/{folder}".format(folder=folder, )
 
     @staticmethod
@@ -243,7 +251,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
     @staticmethod
     def common_organization_path(organization: str, ) -> str:
-        """Return a fully-qualified organization string."""
+        """Returns a fully-qualified organization string."""
         return "organizations/{organization}".format(organization=organization, )
 
     @staticmethod
@@ -254,7 +262,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
     @staticmethod
     def common_project_path(project: str, ) -> str:
-        """Return a fully-qualified project string."""
+        """Returns a fully-qualified project string."""
         return "projects/{project}".format(project=project, )
 
     @staticmethod
@@ -265,7 +273,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
 
     @staticmethod
     def common_location_path(project: str, location: str, ) -> str:
-        """Return a fully-qualified location string."""
+        """Returns a fully-qualified location string."""
         return "projects/{project}/locations/{location}".format(project=project, location=location, )
 
     @staticmethod
@@ -280,7 +288,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
             client_options: Optional[client_options_lib.ClientOptions] = None,
             client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
             ) -> None:
-        """Instantiate the click view service client.
+        """Instantiates the click view service client.
 
         Args:
             credentials (Optional[google.auth.credentials.Credentials]): The
@@ -288,7 +296,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.ClickViewServiceTransport]): The
+            transport (Union[str, ClickViewServiceTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
             client_options (google.api_core.client_options.ClientOptions): Custom options for the
@@ -327,21 +335,18 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
             raise ValueError("Environment variable `GOOGLE_API_USE_CLIENT_CERTIFICATE` must be either `true` or `false`")
         use_client_cert = os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false") == "true"
 
-        ssl_credentials = None
+        client_cert_source_func = None
         is_mtls = False
         if use_client_cert:
             if client_options.client_cert_source:
-                import grpc  # type: ignore
-
-                cert, key = client_options.client_cert_source()
-                ssl_credentials = grpc.ssl_channel_credentials(
-                    certificate_chain=cert, private_key=key
-                )
                 is_mtls = True
+                client_cert_source_func = client_options.client_cert_source
             else:
-                creds = SslCredentials()
-                is_mtls = creds.is_mtls
-                ssl_credentials = creds.ssl_credentials if is_mtls else None
+                is_mtls = mtls.has_default_client_cert_source()
+                if is_mtls:
+                    client_cert_source_func = mtls.default_client_cert_source()
+                else:
+                    client_cert_source_func = None
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -356,7 +361,8 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
                 api_endpoint = self.DEFAULT_MTLS_ENDPOINT if is_mtls else self.DEFAULT_ENDPOINT
             else:
                 raise MutualTLSChannelError(
-                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted values: never, auto, always"
+                    "Unsupported GOOGLE_API_USE_MTLS_ENDPOINT value. Accepted "
+                    "values: never, auto, always"
                 )
 
         # Save or instantiate the transport.
@@ -364,21 +370,26 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
         # instance provides an extensibility point for unusual situations.
         if isinstance(transport, ClickViewServiceTransport):
             # transport is a ClickViewServiceTransport instance.
-            if credentials:
-                raise ValueError('When providing a transport instance, '
-                                 'provide its credentials directly.')
+            if credentials or client_options.credentials_file:
+                raise ValueError("When providing a transport instance, "
+                                 "provide its credentials directly.")
+            if client_options.scopes:
+                raise ValueError(
+                    "When providing a transport instance, provide its scopes "
+                    "directly."
+                )
             self._transport = transport
-        elif isinstance(transport, str):
+        else:
             Transport = type(self).get_transport_class(transport)
             self._transport = Transport(
-                credentials=credentials, host=self.DEFAULT_ENDPOINT
-            )
-        else:
-            self._transport = ClickViewServiceGrpcTransport(
                 credentials=credentials,
+                credentials_file=client_options.credentials_file,
                 host=api_endpoint,
-                ssl_channel_credentials=ssl_credentials,
+                scopes=client_options.scopes,
+                client_cert_source_for_mtls=client_cert_source_func,
+                quota_project_id=client_options.quota_project_id,
                 client_info=client_info,
+                always_use_jwt_access=True,
               )
 
     def get_click_view(self,
@@ -399,7 +410,7 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
             request (Union[google.ads.googleads.v8.services.types.GetClickViewRequest, dict]):
                 The request object. Request message for
                 [ClickViewService.GetClickView][google.ads.googleads.v8.services.ClickViewService.GetClickView].
-            resource_name (:class:`str`):
+            resource_name (str):
                 Required. The resource name of the
                 click view to fetch.
 
@@ -429,11 +440,12 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        if request is not None and any([resource_name]):
+        has_flattened_params = any([resource_name])
+        if request is not None and has_flattened_params:
             raise ValueError('If the `request` argument is set, then none of '
                              'the individual field arguments should be set.')
 
-           # Minor optimization to avoid making a copy if the user passes
+        # Minor optimization to avoid making a copy if the user passes
         # in a click_view_service.GetClickViewRequest.
         # There's no risk of modifying the input as we've already verified
         # there are no flattened fields.
@@ -452,14 +464,14 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
         # add these here.
         metadata = tuple(metadata) + (
             gapic_v1.routing_header.to_grpc_metadata((
-                ('resource_name', request.resource_name),
+                ("resource_name", request.resource_name),
             )),
         )
 
         # Send the request.
         response = rpc(
             request,
-             retry=retry,
+            retry=retry,
             timeout=timeout,
             metadata=metadata,
         )
@@ -468,6 +480,19 @@ class ClickViewServiceClient(metaclass=ClickViewServiceClientMeta):
         return response
 
 
+
+
+
+try:
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
+        gapic_version=pkg_resources.get_distribution(
+            "google-ads",
+        ).version,
+    )
+except pkg_resources.DistributionNotFound:
+    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
+
+
 __all__ = (
-    'ClickViewServiceClient',
+    "ClickViewServiceClient",
 )

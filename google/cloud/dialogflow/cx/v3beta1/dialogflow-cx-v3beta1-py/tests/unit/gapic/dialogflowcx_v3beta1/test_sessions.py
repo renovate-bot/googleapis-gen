@@ -208,18 +208,18 @@ def test_sessions_client_client_options(client_class, transport_class, transport
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_sessions_client_mtls_env_auto(client_class, transport_class, transport_
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_sessions_client_client_options_scopes(client_class, transport_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_sessions_client_client_options_credentials_file(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_sessions_client_client_options_credentials_file(client_class, transport
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_sessions_client_client_options_from_dict():
     with mock.patch('google.cloud.dialogflowcx_v3beta1.services.sessions.transports.SessionsGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_sessions_client_client_options_from_dict():
         )
 
 
-def test_detect_intent(transport: str = 'grpc', request_type=session.DetectIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  session.DetectIntentRequest,
+  dict,
+])
+def test_detect_intent(request_type, transport: str = 'grpc'):
     client = SessionsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -413,10 +416,6 @@ def test_detect_intent(transport: str = 'grpc', request_type=session.DetectInten
     assert response.output_audio == b'output_audio_blob'
     assert response.response_type == session.DetectIntentResponse.ResponseType.PARTIAL
     assert response.allow_cancellation is True
-
-
-def test_detect_intent_from_dict():
-    test_detect_intent(request_type=dict)
 
 
 def test_detect_intent_empty_call():
@@ -542,7 +541,11 @@ async def test_detect_intent_field_headers_async():
     ) in kw['metadata']
 
 
-def test_streaming_detect_intent(transport: str = 'grpc', request_type=session.StreamingDetectIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  session.StreamingDetectIntentRequest,
+  dict,
+])
+def test_streaming_detect_intent(request_type, transport: str = 'grpc'):
     client = SessionsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -569,10 +572,6 @@ def test_streaming_detect_intent(transport: str = 'grpc', request_type=session.S
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, session.StreamingDetectIntentResponse)
-
-
-def test_streaming_detect_intent_from_dict():
-    test_streaming_detect_intent(request_type=dict)
 
 
 @pytest.mark.asyncio
@@ -611,7 +610,11 @@ async def test_streaming_detect_intent_async_from_dict():
     await test_streaming_detect_intent_async(request_type=dict)
 
 
-def test_match_intent(transport: str = 'grpc', request_type=session.MatchIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  session.MatchIntentRequest,
+  dict,
+])
+def test_match_intent(request_type, transport: str = 'grpc'):
     client = SessionsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -638,10 +641,6 @@ def test_match_intent(transport: str = 'grpc', request_type=session.MatchIntentR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, session.MatchIntentResponse)
-
-
-def test_match_intent_from_dict():
-    test_match_intent(request_type=dict)
 
 
 def test_match_intent_empty_call():
@@ -759,7 +758,11 @@ async def test_match_intent_field_headers_async():
     ) in kw['metadata']
 
 
-def test_fulfill_intent(transport: str = 'grpc', request_type=session.FulfillIntentRequest):
+@pytest.mark.parametrize("request_type", [
+  session.FulfillIntentRequest,
+  dict,
+])
+def test_fulfill_intent(request_type, transport: str = 'grpc'):
     client = SessionsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -789,10 +792,6 @@ def test_fulfill_intent(transport: str = 'grpc', request_type=session.FulfillInt
     assert isinstance(response, session.FulfillIntentResponse)
     assert response.response_id == 'response_id_value'
     assert response.output_audio == b'output_audio_blob'
-
-
-def test_fulfill_intent_from_dict():
-    test_fulfill_intent(request_type=dict)
 
 
 def test_fulfill_intent_empty_call():
@@ -1594,7 +1593,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SessionsTransport, '_prep_wrapped_messages') as prep:

@@ -207,18 +207,18 @@ def test_translation_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -249,7 +249,7 @@ def test_translation_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -324,7 +324,7 @@ def test_translation_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -347,7 +347,7 @@ def test_translation_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -358,7 +358,6 @@ def test_translation_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_translation_service_client_client_options_from_dict():
     with mock.patch('google.cloud.translate_v3.services.translation_service.transports.TranslationServiceGrpcTransport.__init__') as grpc_transport:
@@ -378,7 +377,11 @@ def test_translation_service_client_client_options_from_dict():
         )
 
 
-def test_translate_text(transport: str = 'grpc', request_type=translation_service.TranslateTextRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.TranslateTextRequest,
+  dict,
+])
+def test_translate_text(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -404,10 +407,6 @@ def test_translate_text(transport: str = 'grpc', request_type=translation_servic
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, translation_service.TranslateTextResponse)
-
-
-def test_translate_text_from_dict():
-    test_translate_text(request_type=dict)
 
 
 def test_translate_text_empty_call():
@@ -659,7 +658,11 @@ async def test_translate_text_flattened_error_async():
         )
 
 
-def test_detect_language(transport: str = 'grpc', request_type=translation_service.DetectLanguageRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.DetectLanguageRequest,
+  dict,
+])
+def test_detect_language(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -685,10 +688,6 @@ def test_detect_language(transport: str = 'grpc', request_type=translation_servi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, translation_service.DetectLanguageResponse)
-
-
-def test_detect_language_from_dict():
-    test_detect_language(request_type=dict)
 
 
 def test_detect_language_empty_call():
@@ -916,7 +915,11 @@ async def test_detect_language_flattened_error_async():
         )
 
 
-def test_get_supported_languages(transport: str = 'grpc', request_type=translation_service.GetSupportedLanguagesRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.GetSupportedLanguagesRequest,
+  dict,
+])
+def test_get_supported_languages(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -942,10 +945,6 @@ def test_get_supported_languages(transport: str = 'grpc', request_type=translati
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, translation_service.SupportedLanguages)
-
-
-def test_get_supported_languages_from_dict():
-    test_get_supported_languages(request_type=dict)
 
 
 def test_get_supported_languages_empty_call():
@@ -1167,7 +1166,11 @@ async def test_get_supported_languages_flattened_error_async():
         )
 
 
-def test_translate_document(transport: str = 'grpc', request_type=translation_service.TranslateDocumentRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.TranslateDocumentRequest,
+  dict,
+])
+def test_translate_document(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1195,10 +1198,6 @@ def test_translate_document(transport: str = 'grpc', request_type=translation_se
     # Establish that the response is the type that we expect.
     assert isinstance(response, translation_service.TranslateDocumentResponse)
     assert response.model == 'model_value'
-
-
-def test_translate_document_from_dict():
-    test_translate_document(request_type=dict)
 
 
 def test_translate_document_empty_call():
@@ -1318,7 +1317,11 @@ async def test_translate_document_field_headers_async():
     ) in kw['metadata']
 
 
-def test_batch_translate_text(transport: str = 'grpc', request_type=translation_service.BatchTranslateTextRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.BatchTranslateTextRequest,
+  dict,
+])
+def test_batch_translate_text(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1343,10 +1346,6 @@ def test_batch_translate_text(transport: str = 'grpc', request_type=translation_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_batch_translate_text_from_dict():
-    test_batch_translate_text(request_type=dict)
 
 
 def test_batch_translate_text_empty_call():
@@ -1465,7 +1464,11 @@ async def test_batch_translate_text_field_headers_async():
     ) in kw['metadata']
 
 
-def test_batch_translate_document(transport: str = 'grpc', request_type=translation_service.BatchTranslateDocumentRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.BatchTranslateDocumentRequest,
+  dict,
+])
+def test_batch_translate_document(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1490,10 +1493,6 @@ def test_batch_translate_document(transport: str = 'grpc', request_type=translat
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_batch_translate_document_from_dict():
-    test_batch_translate_document(request_type=dict)
 
 
 def test_batch_translate_document_empty_call():
@@ -1738,7 +1737,11 @@ async def test_batch_translate_document_flattened_error_async():
         )
 
 
-def test_create_glossary(transport: str = 'grpc', request_type=translation_service.CreateGlossaryRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.CreateGlossaryRequest,
+  dict,
+])
+def test_create_glossary(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1763,10 +1766,6 @@ def test_create_glossary(transport: str = 'grpc', request_type=translation_servi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_glossary_from_dict():
-    test_create_glossary(request_type=dict)
 
 
 def test_create_glossary_empty_call():
@@ -1981,7 +1980,11 @@ async def test_create_glossary_flattened_error_async():
         )
 
 
-def test_list_glossaries(transport: str = 'grpc', request_type=translation_service.ListGlossariesRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.ListGlossariesRequest,
+  dict,
+])
+def test_list_glossaries(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2009,10 +2012,6 @@ def test_list_glossaries(transport: str = 'grpc', request_type=translation_servi
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGlossariesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_glossaries_from_dict():
-    test_list_glossaries(request_type=dict)
 
 
 def test_list_glossaries_empty_call():
@@ -2216,9 +2215,10 @@ async def test_list_glossaries_flattened_error_async():
         )
 
 
-def test_list_glossaries_pager():
+def test_list_glossaries_pager(transport_name: str = "grpc"):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2268,10 +2268,10 @@ def test_list_glossaries_pager():
         assert len(results) == 6
         assert all(isinstance(i, translation_service.Glossary)
                    for i in results)
-
-def test_list_glossaries_pages():
+def test_list_glossaries_pages(transport_name: str = "grpc"):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2356,7 +2356,8 @@ async def test_list_glossaries_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, translation_service.Glossary)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_glossaries_async_pages():
@@ -2402,7 +2403,11 @@ async def test_list_glossaries_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_glossary(transport: str = 'grpc', request_type=translation_service.GetGlossaryRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.GetGlossaryRequest,
+  dict,
+])
+def test_get_glossary(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2433,10 +2438,6 @@ def test_get_glossary(transport: str = 'grpc', request_type=translation_service.
     assert isinstance(response, translation_service.Glossary)
     assert response.name == 'name_value'
     assert response.entry_count == 1210
-
-
-def test_get_glossary_from_dict():
-    test_get_glossary(request_type=dict)
 
 
 def test_get_glossary_empty_call():
@@ -2642,7 +2643,11 @@ async def test_get_glossary_flattened_error_async():
         )
 
 
-def test_delete_glossary(transport: str = 'grpc', request_type=translation_service.DeleteGlossaryRequest):
+@pytest.mark.parametrize("request_type", [
+  translation_service.DeleteGlossaryRequest,
+  dict,
+])
+def test_delete_glossary(request_type, transport: str = 'grpc'):
     client = TranslationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2667,10 +2672,6 @@ def test_delete_glossary(transport: str = 'grpc', request_type=translation_servi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_glossary_from_dict():
-    test_delete_glossary(request_type=dict)
 
 
 def test_delete_glossary_empty_call():
@@ -3406,7 +3407,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.TranslationServiceTransport, '_prep_wrapped_messages') as prep:

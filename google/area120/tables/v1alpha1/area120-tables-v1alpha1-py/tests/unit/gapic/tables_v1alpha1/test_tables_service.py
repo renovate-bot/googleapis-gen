@@ -204,18 +204,18 @@ def test_tables_service_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -246,7 +246,7 @@ def test_tables_service_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -321,7 +321,7 @@ def test_tables_service_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -344,7 +344,7 @@ def test_tables_service_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -355,7 +355,6 @@ def test_tables_service_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_tables_service_client_client_options_from_dict():
     with mock.patch('google.area120.tables_v1alpha1.services.tables_service.transports.TablesServiceGrpcTransport.__init__') as grpc_transport:
@@ -375,7 +374,11 @@ def test_tables_service_client_client_options_from_dict():
         )
 
 
-def test_get_table(transport: str = 'grpc', request_type=tables.GetTableRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.GetTableRequest,
+  dict,
+])
+def test_get_table(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -405,10 +408,6 @@ def test_get_table(transport: str = 'grpc', request_type=tables.GetTableRequest)
     assert isinstance(response, tables.Table)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_table_from_dict():
-    test_get_table(request_type=dict)
 
 
 def test_get_table_empty_call():
@@ -614,7 +613,11 @@ async def test_get_table_flattened_error_async():
         )
 
 
-def test_list_tables(transport: str = 'grpc', request_type=tables.ListTablesRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.ListTablesRequest,
+  dict,
+])
+def test_list_tables(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -642,10 +645,6 @@ def test_list_tables(transport: str = 'grpc', request_type=tables.ListTablesRequ
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTablesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tables_from_dict():
-    test_list_tables(request_type=dict)
 
 
 def test_list_tables_empty_call():
@@ -702,9 +701,10 @@ async def test_list_tables_async_from_dict():
     await test_list_tables_async(request_type=dict)
 
 
-def test_list_tables_pager():
+def test_list_tables_pager(transport_name: str = "grpc"):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -749,10 +749,10 @@ def test_list_tables_pager():
         assert len(results) == 6
         assert all(isinstance(i, tables.Table)
                    for i in results)
-
-def test_list_tables_pages():
+def test_list_tables_pages(transport_name: str = "grpc"):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -837,7 +837,8 @@ async def test_list_tables_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tables.Table)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tables_async_pages():
@@ -883,7 +884,11 @@ async def test_list_tables_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_workspace(transport: str = 'grpc', request_type=tables.GetWorkspaceRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.GetWorkspaceRequest,
+  dict,
+])
+def test_get_workspace(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -913,10 +918,6 @@ def test_get_workspace(transport: str = 'grpc', request_type=tables.GetWorkspace
     assert isinstance(response, tables.Workspace)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_workspace_from_dict():
-    test_get_workspace(request_type=dict)
 
 
 def test_get_workspace_empty_call():
@@ -1122,7 +1123,11 @@ async def test_get_workspace_flattened_error_async():
         )
 
 
-def test_list_workspaces(transport: str = 'grpc', request_type=tables.ListWorkspacesRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.ListWorkspacesRequest,
+  dict,
+])
+def test_list_workspaces(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1150,10 +1155,6 @@ def test_list_workspaces(transport: str = 'grpc', request_type=tables.ListWorksp
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListWorkspacesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_workspaces_from_dict():
-    test_list_workspaces(request_type=dict)
 
 
 def test_list_workspaces_empty_call():
@@ -1210,9 +1211,10 @@ async def test_list_workspaces_async_from_dict():
     await test_list_workspaces_async(request_type=dict)
 
 
-def test_list_workspaces_pager():
+def test_list_workspaces_pager(transport_name: str = "grpc"):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1257,10 +1259,10 @@ def test_list_workspaces_pager():
         assert len(results) == 6
         assert all(isinstance(i, tables.Workspace)
                    for i in results)
-
-def test_list_workspaces_pages():
+def test_list_workspaces_pages(transport_name: str = "grpc"):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1345,7 +1347,8 @@ async def test_list_workspaces_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tables.Workspace)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_workspaces_async_pages():
@@ -1391,7 +1394,11 @@ async def test_list_workspaces_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_row(transport: str = 'grpc', request_type=tables.GetRowRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.GetRowRequest,
+  dict,
+])
+def test_get_row(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1419,10 +1426,6 @@ def test_get_row(transport: str = 'grpc', request_type=tables.GetRowRequest):
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Row)
     assert response.name == 'name_value'
-
-
-def test_get_row_from_dict():
-    test_get_row(request_type=dict)
 
 
 def test_get_row_empty_call():
@@ -1626,7 +1629,11 @@ async def test_get_row_flattened_error_async():
         )
 
 
-def test_list_rows(transport: str = 'grpc', request_type=tables.ListRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.ListRowsRequest,
+  dict,
+])
+def test_list_rows(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1654,10 +1661,6 @@ def test_list_rows(transport: str = 'grpc', request_type=tables.ListRowsRequest)
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListRowsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_rows_from_dict():
-    test_list_rows(request_type=dict)
 
 
 def test_list_rows_empty_call():
@@ -1861,9 +1864,10 @@ async def test_list_rows_flattened_error_async():
         )
 
 
-def test_list_rows_pager():
+def test_list_rows_pager(transport_name: str = "grpc"):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1913,10 +1917,10 @@ def test_list_rows_pager():
         assert len(results) == 6
         assert all(isinstance(i, tables.Row)
                    for i in results)
-
-def test_list_rows_pages():
+def test_list_rows_pages(transport_name: str = "grpc"):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2001,7 +2005,8 @@ async def test_list_rows_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tables.Row)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_rows_async_pages():
@@ -2047,7 +2052,11 @@ async def test_list_rows_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_row(transport: str = 'grpc', request_type=tables.CreateRowRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.CreateRowRequest,
+  dict,
+])
+def test_create_row(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2075,10 +2084,6 @@ def test_create_row(transport: str = 'grpc', request_type=tables.CreateRowReques
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Row)
     assert response.name == 'name_value'
-
-
-def test_create_row_from_dict():
-    test_create_row(request_type=dict)
 
 
 def test_create_row_empty_call():
@@ -2292,7 +2297,11 @@ async def test_create_row_flattened_error_async():
         )
 
 
-def test_batch_create_rows(transport: str = 'grpc', request_type=tables.BatchCreateRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.BatchCreateRowsRequest,
+  dict,
+])
+def test_batch_create_rows(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2318,10 +2327,6 @@ def test_batch_create_rows(transport: str = 'grpc', request_type=tables.BatchCre
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.BatchCreateRowsResponse)
-
-
-def test_batch_create_rows_from_dict():
-    test_batch_create_rows(request_type=dict)
 
 
 def test_batch_create_rows_empty_call():
@@ -2439,7 +2444,11 @@ async def test_batch_create_rows_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_row(transport: str = 'grpc', request_type=tables.UpdateRowRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.UpdateRowRequest,
+  dict,
+])
+def test_update_row(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2467,10 +2476,6 @@ def test_update_row(transport: str = 'grpc', request_type=tables.UpdateRowReques
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.Row)
     assert response.name == 'name_value'
-
-
-def test_update_row_from_dict():
-    test_update_row(request_type=dict)
 
 
 def test_update_row_empty_call():
@@ -2684,7 +2689,11 @@ async def test_update_row_flattened_error_async():
         )
 
 
-def test_batch_update_rows(transport: str = 'grpc', request_type=tables.BatchUpdateRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.BatchUpdateRowsRequest,
+  dict,
+])
+def test_batch_update_rows(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2710,10 +2719,6 @@ def test_batch_update_rows(transport: str = 'grpc', request_type=tables.BatchUpd
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tables.BatchUpdateRowsResponse)
-
-
-def test_batch_update_rows_from_dict():
-    test_batch_update_rows(request_type=dict)
 
 
 def test_batch_update_rows_empty_call():
@@ -2831,7 +2836,11 @@ async def test_batch_update_rows_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_row(transport: str = 'grpc', request_type=tables.DeleteRowRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.DeleteRowRequest,
+  dict,
+])
+def test_delete_row(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2856,10 +2865,6 @@ def test_delete_row(transport: str = 'grpc', request_type=tables.DeleteRowReques
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_row_from_dict():
-    test_delete_row(request_type=dict)
 
 
 def test_delete_row_empty_call():
@@ -3060,7 +3065,11 @@ async def test_delete_row_flattened_error_async():
         )
 
 
-def test_batch_delete_rows(transport: str = 'grpc', request_type=tables.BatchDeleteRowsRequest):
+@pytest.mark.parametrize("request_type", [
+  tables.BatchDeleteRowsRequest,
+  dict,
+])
+def test_batch_delete_rows(request_type, transport: str = 'grpc'):
     client = TablesServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3085,10 +3094,6 @@ def test_batch_delete_rows(transport: str = 'grpc', request_type=tables.BatchDel
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_batch_delete_rows_from_dict():
-    test_batch_delete_rows(request_type=dict)
 
 
 def test_batch_delete_rows_empty_call():
@@ -3743,7 +3748,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.TablesServiceTransport, '_prep_wrapped_messages') as prep:

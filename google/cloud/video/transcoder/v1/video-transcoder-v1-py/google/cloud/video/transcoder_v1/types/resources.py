@@ -1790,7 +1790,7 @@ class AudioStream(proto.Message):
             -  ``sr`` - Side right channel
             -  ``fc`` - Front center channel
             -  ``lfe`` - Low frequency
-        mapping (Sequence[google.cloud.video.transcoder_v1.types.AudioStream.AudioMapping]):
+        mapping_ (Sequence[google.cloud.video.transcoder_v1.types.AudioStream.AudioMapping]):
             The mapping for the ``Job.edit_list`` atoms with audio
             ``EditAtom.inputs``.
         sample_rate_hertz (int):
@@ -1864,7 +1864,7 @@ class AudioStream(proto.Message):
         proto.STRING,
         number=4,
     )
-    mapping = proto.RepeatedField(
+    mapping_ = proto.RepeatedField(
         proto.MESSAGE,
         number=5,
         message=AudioMapping,
@@ -1890,7 +1890,7 @@ class TextStream(proto.Message):
             -  ``cea608``
             -  ``cea708``
             -  ``webvtt``
-        mapping (Sequence[google.cloud.video.transcoder_v1.types.TextStream.TextMapping]):
+        mapping_ (Sequence[google.cloud.video.transcoder_v1.types.TextStream.TextMapping]):
             The mapping for the ``Job.edit_list`` atoms with text
             ``EditAtom.inputs``.
     """
@@ -1927,7 +1927,7 @@ class TextStream(proto.Message):
         proto.STRING,
         number=1,
     )
-    mapping = proto.RepeatedField(
+    mapping_ = proto.RepeatedField(
         proto.MESSAGE,
         number=3,
         message=TextMapping,

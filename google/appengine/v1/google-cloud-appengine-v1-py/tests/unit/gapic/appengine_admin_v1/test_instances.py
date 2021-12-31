@@ -209,18 +209,18 @@ def test_instances_client_client_options(client_class, transport_class, transpor
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -251,7 +251,7 @@ def test_instances_client_mtls_env_auto(client_class, transport_class, transport
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -326,7 +326,7 @@ def test_instances_client_client_options_scopes(client_class, transport_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -349,7 +349,7 @@ def test_instances_client_client_options_credentials_file(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -360,7 +360,6 @@ def test_instances_client_client_options_credentials_file(client_class, transpor
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_instances_client_client_options_from_dict():
     with mock.patch('google.cloud.appengine_admin_v1.services.instances.transports.InstancesGrpcTransport.__init__') as grpc_transport:
@@ -380,7 +379,11 @@ def test_instances_client_client_options_from_dict():
         )
 
 
-def test_list_instances(transport: str = 'grpc', request_type=appengine.ListInstancesRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.ListInstancesRequest,
+  dict,
+])
+def test_list_instances(request_type, transport: str = 'grpc'):
     client = InstancesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -408,10 +411,6 @@ def test_list_instances(transport: str = 'grpc', request_type=appengine.ListInst
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListInstancesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_instances_from_dict():
-    test_list_instances(request_type=dict)
 
 
 def test_list_instances_empty_call():
@@ -531,9 +530,10 @@ async def test_list_instances_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_instances_pager():
+def test_list_instances_pager(transport_name: str = "grpc"):
     client = InstancesClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -583,10 +583,10 @@ def test_list_instances_pager():
         assert len(results) == 6
         assert all(isinstance(i, instance.Instance)
                    for i in results)
-
-def test_list_instances_pages():
+def test_list_instances_pages(transport_name: str = "grpc"):
     client = InstancesClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -671,7 +671,8 @@ async def test_list_instances_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, instance.Instance)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_instances_async_pages():
@@ -717,7 +718,11 @@ async def test_list_instances_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_instance(transport: str = 'grpc', request_type=appengine.GetInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.GetInstanceRequest,
+  dict,
+])
+def test_get_instance(request_type, transport: str = 'grpc'):
     client = InstancesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -775,10 +780,6 @@ def test_get_instance(transport: str = 'grpc', request_type=appengine.GetInstanc
     assert response.vm_debug_enabled is True
     assert response.vm_ip == 'vm_ip_value'
     assert response.vm_liveness == instance.Instance.Liveness.LivenessState.UNKNOWN
-
-
-def test_get_instance_from_dict():
-    test_get_instance(request_type=dict)
 
 
 def test_get_instance_empty_call():
@@ -928,7 +929,11 @@ async def test_get_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_instance(transport: str = 'grpc', request_type=appengine.DeleteInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.DeleteInstanceRequest,
+  dict,
+])
+def test_delete_instance(request_type, transport: str = 'grpc'):
     client = InstancesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -953,10 +958,6 @@ def test_delete_instance(transport: str = 'grpc', request_type=appengine.DeleteI
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_instance_from_dict():
-    test_delete_instance(request_type=dict)
 
 
 def test_delete_instance_empty_call():
@@ -1075,7 +1076,11 @@ async def test_delete_instance_field_headers_async():
     ) in kw['metadata']
 
 
-def test_debug_instance(transport: str = 'grpc', request_type=appengine.DebugInstanceRequest):
+@pytest.mark.parametrize("request_type", [
+  appengine.DebugInstanceRequest,
+  dict,
+])
+def test_debug_instance(request_type, transport: str = 'grpc'):
     client = InstancesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1100,10 +1105,6 @@ def test_debug_instance(transport: str = 'grpc', request_type=appengine.DebugIns
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_debug_instance_from_dict():
-    test_debug_instance(request_type=dict)
 
 
 def test_debug_instance_empty_call():
@@ -1752,7 +1753,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.InstancesTransport, '_prep_wrapped_messages') as prep:

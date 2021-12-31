@@ -206,18 +206,18 @@ def test_analytics_admin_service_client_client_options(client_class, transport_c
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -248,7 +248,7 @@ def test_analytics_admin_service_client_mtls_env_auto(client_class, transport_cl
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -323,7 +323,7 @@ def test_analytics_admin_service_client_client_options_scopes(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -346,7 +346,7 @@ def test_analytics_admin_service_client_client_options_credentials_file(client_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -357,7 +357,6 @@ def test_analytics_admin_service_client_client_options_credentials_file(client_c
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_analytics_admin_service_client_client_options_from_dict():
     with mock.patch('google.analytics.admin_v1alpha.services.analytics_admin_service.transports.AnalyticsAdminServiceGrpcTransport.__init__') as grpc_transport:
@@ -377,7 +376,11 @@ def test_analytics_admin_service_client_client_options_from_dict():
         )
 
 
-def test_get_account(transport: str = 'grpc', request_type=analytics_admin.GetAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetAccountRequest,
+  dict,
+])
+def test_get_account(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -411,10 +414,6 @@ def test_get_account(transport: str = 'grpc', request_type=analytics_admin.GetAc
     assert response.display_name == 'display_name_value'
     assert response.region_code == 'region_code_value'
     assert response.deleted is True
-
-
-def test_get_account_from_dict():
-    test_get_account(request_type=dict)
 
 
 def test_get_account_empty_call():
@@ -624,7 +623,11 @@ async def test_get_account_flattened_error_async():
         )
 
 
-def test_list_accounts(transport: str = 'grpc', request_type=analytics_admin.ListAccountsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListAccountsRequest,
+  dict,
+])
+def test_list_accounts(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -652,10 +655,6 @@ def test_list_accounts(transport: str = 'grpc', request_type=analytics_admin.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAccountsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_accounts_from_dict():
-    test_list_accounts(request_type=dict)
 
 
 def test_list_accounts_empty_call():
@@ -712,9 +711,10 @@ async def test_list_accounts_async_from_dict():
     await test_list_accounts_async(request_type=dict)
 
 
-def test_list_accounts_pager():
+def test_list_accounts_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -759,10 +759,10 @@ def test_list_accounts_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Account)
                    for i in results)
-
-def test_list_accounts_pages():
+def test_list_accounts_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -847,7 +847,8 @@ async def test_list_accounts_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Account)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_accounts_async_pages():
@@ -893,7 +894,11 @@ async def test_list_accounts_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_account(transport: str = 'grpc', request_type=analytics_admin.DeleteAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteAccountRequest,
+  dict,
+])
+def test_delete_account(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -918,10 +923,6 @@ def test_delete_account(transport: str = 'grpc', request_type=analytics_admin.De
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_account_from_dict():
-    test_delete_account(request_type=dict)
 
 
 def test_delete_account_empty_call():
@@ -1122,7 +1123,11 @@ async def test_delete_account_flattened_error_async():
         )
 
 
-def test_update_account(transport: str = 'grpc', request_type=analytics_admin.UpdateAccountRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateAccountRequest,
+  dict,
+])
+def test_update_account(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1156,10 +1161,6 @@ def test_update_account(transport: str = 'grpc', request_type=analytics_admin.Up
     assert response.display_name == 'display_name_value'
     assert response.region_code == 'region_code_value'
     assert response.deleted is True
-
-
-def test_update_account_from_dict():
-    test_update_account(request_type=dict)
 
 
 def test_update_account_empty_call():
@@ -1379,7 +1380,11 @@ async def test_update_account_flattened_error_async():
         )
 
 
-def test_provision_account_ticket(transport: str = 'grpc', request_type=analytics_admin.ProvisionAccountTicketRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ProvisionAccountTicketRequest,
+  dict,
+])
+def test_provision_account_ticket(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1407,10 +1412,6 @@ def test_provision_account_ticket(transport: str = 'grpc', request_type=analytic
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_admin.ProvisionAccountTicketResponse)
     assert response.account_ticket_id == 'account_ticket_id_value'
-
-
-def test_provision_account_ticket_from_dict():
-    test_provision_account_ticket(request_type=dict)
 
 
 def test_provision_account_ticket_empty_call():
@@ -1467,7 +1468,11 @@ async def test_provision_account_ticket_async_from_dict():
     await test_provision_account_ticket_async(request_type=dict)
 
 
-def test_list_account_summaries(transport: str = 'grpc', request_type=analytics_admin.ListAccountSummariesRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListAccountSummariesRequest,
+  dict,
+])
+def test_list_account_summaries(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1495,10 +1500,6 @@ def test_list_account_summaries(transport: str = 'grpc', request_type=analytics_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAccountSummariesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_account_summaries_from_dict():
-    test_list_account_summaries(request_type=dict)
 
 
 def test_list_account_summaries_empty_call():
@@ -1555,9 +1556,10 @@ async def test_list_account_summaries_async_from_dict():
     await test_list_account_summaries_async(request_type=dict)
 
 
-def test_list_account_summaries_pager():
+def test_list_account_summaries_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1602,10 +1604,10 @@ def test_list_account_summaries_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.AccountSummary)
                    for i in results)
-
-def test_list_account_summaries_pages():
+def test_list_account_summaries_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1690,7 +1692,8 @@ async def test_list_account_summaries_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.AccountSummary)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_account_summaries_async_pages():
@@ -1736,7 +1739,11 @@ async def test_list_account_summaries_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_property(transport: str = 'grpc', request_type=analytics_admin.GetPropertyRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetPropertyRequest,
+  dict,
+])
+def test_get_property(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1778,10 +1785,6 @@ def test_get_property(transport: str = 'grpc', request_type=analytics_admin.GetP
     assert response.currency_code == 'currency_code_value'
     assert response.service_level == resources.ServiceLevel.GOOGLE_ANALYTICS_STANDARD
     assert response.account == 'account_value'
-
-
-def test_get_property_from_dict():
-    test_get_property(request_type=dict)
 
 
 def test_get_property_empty_call():
@@ -1999,7 +2002,11 @@ async def test_get_property_flattened_error_async():
         )
 
 
-def test_list_properties(transport: str = 'grpc', request_type=analytics_admin.ListPropertiesRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListPropertiesRequest,
+  dict,
+])
+def test_list_properties(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2027,10 +2034,6 @@ def test_list_properties(transport: str = 'grpc', request_type=analytics_admin.L
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPropertiesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_properties_from_dict():
-    test_list_properties(request_type=dict)
 
 
 def test_list_properties_empty_call():
@@ -2087,9 +2090,10 @@ async def test_list_properties_async_from_dict():
     await test_list_properties_async(request_type=dict)
 
 
-def test_list_properties_pager():
+def test_list_properties_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2134,10 +2138,10 @@ def test_list_properties_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Property)
                    for i in results)
-
-def test_list_properties_pages():
+def test_list_properties_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2222,7 +2226,8 @@ async def test_list_properties_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Property)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_properties_async_pages():
@@ -2268,7 +2273,11 @@ async def test_list_properties_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_property(transport: str = 'grpc', request_type=analytics_admin.CreatePropertyRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreatePropertyRequest,
+  dict,
+])
+def test_create_property(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2310,10 +2319,6 @@ def test_create_property(transport: str = 'grpc', request_type=analytics_admin.C
     assert response.currency_code == 'currency_code_value'
     assert response.service_level == resources.ServiceLevel.GOOGLE_ANALYTICS_STANDARD
     assert response.account == 'account_value'
-
-
-def test_create_property_from_dict():
-    test_create_property(request_type=dict)
 
 
 def test_create_property_empty_call():
@@ -2468,7 +2473,11 @@ async def test_create_property_flattened_error_async():
         )
 
 
-def test_delete_property(transport: str = 'grpc', request_type=analytics_admin.DeletePropertyRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeletePropertyRequest,
+  dict,
+])
+def test_delete_property(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2510,10 +2519,6 @@ def test_delete_property(transport: str = 'grpc', request_type=analytics_admin.D
     assert response.currency_code == 'currency_code_value'
     assert response.service_level == resources.ServiceLevel.GOOGLE_ANALYTICS_STANDARD
     assert response.account == 'account_value'
-
-
-def test_delete_property_from_dict():
-    test_delete_property(request_type=dict)
 
 
 def test_delete_property_empty_call():
@@ -2731,7 +2736,11 @@ async def test_delete_property_flattened_error_async():
         )
 
 
-def test_update_property(transport: str = 'grpc', request_type=analytics_admin.UpdatePropertyRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdatePropertyRequest,
+  dict,
+])
+def test_update_property(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2773,10 +2782,6 @@ def test_update_property(transport: str = 'grpc', request_type=analytics_admin.U
     assert response.currency_code == 'currency_code_value'
     assert response.service_level == resources.ServiceLevel.GOOGLE_ANALYTICS_STANDARD
     assert response.account == 'account_value'
-
-
-def test_update_property_from_dict():
-    test_update_property(request_type=dict)
 
 
 def test_update_property_empty_call():
@@ -3004,7 +3009,11 @@ async def test_update_property_flattened_error_async():
         )
 
 
-def test_get_user_link(transport: str = 'grpc', request_type=analytics_admin.GetUserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetUserLinkRequest,
+  dict,
+])
+def test_get_user_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3036,10 +3045,6 @@ def test_get_user_link(transport: str = 'grpc', request_type=analytics_admin.Get
     assert response.name == 'name_value'
     assert response.email_address == 'email_address_value'
     assert response.direct_roles == ['direct_roles_value']
-
-
-def test_get_user_link_from_dict():
-    test_get_user_link(request_type=dict)
 
 
 def test_get_user_link_empty_call():
@@ -3247,7 +3252,11 @@ async def test_get_user_link_flattened_error_async():
         )
 
 
-def test_batch_get_user_links(transport: str = 'grpc', request_type=analytics_admin.BatchGetUserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.BatchGetUserLinksRequest,
+  dict,
+])
+def test_batch_get_user_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3273,10 +3282,6 @@ def test_batch_get_user_links(transport: str = 'grpc', request_type=analytics_ad
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_admin.BatchGetUserLinksResponse)
-
-
-def test_batch_get_user_links_from_dict():
-    test_batch_get_user_links(request_type=dict)
 
 
 def test_batch_get_user_links_empty_call():
@@ -3394,7 +3399,11 @@ async def test_batch_get_user_links_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_user_links(transport: str = 'grpc', request_type=analytics_admin.ListUserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListUserLinksRequest,
+  dict,
+])
+def test_list_user_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3422,10 +3431,6 @@ def test_list_user_links(transport: str = 'grpc', request_type=analytics_admin.L
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListUserLinksPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_user_links_from_dict():
-    test_list_user_links(request_type=dict)
 
 
 def test_list_user_links_empty_call():
@@ -3629,9 +3634,10 @@ async def test_list_user_links_flattened_error_async():
         )
 
 
-def test_list_user_links_pager():
+def test_list_user_links_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3681,10 +3687,10 @@ def test_list_user_links_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.UserLink)
                    for i in results)
-
-def test_list_user_links_pages():
+def test_list_user_links_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3769,7 +3775,8 @@ async def test_list_user_links_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.UserLink)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_user_links_async_pages():
@@ -3815,7 +3822,11 @@ async def test_list_user_links_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_audit_user_links(transport: str = 'grpc', request_type=analytics_admin.AuditUserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.AuditUserLinksRequest,
+  dict,
+])
+def test_audit_user_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3843,10 +3854,6 @@ def test_audit_user_links(transport: str = 'grpc', request_type=analytics_admin.
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.AuditUserLinksPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_audit_user_links_from_dict():
-    test_audit_user_links(request_type=dict)
 
 
 def test_audit_user_links_empty_call():
@@ -3966,9 +3973,10 @@ async def test_audit_user_links_field_headers_async():
     ) in kw['metadata']
 
 
-def test_audit_user_links_pager():
+def test_audit_user_links_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4018,10 +4026,10 @@ def test_audit_user_links_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.AuditUserLink)
                    for i in results)
-
-def test_audit_user_links_pages():
+def test_audit_user_links_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4106,7 +4114,8 @@ async def test_audit_user_links_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.AuditUserLink)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_audit_user_links_async_pages():
@@ -4152,7 +4161,11 @@ async def test_audit_user_links_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_user_link(transport: str = 'grpc', request_type=analytics_admin.CreateUserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateUserLinkRequest,
+  dict,
+])
+def test_create_user_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4184,10 +4197,6 @@ def test_create_user_link(transport: str = 'grpc', request_type=analytics_admin.
     assert response.name == 'name_value'
     assert response.email_address == 'email_address_value'
     assert response.direct_roles == ['direct_roles_value']
-
-
-def test_create_user_link_from_dict():
-    test_create_user_link(request_type=dict)
 
 
 def test_create_user_link_empty_call():
@@ -4405,7 +4414,11 @@ async def test_create_user_link_flattened_error_async():
         )
 
 
-def test_batch_create_user_links(transport: str = 'grpc', request_type=analytics_admin.BatchCreateUserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.BatchCreateUserLinksRequest,
+  dict,
+])
+def test_batch_create_user_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4431,10 +4444,6 @@ def test_batch_create_user_links(transport: str = 'grpc', request_type=analytics
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_admin.BatchCreateUserLinksResponse)
-
-
-def test_batch_create_user_links_from_dict():
-    test_batch_create_user_links(request_type=dict)
 
 
 def test_batch_create_user_links_empty_call():
@@ -4552,7 +4561,11 @@ async def test_batch_create_user_links_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_user_link(transport: str = 'grpc', request_type=analytics_admin.UpdateUserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateUserLinkRequest,
+  dict,
+])
+def test_update_user_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4584,10 +4597,6 @@ def test_update_user_link(transport: str = 'grpc', request_type=analytics_admin.
     assert response.name == 'name_value'
     assert response.email_address == 'email_address_value'
     assert response.direct_roles == ['direct_roles_value']
-
-
-def test_update_user_link_from_dict():
-    test_update_user_link(request_type=dict)
 
 
 def test_update_user_link_empty_call():
@@ -4795,7 +4804,11 @@ async def test_update_user_link_flattened_error_async():
         )
 
 
-def test_batch_update_user_links(transport: str = 'grpc', request_type=analytics_admin.BatchUpdateUserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.BatchUpdateUserLinksRequest,
+  dict,
+])
+def test_batch_update_user_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4821,10 +4834,6 @@ def test_batch_update_user_links(transport: str = 'grpc', request_type=analytics
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_admin.BatchUpdateUserLinksResponse)
-
-
-def test_batch_update_user_links_from_dict():
-    test_batch_update_user_links(request_type=dict)
 
 
 def test_batch_update_user_links_empty_call():
@@ -4942,7 +4951,11 @@ async def test_batch_update_user_links_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_user_link(transport: str = 'grpc', request_type=analytics_admin.DeleteUserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteUserLinkRequest,
+  dict,
+])
+def test_delete_user_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4967,10 +4980,6 @@ def test_delete_user_link(transport: str = 'grpc', request_type=analytics_admin.
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_user_link_from_dict():
-    test_delete_user_link(request_type=dict)
 
 
 def test_delete_user_link_empty_call():
@@ -5171,7 +5180,11 @@ async def test_delete_user_link_flattened_error_async():
         )
 
 
-def test_batch_delete_user_links(transport: str = 'grpc', request_type=analytics_admin.BatchDeleteUserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.BatchDeleteUserLinksRequest,
+  dict,
+])
+def test_batch_delete_user_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5196,10 +5209,6 @@ def test_batch_delete_user_links(transport: str = 'grpc', request_type=analytics
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_batch_delete_user_links_from_dict():
-    test_batch_delete_user_links(request_type=dict)
 
 
 def test_batch_delete_user_links_empty_call():
@@ -5316,7 +5325,11 @@ async def test_batch_delete_user_links_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_web_data_stream(transport: str = 'grpc', request_type=analytics_admin.GetWebDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetWebDataStreamRequest,
+  dict,
+])
+def test_get_web_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5352,10 +5365,6 @@ def test_get_web_data_stream(transport: str = 'grpc', request_type=analytics_adm
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.default_uri == 'default_uri_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_web_data_stream_from_dict():
-    test_get_web_data_stream(request_type=dict)
 
 
 def test_get_web_data_stream_empty_call():
@@ -5567,7 +5576,11 @@ async def test_get_web_data_stream_flattened_error_async():
         )
 
 
-def test_delete_web_data_stream(transport: str = 'grpc', request_type=analytics_admin.DeleteWebDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteWebDataStreamRequest,
+  dict,
+])
+def test_delete_web_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5592,10 +5605,6 @@ def test_delete_web_data_stream(transport: str = 'grpc', request_type=analytics_
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_web_data_stream_from_dict():
-    test_delete_web_data_stream(request_type=dict)
 
 
 def test_delete_web_data_stream_empty_call():
@@ -5796,7 +5805,11 @@ async def test_delete_web_data_stream_flattened_error_async():
         )
 
 
-def test_update_web_data_stream(transport: str = 'grpc', request_type=analytics_admin.UpdateWebDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateWebDataStreamRequest,
+  dict,
+])
+def test_update_web_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5832,10 +5845,6 @@ def test_update_web_data_stream(transport: str = 'grpc', request_type=analytics_
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.default_uri == 'default_uri_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_update_web_data_stream_from_dict():
-    test_update_web_data_stream(request_type=dict)
 
 
 def test_update_web_data_stream_empty_call():
@@ -6057,7 +6066,11 @@ async def test_update_web_data_stream_flattened_error_async():
         )
 
 
-def test_create_web_data_stream(transport: str = 'grpc', request_type=analytics_admin.CreateWebDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateWebDataStreamRequest,
+  dict,
+])
+def test_create_web_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6093,10 +6106,6 @@ def test_create_web_data_stream(transport: str = 'grpc', request_type=analytics_
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.default_uri == 'default_uri_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_create_web_data_stream_from_dict():
-    test_create_web_data_stream(request_type=dict)
 
 
 def test_create_web_data_stream_empty_call():
@@ -6318,7 +6327,11 @@ async def test_create_web_data_stream_flattened_error_async():
         )
 
 
-def test_list_web_data_streams(transport: str = 'grpc', request_type=analytics_admin.ListWebDataStreamsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListWebDataStreamsRequest,
+  dict,
+])
+def test_list_web_data_streams(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6346,10 +6359,6 @@ def test_list_web_data_streams(transport: str = 'grpc', request_type=analytics_a
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListWebDataStreamsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_web_data_streams_from_dict():
-    test_list_web_data_streams(request_type=dict)
 
 
 def test_list_web_data_streams_empty_call():
@@ -6553,9 +6562,10 @@ async def test_list_web_data_streams_flattened_error_async():
         )
 
 
-def test_list_web_data_streams_pager():
+def test_list_web_data_streams_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6605,10 +6615,10 @@ def test_list_web_data_streams_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.WebDataStream)
                    for i in results)
-
-def test_list_web_data_streams_pages():
+def test_list_web_data_streams_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6693,7 +6703,8 @@ async def test_list_web_data_streams_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.WebDataStream)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_web_data_streams_async_pages():
@@ -6739,7 +6750,11 @@ async def test_list_web_data_streams_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_ios_app_data_stream(transport: str = 'grpc', request_type=analytics_admin.GetIosAppDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetIosAppDataStreamRequest,
+  dict,
+])
+def test_get_ios_app_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6773,10 +6788,6 @@ def test_get_ios_app_data_stream(transport: str = 'grpc', request_type=analytics
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.bundle_id == 'bundle_id_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_ios_app_data_stream_from_dict():
-    test_get_ios_app_data_stream(request_type=dict)
 
 
 def test_get_ios_app_data_stream_empty_call():
@@ -6986,7 +6997,11 @@ async def test_get_ios_app_data_stream_flattened_error_async():
         )
 
 
-def test_delete_ios_app_data_stream(transport: str = 'grpc', request_type=analytics_admin.DeleteIosAppDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteIosAppDataStreamRequest,
+  dict,
+])
+def test_delete_ios_app_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7011,10 +7026,6 @@ def test_delete_ios_app_data_stream(transport: str = 'grpc', request_type=analyt
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_ios_app_data_stream_from_dict():
-    test_delete_ios_app_data_stream(request_type=dict)
 
 
 def test_delete_ios_app_data_stream_empty_call():
@@ -7215,7 +7226,11 @@ async def test_delete_ios_app_data_stream_flattened_error_async():
         )
 
 
-def test_update_ios_app_data_stream(transport: str = 'grpc', request_type=analytics_admin.UpdateIosAppDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateIosAppDataStreamRequest,
+  dict,
+])
+def test_update_ios_app_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7249,10 +7264,6 @@ def test_update_ios_app_data_stream(transport: str = 'grpc', request_type=analyt
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.bundle_id == 'bundle_id_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_update_ios_app_data_stream_from_dict():
-    test_update_ios_app_data_stream(request_type=dict)
 
 
 def test_update_ios_app_data_stream_empty_call():
@@ -7472,7 +7483,11 @@ async def test_update_ios_app_data_stream_flattened_error_async():
         )
 
 
-def test_list_ios_app_data_streams(transport: str = 'grpc', request_type=analytics_admin.ListIosAppDataStreamsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListIosAppDataStreamsRequest,
+  dict,
+])
+def test_list_ios_app_data_streams(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7500,10 +7515,6 @@ def test_list_ios_app_data_streams(transport: str = 'grpc', request_type=analyti
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListIosAppDataStreamsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_ios_app_data_streams_from_dict():
-    test_list_ios_app_data_streams(request_type=dict)
 
 
 def test_list_ios_app_data_streams_empty_call():
@@ -7707,9 +7718,10 @@ async def test_list_ios_app_data_streams_flattened_error_async():
         )
 
 
-def test_list_ios_app_data_streams_pager():
+def test_list_ios_app_data_streams_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7759,10 +7771,10 @@ def test_list_ios_app_data_streams_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.IosAppDataStream)
                    for i in results)
-
-def test_list_ios_app_data_streams_pages():
+def test_list_ios_app_data_streams_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -7847,7 +7859,8 @@ async def test_list_ios_app_data_streams_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.IosAppDataStream)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_ios_app_data_streams_async_pages():
@@ -7893,7 +7906,11 @@ async def test_list_ios_app_data_streams_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_android_app_data_stream(transport: str = 'grpc', request_type=analytics_admin.GetAndroidAppDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetAndroidAppDataStreamRequest,
+  dict,
+])
+def test_get_android_app_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7927,10 +7944,6 @@ def test_get_android_app_data_stream(transport: str = 'grpc', request_type=analy
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.package_name == 'package_name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_android_app_data_stream_from_dict():
-    test_get_android_app_data_stream(request_type=dict)
 
 
 def test_get_android_app_data_stream_empty_call():
@@ -8140,7 +8153,11 @@ async def test_get_android_app_data_stream_flattened_error_async():
         )
 
 
-def test_delete_android_app_data_stream(transport: str = 'grpc', request_type=analytics_admin.DeleteAndroidAppDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteAndroidAppDataStreamRequest,
+  dict,
+])
+def test_delete_android_app_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -8165,10 +8182,6 @@ def test_delete_android_app_data_stream(transport: str = 'grpc', request_type=an
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_android_app_data_stream_from_dict():
-    test_delete_android_app_data_stream(request_type=dict)
 
 
 def test_delete_android_app_data_stream_empty_call():
@@ -8369,7 +8382,11 @@ async def test_delete_android_app_data_stream_flattened_error_async():
         )
 
 
-def test_update_android_app_data_stream(transport: str = 'grpc', request_type=analytics_admin.UpdateAndroidAppDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateAndroidAppDataStreamRequest,
+  dict,
+])
+def test_update_android_app_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -8403,10 +8420,6 @@ def test_update_android_app_data_stream(transport: str = 'grpc', request_type=an
     assert response.firebase_app_id == 'firebase_app_id_value'
     assert response.package_name == 'package_name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_update_android_app_data_stream_from_dict():
-    test_update_android_app_data_stream(request_type=dict)
 
 
 def test_update_android_app_data_stream_empty_call():
@@ -8626,7 +8639,11 @@ async def test_update_android_app_data_stream_flattened_error_async():
         )
 
 
-def test_list_android_app_data_streams(transport: str = 'grpc', request_type=analytics_admin.ListAndroidAppDataStreamsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListAndroidAppDataStreamsRequest,
+  dict,
+])
+def test_list_android_app_data_streams(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -8654,10 +8671,6 @@ def test_list_android_app_data_streams(transport: str = 'grpc', request_type=ana
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAndroidAppDataStreamsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_android_app_data_streams_from_dict():
-    test_list_android_app_data_streams(request_type=dict)
 
 
 def test_list_android_app_data_streams_empty_call():
@@ -8861,9 +8874,10 @@ async def test_list_android_app_data_streams_flattened_error_async():
         )
 
 
-def test_list_android_app_data_streams_pager():
+def test_list_android_app_data_streams_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8913,10 +8927,10 @@ def test_list_android_app_data_streams_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.AndroidAppDataStream)
                    for i in results)
-
-def test_list_android_app_data_streams_pages():
+def test_list_android_app_data_streams_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -9001,7 +9015,8 @@ async def test_list_android_app_data_streams_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.AndroidAppDataStream)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_android_app_data_streams_async_pages():
@@ -9047,7 +9062,11 @@ async def test_list_android_app_data_streams_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_firebase_link(transport: str = 'grpc', request_type=analytics_admin.CreateFirebaseLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateFirebaseLinkRequest,
+  dict,
+])
+def test_create_firebase_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -9077,10 +9096,6 @@ def test_create_firebase_link(transport: str = 'grpc', request_type=analytics_ad
     assert isinstance(response, resources.FirebaseLink)
     assert response.name == 'name_value'
     assert response.project == 'project_value'
-
-
-def test_create_firebase_link_from_dict():
-    test_create_firebase_link(request_type=dict)
 
 
 def test_create_firebase_link_empty_call():
@@ -9296,7 +9311,11 @@ async def test_create_firebase_link_flattened_error_async():
         )
 
 
-def test_delete_firebase_link(transport: str = 'grpc', request_type=analytics_admin.DeleteFirebaseLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteFirebaseLinkRequest,
+  dict,
+])
+def test_delete_firebase_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -9321,10 +9340,6 @@ def test_delete_firebase_link(transport: str = 'grpc', request_type=analytics_ad
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_firebase_link_from_dict():
-    test_delete_firebase_link(request_type=dict)
 
 
 def test_delete_firebase_link_empty_call():
@@ -9525,7 +9540,11 @@ async def test_delete_firebase_link_flattened_error_async():
         )
 
 
-def test_list_firebase_links(transport: str = 'grpc', request_type=analytics_admin.ListFirebaseLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListFirebaseLinksRequest,
+  dict,
+])
+def test_list_firebase_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -9553,10 +9572,6 @@ def test_list_firebase_links(transport: str = 'grpc', request_type=analytics_adm
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListFirebaseLinksPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_firebase_links_from_dict():
-    test_list_firebase_links(request_type=dict)
 
 
 def test_list_firebase_links_empty_call():
@@ -9760,9 +9775,10 @@ async def test_list_firebase_links_flattened_error_async():
         )
 
 
-def test_list_firebase_links_pager():
+def test_list_firebase_links_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -9812,10 +9828,10 @@ def test_list_firebase_links_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.FirebaseLink)
                    for i in results)
-
-def test_list_firebase_links_pages():
+def test_list_firebase_links_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -9900,7 +9916,8 @@ async def test_list_firebase_links_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.FirebaseLink)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_firebase_links_async_pages():
@@ -9946,7 +9963,11 @@ async def test_list_firebase_links_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_global_site_tag(transport: str = 'grpc', request_type=analytics_admin.GetGlobalSiteTagRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetGlobalSiteTagRequest,
+  dict,
+])
+def test_get_global_site_tag(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -9976,10 +9997,6 @@ def test_get_global_site_tag(transport: str = 'grpc', request_type=analytics_adm
     assert isinstance(response, resources.GlobalSiteTag)
     assert response.name == 'name_value'
     assert response.snippet == 'snippet_value'
-
-
-def test_get_global_site_tag_from_dict():
-    test_get_global_site_tag(request_type=dict)
 
 
 def test_get_global_site_tag_empty_call():
@@ -10185,7 +10202,11 @@ async def test_get_global_site_tag_flattened_error_async():
         )
 
 
-def test_create_google_ads_link(transport: str = 'grpc', request_type=analytics_admin.CreateGoogleAdsLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateGoogleAdsLinkRequest,
+  dict,
+])
+def test_create_google_ads_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -10219,10 +10240,6 @@ def test_create_google_ads_link(transport: str = 'grpc', request_type=analytics_
     assert response.customer_id == 'customer_id_value'
     assert response.can_manage_clients is True
     assert response.creator_email_address == 'creator_email_address_value'
-
-
-def test_create_google_ads_link_from_dict():
-    test_create_google_ads_link(request_type=dict)
 
 
 def test_create_google_ads_link_empty_call():
@@ -10442,7 +10459,11 @@ async def test_create_google_ads_link_flattened_error_async():
         )
 
 
-def test_update_google_ads_link(transport: str = 'grpc', request_type=analytics_admin.UpdateGoogleAdsLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateGoogleAdsLinkRequest,
+  dict,
+])
+def test_update_google_ads_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -10476,10 +10497,6 @@ def test_update_google_ads_link(transport: str = 'grpc', request_type=analytics_
     assert response.customer_id == 'customer_id_value'
     assert response.can_manage_clients is True
     assert response.creator_email_address == 'creator_email_address_value'
-
-
-def test_update_google_ads_link_from_dict():
-    test_update_google_ads_link(request_type=dict)
 
 
 def test_update_google_ads_link_empty_call():
@@ -10699,7 +10716,11 @@ async def test_update_google_ads_link_flattened_error_async():
         )
 
 
-def test_delete_google_ads_link(transport: str = 'grpc', request_type=analytics_admin.DeleteGoogleAdsLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteGoogleAdsLinkRequest,
+  dict,
+])
+def test_delete_google_ads_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -10724,10 +10745,6 @@ def test_delete_google_ads_link(transport: str = 'grpc', request_type=analytics_
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_google_ads_link_from_dict():
-    test_delete_google_ads_link(request_type=dict)
 
 
 def test_delete_google_ads_link_empty_call():
@@ -10928,7 +10945,11 @@ async def test_delete_google_ads_link_flattened_error_async():
         )
 
 
-def test_list_google_ads_links(transport: str = 'grpc', request_type=analytics_admin.ListGoogleAdsLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListGoogleAdsLinksRequest,
+  dict,
+])
+def test_list_google_ads_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -10956,10 +10977,6 @@ def test_list_google_ads_links(transport: str = 'grpc', request_type=analytics_a
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGoogleAdsLinksPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_google_ads_links_from_dict():
-    test_list_google_ads_links(request_type=dict)
 
 
 def test_list_google_ads_links_empty_call():
@@ -11163,9 +11180,10 @@ async def test_list_google_ads_links_flattened_error_async():
         )
 
 
-def test_list_google_ads_links_pager():
+def test_list_google_ads_links_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -11215,10 +11233,10 @@ def test_list_google_ads_links_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.GoogleAdsLink)
                    for i in results)
-
-def test_list_google_ads_links_pages():
+def test_list_google_ads_links_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -11303,7 +11321,8 @@ async def test_list_google_ads_links_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.GoogleAdsLink)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_google_ads_links_async_pages():
@@ -11349,7 +11368,11 @@ async def test_list_google_ads_links_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_data_sharing_settings(transport: str = 'grpc', request_type=analytics_admin.GetDataSharingSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetDataSharingSettingsRequest,
+  dict,
+])
+def test_get_data_sharing_settings(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -11387,10 +11410,6 @@ def test_get_data_sharing_settings(transport: str = 'grpc', request_type=analyti
     assert response.sharing_with_google_any_sales_enabled is True
     assert response.sharing_with_google_products_enabled is True
     assert response.sharing_with_others_enabled is True
-
-
-def test_get_data_sharing_settings_from_dict():
-    test_get_data_sharing_settings(request_type=dict)
 
 
 def test_get_data_sharing_settings_empty_call():
@@ -11604,7 +11623,11 @@ async def test_get_data_sharing_settings_flattened_error_async():
         )
 
 
-def test_get_measurement_protocol_secret(transport: str = 'grpc', request_type=analytics_admin.GetMeasurementProtocolSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetMeasurementProtocolSecretRequest,
+  dict,
+])
+def test_get_measurement_protocol_secret(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -11636,10 +11659,6 @@ def test_get_measurement_protocol_secret(transport: str = 'grpc', request_type=a
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.secret_value == 'secret_value_value'
-
-
-def test_get_measurement_protocol_secret_from_dict():
-    test_get_measurement_protocol_secret(request_type=dict)
 
 
 def test_get_measurement_protocol_secret_empty_call():
@@ -11847,7 +11866,11 @@ async def test_get_measurement_protocol_secret_flattened_error_async():
         )
 
 
-def test_list_measurement_protocol_secrets(transport: str = 'grpc', request_type=analytics_admin.ListMeasurementProtocolSecretsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListMeasurementProtocolSecretsRequest,
+  dict,
+])
+def test_list_measurement_protocol_secrets(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -11875,10 +11898,6 @@ def test_list_measurement_protocol_secrets(transport: str = 'grpc', request_type
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListMeasurementProtocolSecretsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_measurement_protocol_secrets_from_dict():
-    test_list_measurement_protocol_secrets(request_type=dict)
 
 
 def test_list_measurement_protocol_secrets_empty_call():
@@ -12082,9 +12101,10 @@ async def test_list_measurement_protocol_secrets_flattened_error_async():
         )
 
 
-def test_list_measurement_protocol_secrets_pager():
+def test_list_measurement_protocol_secrets_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -12134,10 +12154,10 @@ def test_list_measurement_protocol_secrets_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.MeasurementProtocolSecret)
                    for i in results)
-
-def test_list_measurement_protocol_secrets_pages():
+def test_list_measurement_protocol_secrets_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -12222,7 +12242,8 @@ async def test_list_measurement_protocol_secrets_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.MeasurementProtocolSecret)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_measurement_protocol_secrets_async_pages():
@@ -12268,7 +12289,11 @@ async def test_list_measurement_protocol_secrets_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_measurement_protocol_secret(transport: str = 'grpc', request_type=analytics_admin.CreateMeasurementProtocolSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateMeasurementProtocolSecretRequest,
+  dict,
+])
+def test_create_measurement_protocol_secret(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -12300,10 +12325,6 @@ def test_create_measurement_protocol_secret(transport: str = 'grpc', request_typ
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.secret_value == 'secret_value_value'
-
-
-def test_create_measurement_protocol_secret_from_dict():
-    test_create_measurement_protocol_secret(request_type=dict)
 
 
 def test_create_measurement_protocol_secret_empty_call():
@@ -12521,7 +12542,11 @@ async def test_create_measurement_protocol_secret_flattened_error_async():
         )
 
 
-def test_delete_measurement_protocol_secret(transport: str = 'grpc', request_type=analytics_admin.DeleteMeasurementProtocolSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteMeasurementProtocolSecretRequest,
+  dict,
+])
+def test_delete_measurement_protocol_secret(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -12546,10 +12571,6 @@ def test_delete_measurement_protocol_secret(transport: str = 'grpc', request_typ
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_measurement_protocol_secret_from_dict():
-    test_delete_measurement_protocol_secret(request_type=dict)
 
 
 def test_delete_measurement_protocol_secret_empty_call():
@@ -12750,7 +12771,11 @@ async def test_delete_measurement_protocol_secret_flattened_error_async():
         )
 
 
-def test_update_measurement_protocol_secret(transport: str = 'grpc', request_type=analytics_admin.UpdateMeasurementProtocolSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateMeasurementProtocolSecretRequest,
+  dict,
+])
+def test_update_measurement_protocol_secret(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -12782,10 +12807,6 @@ def test_update_measurement_protocol_secret(transport: str = 'grpc', request_typ
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.secret_value == 'secret_value_value'
-
-
-def test_update_measurement_protocol_secret_from_dict():
-    test_update_measurement_protocol_secret(request_type=dict)
 
 
 def test_update_measurement_protocol_secret_empty_call():
@@ -13003,7 +13024,11 @@ async def test_update_measurement_protocol_secret_flattened_error_async():
         )
 
 
-def test_acknowledge_user_data_collection(transport: str = 'grpc', request_type=analytics_admin.AcknowledgeUserDataCollectionRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.AcknowledgeUserDataCollectionRequest,
+  dict,
+])
+def test_acknowledge_user_data_collection(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -13029,10 +13054,6 @@ def test_acknowledge_user_data_collection(transport: str = 'grpc', request_type=
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_admin.AcknowledgeUserDataCollectionResponse)
-
-
-def test_acknowledge_user_data_collection_from_dict():
-    test_acknowledge_user_data_collection(request_type=dict)
 
 
 def test_acknowledge_user_data_collection_empty_call():
@@ -13150,7 +13171,11 @@ async def test_acknowledge_user_data_collection_field_headers_async():
     ) in kw['metadata']
 
 
-def test_search_change_history_events(transport: str = 'grpc', request_type=analytics_admin.SearchChangeHistoryEventsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.SearchChangeHistoryEventsRequest,
+  dict,
+])
+def test_search_change_history_events(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -13178,10 +13203,6 @@ def test_search_change_history_events(transport: str = 'grpc', request_type=anal
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchChangeHistoryEventsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_search_change_history_events_from_dict():
-    test_search_change_history_events(request_type=dict)
 
 
 def test_search_change_history_events_empty_call():
@@ -13301,9 +13322,10 @@ async def test_search_change_history_events_field_headers_async():
     ) in kw['metadata']
 
 
-def test_search_change_history_events_pager():
+def test_search_change_history_events_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -13353,10 +13375,10 @@ def test_search_change_history_events_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.ChangeHistoryEvent)
                    for i in results)
-
-def test_search_change_history_events_pages():
+def test_search_change_history_events_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -13441,7 +13463,8 @@ async def test_search_change_history_events_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.ChangeHistoryEvent)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_search_change_history_events_async_pages():
@@ -13487,7 +13510,11 @@ async def test_search_change_history_events_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_google_signals_settings(transport: str = 'grpc', request_type=analytics_admin.GetGoogleSignalsSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetGoogleSignalsSettingsRequest,
+  dict,
+])
+def test_get_google_signals_settings(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -13519,10 +13546,6 @@ def test_get_google_signals_settings(transport: str = 'grpc', request_type=analy
     assert response.name == 'name_value'
     assert response.state == resources.GoogleSignalsState.GOOGLE_SIGNALS_ENABLED
     assert response.consent == resources.GoogleSignalsConsent.GOOGLE_SIGNALS_CONSENT_CONSENTED
-
-
-def test_get_google_signals_settings_from_dict():
-    test_get_google_signals_settings(request_type=dict)
 
 
 def test_get_google_signals_settings_empty_call():
@@ -13730,7 +13753,11 @@ async def test_get_google_signals_settings_flattened_error_async():
         )
 
 
-def test_update_google_signals_settings(transport: str = 'grpc', request_type=analytics_admin.UpdateGoogleSignalsSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateGoogleSignalsSettingsRequest,
+  dict,
+])
+def test_update_google_signals_settings(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -13762,10 +13789,6 @@ def test_update_google_signals_settings(transport: str = 'grpc', request_type=an
     assert response.name == 'name_value'
     assert response.state == resources.GoogleSignalsState.GOOGLE_SIGNALS_ENABLED
     assert response.consent == resources.GoogleSignalsConsent.GOOGLE_SIGNALS_CONSENT_CONSENTED
-
-
-def test_update_google_signals_settings_from_dict():
-    test_update_google_signals_settings(request_type=dict)
 
 
 def test_update_google_signals_settings_empty_call():
@@ -13983,7 +14006,11 @@ async def test_update_google_signals_settings_flattened_error_async():
         )
 
 
-def test_create_conversion_event(transport: str = 'grpc', request_type=analytics_admin.CreateConversionEventRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateConversionEventRequest,
+  dict,
+])
+def test_create_conversion_event(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -14017,10 +14044,6 @@ def test_create_conversion_event(transport: str = 'grpc', request_type=analytics
     assert response.event_name == 'event_name_value'
     assert response.deletable is True
     assert response.custom is True
-
-
-def test_create_conversion_event_from_dict():
-    test_create_conversion_event(request_type=dict)
 
 
 def test_create_conversion_event_empty_call():
@@ -14240,7 +14263,11 @@ async def test_create_conversion_event_flattened_error_async():
         )
 
 
-def test_get_conversion_event(transport: str = 'grpc', request_type=analytics_admin.GetConversionEventRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetConversionEventRequest,
+  dict,
+])
+def test_get_conversion_event(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -14274,10 +14301,6 @@ def test_get_conversion_event(transport: str = 'grpc', request_type=analytics_ad
     assert response.event_name == 'event_name_value'
     assert response.deletable is True
     assert response.custom is True
-
-
-def test_get_conversion_event_from_dict():
-    test_get_conversion_event(request_type=dict)
 
 
 def test_get_conversion_event_empty_call():
@@ -14487,7 +14510,11 @@ async def test_get_conversion_event_flattened_error_async():
         )
 
 
-def test_delete_conversion_event(transport: str = 'grpc', request_type=analytics_admin.DeleteConversionEventRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteConversionEventRequest,
+  dict,
+])
+def test_delete_conversion_event(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -14512,10 +14539,6 @@ def test_delete_conversion_event(transport: str = 'grpc', request_type=analytics
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_conversion_event_from_dict():
-    test_delete_conversion_event(request_type=dict)
 
 
 def test_delete_conversion_event_empty_call():
@@ -14716,7 +14739,11 @@ async def test_delete_conversion_event_flattened_error_async():
         )
 
 
-def test_list_conversion_events(transport: str = 'grpc', request_type=analytics_admin.ListConversionEventsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListConversionEventsRequest,
+  dict,
+])
+def test_list_conversion_events(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -14744,10 +14771,6 @@ def test_list_conversion_events(transport: str = 'grpc', request_type=analytics_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConversionEventsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_conversion_events_from_dict():
-    test_list_conversion_events(request_type=dict)
 
 
 def test_list_conversion_events_empty_call():
@@ -14951,9 +14974,10 @@ async def test_list_conversion_events_flattened_error_async():
         )
 
 
-def test_list_conversion_events_pager():
+def test_list_conversion_events_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -15003,10 +15027,10 @@ def test_list_conversion_events_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.ConversionEvent)
                    for i in results)
-
-def test_list_conversion_events_pages():
+def test_list_conversion_events_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -15091,7 +15115,8 @@ async def test_list_conversion_events_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.ConversionEvent)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_conversion_events_async_pages():
@@ -15137,7 +15162,11 @@ async def test_list_conversion_events_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_display_video360_advertiser_link(transport: str = 'grpc', request_type=analytics_admin.GetDisplayVideo360AdvertiserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetDisplayVideo360AdvertiserLinkRequest,
+  dict,
+])
+def test_get_display_video360_advertiser_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -15169,10 +15198,6 @@ def test_get_display_video360_advertiser_link(transport: str = 'grpc', request_t
     assert response.name == 'name_value'
     assert response.advertiser_id == 'advertiser_id_value'
     assert response.advertiser_display_name == 'advertiser_display_name_value'
-
-
-def test_get_display_video360_advertiser_link_from_dict():
-    test_get_display_video360_advertiser_link(request_type=dict)
 
 
 def test_get_display_video360_advertiser_link_empty_call():
@@ -15380,7 +15405,11 @@ async def test_get_display_video360_advertiser_link_flattened_error_async():
         )
 
 
-def test_list_display_video360_advertiser_links(transport: str = 'grpc', request_type=analytics_admin.ListDisplayVideo360AdvertiserLinksRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListDisplayVideo360AdvertiserLinksRequest,
+  dict,
+])
+def test_list_display_video360_advertiser_links(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -15408,10 +15437,6 @@ def test_list_display_video360_advertiser_links(transport: str = 'grpc', request
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDisplayVideo360AdvertiserLinksPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_display_video360_advertiser_links_from_dict():
-    test_list_display_video360_advertiser_links(request_type=dict)
 
 
 def test_list_display_video360_advertiser_links_empty_call():
@@ -15615,9 +15640,10 @@ async def test_list_display_video360_advertiser_links_flattened_error_async():
         )
 
 
-def test_list_display_video360_advertiser_links_pager():
+def test_list_display_video360_advertiser_links_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -15667,10 +15693,10 @@ def test_list_display_video360_advertiser_links_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.DisplayVideo360AdvertiserLink)
                    for i in results)
-
-def test_list_display_video360_advertiser_links_pages():
+def test_list_display_video360_advertiser_links_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -15755,7 +15781,8 @@ async def test_list_display_video360_advertiser_links_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.DisplayVideo360AdvertiserLink)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_display_video360_advertiser_links_async_pages():
@@ -15801,7 +15828,11 @@ async def test_list_display_video360_advertiser_links_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_display_video360_advertiser_link(transport: str = 'grpc', request_type=analytics_admin.CreateDisplayVideo360AdvertiserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateDisplayVideo360AdvertiserLinkRequest,
+  dict,
+])
+def test_create_display_video360_advertiser_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -15833,10 +15864,6 @@ def test_create_display_video360_advertiser_link(transport: str = 'grpc', reques
     assert response.name == 'name_value'
     assert response.advertiser_id == 'advertiser_id_value'
     assert response.advertiser_display_name == 'advertiser_display_name_value'
-
-
-def test_create_display_video360_advertiser_link_from_dict():
-    test_create_display_video360_advertiser_link(request_type=dict)
 
 
 def test_create_display_video360_advertiser_link_empty_call():
@@ -16054,7 +16081,11 @@ async def test_create_display_video360_advertiser_link_flattened_error_async():
         )
 
 
-def test_delete_display_video360_advertiser_link(transport: str = 'grpc', request_type=analytics_admin.DeleteDisplayVideo360AdvertiserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteDisplayVideo360AdvertiserLinkRequest,
+  dict,
+])
+def test_delete_display_video360_advertiser_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -16079,10 +16110,6 @@ def test_delete_display_video360_advertiser_link(transport: str = 'grpc', reques
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_display_video360_advertiser_link_from_dict():
-    test_delete_display_video360_advertiser_link(request_type=dict)
 
 
 def test_delete_display_video360_advertiser_link_empty_call():
@@ -16283,7 +16310,11 @@ async def test_delete_display_video360_advertiser_link_flattened_error_async():
         )
 
 
-def test_update_display_video360_advertiser_link(transport: str = 'grpc', request_type=analytics_admin.UpdateDisplayVideo360AdvertiserLinkRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateDisplayVideo360AdvertiserLinkRequest,
+  dict,
+])
+def test_update_display_video360_advertiser_link(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -16315,10 +16346,6 @@ def test_update_display_video360_advertiser_link(transport: str = 'grpc', reques
     assert response.name == 'name_value'
     assert response.advertiser_id == 'advertiser_id_value'
     assert response.advertiser_display_name == 'advertiser_display_name_value'
-
-
-def test_update_display_video360_advertiser_link_from_dict():
-    test_update_display_video360_advertiser_link(request_type=dict)
 
 
 def test_update_display_video360_advertiser_link_empty_call():
@@ -16536,7 +16563,11 @@ async def test_update_display_video360_advertiser_link_flattened_error_async():
         )
 
 
-def test_get_display_video360_advertiser_link_proposal(transport: str = 'grpc', request_type=analytics_admin.GetDisplayVideo360AdvertiserLinkProposalRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetDisplayVideo360AdvertiserLinkProposalRequest,
+  dict,
+])
+def test_get_display_video360_advertiser_link_proposal(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -16570,10 +16601,6 @@ def test_get_display_video360_advertiser_link_proposal(transport: str = 'grpc', 
     assert response.advertiser_id == 'advertiser_id_value'
     assert response.advertiser_display_name == 'advertiser_display_name_value'
     assert response.validation_email == 'validation_email_value'
-
-
-def test_get_display_video360_advertiser_link_proposal_from_dict():
-    test_get_display_video360_advertiser_link_proposal(request_type=dict)
 
 
 def test_get_display_video360_advertiser_link_proposal_empty_call():
@@ -16783,7 +16810,11 @@ async def test_get_display_video360_advertiser_link_proposal_flattened_error_asy
         )
 
 
-def test_list_display_video360_advertiser_link_proposals(transport: str = 'grpc', request_type=analytics_admin.ListDisplayVideo360AdvertiserLinkProposalsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListDisplayVideo360AdvertiserLinkProposalsRequest,
+  dict,
+])
+def test_list_display_video360_advertiser_link_proposals(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -16811,10 +16842,6 @@ def test_list_display_video360_advertiser_link_proposals(transport: str = 'grpc'
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDisplayVideo360AdvertiserLinkProposalsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_display_video360_advertiser_link_proposals_from_dict():
-    test_list_display_video360_advertiser_link_proposals(request_type=dict)
 
 
 def test_list_display_video360_advertiser_link_proposals_empty_call():
@@ -17018,9 +17045,10 @@ async def test_list_display_video360_advertiser_link_proposals_flattened_error_a
         )
 
 
-def test_list_display_video360_advertiser_link_proposals_pager():
+def test_list_display_video360_advertiser_link_proposals_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -17070,10 +17098,10 @@ def test_list_display_video360_advertiser_link_proposals_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.DisplayVideo360AdvertiserLinkProposal)
                    for i in results)
-
-def test_list_display_video360_advertiser_link_proposals_pages():
+def test_list_display_video360_advertiser_link_proposals_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -17158,7 +17186,8 @@ async def test_list_display_video360_advertiser_link_proposals_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.DisplayVideo360AdvertiserLinkProposal)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_display_video360_advertiser_link_proposals_async_pages():
@@ -17204,7 +17233,11 @@ async def test_list_display_video360_advertiser_link_proposals_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_display_video360_advertiser_link_proposal(transport: str = 'grpc', request_type=analytics_admin.CreateDisplayVideo360AdvertiserLinkProposalRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateDisplayVideo360AdvertiserLinkProposalRequest,
+  dict,
+])
+def test_create_display_video360_advertiser_link_proposal(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -17238,10 +17271,6 @@ def test_create_display_video360_advertiser_link_proposal(transport: str = 'grpc
     assert response.advertiser_id == 'advertiser_id_value'
     assert response.advertiser_display_name == 'advertiser_display_name_value'
     assert response.validation_email == 'validation_email_value'
-
-
-def test_create_display_video360_advertiser_link_proposal_from_dict():
-    test_create_display_video360_advertiser_link_proposal(request_type=dict)
 
 
 def test_create_display_video360_advertiser_link_proposal_empty_call():
@@ -17461,7 +17490,11 @@ async def test_create_display_video360_advertiser_link_proposal_flattened_error_
         )
 
 
-def test_delete_display_video360_advertiser_link_proposal(transport: str = 'grpc', request_type=analytics_admin.DeleteDisplayVideo360AdvertiserLinkProposalRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteDisplayVideo360AdvertiserLinkProposalRequest,
+  dict,
+])
+def test_delete_display_video360_advertiser_link_proposal(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -17486,10 +17519,6 @@ def test_delete_display_video360_advertiser_link_proposal(transport: str = 'grpc
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_display_video360_advertiser_link_proposal_from_dict():
-    test_delete_display_video360_advertiser_link_proposal(request_type=dict)
 
 
 def test_delete_display_video360_advertiser_link_proposal_empty_call():
@@ -17690,7 +17719,11 @@ async def test_delete_display_video360_advertiser_link_proposal_flattened_error_
         )
 
 
-def test_approve_display_video360_advertiser_link_proposal(transport: str = 'grpc', request_type=analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalRequest,
+  dict,
+])
+def test_approve_display_video360_advertiser_link_proposal(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -17716,10 +17749,6 @@ def test_approve_display_video360_advertiser_link_proposal(transport: str = 'grp
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, analytics_admin.ApproveDisplayVideo360AdvertiserLinkProposalResponse)
-
-
-def test_approve_display_video360_advertiser_link_proposal_from_dict():
-    test_approve_display_video360_advertiser_link_proposal(request_type=dict)
 
 
 def test_approve_display_video360_advertiser_link_proposal_empty_call():
@@ -17837,7 +17866,11 @@ async def test_approve_display_video360_advertiser_link_proposal_field_headers_a
     ) in kw['metadata']
 
 
-def test_cancel_display_video360_advertiser_link_proposal(transport: str = 'grpc', request_type=analytics_admin.CancelDisplayVideo360AdvertiserLinkProposalRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CancelDisplayVideo360AdvertiserLinkProposalRequest,
+  dict,
+])
+def test_cancel_display_video360_advertiser_link_proposal(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -17871,10 +17904,6 @@ def test_cancel_display_video360_advertiser_link_proposal(transport: str = 'grpc
     assert response.advertiser_id == 'advertiser_id_value'
     assert response.advertiser_display_name == 'advertiser_display_name_value'
     assert response.validation_email == 'validation_email_value'
-
-
-def test_cancel_display_video360_advertiser_link_proposal_from_dict():
-    test_cancel_display_video360_advertiser_link_proposal(request_type=dict)
 
 
 def test_cancel_display_video360_advertiser_link_proposal_empty_call():
@@ -18000,7 +18029,11 @@ async def test_cancel_display_video360_advertiser_link_proposal_field_headers_as
     ) in kw['metadata']
 
 
-def test_create_custom_dimension(transport: str = 'grpc', request_type=analytics_admin.CreateCustomDimensionRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateCustomDimensionRequest,
+  dict,
+])
+def test_create_custom_dimension(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -18038,10 +18071,6 @@ def test_create_custom_dimension(transport: str = 'grpc', request_type=analytics
     assert response.description == 'description_value'
     assert response.scope == resources.CustomDimension.DimensionScope.EVENT
     assert response.disallow_ads_personalization is True
-
-
-def test_create_custom_dimension_from_dict():
-    test_create_custom_dimension(request_type=dict)
 
 
 def test_create_custom_dimension_empty_call():
@@ -18265,7 +18294,11 @@ async def test_create_custom_dimension_flattened_error_async():
         )
 
 
-def test_update_custom_dimension(transport: str = 'grpc', request_type=analytics_admin.UpdateCustomDimensionRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateCustomDimensionRequest,
+  dict,
+])
+def test_update_custom_dimension(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -18303,10 +18336,6 @@ def test_update_custom_dimension(transport: str = 'grpc', request_type=analytics
     assert response.description == 'description_value'
     assert response.scope == resources.CustomDimension.DimensionScope.EVENT
     assert response.disallow_ads_personalization is True
-
-
-def test_update_custom_dimension_from_dict():
-    test_update_custom_dimension(request_type=dict)
 
 
 def test_update_custom_dimension_empty_call():
@@ -18530,7 +18559,11 @@ async def test_update_custom_dimension_flattened_error_async():
         )
 
 
-def test_list_custom_dimensions(transport: str = 'grpc', request_type=analytics_admin.ListCustomDimensionsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListCustomDimensionsRequest,
+  dict,
+])
+def test_list_custom_dimensions(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -18558,10 +18591,6 @@ def test_list_custom_dimensions(transport: str = 'grpc', request_type=analytics_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCustomDimensionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_custom_dimensions_from_dict():
-    test_list_custom_dimensions(request_type=dict)
 
 
 def test_list_custom_dimensions_empty_call():
@@ -18765,9 +18794,10 @@ async def test_list_custom_dimensions_flattened_error_async():
         )
 
 
-def test_list_custom_dimensions_pager():
+def test_list_custom_dimensions_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -18817,10 +18847,10 @@ def test_list_custom_dimensions_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.CustomDimension)
                    for i in results)
-
-def test_list_custom_dimensions_pages():
+def test_list_custom_dimensions_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -18905,7 +18935,8 @@ async def test_list_custom_dimensions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.CustomDimension)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_custom_dimensions_async_pages():
@@ -18951,7 +18982,11 @@ async def test_list_custom_dimensions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_archive_custom_dimension(transport: str = 'grpc', request_type=analytics_admin.ArchiveCustomDimensionRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ArchiveCustomDimensionRequest,
+  dict,
+])
+def test_archive_custom_dimension(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -18976,10 +19011,6 @@ def test_archive_custom_dimension(transport: str = 'grpc', request_type=analytic
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_archive_custom_dimension_from_dict():
-    test_archive_custom_dimension(request_type=dict)
 
 
 def test_archive_custom_dimension_empty_call():
@@ -19180,7 +19211,11 @@ async def test_archive_custom_dimension_flattened_error_async():
         )
 
 
-def test_get_custom_dimension(transport: str = 'grpc', request_type=analytics_admin.GetCustomDimensionRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetCustomDimensionRequest,
+  dict,
+])
+def test_get_custom_dimension(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -19218,10 +19253,6 @@ def test_get_custom_dimension(transport: str = 'grpc', request_type=analytics_ad
     assert response.description == 'description_value'
     assert response.scope == resources.CustomDimension.DimensionScope.EVENT
     assert response.disallow_ads_personalization is True
-
-
-def test_get_custom_dimension_from_dict():
-    test_get_custom_dimension(request_type=dict)
 
 
 def test_get_custom_dimension_empty_call():
@@ -19435,7 +19466,11 @@ async def test_get_custom_dimension_flattened_error_async():
         )
 
 
-def test_create_custom_metric(transport: str = 'grpc', request_type=analytics_admin.CreateCustomMetricRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateCustomMetricRequest,
+  dict,
+])
+def test_create_custom_metric(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -19473,10 +19508,6 @@ def test_create_custom_metric(transport: str = 'grpc', request_type=analytics_ad
     assert response.description == 'description_value'
     assert response.measurement_unit == resources.CustomMetric.MeasurementUnit.STANDARD
     assert response.scope == resources.CustomMetric.MetricScope.EVENT
-
-
-def test_create_custom_metric_from_dict():
-    test_create_custom_metric(request_type=dict)
 
 
 def test_create_custom_metric_empty_call():
@@ -19700,7 +19731,11 @@ async def test_create_custom_metric_flattened_error_async():
         )
 
 
-def test_update_custom_metric(transport: str = 'grpc', request_type=analytics_admin.UpdateCustomMetricRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateCustomMetricRequest,
+  dict,
+])
+def test_update_custom_metric(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -19738,10 +19773,6 @@ def test_update_custom_metric(transport: str = 'grpc', request_type=analytics_ad
     assert response.description == 'description_value'
     assert response.measurement_unit == resources.CustomMetric.MeasurementUnit.STANDARD
     assert response.scope == resources.CustomMetric.MetricScope.EVENT
-
-
-def test_update_custom_metric_from_dict():
-    test_update_custom_metric(request_type=dict)
 
 
 def test_update_custom_metric_empty_call():
@@ -19965,7 +19996,11 @@ async def test_update_custom_metric_flattened_error_async():
         )
 
 
-def test_list_custom_metrics(transport: str = 'grpc', request_type=analytics_admin.ListCustomMetricsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListCustomMetricsRequest,
+  dict,
+])
+def test_list_custom_metrics(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -19993,10 +20028,6 @@ def test_list_custom_metrics(transport: str = 'grpc', request_type=analytics_adm
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCustomMetricsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_custom_metrics_from_dict():
-    test_list_custom_metrics(request_type=dict)
 
 
 def test_list_custom_metrics_empty_call():
@@ -20200,9 +20231,10 @@ async def test_list_custom_metrics_flattened_error_async():
         )
 
 
-def test_list_custom_metrics_pager():
+def test_list_custom_metrics_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -20252,10 +20284,10 @@ def test_list_custom_metrics_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.CustomMetric)
                    for i in results)
-
-def test_list_custom_metrics_pages():
+def test_list_custom_metrics_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -20340,7 +20372,8 @@ async def test_list_custom_metrics_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.CustomMetric)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_custom_metrics_async_pages():
@@ -20386,7 +20419,11 @@ async def test_list_custom_metrics_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_archive_custom_metric(transport: str = 'grpc', request_type=analytics_admin.ArchiveCustomMetricRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ArchiveCustomMetricRequest,
+  dict,
+])
+def test_archive_custom_metric(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -20411,10 +20448,6 @@ def test_archive_custom_metric(transport: str = 'grpc', request_type=analytics_a
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_archive_custom_metric_from_dict():
-    test_archive_custom_metric(request_type=dict)
 
 
 def test_archive_custom_metric_empty_call():
@@ -20615,7 +20648,11 @@ async def test_archive_custom_metric_flattened_error_async():
         )
 
 
-def test_get_custom_metric(transport: str = 'grpc', request_type=analytics_admin.GetCustomMetricRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetCustomMetricRequest,
+  dict,
+])
+def test_get_custom_metric(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -20653,10 +20690,6 @@ def test_get_custom_metric(transport: str = 'grpc', request_type=analytics_admin
     assert response.description == 'description_value'
     assert response.measurement_unit == resources.CustomMetric.MeasurementUnit.STANDARD
     assert response.scope == resources.CustomMetric.MetricScope.EVENT
-
-
-def test_get_custom_metric_from_dict():
-    test_get_custom_metric(request_type=dict)
 
 
 def test_get_custom_metric_empty_call():
@@ -20870,7 +20903,11 @@ async def test_get_custom_metric_flattened_error_async():
         )
 
 
-def test_get_data_retention_settings(transport: str = 'grpc', request_type=analytics_admin.GetDataRetentionSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetDataRetentionSettingsRequest,
+  dict,
+])
+def test_get_data_retention_settings(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -20902,10 +20939,6 @@ def test_get_data_retention_settings(transport: str = 'grpc', request_type=analy
     assert response.name == 'name_value'
     assert response.event_data_retention == resources.DataRetentionSettings.RetentionDuration.TWO_MONTHS
     assert response.reset_user_data_on_new_activity is True
-
-
-def test_get_data_retention_settings_from_dict():
-    test_get_data_retention_settings(request_type=dict)
 
 
 def test_get_data_retention_settings_empty_call():
@@ -21113,7 +21146,11 @@ async def test_get_data_retention_settings_flattened_error_async():
         )
 
 
-def test_update_data_retention_settings(transport: str = 'grpc', request_type=analytics_admin.UpdateDataRetentionSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateDataRetentionSettingsRequest,
+  dict,
+])
+def test_update_data_retention_settings(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -21145,10 +21182,6 @@ def test_update_data_retention_settings(transport: str = 'grpc', request_type=an
     assert response.name == 'name_value'
     assert response.event_data_retention == resources.DataRetentionSettings.RetentionDuration.TWO_MONTHS
     assert response.reset_user_data_on_new_activity is True
-
-
-def test_update_data_retention_settings_from_dict():
-    test_update_data_retention_settings(request_type=dict)
 
 
 def test_update_data_retention_settings_empty_call():
@@ -21366,7 +21399,11 @@ async def test_update_data_retention_settings_flattened_error_async():
         )
 
 
-def test_create_data_stream(transport: str = 'grpc', request_type=analytics_admin.CreateDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.CreateDataStreamRequest,
+  dict,
+])
+def test_create_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -21399,10 +21436,6 @@ def test_create_data_stream(transport: str = 'grpc', request_type=analytics_admi
     assert response.name == 'name_value'
     assert response.type_ == resources.DataStream.DataStreamType.WEB_DATA_STREAM
     assert response.display_name == 'display_name_value'
-
-
-def test_create_data_stream_from_dict():
-    test_create_data_stream(request_type=dict)
 
 
 def test_create_data_stream_empty_call():
@@ -21620,7 +21653,11 @@ async def test_create_data_stream_flattened_error_async():
         )
 
 
-def test_delete_data_stream(transport: str = 'grpc', request_type=analytics_admin.DeleteDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.DeleteDataStreamRequest,
+  dict,
+])
+def test_delete_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -21645,10 +21682,6 @@ def test_delete_data_stream(transport: str = 'grpc', request_type=analytics_admi
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_data_stream_from_dict():
-    test_delete_data_stream(request_type=dict)
 
 
 def test_delete_data_stream_empty_call():
@@ -21849,7 +21882,11 @@ async def test_delete_data_stream_flattened_error_async():
         )
 
 
-def test_update_data_stream(transport: str = 'grpc', request_type=analytics_admin.UpdateDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.UpdateDataStreamRequest,
+  dict,
+])
+def test_update_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -21882,10 +21919,6 @@ def test_update_data_stream(transport: str = 'grpc', request_type=analytics_admi
     assert response.name == 'name_value'
     assert response.type_ == resources.DataStream.DataStreamType.WEB_DATA_STREAM
     assert response.display_name == 'display_name_value'
-
-
-def test_update_data_stream_from_dict():
-    test_update_data_stream(request_type=dict)
 
 
 def test_update_data_stream_empty_call():
@@ -22103,7 +22136,11 @@ async def test_update_data_stream_flattened_error_async():
         )
 
 
-def test_list_data_streams(transport: str = 'grpc', request_type=analytics_admin.ListDataStreamsRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.ListDataStreamsRequest,
+  dict,
+])
+def test_list_data_streams(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -22131,10 +22168,6 @@ def test_list_data_streams(transport: str = 'grpc', request_type=analytics_admin
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListDataStreamsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_data_streams_from_dict():
-    test_list_data_streams(request_type=dict)
 
 
 def test_list_data_streams_empty_call():
@@ -22338,9 +22371,10 @@ async def test_list_data_streams_flattened_error_async():
         )
 
 
-def test_list_data_streams_pager():
+def test_list_data_streams_pager(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -22390,10 +22424,10 @@ def test_list_data_streams_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.DataStream)
                    for i in results)
-
-def test_list_data_streams_pages():
+def test_list_data_streams_pages(transport_name: str = "grpc"):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -22478,7 +22512,8 @@ async def test_list_data_streams_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.DataStream)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_data_streams_async_pages():
@@ -22524,7 +22559,11 @@ async def test_list_data_streams_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_data_stream(transport: str = 'grpc', request_type=analytics_admin.GetDataStreamRequest):
+@pytest.mark.parametrize("request_type", [
+  analytics_admin.GetDataStreamRequest,
+  dict,
+])
+def test_get_data_stream(request_type, transport: str = 'grpc'):
     client = AnalyticsAdminServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -22557,10 +22596,6 @@ def test_get_data_stream(transport: str = 'grpc', request_type=analytics_admin.G
     assert response.name == 'name_value'
     assert response.type_ == resources.DataStream.DataStreamType.WEB_DATA_STREAM
     assert response.display_name == 'display_name_value'
-
-
-def test_get_data_stream_from_dict():
-    test_get_data_stream(request_type=dict)
 
 
 def test_get_data_stream_empty_call():
@@ -23683,7 +23718,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AnalyticsAdminServiceTransport, '_prep_wrapped_messages') as prep:

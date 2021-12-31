@@ -204,18 +204,18 @@ def test_security_settings_service_client_client_options(client_class, transport
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -246,7 +246,7 @@ def test_security_settings_service_client_mtls_env_auto(client_class, transport_
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -321,7 +321,7 @@ def test_security_settings_service_client_client_options_scopes(client_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -344,7 +344,7 @@ def test_security_settings_service_client_client_options_credentials_file(client
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -355,7 +355,6 @@ def test_security_settings_service_client_client_options_credentials_file(client
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_security_settings_service_client_client_options_from_dict():
     with mock.patch('google.cloud.dialogflowcx_v3.services.security_settings_service.transports.SecuritySettingsServiceGrpcTransport.__init__') as grpc_transport:
@@ -375,7 +374,11 @@ def test_security_settings_service_client_client_options_from_dict():
         )
 
 
-def test_create_security_settings(transport: str = 'grpc', request_type=gcdc_security_settings.CreateSecuritySettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  gcdc_security_settings.CreateSecuritySettingsRequest,
+  dict,
+])
+def test_create_security_settings(request_type, transport: str = 'grpc'):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -416,10 +419,6 @@ def test_create_security_settings(transport: str = 'grpc', request_type=gcdc_sec
     assert response.inspect_template == 'inspect_template_value'
     assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
-
-
-def test_create_security_settings_from_dict():
-    test_create_security_settings(request_type=dict)
 
 
 def test_create_security_settings_empty_call():
@@ -645,7 +644,11 @@ async def test_create_security_settings_flattened_error_async():
         )
 
 
-def test_get_security_settings(transport: str = 'grpc', request_type=security_settings.GetSecuritySettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  security_settings.GetSecuritySettingsRequest,
+  dict,
+])
+def test_get_security_settings(request_type, transport: str = 'grpc'):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -686,10 +689,6 @@ def test_get_security_settings(transport: str = 'grpc', request_type=security_se
     assert response.inspect_template == 'inspect_template_value'
     assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
-
-
-def test_get_security_settings_from_dict():
-    test_get_security_settings(request_type=dict)
 
 
 def test_get_security_settings_empty_call():
@@ -905,7 +904,11 @@ async def test_get_security_settings_flattened_error_async():
         )
 
 
-def test_update_security_settings(transport: str = 'grpc', request_type=gcdc_security_settings.UpdateSecuritySettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  gcdc_security_settings.UpdateSecuritySettingsRequest,
+  dict,
+])
+def test_update_security_settings(request_type, transport: str = 'grpc'):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -946,10 +949,6 @@ def test_update_security_settings(transport: str = 'grpc', request_type=gcdc_sec
     assert response.inspect_template == 'inspect_template_value'
     assert response.deidentify_template == 'deidentify_template_value'
     assert response.purge_data_types == [gcdc_security_settings.SecuritySettings.PurgeDataType.DIALOGFLOW_HISTORY]
-
-
-def test_update_security_settings_from_dict():
-    test_update_security_settings(request_type=dict)
 
 
 def test_update_security_settings_empty_call():
@@ -1175,7 +1174,11 @@ async def test_update_security_settings_flattened_error_async():
         )
 
 
-def test_list_security_settings(transport: str = 'grpc', request_type=security_settings.ListSecuritySettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  security_settings.ListSecuritySettingsRequest,
+  dict,
+])
+def test_list_security_settings(request_type, transport: str = 'grpc'):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1203,10 +1206,6 @@ def test_list_security_settings(transport: str = 'grpc', request_type=security_s
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSecuritySettingsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_security_settings_from_dict():
-    test_list_security_settings(request_type=dict)
 
 
 def test_list_security_settings_empty_call():
@@ -1410,9 +1409,10 @@ async def test_list_security_settings_flattened_error_async():
         )
 
 
-def test_list_security_settings_pager():
+def test_list_security_settings_pager(transport_name: str = "grpc"):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1462,10 +1462,10 @@ def test_list_security_settings_pager():
         assert len(results) == 6
         assert all(isinstance(i, security_settings.SecuritySettings)
                    for i in results)
-
-def test_list_security_settings_pages():
+def test_list_security_settings_pages(transport_name: str = "grpc"):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1550,7 +1550,8 @@ async def test_list_security_settings_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, security_settings.SecuritySettings)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_security_settings_async_pages():
@@ -1596,7 +1597,11 @@ async def test_list_security_settings_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_security_settings(transport: str = 'grpc', request_type=security_settings.DeleteSecuritySettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  security_settings.DeleteSecuritySettingsRequest,
+  dict,
+])
+def test_delete_security_settings(request_type, transport: str = 'grpc'):
     client = SecuritySettingsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1621,10 +1626,6 @@ def test_delete_security_settings(transport: str = 'grpc', request_type=security
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_security_settings_from_dict():
-    test_delete_security_settings(request_type=dict)
 
 
 def test_delete_security_settings_empty_call():
@@ -2354,7 +2355,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SecuritySettingsServiceTransport, '_prep_wrapped_messages') as prep:

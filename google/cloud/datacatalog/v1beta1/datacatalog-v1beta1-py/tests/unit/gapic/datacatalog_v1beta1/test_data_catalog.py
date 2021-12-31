@@ -215,18 +215,18 @@ def test_data_catalog_client_client_options(client_class, transport_class, trans
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -257,7 +257,7 @@ def test_data_catalog_client_mtls_env_auto(client_class, transport_class, transp
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -332,7 +332,7 @@ def test_data_catalog_client_client_options_scopes(client_class, transport_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -355,7 +355,7 @@ def test_data_catalog_client_client_options_credentials_file(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -366,7 +366,6 @@ def test_data_catalog_client_client_options_credentials_file(client_class, trans
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_data_catalog_client_client_options_from_dict():
     with mock.patch('google.cloud.datacatalog_v1beta1.services.data_catalog.transports.DataCatalogGrpcTransport.__init__') as grpc_transport:
@@ -386,7 +385,11 @@ def test_data_catalog_client_client_options_from_dict():
         )
 
 
-def test_search_catalog(transport: str = 'grpc', request_type=datacatalog.SearchCatalogRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.SearchCatalogRequest,
+  dict,
+])
+def test_search_catalog(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -414,10 +417,6 @@ def test_search_catalog(transport: str = 'grpc', request_type=datacatalog.Search
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchCatalogPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_search_catalog_from_dict():
-    test_search_catalog(request_type=dict)
 
 
 def test_search_catalog_empty_call():
@@ -568,9 +567,10 @@ async def test_search_catalog_flattened_error_async():
         )
 
 
-def test_search_catalog_pager():
+def test_search_catalog_pager(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -615,10 +615,10 @@ def test_search_catalog_pager():
         assert len(results) == 6
         assert all(isinstance(i, search.SearchCatalogResult)
                    for i in results)
-
-def test_search_catalog_pages():
+def test_search_catalog_pages(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -703,7 +703,8 @@ async def test_search_catalog_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, search.SearchCatalogResult)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_search_catalog_async_pages():
@@ -749,7 +750,11 @@ async def test_search_catalog_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_entry_group(transport: str = 'grpc', request_type=datacatalog.CreateEntryGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.CreateEntryGroupRequest,
+  dict,
+])
+def test_create_entry_group(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -781,10 +786,6 @@ def test_create_entry_group(transport: str = 'grpc', request_type=datacatalog.Cr
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_create_entry_group_from_dict():
-    test_create_entry_group(request_type=dict)
 
 
 def test_create_entry_group_empty_call():
@@ -1012,7 +1013,11 @@ async def test_create_entry_group_flattened_error_async():
         )
 
 
-def test_update_entry_group(transport: str = 'grpc', request_type=datacatalog.UpdateEntryGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.UpdateEntryGroupRequest,
+  dict,
+])
+def test_update_entry_group(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1044,10 +1049,6 @@ def test_update_entry_group(transport: str = 'grpc', request_type=datacatalog.Up
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_update_entry_group_from_dict():
-    test_update_entry_group(request_type=dict)
 
 
 def test_update_entry_group_empty_call():
@@ -1265,7 +1266,11 @@ async def test_update_entry_group_flattened_error_async():
         )
 
 
-def test_get_entry_group(transport: str = 'grpc', request_type=datacatalog.GetEntryGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.GetEntryGroupRequest,
+  dict,
+])
+def test_get_entry_group(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1297,10 +1302,6 @@ def test_get_entry_group(transport: str = 'grpc', request_type=datacatalog.GetEn
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_get_entry_group_from_dict():
-    test_get_entry_group(request_type=dict)
 
 
 def test_get_entry_group_empty_call():
@@ -1518,7 +1519,11 @@ async def test_get_entry_group_flattened_error_async():
         )
 
 
-def test_delete_entry_group(transport: str = 'grpc', request_type=datacatalog.DeleteEntryGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.DeleteEntryGroupRequest,
+  dict,
+])
+def test_delete_entry_group(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1543,10 +1548,6 @@ def test_delete_entry_group(transport: str = 'grpc', request_type=datacatalog.De
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_entry_group_from_dict():
-    test_delete_entry_group(request_type=dict)
 
 
 def test_delete_entry_group_empty_call():
@@ -1747,7 +1748,11 @@ async def test_delete_entry_group_flattened_error_async():
         )
 
 
-def test_list_entry_groups(transport: str = 'grpc', request_type=datacatalog.ListEntryGroupsRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.ListEntryGroupsRequest,
+  dict,
+])
+def test_list_entry_groups(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1775,10 +1780,6 @@ def test_list_entry_groups(transport: str = 'grpc', request_type=datacatalog.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEntryGroupsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_entry_groups_from_dict():
-    test_list_entry_groups(request_type=dict)
 
 
 def test_list_entry_groups_empty_call():
@@ -1982,9 +1983,10 @@ async def test_list_entry_groups_flattened_error_async():
         )
 
 
-def test_list_entry_groups_pager():
+def test_list_entry_groups_pager(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2034,10 +2036,10 @@ def test_list_entry_groups_pager():
         assert len(results) == 6
         assert all(isinstance(i, datacatalog.EntryGroup)
                    for i in results)
-
-def test_list_entry_groups_pages():
+def test_list_entry_groups_pages(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2122,7 +2124,8 @@ async def test_list_entry_groups_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, datacatalog.EntryGroup)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_entry_groups_async_pages():
@@ -2168,7 +2171,11 @@ async def test_list_entry_groups_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_entry(transport: str = 'grpc', request_type=datacatalog.CreateEntryRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.CreateEntryRequest,
+  dict,
+])
+def test_create_entry(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2205,10 +2212,6 @@ def test_create_entry(transport: str = 'grpc', request_type=datacatalog.CreateEn
     assert response.linked_resource == 'linked_resource_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_create_entry_from_dict():
-    test_create_entry(request_type=dict)
 
 
 def test_create_entry_empty_call():
@@ -2438,7 +2441,11 @@ async def test_create_entry_flattened_error_async():
         )
 
 
-def test_update_entry(transport: str = 'grpc', request_type=datacatalog.UpdateEntryRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.UpdateEntryRequest,
+  dict,
+])
+def test_update_entry(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2475,10 +2482,6 @@ def test_update_entry(transport: str = 'grpc', request_type=datacatalog.UpdateEn
     assert response.linked_resource == 'linked_resource_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_update_entry_from_dict():
-    test_update_entry(request_type=dict)
 
 
 def test_update_entry_empty_call():
@@ -2698,7 +2701,11 @@ async def test_update_entry_flattened_error_async():
         )
 
 
-def test_delete_entry(transport: str = 'grpc', request_type=datacatalog.DeleteEntryRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.DeleteEntryRequest,
+  dict,
+])
+def test_delete_entry(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2723,10 +2730,6 @@ def test_delete_entry(transport: str = 'grpc', request_type=datacatalog.DeleteEn
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_entry_from_dict():
-    test_delete_entry(request_type=dict)
 
 
 def test_delete_entry_empty_call():
@@ -2927,7 +2930,11 @@ async def test_delete_entry_flattened_error_async():
         )
 
 
-def test_get_entry(transport: str = 'grpc', request_type=datacatalog.GetEntryRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.GetEntryRequest,
+  dict,
+])
+def test_get_entry(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2964,10 +2971,6 @@ def test_get_entry(transport: str = 'grpc', request_type=datacatalog.GetEntryReq
     assert response.linked_resource == 'linked_resource_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_get_entry_from_dict():
-    test_get_entry(request_type=dict)
 
 
 def test_get_entry_empty_call():
@@ -3177,7 +3180,11 @@ async def test_get_entry_flattened_error_async():
         )
 
 
-def test_lookup_entry(transport: str = 'grpc', request_type=datacatalog.LookupEntryRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.LookupEntryRequest,
+  dict,
+])
+def test_lookup_entry(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3214,10 +3221,6 @@ def test_lookup_entry(transport: str = 'grpc', request_type=datacatalog.LookupEn
     assert response.linked_resource == 'linked_resource_value'
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
-
-
-def test_lookup_entry_from_dict():
-    test_lookup_entry(request_type=dict)
 
 
 def test_lookup_entry_empty_call():
@@ -3280,7 +3283,11 @@ async def test_lookup_entry_async_from_dict():
     await test_lookup_entry_async(request_type=dict)
 
 
-def test_list_entries(transport: str = 'grpc', request_type=datacatalog.ListEntriesRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.ListEntriesRequest,
+  dict,
+])
+def test_list_entries(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3308,10 +3315,6 @@ def test_list_entries(transport: str = 'grpc', request_type=datacatalog.ListEntr
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEntriesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_entries_from_dict():
-    test_list_entries(request_type=dict)
 
 
 def test_list_entries_empty_call():
@@ -3515,9 +3518,10 @@ async def test_list_entries_flattened_error_async():
         )
 
 
-def test_list_entries_pager():
+def test_list_entries_pager(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3567,10 +3571,10 @@ def test_list_entries_pager():
         assert len(results) == 6
         assert all(isinstance(i, datacatalog.Entry)
                    for i in results)
-
-def test_list_entries_pages():
+def test_list_entries_pages(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3655,7 +3659,8 @@ async def test_list_entries_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, datacatalog.Entry)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_entries_async_pages():
@@ -3701,7 +3706,11 @@ async def test_list_entries_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_tag_template(transport: str = 'grpc', request_type=datacatalog.CreateTagTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.CreateTagTemplateRequest,
+  dict,
+])
+def test_create_tag_template(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3731,10 +3740,6 @@ def test_create_tag_template(transport: str = 'grpc', request_type=datacatalog.C
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_create_tag_template_from_dict():
-    test_create_tag_template(request_type=dict)
 
 
 def test_create_tag_template_empty_call():
@@ -3960,7 +3965,11 @@ async def test_create_tag_template_flattened_error_async():
         )
 
 
-def test_get_tag_template(transport: str = 'grpc', request_type=datacatalog.GetTagTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.GetTagTemplateRequest,
+  dict,
+])
+def test_get_tag_template(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3990,10 +3999,6 @@ def test_get_tag_template(transport: str = 'grpc', request_type=datacatalog.GetT
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_tag_template_from_dict():
-    test_get_tag_template(request_type=dict)
 
 
 def test_get_tag_template_empty_call():
@@ -4199,7 +4204,11 @@ async def test_get_tag_template_flattened_error_async():
         )
 
 
-def test_update_tag_template(transport: str = 'grpc', request_type=datacatalog.UpdateTagTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.UpdateTagTemplateRequest,
+  dict,
+])
+def test_update_tag_template(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4229,10 +4238,6 @@ def test_update_tag_template(transport: str = 'grpc', request_type=datacatalog.U
     assert isinstance(response, tags.TagTemplate)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_update_tag_template_from_dict():
-    test_update_tag_template(request_type=dict)
 
 
 def test_update_tag_template_empty_call():
@@ -4448,7 +4453,11 @@ async def test_update_tag_template_flattened_error_async():
         )
 
 
-def test_delete_tag_template(transport: str = 'grpc', request_type=datacatalog.DeleteTagTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.DeleteTagTemplateRequest,
+  dict,
+])
+def test_delete_tag_template(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4473,10 +4482,6 @@ def test_delete_tag_template(transport: str = 'grpc', request_type=datacatalog.D
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_tag_template_from_dict():
-    test_delete_tag_template(request_type=dict)
 
 
 def test_delete_tag_template_empty_call():
@@ -4687,7 +4692,11 @@ async def test_delete_tag_template_flattened_error_async():
         )
 
 
-def test_create_tag_template_field(transport: str = 'grpc', request_type=datacatalog.CreateTagTemplateFieldRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.CreateTagTemplateFieldRequest,
+  dict,
+])
+def test_create_tag_template_field(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4721,10 +4730,6 @@ def test_create_tag_template_field(transport: str = 'grpc', request_type=datacat
     assert response.display_name == 'display_name_value'
     assert response.is_required is True
     assert response.order == 540
-
-
-def test_create_tag_template_field_from_dict():
-    test_create_tag_template_field(request_type=dict)
 
 
 def test_create_tag_template_field_empty_call():
@@ -4954,7 +4959,11 @@ async def test_create_tag_template_field_flattened_error_async():
         )
 
 
-def test_update_tag_template_field(transport: str = 'grpc', request_type=datacatalog.UpdateTagTemplateFieldRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.UpdateTagTemplateFieldRequest,
+  dict,
+])
+def test_update_tag_template_field(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4988,10 +4997,6 @@ def test_update_tag_template_field(transport: str = 'grpc', request_type=datacat
     assert response.display_name == 'display_name_value'
     assert response.is_required is True
     assert response.order == 540
-
-
-def test_update_tag_template_field_from_dict():
-    test_update_tag_template_field(request_type=dict)
 
 
 def test_update_tag_template_field_empty_call():
@@ -5221,7 +5226,11 @@ async def test_update_tag_template_field_flattened_error_async():
         )
 
 
-def test_rename_tag_template_field(transport: str = 'grpc', request_type=datacatalog.RenameTagTemplateFieldRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.RenameTagTemplateFieldRequest,
+  dict,
+])
+def test_rename_tag_template_field(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5255,10 +5264,6 @@ def test_rename_tag_template_field(transport: str = 'grpc', request_type=datacat
     assert response.display_name == 'display_name_value'
     assert response.is_required is True
     assert response.order == 540
-
-
-def test_rename_tag_template_field_from_dict():
-    test_rename_tag_template_field(request_type=dict)
 
 
 def test_rename_tag_template_field_empty_call():
@@ -5478,7 +5483,11 @@ async def test_rename_tag_template_field_flattened_error_async():
         )
 
 
-def test_delete_tag_template_field(transport: str = 'grpc', request_type=datacatalog.DeleteTagTemplateFieldRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.DeleteTagTemplateFieldRequest,
+  dict,
+])
+def test_delete_tag_template_field(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5503,10 +5512,6 @@ def test_delete_tag_template_field(transport: str = 'grpc', request_type=datacat
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_tag_template_field_from_dict():
-    test_delete_tag_template_field(request_type=dict)
 
 
 def test_delete_tag_template_field_empty_call():
@@ -5717,7 +5722,11 @@ async def test_delete_tag_template_field_flattened_error_async():
         )
 
 
-def test_create_tag(transport: str = 'grpc', request_type=datacatalog.CreateTagRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.CreateTagRequest,
+  dict,
+])
+def test_create_tag(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5750,10 +5759,6 @@ def test_create_tag(transport: str = 'grpc', request_type=datacatalog.CreateTagR
     assert response.name == 'name_value'
     assert response.template == 'template_value'
     assert response.template_display_name == 'template_display_name_value'
-
-
-def test_create_tag_from_dict():
-    test_create_tag(request_type=dict)
 
 
 def test_create_tag_empty_call():
@@ -5971,7 +5976,11 @@ async def test_create_tag_flattened_error_async():
         )
 
 
-def test_update_tag(transport: str = 'grpc', request_type=datacatalog.UpdateTagRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.UpdateTagRequest,
+  dict,
+])
+def test_update_tag(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6004,10 +6013,6 @@ def test_update_tag(transport: str = 'grpc', request_type=datacatalog.UpdateTagR
     assert response.name == 'name_value'
     assert response.template == 'template_value'
     assert response.template_display_name == 'template_display_name_value'
-
-
-def test_update_tag_from_dict():
-    test_update_tag(request_type=dict)
 
 
 def test_update_tag_empty_call():
@@ -6225,7 +6230,11 @@ async def test_update_tag_flattened_error_async():
         )
 
 
-def test_delete_tag(transport: str = 'grpc', request_type=datacatalog.DeleteTagRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.DeleteTagRequest,
+  dict,
+])
+def test_delete_tag(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6250,10 +6259,6 @@ def test_delete_tag(transport: str = 'grpc', request_type=datacatalog.DeleteTagR
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_tag_from_dict():
-    test_delete_tag(request_type=dict)
 
 
 def test_delete_tag_empty_call():
@@ -6454,7 +6459,11 @@ async def test_delete_tag_flattened_error_async():
         )
 
 
-def test_list_tags(transport: str = 'grpc', request_type=datacatalog.ListTagsRequest):
+@pytest.mark.parametrize("request_type", [
+  datacatalog.ListTagsRequest,
+  dict,
+])
+def test_list_tags(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6482,10 +6491,6 @@ def test_list_tags(transport: str = 'grpc', request_type=datacatalog.ListTagsReq
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTagsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tags_from_dict():
-    test_list_tags(request_type=dict)
 
 
 def test_list_tags_empty_call():
@@ -6689,9 +6694,10 @@ async def test_list_tags_flattened_error_async():
         )
 
 
-def test_list_tags_pager():
+def test_list_tags_pager(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6741,10 +6747,10 @@ def test_list_tags_pager():
         assert len(results) == 6
         assert all(isinstance(i, tags.Tag)
                    for i in results)
-
-def test_list_tags_pages():
+def test_list_tags_pages(transport_name: str = "grpc"):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6829,7 +6835,8 @@ async def test_list_tags_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tags.Tag)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tags_async_pages():
@@ -6875,7 +6882,11 @@ async def test_list_tags_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6905,10 +6916,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -7131,7 +7138,11 @@ async def test_set_iam_policy_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7161,10 +7172,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -7387,7 +7394,11 @@ async def test_get_iam_policy_flattened_error_async():
         )
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = DataCatalogClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7415,10 +7426,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -8153,7 +8160,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.DataCatalogTransport, '_prep_wrapped_messages') as prep:

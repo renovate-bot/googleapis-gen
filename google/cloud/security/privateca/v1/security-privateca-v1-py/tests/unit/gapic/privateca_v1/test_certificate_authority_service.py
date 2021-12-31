@@ -211,18 +211,18 @@ def test_certificate_authority_service_client_client_options(client_class, trans
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_certificate_authority_service_client_mtls_env_auto(client_class, transp
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_certificate_authority_service_client_client_options_scopes(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_certificate_authority_service_client_client_options_credentials_file(cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_certificate_authority_service_client_client_options_credentials_file(cl
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_certificate_authority_service_client_client_options_from_dict():
     with mock.patch('google.cloud.security.privateca_v1.services.certificate_authority_service.transports.CertificateAuthorityServiceGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_certificate_authority_service_client_client_options_from_dict():
         )
 
 
-def test_create_certificate(transport: str = 'grpc', request_type=service.CreateCertificateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateCertificateRequest,
+  dict,
+])
+def test_create_certificate(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -421,10 +424,6 @@ def test_create_certificate(transport: str = 'grpc', request_type=service.Create
     assert response.subject_mode == resources.SubjectRequestMode.DEFAULT
     assert response.pem_certificate == 'pem_certificate_value'
     assert response.pem_certificate_chain == ['pem_certificate_chain_value']
-
-
-def test_create_certificate_from_dict():
-    test_create_certificate(request_type=dict)
 
 
 def test_create_certificate_empty_call():
@@ -658,7 +657,11 @@ async def test_create_certificate_flattened_error_async():
         )
 
 
-def test_get_certificate(transport: str = 'grpc', request_type=service.GetCertificateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetCertificateRequest,
+  dict,
+])
+def test_get_certificate(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -697,10 +700,6 @@ def test_get_certificate(transport: str = 'grpc', request_type=service.GetCertif
     assert response.subject_mode == resources.SubjectRequestMode.DEFAULT
     assert response.pem_certificate == 'pem_certificate_value'
     assert response.pem_certificate_chain == ['pem_certificate_chain_value']
-
-
-def test_get_certificate_from_dict():
-    test_get_certificate(request_type=dict)
 
 
 def test_get_certificate_empty_call():
@@ -914,7 +913,11 @@ async def test_get_certificate_flattened_error_async():
         )
 
 
-def test_list_certificates(transport: str = 'grpc', request_type=service.ListCertificatesRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListCertificatesRequest,
+  dict,
+])
+def test_list_certificates(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -944,10 +947,6 @@ def test_list_certificates(transport: str = 'grpc', request_type=service.ListCer
     assert isinstance(response, pagers.ListCertificatesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_certificates_from_dict():
-    test_list_certificates(request_type=dict)
 
 
 def test_list_certificates_empty_call():
@@ -1153,9 +1152,10 @@ async def test_list_certificates_flattened_error_async():
         )
 
 
-def test_list_certificates_pager():
+def test_list_certificates_pager(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1205,10 +1205,10 @@ def test_list_certificates_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Certificate)
                    for i in results)
-
-def test_list_certificates_pages():
+def test_list_certificates_pages(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1293,7 +1293,8 @@ async def test_list_certificates_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Certificate)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_certificates_async_pages():
@@ -1339,7 +1340,11 @@ async def test_list_certificates_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_revoke_certificate(transport: str = 'grpc', request_type=service.RevokeCertificateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.RevokeCertificateRequest,
+  dict,
+])
+def test_revoke_certificate(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1378,10 +1383,6 @@ def test_revoke_certificate(transport: str = 'grpc', request_type=service.Revoke
     assert response.subject_mode == resources.SubjectRequestMode.DEFAULT
     assert response.pem_certificate == 'pem_certificate_value'
     assert response.pem_certificate_chain == ['pem_certificate_chain_value']
-
-
-def test_revoke_certificate_from_dict():
-    test_revoke_certificate(request_type=dict)
 
 
 def test_revoke_certificate_empty_call():
@@ -1595,7 +1596,11 @@ async def test_revoke_certificate_flattened_error_async():
         )
 
 
-def test_update_certificate(transport: str = 'grpc', request_type=service.UpdateCertificateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateCertificateRequest,
+  dict,
+])
+def test_update_certificate(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1634,10 +1639,6 @@ def test_update_certificate(transport: str = 'grpc', request_type=service.Update
     assert response.subject_mode == resources.SubjectRequestMode.DEFAULT
     assert response.pem_certificate == 'pem_certificate_value'
     assert response.pem_certificate_chain == ['pem_certificate_chain_value']
-
-
-def test_update_certificate_from_dict():
-    test_update_certificate(request_type=dict)
 
 
 def test_update_certificate_empty_call():
@@ -1861,7 +1862,11 @@ async def test_update_certificate_flattened_error_async():
         )
 
 
-def test_activate_certificate_authority(transport: str = 'grpc', request_type=service.ActivateCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ActivateCertificateAuthorityRequest,
+  dict,
+])
+def test_activate_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1886,10 +1891,6 @@ def test_activate_certificate_authority(transport: str = 'grpc', request_type=se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_activate_certificate_authority_from_dict():
-    test_activate_certificate_authority(request_type=dict)
 
 
 def test_activate_certificate_authority_empty_call():
@@ -2094,7 +2095,11 @@ async def test_activate_certificate_authority_flattened_error_async():
         )
 
 
-def test_create_certificate_authority(transport: str = 'grpc', request_type=service.CreateCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateCertificateAuthorityRequest,
+  dict,
+])
+def test_create_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2119,10 +2124,6 @@ def test_create_certificate_authority(transport: str = 'grpc', request_type=serv
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_certificate_authority_from_dict():
-    test_create_certificate_authority(request_type=dict)
 
 
 def test_create_certificate_authority_empty_call():
@@ -2347,7 +2348,11 @@ async def test_create_certificate_authority_flattened_error_async():
         )
 
 
-def test_disable_certificate_authority(transport: str = 'grpc', request_type=service.DisableCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DisableCertificateAuthorityRequest,
+  dict,
+])
+def test_disable_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2372,10 +2377,6 @@ def test_disable_certificate_authority(transport: str = 'grpc', request_type=ser
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_disable_certificate_authority_from_dict():
-    test_disable_certificate_authority(request_type=dict)
 
 
 def test_disable_certificate_authority_empty_call():
@@ -2580,7 +2581,11 @@ async def test_disable_certificate_authority_flattened_error_async():
         )
 
 
-def test_enable_certificate_authority(transport: str = 'grpc', request_type=service.EnableCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.EnableCertificateAuthorityRequest,
+  dict,
+])
+def test_enable_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2605,10 +2610,6 @@ def test_enable_certificate_authority(transport: str = 'grpc', request_type=serv
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_enable_certificate_authority_from_dict():
-    test_enable_certificate_authority(request_type=dict)
 
 
 def test_enable_certificate_authority_empty_call():
@@ -2813,7 +2814,11 @@ async def test_enable_certificate_authority_flattened_error_async():
         )
 
 
-def test_fetch_certificate_authority_csr(transport: str = 'grpc', request_type=service.FetchCertificateAuthorityCsrRequest):
+@pytest.mark.parametrize("request_type", [
+  service.FetchCertificateAuthorityCsrRequest,
+  dict,
+])
+def test_fetch_certificate_authority_csr(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2841,10 +2846,6 @@ def test_fetch_certificate_authority_csr(transport: str = 'grpc', request_type=s
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.FetchCertificateAuthorityCsrResponse)
     assert response.pem_csr == 'pem_csr_value'
-
-
-def test_fetch_certificate_authority_csr_from_dict():
-    test_fetch_certificate_authority_csr(request_type=dict)
 
 
 def test_fetch_certificate_authority_csr_empty_call():
@@ -3048,7 +3049,11 @@ async def test_fetch_certificate_authority_csr_flattened_error_async():
         )
 
 
-def test_get_certificate_authority(transport: str = 'grpc', request_type=service.GetCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetCertificateAuthorityRequest,
+  dict,
+])
+def test_get_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3086,10 +3091,6 @@ def test_get_certificate_authority(transport: str = 'grpc', request_type=service
     assert response.state == resources.CertificateAuthority.State.ENABLED
     assert response.pem_ca_certificates == ['pem_ca_certificates_value']
     assert response.gcs_bucket == 'gcs_bucket_value'
-
-
-def test_get_certificate_authority_from_dict():
-    test_get_certificate_authority(request_type=dict)
 
 
 def test_get_certificate_authority_empty_call():
@@ -3303,7 +3304,11 @@ async def test_get_certificate_authority_flattened_error_async():
         )
 
 
-def test_list_certificate_authorities(transport: str = 'grpc', request_type=service.ListCertificateAuthoritiesRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListCertificateAuthoritiesRequest,
+  dict,
+])
+def test_list_certificate_authorities(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3333,10 +3338,6 @@ def test_list_certificate_authorities(transport: str = 'grpc', request_type=serv
     assert isinstance(response, pagers.ListCertificateAuthoritiesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_certificate_authorities_from_dict():
-    test_list_certificate_authorities(request_type=dict)
 
 
 def test_list_certificate_authorities_empty_call():
@@ -3542,9 +3543,10 @@ async def test_list_certificate_authorities_flattened_error_async():
         )
 
 
-def test_list_certificate_authorities_pager():
+def test_list_certificate_authorities_pager(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3594,10 +3596,10 @@ def test_list_certificate_authorities_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.CertificateAuthority)
                    for i in results)
-
-def test_list_certificate_authorities_pages():
+def test_list_certificate_authorities_pages(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3682,7 +3684,8 @@ async def test_list_certificate_authorities_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.CertificateAuthority)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_certificate_authorities_async_pages():
@@ -3728,7 +3731,11 @@ async def test_list_certificate_authorities_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_undelete_certificate_authority(transport: str = 'grpc', request_type=service.UndeleteCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UndeleteCertificateAuthorityRequest,
+  dict,
+])
+def test_undelete_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3753,10 +3760,6 @@ def test_undelete_certificate_authority(transport: str = 'grpc', request_type=se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_undelete_certificate_authority_from_dict():
-    test_undelete_certificate_authority(request_type=dict)
 
 
 def test_undelete_certificate_authority_empty_call():
@@ -3961,7 +3964,11 @@ async def test_undelete_certificate_authority_flattened_error_async():
         )
 
 
-def test_delete_certificate_authority(transport: str = 'grpc', request_type=service.DeleteCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteCertificateAuthorityRequest,
+  dict,
+])
+def test_delete_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3986,10 +3993,6 @@ def test_delete_certificate_authority(transport: str = 'grpc', request_type=serv
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_certificate_authority_from_dict():
-    test_delete_certificate_authority(request_type=dict)
 
 
 def test_delete_certificate_authority_empty_call():
@@ -4194,7 +4197,11 @@ async def test_delete_certificate_authority_flattened_error_async():
         )
 
 
-def test_update_certificate_authority(transport: str = 'grpc', request_type=service.UpdateCertificateAuthorityRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateCertificateAuthorityRequest,
+  dict,
+])
+def test_update_certificate_authority(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4219,10 +4226,6 @@ def test_update_certificate_authority(transport: str = 'grpc', request_type=serv
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_certificate_authority_from_dict():
-    test_update_certificate_authority(request_type=dict)
 
 
 def test_update_certificate_authority_empty_call():
@@ -4437,7 +4440,11 @@ async def test_update_certificate_authority_flattened_error_async():
         )
 
 
-def test_create_ca_pool(transport: str = 'grpc', request_type=service.CreateCaPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateCaPoolRequest,
+  dict,
+])
+def test_create_ca_pool(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4462,10 +4469,6 @@ def test_create_ca_pool(transport: str = 'grpc', request_type=service.CreateCaPo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_ca_pool_from_dict():
-    test_create_ca_pool(request_type=dict)
 
 
 def test_create_ca_pool_empty_call():
@@ -4690,7 +4693,11 @@ async def test_create_ca_pool_flattened_error_async():
         )
 
 
-def test_update_ca_pool(transport: str = 'grpc', request_type=service.UpdateCaPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateCaPoolRequest,
+  dict,
+])
+def test_update_ca_pool(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4715,10 +4722,6 @@ def test_update_ca_pool(transport: str = 'grpc', request_type=service.UpdateCaPo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_ca_pool_from_dict():
-    test_update_ca_pool(request_type=dict)
 
 
 def test_update_ca_pool_empty_call():
@@ -4933,7 +4936,11 @@ async def test_update_ca_pool_flattened_error_async():
         )
 
 
-def test_get_ca_pool(transport: str = 'grpc', request_type=service.GetCaPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetCaPoolRequest,
+  dict,
+])
+def test_get_ca_pool(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4963,10 +4970,6 @@ def test_get_ca_pool(transport: str = 'grpc', request_type=service.GetCaPoolRequ
     assert isinstance(response, resources.CaPool)
     assert response.name == 'name_value'
     assert response.tier == resources.CaPool.Tier.ENTERPRISE
-
-
-def test_get_ca_pool_from_dict():
-    test_get_ca_pool(request_type=dict)
 
 
 def test_get_ca_pool_empty_call():
@@ -5172,7 +5175,11 @@ async def test_get_ca_pool_flattened_error_async():
         )
 
 
-def test_list_ca_pools(transport: str = 'grpc', request_type=service.ListCaPoolsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListCaPoolsRequest,
+  dict,
+])
+def test_list_ca_pools(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5202,10 +5209,6 @@ def test_list_ca_pools(transport: str = 'grpc', request_type=service.ListCaPools
     assert isinstance(response, pagers.ListCaPoolsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_ca_pools_from_dict():
-    test_list_ca_pools(request_type=dict)
 
 
 def test_list_ca_pools_empty_call():
@@ -5411,9 +5414,10 @@ async def test_list_ca_pools_flattened_error_async():
         )
 
 
-def test_list_ca_pools_pager():
+def test_list_ca_pools_pager(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5463,10 +5467,10 @@ def test_list_ca_pools_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.CaPool)
                    for i in results)
-
-def test_list_ca_pools_pages():
+def test_list_ca_pools_pages(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5551,7 +5555,8 @@ async def test_list_ca_pools_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.CaPool)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_ca_pools_async_pages():
@@ -5597,7 +5602,11 @@ async def test_list_ca_pools_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_ca_pool(transport: str = 'grpc', request_type=service.DeleteCaPoolRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteCaPoolRequest,
+  dict,
+])
+def test_delete_ca_pool(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5622,10 +5631,6 @@ def test_delete_ca_pool(transport: str = 'grpc', request_type=service.DeleteCaPo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_ca_pool_from_dict():
-    test_delete_ca_pool(request_type=dict)
 
 
 def test_delete_ca_pool_empty_call():
@@ -5830,7 +5835,11 @@ async def test_delete_ca_pool_flattened_error_async():
         )
 
 
-def test_fetch_ca_certs(transport: str = 'grpc', request_type=service.FetchCaCertsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.FetchCaCertsRequest,
+  dict,
+])
+def test_fetch_ca_certs(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5856,10 +5865,6 @@ def test_fetch_ca_certs(transport: str = 'grpc', request_type=service.FetchCaCer
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.FetchCaCertsResponse)
-
-
-def test_fetch_ca_certs_from_dict():
-    test_fetch_ca_certs(request_type=dict)
 
 
 def test_fetch_ca_certs_empty_call():
@@ -6061,7 +6066,11 @@ async def test_fetch_ca_certs_flattened_error_async():
         )
 
 
-def test_get_certificate_revocation_list(transport: str = 'grpc', request_type=service.GetCertificateRevocationListRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetCertificateRevocationListRequest,
+  dict,
+])
+def test_get_certificate_revocation_list(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6099,10 +6108,6 @@ def test_get_certificate_revocation_list(transport: str = 'grpc', request_type=s
     assert response.access_url == 'access_url_value'
     assert response.state == resources.CertificateRevocationList.State.ACTIVE
     assert response.revision_id == 'revision_id_value'
-
-
-def test_get_certificate_revocation_list_from_dict():
-    test_get_certificate_revocation_list(request_type=dict)
 
 
 def test_get_certificate_revocation_list_empty_call():
@@ -6316,7 +6321,11 @@ async def test_get_certificate_revocation_list_flattened_error_async():
         )
 
 
-def test_list_certificate_revocation_lists(transport: str = 'grpc', request_type=service.ListCertificateRevocationListsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListCertificateRevocationListsRequest,
+  dict,
+])
+def test_list_certificate_revocation_lists(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6346,10 +6355,6 @@ def test_list_certificate_revocation_lists(transport: str = 'grpc', request_type
     assert isinstance(response, pagers.ListCertificateRevocationListsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_certificate_revocation_lists_from_dict():
-    test_list_certificate_revocation_lists(request_type=dict)
 
 
 def test_list_certificate_revocation_lists_empty_call():
@@ -6555,9 +6560,10 @@ async def test_list_certificate_revocation_lists_flattened_error_async():
         )
 
 
-def test_list_certificate_revocation_lists_pager():
+def test_list_certificate_revocation_lists_pager(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6607,10 +6613,10 @@ def test_list_certificate_revocation_lists_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.CertificateRevocationList)
                    for i in results)
-
-def test_list_certificate_revocation_lists_pages():
+def test_list_certificate_revocation_lists_pages(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6695,7 +6701,8 @@ async def test_list_certificate_revocation_lists_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.CertificateRevocationList)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_certificate_revocation_lists_async_pages():
@@ -6741,7 +6748,11 @@ async def test_list_certificate_revocation_lists_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_certificate_revocation_list(transport: str = 'grpc', request_type=service.UpdateCertificateRevocationListRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateCertificateRevocationListRequest,
+  dict,
+])
+def test_update_certificate_revocation_list(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6766,10 +6777,6 @@ def test_update_certificate_revocation_list(transport: str = 'grpc', request_typ
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_certificate_revocation_list_from_dict():
-    test_update_certificate_revocation_list(request_type=dict)
 
 
 def test_update_certificate_revocation_list_empty_call():
@@ -6984,7 +6991,11 @@ async def test_update_certificate_revocation_list_flattened_error_async():
         )
 
 
-def test_create_certificate_template(transport: str = 'grpc', request_type=service.CreateCertificateTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateCertificateTemplateRequest,
+  dict,
+])
+def test_create_certificate_template(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7009,10 +7020,6 @@ def test_create_certificate_template(transport: str = 'grpc', request_type=servi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_certificate_template_from_dict():
-    test_create_certificate_template(request_type=dict)
 
 
 def test_create_certificate_template_empty_call():
@@ -7237,7 +7244,11 @@ async def test_create_certificate_template_flattened_error_async():
         )
 
 
-def test_delete_certificate_template(transport: str = 'grpc', request_type=service.DeleteCertificateTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteCertificateTemplateRequest,
+  dict,
+])
+def test_delete_certificate_template(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7262,10 +7273,6 @@ def test_delete_certificate_template(transport: str = 'grpc', request_type=servi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_certificate_template_from_dict():
-    test_delete_certificate_template(request_type=dict)
 
 
 def test_delete_certificate_template_empty_call():
@@ -7470,7 +7477,11 @@ async def test_delete_certificate_template_flattened_error_async():
         )
 
 
-def test_get_certificate_template(transport: str = 'grpc', request_type=service.GetCertificateTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetCertificateTemplateRequest,
+  dict,
+])
+def test_get_certificate_template(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7500,10 +7511,6 @@ def test_get_certificate_template(transport: str = 'grpc', request_type=service.
     assert isinstance(response, resources.CertificateTemplate)
     assert response.name == 'name_value'
     assert response.description == 'description_value'
-
-
-def test_get_certificate_template_from_dict():
-    test_get_certificate_template(request_type=dict)
 
 
 def test_get_certificate_template_empty_call():
@@ -7709,7 +7716,11 @@ async def test_get_certificate_template_flattened_error_async():
         )
 
 
-def test_list_certificate_templates(transport: str = 'grpc', request_type=service.ListCertificateTemplatesRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListCertificateTemplatesRequest,
+  dict,
+])
+def test_list_certificate_templates(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7739,10 +7750,6 @@ def test_list_certificate_templates(transport: str = 'grpc', request_type=servic
     assert isinstance(response, pagers.ListCertificateTemplatesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_certificate_templates_from_dict():
-    test_list_certificate_templates(request_type=dict)
 
 
 def test_list_certificate_templates_empty_call():
@@ -7948,9 +7955,10 @@ async def test_list_certificate_templates_flattened_error_async():
         )
 
 
-def test_list_certificate_templates_pager():
+def test_list_certificate_templates_pager(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8000,10 +8008,10 @@ def test_list_certificate_templates_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.CertificateTemplate)
                    for i in results)
-
-def test_list_certificate_templates_pages():
+def test_list_certificate_templates_pages(transport_name: str = "grpc"):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8088,7 +8096,8 @@ async def test_list_certificate_templates_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.CertificateTemplate)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_certificate_templates_async_pages():
@@ -8134,7 +8143,11 @@ async def test_list_certificate_templates_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_certificate_template(transport: str = 'grpc', request_type=service.UpdateCertificateTemplateRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateCertificateTemplateRequest,
+  dict,
+])
+def test_update_certificate_template(request_type, transport: str = 'grpc'):
     client = CertificateAuthorityServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -8159,10 +8172,6 @@ def test_update_certificate_template(transport: str = 'grpc', request_type=servi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_certificate_template_from_dict():
-    test_update_certificate_template(request_type=dict)
 
 
 def test_update_certificate_template_empty_call():
@@ -9016,7 +9025,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.CertificateAuthorityServiceTransport, '_prep_wrapped_messages') as prep:

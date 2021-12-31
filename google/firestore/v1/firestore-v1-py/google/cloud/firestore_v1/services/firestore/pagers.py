@@ -129,7 +129,6 @@ class ListDocumentsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[document.Document]:
         async def async_generator():
             async for page in self.pages:
@@ -251,7 +250,6 @@ class PartitionQueryAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[query.Cursor]:
         async def async_generator():
             async for page in self.pages:
@@ -373,7 +371,6 @@ class ListCollectionIdsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[str]:
         async def async_generator():
             async for page in self.pages:

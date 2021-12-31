@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import WebpageViewServiceTransport
 from .grpc import WebpageViewServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[WebpageViewServiceTransport]]
 _transport_registry['grpc'] = WebpageViewServiceGrpcTransport
-
 
 __all__ = (
     'WebpageViewServiceTransport',

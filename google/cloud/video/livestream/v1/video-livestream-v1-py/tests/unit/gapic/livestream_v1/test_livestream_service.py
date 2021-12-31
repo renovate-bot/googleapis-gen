@@ -213,18 +213,18 @@ def test_livestream_service_client_client_options(client_class, transport_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -255,7 +255,7 @@ def test_livestream_service_client_mtls_env_auto(client_class, transport_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -330,7 +330,7 @@ def test_livestream_service_client_client_options_scopes(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -353,7 +353,7 @@ def test_livestream_service_client_client_options_credentials_file(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -364,7 +364,6 @@ def test_livestream_service_client_client_options_credentials_file(client_class,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_livestream_service_client_client_options_from_dict():
     with mock.patch('google.cloud.video.livestream_v1.services.livestream_service.transports.LivestreamServiceGrpcTransport.__init__') as grpc_transport:
@@ -384,7 +383,11 @@ def test_livestream_service_client_client_options_from_dict():
         )
 
 
-def test_create_channel(transport: str = 'grpc', request_type=service.CreateChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateChannelRequest,
+  dict,
+])
+def test_create_channel(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_create_channel(transport: str = 'grpc', request_type=service.CreateChan
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_channel_from_dict():
-    test_create_channel(request_type=dict)
 
 
 def test_create_channel_empty_call():
@@ -637,7 +636,11 @@ async def test_create_channel_flattened_error_async():
         )
 
 
-def test_list_channels(transport: str = 'grpc', request_type=service.ListChannelsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListChannelsRequest,
+  dict,
+])
+def test_list_channels(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -667,10 +670,6 @@ def test_list_channels(transport: str = 'grpc', request_type=service.ListChannel
     assert isinstance(response, pagers.ListChannelsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_channels_from_dict():
-    test_list_channels(request_type=dict)
 
 
 def test_list_channels_empty_call():
@@ -876,9 +875,10 @@ async def test_list_channels_flattened_error_async():
         )
 
 
-def test_list_channels_pager():
+def test_list_channels_pager(transport_name: str = "grpc"):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -928,10 +928,10 @@ def test_list_channels_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Channel)
                    for i in results)
-
-def test_list_channels_pages():
+def test_list_channels_pages(transport_name: str = "grpc"):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1016,7 +1016,8 @@ async def test_list_channels_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Channel)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_channels_async_pages():
@@ -1062,7 +1063,11 @@ async def test_list_channels_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_channel(transport: str = 'grpc', request_type=service.GetChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetChannelRequest,
+  dict,
+])
+def test_get_channel(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1094,10 +1099,6 @@ def test_get_channel(transport: str = 'grpc', request_type=service.GetChannelReq
     assert response.name == 'name_value'
     assert response.active_input == 'active_input_value'
     assert response.streaming_state == resources.Channel.StreamingState.STREAMING
-
-
-def test_get_channel_from_dict():
-    test_get_channel(request_type=dict)
 
 
 def test_get_channel_empty_call():
@@ -1305,7 +1306,11 @@ async def test_get_channel_flattened_error_async():
         )
 
 
-def test_delete_channel(transport: str = 'grpc', request_type=service.DeleteChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteChannelRequest,
+  dict,
+])
+def test_delete_channel(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1330,10 +1335,6 @@ def test_delete_channel(transport: str = 'grpc', request_type=service.DeleteChan
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_channel_from_dict():
-    test_delete_channel(request_type=dict)
 
 
 def test_delete_channel_empty_call():
@@ -1538,7 +1539,11 @@ async def test_delete_channel_flattened_error_async():
         )
 
 
-def test_update_channel(transport: str = 'grpc', request_type=service.UpdateChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateChannelRequest,
+  dict,
+])
+def test_update_channel(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1563,10 +1568,6 @@ def test_update_channel(transport: str = 'grpc', request_type=service.UpdateChan
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_channel_from_dict():
-    test_update_channel(request_type=dict)
 
 
 def test_update_channel_empty_call():
@@ -1781,7 +1782,11 @@ async def test_update_channel_flattened_error_async():
         )
 
 
-def test_start_channel(transport: str = 'grpc', request_type=service.StartChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.StartChannelRequest,
+  dict,
+])
+def test_start_channel(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1806,10 +1811,6 @@ def test_start_channel(transport: str = 'grpc', request_type=service.StartChanne
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_start_channel_from_dict():
-    test_start_channel(request_type=dict)
 
 
 def test_start_channel_empty_call():
@@ -2014,7 +2015,11 @@ async def test_start_channel_flattened_error_async():
         )
 
 
-def test_stop_channel(transport: str = 'grpc', request_type=service.StopChannelRequest):
+@pytest.mark.parametrize("request_type", [
+  service.StopChannelRequest,
+  dict,
+])
+def test_stop_channel(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2039,10 +2044,6 @@ def test_stop_channel(transport: str = 'grpc', request_type=service.StopChannelR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_stop_channel_from_dict():
-    test_stop_channel(request_type=dict)
 
 
 def test_stop_channel_empty_call():
@@ -2247,7 +2248,11 @@ async def test_stop_channel_flattened_error_async():
         )
 
 
-def test_create_input(transport: str = 'grpc', request_type=service.CreateInputRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateInputRequest,
+  dict,
+])
+def test_create_input(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2272,10 +2277,6 @@ def test_create_input(transport: str = 'grpc', request_type=service.CreateInputR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_input_from_dict():
-    test_create_input(request_type=dict)
 
 
 def test_create_input_empty_call():
@@ -2500,7 +2501,11 @@ async def test_create_input_flattened_error_async():
         )
 
 
-def test_list_inputs(transport: str = 'grpc', request_type=service.ListInputsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListInputsRequest,
+  dict,
+])
+def test_list_inputs(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2530,10 +2535,6 @@ def test_list_inputs(transport: str = 'grpc', request_type=service.ListInputsReq
     assert isinstance(response, pagers.ListInputsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_inputs_from_dict():
-    test_list_inputs(request_type=dict)
 
 
 def test_list_inputs_empty_call():
@@ -2739,9 +2740,10 @@ async def test_list_inputs_flattened_error_async():
         )
 
 
-def test_list_inputs_pager():
+def test_list_inputs_pager(transport_name: str = "grpc"):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2791,10 +2793,10 @@ def test_list_inputs_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Input)
                    for i in results)
-
-def test_list_inputs_pages():
+def test_list_inputs_pages(transport_name: str = "grpc"):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2879,7 +2881,8 @@ async def test_list_inputs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Input)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_inputs_async_pages():
@@ -2925,7 +2928,11 @@ async def test_list_inputs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_input(transport: str = 'grpc', request_type=service.GetInputRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetInputRequest,
+  dict,
+])
+def test_get_input(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2959,10 +2966,6 @@ def test_get_input(transport: str = 'grpc', request_type=service.GetInputRequest
     assert response.type_ == resources.Input.Type.RTMP_PUSH
     assert response.tier == resources.Input.Tier.SD
     assert response.uri == 'uri_value'
-
-
-def test_get_input_from_dict():
-    test_get_input(request_type=dict)
 
 
 def test_get_input_empty_call():
@@ -3172,7 +3175,11 @@ async def test_get_input_flattened_error_async():
         )
 
 
-def test_delete_input(transport: str = 'grpc', request_type=service.DeleteInputRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteInputRequest,
+  dict,
+])
+def test_delete_input(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3197,10 +3204,6 @@ def test_delete_input(transport: str = 'grpc', request_type=service.DeleteInputR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_input_from_dict():
-    test_delete_input(request_type=dict)
 
 
 def test_delete_input_empty_call():
@@ -3405,7 +3408,11 @@ async def test_delete_input_flattened_error_async():
         )
 
 
-def test_update_input(transport: str = 'grpc', request_type=service.UpdateInputRequest):
+@pytest.mark.parametrize("request_type", [
+  service.UpdateInputRequest,
+  dict,
+])
+def test_update_input(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3430,10 +3437,6 @@ def test_update_input(transport: str = 'grpc', request_type=service.UpdateInputR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_input_from_dict():
-    test_update_input(request_type=dict)
 
 
 def test_update_input_empty_call():
@@ -3648,7 +3651,11 @@ async def test_update_input_flattened_error_async():
         )
 
 
-def test_create_event(transport: str = 'grpc', request_type=service.CreateEventRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateEventRequest,
+  dict,
+])
+def test_create_event(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3681,10 +3688,6 @@ def test_create_event(transport: str = 'grpc', request_type=service.CreateEventR
     assert response.name == 'name_value'
     assert response.execute_now is True
     assert response.state == resources.Event.State.SCHEDULED
-
-
-def test_create_event_from_dict():
-    test_create_event(request_type=dict)
 
 
 def test_create_event_empty_call():
@@ -3912,7 +3915,11 @@ async def test_create_event_flattened_error_async():
         )
 
 
-def test_list_events(transport: str = 'grpc', request_type=service.ListEventsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListEventsRequest,
+  dict,
+])
+def test_list_events(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3942,10 +3949,6 @@ def test_list_events(transport: str = 'grpc', request_type=service.ListEventsReq
     assert isinstance(response, pagers.ListEventsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_events_from_dict():
-    test_list_events(request_type=dict)
 
 
 def test_list_events_empty_call():
@@ -4151,9 +4154,10 @@ async def test_list_events_flattened_error_async():
         )
 
 
-def test_list_events_pager():
+def test_list_events_pager(transport_name: str = "grpc"):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4203,10 +4207,10 @@ def test_list_events_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Event)
                    for i in results)
-
-def test_list_events_pages():
+def test_list_events_pages(transport_name: str = "grpc"):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4291,7 +4295,8 @@ async def test_list_events_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Event)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_events_async_pages():
@@ -4337,7 +4342,11 @@ async def test_list_events_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_event(transport: str = 'grpc', request_type=service.GetEventRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetEventRequest,
+  dict,
+])
+def test_get_event(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4370,10 +4379,6 @@ def test_get_event(transport: str = 'grpc', request_type=service.GetEventRequest
     assert response.name == 'name_value'
     assert response.execute_now is True
     assert response.state == resources.Event.State.SCHEDULED
-
-
-def test_get_event_from_dict():
-    test_get_event(request_type=dict)
 
 
 def test_get_event_empty_call():
@@ -4581,7 +4586,11 @@ async def test_get_event_flattened_error_async():
         )
 
 
-def test_delete_event(transport: str = 'grpc', request_type=service.DeleteEventRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteEventRequest,
+  dict,
+])
+def test_delete_event(request_type, transport: str = 'grpc'):
     client = LivestreamServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4606,10 +4615,6 @@ def test_delete_event(transport: str = 'grpc', request_type=service.DeleteEventR
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_event_from_dict():
-    test_delete_event(request_type=dict)
 
 
 def test_delete_event_empty_call():
@@ -5388,7 +5393,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.LivestreamServiceTransport, '_prep_wrapped_messages') as prep:

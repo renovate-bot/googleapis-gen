@@ -207,18 +207,18 @@ def test_reservation_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -249,7 +249,7 @@ def test_reservation_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -324,7 +324,7 @@ def test_reservation_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -347,7 +347,7 @@ def test_reservation_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -358,7 +358,6 @@ def test_reservation_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_reservation_service_client_client_options_from_dict():
     with mock.patch('google.cloud.bigquery_reservation_v1.services.reservation_service.transports.ReservationServiceGrpcTransport.__init__') as grpc_transport:
@@ -378,7 +377,11 @@ def test_reservation_service_client_client_options_from_dict():
         )
 
 
-def test_create_reservation(transport: str = 'grpc', request_type=gcbr_reservation.CreateReservationRequest):
+@pytest.mark.parametrize("request_type", [
+  gcbr_reservation.CreateReservationRequest,
+  dict,
+])
+def test_create_reservation(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_create_reservation(transport: str = 'grpc', request_type=gcbr_reservati
     assert response.name == 'name_value'
     assert response.slot_capacity == 1391
     assert response.ignore_idle_slots is True
-
-
-def test_create_reservation_from_dict():
-    test_create_reservation(request_type=dict)
 
 
 def test_create_reservation_empty_call():
@@ -641,7 +640,11 @@ async def test_create_reservation_flattened_error_async():
         )
 
 
-def test_list_reservations(transport: str = 'grpc', request_type=reservation.ListReservationsRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.ListReservationsRequest,
+  dict,
+])
+def test_list_reservations(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -669,10 +672,6 @@ def test_list_reservations(transport: str = 'grpc', request_type=reservation.Lis
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListReservationsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_reservations_from_dict():
-    test_list_reservations(request_type=dict)
 
 
 def test_list_reservations_empty_call():
@@ -876,9 +875,10 @@ async def test_list_reservations_flattened_error_async():
         )
 
 
-def test_list_reservations_pager():
+def test_list_reservations_pager(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -928,10 +928,10 @@ def test_list_reservations_pager():
         assert len(results) == 6
         assert all(isinstance(i, reservation.Reservation)
                    for i in results)
-
-def test_list_reservations_pages():
+def test_list_reservations_pages(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1016,7 +1016,8 @@ async def test_list_reservations_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, reservation.Reservation)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_reservations_async_pages():
@@ -1062,7 +1063,11 @@ async def test_list_reservations_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_reservation(transport: str = 'grpc', request_type=reservation.GetReservationRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.GetReservationRequest,
+  dict,
+])
+def test_get_reservation(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1094,10 +1099,6 @@ def test_get_reservation(transport: str = 'grpc', request_type=reservation.GetRe
     assert response.name == 'name_value'
     assert response.slot_capacity == 1391
     assert response.ignore_idle_slots is True
-
-
-def test_get_reservation_from_dict():
-    test_get_reservation(request_type=dict)
 
 
 def test_get_reservation_empty_call():
@@ -1305,7 +1306,11 @@ async def test_get_reservation_flattened_error_async():
         )
 
 
-def test_delete_reservation(transport: str = 'grpc', request_type=reservation.DeleteReservationRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.DeleteReservationRequest,
+  dict,
+])
+def test_delete_reservation(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1330,10 +1335,6 @@ def test_delete_reservation(transport: str = 'grpc', request_type=reservation.De
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_reservation_from_dict():
-    test_delete_reservation(request_type=dict)
 
 
 def test_delete_reservation_empty_call():
@@ -1534,7 +1535,11 @@ async def test_delete_reservation_flattened_error_async():
         )
 
 
-def test_update_reservation(transport: str = 'grpc', request_type=gcbr_reservation.UpdateReservationRequest):
+@pytest.mark.parametrize("request_type", [
+  gcbr_reservation.UpdateReservationRequest,
+  dict,
+])
+def test_update_reservation(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1566,10 +1571,6 @@ def test_update_reservation(transport: str = 'grpc', request_type=gcbr_reservati
     assert response.name == 'name_value'
     assert response.slot_capacity == 1391
     assert response.ignore_idle_slots is True
-
-
-def test_update_reservation_from_dict():
-    test_update_reservation(request_type=dict)
 
 
 def test_update_reservation_empty_call():
@@ -1787,7 +1788,11 @@ async def test_update_reservation_flattened_error_async():
         )
 
 
-def test_create_capacity_commitment(transport: str = 'grpc', request_type=reservation.CreateCapacityCommitmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.CreateCapacityCommitmentRequest,
+  dict,
+])
+def test_create_capacity_commitment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1823,10 +1828,6 @@ def test_create_capacity_commitment(transport: str = 'grpc', request_type=reserv
     assert response.plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
     assert response.state == reservation.CapacityCommitment.State.PENDING
     assert response.renewal_plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
-
-
-def test_create_capacity_commitment_from_dict():
-    test_create_capacity_commitment(request_type=dict)
 
 
 def test_create_capacity_commitment_empty_call():
@@ -2048,7 +2049,11 @@ async def test_create_capacity_commitment_flattened_error_async():
         )
 
 
-def test_list_capacity_commitments(transport: str = 'grpc', request_type=reservation.ListCapacityCommitmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.ListCapacityCommitmentsRequest,
+  dict,
+])
+def test_list_capacity_commitments(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2076,10 +2081,6 @@ def test_list_capacity_commitments(transport: str = 'grpc', request_type=reserva
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListCapacityCommitmentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_capacity_commitments_from_dict():
-    test_list_capacity_commitments(request_type=dict)
 
 
 def test_list_capacity_commitments_empty_call():
@@ -2283,9 +2284,10 @@ async def test_list_capacity_commitments_flattened_error_async():
         )
 
 
-def test_list_capacity_commitments_pager():
+def test_list_capacity_commitments_pager(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2335,10 +2337,10 @@ def test_list_capacity_commitments_pager():
         assert len(results) == 6
         assert all(isinstance(i, reservation.CapacityCommitment)
                    for i in results)
-
-def test_list_capacity_commitments_pages():
+def test_list_capacity_commitments_pages(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2423,7 +2425,8 @@ async def test_list_capacity_commitments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, reservation.CapacityCommitment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_capacity_commitments_async_pages():
@@ -2469,7 +2472,11 @@ async def test_list_capacity_commitments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_capacity_commitment(transport: str = 'grpc', request_type=reservation.GetCapacityCommitmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.GetCapacityCommitmentRequest,
+  dict,
+])
+def test_get_capacity_commitment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2505,10 +2512,6 @@ def test_get_capacity_commitment(transport: str = 'grpc', request_type=reservati
     assert response.plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
     assert response.state == reservation.CapacityCommitment.State.PENDING
     assert response.renewal_plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
-
-
-def test_get_capacity_commitment_from_dict():
-    test_get_capacity_commitment(request_type=dict)
 
 
 def test_get_capacity_commitment_empty_call():
@@ -2720,7 +2723,11 @@ async def test_get_capacity_commitment_flattened_error_async():
         )
 
 
-def test_delete_capacity_commitment(transport: str = 'grpc', request_type=reservation.DeleteCapacityCommitmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.DeleteCapacityCommitmentRequest,
+  dict,
+])
+def test_delete_capacity_commitment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2745,10 +2752,6 @@ def test_delete_capacity_commitment(transport: str = 'grpc', request_type=reserv
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_capacity_commitment_from_dict():
-    test_delete_capacity_commitment(request_type=dict)
 
 
 def test_delete_capacity_commitment_empty_call():
@@ -2949,7 +2952,11 @@ async def test_delete_capacity_commitment_flattened_error_async():
         )
 
 
-def test_update_capacity_commitment(transport: str = 'grpc', request_type=reservation.UpdateCapacityCommitmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.UpdateCapacityCommitmentRequest,
+  dict,
+])
+def test_update_capacity_commitment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2985,10 +2992,6 @@ def test_update_capacity_commitment(transport: str = 'grpc', request_type=reserv
     assert response.plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
     assert response.state == reservation.CapacityCommitment.State.PENDING
     assert response.renewal_plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
-
-
-def test_update_capacity_commitment_from_dict():
-    test_update_capacity_commitment(request_type=dict)
 
 
 def test_update_capacity_commitment_empty_call():
@@ -3210,7 +3213,11 @@ async def test_update_capacity_commitment_flattened_error_async():
         )
 
 
-def test_split_capacity_commitment(transport: str = 'grpc', request_type=reservation.SplitCapacityCommitmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.SplitCapacityCommitmentRequest,
+  dict,
+])
+def test_split_capacity_commitment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3236,10 +3243,6 @@ def test_split_capacity_commitment(transport: str = 'grpc', request_type=reserva
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, reservation.SplitCapacityCommitmentResponse)
-
-
-def test_split_capacity_commitment_from_dict():
-    test_split_capacity_commitment(request_type=dict)
 
 
 def test_split_capacity_commitment_empty_call():
@@ -3451,7 +3454,11 @@ async def test_split_capacity_commitment_flattened_error_async():
         )
 
 
-def test_merge_capacity_commitments(transport: str = 'grpc', request_type=reservation.MergeCapacityCommitmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.MergeCapacityCommitmentsRequest,
+  dict,
+])
+def test_merge_capacity_commitments(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3487,10 +3494,6 @@ def test_merge_capacity_commitments(transport: str = 'grpc', request_type=reserv
     assert response.plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
     assert response.state == reservation.CapacityCommitment.State.PENDING
     assert response.renewal_plan == reservation.CapacityCommitment.CommitmentPlan.FLEX
-
-
-def test_merge_capacity_commitments_from_dict():
-    test_merge_capacity_commitments(request_type=dict)
 
 
 def test_merge_capacity_commitments_empty_call():
@@ -3712,7 +3715,11 @@ async def test_merge_capacity_commitments_flattened_error_async():
         )
 
 
-def test_create_assignment(transport: str = 'grpc', request_type=reservation.CreateAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.CreateAssignmentRequest,
+  dict,
+])
+def test_create_assignment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3746,10 +3753,6 @@ def test_create_assignment(transport: str = 'grpc', request_type=reservation.Cre
     assert response.assignee == 'assignee_value'
     assert response.job_type == reservation.Assignment.JobType.PIPELINE
     assert response.state == reservation.Assignment.State.PENDING
-
-
-def test_create_assignment_from_dict():
-    test_create_assignment(request_type=dict)
 
 
 def test_create_assignment_empty_call():
@@ -3969,7 +3972,11 @@ async def test_create_assignment_flattened_error_async():
         )
 
 
-def test_list_assignments(transport: str = 'grpc', request_type=reservation.ListAssignmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.ListAssignmentsRequest,
+  dict,
+])
+def test_list_assignments(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3997,10 +4004,6 @@ def test_list_assignments(transport: str = 'grpc', request_type=reservation.List
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAssignmentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_assignments_from_dict():
-    test_list_assignments(request_type=dict)
 
 
 def test_list_assignments_empty_call():
@@ -4204,9 +4207,10 @@ async def test_list_assignments_flattened_error_async():
         )
 
 
-def test_list_assignments_pager():
+def test_list_assignments_pager(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4256,10 +4260,10 @@ def test_list_assignments_pager():
         assert len(results) == 6
         assert all(isinstance(i, reservation.Assignment)
                    for i in results)
-
-def test_list_assignments_pages():
+def test_list_assignments_pages(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4344,7 +4348,8 @@ async def test_list_assignments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, reservation.Assignment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_assignments_async_pages():
@@ -4390,7 +4395,11 @@ async def test_list_assignments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_assignment(transport: str = 'grpc', request_type=reservation.DeleteAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.DeleteAssignmentRequest,
+  dict,
+])
+def test_delete_assignment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4415,10 +4424,6 @@ def test_delete_assignment(transport: str = 'grpc', request_type=reservation.Del
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_assignment_from_dict():
-    test_delete_assignment(request_type=dict)
 
 
 def test_delete_assignment_empty_call():
@@ -4619,7 +4624,11 @@ async def test_delete_assignment_flattened_error_async():
         )
 
 
-def test_search_assignments(transport: str = 'grpc', request_type=reservation.SearchAssignmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.SearchAssignmentsRequest,
+  dict,
+])
+def test_search_assignments(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4647,10 +4656,6 @@ def test_search_assignments(transport: str = 'grpc', request_type=reservation.Se
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchAssignmentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_search_assignments_from_dict():
-    test_search_assignments(request_type=dict)
 
 
 def test_search_assignments_empty_call():
@@ -4864,9 +4869,10 @@ async def test_search_assignments_flattened_error_async():
         )
 
 
-def test_search_assignments_pager():
+def test_search_assignments_pager(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4916,10 +4922,10 @@ def test_search_assignments_pager():
         assert len(results) == 6
         assert all(isinstance(i, reservation.Assignment)
                    for i in results)
-
-def test_search_assignments_pages():
+def test_search_assignments_pages(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5004,7 +5010,8 @@ async def test_search_assignments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, reservation.Assignment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_search_assignments_async_pages():
@@ -5050,7 +5057,11 @@ async def test_search_assignments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_search_all_assignments(transport: str = 'grpc', request_type=reservation.SearchAllAssignmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.SearchAllAssignmentsRequest,
+  dict,
+])
+def test_search_all_assignments(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5078,10 +5089,6 @@ def test_search_all_assignments(transport: str = 'grpc', request_type=reservatio
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.SearchAllAssignmentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_search_all_assignments_from_dict():
-    test_search_all_assignments(request_type=dict)
 
 
 def test_search_all_assignments_empty_call():
@@ -5295,9 +5302,10 @@ async def test_search_all_assignments_flattened_error_async():
         )
 
 
-def test_search_all_assignments_pager():
+def test_search_all_assignments_pager(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5347,10 +5355,10 @@ def test_search_all_assignments_pager():
         assert len(results) == 6
         assert all(isinstance(i, reservation.Assignment)
                    for i in results)
-
-def test_search_all_assignments_pages():
+def test_search_all_assignments_pages(transport_name: str = "grpc"):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -5435,7 +5443,8 @@ async def test_search_all_assignments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, reservation.Assignment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_search_all_assignments_async_pages():
@@ -5481,7 +5490,11 @@ async def test_search_all_assignments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_move_assignment(transport: str = 'grpc', request_type=reservation.MoveAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.MoveAssignmentRequest,
+  dict,
+])
+def test_move_assignment(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5515,10 +5528,6 @@ def test_move_assignment(transport: str = 'grpc', request_type=reservation.MoveA
     assert response.assignee == 'assignee_value'
     assert response.job_type == reservation.Assignment.JobType.PIPELINE
     assert response.state == reservation.Assignment.State.PENDING
-
-
-def test_move_assignment_from_dict():
-    test_move_assignment(request_type=dict)
 
 
 def test_move_assignment_empty_call():
@@ -5738,7 +5747,11 @@ async def test_move_assignment_flattened_error_async():
         )
 
 
-def test_get_bi_reservation(transport: str = 'grpc', request_type=reservation.GetBiReservationRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.GetBiReservationRequest,
+  dict,
+])
+def test_get_bi_reservation(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5768,10 +5781,6 @@ def test_get_bi_reservation(transport: str = 'grpc', request_type=reservation.Ge
     assert isinstance(response, reservation.BiReservation)
     assert response.name == 'name_value'
     assert response.size == 443
-
-
-def test_get_bi_reservation_from_dict():
-    test_get_bi_reservation(request_type=dict)
 
 
 def test_get_bi_reservation_empty_call():
@@ -5977,7 +5986,11 @@ async def test_get_bi_reservation_flattened_error_async():
         )
 
 
-def test_update_bi_reservation(transport: str = 'grpc', request_type=reservation.UpdateBiReservationRequest):
+@pytest.mark.parametrize("request_type", [
+  reservation.UpdateBiReservationRequest,
+  dict,
+])
+def test_update_bi_reservation(request_type, transport: str = 'grpc'):
     client = ReservationServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6007,10 +6020,6 @@ def test_update_bi_reservation(transport: str = 'grpc', request_type=reservation
     assert isinstance(response, reservation.BiReservation)
     assert response.name == 'name_value'
     assert response.size == 443
-
-
-def test_update_bi_reservation_from_dict():
-    test_update_bi_reservation(request_type=dict)
 
 
 def test_update_bi_reservation_empty_call():
@@ -6791,7 +6800,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ReservationServiceTransport, '_prep_wrapped_messages') as prep:

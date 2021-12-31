@@ -215,18 +215,18 @@ def test_product_service_client_client_options(client_class, transport_class, tr
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -257,7 +257,7 @@ def test_product_service_client_mtls_env_auto(client_class, transport_class, tra
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -332,7 +332,7 @@ def test_product_service_client_client_options_scopes(client_class, transport_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -355,7 +355,7 @@ def test_product_service_client_client_options_credentials_file(client_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -366,7 +366,6 @@ def test_product_service_client_client_options_credentials_file(client_class, tr
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_product_service_client_client_options_from_dict():
     with mock.patch('google.cloud.retail_v2alpha.services.product_service.transports.ProductServiceGrpcTransport.__init__') as grpc_transport:
@@ -386,7 +385,11 @@ def test_product_service_client_client_options_from_dict():
         )
 
 
-def test_create_product(transport: str = 'grpc', request_type=product_service.CreateProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.CreateProductRequest,
+  dict,
+])
+def test_create_product(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -449,10 +452,6 @@ def test_create_product(transport: str = 'grpc', request_type=product_service.Cr
     assert response.materials == ['materials_value']
     assert response.patterns == ['patterns_value']
     assert response.conditions == ['conditions_value']
-
-
-def test_create_product_from_dict():
-    test_create_product(request_type=dict)
 
 
 def test_create_product_empty_call():
@@ -710,7 +709,11 @@ async def test_create_product_flattened_error_async():
         )
 
 
-def test_get_product(transport: str = 'grpc', request_type=product_service.GetProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.GetProductRequest,
+  dict,
+])
+def test_get_product(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -773,10 +776,6 @@ def test_get_product(transport: str = 'grpc', request_type=product_service.GetPr
     assert response.materials == ['materials_value']
     assert response.patterns == ['patterns_value']
     assert response.conditions == ['conditions_value']
-
-
-def test_get_product_from_dict():
-    test_get_product(request_type=dict)
 
 
 def test_get_product_empty_call():
@@ -1014,7 +1013,11 @@ async def test_get_product_flattened_error_async():
         )
 
 
-def test_list_products(transport: str = 'grpc', request_type=product_service.ListProductsRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.ListProductsRequest,
+  dict,
+])
+def test_list_products(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1044,10 +1047,6 @@ def test_list_products(transport: str = 'grpc', request_type=product_service.Lis
     assert isinstance(response, pagers.ListProductsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.total_size == 1086
-
-
-def test_list_products_from_dict():
-    test_list_products(request_type=dict)
 
 
 def test_list_products_empty_call():
@@ -1253,9 +1252,10 @@ async def test_list_products_flattened_error_async():
         )
 
 
-def test_list_products_pager():
+def test_list_products_pager(transport_name: str = "grpc"):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1305,10 +1305,10 @@ def test_list_products_pager():
         assert len(results) == 6
         assert all(isinstance(i, product.Product)
                    for i in results)
-
-def test_list_products_pages():
+def test_list_products_pages(transport_name: str = "grpc"):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1393,7 +1393,8 @@ async def test_list_products_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, product.Product)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_products_async_pages():
@@ -1439,7 +1440,11 @@ async def test_list_products_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_update_product(transport: str = 'grpc', request_type=product_service.UpdateProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.UpdateProductRequest,
+  dict,
+])
+def test_update_product(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1502,10 +1507,6 @@ def test_update_product(transport: str = 'grpc', request_type=product_service.Up
     assert response.materials == ['materials_value']
     assert response.patterns == ['patterns_value']
     assert response.conditions == ['conditions_value']
-
-
-def test_update_product_from_dict():
-    test_update_product(request_type=dict)
 
 
 def test_update_product_empty_call():
@@ -1753,7 +1754,11 @@ async def test_update_product_flattened_error_async():
         )
 
 
-def test_delete_product(transport: str = 'grpc', request_type=product_service.DeleteProductRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.DeleteProductRequest,
+  dict,
+])
+def test_delete_product(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1778,10 +1783,6 @@ def test_delete_product(transport: str = 'grpc', request_type=product_service.De
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_product_from_dict():
-    test_delete_product(request_type=dict)
 
 
 def test_delete_product_empty_call():
@@ -1982,7 +1983,11 @@ async def test_delete_product_flattened_error_async():
         )
 
 
-def test_import_products(transport: str = 'grpc', request_type=import_config.ImportProductsRequest):
+@pytest.mark.parametrize("request_type", [
+  import_config.ImportProductsRequest,
+  dict,
+])
+def test_import_products(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2007,10 +2012,6 @@ def test_import_products(transport: str = 'grpc', request_type=import_config.Imp
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_import_products_from_dict():
-    test_import_products(request_type=dict)
 
 
 def test_import_products_empty_call():
@@ -2129,7 +2130,11 @@ async def test_import_products_field_headers_async():
     ) in kw['metadata']
 
 
-def test_set_inventory(transport: str = 'grpc', request_type=product_service.SetInventoryRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.SetInventoryRequest,
+  dict,
+])
+def test_set_inventory(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2154,10 +2159,6 @@ def test_set_inventory(transport: str = 'grpc', request_type=product_service.Set
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_set_inventory_from_dict():
-    test_set_inventory(request_type=dict)
 
 
 def test_set_inventory_empty_call():
@@ -2372,7 +2373,11 @@ async def test_set_inventory_flattened_error_async():
         )
 
 
-def test_add_fulfillment_places(transport: str = 'grpc', request_type=product_service.AddFulfillmentPlacesRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.AddFulfillmentPlacesRequest,
+  dict,
+])
+def test_add_fulfillment_places(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2397,10 +2402,6 @@ def test_add_fulfillment_places(transport: str = 'grpc', request_type=product_se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_add_fulfillment_places_from_dict():
-    test_add_fulfillment_places(request_type=dict)
 
 
 def test_add_fulfillment_places_empty_call():
@@ -2605,7 +2606,11 @@ async def test_add_fulfillment_places_flattened_error_async():
         )
 
 
-def test_remove_fulfillment_places(transport: str = 'grpc', request_type=product_service.RemoveFulfillmentPlacesRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.RemoveFulfillmentPlacesRequest,
+  dict,
+])
+def test_remove_fulfillment_places(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2630,10 +2635,6 @@ def test_remove_fulfillment_places(transport: str = 'grpc', request_type=product
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_remove_fulfillment_places_from_dict():
-    test_remove_fulfillment_places(request_type=dict)
 
 
 def test_remove_fulfillment_places_empty_call():
@@ -2838,7 +2839,11 @@ async def test_remove_fulfillment_places_flattened_error_async():
         )
 
 
-def test_add_local_inventories(transport: str = 'grpc', request_type=product_service.AddLocalInventoriesRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.AddLocalInventoriesRequest,
+  dict,
+])
+def test_add_local_inventories(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2863,10 +2868,6 @@ def test_add_local_inventories(transport: str = 'grpc', request_type=product_ser
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_add_local_inventories_from_dict():
-    test_add_local_inventories(request_type=dict)
 
 
 def test_add_local_inventories_empty_call():
@@ -3071,7 +3072,11 @@ async def test_add_local_inventories_flattened_error_async():
         )
 
 
-def test_remove_local_inventories(transport: str = 'grpc', request_type=product_service.RemoveLocalInventoriesRequest):
+@pytest.mark.parametrize("request_type", [
+  product_service.RemoveLocalInventoriesRequest,
+  dict,
+])
+def test_remove_local_inventories(request_type, transport: str = 'grpc'):
     client = ProductServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3096,10 +3101,6 @@ def test_remove_local_inventories(transport: str = 'grpc', request_type=product_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_remove_local_inventories_from_dict():
-    test_remove_local_inventories(request_type=dict)
 
 
 def test_remove_local_inventories_empty_call():
@@ -3860,7 +3861,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ProductServiceTransport, '_prep_wrapped_messages') as prep:

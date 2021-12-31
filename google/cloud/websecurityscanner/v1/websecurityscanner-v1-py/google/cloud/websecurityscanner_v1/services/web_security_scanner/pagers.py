@@ -131,7 +131,6 @@ class ListScanConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[scan_config.ScanConfig]:
         async def async_generator():
             async for page in self.pages:
@@ -253,7 +252,6 @@ class ListScanRunsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[scan_run.ScanRun]:
         async def async_generator():
             async for page in self.pages:
@@ -375,7 +373,6 @@ class ListCrawledUrlsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[crawled_url.CrawledUrl]:
         async def async_generator():
             async for page in self.pages:
@@ -497,7 +494,6 @@ class ListFindingsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[finding.Finding]:
         async def async_generator():
             async for page in self.pages:

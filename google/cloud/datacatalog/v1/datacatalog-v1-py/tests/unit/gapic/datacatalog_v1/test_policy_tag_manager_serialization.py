@@ -203,18 +203,18 @@ def test_policy_tag_manager_serialization_client_client_options(client_class, tr
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -245,7 +245,7 @@ def test_policy_tag_manager_serialization_client_mtls_env_auto(client_class, tra
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -320,7 +320,7 @@ def test_policy_tag_manager_serialization_client_client_options_scopes(client_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -343,7 +343,7 @@ def test_policy_tag_manager_serialization_client_client_options_credentials_file
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -354,7 +354,6 @@ def test_policy_tag_manager_serialization_client_client_options_credentials_file
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_policy_tag_manager_serialization_client_client_options_from_dict():
     with mock.patch('google.cloud.datacatalog_v1.services.policy_tag_manager_serialization.transports.PolicyTagManagerSerializationGrpcTransport.__init__') as grpc_transport:
@@ -374,7 +373,11 @@ def test_policy_tag_manager_serialization_client_client_options_from_dict():
         )
 
 
-def test_replace_taxonomy(transport: str = 'grpc', request_type=policytagmanagerserialization.ReplaceTaxonomyRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanagerserialization.ReplaceTaxonomyRequest,
+  dict,
+])
+def test_replace_taxonomy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerSerializationClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_replace_taxonomy(transport: str = 'grpc', request_type=policytagmanager
     assert response.description == 'description_value'
     assert response.policy_tag_count == 1715
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
-
-
-def test_replace_taxonomy_from_dict():
-    test_replace_taxonomy(request_type=dict)
 
 
 def test_replace_taxonomy_empty_call():
@@ -541,7 +540,11 @@ async def test_replace_taxonomy_field_headers_async():
     ) in kw['metadata']
 
 
-def test_import_taxonomies(transport: str = 'grpc', request_type=policytagmanagerserialization.ImportTaxonomiesRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanagerserialization.ImportTaxonomiesRequest,
+  dict,
+])
+def test_import_taxonomies(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerSerializationClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -567,10 +570,6 @@ def test_import_taxonomies(transport: str = 'grpc', request_type=policytagmanage
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanagerserialization.ImportTaxonomiesResponse)
-
-
-def test_import_taxonomies_from_dict():
-    test_import_taxonomies(request_type=dict)
 
 
 def test_import_taxonomies_empty_call():
@@ -688,7 +687,11 @@ async def test_import_taxonomies_field_headers_async():
     ) in kw['metadata']
 
 
-def test_export_taxonomies(transport: str = 'grpc', request_type=policytagmanagerserialization.ExportTaxonomiesRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanagerserialization.ExportTaxonomiesRequest,
+  dict,
+])
+def test_export_taxonomies(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerSerializationClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -714,10 +717,6 @@ def test_export_taxonomies(transport: str = 'grpc', request_type=policytagmanage
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, policytagmanagerserialization.ExportTaxonomiesResponse)
-
-
-def test_export_taxonomies_from_dict():
-    test_export_taxonomies(request_type=dict)
 
 
 def test_export_taxonomies_empty_call():
@@ -1317,7 +1316,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.PolicyTagManagerSerializationTransport, '_prep_wrapped_messages') as prep:

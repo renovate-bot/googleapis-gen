@@ -203,18 +203,18 @@ def test_search_service_client_client_options(client_class, transport_class, tra
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -245,7 +245,7 @@ def test_search_service_client_mtls_env_auto(client_class, transport_class, tran
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -320,7 +320,7 @@ def test_search_service_client_client_options_scopes(client_class, transport_cla
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -343,7 +343,7 @@ def test_search_service_client_client_options_credentials_file(client_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -354,7 +354,6 @@ def test_search_service_client_client_options_credentials_file(client_class, tra
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_search_service_client_client_options_from_dict():
     with mock.patch('google.cloud.retail_v2.services.search_service.transports.SearchServiceGrpcTransport.__init__') as grpc_transport:
@@ -374,7 +373,11 @@ def test_search_service_client_client_options_from_dict():
         )
 
 
-def test_search(transport: str = 'grpc', request_type=search_service.SearchRequest):
+@pytest.mark.parametrize("request_type", [
+  search_service.SearchRequest,
+  dict,
+])
+def test_search(request_type, transport: str = 'grpc'):
     client = SearchServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_search(transport: str = 'grpc', request_type=search_service.SearchReque
     assert response.attribution_token == 'attribution_token_value'
     assert response.next_page_token == 'next_page_token_value'
     assert response.redirect_uri == 'redirect_uri_value'
-
-
-def test_search_from_dict():
-    test_search(request_type=dict)
 
 
 def test_search_empty_call():
@@ -541,9 +540,10 @@ async def test_search_field_headers_async():
     ) in kw['metadata']
 
 
-def test_search_pager():
+def test_search_pager(transport_name: str = "grpc"):
     client = SearchServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -593,10 +593,10 @@ def test_search_pager():
         assert len(results) == 6
         assert all(isinstance(i, search_service.SearchResponse.SearchResult)
                    for i in results)
-
-def test_search_pages():
+def test_search_pages(transport_name: str = "grpc"):
     client = SearchServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -681,7 +681,8 @@ async def test_search_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, search_service.SearchResponse.SearchResult)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_search_async_pages():
@@ -1235,7 +1236,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SearchServiceTransport, '_prep_wrapped_messages') as prep:

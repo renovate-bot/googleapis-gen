@@ -211,18 +211,18 @@ def test_vehicle_service_client_client_options(client_class, transport_class, tr
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -253,7 +253,7 @@ def test_vehicle_service_client_mtls_env_auto(client_class, transport_class, tra
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -328,7 +328,7 @@ def test_vehicle_service_client_client_options_scopes(client_class, transport_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -351,7 +351,7 @@ def test_vehicle_service_client_client_options_credentials_file(client_class, tr
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -362,7 +362,6 @@ def test_vehicle_service_client_client_options_credentials_file(client_class, tr
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_vehicle_service_client_client_options_from_dict():
     with mock.patch('maps.fleetengine_v1.services.vehicle_service.transports.VehicleServiceGrpcTransport.__init__') as grpc_transport:
@@ -382,7 +381,11 @@ def test_vehicle_service_client_client_options_from_dict():
         )
 
 
-def test_create_vehicle(transport: str = 'grpc', request_type=vehicle_api.CreateVehicleRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.CreateVehicleRequest,
+  dict,
+])
+def test_create_vehicle(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -424,10 +427,6 @@ def test_create_vehicle(transport: str = 'grpc', request_type=vehicle_api.Create
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
-
-
-def test_create_vehicle_from_dict():
-    test_create_vehicle(request_type=dict)
 
 
 def test_create_vehicle_empty_call():
@@ -561,7 +560,11 @@ async def test_create_vehicle_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_vehicle(transport: str = 'grpc', request_type=vehicle_api.GetVehicleRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.GetVehicleRequest,
+  dict,
+])
+def test_get_vehicle(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -603,10 +606,6 @@ def test_get_vehicle(transport: str = 'grpc', request_type=vehicle_api.GetVehicl
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
-
-
-def test_get_vehicle_from_dict():
-    test_get_vehicle(request_type=dict)
 
 
 def test_get_vehicle_empty_call():
@@ -740,7 +739,11 @@ async def test_get_vehicle_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_vehicle(transport: str = 'grpc', request_type=vehicle_api.UpdateVehicleRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.UpdateVehicleRequest,
+  dict,
+])
+def test_update_vehicle(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -782,10 +785,6 @@ def test_update_vehicle(transport: str = 'grpc', request_type=vehicle_api.Update
     assert response.current_route_segment == 'current_route_segment_value'
     assert response.back_to_back_enabled is True
     assert response.navigation_status == fleetengine.NavigationStatus.NO_GUIDANCE
-
-
-def test_update_vehicle_from_dict():
-    test_update_vehicle(request_type=dict)
 
 
 def test_update_vehicle_empty_call():
@@ -919,7 +918,11 @@ async def test_update_vehicle_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_vehicle_location(transport: str = 'grpc', request_type=vehicle_api.UpdateVehicleLocationRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.UpdateVehicleLocationRequest,
+  dict,
+])
+def test_update_vehicle_location(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -953,10 +956,6 @@ def test_update_vehicle_location(transport: str = 'grpc', request_type=vehicle_a
     assert response.raw_location_sensor == fleetengine.LocationSensor.GPS
     assert response.supplemental_location_sensor == fleetengine.LocationSensor.GPS
     assert response.road_snapped is True
-
-
-def test_update_vehicle_location_from_dict():
-    test_update_vehicle_location(request_type=dict)
 
 
 def test_update_vehicle_location_empty_call():
@@ -1082,7 +1081,11 @@ async def test_update_vehicle_location_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_vehicle_attributes(transport: str = 'grpc', request_type=vehicle_api.UpdateVehicleAttributesRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.UpdateVehicleAttributesRequest,
+  dict,
+])
+def test_update_vehicle_attributes(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1108,10 +1111,6 @@ def test_update_vehicle_attributes(transport: str = 'grpc', request_type=vehicle
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, vehicle_api.UpdateVehicleAttributesResponse)
-
-
-def test_update_vehicle_attributes_from_dict():
-    test_update_vehicle_attributes(request_type=dict)
 
 
 def test_update_vehicle_attributes_empty_call():
@@ -1229,7 +1228,11 @@ async def test_update_vehicle_attributes_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_vehicles(transport: str = 'grpc', request_type=vehicle_api.ListVehiclesRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.ListVehiclesRequest,
+  dict,
+])
+def test_list_vehicles(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1259,10 +1262,6 @@ def test_list_vehicles(transport: str = 'grpc', request_type=vehicle_api.ListVeh
     assert isinstance(response, pagers.ListVehiclesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.total_size == 1086
-
-
-def test_list_vehicles_from_dict():
-    test_list_vehicles(request_type=dict)
 
 
 def test_list_vehicles_empty_call():
@@ -1384,9 +1383,10 @@ async def test_list_vehicles_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_vehicles_pager():
+def test_list_vehicles_pager(transport_name: str = "grpc"):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1436,10 +1436,10 @@ def test_list_vehicles_pager():
         assert len(results) == 6
         assert all(isinstance(i, vehicles.Vehicle)
                    for i in results)
-
-def test_list_vehicles_pages():
+def test_list_vehicles_pages(transport_name: str = "grpc"):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1524,7 +1524,8 @@ async def test_list_vehicles_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, vehicles.Vehicle)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_vehicles_async_pages():
@@ -1570,7 +1571,11 @@ async def test_list_vehicles_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_search_vehicles(transport: str = 'grpc', request_type=vehicle_api.SearchVehiclesRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.SearchVehiclesRequest,
+  dict,
+])
+def test_search_vehicles(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1596,10 +1601,6 @@ def test_search_vehicles(transport: str = 'grpc', request_type=vehicle_api.Searc
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, vehicle_api.SearchVehiclesResponse)
-
-
-def test_search_vehicles_from_dict():
-    test_search_vehicles(request_type=dict)
 
 
 def test_search_vehicles_empty_call():
@@ -1717,7 +1718,11 @@ async def test_search_vehicles_field_headers_async():
     ) in kw['metadata']
 
 
-def test_search_fuzzed_vehicles(transport: str = 'grpc', request_type=vehicle_api.SearchVehiclesRequest):
+@pytest.mark.parametrize("request_type", [
+  vehicle_api.SearchVehiclesRequest,
+  dict,
+])
+def test_search_fuzzed_vehicles(request_type, transport: str = 'grpc'):
     client = VehicleServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1743,10 +1748,6 @@ def test_search_fuzzed_vehicles(transport: str = 'grpc', request_type=vehicle_ap
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, vehicle_api.SearchVehiclesResponse)
-
-
-def test_search_fuzzed_vehicles_from_dict():
-    test_search_fuzzed_vehicles(request_type=dict)
 
 
 def test_search_fuzzed_vehicles_empty_call():
@@ -2346,7 +2347,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.VehicleServiceTransport, '_prep_wrapped_messages') as prep:

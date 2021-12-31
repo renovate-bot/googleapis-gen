@@ -127,7 +127,6 @@ class ListTablesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tables.Table]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListWorkspacesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tables.Workspace]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListRowsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[tables.Row]:
         async def async_generator():
             async for page in self.pages:

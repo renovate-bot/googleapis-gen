@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import GoogleAdsServiceTransport
 from .grpc import GoogleAdsServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[GoogleAdsServiceTransport]]
 _transport_registry['grpc'] = GoogleAdsServiceGrpcTransport
-
 
 __all__ = (
     'GoogleAdsServiceTransport',

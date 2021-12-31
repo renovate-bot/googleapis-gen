@@ -207,18 +207,18 @@ def test_policy_tag_manager_client_client_options(client_class, transport_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -249,7 +249,7 @@ def test_policy_tag_manager_client_mtls_env_auto(client_class, transport_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -324,7 +324,7 @@ def test_policy_tag_manager_client_client_options_scopes(client_class, transport
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -347,7 +347,7 @@ def test_policy_tag_manager_client_client_options_credentials_file(client_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -358,7 +358,6 @@ def test_policy_tag_manager_client_client_options_credentials_file(client_class,
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_policy_tag_manager_client_client_options_from_dict():
     with mock.patch('google.cloud.datacatalog_v1beta1.services.policy_tag_manager.transports.PolicyTagManagerGrpcTransport.__init__') as grpc_transport:
@@ -378,7 +377,11 @@ def test_policy_tag_manager_client_client_options_from_dict():
         )
 
 
-def test_create_taxonomy(transport: str = 'grpc', request_type=policytagmanager.CreateTaxonomyRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.CreateTaxonomyRequest,
+  dict,
+])
+def test_create_taxonomy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -412,10 +415,6 @@ def test_create_taxonomy(transport: str = 'grpc', request_type=policytagmanager.
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
-
-
-def test_create_taxonomy_from_dict():
-    test_create_taxonomy(request_type=dict)
 
 
 def test_create_taxonomy_empty_call():
@@ -635,7 +634,11 @@ async def test_create_taxonomy_flattened_error_async():
         )
 
 
-def test_delete_taxonomy(transport: str = 'grpc', request_type=policytagmanager.DeleteTaxonomyRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.DeleteTaxonomyRequest,
+  dict,
+])
+def test_delete_taxonomy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -660,10 +663,6 @@ def test_delete_taxonomy(transport: str = 'grpc', request_type=policytagmanager.
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_taxonomy_from_dict():
-    test_delete_taxonomy(request_type=dict)
 
 
 def test_delete_taxonomy_empty_call():
@@ -864,7 +863,11 @@ async def test_delete_taxonomy_flattened_error_async():
         )
 
 
-def test_update_taxonomy(transport: str = 'grpc', request_type=policytagmanager.UpdateTaxonomyRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.UpdateTaxonomyRequest,
+  dict,
+])
+def test_update_taxonomy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -898,10 +901,6 @@ def test_update_taxonomy(transport: str = 'grpc', request_type=policytagmanager.
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
-
-
-def test_update_taxonomy_from_dict():
-    test_update_taxonomy(request_type=dict)
 
 
 def test_update_taxonomy_empty_call():
@@ -1111,7 +1110,11 @@ async def test_update_taxonomy_flattened_error_async():
         )
 
 
-def test_list_taxonomies(transport: str = 'grpc', request_type=policytagmanager.ListTaxonomiesRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.ListTaxonomiesRequest,
+  dict,
+])
+def test_list_taxonomies(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1139,10 +1142,6 @@ def test_list_taxonomies(transport: str = 'grpc', request_type=policytagmanager.
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTaxonomiesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_taxonomies_from_dict():
-    test_list_taxonomies(request_type=dict)
 
 
 def test_list_taxonomies_empty_call():
@@ -1346,9 +1345,10 @@ async def test_list_taxonomies_flattened_error_async():
         )
 
 
-def test_list_taxonomies_pager():
+def test_list_taxonomies_pager(transport_name: str = "grpc"):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1398,10 +1398,10 @@ def test_list_taxonomies_pager():
         assert len(results) == 6
         assert all(isinstance(i, policytagmanager.Taxonomy)
                    for i in results)
-
-def test_list_taxonomies_pages():
+def test_list_taxonomies_pages(transport_name: str = "grpc"):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1486,7 +1486,8 @@ async def test_list_taxonomies_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, policytagmanager.Taxonomy)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_taxonomies_async_pages():
@@ -1532,7 +1533,11 @@ async def test_list_taxonomies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_taxonomy(transport: str = 'grpc', request_type=policytagmanager.GetTaxonomyRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.GetTaxonomyRequest,
+  dict,
+])
+def test_get_taxonomy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1566,10 +1571,6 @@ def test_get_taxonomy(transport: str = 'grpc', request_type=policytagmanager.Get
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.activated_policy_types == [policytagmanager.Taxonomy.PolicyType.FINE_GRAINED_ACCESS_CONTROL]
-
-
-def test_get_taxonomy_from_dict():
-    test_get_taxonomy(request_type=dict)
 
 
 def test_get_taxonomy_empty_call():
@@ -1779,7 +1780,11 @@ async def test_get_taxonomy_flattened_error_async():
         )
 
 
-def test_create_policy_tag(transport: str = 'grpc', request_type=policytagmanager.CreatePolicyTagRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.CreatePolicyTagRequest,
+  dict,
+])
+def test_create_policy_tag(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1815,10 +1820,6 @@ def test_create_policy_tag(transport: str = 'grpc', request_type=policytagmanage
     assert response.description == 'description_value'
     assert response.parent_policy_tag == 'parent_policy_tag_value'
     assert response.child_policy_tags == ['child_policy_tags_value']
-
-
-def test_create_policy_tag_from_dict():
-    test_create_policy_tag(request_type=dict)
 
 
 def test_create_policy_tag_empty_call():
@@ -2040,7 +2041,11 @@ async def test_create_policy_tag_flattened_error_async():
         )
 
 
-def test_delete_policy_tag(transport: str = 'grpc', request_type=policytagmanager.DeletePolicyTagRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.DeletePolicyTagRequest,
+  dict,
+])
+def test_delete_policy_tag(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2065,10 +2070,6 @@ def test_delete_policy_tag(transport: str = 'grpc', request_type=policytagmanage
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_policy_tag_from_dict():
-    test_delete_policy_tag(request_type=dict)
 
 
 def test_delete_policy_tag_empty_call():
@@ -2269,7 +2270,11 @@ async def test_delete_policy_tag_flattened_error_async():
         )
 
 
-def test_update_policy_tag(transport: str = 'grpc', request_type=policytagmanager.UpdatePolicyTagRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.UpdatePolicyTagRequest,
+  dict,
+])
+def test_update_policy_tag(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2305,10 +2310,6 @@ def test_update_policy_tag(transport: str = 'grpc', request_type=policytagmanage
     assert response.description == 'description_value'
     assert response.parent_policy_tag == 'parent_policy_tag_value'
     assert response.child_policy_tags == ['child_policy_tags_value']
-
-
-def test_update_policy_tag_from_dict():
-    test_update_policy_tag(request_type=dict)
 
 
 def test_update_policy_tag_empty_call():
@@ -2520,7 +2521,11 @@ async def test_update_policy_tag_flattened_error_async():
         )
 
 
-def test_list_policy_tags(transport: str = 'grpc', request_type=policytagmanager.ListPolicyTagsRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.ListPolicyTagsRequest,
+  dict,
+])
+def test_list_policy_tags(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2548,10 +2553,6 @@ def test_list_policy_tags(transport: str = 'grpc', request_type=policytagmanager
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPolicyTagsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_policy_tags_from_dict():
-    test_list_policy_tags(request_type=dict)
 
 
 def test_list_policy_tags_empty_call():
@@ -2755,9 +2756,10 @@ async def test_list_policy_tags_flattened_error_async():
         )
 
 
-def test_list_policy_tags_pager():
+def test_list_policy_tags_pager(transport_name: str = "grpc"):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2807,10 +2809,10 @@ def test_list_policy_tags_pager():
         assert len(results) == 6
         assert all(isinstance(i, policytagmanager.PolicyTag)
                    for i in results)
-
-def test_list_policy_tags_pages():
+def test_list_policy_tags_pages(transport_name: str = "grpc"):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2895,7 +2897,8 @@ async def test_list_policy_tags_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, policytagmanager.PolicyTag)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_policy_tags_async_pages():
@@ -2941,7 +2944,11 @@ async def test_list_policy_tags_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_policy_tag(transport: str = 'grpc', request_type=policytagmanager.GetPolicyTagRequest):
+@pytest.mark.parametrize("request_type", [
+  policytagmanager.GetPolicyTagRequest,
+  dict,
+])
+def test_get_policy_tag(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2977,10 +2984,6 @@ def test_get_policy_tag(transport: str = 'grpc', request_type=policytagmanager.G
     assert response.description == 'description_value'
     assert response.parent_policy_tag == 'parent_policy_tag_value'
     assert response.child_policy_tags == ['child_policy_tags_value']
-
-
-def test_get_policy_tag_from_dict():
-    test_get_policy_tag(request_type=dict)
 
 
 def test_get_policy_tag_empty_call():
@@ -3192,7 +3195,11 @@ async def test_get_policy_tag_flattened_error_async():
         )
 
 
-def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.GetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.GetIamPolicyRequest,
+  dict,
+])
+def test_get_iam_policy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3222,10 +3229,6 @@ def test_get_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Get
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_get_iam_policy_from_dict():
-    test_get_iam_policy(request_type=dict)
 
 
 def test_get_iam_policy_empty_call():
@@ -3364,7 +3367,11 @@ def test_get_iam_policy_from_dict_foreign():
         call.assert_called()
 
 
-def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.SetIamPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.SetIamPolicyRequest,
+  dict,
+])
+def test_set_iam_policy(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3394,10 +3401,6 @@ def test_set_iam_policy(transport: str = 'grpc', request_type=iam_policy_pb2.Set
     assert isinstance(response, policy_pb2.Policy)
     assert response.version == 774
     assert response.etag == b'etag_blob'
-
-
-def test_set_iam_policy_from_dict():
-    test_set_iam_policy(request_type=dict)
 
 
 def test_set_iam_policy_empty_call():
@@ -3536,7 +3539,11 @@ def test_set_iam_policy_from_dict_foreign():
         call.assert_called()
 
 
-def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_pb2.TestIamPermissionsRequest):
+@pytest.mark.parametrize("request_type", [
+  iam_policy_pb2.TestIamPermissionsRequest,
+  dict,
+])
+def test_test_iam_permissions(request_type, transport: str = 'grpc'):
     client = PolicyTagManagerClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3564,10 +3571,6 @@ def test_test_iam_permissions(transport: str = 'grpc', request_type=iam_policy_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, iam_policy_pb2.TestIamPermissionsResponse)
     assert response.permissions == ['permissions_value']
-
-
-def test_test_iam_permissions_from_dict():
-    test_test_iam_permissions(request_type=dict)
 
 
 def test_test_iam_permissions_empty_call():
@@ -4219,7 +4222,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.PolicyTagManagerTransport, '_prep_wrapped_messages') as prep:

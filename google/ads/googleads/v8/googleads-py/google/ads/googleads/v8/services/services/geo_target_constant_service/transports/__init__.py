@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import GeoTargetConstantServiceTransport
 from .grpc import GeoTargetConstantServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[GeoTargetConstantServiceTransport]]
 _transport_registry['grpc'] = GeoTargetConstantServiceGrpcTransport
-
 
 __all__ = (
     'GeoTargetConstantServiceTransport',

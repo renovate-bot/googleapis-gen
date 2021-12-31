@@ -128,7 +128,6 @@ class ListServicesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Service]:
         async def async_generator():
             async for page in self.pages:
@@ -250,7 +249,6 @@ class ListConsumerQuotaMetricsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.ConsumerQuotaMetric]:
         async def async_generator():
             async for page in self.pages:
@@ -372,7 +370,6 @@ class ListAdminOverridesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.QuotaOverride]:
         async def async_generator():
             async for page in self.pages:
@@ -494,7 +491,6 @@ class ListConsumerOverridesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.QuotaOverride]:
         async def async_generator():
             async for page in self.pages:

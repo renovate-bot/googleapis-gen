@@ -208,18 +208,18 @@ def test_api_gateway_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_api_gateway_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_api_gateway_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_api_gateway_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_api_gateway_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_api_gateway_service_client_client_options_from_dict():
     with mock.patch('google.cloud.apigateway_v1.services.api_gateway_service.transports.ApiGatewayServiceGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_api_gateway_service_client_client_options_from_dict():
         )
 
 
-def test_list_gateways(transport: str = 'grpc', request_type=apigateway.ListGatewaysRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.ListGatewaysRequest,
+  dict,
+])
+def test_list_gateways(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_list_gateways(transport: str = 'grpc', request_type=apigateway.ListGate
     assert isinstance(response, pagers.ListGatewaysPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable_locations == ['unreachable_locations_value']
-
-
-def test_list_gateways_from_dict():
-    test_list_gateways(request_type=dict)
 
 
 def test_list_gateways_empty_call():
@@ -618,9 +617,10 @@ async def test_list_gateways_flattened_error_async():
         )
 
 
-def test_list_gateways_pager():
+def test_list_gateways_pager(transport_name: str = "grpc"):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -670,10 +670,10 @@ def test_list_gateways_pager():
         assert len(results) == 6
         assert all(isinstance(i, apigateway.Gateway)
                    for i in results)
-
-def test_list_gateways_pages():
+def test_list_gateways_pages(transport_name: str = "grpc"):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -758,7 +758,8 @@ async def test_list_gateways_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, apigateway.Gateway)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_gateways_async_pages():
@@ -804,7 +805,11 @@ async def test_list_gateways_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_gateway(transport: str = 'grpc', request_type=apigateway.GetGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.GetGatewayRequest,
+  dict,
+])
+def test_get_gateway(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -840,10 +845,6 @@ def test_get_gateway(transport: str = 'grpc', request_type=apigateway.GetGateway
     assert response.api_config == 'api_config_value'
     assert response.state == apigateway.Gateway.State.CREATING
     assert response.default_hostname == 'default_hostname_value'
-
-
-def test_get_gateway_from_dict():
-    test_get_gateway(request_type=dict)
 
 
 def test_get_gateway_empty_call():
@@ -1055,7 +1056,11 @@ async def test_get_gateway_flattened_error_async():
         )
 
 
-def test_create_gateway(transport: str = 'grpc', request_type=apigateway.CreateGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.CreateGatewayRequest,
+  dict,
+])
+def test_create_gateway(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1080,10 +1085,6 @@ def test_create_gateway(transport: str = 'grpc', request_type=apigateway.CreateG
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_gateway_from_dict():
-    test_create_gateway(request_type=dict)
 
 
 def test_create_gateway_empty_call():
@@ -1308,7 +1309,11 @@ async def test_create_gateway_flattened_error_async():
         )
 
 
-def test_update_gateway(transport: str = 'grpc', request_type=apigateway.UpdateGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.UpdateGatewayRequest,
+  dict,
+])
+def test_update_gateway(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1333,10 +1338,6 @@ def test_update_gateway(transport: str = 'grpc', request_type=apigateway.UpdateG
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_gateway_from_dict():
-    test_update_gateway(request_type=dict)
 
 
 def test_update_gateway_empty_call():
@@ -1551,7 +1552,11 @@ async def test_update_gateway_flattened_error_async():
         )
 
 
-def test_delete_gateway(transport: str = 'grpc', request_type=apigateway.DeleteGatewayRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.DeleteGatewayRequest,
+  dict,
+])
+def test_delete_gateway(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1576,10 +1581,6 @@ def test_delete_gateway(transport: str = 'grpc', request_type=apigateway.DeleteG
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_gateway_from_dict():
-    test_delete_gateway(request_type=dict)
 
 
 def test_delete_gateway_empty_call():
@@ -1784,7 +1785,11 @@ async def test_delete_gateway_flattened_error_async():
         )
 
 
-def test_list_apis(transport: str = 'grpc', request_type=apigateway.ListApisRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.ListApisRequest,
+  dict,
+])
+def test_list_apis(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1814,10 +1819,6 @@ def test_list_apis(transport: str = 'grpc', request_type=apigateway.ListApisRequ
     assert isinstance(response, pagers.ListApisPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable_locations == ['unreachable_locations_value']
-
-
-def test_list_apis_from_dict():
-    test_list_apis(request_type=dict)
 
 
 def test_list_apis_empty_call():
@@ -2023,9 +2024,10 @@ async def test_list_apis_flattened_error_async():
         )
 
 
-def test_list_apis_pager():
+def test_list_apis_pager(transport_name: str = "grpc"):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2075,10 +2077,10 @@ def test_list_apis_pager():
         assert len(results) == 6
         assert all(isinstance(i, apigateway.Api)
                    for i in results)
-
-def test_list_apis_pages():
+def test_list_apis_pages(transport_name: str = "grpc"):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2163,7 +2165,8 @@ async def test_list_apis_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, apigateway.Api)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_apis_async_pages():
@@ -2209,7 +2212,11 @@ async def test_list_apis_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_api(transport: str = 'grpc', request_type=apigateway.GetApiRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.GetApiRequest,
+  dict,
+])
+def test_get_api(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2243,10 +2250,6 @@ def test_get_api(transport: str = 'grpc', request_type=apigateway.GetApiRequest)
     assert response.display_name == 'display_name_value'
     assert response.managed_service == 'managed_service_value'
     assert response.state == apigateway.Api.State.CREATING
-
-
-def test_get_api_from_dict():
-    test_get_api(request_type=dict)
 
 
 def test_get_api_empty_call():
@@ -2456,7 +2459,11 @@ async def test_get_api_flattened_error_async():
         )
 
 
-def test_create_api(transport: str = 'grpc', request_type=apigateway.CreateApiRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.CreateApiRequest,
+  dict,
+])
+def test_create_api(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2481,10 +2488,6 @@ def test_create_api(transport: str = 'grpc', request_type=apigateway.CreateApiRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_api_from_dict():
-    test_create_api(request_type=dict)
 
 
 def test_create_api_empty_call():
@@ -2709,7 +2712,11 @@ async def test_create_api_flattened_error_async():
         )
 
 
-def test_update_api(transport: str = 'grpc', request_type=apigateway.UpdateApiRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.UpdateApiRequest,
+  dict,
+])
+def test_update_api(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2734,10 +2741,6 @@ def test_update_api(transport: str = 'grpc', request_type=apigateway.UpdateApiRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_api_from_dict():
-    test_update_api(request_type=dict)
 
 
 def test_update_api_empty_call():
@@ -2952,7 +2955,11 @@ async def test_update_api_flattened_error_async():
         )
 
 
-def test_delete_api(transport: str = 'grpc', request_type=apigateway.DeleteApiRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.DeleteApiRequest,
+  dict,
+])
+def test_delete_api(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2977,10 +2984,6 @@ def test_delete_api(transport: str = 'grpc', request_type=apigateway.DeleteApiRe
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_api_from_dict():
-    test_delete_api(request_type=dict)
 
 
 def test_delete_api_empty_call():
@@ -3185,7 +3188,11 @@ async def test_delete_api_flattened_error_async():
         )
 
 
-def test_list_api_configs(transport: str = 'grpc', request_type=apigateway.ListApiConfigsRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.ListApiConfigsRequest,
+  dict,
+])
+def test_list_api_configs(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3215,10 +3222,6 @@ def test_list_api_configs(transport: str = 'grpc', request_type=apigateway.ListA
     assert isinstance(response, pagers.ListApiConfigsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable_locations == ['unreachable_locations_value']
-
-
-def test_list_api_configs_from_dict():
-    test_list_api_configs(request_type=dict)
 
 
 def test_list_api_configs_empty_call():
@@ -3424,9 +3427,10 @@ async def test_list_api_configs_flattened_error_async():
         )
 
 
-def test_list_api_configs_pager():
+def test_list_api_configs_pager(transport_name: str = "grpc"):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3476,10 +3480,10 @@ def test_list_api_configs_pager():
         assert len(results) == 6
         assert all(isinstance(i, apigateway.ApiConfig)
                    for i in results)
-
-def test_list_api_configs_pages():
+def test_list_api_configs_pages(transport_name: str = "grpc"):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3564,7 +3568,8 @@ async def test_list_api_configs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, apigateway.ApiConfig)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_api_configs_async_pages():
@@ -3610,7 +3615,11 @@ async def test_list_api_configs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_api_config(transport: str = 'grpc', request_type=apigateway.GetApiConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.GetApiConfigRequest,
+  dict,
+])
+def test_get_api_config(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3646,10 +3655,6 @@ def test_get_api_config(transport: str = 'grpc', request_type=apigateway.GetApiC
     assert response.gateway_service_account == 'gateway_service_account_value'
     assert response.service_config_id == 'service_config_id_value'
     assert response.state == apigateway.ApiConfig.State.CREATING
-
-
-def test_get_api_config_from_dict():
-    test_get_api_config(request_type=dict)
 
 
 def test_get_api_config_empty_call():
@@ -3861,7 +3866,11 @@ async def test_get_api_config_flattened_error_async():
         )
 
 
-def test_create_api_config(transport: str = 'grpc', request_type=apigateway.CreateApiConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.CreateApiConfigRequest,
+  dict,
+])
+def test_create_api_config(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3886,10 +3895,6 @@ def test_create_api_config(transport: str = 'grpc', request_type=apigateway.Crea
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_api_config_from_dict():
-    test_create_api_config(request_type=dict)
 
 
 def test_create_api_config_empty_call():
@@ -4114,7 +4119,11 @@ async def test_create_api_config_flattened_error_async():
         )
 
 
-def test_update_api_config(transport: str = 'grpc', request_type=apigateway.UpdateApiConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.UpdateApiConfigRequest,
+  dict,
+])
+def test_update_api_config(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4139,10 +4148,6 @@ def test_update_api_config(transport: str = 'grpc', request_type=apigateway.Upda
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_api_config_from_dict():
-    test_update_api_config(request_type=dict)
 
 
 def test_update_api_config_empty_call():
@@ -4357,7 +4362,11 @@ async def test_update_api_config_flattened_error_async():
         )
 
 
-def test_delete_api_config(transport: str = 'grpc', request_type=apigateway.DeleteApiConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  apigateway.DeleteApiConfigRequest,
+  dict,
+])
+def test_delete_api_config(request_type, transport: str = 'grpc'):
     client = ApiGatewayServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4382,10 +4391,6 @@ def test_delete_api_config(transport: str = 'grpc', request_type=apigateway.Dele
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_api_config_from_dict():
-    test_delete_api_config(request_type=dict)
 
 
 def test_delete_api_config_empty_call():
@@ -5218,7 +5223,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ApiGatewayServiceTransport, '_prep_wrapped_messages') as prep:

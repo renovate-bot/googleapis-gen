@@ -127,7 +127,6 @@ class ListServicesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[metastore.Service]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListMetadataImportsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[metastore.MetadataImport]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListBackupsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[metastore.Backup]:
         async def async_generator():
             async for page in self.pages:

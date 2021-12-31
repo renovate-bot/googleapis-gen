@@ -210,18 +210,18 @@ def test_network_services_client_client_options(client_class, transport_class, t
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -252,7 +252,7 @@ def test_network_services_client_mtls_env_auto(client_class, transport_class, tr
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -327,7 +327,7 @@ def test_network_services_client_client_options_scopes(client_class, transport_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -350,7 +350,7 @@ def test_network_services_client_client_options_credentials_file(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -361,7 +361,6 @@ def test_network_services_client_client_options_credentials_file(client_class, t
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_network_services_client_client_options_from_dict():
     with mock.patch('google.cloud.networkservices_v1.services.network_services.transports.NetworkServicesGrpcTransport.__init__') as grpc_transport:
@@ -381,7 +380,11 @@ def test_network_services_client_client_options_from_dict():
         )
 
 
-def test_list_endpoint_policies(transport: str = 'grpc', request_type=endpoint_policy.ListEndpointPoliciesRequest):
+@pytest.mark.parametrize("request_type", [
+  endpoint_policy.ListEndpointPoliciesRequest,
+  dict,
+])
+def test_list_endpoint_policies(request_type, transport: str = 'grpc'):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_list_endpoint_policies(transport: str = 'grpc', request_type=endpoint_p
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEndpointPoliciesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_endpoint_policies_from_dict():
-    test_list_endpoint_policies(request_type=dict)
 
 
 def test_list_endpoint_policies_empty_call():
@@ -616,9 +615,10 @@ async def test_list_endpoint_policies_flattened_error_async():
         )
 
 
-def test_list_endpoint_policies_pager():
+def test_list_endpoint_policies_pager(transport_name: str = "grpc"):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -668,10 +668,10 @@ def test_list_endpoint_policies_pager():
         assert len(results) == 6
         assert all(isinstance(i, endpoint_policy.EndpointPolicy)
                    for i in results)
-
-def test_list_endpoint_policies_pages():
+def test_list_endpoint_policies_pages(transport_name: str = "grpc"):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -756,7 +756,8 @@ async def test_list_endpoint_policies_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, endpoint_policy.EndpointPolicy)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_endpoint_policies_async_pages():
@@ -802,7 +803,11 @@ async def test_list_endpoint_policies_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_endpoint_policy(transport: str = 'grpc', request_type=endpoint_policy.GetEndpointPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  endpoint_policy.GetEndpointPolicyRequest,
+  dict,
+])
+def test_get_endpoint_policy(request_type, transport: str = 'grpc'):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -840,10 +845,6 @@ def test_get_endpoint_policy(transport: str = 'grpc', request_type=endpoint_poli
     assert response.description == 'description_value'
     assert response.server_tls_policy == 'server_tls_policy_value'
     assert response.client_tls_policy == 'client_tls_policy_value'
-
-
-def test_get_endpoint_policy_from_dict():
-    test_get_endpoint_policy(request_type=dict)
 
 
 def test_get_endpoint_policy_empty_call():
@@ -1057,7 +1058,11 @@ async def test_get_endpoint_policy_flattened_error_async():
         )
 
 
-def test_create_endpoint_policy(transport: str = 'grpc', request_type=gcn_endpoint_policy.CreateEndpointPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  gcn_endpoint_policy.CreateEndpointPolicyRequest,
+  dict,
+])
+def test_create_endpoint_policy(request_type, transport: str = 'grpc'):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1082,10 +1087,6 @@ def test_create_endpoint_policy(transport: str = 'grpc', request_type=gcn_endpoi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_endpoint_policy_from_dict():
-    test_create_endpoint_policy(request_type=dict)
 
 
 def test_create_endpoint_policy_empty_call():
@@ -1310,7 +1311,11 @@ async def test_create_endpoint_policy_flattened_error_async():
         )
 
 
-def test_update_endpoint_policy(transport: str = 'grpc', request_type=gcn_endpoint_policy.UpdateEndpointPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  gcn_endpoint_policy.UpdateEndpointPolicyRequest,
+  dict,
+])
+def test_update_endpoint_policy(request_type, transport: str = 'grpc'):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1335,10 +1340,6 @@ def test_update_endpoint_policy(transport: str = 'grpc', request_type=gcn_endpoi
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_endpoint_policy_from_dict():
-    test_update_endpoint_policy(request_type=dict)
 
 
 def test_update_endpoint_policy_empty_call():
@@ -1553,7 +1554,11 @@ async def test_update_endpoint_policy_flattened_error_async():
         )
 
 
-def test_delete_endpoint_policy(transport: str = 'grpc', request_type=endpoint_policy.DeleteEndpointPolicyRequest):
+@pytest.mark.parametrize("request_type", [
+  endpoint_policy.DeleteEndpointPolicyRequest,
+  dict,
+])
+def test_delete_endpoint_policy(request_type, transport: str = 'grpc'):
     client = NetworkServicesClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1578,10 +1583,6 @@ def test_delete_endpoint_policy(transport: str = 'grpc', request_type=endpoint_p
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_endpoint_policy_from_dict():
-    test_delete_endpoint_policy(request_type=dict)
 
 
 def test_delete_endpoint_policy_empty_call():
@@ -2372,7 +2373,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.NetworkServicesTransport, '_prep_wrapped_messages') as prep:

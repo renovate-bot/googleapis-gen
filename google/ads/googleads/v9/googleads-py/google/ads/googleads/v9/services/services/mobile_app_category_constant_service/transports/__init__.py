@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import MobileAppCategoryConstantServiceTransport
 from .grpc import MobileAppCategoryConstantServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[MobileAppCategoryConstantServiceTransport]]
 _transport_registry['grpc'] = MobileAppCategoryConstantServiceGrpcTransport
-
 
 __all__ = (
     'MobileAppCategoryConstantServiceTransport',

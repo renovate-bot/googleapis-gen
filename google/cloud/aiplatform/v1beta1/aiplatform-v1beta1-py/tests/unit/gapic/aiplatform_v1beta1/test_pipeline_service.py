@@ -228,18 +228,18 @@ def test_pipeline_service_client_client_options(client_class, transport_class, t
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -270,7 +270,7 @@ def test_pipeline_service_client_mtls_env_auto(client_class, transport_class, tr
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -345,7 +345,7 @@ def test_pipeline_service_client_client_options_scopes(client_class, transport_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -368,7 +368,7 @@ def test_pipeline_service_client_client_options_credentials_file(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -379,7 +379,6 @@ def test_pipeline_service_client_client_options_credentials_file(client_class, t
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_pipeline_service_client_client_options_from_dict():
     with mock.patch('google.cloud.aiplatform_v1beta1.services.pipeline_service.transports.PipelineServiceGrpcTransport.__init__') as grpc_transport:
@@ -399,7 +398,11 @@ def test_pipeline_service_client_client_options_from_dict():
         )
 
 
-def test_create_training_pipeline(transport: str = 'grpc', request_type=pipeline_service.CreateTrainingPipelineRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.CreateTrainingPipelineRequest,
+  dict,
+])
+def test_create_training_pipeline(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -433,10 +436,6 @@ def test_create_training_pipeline(transport: str = 'grpc', request_type=pipeline
     assert response.display_name == 'display_name_value'
     assert response.training_task_definition == 'training_task_definition_value'
     assert response.state == pipeline_state.PipelineState.PIPELINE_STATE_QUEUED
-
-
-def test_create_training_pipeline_from_dict():
-    test_create_training_pipeline(request_type=dict)
 
 
 def test_create_training_pipeline_empty_call():
@@ -656,7 +655,11 @@ async def test_create_training_pipeline_flattened_error_async():
         )
 
 
-def test_get_training_pipeline(transport: str = 'grpc', request_type=pipeline_service.GetTrainingPipelineRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.GetTrainingPipelineRequest,
+  dict,
+])
+def test_get_training_pipeline(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -690,10 +693,6 @@ def test_get_training_pipeline(transport: str = 'grpc', request_type=pipeline_se
     assert response.display_name == 'display_name_value'
     assert response.training_task_definition == 'training_task_definition_value'
     assert response.state == pipeline_state.PipelineState.PIPELINE_STATE_QUEUED
-
-
-def test_get_training_pipeline_from_dict():
-    test_get_training_pipeline(request_type=dict)
 
 
 def test_get_training_pipeline_empty_call():
@@ -903,7 +902,11 @@ async def test_get_training_pipeline_flattened_error_async():
         )
 
 
-def test_list_training_pipelines(transport: str = 'grpc', request_type=pipeline_service.ListTrainingPipelinesRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.ListTrainingPipelinesRequest,
+  dict,
+])
+def test_list_training_pipelines(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -931,10 +934,6 @@ def test_list_training_pipelines(transport: str = 'grpc', request_type=pipeline_
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTrainingPipelinesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_training_pipelines_from_dict():
-    test_list_training_pipelines(request_type=dict)
 
 
 def test_list_training_pipelines_empty_call():
@@ -1138,9 +1137,10 @@ async def test_list_training_pipelines_flattened_error_async():
         )
 
 
-def test_list_training_pipelines_pager():
+def test_list_training_pipelines_pager(transport_name: str = "grpc"):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1190,10 +1190,10 @@ def test_list_training_pipelines_pager():
         assert len(results) == 6
         assert all(isinstance(i, training_pipeline.TrainingPipeline)
                    for i in results)
-
-def test_list_training_pipelines_pages():
+def test_list_training_pipelines_pages(transport_name: str = "grpc"):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1278,7 +1278,8 @@ async def test_list_training_pipelines_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, training_pipeline.TrainingPipeline)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_training_pipelines_async_pages():
@@ -1324,7 +1325,11 @@ async def test_list_training_pipelines_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_training_pipeline(transport: str = 'grpc', request_type=pipeline_service.DeleteTrainingPipelineRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.DeleteTrainingPipelineRequest,
+  dict,
+])
+def test_delete_training_pipeline(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1349,10 +1354,6 @@ def test_delete_training_pipeline(transport: str = 'grpc', request_type=pipeline
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_training_pipeline_from_dict():
-    test_delete_training_pipeline(request_type=dict)
 
 
 def test_delete_training_pipeline_empty_call():
@@ -1557,7 +1558,11 @@ async def test_delete_training_pipeline_flattened_error_async():
         )
 
 
-def test_cancel_training_pipeline(transport: str = 'grpc', request_type=pipeline_service.CancelTrainingPipelineRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.CancelTrainingPipelineRequest,
+  dict,
+])
+def test_cancel_training_pipeline(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1582,10 +1587,6 @@ def test_cancel_training_pipeline(transport: str = 'grpc', request_type=pipeline
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_cancel_training_pipeline_from_dict():
-    test_cancel_training_pipeline(request_type=dict)
 
 
 def test_cancel_training_pipeline_empty_call():
@@ -1786,7 +1787,11 @@ async def test_cancel_training_pipeline_flattened_error_async():
         )
 
 
-def test_create_pipeline_job(transport: str = 'grpc', request_type=pipeline_service.CreatePipelineJobRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.CreatePipelineJobRequest,
+  dict,
+])
+def test_create_pipeline_job(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1822,10 +1827,6 @@ def test_create_pipeline_job(transport: str = 'grpc', request_type=pipeline_serv
     assert response.state == pipeline_state.PipelineState.PIPELINE_STATE_QUEUED
     assert response.service_account == 'service_account_value'
     assert response.network == 'network_value'
-
-
-def test_create_pipeline_job_from_dict():
-    test_create_pipeline_job(request_type=dict)
 
 
 def test_create_pipeline_job_empty_call():
@@ -2057,7 +2058,11 @@ async def test_create_pipeline_job_flattened_error_async():
         )
 
 
-def test_get_pipeline_job(transport: str = 'grpc', request_type=pipeline_service.GetPipelineJobRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.GetPipelineJobRequest,
+  dict,
+])
+def test_get_pipeline_job(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2093,10 +2098,6 @@ def test_get_pipeline_job(transport: str = 'grpc', request_type=pipeline_service
     assert response.state == pipeline_state.PipelineState.PIPELINE_STATE_QUEUED
     assert response.service_account == 'service_account_value'
     assert response.network == 'network_value'
-
-
-def test_get_pipeline_job_from_dict():
-    test_get_pipeline_job(request_type=dict)
 
 
 def test_get_pipeline_job_empty_call():
@@ -2308,7 +2309,11 @@ async def test_get_pipeline_job_flattened_error_async():
         )
 
 
-def test_list_pipeline_jobs(transport: str = 'grpc', request_type=pipeline_service.ListPipelineJobsRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.ListPipelineJobsRequest,
+  dict,
+])
+def test_list_pipeline_jobs(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2336,10 +2341,6 @@ def test_list_pipeline_jobs(transport: str = 'grpc', request_type=pipeline_servi
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPipelineJobsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_pipeline_jobs_from_dict():
-    test_list_pipeline_jobs(request_type=dict)
 
 
 def test_list_pipeline_jobs_empty_call():
@@ -2543,9 +2544,10 @@ async def test_list_pipeline_jobs_flattened_error_async():
         )
 
 
-def test_list_pipeline_jobs_pager():
+def test_list_pipeline_jobs_pager(transport_name: str = "grpc"):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2595,10 +2597,10 @@ def test_list_pipeline_jobs_pager():
         assert len(results) == 6
         assert all(isinstance(i, pipeline_job.PipelineJob)
                    for i in results)
-
-def test_list_pipeline_jobs_pages():
+def test_list_pipeline_jobs_pages(transport_name: str = "grpc"):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2683,7 +2685,8 @@ async def test_list_pipeline_jobs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, pipeline_job.PipelineJob)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_pipeline_jobs_async_pages():
@@ -2729,7 +2732,11 @@ async def test_list_pipeline_jobs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_pipeline_job(transport: str = 'grpc', request_type=pipeline_service.DeletePipelineJobRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.DeletePipelineJobRequest,
+  dict,
+])
+def test_delete_pipeline_job(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2754,10 +2761,6 @@ def test_delete_pipeline_job(transport: str = 'grpc', request_type=pipeline_serv
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_pipeline_job_from_dict():
-    test_delete_pipeline_job(request_type=dict)
 
 
 def test_delete_pipeline_job_empty_call():
@@ -2962,7 +2965,11 @@ async def test_delete_pipeline_job_flattened_error_async():
         )
 
 
-def test_cancel_pipeline_job(transport: str = 'grpc', request_type=pipeline_service.CancelPipelineJobRequest):
+@pytest.mark.parametrize("request_type", [
+  pipeline_service.CancelPipelineJobRequest,
+  dict,
+])
+def test_cancel_pipeline_job(request_type, transport: str = 'grpc'):
     client = PipelineServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2987,10 +2994,6 @@ def test_cancel_pipeline_job(transport: str = 'grpc', request_type=pipeline_serv
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_cancel_pipeline_job_from_dict():
-    test_cancel_pipeline_job(request_type=dict)
 
 
 def test_cancel_pipeline_job_empty_call():
@@ -3891,7 +3894,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.PipelineServiceTransport, '_prep_wrapped_messages') as prep:

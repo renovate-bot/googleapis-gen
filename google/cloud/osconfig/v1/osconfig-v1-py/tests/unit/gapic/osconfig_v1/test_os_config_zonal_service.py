@@ -214,18 +214,18 @@ def test_os_config_zonal_service_client_client_options(client_class, transport_c
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -256,7 +256,7 @@ def test_os_config_zonal_service_client_mtls_env_auto(client_class, transport_cl
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -331,7 +331,7 @@ def test_os_config_zonal_service_client_client_options_scopes(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -354,7 +354,7 @@ def test_os_config_zonal_service_client_client_options_credentials_file(client_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -365,7 +365,6 @@ def test_os_config_zonal_service_client_client_options_credentials_file(client_c
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_os_config_zonal_service_client_client_options_from_dict():
     with mock.patch('google.cloud.osconfig_v1.services.os_config_zonal_service.transports.OsConfigZonalServiceGrpcTransport.__init__') as grpc_transport:
@@ -385,7 +384,11 @@ def test_os_config_zonal_service_client_client_options_from_dict():
         )
 
 
-def test_create_os_policy_assignment(transport: str = 'grpc', request_type=os_policy_assignments.CreateOSPolicyAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignments.CreateOSPolicyAssignmentRequest,
+  dict,
+])
+def test_create_os_policy_assignment(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -410,10 +413,6 @@ def test_create_os_policy_assignment(transport: str = 'grpc', request_type=os_po
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_os_policy_assignment_from_dict():
-    test_create_os_policy_assignment(request_type=dict)
 
 
 def test_create_os_policy_assignment_empty_call():
@@ -638,7 +637,11 @@ async def test_create_os_policy_assignment_flattened_error_async():
         )
 
 
-def test_update_os_policy_assignment(transport: str = 'grpc', request_type=os_policy_assignments.UpdateOSPolicyAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignments.UpdateOSPolicyAssignmentRequest,
+  dict,
+])
+def test_update_os_policy_assignment(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -663,10 +666,6 @@ def test_update_os_policy_assignment(transport: str = 'grpc', request_type=os_po
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_os_policy_assignment_from_dict():
-    test_update_os_policy_assignment(request_type=dict)
 
 
 def test_update_os_policy_assignment_empty_call():
@@ -881,7 +880,11 @@ async def test_update_os_policy_assignment_flattened_error_async():
         )
 
 
-def test_get_os_policy_assignment(transport: str = 'grpc', request_type=os_policy_assignments.GetOSPolicyAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignments.GetOSPolicyAssignmentRequest,
+  dict,
+])
+def test_get_os_policy_assignment(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -925,10 +928,6 @@ def test_get_os_policy_assignment(transport: str = 'grpc', request_type=os_polic
     assert response.deleted is True
     assert response.reconciling is True
     assert response.uid == 'uid_value'
-
-
-def test_get_os_policy_assignment_from_dict():
-    test_get_os_policy_assignment(request_type=dict)
 
 
 def test_get_os_policy_assignment_empty_call():
@@ -1148,7 +1147,11 @@ async def test_get_os_policy_assignment_flattened_error_async():
         )
 
 
-def test_list_os_policy_assignments(transport: str = 'grpc', request_type=os_policy_assignments.ListOSPolicyAssignmentsRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignments.ListOSPolicyAssignmentsRequest,
+  dict,
+])
+def test_list_os_policy_assignments(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1176,10 +1179,6 @@ def test_list_os_policy_assignments(transport: str = 'grpc', request_type=os_pol
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListOSPolicyAssignmentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_os_policy_assignments_from_dict():
-    test_list_os_policy_assignments(request_type=dict)
 
 
 def test_list_os_policy_assignments_empty_call():
@@ -1383,9 +1382,10 @@ async def test_list_os_policy_assignments_flattened_error_async():
         )
 
 
-def test_list_os_policy_assignments_pager():
+def test_list_os_policy_assignments_pager(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1435,10 +1435,10 @@ def test_list_os_policy_assignments_pager():
         assert len(results) == 6
         assert all(isinstance(i, os_policy_assignments.OSPolicyAssignment)
                    for i in results)
-
-def test_list_os_policy_assignments_pages():
+def test_list_os_policy_assignments_pages(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1523,7 +1523,8 @@ async def test_list_os_policy_assignments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, os_policy_assignments.OSPolicyAssignment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_os_policy_assignments_async_pages():
@@ -1569,7 +1570,11 @@ async def test_list_os_policy_assignments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_list_os_policy_assignment_revisions(transport: str = 'grpc', request_type=os_policy_assignments.ListOSPolicyAssignmentRevisionsRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignments.ListOSPolicyAssignmentRevisionsRequest,
+  dict,
+])
+def test_list_os_policy_assignment_revisions(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1597,10 +1602,6 @@ def test_list_os_policy_assignment_revisions(transport: str = 'grpc', request_ty
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListOSPolicyAssignmentRevisionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_os_policy_assignment_revisions_from_dict():
-    test_list_os_policy_assignment_revisions(request_type=dict)
 
 
 def test_list_os_policy_assignment_revisions_empty_call():
@@ -1804,9 +1805,10 @@ async def test_list_os_policy_assignment_revisions_flattened_error_async():
         )
 
 
-def test_list_os_policy_assignment_revisions_pager():
+def test_list_os_policy_assignment_revisions_pager(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1856,10 +1858,10 @@ def test_list_os_policy_assignment_revisions_pager():
         assert len(results) == 6
         assert all(isinstance(i, os_policy_assignments.OSPolicyAssignment)
                    for i in results)
-
-def test_list_os_policy_assignment_revisions_pages():
+def test_list_os_policy_assignment_revisions_pages(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1944,7 +1946,8 @@ async def test_list_os_policy_assignment_revisions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, os_policy_assignments.OSPolicyAssignment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_os_policy_assignment_revisions_async_pages():
@@ -1990,7 +1993,11 @@ async def test_list_os_policy_assignment_revisions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_os_policy_assignment(transport: str = 'grpc', request_type=os_policy_assignments.DeleteOSPolicyAssignmentRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignments.DeleteOSPolicyAssignmentRequest,
+  dict,
+])
+def test_delete_os_policy_assignment(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2015,10 +2022,6 @@ def test_delete_os_policy_assignment(transport: str = 'grpc', request_type=os_po
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_os_policy_assignment_from_dict():
-    test_delete_os_policy_assignment(request_type=dict)
 
 
 def test_delete_os_policy_assignment_empty_call():
@@ -2223,7 +2226,11 @@ async def test_delete_os_policy_assignment_flattened_error_async():
         )
 
 
-def test_get_os_policy_assignment_report(transport: str = 'grpc', request_type=os_policy_assignment_reports.GetOSPolicyAssignmentReportRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignment_reports.GetOSPolicyAssignmentReportRequest,
+  dict,
+])
+def test_get_os_policy_assignment_report(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2257,10 +2264,6 @@ def test_get_os_policy_assignment_report(transport: str = 'grpc', request_type=o
     assert response.instance == 'instance_value'
     assert response.os_policy_assignment == 'os_policy_assignment_value'
     assert response.last_run_id == 'last_run_id_value'
-
-
-def test_get_os_policy_assignment_report_from_dict():
-    test_get_os_policy_assignment_report(request_type=dict)
 
 
 def test_get_os_policy_assignment_report_empty_call():
@@ -2470,7 +2473,11 @@ async def test_get_os_policy_assignment_report_flattened_error_async():
         )
 
 
-def test_list_os_policy_assignment_reports(transport: str = 'grpc', request_type=os_policy_assignment_reports.ListOSPolicyAssignmentReportsRequest):
+@pytest.mark.parametrize("request_type", [
+  os_policy_assignment_reports.ListOSPolicyAssignmentReportsRequest,
+  dict,
+])
+def test_list_os_policy_assignment_reports(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2498,10 +2505,6 @@ def test_list_os_policy_assignment_reports(transport: str = 'grpc', request_type
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListOSPolicyAssignmentReportsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_os_policy_assignment_reports_from_dict():
-    test_list_os_policy_assignment_reports(request_type=dict)
 
 
 def test_list_os_policy_assignment_reports_empty_call():
@@ -2705,9 +2708,10 @@ async def test_list_os_policy_assignment_reports_flattened_error_async():
         )
 
 
-def test_list_os_policy_assignment_reports_pager():
+def test_list_os_policy_assignment_reports_pager(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2757,10 +2761,10 @@ def test_list_os_policy_assignment_reports_pager():
         assert len(results) == 6
         assert all(isinstance(i, os_policy_assignment_reports.OSPolicyAssignmentReport)
                    for i in results)
-
-def test_list_os_policy_assignment_reports_pages():
+def test_list_os_policy_assignment_reports_pages(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2845,7 +2849,8 @@ async def test_list_os_policy_assignment_reports_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, os_policy_assignment_reports.OSPolicyAssignmentReport)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_os_policy_assignment_reports_async_pages():
@@ -2891,7 +2896,11 @@ async def test_list_os_policy_assignment_reports_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_inventory(transport: str = 'grpc', request_type=inventory.GetInventoryRequest):
+@pytest.mark.parametrize("request_type", [
+  inventory.GetInventoryRequest,
+  dict,
+])
+def test_get_inventory(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2919,10 +2928,6 @@ def test_get_inventory(transport: str = 'grpc', request_type=inventory.GetInvent
     # Establish that the response is the type that we expect.
     assert isinstance(response, inventory.Inventory)
     assert response.name == 'name_value'
-
-
-def test_get_inventory_from_dict():
-    test_get_inventory(request_type=dict)
 
 
 def test_get_inventory_empty_call():
@@ -3126,7 +3131,11 @@ async def test_get_inventory_flattened_error_async():
         )
 
 
-def test_list_inventories(transport: str = 'grpc', request_type=inventory.ListInventoriesRequest):
+@pytest.mark.parametrize("request_type", [
+  inventory.ListInventoriesRequest,
+  dict,
+])
+def test_list_inventories(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3154,10 +3163,6 @@ def test_list_inventories(transport: str = 'grpc', request_type=inventory.ListIn
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListInventoriesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_inventories_from_dict():
-    test_list_inventories(request_type=dict)
 
 
 def test_list_inventories_empty_call():
@@ -3361,9 +3366,10 @@ async def test_list_inventories_flattened_error_async():
         )
 
 
-def test_list_inventories_pager():
+def test_list_inventories_pager(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3413,10 +3419,10 @@ def test_list_inventories_pager():
         assert len(results) == 6
         assert all(isinstance(i, inventory.Inventory)
                    for i in results)
-
-def test_list_inventories_pages():
+def test_list_inventories_pages(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3501,7 +3507,8 @@ async def test_list_inventories_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, inventory.Inventory)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_inventories_async_pages():
@@ -3547,7 +3554,11 @@ async def test_list_inventories_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_vulnerability_report(transport: str = 'grpc', request_type=vulnerability.GetVulnerabilityReportRequest):
+@pytest.mark.parametrize("request_type", [
+  vulnerability.GetVulnerabilityReportRequest,
+  dict,
+])
+def test_get_vulnerability_report(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3575,10 +3586,6 @@ def test_get_vulnerability_report(transport: str = 'grpc', request_type=vulnerab
     # Establish that the response is the type that we expect.
     assert isinstance(response, vulnerability.VulnerabilityReport)
     assert response.name == 'name_value'
-
-
-def test_get_vulnerability_report_from_dict():
-    test_get_vulnerability_report(request_type=dict)
 
 
 def test_get_vulnerability_report_empty_call():
@@ -3782,7 +3789,11 @@ async def test_get_vulnerability_report_flattened_error_async():
         )
 
 
-def test_list_vulnerability_reports(transport: str = 'grpc', request_type=vulnerability.ListVulnerabilityReportsRequest):
+@pytest.mark.parametrize("request_type", [
+  vulnerability.ListVulnerabilityReportsRequest,
+  dict,
+])
+def test_list_vulnerability_reports(request_type, transport: str = 'grpc'):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3810,10 +3821,6 @@ def test_list_vulnerability_reports(transport: str = 'grpc', request_type=vulner
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListVulnerabilityReportsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_vulnerability_reports_from_dict():
-    test_list_vulnerability_reports(request_type=dict)
 
 
 def test_list_vulnerability_reports_empty_call():
@@ -4017,9 +4024,10 @@ async def test_list_vulnerability_reports_flattened_error_async():
         )
 
 
-def test_list_vulnerability_reports_pager():
+def test_list_vulnerability_reports_pager(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4069,10 +4077,10 @@ def test_list_vulnerability_reports_pager():
         assert len(results) == 6
         assert all(isinstance(i, vulnerability.VulnerabilityReport)
                    for i in results)
-
-def test_list_vulnerability_reports_pages():
+def test_list_vulnerability_reports_pages(transport_name: str = "grpc"):
     client = OsConfigZonalServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4157,7 +4165,8 @@ async def test_list_vulnerability_reports_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, vulnerability.VulnerabilityReport)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_vulnerability_reports_async_pages():
@@ -4843,7 +4852,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.OsConfigZonalServiceTransport, '_prep_wrapped_messages') as prep:

@@ -202,18 +202,18 @@ def test_identity_aware_proxy_o_auth_service_client_client_options(client_class,
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -244,7 +244,7 @@ def test_identity_aware_proxy_o_auth_service_client_mtls_env_auto(client_class, 
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -319,7 +319,7 @@ def test_identity_aware_proxy_o_auth_service_client_client_options_scopes(client
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -342,7 +342,7 @@ def test_identity_aware_proxy_o_auth_service_client_client_options_credentials_f
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -353,7 +353,6 @@ def test_identity_aware_proxy_o_auth_service_client_client_options_credentials_f
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_identity_aware_proxy_o_auth_service_client_client_options_from_dict():
     with mock.patch('google.cloud.iap_v1.services.identity_aware_proxy_o_auth_service.transports.IdentityAwareProxyOAuthServiceGrpcTransport.__init__') as grpc_transport:
@@ -373,7 +372,11 @@ def test_identity_aware_proxy_o_auth_service_client_client_options_from_dict():
         )
 
 
-def test_list_brands(transport: str = 'grpc', request_type=service.ListBrandsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListBrandsRequest,
+  dict,
+])
+def test_list_brands(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -399,10 +402,6 @@ def test_list_brands(transport: str = 'grpc', request_type=service.ListBrandsReq
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, service.ListBrandsResponse)
-
-
-def test_list_brands_from_dict():
-    test_list_brands(request_type=dict)
 
 
 def test_list_brands_empty_call():
@@ -520,7 +519,11 @@ async def test_list_brands_field_headers_async():
     ) in kw['metadata']
 
 
-def test_create_brand(transport: str = 'grpc', request_type=service.CreateBrandRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateBrandRequest,
+  dict,
+])
+def test_create_brand(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -554,10 +557,6 @@ def test_create_brand(transport: str = 'grpc', request_type=service.CreateBrandR
     assert response.support_email == 'support_email_value'
     assert response.application_title == 'application_title_value'
     assert response.org_internal_only is True
-
-
-def test_create_brand_from_dict():
-    test_create_brand(request_type=dict)
 
 
 def test_create_brand_empty_call():
@@ -683,7 +682,11 @@ async def test_create_brand_field_headers_async():
     ) in kw['metadata']
 
 
-def test_get_brand(transport: str = 'grpc', request_type=service.GetBrandRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetBrandRequest,
+  dict,
+])
+def test_get_brand(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -717,10 +720,6 @@ def test_get_brand(transport: str = 'grpc', request_type=service.GetBrandRequest
     assert response.support_email == 'support_email_value'
     assert response.application_title == 'application_title_value'
     assert response.org_internal_only is True
-
-
-def test_get_brand_from_dict():
-    test_get_brand(request_type=dict)
 
 
 def test_get_brand_empty_call():
@@ -846,7 +845,11 @@ async def test_get_brand_field_headers_async():
     ) in kw['metadata']
 
 
-def test_create_identity_aware_proxy_client(transport: str = 'grpc', request_type=service.CreateIdentityAwareProxyClientRequest):
+@pytest.mark.parametrize("request_type", [
+  service.CreateIdentityAwareProxyClientRequest,
+  dict,
+])
+def test_create_identity_aware_proxy_client(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -878,10 +881,6 @@ def test_create_identity_aware_proxy_client(transport: str = 'grpc', request_typ
     assert response.name == 'name_value'
     assert response.secret == 'secret_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_create_identity_aware_proxy_client_from_dict():
-    test_create_identity_aware_proxy_client(request_type=dict)
 
 
 def test_create_identity_aware_proxy_client_empty_call():
@@ -1005,7 +1004,11 @@ async def test_create_identity_aware_proxy_client_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_identity_aware_proxy_clients(transport: str = 'grpc', request_type=service.ListIdentityAwareProxyClientsRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ListIdentityAwareProxyClientsRequest,
+  dict,
+])
+def test_list_identity_aware_proxy_clients(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1033,10 +1036,6 @@ def test_list_identity_aware_proxy_clients(transport: str = 'grpc', request_type
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListIdentityAwareProxyClientsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_identity_aware_proxy_clients_from_dict():
-    test_list_identity_aware_proxy_clients(request_type=dict)
 
 
 def test_list_identity_aware_proxy_clients_empty_call():
@@ -1156,9 +1155,10 @@ async def test_list_identity_aware_proxy_clients_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_identity_aware_proxy_clients_pager():
+def test_list_identity_aware_proxy_clients_pager(transport_name: str = "grpc"):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1208,10 +1208,10 @@ def test_list_identity_aware_proxy_clients_pager():
         assert len(results) == 6
         assert all(isinstance(i, service.IdentityAwareProxyClient)
                    for i in results)
-
-def test_list_identity_aware_proxy_clients_pages():
+def test_list_identity_aware_proxy_clients_pages(transport_name: str = "grpc"):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1296,7 +1296,8 @@ async def test_list_identity_aware_proxy_clients_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, service.IdentityAwareProxyClient)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_identity_aware_proxy_clients_async_pages():
@@ -1342,7 +1343,11 @@ async def test_list_identity_aware_proxy_clients_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_identity_aware_proxy_client(transport: str = 'grpc', request_type=service.GetIdentityAwareProxyClientRequest):
+@pytest.mark.parametrize("request_type", [
+  service.GetIdentityAwareProxyClientRequest,
+  dict,
+])
+def test_get_identity_aware_proxy_client(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1374,10 +1379,6 @@ def test_get_identity_aware_proxy_client(transport: str = 'grpc', request_type=s
     assert response.name == 'name_value'
     assert response.secret == 'secret_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_identity_aware_proxy_client_from_dict():
-    test_get_identity_aware_proxy_client(request_type=dict)
 
 
 def test_get_identity_aware_proxy_client_empty_call():
@@ -1501,7 +1502,11 @@ async def test_get_identity_aware_proxy_client_field_headers_async():
     ) in kw['metadata']
 
 
-def test_reset_identity_aware_proxy_client_secret(transport: str = 'grpc', request_type=service.ResetIdentityAwareProxyClientSecretRequest):
+@pytest.mark.parametrize("request_type", [
+  service.ResetIdentityAwareProxyClientSecretRequest,
+  dict,
+])
+def test_reset_identity_aware_proxy_client_secret(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1533,10 +1538,6 @@ def test_reset_identity_aware_proxy_client_secret(transport: str = 'grpc', reque
     assert response.name == 'name_value'
     assert response.secret == 'secret_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_reset_identity_aware_proxy_client_secret_from_dict():
-    test_reset_identity_aware_proxy_client_secret(request_type=dict)
 
 
 def test_reset_identity_aware_proxy_client_secret_empty_call():
@@ -1660,7 +1661,11 @@ async def test_reset_identity_aware_proxy_client_secret_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_identity_aware_proxy_client(transport: str = 'grpc', request_type=service.DeleteIdentityAwareProxyClientRequest):
+@pytest.mark.parametrize("request_type", [
+  service.DeleteIdentityAwareProxyClientRequest,
+  dict,
+])
+def test_delete_identity_aware_proxy_client(request_type, transport: str = 'grpc'):
     client = IdentityAwareProxyOAuthServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1685,10 +1690,6 @@ def test_delete_identity_aware_proxy_client(transport: str = 'grpc', request_typ
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_identity_aware_proxy_client_from_dict():
-    test_delete_identity_aware_proxy_client(request_type=dict)
 
 
 def test_delete_identity_aware_proxy_client_empty_call():
@@ -2271,7 +2272,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.IdentityAwareProxyOAuthServiceTransport, '_prep_wrapped_messages') as prep:

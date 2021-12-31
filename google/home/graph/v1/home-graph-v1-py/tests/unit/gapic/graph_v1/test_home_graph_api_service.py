@@ -202,18 +202,18 @@ def test_home_graph_api_service_client_client_options(client_class, transport_cl
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -244,7 +244,7 @@ def test_home_graph_api_service_client_mtls_env_auto(client_class, transport_cla
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -319,7 +319,7 @@ def test_home_graph_api_service_client_client_options_scopes(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -342,7 +342,7 @@ def test_home_graph_api_service_client_client_options_credentials_file(client_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -353,7 +353,6 @@ def test_home_graph_api_service_client_client_options_credentials_file(client_cl
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_home_graph_api_service_client_client_options_from_dict():
     with mock.patch('google.home.graph_v1.services.home_graph_api_service.transports.HomeGraphApiServiceGrpcTransport.__init__') as grpc_transport:
@@ -373,7 +372,11 @@ def test_home_graph_api_service_client_client_options_from_dict():
         )
 
 
-def test_request_sync_devices(transport: str = 'grpc', request_type=homegraph.RequestSyncDevicesRequest):
+@pytest.mark.parametrize("request_type", [
+  homegraph.RequestSyncDevicesRequest,
+  dict,
+])
+def test_request_sync_devices(request_type, transport: str = 'grpc'):
     client = HomeGraphApiServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -399,10 +402,6 @@ def test_request_sync_devices(transport: str = 'grpc', request_type=homegraph.Re
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, homegraph.RequestSyncDevicesResponse)
-
-
-def test_request_sync_devices_from_dict():
-    test_request_sync_devices(request_type=dict)
 
 
 def test_request_sync_devices_empty_call():
@@ -541,7 +540,11 @@ async def test_request_sync_devices_flattened_error_async():
         )
 
 
-def test_report_state_and_notification(transport: str = 'grpc', request_type=homegraph.ReportStateAndNotificationRequest):
+@pytest.mark.parametrize("request_type", [
+  homegraph.ReportStateAndNotificationRequest,
+  dict,
+])
+def test_report_state_and_notification(request_type, transport: str = 'grpc'):
     client = HomeGraphApiServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -569,10 +572,6 @@ def test_report_state_and_notification(transport: str = 'grpc', request_type=hom
     # Establish that the response is the type that we expect.
     assert isinstance(response, homegraph.ReportStateAndNotificationResponse)
     assert response.request_id == 'request_id_value'
-
-
-def test_report_state_and_notification_from_dict():
-    test_report_state_and_notification(request_type=dict)
 
 
 def test_report_state_and_notification_empty_call():
@@ -743,7 +742,11 @@ async def test_report_state_and_notification_flattened_error_async():
         )
 
 
-def test_delete_agent_user(transport: str = 'grpc', request_type=homegraph.DeleteAgentUserRequest):
+@pytest.mark.parametrize("request_type", [
+  homegraph.DeleteAgentUserRequest,
+  dict,
+])
+def test_delete_agent_user(request_type, transport: str = 'grpc'):
     client = HomeGraphApiServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -768,10 +771,6 @@ def test_delete_agent_user(transport: str = 'grpc', request_type=homegraph.Delet
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_agent_user_from_dict():
-    test_delete_agent_user(request_type=dict)
 
 
 def test_delete_agent_user_empty_call():
@@ -982,7 +981,11 @@ async def test_delete_agent_user_flattened_error_async():
         )
 
 
-def test_query(transport: str = 'grpc', request_type=homegraph.QueryRequest):
+@pytest.mark.parametrize("request_type", [
+  homegraph.QueryRequest,
+  dict,
+])
+def test_query(request_type, transport: str = 'grpc'):
     client = HomeGraphApiServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1010,10 +1013,6 @@ def test_query(transport: str = 'grpc', request_type=homegraph.QueryRequest):
     # Establish that the response is the type that we expect.
     assert isinstance(response, homegraph.QueryResponse)
     assert response.request_id == 'request_id_value'
-
-
-def test_query_from_dict():
-    test_query(request_type=dict)
 
 
 def test_query_empty_call():
@@ -1174,7 +1173,11 @@ async def test_query_flattened_error_async():
         )
 
 
-def test_sync(transport: str = 'grpc', request_type=homegraph.SyncRequest):
+@pytest.mark.parametrize("request_type", [
+  homegraph.SyncRequest,
+  dict,
+])
+def test_sync(request_type, transport: str = 'grpc'):
     client = HomeGraphApiServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1202,10 +1205,6 @@ def test_sync(transport: str = 'grpc', request_type=homegraph.SyncRequest):
     # Establish that the response is the type that we expect.
     assert isinstance(response, homegraph.SyncResponse)
     assert response.request_id == 'request_id_value'
-
-
-def test_sync_from_dict():
-    test_sync(request_type=dict)
 
 
 def test_sync_empty_call():
@@ -1833,7 +1832,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.HomeGraphApiServiceTransport, '_prep_wrapped_messages') as prep:

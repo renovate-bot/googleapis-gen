@@ -19,11 +19,9 @@ from typing import Dict, Type
 from .base import RemarketingActionServiceTransport
 from .grpc import RemarketingActionServiceGrpcTransport
 
-
 # Compile a registry of transports.
 _transport_registry = OrderedDict()  # type: Dict[str, Type[RemarketingActionServiceTransport]]
 _transport_registry['grpc'] = RemarketingActionServiceGrpcTransport
-
 
 __all__ = (
     'RemarketingActionServiceTransport',

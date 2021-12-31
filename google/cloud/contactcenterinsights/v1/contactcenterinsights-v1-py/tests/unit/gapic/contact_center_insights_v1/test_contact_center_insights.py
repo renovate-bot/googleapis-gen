@@ -210,18 +210,18 @@ def test_contact_center_insights_client_client_options(client_class, transport_c
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -252,7 +252,7 @@ def test_contact_center_insights_client_mtls_env_auto(client_class, transport_cl
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -327,7 +327,7 @@ def test_contact_center_insights_client_client_options_scopes(client_class, tran
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -350,7 +350,7 @@ def test_contact_center_insights_client_client_options_credentials_file(client_c
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -361,7 +361,6 @@ def test_contact_center_insights_client_client_options_credentials_file(client_c
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_contact_center_insights_client_client_options_from_dict():
     with mock.patch('google.cloud.contact_center_insights_v1.services.contact_center_insights.transports.ContactCenterInsightsGrpcTransport.__init__') as grpc_transport:
@@ -381,7 +380,11 @@ def test_contact_center_insights_client_client_options_from_dict():
         )
 
 
-def test_create_conversation(transport: str = 'grpc', request_type=contact_center_insights.CreateConversationRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.CreateConversationRequest,
+  dict,
+])
+def test_create_conversation(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -419,10 +422,6 @@ def test_create_conversation(transport: str = 'grpc', request_type=contact_cente
     assert response.agent_id == 'agent_id_value'
     assert response.medium == resources.Conversation.Medium.PHONE_CALL
     assert response.turn_count == 1105
-
-
-def test_create_conversation_from_dict():
-    test_create_conversation(request_type=dict)
 
 
 def test_create_conversation_empty_call():
@@ -654,7 +653,11 @@ async def test_create_conversation_flattened_error_async():
         )
 
 
-def test_update_conversation(transport: str = 'grpc', request_type=contact_center_insights.UpdateConversationRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.UpdateConversationRequest,
+  dict,
+])
+def test_update_conversation(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -692,10 +695,6 @@ def test_update_conversation(transport: str = 'grpc', request_type=contact_cente
     assert response.agent_id == 'agent_id_value'
     assert response.medium == resources.Conversation.Medium.PHONE_CALL
     assert response.turn_count == 1105
-
-
-def test_update_conversation_from_dict():
-    test_update_conversation(request_type=dict)
 
 
 def test_update_conversation_empty_call():
@@ -917,7 +916,11 @@ async def test_update_conversation_flattened_error_async():
         )
 
 
-def test_get_conversation(transport: str = 'grpc', request_type=contact_center_insights.GetConversationRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.GetConversationRequest,
+  dict,
+])
+def test_get_conversation(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -955,10 +958,6 @@ def test_get_conversation(transport: str = 'grpc', request_type=contact_center_i
     assert response.agent_id == 'agent_id_value'
     assert response.medium == resources.Conversation.Medium.PHONE_CALL
     assert response.turn_count == 1105
-
-
-def test_get_conversation_from_dict():
-    test_get_conversation(request_type=dict)
 
 
 def test_get_conversation_empty_call():
@@ -1170,7 +1169,11 @@ async def test_get_conversation_flattened_error_async():
         )
 
 
-def test_list_conversations(transport: str = 'grpc', request_type=contact_center_insights.ListConversationsRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.ListConversationsRequest,
+  dict,
+])
+def test_list_conversations(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1198,10 +1201,6 @@ def test_list_conversations(transport: str = 'grpc', request_type=contact_center
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListConversationsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_conversations_from_dict():
-    test_list_conversations(request_type=dict)
 
 
 def test_list_conversations_empty_call():
@@ -1405,9 +1404,10 @@ async def test_list_conversations_flattened_error_async():
         )
 
 
-def test_list_conversations_pager():
+def test_list_conversations_pager(transport_name: str = "grpc"):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1457,10 +1457,10 @@ def test_list_conversations_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Conversation)
                    for i in results)
-
-def test_list_conversations_pages():
+def test_list_conversations_pages(transport_name: str = "grpc"):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1545,7 +1545,8 @@ async def test_list_conversations_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Conversation)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_conversations_async_pages():
@@ -1591,7 +1592,11 @@ async def test_list_conversations_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_conversation(transport: str = 'grpc', request_type=contact_center_insights.DeleteConversationRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.DeleteConversationRequest,
+  dict,
+])
+def test_delete_conversation(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1616,10 +1621,6 @@ def test_delete_conversation(transport: str = 'grpc', request_type=contact_cente
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_conversation_from_dict():
-    test_delete_conversation(request_type=dict)
 
 
 def test_delete_conversation_empty_call():
@@ -1820,7 +1821,11 @@ async def test_delete_conversation_flattened_error_async():
         )
 
 
-def test_create_analysis(transport: str = 'grpc', request_type=contact_center_insights.CreateAnalysisRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.CreateAnalysisRequest,
+  dict,
+])
+def test_create_analysis(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1845,10 +1850,6 @@ def test_create_analysis(transport: str = 'grpc', request_type=contact_center_in
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_analysis_from_dict():
-    test_create_analysis(request_type=dict)
 
 
 def test_create_analysis_empty_call():
@@ -2063,7 +2064,11 @@ async def test_create_analysis_flattened_error_async():
         )
 
 
-def test_get_analysis(transport: str = 'grpc', request_type=contact_center_insights.GetAnalysisRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.GetAnalysisRequest,
+  dict,
+])
+def test_get_analysis(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2091,10 +2096,6 @@ def test_get_analysis(transport: str = 'grpc', request_type=contact_center_insig
     # Establish that the response is the type that we expect.
     assert isinstance(response, resources.Analysis)
     assert response.name == 'name_value'
-
-
-def test_get_analysis_from_dict():
-    test_get_analysis(request_type=dict)
 
 
 def test_get_analysis_empty_call():
@@ -2298,7 +2299,11 @@ async def test_get_analysis_flattened_error_async():
         )
 
 
-def test_list_analyses(transport: str = 'grpc', request_type=contact_center_insights.ListAnalysesRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.ListAnalysesRequest,
+  dict,
+])
+def test_list_analyses(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2326,10 +2331,6 @@ def test_list_analyses(transport: str = 'grpc', request_type=contact_center_insi
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListAnalysesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_analyses_from_dict():
-    test_list_analyses(request_type=dict)
 
 
 def test_list_analyses_empty_call():
@@ -2533,9 +2534,10 @@ async def test_list_analyses_flattened_error_async():
         )
 
 
-def test_list_analyses_pager():
+def test_list_analyses_pager(transport_name: str = "grpc"):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2585,10 +2587,10 @@ def test_list_analyses_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.Analysis)
                    for i in results)
-
-def test_list_analyses_pages():
+def test_list_analyses_pages(transport_name: str = "grpc"):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2673,7 +2675,8 @@ async def test_list_analyses_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.Analysis)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_analyses_async_pages():
@@ -2719,7 +2722,11 @@ async def test_list_analyses_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_analysis(transport: str = 'grpc', request_type=contact_center_insights.DeleteAnalysisRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.DeleteAnalysisRequest,
+  dict,
+])
+def test_delete_analysis(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2744,10 +2751,6 @@ def test_delete_analysis(transport: str = 'grpc', request_type=contact_center_in
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_analysis_from_dict():
-    test_delete_analysis(request_type=dict)
 
 
 def test_delete_analysis_empty_call():
@@ -2948,7 +2951,11 @@ async def test_delete_analysis_flattened_error_async():
         )
 
 
-def test_export_insights_data(transport: str = 'grpc', request_type=contact_center_insights.ExportInsightsDataRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.ExportInsightsDataRequest,
+  dict,
+])
+def test_export_insights_data(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2973,10 +2980,6 @@ def test_export_insights_data(transport: str = 'grpc', request_type=contact_cent
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_export_insights_data_from_dict():
-    test_export_insights_data(request_type=dict)
 
 
 def test_export_insights_data_empty_call():
@@ -3181,7 +3184,11 @@ async def test_export_insights_data_flattened_error_async():
         )
 
 
-def test_create_issue_model(transport: str = 'grpc', request_type=contact_center_insights.CreateIssueModelRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.CreateIssueModelRequest,
+  dict,
+])
+def test_create_issue_model(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3206,10 +3213,6 @@ def test_create_issue_model(transport: str = 'grpc', request_type=contact_center
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_issue_model_from_dict():
-    test_create_issue_model(request_type=dict)
 
 
 def test_create_issue_model_empty_call():
@@ -3424,7 +3427,11 @@ async def test_create_issue_model_flattened_error_async():
         )
 
 
-def test_update_issue_model(transport: str = 'grpc', request_type=contact_center_insights.UpdateIssueModelRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.UpdateIssueModelRequest,
+  dict,
+])
+def test_update_issue_model(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3456,10 +3463,6 @@ def test_update_issue_model(transport: str = 'grpc', request_type=contact_center
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.state == resources.IssueModel.State.UNDEPLOYED
-
-
-def test_update_issue_model_from_dict():
-    test_update_issue_model(request_type=dict)
 
 
 def test_update_issue_model_empty_call():
@@ -3677,7 +3680,11 @@ async def test_update_issue_model_flattened_error_async():
         )
 
 
-def test_get_issue_model(transport: str = 'grpc', request_type=contact_center_insights.GetIssueModelRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.GetIssueModelRequest,
+  dict,
+])
+def test_get_issue_model(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3709,10 +3716,6 @@ def test_get_issue_model(transport: str = 'grpc', request_type=contact_center_in
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
     assert response.state == resources.IssueModel.State.UNDEPLOYED
-
-
-def test_get_issue_model_from_dict():
-    test_get_issue_model(request_type=dict)
 
 
 def test_get_issue_model_empty_call():
@@ -3920,7 +3923,11 @@ async def test_get_issue_model_flattened_error_async():
         )
 
 
-def test_list_issue_models(transport: str = 'grpc', request_type=contact_center_insights.ListIssueModelsRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.ListIssueModelsRequest,
+  dict,
+])
+def test_list_issue_models(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3946,10 +3953,6 @@ def test_list_issue_models(transport: str = 'grpc', request_type=contact_center_
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, contact_center_insights.ListIssueModelsResponse)
-
-
-def test_list_issue_models_from_dict():
-    test_list_issue_models(request_type=dict)
 
 
 def test_list_issue_models_empty_call():
@@ -4151,7 +4154,11 @@ async def test_list_issue_models_flattened_error_async():
         )
 
 
-def test_delete_issue_model(transport: str = 'grpc', request_type=contact_center_insights.DeleteIssueModelRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.DeleteIssueModelRequest,
+  dict,
+])
+def test_delete_issue_model(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4176,10 +4183,6 @@ def test_delete_issue_model(transport: str = 'grpc', request_type=contact_center
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_issue_model_from_dict():
-    test_delete_issue_model(request_type=dict)
 
 
 def test_delete_issue_model_empty_call():
@@ -4384,7 +4387,11 @@ async def test_delete_issue_model_flattened_error_async():
         )
 
 
-def test_deploy_issue_model(transport: str = 'grpc', request_type=contact_center_insights.DeployIssueModelRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.DeployIssueModelRequest,
+  dict,
+])
+def test_deploy_issue_model(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4409,10 +4416,6 @@ def test_deploy_issue_model(transport: str = 'grpc', request_type=contact_center
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_deploy_issue_model_from_dict():
-    test_deploy_issue_model(request_type=dict)
 
 
 def test_deploy_issue_model_empty_call():
@@ -4617,7 +4620,11 @@ async def test_deploy_issue_model_flattened_error_async():
         )
 
 
-def test_undeploy_issue_model(transport: str = 'grpc', request_type=contact_center_insights.UndeployIssueModelRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.UndeployIssueModelRequest,
+  dict,
+])
+def test_undeploy_issue_model(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4642,10 +4649,6 @@ def test_undeploy_issue_model(transport: str = 'grpc', request_type=contact_cent
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_undeploy_issue_model_from_dict():
-    test_undeploy_issue_model(request_type=dict)
 
 
 def test_undeploy_issue_model_empty_call():
@@ -4850,7 +4853,11 @@ async def test_undeploy_issue_model_flattened_error_async():
         )
 
 
-def test_get_issue(transport: str = 'grpc', request_type=contact_center_insights.GetIssueRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.GetIssueRequest,
+  dict,
+])
+def test_get_issue(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4880,10 +4887,6 @@ def test_get_issue(transport: str = 'grpc', request_type=contact_center_insights
     assert isinstance(response, resources.Issue)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_get_issue_from_dict():
-    test_get_issue(request_type=dict)
 
 
 def test_get_issue_empty_call():
@@ -5089,7 +5092,11 @@ async def test_get_issue_flattened_error_async():
         )
 
 
-def test_list_issues(transport: str = 'grpc', request_type=contact_center_insights.ListIssuesRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.ListIssuesRequest,
+  dict,
+])
+def test_list_issues(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5115,10 +5122,6 @@ def test_list_issues(transport: str = 'grpc', request_type=contact_center_insigh
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, contact_center_insights.ListIssuesResponse)
-
-
-def test_list_issues_from_dict():
-    test_list_issues(request_type=dict)
 
 
 def test_list_issues_empty_call():
@@ -5320,7 +5323,11 @@ async def test_list_issues_flattened_error_async():
         )
 
 
-def test_update_issue(transport: str = 'grpc', request_type=contact_center_insights.UpdateIssueRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.UpdateIssueRequest,
+  dict,
+])
+def test_update_issue(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5350,10 +5357,6 @@ def test_update_issue(transport: str = 'grpc', request_type=contact_center_insig
     assert isinstance(response, resources.Issue)
     assert response.name == 'name_value'
     assert response.display_name == 'display_name_value'
-
-
-def test_update_issue_from_dict():
-    test_update_issue(request_type=dict)
 
 
 def test_update_issue_empty_call():
@@ -5569,7 +5572,11 @@ async def test_update_issue_flattened_error_async():
         )
 
 
-def test_calculate_issue_model_stats(transport: str = 'grpc', request_type=contact_center_insights.CalculateIssueModelStatsRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.CalculateIssueModelStatsRequest,
+  dict,
+])
+def test_calculate_issue_model_stats(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5595,10 +5602,6 @@ def test_calculate_issue_model_stats(transport: str = 'grpc', request_type=conta
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, contact_center_insights.CalculateIssueModelStatsResponse)
-
-
-def test_calculate_issue_model_stats_from_dict():
-    test_calculate_issue_model_stats(request_type=dict)
 
 
 def test_calculate_issue_model_stats_empty_call():
@@ -5800,7 +5803,11 @@ async def test_calculate_issue_model_stats_flattened_error_async():
         )
 
 
-def test_create_phrase_matcher(transport: str = 'grpc', request_type=contact_center_insights.CreatePhraseMatcherRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.CreatePhraseMatcherRequest,
+  dict,
+])
+def test_create_phrase_matcher(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5840,10 +5847,6 @@ def test_create_phrase_matcher(transport: str = 'grpc', request_type=contact_cen
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
     assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
-
-
-def test_create_phrase_matcher_from_dict():
-    test_create_phrase_matcher(request_type=dict)
 
 
 def test_create_phrase_matcher_empty_call():
@@ -6069,7 +6072,11 @@ async def test_create_phrase_matcher_flattened_error_async():
         )
 
 
-def test_get_phrase_matcher(transport: str = 'grpc', request_type=contact_center_insights.GetPhraseMatcherRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.GetPhraseMatcherRequest,
+  dict,
+])
+def test_get_phrase_matcher(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6109,10 +6116,6 @@ def test_get_phrase_matcher(transport: str = 'grpc', request_type=contact_center
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
     assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
-
-
-def test_get_phrase_matcher_from_dict():
-    test_get_phrase_matcher(request_type=dict)
 
 
 def test_get_phrase_matcher_empty_call():
@@ -6328,7 +6331,11 @@ async def test_get_phrase_matcher_flattened_error_async():
         )
 
 
-def test_list_phrase_matchers(transport: str = 'grpc', request_type=contact_center_insights.ListPhraseMatchersRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.ListPhraseMatchersRequest,
+  dict,
+])
+def test_list_phrase_matchers(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6356,10 +6363,6 @@ def test_list_phrase_matchers(transport: str = 'grpc', request_type=contact_cent
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListPhraseMatchersPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_phrase_matchers_from_dict():
-    test_list_phrase_matchers(request_type=dict)
 
 
 def test_list_phrase_matchers_empty_call():
@@ -6563,9 +6566,10 @@ async def test_list_phrase_matchers_flattened_error_async():
         )
 
 
-def test_list_phrase_matchers_pager():
+def test_list_phrase_matchers_pager(transport_name: str = "grpc"):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6615,10 +6619,10 @@ def test_list_phrase_matchers_pager():
         assert len(results) == 6
         assert all(isinstance(i, resources.PhraseMatcher)
                    for i in results)
-
-def test_list_phrase_matchers_pages():
+def test_list_phrase_matchers_pages(transport_name: str = "grpc"):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6703,7 +6707,8 @@ async def test_list_phrase_matchers_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, resources.PhraseMatcher)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_phrase_matchers_async_pages():
@@ -6749,7 +6754,11 @@ async def test_list_phrase_matchers_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_phrase_matcher(transport: str = 'grpc', request_type=contact_center_insights.DeletePhraseMatcherRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.DeletePhraseMatcherRequest,
+  dict,
+])
+def test_delete_phrase_matcher(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6774,10 +6783,6 @@ def test_delete_phrase_matcher(transport: str = 'grpc', request_type=contact_cen
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_phrase_matcher_from_dict():
-    test_delete_phrase_matcher(request_type=dict)
 
 
 def test_delete_phrase_matcher_empty_call():
@@ -6978,7 +6983,11 @@ async def test_delete_phrase_matcher_flattened_error_async():
         )
 
 
-def test_update_phrase_matcher(transport: str = 'grpc', request_type=contact_center_insights.UpdatePhraseMatcherRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.UpdatePhraseMatcherRequest,
+  dict,
+])
+def test_update_phrase_matcher(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7018,10 +7027,6 @@ def test_update_phrase_matcher(transport: str = 'grpc', request_type=contact_cen
     assert response.type_ == resources.PhraseMatcher.PhraseMatcherType.ALL_OF
     assert response.active is True
     assert response.role_match == resources.ConversationParticipant.Role.HUMAN_AGENT
-
-
-def test_update_phrase_matcher_from_dict():
-    test_update_phrase_matcher(request_type=dict)
 
 
 def test_update_phrase_matcher_empty_call():
@@ -7247,7 +7252,11 @@ async def test_update_phrase_matcher_flattened_error_async():
         )
 
 
-def test_calculate_stats(transport: str = 'grpc', request_type=contact_center_insights.CalculateStatsRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.CalculateStatsRequest,
+  dict,
+])
+def test_calculate_stats(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7277,10 +7286,6 @@ def test_calculate_stats(transport: str = 'grpc', request_type=contact_center_in
     assert isinstance(response, contact_center_insights.CalculateStatsResponse)
     assert response.average_turn_count == 1931
     assert response.conversation_count == 1955
-
-
-def test_calculate_stats_from_dict():
-    test_calculate_stats(request_type=dict)
 
 
 def test_calculate_stats_empty_call():
@@ -7486,7 +7491,11 @@ async def test_calculate_stats_flattened_error_async():
         )
 
 
-def test_get_settings(transport: str = 'grpc', request_type=contact_center_insights.GetSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.GetSettingsRequest,
+  dict,
+])
+def test_get_settings(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7516,10 +7525,6 @@ def test_get_settings(transport: str = 'grpc', request_type=contact_center_insig
     assert isinstance(response, resources.Settings)
     assert response.name == 'name_value'
     assert response.language_code == 'language_code_value'
-
-
-def test_get_settings_from_dict():
-    test_get_settings(request_type=dict)
 
 
 def test_get_settings_empty_call():
@@ -7725,7 +7730,11 @@ async def test_get_settings_flattened_error_async():
         )
 
 
-def test_update_settings(transport: str = 'grpc', request_type=contact_center_insights.UpdateSettingsRequest):
+@pytest.mark.parametrize("request_type", [
+  contact_center_insights.UpdateSettingsRequest,
+  dict,
+])
+def test_update_settings(request_type, transport: str = 'grpc'):
     client = ContactCenterInsightsClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7755,10 +7764,6 @@ def test_update_settings(transport: str = 'grpc', request_type=contact_center_in
     assert isinstance(response, resources.Settings)
     assert response.name == 'name_value'
     assert response.language_code == 'language_code_value'
-
-
-def test_update_settings_from_dict():
-    test_update_settings(request_type=dict)
 
 
 def test_update_settings_empty_call():
@@ -8649,7 +8654,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ContactCenterInsightsTransport, '_prep_wrapped_messages') as prep:

@@ -127,7 +127,6 @@ class ListInstancesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[baremetalsolution.Instance]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListVolumesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[baremetalsolution.Volume]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListNetworksAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[baremetalsolution.Network]:
         async def async_generator():
             async for page in self.pages:
@@ -493,7 +490,6 @@ class ListSnapshotSchedulePoliciesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[baremetalsolution.SnapshotSchedulePolicy]:
         async def async_generator():
             async for page in self.pages:
@@ -615,7 +611,6 @@ class ListVolumeSnapshotsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[baremetalsolution.VolumeSnapshot]:
         async def async_generator():
             async for page in self.pages:
@@ -737,7 +732,6 @@ class ListLunsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[baremetalsolution.Lun]:
         async def async_generator():
             async for page in self.pages:

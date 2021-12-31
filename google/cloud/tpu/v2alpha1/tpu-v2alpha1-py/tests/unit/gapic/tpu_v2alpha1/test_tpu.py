@@ -208,18 +208,18 @@ def test_tpu_client_client_options(client_class, transport_class, transport_name
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_tpu_client_mtls_env_auto(client_class, transport_class, transport_name,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_tpu_client_client_options_scopes(client_class, transport_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_tpu_client_client_options_credentials_file(client_class, transport_clas
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_tpu_client_client_options_credentials_file(client_class, transport_clas
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_tpu_client_client_options_from_dict():
     with mock.patch('google.cloud.tpu_v2alpha1.services.tpu.transports.TpuGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_tpu_client_client_options_from_dict():
         )
 
 
-def test_list_nodes(transport: str = 'grpc', request_type=cloud_tpu.ListNodesRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.ListNodesRequest,
+  dict,
+])
+def test_list_nodes(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -409,10 +412,6 @@ def test_list_nodes(transport: str = 'grpc', request_type=cloud_tpu.ListNodesReq
     assert isinstance(response, pagers.ListNodesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_nodes_from_dict():
-    test_list_nodes(request_type=dict)
 
 
 def test_list_nodes_empty_call():
@@ -618,9 +617,10 @@ async def test_list_nodes_flattened_error_async():
         )
 
 
-def test_list_nodes_pager():
+def test_list_nodes_pager(transport_name: str = "grpc"):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -670,10 +670,10 @@ def test_list_nodes_pager():
         assert len(results) == 6
         assert all(isinstance(i, cloud_tpu.Node)
                    for i in results)
-
-def test_list_nodes_pages():
+def test_list_nodes_pages(transport_name: str = "grpc"):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -758,7 +758,8 @@ async def test_list_nodes_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, cloud_tpu.Node)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_nodes_async_pages():
@@ -804,7 +805,11 @@ async def test_list_nodes_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_node(transport: str = 'grpc', request_type=cloud_tpu.GetNodeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.GetNodeRequest,
+  dict,
+])
+def test_get_node(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -852,10 +857,6 @@ def test_get_node(transport: str = 'grpc', request_type=cloud_tpu.GetNodeRequest
     assert response.tags == ['tags_value']
     assert response.id == 205
     assert response.api_version == cloud_tpu.Node.ApiVersion.V1_ALPHA1
-
-
-def test_get_node_from_dict():
-    test_get_node(request_type=dict)
 
 
 def test_get_node_empty_call():
@@ -1079,7 +1080,11 @@ async def test_get_node_flattened_error_async():
         )
 
 
-def test_create_node(transport: str = 'grpc', request_type=cloud_tpu.CreateNodeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.CreateNodeRequest,
+  dict,
+])
+def test_create_node(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1104,10 +1109,6 @@ def test_create_node(transport: str = 'grpc', request_type=cloud_tpu.CreateNodeR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_node_from_dict():
-    test_create_node(request_type=dict)
 
 
 def test_create_node_empty_call():
@@ -1332,7 +1333,11 @@ async def test_create_node_flattened_error_async():
         )
 
 
-def test_delete_node(transport: str = 'grpc', request_type=cloud_tpu.DeleteNodeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.DeleteNodeRequest,
+  dict,
+])
+def test_delete_node(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1357,10 +1362,6 @@ def test_delete_node(transport: str = 'grpc', request_type=cloud_tpu.DeleteNodeR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_node_from_dict():
-    test_delete_node(request_type=dict)
 
 
 def test_delete_node_empty_call():
@@ -1565,7 +1566,11 @@ async def test_delete_node_flattened_error_async():
         )
 
 
-def test_stop_node(transport: str = 'grpc', request_type=cloud_tpu.StopNodeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.StopNodeRequest,
+  dict,
+])
+def test_stop_node(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1590,10 +1595,6 @@ def test_stop_node(transport: str = 'grpc', request_type=cloud_tpu.StopNodeReque
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_stop_node_from_dict():
-    test_stop_node(request_type=dict)
 
 
 def test_stop_node_empty_call():
@@ -1712,7 +1713,11 @@ async def test_stop_node_field_headers_async():
     ) in kw['metadata']
 
 
-def test_start_node(transport: str = 'grpc', request_type=cloud_tpu.StartNodeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.StartNodeRequest,
+  dict,
+])
+def test_start_node(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1737,10 +1742,6 @@ def test_start_node(transport: str = 'grpc', request_type=cloud_tpu.StartNodeReq
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_start_node_from_dict():
-    test_start_node(request_type=dict)
 
 
 def test_start_node_empty_call():
@@ -1859,7 +1860,11 @@ async def test_start_node_field_headers_async():
     ) in kw['metadata']
 
 
-def test_update_node(transport: str = 'grpc', request_type=cloud_tpu.UpdateNodeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.UpdateNodeRequest,
+  dict,
+])
+def test_update_node(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1884,10 +1889,6 @@ def test_update_node(transport: str = 'grpc', request_type=cloud_tpu.UpdateNodeR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_node_from_dict():
-    test_update_node(request_type=dict)
 
 
 def test_update_node_empty_call():
@@ -2102,7 +2103,11 @@ async def test_update_node_flattened_error_async():
         )
 
 
-def test_generate_service_identity(transport: str = 'grpc', request_type=cloud_tpu.GenerateServiceIdentityRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.GenerateServiceIdentityRequest,
+  dict,
+])
+def test_generate_service_identity(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2128,10 +2133,6 @@ def test_generate_service_identity(transport: str = 'grpc', request_type=cloud_t
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tpu.GenerateServiceIdentityResponse)
-
-
-def test_generate_service_identity_from_dict():
-    test_generate_service_identity(request_type=dict)
 
 
 def test_generate_service_identity_empty_call():
@@ -2249,7 +2250,11 @@ async def test_generate_service_identity_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_accelerator_types(transport: str = 'grpc', request_type=cloud_tpu.ListAcceleratorTypesRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.ListAcceleratorTypesRequest,
+  dict,
+])
+def test_list_accelerator_types(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2279,10 +2284,6 @@ def test_list_accelerator_types(transport: str = 'grpc', request_type=cloud_tpu.
     assert isinstance(response, pagers.ListAcceleratorTypesPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_accelerator_types_from_dict():
-    test_list_accelerator_types(request_type=dict)
 
 
 def test_list_accelerator_types_empty_call():
@@ -2488,9 +2489,10 @@ async def test_list_accelerator_types_flattened_error_async():
         )
 
 
-def test_list_accelerator_types_pager():
+def test_list_accelerator_types_pager(transport_name: str = "grpc"):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2540,10 +2542,10 @@ def test_list_accelerator_types_pager():
         assert len(results) == 6
         assert all(isinstance(i, cloud_tpu.AcceleratorType)
                    for i in results)
-
-def test_list_accelerator_types_pages():
+def test_list_accelerator_types_pages(transport_name: str = "grpc"):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2628,7 +2630,8 @@ async def test_list_accelerator_types_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, cloud_tpu.AcceleratorType)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_accelerator_types_async_pages():
@@ -2674,7 +2677,11 @@ async def test_list_accelerator_types_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_accelerator_type(transport: str = 'grpc', request_type=cloud_tpu.GetAcceleratorTypeRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.GetAcceleratorTypeRequest,
+  dict,
+])
+def test_get_accelerator_type(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2704,10 +2711,6 @@ def test_get_accelerator_type(transport: str = 'grpc', request_type=cloud_tpu.Ge
     assert isinstance(response, cloud_tpu.AcceleratorType)
     assert response.name == 'name_value'
     assert response.type_ == 'type__value'
-
-
-def test_get_accelerator_type_from_dict():
-    test_get_accelerator_type(request_type=dict)
 
 
 def test_get_accelerator_type_empty_call():
@@ -2913,7 +2916,11 @@ async def test_get_accelerator_type_flattened_error_async():
         )
 
 
-def test_list_runtime_versions(transport: str = 'grpc', request_type=cloud_tpu.ListRuntimeVersionsRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.ListRuntimeVersionsRequest,
+  dict,
+])
+def test_list_runtime_versions(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2943,10 +2950,6 @@ def test_list_runtime_versions(transport: str = 'grpc', request_type=cloud_tpu.L
     assert isinstance(response, pagers.ListRuntimeVersionsPager)
     assert response.next_page_token == 'next_page_token_value'
     assert response.unreachable == ['unreachable_value']
-
-
-def test_list_runtime_versions_from_dict():
-    test_list_runtime_versions(request_type=dict)
 
 
 def test_list_runtime_versions_empty_call():
@@ -3152,9 +3155,10 @@ async def test_list_runtime_versions_flattened_error_async():
         )
 
 
-def test_list_runtime_versions_pager():
+def test_list_runtime_versions_pager(transport_name: str = "grpc"):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3204,10 +3208,10 @@ def test_list_runtime_versions_pager():
         assert len(results) == 6
         assert all(isinstance(i, cloud_tpu.RuntimeVersion)
                    for i in results)
-
-def test_list_runtime_versions_pages():
+def test_list_runtime_versions_pages(transport_name: str = "grpc"):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3292,7 +3296,8 @@ async def test_list_runtime_versions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, cloud_tpu.RuntimeVersion)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_runtime_versions_async_pages():
@@ -3338,7 +3343,11 @@ async def test_list_runtime_versions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_get_runtime_version(transport: str = 'grpc', request_type=cloud_tpu.GetRuntimeVersionRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.GetRuntimeVersionRequest,
+  dict,
+])
+def test_get_runtime_version(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3368,10 +3377,6 @@ def test_get_runtime_version(transport: str = 'grpc', request_type=cloud_tpu.Get
     assert isinstance(response, cloud_tpu.RuntimeVersion)
     assert response.name == 'name_value'
     assert response.version == 'version_value'
-
-
-def test_get_runtime_version_from_dict():
-    test_get_runtime_version(request_type=dict)
 
 
 def test_get_runtime_version_empty_call():
@@ -3577,7 +3582,11 @@ async def test_get_runtime_version_flattened_error_async():
         )
 
 
-def test_get_guest_attributes(transport: str = 'grpc', request_type=cloud_tpu.GetGuestAttributesRequest):
+@pytest.mark.parametrize("request_type", [
+  cloud_tpu.GetGuestAttributesRequest,
+  dict,
+])
+def test_get_guest_attributes(request_type, transport: str = 'grpc'):
     client = TpuClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3603,10 +3612,6 @@ def test_get_guest_attributes(transport: str = 'grpc', request_type=cloud_tpu.Ge
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, cloud_tpu.GetGuestAttributesResponse)
-
-
-def test_get_guest_attributes_from_dict():
-    test_get_guest_attributes(request_type=dict)
 
 
 def test_get_guest_attributes_empty_call():
@@ -4297,7 +4302,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.TpuTransport, '_prep_wrapped_messages') as prep:

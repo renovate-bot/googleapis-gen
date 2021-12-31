@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_node_groups_client_client_options(client_class, transport_class, transp
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_node_groups_client_mtls_env_auto(client_class, transport_class, transpo
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_node_groups_client_client_options_scopes(client_class, transport_class,
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_node_groups_client_client_options_credentials_file(client_class, transp
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,19 +348,71 @@ def test_node_groups_client_client_options_credentials_file(client_class, transp
         )
 
 
-def test_add_nodes_unary_rest(transport: str = 'rest', request_type=compute.AddNodesNodeGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.AddNodesNodeGroupRequest,
+  dict,
+])
+def test_add_nodes_unary_rest(request_type, transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AddNodesNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.add_nodes_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AddNodesNodeGroupRequest,
+    dict,
+])
+def test_add_nodes_unary_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_groups_add_nodes_request_resource"] = compute.NodeGroupsAddNodesRequest(additional_node_count=2214)
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_groups_add_nodes_request_resource"] = {'additional_node_count': 2214}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -440,7 +492,7 @@ def test_add_nodes_unary_rest_required_fields(request_type=compute.AddNodesNodeG
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._add_nodes_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).add_nodes._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -455,7 +507,7 @@ def test_add_nodes_unary_rest_required_fields(request_type=compute.AddNodesNodeG
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._add_nodes_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).add_nodes._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -500,17 +552,17 @@ def test_add_nodes_unary_rest_required_fields(request_type=compute.AddNodesNodeG
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -523,8 +575,8 @@ def test_add_nodes_unary_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_groups_add_nodes_request_resource"] = compute.NodeGroupsAddNodesRequest(additional_node_count=2214)
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_groups_add_nodes_request_resource"] = {'additional_node_count': 2214}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -537,18 +589,14 @@ def test_add_nodes_unary_rest_bad_request(transport: str = 'rest', request_type=
         client.add_nodes_unary(request)
 
 
-def test_add_nodes_unary_rest_from_dict():
-    test_add_nodes_unary_rest(request_type=dict)
-
-
-def test_add_nodes_unary_rest_flattened(transport: str = 'rest'):
+def test_add_nodes_unary_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -561,7 +609,7 @@ def test_add_nodes_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -598,18 +646,59 @@ def test_add_nodes_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_aggregated_list_rest(transport: str = 'rest', request_type=compute.AggregatedListNodeGroupsRequest):
+def test_add_nodes_unary_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.AggregatedListNodeGroupsRequest,
+  dict,
+])
+def test_aggregated_list_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.AggregatedListNodeGroupsRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.NodeGroupAggregatedList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+              unreachables=['unreachables_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.NodeGroupAggregatedList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.aggregated_list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.AggregatedListNodeGroupsRequest,
+    dict,
+])
+def test_aggregated_list_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroupAggregatedList(
               id='id_value',
@@ -651,7 +740,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -660,7 +749,7 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._aggregated_list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).aggregated_list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -701,8 +790,8 @@ def test_aggregated_list_rest_required_fields(request_type=compute.AggregatedLis
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -715,7 +804,7 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -728,18 +817,14 @@ def test_aggregated_list_rest_bad_request(transport: str = 'rest', request_type=
         client.aggregated_list(request)
 
 
-def test_aggregated_list_rest_from_dict():
-    test_aggregated_list_rest(request_type=dict)
-
-
-def test_aggregated_list_rest_flattened(transport: str = 'rest'):
+def test_aggregated_list_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroupAggregatedList()
 
@@ -752,7 +837,7 @@ def test_aggregated_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -793,80 +878,131 @@ def test_aggregated_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.NodeGroupAggregatedList(
-                    items={
-                        'a':compute.NodeGroupsScopedList(),
-                        'b':compute.NodeGroupsScopedList(),
-                        'c':compute.NodeGroupsScopedList(),
-                    },
-                    next_page_token='abc',
-                ),
-                compute.NodeGroupAggregatedList(
-                    items={},
-                    next_page_token='def',
-                ),
-                compute.NodeGroupAggregatedList(
-                    items={
-                        'g':compute.NodeGroupsScopedList(),
-                    },
-                    next_page_token='ghi',
-                ),
-                compute.NodeGroupAggregatedList(
-                    items={
-                        'h':compute.NodeGroupsScopedList(),
-                        'i':compute.NodeGroupsScopedList(),
-                    },
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.NodeGroupAggregatedList(
+                items={
+                    'a':compute.NodeGroupsScopedList(),
+                    'b':compute.NodeGroupsScopedList(),
+                    'c':compute.NodeGroupsScopedList(),
+                },
+                next_page_token='abc',
+            ),
+            compute.NodeGroupAggregatedList(
+                items={},
+                next_page_token='def',
+            ),
+            compute.NodeGroupAggregatedList(
+                items={
+                    'g':compute.NodeGroupsScopedList(),
+                },
+                next_page_token='ghi',
+            ),
+            compute.NodeGroupAggregatedList(
+                items={
+                    'h':compute.NodeGroupsScopedList(),
+                    'i':compute.NodeGroupsScopedList(),
+                },
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.NodeGroupAggregatedList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.NodeGroupAggregatedList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.aggregated_list(request=sample_request)
+        pager = client.aggregated_list(request=sample_request)
 
-            assert isinstance(pager.get('a'), compute.NodeGroupsScopedList)
-            assert pager.get('h') is None
+        assert isinstance(pager.get('a'), compute.NodeGroupsScopedList)
+        assert pager.get('h') is None
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(
-                isinstance(i, tuple)
-                    for i in results)
-            for result in results:
-                assert isinstance(result, tuple)
-                assert tuple(type(t) for t in result) == (str, compute.NodeGroupsScopedList)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(
+            isinstance(i, tuple)
+                for i in results)
+        for result in results:
+            assert isinstance(result, tuple)
+            assert tuple(type(t) for t in result) == (str, compute.NodeGroupsScopedList)
 
-            assert pager.get('a') is None
-            assert isinstance(pager.get('h'), compute.NodeGroupsScopedList)
+        assert pager.get('a') is None
+        assert isinstance(pager.get('h'), compute.NodeGroupsScopedList)
 
-            pages = list(client.aggregated_list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.aggregated_list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_delete_unary_rest(transport: str = 'rest', request_type=compute.DeleteNodeGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteNodeGroupRequest,
+  dict,
+])
+def test_delete_unary_rest(request_type, transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteNodeGroupRequest,
+    dict,
+])
+def test_delete_unary_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -946,7 +1082,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteNodeGroupR
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -961,7 +1097,7 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteNodeGroupR
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._delete_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1005,17 +1141,17 @@ def test_delete_unary_rest_required_fields(request_type=compute.DeleteNodeGroupR
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1028,7 +1164,7 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1041,18 +1177,14 @@ def test_delete_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.delete_unary(request)
 
 
-def test_delete_unary_rest_from_dict():
-    test_delete_unary_rest(request_type=dict)
-
-
-def test_delete_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_unary_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1065,7 +1197,7 @@ def test_delete_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1100,19 +1232,77 @@ def test_delete_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_delete_nodes_unary_rest(transport: str = 'rest', request_type=compute.DeleteNodesNodeGroupRequest):
+def test_delete_unary_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.DeleteNodesNodeGroupRequest,
+  dict,
+])
+def test_delete_nodes_unary_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.DeleteNodesNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.delete_nodes_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.DeleteNodesNodeGroupRequest,
+    dict,
+])
+def test_delete_nodes_unary_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_groups_delete_nodes_request_resource"] = compute.NodeGroupsDeleteNodesRequest(nodes=['nodes_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_groups_delete_nodes_request_resource"] = {'nodes': ['nodes_value_1', 'nodes_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1192,7 +1382,7 @@ def test_delete_nodes_unary_rest_required_fields(request_type=compute.DeleteNode
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._delete_nodes_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete_nodes._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1207,7 +1397,7 @@ def test_delete_nodes_unary_rest_required_fields(request_type=compute.DeleteNode
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._delete_nodes_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).delete_nodes._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1252,17 +1442,17 @@ def test_delete_nodes_unary_rest_required_fields(request_type=compute.DeleteNode
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1275,8 +1465,8 @@ def test_delete_nodes_unary_rest_bad_request(transport: str = 'rest', request_ty
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_groups_delete_nodes_request_resource"] = compute.NodeGroupsDeleteNodesRequest(nodes=['nodes_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_groups_delete_nodes_request_resource"] = {'nodes': ['nodes_value_1', 'nodes_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1289,18 +1479,14 @@ def test_delete_nodes_unary_rest_bad_request(transport: str = 'rest', request_ty
         client.delete_nodes_unary(request)
 
 
-def test_delete_nodes_unary_rest_from_dict():
-    test_delete_nodes_unary_rest(request_type=dict)
-
-
-def test_delete_nodes_unary_rest_flattened(transport: str = 'rest'):
+def test_delete_nodes_unary_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1313,7 +1499,7 @@ def test_delete_nodes_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1350,18 +1536,67 @@ def test_delete_nodes_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetNodeGroupRequest):
+def test_delete_nodes_unary_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetNodeGroupRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.NodeGroup(
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              fingerprint='fingerprint_value',
+              id=205,
+              kind='kind_value',
+              location_hint='location_hint_value',
+              maintenance_policy='maintenance_policy_value',
+              name='name_value',
+              node_template='node_template_value',
+              self_link='self_link_value',
+              size=443,
+              status='status_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.NodeGroup.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetNodeGroupRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroup(
               creation_timestamp='creation_timestamp_value',
@@ -1423,7 +1658,7 @@ def test_get_rest_required_fields(request_type=compute.GetNodeGroupRequest):
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1438,7 +1673,7 @@ def test_get_rest_required_fields(request_type=compute.GetNodeGroupRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1482,17 +1717,17 @@ def test_get_rest_required_fields(request_type=compute.GetNodeGroupRequest):
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1505,7 +1740,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetN
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1518,18 +1753,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetN
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroup()
 
@@ -1542,7 +1773,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1577,18 +1808,57 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_get_iam_policy_rest(transport: str = 'rest', request_type=compute.GetIamPolicyNodeGroupRequest):
+def test_get_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.GetIamPolicyNodeGroupRequest,
+  dict,
+])
+def test_get_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetIamPolicyNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetIamPolicyNodeGroupRequest,
+    dict,
+])
+def test_get_iam_policy_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -1630,7 +1900,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyNo
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1645,7 +1915,7 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyNo
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._get_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1690,16 +1960,16 @@ def test_get_iam_policy_rest_required_fields(request_type=compute.GetIamPolicyNo
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1712,7 +1982,7 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1725,18 +1995,14 @@ def test_get_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.get_iam_policy(request)
 
 
-def test_get_iam_policy_rest_from_dict():
-    test_get_iam_policy_rest(request_type=dict)
-
-
-def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_get_iam_policy_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -1749,7 +2015,7 @@ def test_get_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -1784,19 +2050,77 @@ def test_get_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_insert_unary_rest(transport: str = 'rest', request_type=compute.InsertNodeGroupRequest):
+def test_get_iam_policy_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.InsertNodeGroupRequest,
+  dict,
+])
+def test_insert_unary_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.InsertNodeGroupRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.insert_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.InsertNodeGroupRequest,
+    dict,
+])
+def test_insert_unary_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["node_group_resource"] = compute.NodeGroup(autoscaling_policy=compute.NodeGroupAutoscalingPolicy(max_nodes=958))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["node_group_resource"] = {'autoscaling_policy': {'max_nodes': 958, 'min_nodes': 956, 'mode': 'mode_value'}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'location_hint': 'location_hint_value', 'maintenance_policy': 'maintenance_policy_value', 'maintenance_window': {'maintenance_duration': {'nanos': 543, 'seconds': 751}, 'start_time': 'start_time_value'}, 'name': 'name_value', 'node_template': 'node_template_value', 'self_link': 'self_link_value', 'size': 443, 'status': 'status_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -1861,7 +2185,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertNodeGroupR
     transport_class = transports.NodeGroupsRestTransport
 
     request_init = {}
-    request_init["initial_node_count"] = ""
+    request_init["initial_node_count"] = 0
     request_init["project"] = ""
     request_init["zone"] = ""
     request = request_type(request_init)
@@ -1876,7 +2200,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertNodeGroupR
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -1891,7 +2215,7 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertNodeGroupR
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._insert_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).insert._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -1936,17 +2260,17 @@ def test_insert_unary_rest_required_fields(request_type=compute.InsertNodeGroupR
 
             expected_params = [
                 (
-                    "initial_node_count",
-                    ""
-                )
+                    "initialNodeCount",
+                    0,
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -1959,8 +2283,8 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
-    request_init["node_group_resource"] = compute.NodeGroup(autoscaling_policy=compute.NodeGroupAutoscalingPolicy(max_nodes=958))
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
+    request_init["node_group_resource"] = {'autoscaling_policy': {'max_nodes': 958, 'min_nodes': 956, 'mode': 'mode_value'}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'location_hint': 'location_hint_value', 'maintenance_policy': 'maintenance_policy_value', 'maintenance_window': {'maintenance_duration': {'nanos': 543, 'seconds': 751}, 'start_time': 'start_time_value'}, 'name': 'name_value', 'node_template': 'node_template_value', 'self_link': 'self_link_value', 'size': 443, 'status': 'status_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -1973,18 +2297,14 @@ def test_insert_unary_rest_bad_request(transport: str = 'rest', request_type=com
         client.insert_unary(request)
 
 
-def test_insert_unary_rest_from_dict():
-    test_insert_unary_rest(request_type=dict)
-
-
-def test_insert_unary_rest_flattened(transport: str = 'rest'):
+def test_insert_unary_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -1997,7 +2317,7 @@ def test_insert_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2034,18 +2354,58 @@ def test_insert_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListNodeGroupsRequest):
+def test_insert_unary_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListNodeGroupsRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListNodeGroupsRequest({'project': 'sample1', 'zone': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.NodeGroupList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.NodeGroupList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListNodeGroupsRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroupList(
               id='id_value',
@@ -2087,7 +2447,7 @@ def test_list_rest_required_fields(request_type=compute.ListNodeGroupsRequest):
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2099,7 +2459,7 @@ def test_list_rest_required_fields(request_type=compute.ListNodeGroupsRequest):
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2142,12 +2502,12 @@ def test_list_rest_required_fields(request_type=compute.ListNodeGroupsRequest):
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2160,7 +2520,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2"}
+    request_init = {'project': 'sample1', 'zone': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2173,18 +2533,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroupList()
 
@@ -2197,7 +2553,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2240,70 +2596,103 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.NodeGroupList(
-                    items=[
-                        compute.NodeGroup(),
-                        compute.NodeGroup(),
-                        compute.NodeGroup(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.NodeGroupList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.NodeGroupList(
-                    items=[
-                        compute.NodeGroup(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.NodeGroupList(
-                    items=[
-                        compute.NodeGroup(),
-                        compute.NodeGroup(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.NodeGroupList(
+                items=[
+                    compute.NodeGroup(),
+                    compute.NodeGroup(),
+                    compute.NodeGroup(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.NodeGroupList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.NodeGroupList(
+                items=[
+                    compute.NodeGroup(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.NodeGroupList(
+                items=[
+                    compute.NodeGroup(),
+                    compute.NodeGroup(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.NodeGroupList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.NodeGroupList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1", "zone": "sample2"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.NodeGroup)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.NodeGroup)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_list_nodes_rest(transport: str = 'rest', request_type=compute.ListNodesNodeGroupsRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.ListNodesNodeGroupsRequest,
+  dict,
+])
+def test_list_nodes_rest(request_type, transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListNodesNodeGroupsRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.NodeGroupsListNodes(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.NodeGroupsListNodes.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list_nodes(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListNodesNodeGroupsRequest,
+    dict,
+])
+def test_list_nodes_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroupsListNodes(
               id='id_value',
@@ -2347,7 +2736,7 @@ def test_list_nodes_rest_required_fields(request_type=compute.ListNodesNodeGroup
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._list_nodes_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list_nodes._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2362,7 +2751,7 @@ def test_list_nodes_rest_required_fields(request_type=compute.ListNodesNodeGroup
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._list_nodes_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list_nodes._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2406,17 +2795,17 @@ def test_list_nodes_rest_required_fields(request_type=compute.ListNodesNodeGroup
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2429,7 +2818,7 @@ def test_list_nodes_rest_bad_request(transport: str = 'rest', request_type=compu
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2442,18 +2831,14 @@ def test_list_nodes_rest_bad_request(transport: str = 'rest', request_type=compu
         client.list_nodes(request)
 
 
-def test_list_nodes_rest_from_dict():
-    test_list_nodes_rest(request_type=dict)
-
-
-def test_list_nodes_rest_flattened(transport: str = 'rest'):
+def test_list_nodes_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.NodeGroupsListNodes()
 
@@ -2466,7 +2851,7 @@ def test_list_nodes_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2511,71 +2896,122 @@ def test_list_nodes_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.NodeGroupsListNodes(
-                    items=[
-                        compute.NodeGroupNode(),
-                        compute.NodeGroupNode(),
-                        compute.NodeGroupNode(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.NodeGroupsListNodes(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.NodeGroupsListNodes(
-                    items=[
-                        compute.NodeGroupNode(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.NodeGroupsListNodes(
-                    items=[
-                        compute.NodeGroupNode(),
-                        compute.NodeGroupNode(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.NodeGroupsListNodes(
+                items=[
+                    compute.NodeGroupNode(),
+                    compute.NodeGroupNode(),
+                    compute.NodeGroupNode(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.NodeGroupsListNodes(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.NodeGroupsListNodes(
+                items=[
+                    compute.NodeGroupNode(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.NodeGroupsListNodes(
+                items=[
+                    compute.NodeGroupNode(),
+                    compute.NodeGroupNode(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.NodeGroupsListNodes.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.NodeGroupsListNodes.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
-            pager = client.list_nodes(request=sample_request)
+        pager = client.list_nodes(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.NodeGroupNode)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.NodeGroupNode)
+                for i in results)
 
-            pages = list(client.list_nodes(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list_nodes(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
-
-def test_patch_unary_rest(transport: str = 'rest', request_type=compute.PatchNodeGroupRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.PatchNodeGroupRequest,
+  dict,
+])
+def test_patch_unary_rest(request_type, transport: str = 'rest'):
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.PatchNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.patch_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.PatchNodeGroupRequest,
+    dict,
+])
+def test_patch_unary_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_group_resource"] = compute.NodeGroup(autoscaling_policy=compute.NodeGroupAutoscalingPolicy(max_nodes=958))
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_group_resource"] = {'autoscaling_policy': {'max_nodes': 958, 'min_nodes': 956, 'mode': 'mode_value'}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'location_hint': 'location_hint_value', 'maintenance_policy': 'maintenance_policy_value', 'maintenance_window': {'maintenance_duration': {'nanos': 543, 'seconds': 751}, 'start_time': 'start_time_value'}, 'name': 'name_value', 'node_template': 'node_template_value', 'self_link': 'self_link_value', 'size': 443, 'status': 'status_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -2655,7 +3091,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchNodeGroupReq
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2670,7 +3106,7 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchNodeGroupReq
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._patch_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).patch._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2715,17 +3151,17 @@ def test_patch_unary_rest_required_fields(request_type=compute.PatchNodeGroupReq
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2738,8 +3174,8 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_group_resource"] = compute.NodeGroup(autoscaling_policy=compute.NodeGroupAutoscalingPolicy(max_nodes=958))
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_group_resource"] = {'autoscaling_policy': {'max_nodes': 958, 'min_nodes': 956, 'mode': 'mode_value'}, 'creation_timestamp': 'creation_timestamp_value', 'description': 'description_value', 'fingerprint': 'fingerprint_value', 'id': 205, 'kind': 'kind_value', 'location_hint': 'location_hint_value', 'maintenance_policy': 'maintenance_policy_value', 'maintenance_window': {'maintenance_duration': {'nanos': 543, 'seconds': 751}, 'start_time': 'start_time_value'}, 'name': 'name_value', 'node_template': 'node_template_value', 'self_link': 'self_link_value', 'size': 443, 'status': 'status_value', 'zone': 'zone_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2752,18 +3188,14 @@ def test_patch_unary_rest_bad_request(transport: str = 'rest', request_type=comp
         client.patch_unary(request)
 
 
-def test_patch_unary_rest_from_dict():
-    test_patch_unary_rest(request_type=dict)
-
-
-def test_patch_unary_rest_flattened(transport: str = 'rest'):
+def test_patch_unary_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -2776,7 +3208,7 @@ def test_patch_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -2813,19 +3245,58 @@ def test_patch_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_iam_policy_rest(transport: str = 'rest', request_type=compute.SetIamPolicyNodeGroupRequest):
+def test_patch_unary_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetIamPolicyNodeGroupRequest,
+  dict,
+])
+def test_set_iam_policy_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetIamPolicyNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Policy(
+              etag='etag_value',
+              iam_owned=True,
+              version=774,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Policy.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_iam_policy(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetIamPolicyNodeGroupRequest,
+    dict,
+])
+def test_set_iam_policy_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["zone_set_policy_request_resource"] = compute.ZoneSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["zone_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy(
               etag='etag_value',
@@ -2867,7 +3338,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyNo
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -2882,7 +3353,7 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyNo
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._set_iam_policy_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_iam_policy._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -2928,16 +3399,16 @@ def test_set_iam_policy_rest_required_fields(request_type=compute.SetIamPolicyNo
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -2950,8 +3421,8 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["zone_set_policy_request_resource"] = compute.ZoneSetPolicyRequest(bindings=[compute.Binding(binding_id='binding_id_value')])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["zone_set_policy_request_resource"] = {'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'policy': {'audit_configs': [{'audit_log_configs': [{'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'ignore_child_exemptions': True, 'log_type': 'log_type_value'}], 'exempted_members': ['exempted_members_value_1', 'exempted_members_value_2'], 'service': 'service_value'}], 'bindings': [{'binding_id': 'binding_id_value', 'condition': {'description': 'description_value', 'expression': 'expression_value', 'location': 'location_value', 'title': 'title_value'}, 'members': ['members_value_1', 'members_value_2'], 'role': 'role_value'}], 'etag': 'etag_value', 'iam_owned': True, 'rules': [{'action': 'action_value', 'conditions': [{'iam': 'iam_value', 'op': 'op_value', 'svc': 'svc_value', 'sys': 'sys_value', 'values': ['values_value_1', 'values_value_2']}], 'description': 'description_value', 'ins': ['ins_value_1', 'ins_value_2'], 'log_configs': [{'cloud_audit': {'authorization_logging_options': {'permission_type': 'permission_type_value'}, 'log_name': 'log_name_value'}, 'counter': {'custom_fields': [{'name': 'name_value', 'value': 'value_value'}], 'field': 'field_value', 'metric': 'metric_value'}, 'data_access': {'log_mode': 'log_mode_value'}}], 'not_ins': ['not_ins_value_1', 'not_ins_value_2'], 'permissions': ['permissions_value_1', 'permissions_value_2']}], 'version': 774}}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -2964,18 +3435,14 @@ def test_set_iam_policy_rest_bad_request(transport: str = 'rest', request_type=c
         client.set_iam_policy(request)
 
 
-def test_set_iam_policy_rest_from_dict():
-    test_set_iam_policy_rest(request_type=dict)
-
-
-def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
+def test_set_iam_policy_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Policy()
 
@@ -2988,7 +3455,7 @@ def test_set_iam_policy_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -3025,19 +3492,77 @@ def test_set_iam_policy_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_set_node_template_unary_rest(transport: str = 'rest', request_type=compute.SetNodeTemplateNodeGroupRequest):
+def test_set_iam_policy_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.SetNodeTemplateNodeGroupRequest,
+  dict,
+])
+def test_set_node_template_unary_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.SetNodeTemplateNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.Operation(
+              client_operation_id='client_operation_id_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              end_time='end_time_value',
+              http_error_message='http_error_message_value',
+              http_error_status_code=2374,
+              id=205,
+              insert_time='insert_time_value',
+              kind='kind_value',
+              name='name_value',
+              operation_group_id='operation_group_id_value',
+              operation_type='operation_type_value',
+              progress=885,
+              region='region_value',
+              self_link='self_link_value',
+              start_time='start_time_value',
+              status=compute.Operation.Status.DONE,
+              status_message='status_message_value',
+              target_id=947,
+              target_link='target_link_value',
+              user='user_value',
+              zone='zone_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.Operation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.set_node_template_unary(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.SetNodeTemplateNodeGroupRequest,
+    dict,
+])
+def test_set_node_template_unary_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_groups_set_node_template_request_resource"] = compute.NodeGroupsSetNodeTemplateRequest(node_template='node_template_value')
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_groups_set_node_template_request_resource"] = {'node_template': 'node_template_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation(
               client_operation_id='client_operation_id_value',
@@ -3117,7 +3642,7 @@ def test_set_node_template_unary_rest_required_fields(request_type=compute.SetNo
     assert "project" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._set_node_template_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_node_template._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -3132,7 +3657,7 @@ def test_set_node_template_unary_rest_required_fields(request_type=compute.SetNo
     jsonified_request["project"] = 'project_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._set_node_template_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).set_node_template._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -3177,17 +3702,17 @@ def test_set_node_template_unary_rest_required_fields(request_type=compute.SetNo
 
             expected_params = [
                 (
-                    "node_group",
-                    ""
-                )
+                    "nodeGroup",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -3200,8 +3725,8 @@ def test_set_node_template_unary_rest_bad_request(transport: str = 'rest', reque
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
-    request_init["node_groups_set_node_template_request_resource"] = compute.NodeGroupsSetNodeTemplateRequest(node_template='node_template_value')
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
+    request_init["node_groups_set_node_template_request_resource"] = {'node_template': 'node_template_value'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -3214,18 +3739,14 @@ def test_set_node_template_unary_rest_bad_request(transport: str = 'rest', reque
         client.set_node_template_unary(request)
 
 
-def test_set_node_template_unary_rest_from_dict():
-    test_set_node_template_unary_rest(request_type=dict)
-
-
-def test_set_node_template_unary_rest_flattened(transport: str = 'rest'):
+def test_set_node_template_unary_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.Operation()
 
@@ -3238,7 +3759,7 @@ def test_set_node_template_unary_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "node_group": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'node_group': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -3275,19 +3796,56 @@ def test_set_node_template_unary_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_test_iam_permissions_rest(transport: str = 'rest', request_type=compute.TestIamPermissionsNodeGroupRequest):
+def test_set_node_template_unary_rest_error():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.TestIamPermissionsNodeGroupRequest,
+  dict,
+])
+def test_test_iam_permissions_rest(request_type, transport: str = 'rest'):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.TestIamPermissionsNodeGroupRequest({'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.TestPermissionsResponse(
+              permissions=['permissions_value'],
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.TestPermissionsResponse.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.test_iam_permissions(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.TestIamPermissionsNodeGroupRequest,
+    dict,
+])
+def test_test_iam_permissions_rest(request_type):
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse(
               permissions=['permissions_value'],
@@ -3325,7 +3883,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     assert "resource" not in jsonified_request
     assert "zone" not in jsonified_request
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -3340,7 +3898,7 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
     jsonified_request["resource"] = 'resource_value'
     jsonified_request["zone"] = 'zone_value'
 
-    unset_fields = transport_class._test_iam_permissions_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).test_iam_permissions._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -3386,16 +3944,16 @@ def test_test_iam_permissions_rest_required_fields(request_type=compute.TestIamP
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "resource",
-                    ""
-                )
+                    "",
+                ),
                 (
                     "zone",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -3408,8 +3966,8 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
-    request_init["test_permissions_request_resource"] = compute.TestPermissionsRequest(permissions=['permissions_value'])
+    request_init = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
+    request_init["test_permissions_request_resource"] = {'permissions': ['permissions_value_1', 'permissions_value_2']}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -3422,18 +3980,14 @@ def test_test_iam_permissions_rest_bad_request(transport: str = 'rest', request_
         client.test_iam_permissions(request)
 
 
-def test_test_iam_permissions_rest_from_dict():
-    test_test_iam_permissions_rest(request_type=dict)
-
-
-def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
+def test_test_iam_permissions_rest_flattened():
     client = NodeGroupsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.TestPermissionsResponse()
 
@@ -3446,7 +4000,7 @@ def test_test_iam_permissions_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "zone": "sample2", "resource": "sample3"}
+        sample_request = {'project': 'sample1', 'zone': 'sample2', 'resource': 'sample3'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -3481,6 +4035,13 @@ def test_test_iam_permissions_rest_flattened_error(transport: str = 'rest'):
             resource='resource_value',
             test_permissions_request_resource=compute.TestPermissionsRequest(permissions=['permissions_value']),
         )
+
+
+def test_test_iam_permissions_rest_error():
+    client = NodeGroupsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport='rest'
+    )
 
 
 def test_credentials_transport_error():
@@ -3734,7 +4295,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.NodeGroupsTransport, '_prep_wrapped_messages') as prep:

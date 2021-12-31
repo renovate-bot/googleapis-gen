@@ -206,18 +206,18 @@ def test_cloud_shell_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -248,7 +248,7 @@ def test_cloud_shell_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -323,7 +323,7 @@ def test_cloud_shell_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -346,7 +346,7 @@ def test_cloud_shell_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -357,7 +357,6 @@ def test_cloud_shell_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_cloud_shell_service_client_client_options_from_dict():
     with mock.patch('google.cloud.shell_v1.services.cloud_shell_service.transports.CloudShellServiceGrpcTransport.__init__') as grpc_transport:
@@ -377,7 +376,11 @@ def test_cloud_shell_service_client_client_options_from_dict():
         )
 
 
-def test_get_environment(transport: str = 'grpc', request_type=cloudshell.GetEnvironmentRequest):
+@pytest.mark.parametrize("request_type", [
+  cloudshell.GetEnvironmentRequest,
+  dict,
+])
+def test_get_environment(request_type, transport: str = 'grpc'):
     client = CloudShellServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -421,10 +424,6 @@ def test_get_environment(transport: str = 'grpc', request_type=cloudshell.GetEnv
     assert response.ssh_host == 'ssh_host_value'
     assert response.ssh_port == 882
     assert response.public_keys == ['public_keys_value']
-
-
-def test_get_environment_from_dict():
-    test_get_environment(request_type=dict)
 
 
 def test_get_environment_empty_call():
@@ -644,7 +643,11 @@ async def test_get_environment_flattened_error_async():
         )
 
 
-def test_start_environment(transport: str = 'grpc', request_type=cloudshell.StartEnvironmentRequest):
+@pytest.mark.parametrize("request_type", [
+  cloudshell.StartEnvironmentRequest,
+  dict,
+])
+def test_start_environment(request_type, transport: str = 'grpc'):
     client = CloudShellServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -669,10 +672,6 @@ def test_start_environment(transport: str = 'grpc', request_type=cloudshell.Star
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_start_environment_from_dict():
-    test_start_environment(request_type=dict)
 
 
 def test_start_environment_empty_call():
@@ -791,7 +790,11 @@ async def test_start_environment_field_headers_async():
     ) in kw['metadata']
 
 
-def test_authorize_environment(transport: str = 'grpc', request_type=cloudshell.AuthorizeEnvironmentRequest):
+@pytest.mark.parametrize("request_type", [
+  cloudshell.AuthorizeEnvironmentRequest,
+  dict,
+])
+def test_authorize_environment(request_type, transport: str = 'grpc'):
     client = CloudShellServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -816,10 +819,6 @@ def test_authorize_environment(transport: str = 'grpc', request_type=cloudshell.
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_authorize_environment_from_dict():
-    test_authorize_environment(request_type=dict)
 
 
 def test_authorize_environment_empty_call():
@@ -938,7 +937,11 @@ async def test_authorize_environment_field_headers_async():
     ) in kw['metadata']
 
 
-def test_add_public_key(transport: str = 'grpc', request_type=cloudshell.AddPublicKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  cloudshell.AddPublicKeyRequest,
+  dict,
+])
+def test_add_public_key(request_type, transport: str = 'grpc'):
     client = CloudShellServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -963,10 +966,6 @@ def test_add_public_key(transport: str = 'grpc', request_type=cloudshell.AddPubl
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_add_public_key_from_dict():
-    test_add_public_key(request_type=dict)
 
 
 def test_add_public_key_empty_call():
@@ -1085,7 +1084,11 @@ async def test_add_public_key_field_headers_async():
     ) in kw['metadata']
 
 
-def test_remove_public_key(transport: str = 'grpc', request_type=cloudshell.RemovePublicKeyRequest):
+@pytest.mark.parametrize("request_type", [
+  cloudshell.RemovePublicKeyRequest,
+  dict,
+])
+def test_remove_public_key(request_type, transport: str = 'grpc'):
     client = CloudShellServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1110,10 +1113,6 @@ def test_remove_public_key(transport: str = 'grpc', request_type=cloudshell.Remo
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_remove_public_key_from_dict():
-    test_remove_public_key(request_type=dict)
 
 
 def test_remove_public_key_empty_call():
@@ -1753,7 +1752,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.CloudShellServiceTransport, '_prep_wrapped_messages') as prep:

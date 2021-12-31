@@ -205,18 +205,18 @@ def test_error_stats_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -247,7 +247,7 @@ def test_error_stats_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -322,7 +322,7 @@ def test_error_stats_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -345,7 +345,7 @@ def test_error_stats_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -356,7 +356,6 @@ def test_error_stats_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_error_stats_service_client_client_options_from_dict():
     with mock.patch('google.cloud.errorreporting_v1beta1.services.error_stats_service.transports.ErrorStatsServiceGrpcTransport.__init__') as grpc_transport:
@@ -376,7 +375,11 @@ def test_error_stats_service_client_client_options_from_dict():
         )
 
 
-def test_list_group_stats(transport: str = 'grpc', request_type=error_stats_service.ListGroupStatsRequest):
+@pytest.mark.parametrize("request_type", [
+  error_stats_service.ListGroupStatsRequest,
+  dict,
+])
+def test_list_group_stats(request_type, transport: str = 'grpc'):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -404,10 +407,6 @@ def test_list_group_stats(transport: str = 'grpc', request_type=error_stats_serv
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListGroupStatsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_group_stats_from_dict():
-    test_list_group_stats(request_type=dict)
 
 
 def test_list_group_stats_empty_call():
@@ -621,9 +620,10 @@ async def test_list_group_stats_flattened_error_async():
         )
 
 
-def test_list_group_stats_pager():
+def test_list_group_stats_pager(transport_name: str = "grpc"):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -673,10 +673,10 @@ def test_list_group_stats_pager():
         assert len(results) == 6
         assert all(isinstance(i, error_stats_service.ErrorGroupStats)
                    for i in results)
-
-def test_list_group_stats_pages():
+def test_list_group_stats_pages(transport_name: str = "grpc"):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -761,7 +761,8 @@ async def test_list_group_stats_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, error_stats_service.ErrorGroupStats)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_group_stats_async_pages():
@@ -807,7 +808,11 @@ async def test_list_group_stats_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_list_events(transport: str = 'grpc', request_type=error_stats_service.ListEventsRequest):
+@pytest.mark.parametrize("request_type", [
+  error_stats_service.ListEventsRequest,
+  dict,
+])
+def test_list_events(request_type, transport: str = 'grpc'):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -835,10 +840,6 @@ def test_list_events(transport: str = 'grpc', request_type=error_stats_service.L
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListEventsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_events_from_dict():
-    test_list_events(request_type=dict)
 
 
 def test_list_events_empty_call():
@@ -1052,9 +1053,10 @@ async def test_list_events_flattened_error_async():
         )
 
 
-def test_list_events_pager():
+def test_list_events_pager(transport_name: str = "grpc"):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1104,10 +1106,10 @@ def test_list_events_pager():
         assert len(results) == 6
         assert all(isinstance(i, common.ErrorEvent)
                    for i in results)
-
-def test_list_events_pages():
+def test_list_events_pages(transport_name: str = "grpc"):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1192,7 +1194,8 @@ async def test_list_events_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, common.ErrorEvent)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_events_async_pages():
@@ -1238,7 +1241,11 @@ async def test_list_events_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_events(transport: str = 'grpc', request_type=error_stats_service.DeleteEventsRequest):
+@pytest.mark.parametrize("request_type", [
+  error_stats_service.DeleteEventsRequest,
+  dict,
+])
+def test_delete_events(request_type, transport: str = 'grpc'):
     client = ErrorStatsServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1264,10 +1271,6 @@ def test_delete_events(transport: str = 'grpc', request_type=error_stats_service
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, error_stats_service.DeleteEventsResponse)
-
-
-def test_delete_events_from_dict():
-    test_delete_events(request_type=dict)
 
 
 def test_delete_events_empty_call():
@@ -1949,7 +1952,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.ErrorStatsServiceTransport, '_prep_wrapped_messages') as prep:

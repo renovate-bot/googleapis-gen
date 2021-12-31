@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-from typing import Any, Callable, Iterable, Sequence, Tuple
+from typing import Any, Callable, Iterable, Sequence, Tuple, Optional, Iterator
 
 from google.ads.googleads.v9.services.types import keyword_plan_idea_service
 
@@ -67,7 +67,7 @@ class GenerateKeywordIdeasPager:
             self._response = self._method(self._request, metadata=self._metadata)
             yield self._response
 
-    def __iter__(self) -> Iterable[keyword_plan_idea_service.GenerateKeywordIdeaResult]:
+    def __iter__(self) -> Iterator[keyword_plan_idea_service.GenerateKeywordIdeaResult]:
         for page in self.pages:
             yield from page.results
 

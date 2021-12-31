@@ -1,22 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import path_template
-from google.api_core import gapic_v1
-from requests import __version__ as requests_version
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
-import warnings
-
-try:
-    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
-except AttributeError:  # pragma: NO COVER
-    OptionalRetry = Union[retries.Retry, object]  # type: ignore
-
 # -*- coding: utf-8 -*-
 # Copyright 2020 Google LLC
 #
@@ -33,6 +14,27 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+import json  # type: ignore
+import grpc  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.api_core import rest_helpers
+from google.api_core import path_template
+from google.api_core import gapic_v1
+from requests import __version__ as requests_version
+import dataclasses
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+import warnings
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
+
+
 from google.cloud.compute_v1.types import compute
 
 from .base import DiskTypesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -43,6 +45,11 @@ DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     grpc_version=None,
     rest_version=requests_version,
 )
+
+@dataclasses.dataclass
+class DiskTypesRestStub:
+    _session: AuthorizedSession
+    _host: str
 
 class DiskTypesRestTransport(DiskTypesTransport):
     """REST backend transport for DiskTypes.
@@ -55,6 +62,8 @@ class DiskTypesRestTransport(DiskTypesTransport):
 
     It sends JSON representations of protocol buffers over HTTP/1.1
     """
+    _STUBS: Dict[str, DiskTypesRestStub] = {}
+
     def __init__(self, *,
             host: str = 'compute.googleapis.com',
             credentials: ga_credentials.Credentials=None,
@@ -91,7 +100,7 @@ class DiskTypesRestTransport(DiskTypesTransport):
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
+                Generally, you only need to set this if you are developing
                 your own client library.
             always_use_jwt_access (Optional[bool]): Whether self signed JWT should
                 be used for service account credentials.
@@ -115,112 +124,118 @@ class DiskTypesRestTransport(DiskTypesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
-    __aggregated_list_required_fields_default_values =  {
-        "project" : "",    }
+    class _AggregatedList(DiskTypesRestStub):
+        def __hash__(self):
+            return hash("AggregatedList")
 
-    @staticmethod
-    def _aggregated_list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in DiskTypesRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    def _aggregated_list(self,
-            request: compute.AggregatedListDiskTypesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.DiskTypeAggregatedList:
-        r"""Call the aggregated list method over HTTP.
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-        Args:
-            request (~.compute.AggregatedListDiskTypesRequest):
-                The request object. A request message for
+        def __call__(self,
+                request: compute.AggregatedListDiskTypesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.DiskTypeAggregatedList:
+            r"""Call the aggregated list method over HTTP.
+
+            Args:
+                request (~.compute.AggregatedListDiskTypesRequest):
+                    The request object. A request message for
                 DiskTypes.AggregatedList. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.DiskTypeAggregatedList:
+            Returns:
+                ~.compute.DiskTypeAggregatedList:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/aggregated/diskTypes',
             },
-        ]
+            ]
 
-        request_kwargs = compute.AggregatedListDiskTypesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.AggregatedListDiskTypesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.AggregatedListDiskTypesRequest.to_json(
-            compute.AggregatedListDiskTypesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.AggregatedListDiskTypesRequest.to_json(
+                compute.AggregatedListDiskTypesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.DiskTypeAggregatedList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.DiskTypeAggregatedList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Get(DiskTypesRestStub):
+        def __hash__(self):
+            return hash("Get")
 
-    __get_required_fields_default_values =  {
-        "diskType" : "",        "project" : "",        "zone" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "diskType" : "",            "project" : "",            "zone" : "",        }
 
-    @staticmethod
-    def _get_get_unset_required_fields(message_dict):
-        return {k: v for k, v in DiskTypesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get(self,
-            request: compute.GetDiskTypeRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.DiskType:
-        r"""Call the get method over HTTP.
+        def __call__(self,
+                request: compute.GetDiskTypeRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.DiskType:
+            r"""Call the get method over HTTP.
 
-        Args:
-            request (~.compute.GetDiskTypeRequest):
-                The request object. A request message for DiskTypes.Get.
+            Args:
+                request (~.compute.GetDiskTypeRequest):
+                    The request object. A request message for DiskTypes.Get.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.DiskType:
-                Represents a Disk Type resource. Google Compute Engine
+            Returns:
+                ~.compute.DiskType:
+                    Represents a Disk Type resource. Google Compute Engine
                 has two Disk Type resources: \*
                 `Regional </compute/docs/reference/rest/v1/regionDiskTypes>`__
                 \* `Zonal </compute/docs/reference/rest/v1/diskTypes>`__
@@ -232,144 +247,159 @@ class DiskTypesRestTransport(DiskTypesTransport):
                 represents disk types for a regional persistent disk.
                 For more information, read Regional persistent disks.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/zones/{zone}/diskTypes/{disk_type}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetDiskTypeRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetDiskTypeRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetDiskTypeRequest.to_json(
-            compute.GetDiskTypeRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetDiskTypeRequest.to_json(
+                compute.GetDiskTypeRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.DiskType.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.DiskType.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _List(DiskTypesRestStub):
+        def __hash__(self):
+            return hash("List")
 
-    __list_required_fields_default_values =  {
-        "project" : "",        "zone" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "zone" : "",        }
 
-    @staticmethod
-    def _list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in DiskTypesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _list(self,
-            request: compute.ListDiskTypesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.DiskTypeList:
-        r"""Call the list method over HTTP.
+        def __call__(self,
+                request: compute.ListDiskTypesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.DiskTypeList:
+            r"""Call the list method over HTTP.
 
-        Args:
-            request (~.compute.ListDiskTypesRequest):
-                The request object. A request message for DiskTypes.List.
+            Args:
+                request (~.compute.ListDiskTypesRequest):
+                    The request object. A request message for DiskTypes.List.
                 See the method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.DiskTypeList:
-                Contains a list of disk types.
-        """
+            Returns:
+                ~.compute.DiskTypeList:
+                    Contains a list of disk types.
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/zones/{zone}/diskTypes',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListDiskTypesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListDiskTypesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListDiskTypesRequest.to_json(
-            compute.ListDiskTypesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListDiskTypesRequest.to_json(
+                compute.ListDiskTypesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.DiskTypeList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.DiskTypeList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
-
-    @ property
+    @property
     def aggregated_list(self) -> Callable[
             [compute.AggregatedListDiskTypesRequest],
             compute.DiskTypeAggregatedList]:
-        return self._aggregated_list
-    @ property
+        stub = self._STUBS.get("aggregated_list")
+        if not stub:
+            stub = self._STUBS["aggregated_list"] = self._AggregatedList(self._session, self._host)
+
+        return stub
+
+    @property
     def get(self) -> Callable[
             [compute.GetDiskTypeRequest],
             compute.DiskType]:
-        return self._get
-    @ property
+        stub = self._STUBS.get("get")
+        if not stub:
+            stub = self._STUBS["get"] = self._Get(self._session, self._host)
+
+        return stub
+
+    @property
     def list(self) -> Callable[
             [compute.ListDiskTypesRequest],
             compute.DiskTypeList]:
-        return self._list
+        stub = self._STUBS.get("list")
+        if not stub:
+            stub = self._STUBS["list"] = self._List(self._session, self._host)
+
+        return stub
+
     def close(self):
         self._session.close()
 

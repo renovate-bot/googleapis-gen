@@ -219,18 +219,18 @@ def test_tensorboard_service_client_client_options(client_class, transport_class
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -261,7 +261,7 @@ def test_tensorboard_service_client_mtls_env_auto(client_class, transport_class,
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -336,7 +336,7 @@ def test_tensorboard_service_client_client_options_scopes(client_class, transpor
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -359,7 +359,7 @@ def test_tensorboard_service_client_client_options_credentials_file(client_class
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -370,7 +370,6 @@ def test_tensorboard_service_client_client_options_credentials_file(client_class
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_tensorboard_service_client_client_options_from_dict():
     with mock.patch('google.cloud.aiplatform_v1beta1.services.tensorboard_service.transports.TensorboardServiceGrpcTransport.__init__') as grpc_transport:
@@ -390,7 +389,11 @@ def test_tensorboard_service_client_client_options_from_dict():
         )
 
 
-def test_create_tensorboard(transport: str = 'grpc', request_type=tensorboard_service.CreateTensorboardRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.CreateTensorboardRequest,
+  dict,
+])
+def test_create_tensorboard(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -415,10 +418,6 @@ def test_create_tensorboard(transport: str = 'grpc', request_type=tensorboard_se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_create_tensorboard_from_dict():
-    test_create_tensorboard(request_type=dict)
 
 
 def test_create_tensorboard_empty_call():
@@ -633,7 +632,11 @@ async def test_create_tensorboard_flattened_error_async():
         )
 
 
-def test_get_tensorboard(transport: str = 'grpc', request_type=tensorboard_service.GetTensorboardRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.GetTensorboardRequest,
+  dict,
+])
+def test_get_tensorboard(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -671,10 +674,6 @@ def test_get_tensorboard(transport: str = 'grpc', request_type=tensorboard_servi
     assert response.blob_storage_path_prefix == 'blob_storage_path_prefix_value'
     assert response.run_count == 989
     assert response.etag == 'etag_value'
-
-
-def test_get_tensorboard_from_dict():
-    test_get_tensorboard(request_type=dict)
 
 
 def test_get_tensorboard_empty_call():
@@ -888,7 +887,11 @@ async def test_get_tensorboard_flattened_error_async():
         )
 
 
-def test_update_tensorboard(transport: str = 'grpc', request_type=tensorboard_service.UpdateTensorboardRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.UpdateTensorboardRequest,
+  dict,
+])
+def test_update_tensorboard(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -913,10 +916,6 @@ def test_update_tensorboard(transport: str = 'grpc', request_type=tensorboard_se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_update_tensorboard_from_dict():
-    test_update_tensorboard(request_type=dict)
 
 
 def test_update_tensorboard_empty_call():
@@ -1131,7 +1130,11 @@ async def test_update_tensorboard_flattened_error_async():
         )
 
 
-def test_list_tensorboards(transport: str = 'grpc', request_type=tensorboard_service.ListTensorboardsRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ListTensorboardsRequest,
+  dict,
+])
+def test_list_tensorboards(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1159,10 +1162,6 @@ def test_list_tensorboards(transport: str = 'grpc', request_type=tensorboard_ser
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTensorboardsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tensorboards_from_dict():
-    test_list_tensorboards(request_type=dict)
 
 
 def test_list_tensorboards_empty_call():
@@ -1366,9 +1365,10 @@ async def test_list_tensorboards_flattened_error_async():
         )
 
 
-def test_list_tensorboards_pager():
+def test_list_tensorboards_pager(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1418,10 +1418,10 @@ def test_list_tensorboards_pager():
         assert len(results) == 6
         assert all(isinstance(i, tensorboard.Tensorboard)
                    for i in results)
-
-def test_list_tensorboards_pages():
+def test_list_tensorboards_pages(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1506,7 +1506,8 @@ async def test_list_tensorboards_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tensorboard.Tensorboard)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tensorboards_async_pages():
@@ -1552,7 +1553,11 @@ async def test_list_tensorboards_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_tensorboard(transport: str = 'grpc', request_type=tensorboard_service.DeleteTensorboardRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.DeleteTensorboardRequest,
+  dict,
+])
+def test_delete_tensorboard(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1577,10 +1582,6 @@ def test_delete_tensorboard(transport: str = 'grpc', request_type=tensorboard_se
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_tensorboard_from_dict():
-    test_delete_tensorboard(request_type=dict)
 
 
 def test_delete_tensorboard_empty_call():
@@ -1785,7 +1786,11 @@ async def test_delete_tensorboard_flattened_error_async():
         )
 
 
-def test_create_tensorboard_experiment(transport: str = 'grpc', request_type=tensorboard_service.CreateTensorboardExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.CreateTensorboardExperimentRequest,
+  dict,
+])
+def test_create_tensorboard_experiment(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1821,10 +1826,6 @@ def test_create_tensorboard_experiment(transport: str = 'grpc', request_type=ten
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.source == 'source_value'
-
-
-def test_create_tensorboard_experiment_from_dict():
-    test_create_tensorboard_experiment(request_type=dict)
 
 
 def test_create_tensorboard_experiment_empty_call():
@@ -2056,7 +2057,11 @@ async def test_create_tensorboard_experiment_flattened_error_async():
         )
 
 
-def test_get_tensorboard_experiment(transport: str = 'grpc', request_type=tensorboard_service.GetTensorboardExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.GetTensorboardExperimentRequest,
+  dict,
+])
+def test_get_tensorboard_experiment(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2092,10 +2097,6 @@ def test_get_tensorboard_experiment(transport: str = 'grpc', request_type=tensor
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.source == 'source_value'
-
-
-def test_get_tensorboard_experiment_from_dict():
-    test_get_tensorboard_experiment(request_type=dict)
 
 
 def test_get_tensorboard_experiment_empty_call():
@@ -2307,7 +2308,11 @@ async def test_get_tensorboard_experiment_flattened_error_async():
         )
 
 
-def test_update_tensorboard_experiment(transport: str = 'grpc', request_type=tensorboard_service.UpdateTensorboardExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.UpdateTensorboardExperimentRequest,
+  dict,
+])
+def test_update_tensorboard_experiment(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2343,10 +2348,6 @@ def test_update_tensorboard_experiment(transport: str = 'grpc', request_type=ten
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
     assert response.source == 'source_value'
-
-
-def test_update_tensorboard_experiment_from_dict():
-    test_update_tensorboard_experiment(request_type=dict)
 
 
 def test_update_tensorboard_experiment_empty_call():
@@ -2568,7 +2569,11 @@ async def test_update_tensorboard_experiment_flattened_error_async():
         )
 
 
-def test_list_tensorboard_experiments(transport: str = 'grpc', request_type=tensorboard_service.ListTensorboardExperimentsRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ListTensorboardExperimentsRequest,
+  dict,
+])
+def test_list_tensorboard_experiments(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2596,10 +2601,6 @@ def test_list_tensorboard_experiments(transport: str = 'grpc', request_type=tens
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTensorboardExperimentsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tensorboard_experiments_from_dict():
-    test_list_tensorboard_experiments(request_type=dict)
 
 
 def test_list_tensorboard_experiments_empty_call():
@@ -2803,9 +2804,10 @@ async def test_list_tensorboard_experiments_flattened_error_async():
         )
 
 
-def test_list_tensorboard_experiments_pager():
+def test_list_tensorboard_experiments_pager(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2855,10 +2857,10 @@ def test_list_tensorboard_experiments_pager():
         assert len(results) == 6
         assert all(isinstance(i, tensorboard_experiment.TensorboardExperiment)
                    for i in results)
-
-def test_list_tensorboard_experiments_pages():
+def test_list_tensorboard_experiments_pages(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -2943,7 +2945,8 @@ async def test_list_tensorboard_experiments_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tensorboard_experiment.TensorboardExperiment)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tensorboard_experiments_async_pages():
@@ -2989,7 +2992,11 @@ async def test_list_tensorboard_experiments_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_tensorboard_experiment(transport: str = 'grpc', request_type=tensorboard_service.DeleteTensorboardExperimentRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.DeleteTensorboardExperimentRequest,
+  dict,
+])
+def test_delete_tensorboard_experiment(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3014,10 +3021,6 @@ def test_delete_tensorboard_experiment(transport: str = 'grpc', request_type=ten
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_tensorboard_experiment_from_dict():
-    test_delete_tensorboard_experiment(request_type=dict)
 
 
 def test_delete_tensorboard_experiment_empty_call():
@@ -3222,7 +3225,11 @@ async def test_delete_tensorboard_experiment_flattened_error_async():
         )
 
 
-def test_create_tensorboard_run(transport: str = 'grpc', request_type=tensorboard_service.CreateTensorboardRunRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.CreateTensorboardRunRequest,
+  dict,
+])
+def test_create_tensorboard_run(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3256,10 +3263,6 @@ def test_create_tensorboard_run(transport: str = 'grpc', request_type=tensorboar
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
-
-
-def test_create_tensorboard_run_from_dict():
-    test_create_tensorboard_run(request_type=dict)
 
 
 def test_create_tensorboard_run_empty_call():
@@ -3489,7 +3492,11 @@ async def test_create_tensorboard_run_flattened_error_async():
         )
 
 
-def test_batch_create_tensorboard_runs(transport: str = 'grpc', request_type=tensorboard_service.BatchCreateTensorboardRunsRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.BatchCreateTensorboardRunsRequest,
+  dict,
+])
+def test_batch_create_tensorboard_runs(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3515,10 +3522,6 @@ def test_batch_create_tensorboard_runs(transport: str = 'grpc', request_type=ten
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tensorboard_service.BatchCreateTensorboardRunsResponse)
-
-
-def test_batch_create_tensorboard_runs_from_dict():
-    test_batch_create_tensorboard_runs(request_type=dict)
 
 
 def test_batch_create_tensorboard_runs_empty_call():
@@ -3730,7 +3733,11 @@ async def test_batch_create_tensorboard_runs_flattened_error_async():
         )
 
 
-def test_get_tensorboard_run(transport: str = 'grpc', request_type=tensorboard_service.GetTensorboardRunRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.GetTensorboardRunRequest,
+  dict,
+])
+def test_get_tensorboard_run(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3764,10 +3771,6 @@ def test_get_tensorboard_run(transport: str = 'grpc', request_type=tensorboard_s
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
-
-
-def test_get_tensorboard_run_from_dict():
-    test_get_tensorboard_run(request_type=dict)
 
 
 def test_get_tensorboard_run_empty_call():
@@ -3977,7 +3980,11 @@ async def test_get_tensorboard_run_flattened_error_async():
         )
 
 
-def test_update_tensorboard_run(transport: str = 'grpc', request_type=tensorboard_service.UpdateTensorboardRunRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.UpdateTensorboardRunRequest,
+  dict,
+])
+def test_update_tensorboard_run(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4011,10 +4018,6 @@ def test_update_tensorboard_run(transport: str = 'grpc', request_type=tensorboar
     assert response.display_name == 'display_name_value'
     assert response.description == 'description_value'
     assert response.etag == 'etag_value'
-
-
-def test_update_tensorboard_run_from_dict():
-    test_update_tensorboard_run(request_type=dict)
 
 
 def test_update_tensorboard_run_empty_call():
@@ -4234,7 +4237,11 @@ async def test_update_tensorboard_run_flattened_error_async():
         )
 
 
-def test_list_tensorboard_runs(transport: str = 'grpc', request_type=tensorboard_service.ListTensorboardRunsRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ListTensorboardRunsRequest,
+  dict,
+])
+def test_list_tensorboard_runs(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4262,10 +4269,6 @@ def test_list_tensorboard_runs(transport: str = 'grpc', request_type=tensorboard
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTensorboardRunsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tensorboard_runs_from_dict():
-    test_list_tensorboard_runs(request_type=dict)
 
 
 def test_list_tensorboard_runs_empty_call():
@@ -4469,9 +4472,10 @@ async def test_list_tensorboard_runs_flattened_error_async():
         )
 
 
-def test_list_tensorboard_runs_pager():
+def test_list_tensorboard_runs_pager(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4521,10 +4525,10 @@ def test_list_tensorboard_runs_pager():
         assert len(results) == 6
         assert all(isinstance(i, tensorboard_run.TensorboardRun)
                    for i in results)
-
-def test_list_tensorboard_runs_pages():
+def test_list_tensorboard_runs_pages(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -4609,7 +4613,8 @@ async def test_list_tensorboard_runs_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tensorboard_run.TensorboardRun)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tensorboard_runs_async_pages():
@@ -4655,7 +4660,11 @@ async def test_list_tensorboard_runs_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_tensorboard_run(transport: str = 'grpc', request_type=tensorboard_service.DeleteTensorboardRunRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.DeleteTensorboardRunRequest,
+  dict,
+])
+def test_delete_tensorboard_run(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4680,10 +4689,6 @@ def test_delete_tensorboard_run(transport: str = 'grpc', request_type=tensorboar
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_tensorboard_run_from_dict():
-    test_delete_tensorboard_run(request_type=dict)
 
 
 def test_delete_tensorboard_run_empty_call():
@@ -4888,7 +4893,11 @@ async def test_delete_tensorboard_run_flattened_error_async():
         )
 
 
-def test_batch_create_tensorboard_time_series(transport: str = 'grpc', request_type=tensorboard_service.BatchCreateTensorboardTimeSeriesRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.BatchCreateTensorboardTimeSeriesRequest,
+  dict,
+])
+def test_batch_create_tensorboard_time_series(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4914,10 +4923,6 @@ def test_batch_create_tensorboard_time_series(transport: str = 'grpc', request_t
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tensorboard_service.BatchCreateTensorboardTimeSeriesResponse)
-
-
-def test_batch_create_tensorboard_time_series_from_dict():
-    test_batch_create_tensorboard_time_series(request_type=dict)
 
 
 def test_batch_create_tensorboard_time_series_empty_call():
@@ -5129,7 +5134,11 @@ async def test_batch_create_tensorboard_time_series_flattened_error_async():
         )
 
 
-def test_create_tensorboard_time_series(transport: str = 'grpc', request_type=tensorboard_service.CreateTensorboardTimeSeriesRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.CreateTensorboardTimeSeriesRequest,
+  dict,
+])
+def test_create_tensorboard_time_series(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5169,10 +5178,6 @@ def test_create_tensorboard_time_series(transport: str = 'grpc', request_type=te
     assert response.etag == 'etag_value'
     assert response.plugin_name == 'plugin_name_value'
     assert response.plugin_data == b'plugin_data_blob'
-
-
-def test_create_tensorboard_time_series_from_dict():
-    test_create_tensorboard_time_series(request_type=dict)
 
 
 def test_create_tensorboard_time_series_empty_call():
@@ -5398,7 +5403,11 @@ async def test_create_tensorboard_time_series_flattened_error_async():
         )
 
 
-def test_get_tensorboard_time_series(transport: str = 'grpc', request_type=tensorboard_service.GetTensorboardTimeSeriesRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.GetTensorboardTimeSeriesRequest,
+  dict,
+])
+def test_get_tensorboard_time_series(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5438,10 +5447,6 @@ def test_get_tensorboard_time_series(transport: str = 'grpc', request_type=tenso
     assert response.etag == 'etag_value'
     assert response.plugin_name == 'plugin_name_value'
     assert response.plugin_data == b'plugin_data_blob'
-
-
-def test_get_tensorboard_time_series_from_dict():
-    test_get_tensorboard_time_series(request_type=dict)
 
 
 def test_get_tensorboard_time_series_empty_call():
@@ -5657,7 +5662,11 @@ async def test_get_tensorboard_time_series_flattened_error_async():
         )
 
 
-def test_update_tensorboard_time_series(transport: str = 'grpc', request_type=tensorboard_service.UpdateTensorboardTimeSeriesRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.UpdateTensorboardTimeSeriesRequest,
+  dict,
+])
+def test_update_tensorboard_time_series(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5697,10 +5706,6 @@ def test_update_tensorboard_time_series(transport: str = 'grpc', request_type=te
     assert response.etag == 'etag_value'
     assert response.plugin_name == 'plugin_name_value'
     assert response.plugin_data == b'plugin_data_blob'
-
-
-def test_update_tensorboard_time_series_from_dict():
-    test_update_tensorboard_time_series(request_type=dict)
 
 
 def test_update_tensorboard_time_series_empty_call():
@@ -5926,7 +5931,11 @@ async def test_update_tensorboard_time_series_flattened_error_async():
         )
 
 
-def test_list_tensorboard_time_series(transport: str = 'grpc', request_type=tensorboard_service.ListTensorboardTimeSeriesRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ListTensorboardTimeSeriesRequest,
+  dict,
+])
+def test_list_tensorboard_time_series(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -5954,10 +5963,6 @@ def test_list_tensorboard_time_series(transport: str = 'grpc', request_type=tens
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListTensorboardTimeSeriesPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_tensorboard_time_series_from_dict():
-    test_list_tensorboard_time_series(request_type=dict)
 
 
 def test_list_tensorboard_time_series_empty_call():
@@ -6161,9 +6166,10 @@ async def test_list_tensorboard_time_series_flattened_error_async():
         )
 
 
-def test_list_tensorboard_time_series_pager():
+def test_list_tensorboard_time_series_pager(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6213,10 +6219,10 @@ def test_list_tensorboard_time_series_pager():
         assert len(results) == 6
         assert all(isinstance(i, tensorboard_time_series.TensorboardTimeSeries)
                    for i in results)
-
-def test_list_tensorboard_time_series_pages():
+def test_list_tensorboard_time_series_pages(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -6301,7 +6307,8 @@ async def test_list_tensorboard_time_series_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tensorboard_time_series.TensorboardTimeSeries)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_tensorboard_time_series_async_pages():
@@ -6347,7 +6354,11 @@ async def test_list_tensorboard_time_series_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_tensorboard_time_series(transport: str = 'grpc', request_type=tensorboard_service.DeleteTensorboardTimeSeriesRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.DeleteTensorboardTimeSeriesRequest,
+  dict,
+])
+def test_delete_tensorboard_time_series(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6372,10 +6383,6 @@ def test_delete_tensorboard_time_series(transport: str = 'grpc', request_type=te
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, future.Future)
-
-
-def test_delete_tensorboard_time_series_from_dict():
-    test_delete_tensorboard_time_series(request_type=dict)
 
 
 def test_delete_tensorboard_time_series_empty_call():
@@ -6580,7 +6587,11 @@ async def test_delete_tensorboard_time_series_flattened_error_async():
         )
 
 
-def test_batch_read_tensorboard_time_series_data(transport: str = 'grpc', request_type=tensorboard_service.BatchReadTensorboardTimeSeriesDataRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.BatchReadTensorboardTimeSeriesDataRequest,
+  dict,
+])
+def test_batch_read_tensorboard_time_series_data(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6606,10 +6617,6 @@ def test_batch_read_tensorboard_time_series_data(transport: str = 'grpc', reques
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tensorboard_service.BatchReadTensorboardTimeSeriesDataResponse)
-
-
-def test_batch_read_tensorboard_time_series_data_from_dict():
-    test_batch_read_tensorboard_time_series_data(request_type=dict)
 
 
 def test_batch_read_tensorboard_time_series_data_empty_call():
@@ -6811,7 +6818,11 @@ async def test_batch_read_tensorboard_time_series_data_flattened_error_async():
         )
 
 
-def test_read_tensorboard_time_series_data(transport: str = 'grpc', request_type=tensorboard_service.ReadTensorboardTimeSeriesDataRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ReadTensorboardTimeSeriesDataRequest,
+  dict,
+])
+def test_read_tensorboard_time_series_data(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -6837,10 +6848,6 @@ def test_read_tensorboard_time_series_data(transport: str = 'grpc', request_type
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tensorboard_service.ReadTensorboardTimeSeriesDataResponse)
-
-
-def test_read_tensorboard_time_series_data_from_dict():
-    test_read_tensorboard_time_series_data(request_type=dict)
 
 
 def test_read_tensorboard_time_series_data_empty_call():
@@ -7042,7 +7049,11 @@ async def test_read_tensorboard_time_series_data_flattened_error_async():
         )
 
 
-def test_read_tensorboard_blob_data(transport: str = 'grpc', request_type=tensorboard_service.ReadTensorboardBlobDataRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ReadTensorboardBlobDataRequest,
+  dict,
+])
+def test_read_tensorboard_blob_data(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7068,10 +7079,6 @@ def test_read_tensorboard_blob_data(transport: str = 'grpc', request_type=tensor
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, tensorboard_service.ReadTensorboardBlobDataResponse)
-
-
-def test_read_tensorboard_blob_data_from_dict():
-    test_read_tensorboard_blob_data(request_type=dict)
 
 
 def test_read_tensorboard_blob_data_empty_call():
@@ -7275,7 +7282,11 @@ async def test_read_tensorboard_blob_data_flattened_error_async():
         )
 
 
-def test_write_tensorboard_experiment_data(transport: str = 'grpc', request_type=tensorboard_service.WriteTensorboardExperimentDataRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.WriteTensorboardExperimentDataRequest,
+  dict,
+])
+def test_write_tensorboard_experiment_data(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7301,10 +7312,6 @@ def test_write_tensorboard_experiment_data(transport: str = 'grpc', request_type
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tensorboard_service.WriteTensorboardExperimentDataResponse)
-
-
-def test_write_tensorboard_experiment_data_from_dict():
-    test_write_tensorboard_experiment_data(request_type=dict)
 
 
 def test_write_tensorboard_experiment_data_empty_call():
@@ -7516,7 +7523,11 @@ async def test_write_tensorboard_experiment_data_flattened_error_async():
         )
 
 
-def test_write_tensorboard_run_data(transport: str = 'grpc', request_type=tensorboard_service.WriteTensorboardRunDataRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.WriteTensorboardRunDataRequest,
+  dict,
+])
+def test_write_tensorboard_run_data(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7542,10 +7553,6 @@ def test_write_tensorboard_run_data(transport: str = 'grpc', request_type=tensor
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, tensorboard_service.WriteTensorboardRunDataResponse)
-
-
-def test_write_tensorboard_run_data_from_dict():
-    test_write_tensorboard_run_data(request_type=dict)
 
 
 def test_write_tensorboard_run_data_empty_call():
@@ -7757,7 +7764,11 @@ async def test_write_tensorboard_run_data_flattened_error_async():
         )
 
 
-def test_export_tensorboard_time_series_data(transport: str = 'grpc', request_type=tensorboard_service.ExportTensorboardTimeSeriesDataRequest):
+@pytest.mark.parametrize("request_type", [
+  tensorboard_service.ExportTensorboardTimeSeriesDataRequest,
+  dict,
+])
+def test_export_tensorboard_time_series_data(request_type, transport: str = 'grpc'):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -7785,10 +7796,6 @@ def test_export_tensorboard_time_series_data(transport: str = 'grpc', request_ty
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ExportTensorboardTimeSeriesDataPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_export_tensorboard_time_series_data_from_dict():
-    test_export_tensorboard_time_series_data(request_type=dict)
 
 
 def test_export_tensorboard_time_series_data_empty_call():
@@ -7992,9 +7999,10 @@ async def test_export_tensorboard_time_series_data_flattened_error_async():
         )
 
 
-def test_export_tensorboard_time_series_data_pager():
+def test_export_tensorboard_time_series_data_pager(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8044,10 +8052,10 @@ def test_export_tensorboard_time_series_data_pager():
         assert len(results) == 6
         assert all(isinstance(i, tensorboard_data.TimeSeriesDataPoint)
                    for i in results)
-
-def test_export_tensorboard_time_series_data_pages():
+def test_export_tensorboard_time_series_data_pages(transport_name: str = "grpc"):
     client = TensorboardServiceClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -8132,7 +8140,8 @@ async def test_export_tensorboard_time_series_data_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, tensorboard_data.TimeSeriesDataPoint)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_export_tensorboard_time_series_data_async_pages():
@@ -8800,7 +8809,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.TensorboardServiceTransport, '_prep_wrapped_messages') as prep:

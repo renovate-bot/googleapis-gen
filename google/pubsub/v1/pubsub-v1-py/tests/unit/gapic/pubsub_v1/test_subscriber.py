@@ -208,18 +208,18 @@ def test_subscriber_client_client_options(client_class, transport_class, transpo
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -250,7 +250,7 @@ def test_subscriber_client_mtls_env_auto(client_class, transport_class, transpor
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -325,7 +325,7 @@ def test_subscriber_client_client_options_scopes(client_class, transport_class, 
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -348,7 +348,7 @@ def test_subscriber_client_client_options_credentials_file(client_class, transpo
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -359,7 +359,6 @@ def test_subscriber_client_client_options_credentials_file(client_class, transpo
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_subscriber_client_client_options_from_dict():
     with mock.patch('google.pubsub_v1.services.subscriber.transports.SubscriberGrpcTransport.__init__') as grpc_transport:
@@ -379,7 +378,11 @@ def test_subscriber_client_client_options_from_dict():
         )
 
 
-def test_create_subscription(transport: str = 'grpc', request_type=pubsub.Subscription):
+@pytest.mark.parametrize("request_type", [
+  pubsub.Subscription,
+  dict,
+])
+def test_create_subscription(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -419,10 +422,6 @@ def test_create_subscription(transport: str = 'grpc', request_type=pubsub.Subscr
     assert response.enable_message_ordering is True
     assert response.filter == 'filter_value'
     assert response.detached is True
-
-
-def test_create_subscription_from_dict():
-    test_create_subscription(request_type=dict)
 
 
 def test_create_subscription_empty_call():
@@ -668,7 +667,11 @@ async def test_create_subscription_flattened_error_async():
         )
 
 
-def test_get_subscription(transport: str = 'grpc', request_type=pubsub.GetSubscriptionRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.GetSubscriptionRequest,
+  dict,
+])
+def test_get_subscription(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -708,10 +711,6 @@ def test_get_subscription(transport: str = 'grpc', request_type=pubsub.GetSubscr
     assert response.enable_message_ordering is True
     assert response.filter == 'filter_value'
     assert response.detached is True
-
-
-def test_get_subscription_from_dict():
-    test_get_subscription(request_type=dict)
 
 
 def test_get_subscription_empty_call():
@@ -927,7 +926,11 @@ async def test_get_subscription_flattened_error_async():
         )
 
 
-def test_update_subscription(transport: str = 'grpc', request_type=pubsub.UpdateSubscriptionRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.UpdateSubscriptionRequest,
+  dict,
+])
+def test_update_subscription(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -967,10 +970,6 @@ def test_update_subscription(transport: str = 'grpc', request_type=pubsub.Update
     assert response.enable_message_ordering is True
     assert response.filter == 'filter_value'
     assert response.detached is True
-
-
-def test_update_subscription_from_dict():
-    test_update_subscription(request_type=dict)
 
 
 def test_update_subscription_empty_call():
@@ -1102,7 +1101,11 @@ async def test_update_subscription_field_headers_async():
     ) in kw['metadata']
 
 
-def test_list_subscriptions(transport: str = 'grpc', request_type=pubsub.ListSubscriptionsRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.ListSubscriptionsRequest,
+  dict,
+])
+def test_list_subscriptions(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1130,10 +1133,6 @@ def test_list_subscriptions(transport: str = 'grpc', request_type=pubsub.ListSub
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSubscriptionsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_subscriptions_from_dict():
-    test_list_subscriptions(request_type=dict)
 
 
 def test_list_subscriptions_empty_call():
@@ -1337,9 +1336,10 @@ async def test_list_subscriptions_flattened_error_async():
         )
 
 
-def test_list_subscriptions_pager():
+def test_list_subscriptions_pager(transport_name: str = "grpc"):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1389,10 +1389,10 @@ def test_list_subscriptions_pager():
         assert len(results) == 6
         assert all(isinstance(i, pubsub.Subscription)
                    for i in results)
-
-def test_list_subscriptions_pages():
+def test_list_subscriptions_pages(transport_name: str = "grpc"):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -1477,7 +1477,8 @@ async def test_list_subscriptions_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, pubsub.Subscription)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_subscriptions_async_pages():
@@ -1523,7 +1524,11 @@ async def test_list_subscriptions_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_delete_subscription(transport: str = 'grpc', request_type=pubsub.DeleteSubscriptionRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.DeleteSubscriptionRequest,
+  dict,
+])
+def test_delete_subscription(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1548,10 +1553,6 @@ def test_delete_subscription(transport: str = 'grpc', request_type=pubsub.Delete
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_subscription_from_dict():
-    test_delete_subscription(request_type=dict)
 
 
 def test_delete_subscription_empty_call():
@@ -1752,7 +1753,11 @@ async def test_delete_subscription_flattened_error_async():
         )
 
 
-def test_modify_ack_deadline(transport: str = 'grpc', request_type=pubsub.ModifyAckDeadlineRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.ModifyAckDeadlineRequest,
+  dict,
+])
+def test_modify_ack_deadline(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -1777,10 +1782,6 @@ def test_modify_ack_deadline(transport: str = 'grpc', request_type=pubsub.Modify
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_modify_ack_deadline_from_dict():
-    test_modify_ack_deadline(request_type=dict)
 
 
 def test_modify_ack_deadline_empty_call():
@@ -2001,7 +2002,11 @@ async def test_modify_ack_deadline_flattened_error_async():
         )
 
 
-def test_acknowledge(transport: str = 'grpc', request_type=pubsub.AcknowledgeRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.AcknowledgeRequest,
+  dict,
+])
+def test_acknowledge(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2026,10 +2031,6 @@ def test_acknowledge(transport: str = 'grpc', request_type=pubsub.AcknowledgeReq
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_acknowledge_from_dict():
-    test_acknowledge(request_type=dict)
 
 
 def test_acknowledge_empty_call():
@@ -2240,7 +2241,11 @@ async def test_acknowledge_flattened_error_async():
         )
 
 
-def test_pull(transport: str = 'grpc', request_type=pubsub.PullRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.PullRequest,
+  dict,
+])
+def test_pull(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2266,10 +2271,6 @@ def test_pull(transport: str = 'grpc', request_type=pubsub.PullRequest):
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pubsub.PullResponse)
-
-
-def test_pull_from_dict():
-    test_pull(request_type=dict)
 
 
 def test_pull_empty_call():
@@ -2491,7 +2492,11 @@ async def test_pull_flattened_error_async():
         )
 
 
-def test_streaming_pull(transport: str = 'grpc', request_type=pubsub.StreamingPullRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.StreamingPullRequest,
+  dict,
+])
+def test_streaming_pull(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2518,10 +2523,6 @@ def test_streaming_pull(transport: str = 'grpc', request_type=pubsub.StreamingPu
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, pubsub.StreamingPullResponse)
-
-
-def test_streaming_pull_from_dict():
-    test_streaming_pull(request_type=dict)
 
 
 @pytest.mark.asyncio
@@ -2560,7 +2561,11 @@ async def test_streaming_pull_async_from_dict():
     await test_streaming_pull_async(request_type=dict)
 
 
-def test_modify_push_config(transport: str = 'grpc', request_type=pubsub.ModifyPushConfigRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.ModifyPushConfigRequest,
+  dict,
+])
+def test_modify_push_config(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2585,10 +2590,6 @@ def test_modify_push_config(transport: str = 'grpc', request_type=pubsub.ModifyP
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_modify_push_config_from_dict():
-    test_modify_push_config(request_type=dict)
 
 
 def test_modify_push_config_empty_call():
@@ -2799,7 +2800,11 @@ async def test_modify_push_config_flattened_error_async():
         )
 
 
-def test_get_snapshot(transport: str = 'grpc', request_type=pubsub.GetSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.GetSnapshotRequest,
+  dict,
+])
+def test_get_snapshot(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -2829,10 +2834,6 @@ def test_get_snapshot(transport: str = 'grpc', request_type=pubsub.GetSnapshotRe
     assert isinstance(response, pubsub.Snapshot)
     assert response.name == 'name_value'
     assert response.topic == 'topic_value'
-
-
-def test_get_snapshot_from_dict():
-    test_get_snapshot(request_type=dict)
 
 
 def test_get_snapshot_empty_call():
@@ -3038,7 +3039,11 @@ async def test_get_snapshot_flattened_error_async():
         )
 
 
-def test_list_snapshots(transport: str = 'grpc', request_type=pubsub.ListSnapshotsRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.ListSnapshotsRequest,
+  dict,
+])
+def test_list_snapshots(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3066,10 +3071,6 @@ def test_list_snapshots(transport: str = 'grpc', request_type=pubsub.ListSnapsho
     # Establish that the response is the type that we expect.
     assert isinstance(response, pagers.ListSnapshotsPager)
     assert response.next_page_token == 'next_page_token_value'
-
-
-def test_list_snapshots_from_dict():
-    test_list_snapshots(request_type=dict)
 
 
 def test_list_snapshots_empty_call():
@@ -3273,9 +3274,10 @@ async def test_list_snapshots_flattened_error_async():
         )
 
 
-def test_list_snapshots_pager():
+def test_list_snapshots_pager(transport_name: str = "grpc"):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3325,10 +3327,10 @@ def test_list_snapshots_pager():
         assert len(results) == 6
         assert all(isinstance(i, pubsub.Snapshot)
                    for i in results)
-
-def test_list_snapshots_pages():
+def test_list_snapshots_pages(transport_name: str = "grpc"):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials,
+        transport=transport_name,
     )
 
     # Mock the actual call within the gRPC stub, and fake the request.
@@ -3413,7 +3415,8 @@ async def test_list_snapshots_async_pager():
 
         assert len(responses) == 6
         assert all(isinstance(i, pubsub.Snapshot)
-                   for i in responses)
+                for i in responses)
+
 
 @pytest.mark.asyncio
 async def test_list_snapshots_async_pages():
@@ -3459,7 +3462,11 @@ async def test_list_snapshots_async_pages():
         for page_, token in zip(pages, ['abc','def','ghi', '']):
             assert page_.raw_page.next_page_token == token
 
-def test_create_snapshot(transport: str = 'grpc', request_type=pubsub.CreateSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.CreateSnapshotRequest,
+  dict,
+])
+def test_create_snapshot(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3489,10 +3496,6 @@ def test_create_snapshot(transport: str = 'grpc', request_type=pubsub.CreateSnap
     assert isinstance(response, pubsub.Snapshot)
     assert response.name == 'name_value'
     assert response.topic == 'topic_value'
-
-
-def test_create_snapshot_from_dict():
-    test_create_snapshot(request_type=dict)
 
 
 def test_create_snapshot_empty_call():
@@ -3708,7 +3711,11 @@ async def test_create_snapshot_flattened_error_async():
         )
 
 
-def test_update_snapshot(transport: str = 'grpc', request_type=pubsub.UpdateSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.UpdateSnapshotRequest,
+  dict,
+])
+def test_update_snapshot(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3738,10 +3745,6 @@ def test_update_snapshot(transport: str = 'grpc', request_type=pubsub.UpdateSnap
     assert isinstance(response, pubsub.Snapshot)
     assert response.name == 'name_value'
     assert response.topic == 'topic_value'
-
-
-def test_update_snapshot_from_dict():
-    test_update_snapshot(request_type=dict)
 
 
 def test_update_snapshot_empty_call():
@@ -3863,7 +3866,11 @@ async def test_update_snapshot_field_headers_async():
     ) in kw['metadata']
 
 
-def test_delete_snapshot(transport: str = 'grpc', request_type=pubsub.DeleteSnapshotRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.DeleteSnapshotRequest,
+  dict,
+])
+def test_delete_snapshot(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -3888,10 +3895,6 @@ def test_delete_snapshot(transport: str = 'grpc', request_type=pubsub.DeleteSnap
 
     # Establish that the response is the type that we expect.
     assert response is None
-
-
-def test_delete_snapshot_from_dict():
-    test_delete_snapshot(request_type=dict)
 
 
 def test_delete_snapshot_empty_call():
@@ -4092,7 +4095,11 @@ async def test_delete_snapshot_flattened_error_async():
         )
 
 
-def test_seek(transport: str = 'grpc', request_type=pubsub.SeekRequest):
+@pytest.mark.parametrize("request_type", [
+  pubsub.SeekRequest,
+  dict,
+])
+def test_seek(request_type, transport: str = 'grpc'):
     client = SubscriberClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -4118,10 +4125,6 @@ def test_seek(transport: str = 'grpc', request_type=pubsub.SeekRequest):
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, pubsub.SeekResponse)
-
-
-def test_seek_from_dict():
-    test_seek(request_type=dict)
 
 
 def test_seek_empty_call():
@@ -4776,7 +4779,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.SubscriberTransport, '_prep_wrapped_messages') as prep:

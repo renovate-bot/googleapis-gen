@@ -129,7 +129,6 @@ class ListServicesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.ManagedService]:
         async def async_generator():
             async for page in self.pages:
@@ -251,7 +250,6 @@ class ListServiceConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[service_pb2.Service]:
         async def async_generator():
             async for page in self.pages:
@@ -373,7 +371,6 @@ class ListServiceRolloutsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[resources.Rollout]:
         async def async_generator():
             async for page in self.pages:

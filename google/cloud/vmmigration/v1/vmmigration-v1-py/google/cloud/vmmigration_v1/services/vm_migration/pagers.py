@@ -127,7 +127,6 @@ class ListSourcesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.Source]:
         async def async_generator():
             async for page in self.pages:
@@ -249,7 +248,6 @@ class ListUtilizationReportsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.UtilizationReport]:
         async def async_generator():
             async for page in self.pages:
@@ -371,7 +369,6 @@ class ListDatacenterConnectorsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.DatacenterConnector]:
         async def async_generator():
             async for page in self.pages:
@@ -493,7 +490,6 @@ class ListMigratingVmsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.MigratingVm]:
         async def async_generator():
             async for page in self.pages:
@@ -615,7 +611,6 @@ class ListCloneJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.CloneJob]:
         async def async_generator():
             async for page in self.pages:
@@ -737,7 +732,6 @@ class ListCutoverJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.CutoverJob]:
         async def async_generator():
             async for page in self.pages:
@@ -859,7 +853,6 @@ class ListGroupsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.Group]:
         async def async_generator():
             async for page in self.pages:
@@ -981,7 +974,6 @@ class ListTargetProjectsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[vmmigration.TargetProject]:
         async def async_generator():
             async for page in self.pages:

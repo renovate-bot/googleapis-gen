@@ -128,7 +128,6 @@ class ListDataSourcesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[datatransfer.DataSource]:
         async def async_generator():
             async for page in self.pages:
@@ -250,7 +249,6 @@ class ListTransferConfigsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[transfer.TransferConfig]:
         async def async_generator():
             async for page in self.pages:
@@ -372,7 +370,6 @@ class ListTransferRunsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[transfer.TransferRun]:
         async def async_generator():
             async for page in self.pages:
@@ -494,7 +491,6 @@ class ListTransferLogsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[transfer.TransferMessage]:
         async def async_generator():
             async for page in self.pages:

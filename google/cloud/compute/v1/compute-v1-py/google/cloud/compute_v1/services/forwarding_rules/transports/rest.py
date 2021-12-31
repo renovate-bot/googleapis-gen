@@ -1,22 +1,3 @@
-from google.auth.transport.requests import AuthorizedSession  # type: ignore
-import json  # type: ignore
-import grpc  # type: ignore
-from google.auth.transport.grpc import SslCredentials  # type: ignore
-from google.auth import credentials as ga_credentials  # type: ignore
-from google.api_core import exceptions as core_exceptions
-from google.api_core import retry as retries
-from google.api_core import rest_helpers
-from google.api_core import path_template
-from google.api_core import gapic_v1
-from requests import __version__ as requests_version
-from typing import Callable, Dict, Optional, Sequence, Tuple, Union
-import warnings
-
-try:
-    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
-except AttributeError:  # pragma: NO COVER
-    OptionalRetry = Union[retries.Retry, object]  # type: ignore
-
 # -*- coding: utf-8 -*-
 # Copyright 2020 Google LLC
 #
@@ -33,6 +14,27 @@ except AttributeError:  # pragma: NO COVER
 # limitations under the License.
 #
 
+from google.auth.transport.requests import AuthorizedSession  # type: ignore
+import json  # type: ignore
+import grpc  # type: ignore
+from google.auth.transport.grpc import SslCredentials  # type: ignore
+from google.auth import credentials as ga_credentials  # type: ignore
+from google.api_core import exceptions as core_exceptions
+from google.api_core import retry as retries
+from google.api_core import rest_helpers
+from google.api_core import path_template
+from google.api_core import gapic_v1
+from requests import __version__ as requests_version
+import dataclasses
+from typing import Callable, Dict, Optional, Sequence, Tuple, Union
+import warnings
+
+try:
+    OptionalRetry = Union[retries.Retry, gapic_v1.method._MethodDefault]
+except AttributeError:  # pragma: NO COVER
+    OptionalRetry = Union[retries.Retry, object]  # type: ignore
+
+
 from google.cloud.compute_v1.types import compute
 
 from .base import ForwardingRulesTransport, DEFAULT_CLIENT_INFO as BASE_DEFAULT_CLIENT_INFO
@@ -43,6 +45,11 @@ DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
     grpc_version=None,
     rest_version=requests_version,
 )
+
+@dataclasses.dataclass
+class ForwardingRulesRestStub:
+    _session: AuthorizedSession
+    _host: str
 
 class ForwardingRulesRestTransport(ForwardingRulesTransport):
     """REST backend transport for ForwardingRules.
@@ -55,6 +62,8 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
 
     It sends JSON representations of protocol buffers over HTTP/1.1
     """
+    _STUBS: Dict[str, ForwardingRulesRestStub] = {}
+
     def __init__(self, *,
             host: str = 'compute.googleapis.com',
             credentials: ga_credentials.Credentials=None,
@@ -91,7 +100,7 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
             client_info (google.api_core.gapic_v1.client_info.ClientInfo):
                 The client info used to send a user-agent string along with
                 API requests. If ``None``, then default info will be used.
-                Generally, you only need to set this if you're developing
+                Generally, you only need to set this if you are developing
                 your own client library.
             always_use_jwt_access (Optional[bool]): Whether self signed JWT should
                 be used for service account credentials.
@@ -115,113 +124,119 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
             self._session.configure_mtls_channel(client_cert_source_for_mtls)
         self._prep_wrapped_messages(client_info)
 
-    __aggregated_list_required_fields_default_values =  {
-        "project" : "",    }
+    class _AggregatedList(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("AggregatedList")
 
-    @staticmethod
-    def _aggregated_list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__aggregated_list_required_fields_default_values.items() if k not in message_dict}
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",        }
 
-    def _aggregated_list(self,
-            request: compute.AggregatedListForwardingRulesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.ForwardingRuleAggregatedList:
-        r"""Call the aggregated list method over HTTP.
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-        Args:
-            request (~.compute.AggregatedListForwardingRulesRequest):
-                The request object. A request message for
+        def __call__(self,
+                request: compute.AggregatedListForwardingRulesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.ForwardingRuleAggregatedList:
+            r"""Call the aggregated list method over HTTP.
+
+            Args:
+                request (~.compute.AggregatedListForwardingRulesRequest):
+                    The request object. A request message for
                 ForwardingRules.AggregatedList. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.ForwardingRuleAggregatedList:
+            Returns:
+                ~.compute.ForwardingRuleAggregatedList:
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/aggregated/forwardingRules',
             },
-        ]
+            ]
 
-        request_kwargs = compute.AggregatedListForwardingRulesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.AggregatedListForwardingRulesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.AggregatedListForwardingRulesRequest.to_json(
-            compute.AggregatedListForwardingRulesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.AggregatedListForwardingRulesRequest.to_json(
+                compute.AggregatedListForwardingRulesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._aggregated_list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.ForwardingRuleAggregatedList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.ForwardingRuleAggregatedList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Delete(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("Delete")
 
-    __delete_required_fields_default_values =  {
-        "forwardingRule" : "",        "project" : "",        "region" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "forwardingRule" : "",            "project" : "",            "region" : "",        }
 
-    @staticmethod
-    def _delete_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__delete_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _delete(self,
-            request: compute.DeleteForwardingRuleRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the delete method over HTTP.
+        def __call__(self,
+                request: compute.DeleteForwardingRuleRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the delete method over HTTP.
 
-        Args:
-            request (~.compute.DeleteForwardingRuleRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.DeleteForwardingRuleRequest):
+                    The request object. A request message for
                 ForwardingRules.Delete. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -237,83 +252,85 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'delete',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.DeleteForwardingRuleRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.DeleteForwardingRuleRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.DeleteForwardingRuleRequest.to_json(
-            compute.DeleteForwardingRuleRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.DeleteForwardingRuleRequest.to_json(
+                compute.DeleteForwardingRuleRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._delete_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Get(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("Get")
 
-    __get_required_fields_default_values =  {
-        "forwardingRule" : "",        "project" : "",        "region" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "forwardingRule" : "",            "project" : "",            "region" : "",        }
 
-    @staticmethod
-    def _get_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__get_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _get(self,
-            request: compute.GetForwardingRuleRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.ForwardingRule:
-        r"""Call the get method over HTTP.
+        def __call__(self,
+                request: compute.GetForwardingRuleRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.ForwardingRule:
+            r"""Call the get method over HTTP.
 
-        Args:
-            request (~.compute.GetForwardingRuleRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.GetForwardingRuleRequest):
+                    The request object. A request message for
                 ForwardingRules.Get. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.ForwardingRule:
-                Represents a Forwarding Rule resource. Forwarding rule
+            Returns:
+                ~.compute.ForwardingRule:
+                    Represents a Forwarding Rule resource. Forwarding rule
                 resources in Google Cloud can be either regional or
                 global in scope: \*
                 `Global <https://cloud.google.com/compute/docs/reference/rest/v1/globalForwardingRules>`__
@@ -326,83 +343,85 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
                 gateways (targetVpnGateway). For more information, read
                 Forwarding rule concepts and Using protocol forwarding.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}',
             },
-        ]
+            ]
 
-        request_kwargs = compute.GetForwardingRuleRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.GetForwardingRuleRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.GetForwardingRuleRequest.to_json(
-            compute.GetForwardingRuleRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.GetForwardingRuleRequest.to_json(
+                compute.GetForwardingRuleRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._get_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.ForwardingRule.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.ForwardingRule.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Insert(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("Insert")
 
-    __insert_required_fields_default_values =  {
-        "project" : "",        "region" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "region" : "",        }
 
-    @staticmethod
-    def _insert_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__insert_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _insert(self,
-            request: compute.InsertForwardingRuleRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the insert method over HTTP.
+        def __call__(self,
+                request: compute.InsertForwardingRuleRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the insert method over HTTP.
 
-        Args:
-            request (~.compute.InsertForwardingRuleRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.InsertForwardingRuleRequest):
+                    The request object. A request message for
                 ForwardingRules.Insert. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -418,171 +437,173 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules',
                 'body': 'forwarding_rule_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.InsertForwardingRuleRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.InsertForwardingRuleRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.ForwardingRule.to_json(
-            compute.ForwardingRule(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.ForwardingRule.to_json(
+                compute.ForwardingRule(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.InsertForwardingRuleRequest.to_json(
-            compute.InsertForwardingRuleRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.InsertForwardingRuleRequest.to_json(
+                compute.InsertForwardingRuleRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._insert_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _List(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("List")
 
-    __list_required_fields_default_values =  {
-        "project" : "",        "region" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "region" : "",        }
 
-    @staticmethod
-    def _list_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__list_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _list(self,
-            request: compute.ListForwardingRulesRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.ForwardingRuleList:
-        r"""Call the list method over HTTP.
+        def __call__(self,
+                request: compute.ListForwardingRulesRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.ForwardingRuleList:
+            r"""Call the list method over HTTP.
 
-        Args:
-            request (~.compute.ListForwardingRulesRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.ListForwardingRulesRequest):
+                    The request object. A request message for
                 ForwardingRules.List. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.ForwardingRuleList:
-                Contains a list of ForwardingRule
+            Returns:
+                ~.compute.ForwardingRuleList:
+                    Contains a list of ForwardingRule
                 resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'get',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules',
             },
-        ]
+            ]
 
-        request_kwargs = compute.ListForwardingRulesRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.ListForwardingRulesRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.ListForwardingRulesRequest.to_json(
-            compute.ListForwardingRulesRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.ListForwardingRulesRequest.to_json(
+                compute.ListForwardingRulesRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._list_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.ForwardingRuleList.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.ForwardingRuleList.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _Patch(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("Patch")
 
-    __patch_required_fields_default_values =  {
-        "forwardingRule" : "",        "project" : "",        "region" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "forwardingRule" : "",            "project" : "",            "region" : "",        }
 
-    @staticmethod
-    def _patch_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__patch_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _patch(self,
-            request: compute.PatchForwardingRuleRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the patch method over HTTP.
+        def __call__(self,
+                request: compute.PatchForwardingRuleRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the patch method over HTTP.
 
-        Args:
-            request (~.compute.PatchForwardingRuleRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.PatchForwardingRuleRequest):
+                    The request object. A request message for
                 ForwardingRules.Patch. See the method
                 description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -598,92 +619,92 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'patch',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}',
                 'body': 'forwarding_rule_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.PatchForwardingRuleRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.PatchForwardingRuleRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.ForwardingRule.to_json(
-            compute.ForwardingRule(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.ForwardingRule.to_json(
+                compute.ForwardingRule(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.PatchForwardingRuleRequest.to_json(
-            compute.PatchForwardingRuleRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.PatchForwardingRuleRequest.to_json(
+                compute.PatchForwardingRuleRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._patch_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetLabels(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("SetLabels")
 
-    __set_labels_required_fields_default_values =  {
-        "project" : "",        "region" : "",        "resource" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "project" : "",            "region" : "",            "resource" : "",        }
 
-    @staticmethod
-    def _set_labels_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__set_labels_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_labels(self,
-            request: compute.SetLabelsForwardingRuleRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set labels method over HTTP.
+        def __call__(self,
+                request: compute.SetLabelsForwardingRuleRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set labels method over HTTP.
 
-        Args:
-            request (~.compute.SetLabelsForwardingRuleRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetLabelsForwardingRuleRequest):
+                    The request object. A request message for
                 ForwardingRules.SetLabels. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -699,92 +720,92 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules/{resource}/setLabels',
                 'body': 'region_set_labels_request_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetLabelsForwardingRuleRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetLabelsForwardingRuleRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.RegionSetLabelsRequest.to_json(
-            compute.RegionSetLabelsRequest(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.RegionSetLabelsRequest.to_json(
+                compute.RegionSetLabelsRequest(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetLabelsForwardingRuleRequest.to_json(
-            compute.SetLabelsForwardingRuleRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetLabelsForwardingRuleRequest.to_json(
+                compute.SetLabelsForwardingRuleRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_labels_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
+    class _SetTarget(ForwardingRulesRestStub):
+        def __hash__(self):
+            return hash("SetTarget")
 
-    __set_target_required_fields_default_values =  {
-        "forwardingRule" : "",        "project" : "",        "region" : "",    }
+        __REQUIRED_FIELDS_DEFAULT_VALUES =  {
+            "forwardingRule" : "",            "project" : "",            "region" : "",        }
 
-    @staticmethod
-    def _set_target_get_unset_required_fields(message_dict):
-        return {k: v for k, v in ForwardingRulesRestTransport.__set_target_required_fields_default_values.items() if k not in message_dict}
+        @classmethod
+        def _get_unset_required_fields(cls, message_dict):
+            return {k: v for k, v in cls.__REQUIRED_FIELDS_DEFAULT_VALUES.items() if k not in message_dict}
 
-    def _set_target(self,
-            request: compute.SetTargetForwardingRuleRequest, *,
-            retry: OptionalRetry=gapic_v1.method.DEFAULT,
-            timeout: float=None,
-            metadata: Sequence[Tuple[str, str]]=(),
-            ) -> compute.Operation:
-        r"""Call the set target method over HTTP.
+        def __call__(self,
+                request: compute.SetTargetForwardingRuleRequest, *,
+                retry: OptionalRetry=gapic_v1.method.DEFAULT,
+                timeout: float=None,
+                metadata: Sequence[Tuple[str, str]]=(),
+                ) -> compute.Operation:
+            r"""Call the set target method over HTTP.
 
-        Args:
-            request (~.compute.SetTargetForwardingRuleRequest):
-                The request object. A request message for
+            Args:
+                request (~.compute.SetTargetForwardingRuleRequest):
+                    The request object. A request message for
                 ForwardingRules.SetTarget. See the
                 method description for details.
 
-            retry (google.api_core.retry.Retry): Designation of what errors, if any,
-                should be retried.
-            timeout (float): The timeout for this request.
-            metadata (Sequence[Tuple[str, str]]): Strings which should be
-                sent along with the request as metadata.
+                retry (google.api_core.retry.Retry): Designation of what errors, if any,
+                    should be retried.
+                timeout (float): The timeout for this request.
+                metadata (Sequence[Tuple[str, str]]): Strings which should be
+                    sent along with the request as metadata.
 
-        Returns:
-            ~.compute.Operation:
-                Represents an Operation resource. Google Compute Engine
+            Returns:
+                ~.compute.Operation:
+                    Represents an Operation resource. Google Compute Engine
                 has three Operation resources: \*
                 `Global </compute/docs/reference/rest/v1/globalOperations>`__
                 \*
@@ -800,102 +821,138 @@ class ForwardingRulesRestTransport(ForwardingRulesTransport):
                 use the ``zonalOperations`` resource. For more
                 information, read Global, Regional, and Zonal Resources.
 
-        """
+            """
 
-        http_options = [
-            {
+            http_options = [{
                 'method': 'post',
                 'uri': '/compute/v1/projects/{project}/regions/{region}/forwardingRules/{forwarding_rule}/setTarget',
                 'body': 'target_reference_resource',
             },
-        ]
+            ]
 
-        request_kwargs = compute.SetTargetForwardingRuleRequest.to_dict(request)
-        transcoded_request = path_template.transcode(
-            http_options, **request_kwargs)
+            request_kwargs = compute.SetTargetForwardingRuleRequest.to_dict(request)
+            transcoded_request = path_template.transcode(
+                http_options, **request_kwargs)
 
-        # Jsonify the request body
-        body = compute.TargetReference.to_json(
-            compute.TargetReference(
-                transcoded_request['body']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        )
-        uri = transcoded_request['uri']
-        method = transcoded_request['method']
+            # Jsonify the request body
+            body = compute.TargetReference.to_json(
+                compute.TargetReference(transcoded_request['body']),                including_default_value_fields=False,
+                use_integers_for_enums=False
+            )
+            uri = transcoded_request['uri']
+            method = transcoded_request['method']
 
-        # Jsonify the query params
-        query_params = json.loads(compute.SetTargetForwardingRuleRequest.to_json(
-            compute.SetTargetForwardingRuleRequest(transcoded_request['query_params']),
-            including_default_value_fields=False,
-            use_integers_for_enums=False
-        ))
+            # Jsonify the query params
+            query_params = json.loads(compute.SetTargetForwardingRuleRequest.to_json(
+                compute.SetTargetForwardingRuleRequest(transcoded_request['query_params']),
+                including_default_value_fields=False,
+                use_integers_for_enums=False
+            ))
 
-        query_params.update(self._set_target_get_unset_required_fields(query_params))
+            query_params.update(self._get_unset_required_fields(query_params))
 
-        # Send the request
-        headers = dict(metadata)
-        headers['Content-Type'] = 'application/json'
-        response=getattr(self._session, method)(
-            # Replace with proper schema configuration (http/https) logic
-            "https://{host}{uri}".format(host=self._host, uri=uri),
-            timeout=timeout,
-            headers=headers,
-            params=rest_helpers.flatten_query_params(query_params),
-            data=body,
-        )
+            # Send the request
+            headers = dict(metadata)
+            headers['Content-Type'] = 'application/json'
+            response = getattr(self._session, method)(
+                # Replace with proper schema configuration (http/https) logic
+                "https://{host}{uri}".format(host=self._host, uri=uri),
+                timeout=timeout,
+                headers=headers,
+                params=rest_helpers.flatten_query_params(query_params),
+                data=body,
+                )
 
-        # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
-        # subclass.
-        if response.status_code >= 400:
-            raise core_exceptions.from_http_response(response)
+            # In case of error, raise the appropriate core_exceptions.GoogleAPICallError exception
+            # subclass.
+            if response.status_code >= 400:
+                raise core_exceptions.from_http_response(response)
+            # Return the response
+            return compute.Operation.from_json(
+                response.content,
+                ignore_unknown_fields=True
+            )
 
-        # Return the response
-        return compute.Operation.from_json(
-            response.content,
-            ignore_unknown_fields=True
-        )
-
-    @ property
+    @property
     def aggregated_list(self) -> Callable[
             [compute.AggregatedListForwardingRulesRequest],
             compute.ForwardingRuleAggregatedList]:
-        return self._aggregated_list
-    @ property
+        stub = self._STUBS.get("aggregated_list")
+        if not stub:
+            stub = self._STUBS["aggregated_list"] = self._AggregatedList(self._session, self._host)
+
+        return stub
+
+    @property
     def delete(self) -> Callable[
             [compute.DeleteForwardingRuleRequest],
             compute.Operation]:
-        return self._delete
-    @ property
+        stub = self._STUBS.get("delete")
+        if not stub:
+            stub = self._STUBS["delete"] = self._Delete(self._session, self._host)
+
+        return stub
+
+    @property
     def get(self) -> Callable[
             [compute.GetForwardingRuleRequest],
             compute.ForwardingRule]:
-        return self._get
-    @ property
+        stub = self._STUBS.get("get")
+        if not stub:
+            stub = self._STUBS["get"] = self._Get(self._session, self._host)
+
+        return stub
+
+    @property
     def insert(self) -> Callable[
             [compute.InsertForwardingRuleRequest],
             compute.Operation]:
-        return self._insert
-    @ property
+        stub = self._STUBS.get("insert")
+        if not stub:
+            stub = self._STUBS["insert"] = self._Insert(self._session, self._host)
+
+        return stub
+
+    @property
     def list(self) -> Callable[
             [compute.ListForwardingRulesRequest],
             compute.ForwardingRuleList]:
-        return self._list
-    @ property
+        stub = self._STUBS.get("list")
+        if not stub:
+            stub = self._STUBS["list"] = self._List(self._session, self._host)
+
+        return stub
+
+    @property
     def patch(self) -> Callable[
             [compute.PatchForwardingRuleRequest],
             compute.Operation]:
-        return self._patch
-    @ property
+        stub = self._STUBS.get("patch")
+        if not stub:
+            stub = self._STUBS["patch"] = self._Patch(self._session, self._host)
+
+        return stub
+
+    @property
     def set_labels(self) -> Callable[
             [compute.SetLabelsForwardingRuleRequest],
             compute.Operation]:
-        return self._set_labels
-    @ property
+        stub = self._STUBS.get("set_labels")
+        if not stub:
+            stub = self._STUBS["set_labels"] = self._SetLabels(self._session, self._host)
+
+        return stub
+
+    @property
     def set_target(self) -> Callable[
             [compute.SetTargetForwardingRuleRequest],
             compute.Operation]:
-        return self._set_target
+        stub = self._STUBS.get("set_target")
+        if not stub:
+            stub = self._STUBS["set_target"] = self._SetTarget(self._session, self._host)
+
+        return stub
+
     def close(self):
         self._session.close()
 

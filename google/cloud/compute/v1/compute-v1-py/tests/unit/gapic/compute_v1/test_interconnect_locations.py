@@ -24,7 +24,7 @@ import pytest
 from proto.marshal.rules.dates import DurationRule, TimestampRule
 
 from requests import Response
-from requests import Request
+from requests import Request, PreparedRequest
 from requests.sessions import Session
 
 from google.api_core import client_options
@@ -200,18 +200,18 @@ def test_interconnect_locations_client_client_options(client_class, transport_cl
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -239,7 +239,7 @@ def test_interconnect_locations_client_mtls_env_auto(client_class, transport_cla
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -313,7 +313,7 @@ def test_interconnect_locations_client_client_options_scopes(client_class, trans
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -335,7 +335,7 @@ def test_interconnect_locations_client_client_options_credentials_file(client_cl
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -348,18 +348,63 @@ def test_interconnect_locations_client_client_options_credentials_file(client_cl
         )
 
 
-def test_get_rest(transport: str = 'rest', request_type=compute.GetInterconnectLocationRequest):
+@pytest.mark.parametrize("request_type", [
+  compute.GetInterconnectLocationRequest,
+  dict,
+])
+def test_get_rest(request_type, transport: str = 'rest'):
     client = InterconnectLocationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.GetInterconnectLocationRequest({'project': 'sample1', 'interconnect_location': 'sample2'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.InterconnectLocation(
+              address='address_value',
+              availability_zone='availability_zone_value',
+              city='city_value',
+              continent='continent_value',
+              creation_timestamp='creation_timestamp_value',
+              description='description_value',
+              facility_provider='facility_provider_value',
+              facility_provider_facility_id='facility_provider_facility_id_value',
+              id=205,
+              kind='kind_value',
+              name='name_value',
+              peeringdb_facility_id='peeringdb_facility_id_value',
+              self_link='self_link_value',
+              status='status_value',
+              supports_pzs=True,
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.InterconnectLocation.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.get(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.GetInterconnectLocationRequest,
+    dict,
+])
+def test_get_rest(request_type):
+    client = InterconnectLocationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "interconnect_location": "sample2"}
+    request_init = {'project': 'sample1', 'interconnect_location': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.InterconnectLocation(
               address='address_value',
@@ -423,7 +468,7 @@ def test_get_rest_required_fields(request_type=compute.GetInterconnectLocationRe
     assert "interconnectLocation" not in jsonified_request
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -435,7 +480,7 @@ def test_get_rest_required_fields(request_type=compute.GetInterconnectLocationRe
     jsonified_request["interconnectLocation"] = 'interconnect_location_value'
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._get_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).get._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -477,13 +522,13 @@ def test_get_rest_required_fields(request_type=compute.GetInterconnectLocationRe
 
             expected_params = [
                 (
-                    "interconnect_location",
-                    ""
-                )
+                    "interconnectLocation",
+                    "",
+                ),
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -496,7 +541,7 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetI
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1", "interconnect_location": "sample2"}
+    request_init = {'project': 'sample1', 'interconnect_location': 'sample2'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -509,18 +554,14 @@ def test_get_rest_bad_request(transport: str = 'rest', request_type=compute.GetI
         client.get(request)
 
 
-def test_get_rest_from_dict():
-    test_get_rest(request_type=dict)
-
-
-def test_get_rest_flattened(transport: str = 'rest'):
+def test_get_rest_flattened():
     client = InterconnectLocationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.InterconnectLocation()
 
@@ -533,7 +574,7 @@ def test_get_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1", "interconnect_location": "sample2"}
+        sample_request = {'project': 'sample1', 'interconnect_location': 'sample2'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -566,18 +607,58 @@ def test_get_rest_flattened_error(transport: str = 'rest'):
         )
 
 
-def test_list_rest(transport: str = 'rest', request_type=compute.ListInterconnectLocationsRequest):
+def test_get_rest_error():
     client = InterconnectLocationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport='rest'
+    )
+
+@pytest.mark.parametrize("request_type", [
+  compute.ListInterconnectLocationsRequest,
+  dict,
+])
+def test_list_rest(request_type, transport: str = 'rest'):
+    client = InterconnectLocationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
+    )
+    # Send a request that will satisfy transcoding
+    request = compute.ListInterconnectLocationsRequest({'project': 'sample1'})
+
+    with mock.patch.object(type(client.transport._session), 'request') as req:
+        return_value = compute.InterconnectLocationList(
+              id='id_value',
+              kind='kind_value',
+              next_page_token='next_page_token_value',
+              self_link='self_link_value',
+        )
+        req.return_value = Response()
+        req.return_value.status_code = 500
+        req.return_value.request = PreparedRequest()
+        json_return_value = compute.InterconnectLocationList.to_json(return_value)
+        req.return_value._content = json_return_value.encode("UTF-8")
+        with pytest.raises(core_exceptions.GoogleAPIError):
+            # We only care that the correct exception is raised when putting
+            # the request over the wire, so an empty request is fine.
+            client.list(request)
+
+
+@pytest.mark.parametrize("request_type", [
+    compute.ListInterconnectLocationsRequest,
+    dict,
+])
+def test_list_rest(request_type):
+    client = InterconnectLocationsClient(
+        credentials=ga_credentials.AnonymousCredentials(),
+        transport="rest",
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.InterconnectLocationList(
               id='id_value',
@@ -617,7 +698,7 @@ def test_list_rest_required_fields(request_type=compute.ListInterconnectLocation
     # verify fields with default values are dropped
     assert "project" not in jsonified_request
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with default values are now present
@@ -626,7 +707,7 @@ def test_list_rest_required_fields(request_type=compute.ListInterconnectLocation
 
     jsonified_request["project"] = 'project_value'
 
-    unset_fields = transport_class._list_get_unset_required_fields(jsonified_request)
+    unset_fields = transport_class(credentials=ga_credentials.AnonymousCredentials()).list._get_unset_required_fields(jsonified_request)
     jsonified_request.update(unset_fields)
 
     # verify required fields with non-default values are left alone
@@ -667,8 +748,8 @@ def test_list_rest_required_fields(request_type=compute.ListInterconnectLocation
             expected_params = [
                 (
                     "project",
-                    ""
-                )
+                    "",
+                ),
             ]
             actual_params = req.call_args.kwargs['params']
             assert expected_params == actual_params
@@ -681,7 +762,7 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
     )
 
     # send a request that will satisfy transcoding
-    request_init = {"project": "sample1"}
+    request_init = {'project': 'sample1'}
     request = request_type(request_init)
 
     # Mock the http request call within the method and fake a BadRequest error.
@@ -694,18 +775,14 @@ def test_list_rest_bad_request(transport: str = 'rest', request_type=compute.Lis
         client.list(request)
 
 
-def test_list_rest_from_dict():
-    test_list_rest(request_type=dict)
-
-
-def test_list_rest_flattened(transport: str = 'rest'):
+def test_list_rest_flattened():
     client = InterconnectLocationsClient(
         credentials=ga_credentials.AnonymousCredentials(),
-        transport=transport,
+        transport="rest",
     )
 
     # Mock the http request call within the method and fake a response.
-    with mock.patch.object(Session, 'request') as req:
+    with mock.patch.object(type(client.transport._session), 'request') as req:
         # Designate an appropriate value for the returned response.
         return_value = compute.InterconnectLocationList()
 
@@ -718,7 +795,7 @@ def test_list_rest_flattened(transport: str = 'rest'):
         req.return_value = response_value
 
         # get arguments that satisfy an http rule for this method
-        sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
         # get truthy value for each flattened field
         mock_args = dict(
@@ -759,56 +836,56 @@ def test_list_rest_pager(transport: str = 'rest'):
     with mock.patch.object(Session, 'request') as req:
         # TODO(kbandes): remove this mock unless there's a good reason for it.
         #with mock.patch.object(path_template, 'transcode') as transcode:
-            # Set the response as a series of pages
-            response = (
-                compute.InterconnectLocationList(
-                    items=[
-                        compute.InterconnectLocation(),
-                        compute.InterconnectLocation(),
-                        compute.InterconnectLocation(),
-                    ],
-                    next_page_token='abc',
-                ),
-                compute.InterconnectLocationList(
-                    items=[],
-                    next_page_token='def',
-                ),
-                compute.InterconnectLocationList(
-                    items=[
-                        compute.InterconnectLocation(),
-                    ],
-                    next_page_token='ghi',
-                ),
-                compute.InterconnectLocationList(
-                    items=[
-                        compute.InterconnectLocation(),
-                        compute.InterconnectLocation(),
-                    ],
-                ),
-            )
-            # Two responses for two calls
-            response = response + response
+        # Set the response as a series of pages
+        response = (
+            compute.InterconnectLocationList(
+                items=[
+                    compute.InterconnectLocation(),
+                    compute.InterconnectLocation(),
+                    compute.InterconnectLocation(),
+                ],
+                next_page_token='abc',
+            ),
+            compute.InterconnectLocationList(
+                items=[],
+                next_page_token='def',
+            ),
+            compute.InterconnectLocationList(
+                items=[
+                    compute.InterconnectLocation(),
+                ],
+                next_page_token='ghi',
+            ),
+            compute.InterconnectLocationList(
+                items=[
+                    compute.InterconnectLocation(),
+                    compute.InterconnectLocation(),
+                ],
+            ),
+        )
+        # Two responses for two calls
+        response = response + response
 
-            # Wrap the values into proper Response objs
-            response = tuple(compute.InterconnectLocationList.to_json(x) for x in response)
-            return_values = tuple(Response() for i in response)
-            for return_val, response_val in zip(return_values, response):
-                return_val._content = response_val.encode('UTF-8')
-                return_val.status_code = 200
-            req.side_effect = return_values
+        # Wrap the values into proper Response objs
+        response = tuple(compute.InterconnectLocationList.to_json(x) for x in response)
+        return_values = tuple(Response() for i in response)
+        for return_val, response_val in zip(return_values, response):
+            return_val._content = response_val.encode('UTF-8')
+            return_val.status_code = 200
+        req.side_effect = return_values
 
-            sample_request = {"project": "sample1"}
+        sample_request = {'project': 'sample1'}
 
-            pager = client.list(request=sample_request)
+        pager = client.list(request=sample_request)
 
-            results = list(pager)
-            assert len(results) == 6
-            assert all(isinstance(i, compute.InterconnectLocation)
-                    for i in results)
+        results = list(pager)
+        assert len(results) == 6
+        assert all(isinstance(i, compute.InterconnectLocation)
+                for i in results)
 
-            pages = list(client.list(request=sample_request).pages)
-            for page_, token in zip(pages, ['abc','def','ghi', '']):
-                assert page_.raw_page.next_page_token == token
+        pages = list(client.list(request=sample_request).pages)
+        for page_, token in zip(pages, ['abc','def','ghi', '']):
+            assert page_.raw_page.next_page_token == token
 
 
 def test_credentials_transport_error():
@@ -1053,7 +1130,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.InterconnectLocationsTransport, '_prep_wrapped_messages') as prep:

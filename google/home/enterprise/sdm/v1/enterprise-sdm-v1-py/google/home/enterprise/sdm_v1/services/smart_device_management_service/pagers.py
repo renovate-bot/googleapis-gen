@@ -129,7 +129,6 @@ class ListDevicesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[device.Device]:
         async def async_generator():
             async for page in self.pages:
@@ -251,7 +250,6 @@ class ListStructuresAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[site.Structure]:
         async def async_generator():
             async for page in self.pages:
@@ -373,7 +371,6 @@ class ListRoomsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[site.Room]:
         async def async_generator():
             async for page in self.pages:

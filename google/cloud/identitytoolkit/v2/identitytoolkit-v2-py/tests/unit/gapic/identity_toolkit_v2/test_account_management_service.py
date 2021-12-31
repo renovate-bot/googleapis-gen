@@ -202,18 +202,18 @@ def test_account_management_service_client_client_options(client_class, transpor
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -244,7 +244,7 @@ def test_account_management_service_client_mtls_env_auto(client_class, transport
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -319,7 +319,7 @@ def test_account_management_service_client_client_options_scopes(client_class, t
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -342,7 +342,7 @@ def test_account_management_service_client_client_options_credentials_file(clien
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -353,7 +353,6 @@ def test_account_management_service_client_client_options_credentials_file(clien
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_account_management_service_client_client_options_from_dict():
     with mock.patch('google.cloud.identity_toolkit_v2.services.account_management_service.transports.AccountManagementServiceGrpcTransport.__init__') as grpc_transport:
@@ -373,7 +372,11 @@ def test_account_management_service_client_client_options_from_dict():
         )
 
 
-def test_finalize_mfa_enrollment(transport: str = 'grpc', request_type=account_management_service.FinalizeMfaEnrollmentRequest):
+@pytest.mark.parametrize("request_type", [
+  account_management_service.FinalizeMfaEnrollmentRequest,
+  dict,
+])
+def test_finalize_mfa_enrollment(request_type, transport: str = 'grpc'):
     client = AccountManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -404,10 +407,6 @@ def test_finalize_mfa_enrollment(transport: str = 'grpc', request_type=account_m
     assert isinstance(response, account_management_service.FinalizeMfaEnrollmentResponse)
     assert response.id_token == 'id_token_value'
     assert response.refresh_token == 'refresh_token_value'
-
-
-def test_finalize_mfa_enrollment_from_dict():
-    test_finalize_mfa_enrollment(request_type=dict)
 
 
 def test_finalize_mfa_enrollment_empty_call():
@@ -466,7 +465,11 @@ async def test_finalize_mfa_enrollment_async_from_dict():
     await test_finalize_mfa_enrollment_async(request_type=dict)
 
 
-def test_start_mfa_enrollment(transport: str = 'grpc', request_type=account_management_service.StartMfaEnrollmentRequest):
+@pytest.mark.parametrize("request_type", [
+  account_management_service.StartMfaEnrollmentRequest,
+  dict,
+])
+def test_start_mfa_enrollment(request_type, transport: str = 'grpc'):
     client = AccountManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -493,10 +496,6 @@ def test_start_mfa_enrollment(transport: str = 'grpc', request_type=account_mana
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, account_management_service.StartMfaEnrollmentResponse)
-
-
-def test_start_mfa_enrollment_from_dict():
-    test_start_mfa_enrollment(request_type=dict)
 
 
 def test_start_mfa_enrollment_empty_call():
@@ -551,7 +550,11 @@ async def test_start_mfa_enrollment_async_from_dict():
     await test_start_mfa_enrollment_async(request_type=dict)
 
 
-def test_withdraw_mfa(transport: str = 'grpc', request_type=account_management_service.WithdrawMfaRequest):
+@pytest.mark.parametrize("request_type", [
+  account_management_service.WithdrawMfaRequest,
+  dict,
+])
+def test_withdraw_mfa(request_type, transport: str = 'grpc'):
     client = AccountManagementServiceClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -581,10 +584,6 @@ def test_withdraw_mfa(transport: str = 'grpc', request_type=account_management_s
     assert isinstance(response, account_management_service.WithdrawMfaResponse)
     assert response.id_token == 'id_token_value'
     assert response.refresh_token == 'refresh_token_value'
-
-
-def test_withdraw_mfa_from_dict():
-    test_withdraw_mfa(request_type=dict)
 
 
 def test_withdraw_mfa_empty_call():
@@ -1104,7 +1103,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.AccountManagementServiceTransport, '_prep_wrapped_messages') as prep:

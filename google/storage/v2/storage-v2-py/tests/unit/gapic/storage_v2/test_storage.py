@@ -203,18 +203,18 @@ def test_storage_client_client_options(client_class, transport_class, transport_
     # unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_MTLS_ENDPOINT": "Unsupported"}):
         with pytest.raises(MutualTLSChannelError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case GOOGLE_API_USE_CLIENT_CERTIFICATE has unsupported value.
     with mock.patch.dict(os.environ, {"GOOGLE_API_USE_CLIENT_CERTIFICATE": "Unsupported"}):
         with pytest.raises(ValueError):
-            client = client_class()
+            client = client_class(transport=transport_name)
 
     # Check the case quota_project_id is provided
     options = client_options.ClientOptions(quota_project_id="octopus")
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -245,7 +245,7 @@ def test_storage_client_mtls_env_auto(client_class, transport_class, transport_n
         options = client_options.ClientOptions(client_cert_source=client_cert_source_callback)
         with mock.patch.object(transport_class, '__init__') as patched:
             patched.return_value = None
-            client = client_class(transport=transport_name, client_options=options)
+            client = client_class(client_options=options, transport=transport_name)
 
             if use_client_cert_env == "false":
                 expected_client_cert_source = None
@@ -320,7 +320,7 @@ def test_storage_client_client_options_scopes(client_class, transport_class, tra
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file=None,
@@ -343,7 +343,7 @@ def test_storage_client_client_options_credentials_file(client_class, transport_
     )
     with mock.patch.object(transport_class, '__init__') as patched:
         patched.return_value = None
-        client = client_class(transport=transport_name, client_options=options)
+        client = client_class(client_options=options, transport=transport_name)
         patched.assert_called_once_with(
             credentials=None,
             credentials_file="credentials.json",
@@ -354,7 +354,6 @@ def test_storage_client_client_options_credentials_file(client_class, transport_
             client_info=transports.base.DEFAULT_CLIENT_INFO,
             always_use_jwt_access=True,
         )
-
 
 def test_storage_client_client_options_from_dict():
     with mock.patch('google.storage_v2.services.storage.transports.StorageGrpcTransport.__init__') as grpc_transport:
@@ -374,7 +373,11 @@ def test_storage_client_client_options_from_dict():
         )
 
 
-def test_read_object(transport: str = 'grpc', request_type=storage.ReadObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.ReadObjectRequest,
+  dict,
+])
+def test_read_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -400,10 +403,6 @@ def test_read_object(transport: str = 'grpc', request_type=storage.ReadObjectReq
     # Establish that the response is the type that we expect.
     for message in response:
         assert isinstance(message, storage.ReadObjectResponse)
-
-
-def test_read_object_from_dict():
-    test_read_object(request_type=dict)
 
 
 def test_read_object_empty_call():
@@ -563,7 +562,11 @@ async def test_read_object_flattened_error_async():
         )
 
 
-def test_write_object(transport: str = 'grpc', request_type=storage.WriteObjectRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.WriteObjectRequest,
+  dict,
+])
+def test_write_object(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -591,10 +594,6 @@ def test_write_object(transport: str = 'grpc', request_type=storage.WriteObjectR
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.WriteObjectResponse)
-
-
-def test_write_object_from_dict():
-    test_write_object(request_type=dict)
 
 
 @pytest.mark.asyncio
@@ -632,7 +631,11 @@ async def test_write_object_async_from_dict():
     await test_write_object_async(request_type=dict)
 
 
-def test_start_resumable_write(transport: str = 'grpc', request_type=storage.StartResumableWriteRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.StartResumableWriteRequest,
+  dict,
+])
+def test_start_resumable_write(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -660,10 +663,6 @@ def test_start_resumable_write(transport: str = 'grpc', request_type=storage.Sta
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.StartResumableWriteResponse)
     assert response.upload_id == 'upload_id_value'
-
-
-def test_start_resumable_write_from_dict():
-    test_start_resumable_write(request_type=dict)
 
 
 def test_start_resumable_write_empty_call():
@@ -720,7 +719,11 @@ async def test_start_resumable_write_async_from_dict():
     await test_start_resumable_write_async(request_type=dict)
 
 
-def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryWriteStatusRequest):
+@pytest.mark.parametrize("request_type", [
+  storage.QueryWriteStatusRequest,
+  dict,
+])
+def test_query_write_status(request_type, transport: str = 'grpc'):
     client = StorageClient(
         credentials=ga_credentials.AnonymousCredentials(),
         transport=transport,
@@ -747,10 +750,6 @@ def test_query_write_status(transport: str = 'grpc', request_type=storage.QueryW
 
     # Establish that the response is the type that we expect.
     assert isinstance(response, storage.QueryWriteStatusResponse)
-
-
-def test_query_write_status_from_dict():
-    test_query_write_status(request_type=dict)
 
 
 def test_query_write_status_empty_call():
@@ -1405,7 +1404,7 @@ def test_parse_common_location_path():
     assert expected == actual
 
 
-def test_client_withDEFAULT_CLIENT_INFO():
+def test_client_with_default_client_info():
     client_info = gapic_v1.client_info.ClientInfo()
 
     with mock.patch.object(transports.StorageTransport, '_prep_wrapped_messages') as prep:

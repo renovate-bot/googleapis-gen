@@ -133,7 +133,6 @@ class ListCustomJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[custom_job.CustomJob]:
         async def async_generator():
             async for page in self.pages:
@@ -255,7 +254,6 @@ class ListDataLabelingJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[data_labeling_job.DataLabelingJob]:
         async def async_generator():
             async for page in self.pages:
@@ -377,7 +375,6 @@ class ListHyperparameterTuningJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[hyperparameter_tuning_job.HyperparameterTuningJob]:
         async def async_generator():
             async for page in self.pages:
@@ -499,7 +496,6 @@ class ListBatchPredictionJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[batch_prediction_job.BatchPredictionJob]:
         async def async_generator():
             async for page in self.pages:
@@ -621,7 +617,6 @@ class SearchModelDeploymentMonitoringStatsAnomaliesAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[gca_model_deployment_monitoring_job.ModelMonitoringStatsAnomalies]:
         async def async_generator():
             async for page in self.pages:
@@ -743,7 +738,6 @@ class ListModelDeploymentMonitoringJobsAsyncPager:
             self._request.page_token = self._response.next_page_token
             self._response = await self._method(self._request, metadata=self._metadata)
             yield self._response
-
     def __aiter__(self) -> AsyncIterator[model_deployment_monitoring_job.ModelDeploymentMonitoringJob]:
         async def async_generator():
             async for page in self.pages:
