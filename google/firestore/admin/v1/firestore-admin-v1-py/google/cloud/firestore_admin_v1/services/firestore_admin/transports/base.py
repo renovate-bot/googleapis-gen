@@ -26,6 +26,7 @@ from google.api_core import operations_v1
 from google.auth import credentials as ga_credentials  # type: ignore
 from google.oauth2 import service_account # type: ignore
 
+from google.cloud.firestore_admin_v1.types import database
 from google.cloud.firestore_admin_v1.types import field
 from google.cloud.firestore_admin_v1.types import firestore_admin
 from google.cloud.firestore_admin_v1.types import index
@@ -205,6 +206,21 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
                 default_timeout=60.0,
                 client_info=client_info,
             ),
+            self.get_database: gapic_v1.method.wrap_method(
+                self.get_database,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.list_databases: gapic_v1.method.wrap_method(
+                self.list_databases,
+                default_timeout=None,
+                client_info=client_info,
+            ),
+            self.update_database: gapic_v1.method.wrap_method(
+                self.update_database,
+                default_timeout=None,
+                client_info=client_info,
+            ),
          }
 
     def close(self):
@@ -296,6 +312,33 @@ initial=0.1,maximum=60.0,multiplier=1.3,                    predicate=retries.if
     @property
     def import_documents(self) -> Callable[
             [firestore_admin.ImportDocumentsRequest],
+            Union[
+                operations_pb2.Operation,
+                Awaitable[operations_pb2.Operation]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def get_database(self) -> Callable[
+            [firestore_admin.GetDatabaseRequest],
+            Union[
+                database.Database,
+                Awaitable[database.Database]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def list_databases(self) -> Callable[
+            [firestore_admin.ListDatabasesRequest],
+            Union[
+                firestore_admin.ListDatabasesResponse,
+                Awaitable[firestore_admin.ListDatabasesResponse]
+            ]]:
+        raise NotImplementedError()
+
+    @property
+    def update_database(self) -> Callable[
+            [firestore_admin.UpdateDatabaseRequest],
             Union[
                 operations_pb2.Operation,
                 Awaitable[operations_pb2.Operation]

@@ -33,6 +33,16 @@ return [
                     'totalPollTimeoutMillis' => '300000',
                 ],
             ],
+            'UpdateDatabase' => [
+                'longRunning' => [
+                    'operationReturnType' => '\Google\Cloud\Firestore\Admin\V1\Database',
+                    'metadataReturnType' => '\Google\Cloud\Firestore\Admin\V1\UpdateDatabaseMetadata',
+                    'initialPollDelayMillis' => '500',
+                    'pollDelayMultiplier' => '1.5',
+                    'maxPollDelayMillis' => '5000',
+                    'totalPollTimeoutMillis' => '300000',
+                ],
+            ],
             'UpdateField' => [
                 'longRunning' => [
                     'operationReturnType' => '\Google\Cloud\Firestore\Admin\V1\Field',

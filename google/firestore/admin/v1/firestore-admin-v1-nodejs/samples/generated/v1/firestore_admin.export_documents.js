@@ -42,7 +42,7 @@ function main(name) {
   // const outputUriPrefix = 'abc123'
 
   // Imports the Admin library
-  const {FirestoreAdminClient} = require('admin').v1;
+  const {FirestoreAdminClient} = require('@google-cloud/firestore-admin').v1;
 
   // Instantiates a client
   const adminClient = new FirestoreAdminClient();

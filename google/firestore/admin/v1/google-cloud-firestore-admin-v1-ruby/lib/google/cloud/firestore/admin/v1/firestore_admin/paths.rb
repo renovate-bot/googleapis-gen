@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -101,6 +101,20 @@ module Google
                 raise ::ArgumentError, "collection cannot contain /" if collection.to_s.include? "/"
 
                 "projects/#{project}/databases/#{database}/collectionGroups/#{collection}/indexes/#{index}"
+              end
+
+              ##
+              # Create a fully-qualified Project resource string.
+              #
+              # The resource will be in the following format:
+              #
+              # `projects/{project}`
+              #
+              # @param project [String]
+              #
+              # @return [::String]
+              def project_path project:
+                "projects/#{project}"
               end
 
               extend self

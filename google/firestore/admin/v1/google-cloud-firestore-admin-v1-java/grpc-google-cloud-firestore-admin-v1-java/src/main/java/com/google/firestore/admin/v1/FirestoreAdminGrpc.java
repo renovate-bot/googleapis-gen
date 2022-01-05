@@ -4,6 +4,24 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
 
 /**
  * <pre>
+ * The Cloud Firestore Admin API.
+ * This API provides several administrative services for Cloud Firestore.
+ * Project, Database, Namespace, Collection, Collection Group, and Document are
+ * used as defined in the Google Cloud Firestore API.
+ * Operation: An Operation represents work being performed in the background.
+ * The index service manages Cloud Firestore indexes.
+ * Index creation is performed asynchronously.
+ * An Operation resource is created for each such asynchronous operation.
+ * The state of the operation (including any errors encountered)
+ * may be queried via the Operation resource.
+ * The Operations collection provides a record of actions performed for the
+ * specified Project (including any Operations in progress). Operations are not
+ * created directly but through calls on other collections or resources.
+ * An Operation that is done may be deleted so that it is no longer listed as
+ * part of the Operation collection. Operations are garbage collected after
+ * 30 days. By default, ListOperations will only return in progress and failed
+ * operations. To list completed operation, issue a ListOperations request with
+ * the filter `done: true`.
  * Operations are created by service `FirestoreAdmin`, but are accessed via
  * service `google.longrunning.Operations`.
  * </pre>
@@ -298,6 +316,99 @@ public final class FirestoreAdminGrpc {
     return getImportDocumentsMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<com.google.firestore.admin.v1.GetDatabaseRequest,
+      com.google.firestore.admin.v1.Database> getGetDatabaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDatabase",
+      requestType = com.google.firestore.admin.v1.GetDatabaseRequest.class,
+      responseType = com.google.firestore.admin.v1.Database.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.firestore.admin.v1.GetDatabaseRequest,
+      com.google.firestore.admin.v1.Database> getGetDatabaseMethod() {
+    io.grpc.MethodDescriptor<com.google.firestore.admin.v1.GetDatabaseRequest, com.google.firestore.admin.v1.Database> getGetDatabaseMethod;
+    if ((getGetDatabaseMethod = FirestoreAdminGrpc.getGetDatabaseMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getGetDatabaseMethod = FirestoreAdminGrpc.getGetDatabaseMethod) == null) {
+          FirestoreAdminGrpc.getGetDatabaseMethod = getGetDatabaseMethod =
+              io.grpc.MethodDescriptor.<com.google.firestore.admin.v1.GetDatabaseRequest, com.google.firestore.admin.v1.Database>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDatabase"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.admin.v1.GetDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.admin.v1.Database.getDefaultInstance()))
+              .setSchemaDescriptor(new FirestoreAdminMethodDescriptorSupplier("GetDatabase"))
+              .build();
+        }
+      }
+    }
+    return getGetDatabaseMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.firestore.admin.v1.ListDatabasesRequest,
+      com.google.firestore.admin.v1.ListDatabasesResponse> getListDatabasesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDatabases",
+      requestType = com.google.firestore.admin.v1.ListDatabasesRequest.class,
+      responseType = com.google.firestore.admin.v1.ListDatabasesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.firestore.admin.v1.ListDatabasesRequest,
+      com.google.firestore.admin.v1.ListDatabasesResponse> getListDatabasesMethod() {
+    io.grpc.MethodDescriptor<com.google.firestore.admin.v1.ListDatabasesRequest, com.google.firestore.admin.v1.ListDatabasesResponse> getListDatabasesMethod;
+    if ((getListDatabasesMethod = FirestoreAdminGrpc.getListDatabasesMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getListDatabasesMethod = FirestoreAdminGrpc.getListDatabasesMethod) == null) {
+          FirestoreAdminGrpc.getListDatabasesMethod = getListDatabasesMethod =
+              io.grpc.MethodDescriptor.<com.google.firestore.admin.v1.ListDatabasesRequest, com.google.firestore.admin.v1.ListDatabasesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDatabases"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.admin.v1.ListDatabasesRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.admin.v1.ListDatabasesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new FirestoreAdminMethodDescriptorSupplier("ListDatabases"))
+              .build();
+        }
+      }
+    }
+    return getListDatabasesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<com.google.firestore.admin.v1.UpdateDatabaseRequest,
+      com.google.longrunning.Operation> getUpdateDatabaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateDatabase",
+      requestType = com.google.firestore.admin.v1.UpdateDatabaseRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<com.google.firestore.admin.v1.UpdateDatabaseRequest,
+      com.google.longrunning.Operation> getUpdateDatabaseMethod() {
+    io.grpc.MethodDescriptor<com.google.firestore.admin.v1.UpdateDatabaseRequest, com.google.longrunning.Operation> getUpdateDatabaseMethod;
+    if ((getUpdateDatabaseMethod = FirestoreAdminGrpc.getUpdateDatabaseMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getUpdateDatabaseMethod = FirestoreAdminGrpc.getUpdateDatabaseMethod) == null) {
+          FirestoreAdminGrpc.getUpdateDatabaseMethod = getUpdateDatabaseMethod =
+              io.grpc.MethodDescriptor.<com.google.firestore.admin.v1.UpdateDatabaseRequest, com.google.longrunning.Operation>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateDatabase"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.firestore.admin.v1.UpdateDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  com.google.longrunning.Operation.getDefaultInstance()))
+              .setSchemaDescriptor(new FirestoreAdminMethodDescriptorSupplier("UpdateDatabase"))
+              .build();
+        }
+      }
+    }
+    return getUpdateDatabaseMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -344,6 +455,24 @@ public final class FirestoreAdminGrpc {
 
   /**
    * <pre>
+   * The Cloud Firestore Admin API.
+   * This API provides several administrative services for Cloud Firestore.
+   * Project, Database, Namespace, Collection, Collection Group, and Document are
+   * used as defined in the Google Cloud Firestore API.
+   * Operation: An Operation represents work being performed in the background.
+   * The index service manages Cloud Firestore indexes.
+   * Index creation is performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * The Operations collection provides a record of actions performed for the
+   * specified Project (including any Operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * An Operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection. Operations are garbage collected after
+   * 30 days. By default, ListOperations will only return in progress and failed
+   * operations. To list completed operation, issue a ListOperations request with
+   * the filter `done: true`.
    * Operations are created by service `FirestoreAdmin`, but are accessed via
    * service `google.longrunning.Operations`.
    * </pre>
@@ -428,7 +557,7 @@ public final class FirestoreAdminGrpc {
      * Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
      * that have been explicitly overridden. To issue this query, call
      * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-     * `indexConfig.usesAncestorConfig:false`.
+     * `indexConfig.usesAncestorConfig:false` .
      * </pre>
      */
     public void listFields(com.google.firestore.admin.v1.ListFieldsRequest request,
@@ -446,6 +575,8 @@ public final class FirestoreAdminGrpc {
      * used once the associated operation is done. If an export operation is
      * cancelled before completion it may leave partial data behind in Google
      * Cloud Storage.
+     * For more details on export behavior and output format, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/export-import
      * </pre>
      */
     public void exportDocuments(com.google.firestore.admin.v1.ExportDocumentsRequest request,
@@ -465,6 +596,36 @@ public final class FirestoreAdminGrpc {
     public void importDocuments(com.google.firestore.admin.v1.ImportDocumentsRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getImportDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Gets information about a database.
+     * </pre>
+     */
+    public void getDatabase(com.google.firestore.admin.v1.GetDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.Database> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetDatabaseMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the databases in the project.
+     * </pre>
+     */
+    public void listDatabases(com.google.firestore.admin.v1.ListDatabasesRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.ListDatabasesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getListDatabasesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates a database.
+     * </pre>
+     */
+    public void updateDatabase(com.google.firestore.admin.v1.UpdateDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateDatabaseMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -532,12 +693,51 @@ public final class FirestoreAdminGrpc {
                 com.google.firestore.admin.v1.ImportDocumentsRequest,
                 com.google.longrunning.Operation>(
                   this, METHODID_IMPORT_DOCUMENTS)))
+          .addMethod(
+            getGetDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.firestore.admin.v1.GetDatabaseRequest,
+                com.google.firestore.admin.v1.Database>(
+                  this, METHODID_GET_DATABASE)))
+          .addMethod(
+            getListDatabasesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.firestore.admin.v1.ListDatabasesRequest,
+                com.google.firestore.admin.v1.ListDatabasesResponse>(
+                  this, METHODID_LIST_DATABASES)))
+          .addMethod(
+            getUpdateDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+              new MethodHandlers<
+                com.google.firestore.admin.v1.UpdateDatabaseRequest,
+                com.google.longrunning.Operation>(
+                  this, METHODID_UPDATE_DATABASE)))
           .build();
     }
   }
 
   /**
    * <pre>
+   * The Cloud Firestore Admin API.
+   * This API provides several administrative services for Cloud Firestore.
+   * Project, Database, Namespace, Collection, Collection Group, and Document are
+   * used as defined in the Google Cloud Firestore API.
+   * Operation: An Operation represents work being performed in the background.
+   * The index service manages Cloud Firestore indexes.
+   * Index creation is performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * The Operations collection provides a record of actions performed for the
+   * specified Project (including any Operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * An Operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection. Operations are garbage collected after
+   * 30 days. By default, ListOperations will only return in progress and failed
+   * operations. To list completed operation, issue a ListOperations request with
+   * the filter `done: true`.
    * Operations are created by service `FirestoreAdmin`, but are accessed via
    * service `google.longrunning.Operations`.
    * </pre>
@@ -638,7 +838,7 @@ public final class FirestoreAdminGrpc {
      * Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
      * that have been explicitly overridden. To issue this query, call
      * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-     * `indexConfig.usesAncestorConfig:false`.
+     * `indexConfig.usesAncestorConfig:false` .
      * </pre>
      */
     public void listFields(com.google.firestore.admin.v1.ListFieldsRequest request,
@@ -657,6 +857,8 @@ public final class FirestoreAdminGrpc {
      * used once the associated operation is done. If an export operation is
      * cancelled before completion it may leave partial data behind in Google
      * Cloud Storage.
+     * For more details on export behavior and output format, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/export-import
      * </pre>
      */
     public void exportDocuments(com.google.firestore.admin.v1.ExportDocumentsRequest request,
@@ -679,10 +881,61 @@ public final class FirestoreAdminGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * Gets information about a database.
+     * </pre>
+     */
+    public void getDatabase(com.google.firestore.admin.v1.GetDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.Database> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDatabaseMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * List all the databases in the project.
+     * </pre>
+     */
+    public void listDatabases(com.google.firestore.admin.v1.ListDatabasesRequest request,
+        io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.ListDatabasesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDatabasesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Updates a database.
+     * </pre>
+     */
+    public void updateDatabase(com.google.firestore.admin.v1.UpdateDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateDatabaseMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
    * <pre>
+   * The Cloud Firestore Admin API.
+   * This API provides several administrative services for Cloud Firestore.
+   * Project, Database, Namespace, Collection, Collection Group, and Document are
+   * used as defined in the Google Cloud Firestore API.
+   * Operation: An Operation represents work being performed in the background.
+   * The index service manages Cloud Firestore indexes.
+   * Index creation is performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * The Operations collection provides a record of actions performed for the
+   * specified Project (including any Operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * An Operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection. Operations are garbage collected after
+   * 30 days. By default, ListOperations will only return in progress and failed
+   * operations. To list completed operation, issue a ListOperations request with
+   * the filter `done: true`.
    * Operations are created by service `FirestoreAdmin`, but are accessed via
    * service `google.longrunning.Operations`.
    * </pre>
@@ -777,7 +1030,7 @@ public final class FirestoreAdminGrpc {
      * Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
      * that have been explicitly overridden. To issue this query, call
      * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-     * `indexConfig.usesAncestorConfig:false`.
+     * `indexConfig.usesAncestorConfig:false` .
      * </pre>
      */
     public com.google.firestore.admin.v1.ListFieldsResponse listFields(com.google.firestore.admin.v1.ListFieldsRequest request) {
@@ -795,6 +1048,8 @@ public final class FirestoreAdminGrpc {
      * used once the associated operation is done. If an export operation is
      * cancelled before completion it may leave partial data behind in Google
      * Cloud Storage.
+     * For more details on export behavior and output format, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/export-import
      * </pre>
      */
     public com.google.longrunning.Operation exportDocuments(com.google.firestore.admin.v1.ExportDocumentsRequest request) {
@@ -815,10 +1070,58 @@ public final class FirestoreAdminGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * Gets information about a database.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.Database getDatabase(com.google.firestore.admin.v1.GetDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatabaseMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * List all the databases in the project.
+     * </pre>
+     */
+    public com.google.firestore.admin.v1.ListDatabasesResponse listDatabases(com.google.firestore.admin.v1.ListDatabasesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatabasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Updates a database.
+     * </pre>
+     */
+    public com.google.longrunning.Operation updateDatabase(com.google.firestore.admin.v1.UpdateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateDatabaseMethod(), getCallOptions(), request);
+    }
   }
 
   /**
    * <pre>
+   * The Cloud Firestore Admin API.
+   * This API provides several administrative services for Cloud Firestore.
+   * Project, Database, Namespace, Collection, Collection Group, and Document are
+   * used as defined in the Google Cloud Firestore API.
+   * Operation: An Operation represents work being performed in the background.
+   * The index service manages Cloud Firestore indexes.
+   * Index creation is performed asynchronously.
+   * An Operation resource is created for each such asynchronous operation.
+   * The state of the operation (including any errors encountered)
+   * may be queried via the Operation resource.
+   * The Operations collection provides a record of actions performed for the
+   * specified Project (including any Operations in progress). Operations are not
+   * created directly but through calls on other collections or resources.
+   * An Operation that is done may be deleted so that it is no longer listed as
+   * part of the Operation collection. Operations are garbage collected after
+   * 30 days. By default, ListOperations will only return in progress and failed
+   * operations. To list completed operation, issue a ListOperations request with
+   * the filter `done: true`.
    * Operations are created by service `FirestoreAdmin`, but are accessed via
    * service `google.longrunning.Operations`.
    * </pre>
@@ -919,7 +1222,7 @@ public final class FirestoreAdminGrpc {
      * Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
      * that have been explicitly overridden. To issue this query, call
      * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-     * `indexConfig.usesAncestorConfig:false`.
+     * `indexConfig.usesAncestorConfig:false` .
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.admin.v1.ListFieldsResponse> listFields(
@@ -938,6 +1241,8 @@ public final class FirestoreAdminGrpc {
      * used once the associated operation is done. If an export operation is
      * cancelled before completion it may leave partial data behind in Google
      * Cloud Storage.
+     * For more details on export behavior and output format, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/export-import
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> exportDocuments(
@@ -960,6 +1265,39 @@ public final class FirestoreAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * Gets information about a database.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.admin.v1.Database> getDatabase(
+        com.google.firestore.admin.v1.GetDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDatabaseMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * List all the databases in the project.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.firestore.admin.v1.ListDatabasesResponse> listDatabases(
+        com.google.firestore.admin.v1.ListDatabasesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDatabasesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Updates a database.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation> updateDatabase(
+        com.google.firestore.admin.v1.UpdateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateDatabaseMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INDEX = 0;
@@ -971,6 +1309,9 @@ public final class FirestoreAdminGrpc {
   private static final int METHODID_LIST_FIELDS = 6;
   private static final int METHODID_EXPORT_DOCUMENTS = 7;
   private static final int METHODID_IMPORT_DOCUMENTS = 8;
+  private static final int METHODID_GET_DATABASE = 9;
+  private static final int METHODID_LIST_DATABASES = 10;
+  private static final int METHODID_UPDATE_DATABASE = 11;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1023,6 +1364,18 @@ public final class FirestoreAdminGrpc {
           break;
         case METHODID_IMPORT_DOCUMENTS:
           serviceImpl.importDocuments((com.google.firestore.admin.v1.ImportDocumentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DATABASE:
+          serviceImpl.getDatabase((com.google.firestore.admin.v1.GetDatabaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.Database>) responseObserver);
+          break;
+        case METHODID_LIST_DATABASES:
+          serviceImpl.listDatabases((com.google.firestore.admin.v1.ListDatabasesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.firestore.admin.v1.ListDatabasesResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_DATABASE:
+          serviceImpl.updateDatabase((com.google.firestore.admin.v1.UpdateDatabaseRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
@@ -1095,6 +1448,9 @@ public final class FirestoreAdminGrpc {
               .addMethod(getListFieldsMethod())
               .addMethod(getExportDocumentsMethod())
               .addMethod(getImportDocumentsMethod())
+              .addMethod(getGetDatabaseMethod())
+              .addMethod(getListDatabasesMethod())
+              .addMethod(getUpdateDatabaseMethod())
               .build();
         }
       }

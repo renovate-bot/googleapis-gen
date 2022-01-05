@@ -1448,7 +1448,7 @@ private static final long serialVersionUID = 0L;
   private volatile java.lang.Object name_;
   /**
    * <pre>
-   * A field name of the form
+   * Required. A field name of the form
    * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
    * A field path may be a simple field name, e.g. `address` or a path to fields
    * within map_value , e.g. `address.city`,
@@ -1472,7 +1472,7 @@ private static final long serialVersionUID = 0L;
    * have their own `Field` index configuration.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The name.
    */
   @java.lang.Override
@@ -1490,7 +1490,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * A field name of the form
+   * Required. A field name of the form
    * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
    * A field path may be a simple field name, e.g. `address` or a path to fields
    * within map_value , e.g. `address.city`,
@@ -1514,7 +1514,7 @@ private static final long serialVersionUID = 0L;
    * have their own `Field` index configuration.
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -1920,7 +1920,7 @@ private static final long serialVersionUID = 0L;
     private java.lang.Object name_ = "";
     /**
      * <pre>
-     * A field name of the form
+     * Required. A field name of the form
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
      * A field path may be a simple field name, e.g. `address` or a path to fields
      * within map_value , e.g. `address.city`,
@@ -1944,7 +1944,7 @@ private static final long serialVersionUID = 0L;
      * have their own `Field` index configuration.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -1961,7 +1961,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A field name of the form
+     * Required. A field name of the form
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
      * A field path may be a simple field name, e.g. `address` or a path to fields
      * within map_value , e.g. `address.city`,
@@ -1985,7 +1985,7 @@ private static final long serialVersionUID = 0L;
      * have their own `Field` index configuration.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -2003,7 +2003,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A field name of the form
+     * Required. A field name of the form
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
      * A field path may be a simple field name, e.g. `address` or a path to fields
      * within map_value , e.g. `address.city`,
@@ -2027,7 +2027,7 @@ private static final long serialVersionUID = 0L;
      * have their own `Field` index configuration.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -2043,7 +2043,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A field name of the form
+     * Required. A field name of the form
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
      * A field path may be a simple field name, e.g. `address` or a path to fields
      * within map_value , e.g. `address.city`,
@@ -2067,7 +2067,7 @@ private static final long serialVersionUID = 0L;
      * have their own `Field` index configuration.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -2078,7 +2078,7 @@ private static final long serialVersionUID = 0L;
     }
     /**
      * <pre>
-     * A field name of the form
+     * Required. A field name of the form
      * `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
      * A field path may be a simple field name, e.g. `address` or a path to fields
      * within map_value , e.g. `address.city`,
@@ -2102,7 +2102,7 @@ private static final long serialVersionUID = 0L;
      * have their own `Field` index configuration.
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */

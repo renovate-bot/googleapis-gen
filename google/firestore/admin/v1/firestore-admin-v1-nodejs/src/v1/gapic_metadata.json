@@ -3,7 +3,7 @@
   "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
   "language": "typescript",
   "protoPackage": "google.firestore.admin.v1",
-  "libraryPackage": "admin",
+  "libraryPackage": "@google-cloud/firestore-admin",
   "services": {
     "FirestoreAdmin": {
       "clients": {
@@ -25,6 +25,16 @@
                 "getField"
               ]
             },
+            "GetDatabase": {
+              "methods": [
+                "getDatabase"
+              ]
+            },
+            "ListDatabases": {
+              "methods": [
+                "listDatabases"
+              ]
+            },
             "CreateIndex": {
               "methods": [
                 "createIndex"
@@ -43,6 +53,11 @@
             "ImportDocuments": {
               "methods": [
                 "importDocuments"
+              ]
+            },
+            "UpdateDatabase": {
+              "methods": [
+                "updateDatabase"
               ]
             },
             "ListIndexes": {
@@ -79,6 +94,16 @@
                 "getField"
               ]
             },
+            "GetDatabase": {
+              "methods": [
+                "getDatabase"
+              ]
+            },
+            "ListDatabases": {
+              "methods": [
+                "listDatabases"
+              ]
+            },
             "CreateIndex": {
               "methods": [
                 "createIndex"
@@ -97,6 +122,11 @@
             "ImportDocuments": {
               "methods": [
                 "importDocuments"
+              ]
+            },
+            "UpdateDatabase": {
+              "methods": [
+                "updateDatabase"
               ]
             },
             "ListIndexes": {

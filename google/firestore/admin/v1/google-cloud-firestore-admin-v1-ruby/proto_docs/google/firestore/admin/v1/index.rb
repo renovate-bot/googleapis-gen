@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -70,7 +70,7 @@ module Google
             # @!attribute [rw] order
             #   @return [::Google::Cloud::Firestore::Admin::V1::Index::IndexField::Order]
             #     Indicates that this field supports ordering by the specified order or
-            #     comparing using =, <, <=, >, >=.
+            #     comparing using =, !=, <, <=, >, >=.
             # @!attribute [rw] array_config
             #   @return [::Google::Cloud::Firestore::Admin::V1::Index::IndexField::ArrayConfig]
             #     Indicates that this field supports operations on `array_value`s.

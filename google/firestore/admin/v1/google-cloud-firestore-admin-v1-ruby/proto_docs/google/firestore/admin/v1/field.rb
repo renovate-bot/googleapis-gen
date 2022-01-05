@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ module Google
           # collections in the database with the same id.
           # @!attribute [rw] name
           #   @return [::String]
-          #     A field name of the form
+          #     Required. A field name of the form
           #     `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}/fields/{field_path}`
           #
           #     A field path may be a simple field name, e.g. `address` or a path to fields

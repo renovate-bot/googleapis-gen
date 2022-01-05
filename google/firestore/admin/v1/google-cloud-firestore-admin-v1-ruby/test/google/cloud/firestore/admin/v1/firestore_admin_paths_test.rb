@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Copyright 2021 Google LLC
+# Copyright 2022 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -68,6 +68,18 @@ class ::Google::Cloud::Firestore::Admin::V1::FirestoreAdmin::ClientPathsTest < M
 
       path = client.index_path project: "value0", database: "value1", collection: "value2", index: "value3"
       assert_equal "projects/value0/databases/value1/collectionGroups/value2/indexes/value3", path
+    end
+  end
+
+  def test_project_path
+    grpc_channel = ::GRPC::Core::Channel.new "localhost:8888", nil, :this_channel_is_insecure
+    ::Gapic::ServiceStub.stub :new, nil do
+      client = ::Google::Cloud::Firestore::Admin::V1::FirestoreAdmin::Client.new do |config|
+        config.credentials = grpc_channel
+      end
+
+      path = client.project_path project: "value0"
+      assert_equal "projects/value0", path
     end
   end
 end

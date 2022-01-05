@@ -17,17 +17,23 @@
 from google.cloud.firestore_admin_v1.services.firestore_admin.client import FirestoreAdminClient
 from google.cloud.firestore_admin_v1.services.firestore_admin.async_client import FirestoreAdminAsyncClient
 
+from google.cloud.firestore_admin_v1.types.database import Database
 from google.cloud.firestore_admin_v1.types.field import Field
 from google.cloud.firestore_admin_v1.types.firestore_admin import CreateIndexRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import DeleteIndexRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import ExportDocumentsRequest
+from google.cloud.firestore_admin_v1.types.firestore_admin import GetDatabaseRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import GetFieldRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import GetIndexRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import ImportDocumentsRequest
+from google.cloud.firestore_admin_v1.types.firestore_admin import ListDatabasesRequest
+from google.cloud.firestore_admin_v1.types.firestore_admin import ListDatabasesResponse
 from google.cloud.firestore_admin_v1.types.firestore_admin import ListFieldsRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import ListFieldsResponse
 from google.cloud.firestore_admin_v1.types.firestore_admin import ListIndexesRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import ListIndexesResponse
+from google.cloud.firestore_admin_v1.types.firestore_admin import UpdateDatabaseMetadata
+from google.cloud.firestore_admin_v1.types.firestore_admin import UpdateDatabaseRequest
 from google.cloud.firestore_admin_v1.types.firestore_admin import UpdateFieldRequest
 from google.cloud.firestore_admin_v1.types.index import Index
 from google.cloud.firestore_admin_v1.types.location import LocationMetadata
@@ -41,17 +47,23 @@ from google.cloud.firestore_admin_v1.types.operation import OperationState
 
 __all__ = ('FirestoreAdminClient',
     'FirestoreAdminAsyncClient',
+    'Database',
     'Field',
     'CreateIndexRequest',
     'DeleteIndexRequest',
     'ExportDocumentsRequest',
+    'GetDatabaseRequest',
     'GetFieldRequest',
     'GetIndexRequest',
     'ImportDocumentsRequest',
+    'ListDatabasesRequest',
+    'ListDatabasesResponse',
     'ListFieldsRequest',
     'ListFieldsResponse',
     'ListIndexesRequest',
     'ListIndexesResponse',
+    'UpdateDatabaseMetadata',
+    'UpdateDatabaseRequest',
     'UpdateFieldRequest',
     'Index',
     'LocationMetadata',

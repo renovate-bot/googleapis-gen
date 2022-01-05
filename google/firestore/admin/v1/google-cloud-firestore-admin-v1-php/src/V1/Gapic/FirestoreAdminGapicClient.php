@@ -1,6 +1,6 @@
 <?php
 /*
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -36,30 +36,62 @@ use Google\ApiCore\RequestParamsHeaderDescriptor;
 use Google\ApiCore\RetrySettings;
 
 use Google\ApiCore\Transport\TransportInterface;
+
 use Google\ApiCore\ValidationException;
 use Google\Auth\FetchAuthTokenInterface;
 use Google\Cloud\Firestore\Admin\V1\CreateIndexRequest;
+use Google\Cloud\Firestore\Admin\V1\Database;
 use Google\Cloud\Firestore\Admin\V1\DeleteIndexRequest;
 use Google\Cloud\Firestore\Admin\V1\ExportDocumentsRequest;
 use Google\Cloud\Firestore\Admin\V1\ExportDocumentsResponse;
 use Google\Cloud\Firestore\Admin\V1\Field;
 use Google\Cloud\Firestore\Admin\V1\FieldOperationMetadata;
+use Google\Cloud\Firestore\Admin\V1\GetDatabaseRequest;
 use Google\Cloud\Firestore\Admin\V1\GetFieldRequest;
 use Google\Cloud\Firestore\Admin\V1\GetIndexRequest;
 use Google\Cloud\Firestore\Admin\V1\ImportDocumentsRequest;
 use Google\Cloud\Firestore\Admin\V1\Index;
 use Google\Cloud\Firestore\Admin\V1\IndexOperationMetadata;
+use Google\Cloud\Firestore\Admin\V1\ListDatabasesRequest;
+use Google\Cloud\Firestore\Admin\V1\ListDatabasesResponse;
 use Google\Cloud\Firestore\Admin\V1\ListFieldsRequest;
 use Google\Cloud\Firestore\Admin\V1\ListFieldsResponse;
 use Google\Cloud\Firestore\Admin\V1\ListIndexesRequest;
 use Google\Cloud\Firestore\Admin\V1\ListIndexesResponse;
+use Google\Cloud\Firestore\Admin\V1\UpdateDatabaseRequest;
 use Google\Cloud\Firestore\Admin\V1\UpdateFieldRequest;
 use Google\LongRunning\Operation;
 use Google\Protobuf\FieldMask;
 use Google\Protobuf\GPBEmpty;
 
 /**
- * Service Description: Operations are created by service `FirestoreAdmin`, but are accessed via
+ * Service Description: The Cloud Firestore Admin API.
+ *
+ * This API provides several administrative services for Cloud Firestore.
+ *
+ * Project, Database, Namespace, Collection, Collection Group, and Document are
+ * used as defined in the Google Cloud Firestore API.
+ *
+ * Operation: An Operation represents work being performed in the background.
+ *
+ * The index service manages Cloud Firestore indexes.
+ *
+ * Index creation is performed asynchronously.
+ * An Operation resource is created for each such asynchronous operation.
+ * The state of the operation (including any errors encountered)
+ * may be queried via the Operation resource.
+ *
+ * The Operations collection provides a record of actions performed for the
+ * specified Project (including any Operations in progress). Operations are not
+ * created directly but through calls on other collections or resources.
+ *
+ * An Operation that is done may be deleted so that it is no longer listed as
+ * part of the Operation collection. Operations are garbage collected after
+ * 30 days. By default, ListOperations will only return in progress and failed
+ * operations. To list completed operation, issue a ListOperations request with
+ * the filter `done: true`.
+ *
+ * Operations are created by service `FirestoreAdmin`, but are accessed via
  * service `google.longrunning.Operations`.
  *
  * This class provides the ability to make remote calls to the backing service through method
@@ -146,6 +178,8 @@ class FirestoreAdminGapicClient
 
     private static $indexNameTemplate;
 
+    private static $projectNameTemplate;
+
     private static $pathTemplateMap;
 
     private $operationsClient;
@@ -205,6 +239,15 @@ class FirestoreAdminGapicClient
         return self::$indexNameTemplate;
     }
 
+    private static function getProjectNameTemplate()
+    {
+        if (self::$projectNameTemplate == null) {
+            self::$projectNameTemplate = new PathTemplate('projects/{project}');
+        }
+
+        return self::$projectNameTemplate;
+    }
+
     private static function getPathTemplateMap()
     {
         if (self::$pathTemplateMap == null) {
@@ -213,6 +256,7 @@ class FirestoreAdminGapicClient
                 'database' => self::getDatabaseNameTemplate(),
                 'field' => self::getFieldNameTemplate(),
                 'index' => self::getIndexNameTemplate(),
+                'project' => self::getProjectNameTemplate(),
             ];
         }
 
@@ -298,6 +342,21 @@ class FirestoreAdminGapicClient
     }
 
     /**
+     * Formats a string containing the fully-qualified path to represent a project
+     * resource.
+     *
+     * @param string $project
+     *
+     * @return string The formatted project resource.
+     */
+    public static function projectName($project)
+    {
+        return self::getProjectNameTemplate()->render([
+            'project' => $project,
+        ]);
+    }
+
+    /**
      * Parses a formatted name string and returns an associative array of the components in the name.
      * The following name formats are supported:
      * Template: Pattern
@@ -305,6 +364,7 @@ class FirestoreAdminGapicClient
      * - database: projects/{project}/databases/{database}
      * - field: projects/{project}/databases/{database}/collectionGroups/{collection}/fields/{field}
      * - index: projects/{project}/databases/{database}/collectionGroups/{collection}/indexes/{index}
+     * - project: projects/{project}
      *
      * The optional $template argument can be supplied to specify a particular pattern,
      * and must match one of the templates listed above. If no $template argument is
@@ -551,6 +611,9 @@ class FirestoreAdminGapicClient
      * cancelled before completion it may leave partial data behind in Google
      * Cloud Storage.
      *
+     * For more details on export behavior and output format, refer to:
+     * https://cloud.google.com/firestore/docs/manage-data/export-import
+     *
      * Sample code:
      * ```
      * $firestoreAdminClient = new FirestoreAdminClient();
@@ -631,6 +694,47 @@ class FirestoreAdminGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->startOperationsCall('ExportDocuments', $optionalArgs, $request, $this->getOperationsClient())->wait();
+    }
+
+    /**
+     * Gets information about a database.
+     *
+     * Sample code:
+     * ```
+     * $firestoreAdminClient = new FirestoreAdminClient();
+     * try {
+     *     $formattedName = $firestoreAdminClient->databaseName('[PROJECT]', '[DATABASE]');
+     *     $response = $firestoreAdminClient->getDatabase($formattedName);
+     * } finally {
+     *     $firestoreAdminClient->close();
+     * }
+     * ```
+     *
+     * @param string $name         Required. A name of the form
+     *                             `projects/{project_id}/databases/{database_id}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Firestore\Admin\V1\Database
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function getDatabase($name, array $optionalArgs = [])
+    {
+        $request = new GetDatabaseRequest();
+        $requestParamHeaders = [];
+        $request->setName($name);
+        $requestParamHeaders['name'] = $name;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('GetDatabase', Database::class, $optionalArgs, $request)->wait();
     }
 
     /**
@@ -801,12 +905,53 @@ class FirestoreAdminGapicClient
     }
 
     /**
+     * List all the databases in the project.
+     *
+     * Sample code:
+     * ```
+     * $firestoreAdminClient = new FirestoreAdminClient();
+     * try {
+     *     $formattedParent = $firestoreAdminClient->projectName('[PROJECT]');
+     *     $response = $firestoreAdminClient->listDatabases($formattedParent);
+     * } finally {
+     *     $firestoreAdminClient->close();
+     * }
+     * ```
+     *
+     * @param string $parent       Required. A parent name of the form
+     *                             `projects/{project_id}`
+     * @param array  $optionalArgs {
+     *     Optional.
+     *
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\Cloud\Firestore\Admin\V1\ListDatabasesResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function listDatabases($parent, array $optionalArgs = [])
+    {
+        $request = new ListDatabasesRequest();
+        $requestParamHeaders = [];
+        $request->setParent($parent);
+        $requestParamHeaders['parent'] = $parent;
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startCall('ListDatabases', ListDatabasesResponse::class, $optionalArgs, $request)->wait();
+    }
+
+    /**
      * Lists the field configuration and metadata for this database.
      *
      * Currently, [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
      * that have been explicitly overridden. To issue this query, call
      * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-     * `indexConfig.usesAncestorConfig:false`.
+     * `indexConfig.usesAncestorConfig:false` .
      *
      * Sample code:
      * ```
@@ -840,8 +985,8 @@ class FirestoreAdminGapicClient
      *           The filter to apply to list results. Currently,
      *           [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
      *           that have been explicitly overridden. To issue this query, call
-     *           [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-     *           `indexConfig.usesAncestorConfig:false`.
+     *           [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with a filter that includes
+     *           `indexConfig.usesAncestorConfig:false` .
      *     @type int $pageSize
      *           The maximum number of resources contained in the underlying API
      *           response. The API may return fewer values in a page, even if
@@ -959,6 +1104,77 @@ class FirestoreAdminGapicClient
         $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
         $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
         return $this->getPagedListResponse('ListIndexes', $optionalArgs, ListIndexesResponse::class, $request);
+    }
+
+    /**
+     * Updates a database.
+     *
+     * Sample code:
+     * ```
+     * $firestoreAdminClient = new FirestoreAdminClient();
+     * try {
+     *     $database = new Database();
+     *     $operationResponse = $firestoreAdminClient->updateDatabase($database);
+     *     $operationResponse->pollUntilComplete();
+     *     if ($operationResponse->operationSucceeded()) {
+     *         $result = $operationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $operationResponse->getError();
+     *         // handleError($error)
+     *     }
+     *     // Alternatively:
+     *     // start the operation, keep the operation name, and resume later
+     *     $operationResponse = $firestoreAdminClient->updateDatabase($database);
+     *     $operationName = $operationResponse->getName();
+     *     // ... do other work
+     *     $newOperationResponse = $firestoreAdminClient->resumeOperation($operationName, 'updateDatabase');
+     *     while (!$newOperationResponse->isDone()) {
+     *         // ... do other work
+     *         $newOperationResponse->reload();
+     *     }
+     *     if ($newOperationResponse->operationSucceeded()) {
+     *         $result = $newOperationResponse->getResult();
+     *     // doSomethingWith($result)
+     *     } else {
+     *         $error = $newOperationResponse->getError();
+     *         // handleError($error)
+     *     }
+     * } finally {
+     *     $firestoreAdminClient->close();
+     * }
+     * ```
+     *
+     * @param Database $database     Required. The database to update.
+     * @param array    $optionalArgs {
+     *     Optional.
+     *
+     *     @type FieldMask $updateMask
+     *           The list of fields to be updated.
+     *     @type RetrySettings|array $retrySettings
+     *           Retry settings to use for this call. Can be a
+     *           {@see Google\ApiCore\RetrySettings} object, or an associative array of retry
+     *           settings parameters. See the documentation on
+     *           {@see Google\ApiCore\RetrySettings} for example usage.
+     * }
+     *
+     * @return \Google\ApiCore\OperationResponse
+     *
+     * @throws ApiException if the remote call fails
+     */
+    public function updateDatabase($database, array $optionalArgs = [])
+    {
+        $request = new UpdateDatabaseRequest();
+        $requestParamHeaders = [];
+        $request->setDatabase($database);
+        $requestParamHeaders['database.name'] = $database->getName();
+        if (isset($optionalArgs['updateMask'])) {
+            $request->setUpdateMask($optionalArgs['updateMask']);
+        }
+
+        $requestParams = new RequestParamsHeaderDescriptor($requestParamHeaders);
+        $optionalArgs['headers'] = isset($optionalArgs['headers']) ? array_merge($requestParams->getHeader(), $optionalArgs['headers']) : $requestParams->getHeader();
+        return $this->startOperationsCall('UpdateDatabase', $optionalArgs, $request, $this->getOperationsClient())->wait();
     }
 
     /**

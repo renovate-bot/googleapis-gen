@@ -17,17 +17,23 @@
 from .services.firestore_admin import FirestoreAdminClient
 from .services.firestore_admin import FirestoreAdminAsyncClient
 
+from .types.database import Database
 from .types.field import Field
 from .types.firestore_admin import CreateIndexRequest
 from .types.firestore_admin import DeleteIndexRequest
 from .types.firestore_admin import ExportDocumentsRequest
+from .types.firestore_admin import GetDatabaseRequest
 from .types.firestore_admin import GetFieldRequest
 from .types.firestore_admin import GetIndexRequest
 from .types.firestore_admin import ImportDocumentsRequest
+from .types.firestore_admin import ListDatabasesRequest
+from .types.firestore_admin import ListDatabasesResponse
 from .types.firestore_admin import ListFieldsRequest
 from .types.firestore_admin import ListFieldsResponse
 from .types.firestore_admin import ListIndexesRequest
 from .types.firestore_admin import ListIndexesResponse
+from .types.firestore_admin import UpdateDatabaseMetadata
+from .types.firestore_admin import UpdateDatabaseRequest
 from .types.firestore_admin import UpdateFieldRequest
 from .types.index import Index
 from .types.location import LocationMetadata
@@ -42,6 +48,7 @@ from .types.operation import OperationState
 __all__ = (
     'FirestoreAdminAsyncClient',
 'CreateIndexRequest',
+'Database',
 'DeleteIndexRequest',
 'ExportDocumentsMetadata',
 'ExportDocumentsRequest',
@@ -49,12 +56,15 @@ __all__ = (
 'Field',
 'FieldOperationMetadata',
 'FirestoreAdminClient',
+'GetDatabaseRequest',
 'GetFieldRequest',
 'GetIndexRequest',
 'ImportDocumentsMetadata',
 'ImportDocumentsRequest',
 'Index',
 'IndexOperationMetadata',
+'ListDatabasesRequest',
+'ListDatabasesResponse',
 'ListFieldsRequest',
 'ListFieldsResponse',
 'ListIndexesRequest',
@@ -62,5 +72,7 @@ __all__ = (
 'LocationMetadata',
 'OperationState',
 'Progress',
+'UpdateDatabaseMetadata',
+'UpdateDatabaseRequest',
 'UpdateFieldRequest',
 )

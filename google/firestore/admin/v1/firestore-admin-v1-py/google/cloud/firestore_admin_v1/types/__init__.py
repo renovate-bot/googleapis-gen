@@ -13,6 +13,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+from .database import (
+    Database,
+)
 from .field import (
     Field,
 )
@@ -20,13 +23,18 @@ from .firestore_admin import (
     CreateIndexRequest,
     DeleteIndexRequest,
     ExportDocumentsRequest,
+    GetDatabaseRequest,
     GetFieldRequest,
     GetIndexRequest,
     ImportDocumentsRequest,
+    ListDatabasesRequest,
+    ListDatabasesResponse,
     ListFieldsRequest,
     ListFieldsResponse,
     ListIndexesRequest,
     ListIndexesResponse,
+    UpdateDatabaseMetadata,
+    UpdateDatabaseRequest,
     UpdateFieldRequest,
 )
 from .index import (
@@ -46,17 +54,23 @@ from .operation import (
 )
 
 __all__ = (
+    'Database',
     'Field',
     'CreateIndexRequest',
     'DeleteIndexRequest',
     'ExportDocumentsRequest',
+    'GetDatabaseRequest',
     'GetFieldRequest',
     'GetIndexRequest',
     'ImportDocumentsRequest',
+    'ListDatabasesRequest',
+    'ListDatabasesResponse',
     'ListFieldsRequest',
     'ListFieldsResponse',
     'ListIndexesRequest',
     'ListIndexesResponse',
+    'UpdateDatabaseMetadata',
+    'UpdateDatabaseRequest',
     'UpdateFieldRequest',
     'Index',
     'LocationMetadata',

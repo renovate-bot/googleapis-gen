@@ -34,8 +34,8 @@ public interface ListFieldsRequestOrBuilder extends
    * The filter to apply to list results. Currently,
    * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
    * that have been explicitly overridden. To issue this query, call
-   * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-   * `indexConfig.usesAncestorConfig:false`.
+   * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with a filter that includes
+   * `indexConfig.usesAncestorConfig:false` .
    * </pre>
    *
    * <code>string filter = 2;</code>
@@ -47,8 +47,8 @@ public interface ListFieldsRequestOrBuilder extends
    * The filter to apply to list results. Currently,
    * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] only supports listing fields
    * that have been explicitly overridden. To issue this query, call
-   * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with the filter set to
-   * `indexConfig.usesAncestorConfig:false`.
+   * [FirestoreAdmin.ListFields][google.firestore.admin.v1.FirestoreAdmin.ListFields] with a filter that includes
+   * `indexConfig.usesAncestorConfig:false` .
    * </pre>
    *
    * <code>string filter = 2;</code>
