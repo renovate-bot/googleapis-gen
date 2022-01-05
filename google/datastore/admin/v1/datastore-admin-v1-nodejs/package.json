@@ -1,5 +1,5 @@
 {
-  "name": "admin",
+  "name": "@google-cloud/datastore-admin",
   "version": "0.1.0",
   "description": "Admin client for Node.js",
   "repository": "googleapis/nodejs-admin",

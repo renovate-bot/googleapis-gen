@@ -19,6 +19,7 @@ from google.cloud.datastore_admin_v1.services.datastore_admin.async_client impor
 
 from google.cloud.datastore_admin_v1.types.datastore_admin import CommonMetadata
 from google.cloud.datastore_admin_v1.types.datastore_admin import CreateIndexRequest
+from google.cloud.datastore_admin_v1.types.datastore_admin import DatastoreFirestoreMigrationMetadata
 from google.cloud.datastore_admin_v1.types.datastore_admin import DeleteIndexRequest
 from google.cloud.datastore_admin_v1.types.datastore_admin import EntityFilter
 from google.cloud.datastore_admin_v1.types.datastore_admin import ExportEntitiesMetadata
@@ -33,11 +34,16 @@ from google.cloud.datastore_admin_v1.types.datastore_admin import ListIndexesRes
 from google.cloud.datastore_admin_v1.types.datastore_admin import Progress
 from google.cloud.datastore_admin_v1.types.datastore_admin import OperationType
 from google.cloud.datastore_admin_v1.types.index import Index
+from google.cloud.datastore_admin_v1.types.migration import MigrationProgressEvent
+from google.cloud.datastore_admin_v1.types.migration import MigrationStateEvent
+from google.cloud.datastore_admin_v1.types.migration import MigrationState
+from google.cloud.datastore_admin_v1.types.migration import MigrationStep
 
 __all__ = ('DatastoreAdminClient',
     'DatastoreAdminAsyncClient',
     'CommonMetadata',
     'CreateIndexRequest',
+    'DatastoreFirestoreMigrationMetadata',
     'DeleteIndexRequest',
     'EntityFilter',
     'ExportEntitiesMetadata',
@@ -52,4 +58,8 @@ __all__ = ('DatastoreAdminClient',
     'Progress',
     'OperationType',
     'Index',
+    'MigrationProgressEvent',
+    'MigrationStateEvent',
+    'MigrationState',
+    'MigrationStep',
 )
